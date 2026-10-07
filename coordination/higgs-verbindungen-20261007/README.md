@@ -4,6 +4,10 @@
 
 Die vorhandenen [B13–B23-Befunde](../higgs-bestandsaufnahme-20261007/BESTAND.md) enthalten mehr als Literatur: Higgsrückwirkung, stationäre Bindung und 3D-Dynamik. Sie liefern aber noch keine Herleitung des Higgsmechanismus, keine Hadronquantenzahlen und keinen allgemeinen Bildungs-/Stabilitätsnachweis. Diese Unterscheidung steuert die Modellsuche.
 
+## Nachtrag 08.10.2026: Idee 01 erstmals numerisch geprüft
+
+[HIGGS-RESPONSE-1](../higgs-response-20261008/ERGEBNIS.md) ist abgeschlossen: Die räumliche Antwort zweiter Ordnung besteht den festgelegten Pilot an allen acht B13-Parametergruppen. Der ursprüngliche lineare Ansatz reicht nur im schwachen Regime; lokale Näherungen scheitern am Profilkriterium. Neue Diagnose vorhandener Profile, keine neue Relaxation. Die folgenden drei Runden dokumentieren weiterhin den vorherigen Ideenstand vom 07.10.
+
 ## Was jetzt zusätzlich vorliegt
 
 - [Runde 1](RUNDE-1.md): zehn Mechanismen bzw. Verbindungen aus dem vorhandenen Modell.

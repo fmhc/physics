@@ -1,0 +1,48 @@
+{
+  "base_public_commit": "5e61c34b3b96684fe512e46d930a72562a6f1944",
+  "compute_host": "GPU-Rechner .69",
+  "gpu": "Quadro P5000",
+  "lease": "8e7da38f, nach Abschluss freigegeben",
+  "cpu_limit": "100%",
+  "memory_limit": "2 GiB",
+  "runtime_limit_s": 120,
+  "execution": [
+    {
+      "stage": "results",
+      "input_sha256": "1aa779f171b0ab3c3eb1b844d98934b18cb6dc129b398fff10ea7e33ce801a7d",
+      "torch": "2.5.1+cu121",
+      "compute": "CUDA float64 operators, norms, energy and autograd; CPU control, JSON and scalar grouping",
+      "source_hashes": {
+        "run.py": "15073f2f55217d5dd6d30d5a5408d2b7cf28e9c9ef245c6f69e83baadb214743",
+        "PLAN.md": "66eb6b6474289937024ad5ef60262a1b3d7ecbf0e8cef9e4498e936cfb237d41"
+      },
+      "original_provenance_sha256": "6f7732a7174612ea896960c101784f9229efe7aa6d1aa47794e86a3e661263fa"
+    },
+    {
+      "stage": "results-second-order",
+      "input_sha256": "1aa779f171b0ab3c3eb1b844d98934b18cb6dc129b398fff10ea7e33ce801a7d",
+      "torch": "2.5.1+cu121",
+      "compute": "CUDA float64 operators, norms, energy and autograd; CPU control, JSON and scalar grouping",
+      "source_hashes": {
+        "followup.py": "31832a9b6fcc838353b42478fb4e7bb67a82ba43fc66741f08c333440321dbec",
+        "PLAN.md": "66eb6b6474289937024ad5ef60262a1b3d7ecbf0e8cef9e4498e936cfb237d41",
+        "FOLLOWUP-PLAN.md": "3985c55f39da722906ad0ece379fe883c5ac354de81969cf3b39155f0c41e5a2"
+      },
+      "original_provenance_sha256": "efe1823b495fcbde31bf04928b30c9f0b85252deccf2f2303dadd6312d7cd0f9"
+    }
+  ],
+  "export_changes": [
+    {
+      "file": "run.py",
+      "executed_sha256": "15073f2f55217d5dd6d30d5a5408d2b7cf28e9c9ef245c6f69e83baadb214743",
+      "export_sha256": "59859de2e98cfdef730e74e160828613091169c1dbf582918f1d7be9d716b2f2",
+      "change": "Nur Eingabepfad auf beigefügte B13-PROFILES.json relativ zum Skript umgestellt; Rechenformeln unverändert."
+    },
+    {
+      "file": "followup.py",
+      "executed_sha256": "31832a9b6fcc838353b42478fb4e7bb67a82ba43fc66741f08c333440321dbec",
+      "export_sha256": "611aee275b75eb58a1e8a759ab675a6c6e6065e23d07dd4f6cc0700e98fa4eff",
+      "change": "Nur Eingabepfad auf beigefügte B13-PROFILES.json relativ zum Skript umgestellt; Rechenformeln unverändert."
+    }
+  ]
+}

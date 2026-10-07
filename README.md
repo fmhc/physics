@@ -1,6 +1,6 @@
 # Tetranetz-Physik: Forschungsarchiv zu Finns gefuelltem Tetraedernetz
 
-**Stand:** 07.10.2026, Export aus dem Arbeitsprojekt.
+**Stand:** 08.10.2026, Export aus dem Arbeitsprojekt.
 
 > **Wichtig:** Alles hier sind synthetische Modellrechnungen und Hypothesen. Nichts davon ist eine Bestaetigung durch
 > Messdaten, und nichts ist begutachtet (peer review). Die Texte und der Code sind ueberwiegend von KI-Systemen erstellt
@@ -49,6 +49,14 @@ Modellideen werden auf Passung zum Netz, bekannte Befunde und prüfbare Vorhersa
 Für Mesonen/Baryonen prüfen wir Skyrme- und neue Wirbelmodelle sowie unabhängige Observablen. Bei schwacher Kraft und Higgs stehen chirale Materie, Eichstruktur und Massendiagnose noch aus. Sieben Testkarten konkretisieren die nächsten Prüfungen; Skyrme-Topologie und Higgs-Phasendiagnose wurden korrigiert. **Neue Modellvorschläge und Literaturbefunde, noch keine neuen Simulationsergebnisse:** Hadronen bleiben bei 10 %, schwache Kraft und Higgs bei jeweils 2 % subjektiver Entwicklungsschätzung.
 
 **Nachtrag zur Archivsuche:** Es existieren bereits numerische Higgsportal-Rechnungen B13–B23, einschließlich dynamischer 3D-Felder. Die frühere Aussage „nur Literaturvorarbeit“ war unvollständig. [Bestandsaufnahme und Ergebnisbelege](coordination/higgs-bestandsaufnahme-20261007/BESTAND.md).
+
+## Neuer Befund: Higgsantwort kontrolliert vereinfacht (08.10.2026)
+
+Alle 24 vorhandenen B13-Profile wurden neu ausgewertet. Die räumliche Antwort zweiter Ordnung erreicht **0,026–0,028 % Profilfehler bei schwacher** und **0,64–0,71 % bei stärkerer Portalkopplung**; alle acht Parametergruppen bestehen das vorab gesetzte 5-%-Pilotkriterium einschließlich Gitter-/Boxvergleich. Rein lokale Näherungen bestehen das Profilkriterium nicht. [Ergebnisse, Grenzen, Code und Daten](coordination/higgs-response-20261008/ERGEBNIS.md).
+
+[![Higgs-Näherungen: Profil- und Energiefehler im Vergleich](coordination/higgs-response-20261008/approximation-errors.svg)](coordination/higgs-response-20261008/ERGEBNIS.md)
+
+Neue CUDA-Auswertung vorhandener radialer 3D-Profile; keine erneute Relaxation. Gültigkeit für neue selbstkonsistente Profile und Zeitentwicklung ist noch offen. Die Entwicklungsschätzungen bleiben unverändert.
 
 ## Zehn Verbindungsideen in drei Runden
 

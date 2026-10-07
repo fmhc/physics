@@ -1,7 +1,11 @@
-# Stand und naechste Schritte (07.10.2026)
+# Stand und naechste Schritte (08.10.2026)
 
 Synthetische Modellrechnungen und Hypothesen, nicht begutachtet. Kennzeichen: [E] gerechnet, [M] Mathematik, [L]
 Literatur, [H] Hypothese.
+
+## Neue Higgs-Auswertung (08.10.2026)
+
+[HIGGS-RESPONSE-1](coordination/higgs-response-20261008/ERGEBNIS.md) prüft Näherungen an allen 24 gespeicherten B13-Profilen. Eine räumliche Korrektur zweiter Ordnung besteht das vorab definierte Pilotkriterium in allen acht Parametergruppen. Es handelt sich um eine neue Auswertung bei festgehaltenen Singuletts, keine neue Relaxation und keine Herleitung des Higgsmechanismus. Nächste Frage: konsistente reduzierte Energie und Kräfte, danach selbstkonsistente Profile; parallel bleibt die vollständige Modenprüfung wichtig.
 
 ## Neuer Literatur- und Modellvergleich
 
