@@ -66,6 +66,14 @@ Die anschließende Kraftprüfung auf denselben 24 Profilen ist abgeschlossen. Di
 
 Damit ist ein weiterer Baustein für die Modellverbindungen gerechnet. Neue selbstkonsistente Minima, Zeitentwicklung und Übertragung auf V bleiben offen; die Entwicklungsschätzungen ändern sich dadurch nicht.
 
+## Neuer Befund: selbstkonsistenter Higgs-Pilot (08.10.2026)
+
+**18 neue Relaxationen** vergleichen die volle Portaltheorie mit E3 und Ecomp: ein Parameterfall bei stärkerer Kopplung, drei Gitter und zwei Startprofile. Alle konvergieren; beide Näherungen bestehen die vorab festgelegten Kriterien für Materieprofil, Gesamtenergie und Frequenz. Ecomp erreicht höchstens **0,000066 % Materieprofilfehler**. Die rekonstruierte Higgsabweichung bleibt mit etwa **0,65 %** deutlich weniger genau. [Bericht, Grenzen, Fehlversuch und reproduzierbare Ergebnisse](coordination/higgs-minima-20261008/ERGEBNIS.md).
+
+[![Selbstkonsistenter Higgsvergleich: Materieprofile und Frequenzen](coordination/higgs-minima-20261008/minima-errors.svg)](coordination/higgs-minima-20261008/ERGEBNIS.md)
+
+Geprüft ist ein bekannter radialer 3D-Zweig. Allgemeine Stabilität, Zeitentwicklung und Übertragung auf V bleiben offen. Die Entwicklungsprozente bleiben unverändert.
+
 ## Zehn Verbindungsideen in drei Runden
 
 Aus den vorhandenen Higgsportal-Rechnungen wurden [zehn Ideen über drei analytische Runden weiterentwickelt](coordination/higgs-verbindungen-20261007/README.md): Mechanismus, Gegenprüfung und konkreter Entscheidungstest. Priorität haben die berechenbare Higgsrückwirkung, die vollständige Modenprüfung und die Übertragung derselben Portalwirkung auf V. Neue analytische Bausteine und eine gezielte Prüfung des OpenAI-Math-Releases sind dokumentiert. Keine neuen Simulationen oder erhöhten Fortschrittsprozente.
