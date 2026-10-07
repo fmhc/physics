@@ -50,6 +50,10 @@ Für Mesonen/Baryonen prüfen wir Skyrme- und neue Wirbelmodelle sowie unabhäng
 
 **Nachtrag zur Archivsuche:** Es existieren bereits numerische Higgsportal-Rechnungen B13–B23, einschließlich dynamischer 3D-Felder. Die frühere Aussage „nur Literaturvorarbeit“ war unvollständig. [Bestandsaufnahme und Ergebnisbelege](coordination/higgs-bestandsaufnahme-20261007/BESTAND.md).
 
+## Zehn Verbindungsideen in drei Runden
+
+Aus den vorhandenen Higgsportal-Rechnungen wurden [zehn Ideen über drei analytische Runden weiterentwickelt](coordination/higgs-verbindungen-20261007/README.md): Mechanismus, Gegenprüfung und konkreter Entscheidungstest. Priorität haben die berechenbare Higgsrückwirkung, die vollständige Modenprüfung und die Übertragung derselben Portalwirkung auf V. Neue analytische Bausteine und eine gezielte Prüfung des OpenAI-Math-Releases sind dokumentiert. Keine neuen Simulationen oder erhöhten Fortschrittsprozente.
+
 ## Stand je Bereich (07.10.2026)
 
 Je Bereich steht, was gerechnet ist, was Hypothese ist und welcher Mechanismus fehlt. Alle
