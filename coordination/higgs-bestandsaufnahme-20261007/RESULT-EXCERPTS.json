@@ -1,0 +1,44 @@
+[
+  {
+    "source": "coordination/field-next-20260925/SUMMARY.json",
+    "source_sha256": "db26c5fd53099efaff697b33336e92804bd3d12b189511b51f12ee66a76e335d",
+    "selected_fields": {
+      "all_precision_targets_pass": true,
+      "all_cases_time_refinement_tested": false,
+      "caveats": [
+        "Density norms use shared h=1 samples, not all native fine-grid cells; probe order is indicative.",
+        "Only two cases have time-refinement controls; precision_target_pass permits absent time controls.",
+        "Flux voxel faces move by h/2 between grids; instantaneous E/Q closure and sampled time integrals are separate.",
+        "Trapezoidal flux integrals use cadence 0.5; reducing evolution dt does not refine that quadrature.",
+        "Momentum closure after spatial residual subtraction tests temporal integration, not independently correct stress.",
+        "Phase contrasts have unequal initial E/Q and are not isolated force measurements."
+      ]
+    }
+  },
+  {
+    "source": "coordination/field-fixedq-20260925/SUMMARY.json",
+    "source_sha256": "ae4033faf22f8023e98ed1eba3046bb2e88e49e9f9f8b57d42bc1f35f7a9c9ca",
+    "selected_fields": {
+      "q250_checks": {
+        "energy_medium_fine": 0.00041727981162964826,
+        "radius90_medium_fine": 0.00023846429336311844,
+        "box_energy_same_h": 5.370399105505418e-11,
+        "binding_margin_per_Q": 0.062204887132372266,
+        "energy_grid_difference_per_Q": 0.000369909544321672,
+        "max_start_energy_difference": 2.1232088235269972e-12
+      },
+      "q250_numerical_candidate": true,
+      "scope": "Static real-seeded 3D stationary search; no free evolution, Hessian, quantum stability or KEV activation.",
+      "caveat": "Box check at coarse h; radii use discrete cumulative samples. Other charges lack fine-grid/box controls."
+    }
+  },
+  {
+    "source": "coordination/field-branches-20260925/SUMMARY.json",
+    "source_sha256": "62e7076487b1faf7f196388a7185029f042dc27272f8bc61a18ea3ea8e2b5b25",
+    "selected_fields": {
+      "all_curvature_indicators_negative": true,
+      "all_available_channels_higher": true,
+      "scope": "Finite real-seeded search; curvature only on sampled localized branch, not global concavity."
+    }
+  }
+]

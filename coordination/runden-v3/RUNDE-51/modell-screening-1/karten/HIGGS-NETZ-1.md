@@ -11,3 +11,5 @@ Status: Implementierungspilot geplant; keine neue Simulation und kein Phasendiag
 Abbruch: fehlende Eichinvarianz, falscher κ = 0-Grenzfall oder unaufgelöste Durchmischung. Ergebnis eines kleinen Piloten darf „Implementierung bestanden, Physik unentschieden“ lauten. Ein späterer skalarer Kompositkanal braucht eigene Operatoren und Spektralanalyse.
 
 Keine automatische Fortsetzung früher genannter Kurzlaufbudgets. Vor Start Parameter, Budget, Ressourcenkoordination und Auswertung einfrieren. Primärkontrolle: [Volltextvergleich, Abschnitt 7](../VOLLTEXT-VERGLEICH-20261007.md#7-ältere-kontrolle-festlängiges-su2-higgsmodell).
+
+Archivnachtrag: [B13–B23](../../../../higgs-bestandsaufnahme-20261007/BESTAND.md) enthalten schon einen dynamischen radialen Higgssektor mit zusätzlichen Singuletts auf kartesischen Gittern. Dieser festlängige SU(2)-Pilot bleibt davon getrennt. Vor Implementierung vorhandene Definitionen vergleichen; keine historischen Läufe allein wegen der Wiederentdeckung wiederholen.

@@ -29,3 +29,7 @@ Ein Ergebnisbericht nennt Modellversion, Rohdatenpfad, reproduzierbaren Aufruf, 
 Die README-Schätzungen bleiben unverändert, insbesondere Hadronen 10 %, schwache Kraft 2 %, Higgs 2 %. Eine Neubewertung braucht neue Befunde und eine explizite Begründung. Die zwölf Erklärgrafiken bleiben schematisch.
 
 Begründungen und Primärquellen: [Volltextvergleich](VOLLTEXT-VERGLEICH-20261007.md). Überblick: [Kandidatenmatrix](KANDIDATENMATRIX.md).
+
+## Wiedergefundene Vorarbeiten
+
+Die [Bestandsaufnahme B13–B23](../../../higgs-bestandsaufnahme-20261007/BESTAND.md) ergänzt bereits gerechnete radiale Higgsportal-Modelle und deren 3D-Dynamik. Vor neuen Portalrechnungen diese Ergebnisse und Normierungen prüfen. Das ist eine andere Modelllinie als HIGGS-NETZ-1; der Portalanschluss ist vorhanden, die Herleitung des Higgsmechanismus aus V weiterhin offen.
