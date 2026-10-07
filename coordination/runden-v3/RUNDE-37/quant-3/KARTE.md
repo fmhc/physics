@@ -55,3 +55,26 @@
   hoechstens 10 min. Auswertungen auf cpu oder cpu7.
 - df vor jedem Lauf, abbrechen unter 10 GB frei. Keine Konfigurationsserien speichern.
 - Synthetisch, keine Messdaten. SU(2) statt SU(3) aus Kostengruenden; SU(3) folgt erst, wenn S2 traegt.
+
+# Nachtrag S5 (Karte, vor jeder Rechnung, ab 2026-10-07 14:39:14 CEST, date): Skala per Gradient Flow statt Fadenspannung
+
+- Anlass: S4 auf L = 6 war nicht messbar (Polyakov-Korrelator verrauscht). Scout-Fund arXiv:2502.08061 [S Abstract]: Gradient-Flow-Skalen t0 und w0 sind die Standardskala der Gitter-QCD; sie sind rauscharm.
+- Frage: Stimmt T_c * Wurzel(t0) auf Finns Netz (L = 6, Nt = 4, beta_c ~ 3,29) mit dem Hyperkubus (Nt = 4, beta_c = 2,30) ueberein? Das waere ein Universalitaetstest ohne Fadenspannung.
+
+| Nr | Erwartung | So kann sie scheitern | Wahrsch. |
+|---|---|---|---|
+| S5a | Kontrolle: Der Wilson-Flow ist auf dem Hyperkubus stabil, t0 aus t^2 <E> = 0,3 (SU(2)-Konvention angeben) mit Fehler unter 3 % | kein stabiles t0 | 80 % |
+| S5b | T_c * Wurzel(t0) auf dem Netz weicht vom Hyperkubus um weniger als 15 % ab | Abweichung >= 15 % | 45 % |
+| S5c | w0/Wurzel(t0) stimmt auf beiden Gittern auf 10 % ueberein | Abweichung >= 10 % | 55 % |
+
+# Nachtrag S6 (Karte, vor jeder Rechnung, ab 2026-10-07 17:22:12 CEST, date): zweiter Gitterabstand
+
+- Finn 07.10.: "mach weiter mit zweitem gitterabstand". Anlass: S5 hat nur einen Abstand je Gitter.
+- Plan: je Gitter ein feinerer Abstand mit beta_c(Nt = 6), Hyperkubus Literatur [L] ~2,43; Netz neu bestimmen. Dort t0, w0 und T_c*Wurzel(t0) mit Nt_c = 6.
+
+| Nr | Erwartung | So kann sie scheitern | Wahrsch. |
+|---|---|---|---|
+| S6a | Hyperkubus: beta_c(Nt = 6) im Bereich 2,40 bis 2,46 | ausserhalb | 75 % |
+| S6b | w0/Wurzel(t0) bleibt auf dem Netz beim feineren Abstand auf 2 % am Hyperkubus-Wert desselben Abstands | Abweichung > 2 % | 60 % |
+| S6c | T_c*Wurzel(t0) Netz gegen Hyperkubus: die Abweichung wird mit feinerem Abstand kleiner oder bleibt unter 5 % | Abweichung waechst ueber 5 % | 45 % |
+| S6d | Die Flusszeit-Umrechnung kappa auf dem Netz bleibt beim feineren Abstand auf 3 % gleich (Geometriegroesse, nicht Kopplung) | Aenderung > 3 % | 70 % |

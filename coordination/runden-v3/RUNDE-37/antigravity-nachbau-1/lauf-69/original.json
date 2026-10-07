@@ -1,0 +1,58 @@
+{
+ "unimodular_pachner.py": {
+  "rc": 1,
+  "stdout": "--- Unimodulares Regge-Kalk\u00fcl: Pachner 2-3 Test ---\nZiel-4-Volumen (Unimodulare Zwangsbedingung): 0.22822\n\nErgebnis der Minimierung:\nNeue innere Kantenl\u00e4nge L^2: 1.0000\nErreichte Wirkung (Spannung): 0.0000\n",
+  "stderr": "Traceback (most recent call last):\n  File \"/home/fmh/ComfyUI/venv/lib/python3.12/site-packages/scipy/_lib/_util.py\", line 947, in __getattr__\n    return self[name]\n           ~~~~^^^^^^\nKeyError: 'maxcv'\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"/home/fmh/fmhc-physics-remote/antigravity-nachbau-1/ag-original/unimodular_pachner.py\", line 91, in <module>\n    print(f\"Erfolg der Volumen-Erhaltung: {res.success} (Abweichung: {res.maxcv:.2e})\")\n                                                                      ^^^^^^^^^\n  File \"/home/fmh/ComfyUI/venv/lib/python3.12/site-packages/scipy/_lib/_util.py\", line 949, in __getattr__\n    raise AttributeError(name) from e\nAttributeError: maxcv\n",
+  "sha256": "85fe2ab513b7050d2be590c77ea495646062eeb3ba07821cc83ba280246fe245",
+  "t_s": 0.9957244396209717
+ },
+ "ribbon_frustration.py": {
+  "rc": 0,
+  "stdout": "Starte Frustrations-Analyse der Z2-B\u00e4nder...\n--- Analyse der Faden-Stabilit\u00e4t (t=0.01, twist=3.14) ---\nBreite w=0.01 | w^2/t=0.0100 | Energie E=9.87e-08 -> Stabil (Mikroskopisch)\nBreite w=0.05 | w^2/t=0.2500 | Energie E=7.97e-07 -> Stabil (Mikroskopisch)\nBreite w=0.10 | w^2/t=1.0000 | Energie E=1.07e-05 -> Instabil! (Mesoskopischer Form-\u00dcbergang / Riss)\nBreite w=0.20 | w^2/t=4.0000 | Energie E=3.13e-04 -> Instabil! (Mesoskopischer Form-\u00dcbergang / Riss)\nBreite w=0.50 | w^2/t=25.0000 | Energie E=3.04e-02 -> Instabil! (Mesoskopischer Form-\u00dcbergang / Riss)\nBreite w=1.00 | w^2/t=100.0000 | Energie E=9.72e-01 -> Instabil! (Mesoskopischer Form-\u00dcbergang / Riss)\n\nFazit:\n1. Durch die Aufgabe der Inextensibility (die F\u00e4den im Netz *d\u00fcrfen* sich dehnen),\n   bleiben d\u00fcnne F\u00e4den stabil. Die Dehnungsenergie ist minimal.\n2. Ab einem mesoskopischen Radius rei\u00dft der Faden oder faltet sich (Shape Transition).\n   Das erkl\u00e4rt pr\u00e4zise den Confinement-Bruch bzw. das String-Breaking bei dicken F\u00e4den!\n",
+  "stderr": "",
+  "sha256": "c2dce96c37eca7bb3d730d76cbfebc40f3891d5c5b95332f59bcf33170764d58",
+  "t_s": 0.01927804946899414
+ },
+ "quantum_rotor_witness.py": {
+  "rc": 0,
+  "stdout": "--- Q-Ball Quantum Rotor Witness (Lichtablenkung) ---\nSto\u00dfparameter (Abstand): 1.0e-15 m\nPhoton-Wellenl\u00e4nge:      1.0e-12 m\n--------------------------------------------------\nPhasenverschiebung Prograde:   1.3547e-15 rad\nPhasenverschiebung Retrograde: 1.3547e-15 rad\nGravitomagnetische Differenz:  2.0766e-35 rad\n--------------------------------------------------\nAsymmetrische Verschr\u00e4nkungsentropie (S_L Differenz): 8.6249e-70\n\nFAZIT:\nDas Modell sagt eine asymmetrische Quantenverschr\u00e4nkung (Prograde vs. Retrograde) voraus.\nEin Interferometer, das Gammastrahlung an rotierenden topologischen Q-B\u00e4llen streut,\nwird einen Verlust an Koh\u00e4renz messen, der exakt von der Rotationsrichtung abh\u00e4ngt.\nDamit haben wir ein messbares Kriterium (Witness) f\u00fcr die PDG-Tabelle!\n",
+  "stderr": "",
+  "sha256": "a33752aca02eb674325e409ed1a61fe66845a3f3f482c43f765e85efe295da2c",
+  "t_s": 0.02052783966064453
+ },
+ "generationen_dimensionen.py": {
+  "rc": 0,
+  "stdout": "--- Ableitung: Schwache Kraft (SU(2)) und Teilchen-Generationen ---\nUrsprung der Schwachen Kraft (Isospin):\nALLGEMEIN (1D, 2D, 3D): Jedes dieser Gitter ist bipartit (Untergitter A und B).\nEine Welle, die auf dem Netz wandert, wird zwingend als 2-komponentiger Spinor (SU(2)) \nbeschrieben. Das ist die Ursache der Schwachen Kraft (Links/Rechts-H\u00e4ndigkeit)!\n\nUrsprung der Generationen (Dimensionalit\u00e4t):\nDimension 1D (1D-Kette): -> 1 Generation (nur Elektron-Analogon)\nDimension 2D (2D-Wabennetz): -> 2 Generationen (z.B. Elektron, Myon)\nDimension 3D (3D-Diamantgitter): -> 3 Generationen (Elektron, Myon, Tau!)\n\nOFFENE PR\u00dcFUNG:\n- Die Massehierarchie der 3 Generationen (Warum m_Tau > m_Myon > m_El?) muss aus\n  der unterschiedlichen Kopplung der 3 Topologien an die Netz-Verzerrung (Higgs-Mechanismus)\n  hergeleitet werden.\n",
+  "stderr": "",
+  "sha256": "6c50f82aa4a2779aa096996953483f20aeccb68979f61c86ab89b0b2fb96bec3",
+  "t_s": 0.01941227912902832
+ },
+ "higgs_masse_hierarchie.py": {
+  "rc": 0,
+  "stdout": "--- Higgs-Verzerrung und Massehierarchie ---\n1. Unverzerrtes Gitter (Higgs-Feld = 0):\nMassen (e, my, tau): 0.0000, 0.0000, 0.0000\n\n2. Spontan verzerrtes Gitter (Higgs-Feld eingeschaltet):\nVerzerrungstensor (Strain): [-0.15, 0.05, 0.25, -0.01]\nM_1 (Elektron-\u00e4hnlich): 0.0600\nM_2 (Myon-\u00e4hnlich):     0.3400\nM_3 (Tau-\u00e4hnlich):      0.4600\n\nFAZIT:\nDie spontane Gitterverzerrung (unser Higgs-Mechanismus) bricht die\nkubische Symmetrie. Dadurch \u00f6ffnen sich in den 3 T\u00e4lern unterschiedliche L\u00fccken.\nEine strenge Massehierarchie M_1 < M_2 < M_3 ist die mathematisch\nnotwendige Folge jeder asymmetrischen Spannungsverteilung im Netz!\n",
+  "stderr": "",
+  "sha256": "ade9dd208550361d882007ba828b5c428f45b56cc4f363ccc40b5504956f709c",
+  "t_s": 0.021982431411743164
+ },
+ "gravity_nearfield_collapse.py": {
+  "rc": 0,
+  "stdout": "--- Schwerkraft-Nahfeld: Periheldrehung und Kollaps ---\n\n1. Fernfeld (Lineare Elastizit\u00e4t, alpha = 0.0):\nPeriheldrehung pro Umlauf: 0.000000 rad\n\n2. Nahfeld (Nichtlineare Versteifung, alpha = 1.5):\nPeriheldrehung pro Umlauf: -5.683700 rad\n\n3. Echter Kollaps (Objekt trifft den Horizont):\nKOLLAPS: Horizont erreicht (c=0)\n\nFAZIT:\nDie ART-Effekte im Nahfeld (Periheldrehung und Schwarze L\u00f6cher) ergeben sich\nin unserem Modell v\u00f6llig zwanglos, sobald das Netz nichtlinear elastisch reagiert!\nDer Ereignishorizont ist einfach der Radius, an dem das Gitter so extrem gestreckt\nist, dass die lokale Wellengeschwindigkeit auf Null sinkt.\n",
+  "stderr": "",
+  "sha256": "334d9a87cccf36c06bdf92ff1a2927c0c606ff55f5ed914a883b438c7cda0153",
+  "t_s": 0.6017646789550781
+ },
+ "kollaps_szenarien.py": {
+  "rc": 0,
+  "stdout": "--- Phasen\u00fcbergang im Zentrum Schwarzer L\u00f6cher ---\n\nMasse (R_H)     | E_A (Riss/Oberfl\u00e4che)     | E_B (Schmelze/Volumen)    | Bevorzugter Zustand\n------------------------------------------------------------------------------------------\n0.1             | 0.13                      | 0.00                      | Szenario B (Dichte Schmelze)\n1.0             | 12.57                     | 0.84                      | Szenario B (Dichte Schmelze)\n5.0             | 314.16                    | 104.72                    | Szenario B (Dichte Schmelze)\n10.0            | 1256.64                   | 837.76                    | Szenario B (Dichte Schmelze)\n50.0            | 31415.93                  | 104719.76                 | Szenario A (Hohler Riss!)\n100.0           | 125663.71                 | 837758.04                 | Szenario A (Hohler Riss!)\n\nFAZIT DER KOLLAPS-DYNAMIK:\n1. Mikro-Schwarze L\u00f6cher (Quanten-Level): Bevorzugen Szenario B.\n   Es kostet zu viel Energie, das Netz f\u00fcr einen winzigen Radius aufzurei\u00dfen.\n   Sie sind dichte, komprimierte Gitter-Nuggets.\n2. Makroskopische Schwarze L\u00f6cher (Astrophysik): Bevorzugen absolut Szenario A.\n   Da das Volumen mit M^3 w\u00e4chst, wird die Schmelze energetisch unm\u00f6glich.\n   Das Netz REISST! Reale Sternen-Schwarze L\u00f6cher sind gigantische topologische\n   Hohlr\u00e4ume (Bubbles), auf deren innerer Oberfl\u00e4che die gesamte Materie klebt.\n",
+  "stderr": "",
+  "sha256": "3a88eb2f2dc4f8c6cc5bce9124b179b0df76136ff7b94f943410e751439f8883",
+  "t_s": 0.01881265640258789
+ },
+ "dirac_gitter_gpu.py": {
+  "rc": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"/home/fmh/fmhc-physics-remote/antigravity-nachbau-1/ag-original/dirac_gitter_gpu.py\", line 142, in <module>\n    args = parser.parse_argument()\n           ^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'ArgumentParser' object has no attribute 'parse_argument'. Did you mean: 'add_argument'?\n",
+  "sha256": "d13b15d37dfb3aa384d06d785b5afd241c1a6661f28fcc83d6e057ebf953ab22",
+  "t_s": 2.705540180206299
+ }
+}

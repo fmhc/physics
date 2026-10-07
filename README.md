@@ -24,22 +24,22 @@ Theorie der Teilchenphysik entstehen.
 - Die Architektur Regge + DEC-Maxwell + Skalar ist **Literatur**, unter anderem McDonald/Miller 2010. Eigen sind nur
   die Rechnungen auf diesem Netz.
 
-## Stand je Schicht (Schaetzung der Leitung, 06.10.2026)
+## Stand je Schicht (Schaetzung der Leitung, 07.10.2026)
 
 | Schicht | Stand | steht | fehlt |
 |---|---|---|---|
-| Netz und Raum | 60 % | Netz, Fuellung, Gewichte; traegt Licht und Schwerkraft | Herleitung des Netzes; nichtlineare Netzdynamik (Ausnahmezuege beim Umklappen) |
-| Schwerkraft | 50 % | Fernfeld wie ART: Lichtablenkung, Shapiro, beta ~ 1, gleiche Uhr fuer Licht und Wellen | Nahfeld, Perihel, Kollaps |
+| Netz und Raum | 65 % | Netz, Fuellung, Gewichte; traegt Licht und Schwerkraft | Herleitung des Netzes; nichtlineare Netzdynamik (Ausnahmezuege beim Umklappen) |
+| Schwerkraft | 55 % | Fernfeld wie ART: Lichtablenkung, Shapiro, beta ~ 1, gleiche Uhr fuer Licht und Wellen | Nahfeld, Perihel, Kollaps |
 | Licht | 55 % | klassisch und quantisiert ein masseloses, richtungsgleiches Photon | Kopplungskonstante nicht hergeleitet |
 | Materiefeld (Q-Baelle) | 30 % | Q-Baelle sind Vielteilchen-Objekte | Massen kleiner Teilchen |
 | Spin 1/2 | 20 % | Fadenenden mit Spin-Vorzeichen per Buchhaltung | eine Dynamik, die es erzwingt |
-| Starke Kraft | 30 % | SU(2) auf dem Netz schliesst ein und schmilzt ohne Volumenuebergang (kleine Netze) | Fadenspannung (Grenzfall), SU(3) |
+| Starke Kraft | 35 % | SU(2) auf dem Netz schliesst ein und schmilzt ohne Volumenuebergang (kleine Netze) | Fadenspannung (Grenzfall), SU(3) |
 | Mesonen, Baryonen | 5 % | duenne Faeden stabil | fast alles |
 | Schwache Kraft, Higgs, Generationen | 0 % | - | alles |
 | Vergleich mit Messdaten | 5 % | Schranken (GW170817, Doppelbrechung) | Vorhersagen |
-| Quantengravitation | 5 % | dynamisches Netz (CDT-artig) gebaut, Volumina zu klein | alles Weitere |
+| Quantengravitation | 7 % | dynamisches Netz (CDT-artig) gebaut, Volumina zu klein | alles Weitere |
 
-Gesamt grob 20 % auf dem Weg zu einer kompletten Theorie.
+Gesamt grob 22 % (Stand 07.10.2026; Neues und naechste Schritte in [STAND-UND-NAECHSTE-SCHRITTE.md](STAND-UND-NAECHSTE-SCHRITTE.md)) auf dem Weg zu einer kompletten Theorie.
 
 ## Verzeichnisse
 

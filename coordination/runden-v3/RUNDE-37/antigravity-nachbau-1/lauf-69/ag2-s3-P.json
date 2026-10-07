@@ -1,0 +1,111 @@
+{
+ "info": {
+  "numpy": "2.4.4",
+  "scipy": "1.18.0",
+  "python": "3.12.3",
+  "host": "ubuntu-auto",
+  "argv": [
+   "/home/fmh/fmhc-physics-remote/antigravity-nachbau-1/code/ag2_unimod.py",
+   "--netz",
+   "glas-N128-s3",
+   "--lesart",
+   "P",
+   "--zugmax",
+   "0",
+   "--out",
+   "/home/fmh/fmhc-physics-remote/antigravity-nachbau-1/lauf/ag2-s3-P.json"
+  ],
+  "nn_sha256": "9ccc3e38ee38ddf54d7f76adc6509a52438f2a16bda143b3bf117eb25c0d632e"
+ },
+ "netz": "glas-N128-s3",
+ "lesart": "P",
+ "abbruch": {
+  "t": 0.33136699535789904,
+  "n": 104,
+  "grund": "mehr als 0 Zuege"
+ },
+ "ereignisse": [
+  {
+   "t": 0.32975390443390257,
+   "typ": 32,
+   "mu_hg": 0.0008055086967244228,
+   "ausgefuehrt": true,
+   "dH_rel": -3.3052455450760526e-06
+  }
+ ],
+ "auswertung": [
+  {
+   "rolle": "start",
+   "E": 1001,
+   "nV": 128,
+   "T": 873,
+   "vol_summe": 127.99999999999994,
+   "M_n_neg_selbst": 128,
+   "M_n_neg_code": 128,
+   "A_pd": true,
+   "n_wachsend_code": 0,
+   "M_neg_global": 128,
+   "rang_global": 1,
+   "kin_neg_global": 0,
+   "wachsend_global": 0,
+   "dim_x_global": 491,
+   "M_neg_lokal": 114,
+   "rang_lokal": 128,
+   "kin_neg_lokal": 0,
+   "wachsend_lokal": 0,
+   "dim_x_lokal": 364,
+   "wachsend_ohne": 0,
+   "kin_neg_ohne": 0,
+   "t_s": 3.619563341140747
+  },
+  {
+   "rolle": "alt_gd",
+   "E": 1001,
+   "nV": 128,
+   "T": 873,
+   "vol_summe": 128.00203804820964,
+   "M_n_neg_selbst": 129,
+   "M_n_neg_code": 129,
+   "A_pd": false,
+   "n_wachsend_code": 4,
+   "M_neg_global": 128,
+   "rang_global": 1,
+   "kin_neg_global": 0,
+   "wachsend_global": 3,
+   "dim_x_global": 491,
+   "M_neg_lokal": 114,
+   "rang_lokal": 128,
+   "kin_neg_lokal": 0,
+   "wachsend_lokal": 0,
+   "dim_x_lokal": 364,
+   "wachsend_ohne": 4,
+   "kin_neg_ohne": 1,
+   "t_s": 3.6123123168945312
+  },
+  {
+   "rolle": "neu_gd",
+   "E": 1000,
+   "nV": 128,
+   "T": 872,
+   "vol_summe": 128.00203808772534,
+   "M_n_neg_selbst": 128,
+   "M_n_neg_code": 128,
+   "A_pd": true,
+   "n_wachsend_code": 3,
+   "M_neg_global": 128,
+   "rang_global": 1,
+   "kin_neg_global": 0,
+   "wachsend_global": 3,
+   "dim_x_global": 490,
+   "M_neg_lokal": 114,
+   "rang_lokal": 128,
+   "kin_neg_lokal": 0,
+   "wachsend_lokal": 0,
+   "dim_x_lokal": 363,
+   "wachsend_ohne": 3,
+   "kin_neg_ohne": 0,
+   "t_s": 3.632664918899536
+  }
+ ],
+ "laufzeit_s": 27.438233613967896
+}
