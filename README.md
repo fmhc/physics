@@ -41,6 +41,13 @@ Die Grafiken sind schematische Erklärbilder, keine Simulationsergebnisse oder M
 Modellideen werden auf Passung zum Netz, bekannte Befunde und prüfbare Vorhersagen untersucht. Die Bilder behaupten insbesondere keine Herleitung von Hadronen, Higgs oder Teilchenfamilien.
 
 <!-- END RESEARCH GRAPHICS -->
+
+## Neue Modelle: Literaturvergleich und nächste Prüfungen
+
+**07.10.2026:** Sechs arXiv-Arbeiten und zwei ältere Kontrollen wurden in den relevanten Volltextabschnitten gelesen und mit unseren Ansätzen verglichen. [Vergleich und Primärquellen](coordination/runden-v3/RUNDE-51/modell-screening-1/VOLLTEXT-VERGLEICH-20261007.md) · [Kandidatenmatrix](coordination/runden-v3/RUNDE-51/modell-screening-1/KANDIDATENMATRIX.md) · [Modellfahrplan](coordination/runden-v3/RUNDE-51/modell-screening-1/MODELLFAHRPLAN.md).
+
+Für Mesonen/Baryonen prüfen wir Skyrme- und neue Wirbelmodelle sowie unabhängige Observablen. Bei schwacher Kraft und Higgs stehen chirale Materie, Eichstruktur und Massendiagnose noch aus. Sieben Testkarten konkretisieren die nächsten Prüfungen; Skyrme-Topologie und Higgs-Phasendiagnose wurden korrigiert. **Neue Modellvorschläge und Literaturbefunde, noch keine neuen Simulationsergebnisse:** Hadronen bleiben bei 10 %, schwache Kraft und Higgs bei jeweils 2 % subjektiver Entwicklungsschätzung.
+
 ## Stand je Bereich (07.10.2026)
 
 Je Bereich steht, was gerechnet ist, was Hypothese ist und welcher Mechanismus fehlt. Alle

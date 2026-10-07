@@ -3,6 +3,10 @@
 Synthetische Modellrechnungen und Hypothesen, nicht begutachtet. Kennzeichen: [E] gerechnet, [M] Mathematik, [L]
 Literatur, [H] Hypothese.
 
+## Neuer Literatur- und Modellvergleich
+
+Der [Volltextvergleich vom 07.10.2026](coordination/runden-v3/RUNDE-51/modell-screening-1/VOLLTEXT-VERGLEICH-20261007.md) prüft sechs arXiv-Arbeiten und zwei ältere Kontrollen. Der [revidierte Modellfahrplan](coordination/runden-v3/RUNDE-51/modell-screening-1/MODELLFAHRPLAN.md) enthält sieben konkrete Prüfkarten. Schwerpunkt: Hadronmodelle, chirale Materie, Higgs und belastbare Auswertung. Dies ist Quellenlektüre [S] und Modellplanung [H], keine neue Simulation. Die Prozentwerte bleiben unverändert.
+
 ## Neu seit der ersten Fassung
 
 - **Starke Kraft (QUANT-3, S5):** Mit Wilson-Flow-Skalen stimmt das dimensionslose Verhaeltnis w0/Wurzel(t0) auf dem
