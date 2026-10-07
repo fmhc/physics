@@ -1,0 +1,49 @@
+Nichtautor-Codelektüre, particle_binding, 02.10.2026
+
+Gelesen: outgoing/code.py, PLAN.txt und die verwendeten grid/load_refs/
+profile_check-APIs in modes/code.py. Bestätigter Codehash:
+75b1dce542aa728fe6bf58ecea4aec4a2ddf8a6a5a6e236666075c6902bbd292.
+Planhash: 2d7d7732a3139a29645902cbd381a8e08ddd80138b47f810f2a1738b784fbc22.
+Keine Ausführung, keine Rechnung.
+
+Urteil: kein konkreter blockierender Implementierungsfehler gefunden.
+Der begrenzte QA-/Vierfall-Lauf ist im vereinbarten Umfang fachlich
+vertretbar; sein Ergebnis und alle vorgesehenen Gates bleiben offen.
+
+Operator und Datenweg: komplexe Randdiagonale bleibt durch astype(complex)
+und komplexes bc erhalten. beta, Randfläche, V_last und negatives
+Diagonalzeichen stimmen. Die sqrtV-Quelle wird blockweise flachgelegt;
+die Rücktransformation teilt jeden Kanal durch dasselbe root. D und B
+verbinden die richtigen Kanäle. Der Normhelfer summiert bei drei Kanälen
+korrekt über Kanal und radiale Zelle. Provenienzprüfung bindet Operator,
+Quellresultat, NPZ und Referenzmanifest; die Quellkanalrekombination wird
+explizit geprüft. Keine zusätzliche Normierung oder Phasenänderung.
+
+work und flux verwenden dieselbe E-omegaQ-Konvention. Labor-/Ladungsfluss
+werden gesondert umgerechnet; Kontinuumsamplituden und FV-Fluss bleiben
+getrennt. Die freie Gaussian-QA trennt Betrag und komplexen Fehler gemäß
+Plan. Nullbump wird analytisch und nicht mit der Lösematrix erzeugt;
+Profilfehler, Amplitudenboden und h-Reduktion werden geprüft. Closed und
+Incoming-Mutant erhalten ihre eigenen Prüfungen und keine Produktions-
+Nichtnullschwellen. Auch diese Kontrollen müssen die geplante algebraische
+Workbilanz erfüllen: nahe Null kann Auslöschung diese strenge relative
+Prüfung scheitern lassen. Das wäre ein offener QA-Ausgang; der Code lockert
+den vorab vereinbarten Boden nicht stillschweigend.
+
+Vier Fälle und Fenster sind fest. Produktionsgates prüfen Rest/Bilanz,
+beide Fensterstreuungen, deren komplexe Differenz und Kontinuums-/FV-Fluss.
+R-Vergleich nutzt komplexe, h-Vergleich Betragsamplituden; beide verwenden
+das erste feste Fenster, während das zweite innerhalb jedes Falles
+angebunden bleibt. Die globale fünffache Reserve ist konservativ aus
+beobachteten Änderungen und beiden Fensterstreuungen gebildet. Der
+Hintergrundcheck nutzt die bestehende stationäre Dirichlet-Referenzprüfung
+einschließlich Randzelle, keine nachträgliche Profilkorrektur. Randwerte
+und abgeschnittene Quellenanteile werden gesondert ausgegeben.
+
+Atomische JSON-Teilstände werden nach jeder abgeschlossenen QA und jedem
+Produktionsfall gesichert. Algebraisches/QA-Versagen wird UNRESOLVED;
+interner Zeitabbruch INCOMPLETE. Native Abbrüche können nur den letzten
+gesicherten Teilstand hinterlassen; der äußere Rootdeckel ist hierfür
+wie geplant erforderlich. Import führt keinen alten Modenlauf aus.
+Ein späteres CONTROLLED_FORCED_RESPONSE wäre ausschließlich die feste
+stationäre Antwort, keine Dämpfungsrate oder volle nichtlineare Stabilität.

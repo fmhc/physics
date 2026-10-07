@@ -1,0 +1,52 @@
+RG-1 Bahn (Auswertung). Start 2026-09-30T03:39:22+02:00, Ende 2026-09-30T03:39:22+02:00, finn-precision-7550, Python 3.12.3, numpy 2.2.6, OMP_NUM_THREADS=1
+Explorativ (v3). Plan und Vorhersagen: PLAN.md. Gueltig = Klammer geschlossen, Mitte-Bahn erreicht die Schwanzschwelle, Einschachtelung monoton.
+Tabelle: lauf-lokal/h001/ergebnis.json; L3-Tabelle: lauf-lokal/h0005/ergebnis.json
+
+Zeilen: 234, gueltig 234
+
+Q_min(m) im Gitter (kleinste Ladung je m) und NLS-Grenze omega -> 1 (Q_lim = 2 N_T):
+m | Q_min        | bei omega^2 | Lage                        | E_min        | J = m Q_min  | Q faellt monoton | Q_lim (NLS)  | rho_max/m (NLS)
+0 |     11.82297 | 0.990       | Rand oben (groesstes omega^2) |     11.82266 |       0.0000 | ja               |     11.70090 | -
+1 |     48.65279 | 0.990       | Rand oben (groesstes omega^2) |     48.65190 |      48.6528 | ja               |     48.29835 | 1.5790
+2 |     90.39591 | 0.990       | Rand oben (groesstes omega^2) |     90.39429 |     180.7918 | ja               |     89.75207 | 1.4730
+3 |    133.37035 | 0.990       | Rand oben (groesstes omega^2) |    133.36796 |     400.1111 | ja               |    132.42338 | 1.4430
+4 |    176.75842 | 0.990       | Rand oben (groesstes omega^2) |    176.75526 |     707.0337 | ja               |    175.50422 | 1.4310
+5 |    220.32449 | 0.990       | Rand oben (groesstes omega^2) |    220.32055 |    1101.6224 | ja               |    218.76147 | 1.4251
+6 |    263.98169 | 0.990       | Rand oben (groesstes omega^2) |    263.97697 |    1583.8901 | ja               |    262.10909 | 1.4219
+7 |    307.69146 | 0.990       | Rand oben (groesstes omega^2) |    307.68596 |    2153.8402 | ja               |    305.50886 | 1.4199
+8 |    351.43422 | 0.990       | Rand oben (groesstes omega^2) |    351.42793 |    2811.4737 | ja               |    348.94137 | 1.4186
+beta (Gitter, m = 3..8): 0.98814 (Standardfehler 1.6e-03, rms 1.1e-03, n = 6)
+beta (NLS-Grenze, m = 3..8): 0.98815 (Standardfehler 1.6e-03, rms 1.1e-03, n = 6)
+alpha (Ecken der fuehrenden Bahn, Gitter, m = 3..8): 2.01199 (Standardfehler 1.7e-03, rms 1.1e-03, n = 6)
+alpha (Ecken, NLS-Grenze, m = 3..8): 2.01198 (Standardfehler 1.7e-03, rms 1.1e-03, n = 6)
+beta lokal: 3-4: 0.9790, 4-5: 0.9873, 5-6: 0.9915, 6-7: 0.9939, 7-8: 0.9955
+alpha lokal: 3-4: 2.0214, 4-5: 2.0128, 5-6: 2.0085, 6-7: 2.0061, 7-8: 2.0046
+Ecken (E_min(m), J = m Q): m=1: E=48.652, J=48.65, J/E^2=0.02055, w2=0.990; m=2: E=90.394, J=180.79, J/E^2=0.02213, w2=0.990; m=3: E=133.368, J=400.11, J/E^2=0.02249, w2=0.990; m=4: E=176.755, J=707.03, J/E^2=0.02263, w2=0.990; m=5: E=220.321, J=1101.62, J/E^2=0.02269, w2=0.990; m=6: E=263.977, J=1583.89, J/E^2=0.02273, w2=0.990; m=7: E=307.686, J=2153.84, J/E^2=0.02275, w2=0.990; m=8: E=351.428, J=2811.47, J/E^2=0.02276, w2=0.990
+Huelle E_min(J) (Karte): alpha = 1/Steigung(ln E gegen ln J) = 2.0911, Abwaertsspruenge (Saegezahn): 5, Anteile je m: {'3': 117, '4': 91, '5': 74, '6': 63, '7': 54, '8': 1}
+Huelle J_max(E) (Chew-Frautschi): alpha = 2.0552
+
+Ringbild: Exponent gamma aus ln R_max gegen ln m (m = 3..8); R_max sqrt(a)/m (NLS-Duennring: sqrt 2 = 1,4142)
+  omega^2 = 0.55: gamma = 0.9573; R_max: 0: 0.00, 1: 6.02, 2: 9.93, 3: 14.12, 4: 18.44, 5: 22.82, 6: 27.22, 7: 31.65, 8: 36.09; R_max sqrt(a)/m: 1: 4.040, 2: 3.330, 3: 3.158, 4: 3.093, 5: 3.061, 6: 3.044, 7: 3.033, 8: 3.026; Dicke/R: 1: 1.107, 2: 0.698, 3: 0.497, 4: 0.383, 5: 0.310, 6: 0.261, 7: 0.224, 8: 0.197
+  omega^2 = 0.7: gamma = 0.9802; R_max: 0: 0.00, 1: 3.54, 2: 6.47, 3: 9.46, 4: 12.49, 5: 15.54, 6: 18.60, 7: 21.66, 8: 24.73; R_max sqrt(a)/m: 1: 1.936, 2: 1.771, 3: 1.727, 4: 1.710, 5: 1.702, 6: 1.698, 7: 1.695, 8: 1.693; Dicke/R: 1: 0.889, 2: 0.508, 3: 0.351, 4: 0.267, 5: 0.215, 6: 0.180, 7: 0.155, 8: 0.136
+  omega^2 = 0.8: gamma = 0.9816; R_max: 0: 0.00, 1: 3.90, 2: 7.22, 3: 10.58, 4: 13.98, 5: 17.40, 6: 20.82, 7: 24.26, 8: 27.69; R_max sqrt(a)/m: 1: 1.745, 2: 1.613, 3: 1.577, 4: 1.563, 5: 1.556, 6: 1.552, 7: 1.550, 8: 1.548; Dicke/R: 1: 0.870, 2: 0.492, 3: 0.339, 4: 0.258, 5: 0.208, 6: 0.174, 7: 0.149, 8: 0.131
+  omega^2 = 0.9: gamma = 0.9824; R_max: 0: 0.00, 1: 5.20, 2: 9.67, 3: 14.19, 4: 18.76, 5: 23.35, 6: 27.95, 7: 32.56, 8: 37.18; R_max sqrt(a)/m: 1: 1.644, 2: 1.528, 3: 1.496, 4: 1.483, 5: 1.477, 6: 1.473, 7: 1.471, 8: 1.470; Dicke/R: 1: 0.860, 2: 0.484, 3: 0.333, 4: 0.253, 5: 0.204, 6: 0.170, 7: 0.146, 8: 0.128
+  omega^2 = 0.95: gamma = 0.9827; R_max: 0: 0.00, 1: 7.19, 2: 13.40, 3: 19.68, 4: 26.02, 5: 32.39, 6: 38.78, 7: 45.18, 8: 51.58; R_max sqrt(a)/m: 1: 1.609, 2: 1.498, 3: 1.467, 4: 1.455, 5: 1.449, 6: 1.445, 7: 1.443, 8: 1.442; Dicke/R: 1: 0.857, 2: 0.481, 3: 0.331, 4: 0.251, 5: 0.202, 6: 0.169, 7: 0.145, 8: 0.127
+  omega^2 = 0.99: gamma = 0.9829; R_max: 0: 0.00, 1: 15.85, 2: 29.55, 3: 43.42, 4: 57.42, 5: 71.48, 6: 85.57, 7: 99.69, 8: 113.83; R_max sqrt(a)/m: 1: 1.585, 2: 1.478, 3: 1.447, 4: 1.435, 5: 1.430, 6: 1.426, 7: 1.424, 8: 1.423; Dicke/R: 1: 0.854, 2: 0.479, 3: 0.330, 4: 0.250, 5: 0.202, 6: 0.168, 7: 0.145, 8: 0.127
+  NLS: gamma = 0.9830; rho_max/m: 1: 1.5790, 2: 1.4730, 3: 1.4430, 4: 1.4310, 5: 1.4251, 6: 1.4219, 7: 1.4199, 8: 1.4186; Dicke/rho_max: 1: 0.854, 2: 0.479, 3: 0.329, 4: 0.250, 5: 0.201, 6: 0.168, 7: 0.145, 8: 0.127
+
+Rotorprobe (Nebenprobe): bei festem Q Energie je m; Exponent aus ln(E_m - E_0) gegen ln m (starrer Rotor: 2)
+  Q = 300.0: E_m = 0: 232.127, 1: 245.618, 2: 260.968, 3: 274.192, 4: 285.047, 5: 293.234, 6: 298.411; Exponent = 0.899
+  Q = 1000.0: E_m = 0: 744.242, 1: 764.668, 2: 787.042, 3: 803.902, 4: 822.858, 5: 840.611, 6: 855.858, 7: 871.888, 8: 886.041; Exponent = 0.924
+Nebenprobe dE = omega dQ (Trapez zwischen Nachbarzeilen, max. relativer Rest je m): 0: 6.0e-03, 1: 5.7e-03, 2: 5.4e-03, 3: 5.2e-03, 4: 5.2e-03, 5: 5.1e-03, 6: 5.1e-03, 7: 5.1e-03, 8: 5.1e-03
+
+L2 Anschluss m = 0 an RUNDE-03 (Abweichungen: p, S_max, R_halb absolut; Q, E relativ; Grenzen {'p': 1e-09, 'Q': 0.0001, 'E': 0.0001, 'S_max': 1e-05, 'R_halb': 0.002}):
+  omega^2 = 0.52 (h = 0.01): dp = +0.00e+00, dQ/Q = -3.70e-08, dE/E = -7.55e-08, dS_max = -4.92e-07, dR_halb = +1.32e-04 -> bestanden
+  omega^2 = 0.55 (h = 0.01): dp = -2.22e-16, dQ/Q = +3.36e-07, dE/E = +8.81e-08, dS_max = +3.45e-07, dR_halb = +3.78e-04 -> bestanden
+  omega^2 = 0.6 (h = 0.01): dp = +4.44e-16, dQ/Q = +1.79e-06, dE/E = +1.63e-06, dS_max = -3.19e-07, dR_halb = +4.63e-04 -> bestanden
+  omega^2 = 0.7 (h = 0.01): dp = +1.33e-15, dQ/Q = +2.98e-06, dE/E = +3.43e-07, dS_max = -1.86e-07, dR_halb = +1.73e-04 -> bestanden
+  omega^2 = 0.8 (h = 0.01): dp = +1.55e-15, dQ/Q = +1.06e-06, dE/E = +3.96e-06, dS_max = +3.37e-07, dR_halb = -4.43e-04 -> bestanden
+  L2 (R3-Anschluss): bestanden
+L2 Codeprobe J = m Q auf dem Gitter: max |J/(mQ) - 1| = 6.7e-16, m = 0: max |J/Q| = 4.8e-18, max |Q_gitter/Q - 1| = 2.2e-11, max |E_gitter/E - 1| = 1.2e-11, max Rest der 2D-Feldgleichung = 1.2e-07 -> bestanden
+L3 halbe Schrittweite (h0 = 0.01 gegen 0.005): d alpha = -1.22e-12, d beta = +1.20e-12, d alpha_lim = -3.64e-10, d beta_lim = +3.55e-10, max |dQ/Q|, |dE/E| in den Fitzeilen = 4.5e-09, in allen Zeilen = 3.9e-07 -> bestanden
+
+Urteile (Regeln vorab, PLAN.md Abschnitt 5): {"alpha": "H getragen (alpha = 2 innerhalb 0,1)", "beta": "Ring-Mechanismus getragen (beta = 1 innerhalb 0,1)", "qmin_lage": ["Rand oben (groesstes omega^2)"]}

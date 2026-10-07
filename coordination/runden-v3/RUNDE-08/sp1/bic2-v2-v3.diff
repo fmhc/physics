@@ -1,0 +1,266 @@
+--- bic2_v2.py	2026-09-30 05:14:26.097887148 +0200
++++ bic2.py	2026-09-30 06:49:46.301459653 +0200
+@@ -22,6 +22,18 @@
+   - Sicherheitsnetz in main: unerwarteter Fehler -> Traceback in Bericht und JSON, dann rc = 1.
+   - Phasenspruenge ohne Division (kein ZeroDivisionError bei W = 0), phasentest gegen A' = 0 geschuetzt.
+ 
++Version 3 (Runde 8, Karte SP-1; begonnen 2026-09-30 06:43:47 CEST, gemessen). Aenderungen gegen Version 2
++(SHA-256 1f8affbd..., Sicherung bic2_v2.py): --l fuer exakt und kurve.
++  - exakt und kurve rechnen fuer genau einen Drehimpuls l (--l 1, --l 2, ...; ohne --l: l = 0). An allen Stellen, die
++    bisher fest nu = 1.0 uebergaben (Pluecker- und direkter Newton, Eigenvektoren, W-Gitter, Umlauf-Rechtecke, neu
++    legen, kurve-Abtastung, Pole, Verfeinerung), steht jetzt nu = l + 1 (dim = 3). Fliehkraftterm l(l+1)/r^2 in beiden
++    Kanaelen, Start U, V ~ r^(l+1) und die abbrechende Hankel-Reihe kommen aus den vorhandenen Routinen (wie in pole).
++  - l = 0: nu = 0 + 1.0 = 1.0 bitgleich, Rechenweg unveraendert. Kopfzeile und JSON-Schluessel "l" nur fuer l > 0.
++  - --l bleibt fuer pole, zeitlin und bruecke eine Liste (Vorgabe 0,1,2; Argumente-JSON unveraendert).
++  - Die Vorgaben von exakt (--x0, --rho0, --drho, --cgam) gelten fuer l = 0, beta = 0,5; fuer l > 0 angeben.
++  - Das gemeldete Kernwachstum enthaelt den Potenzfaktor (r_m/h)^(l+1) des Starts r^(l+1); fuer l > 0 ist es darum
++    groesser, ohne dass die Rechnung schlechter wird.
++
+ --- urspruenglicher Kopf (Runde 6) ---
+ 
+ Modell: L = |phi_t|^2 - |grad phi|^2 - U(S), U = S - S^2 + beta S^3, S = |phi|^2, beta = 1/2 (Ciurla-Probe beta = 1/4).
+@@ -1596,17 +1608,21 @@
+ 
+ # ================================================================ Kommando exakt (Teil a)
+ 
+-def exakt(a, dev, budget, zeilen, erg, sichern):
++def exakt(a, dev, budget, zeilen, erg, sichern, l=0):
+     pot = pot_poly(a.beta)
+     x0, rho0 = a.x0, a.rho0
++    nu = l + 1.0                  # Version 3: dim = 3, U, V ~ r^(l+1); l = 0 gibt 1.0 wie Version 2
+     offs = sorted([float(v) for v in a.offsets.split(",")], key=abs)
+     for h in [float(v) for v in a.h.split(",")]:
+         if not budget.ok(f"exakt h = {h}", 60.0):
+             continue
+         f_rand = FRAND.get(h, 1e-8)
+         st = {"h": h, "f_rand": f_rand, "potential": pot_text(pot)}
++        if l:
++            st["l"] = l
+         erg[f"h{h}"] = st
+-        zeilen.append(f"=== exakt {pot_text(pot)}, h = {h}, f_rand = {f_rand}, x0 = {x0}, rho0 = {rho0}")
++        zeilen.append(f"=== exakt {pot_text(pot)}, h = {h}, f_rand = {f_rand}, x0 = {x0}, rho0 = {rho0}"
++                      + (f", l = {l}" if l else ""))
+         profs, xs, t_prof = profile_stapel([x0 + o for o in offs], pot, h, dev, budget, zeilen,
+                                            reserve=a.reserve)
+         if len(profs) < 3:
+@@ -1623,7 +1639,7 @@
+         # 1. Pole (alle omega^2 in einem Stapel)
+         keime = [complex(rho0 + a.drho * (x - x0), -max(1e-10, a.cgam * (x - x0) ** 2)) for x in xs]
+         t0 = uhr()
+-        pol = newton_m(L, keime, list(range(len(xs))), [1.0] * len(xs), iters=a.iter_newton)
++        pol = newton_m(L, keime, list(range(len(xs))), [nu] * len(xs), iters=a.iter_newton)
+         st["pole_pluecker"] = pol
+         st["sek_newton"] = uhr() - t0
+         zeilen.append(f"  Newton (Pluecker) {uhr() - t0:.1f} s, konvergiert {sum(p['konvergiert'] for p in pol)}/{len(pol)}")
+@@ -1631,7 +1647,7 @@
+         if not budget.ok("Newton direkt", 20.0):
+             continue
+         t0 = uhr()
+-        pold = newton_direkt(L, [p["rho"] for p in pol], list(range(len(xs))), [1.0] * len(xs))
++        pold = newton_direkt(L, [p["rho"] for p in pol], list(range(len(xs))), [nu] * len(xs))
+         for p_, q_ in zip(pold, pol):
+             p_["rho_pluecker"] = q_["rho"]
+         pol = pold
+@@ -1642,7 +1658,7 @@
+         # 2. Eigenvektoren, A_out, Flussbreite
+         if not budget.ok("Eigenvektoren", 20.0):
+             continue
+-        Dd = direkt_m(L, [p["rho"] for p in pol], list(range(len(xs))), [1.0] * len(xs), gram=True)
++        Dd = direkt_m(L, [p["rho"] for p in pol], list(range(len(xs))), [nu] * len(xs), gram=True)
+         tab = []
+         zeilen.append("  omega^2 | Re rho | Gamma Newton | Gamma Fluss | N_K | A_norm | arg A | sig_min/sig_2 | Wachstum")
+         for i, x in enumerate(xs):
+@@ -1679,7 +1695,7 @@
+             for dr_ in drs:
+                 pkt_r.append(complex(rc + dr_, 0.0))
+                 pkt_i.append(i)
+-        Dw = direkt_m(L, pkt_r, pkt_i, [1.0] * len(pkt_r), gram=False)
++        Dw = direkt_m(L, pkt_r, pkt_i, [nu] * len(pkt_r), gram=False)
+         W = [complex(float(Dw["la"][k].real), float(Dw["lb"][k].real)) for k in range(len(pkt_r))]
+         im_rest = max(float(Dw["la"][k].imag.abs() + Dw["lb"][k].imag.abs()) / max(abs(W[k]), 1e-300)
+                       for k in range(len(pkt_r)))
+@@ -1731,7 +1747,7 @@
+             if not budget.ok(f"Umlauf dx = {dx_r}", 20.0):
+                 break
+             try:
+-                e_u = umlauf_rechteck(L, xs, ic_u, rc_u, dx_r, wn, a, zeilen)
++                e_u = umlauf_rechteck(L, xs, ic_u, rc_u, dx_r, wn, a, zeilen, nu=nu)
+             except (RuntimeError, ValueError, ZeroDivisionError) as err:
+                 e_u = {"dx": dx_r, "fehler": f"{type(err).__name__}: {err}"}
+                 zeilen.append(f"  Umlauf dx = {dx_r:.1e}: Fehler {e_u['fehler']}")
+@@ -1749,7 +1765,7 @@
+                 sichern()
+                 continue
+             try:
+-                e_n = umlauf_neu_gelegt(a, pot, h, f_rand, dev, budget, zeilen, wn, dx_r)
++                e_n = umlauf_neu_gelegt(a, pot, h, f_rand, dev, budget, zeilen, wn, dx_r, nu=nu)
+             except (RuntimeError, ValueError, ZeroDivisionError) as err:
+                 e_n = {"dx": dx_r, "neu_gelegt": True, "fehler": f"{type(err).__name__}: {err}"}
+                 zeilen.append(f"  Rechteck dx = {dx_r:.1e} neu legen: Fehler {e_n['fehler']}")
+@@ -1757,9 +1773,9 @@
+             sichern()
+ 
+ 
+-def umlauf_neu_gelegt(a, pot, h, f_rand, dev, budget, zeilen, wn, dx_r):
++def umlauf_neu_gelegt(a, pot, h, f_rand, dev, budget, zeilen, wn, dx_r, nu=1.0):
+     """Rechteck um den Fit-Mittelpunkt (wn["x"], wn["rho"]) mit neuen Profilen bei x* + dx_r * (-1 ... 1); vorher ein
+-    zweiter linearer Fit auf dem neuen Gitter (Mitte in rho nachgefuehrt, falls er gelingt)."""
++    zweiter linearer Fit auf dem neuen Gitter (Mitte in rho nachgefuehrt, falls er gelingt). nu = l + 1 (Version 3)."""
+     n = max(3, a.neu_profile)
+     xs_n = [wn["x"] + dx_r * (2.0 * k / (n - 1) - 1.0) for k in range(n)]
+     profs, xs_ok, _ = profile_stapel(xs_n, pot, h, dev, budget, zeilen, reserve=10.0)
+@@ -1776,7 +1792,7 @@
+     drs = [-1e-4, -3e-5, 0.0, 3e-5, 1e-4]
+     pr = [complex(rc_n + d, 0.0) for _ in xs_ok for d in drs]
+     pi_ = [i for i in range(len(xs_ok)) for _ in drs]
+-    Dw = direkt_m(L1, pr, pi_, [1.0] * len(pr), gram=False)
++    Dw = direkt_m(L1, pr, pi_, [nu] * len(pr), gram=False)
+     W = [complex(float(Dw["la"][k].real), float(Dw["lb"][k].real)) for k in range(len(pr))]
+     fit2, grund2 = lin_fit_nullstelle([(pr[k].real - rc_n, xs_ok[pi_[k]] - xs_ok[ic_n], W[k]) for k in range(len(pr))])
+     wn2 = wn
+@@ -1789,7 +1805,7 @@
+                   f"({len(xs_ok)} neue Profile); zweiter Fit: "
+                   + (f"omega*^2 = {wn2['x']:.9f}, rho* = {wn2['rho']:.10f}, cond J = {wn2['condJ']:.1e}"
+                      if fit2 is not None else f"nicht moeglich ({grund2})"))
+-    e = umlauf_rechteck(L1, xs_ok, ic_n, rc_n, dx_r, wn2, a, zeilen)
++    e = umlauf_rechteck(L1, xs_ok, ic_n, rc_n, dx_r, wn2, a, zeilen, nu=nu)
+     e.update({"neu_gelegt": True, "x_neu": xs_ok, "fit_neu": wn2 if fit2 is not None else None,
+               "fit_neu_fehler": grund2})
+     return e
+@@ -1864,9 +1880,10 @@
+     return min(max(drho, 1.5 * wand), 5e-3)
+ 
+ 
+-def umlauf_rechteck(L, xs, ic, rc, dx_r, wnull, a, zeilen):
++def umlauf_rechteck(L, xs, ic, rc, dx_r, wnull, a, zeilen, nu=1.0):
+     """Rechteck: x von xs[ic] - dx_r bis + dx_r (nur vorhandene Profile), rho von rc - drho bis rc + drho. drho aus der
+-    Jacobimatrix (Rechteck im W-Raum etwa quadratisch), mindestens das 1,5-fache der Wanderung der l_b-Nullinie."""
++    Jacobimatrix (Rechteck im W-Raum etwa quadratisch), mindestens das 1,5-fache der Wanderung der l_b-Nullinie.
++    nu = l + 1 (Version 3)."""
+     xl = [i for i in range(len(xs)) if abs(xs[i] - xs[ic]) <= dx_r * (1 + 1e-9)]
+     xl.sort(key=lambda i: xs[i])
+     if len(xl) < 3:
+@@ -1885,7 +1902,7 @@
+         pfad.append((r_hi, i))
+     for k in range(1, ns):                          # links: x = x_lo, rho faellt
+         pfad.append((r_hi - 2.0 * drho * k / ns, x_lo))
+-    Dw = direkt_m(L, [complex(p[0], 0.0) for p in pfad], [p[1] for p in pfad], [1.0] * len(pfad), gram=False)
++    Dw = direkt_m(L, [complex(p[0], 0.0) for p in pfad], [p[1] for p in pfad], [nu] * len(pfad), gram=False)
+     W = [complex(float(Dw["la"][k].real), float(Dw["lb"][k].real)) for k in range(len(pfad))]
+     # rho-Seiten (gleiches Profil) adaptiv verfeinern, bis jeder Phasensprung dort < 0,3 rad ist (billig)
+     for _ in range(8):
+@@ -1897,7 +1914,7 @@
+         if not neu:
+             break
+         mitte = [(0.5 * (pfad[k][0] + pfad[(k + 1) % len(pfad)][0]), pfad[k][1]) for k in neu]
+-        Dn = direkt_m(L, [complex(p[0], 0.0) for p in mitte], [p[1] for p in mitte], [1.0] * len(mitte), gram=False)
++        Dn = direkt_m(L, [complex(p[0], 0.0) for p in mitte], [p[1] for p in mitte], [nu] * len(mitte), gram=False)
+         Wn = [complex(float(Dn["la"][k].real), float(Dn["lb"][k].real)) for k in range(len(mitte))]
+         p2, w2l = [], []
+         j = 0
+@@ -1920,10 +1937,11 @@
+ 
+ # ================================================================ Kommando kurve (Teil b)
+ 
+-def kurve(a, dev, budget, zeilen, erg, sichern):
++def kurve(a, dev, budget, zeilen, erg, sichern, l=0):
+     pot = POT_LOG if a.pot == "log" else pot_poly(a.beta)
+     h = float(a.h.split(",")[0])
+     f_rand = FRAND.get(h, 1e-8)
++    nu = l + 1.0                  # Version 3: dim = 3, U, V ~ r^(l+1); l = 0 gibt 1.0 wie Version 2
+     if a.omega2_liste:
+         xs = [float(v) for v in a.omega2_liste.split(",")]
+     else:
+@@ -1931,8 +1949,10 @@
+         n = int(math.floor((a.xmax - lo) / a.dx + 1e-9)) + 1
+         xs = [round(lo + k * a.dx, 6) for k in range(n)]
+     zeilen.append(f"=== kurve {pot_text(pot)}, h = {h}, omega^2 = {xs[0]} .. {xs[-1]} ({len(xs)} Werte), "
+-                  f"Existenz omega^2 > {omega2_min(pot):.4f}")
++                  f"Existenz omega^2 > {omega2_min(pot):.4f}" + (f", l = {l}" if l else ""))
+     st = {"potential": pot_text(pot), "pot": pot, "h": h, "f_rand": f_rand, "x_geplant": xs}
++    if l:
++        st["l"] = l
+     erg["kurve"] = st
+     # Vorrang: jeder zweite Wert zuerst (grobes Raster bleibt bei Zeitnot vollstaendig ueber den Bereich)
+     reihenf = xs[::2] + xs[1::2]
+@@ -1959,7 +1979,7 @@
+     W = []
+     wachs = []
+     for s0_ in range(0, len(pkt_r), a.stapel):
+-        Dw = direkt_m(L, pkt_r[s0_:s0_ + a.stapel], pkt_i[s0_:s0_ + a.stapel], [1.0] * len(pkt_r[s0_:s0_ + a.stapel]),
++        Dw = direkt_m(L, pkt_r[s0_:s0_ + a.stapel], pkt_i[s0_:s0_ + a.stapel], [nu] * len(pkt_r[s0_:s0_ + a.stapel]),
+                       gram=False)
+         W += [complex(float(Dw["la"][k].real), float(Dw["lb"][k].real)) for k in range(len(Dw["la"]))]
+         wachs += [float(v) for v in Dw["wachstum"].tolist()]
+@@ -1984,7 +2004,7 @@
+     # komplexe Pole zu den Kandidaten (Pluecker-Newton, alle in einem Stapel)
+     if kand and budget.ok("Newton kurve", 30.0):
+         pol = newton_m(L, [complex(k_["rho_b"], -1e-5) for k_ in kand], [k_["ix"] for k_ in kand],
+-                       [1.0] * len(kand), iters=a.iter_newton)
++                       [nu] * len(kand), iters=a.iter_newton)
+         for k_, p_ in zip(kand, pol):
+             k_["pol"] = p_["rho"]
+             k_["pol_konvergiert"] = p_["konvergiert"]
+@@ -2043,7 +2063,7 @@
+                 break
+             L1 = lin_multi(ps, h, f_rand, dev)
+             rr = [complex(rho_ref + a.fein_fenster * (2.0 * k / (a.n_fein_rho - 1) - 1.0), 0.0) for k in range(a.n_fein_rho)]
+-            Dw = direkt_m(L1, rr, [0] * len(rr), [1.0] * len(rr), gram=False)
++            Dw = direkt_m(L1, rr, [0] * len(rr), [nu] * len(rr), gram=False)
+             Wf = [complex(float(Dw["la"][k].real), float(Dw["lb"][k].real)) for k in range(len(rr))]
+             sn, rn = None, None
+             for k in range(len(rr) - 1):
+@@ -2052,7 +2072,7 @@
+                     rk = rr[k].real + t_ * (rr[k + 1].real - rr[k].real)
+                     if rn is None or abs(rk - rho_ref) < abs(rn - rho_ref):
+                         rn, sn = rk, Wf[k].real + t_ * (Wf[k + 1].real - Wf[k].real)
+-            pn = newton_m(L1, [complex(rn if rn is not None else rho_ref, -1e-7)], [0], [1.0], iters=a.iter_newton)[0]
++            pn = newton_m(L1, [complex(rn if rn is not None else rho_ref, -1e-7)], [0], [nu], iters=a.iter_newton)[0]
+             fein["schritte"].append({"x": xn, "rho_b": rn, "s": sn, "pol": pn["rho"], "Gamma": -pn["rho"].imag,
+                                      "konvergiert": pn["konvergiert"]})
+             zeilen.append(f"    fein {it}: omega^2 = {xn:.8f}, rho_b = {rn}, s = {sn}, Pol {fz(pn['rho'], 8)}")
+@@ -2181,7 +2201,8 @@
+     ap.add_argument("--out", default=None)
+     ap.add_argument("--budget", type=float, default=540.0, help="Sekunden, danach entfallen weitere Stufen")
+     ap.add_argument("--omega2", default="0.7", help="Liste, z. B. 0.7 oder 0.52,0.55")
+-    ap.add_argument("--l", default="0,1,2")
++    ap.add_argument("--l", default=None, help="pole/zeitlin/bruecke: Liste (Vorgabe 0,1,2); exakt/kurve (Version 3): "
++                    "genau ein l (Vorgabe 0); fuer l > 0 bei exakt --x0, --rho0, --drho, --cgam angeben")
+     ap.add_argument("--h", default="0.02,0.01,0.005", help="Stufen A,B,C (Schritt der linearen ODE)")
+     ap.add_argument("--bereich", default="alles", choices=["alles", "gebunden", "resonanz"])
+     ap.add_argument("--n-gebunden", dest="n_gebunden", type=int, default=300)
+@@ -2207,8 +2228,22 @@
+     return ap.parse_args()
+ 
+ 
++def l_eins(a, gegeben):
++    """Version 3: exakt und kurve rechnen fuer genau ein l; ohne --l gilt l = 0 (Rechenweg wie Version 2)."""
++    if not gegeben:
++        return 0
++    teile = [v.strip() for v in a.l.split(",") if v.strip()]
++    if len(teile) != 1 or int(teile[0]) < 0:
++        raise SystemExit(f"{a.kommando}: --l braucht genau einen Wert l >= 0 (z. B. --l 1), nicht '{a.l}'")
++    return int(teile[0])
++
++
+ def main():
+     a = argumente()
++    l_gegeben = a.l is not None       # Version 3
++    if not l_gegeben:
++        a.l = "0,1,2"                 # Vorgabe wie Version 2 (pole, zeitlin, bruecke; Argumente-JSON unveraendert)
++    l_ek = l_eins(a, l_gegeben) if a.kommando in ("exakt", "kurve") else 0
+     if a.geraet == "cuda":
+         if not torch.cuda.is_available():
+             raise SystemExit("--geraet cuda, aber kein CUDA-Geraet")
+@@ -2286,9 +2321,9 @@
+             zeilen.append(f"  nlfit Rauch: {type(err).__name__} {err}")
+         zeilen.append(f"Rauchtest durchgelaufen nach {uhr():.1f} s (Zahlen ohne Bedeutung).")
+     elif a.kommando == "exakt":
+-        exakt(a, dev, budget, zeilen, ergebnis["ergebnisse"], sichern)
++        exakt(a, dev, budget, zeilen, ergebnis["ergebnisse"], sichern, l=l_ek)
+     elif a.kommando == "kurve":
+-        kurve(a, dev, budget, zeilen, ergebnis["ergebnisse"], sichern)
++        kurve(a, dev, budget, zeilen, ergebnis["ergebnisse"], sichern, l=l_ek)
+     elif a.kommando == "nlfit":
+         nlfit(a, zeilen, ergebnis["ergebnisse"])
+     elif a.kommando == "pole":

@@ -1,0 +1,18 @@
+split("\n") | map(select(length>0) | split("  ") | {path: ("coordination/runden-v3/" + .[1]), sha256: .[0]}) as $src | {
+  id: "claude-runde-v3-41-berichtigung-kernmasse-20261004",
+  time: $t,
+  time_kind: "completed",
+  author: "claude-primary (Anthropic, Opus 5.5), Leitung; Gegenleser KERNMASSE-LESER pruefer-opus (Anthropic, Opus 5.5)",
+  topic: "theory",
+  status: "reported",
+  evidenzart: "modell",
+  korrektur: true,
+  supersedes: "claude-runde-v3-41-20261004",
+  widerruft: ["die Kausalmenge traegt massive Materie in 3+1 stabil (Gewichte aus dem Kontinuum)", "Positiv: Auf der Kausalmenge bleibt massive Materie in 3+1 stabil, wenn die Masse im nichtlokalen Kern sitzt, und das Rauschen des einzelnen Netzes faellt mit der Dichte; die Gewichte stammen aber aus der Kontinuumsformel."],
+  title: "Berichtigung zu Runde 41: KAUSAL-4D-KERNMASSE-1 zeigt nicht, dass die Kausalmenge massive Materie in 3+1 stabil traegt, sondern nur, dass dieser Weg nicht ausgeschlossen ist (Stabilitaet folgt aus der Bauart)",
+  question: "Haelt der Bedeutungssatz zu KAUSAL-4D-KERNMASSE-1 im Journal claude-runde-v3-41-20261004 einer frischen Lesung stand?",
+  action: "Frischer Leser KERNMASSE-LESER (pruefer-opus) prueft Herleitung, Urteile, Selbstanzeigen, Nebenbefund und Bedeutungssatz; Leitung formuliert den berichtigten Wortlaut nach dessen Anforderungen (RUNDE-42/BERICHTIGUNG-R41-KERNMASSE.md).",
+  result: "Gesamturteil des Lesers: haelt mit Einschraenkung, kein A-Befund, 11 B-Befunde. Herleitung der Ortsraumform und Nebenbefund-Rechnung nachgerechnet; KM0 bis KM2 halten mit Einschraenkung. B1: Jede Ein-Schritt-Regel mit beschraenkten Gewichten ist im Mittel und je Netz stabil (Satz, keine Messung); fallendes Rauschen zeigen alle vier Regeln (VJ -0,27, V-0 -0,35, V-00 -0,30, VK -0,35); eigen ist der neuen Regel nur das niedrigere Niveau (0,73- bis 0,81-mal VJ). Der Nebenbefund zu den Nullstellen von k~ bleibt Hypothese bis zur Auswertung durch ein anderes Haus.",
+  meaning: "Berichtigter Wortlaut: Auf diesem Weg ist massive Materie auf der Kausalmenge nicht ausgeschlossen. Die Stabilitaet folgt aus der Bauart, nicht aus der Kausalmenge; gemessen ist nur das Rauschen des einzelnen Netzes, das bei allen Regeln mit der Dichte faellt und bei der neuen auf niedrigerem Niveau liegt. Gebaut ist ein vorgegebener Propagator aus der Kontinuumsformel; eine Gleichung auf der Kausalmenge dazu gibt es nicht. Alle uebrigen Aussagen des Eintrags claude-runde-v3-41-20261004 bleiben unberuehrt.",
+  sources: $src
+}

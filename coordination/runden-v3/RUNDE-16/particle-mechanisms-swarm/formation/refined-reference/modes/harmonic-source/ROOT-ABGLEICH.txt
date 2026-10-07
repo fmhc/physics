@@ -1,0 +1,31 @@
+Root-Abgleich der zwei Papierherleitungen, 2026-10-02
+ROOT-PAPER.txt und unabhängige DERIVATION.txt stimmen überein:
+ alpha = sqrt(2) f b = f(-6+15f^2)/sqrt(2),
+ beta  = sqrt(2) f c = f(-2+3f^2)/sqrt(2),
+ d     = a = -2+3f^2.
+Auch chi-Quelle, DC-Anteile, 2rho-Anteile und Kanalfaktoren stimmen.
+Die Agentenableitung wurde erst nach der eigenen Ableitung gelesen.
+Kein neuer numerischer Befund daraus.
+
+Für eine phasenunabhängige Implementierung sei q=(qx,qy,qz) der komplexe
+physische Positions-Ritzvektor nach Division durch sqrt(Volumen).
+Die reellen kanonischen Felder sind Re(q exp(i rho t)). Für die homogene
+quadratische Quellenabbildung J gilt exakt:
+ J_DC = [J(Re q)+J(Im q)]/2,
+ J_2  = J(q)/4,
+ J(t) = J_DC + 2 Re[J_2 exp(2 i rho t)].
+Die Polynome dabei algebraisch komplex erweitern, kein abs(q)^2 anstelle
+von q^2 in J_2 einsetzen. Bei J_DC werden reelle Argumente benutzt.
+
+Für das komplexe Laborfeld besitzt die obere zweite Seitenbandquelle
+bei omega+2rho den Koeffizienten (J_2x+i J_2y)/sqrt(2).
+Dies ist nicht dieselbe Darstellung wie die reellen cos/sin-Amplituden
+qx2,qy2 aus DERIVATION: dort lauten die Fourierkoeffizienten qx2/2 und
+-i qy2/2. Dann wird derselbe Ausdruck (qx2+qy2)/(2sqrt(2)).
+Ein zusätzliches Halbieren im allgemeinen komplexen Ausdruck wäre falsch.
+
+Die Quelle ist nur der rechte Rand einer gekoppelten inhomogenen
+Störgleichung. Weder eine lokale Norm noch der freie Besselintegral-
+Überlapp ist ohne weitere Näherung deren auslaufende Amplitude. Ein späterer
+Abstrahltest braucht den tatsächlichen Hintergrundoperator bei 2rho,
+regulären Ursprung, offene/geschlossene Außenkanäle und Randkontrollen.

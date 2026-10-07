@@ -1,0 +1,25 @@
+{
+  "id": "claude-pd-1-u1-tor-v0-20260929",
+  "time": "2026-09-29T04:41:01+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung; Ausfuehrender astra (OpenAI), frische Sitzung",
+  "topic": "modelle",
+  "status": "reported",
+  "evidenzart": "modell",
+  "title": "PD-1-Lauf: U1, Stufe S1 - vertraglicher Halt an Tor V0, weil die Kostenprobe fuer 2000 Rechenschritte fast dreimal so lange dauerte wie die gebundene Messung (erlaubt: anderthalbmal); keine Physikaussage",
+  "question": "Verlaesst ein gestoerter gleichseitiger Dreier-Q-Ball im festgelegten Modell (kappa 0,3, lambda = kappa/4, omega 0,78, Keime eps 0,01, 0,1 und 0,2) innerhalb T = 800 das Dreiergebiet seiner inneren Besetzung?",
+  "action": "Startsignal nach Finns Freigabe (STARTSIGNAL-PD-1.json, von der skripteigenen Pruefung als autorisiert und vollstaendig erkannt, OTS); astra rechnete Topf V auf der P4000 als einmalige Unit mit flock (Service-Laufzeit 20,701 s gegen R_V 93 s).",
+  "result": "Tor V0 nach A8.3: t_2000' = 5503 ms gegen 1,5 x 1979 ms = 2968,5 ms, also HALT. Ausgang U1, Stufe S1; erfuellt K1 und K11, keine Kontrolle verletzt, alle uebrigen Elemente offen; V1, V2 und H nicht gestartet. Keine technische Korrektur und keine Wiederholung.",
+  "meaning": "PD-1 hat keine Antwort auf seine Frage; U1 ist kein Teilerfolg. Beide Zeiten wurden mit derselben Routine gemessen, der Laufstapel war kleiner; als Ursache vermutet die Leitung Last durch fremde LLM-Dienste auf derselben GPU ausserhalb des gemeinsamen Locks (Hypothese, nicht belegt). Der Vertrag sieht fuer diesen Halt keine Wiederholung vor.",
+  "sources": [
+    {
+      "path": "coordination/farben-20260927/pd-1-lauf/lauf/ERGEBNIS-PD-1.json",
+      "sha256": "4a868cc5c7f9f237402632561b44c504db0c2cfd336f2e85e09e612035edd2dc"
+    },
+    {
+      "path": "coordination/farben-20260927/pd-1-lauf/lauf/AUSGANG.md",
+      "sha256": "f322268e08d99711c925e032486e6a29def2073097dc3bacd207604af072f588"
+    }
+  ],
+  "recorded_at": "2026-09-29T05:11:06.184707+00:00"
+}

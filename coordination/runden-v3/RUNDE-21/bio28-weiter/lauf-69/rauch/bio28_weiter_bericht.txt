@@ -1,0 +1,43 @@
+Runde 21 bio28-weiter: Bio 28 nachgerechnet mit Zusatzreihe. Start 2026-10-02T16:22:29+00:00, Ende 2026-10-02T16:23:34+00:00, Quadro P4000, torch 2.5.1+cu121 RAUCHLAUF: Zahlen ungueltig
+Dauer [s]: schiessen_s 63.9, entwicklung_grob_s 0.9, analyse_grob_s 0.7
+Analysen: grob 3
+sha256: {"bio28_weiter.py": "13b61b3f5ec3f3503ecdf5fb05f3ab9bcfe7dfd4736a8d540becf67898df3f4a", "r5_2d_a.py": "4b7a00b22e427ab9889056057437fc2199ca0fe6fff0ccf4847c11f62892bc7b", "ref": "a708b364f41c61ed7aafd195161be11abbba30c0157abf49ea377c6062a8ecb0"}
+Stufe Lauf | Q_m1 + k Q_0 | J/Q | t verschmolzen | Windung groesstes (Ende; je gesehen) | t Teilung danach | n Ende | Q-Verlust
+  grob w60_nachbarn0 | 138.8 + 0 x 66.6 | 1.000 | None | 1; [1] | None | 1 | 0.0e+00
+  grob w60_nachbarn1 | 138.8 + 1 x 66.6 | 0.687 | None | 1; [1] | None | 2 | 3.3e-12
+  grob w60_nachbarn2 | 138.8 + 2 x 66.6 | 0.536 | None | 1; [1] | None | 3 | 5.0e-12
+  grob w75_nachbarn0 | 66.2 + 0 x 19.0 | 1.000 | None | 1; [1] | None | 1 | 2.5e-14
+  grob w75_nachbarn1 | 66.2 + 1 x 19.0 | 0.792 | None | 1; [1] | None | 2 | 6.4e-12
+  grob w75_nachbarn2 | 66.2 + 2 x 19.0 | 0.675 | None | 1; [1] | None | 3 | 1.0e-11
+Y grob w60_nachbarn1: t_T None, Y1 None, Y2 False (n_ende 2), Y3 None; Ein-Gebiet t None; Windungen None; Q-Anteil None; d12 Start None, min vor Ein None; Bruchstuecke null
+Y grob w60_nachbarn2: t_T None, Y1 None, Y2 False (n_ende 3), Y3 None; Ein-Gebiet t None; Windungen None; Q-Anteil None; d12 Start None, min vor Ein None; Bruchstuecke null
+Y grob w75_nachbarn1: t_T None, Y1 None, Y2 False (n_ende 2), Y3 None; Ein-Gebiet t None; Windungen None; Q-Anteil None; d12 Start None, min vor Ein None; Bruchstuecke null
+Y grob w75_nachbarn2: t_T None, Y1 None, Y2 False (n_ende 3), Y3 None; Ein-Gebiet t None; Windungen None; Q-Anteil None; d12 Start None, min vor Ein None; Bruchstuecke null
+Y je Stufe: {"grob": {"Y1": null, "Y2": false, "Y3": null}}
+Y gesamt: {"Y0": "offen (keine Referenz)", "Y1": "offen", "Y2": "nicht eingetroffen (nur grob, fein fehlt)", "Y3": "offen"}
+Bedeutung (Karte): offen: Bedeutung nach Karte nicht zuordenbar
+Zusatzreihe (t, n, Q_box | je Gebiet Q, Windung, Schwerpunkt, S_min_kreis | d12):
+  [grob w60_nachbarn0]
+    0.0 n 1 Qb  138.76 | Q  115.47 w 1 ( -0.00, -0.00) Smin 0.853 | d12 None
+    0.5 n 1 Qb  138.76 | Q  115.47 w 1 ( -0.00, -0.00) Smin 0.853 | d12 None
+    1.0 n 1 Qb  138.76 | Q  115.47 w 1 ( -0.00, -0.00) Smin 0.853 | d12 None
+  [grob w60_nachbarn1]
+    0.0 n 2 Qb  212.81 | Q  100.45 w 1 (  0.17,  0.00) Smin 0.859; Q   48.14 w 0 ( 12.66, -0.00) Smin 0.928 | d12 12.488
+    0.5 n 2 Qb  212.81 | Q  100.58 w 1 (  0.18,  0.00) Smin 0.858; Q   48.14 w 0 ( 12.66, -0.00) Smin 0.925 | d12 12.474
+    1.0 n 2 Qb  212.81 | Q  101.15 w 1 (  0.23,  0.01) Smin 0.855; Q   48.63 w 0 ( 12.61, -0.00) Smin 0.913 | d12 12.378
+  [grob w60_nachbarn2]
+    0.0 n 3 Qb  286.86 | Q  104.03 w 1 (  0.00,  0.00) Smin 0.859; Q   48.14 w 0 (-12.66, -0.00) Smin 0.928; Q   48.14 w 0 ( 12.66,  0.00) Smin 0.928 | d12 12.662
+    0.5 n 3 Qb  286.86 | Q  104.31 w 1 ( -0.00,  0.00) Smin 0.858; Q   48.14 w 0 ( 12.66, -0.00) Smin 0.925; Q   48.14 w 0 (-12.66,  0.00) Smin 0.925 | d12 12.659
+    1.0 n 3 Qb  286.86 | Q  105.44 w 1 ( -0.00,  0.00) Smin 0.857; Q   48.63 w 0 (-12.61,  0.00) Smin 0.913; Q   48.63 w 0 ( 12.61, -0.00) Smin 0.913 | d12 12.608
+  [grob w75_nachbarn0]
+    0.0 n 1 Qb   66.23 | Q   53.50 w 1 (  0.00,  0.00) Smin 0.443 | d12 None
+    0.5 n 1 Qb   66.23 | Q   53.50 w 1 ( -0.00, -0.00) Smin 0.443 | d12 None
+    1.0 n 1 Qb   66.23 | Q   53.50 w 1 ( -0.00, -0.00) Smin 0.443 | d12 None
+  [grob w75_nachbarn1]
+    0.0 n 2 Qb   91.54 | Q   46.37 w 1 (  0.32, -0.00) Smin 0.447; Q   13.40 w 0 ( 10.34,  0.00) Smin 0.476 | d12 10.027
+    0.5 n 2 Qb   91.54 | Q   46.54 w 1 (  0.36,  0.00) Smin 0.445; Q   13.81 w 0 ( 10.32, -0.00) Smin 0.474 | d12 9.961
+    1.0 n 2 Qb   91.54 | Q   47.18 w 1 (  0.49,  0.01) Smin 0.440; Q   14.22 w 0 ( 10.22, -0.00) Smin 0.467 | d12 9.727
+  [grob w75_nachbarn2]
+    0.0 n 3 Qb  116.83 | Q   49.63 w 1 ( -0.00,  0.00) Smin 0.446; Q   13.32 w 0 (-10.36, -0.00) Smin 0.481; Q   13.32 w 0 ( 10.36,  0.00) Smin 0.481 | d12 10.359
+    0.5 n 3 Qb  116.83 | Q   50.23 w 1 (  0.00, -0.00) Smin 0.445; Q   13.81 w 0 (-10.32,  0.00) Smin 0.474; Q   13.81 w 0 ( 10.32, -0.00) Smin 0.474 | d12 10.325
+    1.0 n 3 Qb  116.83 | Q   51.44 w 1 (  0.00,  0.00) Smin 0.441; Q   14.22 w 0 ( 10.22, -0.00) Smin 0.467; Q   14.22 w 0 (-10.22,  0.00) Smin 0.467 | d12 10.216

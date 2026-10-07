@@ -1,0 +1,1 @@
+.sprossen_tabelle[] | select(.sprosse != null) | "| \(.k) | \(.sprosse) | \(.R_vorhergesagt) | \(if .R_gefunden then (.R_gefunden*1000|round/1000) else "-" end) | \(if .abweichung then (.abweichung*1000|round/1000) else "-" end) | \(if .w2 then (.w2*1e8|round/1e8) else "-" end) | \(.umlauf // "-") |"

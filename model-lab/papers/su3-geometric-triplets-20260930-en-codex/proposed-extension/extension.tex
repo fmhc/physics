@@ -1,0 +1,228 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,geometry,hyperref}
+\geometry{margin=24mm}
+\hypersetup{hypertexnames=false,colorlinks=true,urlcolor=blue,
+pdftitle={Degeneracy, invariance, and exchange: proposed additions to v0.5}}
+\setlength{\emergencystretch}{2em}
+\newtheorem{proposition}{Proposition}
+\newcommand{\norm}[1]{\left\lVert #1\right\rVert}
+\newcommand{\ran}{\operatorname{ran}}
+\newcommand{\spec}{\operatorname{spec}}
+\begin{document}
+\begin{flushleft}
+Not incorporated into the delivered manuscript v0.5; not externally peer reviewed}
+\vspace{0.7em}
+
+{\Large\bfseries Degeneracy, invariance, and exchange: proposed additions to v0.5}
+\end{flushleft}
+
+\paragraph{Editorial purpose and status.}
+When does a geometrically degenerate triplet sector support closed,
+symmetry-compatible interaction dynamics?
+A threefold linear eigenvalue, an isotropic projected coupling, and a mode
+with low radiation are distinct properties.
+The existing counterexamples in v0.5 can make this distinction the central
+contribution. The two propositions below are finite-dimensional linear
+algebra, with no novelty claim. They introduce no new numerical results.
+The effective two-mode example in the final section motivates a future
+question; it is not a derived model of the project's Q-balls.
+
+The source proposal is \texttt{BEITRAG.txt}, sections A--C, supplied by
+ag-phy-coordination on 30 September 2026. An independent algebraic reading
+within OpenAI is documented in \texttt{ALGEBRA-REVIEW.txt}; it is not an
+external scientific review. The original v0.5 manuscript and its artifacts
+remain unchanged.
+
+\section*{1. Eliminated modes and the symmetry of a projected sector}
+Let \(H=H^\dagger\) be a time-independent operator on a finite-dimensional
+complex Hilbert space. Let \(P=P^\dagger=P^2\) be an orthogonal rank-three
+projector, and \(Q=I-P\). The projectors select subspaces; \(P\) is not
+assumed to be a spectral projector of the full coupled \(H\).
+In orthonormal bases of \(\ran P\) and \(\ran Q\), write
+\begin{equation}
+H=\begin{pmatrix}\lambda I_3&V\\ V^\dagger&D\end{pmatrix},
+\qquad
+\lambda\in\mathbb R,\quad D=D^\dagger,\quad V=PHQ.
+\tag{S1}
+\end{equation}
+Here and below, block operators are restricted to their respective
+subspaces. Norms are Euclidean vector norms and their induced operator norms.
+
+\begin{proposition}[Schur correction and sufficient symmetry protection]
+For real \(z\notin\spec(D)\), define
+\begin{equation}
+H_{\mathrm{eff}}(z)=\lambda I_3-V(D-zI_Q)^{-1}V^\dagger .
+\tag{S2}
+\end{equation}
+Then
+\begin{equation}
+\det(H-zI)=\det(D-zI_Q)
+           \det\!\left(H_{\mathrm{eff}}(z)-zI_3\right).
+\tag{S3}
+\end{equation}
+Thus, away from the excluded poles, the full eigenvalue problem is
+equivalent to the reduced eigenvalue condition.
+Writing \(\delta=\operatorname{dist}(z,\spec(D))>0\), one has
+\begin{equation}
+\norm{H_{\mathrm{eff}}(z)-\lambda I_3}
+\leq \frac{\norm{V}^{\,2}}{\delta}.
+\tag{S4}
+\end{equation}
+If a unitary group representation \(R(g)\) satisfies
+\([R(g),H]=[R(g),P]=0\) for every \(g\), and its restriction to
+\(\ran P\) is irreducible over \(\mathbb C\), then
+\(H_{\mathrm{eff}}(z)\) is scalar on \(\ran P\).
+\end{proposition}
+
+\begin{proof}
+For a full eigenvector \((u,v)\), the lower block equation gives
+\(v=-(D-zI_Q)^{-1}V^\dagger u\). Substitution into the upper block yields
+\((H_{\mathrm{eff}}(z)-zI_3)u=0\). At the allowed values of \(z\), a
+nonzero full eigenvector cannot have \(u=0\), and each reduced eigenvector
+reconstructs a full one by this formula. Block elimination gives (S3).
+Since \(D\) is Hermitian, the spectral theorem gives
+\(\norm{(D-zI_Q)^{-1}}=1/\delta\), proving (S4).
+
+Commutation with \(P\) makes \(R(g)\) block diagonal,
+with restrictions \(R_P(g)\) and \(R_Q(g)\). Commutation with \(H\)
+implies \(R_PV=VR_Q\) and \([R_Q,D]=0\).
+Consequently \(V(D-zI_Q)^{-1}V^\dagger\) commutes with every \(R_P(g)\).
+Schur's lemma on the irreducible complex triplet then makes this
+operator, and hence \(H_{\mathrm{eff}}(z)\), scalar.
+\end{proof}
+
+\paragraph{Explicit counterexample to protection by projection alone.}
+Take a single complementary mode \(D=\Delta\), with
+\(\Delta\in\mathbb R\), and \(V=g(1,0,0)^T\), \(g\in\mathbb C\setminus\{0\}\).
+For \(z\ne\Delta\),
+\begin{equation}
+H_{\mathrm{eff}}(z)-\lambda I_3
+=-\frac{|g|^2}{\Delta-z}
+  \begin{pmatrix}1&0&0\\0&0&0\\0&0&0\end{pmatrix}.
+\tag{S5}
+\end{equation}
+One triplet direction is distinguished even though the direct compression
+\(PHP\) is exactly isotropic. For real \(g\), the numerator is \(g^2\).
+Equal eigenvalues of \(PHP\) therefore do not by themselves protect the
+symmetry of the reduced coupled problem.
+
+\paragraph{Limits of the statement.}
+The determinant reduction is not to be evaluated at a pole \(z\in\spec(D)\).
+The norm estimate controls the entire correction, not a compulsory amount
+of anisotropy; a nonzero correction can be isotropic. A full symmetry
+representation can protect isotropy while still allowing transfer to
+equivalent representations inside \(Q\). It does not in itself imply
+\(QHP=0\) or absence of leakage.
+Moreover, \(H_{\mathrm{eff}}(z)\) is an energy-dependent Schur operator,
+not automatically a time-local generator for the projected evolution.
+The actual Q-ball frequency pencil and its normalization must be derived
+and treated on their own terms. This finite Schr\"odinger-type formula
+cannot be imported into that problem without justification.
+
+\section*{2. A conservative finite-time leakage bound}
+\begin{proposition}[Leakage from an initially occupied subspace]
+For the same time-independent Hermitian \(H\), let
+\(i\dot\psi=H\psi\), \(\norm{\psi(0)}=1\), and \(Q\psi(0)=0\).
+Then, for every real \(t\),
+\begin{equation}
+Q\psi(t)=-i\int_0^t
+ e^{-iD(t-s)}QHP\,P\psi(s)\,ds,
+\tag{S6}
+\end{equation}
+and
+\begin{equation}
+\norm{Q\psi(t)}\leq
+\min\{1,\,|t|\norm{QHP}\},\qquad
+\norm{Q\psi(t)}^2\leq
+\min\{1,\,t^2\norm{QHP}^{\,2}\}.
+\tag{S7}
+\end{equation}
+These statements hold for any orthogonal projector \(P\), not only rank three.
+\end{proposition}
+
+\begin{proof}
+Projecting the evolution gives
+\(i\,d(Q\psi)/dt=DQ\psi+QHP\,P\psi\).
+Variation of constants, with zero initial \(Q\)-component, yields (S6).
+Both the full evolution and \(e^{-iD(t-s)}\) are unitary.
+Thus \(\norm{P\psi(s)}\leq1\), and the integral has norm at most
+\(|t|\norm{QHP}\). For negative \(t\), reverse the oriented integration
+interval; its length is still \(|t|\).
+The full-state normalization independently gives
+\(\norm{Q\psi(t)}\leq1\). Combining the two bounds and squaring proves (S7).
+\end{proof}
+
+\paragraph{Connection to the existing invariance checks.}
+For classical complex amplitudes, \(\norm{Q\psi(t)}^2\) is the fraction of
+the normalized squared norm outside the chosen subspace. Calling it a
+probability additionally presumes a quantum-state interpretation.
+The exact condition \(QHP=0\) implies zero leakage for every initial state
+in \(P\). For an observation window \(|t|\leq T\), \(T>0\), a sufficient
+condition for an outside norm fraction at most \(\varepsilon\in[0,1]\) is
+\(\norm{QHP}\leq\sqrt{\varepsilon}/T\).
+Reported Frobenius norms of outside blocks may be used as conservative
+upper bounds on the induced norm, provided the projector, normalization,
+and block definition actually match.
+This connects the algebraic invariance criterion to a finite tolerated
+error. It proves neither sharp long-time stability nor an optimal
+lifetime. For large times the bound may reduce to the trivial value one.
+Nonlinear fields require other error estimates; no nonlinear or
+continuum certificate follows from (S7).
+
+\section*{3. A future question: dark and still interacting?}
+As a purely effective passive two-mode illustration, consider
+\begin{equation}
+\mathcal H=
+\begin{pmatrix}
+\omega-i\gamma/2 & J-i\gamma_{12}/2\\
+J-i\gamma_{12}/2 & \omega-i\gamma/2
+\end{pmatrix},
+\quad
+\omega,J,\gamma,\gamma_{12}\in\mathbb R,\quad
+\gamma\geq|\gamma_{12}|.
+\tag{S8}
+\end{equation}
+The last condition makes the loss matrix positive semidefinite.
+The normalized symmetric and antisymmetric vectors have eigenvalues
+\begin{equation}
+z_\pm=\omega\pm J-\frac{i}{2}(\gamma\pm\gamma_{12}).
+\tag{S9}
+\end{equation}
+For \(\gamma_{12}=\gamma\), the antisymmetric channel has zero decay
+in this model even when \(J\ne0\). Thus zero decay in a channel is not
+logically equivalent to absent coherent coupling. This is a familiar
+algebraic possibility, not a parameter choice derived from KRAFT or
+from the project's microscopic field model.
+
+In a microscopic mediation mechanism, the dispersive and dissipative
+parts arise from the same causal response and cannot simply be chosen
+independently. Nor does a fixed \(J\) establish a spatial force: that
+requires positional dependence, dynamical positions, and consistent
+energy and momentum accounting. The coordinator reports that
+KRAFT-still failed its strict force-switch criterion; this example
+does not reinterpret that result.
+
+The smallest proposed next question is whether the same field or
+scattering operator yields both finite coherent frequency splitting and
+small radiation, with a consistently defined distance force where
+applicable. Frequency splitting, radiation channels, and energy flux
+must refer to the same configuration. Different phase windows or fits
+must not be presented as one joint finding. This is a proposed study,
+not a calculation performed for this supplement.
+
+\section*{4. Placement and boundaries}
+Propositions 1 and 2 are proposed for insertion after the exchange and
+subspace-invariance criteria of v0.5, section 4. They formalize why a
+degenerate compression or an isotropic projected matrix is insufficient
+when complementary modes remain coupled.
+Section 3 belongs among the concrete future field-model questions,
+not among the already completed triplet experiments.
+
+Frequency-dependent mediator range, Hamiltonian phase memory, and
+Hawking-related questions are retained in the separate, attributed
+\texttt{RESEARCH-NOTE-EN.txt}. They do not extend the claims of the main
+paper. No KRAFT numbers are mixed into the triplet results, and the
+existing BIC/exterior proof remains a separate line of work.
+\end{document}

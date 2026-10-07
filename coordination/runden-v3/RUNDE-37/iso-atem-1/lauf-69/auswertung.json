@@ -1,0 +1,214 @@
+{
+ "meta": {
+  "code_sha256": "9c5b197031ba8e4cabe801143ec065fabf76be1d6ceb2e3e589dd9958c83db0a",
+  "argv": [
+   "/home/fmh/fmhc-physics-remote/iso-atem-1/code/iso_atem.py.eingefroren-20261004-191248",
+   "auswertung",
+   "--kontrolle",
+   "/home/fmh/fmhc-physics-remote/iso-atem-1/lauf/kontrolle.json",
+   "--ast",
+   "/home/fmh/fmhc-physics-remote/iso-atem-1/lauf/ast.json",
+   "--zufall",
+   "/home/fmh/fmhc-physics-remote/iso-atem-1/lauf/zufall-1.json,/home/fmh/fmhc-physics-remote/iso-atem-1/lauf/zufall-2.json",
+   "--out",
+   "/home/fmh/fmhc-physics-remote/iso-atem-1/lauf/auswertung.json"
+  ],
+  "python": "3.12.3",
+  "numpy": "2.4.4",
+  "host": "ubuntu-auto",
+  "start_utc": "2026-10-04T17:17:31Z"
+ },
+ "eingaben_code_sha256": {
+  "kontrolle": "9c5b197031ba8e4cabe801143ec065fabf76be1d6ceb2e3e589dd9958c83db0a",
+  "ast": "9c5b197031ba8e4cabe801143ec065fabf76be1d6ceb2e3e589dd9958c83db0a"
+ },
+ "urteile": {
+  "IA1": {
+   "plan": "eingetroffen",
+   "wortlaut": "eingetroffen",
+   "teilA_max_r": 6.684427777288335e-16,
+   "gamma97_min_r_rms": 0.02121320343559625,
+   "gamma_min_r_rms": {
+    "0.99": 0.007071067811865373,
+    "0.97": 0.02121320343559625,
+    "0.95": 0.035355339059327306,
+    "0.9": 0.0707106781186546
+   }
+  },
+  "IA2": {
+   "plan": "eingetroffen",
+   "wortlaut": "eingetroffen",
+   "ast_ok": true,
+   "ast_erreicht_097": true,
+   "exakt097_r_max": 4.996003610813204e-16,
+   "C_min_r_max": {
+    "0.99": 3.3306690738754696e-16,
+    "0.97": 3.554447978966673e-16,
+    "0.95": 3.3306690738754696e-16,
+    "0.9": 3.3306690738754696e-16
+   }
+  },
+  "IA3": {
+   "plan": "teilweise",
+   "wortlaut": "eingetroffen",
+   "B_sym": {
+    "P213": true,
+    "T_alle": true,
+    "schrauben": true,
+    "n_O24": 12,
+    "platz": true,
+    "achsen": [
+     0,
+     2,
+     3,
+     1,
+     0,
+     3,
+     1,
+     2
+    ]
+   },
+   "C097_Loesungen": 344,
+   "C097_P213": 189
+  }
+ },
+ "teilC": {
+  "0.99": {
+   "n": 600,
+   "Loesung": 353,
+   "fast": 0,
+   "keine": 247,
+   "Loesung_P213": 188,
+   "Loesung_nicht_P213": 165,
+   "Loesung_ueberlappungsfrei": 353,
+   "nicht_P213_ueberlappungsfrei": 165,
+   "nah_Loesung": 163,
+   "weit_Loesung": 190,
+   "nullitaeten": [
+    0
+   ],
+   "n_O24_werte": [
+    4,
+    12
+   ],
+   "min_r_max": 3.3306690738754696e-16
+  },
+  "0.97": {
+   "n": 600,
+   "Loesung": 344,
+   "fast": 0,
+   "keine": 256,
+   "Loesung_P213": 189,
+   "Loesung_nicht_P213": 155,
+   "Loesung_ueberlappungsfrei": 344,
+   "nicht_P213_ueberlappungsfrei": 155,
+   "nah_Loesung": 163,
+   "weit_Loesung": 181,
+   "nullitaeten": [
+    0
+   ],
+   "n_O24_werte": [
+    4,
+    12
+   ],
+   "min_r_max": 3.554447978966673e-16
+  },
+  "0.95": {
+   "n": 600,
+   "Loesung": 344,
+   "fast": 0,
+   "keine": 256,
+   "Loesung_P213": 186,
+   "Loesung_nicht_P213": 158,
+   "Loesung_ueberlappungsfrei": 344,
+   "nicht_P213_ueberlappungsfrei": 158,
+   "nah_Loesung": 163,
+   "weit_Loesung": 181,
+   "nullitaeten": [
+    0
+   ],
+   "n_O24_werte": [
+    4,
+    12
+   ],
+   "min_r_max": 3.3306690738754696e-16
+  },
+  "0.9": {
+   "n": 600,
+   "Loesung": 300,
+   "fast": 0,
+   "keine": 300,
+   "Loesung_P213": 164,
+   "Loesung_nicht_P213": 136,
+   "Loesung_ueberlappungsfrei": 300,
+   "nicht_P213_ueberlappungsfrei": 136,
+   "nah_Loesung": 147,
+   "weit_Loesung": 153,
+   "nullitaeten": [
+    0
+   ],
+   "n_O24_werte": [
+    4,
+    12
+   ],
+   "min_r_max": 3.3306690738754696e-16
+  }
+ },
+ "ast": {
+  "plus": {
+   "beruehrung": null,
+   "d_OO_unter_1": {
+    "phiA_grad": 0.0,
+    "phiB_grad": 0.0,
+    "phim_grad": 0.0,
+    "uA": 0.0,
+    "uB": 1.224744871391589,
+    "lambda": 1.0,
+    "V_V0": 1.0,
+    "r_max": 3.925231146709438e-16,
+    "w_O1_min": 179.99999879258172,
+    "w_O1_max": 180.0,
+    "w_O2_min": 179.99999879258172,
+    "w_O2_max": 180.0,
+    "g_nb": null,
+    "g_adj": 0.08164965809277236,
+    "d_OO": 0.9999999999999996,
+    "KM_lam": 0.0,
+    "KM_key": 2.220446049250313e-16
+   },
+   "n_punkte": 1075,
+   "max_r_max": 8.1773032027145e-16,
+   "max_KM_lam": 3.3306690738754696e-16,
+   "max_KM_key": 6.661338147750939e-16,
+   "lambda_end": 0.5999422709217016
+  },
+  "minus": {
+   "beruehrung": null,
+   "d_OO_unter_1": {
+    "phiA_grad": 0.0,
+    "phiB_grad": 0.0,
+    "phim_grad": 0.0,
+    "uA": 0.0,
+    "uB": 1.224744871391589,
+    "lambda": 1.0,
+    "V_V0": 1.0,
+    "r_max": 3.925231146709438e-16,
+    "w_O1_min": 179.99999879258172,
+    "w_O1_max": 180.0,
+    "w_O2_min": 179.99999879258172,
+    "w_O2_max": 180.0,
+    "g_nb": null,
+    "g_adj": 0.08164965809277236,
+    "d_OO": 0.9999999999999996,
+    "KM_lam": 0.0,
+    "KM_key": 2.220446049250313e-16
+   },
+   "n_punkte": 1003,
+   "max_r_max": 8.473409486550036e-16,
+   "max_KM_lam": 4.440892098500626e-16,
+   "max_KM_key": 6.661338147750939e-16,
+   "lambda_end": 0.5998663881790544
+  }
+ },
+ "laufzeit_s": 0.28173327445983887
+}

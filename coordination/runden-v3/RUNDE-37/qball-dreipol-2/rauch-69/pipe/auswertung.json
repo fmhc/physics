@@ -1,0 +1,662 @@
+{
+ "erstellt_utc": "2026-10-04T16:24:20Z",
+ "ordner": "/home/fmh/fmhc-physics-remote/qball-dreipol-2/rauch/pipe",
+ "eingaben": {
+  "A.json": "435014eab481cecc02ec772b2a35fb5bab88915be55a23b20d4f5f90a75af770",
+  "B_m01.json": "aca2179595c8fad6d008800f9a9dd9ef51bbf0841b9d528adc4cc25dc45b1cda",
+  "B_p01.json": "c6d20192e7e25b98af221541a4d561c664d4519ced8ff0997e69f6e1ed99a232",
+  "B_m01_fein.json": null,
+  "S.json": "f86e80ab5d75daeb0b1111179ee25092b0c37fd617d68bcc3bfaa6aa1f75ea17",
+  "C_p01.json": "d96afced629d421afe9f8959f6514ebbc094cfa07d6fbb065c2e9c2dac2266ab",
+  "C_m01.json": "5d326d0cab803e8646c6774aaf6af498299f122f615a87e605e0ee20c207e610"
+ },
+ "urteile": {
+  "DP0": {
+   "plan": "nicht auswertbar",
+   "kartenwortlaut": "nicht auswertbar",
+   "teile": {
+    "2d": {
+     "paarabstand_R": [
+      0.7854157216368959,
+      0.7854157216368964,
+      0.7854157216368968
+     ],
+     "max_rel_abw_paarabstand": 0.3691439986852243,
+     "E_dreieck": 62.057434787943,
+     "E_mischball": 61.81548479169617,
+     "luecke": -0.24194999624683078,
+     "rel_abw_luecke": 2.6571917551152797,
+     "nachbau_status": "nmax",
+     "nachbau_it": 30,
+     "misch_status": "konvergiert",
+     "urteil": "nicht auswertbar",
+     "E_ball": 22.70772179572836,
+     "ball_abw_gitter_radial": 5.783707366369129e-07,
+     "misch_abw_gitter_radial": 2.410898340965417e-07
+    },
+    "3d_m01": {
+     "g4": -0.1,
+     "N": 32,
+     "L": 48.0,
+     "h": 1.5,
+     "Q1": 300.0,
+     "E_ball": 271.6188796608212,
+     "E_ball_radial": 271.49278766528533,
+     "abw_ball": 0.0004644395772728238,
+     "om_ball": 0.8141804402206029,
+     "R_halb": 2.853151411996902,
+     "E_misch": 765.6940963190315,
+     "E_misch_radial": 765.6013164403926,
+     "abw_misch": 0.0001211856310152637,
+     "status": [
+      "nmax",
+      "nmax"
+     ],
+     "urteil": "nicht auswertbar"
+    },
+    "3d_p01": {
+     "g4": 0.1,
+     "N": 32,
+     "L": 48.0,
+     "h": 1.5,
+     "Q1": 300.0,
+     "E_ball": 289.6080098573807,
+     "E_ball_radial": 289.5917946433594,
+     "abw_ball": 5.5993347606086985e-05,
+     "om_ball": 0.9017489094455118,
+     "R_halb": 2.8092259899527985,
+     "E_misch": 791.2527693154775,
+     "E_misch_radial": 791.197220179582,
+     "abw_misch": 7.020896241627383e-05,
+     "status": [
+      "nmax",
+      "nmax"
+     ],
+     "urteil": "nicht auswertbar"
+    }
+   },
+   "regel": "2D: Paarabstand/R auf 2 % bei 1,245, Luecke zum Mischball auf 10 % bei 0,146; 3D: |E_Gitter/E_radial - 1| <= 1e-4 fuer Einpol- und Mischball bei beiden g4"
+  },
+  "DP1": {
+   "plan": "nicht eingetroffen",
+   "kartenwortlaut": "nicht eingetroffen",
+   "je_stoerung": {
+    "V1": {
+     "text": "Pol 1 um 0.15 R tangential (+x)",
+     "status": "nmax",
+     "it": 20,
+     "d_rms_start": 0.05064193061325927,
+     "d_form_start": 0.09914347220507956,
+     "dE_start": 0.015238005656875941,
+     "d_rms_ende": 0.07879658630843442,
+     "d_form_ende": 0.1536000640950202,
+     "dE_ende": -0.01870319500198292,
+     "reinheit_start": [
+      0.4251870428601088,
+      0.43879086241635773,
+      0.29440578052786653
+     ],
+     "reinheit_ende": [
+      0.39142949633422114,
+      0.4216739912834826,
+      0.2626085623830915
+     ],
+     "res_ende": 0.0038653461842692305,
+     "plan": "nicht zurueck",
+     "kartenwortlaut": "nicht zurueck"
+    },
+    "V2": {
+     "text": "Pol 2 um 0.15 R radial nach aussen",
+     "status": "nmax",
+     "it": 20,
+     "d_rms_start": 0.07071067811865468,
+     "d_form_start": 0.1370086340065754,
+     "dE_start": 0.030778664980012138,
+     "d_rms_ende": 0.061533820504175926,
+     "d_form_ende": 0.13745677828917674,
+     "dE_ende": -0.015275732058078972,
+     "reinheit_start": [
+      0.36445934547430153,
+      0.4658181529271997,
+      0.3637981914124944
+     ],
+     "reinheit_ende": [
+      0.3338152085849952,
+      0.4262170285818941,
+      0.33315652193781065
+     ],
+     "res_ende": 0.004836119025593083,
+     "plan": "nicht zurueck",
+     "kartenwortlaut": "nicht zurueck"
+    },
+    "L1": {
+     "text": "5 % der Farbe 2 von Klumpen 2 nach Klumpen 1",
+     "status": "nmax",
+     "it": 20,
+     "d_rms_start": 0.021451688597524707,
+     "d_form_start": 0.04900044033653352,
+     "dE_start": 1.4562800683808845,
+     "d_rms_ende": 0.08419279763426728,
+     "d_form_ende": 0.15606703177917003,
+     "dE_ende": -0.020462993606024327,
+     "reinheit_start": [
+      0.3798515477611714,
+      0.34843063256887713,
+      0.410780879426259
+     ],
+     "reinheit_ende": [
+      0.3544580633046942,
+      0.330842197345338,
+      0.3809579849309442
+     ],
+     "res_ende": 0.0031152235909744364,
+     "plan": "nicht zurueck",
+     "kartenwortlaut": "nicht zurueck"
+    },
+    "L2": {
+     "text": "5 % der Farbe 1 von Klumpen 1 nach Klumpen 2",
+     "status": "nmax",
+     "it": 20,
+     "d_rms_start": 0.021451688597524606,
+     "d_form_start": 0.04900044033653343,
+     "dE_start": 1.4562800683808845,
+     "d_rms_ende": 0.08419279763426718,
+     "d_form_ende": 0.15606703177917003,
+     "dE_ende": -0.020462993606024327,
+     "reinheit_start": [
+      0.35085854655694926,
+      0.3685692688149639,
+      0.4196045432162583
+     ],
+     "reinheit_ende": [
+      0.3317364593732771,
+      0.34439333933530525,
+      0.3901090594081206
+     ],
+     "res_ende": 0.003111098477000279,
+     "plan": "nicht zurueck",
+     "kartenwortlaut": "nicht zurueck"
+    },
+    "P1": {
+     "text": "Phase von Komponente 2 um pi/2 versetzt",
+     "status": "nmax",
+     "it": 20,
+     "d_rms_start": 2.2128912066928803e-16,
+     "d_form_start": 0.0,
+     "dE_start": 0.0,
+     "d_rms_ende": 0.07890574228486943,
+     "d_form_ende": 0.13666875464632997,
+     "dE_ende": -0.01974233254383506,
+     "reinheit_start": [
+      0.38373673672310576,
+      0.3731354061532763,
+      0.3935894456399347
+     ],
+     "reinheit_ende": [
+      0.35726326542934744,
+      0.3483896118884303,
+      0.3653746874455942
+     ],
+     "res_ende": 0.0030826023951424086,
+     "plan": "nicht zurueck",
+     "kartenwortlaut": "nicht zurueck"
+    },
+    "P2": {
+     "text": "Phasen von Komponente 2 und 3 um 2pi/3 und 4pi/3 versetzt",
+     "status": "nmax",
+     "it": 20,
+     "d_rms_start": 1.9379843750477963e-16,
+     "d_form_start": 8.744741902801112e-17,
+     "dE_start": 0.0,
+     "d_rms_ende": 0.07890574228486943,
+     "d_form_ende": 0.13666875464633,
+     "dE_ende": -0.01974233254383506,
+     "reinheit_start": [
+      0.38373673672310576,
+      0.3746380895500207,
+      0.3920867622431903
+     ],
+     "reinheit_ende": [
+      0.35726326542934755,
+      0.3483946586802145,
+      0.36536964065381
+     ],
+     "res_ende": 0.0030826023951394943,
+     "plan": "nicht zurueck",
+     "kartenwortlaut": "nicht zurueck"
+    },
+    "L3": {
+     "text": "Sektorwechsel Q = (63, 57, 60), beschreibend",
+     "status": "nmax",
+     "it": 20,
+     "d_rms_start": 2.30262144865411e-16,
+     "d_form_start": 8.744741902801112e-17,
+     "dE_start": -0.0020123014072979117,
+     "d_rms_ende": 0.0789121565228001,
+     "d_form_ende": 0.1378924279327081,
+     "dE_ende": -0.02197832712562331,
+     "reinheit_start": [
+      0.38373673672310576,
+      0.3731354061532762,
+      0.3935894456399347
+     ],
+     "reinheit_ende": [
+      0.35889805160897903,
+      0.347234887400852,
+      0.3649024836915557
+     ],
+     "res_ende": 0.0030835295736944823,
+     "plan": "nicht zurueck",
+     "kartenwortlaut": "nicht zurueck"
+    }
+   },
+   "E_ref": 61.84107268079455,
+   "referenz": {
+    "status": "nmax",
+    "it": 30,
+    "sek": 0.04278755187988281,
+    "Q": [
+     25.0,
+     25.0,
+     25.0
+    ],
+    "E": 61.84107268079455,
+    "om": [
+     0.7500096984921955,
+     0.7500096984921955,
+     0.7500096984921955
+    ],
+    "Lam": [
+     33.33290229480966,
+     33.33290229480966,
+     33.33290229480966
+    ],
+    "res": 0.006602110377427611,
+    "schwerpunkte": [
+     [
+      -1.3828359482027164e-15,
+      0.28850966046137194
+     ],
+     [
+      -0.24985669519678186,
+      -0.14425483023070154
+     ],
+     [
+      0.24985669519677936,
+      -0.14425483023070207
+     ]
+    ],
+    "paarabstand": [
+     0.4997133903935601,
+     0.4997133903935607,
+     0.4997133903935612
+    ],
+    "paarabstand_R": [
+     0.2624016092526856,
+     0.2624016092526859,
+     0.2624016092526862
+    ],
+    "reinheit": [
+     0.38373673672310576,
+     0.3731354061532763,
+     0.3935894456399347
+    ],
+    "S_max": 1.0987685456402922
+   },
+   "regel_plan": "je Stoerung: Fluss konvergiert, d_form < 0,02 R, d_rms < 0,02 R, |E_Ende - E_ref| < 1e-3; alle sechs",
+   "regel_kw": "je Stoerung am Flussende: d_rms < 0,02 R und |dE|/E_ref < 1e-3; alle sechs"
+  },
+  "DP2": {
+   "plan": "nicht auswertbar",
+   "kartenwortlaut": "nicht auswertbar",
+   "je_g4": {
+    "m01": {
+     "g4": -0.1,
+     "status": "nmax",
+     "it": 20,
+     "sek": 0.037278175354003906,
+     "res": 0.05557465872855931,
+     "E_ende": 776.4686402945508,
+     "E_drei_getrennt": 814.8566389824637,
+     "E_start": 796.4352771388725,
+     "E_misch_gitter": 765.6940963190315,
+     "E_misch_radial": 765.6013164403926,
+     "E_ende_minus_misch_gitter": 10.77454397551935,
+     "E_ende_minus_misch_radial": 10.867323854158258,
+     "paarabstand_R": [
+      1.4507818047297656,
+      1.4507818403944424,
+      1.439703959358434
+     ],
+     "gestalt": "dreieck",
+     "reinheit": [
+      0.7005214129061401,
+      0.7362840515049527,
+      0.7214288899851157
+     ],
+     "min_reinheit": 0.7005214129061401,
+     "R_halb": 2.853151411996902,
+     "om": [
+      0.7861817907827143,
+      0.785841163097185,
+      0.7858411632996891
+     ]
+    },
+    "p01": {
+     "g4": 0.1,
+     "status": "nmax",
+     "it": 20,
+     "sek": 0.037100791931152344,
+     "res": 0.050313420327265254,
+     "E_ende": 797.7769701761392,
+     "E_drei_getrennt": 868.8240295721421,
+     "E_start": 841.2304969169479,
+     "E_misch_gitter": 791.2527693154775,
+     "E_misch_radial": 791.197220179582,
+     "E_ende_minus_misch_gitter": 6.524200860661722,
+     "E_ende_minus_misch_radial": 6.5797499965572115,
+     "paarabstand_R": [
+      0.7424863896987928,
+      0.7424863760936771,
+      0.7421230347769258
+     ],
+     "gestalt": "zwischenform",
+     "reinheit": [
+      0.5178486366268539,
+      0.45322719856914595,
+      0.5464690985146362
+     ],
+     "min_reinheit": 0.45322719856914595,
+     "R_halb": 2.8092259899527985,
+     "om": [
+      0.83367566461666,
+      0.8336062942397524,
+      0.8336062941630611
+     ]
+    }
+   },
+   "regel_plan": "g4 = -0,1: Fluss konvergiert, Gestalt Dreieck (min Paarabstand > R), Reinheit je Farbe >= 0,5, E_Ende < E_Misch(Gitter) (1 - 1e-6)",
+   "regel_kw": "wie Plan, E_Ende unter dem Gitter- und dem radialen 3D-Mischball"
+  },
+  "DP3": {
+   "plan": "nicht auswertbar",
+   "kartenwortlaut": "nicht auswertbar",
+   "je_g4": {
+    "p01": {
+     "g4": 0.1,
+     "R": 2.0515938545398082,
+     "R_K": 8.523758091992105,
+     "laeufe": {
+      "saat1": {
+       "gueltig": false,
+       "t_ende": 2.0,
+       "dE_rel": 4.571920695697018e-06,
+       "dQ_rel": 1.4955144873540067e-16,
+       "ausstoss": false,
+       "t_ausstoss": null,
+       "max_r_R": 1.2952711007098057,
+       "min_anteil": 0.9938810914947269,
+       "anteil_t_ende": [
+        0.9938877325327894,
+        0.9942895520200541,
+        0.9948970899397361
+       ],
+       "min_anteil_t_ende": 0.9938877325327894,
+       "beisammen_plan": true,
+       "beisammen_kw": true,
+       "paarabstand_R_t_ende": [
+        2.1556445723641136,
+        2.1561779227559703,
+        1.9559926049352085
+       ],
+       "mittendurchgaenge": [],
+       "pulsationsdauer": null,
+       "min_mittlerer_paarabstand_R": 2.089271700018431,
+       "max_mittlerer_paarabstand_R": 2.1332851135969872
+      },
+      "saat2": {
+       "gueltig": false,
+       "t_ende": 2.0,
+       "dE_rel": 4.588011371099936e-06,
+       "dQ_rel": 2.841953714155042e-16,
+       "ausstoss": false,
+       "t_ausstoss": null,
+       "max_r_R": 1.2959306451543124,
+       "min_anteil": 0.9938796461856084,
+       "anteil_t_ende": [
+        0.9938900888672006,
+        0.9942928581248918,
+        0.994922575947827
+       ],
+       "min_anteil_t_ende": 0.9938900888672006,
+       "beisammen_plan": true,
+       "beisammen_kw": true,
+       "paarabstand_R_t_ende": [
+        2.1559253235585225,
+        2.1565822062138866,
+        1.9552715817512396
+       ],
+       "mittendurchgaenge": [],
+       "pulsationsdauer": null,
+       "min_mittlerer_paarabstand_R": 2.089259703841216,
+       "max_mittlerer_paarabstand_R": 2.133311271399389
+      },
+      "saat3": {
+       "gueltig": false,
+       "t_ende": 2.0,
+       "dE_rel": 4.558306931557992e-06,
+       "dQ_rel": 2.8410323815561114e-16,
+       "ausstoss": false,
+       "t_ausstoss": null,
+       "max_r_R": 1.2952653394434022,
+       "min_anteil": 0.9938848353683284,
+       "anteil_t_ende": [
+        0.9938938996460396,
+        0.9942855581085257,
+        0.994902770843626
+       ],
+       "min_anteil_t_ende": 0.9938938996460396,
+       "beisammen_plan": true,
+       "beisammen_kw": true,
+       "paarabstand_R_t_ende": [
+        2.155892798766909,
+        2.1564112167640452,
+        1.9559758665302385
+       ],
+       "mittendurchgaenge": [],
+       "pulsationsdauer": null,
+       "min_mittlerer_paarabstand_R": 2.0894266273537307,
+       "max_mittlerer_paarabstand_R": 2.133358352921658
+      },
+      "saat4": {
+       "gueltig": false,
+       "t_ende": 2.0,
+       "dE_rel": 4.5760218185659045e-06,
+       "dQ_rel": 4.2636430687534434e-16,
+       "ausstoss": false,
+       "t_ausstoss": null,
+       "max_r_R": 1.2956619439878878,
+       "min_anteil": 0.9938834760107507,
+       "anteil_t_ende": [
+        0.9938951113298969,
+        0.9942849756875047,
+        0.9949206736841104
+       ],
+       "min_anteil_t_ende": 0.9938951113298969,
+       "beisammen_plan": true,
+       "beisammen_kw": true,
+       "paarabstand_R_t_ende": [
+        2.155783969572953,
+        2.1567692797076625,
+        1.955991609009276
+       ],
+       "mittendurchgaenge": [],
+       "pulsationsdauer": null,
+       "min_mittlerer_paarabstand_R": 2.0895149527632975,
+       "max_mittlerer_paarabstand_R": 2.1336956598056047
+      }
+     },
+     "plan": "nicht auswertbar",
+     "kartenwortlaut": "nicht auswertbar",
+     "schwellen": {
+      "E_start": 67.56881991899544,
+      "E_drei_getrennt": 71.00183096227627,
+      "paare": {
+       "60+60 (Pol 2 frei)": {
+        "schwelle": 67.44466597674892,
+        "start_minus_schwelle": 0.12415394224652232
+       },
+       "60+57 (Pol 1 oder 3 frei)": {
+        "schwelle": 67.52962348448378,
+        "start_minus_schwelle": 0.03919643451166621
+       }
+      },
+      "ausstoss_energetisch_verboten": false,
+      "zerfall_in_drei_verboten": true
+     }
+    },
+    "m01": {
+     "g4": -0.1,
+     "R": 1.9043838634097314,
+     "R_K": 7.912144662589171,
+     "laeufe": {
+      "saat1": {
+       "gueltig": false,
+       "t_ende": 2.0,
+       "dE_rel": 1.7748247789288985e-06,
+       "dQ_rel": 1.4954407141567858e-16,
+       "ausstoss": false,
+       "t_ausstoss": null,
+       "max_r_R": 1.2952093029430598,
+       "min_anteil": 0.9978477094668148,
+       "anteil_t_ende": [
+        0.9978497870683752,
+        0.9981149107827957,
+        0.9982674883955879
+       ],
+       "min_anteil_t_ende": 0.9978497870683752,
+       "beisammen_plan": true,
+       "beisammen_kw": true,
+       "paarabstand_R_t_ende": [
+        2.175295179370504,
+        2.1761044959460225,
+        1.979273400489795
+       ],
+       "mittendurchgaenge": [],
+       "pulsationsdauer": null,
+       "min_mittlerer_paarabstand_R": 2.1102243586021068,
+       "max_mittlerer_paarabstand_R": 2.133368370425269
+      },
+      "saat2": {
+       "gueltig": false,
+       "t_ende": 2.0,
+       "dE_rel": 1.7775011464179282e-06,
+       "dQ_rel": 1.4949519671294762e-16,
+       "ausstoss": false,
+       "t_ausstoss": null,
+       "max_r_R": 1.296048041085135,
+       "min_anteil": 0.9978596355909601,
+       "anteil_t_ende": [
+        0.997862948858083,
+        0.9981129239156585,
+        0.9982696093747412
+       ],
+       "min_anteil_t_ende": 0.997862948858083,
+       "beisammen_plan": true,
+       "beisammen_kw": true,
+       "paarabstand_R_t_ende": [
+        2.175565103575747,
+        2.176538245218923,
+        1.9784150207125994
+       ],
+       "mittendurchgaenge": [],
+       "pulsationsdauer": null,
+       "min_mittlerer_paarabstand_R": 2.1101727898357563,
+       "max_mittlerer_paarabstand_R": 2.1333367411549045
+      },
+      "saat3": {
+       "gueltig": false,
+       "t_ende": 2.0,
+       "dE_rel": 1.8031960781513586e-06,
+       "dQ_rel": 2.840979807985275e-16,
+       "ausstoss": false,
+       "t_ausstoss": null,
+       "max_r_R": 1.2952540926460583,
+       "min_anteil": 0.9978613977481554,
+       "anteil_t_ende": [
+        0.9978643302132544,
+        0.9981133626116717,
+        0.9982691406582836
+       ],
+       "min_anteil_t_ende": 0.9978643302132544,
+       "beisammen_plan": true,
+       "beisammen_kw": true,
+       "paarabstand_R_t_ende": [
+        2.1755982536566902,
+        2.1763777154788198,
+        1.9792224262979907
+       ],
+       "mittendurchgaenge": [],
+       "pulsationsdauer": null,
+       "min_mittlerer_paarabstand_R": 2.1103994651445,
+       "max_mittlerer_paarabstand_R": 2.1333521422423645
+      },
+      "saat4": {
+       "gueltig": false,
+       "t_ende": 2.0,
+       "dE_rel": 1.7521859618698767e-06,
+       "dQ_rel": 2.8430159652634233e-16,
+       "ausstoss": false,
+       "t_ausstoss": null,
+       "max_r_R": 1.2956116388039756,
+       "min_anteil": 0.9978486827721426,
+       "anteil_t_ende": [
+        0.997851590773289,
+        0.9981093925032111,
+        0.9982662706875405
+       ],
+       "min_anteil_t_ende": 0.997851590773289,
+       "beisammen_plan": true,
+       "beisammen_kw": true,
+       "paarabstand_R_t_ende": [
+        2.1751480297914823,
+        2.1765322964183036,
+        1.978963028568935
+       ],
+       "mittendurchgaenge": [],
+       "pulsationsdauer": null,
+       "min_mittlerer_paarabstand_R": 2.1102144515929067,
+       "max_mittlerer_paarabstand_R": 2.133623854941473
+      }
+     },
+     "plan": "nicht auswertbar",
+     "kartenwortlaut": "nicht auswertbar",
+     "schwellen": {
+      "E_start": 64.13036506602162,
+      "E_drei_getrennt": 67.14968569654748,
+      "paare": {
+       "60+60 (Pol 2 frei)": {
+        "schwelle": 64.24073599423485,
+        "start_minus_schwelle": -0.11037092821322858
+       },
+       "60+57 (Pol 1 oder 3 frei)": {
+        "schwelle": 64.26631218579192,
+        "start_minus_schwelle": -0.13594711977029306
+       }
+      },
+      "ausstoss_energetisch_verboten": true,
+      "zerfall_in_drei_verboten": true
+     }
+    }
+   },
+   "nebenurteil_plan_g4_m01": "nicht auswertbar",
+   "regel_plan": "g4 = +0,1 (Hauptwert): >= 3 von 4 gueltigen Saaten ohne Ausstoss (kein Polschwerpunkt > 4 R von der Mitte bis t = 300) und min_t,a Q_a,in/Q_a >= 0,9",
+   "regel_kw": "bei beiden g4: >= 3 von 4 Saaten ohne Ausstoss und Q_a,in/Q_a >= 0,9 bei t = 300"
+  }
+ },
+ "beschreibend": {},
+ "vermerke": [
+  "DP1: P1 und P2 (gleichfoermiger Phasenversatz je Komponente) sind exakte Symmetrien von E_Q (U(1)^3); ihre Rueckkehr war vorab ableitbar (PLAN 2.2).",
+  "DP3 bei g4 = -0.1: Ausstoss (zwei verschmolzen, einer frei) ist energetisch verboten (E_start unter allen Schwellen); 'kein Ausstoss' war vorab ableitbar."
+ ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "astra-r19-v2-geerntet-20260916",
+  "time": "2026-09-16T04:24:00+02:00",
+  "time_kind": "document",
+  "author": "astra-lead",
+  "topic": "operations",
+  "status": "checked",
+  "title": "R19 mit Promptvertrag v2 geerntet: sieben PASS ohne Aufstieg",
+  "question": "Laesst sich der verworfene R18-Versuch mit dem vereinbarten Lesenachweis vollstaendig fortsetzen?",
+  "action": "R18 unveraendert verworfen archiviert; R19 mit gebundenem Vertrag v2 eingefroren. Lesenachweis Dateiname oder Hashpraefix pro Volltextquelle. Neue Kalibrierung, neun Einzelaufrufe, serialisierte Stimmenbuchung und Ernte unter Rundenlock mit Backups.",
+  "result": "M7 PASS, K1 FAIL; EV2, F1, H1, M3.3, S1.2, S2.2 und V1 PASS. Eintraege 803-811 angenommen. Null Aufstiege/Abstiege, keine Fachpatches; Kalibrierzeilen byteidentisch. H1 brauchte eine reversible, hashgebundene JSON-Huellendekodierung ohne neuen Modellcall; QA auf .69 bestanden, Originalantwort unveraendert.",
+  "meaning": "Eine Alibaba-Stimme pro Claim, Quorum weiter offen. A2 ungeprueft, F1-Herkunftsvorbehalt bleibt. Dreizehn nicht vorgelegte und zwei ausgesetzte Claims bleiben ungeprueft. Kein OpenRouter/Ollama, keine neue Physikrechnung. R20 braucht einen eigenen zulaessigen Vertrag.",
+  "sources": [
+    {
+      "path": "coordination/steuerung-20260915-drei-runden/LEAD-R19-BERICHT.md",
+      "sha256": "5851d26d26a89f9ae2f507999ec64cb4d01b14a409e0fd973741ecb1c82bd6f8"
+    },
+    {
+      "path": "gauntlet/new-runs/entwicklung-v2-20260911/rounds/019/harvest-done.json",
+      "sha256": "0d972079e0b660cf9a11c0dbfd3ad44d9bda1a85d0a2ff5aa4d6a2d11f7d63b5"
+    },
+    {
+      "path": "gauntlet/new-runs/entwicklung-v2-20260911/rounds/019/patches.md",
+      "sha256": "7499bf522899e3e9f9a6297312b3072fa363de7ee6709cd35badc5d9af3fdee1"
+    },
+    {
+      "path": "gauntlet/new-runs/entwicklung-v2-20260911/rounds/019/io-qwen-v2/PARSER-FORTSETZUNG.json",
+      "sha256": "3f2c8126662842cb641fa706aa3391eca29c65410924b0007511cba5465b2e9e"
+    }
+  ],
+  "recorded_at": "2026-09-16T02:25:04.959646+00:00"
+}

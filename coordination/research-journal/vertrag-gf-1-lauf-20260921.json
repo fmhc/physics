@@ -1,0 +1,51 @@
+{
+  "id": "vertrag-gf-1-lauf-20260921",
+  "time": "2026-09-21T02:05:00+02:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5)",
+  "topic": "theory",
+  "status": "reported",
+  "title": "Lauf GF-1 (Vorhersage V3 der Gesamtformel): Ausgang T, weil zwei eigene Kontrollen nicht erreichbar sind - die gemessene Kennzahl 1,09913 +/- 0,00021 ist kein Befund",
+  "question": "Aendert sich die Ladung Q eines stationaeren m=0-Klumpens nahe der unteren Fensterkante um den vorhergesagten Faktor (sigma_H/sigma_R)^3 = 1,1009 (A), wenn man die Form der Selbstwechselwirkung U um 2,1 Prozent aendert, ohne eine der drei Kalibrierkonstanten U'(0)=1, S*=1, min U/S=1/2 anzutasten - oder liegen die Ladungen innerhalb von 1 Prozent uebereinander (B)? V3 ist laut beiden Fremdhaeusern des S0-Reviews die einzige echte, neue, pruefbare Vorhersage der Gesamtformel (REVIEW-gesamtformel.md, Befund F7).",
+  "action": "Startsignal Finn 21.09.2026 'mach weiter' / 'full go', festgehalten in gf-1-lauf/startsignal-gf-1.txt. Laufskript gf_1.py (claude-primary, Bausteine aus fm_1.py uebernommen, Original unveraendert) auf fmh@192.168.178.69, CPU, Unit fmhc-physics-gf-1-20260921, CPUQuota 200 %, MemoryMax 8G, RuntimeMaxSec 7200, einthreadig, Laufzeit 328,9 s, kein CUDA-Geraet belegt, gauntlet-gpu.lock nicht angefasst. Vier Arme (Referenz alpha=0, Hauptarm alpha=0,1, Nullprobe alpha=-0,2/beta=0,40383916538232645 mit rechnerisch identischem sigma, Wiederholung mit umgekehrtem Startwertgitter) x sieben delta von 0,0330 bis 0,1084 x drei Schrittweiten, dazu L=160 fuer K4 und ein Fehlerarm fuer die Trennkraftprobe K8. Das im Vertrag 2.4 vorgeschriebene Schiessverfahren hat in KEINER der 28 Pflichtzellen ein Klammerpaar gefunden (alle 1200 Startwerte Klasse O); getragen hat durchweg die in Vertrag 9.3 vorab festgelegte Umschaltung auf ein Newton-Verfahren, hier als Numerov-Diskretisierung von u = r f, mit Fortsetzung in Schritten von 0,0005 in delta ab delta = 0,1724 (Arme R, H, N2) bzw. 0,2044 (Arm N1), 251 bis 345 Sprossen je Kette, alle 17 Ketten konvergiert (Residuum 3e-15 bis 7e-15). Elf Vertragsluecken wurden vor dem Lauf im Skriptkopf notiert und stehen unveraendert in der Ergebnisdatei und im Bericht. An keiner Schwelle, Toleranz, Kontrolle oder Gitterangabe wurde etwas geaendert.",
+  "result": "Ausgang T. Begruendungskette der Ergebnisdatei woertlich: 'Kontrollen/Nullproben verfehlt: K2, K8'. K2 (Gitterordnung) verlangt Ordnung in [3,5; 4,5]; gemessen 2,45 bis 4,80, in 7 von 28 Zellen innerhalb, in zwei Zellen nicht definiert (Vorzeichenwechsel der Differenzen). Ursache: die zweite K2-Bedingung |Q(0,005)-Q(0,0025)|/Q <= 1e-5 ist mit 2,8e-12 millionenfach uebererfuellt, der Ordnungsschaetzer misst Rundungsrauschen statt Diskretisierung. K8 verlangt, dass der eingebaute Fehler 'f(L)=0 statt Robin' K6 reissen laesst (D > 0,05); gemessen D_max = 2,0e-10, weil die Beimischung bei 0,8 L nur e^{-0,4 kappa L} = 3,2e-10 betraegt. FM-1s echter Fehler (weggelassener 1/r-Anteil) gibt dort D = 2,87e-02, auch unter 0,05. Bestanden: K1 (min U/S = 0,5 und argmin = 1,000000 exakt auf S in [0;30]), K3, K4 (1,5e-12), K5 (100 %), K6 (104 Punkte, max 4,5e-12), K7 (2,2e-15). Beide Nullproben erfuellt: N1 = 1,000162 +/- 0,000044 (Schwelle 1,000 +/- 0,015), N2 exakt 0,0. Besetzung 7 von 7 je Arm. Gemessen, KEIN BEFUND: R_Q(delta->0) = 1,09912621 +/- 0,00021232 aus der vorgeschriebenen linearen Regression ueber sieben delta, auf allen drei Schrittweiten gleich; Vorabwert (sigma_H/sigma_R)^3 = 1,10085087, Abstand -0,0017247 bei Schwelle 0,030, aber 8,1 eigene Standardfehler; quadratisch extrapoliert 1,10049, kubisch 1,10082. Kantenverschiebung exakt 0,00 % bei 2,1179 % Formaenderung. Hebel 4,68 bzw. 4,96 (Normierung c/5) gegen vorab 5,04 und rund 0,15 bei D_rot, also 31- bis 33-fach; Nullprobe 0,0087. Gegenprobe: bei delta = 0,0476 misst dieser Lauf Q = 22744,92744792, FM-1s T-Lauf mit anderem Verfahren 22744,9. Der in FORMEN.md 1 berichtigte eigene Fehler ist im Vertrag behoben: Zulaessigkeitsbedingung im Text, K1 auf S in [0;30], Nullprobe mit alpha = -0,2 und beta > 0.",
+  "meaning": "Der Lauf sagt ueber die Frage des Vertrags NICHTS; T heisst, die Zahlen gelten nicht. Berichtet, nicht gebucht: Runde 022 eingefroren, keine Registerzeile, keine Jury, keine Evidenz; ohne S2 aus einem fremden Haus ist nach Vertrag 10.3 keine Zahl zitierfaehig, und das nach 10.5 pflichtige S0-Fremdreview des Vertragstextes selbst ist unerfuellt. Gelernt wird dreierlei. Erstens sind beide gerissenen Kontrollen fuer das Schiessverfahren geschrieben, das den Lauf gar nicht getragen hat: K2 misst bei einem Verfahren mit 1,5e-11 Gitterfehler schon bei h = 0,010 nur Rauschen, und K6 misst dort, wo jede Randbedingung wirkungslos ist, weil L = 80 weit ausserhalb des Profils (Duennwandradius 6,5 bis 21,5) liegt. Zweitens hat die Erreichbarkeitsrechnung 6.4 mit grossem Rand gehalten (erwartet SE_a <= 0,005, gemessen 0,000212, Effekt zu Streuung 467 statt 20), und Restrisiko 1 (Duennwandnaeherung traegt noch nicht) ist nicht eingetreten. Drittens haette auch ein sauberes A ueber die Natur nichts gesagt, weil die Form von U in beiden Armen von Hand eingesetzt ist; der Hebelvergleich 4,68 gegen 0,15 vergleicht zwei Latten, nicht zwei Messungen. Der Bericht schliesst mit einem Fassung-2-Vorschlag GF-2 in sechs Punkten: K2 auf groebere Schrittweiten mit Mindestdifferenz, K6 an den Profilradius statt an L binden, K8 auf den historisch echten Fehler mit passender Schwelle, Schaetzer um ein quadratisches Glied erweitern, N2 als zweiten Codepfad statt als Gitterumkehr, und die Widersprueche zwischen 7.1, 9.3 und der K8-Zeile aufloesen.",
+  "sources": [
+    {
+      "path": "coordination/gesamtformel-20260921/gf-1-lauf/BERICHT-GF-1.md",
+      "role": "Bericht des Laufs",
+      "sha256": "bd945126cf00968ebe51c696311ecb7c293391f2a27d60aea140b221774798a0"
+    },
+    {
+      "path": "coordination/gesamtformel-20260921/gf-1-lauf/ERGEBNIS-GF-1.json",
+      "role": "Ergebnisdatei, jede Berichtszahl daraus ableitbar",
+      "sha256": "c1427494a6095ca84ae447cce2812843160f5d392683edc377e0a71b15fc5dc4"
+    },
+    {
+      "path": "coordination/gesamtformel-20260921/gf-1-lauf/gf_1.py",
+      "role": "Laufskript",
+      "sha256": "5d1dd0b26423c3e9b17a3a2e54d0a9c3c9da2346c721ea81a01dbc93234fa4b6"
+    },
+    {
+      "path": "coordination/gesamtformel-20260921/gf-1-lauf/startsignal-gf-1.txt",
+      "role": "Startsignal mit Wortlaut, Zeit, Grund und den gebundenen Hashes",
+      "sha256": "6f3326b697db419aab9c13619b9d6e7283e4d7e166be0218d3099d8a4c184bb9"
+    },
+    {
+      "path": "coordination/gesamtformel-20260921/GF-1-VERTRAG.md",
+      "role": "gerechneter Vertrag",
+      "sha256": "f59414607a8a28b6bc64e5f73689fb1007db2a161c427af963afbcce62df826d"
+    },
+    {
+      "path": "coordination/gesamtformel-20260921/REVIEW-gesamtformel.md",
+      "role": "S0-Fremdreview der Grundlagenpapiere (Qwen, DeepSeek)",
+      "sha256": "fa76f0daf41b4d8577e98ecc6a92b72a638168be397aebf88a9a85f225495262"
+    },
+    {
+      "path": "coordination/gesamtformel-20260921/kontrolle/KONTROLLE-GF1.json",
+      "role": "hashgebundene Vorabzahlen des Vertrags",
+      "sha256": "b91357c0c603e15b5411f64ec147d2517787eb0e014dbd4effe2a31ed4ce49af"
+    }
+  ],
+  "recorded_at": "2026-09-21T00:04:48.442489+00:00"
+}

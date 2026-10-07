@@ -1,0 +1,46 @@
+{
+  "id": "claude-mem-b3-20260917",
+  "time": "2026-09-17T03:11:15+02:00",
+  "time_kind": "completed",
+  "author": "claude-subagent (Anthropic, Fable 5.1), Leihgabe claude-primary, Auftrag Finn 17.09.2026",
+  "topic": "theory",
+  "status": "reported",
+  "title": "MEM-B3 (Folgevertrag zu Silber MEM-B1/B2): Der Vorhersagegewinn je zusaetzlich sichtbarem Freiheitsgrad ist monoton und saettigend (0,1 % Rauschen: NRMSE 0,371 -> 0,0103 -> 0,00078 -> 0,00058), beim vollstaendigen Zustand rauschfrei null (1e-15). Ausgang A.",
+  "question": "Wie gross ist der Vorhersagegewinn je weiterem sichtbaren Freiheitsgrad (Karte), wenn das Q-only-Fenster (Index 9 bis 16) 1, 2, 3 oder 4 der vier gekoppelten Oszillatoren zeigt, und ist er additiv oder saettigend und beim vollstaendigen Zustand null?",
+  "action": "Vertrag MEM-B3-VERTRAG.md (S0). Verborgene Freiheitsgrade mit den Paketfunktionen und Seeds 71001/71002/71003 regeneriert (K1: gespeicherte sichtbare Bahnen auf 1,2e-14, qtest/ptest exakt). Modelle je k: DE-k (lineare Direktvorhersage 8k -> 20, Ridge am Validierungs-NRMSE), Oracle-k (exakte Dynamik, regularisierter Zustandsschaetzer aus 8k Messungen), AR(8) des Pakets als Bezug; Rauschen 0 / 0,001 / 0,01 je Kanal, Seed 2026091703; Bootstrap-SD ueber 64 Testbahnen. Skript mem_b3.py auf .69 CPU (User-Unit fmhc-physics-mem-b3-20260917, 1,1 s). K0 (vier Hashes), K2 (Paket-AR(8) gekoppelt 0,474310 / 0,497224 auf 1e-12) bestanden.",
+  "result": "Gekoppelt, 0,1 % Rauschen: DE 0,3710 / 0,01031 / 0,000775 / 0,000584 (k = 1..4), Oracle 2,49 / 0,01068 / 0,000772 / 0,000581; Gewinn je Karte DE 36 / 13 / 1,33, Oracle 233 / 14 / 1,33 (saettigend). 1 % Rauschen: DE 0,418 / 0,0660 / 0,00736 / 0,00561, Oracle 24,3 / 0,0980 / 0,00790 / 0,00553. Rauschfrei k = 4: 1,3e-15 (DE), 2,0e-15 (Oracle). AR(8)-Bezug 0,479 / 0,488. Kontrollsystem ungekoppelt: Gewinn je Karte 1,00 (0,00055 bzw. 0,0054 fuer alle k). Auffaellig: Oracle-1 ist unter der hier gewaehlten schwachen Regularisierung schlecht konditioniert (2,5 bzw. 24), anders als das MEM-B2-Oracle mit isotropem Prior; das beruehrt den Ausgang nicht.",
+  "meaning": "HYPOTHESE-Ebene (Karten-Lesart): Jede weitere sichtbare Karte hilft, aber immer weniger; die zweite Karte bringt den groessten Sprung, die vierte fast nichts mehr (saettigend, nicht additiv). Im ungekoppelten System bringen Zusatzkarten nichts, wie erwartet. Aussage gilt nur fuer dieses lineare Vier-Moden-System des OpenAI-Pakets; kein physikalisches Gedaechtnis, keine Teilchendeutung. S2/S3 offen; keine Registerzeile.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260917/MEM-B3-VERTRAG.md",
+      "role": "Vertrag S0",
+      "sha256": "d1b54b5a2f529caf51d689ca8adceb79deae95489b9837368bcd97e8ae733ded"
+    },
+    {
+      "path": "coordination/vertraege-20260917/startsignal-mem-b3.txt",
+      "role": "Startsignal",
+      "sha256": "f907a2c57e6550f617e475fd8ed4a13f63caa2eee6fcd8439dfda8e58e178524"
+    },
+    {
+      "path": "coordination/vertraege-20260917/mem-b3-lauf/BERICHT-MEM-B3.md",
+      "role": "Bericht S1",
+      "sha256": "1bd357baffc6ccf152cbcdb1ec26fdb69b29868837c5262f64cb99a2b236f477"
+    },
+    {
+      "path": "coordination/vertraege-20260917/mem-b3-lauf/ERGEBNIS-MEM-B3.json",
+      "role": "Ergebnis S1",
+      "sha256": "1e109c774d2722b9010b10c5b50ea353b6986125e537a33617a5edce65e7c0df"
+    },
+    {
+      "path": "coordination/vertraege-20260917/mem-b3-lauf/mem_b3.py",
+      "role": "Skript",
+      "sha256": "42621f97ca85e6bdb1af8efca6bc5895e7095a595a4d53b8c8c5a6f826c26119"
+    },
+    {
+      "path": "coordination/review-gaia-memory-20260915/paket/results/memory_truth_coupled.npz",
+      "role": "Datensatz (eingefroren)",
+      "sha256": "cea8944532f8c5d6f170d3179844567a5ba2975f612936692dfeb66e8ee4d590"
+    }
+  ],
+  "recorded_at": "2026-09-17T01:11:17.460488+00:00"
+}

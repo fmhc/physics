@@ -1,0 +1,120 @@
+FADEN-KERN-1: Bindung oder Verschmelzung — unabhängige Aktenprüfung
+02.10.2026; particle_binding. Nur Lektüre/Papier, keine neuen Rechnungen,
+Interpreter, Tests oder Gitoperationen. Keine Ausführungsfreigabe erteilt.
+
+1. Belastbarer Schluss und genaue Voraussetzungen
+
+Für V=(chi²-1)²/4+(1+chi²)|phi|²-|phi|⁴+|phi|⁶/2 gilt im
+unbeschränkten dreidimensionalen Raum bei festem Q>0, P=J=0 und
+phi->0, chi->+1: Jeder zulässige endlichenergetische Zustand besitzt
+einen kozentrierten radialen Vergleich mit nicht größerer Energie.
+Das widerlegt einen notwendigen energetischen Vorteil einer räumlich
+getrennten Perlenkette. Es ist KEIN Nachweis, dass jede Kette dynamisch
+verschmilzt, und kein vollständiger Satz über lokale Metastabilität.
+
+Die Schritte aus [1] sind konsistent, mit folgenden Präzisierungen:
+• Bei I=Integral |phi|² minimiert phi_t=i[Q/(2I)]phi, chi_t=0 die
+  zeitliche kinetische Energie. Betragnehmen f=|phi| entfernt räumliche
+  Phasengradienten ohne Potentialänderung; die Gradientenergie steigt
+  nicht. Das neue reelle Profil mit uniformer Phasendrehung hat P=J=0.
+  Relative Phasen sind hier keine erhaltenen Teilchenetiketten. Vorgeschriebene
+  Ströme, Windung oder J≠0 würden eine andere Vergleichsklasse definieren.
+• chi->min(|chi|,1) ist eine zulässige Lipschitz-Abbildung: Gradientenergie
+  steigt nicht; für |chi|>1 sinken sowohl Doppelmulde als auch chi²f².
+  Der +1-Fernrand bleibt bestehen. Lokale negative chi-Bereiche sind im
+  gewählten Sektor kein Hindernis für diesen GLOBALEN Vergleich.
+• eta=1-chi liegt danach in [0,1]. In
+  E_Q=Q²/(4I)+Integral[|grad f|²+|grad eta|²/2+A(eta)
+                    +2f²-f⁴+f⁶/2-(2eta-eta²)f²]
+  bleiben Einzelfeldintegrale und I bei Schwarz-Umordnung erhalten;
+  Gradientintegrale sinken. Die monotone Funktion 2eta-eta² macht das
+  negative Überlappglied durch kozentrierte Umordnung nicht größer.
+  Erforderlich sind endliches I und alle Potential-/Gradientintegrale;
+  f in H1(R³) sowie eta in H1 mit geeignetem Fernrand genügen hier.
+  chi selbst liegt wegen chi->1 NICHT in H1(R³).
+
+Wichtige logische Grenze: E_radial<=E_Kette allein schließt einen exakt
+entarteten nicht-radialen globalen Minimierer noch nicht aus. Dafür fehlen
+Gleichheitsfall/Rigidität samt Regularität und ggf. Ausschluss von Plateaus.
+Ebenso fehlen Existenz/Kompaktheit eines Minimierers für das gewählte Q.
+Falls ein Minimum erreicht wird, liefert die Umordnung jedenfalls auch
+einen radial fallenden Minimierer. Die Formulierung „höchstens metastabil“
+ist ohne diese Zusatzschritte stärker als der explizit geführte Beweis.
+Umordnung ist keine infinitesimale erlaubte Abstiegskurve: eine lokale
+Barriere bzw. ein lokales Mehrkernminimum wird dadurch nicht ausgeschlossen.
+Feste Knoten/Federn des Graphmodells v2 fallen nicht unter diesen Satz.
+
+2. Was tatsächlich vorliegt
+
+[2] zeigt analytisch inf E_Q(100)<141.26<100sqrt(2) durch einen glatten
+Gaußtrial im Freiraum. Damit ist vollständige freie Ladung energetisch
+unterboten; Erreichen des Infimums und Spaltungsstabilität bleiben offen.
+
+[3] liefert im gekoppelten radialen Q100-Arm E/Q=1.38429332448,
+omega=1.24850481353 und min chi=0.39014165214 auf R16,h=.05.
+Ausführung laut Akte: .69/ubuntu-auto, CPU11, ein Thread, kein CUDA.
+Seine vorgegebenen Gitter-/Randdiagnosen bestehen. Gesamtpilot bleibt
+UNRESOLVED wegen des entkoppelten Arms; max. Feldrest dort nicht mit dem
+RMS-Tor verwechseln. Dies ist ein radialer Einzelkernkandidat, kein
+freier Zweikern-, Ladungstransfer- oder voller 3D-Stabilitätsversuch.
+
+[4] misst positive Kosten einer RELATIVEN Verschiebung von phi- und
+chi-Profil desselben Kerns (K_rel≈4.24632). [5] findet rückstellende
+Kurzzeitantwort in eingefrorener linearer l=1-Dynamik. Beide liefen laut
+Akten auf .69/CPU. Weder K_rel noch diese Antwort ist eine Bindungskraft
+zwischen zwei Q-Kernen. In den gezielt gelesenen Anschlussakten liegt
+kein ausgeführter frei relaxierter Zweikern-/Transfernachweis vor.
+
+3. Ein entscheidender, begrenzter Falsifikationstest — noch nicht gestartet
+
+H_C: Bei Q=100,P=J=0 existiert ein gleichphasiger stationärer Zweikern
+mit endlichem freiem Abstand, der ein lokales Minimum von E_Q ist,
+auch gegen gemischte Abstands-/Ladungstransferstörungen.
+Gegenhypothese: Der gefundene Kandidat hat in diesem Unterraum einen
+Abstieg, z.B. zur Vereinigung oder zu ungleicher Ladungsteilung.
+
+Ein freier voller 3D-Fest-Q-Start mit zwei Maxima; keine Kernpositions-,
+Teil-Q- oder Achsensymmetriebedingung. Wird kein stationärer Zweikern
+gefunden, ist nur dieser Suchversuch negativ/unentschieden, keine
+Nichtexistenz bewiesen. Am etwaigen Kandidaten (f0,chi0) mit I0:
+  g_ab=f0+a*u_d+b*u_q,
+  f_ab=sqrt(I0/Integral g_ab²)*g_ab,
+  chi_ab=chi0+a*v_d,
+  phi=f_ab, phi_t=i[100/(2I0)]f_ab, chi_t=0.
+u_d,v_d entstehen durch denselben glatten lokalen Verschiebungsvektor,
+der die beiden Maxima annähert/entfernt; außerhalb des Kerns Null.
+u_q=s(x)f0 mit glattem s, links positiv/rechts negativ, verändert die
+normierten Teilintegrale. Beide Profile bleiben frei im selben Vakuum.
+Diese Zustände erhalten exakt Gesamt-Q und P=J=0; keine separate
+Teil-Q-Normierung. Die zusätzliche/abgesenkte Energie wird ausgewiesen.
+
+Prüfe die neun (a,b)-Punkte eines kleinen vorab festgelegten symmetrischen
+3x3-Stencils und denselben mit halber Amplitude: 17 verschiedene Profile.
+Die gemischten Punkte sind nötig: positive Einzelkrümmungen schließen
+eine negative gemischte Richtung nicht aus. Energie, stationärer Rest,
+Q/P/J und tatsächlich geänderte Maxima/Teil-Q protokollieren. Genau die
+entscheidende Energiedifferenz auf feinerem Gitter und größerer Box
+gegenprüfen; Fehler kleiner als behaupteter Abstieg. Budgetdeckel vorab
+mit Koordination, keine Nachsuche bei Überschreitung. Noch keine Laufplanung.
+
+Ein belastbarer Abstieg falsifiziert H_C für diesen Kandidaten; für ein
+strenges lokales Gegenargument negative Ableitung/Hesse-Richtung gegen
+Residual- und Diskretisierungsfehler absichern, nicht nur einen entfernten
+tieferen Punkt finden. Kein Abstieg lässt H_C offen: Phasen-, Quer- und
+andere Feldmoden sowie höhere Ordnungen fehlen. Kein positiver Vollbeweis
+aus 17 Profilen. Ein globaler Bindungsvergleich erfordert zusätzlich
+inf_q[E1(q)+E1(100-q)] und freie Ladungsanteile, nicht nur 2E1(50).
+Die Stencil-Energien heißen Trialenergien. Ein per Abstandsconstraint
+gehaltener Zustand wäre erst bei verschwindender Constraintkraft und
+freiem Feldresiduum ein stationärer Verbund, kein „gebundenes Paar“
+allein wegen eines Minimums einer erzwungenen Abstandskurve.
+
+Gelesene lokale Anker (Pfade relativ zur Projektwurzel)
+[1] coordination/resonance-20260930/mixed-dimensional-composites/
+    ag-phy-min/BERICHT.txt, insbesondere §§2–6.
+[2–5] coordination/resonance-20260930/constituents-20261001/:
+    GAUSS-Q100-BEWEIS.txt;
+    radial-pilot/ERGEBNIS.txt und RESULT-REVIEW.txt;
+    relative-shift/ERGEBNIS.txt; dipole-dynamics/ERGEBNIS.txt.
+Zusätzlich gelesen: RUNDE-16/two-sides-review/codex/ARBEITSMODELL-V2.md
+unter coordination/runden-v3; keine Übertragung seiner Graphkräfte.

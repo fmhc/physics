@@ -1,0 +1,36 @@
+{
+  "id": "sp-2-s1-kartendeck-ausschluss-20260917",
+  "time": "2026-09-17T02:46:23+02:00",
+  "time_kind": "completed",
+  "author": "claude-worker-69 (Claude-Subagent, Anthropic, claude-fable-5-1), Stufe S1 auf .69 CPU, im Auftrag Finn",
+  "topic": "theory",
+  "status": "reported",
+  "title": "SP-2 S1: Belegungsgrenze im 16er-Ring erzeugt kein Nachbarloch in der Paarkorrelation; formal T durch Faktor N in der Normierungsformel des Vertrags",
+  "question": "Zeigt die stationaere Paarkorrelation g(r) eines Rings mit Q = 4 huepfenden Ladungseinheiten bei Belegungsgrenze Q_i <= 1 ein Loch bei r = 1 (g(1) < 1 - 4 sigma und unter dem Mittel der weiteren Abstaende), das ohne Grenze fehlt?",
+  "action": "Vertrag sp-2-kartendeck-ausschluss-VERTRAG.md (S0 vom selben Subagenten) gerechnet: Gillespie mit Seed 2026091701, 200 Realisierungen je Variante, sechs Varianten (Q in {4, 8} x Grenze in {1, Q, 2}), Fenster [50, 550], zeitgewichtet; exakte Aufzaehlung des stationaeren Zustands fuer Q = 4 (1820 / 3876 / 3620 Zustaende, numpy.linalg.solve); Kontrollen K0-K3. User-Unit fmhc-physics-sp-2-20260917 auf ubuntu-auto, CPUQuota 200 %, 80,5 s Wanduhr, 6,8e6 Ereignisse.",
+  "result": "Ausgang T (K0): die Nullkontrolle ohne Grenze liefert g = 0,0635 +- 0,0003 statt 1, weil die Vertragsformel g = N C/(Q(Q-1)) mit C = <sum Q_i Q_(i+r)>/N um den Faktor N = 16 zu klein normiert (Textfehler, im Nachtrag des Berichts belegt); Skript und Aufzaehlung folgen der Formel konsistent (exakt 1/16 ohne Grenze, 1/15 mit Grenze). K1 exakt (Erhaltung, max Q_i <= L, M = 0 bei L = 1), K2 exakt (pi gleichfoermig 1,6e-15; Multinomial 1,4e-12; Produktmass 1/n! 5,7e-12), K3 bestanden (alle |z| <= 3,4). Diagnose mit Faktor 16: ohne Grenze g(r) = 1,000, mit Grenze L = 1 g(r) = 16/15 = 1,0667 fuer alle r = 1..8 (Gillespie 1,067 +- 0,005 bei r = 1, 1,064 +- 0,005 bei r = 8), kein Loch bei r = 1; nach Abschn. 5 waere das B1. Transiente g(1, t) faellt vom Blockstart in ~10 Zeiteinheiten auf den stationaeren Wert, mit und ohne Grenze aehnlich.",
+  "meaning": "Die Onsite-Belegungsgrenze allein ist keine Wechselwirkung zwischen verschiedenen Knoten: der stationaere Zustand ist fuer alle drei Grenzen ein Produktmass (bedingt auf die Gesamtladung), also ist g(r) fuer r >= 1 abstandsunabhaengig, wie in Abschn. 4 vorab erwartet und durch die Aufzaehlung exakt bestaetigt. Ein 'Loch bei kurzem Abstand' braeuchte eine nachbarabhaengige Sprungregel (anderer Vertrag). Formal T wegen des Faktors N in der Normierungsformel; Fassung 2 (nur Formel M1) und Neustart entscheidet claude-primary. Keine Aussage ueber Teilchen, Spin oder Quantenstatistik.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260916/sp-2-lauf/BERICHT-SP-2.md",
+      "sha256": "2d34acf34a7975659122dfd7ebeba7faa1a8cacb77a6d2ae209daa68a80f0dc9"
+    },
+    {
+      "path": "coordination/vertraege-20260916/sp-2-lauf/ERGEBNIS-SP-2.json",
+      "sha256": "89c4833f01e0a88189fcf3f56bc95fb55e2a7748b74cd96b4019e65976953c58"
+    },
+    {
+      "path": "coordination/vertraege-20260916/sp-2-lauf/sp_2.py",
+      "sha256": "6d10a215d7618ac35b3c8e3b8d21132d13343f5092daf8d785a0812e9c80583b"
+    },
+    {
+      "path": "coordination/vertraege-20260916/sp-2-kartendeck-ausschluss-VERTRAG.md",
+      "sha256": "e20d28939fe6edc073a01b435d64d3c3115d4472bbca6dcdb4c7c1e8a4b6df24"
+    },
+    {
+      "path": "coordination/vertraege-20260916/startsignal-sp-2.txt",
+      "sha256": "53f882da6a982cf1353c315d69f324ddd728a03746f20c516bf4a411651ada9f"
+    }
+  ],
+  "recorded_at": "2026-09-17T00:47:57.357359+00:00"
+}

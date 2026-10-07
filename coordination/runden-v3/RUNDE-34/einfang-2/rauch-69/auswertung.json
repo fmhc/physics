@@ -1,0 +1,354 @@
+{
+ "befehl": "auswertung",
+ "start": "2026-10-03T16:56:29+0000",
+ "regeln": {
+  "R_einfang": 12.255099999999999,
+  "R_frei": 12.0,
+  "D_nah": 3.0,
+  "delta_ext": 2.0,
+  "sehne": 5,
+  "min_punkte": 10
+ },
+ "laeufe": {
+  "rauch-ik200": {
+   "name": "rauch-ik200",
+   "geo": "ikosaeder",
+   "v0": 0.0,
+   "b": 0.0,
+   "nu": 200,
+   "h": 0.2,
+   "dt": 0.05,
+   "T_ende": 10.0,
+   "vollstaendig": true,
+   "K_nominal": 0.0,
+   "K_eff": 3.1215469533663054e-06,
+   "E_rest": 119.91235632577852,
+   "punkte": 6,
+   "E_tot_abw_max": 6.182385078545849e-06,
+   "Q_tot_abw_max": 5.684341886080802e-14,
+   "ohne_karte": 0,
+   "strecken": [
+    {
+     "seg_von": 0.0,
+     "seg_bis": 10.0,
+     "v": null
+    }
+   ],
+   "begegnungen": [],
+   "nahe_durchgaenge": [],
+   "einfang": {
+    "eingefangen": false,
+    "spitze_ende": 0,
+    "d_ende": 19.999999997836383
+   },
+   "spitzen_auf_spiegelebene": [
+    0,
+    1,
+    9,
+    10
+   ],
+   "spiegel_abstand_max": 1.6951693382338817e-09,
+   "spiegel_abstand_max_alle_karten": 1.6951693382338817e-09
+  },
+  "rauch-ik25": {
+   "name": "rauch-ik25",
+   "geo": "ikosaeder",
+   "v0": 0.1,
+   "b": 0.0,
+   "nu": 84,
+   "h": 0.2976190476190476,
+   "dt": 0.1,
+   "T_ende": 700.0,
+   "vollstaendig": true,
+   "K_nominal": 0.6040651487865117,
+   "K_eff": 0.6395621707847852,
+   "E_rest": 119.90617315351618,
+   "punkte": 351,
+   "E_tot_abw_max": 0.0037462936723784424,
+   "Q_tot_abw_max": 5.968558980384842e-13,
+   "ohne_karte": 0,
+   "strecken": [
+    {
+     "seg_von": 0.0,
+     "seg_bis": 4.0,
+     "v": null
+    },
+    {
+     "seg_von": 222.0,
+     "seg_bis": 522.0,
+     "v": 0.0639091114562319,
+     "t_von": 222.0,
+     "t_bis": 522.0,
+     "punkte": 151,
+     "sehnen": 30,
+     "Q_ball": 149.70867866447514,
+     "E_ball": 120.21605134041158,
+     "atmung_rel": 0.018091025240622585,
+     "S_max_mittel": 1.0560434580555162,
+     "K": 0.24517535963195672,
+     "E_innen": 0.2834864613140705
+    }
+   ],
+   "begegnungen": [
+    {
+     "spitze": 0,
+     "t_ein": 6.0,
+     "t_aus": 220.0,
+     "offen_am_ende": false,
+     "spitzenwechsel": false,
+     "d_min": 0.3168794932994562,
+     "t_min": 100.0,
+     "durchgaenge": 1,
+     "t_minima_nah": [
+      100.0
+     ],
+     "wenden": 0,
+     "d_wenden": [],
+     "v_vor": null,
+     "K_vor": null,
+     "v_nach": 0.0639091114562319,
+     "K_nach": 0.24517535963195672,
+     "nah": true
+    },
+    {
+     "spitze": 10,
+     "t_ein": 524.0,
+     "t_aus": 700.0,
+     "offen_am_ende": true,
+     "spitzenwechsel": false,
+     "d_min": 0.18842905139340038,
+     "t_min": 656.0,
+     "durchgaenge": 1,
+     "t_minima_nah": [
+      656.0
+     ],
+     "wenden": 0,
+     "d_wenden": [],
+     "v_vor": 0.0639091114562319,
+     "K_vor": 0.24517535963195672,
+     "v_nach": null,
+     "K_nach": null,
+     "nah": true
+    }
+   ],
+   "nahe_durchgaenge": [
+    {
+     "spitze": 0,
+     "t_ein": 6.0,
+     "t_aus": 220.0,
+     "offen_am_ende": false,
+     "spitzenwechsel": false,
+     "d_min": 0.3168794932994562,
+     "t_min": 100.0,
+     "durchgaenge": 1,
+     "t_minima_nah": [
+      100.0
+     ],
+     "wenden": 0,
+     "d_wenden": [],
+     "v_vor": null,
+     "K_vor": null,
+     "v_nach": 0.0639091114562319,
+     "K_nach": 0.24517535963195672,
+     "nah": true
+    },
+    {
+     "spitze": 10,
+     "t_ein": 524.0,
+     "t_aus": 700.0,
+     "offen_am_ende": true,
+     "spitzenwechsel": false,
+     "d_min": 0.18842905139340038,
+     "t_min": 656.0,
+     "durchgaenge": 1,
+     "t_minima_nah": [
+      656.0
+     ],
+     "wenden": 0,
+     "d_wenden": [],
+     "v_vor": 0.0639091114562319,
+     "K_vor": 0.24517535963195672,
+     "v_nach": null,
+     "K_nach": null,
+     "nah": true
+    }
+   ],
+   "einfang": {
+    "eingefangen": false,
+    "spitze_ende": 10,
+    "d_ende": 6.375969586187647,
+    "t_c": 520.0,
+    "wenden": 0,
+    "d_wenden": []
+   },
+   "spitzen_auf_spiegelebene": [
+    0,
+    1,
+    9,
+    10
+   ],
+   "spiegel_abstand_max": 5.062839036895639e-12,
+   "spiegel_abstand_max_alle_karten": 0.04390274054520216
+  },
+  "rauch-ik40ruh": {
+   "name": "rauch-ik40ruh",
+   "geo": "ikosaeder",
+   "v0": 0.0,
+   "b": 0.0,
+   "nu": 134,
+   "h": 0.29850746268656714,
+   "dt": 0.1,
+   "T_ende": 100.0,
+   "vollstaendig": true,
+   "K_nominal": 0.0,
+   "K_eff": 1.926456420164868e-06,
+   "E_rest": 119.90606212806404,
+   "punkte": 51,
+   "E_tot_abw_max": 0.00010031555532918901,
+   "Q_tot_abw_max": 1.1368683772161603e-13,
+   "ohne_karte": 0,
+   "strecken": [
+    {
+     "seg_von": 0.0,
+     "seg_bis": 100.0,
+     "v": 1.9106571324938633e-08,
+     "t_von": 20.0,
+     "t_bis": 100.0,
+     "punkte": 41,
+     "sehnen": 8,
+     "Q_ball": 149.99986191408786,
+     "E_ball": 119.90600507393879,
+     "atmung_rel": 0.0003719517520476711,
+     "S_max_mittel": 1.056888500204963,
+     "K": 2.662447117013014e-14,
+     "E_innen": 4.663320415156803e-05
+    }
+   ],
+   "begegnungen": [],
+   "nahe_durchgaenge": [],
+   "einfang": {
+    "eingefangen": false,
+    "spitze_ende": 0,
+    "d_ende": 19.999999907125922
+   },
+   "spitzen_auf_spiegelebene": [
+    0,
+    1,
+    9,
+    10
+   ],
+   "spiegel_abstand_max": 6.927791673660977e-14,
+   "spiegel_abstand_max_alle_karten": 6.927791673660977e-14
+  },
+  "rauch-torus": {
+   "name": "rauch-torus",
+   "geo": "torus",
+   "v0": 0.15,
+   "dt": 0.1,
+   "T_ende": 240.0,
+   "vollstaendig": true,
+   "K_nominal": 1.3721453098978764,
+   "K_eff": 1.3686493296828957,
+   "E_tot_abw_max": 0.00016411201264077135,
+   "Q_tot_abw_max": 2.2737367544323206e-13,
+   "v_20_220": 0.1497639811968018,
+   "v_3800_4000": null,
+   "vx_gerade_20_220": 0.14976410550042354,
+   "vx_gerade_3800_4000": null,
+   "quer_drift_max": 6.750155989720952e-14,
+   "t_4000": 240.0,
+   "Q_ball_0": 149.9998774527192,
+   "Q_ball_4000": 149.9995973163587,
+   "Q_ball_rel_4000": -1.8675772625043052e-06,
+   "S_max_spanne": [
+    1.0545776447599462,
+    1.058433133757076
+   ]
+  }
+ },
+ "urteile": {
+  "E2-0": {
+   "eingetroffen": null,
+   "urteil": "nicht entscheidbar (Lauf fehlt oder zu kurz)"
+  },
+  "E2-1": {
+   "spitze": 0,
+   "d_min": 0.3168794932994562,
+   "t_min": 100.0,
+   "v_vor": null,
+   "v_nach": 0.0639091114562319,
+   "K_vor": null,
+   "K_nach": 0.24517535963195672,
+   "eingetroffen": true,
+   "v_nach_durch_v0": 0.639091114562319,
+   "v_nach_durch_v_vor": null,
+   "regel": "erste Begegnung des Hauptlaufs ist ein naher Durchgang (d_min < 3) und 0,60 <= v_nach/0,05 <= 0,80 (v_nach = Sehnen-Geschwindigkeit der folgenden freien Strecke)",
+   "proben": {
+    "rauch-ik200": {
+     "eingetroffen": null,
+     "urteil": "nicht entscheidbar (keine Begegnung)"
+    }
+   }
+  },
+  "E2-2": {
+   "eingetroffen": null,
+   "urteil": "nicht entscheidbar (T_ende 700.0 < 8000)",
+   "einfang": {
+    "eingefangen": false,
+    "spitze_ende": 10,
+    "d_ende": 6.375969586187647,
+    "t_c": 520.0,
+    "wenden": 0,
+    "d_wenden": []
+   },
+   "regel": "Hauptlauf bis T = 8000: Ball am Ende innerhalb R_halb + 6 = 12,26 einer Spitze, durchgehend seit t_c, und in [t_c, 8000] mindestens zwei Wenden (Maxima von d mit Hysterese 2)",
+   "proben": {
+    "rauch-ik200": {
+     "eingetroffen": null,
+     "urteil": "nicht entscheidbar (T_ende 10.0 < 8000)",
+     "einfang": {
+      "eingefangen": false,
+      "spitze_ende": 0,
+      "d_ende": 19.999999997836383
+     }
+    }
+   },
+   "durchgaenge_vergleich": {
+    "rauch-ik200": {
+     "haupt": 0,
+     "probe": 0,
+     "bis_t": 10.0
+    }
+   }
+  },
+  "E2-3": {
+   "eingetroffen": null,
+   "urteil": "nicht entscheidbar (weniger als 2 auswertbare Durchgaenge)",
+   "auswertbar": [],
+   "nicht_auswertbar": [
+    {
+     "lauf": "rauch-ik25",
+     "spitze": 0,
+     "t_min": 100.0,
+     "K_vor": null,
+     "K_nach": 0.24517535963195672
+    },
+    {
+     "lauf": "rauch-ik25",
+     "spitze": 10,
+     "t_min": 656.0,
+     "K_vor": 0.24517535963195672,
+     "K_nach": null
+    }
+   ],
+   "regel": "alle nahen Durchgaenge (d_min < 3, t_min <= 8000) der Laeufe rauch-ik25 und rauch-ik40ruh mit K davor und danach: Mittel von 1 - K_nach/K_vor >= 0,30 und jedes K_nach/K_vor <= 1,10; mindestens 2",
+   "proben": {
+    "rauch-ik200": {
+     "eingetroffen": null,
+     "urteil": "nicht entscheidbar (weniger als 2 auswertbare Durchgaenge)"
+    }
+   }
+  }
+ },
+ "ende": "2026-10-03T16:56:29+0000"
+}

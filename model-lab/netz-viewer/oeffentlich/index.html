@@ -1,0 +1,125 @@
+<!doctype html>
+<!-- SPDX-License-Identifier: CC-BY-4.0 AND Apache-2.0 -->
+<!-- SPDX-FileCopyrightText: 2026 Finn Malte Hinrichsen -->
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Vier Filme synthetischer Modellrechnungen auf dem gefüllten Tetraedernetz V: Schwerewelle, Lichtpuls an einer Masse, fallende Q-Bälle, Drehrahmen. Keine Messdaten, Arbeitsstand.">
+  <title>Netz-Ansicht · Vier Filme aus dem Tetraedernetz V · physics.fmhc.io</title>
+  <link rel="icon" href="bilder/zeichen.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="schriften.css">
+  <link rel="stylesheet" href="start.css">
+</head>
+<body>
+  <header class="kopf">
+    <div class="marke"><span>Netz-Ansicht</span><span class="marke-trenner"></span><span>physics.fmhc.io</span></div>
+    <h1>Vier Filme aus dem gefüllten Tetraedernetz&nbsp;V</h1>
+    <p class="einleitung">Ein GPU-Rechenkern hat auf Finns gefülltem Tetraedernetz V vier Abläufe gerechnet: eine Schwerewelle,
+      einen Lichtpuls an einer Masse, zwei fallende Q-Bälle und einen Drehrahmen mit 360-Grad-Kern. Die Ansicht spielt die
+      gespeicherten Bilder im Browser ab; man kann drehen, schneiden und Bild für Bild blättern.
+      <strong>Synthetische Modellrechnungen auf einem Tetraedernetz, keine Messdaten. Arbeitsstand, keine begutachtete
+      Veröffentlichung.</strong></p>
+    <p class="englisch" lang="en">Four films computed by a GPU kernel on Finn’s filled tetrahedral net V: a gravitational wave,
+      a light pulse passing a mass, two falling Q-balls and a rotating frame with a 360° core. Synthetic model computations
+      on a tetrahedral net, not measured data. Work in progress, not peer-reviewed.</p>
+    <p class="vermerk">Synthetische Modellrechnungen · keine Messdaten · Arbeitsstand</p>
+  </header>
+
+  <main class="filme">
+    <article class="film">
+      <a class="plakat" href="ansicht.html?d=data/schwerewelle-v/manifest.json&amp;ebenen=netz,energie&amp;schnitt=scheibe,z,6,1&amp;blick=oben&amp;skala=bild&amp;tempo=4&amp;spielen=1">
+        <img src="bilder/schwerewelle-v.webp" width="1200" height="750" alt="Draufsicht auf eine Scheibe durch das Netz: ein Bogen aus farbigen Kanten (gedehnt orange, gestaucht blau) um die Mitte des Wellenpakets.">
+      </a>
+      <div class="film-text">
+        <span class="nr">01</span>
+        <h2>Schwerewelle</h2>
+        <p>Ein Schwerewellen-Paket (transversal-spurfrei, zirkular um z) läuft von der Boxmitte als Kugelschale nach außen.
+          Gezeigt: Dehnung der Kanten und Energie in einer Scheibe durch die Mitte.</p>
+        <p class="en" lang="en">A gravitational-wave packet (TT, circular about z) spreads from the box centre as a spherical
+          shell. Shown: edge strain and energy in a slice through the centre.</p>
+        <p class="daten">12×12×12 Zellen · 69 120 Ecken · 470 016 Kanten · 17 Bilder, t = 0 bis 4 a/c · 55 MB</p>
+        <p class="wege"><a class="los" href="ansicht.html?d=data/schwerewelle-v/manifest.json&amp;ebenen=netz,energie&amp;schnitt=scheibe,z,6,1&amp;blick=oben&amp;skala=bild&amp;tempo=4&amp;spielen=1">Film ansehen</a>
+          <a href="ansicht.html?d=data/schwerewelle-v/manifest.json">3D-Gesamtansicht</a>
+          <a href="data/schwerewelle-v/manifest.json">Manifest</a></p>
+      </div>
+    </article>
+
+    <article class="film">
+      <a class="plakat" href="ansicht.html?d=data/licht-linse-v/manifest.json&amp;ebenen=netz,energie,takt&amp;schnitt=scheibe,z,6,1.2&amp;blick=oben&amp;skala=bild&amp;tempo=8&amp;spielen=1">
+        <img src="bilder/licht-linse-v.webp" width="1200" height="750" alt="Draufsicht auf eine Scheibe: blaues Glimmen des Takts um die Masse in der Mitte, daneben das grüne Band der Lichtfront.">
+      </a>
+      <div class="film-text">
+        <span class="nr">02</span>
+        <h2>Lichtpuls an einer Masse</h2>
+        <p>Eine ebene Lichtfront läuft in +x durch das Netz an einer Masse vorbei; die Masse wirkt über Takt und Kantenlängen
+          (Takt überhöht). Gezeigt: Lichtenergie und Takt in einer Scheibe.</p>
+        <p class="en" lang="en">A plane light front travels along +x past a mass that acts through lapse and edge lengths
+          (lapse exaggerated). Shown: light energy and lapse in a slice.</p>
+        <p class="daten">20×12×12 Zellen · 115 200 Ecken · 783 360 Kanten · 37 Bilder, t = 0 bis 15 a/c · 66 MB</p>
+        <p class="wege"><a class="los" href="ansicht.html?d=data/licht-linse-v/manifest.json&amp;ebenen=netz,energie,takt&amp;schnitt=scheibe,z,6,1.2&amp;blick=oben&amp;skala=bild&amp;tempo=8&amp;spielen=1">Film ansehen</a>
+          <a href="ansicht.html?d=data/licht-linse-v/manifest.json">3D-Gesamtansicht</a>
+          <a href="data/licht-linse-v/manifest.json">Manifest</a></p>
+      </div>
+    </article>
+
+    <article class="film">
+      <a class="plakat" href="ansicht.html?d=data/qball-fall-v/manifest.json&amp;ebenen=netz,skalar_betrag2,takt&amp;schnitt=scheibe,y,6,1.2&amp;blick=vorn&amp;tempo=4&amp;spielen=1">
+        <img src="bilder/qball-fall-v.webp" width="1200" height="750" alt="Blick von vorn auf eine Scheibe: zwei leuchtende Q-Bälle zwischen einem warmen Takt-Band oben und einem blauen unten.">
+      </a>
+      <div class="film-text">
+        <span class="nr">03</span>
+        <h2>Zwei fallende Q-Bälle</h2>
+        <p>Zwei Q-Bälle mit verschiedener Bindung in einem vorgegebenen Takt-Gefälle, metrisch gekoppelt.
+          Gezeigt: |φ|² und Takt, Blick von vorn auf eine Scheibe.</p>
+        <p class="en" lang="en">Two Q-balls with different binding fall in a prescribed lapse gradient, metrically coupled.
+          Shown: |φ|² and lapse, front view of a slice.</p>
+        <p class="daten">24×12×20 Zellen · 230 400 Ecken · 1 566 720 Kanten · 25 Bilder, t = 0 bis 200/m · 90 MB</p>
+        <p class="wege"><a class="los" href="ansicht.html?d=data/qball-fall-v/manifest.json&amp;ebenen=netz,skalar_betrag2,takt&amp;schnitt=scheibe,y,6,1.2&amp;blick=vorn&amp;tempo=4&amp;spielen=1">Film ansehen</a>
+          <a href="ansicht.html?d=data/qball-fall-v/manifest.json">3D-Gesamtansicht</a>
+          <a href="data/qball-fall-v/manifest.json">Manifest</a></p>
+      </div>
+    </article>
+
+    <article class="film">
+      <a class="plakat" href="ansicht.html?d=data/drehrahmen-360-v/manifest.json&amp;ebenen=rahmen,energie&amp;schnitt=scheibe,z,6,1&amp;blick=oben&amp;rahmenanteil=1&amp;skala=bild&amp;tempo=4&amp;spielen=1">
+        <img src="bilder/drehrahmen-360-v.webp" width="1200" height="750" alt="Draufsicht auf eine Scheibe: kleine farbige Achsenkreuze der Drehrahmen und ein grüner Energiering um den gedrehten Kern.">
+      </a>
+      <div class="film-text">
+        <span class="nr">04</span>
+        <h2>Drehrahmen mit 360-Grad-Kern</h2>
+        <p>Ein Rahmenfeld, dessen Kern in 30-Grad-Schritten bis 360 Grad gedreht und je Winkel relaxiert wird; danach eine
+          Störprobe am 360-Grad-Zustand. Gezeigt: Rahmen als Achsenkreuze und Energie, Scheibe von oben.</p>
+        <p class="en" lang="en">A frame field whose core is turned in 30° steps up to 360°, relaxed at each angle, then
+          perturbed at 360°. Shown: frames as axis crosses and energy, slice seen from above.</p>
+        <p class="daten">12×12×12 Zellen · 69 120 Ecken · 470 016 Kanten · 17 Bilder, Winkel 0 bis 360°, dann Störprobe · 43 MB</p>
+        <p class="wege"><a class="los" href="ansicht.html?d=data/drehrahmen-360-v/manifest.json&amp;ebenen=rahmen,energie&amp;schnitt=scheibe,z,6,1&amp;blick=oben&amp;rahmenanteil=1&amp;skala=bild&amp;tempo=4&amp;spielen=1">Film ansehen</a>
+          <a href="ansicht.html?d=data/drehrahmen-360-v/manifest.json">3D-Gesamtansicht</a>
+          <a href="data/drehrahmen-360-v/manifest.json">Manifest</a></p>
+      </div>
+    </article>
+  </main>
+
+  <section class="hinweise">
+    <div>
+      <h3>Bedienung</h3>
+      <p>Maus: ziehen dreht, rechte Taste verschiebt, Rad zoomt. Tasten: Leertaste spielt oder pausiert, Pfeile blättern
+        Bild für Bild, T blendet die Seitentafeln aus. Links lassen sich Ebenen, Schnitt und Farbskalen wählen, rechts
+        stehen Lauf, Diagnose und Legende. Braucht einen Browser mit WebGL2; die Daten werden je Bild nachgeladen.</p>
+      <p class="en" lang="en">Drag to rotate, right-drag to pan, wheel to zoom; space plays or pauses, arrow keys step
+        frames, T hides the side panels. Requires WebGL2.</p>
+    </div>
+    <div>
+      <h3>Daten und Technik</h3>
+      <p>Jeder Film liegt als Ordner <code>data/&lt;name&gt;/</code> vor: <code>manifest.json</code> beschreibt Netz,
+        Größen, Bilder und Diagnose; Netz und Bilder sind float32- bzw. uint32-Felder in kleiner Byte-Reihenfolge.
+        Die Ansicht rechnet selbst keine Physik, sie zeigt nur die gespeicherten Bilder. Darstellung mit three.js r186
+        (WebGL2), Schrift IBM Plex. Lizenzen: <a href="LIZENZEN.txt">LIZENZEN.txt</a>.</p>
+    </div>
+  </section>
+
+  <footer class="fuss">© 2026 Finn Malte Hinrichsen · Texte, Abbildungen, Daten: <a href="https://creativecommons.org/licenses/by/4.0/deed.de">CC BY 4.0</a>
+    · Code: <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache-2.0</a> · Erstellt mit KI-Systemen · Arbeitsstand, keine
+    begutachtete Veröffentlichung · <a href="https://fmhc.io/impressum">Impressum</a> · <a href="https://fmhc.io/datenschutz">Datenschutz</a></footer>
+</body>
+</html>

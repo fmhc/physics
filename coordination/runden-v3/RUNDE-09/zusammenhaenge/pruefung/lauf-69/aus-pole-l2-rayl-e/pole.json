@@ -1,0 +1,274 @@
+{
+ "start": "2026-09-30T08:11:54+00:00",
+ "kommando": "pole",
+ "argumente": {
+  "kommando": "pole",
+  "beta": 0.5,
+  "x0": 0.79768,
+  "rho0": 1.744625,
+  "drho": 0.4049,
+  "cgam": 1.07,
+  "offsets": "0,2e-5,-2e-5,1e-4,-1e-4,3e-4,-3e-4,5e-4,-5e-4,2e-3,-2e-3,8e-3,-8e-3",
+  "w_drho": "-3e-4,-1e-4,-3e-5,0,3e-5,1e-4,3e-4",
+  "w_dx": 0.0005,
+  "u_dx": "5e-4,1e-4",
+  "u_drho": 2e-05,
+  "u_n": 60,
+  "reserve": 90.0,
+  "rc": null,
+  "neu_legen": "ja",
+  "neu_profile": 3,
+  "u_drho_ohne_fit": 0.0005,
+  "pot": "poly",
+  "omega2_liste": null,
+  "xmin": 0.62,
+  "xmax": 0.905,
+  "dx": 0.02,
+  "abstand": 0.12,
+  "n_rho": 400,
+  "stapel": 3000,
+  "max_kand": 8,
+  "ast_tol": 0.03,
+  "n_wechsel_fein": 2,
+  "n_fein": 4,
+  "fein_fenster": 0.01,
+  "n_fein_rho": 81,
+  "dateien": "",
+  "geraet": "cpu",
+  "out": "aus-pole-l2-rayl-e",
+  "budget": 540.0,
+  "omega2": "0.69,0.71",
+  "l": "2",
+  "h": "0.02",
+  "bereich": "alles",
+  "n_gebunden": 300,
+  "n_resonanz": 700,
+  "n_flaeche": 160,
+  "n_kante": 240,
+  "kasten_im": -0.1,
+  "kontur_runden": 8,
+  "kontur_max": 6000,
+  "rho_max": 9.0,
+  "iter_newton": 25,
+  "iter_illinois": 30,
+  "null_eps": 0.001,
+  "dims": "1,1.25,1.5,1.75,2,2.25,2.5,2.75,3",
+  "start": null,
+  "ciurla": false,
+  "eta": "0,0.001,0.01",
+  "dr": "0.05,0.025,0.0125",
+  "T": 800.0,
+  "rmax": 200.0,
+  "rsd": 130.0,
+  "mess": 0.2
+ },
+ "ergebnisse": {
+  "0.69": {
+   "omega2": 0.69,
+   "omega": 0.8306623862918074,
+   "kante_unten": 0.16933761370819256,
+   "kante_oben": 1.8306623862918074,
+   "l": [
+    2
+   ],
+   "stufen": {
+    "0.02": {
+     "h": 0.02,
+     "f_rand": 1e-06,
+     "R_aus": 25.52,
+     "r_m": 3.72,
+     "f0": 1.065206442760061,
+     "S0": 1.134664765697543,
+     "r_cut": 21.36,
+     "grund": 1,
+     "klammer_s": 3.6415315207705135e-14,
+     "rueckfall": false,
+     "streuung_cut": 1.9519941218959502e-12,
+     "sek_profil": 14.237500581890345
+    }
+   },
+   "kennzahlen": {
+    "Q": 537.4496193291923,
+    "E": 482.0206576109617,
+    "S0": 1.134664765697543,
+    "n_in": 1.8850466838311113,
+    "w_in": 1.5658373766626092,
+    "eps_in": 1.3605394165110454,
+    "p_in": 0.20529796015156387,
+    "R_Q": 4.082965216068417,
+    "R_halb": 3.7117687238444876,
+    "R_gradmax": 4.15,
+    "sigma_grad": 0.5095466720931867,
+    "sigma_laplace": 0.4191122151143176,
+    "sigma_kink": 0.3535533905932738,
+    "omega_R_haupt": 0.19556905192826748,
+    "omega_R_min": 0.1629054631431974,
+    "omega_R_max": 0.24205276727939404,
+    "omega_R_varianten": {
+     "grad/R_Q/w": 0.19556905192826748,
+     "grad/R_Q/eps": 0.20980599519896856,
+     "grad/R_halb/w": 0.22562763360766624,
+     "grad/R_halb/eps": 0.24205276727939404,
+     "laplace/R_Q/w": 0.17736719790099223,
+     "laplace/R_Q/eps": 0.19027909121796674,
+     "laplace/R_halb/w": 0.20462819013256758,
+     "laplace/R_halb/eps": 0.2195246162581703,
+     "kink/R_Q/w": 0.1629054631431974,
+     "kink/R_Q/eps": 0.17476457793865938,
+     "kink/R_halb/w": 0.18794371496080164,
+     "kink/R_halb/eps": 0.2016255525603579
+    }
+   },
+   "nullmoden": {
+    "2": {
+     "absD0": 0.3960031673428055,
+     "absD_eps": 0.3959896619299541,
+     "absD_2eps": 0.3959491446651407,
+     "verhaeltnis_2eps_eps": 0.9998976810035496,
+     "D0_durch_Deps": 1.000034105468273
+    }
+   },
+   "sek_je_durchlauf_B": 1.1576215596869588,
+   "gebunden_max_rel_imD": 0.0,
+   "ergebnisse": {
+    "0.02": {
+     "gebunden": [
+      {
+       "l": 2,
+       "rho": 0.15710406400419352,
+       "klammer": 6.342426583927363e-13
+      }
+     ],
+     "resonanzen": []
+    }
+   },
+   "kontur": {
+    "2": {
+     "umlauf_roh": -1.4359150931603223e-16,
+     "umlauf": 0,
+     "punkte": 767,
+     "max_sprung": 0.36344384437749944,
+     "aufgeloest": true,
+     "min_absD_rand": 0.043132595123388136,
+     "gefunden_newton": 0
+    }
+   },
+   "negativkontrolle": {
+    "absD_frei_an_gebundenen": [
+     0.9324999291346858
+    ],
+    "vorzeichenwechsel_frei_gebunden": 0,
+    "umlauf_frei": {
+     "2": -1.1043592643970545e-17
+    }
+   }
+  },
+  "0.71": {
+   "omega2": 0.71,
+   "omega": 0.8426149773176358,
+   "kante_unten": 0.1573850226823642,
+   "kante_oben": 1.842614977317636,
+   "l": [
+    2
+   ],
+   "stufen": {
+    "0.02": {
+     "h": 0.02,
+     "f_rand": 1e-06,
+     "R_aus": 25.7,
+     "r_m": 3.34,
+     "f0": 1.064926014281133,
+     "S0": 1.1340674158926998,
+     "r_cut": 21.400000000000002,
+     "grund": 1,
+     "klammer_s": 3.6415315207705135e-14,
+     "rueckfall": false,
+     "streuung_cut": 1.8984813721090177e-12,
+     "sek_profil": 14.067630084231496
+    }
+   },
+   "kennzahlen": {
+    "Q": 420.1653430241509,
+    "E": 383.93746434330603,
+    "S0": 1.1340674158926998,
+    "n_in": 1.911164379838194,
+    "w_in": 1.6103757305676336,
+    "eps_in": 1.3824134779255723,
+    "p_in": 0.22796225264206127,
+    "R_Q": 3.7440748735877745,
+    "R_halb": 3.333919392490333,
+    "R_gradmax": 3.7600000000000002,
+    "sigma_grad": 0.5092035219314297,
+    "sigma_laplace": 0.4267538711218049,
+    "sigma_kink": 0.3535533905932738,
+    "omega_R_haupt": 0.21953829994368385,
+    "omega_R_min": 0.18293301854342567,
+    "omega_R_max": 0.2819934821400778,
+    "omega_R_varianten": {
+     "grad/R_Q/w": 0.21953829994368385,
+     "grad/R_Q/eps": 0.23694902475211896,
+     "grad/R_halb/w": 0.26127294564304226,
+     "grad/R_halb/eps": 0.2819934821400778,
+     "laplace/R_Q/w": 0.2009802268385291,
+     "laplace/R_Q/eps": 0.21691918337741145,
+     "laplace/R_halb/w": 0.23918694776983973,
+     "laplace/R_halb/eps": 0.25815593006795573,
+     "kink/R_Q/w": 0.18293301854342567,
+     "kink/R_Q/eps": 0.19744072150483588,
+     "kink/R_halb/w": 0.21770893107250366,
+     "kink/R_halb/eps": 0.2349745757833093
+    }
+   },
+   "nullmoden": {
+    "2": {
+     "absD0": 0.4922780529869548,
+     "absD_eps": 0.49226528781597534,
+     "absD_2eps": 0.49222699107290563,
+     "verhaeltnis_2eps_eps": 0.9999222030396666,
+     "D0_durch_Deps": 1.000025931487138
+    }
+   },
+   "sek_je_durchlauf_B": 1.1574232373386621,
+   "gebunden_max_rel_imD": 0.0,
+   "ergebnisse": {
+    "0.02": {
+     "gebunden": [],
+     "resonanzen": [
+      {
+       "l": 2,
+       "rho": [
+        0.16886962538651576,
+        -0.000700873369074769
+       ],
+       "absD": 4.219857212752997e-16,
+       "iter": 4
+      }
+     ]
+    }
+   },
+   "kontur": {
+    "2": {
+     "umlauf_roh": 1.0,
+     "umlauf": 1,
+     "punkte": 777,
+     "max_sprung": 0.3902268174530337,
+     "aufgeloest": true,
+     "min_absD_rand": 0.01485466893576751,
+     "gefunden_newton": 1
+    }
+   },
+   "negativkontrolle": {
+    "absD_frei_an_polen": [
+     0.945818116936468
+    ],
+    "vorzeichenwechsel_frei_gebunden": 0,
+    "umlauf_frei": {
+     "2": -4.141347241488954e-17
+    }
+   }
+  }
+ },
+ "ende": "2026-09-30T08:14:14+00:00",
+ "sek": 139.899688356556,
+ "entfallen": []
+}

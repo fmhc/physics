@@ -1,0 +1,40 @@
+{
+  "id": "claude-ks-1-gen-s0-r1-r2-fassung3-20260925",
+  "time": "2026-09-25T06:12:01+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung; Vertragsautor KS-1-GEN (Anthropic, Opus 5.5); S0: astra (OpenAI) und lokales Qwen (.69)",
+  "topic": "binaries",
+  "status": "open",
+  "title": "KS-1-GEN (DR4-Erzeuger nach KS-1 A12.5): zwei S0-Runden zurueckgewiesen, Fassung 3 schirmt den blinden Nachbau technisch ab; wartet auf Docker-Freigabe",
+  "question": "Kann ein fremdes Haus allein aus Teil A den DR3-Export von KS-1 nachbauen, abgeschirmt von unseren Referenzen, als Qualifikation vor der DR4-Auswertung?",
+  "action": "Fassung 1 bis 3 des Erzeugervertrags mit Vorlaeufen auf der .69: Herkunft der DR3-Kette mit sha256, exakter Nachbau durch den Referenzerzeuger, 19 Fehlerarme und Gegenfaelle des Entscheiders. S0 Runde 1 und 2 durch astra und das lokale Qwen. Die Leitung hat geprueft, dass bubblewrap auf dem Laptop unmoeglich ist (unprivilegierte User-Namespaces gesperrt).",
+  "result": "Der Referenzerzeuger reproduziert alle 18 051 DR3-Paare und alle Felder bis 3,9e-16 relativ (x_k bis 4,2e-14). astra wies Runde 1 zurueck (Vergleichsregeln, Hauptwegpruefung, Unabhaengigkeit des Ausfuehrenden) und Runde 2 ebenso: Die Protokollpruefung liess unbekannte Ereignisse durch, die Modulausfuehrung war ungeschuetzt, und der Entscheider hatte vier Fehler. Qwen gab Runde 2 frei, fand aber in Runde 1 als einziges Haus die offene Typanhebung b32/b64. Fassung 3: Die Module laufen auf der .69 in einem unshare-Namensraum; im Beleg fehlen dort 13 von 13 Referenzpfaden, und der Autorenlauf ist 61 von 61 bitgleich. Der Entscheider besteht 45 von 45 Gegenfaellen, hoechstens zwei Sitzungen je Fassung. Die codex-Sitzung soll in einem Docker-Container laufen, ist aber noch nicht gebaut.",
+  "meaning": "Der Vertrag qualifiziert nur den DR3-Nachbau (Lauf Q). Lauf E fuer DR4 bleibt ein Entwurf, bis Finn den Weg fuer R_chance_align waehlt. Dabei gilt: R_chance_align haengt an der Relativgeschwindigkeit. Unter den Wegen (a) und (b) truegen schon die Zaehlungen zur Festlegung von KONFIG-DR4 Geschwindigkeitsinformation, unter (c) nicht. S0 Runde 3, die letzte regulaere, folgt erst nach Finns Docker-Freigabe und einer Formatprobe am echten Container. Lehre: Eine Abschirmung per Befehlsprotokoll erkennt nur bekannte Ereignisse; blinde Nachbauten brauchen eine technische Trennung.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260925/KS-1-GEN-VERTRAG.md",
+      "sha256": "35ede0fb32df0bf9ad3bd4ffe9fa08b3093035eea8d498ff43d2e0ecab25d544"
+    },
+    {
+      "path": "coordination/vertraege-20260925/ks-1-gen-s0/review-astra-f1/REVIEW-astra-KS-1-GEN-F1.md",
+      "sha256": "12c712086b58f8640e2187b266981dd0484b73baec6d34e38d908a07861951c0"
+    },
+    {
+      "path": "coordination/vertraege-20260925/ks-1-gen-s0/review-astra-f2/REVIEW-astra-KS-1-GEN-F2.md",
+      "sha256": "42116b1ac6287be647586694ddb0f4a05e8921d06e643f8a90ffc9ddd71eae7e"
+    },
+    {
+      "path": "coordination/vertraege-20260925/ks-1-gen-s0/review-qwen69-f1/antwort.md",
+      "sha256": "e7bab18c9f22e0ef5de31aff4b8c4b054957493c7565c9bf17a094b32b95783b"
+    },
+    {
+      "path": "coordination/vertraege-20260925/ks-1-gen-s0/review-qwen69-f2/antwort.md",
+      "sha256": "35774f581bc82114a64617b9f2efe07523ecd97dd6af9ceddd7b79ba5c271864"
+    },
+    {
+      "path": "coordination/vertraege-20260925/ks-1-gen-s0/SHA256SUMS",
+      "sha256": "1415bd058e84fc191d5d82dfccb2fcfd64e2d02435f4cd67ae049d098823e7bf"
+    }
+  ],
+  "recorded_at": "2026-09-25T06:12:51.123723+00:00"
+}

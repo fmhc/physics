@@ -1,0 +1,46 @@
+Zeitbereichsadapter, particle_core, 2026-10-02. Kein Interpreter/Test/Lauf.
+CLI (alle Argumente erforderlich):
+ --excitation EXISTING_EXCITATION_CODE
+ --dynamics EXISTING_TIMESTEP_HALF_CODE
+ --operator EXISTING_MODES_CODE
+ --outgoing EXISTING_OUTGOING_CODE
+ --response-code EXISTING_FINE_RESPONSES_CODE
+ --reference ORIGINAL_PREPARED_REFERENCE_DIRECTORY
+ --source-dir ORIGINAL_HARMONIC_SOURCE_OUTPUT
+ --prepared-dir FINE_PREPARED_OUTPUT
+ --response-dir FINE_RESPONSE_OUTPUT
+ --search-dir ORIGINAL_MODES_SEARCH_OUTPUT
+ --out NEW_EMPTY_OUTPUT_DIRECTORY
+
+Alle Code-/Manifesthashes sind feste Konstanten; konkrete NPZ-Dateien
+werden entlang vorhandener Manifeste geprüft. Neue h=.025-Eingaben über
+unverändertes responses.load_prepared, keine Wiederpräparation.
+excitation.initial/canonical und timestep-half.advance werden unverändert
+importiert. Ausschließlich der Adapter orchestriert die elf freien Arme.
+
+Lockstep pro Level: drei bzw fünf volle aktuelle Zustände, keine volle
+kanonische Zeittrajektorie. Volle Uodd-6Blocknorm alle.4 direkt am Paar.
+Messschalen mit jeweils zwei Halozentren alle.1; maximal etwa100MB rohe
+komplexe Ringdaten beim feinen Level, danach levelweise auswerten/freigeben.
+Anfang/Ende plus Ring-NPZ pro Arm, atomischer JSON-Teilstand alle4Zeit-
+einheiten und nach jedem fertigen Arm/Auswerteschritt. Keine Rohdaten
+aller vollständigen Gitter zu allen Samples im RAM.
+
+Angewendete Ritzphase=-arg(pivot), Antwort mal phase². Ueven bereits
+alpha²-skaliert: aus diesem Feld berechneter Fluss ist direkt Koeffizient;
+physischer PARITÄTSGERADER Bandfluss=alpha^4*Koeffizient. Das ist keine
+Behauptung identischer Gesamtflüsse der einzelnen +/-Arme.
+Extraktions-QA liefert Leakage je Basisfrequenz. Reserve nutzt diese
+Fehler multipliziert mit den tatsächlich extrahierten DC-/Grund-/Band-
+Koeffizienten und derselben radialen Aout-Abbildung, keine dimensionslose
+Testzahl als absoluten Feldfehler. Transient bedingte unmodellierte
+Spektralanteile werden nicht als rigoros beschränkt ausgegeben.
+dt-/h-/Amplitudengates beziehen sich auf Beträge wie im Plan; komplexe
+Differenzen zusätzlich deskriptiv. Zeitfenstervergleich ist komplex.
+
+Interner Prozess-CPU-Checkpoint280 ab vor Imports; externer Rootdeckel300
+bleibt nötig. QA-Fehler vor Armen erzeugen UNRESOLVED mit error und bisher
+gespeichertem Teilstand; Zeitlimit INCOMPLETE. Keine Retries. Positive
+Endentscheidung verlangt alle11Arme und sämtliche geplanten Messkombinationen.
+Reviewdateien PLAN/REVIEW-PLAN/REVIEW-NORMALIZATION gelesen. Vor Ausführung
+unabhängige Codelektüre und Root-Prüfung; Autor hat nichts gestartet.

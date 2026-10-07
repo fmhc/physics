@@ -1,0 +1,222 @@
+ZWEITE UNABHAENGIGE LESUNG: ZWEI SEITEN DES FELDES
+Datum: 2. Oktober 2026
+Quelle: /home/fmh/Downloads/zwei_seiten_des_feldes_formeln_arbeitsmodell.md
+Methode: reine Papierpruefung der vorliegenden Formeln; keine Numerik,
+keine Interpreter, keine Tests, keine Literaturbehauptung und kein QA-Siegel.
+Die Quelle wurde nicht geaendert.
+
+URTEIL
+Die Sammlung ist als Ideenskizze brauchbar, aber noch kein geschlossenes
+mathematisches Modell. Vor einem numerischen Benchmark muessen mindestens
+Kinetik-Konvention, Schnittobjekte/Ereignisse, differenzierbare Energie und
+freie versus vorgeschriebene Rotation festgelegt werden. Ein N-Scan kann
+fehlende Definitionen nicht ersetzen. Die angegebenen Vorbehalte zu
+Elementarteilchen, Eigenzeit, Lorentz-Invarianz und Gravitation sind richtig.
+
+1. KOMPLEXES FELD: KONJUGATION UND FAKTOR ZWEI (Abschnitte 1, 2, 8)
+Die Dichte (1/2) partial_mu Phi partial^mu Phi ist fuer ein komplexes Phi
+im Allgemeinen nicht reell. Sie passt nicht zu dem von Phi* abhaengigen
+Potential und der angegebenen Gleichung.
+Mit Signatur (+---) und Phi = u + i v sind zwei konsistente Alternativen:
+ A: L = partial_mu Phi* partial^mu Phi - V.
+    Dann Box Phi + partial V/partial Phi* = 0, wie angegeben.
+ B: L = (1/2) partial_mu Phi* partial^mu Phi - V.
+    Dann Box Phi + 2 partial V/partial Phi* = 0.
+Die zweite Konvention entspricht der diskreten Kinetik in Abschnitt 8.
+Nicht zwischen A und B wechseln, ohne das Potential ebenfalls anzupassen.
+Fuer das gedruckte V = m^2 r^2 - lambda r^4 + g r^6 gilt exakt:
+ partial V/partial Phi* = (m^2 - 2 lambda r^2 + 3 g r^4) Phi.
+Dagegen hat Abschnitt 2 nur einen kubischen, positiv geschriebenen Term.
+Er ist ein anderes Modell; weder die Sextik noch die Faktoren/ Vorzeichen
+sind aus Abschnitt 1 uebernommen. Das ist als explizite Alternative erlaubt,
+als bereits konsistente Diskretisierung nicht.
+Falls nach unten beschraenkte Sextik gewuenscht: g > 0 ist eine einfache
+hinreichende Bedingung fuer das asymptotische Verhalten. Sie legt noch
+keine stabile lokalisierte Loesung und kein gewuenschtes Vakuum fest.
+
+2. TICKDEFINITION UND GRENZWERT (Abschnitte 4, 22)
+Der Vergleich I_S(t-dt) != I_S(t) zaehlt jede Ortsverschiebung eines
+bestehenden Schnitts als Tick. Eine stetig wandernde Schnittkomponente
+liefert dann in jedem Schritt einen Tick: die Rate skaliert wie 1/dt.
+Die Summe ist zudem ein Zaehler im aktuellen Zeitfenster, nicht die
+kumulative Anzahl N_tick(t), die der Name nahelegt.
+Fuer isolierte Ereignisse mit Zeiten t_k ist der saubere Zaehler
+ N(t) = sum_k 1[t_k <= t].
+Seine Ableitung ist als Mass sum_k delta(t-t_k), keine regulaere endliche
+Funktion: abseits der Ereignisse ist der infinitesimale Quotient null;
+an Ereigniszeiten kann er divergieren oder konventionsabhaengig sein.
+Moegliche operationale Raten:
+ nu_Delta(t) = [N(t+Delta/2)-N(t-Delta/2)]/Delta
+bei einer FESTGELEGTEN physikalischen Fensterbreite Delta, oder eine
+stochastische bedingte Intensitaet ueber einen Erwartungswert. Fuer eine
+lokale Rate braucht es zusaetzlich ein raeumliches Fenster; pro Volumen
+sind die Einheiten dann anders.
+Zuerst Ereignisse definieren: Geburt, Tod, Fusion, Spaltung oder ein
+festgelegter orientierter Schwellendurchgang. Ortsbewegung allein ist kein
+solches Ereignis. Tracking, tangentiale Beruehrungen, gleichzeitige
+Mehrfachereignisse und Mindestpersistenz brauchen feste Regeln.
+Numerisches dt gegen null prueft Ereigniszeit-/Zaehlerkonvergenz bei
+festem Delta und festen geometrischen Toleranzen; nicht Delta mit dt
+identifizieren. Ein weiterer Toleranztest kann gesondert folgen.
+Die Eigenzeithypothese waere dimensionsklar d tau = (nu/nu_ref) dt mit
+einer Referenzrate. Sie bleibt postuliert; bei Ereignisstille ergibt sie
+Stillstand und ist ohne Transformationsgesetz keine relativistische
+Eigenzeit.
+
+3. SCHNITTENERGIE IST NICHT AUTOMATISCH EINE KRAFT (Abschnitte 3, 5)
+Die Objekte M_a sind nicht festgelegt: Kanten, volle Flaechen, deren
+Raender, volumige Koerper oder Isoflaechen des Feldes ergeben verschiedene
+Schnitte. Ein gueltig eingebetteter Zellkomplex hat bereits gemeinsame
+Unterzellen als Inzidenzen. Werden diese als Schnitte gezaehlt, entstehen
+triviale dauerhafte Kontakte. Bei sich ueberkreuzenden nichtinzidenten
+Zellen muss auch die Bedeutung von K als Zellkomplex geklaert werden.
+Die Dimensionsformel gilt fuer nichtleere transversale Schnitte glatter
+Untermannigfaltigkeiten. Sie garantiert nicht deren Existenz; negative
+rechte Seite bedeutet generisch leer. Raender, Ecken und Tangentialitaet
+brauchen separate Behandlung.
+Eine Energie beta mal exakter Punktzahl ist auf Bereichen fester
+Schnitttopologie konstant, also hat sie dort Gradient null. Beim
+Entstehen/Verschwinden springt sie; dort existiert die klassische Kraft
+-nabla E im Allgemeinen nicht. Sie erzeugt somit keine glatte Anziehung
+bereits vor dem Kontakt. Eine laengen- oder flaechengemessene Schnittmenge
+kann innerhalb einer festen Schnittklasse differenzierbar sein, verliert
+diese Eigenschaft aber moeglicherweise an Topologiewechseln.
+Fuer Newton-Dynamik entweder eine explizite glatte Nahkontaktenergie
+U_epsilon waehlen (deren Kraefte dann von epsilon und der gewaehlten
+Regularisierung abhaengen), oder ein vollstaendiges hybrides Kontaktmodell
+mit Sprung-/Impulsregeln definieren. Exakte Schnitte zunaechst nur als
+Diagnostik zu behandeln ist der kleinste konsistente Schritt.
+Bei verschiedenen Schnittdimensionen haben beta_S verschiedene Einheiten:
+Energie fuer Punktzahl, Energie/Laenge fuer Laenge usw. Ein Wechsel der
+Dimension innerhalb desselben S kann nicht kommentarlos denselben
+Koeffizienten und dieselbe Massdefinition behalten.
+
+4. POTENTIALENERGIE, GESAMTENERGIE UND KOPPLUNG (Abschnitte 5, 8, 16)
+Das E in S = integral (T-E) dt muss Potentialenergie U sein. Die erhaltene
+Gesamtenergie fuer ein autonomes konservatives Modell ist H = T + U.
+Wuerde E_field dort bereits die Feldkinetik enthalten, waere diese doppelt
+oder mit falschem Vorzeichen enthalten. Abschnitt 16 darf fuer den
+Energiefehler nicht bloss U(t) verwenden. Bei H_ref nahe null ist ein
+relativer Fehler Delta H/H_ref unbrauchbar; eine feste Energieskala angeben.
+Haengt U_field weder von x noch U_geom von Psi ab, sind Geometrie und Feld
+dynamisch entkoppelt. Das blosse Addieren beider Energien erzeugt keine
+Rueckwirkung. Etwa J_ij(x) in einem symmetrischen Feder-/Graphenterm kann
+eine solche Kopplung schaffen, muss dann aber in den Ortskraeften
+mitdifferenziert werden. Nichtreziproke J_ij entstehen nicht beliebig aus
+einer reellen paarweisen Potentialenergie mit der angegebenen Kinetik.
+Positive reine Laengen-/Flaechen-/Volumenterme bevorzugen Verkleinerung.
+Ohne Gegenterm, Zwang, Ladungs-/Drehimpulsbedingung o.ae. ist ein stabiler
+endlicher Radius nicht dadurch schon gesichert.
+
+5. HESSE-MATRIX, MASSE UND KOMPLEXE KOORDINATEN (Abschnitte 7, 10, 14)
+Die Matrix partial^2 E/(partial Psi_i partial Psi_j) ist fuer ein reelles
+Potential komplexer Variablen allein nicht die vollstaendige Hesse-Matrix.
+Es fehlen gemischte Psi/Psi*-Bloecke. Einfacher und eindeutig ist
+ q = (alle x-Komponenten, Re Psi_1, Im Psi_1, ...).
+Am STATISCHEN Gleichgewicht q0 mit grad U(q0)=0 gilt bei konstanter
+positiver Massenmatrix M:
+ M delta q_ddot = -K delta q,   K = Hess_q U(q0),
+ K v = omega^2 M v.
+Nur bei M=I oder nach Massennormierung ist omega^2 direkt Eigenwert der
+angegebenen Hesse-Matrix. Einheiten und physikalische Teilchenmasse sind
+nicht durch den Namen m oder einen rohen Hesse-Eigenwert bewiesen.
+Zwaenge brauchen Projektion auf den zulaessigen Tangentialraum;
+Symmetrie-Nullmoden sind vor einem Minimum-Stabilitaetsscore auszusortieren.
+Positive reduzierte Eigenwerte liefern lineare oszillatorische Stabilitaet
+im genannten konservativen statischen Fall. Nullmoden koennen ebenso
+Entartungen oder hoehere Instabilitaeten bedeuten; Null heisst nicht sicher
+Symmetrie. Bei rotierenden Zustaenden ist die statische Hesse-Matrix allein
+kein hinreichendes Kriterium. S(N)=min lambda_n bleibt ohne diese Angaben
+und vergleichbare Normierung kein brauchbarer allgemeiner Score.
+
+6. ROTATION IST ZUNAECHST KINEMATIK (Abschnitt 6)
+Die vorgegebenen Kreisbahnen erfuellen x_ddot = -Omega^2 x. Eine freie
+Loesung muessen sie erst sein, wenn die aus U abgeleitete Kraft genau
+-m Omega^2 x liefert, auch unter Beruecksichtigung der Feldrueckwirkung.
+R, Omega, J und sonstige Parameter sind daher nicht beliebig unabhaengig.
+Ebenso verlangt ein freier ruhender Zentralknoten resultierende Kraft null.
+Vorgeschriebene Rotation ist ein extern gefuehrtes Experiment mit moeglicher
+Arbeitszufuhr; Energieerhaltung des isolierten Teils gilt dann nicht einfach.
+Im rotierenden Bezugssystem entstehen Coriolis- und Zentrifugalterme. Die
+Stabilitaet verwendet das entsprechende gyroskopische System oder die
+Floquet-Matrix der echten periodischen Bahn im Inertialsystem. Auch ein
+Feldansatz A_i exp(i omega t) ist im reellen Zustandsraum zeitabhaengig;
+seine Stabilitaet ist keine gewoehnliche statische Hessian-Pruefung ohne
+Reduktion der Phasensymmetrie.
+
+7. WO SIND DIE ZWEI SEITEN? (Titel und Gesamtmodell)
+Explizit vorhanden ist ein komplexes Feld je Ort. Das sind zwei reelle
+Komponenten, aber noch keine definierten zwei physikalischen Seiten mit
+getrennter Dynamik und Wechselwirkung. Soll genau das gemeint sein, muss
+es gesagt werden. Soll dagegen ein echtes Zweifeldmodell gemeint sein,
+fehlen zwei Feldbezeichnungen, ihre Freiheitsgrade, die Kopplung und die
+Zuordnung der Schnitte zu diesen Feldern. Komplexe Konjugation allein
+ist kein zweites unabhaengiges Feld. Die folgende Erweiterung ist ein
+moeglicher Modellentscheid, keine aus der Quelle abgeleitete Pflicht.
+
+MINIMAL KONSISTENTER WIRKUNGSKERN MIT KOORDINIERTEN FAKTOREN
+Festes K; z_i = u_i + i v_i; m_i > 0, mu_i > 0; ungerichtete Paare i<j.
+ S = integral dt [sum_i m_i |x_dot_i|^2/2
+                  + sum_i mu_i |z_dot_i|^2/2 - U(x,z)].
+ U = U_geom(x)
+     + sum_i mu_i [a_i |z_i|^2/2 + b_i |z_i|^4/4 + c_i |z_i|^6/6]
+     + sum_(i<j) k_ij(x) |z_i-z_j|^2/2.
+Hier sind alle Summanden Potentialenergie, k_ij=k_ji reell, und x ist in
+einem Bereich glatter Geometrie zu behandeln. Fuer diese KONVENTION gilt
+ mu_i z_ddot_i = -2 partial U/partial z_i*,
+ also
+ mu_i z_ddot_i + mu_i(a_i+b_i|z_i|^2+c_i|z_i|^4)z_i
+               + sum_j k_ij(x)(z_i-z_j) = 0,
+ m_i x_ddot_i = -partial U/partial x_i.
+Bei mu_i=1, a_i=omega_i^2, b_i=lambda, c_i=0 und k_ij=J_ij
+ist dies exakt die Gleichung aus Abschnitt 2 fuer symmetrisches J.
+Das Original-Sextikpotential m^2 r^2-lambda r^4+g r^6 entspraeche bei
+mu_i=1 stattdessen a_i=2m^2, b_i=-4lambda, c_i=6g.
+Man darf alternativ den Kontinuumsfaktor ohne 1/2 verwenden; dann sind
+Kinetik und Potential gemeinsam neu zu normieren, nicht nur ein Term.
+
+Echtes Zweifeldmodell: z_i -> z_(i,+), z_(i,-), die genannten Feldterme
+und kinetischen Terme ueber s=+,- summieren, und beispielsweise
+ U_mix = sum_i eta_i |z_(i,+)-z_(i,-)|^2/2
+hinzufuegen. Die Gleichung fuer Seite s erhaelt dann den Term
+ + eta_i (z_(i,s)-z_(i,-s))
+auf der linken Seite; die zugehoerige mu_(i,s) bleibt vor der Beschleunigung.
+Dies spezifiziert reziproken Phasenaustausch, aber noch keine physikalische
+Interpretation der Seiten oder emergente Raumzeit. eta=0 ist die klare
+entkoppelte Gegenprobe. Energieerhaltung betrifft H=T+U inklusive U_mix.
+Schnitte sind in diesem Minimalkern Messgroessen. Erst nach Definition
+eines glatten U_epsilon oder von Kontaktregeln werden sie Energiebeitraege.
+
+WEITERE DEFINITIONEN VOR EINEM VERGLEICH
+- N muss durchgaengig aeussere Knoten oder Gesamtzahl sein; beim N+1-Ansatz
+  ist der Zustandsvektor aus Abschnitt 20 sonst um den Zentralknoten zu kurz.
+- D muss unterscheiden: Einbettungsdimension, Dimension des Zellkomplexes,
+  Schnittdimension und geschaetzte effektive Dimension. Der planare Ring
+  in R^3 ist nicht allein wegen der drei Koordinaten ein volumiges System.
+- P(d=k)=T_k/T ist nur normiert, wenn die Klassen eine disjunkte vollstaendige
+  Einteilung des gemessenen Zeitobjekts sind. Bei gleichzeitig verschiedenen
+  Schnittdimensionen stattdessen eine Sampling-/Gewichtungsregel festlegen;
+  der Zustand ohne Schnitt muss mitbehandelt werden.
+- sigma_I verwendet im Nenner eine feste Anzahl getrackter Lebenslaeufe,
+  nicht eine wechselnde momentane Schnittzahl. Bei null Tracks undefiniert.
+  Am Beobachtungsende lebende Komponenten sind rechtszensiert; ihre volle
+  Lebensdauer ist nicht gleich der bis dahin beobachteten Dauer.
+- corr(H,nu) ist fuer exakt erhaltenes H innerhalb eines konservativen
+  Laufs wegen Var(H)=0 undefiniert. U(t) oder eine Ensemblekorrelation ueber
+  verschiedene Anfangsenergien waeren verschiedene, klar zu benennende Fragen.
+- Ein kurzer exponentieller Abstandszuwachs beweist noch kein Chaos; auch
+  ein hyperbolischer Sattel liefert ihn. Lyapunov-Werte brauchen festgelegte
+  Phase-Space-Norm, Behandlung von Symmetrien und ausreichende Zeitdauer.
+- 'Moegliche Schnitte' im Nenner von T(N) muss vorab eine feste Kandidatenmenge
+  bezeichnen; Mehrfachschnitte koennen sonst dieselbe geometrische Komponente
+  vielfach zaehlen. N-Scans brauchen gleiche lokale Skalen/Kopplungsregeln,
+  damit mehr Kanten oder Gesamtenergie nicht bloss als N-Sondereffekt gelten.
+
+EMPFEHLUNG AN DIE KOORDINATION
+Zuerst diese Definitionen auf eine kleine geschlossene Modellkarte bringen.
+Der kleinste sinnvolle Benchmark prueft dann eine feste Geometrie mit
+konsistenter Feldwirkung und separat eine definierte Schnittdiagnostik.
+Ein grosser Tetraeder-bis-N-Scan ist vor diesen Entscheidungen verfrueht.
+Keine Aussage dieses Berichts belegt, dass 11 oder 19 ausgezeichnet sind,
+dass Schnitt-Ereignisse physikalische Eigenzeit erzeugen oder dass aus
+diesem klassischen Freiheitsgradsystem bekannte Teilchen folgen.

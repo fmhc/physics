@@ -1,0 +1,83 @@
+Unabhängige Ergebnislesung, 02.10.2026, particle_binding
+Nur Aktenlektüre und Hashprüfung; keine neue Rechnung oder Verfeinerung.
+
+Urteil: NUMERICALLY_UNRESOLVED_SENSITIVITY bleibt der richtige offizielle
+Ausgang. Die zeitlich verfeinerte Serie ist vollständig, verfehlt aber
+das vorab gesetzte räumliche Rest-Sensitivitätsgate. Weder Erfolg noch
+physikalische Widerlegung und kein rückwirkendes NO_CANDIDATE-Label.
+
+Provenienz und Umfang
+HALF-RESULT.json SHA256:
+97cfb7ff68bff7a64bb4fb0aaf44130e859f6689ad5482594e5209c79df6e89a.
+Tatsächlicher timestep-half.py-Hash466b25fb… stimmt mit RESULT-Bindung
+und reviewed Quelle überein. Sechs complete-Arme, je Referenz/Wolke für
+base(h=.1,dt=.01),space(h=.05,dt=.01),time(h=.1,dt=.005), bisT64.
+Der Status wird erst nach den Laufkontrollen und Referenzprüfungen durch
+classify gesetzt. Damit ist der frühere Energieabbruch dieser neuen
+Serie nicht wieder aufgetreten; das hebt den alten Fehlbefund nicht auf.
+Keine fehlenden zusätzlichen Arme oder budgetbedingte Teilserie.
+
+HALF-TIME.txt: user27.11+system.04CPU-s, wall27.17s,exit2;
+intern27.062505963CPU-s, PeakRSS37820KiB. .69/ubuntu-auto, CPU NumPy
+float64, kein CUDA. Exit2 ist der geplante Unentschiedenstatus, kein
+Beleg für Prozessabsturz. Keine automatische weitere Halbierung gestartet.
+
+Konkreter unabhängiger Gategegencheck
+Bei gemeinsamem Sample t57.6 lauten die Wolkenwerte:
+             base                 space
+ rphi        .25394166596738266    .24938563563399177
+ rchi        .4277971297823516     .42174412526169613
+Differenzen ungefähr.00455603 und.00605300: beide > unverändertes.004.
+Das liegt im vorgeschriebenen Fenster48..64 und reicht bereits zur
+Bestätigung des gemeldeten Sensitivitätsstatus; kein globaler Maximum-
+Suchlauf wurde für diesen Review durchgeführt. Der dazu gelesene Code
+prüft Raum und Zeit getrennt, noch vor den physikalischen Kandidatengates.
+Roots Übersicht nennt maximale Zeit-Restdifferenz≈.00155 und maximale
+Raum-Qcore-Differenz/Q0≈.000479; beides unter den jeweiligen Grenzen.
+Diese beiden globalen Maxima wurden hier nicht neu berechnet.
+
+Erhaltung an den ausdrücklich gegengelesenen Endsamples:
+Edrift base2.42628e-6,space2.41932e-6,time6.03144e-7 (<1e-5),
+Qdrift etwa4–7e-16 und Kernbilanz höchstens etwa1.2e-15.
+Dass alle sechs Arme complete sind und der normale Klassifikator erreicht
+wurde, ist zusammen mit dem geprüften run_arm-Pfad konsistent mit
+bestandenen Lauf-Erhaltungsgates an sämtlichen gespeicherten Samples.
+Gute Erhaltung allein garantiert keine räumlich konvergierten Feldreste.
+
+Deskriptiver Befund, ohne offiziellen Physikentscheid
+Am Ende besitzen alle drei Wolkenarme r50_density≈3.291 gegenüber
+anfangs≈8.701 und Qcore≈899.6–899.9 bei GesamtQ1100. Das beschreibt
+eine kompaktere Amplitudendichte mit weiterhin erheblicher Kernladung.
+Es beweist keine annähernd stationäre Lösung. BeiT64 liegen beispielsweise
+die base-Reste rphi≈.371,rchi≈.899,tphi≈.207,tchi≈.621, also weit über
+dem vorgesehenen.02; die anderen beiden Arme zeigen ähnlich große Werte.
+chi_first_cell≈.61 ist ebenfalls kein Bestehen des.2-Gates.
+Eine kleine Figur oder hohe Kernladung darf diese dynamischen Reste
+nicht ersetzen. Wegen des übergeordneten Sensitivitätsfehlers wird daraus
+aber kein nachträglicher gültiger negativer Gesamtklassifikator konstruiert.
+
+Zwei Interpretationsfallen vermeiden:
+- Riesige cloud-driftchi-Werte sind wegen chi_start-1=0/Floor1e-14
+  schlecht normierte Vergleichsdiagnosen, kein Nachweis einer gigantischen
+  physikalischen Instabilität. Sie sind auch kein Wolkenkandidatengate.
+- omega aus Qcore/(2Icore) ist ein momentaner Fitparameter einer deutlich
+  nichtstationären Wolke, nicht bereits deren stationäre Eigenfrequenz.
+
+Empfehlung: jetzt Mechanik/Papierfrage präzisieren, kein blindes Gitterrennen
+Die sinnvollste nächste Frage ist, warum starke Kompaktierung in einem
+konservativen Zweifeldsystem nicht automatisch eine stationäre Hülle
+ergibt. Ausgangsenergie liegt über dem stationären Kern bei gleichem Q;
+ohne Dissipation kann Energie zwischen phi-Amplitude, Phase und chi
+wechseln oder nach außen transportiert werden. Das sind plausible
+Mechanismen, keine aus diesem Lauf bereits getrennt gemessenen Ursachen.
+Eine Papieranalyse sollte Kernbewegung, periodische Atmung und auslaufende
+Anregungen sauber unterscheiden und eine künftige lokale Energiefluss-
+/Modenmessung definieren. Die bisherige Gesamterhaltung weist keine
+Strahlungskühlung nach; ein Energieverlust des ganzen Kastens findet nicht
+statt. Dafür keine neue Kopplung, Falle oder Dämpfung zur Rettung einsetzen.
+
+Vor weiterer Numerik gezielt entscheiden, welche offene Mechanismusfrage
+eine zusätzliche Messung beantworten könnte. Bloß h oderdt weiter senken,
+bis ein gewünschtes Label erscheint, ist durch diesen Befund nicht
+begründet. Der vorliegende Datensatz bleibt vollständig dokumentiert,
+räumlich sensitiv und physikalisch im festgelegten Sinn unentschieden.

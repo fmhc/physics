@@ -1,0 +1,82 @@
+Unabhängige Ergebnislesung und begrenzter Numerikvorschlag, 02.10.2026
+particle_binding; nur Dateilektüre/Hash, keine neue Rechnung oder Ausführung.
+
+1. Ergebnis: numerisch unentschieden, korrekt gestoppt
+MAIN-RESULT.json SHA256:
+c0c83d4815fdf760e4b85cde461acedd918a54b92480761100931538f4d897aa.
+Gebundener Code0ce21bee… entspricht dem geprüften V2-Hauptcode;
+Referenzmanifest8c33ace3… entspricht der neuen diskreten Präparation.
+Gespeicherter Status NUMERICALLY_UNRESOLVED und Fehler
+FloatingPointError('conservation gate') stimmen mit dem Codepfad überein.
+
+Vorliegende Evolutionsarme:
+- base/reference (h=.1,dt=.02): bisT64, complete=true.
+- base/cloud (h=.1,dt=.02): bisT40.8, complete=false.
+Weitere h/dt-Evolutionsarme fehlen. Deren initial_checks sind keine Läufe.
+Das vorgesehene Auswertefenster48..64 wurde für die Wolke nicht erreicht;
+classify hat keinen physikalischen Gesamtentscheid ausgeführt.
+
+AbbruchsampleT40.8:
+ Edrift=1.091105301354034e-5 > festes1e-5-Gate,
+ Qdrift=6.661338147750939e-16,
+ Kernladungsbilanz=4.3924460028806195e-16.
+BeiT40 lag Edrift noch9.559724950092274e-6. Somit ist der konkrete
+Trigger Energie, nicht Ladung/Fluss. Kragenenergie am Abbruch etwa
+5.15e-60 absolut, kein Hinweis auf das Kragengate als Auslöser.
+Die sehr gute Q-Bilanz ist erwartbar für den ladungserhaltenden Verlet-
+Algorithmus und ersetzt keine Energiekontrolle. Sie widerlegt auch
+keinen zeitlichen Diskretisierungsfehler der Energie.
+
+Ein vollständiger base-Referenzarm besagt zunächst, dass dessen Lauf-
+Erhaltungsgates durchliefen; er ersetzt nicht die fehlenden anderen Arme.
+Kompaktere Wolkenform und veränderte chi-Werte im Teilfenster erlauben
+kein Erfolgslabel. Ebenso ist der technische Abbruch keine Widerlegung
+einer späteren Verdichtung oder der Existenz von M2-Kernen.
+RESULT meldet ubuntu-auto/.69, NumPyfloat64 CPU, intern2.701905368CPU-s.
+Keine CUDA-Ausführung; externe Budgetquittung separat beiRoot.
+
+2. Vorgeschlagene einmalige Zeitverfeinerung: fachlich begründbar
+Eine NEUE, prospektiv gebundene Fassung mit genau
+ (base h=.1,dt=.01), (space h=.05,dt=.01), (time h=.1,dt=.005)
+ist ein gezielter Numeriktest auf den dokumentierten Energiegatefehler.
+Das ist keine Lockerung des1e-5-Gates und keine Wahl eines physikalisch
+günstigeren Anfangszustands. Verlet ist zweiter Ordnung; kleinere
+Zeitschritte sollten im aufgelösten Regime Zeitfehler verkleinern.
+Eine Verringerung exakt umFaktor4 ist hier weder garantiert noch als
+neues Bestehenstor vorzuschreiben. Raumfehler/nichtlineare Auflösung
+bleiben mögliche Grenzen; das bestehende h-/dt-Vergleichspaar bleibt nötig.
+
+Dies ist ausdrücklich eine neue Numerikrevision NACH dem ersten Befund,
+nicht der ursprüngliche vorgesehene Lauf und kein automatischer Restart.
+Originalplan verbot dt-Rettungsiteration innerhalb seines Laufs. Daher
+alten Status einfrieren, neue Begründung/Plan/Codehash vorab dokumentieren
+und getrennt durch Root koordinieren. Frühere Daten nicht überschreiben,
+nicht still als Bestandteil eines erfolgreichen neuen Gesamtlaufs führen.
+
+Prospektiv unverändert lassen:
+M2, Q1100, Gaußbreite8, ungechirpte phi_t=i sqrt2phi, chi=1;
+R120,RC12,T64, Schlussfenster48..64, alle Energie-/Referenz-/Physikgates,
+gleiche vorbereitete exact-grid-Referenzdateien und deren Herkunft.
+Keine neue Newton-Präparation erforderlich. Sechs neue komplette Arme
+der benannten dt-Fassung liefern den zusammengehörigen Vergleich;
+alte dt=.02-Daten bleiben nur separat markierte Zusatzdiagnose.
+Messabstand.8 bleibt80/160 Integratorschritte, also81 unveränderte
+Samplezeiten. Der V2-Zeitstrukturguard benötigt keine Änderung.
+
+Vor Ausführung nur geänderte LEVELS/Quelle unabhängig lesen und Inputs
+neu binden; bestehende geprüfte Identitäten/Classifierlogik bleiben
+inhaltlich dieselben. Eigener frischer Ergebnisordner, Ressourcen-/Peer-
+Abstimmung und expliziter Deckel durchRoot. Keine stille Verwendung
+des Restbudgets als Freigabe für beliebig viele Verfeinerungsversuche.
+Bei erneutem Gatefehler: wieder numerisch unentschieden, stoppen;
+kein dt=.0025, kein T-Kürzen, kein Threshold-Anheben als Automatismus.
+
+Zusatzdiagnose ohne neue Physikschwelle: Energiefehler und Kernobservablen
+an denselben vorhandenen Zeiten bis40.8 zwischen altem und neuem h=.1-
+Arm vergleichen. Sinkender Energiefehler stützt die Zeitfehlerdiagnose,
+beweist allein aber noch keine konvergierte Physik. Erst vollständige
+neue sechs Arme erlauben den unveränderten explorativen Klassifikator.
+Auch dessen späterer Erfolg wäre nur ein sampled radialer Kandidat;
+keine Langzeit-/3D-Stabilität oder Bildung aus freier Strahlung.
+
+Dieser Bericht ist Papierbewertung und Vorschlag, kein Startauftrag.

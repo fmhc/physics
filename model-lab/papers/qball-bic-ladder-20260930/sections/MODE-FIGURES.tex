@@ -1,0 +1,69 @@
+\subsection{Spatial mode shapes and phase-resolved reconstruction}\label{sec:mode-figures}
+The three-dimensional shape is obtained from the computed radial functions
+and the specified spherical harmonic, not from a point-particle picture.
+For real radial components and the positive-carrier convention of this paper,
+we display the rotating-frame perturbation per unit small amplitude,
+\begin{equation}
+ \psi_1(\mathbf{x},t)=Y_{l0}(\widehat{\mathbf{x}})
+ \left[\frac{A(r)}r e^{i\rho t}+\frac{B(r)}r e^{-i\rho t}\right].
+ \label{eq:mode-render}
+\end{equation}
+The full first-order field is $e^{i\omega t}(f+\epsilon\psi_1)$.
+Thus a stationary background density does not mean that the complex field
+is static. A localized nonzero oscillation can have zero linear radiation;
+this is distinct from removing the oscillation itself.
+
+Figures~\ref{fig:radial-mode} and~\ref{fig:dipole-phases} use stored numerical
+reconstructions near C0 and T2. They are not pointwise interval-certified
+eigenfunctions and are not a nonlinear three-dimensional time evolution.
+The T2 arrays were produced in the conjugate carrier convention; the time
+factors in Eq.~\eqref{eq:mode-render} conjugate that convention consistently.
+Interpolation is used only for display. All lengths are dimensionless model
+coordinates; no particle diameter or laboratory length is assigned.
+
+\begin{figure}[htbp]\centering
+\includegraphics[width=.97\linewidth]{radial-mode.pdf}
+\caption{C0 spherical mode at phase zero. Left: cutaway surfaces of constant
+$|\psi_1|$ at25\%,50\% and75\% of its displayed maximum; color identifies
+the amplitude level. Removing a quadrant exposes the radial shells
+and is only a drawing choice. Right: the background and the radial mode,
+separately normalized for comparison. The shells are level sets, not material
+surfaces. These are numerical reconstructions associated with C0, not new
+existence certificates.}\label{fig:radial-mode}
+\end{figure}
+
+\begin{figure}[htbp]\centering
+\includegraphics[width=.97\linewidth]{dipole-phases.pdf}
+\caption{T2 with a real $Y_{10}=\sqrt{3/(4\pi)}z/r$ angular factor.
+Top: three phases of the linear mode at a common amplitude-isosurface level.
+Bottom: the corresponding $y=0$ sections; phase is masked below1.5\% of the
+common displayed peak, because phase is undefined at a node. Color encodes
+$\arg\psi_1$ in the rotating frame, with a fixed common gauge and cyclic scale;
+it is neither a vector direction nor an additional charge. The opposite
+lobes are in antiphase. The changing quadratures follow the two computed
+radial sidebands and their analytic time factors, rather than a fresh
+nonlinear simulation.}\label{fig:dipole-phases}
+\end{figure}
+
+A spatial node of $\psi_1$ is not the BIC cancellation condition. The latter
+is a condition on the frequency and background parameters. To visualize
+this distinction, Fig.~\ref{fig:bic-winding} shows an archived C0 search using
+a normalized backward-Jost origin residual $F=(F_1,F_2)$.
+Its complex representation $F_1+iF_2$ is a device for tracking the winding
+of two real boundary residuals, not the phase of the physical field.
+The finite-radius numerical diagnostic predates and does not replace the
+existence enclosure in Section~\ref{sec:proof-model}.
+
+\begin{figure}[htbp]\centering
+\includegraphics[width=.97\linewidth]{bic-winding.pdf}
+\caption{The C0 cancellation in parameter space. Left: two sampled parameter
+loops lifted by $|F|$, colored by $\arg(F_1+iF_2)$; the star marks the numerical
+root. The reference coordinates are $\rho_{\mathrm{ref}}=1.744625038252254$ and
+$\omega^2_{\mathrm{ref}}=0.7976953125$. Right: their residual images and an offset
+control, with numerical windings$+1,+1,0$. Lines connect stored samples;
+no two-dimensional residual surface has been inferred from these loops.
+The historical calculation uses outer radius$44$. The plotted residual is
+neither radiated power nor an absolute outgoing-wave amplitude, and the
+third plotting coordinate is not a third physical-space dimension.}
+\label{fig:bic-winding}
+\end{figure}

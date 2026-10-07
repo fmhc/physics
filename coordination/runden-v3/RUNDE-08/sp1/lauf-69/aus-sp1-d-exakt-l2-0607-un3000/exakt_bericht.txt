@@ -1,0 +1,20 @@
+Runde 7 bic2 exakt Start 2026-09-30T05:53:34+00:00, Geraet cpu, torch 2.5.1+cu121
+=== exakt U = S - S^2 + 0.5 S^3, h = 0.01, f_rand = 1e-08, x0 = 0.606981, rho0 = 1.69404, l = 2
+  7 Profile (je bis 27.9 s), R = 34.22, r_m = 6.740
+  Newton (Pluecker) 13.4 s, konvergiert 7/7
+  Newton (direkt) 12.7 s, konvergiert 7/7, max |rho_direkt - rho_pluecker| = 3.00e-09
+  omega^2 | Re rho | Gamma Newton | Gamma Fluss | N_K | A_norm | arg A | sig_min/sig_2 | Wachstum
+    0.6064810 | 1.6928546692 | 1.4682e-05 | 1.4682e-05 | 9.41042e+03 | +3.383539e-03 -1.236524e-03i | -0.350374 | 1.0e-15 | 1.4e+07
+    0.6068810 | 1.6938031857 | 5.8219e-07 | 5.8219e-07 | 9.42196e+03 | +6.852198e-04 -2.128315e-04i | -0.301156 | 3.3e-15 | 1.4e+07
+    0.6069610 | 1.6939926565 | 2.3423e-08 | 2.3423e-08 | 9.42512e+03 | +1.378492e-04 -4.133881e-05i | -0.291351 | 2.4e-15 | 1.4e+07
+    0.6069810 | 1.6940400084 | 5.7817e-13 | 5.7817e-13 | 9.42595e+03 | +6.853602e-07 -2.037005e-07i | -0.288901 | 3.7e-15 | 1.4e+07
+    0.6070010 | 1.6940873535 | 2.2935e-08 | 2.2935e-08 | 9.42681e+03 | -1.365993e-04 +4.023583e-05i | +2.855140 | 5.0e-16 | 1.4e+07
+    0.6070810 | 1.6942766634 | 5.7671e-07 | 5.7671e-07 | 9.43039e+03 | -6.868695e-04 +1.950357e-04i | +2.864926 | 1.2e-15 | 1.4e+07
+    0.6074810 | 1.6952211733 | 1.4275e-05 | 1.4275e-05 | 9.45242e+03 | -3.457806e-03 +8.020584e-04i | +2.913667 | 7.3e-15 | 1.3e+07
+  Phasentest: Sprung zwischen Nachbarn - pi = +4.898e-03; Phase mod pi (rel. links aussen): +0.00e+00, +4.92e-02, +5.90e-02, +6.15e-02, +6.39e-02, +7.37e-02, +1.22e-01
+  Naechster Abstand zum Ursprung: d_min = 6.248e-12 bei omega^2 = 0.6069810999, |A'| = 7.1572e+00, d_min/|A'| = 8.730e-13 (Einheit omega^2), Fitrest 1.5e-08
+  s(x) = L(y_a) an L(y_b) = 0: 0.6068810: +3.4295e-04 (rho 1.693857674), 0.6069610: +6.9484e-05 (rho 1.694003610), 0.6069810: +3.4569e-07 (rho 1.694040063), 0.6070010: -6.9114e-05 (rho 1.694076502), 0.6070810: -3.5002e-04 (rho 1.694222132)
+  Nullstelle von W (linearer Fit, 25 Punkte): rho* = 1.6940364108, omega*^2 = 0.606979238, det J = 6.760e+03, cond J = 2.6e+03, Fitrest 2.8e-03, |Im|/|W| max 0.0e+00
+  Umlauf W auf Rechteck dx = 5.0e-04, drho = 2.734e-03 (6028 Punkte): -1.0000, groesster Phasensprung 0.282 rad (aufgeloest: True), min |W| = 1.657e-03
+  Umlauf W auf Rechteck dx = 1.0e-04, drho = 5.468e-04 (6024 Punkte): -1.0000, groesster Phasensprung 0.284 rad (aufgeloest: True), min |W| = 3.375e-04
+Ende 2026-09-30T05:58:31+00:00, 296.9 s; entfallen: nichts

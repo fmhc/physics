@@ -1,0 +1,44 @@
+Runde 5 R5-B rauch Start 2026-09-30T00:29:15+00:00 auf Quadro P4000, torch 2.5.1+cu121, Faktor 0.05
+
+mi (Bio 22, Chemie 10): periodische Box L = 200.0, S0 = |psi|^2 des Kondensats, instabil fuer S0 < 2/3; t_lin: rms(dS) >= 0,01 S0; verklumpt: (S_max - S_min)/S0 >= 1
+  Lauf | instabil | k_max Theorie (lambda) | k_dom | g_max Theorie | g gemessen | max |g_k - Theorie| | t_lin | t_klumpen | Klumpen Ende | Leerlaenge 0/Mitte/Ende | Q-Drift | E-Drift
+  [grob]
+  rauschen S0=0.15 delta=1e-06 saat=21 w=0.0 | True  | 0.4627 (13.58) | nan | 0.1357 | nan | nan | nan | nan | 0 | 0.0/0.0/0.0 | -2.8e-16 | +7.9e-12
+  rauschen S0=0.15 delta=1e-06 saat=22 w=0.0 | True  | 0.4627 (13.58) | nan | 0.1357 | nan | nan | nan | nan | 0 | 0.0/0.0/0.0 | +0.0e+00 | +7.9e-12
+  rauschen S0=0.35 delta=1e-06 saat=21 w=0.0 | True  | 0.5248 (11.97) | nan | 0.2390 | nan | nan | nan | nan | 0 | 0.0/0.0/0.0 | +0.0e+00 | +5.2e-08
+  rauschen S0=0.35 delta=1e-06 saat=22 w=0.0 | True  | 0.5248 (11.97) | nan | 0.2390 | nan | nan | nan | nan | 0 | 0.0/0.0/0.0 | +0.0e+00 | +5.2e-08
+  rauschen S0=0.55 delta=1e-06 saat=21 w=0.0 | True  | 0.4078 (15.41) | nan | 0.1618 | nan | nan | nan | nan | 0 | 0.0/0.0/0.0 | +0.0e+00 | +1.1e-08
+  rauschen S0=0.55 delta=1e-06 saat=22 w=0.0 | True  | 0.4078 (15.41) | nan | 0.1618 | nan | nan | nan | nan | 0 | 0.0/0.0/0.0 | +0.0e+00 | +1.1e-08
+  rauschen S0=0.63 delta=1e-06 saat=21 w=0.0 | True  | 0.2563 (24.51) | nan | 0.0598 | nan | nan | nan | nan | 0 | 0.0/0.0/0.0 | +0.0e+00 | +1.8e-08
+  rauschen S0=0.63 delta=1e-06 saat=22 w=0.0 | True  | 0.2563 (24.51) | nan | 0.0598 | nan | nan | nan | nan | 0 | 0.0/0.0/0.0 | +0.0e+00 | +1.8e-08
+  rauschen S0=0.72 delta=1e-06 saat=21 w=0.0 | False | nan (nan) | nan | 0.0000 | nan | nan | nan | nan | 0 | 0.0/0.0/0.0 | +0.0e+00 | +1.1e-12
+  rauschen S0=0.72 delta=1e-06 saat=22 w=0.0 | False | nan (nan) | nan | 0.0000 | nan | nan | nan | nan | 0 | 0.0/0.0/0.0 | +0.0e+00 | +1.1e-12
+  rauschen S0=0.85 delta=1e-06 saat=21 w=0.0 | False | nan (nan) | nan | 0.0000 | nan | nan | nan | nan | 0 | 0.0/0.0/0.0 | +0.0e+00 | +2.0e-12
+  rauschen S0=0.85 delta=1e-06 saat=22 w=0.0 | False | nan (nan) | nan | 0.0000 | nan | nan | nan | nan | 0 | 0.0/0.0/0.0 | -1.3e-16 | +2.0e-12
+  rauschen S0=0.35 delta=0.001 saat=21 w=0.0 | True  | 0.5248 (11.97) | 0.4375 | 0.2390 | 0.1622 | 0.0702 | 13.0 | nan | 0 | 0.0/0.0/0.0 | -1.5e-16 | +3.4e-08
+  rauschen S0=0.63 delta=0.001 saat=21 w=0.0 | True  | 0.2563 (24.51) | nan | 0.0598 | nan | nan | nan | nan | 0 | 0.0/0.0/0.0 | +0.0e+00 | +1.7e-08
+  loch S0=0.72 delta=1e-06 saat=21 w=2.0     | False | nan (nan) | 0.0314 | 0.0000 | nan | nan | 0.0 | nan | 4 | 6.3/12.3/18.5 | -1.8e-16 | -5.7e-06
+  loch S0=0.72 delta=1e-06 saat=21 w=8.0     | False | nan (nan) | 0.0314 | 0.0000 | nan | nan | 0.0 | nan | 4 | 25.1/29.9/37.7 | +0.0e+00 | -7.0e-06
+  loch S0=0.85 delta=1e-06 saat=21 w=2.0     | False | nan (nan) | 0.0314 | 0.0000 | nan | nan | 0.0 | nan | 0 | 6.3/9.9/13.7 | +0.0e+00 | -3.5e-06
+  loch S0=0.85 delta=1e-06 saat=21 w=8.0     | False | nan (nan) | 0.0314 | 0.0000 | nan | nan | 0.0 | nan | 4 | 25.1/27.5/33.5 | +1.6e-16 | -4.7e-06
+  [fein]
+  rauschen S0=0.15 delta=1e-06 saat=21 w=0.0 | True  | 0.4627 (13.58) | nan | 0.1357 | nan | nan | nan | nan | 0 | 0.0/0.0/0.0 | +0.0e+00 | +4.9e-13
+  rauschen S0=0.15 delta=1e-06 saat=22 w=0.0 | True  | 0.4627 (13.58) | nan | 0.1357 | nan | nan | nan | nan | 0 | 0.0/0.0/0.0 | +0.0e+00 | +4.9e-13
+  rauschen S0=0.35 delta=1e-06 saat=21 w=0.0 | True  | 0.5248 (11.97) | nan | 0.2390 | nan | nan | nan | nan | 0 | 0.0/0.0/0.0 | +0.0e+00 | +3.3e-09
+  rauschen S0=0.35 delta=1e-06 saat=22 w=0.0 | True  | 0.5248 (11.97) | nan | 0.2390 | nan | nan | nan | nan | 0 | 0.0/0.0/0.0 | +0.0e+00 | +3.3e-09
+  rauschen S0=0.55 delta=1e-06 saat=21 w=0.0 | True  | 0.4078 (15.41) | nan | 0.1618 | nan | nan | nan | nan | 0 | 0.0/0.0/0.0 | +0.0e+00 | +6.8e-10
+  rauschen S0=0.55 delta=1e-06 saat=22 w=0.0 | True  | 0.4078 (15.41) | nan | 0.1618 | nan | nan | nan | nan | 0 | 0.0/0.0/0.0 | +0.0e+00 | +6.8e-10
+  rauschen S0=0.63 delta=1e-06 saat=21 w=0.0 | True  | 0.2563 (24.51) | nan | 0.0598 | nan | nan | nan | nan | 0 | 0.0/0.0/0.0 | +0.0e+00 | +1.1e-09
+  rauschen S0=0.63 delta=1e-06 saat=22 w=0.0 | True  | 0.2563 (24.51) | nan | 0.0598 | nan | nan | nan | nan | 0 | 0.0/0.0/0.0 | +0.0e+00 | +1.1e-09
+  rauschen S0=0.72 delta=1e-06 saat=21 w=0.0 | False | nan (nan) | nan | 0.0000 | nan | nan | nan | nan | 0 | 0.0/0.0/0.0 | -1.7e-16 | +4.6e-14
+  rauschen S0=0.72 delta=1e-06 saat=22 w=0.0 | False | nan (nan) | nan | 0.0000 | nan | nan | nan | nan | 0 | 0.0/0.0/0.0 | +0.0e+00 | +4.6e-14
+  rauschen S0=0.85 delta=1e-06 saat=21 w=0.0 | False | nan (nan) | nan | 0.0000 | nan | nan | nan | nan | 0 | 0.0/0.0/0.0 | +0.0e+00 | +7.8e-14
+  rauschen S0=0.85 delta=1e-06 saat=22 w=0.0 | False | nan (nan) | nan | 0.0000 | nan | nan | nan | nan | 0 | 0.0/0.0/0.0 | -1.3e-16 | +7.8e-14
+  rauschen S0=0.35 delta=0.001 saat=21 w=0.0 | True  | 0.5248 (11.97) | 0.4375 | 0.2390 | 0.1621 | 0.0702 | 13.0 | nan | 0 | 0.0/0.0/0.0 | +0.0e+00 | -1.2e-09
+  rauschen S0=0.63 delta=0.001 saat=21 w=0.0 | True  | 0.2563 (24.51) | nan | 0.0598 | nan | nan | nan | nan | 0 | 0.0/0.0/0.0 | +1.9e-16 | +9.4e-10
+  loch S0=0.72 delta=1e-06 saat=21 w=2.0     | False | nan (nan) | 0.0314 | 0.0000 | nan | nan | 0.0 | nan | 4 | 6.2/12.3/18.5 | +0.0e+00 | -1.4e-06
+  loch S0=0.72 delta=1e-06 saat=21 w=8.0     | False | nan (nan) | 0.0314 | 0.0000 | nan | nan | 0.0 | nan | 4 | 25.0/29.8/37.7 | -2.0e-16 | -1.7e-06
+  loch S0=0.85 delta=1e-06 saat=21 w=2.0     | False | nan (nan) | 0.0314 | 0.0000 | nan | nan | 0.0 | nan | 0 | 6.2/9.9/13.7 | +0.0e+00 | -8.7e-07
+  loch S0=0.85 delta=1e-06 saat=21 w=8.0     | False | nan (nan) | 0.0314 | 0.0000 | nan | nan | 0.0 | nan | 4 | 25.0/27.4/33.5 | +0.0e+00 | -1.2e-06
+  L3 (k_dom, g, t_klumpen; nicht definierte zaehlen als nicht bestanden): 6 von 54
+mi: Dauer 1.4 s (davon Zeitentwicklung 1.3 s); Hochrechnung fuer Faktor 1: 25 s

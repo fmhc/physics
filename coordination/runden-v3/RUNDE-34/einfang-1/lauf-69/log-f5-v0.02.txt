@@ -1,0 +1,36 @@
+start 2026-10-03T16:06:50+00:00 spur=p4000a unit=fmhc-physics-klein-r34ef-f5-v0.02-160650
+Running as unit: fmhc-physics-klein-r34ef-f5-v0.02-160650.service; invocation ID: 753bf7bb312e46899c8af1aa7f5dbe0b
+torch 2.5.1+cu121, Geraet cuda (Quadro P4000)
+Netz n=5 h=0.3 R=60: 120876 Ecken, 119726 frei, Grad Spitze 5, Defekt 1.047198, Bauzeit bis jetzt 5.8 s
+statischer Ball: Q_lat 199.959996 E 157.25837339 omega 0.744852 c -1.6e-11 1.7e-14 res 4.8e-08 aussen 2 (2.6 s)
+/home/fmh/fmhc-physics-remote/runde34-einfang/einfang.py:144: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at ../aten/src/ATen/SparseCsrTensorImpl.cpp:53.)
+  Lt = torch.sparse_csr_tensor(torch.tensor(Lff.indptr, dtype=torch.int64), torch.tensor(Lff.indices, dtype=torch.int64),
+Start: E 157.31959689 Q 200.00000000 E_rest 157.28817043 K_eff 0.031426 K_nominal 0.031467 x -25.0002 Q_ball 199.999582
+t 100.0 x -23.0011 x_S -23.0010 E 157.319661 E_damp 1.718e-05 Q 199.999996 E_ball 157.319329 Q_ball 199.999563 S_max 1.0500 (2.69 ms/Schritt)
+t 200.0 x -21.0024 x_S -21.0025 E 157.319643 E_damp 3.089e-05 Q 199.999991 E_ball 157.319335 Q_ball 199.999576 S_max 1.0504 (2.76 ms/Schritt)
+t 300.0 x -19.0036 x_S -19.0036 E 157.319630 E_damp 3.447e-05 Q 199.999989 E_ball 157.319332 Q_ball 199.999587 S_max 1.0506 (2.65 ms/Schritt)
+t 400.0 x -17.0049 x_S -17.0046 E 157.319655 E_damp 3.567e-05 Q 199.999989 E_ball 157.319321 Q_ball 199.999544 S_max 1.0500 (2.60 ms/Schritt)
+t 500.0 x -15.0059 x_S -15.0059 E 157.319617 E_damp 3.618e-05 Q 199.999988 E_ball 157.319314 Q_ball 199.999579 S_max 1.0507 (2.56 ms/Schritt)
+t 600.0 x -13.0066 x_S -13.0066 E 157.319641 E_damp 3.643e-05 Q 199.999988 E_ball 157.319317 Q_ball 199.999556 S_max 1.0502 (2.54 ms/Schritt)
+t 700.0 x -10.9996 x_S -10.9993 E 157.319643 E_damp 3.656e-05 Q 199.999988 E_ball 157.319324 Q_ball 199.999562 S_max 1.0502 (2.53 ms/Schritt)
+t 800.0 x -8.8489 x_S -8.8475 E 157.319665 E_damp 3.666e-05 Q 199.999988 E_ball 157.319380 Q_ball 199.999602 S_max 1.0501 (2.52 ms/Schritt)
+t 900.0 x -1.8512 x_S -1.8332 E 157.318613 E_damp 3.675e-05 Q 199.999988 E_ball 157.318095 Q_ball 199.999388 S_max 1.0540 (2.51 ms/Schritt)
+t 1000.0 x 8.2235 x_S 8.2204 E 157.319736 E_damp 2.092e-04 Q 199.999835 E_ball 157.317110 Q_ball 199.997114 S_max 1.0459 (2.51 ms/Schritt)
+t 1100.0 x 10.1614 x_S 10.1609 E 157.318249 E_damp 1.143e-03 Q 199.998960 E_ball 157.316902 Q_ball 199.997578 S_max 1.0555 (2.50 ms/Schritt)
+t 1200.0 x 11.6980 x_S 11.6973 E 157.318380 E_damp 1.585e-03 Q 199.998534 E_ball 157.316719 Q_ball 199.996733 S_max 1.0449 (2.49 ms/Schritt)
+t 1300.0 x 13.1743 x_S 13.1736 E 157.317472 E_damp 2.075e-03 Q 199.998061 E_ball 157.316699 Q_ball 199.997221 S_max 1.0525 (2.49 ms/Schritt)
+t 1400.0 x 14.6406 x_S 14.6412 E 157.317360 E_damp 2.241e-03 Q 199.997904 E_ball 157.316554 Q_ball 199.996999 S_max 1.0517 (2.48 ms/Schritt)
+t 1500.0 x 16.1234 x_S 16.1230 E 157.317556 E_damp 2.364e-03 Q 199.997788 E_ball 157.316520 Q_ball 199.996603 S_max 1.0457 (2.48 ms/Schritt)
+t 1600.0 x 17.6081 x_S 17.6075 E 157.316922 E_damp 2.480e-03 Q 199.997680 E_ball 157.316350 Q_ball 199.997072 S_max 1.0553 (2.48 ms/Schritt)
+t 1700.0 x 19.0772 x_S 19.0777 E 157.317177 E_damp 2.654e-03 Q 199.997517 E_ball 157.316356 Q_ball 199.996577 S_max 1.0473 (2.47 ms/Schritt)
+t 1800.0 x 20.5486 x_S 20.5480 E 157.316873 E_damp 2.850e-03 Q 199.997333 E_ball 157.315928 Q_ball 199.996267 S_max 1.0495 (2.47 ms/Schritt)
+t 1900.0 x 22.0315 x_S 22.0311 E 157.316462 E_damp 2.960e-03 Q 199.997229 E_ball 157.316042 Q_ball 199.996734 S_max 1.0549 (2.47 ms/Schritt)
+t 2000.0 x 23.5120 x_S 23.5118 E 157.316949 E_damp 3.027e-03 Q 199.997168 E_ball 157.315836 Q_ball 199.995885 S_max 1.0447 (2.47 ms/Schritt)
+Ende: Ball bei |x| > 24 nach Austritt, t 2034.0, 2.47 ms/Schritt, Dauer 59.7 s, geschrieben /home/fmh/fmhc-physics-remote/runde34-einfang/lauf/ef-f5-v0.02.json
+Finished with result: success
+Main processes terminated with: code=exited/status=0
+Service runtime: 1min 298ms
+CPU time consumed: 1min 249ms
+Memory peak: 1.2M
+Memory swap peak: 0B
+ende 2026-10-03T16:07:50+00:00 rc=0 unit=fmhc-physics-klein-r34ef-f5-v0.02-160650

@@ -1,0 +1,58 @@
+Unabhängige Ergebnislektüre, particle_binding, 02.10.2026
+RESULT SHA256 a3f302b50f184ef2b7fdf9d92afb903068e22436d2b3547fa4248f80e9a56cc3
+Code SHA256 74ba12a56e60241a967c2ff143a6489adbd7b27a3b72ddeeb0d3d29fee3c43c6
+Gelesen gespeichertes JSON und TIME.txt gegen Plan/Code, keine Rechnung.
+Roh-NPZ liegen remote; deren im JSON gespeicherte Hashkette wurde hier
+nicht durch erneutes Laden der Rohfelder unabhängig reproduziert.
+
+UNRESOLVED ist der korrekte vorab definierte Ausgang. Alle elf Arme sind
+bisT128 vollständig, jeweils321 globale QA-Samples; alle drei Level und
+sechzehn Messkombinationen liegen vor, keine Exception. Exit2 bezeichnet
+hier das nicht bestandene Physik-/Signalkriterium, keinen Prozessabbruch.
+TIME: user167.60s, system1.12s, wall169.04s, maxRSS240212KiB. Interne
+CPU168.391s; der Lauf blieb unter dem300CPU-s-Deckel.
+
+Was besteht: Die gebundenen algebraischen Extraktions-/Flux-QAs bestehen;
+die volle stationäre Antwort wird durch den identischen Extraktionspfad
+mit relativen Fehlern ca.7.6–7.8e-7 zurückgewonnen. Kein globales Numerik-
+Gate löste einen Abbruch aus. Der gespeicherte maximale Fehler des
+ungeraden Anteils beträgt .0008918566 gegen .05: Norm des Unterschieds
+zur festen linearen Prognose, geteilt durch die volle komplexe kanonische
+6Block-Modennorm. Das ist weder Gesamtenergiedrift noch Außenbandfehler.
+
+Alle h-/dt-/Amplituden-BETRAGSvergleiche bestehen: maximal gespeicherte
+relative Werte .0104687/.00050879/.000019902 bei Grenzen .05/.05/.10,
+jeweils relativ zum zugeordneten stationären Sollbetrag. Komplexe Deltas
+stehen zusätzlich deskriptiv. Die vier physischen Bandflussverhältnisse
+groß/klein liegen nahe16; ihre Fehler gegen16 sind ca.3.3e-6 bis8.4e-6
+gegen .20. Das stützt die beobachtete quadratische Paritätsantwort und
+deren quartische Bandfluss-Skalierung, auch wenn diese Antwort nicht die
+stationäre Sollantwort ist. Die kleinere Amplitude besitzt weiterhin
+keine eigene h-/dt-Serie.
+
+Was eindeutig scheitert, in ALLEN16Messkombinationen:
+- komplexer Plusfeldfehler ca.5.28–9.27 statt<.10;
+- Incoming/Outgoing-Normverhältnis ca..179–.320 statt<.10;
+- relativer Bandenergieflussfehler ca.15.53–63.37 statt<.20;
+- Signalreserve:5*max(beobachtete Änderungen/Leckage)=.0010143574,
+  während die Sollamplitude nur ca.1.96–1.98e-5 beträgt.
+Alle acht komplexen Vergleiche der beiden festen Zeitfenster scheitern
+ebenfalls: relative Änderungen ca.6.34–10.33 statt<.10. Die große Reserve
+ist damit keine bloße Rundungsfrage. Eine gute Amplitudenskalierung ersetzt
+keinen dieser fehlenden Soll-/Fensternachweise.
+
+Zulässige Aussage: Die vollständige freie Kurzzeitserie zeigt eine sehr
+gut reproduzierte, amplitudeabhängig skalierende gerade Außenbandantwort,
+die in den vorab festgelegten Fenstern stark von der gespeicherten
+stationären erzwungenen Antwort abweicht und sich zwischen den Fenstern
+stark verändert. Die vorab verlangte Identifikation ist nicht gelungen.
+Die Daten bestimmen damit weder eine Lebensdauer noch asymptotische
+Stationarität oder vollständige Strahlungsfreiheit. Insbesondere ist ein
+im finiten Fenster extrahierter Incominganteil kein isolierter Nachweis
+einer Randreflexion; transiente/breitbandige Beiträge sind nicht zerlegt.
+Eine konkrete Ursache der Abweichung wird hier nicht bewiesen.
+
+Die zuvor kontrollierte stationäre erzwungene Antwort, der historische
+Moden-LokalisierungsFAIL und der ältere coarse-QA-Fail bleiben unverändert.
+Keine Fensteränderung, Verlängerung, Gateumwertung oder neue Rechnung
+folgt automatisch aus diesem Ergebnisreview.

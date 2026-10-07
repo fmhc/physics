@@ -1,0 +1,141 @@
+M2: BEGRENZTE NICHTLINEARE RÜCKKEHR ODER BERUHIGUNG
+particle_core, 2026-10-03. Entwurf, KEINE Lauf-/Codefreigabe.
+Status MACHBARKEIT_OFFEN: T96 deckt die bereits sichtbaren langsamen
+23..26-Zeitskalen nicht mehrfach ab. Messentwurf, kein bindenderHauptplan.
+Gelesen: ursprünglicher formation/PLAN, ROOT-QUESTION, refined-reference/
+TIMESTEP-HALF-PLAN, timestep-half.py, HALF-RESULT-REVIEW und Forschungsstand.
+Alte Seedinterpolation ist durch bestehende float64exactgrid-Referenzen
+ersetzt; keinerlei erneuteProfilrelaxation. FORMELN.txt gehört zumEntwurf.
+
+1. FORTSETZUNG UND BUDGET
+Nur bestehende T64-Endzustände fortsetzen, niemals0..64 neu rechnen.
+Fester neuerEndpunktT96; AbschnitteI=[64,80],II=[80,96].
+DreiWolkenarme: base(h=.1,dt=.01),space(.05,.01),time(.1,.005).
+Zusätzlich die drei passenden EXISTIERENDEN T64-Referenzendzustände bis96
+fortsetzen als Kontrollen von stationärerRotation/Integrator. Also6Arme,
+kein neuerStarttyp, keineUmweltkopplung, keineAbsorption. R120 unverändert.
+KragenGateverletzung durch ankommendeWellenfront ist zulässiger numerischer
+Abbruch; kein Randwechsel/automatischesKürzen/Verlängern desFensters.
+
+Ziel<=120CPU-s gesamt aufeiner.69CPU einschließlichQA/Auswertung;
+interner100CPU-s-Checkpoint, externeCPU-/Wandgrenzen erstRootbindung.
+Alte6ArmeT64 kosteten27.15CPU-s;32weitereZeit-Einheiten sind kürzer,
+dichtereKernmessung undRückkehrauswertung kostenzusätzlich. Vorsichtige
+Planerwartung30..60CPU-s, keineZeitgarantie oderVorabmessung. KeinRetry.
+NativeKernzustände samtmindestens2Halozellen alle.1 und nativeKräfte/K/
+Stationaritäts-/Erhaltungsdiagnosen speichern; Vollzustand nurStart/Ende.
+ArmweiseArrayausgabe, keine unbeschränktePaarabstandsmatrix.
+
+2. PROVENIENZ VOR JEDER EVOLUTION
+HALF-RESULT-SHA97cfb7ff68bff7a64bb4fb0aaf44130e859f6689ad5482594e5209c79df6e89a;
+timestep-half.py466b25fb813770a1ab13eea962c93b39308dfe1ad22171fe638c60fdafef998d.
+NPZSchema enthält r,phi,pi,chi,chi_t, aber KEINEN eigenenZeitstempel und
+keine ursprünglicheNPZ-Hashbindung imRESULT. Daher VOR Lauf eigenes
+Checkpointmanifest: Archivherkunft/Kopierbeleg, unveränderteDateihashes,
+Zuordnungkind/level/h/dt undT64 ausdemvollständigenzugehörigenRESULT.
+Keine aus Dateiname allein bewieseneZeit-/Historienidentität behaupten.
+RekonstruiertesE,Q,Qcore,R50/chiFirstCell undvierReste müssen gegenletztes
+altesSample passen (relativeSkala max(1,|Altwert|), Toleranz1e-11).
+Feldschema/float64/exakterGrid/Finite prüfen. Nichtnormalisieren.
+UngeklärteBindung => INCOMPLETE vorEvolution. Originale unverändert.
+
+3. MESSFRAGE UND UNVERÄNDERTE KONTROLLEN
+Wiederkehrende große Zwei-Feld-Atmung gegenüber aufgelösterBeruhigung,
+nicht asymptotischeLebensdauer. Gemeinsame U1-Phase vonphi UNDpi entfernen;
+labpi allein ist keineNichtstationarität. ExakteFormeln inFORMELN.txt.
+
+SeparateE/Q/Bilanz/Kragen-Gates ausHALF bleiben1e-5,1e-5,1e-5,1e-8.
+E/Q gegen ORIGINALT0-Basiswerte prüfen, nicht T64 alsneuenNullfehlerstand.
+Kernflussintegral mit gespeichertemT64-Wert fortschreiben; Kontinuität
+amCheckpoint prüfen. Referenzreste/Formdriften über64..96<.004, Drift
+gegen originalesReferenzstartprofil mit korrekterU1-Phase. Kein Neudefinieren
+der Wolken-driftchi gegenchiStart=1: sie bleibt nichtbrauchbar alsSignal.
+Qcore-Sensitivität .002 bleibt. Die alte Raumrestgrenze.004 bleibt für
+Stationaritäts-/Bildungsaussagen maßgeblich; eine eigenständigeRückkehr-
+Diagnose hat ihre untenstehendenZustandsreserven, ersetzt den altenStatus
+nicht. Scheitert einReferenz-/Erhaltungs-/Randgate: keinePhysikklassifikation.
+
+4. KONKRETE MESSREGELN ALS ENTWURF, NICHT VERDECKTE ERFOLGSGRENZEN
+FORMELN definiertZ/Nref,d,K. Zusätzlich alle4Komponentendistanzen,
+RadiusdichteR50 undchiFirstCell; Gesamtphase nichtalsAtmungsuhr verwenden.
+FensterexkursionA_j=max_t d(Z(t),Z(Fensteranfang)); K_j=ZeitRMS(K).
+Raum-/Zeit-/Samplingreserven etaZ/etaK empirisch wieFORMELN, getrennte
+Beiträge ausweisen. GroßeExkursion nurA_j>10*(2etaZ), Bewegung nur
+K_j>10etaK; keine positiveAtmungsentscheidung bei stationäremU1-Orbit.
+Die Faktoren10 sind erklärte operative Auflösungsreserven, keineSätze.
+
+Eine endlicheRückkehrdiagnose könnte auf festemLag-Gittertau=1.6,.1,...,30.4
+aufgebaut werden: D_k(t,tau)=d(Z(t),Z(t+k*tau)), k=1,2, auf ALLEN
+vorhandenenSynchronzeiten mit beidenPartnern in64..96. KeinFFT/Frequenzfit.
+Phasenfrei ausrichten, aber keineZeit-/Radiusreskalierung. EinenLag nicht
+nach dem kleinsten Einzelabstand alsbelegtePeriode ausgeben. Kandidat
+nur wenn bei demselbenLag aufALLEN3Gittern, für beidek, maximalerD_k plus
+2etaZ kleiner als.1*min(A_I,A_II) ist und Überlappfenster jeweils>=1.6.
+AlleLags undfehlendeÜberdeckung berichten, keinebesteKurveauswahl.
+.1 bedeutet explizit 'Rückkehr innerhalb10% derExkursion', keine exakte
+Periodizität. BeideFenster müssen bewegteaufgelösteExkursion besitzen.
+HüllvergleichA_II/A_I undK_II/K_I nur alsvergleichbar kennzeichnen, wenn
+jeweils[.8,1.25] einschließlich numerischerReserven eingehalten wird.
+Diese20/25%-Operationalisierung ist VORSCHLAG zurfachlichenAbnahme,
+keine aus den unbekanntenFortsetzungsdaten hergeleiteteNaturgrenze.
+
+Beruhigungstendenz wäre eine eigene, schwächereEinzelaussage: A undK
+beide um mindestens20% UND mehr als10ihrerDifferenzunsicherheit gefallen,
+aufallenStufen. Das beweist keineMonotonie zwischenSamples und entscheidet
+nicht allein gegen langsameAtmung. AnnäherndeStationarität zusätzlich
+nur bei ALLEN alten vierResten<.02, Qcore/Q>=.8 mitSchwankung<=.01,
+chiFirstCell<.2, R50<=.8*ORIGINALanfangsR50 und bisherigenSensitivitäts-
+gates imfestenSchlussfenster80..96. KeinReference-/Numerikfail wird
+nachträglich als NO_CANDIDATE umetikettiert.
+
+5. MESSKONTROLLEN VOR EVOLUTION
+(a) Sicherstationäre algebraischeQBallbahn phi=f exp(iomega t),
+pi=iomega phi,chi=g,w=0 mitgehörigenanalytischenBeschleunigungen:
+d=0 fürbeliebigeZeitpaare, W=0; Rückkehr ja, AtmungNEIN wegenA=K=0.
+Zusätzlich konstante gemeinsameU1-Rotation beliebigerZustände: d=0.
+EchteFV-Referenzarme prüfen separat ihre vorhandenen diskretenReste.
+(b) Sicherperiodische SYNTHETISCHE Zustandsbahn, keinM2-Lösungsanspruch:
+phi=exp(iomega t)[f+a u cos(nu t)],
+pi=exp(iomega t)[iomega(f+a u cos(nu t))-a nu u sin(nu t)],
+chi=g+b v cos(nu t),w=-b nu v sin(nu t), feste glatteu,v,
+a=b=.01 undomega=1. Eine vollePeriode führt zu d=0; dazwischenA,K>0.
+Zwei vorab festePeriodenP=4 undP=26.4. P=4 prüft mehrfachenReturn;
+P=26.4 MUSS im32langenBeobachtungsabschnitt als fürmehrfachenReturn
+unzureichend erkannt werden, obwohl die synthetischeBahn exaktperiodischist.
+AlgebraischeIdentitäten in bekannterNichtnull-Signalnorm<1e-10; keinFit.
+(c) GleicheRadiuskurve, andereGeschwindigkeiten: RootsAnker(1,i) vs(1,-i)
+in seiner m=1-Einzellagenkonvention, Abstandquadrat4 imRootX-Maß.
+Zusätzlich gleichephi/pi/chi bei entgegengesetztemchi_t: Abstand>0,
+Q unverändert. Nicht als zwei reale physischeZeithistorien behaupten.
+Radius allein darf beideTests nicht als vollständigeRückkehr klassifizieren.
+
+6. ENTSCHEIDENDER MACHBARKEITSKONFLIKT — DERZEIT KEINE LAUFBINDUNG
+Nach unabhängigerPrüfung und Lesung von time-analysis/out/SUMMARY.json:
+Radius-Maximaabstände reichenbis23.2, Qcore-Abständebis26.4, während
+chi schnellere3.2..9.6 zeigt. Diese Werte sind KEINE gesichertenPerioden,
+aber verbieten die stillschweigende Wahl kurzerchi-Takte alsDefinition
+der großen Wolkenatmung. Ein engerLagbereich1.6..12 wäre deshalb nicht
+angemessen; der volleEntwurf zeigt explizit dieBeobachtungslücke.
+
+32zusätzlicheZeiteinheiten reichen für zweiRückkehren auf23..26-Skalen
+nicht. Bei zweimaligemLag undMindestüberlappung1.6 sind maximal15.2
+abdeckbar. Eine kleinere ausreichendeSubfrage 'schnelleRückkehr bis15.2'
+ist KEIN Ersatz für die beauftragte generische großeAtmungsfrage.
+Eine fallendeHülle über zwei16Fenster kann selbst Teil langsamerAtmung
+sein. Deshalb darf auch ein20%-Rückgang nicht als derenWiderlegung gelten.
+
+Entwurfstatus MACHBARKEIT_OFFEN. Budget/Checkpoints machenFortsetzung
+technisch plausibel, lösen aber nicht denZeit-/Randkonflikt. T128 könnte
+mehr langsameRückkehrabschnitte abdecken, ist hier NICHT freigegeben:
+R120ohneAbsorption kann vorher das unveränderteKragengate verletzen.
+KeineAusweichbewegung zu neuemRand, größerenBoxen oder längererRechnung.
+VorCodeauftrag mussRootentscheiden, ob ein begrenzter DESKRIPTIVER
+Fortsetzungsdatensatz den Aufwandwertist oder die Mechanikfrage zunächst
+offenbleibt. KeineBehauptung, dassT96 allein den gewünschtenGegensatz
+entscheidenkann; keineWorkflowpflicht, daraus einenLauf zu erzeugen.
+
+Provenienznachtrag: Root hat Enddateien dauerhaft unter
+/home/fmh/fmhc-physics-remote/m2-second-harmonic-20261002/cloud-checkpoints-20261003
+archiviert; recurrence/root/CHECKPOINTS.sha256 bindet heutigeHashes inkl
+OriginalRESULT/Code. Das ist keine rückwirkend behauptete alteNPZ-Bindung.
+Der oben verlangte T64-Diagnoseabgleich bleibt vorNutzung erforderlich.

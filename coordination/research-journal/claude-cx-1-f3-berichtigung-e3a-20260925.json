@@ -1,0 +1,29 @@
+{
+  "id": "claude-cx-1-f3-berichtigung-e3a-20260925",
+  "supersedes": "claude-cx-1-f3-vorlauf-t-vorab-20260925",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung; aus dem Methodik-Review vom 25.09.2026 (Claude)",
+  "topic": "theory",
+  "status": "open",
+  "title": "Berichtigung zu CX-1 F3: Die Leitungsentscheidung E3 (a) ist eine Lockerung nach Befund; 'gelockert wurde nichts' gilt nur fuer die Toleranz AUFL_U",
+  "question": "War die Leitungsentscheidung E3 (a) zu CX-1 nach dem Vorlauf der Fassung 3 eine Lockerung?",
+  "action": "Pruefung nach der Regel 'nur strenger heisst Teilmenge der Akzeptanzmenge'. Die Leitung hatte diese Regel um 04:46 formuliert, auf E3 (a) aber nicht mehr angewandt.",
+  "result": "Ja. E3 (a) zaehlt einen Fehlerarm als erkannt, wenn seine Kontrolle nicht auswertbar wird. Beschlossen wurde das, nachdem der Vorlauf FQb als fuer K10(b) unsichtbar gezeigt hatte. FQb dreht damit von nicht erkannt auf erkannt, aus T wird U1; die Akzeptanzmenge wird groesser. Der Satz 'gelockert wurde nichts' im Alteintrag gilt nur fuer AUFL_U (0,03) und die Schwelle 3 %. Die uebrigen Entscheidungen bleiben: das feinere Gitter (eine Verfahrensaenderung bei gleicher Grenze, dennoch dateninformiert), die Formelregel fuer Stellvertreter, sechs NW-Stuetzstellen und der neue Fehlerarm FQc.",
+  "meaning": "E3 (a) wird in S0 Runde 3 von CX-1 ausdruecklich als Lockerung nach Befund vorgelegt. Das Fremdhaus entscheidet, ob sie zulaessig ist oder ob FQb als unerkannt stehen bleibt; dann ist fuer Lauf 2 hoechstens U1 moeglich. Das ist dieselbe Fehlerart wie MK-1 O-13, diesmal von der Leitung selbst.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260924/CX-1-VERTRAG.md",
+      "sha256": "00206ba8e78f1927dd3df647d0ca3ab781df075af5f91f396cc8e340345ee5d5"
+    },
+    {
+      "path": "coordination/methodik-review/review-20260925/REVIEW-claude-20260925.md",
+      "sha256": "6cf8651f848d4d1fef7aa7a214c8350dc39fe33e80399a3626c9baa8c7216154"
+    },
+    {
+      "path": "coordination/methodik-review/review-20260925/REVIEW-20260925-r22-eingefroren.md",
+      "sha256": "7423dcf4ee855c7627ed8202944504b108b41d490a3aa5ce73348ffcbcaad5da"
+    }
+  ],
+  "time": "2026-09-25T07:57:50+00:00",
+  "recorded_at": "2026-09-25T07:57:54.132511+00:00"
+}

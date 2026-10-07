@@ -1,0 +1,25 @@
+{
+  "id": "claude-r3b-r4-wiedereintritt-20260924",
+  "time": "2026-09-23T23:13:39.934879+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5); gerechnet von den Schwestersitzungen codex-periodic-refine und codex-random-reentry",
+  "topic": "modelle",
+  "status": "reported",
+  "title": "Rueckkehr der Viererform: echte Wiederbegegnung nur ueber das periodische Bild; zufaelliger Wiedereintritt einzelner Teilchen zerreisst beide Paare",
+  "question": "Kehrt die gestufte Viererform nach vollstaendiger Trennung zurueck, und was bewirkt Finns Randmodell, bei dem ein austretendes Teilchen an zufaelliger Stelle wieder eintritt?",
+  "action": "R3b rechnete die fuenf zeitschritt-unentschiedenen R3-Faelle mit halbierten Schritten nach und trennte Grenzflattern von Entkopplung und Wiederbegegnung; R4 und R4b setzten Finns Randmodell in einer Kiste L 12 ohne periodische Raender um, R4 energieerhaltend, R4b mit ausgewiesener Umgebungsarbeit. Meine Erwartungen standen jeweils vor den Ergebnissen in der Arbeitsdatei; die R4b-Energiespruenge habe ich aus den Rohdaten selbst ausgewertet.",
+  "result": "R3b: in keinem freien Lauf eine Begegnung nach vollstaendiger Entkopplung, die vorab abgeleitete Nullprobe haelt; echte Wiederbegegnung nur in Kisten ueber das periodische Bild; in d3-e0 bei L 12 Entkopplung bei t 66,8 und Wiederbegegnung bei t 128,4 in beiden Zeitschritten, fuenf gezaehlte Wiederbildungen stehen fuer eine echte Rueckkehr. R4: erster Lauf brach nach 6,277 s ab, kein zulaessiger Wiedereintritt unter 128 Vorschlaegen, wie vorab aus Paarbindung 0,9356 gegen hoechstens 0,286 bzw. 0,850 Bewegungsenergie abgeleitet. R4b: 189 Rueckfuehrungen, davon 12 Energiespruenge bei 0,836 bis 0,936 (Mittel 0,899), 5 bei 0,46 bis 0,81 und 172 unter 0,08; Summe je Lauf mit Randkontakt 1,59 bis 2,16, also etwa zwei Zerreissungen je Lauf; 0 Wiederbildungen nach dem ersten Wiedereintritt.",
+  "meaning": "Die Zaehlung geometrischer Wiederbildungen ueberschaetzt echte Rueckkehren stark; die Trennung von Grenzflattern und Entkopplung ist dafuer noetig. Finns Randmodell mit einzelnen Teilchen zerreisst am Rand beide Paare der Viererform und kann deshalb nicht messen, ob getrennte Paare wieder zusammenfinden; das ist ein Befund ueber das Randmodell, nicht ueber die Physik der Form. Die Alternative, gebundene Paare als Einheit zu versetzen, liegt bei Finn. Offen ist die Verweildauer nach der einen echten Wiederbegegnung, die Wiederkehr von Einfang unterscheiden wuerde. NACHPRUEFUNG 24.09. 01:14 (Gegensweep): in 7 von 8 Laeufen mit Randkontakt trifft je ein grosser Sprung beide Paare; in einem Lauf bindet sich ein losgerissenes Teilchen neu. Die pauschale Aussage 'Befund ueber das Randmodell, nicht ueber die Physik' ist zu stark: bis zum ersten Randkontakt ist jeder Lauf freie Dynamik, und bei E 0,850 fliegt dort schon vor jedem Eingriff ein Teilchen allein davon.",
+  "compute": "Schwestersitzungen: OpenMM CUDA double auf .69/P5000, R4b 96,5 s; von mir nur Dateiauswertung",
+  "sources": [
+    {
+      "path": "coordination/random-reentry-20260924/FAILED.md"
+    },
+    {
+      "path": "coordination/random-reentry-bath-20260924/SUMMARY.json"
+    },
+    {
+      "path": "coordination/ARBEITSFELD-claude-primary.md"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+Karte 5 Groessengrenze (Bio 28, Futter = gleichphasige Nachbarn). Start 2026-09-30T01:01:03+00:00, Ende 2026-09-30T01:04:14+00:00, Quadro P4000, torch 2.5.1+cu121
+Dauer [s]: schiessen_s 63.4, entwicklung_grob_s 27.1, entwicklung_fein_s 100.0
+Stufe Lauf | Q_m1 + k Q_0 | J/Q | t verschmolzen | Windung groesstes (Ende; je gesehen) | t Teilung danach | n Ende | Q-Verlust
+  grob w60_nachbarn0 | 138.8 + 0 x 66.6 | 1.000 | None | 1; [1] | None | 1 | 4.1e-09
+  grob w60_nachbarn1 | 138.8 + 1 x 66.6 | 0.687 | 5.0 | None; [0, 1] | 15.0 | 0 | 9.4e-01
+  grob w60_nachbarn2 | 138.8 + 2 x 66.6 | 0.536 | 5.0 | None; [0, 1] | 10.0 | 0 | 8.1e-01
+  grob w75_nachbarn0 | 66.2 + 0 x 19.0 | 1.000 | None | None; [0, 1] | 255.0 | 0 | 9.7e-01
+  grob w75_nachbarn1 | 66.2 + 1 x 19.0 | 0.792 | 5.0 | None; [0, 1] | 15.0 | 0 | 9.9e-01
+  grob w75_nachbarn2 | 66.2 + 2 x 19.0 | 0.675 | 5.0 | None; [0, 1] | 10.0 | 0 | 9.7e-01
+  fein w60_nachbarn1 | 138.8 + 1 x 66.6 | 0.687 | 5.0 | None; [0, 1] | 15.0 | 0 | 9.4e-01
+  fein w60_nachbarn2 | 138.8 + 2 x 66.6 | 0.536 | 5.0 | None; [0, 1] | 10.0 | 0 | 8.1e-01
+  fein w75_nachbarn1 | 66.2 + 1 x 19.0 | 0.792 | 5.0 | None; [0, 1] | 15.0 | 0 | 9.9e-01
+  fein w75_nachbarn2 | 66.2 + 2 x 19.0 | 0.675 | 5.0 | None; [0, 1] | 10.0 | 0 | 9.7e-01
+Kennzahlen: {"verschmolzen": {"w60_nachbarn1": 5.0, "w60_nachbarn2": 5.0, "w75_nachbarn1": 5.0, "w75_nachbarn2": 5.0}, "teilung_nach_wachstum": {"w60_nachbarn1": 15.0, "w60_nachbarn2": 10.0, "w75_nachbarn1": 15.0, "w75_nachbarn2": 10.0}, "windung_behalten": {"w60_nachbarn1": false, "w60_nachbarn2": false, "w75_nachbarn1": false, "w75_nachbarn2": false}, "bio28": "Groessengrenze gesehen: gewachsener Ball teilt sich", "kontrollen_ohne_nachbarn": {"w60_nachbarn0": null, "w75_nachbarn0": 255.0}, "L3": {"laeufe": [{"lauf": "w60_nachbarn1", "bestanden": true}, {"lauf": "w60_nachbarn2", "bestanden": true}, {"lauf": "w75_nachbarn1", "bestanden": true}, {"lauf": "w75_nachbarn2", "bestanden": true}], "bestanden": true}}

@@ -1,0 +1,138 @@
+R5-C r5c.py Start 2026-09-30T00:33:14+00:00 auf CPU, 1 Thread, torch 2.5.1+cu121, Unterbefehl rauch, Laufzeitfaktor 0.05
+
+Osmose (Bio 2): Ball omega^2 = 0.7 auf Kondensat S = (0.8, 1.0, 1.1, 1.2), Ring L = 200.0, Fenster +-15.0, T = 10.
+  S | omega_bg | omega - omega_bg | Ueberschuss 0 | rel. bei T/4 | rel. Ende | Buckel rel. Ende | Rate 0-30 | omega Mitte Ende | geloest / gewachsen
+  [grob]
+  0.8 | 0.6000 | +0.2367 | 2.4415 | 1.001 | 1.007 | 0.1978 | 0.002268 | 0.6372 | False / True
+  1.0 | 0.7071 | +0.1296 | 2.4415 | 1.001 | 1.014 | 0.06904 | 0.004473 | 0.7395 | False / True
+  1.1 | 0.7842 | +0.0524 | 2.4415 | 1.001 | 1.016 | 0.03835 | 0.005049 | 0.8048 | False / True
+  1.2 | 0.8718 | -0.0351 | 2.4415 | 1.001 | 1.017 | -0.02749 | 0.005436 | 0.8816 | False / True
+  [fein]
+  0.8 | 0.6000 | +0.2367 | 2.4415 | 1.001 | 1.007 | 0.1978 | 0.002237 | 0.6373 | False / True
+  1.0 | 0.7071 | +0.1296 | 2.4415 | 1.001 | 1.014 | 0.06906 | 0.00441 | 0.7394 | False / True
+  1.1 | 0.7842 | +0.0524 | 2.4415 | 1.001 | 1.016 | 0.03857 | 0.004977 | 0.8049 | False / True
+  1.2 | 0.8718 | -0.0351 | 2.4415 | 1.001 | 1.017 | -0.028 | 0.005357 | 0.8814 | False / True
+  L3 (rel. Ueberschuss am Ende gegen 1): 4 von 4
+  osmose: 2.1 s bei Faktor 0.05; Hochrechnung volle Laenge etwa 42 s
+
+Massenwirkung (Chemie 9): Kondensat S = 1.1 (omega_bg = 0.7842), Baelle omega^2 = (0.55, 0.7, 0.9), Ring L = 200.0, T = 40.
+  omega^2 | omega - omega_bg | Ueberschuss 0 | rel. Ende | Buckel rel. Ende | omega Mitte Ende | geloest
+  [grob]
+  0.55 | -0.0426 | 3.8144 | -0.2496 | -0.06008 | 0.7835 | True
+  0.7 | +0.0524 | 2.4415 | -0.07484 | -0.005077 | 0.7836 | True
+  0.9 | +0.1645 | 1.2910 | 0.03714 | -0.01638 | 0.7847 | True
+  [fein]
+  0.55 | -0.0426 | 3.8144 | -0.2501 | -0.06071 | 0.7836 | True
+  0.7 | +0.0524 | 2.4415 | -0.07486 | -0.005164 | 0.7835 | True
+  0.9 | +0.1645 | 1.2910 | 0.03786 | -0.01647 | 0.7847 | True
+  L3 (omega Mitte Ende gegen omega Ball): 3 von 3
+  massenwirkung: 5.2 s bei Faktor 0.05; Hochrechnung volle Laenge etwa 103 s
+
+Ladungspendeln (Bio 12): gegenphasiger Ring L = 120.0, Ungleichgewicht omega^2 = 0.7 +- 0.004, T = 30. Vorhersage Omega_p = sqrt(4 |domega/dQ| J(D)), |domega/dQ| = 0.1014.
+  K | D | Muster | delta | Omega_p | Vorhersage | Verhaeltnis | q0 | Spanne q | max|q| | max Verschiebung | min Abstand Ende
+  [grob] Steigung ln Omega_p gegen D: 0.4636 (Vorhersage -0.2739)
+  16 | 7.50 | wechselnd | 0.004 | 0.1052 | 0.1665 | 0.6318 | -0.0155 | 0.0320 | 0.0165 | 0.000 | 7.50
+  12 | 10.00 | wechselnd | 0.004 | 0.1225 | 0.0840 | 1.459 | -0.0199 | 0.0372 | 0.0199 | 0.000 | 10.00
+  10 | 12.00 | wechselnd | 0.004 | 1.389 | 0.0486 | 28.61 | -0.0218 | 0.0199 | 0.0218 | 0.000 | 12.00
+  8 | 15.00 | wechselnd | 0.004 | 2.273 | 0.0213 | 106.5 | -0.0230 | 0.0046 | 0.0230 | 0.000 | 15.00
+  6 | 20.00 | wechselnd | 0.004 | 2.476 | 0.0054 | 456.1 | -0.0235 | 0.0003 | 0.0235 | 0.000 | 20.00
+  4 | 30.00 | wechselnd | 0.004 | 0.8007 | 0.0004 | 2281 | -0.0236 | 0.0000 | 0.0236 | 0.000 | 30.00
+  12 | 10.00 | wechselnd | 0.0 | 5.958 | 0.0840 | 70.96 | +0.0000 | 0.0000 | 0.0000 | 0.000 | 10.00
+  12 | 10.00 | gleich | 0.004 | 2.871 | 0.0840 | 34.2 | -0.0299 | 0.1733 | 0.2024 | 0.000 | 10.00
+  freie Paare: D0 | dphi | q0 | Spanne q | Nulldurchgaenge q | D min, max, Ende | verschmolzen
+  7.0 | 3.142 | -0.0195 | 0.0172 | 1 | 7.22, 15.42, 15.42 | False
+  8.0 | 3.142 | -0.0206 | 0.0169 | 1 | 8.13, 14.23, 14.23 | False
+  10.0 | 3.142 | -0.0220 | 0.0138 | 1 | 10.04, 12.91, 12.91 | False
+  8.0 | 1.571 | +0.0000 | 0.8379 | 1 | 7.99, 11.02, 11.02 | False
+  [fein] Steigung ln Omega_p gegen D: 0.4532 (Vorhersage -0.2739)
+  16 | 7.50 | wechselnd | 0.004 | 0.1051 | 0.1665 | 0.6314 | -0.0155 | 0.0320 | 0.0165 | 0.000 | 7.50
+  12 | 10.00 | wechselnd | 0.004 | 0.1224 | 0.0840 | 1.457 | -0.0199 | 0.0372 | 0.0199 | 0.000 | 10.00
+  10 | 12.00 | wechselnd | 0.004 | 1.368 | 0.0486 | 28.18 | -0.0218 | 0.0199 | 0.0218 | 0.000 | 12.00
+  8 | 15.00 | wechselnd | 0.004 | 2.102 | 0.0213 | 98.44 | -0.0230 | 0.0046 | 0.0230 | 0.000 | 15.00
+  6 | 20.00 | wechselnd | 0.004 | 2.021 | 0.0054 | 372.2 | -0.0235 | 0.0003 | 0.0235 | 0.000 | 20.00
+  4 | 30.00 | wechselnd | 0.004 | 2.396 | 0.0004 | 6825 | -0.0236 | 0.0000 | 0.0236 | 0.000 | 30.00
+  12 | 10.00 | wechselnd | 0.0 | 4.279 | 0.0840 | 50.96 | +0.0000 | 0.0000 | 0.0000 | 0.000 | 10.00
+  12 | 10.00 | gleich | 0.004 | 3.949 | 0.0840 | 47.04 | -0.0294 | 0.1746 | 0.2038 | 0.000 | 10.00
+  freie Paare: D0 | dphi | q0 | Spanne q | Nulldurchgaenge q | D min, max, Ende | verschmolzen
+  7.0 | 3.142 | -0.0195 | 0.0172 | 1 | 7.22, 15.42, 15.42 | False
+  8.0 | 3.142 | -0.0206 | 0.0169 | 1 | 8.13, 14.23, 14.23 | False
+  10.0 | 3.142 | -0.0220 | 0.0137 | 1 | 10.04, 12.92, 12.92 | False
+  8.0 | 1.571 | +0.0000 | 0.8387 | 1 | 7.99, 11.02, 11.02 | False
+  L3 (Omega_p): 5 von 6
+  pendeln: 9.1 s bei Faktor 0.05; Hochrechnung volle Laenge etwa 182 s
+
+IR-Schwingung (Chemie 4): gegenphasiger Ring L = 120.0, Baelle abwechselnd um +-0.3 verschoben, T = 30. Vorhersage Omega_vib = sqrt(4 kappa^2 J(D)/E).
+  K | D | s0 | Omega_vib | Vorhersage | Verhaeltnis | u0 | Spanne u Anfang, Ende | max|q| | (Omega_p Vorhersage)
+  [grob]
+  16 | 7.50 | 0.3 | 0.8485 | 0.1889 | 4.492 | +0.2465 | 0.2230, 0.2224 | 2.50e-15 | (0.1665)
+  12 | 10.00 | 0.3 | 0.2564 | 0.0953 | 2.692 | +0.2854 | 0.0704, 0.0972 | 1.04e-15 | (0.0840)
+  10 | 12.00 | 0.3 | 1.831 | 0.0551 | 33.25 | +0.2950 | 0.0249, 0.1140 | 9.77e-16 | (0.0486)
+  8 | 15.00 | 0.3 | 0.7288 | 0.0242 | 30.09 | +0.2990 | 0.0050, 0.0320 | 1.33e-15 | (0.0213)
+  4 | 30.00 | 0.3 | 1.797 | 0.0004 | 4512 | +0.3000 | 0.0000, 0.0000 | 2.55e-15 | (0.0004)
+  12 | 10.00 | 0.0 | 3.009 | 0.0953 | 31.59 | -0.0000 | 0.0000, 0.0000 | 2.47e-06 | (0.0840)
+  [fein]
+  16 | 7.50 | 0.3 | 0.8488 | 0.1889 | 4.494 | +0.2466 | 0.2232, 0.2222 | 7.22e-16 | (0.1665)
+  12 | 10.00 | 0.3 | 0.2562 | 0.0953 | 2.69 | +0.2854 | 0.0703, 0.0971 | 1.78e-15 | (0.0840)
+  10 | 12.00 | 0.3 | 1.832 | 0.0551 | 33.26 | +0.2950 | 0.0250, 0.1141 | 1.24e-15 | (0.0486)
+  8 | 15.00 | 0.3 | 1.83 | 0.0242 | 75.54 | +0.2990 | 0.0050, 0.0318 | 2.00e-15 | (0.0213)
+  4 | 30.00 | 0.3 | 1.788 | 0.0004 | 4489 | +0.3000 | 0.0000, 0.0000 | 2.44e-15 | (0.0004)
+  12 | 10.00 | 0.0 | 1.175 | 0.0953 | 12.34 | -0.0000 | 0.0000, 0.0000 | 6.51e-07 | (0.0840)
+  L3 (Omega_vib): 4 von 5
+  ir: 3.6 s bei Faktor 0.05; Hochrechnung volle Laenge etwa 71 s
+
+Quorum (Bio 39): gegenphasiger Ring L = 120.0, K = (8, 12, 16) (D = 15 / 10 / 7,5), Atemstoss eta = 0.02 mit Zufallsphasen (Seed 1239), T = 30. r = Kuramoto-Ordnung der Atemphasen, C = Kohaerenz, je in vier Zeitfenstern.
+  [grob] Atemfrequenz (Median) 0.5561
+  K 8 (D 15.0, zufall): r 0.054, 0.139, 0.133, 0.115; C 0.008, 0.008, 0.011, 0.015; Atemamplitude 1.12e-02 -> 7.33e-03
+  K 12 (D 10.0, zufall): r 0.742, 0.740, 0.483, 0.386; C 0.463, 0.465, 0.335, 0.092; Atemamplitude 9.18e-03 -> 1.76e-02
+  K 16 (D 7.5, zufall): r 0.965, 0.869, 0.901, 0.807; C 0.860, 0.629, 0.701, 0.604; Atemamplitude 1.44e-02 -> 1.76e-02
+  K 12 (D 10.0, gleich): r 1.000, 1.000, 1.000, 1.000; C 1.000, 1.000, 1.000, 1.000; Atemamplitude 1.46e-02 -> 1.08e-02
+  K 2 (D 60.0, entkoppelt): r 1.000, 0.998, 0.998, 0.995; C 0.880, 0.893, 0.887, 0.892; Atemamplitude 1.14e-02 -> 7.86e-03
+  [fein] Atemfrequenz (Median) 0.5561
+  K 8 (D 15.0, zufall): r 0.044, 0.121, 0.111, 0.098; C 0.013, 0.010, 0.011, 0.009; Atemamplitude 1.12e-02 -> 7.36e-03
+  K 12 (D 10.0, zufall): r 0.711, 0.729, 0.477, 0.374; C 0.446, 0.450, 0.322, 0.085; Atemamplitude 9.07e-03 -> 1.75e-02
+  K 16 (D 7.5, zufall): r 0.964, 0.866, 0.900, 0.804; C 0.857, 0.626, 0.698, 0.598; Atemamplitude 1.43e-02 -> 1.75e-02
+  K 12 (D 10.0, gleich): r 1.000, 1.000, 1.000, 1.000; C 1.000, 1.000, 1.000, 1.000; Atemamplitude 1.44e-02 -> 1.07e-02
+  K 2 (D 60.0, entkoppelt): r 1.000, 0.998, 0.998, 0.995; C 0.884, 0.897, 0.891, 0.896; Atemamplitude 1.15e-02 -> 8.00e-03
+  L3 (r_Ende gegen r_Anfang): 3 von 5
+  quorum: 3.0 s bei Faktor 0.05; Hochrechnung volle Laenge etwa 60 s
+
+Lawinen (Bio 50): gegenphasiger Ring L = 240.0, K = 24 (D = 10), alle 10.0 ein Stoss (Faktor 1 + eta, eta in (0.01, 0.03)) auf einen zufaelligen Ball; Ereignis: |S_max/S_max(0) - 1| > 0.01; Lawine = zusammenhaengendes Gebiet in (Zeit, Ball). T = 25.
+  [grob]
+  K 24 Seed 11 Stoesse 1: 5 Lawinen, Groesse mittel 24.00, max 24, Anteil 1 0, Dauer max 16.0, aktiv Ende 0.81; Verteilung 1..: [0, 0, 0, 0, 0, 0, 0, 0]
+  K 24 Seed 12 Stoesse 1: 5 Lawinen, Groesse mittel 24.00, max 24, Anteil 1 0, Dauer max 16.0, aktiv Ende 0.81; Verteilung 1..: [0, 0, 0, 0, 0, 0, 0, 0]
+  K 24 Seed 13 Stoesse 1: 5 Lawinen, Groesse mittel 24.00, max 24, Anteil 1 0, Dauer max 16.0, aktiv Ende 0.81; Verteilung 1..: [0, 0, 0, 0, 0, 0, 0, 0]
+  K 24 Seed 14 Stoesse 1: 9 Lawinen, Groesse mittel 24.00, max 24, Anteil 1 0, Dauer max 4.0, aktiv Ende 0.80; Verteilung 1..: [0, 0, 0, 0, 0, 0, 0, 0]
+  K 24 Seed 0 Stoesse 0: 11 Lawinen, Groesse mittel 24.00, max 24, Anteil 1 0, Dauer max 2.5, aktiv Ende 0.80; Verteilung 1..: [0, 0, 0, 0, 0, 0, 0, 0]
+  K 8 Seed 11 Stoesse 1: 1 Lawinen, Groesse mittel 1.00, max 1, Anteil 1 1, Dauer max 15.5, aktiv Ende 0.12; Verteilung 1..: [1, 0, 0, 0, 0, 0, 0, 0]
+  [fein]
+  K 24 Seed 11 Stoesse 1: 5 Lawinen, Groesse mittel 24.00, max 24, Anteil 1 0, Dauer max 16.0, aktiv Ende 0.81; Verteilung 1..: [0, 0, 0, 0, 0, 0, 0, 0]
+  K 24 Seed 12 Stoesse 1: 5 Lawinen, Groesse mittel 24.00, max 24, Anteil 1 0, Dauer max 16.0, aktiv Ende 0.81; Verteilung 1..: [0, 0, 0, 0, 0, 0, 0, 0]
+  K 24 Seed 13 Stoesse 1: 5 Lawinen, Groesse mittel 24.00, max 24, Anteil 1 0, Dauer max 16.0, aktiv Ende 0.81; Verteilung 1..: [0, 0, 0, 0, 0, 0, 0, 0]
+  K 24 Seed 14 Stoesse 1: 9 Lawinen, Groesse mittel 24.00, max 24, Anteil 1 0, Dauer max 4.0, aktiv Ende 0.80; Verteilung 1..: [0, 0, 0, 0, 0, 0, 0, 0]
+  K 24 Seed 0 Stoesse 0: 11 Lawinen, Groesse mittel 24.00, max 24, Anteil 1 0, Dauer max 2.5, aktiv Ende 0.80; Verteilung 1..: [0, 0, 0, 0, 0, 0, 0, 0]
+  K 8 Seed 11 Stoesse 1: 1 Lawinen, Groesse mittel 1.00, max 1, Anteil 1 1, Dauer max 15.5, aktiv Ende 0.12; Verteilung 1..: [1, 0, 0, 0, 0, 0, 0, 0]
+  L3 (mittlere Groesse gegen 1): 5 von 5
+  lawinen: 6.6 s bei Faktor 0.05; Hochrechnung volle Laenge etwa 133 s
+
+Symbiose (Bio 16): freie Paare im Abstand 10.0, links omega^2 = 0.7, rechts (0.7, 0.71, 0.72, 0.74, 0.78), gleichphasig; dazu gegenphasig gleich und ein Einzelball. T = 40.
+  rechts | dphi | Klasse | D min, max, Ende | t verschmelzen | Bindung Start | Gewinn Verschmelzen (Anker) | abgestrahlt E | Anregung Ende
+  [grob]
+  0.7 | 0.000 | verschmolzen | -0.00, 9.95, 0.00 | 26 | +0.19169 | -0.4484 | -0.0001 | 0.4586
+  0.71 | 0.000 | verschmolzen | 0.00, 9.95, 0.00 | 26.5 | +0.19689 | -0.4413 | -0.0000 | 0.4526
+  0.72 | 0.000 | gebunden | 4.94, 9.95, 7.35 | nan | +0.20249 | -0.4341 | 0.0000 | 0.4464
+  0.74 | 0.000 | gebunden | 6.09, 9.95, 8.22 | nan | +0.21500 | -0.4191 | 0.0001 | 0.4335
+  0.78 | 0.000 | gebunden | 7.46, 9.93, 9.42 | nan | +0.24634 | -0.3866 | 0.0001 | 0.4057
+  0.7 | 3.142 | gebunden | 10.04, 14.52, 14.52 | nan | -0.19718 | -0.4484 | 0.0000 | 0.4334
+  Einzelball: E Box 2.298462 -> 2.298462 (Anker 2.298607)
+  [fein]
+  0.7 | 0.000 | verschmolzen | 0.00, 9.95, 0.00 | 26 | +0.19192 | -0.4484 | -0.0000 | 0.4588
+  0.71 | 0.000 | verschmolzen | 0.00, 9.95, 0.00 | 26.5 | +0.19711 | -0.4413 | -0.0000 | 0.4528
+  0.72 | 0.000 | gebunden | 4.94, 9.95, 7.35 | nan | +0.20270 | -0.4341 | 0.0000 | 0.4466
+  0.74 | 0.000 | gebunden | 6.09, 9.95, 8.22 | nan | +0.21519 | -0.4191 | 0.0000 | 0.4338
+  0.78 | 0.000 | gebunden | 7.46, 9.93, 9.42 | nan | +0.24650 | -0.3866 | 0.0000 | 0.4059
+  0.7 | 3.142 | gebunden | 10.04, 14.53, 14.53 | nan | -0.19697 | -0.4484 | 0.0000 | 0.4336
+  Einzelball: E Box 2.298571 -> 2.298571 (Anker 2.298607)
+  L3 (D_Ende gegen D0): 6 von 6
+  symbiose: 8.5 s bei Faktor 0.05; Hochrechnung volle Laenge etwa 171 s
+
+Ende 2026-09-30T00:33:52+00:00, Dauer 38.1 s, Torch-Speicher max nan MB, Fehler in: keine

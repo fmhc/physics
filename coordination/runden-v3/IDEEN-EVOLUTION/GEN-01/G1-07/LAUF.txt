@@ -1,0 +1,24 @@
+# G1-07 Laufzettel fuer die Leitung (Test-Agent T-1). Rechnen tut die Leitung.
+# Skript: abfluss1d.py (Kopie aus RUNDE-05/r5b/r5b.py, torch, float64/complex128; --geraet cuda|cpu ohne Umbau).
+# Ordner: Kartenordner G1-07 nach /home/fmh/fmhc-physics-remote/evo-gen01-g1-07 kopieren (Name frei waehlbar).
+# Spur: p4000a (GPU); fein darf auf p4000b, wenn WM-1-MB nicht laeuft (kleintest.sh prueft das).
+#
+# Formprobe lokal (CPU, 1 Faden, nice 19; alle Zeiten x 0,01 bzw. 0,004): alle Unterbefehle laufen, rc = 0.
+#   dauer grob 5,5 s bei x 0,01   -> CPU voll etwa 550 s (9 min, zu knapp an 10 min fuer eine CPU-Spur)
+#   dauer fein 8,2 s bei x 0,004  -> CPU voll etwa 2060 s (34 min): passt auf CPU nicht in 10 min
+#   stopp grob 0,6 s bei x 0,01   -> CPU voll etwa 60 s (haengt von Q_d ab: T = ln(Q0/(0,8 Q_d))/1e-3 + 2000)
+#   GPU (P4000): nicht gemessen; 4 Laeufe x 12001 Punkte, 155 000 Schritte grob; erwartet unter 10 min je Aufruf.
+#   Liegt ein GPU-Aufruf ueber 10 min (RuntimeMaxSec 600), dauer je gamma teilen:
+#   --gammas 5e-4 --ohne-gegen | --gammas 1e-3 --ohne-gegen | --gammas 2e-3 (mit gamma = 0); urteil braucht dann eine
+#   zusammengefuehrte Datei (laeufe-Listen aneinanderhaengen, z. B. mit jq -s).
+#
+# Reihenfolge (stopp braucht Q_d(1e-3) aus dauer derselben Stufe; die Regel steht vorab in der Karte):
+cd /home/fmh/fmhc-physics-remote/evo-gen01-g1-07 && bash /home/fmh/fmhc-physics-remote/kleintests/kleintest.sh p4000a g107-dauer abfluss1d.py dauer --out ausgabe | tee lauf-69-dauer.log
+cd /home/fmh/fmhc-physics-remote/evo-gen01-g1-07 && bash /home/fmh/fmhc-physics-remote/kleintests/kleintest.sh p4000a g107-stopp abfluss1d.py stopp --dauer-json ausgabe/dauer_grob_ergebnis.json --out ausgabe | tee lauf-69-stopp.log
+cd /home/fmh/fmhc-physics-remote/evo-gen01-g1-07 && bash /home/fmh/fmhc-physics-remote/kleintests/kleintest.sh p4000b g107-dauer-f abfluss1d.py dauer --fein --out ausgabe | tee lauf-69-dauer-fein.log
+cd /home/fmh/fmhc-physics-remote/evo-gen01-g1-07 && bash /home/fmh/fmhc-physics-remote/kleintests/kleintest.sh p4000b g107-stopp-f abfluss1d.py stopp --fein --dauer-json ausgabe/dauer_fein_ergebnis.json --out ausgabe | tee lauf-69-stopp-fein.log
+# Auswertung (nur JSON lesen, Sekunden, CPU):
+cd /home/fmh/fmhc-physics-remote/evo-gen01-g1-07 && bash /home/fmh/fmhc-physics-remote/kleintests/kleintest.sh cpu g107-urteil abfluss1d.py urteil --geraet cpu --a ausgabe/dauer_grob_ergebnis.json --b ausgabe/stopp_grob_ergebnis.json --out ausgabe | tee lauf-69-urteil.log
+cd /home/fmh/fmhc-physics-remote/evo-gen01-g1-07 && bash /home/fmh/fmhc-physics-remote/kleintests/kleintest.sh cpu g107-l3 abfluss1d.py l3 --geraet cpu --a ausgabe/dauer_grob_ergebnis.json --b ausgabe/dauer_fein_ergebnis.json --out ausgabe | tee lauf-69-l3.log
+# Ergebnis: ausgabe/urteil_grob_bericht.txt (Ausgang nach KARTE.md, 1D), ausgabe/l3_dauer_bericht.txt.
+# formprobe/ und formprobe-*.log sind Rauchtests mit verkuerzten Zeiten: keine Aussage daraus.

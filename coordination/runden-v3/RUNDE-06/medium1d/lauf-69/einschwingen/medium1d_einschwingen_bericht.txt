@@ -1,0 +1,28 @@
+Runde 6 M1 medium1d.py einschwingen Start 2026-09-30T01:50:15+00:00 auf Quadro P4000, torch 2.5.1+cu121, Zeitfaktor 1.0, Stufen grob/fein
+
+einschwingen (Klaerung r5d kreuzen): C0 = 0,1, lam = 0,1, u = 0,48 / 0,76 / 1,46 c_s. 'ploetzlich' = r5d-Start (Ball ungekleidet, Stroemung und lam ab t = 0); 'adiabatisch' = lam [0, 100], Stroemung [120, 320]. r5d kreuzen n=5: x(300) = +1,273, v = 5,22e-3, a = 4,04e-6.
+  Lauf | x(300) | v, a auf [100, 300] | v, a auf [370, 570] | F_med spaet | F_Falle | C-Spanne max (Medium allein)
+  [grob]
+  ploetzlich frei n=10       | +1.2728 | 5.22e-03, 4.04e-06 | 5.45e-03, 2.51e-08 | 5.81e-08 | 0.00e+00 | 3.15e-02
+  adiabatisch frei u=0.0994  | +0.1114 | 4.47e-04, 1.02e-05 | 3.43e-03, 1.69e-06 | 3.82e-06 | 0.00e+00 | 2.64e-02
+  ploetzlich frei n=16       | +3.7417 | 1.65e-02, 5.23e-05 | 2.36e-02, 9.30e-06 | 2.14e-05 | 0.00e+00 | 4.78e-02
+  adiabatisch frei u=0.1578  | +0.2129 | 8.04e-04, 1.93e-05 | 1.58e-02, 4.85e-05 | 1.12e-04 | 0.00e+00 | 4.74e-02
+  ploetzlich frei n=32       | +18.2990 | 8.51e-02, 4.56e-04 | 1.82e-01, 3.06e-04 | 7.40e-04 | 0.00e+00 | 9.61e-02
+  adiabatisch frei u=0.3044  | +0.7697 | 2.49e-03, 6.81e-05 | 1.06e-01, 3.77e-04 | 8.84e-04 | 0.00e+00 | 8.14e-02
+  ploetzlich lam=0 n=32      | -0.0000 | -1.32e-08, -4.27e-10 | 1.96e-11, -2.09e-12 | 0.00e+00 | 0.00e+00 | 6.63e-15
+  Medium allein n=32         | +0.0000 | 0.00e+00, 0.00e+00 | 0.00e+00, 0.00e+00 | 0.00e+00 | 0.00e+00 | 6.63e-15
+  ploetzlich gehalten n=10   | +0.0008 | -1.37e-06, 7.48e-07 | 1.47e-06, -7.15e-07 | 5.35e-07 | -1.53e-06 | 3.33e-02
+  [fein]
+  ploetzlich frei n=10       | +1.2726 | 5.22e-03, 4.04e-06 | 5.45e-03, 2.49e-08 | 5.78e-08 | 0.00e+00 | 3.15e-02
+  adiabatisch frei u=0.0994  | +0.1113 | 4.47e-04, 1.02e-05 | 3.43e-03, 1.69e-06 | 3.83e-06 | 0.00e+00 | 2.64e-02
+  ploetzlich frei n=16       | +3.7406 | 1.65e-02, 5.23e-05 | 2.36e-02, 9.31e-06 | 2.14e-05 | 0.00e+00 | 4.78e-02
+  adiabatisch frei u=0.1578  | +0.2128 | 8.04e-04, 1.93e-05 | 1.58e-02, 4.85e-05 | 1.12e-04 | 0.00e+00 | 4.73e-02
+  ploetzlich frei n=32       | +18.2861 | 8.50e-02, 4.56e-04 | 1.82e-01, 3.06e-04 | 7.40e-04 | 0.00e+00 | 9.60e-02
+  adiabatisch frei u=0.3044  | +0.7691 | 2.49e-03, 6.81e-05 | 1.06e-01, 3.77e-04 | 8.84e-04 | 0.00e+00 | 8.13e-02
+  ploetzlich lam=0 n=32      | +0.0000 | 0.00e+00, 0.00e+00 | 2.64e-12, -2.56e-13 | 0.00e+00 | 0.00e+00 | 8.83e-15
+  Medium allein n=32         | +0.0000 | 0.00e+00, 0.00e+00 | 0.00e+00, 0.00e+00 | 0.00e+00 | 0.00e+00 | 8.83e-15
+  ploetzlich gehalten n=10   | +0.0008 | -1.40e-06, 7.48e-07 | 1.52e-06, -7.14e-07 | 5.33e-07 | -1.53e-06 | 3.33e-02
+  L3 (Effekt >= 5 x Aenderung grob -> fein): 14 von 14 Kenngroessen bestanden
+  Rechenzeit grob 32.4 s, fein 59.5 s
+
+Ende 2026-09-30T01:51:47+00:00, Dauer 92.6 s, Torch-Speicher max 46 MB, Fehler in: keine

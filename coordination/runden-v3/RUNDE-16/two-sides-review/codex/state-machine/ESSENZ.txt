@@ -1,0 +1,67 @@
+ESSENZ: EREIGNISGETRIEBENE KAUSALMASCHINE
+2. Oktober2026, exploratives strukturelles Kontrollmodell.
+
+Die Nutzerformulierung status+status=change wird als lokale Uebergangsfunktion
+R:(s_i,s_j,c_ij)->(s'_i,s'_j,c'_ij) praezisiert. Das Plus ist keine numerische
+Addition, sondern Begegnung/Wechselwirkung. Die Kante c kann ein unterwegs
+befindliches Signal speichern. Ohne freigegebene Wechselwirkung keine
+Zustandsaenderung. Regel, Zustand und Ausloeser sind drei verschiedene Dinge.
+
+Ein Ereignis e_k erzeugt die Voraussetzung fuer e_(k+1). Dies definiert zuerst
+eine Kausalordnung, nicht eine fundamentale Zeitdauer. Mehrere unabhaengige
+Ereignisse bilden eine partielle Ordnung. Disjunkte lokale Regeln koennen
+kommutieren; um dieselbe Ressource konkurrierende muessen durch Physik oder
+eine ausdrueckliche Arbitrierungsregel entschieden werden. Eine globale
+Update-Schleife ist kein Nachweis einer universellen Synchronuhr.
+
+KONKRETER MOTORAEHNLICHER ANKER
+Ein Token trifft auf einen Knoten mit lokalem Rotor r_i. Er schaltet r_i
+modulo AnzahlPorts weiter und wird durch den gewaehlten Port abgegeben.
+Alle anderen Rotoren bleiben unveraendert. So gibt es lokale Speicherung,
+Umschalten, Weitergabe und Rueckkehr, ohne vorausgesetzten globalen4Takt.
+Portreihenfolge und Starttoken bleiben Modellannahmen. Anfangsruhe ohne
+Token bleibt perDefinitionRuhe; die Maschine erklaert keine Erstanregung.
+Die Regel ist bekannt: Rotorrouter, kein eigener neuer Grundmechanismus.
+Primaertext: Holroyd/Levine/Meszaros/Peres/Propp/Wilson, arXiv0801.3306,
+https://lionellevine.github.io/sand.pdf, §4 Lemma4.9 einschliesslichBeweis,
+PDF-Seiten25-26 gelesen. Im Eulerischen rekurrenten Zustand wird jede
+gerichteteKante proUmlauf einmal besucht. Numerik ist Kontrolle diesesSatzes.
+
+4/3 ALS KONKRETE STRUKTUR
+Vier Knoten mit je3Nachbarn:4*3=12 gerichtete Verbindungen,6ungerichtete.
+Daraus stammt der erwartete12Ereignisumlauf der Rotorregel. Kein Faktor4/3
+in einer Kraft, keineHerleitungdreierRaumdimensionen. Derselbe abstrakteK4
+ist ohne metrischeDaten nur einGraph; seine raeumlicheEinbettung bestimmt
+dieseRegel nicht. VierKnoten allein reichen auchnicht: Quadrat hat8,
+Dreistern6gerichteteVerbindungen. DieseGegenproben trennen Knotenzahl,
+lokalePortzahl undTopologie.
+
+BINARITAET UND DREIERWECHSEL
+Annahme: zweiBits, allevierZustaende, bijektive lokaleAbbildung, Energie
+progesetztBit identisch und ZahlgesetzerBits strikt erhalten. Dann duerfen
+00und11nichtwechseln;10und01nur bleibenoder tauschen. Genau2Gatter.
+DreiBits erlauben einen kontrolliertenTausch: erstesBitbleibt, bei1tauschen
+dieanderen. Dasist reversibel und zahlenerhaltend. Eszeigt einen konkreten
+Mehrwert von DreierkopplungUNTERdiesenAnnahmen; keinBeweis,dassNatur3Koerper
+oderSpin/Farbe braucht. Interaktionsenergien,Reservoirs,mehrlokaleZustaende
+oder andereErhaltungsaetze aendern dieAussage.
+
+PHYSIKBRUECKE, DIE NOCH FEHLT
+Ein12Ereigniszyklus hat mit positiven Laufzeiten tau_e die Dauer Summe tau_e.
+DieseZeiten muessen aus einem kontinuierlichenModell, Barrieren oder
+Signalgeschwindigkeiten folgen, nicht aus dem Zaehler selbst. Ein Zyklus
+beweist weder Energieerhaltung noch nutzbare Arbeit. Verlustfreiheit und
+vorhandeneAnregung koennen Bewegung erlauben; dauernder Arbeitsentzug
+braucht eine Energiebilanz. Vollstaendige Reversibilitaet getrennt pruefen:
+Der Rotorrouter kann vor seinem periodischenTeil Zustandsinformation verlieren.
+Eine konservative Physikinterpretation braeuchte zusaetzliche verborgene
+Variablen oder eine andere reversibleRegel, samt definierterEnergie.
+
+Bruecke zu ArbeitsmodellV2: kontinuierlicheFeldzustände in metastabile
+Bereiche partitionieren; Ereignisse sind verifizierte Durchgaenge zwischen
+Bereichen. Die effektiveUebergangstabelle, Verweilzeiten und Energiebilanzen
+aus freierDynamik MESSEN, nicht eine gewuenschte4Taktfolgehineinprogrammieren.
+Vorhersage: eine tragfaehige reduzierteMaschine sagt naechstenZustand und
+Zeitverteilung auf unbenutztenStartphasen voraus. Gegenprobe: gleicher
+sichtbarerZustand mit anderemChi/Gedaechtnis fuehrt zu anderemAusgang.
+Dann reicht der sichtbareZustand nicht und die Maschine braucht Memory.

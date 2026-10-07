@@ -1,0 +1,129 @@
+UNABHAENGIGE GEOMETRISCHE PAPIERPRUEFUNG — 2026-10-02
+
+Gelesen: EINORDNUNG.md und
+bundle/tetra_chain_slice_intersections_2026-10-02.md.
+Methode: Definitionspruefung und elementarer Beweis; keine Interpreter,
+Tests, Simulationen oder numerischen Laeufe. Keine Aussage ueber die nicht
+mitgelieferten exakten Koordinaten der beiden Bundle-Modelle.
+
+ERGEBNIS
+
+P = T3 + 2 T4 + 2 C gilt fuer eine eingebettete gestapelte Tetraederkette
+mit geometrischem C auch ohne Konvexitaet benachbarter Tetraederpaare.
+Die Einordnung nennt eine unnoetig starke Bedingung, weil sie geometrische
+Schnittkomponenten mit Indexlaeufen geschnittener Tetraeder identifiziert.
+Diese Identifikation kann bei nichtkonvexen Paaren falsch sein. Das widerlegt
+die dortige Laeufe-Begruendung, aber nicht die Formel mit richtigem C.
+
+PRAEZISE HINREICHENDE VORAUSSETZUNGEN
+
+1. Nichtdegenerierte abgeschlossene Tetraeder K_1,...,K_N bilden eine
+   eingebettete gestapelte Kette: K_i wird ueber eine Randdreiecksflaeche
+   F_{i-1} von K_{i-1} angefuegt, seine vierte Ecke ist neu, und
+   K_i geschnitten mit (K_1 vereinigt ... vereinigt K_{i-1}) ist exakt
+   F_{i-1}. Insbesondere keine Ueberlappung, Rueckverklebung, zusaetzliche
+   Beruehrung oder Kreuzung. Aus frueheren Gliedern geerbte gemeinsame
+   Kanten sind erlaubt. Diese Definition ist staerker als die unpraezise
+   Aussage, aufeinanderfolgende Tetraeder teilten jeweils eine Flaeche.
+2. Eine Ebene H trifft keine Ecke. Dann ist jeder nichtleere Tetraederschnitt
+   ein echtes Dreieck oder Viereck und jeder nichtleere Flaechenschnitt
+   ein Segment mit zwei verschiedenen Endpunkten.
+3. P zaehlt alle verschiedenen Schnittpunkte von H mit den Kanten des
+   gesamten Tetraederkomplexes, auch wenn ein Punkt kein Extrempunkt des
+   aeusseren Schnittumrisses ist. C ist die Anzahl zusammenhaengender
+   Komponenten der geometrischen Vereinigungsmenge der Schnittpolygone.
+
+Auch allgemeinere eingebettete Ketten reichen, sofern jede Kanteninzidenz
+ein zusammenhaengendes Indexintervall bildet und keine weiteren Kontakte
+hinzukommen. Eine blosse Auflistung flaechenteilender Paare garantiert
+diese Voraussetzungen nicht. N+3 Ecken und 3N+3 Kanten passen zum Stapeln,
+beweisen aber allein noch keine geometrische Einbettung.
+
+BEWEIS MIT DEM RICHTIGEN GRAPHEN
+
+Setze S=T3+T4. Bilde einen Graphen G mit einem Knoten pro geschnittenem
+Tetraeder. Verbinde i und i+1 genau dann, wenn H ihre gemeinsame Flaeche
+F_i schneidet. Beide Tetraeder zu schneiden genuegt nicht!
+G ist ein Teilgraph des Indexpfades, also ein Wald. Fuer seine Kantenzahl
+E und Komponentenzahl C_G gilt E=S-C_G.
+
+Jede Kante des Tetraederkomplexes gehoert zu einem zusammenhaengenden
+Indexintervall: Bei Anfuegen eines neuen Tetraeders ist jede alte Kante
+eine Kante seiner Anheftungsflaeche, also auch des unmittelbaren Vorgaengers;
+nach ihrem Verschwinden kann sie ohne unerlaubte Zusatzberuehrung nicht
+wiederkehren. Schneidet H eine solche Kante, werden alle Tetraeder und
+gemeinsamen Flaechen dieses Intervalls geschnitten.
+
+Ein Schnittpunkt auf einer Komplexkante mit r inzidenten Tetraedern wird
+in 3T3+4T4 genau r-mal gezaehlt. Er liegt auf genau r-1 geschnittenen
+gemeinsamen Flaechen des Intervalls. Jede dieser Flaechen hat genau zwei
+solche Endpunkte. Daher, mit korrekt beruecksichtigten Mehrfachinzidenzen,
+
+  P = 3T3 + 4T4 - 2E.
+
+Die Graphkomponenten entsprechen den geometrischen Komponenten: Eine
+Graphkante verbindet zwei Schnittpolygone durch ein gemeinsames Segment.
+Umgekehrt koennen sich Polygone in einer eingebetteten Kette nur an einer
+gemeinsamen Flaeche oder Kante beruehren; eine gemeinsame Ecke ist durch H
+ausgeschlossen. Eine Beruehrung an einer Komplexkante verbindet entlang
+ihres gesamten Indexintervalls ebenfalls durch geschnittene Flaechen in G.
+Es entstehen also keine zusaetzlichen Verbindungen ausserhalb von G.
+Damit C_G=C und
+
+  P = 3T3+4T4-2(S-C) = T3+2T4+2C.
+
+Der leere Schnitt erfuellt die Formel mit allen Zaehlern null.
+
+EXPLIZITES VERZERRTES GEGENBEISPIEL GEGEN C = INDEXLAEUFE
+
+Bezeichne die gemeinsamen Flaechenecken hier mit A,B,Q, damit C fuer
+die Komponentenzahl frei bleibt:
+
+  A=(0,0,0), B=(1,0,0), Q=(0,1,0),
+  D=(2,0,1), E=(2,0,-1).
+  K_1=conv(A,B,Q,D), K_2=conv(A,B,Q,E), H: x=3/2.
+
+Die nichtdegenerierten Tetraeder liegen auf entgegengesetzten Seiten
+von z=0 und haben exakt ABQ gemeinsam. H trifft keine Ecke. Alle drei
+Flaechenecken haben x<3/2, beide Spitzen x>3/2. Deshalb werden beide
+Tetraeder geschnitten, ihre gemeinsame Flaeche jedoch nicht.
+
+Die beiden Dreiecke haben die Eckpunkte
+
+  (3/2,0,3/4), (3/2,0,1/2), (3/2,1/4,3/4)
+  beziehungsweise
+  (3/2,0,-3/4), (3/2,0,-1/2), (3/2,1/4,-3/4).
+
+Sie sind getrennt. Somit T3=2, T4=0, P=6, C=2. Die Formel gibt korrekt
+6=2+0+4. Es existiert aber nur ein Indexlauf geschnittener Tetraeder;
+die falsche Einsetzung dieses Laufzaehlers R=1 ergabe 4 statt 6.
+Das Paar ist nichtkonvex: Die Strecke DE enthaelt (2,0,0), das nicht
+in ABQ und damit nicht in der Vereinigung liegt. Dies ist keine
+Schnittebenendegeneration und kein Selbstueberlappungseffekt.
+
+ROLLE DER KONVEXITÄT
+
+Ist jedes Nachbarpaar als Vereinigung konvex, verbindet ein Schnitt,
+der beide Tetraeder trifft, sie durch die gemeinsame Flaeche. Dann gilt
+C=R, und die Laeufe-Begruendung ist zulaessig. Bei Spitzen auf
+entgegengesetzten Seiten der gemeinsamen Flaechenebene ist das Treffen
+der Spitzenverbindungsstrecke mit dem gemeinsamen Dreieck eine
+hinreichende Konvexitaetsbedingung (Randfaelle eingeschlossen).
+Regulaere angefuegte Paare erfuellen dies. Fuer den obigen korrekten
+Graphbeweis ist weder lokale noch globale Konvexitaet erforderlich.
+
+EMPFOHLENE FASSUNG FUER EINORDNUNG/BUNDLE
+
+"Die Zaehregel gilt fuer eine eingebettete gestapelte Tetraederkette
+und eine Ebene ohne getroffene Ecken. Die geschnittenen Tetraeder
+werden nur ueber tatsaechlich geschnittene gemeinsame Flaechen verbunden.
+Dieser Wald hat S-C Kanten, wobei C die geometrischen Schnittkomponenten
+zaehlt. Das Identifizieren von je zwei Endpunkten pro Waldkante liefert
+P=T3+2T4+2C. Konvexitaet benachbarter Paare wird nur gebraucht, wenn man
+C stattdessen aus den Indexlaeufen geschnittener Tetraeder bestimmen will."
+
+Die sechs tabellierten Beispiele sind mit dieser Formel vereinbar.
+Ohne Koordinaten/Erzeugungscode bleibt offen, ob die Bundle-Geometrie
+die genannten Einbettungsbedingungen ueberall erfuellt und wie der
+Komponentenzaehler dort konkret berechnet wurde. Aus der Papierregel
+folgen keine Monte-Carlo-Verteilungen und keine physikalische Dynamik.

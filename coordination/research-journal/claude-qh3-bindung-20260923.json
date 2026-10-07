@@ -1,0 +1,25 @@
+{
+  "id": "claude-qh3-bindung-20260923",
+  "time": "2026-09-23T17:58:39.586495+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5)",
+  "topic": "modelle",
+  "status": "reported",
+  "title": "QH3: mit eingesetzter Nachbaranziehung binden zwei neutrale Verbaende (12 von 60 Rasterzellen), in beiden Kopplungsfamilien; die Verbaende sind aber kompakt, keine raeumliche Skalentrennung",
+  "question": "Bindet eine explizit eingefuehrte Zusatzanziehung zwei neutrale Komposite, und liegt es an der Form der Kopplung?",
+  "action": "Codex fuhr QH3 auf .69/P5000: 120 Sektorberechnungen, 60 Bindungsvergleiche; zwei Zusatzterme getrennt verglichen (Kontaktkopplung c_i = n+_i n-_i, die fertige Komposite koppelt, gegen mikroskopische Dichtekopplung rho_i = n+_i + n-_i), g von -0,05 bis 0,1 mit repulsiver Gegenprobe, L = 4/6/8, kappa = 0,05/0,1. Auflage von mir (96150ed9): nur der Vergleich beider Familien ist aussagekraeftig, und das Abbruchkriterium der Variantenreihe muss genannt werden.",
+  "result": "12 von 60 Vergleichen mit negativer Bindungsenergie, alle bei kappa = 0,05 und g = 0,05/0,1, in beiden Kopplungsfamilien und allen drei Boxen. Bei L8, kappa = 0,05: ohne Zusatzkraft E2-2E1 = +0,004947 bei bedingtem Paarabstand 3,3922; mit Kontaktkopplung g = 0,05 -0,004915 bei 1,4457; mit Dichtekopplung -0,005641 bei 1,4582; bei g = 0,1 beide rund -0,0468 bei Abstand 1,04. Innere Paarstruktur bleibt erhalten, P(zwei neutrale Kontakte) 0,92 bis 0,96. Randanteil faellt von 9-10 Prozent (L4) auf 1 Prozent (L8), der Abstand steigt noch mit L.",
+  "meaning": "Die Selbsterfuellungssorge ist entkraeftet: haette nur die Kompositkopplung gebunden, waere der Befund eingebaut gewesen; die mikroskopische Dichtekopplung liefert dasselbe. Die Hauptaussage bleibt aber negativ: die gebundenen Verbaende sind kompakt (Paarabstand bis auf eine Gittereinheit), also Kompaktierung mit erhaltener innerer Struktur, keine raeumliche Skalentrennung. Nachbarbindung allein ist kein Hierarchienachweis. Drei Boxen legen keinen Grenzwert fest. Damit ist die Variantensuche nach acht Modellvarianten beendet; erlaubt bleibt die Vertiefung des gefundenen Regimes mit vorab gebundener Diagnose (Paargroesse gegen Verbandsgroesse, Abloeseschwelle).",
+  "compute": "Codex auf .69/P5000 CUDA-f64, Programmzeit 2,5 s, Service 5,4 s; Matrizen bis Dimension 784; keine Rechnung von mir",
+  "sources": [
+    {
+      "path": "coordination/stabile-kompositionen-20260923/binding-a/RESULT.json"
+    },
+    {
+      "path": "coordination/stabile-kompositionen-20260923/BINDUNG-VORAB.md"
+    },
+    {
+      "path": "model-lab/kevloop/ideation/quantum_binding.py"
+    }
+  ]
+}

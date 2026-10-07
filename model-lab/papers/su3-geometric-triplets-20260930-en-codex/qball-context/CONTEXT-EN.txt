@@ -1,0 +1,103 @@
+Q-BALL GEOMETRY AND THE 2+2 LITERATURE CONNECTION
+English translation by ag-phy-lat, 1 October 2026, of the coordinator's
+report dated 30 September 2026. The literature findings and reading scope
+below are attributed to ag-phy-coordination and its reviewers. They are not
+a new independent literature audit by the translator.
+
+Existing project profile
+model-lab/simulation-environment/qball-explorer/data/bic-initial-profile.json
+omega²=0.7976767871108792; the radial background at the project's BIC
+candidate, not the omega²=0.7 profile and not Higgsportal-Q250.
+f(0)=1.02423550657.
+
+GEOMETRIE.png/.svg use existing radial background values, reconstructed
+spatially using spherical symmetry. No new field problem was solved.
+The plotted quantity is normalized field density, S=f², not the full
+energy density. The three surfaces are freely chosen display levels of
+80/30/5 percent, not physical shells. Their interpolated radii are
+1.46604/2.87332/4.38686 in model units. The tail has no hard outer edge.
+No conversion to metres has been derived.
+
+The coordinator reports rendering on TS440, CPU core 0, nice 19, under
+the existing laboratory lock; 2.070 CPU seconds after imports. RENDER.json
+records the input hash. The renderer and outputs are preserved alongside
+this note. No local interpreter was used for that rendering. The coordinator
+reports a visual inspection. The older bic-view/desktop.png is explicitly
+schematic and is not used as the actual geometry.
+
+The background phase exp(-i omega t) rotates in complex field space while
+the density f² remains stationary. Spherical symmetry was assumed in the
+radial ansatz; the image does not demonstrate stability against asymmetric
+perturbations.
+
+Literature: limited additional source review
+
+1. Xie/Saffin/Zhou, 2101.06988
+https://arxiv.org/html/2101.06988
+A reviewer read the model/preparation and sections 4–5; the coordinator
+also read sections 4–5. The sextic reference case g=0.5 matches the project's
+U=S-S²+0.5S³. Free Q-ball/anti-Q-ball superpositions form long-lived
+charge-swapping states; planar quadrupoles and higher three-dimensional
+multipoles are also considered. The energy envelope can be nearly spherical
+while the charge density swaps in a multipolar pattern. This is not evidence
+of spatially orbiting 2+2 pairs. At g=0.5, higher multipoles lose their charge
+structure relatively rapidly; 3D lifetimes are shorter than 2D lifetimes.
+Figure 22 shows 2D patterns, not the project's 3D solution.
+
+2. Hou/Saffin/Xie/Zhou, 2202.08392
+https://arxiv.org/pdf/2202.08392
+A reviewer examined the model and sections 4.2–4.4; the coordinator read
+the abstract. The potential is logarithmic and therefore different.
+Very long lifetimes are observed even for higher charge-swapping composites;
+these are finite lower bounds, not a proof of eternal stability. Reflection
+conditions in long symmetric runs limit conclusions about symmetry-breaking
+perturbations. The authors overlap with reference 1: this is not an
+independent replication.
+
+3. Loiko/Perapechka/Shnir, 2012.01052
+https://arxiv.org/html/2012.01052
+A reviewer examined sections II–IV; the coordinator read the abstract.
+The gauged Friedberg–Lee–Sirlin model includes an additional real field and
+electromagnetic dynamics. It supports chains with 2/4/6 constituents and
+stationary axisymmetric tori carrying angular momentum, not four orbiting
+point bodies. Multi-torus states are energy saddle points; no general
+stability proof is provided. Applying this construction would require
+an explicit change to the project model.
+
+4. Brihaye/Hartmann, 0711.1969v2
+https://arxiv.org/pdf/0711.1969
+The coordinator examined the introduction, model/ansatz, and stability
+discussion; the text was already in the local source collection. The model
+has two complex fields with separate U(1) charges and a density coupling.
+It considers stationary nonrotating/rotating components and angularly excited
+forms. Numerical existence and energetic comparisons do not replace a full
+dynamical stability analysis. This is not new evidence for 2+2 orbital motion.
+
+5. Almumin et al., 2302.11589
+https://link.springer.com/article/10.1140/epjc/s10052-024-12712-x
+The coordinator examined the introduction, end of section 4, and section 5.
+Small spatially rotating perturbations are constructed perturbatively;
+higher orders can produce radiation. The leading l=1 radial form contains
+f', so its distinction from translation/centre-of-mass motion must be checked
+independently before including it in the project's internal mode spectrum.
+It certifies neither the missing positive dipole mode nor a stable free
+four-body composite.
+
+Coordinator's implications for the paper
+Reference 1 is the closest new comparison: the same potential, but different
+initial data and a different total-charge sector from the project's single
+charged Q-ball. Positive/negative charge regions must not be presented as
+positive/negative electric charges. Four charge lobes, four energy cores,
+and four particle trajectories are different observables.
+
+A useful future research question is whether such a charge pattern survives
+or decays after adding a small amount of angular momentum. This would require
+new 3D initial data, absorber and volume checks, and asymmetric perturbations.
+No such calculation was performed here. A literature match does not authorize
+a simulation. There is no demonstration that the project's BIC and a
+charge-swapping Q-ball share the same mechanism.
+
+Editorial disposition
+This remains a separate contextual note. It does not change the current
+priority of polarization-dependent exchange and quantitative subspace
+invariance, and adds no claims or figures to the frozen v0.5 manuscript.

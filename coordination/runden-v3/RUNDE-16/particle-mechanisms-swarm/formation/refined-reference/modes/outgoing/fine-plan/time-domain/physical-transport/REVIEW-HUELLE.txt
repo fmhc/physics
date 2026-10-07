@@ -1,0 +1,96 @@
+Zusätzliche Vorab-Papierprüfung particle_binding, 03.10.2026.
+Keine gespeicherten Transportwerte/QA berechnet oder gesichtet.
+Ursprünglicher PLAN/REVIEW-PLAN bleiben als vorheriger Stand erhalten.
+
+Roots Einwand ist fachlich begründet. Die alte k*.5(C_L+C_R)^2-Hülle
+mit einem einzigen64eps-Faktor ist eine grobe, mathematisch positive
+Sensitivitätsskala. Sie ist aber keine scharfe Vorwärtspropagation der
+tatsächlichen Operation .5k(cR−cL)^2. Bei cR=cL=1 setzt sie einen
+O(eps)-Boden, obwohl der quadrierte Differenzterm um die Nullstelle
+keinen linearen Fehler in der Differenz hat. Damit ist dieser Boden
+nicht notwendig. Daraus folgt OHNE reale Auswertung noch nicht, dass
+alle interessierenden Signale tatsächlich unauflösbar würden.
+
+Saubere lokale Ableitung: d=cR−cL und eine gewählte absolute
+Differenzunsicherheit e>=0. Dann exakt
+ |(d+delta)^2−d²| <=2|d|e+e² für |delta|<=e.
+Nimmt man vorab e=gamma(|cL|+|cR|), ist die von Root angegebene
+Form2|d|gamma*Csum+gamma²*Csum² korrekt. Sie beschreibt zunächst
+die Fehlerfortpflanzung der Differenz, NICHT bereits sämtliche
+zusätzlichen Multiplikations-/Summationsrundungen.
+
+Bei gerundetem Quadrieren kommt konservativ hinzu
+ gamma*(|d|+e)^2 (normale endliche Werte, kein Über-/Unterlauf).
+Für .5k multiplizieren und Rundung/gegebenenfalls Unsicherheit von k
+ebenfalls gesondert fortpflanzen. Ist d die berechnete statt ideale
+Differenz, gilt derselbe Differenzbetragssatz mit |d_berechnet| und
+e, und zur tatsächlich gerundeten Quadratbildung kann gamma*d_berechnet²
+gerechnet werden. Keine Mischung idealer/berechneter Größen ohne
+deklarierte Konvention. Keine abschließende nochmalige64eps-Multiplikation
+auf bereits absolut in eps skalierte Fehler: sonst falsche eps²-Skalierung.
+
+Am exakten Vakuum d=0 bleibt in dieser robusten Csum-basierten
+Sensitivitätsannahme nur O(gamma²), nicht O(gamma). Wenn Eingaben als
+exakte gespeicherte Floatwerte behandelt werden, ist 1−1 tatsächlich
+exakt0 und kann sogar Fehler0 liefern. Beides ist enger als die alte
+Hülle; die robuste Variante muss nicht behaupten, unbekannte vergangene
+Evolutionsfehler zu erfassen. Float-Eingabearithmetik und hypothetische
+Fehler ihrer physikalischen Werte sind ausdrücklich zu unterscheiden.
+
+Analoge Struktur beachten, keine selektive Reparatur nur günstiger
+Terme: |Delta p|² hat die entsprechende komplexe quadratische Schranke.
+Produkte (wL+wR)Delta c bzw. Re(conj(vL+vR)Delta p) brauchen bilineare
+Fortpflanzung |a|e_b+|b|e_a+e_a e_b plus Operationsrundung. Die stabile
+Potentialform(c−1)(c+1) und anschließende Quadratur ebenfalls nach
+derselben Regel behandeln. Die Laborableitung rd+iomega*p enthält
+eigene Operationen; v darf nicht zugleich als exakt und als bereits
+unsichere Größe benutzt werden. Ausgangsannahmen explizit fixieren.
+
+Zulässige Revision: neue Hüllenvorschrift vollständig vor Implementierung
+und Ergebniskenntnis herleiten/frieren, alte Vorschrift dokumentiert
+behalten. Unveränderte physische Frage, Fenster, Richtungsregel10u,
+dt-/Sampling-/Bilanzterme und Aussagegrenzen. Dies korrigiert den
+Auswertesensitivitätsansatz, nicht ein nachträglich verfehltes Gate.
+Auch feinere Propagation bleibt ohne vollständige Rundungsanalyse aller
+Schritte eine empirische Reserve; gemeinsame Bilanz-/Aliasingblindstellen
+und unbekannte Evolutionsfehler verschwinden dadurch nicht.
+
+Der grobe Vorgänger war als konservative Vorabdefinition implementierbar,
+aber seine Zweckmäßigkeit ist durch die unnötige lineare Nullstellen-
+Empfindlichkeit eingeschränkt. Ich befürworte die begründete prospektive
+Präzisierung statt Beharren auf diesem künstlichen Boden. Endgültigen
+HUELLE.txt-Text anschließend unabhängig gegen diese Ableitung prüfen.
+
+Finale Lektüre: HUELLE.txt vollständig gelesen und SHA256 bestätigt:
+75066a2d0a5c8207166f8b786ba44f48d0d2bd3e3e44714ebeff9e8a2bf7ad9e.
+Die Quadrat- und Produktformeln in berechneten hat-Größen sind korrekt:
+2|dhat|e+e² plus Quadratrundung bzw. |ahat|e_b+|bhat|e_a+e_a e_b
+plus Produktrundung. Komplexe Komponenten und v-Rekonstruktion behandeln
+die möglichen internen Auslöschungen, Potential wird nicht expandiert.
+FQ-Hülle berücksichtigt den vollen komplexen Produktmaßstab statt nur
+der kleinen Imaginärkomponente. k/V, halbeKanten, Paare, gewichtete
+Raum-/Zeitsummen und Interpolationsrundung werden ausdrücklich erfasst.
+Keine doppelte64eps-Skalierung fertiger absoluter Fehler.
+
+Kein verbleibender konkreter Formelblocker für die begrenzte Code-
+implementierung. Die noch symbolischen gamma_m müssen dort vorab feste,
+nachvollziehbare lokale Operationsreserven erhalten; zulässig ist das
+erklärte konservative lokale gamma64. Für Raum-/Zeitsummen separate
+längenabhängige gamma_(n-1) oder vergleichbar begründete feste Zählung,
+nicht pauschal gamma64 für beliebig viele Summanden. Anschließender
+Nichtautor-Codevergleich prüft diese konkrete Zuordnung.
+
+Die Schrankenformeln setzen ideale nichtnegative Fehleroberwerte voraus;
+eine Float-Auswertung ohne nach außen gerichtete Rundung macht daraus
+kein formales Intervallzertifikat. Der Nachtrag beansprucht ausdrücklich
+nur lokale Auswertesensitivität und keine absolute Physikgenauigkeit;
+diese Grenze muss im Code/Ergebnis erhalten bleiben. Globale Evolution,
+frühere Datenerzeugung und gemeinsame Abtast-/Bilanzfehler sind weiterhin
+nicht zertifiziert. Implementierung kann auf dieser prospektiv gebundenen
+Basis beginnen; keine Ausführung oder Zustimmung zu neuen Physikläufen.
+
+BINDUNG-V2.txt danach gelesen: fixes gamma64 pro lokaler Real-/Komplex-
+und Gewichtungsoperation, gamma_(n-1) für Raum-/Zeitreduktionen, keine
+Doppelskalierung, Float-Eingaben als gegeben. Diese konkrete Regel
+beseitigt die offene Wahl von m und ist konsistent konservativ für
+die vorgesehene Sensitivität. Kein weiterer Blocker.

@@ -1,0 +1,131 @@
+WEBGPU / SICHTBARE Q-BALL-FORM — technische Entscheidung, 30.09.2026
+Status: Codelektüre und Architekturentwurf. Keine App geändert, keine Tests
+oder Simulationen gestartet. Noch keine gemessene WebGPU-Performance.
+
+IST
+live-solver.js: echte RK4-Zeitentwicklung der radialen 3D-KG-Gleichung,
+Float64Arrays auf Browser-CPU; l=0 ist per Ansatz erzwungen. Anfangsprofil
+ist gespeichert, die nachfolgende Trajektorie wird live berechnet.
+live.js: WebGLRenderer, 3072 feste Proben auf 32 Radien, additive leuchtende
+Sprites. Keine rekonstruierte materielle Oberfläche, keine frei laufenden
+Teilchen. Sichtbarer Radius wird auf feste Bildschirmgröße skaliert.
+angular-solver.js: endlichdimensionale passive Amplitudendynamik mit
+vorgegebenen Zentren/Achsen und P3-Abstrahlbasis. Keine deformierbare PDE,
+keine mechanisch berechnete Bewegung oder Bindung der Zentren.
+angular-live.js: feste Kugelglyphen, deren Farbe eine Winkelbasis darstellt.
+
+WAS DIE FORM HEUTE IST
+Das gespeicherte BIC-Hintergrundprofil ist monoton und kugelsymmetrisch.
+Es besitzt keine harte Oberfläche. Flächen konstanter Dichte sind Kugeln.
+Bei 80/30/5 Prozent der Anfangszentraldichte sind die Radien etwa
+1.4660/2.8733/4.3869 Modelleinheiten. Gewählte Schwellen sind keine
+physikalischen Schalen. Die l=0-BIC-Störung ist ebenfalls radial.
+Innere komplexe Phase ist kein rotierender materieller Punkt.
+Die eigene Darstellung aus tatsächlichem Profil liegt bereits unter
+../qball-geometry-search/GEOMETRIE.png; keine neue PDE-Rechnung.
+
+PRIORITÄT 1 — FORM AUS DEM LAUFENDEN FELD
+Drei synchronisierte Ansichten, identische Modellzeit und Datenquelle:
+(a) transparente Dichte-Isosurfaces mit frei wählbarer, numerisch sichtbarer
+    Schwelle, standardmäßig relativ zur FESTEN Anfangszentraldichte;
+(b) orthogonale x/y/z-Schnittbilder mit Achsen in Modelleinheiten;
+(c) getrennte vorzeichenbehaftete Re/Im-Störungsansicht, Phase nur oberhalb
+    ausgewiesener Amplitudenschwelle. |psi|², Energiedichte und Ladungsdichte
+    getrennt auswählbar, nicht synonym beschriften.
+Beim aktuellen radialen Löser genügen 1D-Textur+radiales Raymarching bzw.
+Iso-Radien aus aktuellen Samples. Auch nichtmonotone Profile können mehrere
+Flächen pro Schwelle besitzen; nicht nur die erste Kreuzung zeichnen.
+Keine künstlichen Winkel-Lappen ergänzen. Isosurfaces/Volumen erklären die
+berechnete Form zuverlässiger als eine unkalibrierte Punktwolke.
+Gaussian Splats sind höchstens eine Darstellungsoption, kein Feldintegrator.
+
+PRIORITÄT 2 — ECHTE 3D-FORMDYNAMIK
+WebGPU-Compute entwickelt pro kartesischer Zelle
+(Re psi, Im psi, Re pi, Im pi), pi=dt psi, im Laborrahmen:
+  dt psi=pi,
+  dt pi=Delta psi-[1-2|psi|²+1.5|psi|⁴]psi-2 sigma pi.
+Dies ist derselbe Einfeldsektor, nicht automatisch das Higgsportalmodell.
+GPU-Storage-Puffer, getrennte Lese-/Schreibzustände, feste physikalische dt,
+mehrere Dispatches für Integratorstufen; keine rennenden In-place-Stencils.
+Ein Rendererwechsel allein liefert keinen Compute-Löser.
+Integrator/Stencils zunächst explizit festlegen und gegen radiale Referenz
+prüfen. Rendering darf Schritte auslassen, niemals Modellzeit erfinden.
+Physikalische Einheit/Skala bleibt dimensionslos.
+
+Kontrollierte Starts: radialer Hintergrund mit bekannter Störung;
+dann kleine reelle Y_lm-Störungen mit l=1,2,3,4 und explizit regulärem
+Radialfaktor ~r^l am Ursprung. Diese Starts sind Präparationen, nicht bereits
+gefundene Eigenmoden. l=1-Translation vom echten inneren Modus trennen.
+4/8-Lappen einer Winkelbasis sind nicht automatisch 4/8 Teilchen.
+Zwei Zentren mit definierter relativer Phase erst nach Einzelballkontrollen;
+Superposition ist eine Anfangsbedingung, keine stationäre Verbundlösung.
+
+Numerisch nötig: freie Wellen/Dispersion, ungestörter Ball, Vergleich zur
+radialen Rechnung, h/dt- und Boxvariation, Drehen derselben Präparation gegen
+Gitteranisotropie, Energie/Ladung plus Absorberverluste, mehrere Flussradien.
+Partikel-/Objektpositionen nur als aus Felddichte abgeleitete Diagnostik,
+keine erfundenen Punktkräfte zusätzlich zur PDE.
+
+RAND, GENAUIGKEIT UND KOSTEN
+Schwamm plus endlicher Rand ist keine exakte offene Unendlichkeit. Reflektion
+messen; Detektoren innerhalb des Schwamms vermeiden. Absorbervergleich und
+Boxgrößenvergleich sind für lange Lebensdauer entscheidend.
+WGSL bietet native f32 und optional f16, kein natives f64. Daher erst
+explorative Formdynamik; sehr kleine BIC-Abstrahlung nicht aus f32-Nullen
+folgern. Referenz auf Rechenhost in höherer Präzision bleibt erforderlich.
+Primärquelle: https://www.w3.org/TR/WGSL/ (Typen, 30.09.2026 gelesen).
+Three.js WebGPURenderer kann auf WebGL2 zurückfallen: tatsächliches Backend
+anzeigen, Compute-Verfügbarkeit explizit prüfen, keine stille Ersatzrechnung.
+https://threejs.org/docs/pages/WebGPURenderer.html
+
+Analytische reine Zustandsspeicherschätzung, keine Messung:
+vier f32 pro Zelle und zwei Zustandskopien => 32 Bytes/Zelle:
+128^3: 64 MiB, 256^3: 512 MiB. Referenzlauf verdoppelt das; RK4-Stufen,
+Volumentexturen, Diagnostik und Rendering kommen zusätzlich dazu.
+Bisheriges R=80 bei h=.2 in voller umschließender Box verlangt 801^3 Zellen:
+rund 15.3 GiB allein für diese zwei Zustandspuffer. Ein 128^3-Pilot ist
+also NICHT dieselbe aufgelöste große BIC-Box. Browser-/Binding-Limits extra.
+Kein seriöses FPS-Versprechen ohne Adapter-/Treiberprüfung und Messung.
+
+EMPFOHLENE AUFTEILUNG
+Jetzt Formansicht aus bestehendem radialen Live-Zustand verbessern.
+Danach begrenzter kartesischer WebGPU-Pilot für Verformung und l>0.
+Für große Außenräume/Nullstellen weiterhin präziser Fernlöser, dessen LIVE
+Feldschnitte/Volumendaten in die Ansicht gestreamt werden können; kein
+Abspielen alter Trajektorien. Browser-WebGPU läuft auf dem Rechner des
+Browsers, auch wenn die Seite von .69 kommt. Es entlastet den Laptop nicht
+automatisch. Ein entfernt laufender Solver mit lokaler leichter Anzeige
+passt zur bisherigen Hardwarevorgabe. Keine lokale GPU-Last gestartet.
+
+FERTIG-KRITERIUM FÜR DEN UMBAU
+Nutzer kann die echte Dichteform drehen, schneiden und ihre Schwelle lesen;
+Deformationen stammen aus 3D-PDE, Gleichungen/Host/Präzision sichtbar;
+Referenz und Bilanzkontrollen bestanden auf freigegebenem Rechenhost;
+exakte BIC-/Langzeitbeweise bleiben getrennt. Dieser Entwurf behauptet
+keine bereits implementierte oder geprüfte WebGPU-Version.
+
+NACHTRAG: VORHANDENES TOOLSET, NACH GEZIELTER BESTANDSSUCHE
+Nicht bei null anfangen:
+1. model-lab/rotation-lab/gpu-physics.mjs: echter WGSL/f32-Compute-Kern,
+   Puffer/Readback, Geräteinitialisierung im app.mjs. Historische .69-QA:
+   121 GPU/JS-Vergleiche bestanden laut html-labor-20260909/ERGEBNIS.md.
+   Kleine ODE-Systeme, @workgroup_size(1); NICHT der benötigte parallele
+   3D-KG-Stencil. Infrastruktur und QA-Muster wiederverwenden, Gleichung
+   und Dispatch-Architektur nicht unverändert übernehmen.
+2. model-lab/simulation-environment/field3d/engine.py: vorhandener echter
+   kartesischer CUDA-complex128/float64-Löser, zwei komplexe Felder plus
+   reelles Higgsfeld, 7-Punkt-Laplacian, Verlet und Flussdiagnostik.
+   Wiederverwendbarer 3D-Rechenrahmen, jedoch anderes Potential/Modell als
+   der Einfeld-BIC. torch.roll impliziert periodische Nachbarn; kompakte
+   Startfenster sind kein offener Außenraum. Modell und Rand portieren
+   beziehungsweise explizit als eigenen Sektor ausweisen.
+   field3d/viewer.js lädt gespeicherte Frames: noch KEIN Live-Stream.
+3. qball-explorer/live-solver.js: richtige Einfeld-BIC-Referenz und echte
+   radiale Live-Rechnung. Beste Quelle für Startprofil und Vergleich.
+4. Vorhandenes Three.js-Vendor meldet REVISION=185; OrbitControls und
+   WebGL-Renderer im Einsatz. In den gezielt gesuchten Projekt-JS-Modulen
+   keine fertige WebGPU-Volumen-/MarchingCubes-Integration gefunden.
+
+Damit fehlen vor allem Verbindungen: Einfeld-3D-Adapter, laufender
+Datenkanal, Volumen-/Isoflächenansicht und deren QA. Ein weiterer
+Punktteilchensimulator würde diese fehlenden Feldbausteine nicht ersetzen.

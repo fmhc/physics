@@ -1,0 +1,34 @@
+G1-09 Blase im Tropfen: Aufrufe fuer die Leitung
+Geschrieben vom Test-Agenten T-2, 2026-09-30 08:14:16 CEST (date). Vorhersage in KARTE.md seit 07:58:24.
+
+Code:  blase.py = Kopie von RUNDE-05/r5a/r5a.py (Original unveraendert, sha256 e51b4172...), neuer Unterbefehl "blase".
+       torch float64/complex128; ausdruecklich CPU-faehig (--geraet cpu, 1 Faden), wie die Karte vorsieht.
+Spur:  cpu2 (oder cpu / cpu5). Mit --geraet cuda auch p4000a moeglich; noetig ist das nicht.
+
+Formprobe (Laptop, nice 19, 1 Faden, CUDA_VISIBLE_DEVICES leer, timeout 120, --t-end 3):
+  08:13:19 bis 08:13:52: haupt rc 0 (12,4 s, davon Schiessen 12,2 s), gegen rc 0.
+  Zahlen der Zeitentwicklung ungueltig (T = 3), nicht ernten. Dateien in formprobe/.
+Geschaetzte Laufzeit: je Aufruf unter 2 min.
+  - Schiessen etwa 12 s auf dem Laptop.
+  - Zeitentwicklung T = 120: grob 2400, fein 4800 Schritte bei 1501 bzw. 3001 Punkten, 3 bzw. 1 Lauf.
+  - Fuer die .69-CPU ist Faktor 2 angesetzt.
+
+Vorbereitung auf der .69 (Ordnername Vorschlag):
+  mkdir -p /home/fmh/fmhc-physics-remote/ie-gen01-g1-09
+  dorthin kopieren: blase.py und KARTE.md (formprobe/ nicht noetig). Die Tabelle eingabe/ braucht "blase" nicht.
+
+1) Hauptlauf: omega^2 = 0,52, R0 = 8 / 12 / 18, T = 120, grob (dr 0,1, dt 0,05) und fein (dr/2, dt/2)
+cd /home/fmh/fmhc-physics-remote/ie-gen01-g1-09 && bash /home/fmh/fmhc-physics-remote/kleintests/kleintest.sh cpu2 g109-haupt blase.py blase --geraet cpu --teil haupt --out lauf-69 | tee /home/fmh/fmhc-physics-remote/ie-gen01-g1-09/lauf-69-haupt.log
+
+2) Gegenprobe (getrennter Lauf): R0 = 0 (Ball ohne Leere), sonst gleich
+cd /home/fmh/fmhc-physics-remote/ie-gen01-g1-09 && bash /home/fmh/fmhc-physics-remote/kleintests/kleintest.sh cpu2 g109-gegen blase.py blase --geraet cpu --teil gegen --out lauf-69 | tee /home/fmh/fmhc-physics-remote/ie-gen01-g1-09/lauf-69-gegen.log
+
+Lokal statt .69 (Leitung):
+date; cd /home/fmh/fmhc-physics/coordination/runden-v3/IDEEN-EVOLUTION/GEN-01/G1-09 && CUDA_VISIBLE_DEVICES= nice -n 19 timeout 600 python3 blase.py blase --geraet cpu --teil haupt --out lauf-lokal | tee lauf-lokal-haupt.log
+date; cd /home/fmh/fmhc-physics/coordination/runden-v3/IDEEN-EVOLUTION/GEN-01/G1-09 && CUDA_VISIBLE_DEVICES= nice -n 19 timeout 600 python3 blase.py blase --geraet cpu --teil gegen --out lauf-lokal | tee lauf-lokal-gegen.log
+
+Ausgaben: <out>/r5a_blase_haupt_ergebnis.json und _bericht.txt, r5a_blase_gegen_*; Zeitreihen in *_zeitreihen.pt.
+  - Die bindende Vorhersage T_E(R0) steht im Bericht in der Zeile "Vorhersage T_E", vor allen Laufwerten.
+  - Unter "kennzahlen": V1 (|t70/T_E - 1| <= 0,15), V2 (Abfall t70/t70_unbegrenzt von 8 nach 18 >= 0,10), V3 (R_v
+    monoton bis 0,7 R0), "scheitert", L3 (t70 grob gegen fein <= 2 %), Gegenprobe (R_d auf 0,2, S(0) auf 1e-3,
+    j_r < 1e-4) und "plausibilitaet_bestanden".

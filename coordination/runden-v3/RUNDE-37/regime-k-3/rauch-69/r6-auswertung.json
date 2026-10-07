@@ -1,0 +1,1433 @@
+{
+ "eingaben": {
+  "kw-r": {
+   "pfad": "/home/fmh/fmhc-physics-remote/regime-k-3/rauch/r5-kw-raster.json",
+   "sha256": "be324cdb4ced090cf61825f4f7e44043d2606472ff20dcd0a3086b3ce53ff81f"
+  },
+  "kw-b": {
+   "pfad": "/home/fmh/fmhc-physics-remote/regime-k-3/rauch/r5-kw-bz.json",
+   "sha256": "d37e371eda04cf9cafd142e138ec0ad0541031e5dd44ee51b6af8390c97f4dcf"
+  },
+  "b1-r": {
+   "pfad": "/home/fmh/fmhc-physics-remote/regime-k-3/rauch/r5-b1-raster.json",
+   "sha256": "5b26852dbcacb8bb0144447a6e8b0a745596421b131e925424f517bcbef12a79"
+  },
+  "b1-b": {
+   "pfad": "/home/fmh/fmhc-physics-remote/regime-k-3/rauch/r5-b1-bz.json",
+   "sha256": "bba48b1e6ecb6fd6e0976f5c440df54053a32575dca5bcff185d569eabed2fdc"
+  },
+  "va-r": {
+   "pfad": "/home/fmh/fmhc-physics-remote/regime-k-3/rauch/r5-va-raster.json",
+   "sha256": "9de3ec1244df66c5b67546b91ddb064e788a14e6e11df26b1bc54ee722c50bc3"
+  },
+  "va-b": {
+   "pfad": "/home/fmh/fmhc-physics-remote/regime-k-3/rauch/r5-va-bz.json",
+   "sha256": "b97de940fbd6a524fa26dd68f2c3149b49af2a94c3eddbb053ade54e8232a3bb"
+  },
+  "ref-va1": {
+   "pfad": "/home/fmh/fmhc-physics-remote/regime-k-2/lauf/welle-V-A-koord-rw24.json",
+   "sha256": "d4311e34f0fe27fa61f18a62f9001a908d8f38eea4a2d8d3291a74a9a467c2b2"
+  },
+  "ref-va2": {
+   "pfad": "/home/fmh/fmhc-physics-remote/regime-k-2/lauf/welle-V-A-koord-rk25.json",
+   "sha256": "0bbba8136150e8fcce57db2efa5fb2689f61c7f887d026879018e9355b06860f"
+  },
+  "ref-kw": {
+   "pfad": "/home/fmh/fmhc-physics-remote/regime-k-2/lauf/welle-KW-koord-rw24.json",
+   "sha256": "e23f83d0c5bbadf72840981ef04037a00b8da2924b9688c5b18eaf4160b95150"
+  },
+  "ref-b1": {
+   "pfad": "/home/fmh/fmhc-physics-remote/regime-k-2/lauf/welle-B1-t1-koord-rw24.json",
+   "sha256": "756035b6e2c96f5fe280422b297664f99ed613ab739c7b533150786fbcf41d8e"
+  }
+ },
+ "arme": {
+  "KW": {
+   "punkte": 8,
+   "raster": 4,
+   "bz": 4,
+   "sperren": {},
+   "gesperrt": 0,
+   "skripte": [
+    "b921377be6c6d4caa3b0da8ce7642791b7945dde94dd21be19780ac287bbc30f"
+   ],
+   "K1_max": 1.1276096074330354e-15,
+   "K1_herm_max": 1.671047637853583e-15,
+   "global": {
+    "K1": {
+     "spektrum_max_rel": 1.1276096074330354e-15,
+     "herm_max_rel": 1.671047637853583e-15,
+     "punkte": 8
+    },
+    "S": 24,
+    "NE": 15,
+    "Es": 7,
+    "NB": 8,
+    "zeltstangen": 1,
+    "diagonalen": 7,
+    "tote_kanten": 1
+   },
+   "d": {
+    "3": 8
+   },
+   "H_bb_null": {
+    "3": 8
+   },
+   "null_entkoppelt": {
+    "1": 8
+   },
+   "null_nur_unten": {
+    "1": 8
+   },
+   "null_nur_oben": {
+    "1": 8
+   },
+   "null_gemischt": {
+    "0": 8
+   },
+   "rang_G": {
+    "3": 8
+   },
+   "rang_C": {
+    "1": 8
+   },
+   "pfad": {
+    "statisch": 8
+   },
+   "nicht_propagierend": {
+    "2": 8
+   },
+   "herm_max": 1.806273370685772e-15,
+   "eich_max": 8.532856995122449e-08,
+   "B_sym_max": 0.0,
+   "sin_C_max": 2.646061802334466e-07,
+   "cond_B_W_max": 1.327965636432893e+16,
+   "s_sym_max": 3.71633902063376e-16,
+   "p_err_max": 4.181854203051515e-13,
+   "err_max": 5.220522262835915e-13,
+   "s_voll_max": 1.412741417682242e-16,
+   "kappa_max": 142.75878637104904,
+   "zeit_max_s": 0.019736051559448242,
+   "zahl_eigenwerte": {
+    "4": 8
+   }
+  },
+  "B1-t1": {
+   "punkte": 8,
+   "raster": 4,
+   "bz": 4,
+   "sperren": {
+    "symplektisch": 1,
+    "unecht": 1
+   },
+   "gesperrt": 1,
+   "skripte": [
+    "b921377be6c6d4caa3b0da8ce7642791b7945dde94dd21be19780ac287bbc30f"
+   ],
+   "K1_max": 2.8428816853398123e-15,
+   "K1_herm_max": 5.420428388877185e-16,
+   "global": {
+    "K1": {
+     "spektrum_max_rel": 2.8428816853398123e-15,
+     "herm_max_rel": 5.420428388877185e-16,
+     "punkte": 8
+    },
+    "S": 96,
+    "NE": 60,
+    "Es": 28,
+    "NB": 32,
+    "zeltstangen": 4,
+    "diagonalen": 28,
+    "tote_kanten": 0
+   },
+   "d": {
+    "12": 8
+   },
+   "H_bb_null": {
+    "0": 8
+   },
+   "null_entkoppelt": {
+    "0": 8
+   },
+   "null_nur_unten": {
+    "0": 8
+   },
+   "null_nur_oben": {
+    "0": 8
+   },
+   "null_gemischt": {
+    "0": 8
+   },
+   "rang_G": {
+    "16": 8
+   },
+   "rang_C": {
+    "0": 8
+   },
+   "pfad": {
+    "T": 8
+   },
+   "nicht_propagierend": {
+    "0": 8
+   },
+   "herm_max": 5.114802390070628e-16,
+   "eich_max": 1.1464416199464225e-09,
+   "B_sym_max": 0.0,
+   "sin_C_max": 0.0,
+   "cond_B_W_max": 775.2166245475902,
+   "s_sym_max": 9.125038742171469e-16,
+   "p_err_max": 2.218135002793476e-05,
+   "err_max": 0.3333544743550288,
+   "s_voll_max": 2.1753744081727753e-08,
+   "kappa_max": 731.0148066194089,
+   "zeit_max_s": 0.15920662879943848,
+   "zahl_eigenwerte": {
+    "24": 8
+   }
+  },
+  "V-A": {
+   "punkte": 8,
+   "raster": 4,
+   "bz": 4,
+   "sperren": {
+    "bulk": 1,
+    "symplektisch": 1,
+    "unecht": 1,
+    "verfeinerung": 1
+   },
+   "gesperrt": 1,
+   "skripte": [
+    "b921377be6c6d4caa3b0da8ce7642791b7945dde94dd21be19780ac287bbc30f"
+   ],
+   "K1_max": 4.599913523427462e-15,
+   "K1_herm_max": 6.358029031193618e-16,
+   "global": {
+    "K1": {
+     "spektrum_max_rel": 4.599913523427462e-15,
+     "herm_max_rel": 6.358029031193618e-16,
+     "punkte": 8
+    },
+    "S": 232,
+    "NE": 146,
+    "Es": 68,
+    "NB": 78,
+    "zeltstangen": 10,
+    "diagonalen": 68,
+    "tote_kanten": 0
+   },
+   "d": {
+    "28": 8
+   },
+   "H_bb_null": {
+    "1": 1,
+    "0": 7
+   },
+   "null_entkoppelt": {
+    "0": 8
+   },
+   "null_nur_unten": {
+    "0": 8
+   },
+   "null_nur_oben": {
+    "0": 8
+   },
+   "null_gemischt": {
+    "1": 1,
+    "0": 7
+   },
+   "rang_G": {
+    "40": 8
+   },
+   "rang_C": {
+    "0": 8
+   },
+   "pfad": {
+    "T": 8
+   },
+   "nicht_propagierend": {
+    "0": 8
+   },
+   "herm_max": 6.345402144962098e-16,
+   "eich_max": 2.2614351738356755e-07,
+   "B_sym_max": 0.0,
+   "sin_C_max": 0.0,
+   "cond_B_W_max": 9329896.81261495,
+   "s_sym_max": 2.06164404091787e-14,
+   "p_err_max": 0.6603185326970347,
+   "err_max": 118.92183322692692,
+   "s_voll_max": 0.0009501869575351052,
+   "kappa_max": 794.7414145189331,
+   "zeit_max_s": 5.019480466842651,
+   "zahl_eigenwerte": {
+    "56": 8
+   }
+  }
+ },
+ "K5": {
+  "KW": {
+   "max_rel": 0.0,
+   "paare": 0
+  },
+  "B1-t1": {
+   "max_rel": 0.0,
+   "paare": 0
+  },
+  "V-A": {
+   "max_rel": 0.0,
+   "paare": 0
+  }
+ },
+ "K6": {
+  "V-A": {
+   "max_rel": 0.0,
+   "fehlend": 49,
+   "nullstellen": 0,
+   "dateien": [
+    "va1",
+    "va2"
+   ],
+   "ok": false
+  },
+  "KW": {
+   "max_rel": 0.0,
+   "fehlend": 24,
+   "nullstellen": 0,
+   "dateien": [
+    "kw"
+   ],
+   "ok": false
+  },
+  "B1-t1": {
+   "max_rel": 0.0,
+   "fehlend": 24,
+   "nullstellen": 0,
+   "dateien": [
+    "b1"
+   ],
+   "ok": false
+  }
+ },
+ "PK-T": {
+  "punkte": 3,
+  "tt_nicht_zuordenbar": 0,
+  "verletzt_oder_unsicher": 0,
+  "g_max": 1.5605138346335686e-13,
+  "ok": true
+ },
+ "urteile": {
+  "Pipeline": {
+   "ok": false,
+   "PK-T": true,
+   "K1": true,
+   "K6": {
+    "KW": false,
+    "B1-t1": false,
+    "V-A": false
+   }
+  },
+  "RT0": {
+   "plan": "unklar (Pipeline)",
+   "karte": "unklar (Pipeline)",
+   "detail": {
+    "urteil": "eingetroffen",
+    "verstoss_punkte": 0,
+    "verletzte_eigenwerte": 0,
+    "gesperrt_oder_unsicher": 0,
+    "beispiele_verstoss": [],
+    "beispiele_gesperrt": [],
+    "g_max": 1.5605138346335686e-13,
+    "punkte": 8
+   },
+   "plan_vor_PK": "eingetroffen"
+  },
+  "RT1": {
+   "plan": "unklar (Pipeline)",
+   "karte": "unklar (Pipeline)",
+   "koord": {
+    "urteil": "nicht eingetroffen",
+    "punkte": 2,
+    "verstoss_punkte": 1,
+    "gesperrt": 1,
+    "beispiele_gesperrt": [
+     "x+@kl0.005"
+    ],
+    "g_tt_max": 5.392698595940002e-07
+   },
+   "kl": {
+    "urteil": "nicht eingetroffen",
+    "punkte": 3,
+    "verstoss_punkte": 2,
+    "gesperrt": 1,
+    "beispiele_gesperrt": [
+     "x+@kl0.005"
+    ],
+    "g_tt_max": 5.283615538553807e-06
+   },
+   "plan_vor_PK": "nicht eingetroffen",
+   "karte_vor_PK": "nicht eingetroffen"
+  },
+  "RT2": {
+   "plan": "unklar (Pipeline)",
+   "karte": "unklar (Pipeline)",
+   "plan_detail": {
+    "urteil": "nicht eingetroffen",
+    "verstoss_punkte": 7,
+    "verletzte_eigenwerte": 388,
+    "gesperrt_oder_unsicher": 1,
+    "beispiele_verstoss": [
+     "rk_d3_ohnet_-1-1@kl0.02",
+     "fib11@kl0.07",
+     "312@kl0.2",
+     "[0, 0, 1]@bz",
+     "[2, 0, 0]@bz",
+     "[3, 7, 7]@bz",
+     "[5, 7, 6]@bz"
+    ],
+    "beispiele_gesperrt": [
+     "x+@kl0.005"
+    ],
+    "g_max": 22.13510822976764,
+    "punkte": 8
+   },
+   "karte_detail": {
+    "urteil": "nicht eingetroffen",
+    "verstoss_punkte": 7,
+    "verletzte_eigenwerte": 388,
+    "gesperrt_oder_unsicher": 1,
+    "beispiele_verstoss": [
+     "rk_d3_ohnet_-1-1@kl0.02",
+     "fib11@kl0.07",
+     "312@kl0.2",
+     "[0, 0, 1]@bz",
+     "[2, 0, 0]@bz",
+     "[3, 7, 7]@bz",
+     "[5, 7, 6]@bz"
+    ],
+    "beispiele_gesperrt": [
+     "x+@kl0.005"
+    ],
+    "g_max": 22.1082547926898,
+    "punkte": 8
+   },
+   "plan_vor_PK": "eingetroffen",
+   "karte_vor_PK": "eingetroffen"
+  },
+  "RT3": {
+   "plan": "unklar (Pipeline)",
+   "karte": "unklar (Pipeline)",
+   "plan_detail": {
+    "urteil": "nicht auswertbar",
+    "a_raster": true,
+    "b_bz_max": true,
+    "c_bz_mittel": true,
+    "raster_verglichen": 2,
+    "raster_verstoesse": 0,
+    "beispiele": [],
+    "anteil_gesperrt": {
+     "B1-t1": 0.125,
+     "V-A": 0.125
+    },
+    "verteilung": {
+     "B1-t1-raster": {
+      "min": 8,
+      "max": 8,
+      "mittel": 8.0,
+      "zahl": 3,
+      "haeufigkeit": {
+       "8": 3
+      }
+     },
+     "B1-t1-bz": {
+      "min": 8,
+      "max": 12,
+      "mittel": 10.0,
+      "zahl": 4,
+      "haeufigkeit": {
+       "8": 2,
+       "12": 2
+      }
+     },
+     "V-A-raster": {
+      "min": 52,
+      "max": 56,
+      "mittel": 54.666666666666664,
+      "zahl": 3,
+      "haeufigkeit": {
+       "52": 1,
+       "56": 2
+      }
+     },
+     "V-A-bz": {
+      "min": 56,
+      "max": 56,
+      "mittel": 56.0,
+      "zahl": 4,
+      "haeufigkeit": {
+       "56": 4
+      }
+     }
+    }
+   },
+   "karte_detail": {
+    "urteil": "nicht auswertbar",
+    "a_raster": true,
+    "b_bz_max": true,
+    "c_bz_mittel": true,
+    "raster_verglichen": 2,
+    "raster_verstoesse": 0,
+    "beispiele": [],
+    "anteil_gesperrt": {
+     "B1-t1": 0.125,
+     "V-A": 0.125
+    },
+    "verteilung": {
+     "B1-t1-raster": {
+      "min": 4,
+      "max": 4,
+      "mittel": 4.0,
+      "zahl": 3,
+      "haeufigkeit": {
+       "4": 3
+      }
+     },
+     "B1-t1-bz": {
+      "min": 0,
+      "max": 8,
+      "mittel": 5.0,
+      "zahl": 4,
+      "haeufigkeit": {
+       "0": 1,
+       "4": 1,
+       "8": 2
+      }
+     },
+     "V-A-raster": {
+      "min": 52,
+      "max": 56,
+      "mittel": 54.666666666666664,
+      "zahl": 3,
+      "haeufigkeit": {
+       "52": 1,
+       "56": 2
+      }
+     },
+     "V-A-bz": {
+      "min": 56,
+      "max": 56,
+      "mittel": 56.0,
+      "zahl": 4,
+      "haeufigkeit": {
+       "56": 4
+      }
+     }
+    }
+   },
+   "plan_vor_PK": "nicht auswertbar",
+   "karte_vor_PK": "nicht auswertbar"
+  }
+ },
+ "beschreibend": {
+  "KW": {
+   "eigenwerte_je_art": {
+    "tt": 16,
+    "gitter": 16
+   },
+   "instabil_1e-6_je_art": {
+    "tt": 0,
+    "gitter_kreis": 0,
+    "gitter_schnitt": 0,
+    "gitter_reell_pos": 0,
+    "gitter_komplex": 0
+   },
+   "top12": [
+    {
+     "punkt": "x+",
+     "betrag": "kl0.005",
+     "kb": 0.003502465917396254,
+     "z": [
+      0.9965036641297433,
+      1.5550577541373863e-13
+     ],
+     "abs_z": 0.9965036641297433,
+     "delta": 1.560513834633447e-13,
+     "omega": [
+      0.003502462336807107,
+      -1.560513834633447e-13
+     ],
+     "tt_anteil": 0.9999999999999631,
+     "art": "tt",
+     "s_voll": 1.0797646546996242e-16
+    },
+    {
+     "punkt": "x+",
+     "betrag": "kl0.005",
+     "kb": 0.003502465917396254,
+     "z": [
+      1.0035086031256104,
+      -1.2498699864283071e-13
+     ],
+     "abs_z": 1.0035086031256104,
+     "delta": 1.2455000211611134e-13,
+     "omega": [
+      -0.0035024623371982893,
+      1.2455000211611134e-13
+     ],
+     "tt_anteil": 0.9999999999999629,
+     "art": "tt",
+     "s_voll": 9.858052555770618e-17
+    },
+    {
+     "punkt": "x+",
+     "betrag": "kl0.005",
+     "kb": 0.003502465917396254,
+     "z": [
+      1.0035086031254061,
+      8.443722527505188e-14
+     ],
+     "abs_z": 1.0035086031254061,
+     "delta": 8.414200437552199e-14,
+     "omega": [
+      -0.0035024623369947225,
+      -8.414200437552199e-14
+     ],
+     "tt_anteil": 0.9999999999998893,
+     "art": "tt",
+     "s_voll": 1.1436742719536693e-16
+    },
+    {
+     "punkt": "rk_d3_ohnet_-1-1",
+     "betrag": "kl0.02",
+     "kb": 0.014009863669585017,
+     "z": [
+      1.0141083068015502,
+      8.481681609239202e-14
+     ],
+     "abs_z": 1.0141083068015502,
+     "delta": 8.363684186741381e-14,
+     "omega": [
+      -0.014009710906426559,
+      -8.363684186741381e-14
+     ],
+     "tt_anteil": 0.9999999999812758,
+     "art": "tt",
+     "s_voll": 1.3553880223575637e-16
+    },
+    {
+     "punkt": "rk_d3_ohnet_-1-1",
+     "betrag": "kl0.02",
+     "kb": 0.014009863669585017,
+     "z": [
+      0.9860879684087837,
+      -6.844156779710134e-14
+     ],
+     "abs_z": 0.9860879684087837,
+     "delta": 6.940716243353335e-14,
+     "omega": [
+      0.014009710906014466,
+      6.940716243353335e-14
+     ],
+     "tt_anteil": 0.9999999999999994,
+     "art": "tt",
+     "s_voll": 9.296970341381076e-17
+    },
+    {
+     "punkt": "x+",
+     "betrag": "kl0.005",
+     "kb": 0.003502465917396254,
+     "z": [
+      0.9965036641297663,
+      -6.69286662985322e-14
+     ],
+     "abs_z": 0.9965036641297663,
+     "delta": 6.716349242627235e-14,
+     "omega": [
+      0.0035024623367840447,
+      6.716349242627235e-14
+     ],
+     "tt_anteil": 0.9999999999998895,
+     "art": "tt",
+     "s_voll": 9.04756532447814e-17
+    },
+    {
+     "punkt": "fib11",
+     "betrag": "kl0.07",
+     "kb": 0.04903452284354756,
+     "z": [
+      0.9521563356358671,
+      -4.587899843017693e-14
+     ],
+     "abs_z": 0.9521563356358671,
+     "delta": 4.818431250529684e-14,
+     "omega": [
+      0.0490260395681863,
+      4.818431250529684e-14
+     ],
+     "tt_anteil": 0.9999999999359359,
+     "art": "tt",
+     "s_voll": 1.0059418140732677e-16
+    },
+    {
+     "punkt": "fib11",
+     "betrag": "kl0.07",
+     "kb": 0.04903452284354756,
+     "z": [
+      0.9521563356357398,
+      3.1334155484323734e-14
+     ],
+     "abs_z": 0.9521563356357398,
+     "delta": 3.2908624678112777e-14,
+     "omega": [
+      0.049026039568320044,
+      -3.2908624678112777e-14
+     ],
+     "tt_anteil": 0.9999999973721949,
+     "art": "tt",
+     "s_voll": 1.3045363585083857e-16
+    },
+    {
+     "punkt": "rk_d3_ohnet_-1-1",
+     "betrag": "kl0.02",
+     "kb": 0.014009863669585017,
+     "z": [
+      0.9860879684083091,
+      2.907501902728886e-14
+     ],
+     "abs_z": 0.9860879684083091,
+     "delta": 2.94852183159888e-14,
+     "omega": [
+      0.01400971090649567,
+      -2.94852183159888e-14
+     ],
+     "tt_anteil": 0.9999999999812765,
+     "art": "tt",
+     "s_voll": 1.412741417682242e-16
+    },
+    {
+     "punkt": "fib11",
+     "betrag": "kl0.07",
+     "kb": 0.04903452284354756,
+     "z": [
+      1.0502476983805502,
+      -2.2043265879000525e-14
+     ],
+     "abs_z": 1.0502476983805502,
+     "delta": 2.098863526479569e-14,
+     "omega": [
+      -0.04902603956821439,
+      2.098863526479569e-14
+     ],
+     "tt_anteil": 0.9999999999345602,
+     "art": "tt",
+     "s_voll": 8.481508490402904e-17
+    },
+    {
+     "punkt": "fib11",
+     "betrag": "kl0.07",
+     "kb": 0.04903452284354756,
+     "z": [
+      1.050247698380677,
+      1.04217510973831e-14
+     ],
+     "abs_z": 1.050247698380677,
+     "delta": 9.923136335791893e-15,
+     "omega": [
+      -0.04902603956833511,
+      -9.923136335791893e-15
+     ],
+     "tt_anteil": 0.9999999973710062,
+     "art": "tt",
+     "s_voll": 1.3392343451959748e-16
+    },
+    {
+     "punkt": "312",
+     "betrag": "kl0.2",
+     "kb": 0.14009863669585018,
+     "z": [
+      0.8694215477250647,
+      3.4869442444701452e-15
+     ],
+     "abs_z": 0.8694215477250647,
+     "delta": 4.010648520955239e-15,
+     "omega": [
+      0.13992717614168118,
+      -4.010648520955239e-15
+     ],
+     "tt_anteil": 0.999999881101833,
+     "art": "tt",
+     "s_voll": 9.814979691452372e-17
+    }
+   ],
+   "je_betrag": {
+    "kl0.005": {
+     "punkte": 1,
+     "g_tt_max": 1.5605138346335686e-13,
+     "g_gitter_max": 0.0,
+     "n_inst_summe": 0,
+     "tt_zuordenbar": 1,
+     "kreis_eukl": 0,
+     "schnitt": 0
+    },
+    "kl0.02": {
+     "punkte": 1,
+     "g_tt_max": 8.363684186741731e-14,
+     "g_gitter_max": 0.0,
+     "n_inst_summe": 0,
+     "tt_zuordenbar": 1,
+     "kreis_eukl": 0,
+     "schnitt": 0
+    },
+    "kl0.07": {
+     "punkte": 1,
+     "g_tt_max": 4.8184312505298e-14,
+     "g_gitter_max": 0.0,
+     "n_inst_summe": 0,
+     "tt_zuordenbar": 1,
+     "kreis_eukl": 0,
+     "schnitt": 0
+    },
+    "kl0.2": {
+     "punkte": 1,
+     "g_tt_max": 4.010648520955247e-15,
+     "g_gitter_max": 0.0,
+     "n_inst_summe": 0,
+     "tt_zuordenbar": 1,
+     "kreis_eukl": 0,
+     "schnitt": 0
+    },
+    "bz": {
+     "punkte": 4,
+     "g_tt_max": 0.0,
+     "g_gitter_max": 1.2065914769726892e-15,
+     "n_inst_summe": 0,
+     "tt_zuordenbar": 0,
+     "kreis_eukl": 0,
+     "schnitt": 0
+    }
+   },
+   "wuerfelformel_tt_max_rel": 7.720432083946215e-11,
+   "bz_rand": {
+    "punkte": 0,
+    "g_max": null,
+    "n_inst_max": null,
+    "n_inst_mittel": null,
+    "gesperrt": 0,
+    "pfad_buendel": 0
+   },
+   "symmetriepunkte": {},
+   "kuhn_gittermode_abs_z": null,
+   "kuhn_gittermode_arg": null
+  },
+  "B1-t1": {
+   "eigenwerte_je_art": {
+    "tt": 16,
+    "gitter": 176
+   },
+   "instabil_1e-6_je_art": {
+    "tt": 0,
+    "gitter_kreis": 0,
+    "gitter_schnitt": 36,
+    "gitter_reell_pos": 0,
+    "gitter_komplex": 36
+   },
+   "top12": [
+    {
+     "punkt": "x+",
+     "betrag": "kl0.005",
+     "kb": 0.005356599237646071,
+     "z": [
+      -28.674467393059167,
+      2.7225980751583446e-16
+     ],
+     "abs_z": 28.674467393059167,
+     "delta": 3.141592653589793,
+     "omega": [
+      -3.3560070889304408,
+      -3.141592653589793
+     ],
+     "tt_anteil": 0.9044940476789387,
+     "art": "gitter",
+     "s_voll": 8.553429416844742e-17
+    },
+    {
+     "punkt": "x+",
+     "betrag": "kl0.005",
+     "kb": 0.005356599237646071,
+     "z": [
+      -8.19032533276874,
+      -7.469773572060772e-17
+     ],
+     "abs_z": 8.19032533276874,
+     "delta": 3.141592653589793,
+     "omega": [
+      -2.10295362024682,
+      3.141592653589793
+     ],
+     "tt_anteil": 0.7405687160092381,
+     "art": "gitter",
+     "s_voll": 9.587361930528573e-17
+    },
+    {
+     "punkt": "x+",
+     "betrag": "kl0.005",
+     "kb": 0.005356599237646071,
+     "z": [
+      -0.1220952720887768,
+      3.4179956745467694e-19
+     ],
+     "abs_z": 0.1220952720887768,
+     "delta": 3.141592653589793,
+     "omega": [
+      2.1029536202468195,
+      -3.141592653589793
+     ],
+     "tt_anteil": 0.47888130892039293,
+     "art": "gitter",
+     "s_voll": 9.27403711975959e-17
+    },
+    {
+     "punkt": "x+",
+     "betrag": "kl0.005",
+     "kb": 0.005356599237646071,
+     "z": [
+      -0.03487423101159524,
+      -8.296707705825375e-19
+     ],
+     "abs_z": 0.03487423101159524,
+     "delta": 3.141592653589793,
+     "omega": [
+      3.3560070889304403,
+      3.141592653589793
+     ],
+     "tt_anteil": 0.5774820604504871,
+     "art": "gitter",
+     "s_voll": 7.271666712943122e-17
+    },
+    {
+     "punkt": "rk_d3_ohnet_-1-1",
+     "betrag": "kl0.02",
+     "kb": 0.021426396950584285,
+     "z": [
+      -28.674242324433873,
+      -1.21744223100048e-15
+     ],
+     "abs_z": 28.674242324433873,
+     "delta": 3.141592653589793,
+     "omega": [
+      -3.3559992398044045,
+      3.141592653589793
+     ],
+     "tt_anteil": 0.7974898498774665,
+     "art": "gitter",
+     "s_voll": 1.247032677391381e-16
+    },
+    {
+     "punkt": "rk_d3_ohnet_-1-1",
+     "betrag": "kl0.02",
+     "kb": 0.021426396950584285,
+     "z": [
+      -8.190494990973871,
+      3.4837136977407174e-17
+     ],
+     "abs_z": 8.190494990973871,
+     "delta": 3.141592653589793,
+     "omega": [
+      -2.102974334496996,
+      -3.141592653589793
+     ],
+     "tt_anteil": 0.5721375613549283,
+     "art": "gitter",
+     "s_voll": 1.1584154744472823e-16
+    },
+    {
+     "punkt": "rk_d3_ohnet_-1-1",
+     "betrag": "kl0.02",
+     "kb": 0.021426396950584285,
+     "z": [
+      -0.12209274300295947,
+      -2.7865191905862595e-18
+     ],
+     "abs_z": 0.12209274300295947,
+     "delta": 3.141592653589793,
+     "omega": [
+      2.1029743344969964,
+      3.141592653589793
+     ],
+     "tt_anteil": 0.3828386236805534,
+     "art": "gitter",
+     "s_voll": 8.432025175326223e-17
+    },
+    {
+     "punkt": "rk_d3_ohnet_-1-1",
+     "betrag": "kl0.02",
+     "kb": 0.021426396950584285,
+     "z": [
+      -0.03487450474490408,
+      -2.7841956560265482e-18
+     ],
+     "abs_z": 0.03487450474490408,
+     "delta": 3.141592653589793,
+     "omega": [
+      3.3559992398044063,
+      3.141592653589793
+     ],
+     "tt_anteil": 0.4833717218714374,
+     "art": "gitter",
+     "s_voll": 8.736701370226086e-17
+    },
+    {
+     "punkt": "fib11",
+     "betrag": "kl0.07",
+     "kb": 0.074992389327045,
+     "z": [
+      -8.19246701209216,
+      8.308987939948752e-16
+     ],
+     "abs_z": 8.19246701209216,
+     "delta": 3.141592653589793,
+     "omega": [
+      -2.1032150749842713,
+      -3.141592653589793
+     ],
+     "tt_anteil": 0.6592868287851543,
+     "art": "gitter",
+     "s_voll": 9.570068446466901e-17
+    },
+    {
+     "punkt": "fib11",
+     "betrag": "kl0.07",
+     "kb": 0.074992389327045,
+     "z": [
+      -0.12206335387423464,
+      -4.242063367205323e-18
+     ],
+     "abs_z": 0.12206335387423464,
+     "delta": 3.141592653589793,
+     "omega": [
+      2.103215074984272,
+      3.141592653589793
+     ],
+     "tt_anteil": 0.3991537422244325,
+     "art": "gitter",
+     "s_voll": 7.01276777464428e-17
+    },
+    {
+     "punkt": "fib11",
+     "betrag": "kl0.07",
+     "kb": 0.074992389327045,
+     "z": [
+      -0.03487472820341022,
+      -5.137065459730365e-18
+     ],
+     "abs_z": 0.03487472820341022,
+     "delta": 3.141592653589793,
+     "omega": [
+      3.3559928323215793,
+      3.141592653589793
+     ],
+     "tt_anteil": 0.2034630420896476,
+     "art": "gitter",
+     "s_voll": 6.736558710335612e-17
+    },
+    {
+     "punkt": "312",
+     "betrag": "kl0.2",
+     "kb": 0.21426396950584284,
+     "z": [
+      -8.215799059214982,
+      1.7586701655496296e-16
+     ],
+     "abs_z": 8.215799059214982,
+     "delta": 3.141592653589793,
+     "omega": [
+      -2.106059015074859,
+      -3.141592653589793
+     ],
+     "tt_anteil": 0.3860147885038231,
+     "art": "gitter",
+     "s_voll": 1.2031553967374465e-16
+    }
+   ],
+   "je_betrag": {
+    "kl0.005": {
+     "punkte": 1,
+     "g_tt_max": 8.980364112207912e-14,
+     "g_gitter_max": 22.140692632779267,
+     "n_inst_summe": 8,
+     "tt_zuordenbar": 1,
+     "kreis_eukl": 0,
+     "schnitt": 4
+    },
+    "kl0.02": {
+     "punkte": 1,
+     "g_tt_max": 3.045683083569206e-14,
+     "g_gitter_max": 22.140692632779267,
+     "n_inst_summe": 8,
+     "tt_zuordenbar": 1,
+     "kreis_eukl": 0,
+     "schnitt": 4
+    },
+    "kl0.07": {
+     "punkte": 1,
+     "g_tt_max": 1.0706808961667669e-14,
+     "g_gitter_max": 22.140692632779267,
+     "n_inst_summe": 8,
+     "tt_zuordenbar": 1,
+     "kreis_eukl": 0,
+     "schnitt": 4
+    },
+    "kl0.2": {
+     "punkte": 1,
+     "g_tt_max": 1.5822181993536143e-15,
+     "g_gitter_max": 22.140692632779267,
+     "n_inst_summe": 8,
+     "tt_zuordenbar": 1,
+     "kreis_eukl": 0,
+     "schnitt": 4
+    },
+    "bz": {
+     "punkte": 4,
+     "g_tt_max": 0.0,
+     "g_gitter_max": 22.140692632779267,
+     "n_inst_summe": 40,
+     "tt_zuordenbar": 0,
+     "kreis_eukl": 0,
+     "schnitt": 20
+    }
+   },
+   "wuerfelformel_tt_max_rel": null,
+   "bz_rand": {
+    "punkte": 0,
+    "g_max": null,
+    "n_inst_max": null,
+    "n_inst_mittel": null,
+    "gesperrt": 0,
+    "pfad_buendel": 0
+   },
+   "symmetriepunkte": {},
+   "kuhn_gittermode_abs_z": null,
+   "kuhn_gittermode_arg": null
+  },
+  "V-A": {
+   "eigenwerte_je_art": {
+    "tt": 8,
+    "gitter": 440
+   },
+   "instabil_1e-6_je_art": {
+    "tt": 4,
+    "gitter_kreis": 14,
+    "gitter_schnitt": 4,
+    "gitter_reell_pos": 0,
+    "gitter_komplex": 407
+   },
+   "top12": [
+    {
+     "punkt": "x+",
+     "betrag": "kl0.005",
+     "kb": 0.007551982254719239,
+     "z": [
+      -0.0001235921717500211,
+      -2.9829349250453465e-08
+     ],
+     "abs_z": 0.00012359217534972346,
+     "delta": 3.1413513005311904,
+     "omega": [
+      8.998523321176618,
+      3.1413513005311904
+     ],
+     "tt_anteil": 0.4189238791172236,
+     "art": "gitter",
+     "s_voll": 8.331870925018931e-08
+    },
+    {
+     "punkt": "x+",
+     "betrag": "kl0.005",
+     "kb": 0.007551982254719239,
+     "z": [
+      -4034.5512717300385,
+      -1.2479726710018628
+     ],
+     "abs_z": 4034.5514647423024,
+     "delta": 3.141283332293037,
+     "omega": [
+      -8.302650413370866,
+      3.141283332293037
+     ],
+     "tt_anteil": 0.4537015923503439,
+     "art": "gitter",
+     "s_voll": 6.112565506026099e-07
+    },
+    {
+     "punkt": "x+",
+     "betrag": "kl0.005",
+     "kb": 0.007551982254719239,
+     "z": [
+      -0.021139164677644325,
+      2.965297347539059e-05
+     ],
+     "abs_z": 0.021139185475495537,
+     "delta": 3.1401899040262164,
+     "omega": [
+      3.8566268292967476,
+      -3.1401899040262164
+     ],
+     "tt_anteil": 0.22874494949976729,
+     "art": "gitter",
+     "s_voll": 2.8069862333692823e-16
+    },
+    {
+     "punkt": "x+",
+     "betrag": "kl0.005",
+     "kb": 0.007551982254719239,
+     "z": [
+      -47.30546582819427,
+      0.06635776506955555
+     ],
+     "abs_z": 47.3055123698649,
+     "delta": 3.140189904026215,
+     "omega": [
+      -3.8566268292966703,
+      -3.140189904026215
+     ],
+     "tt_anteil": 0.627192089292567,
+     "art": "gitter",
+     "s_voll": 2.6093705645902555e-16
+    },
+    {
+     "punkt": "fib11",
+     "betrag": "kl0.07",
+     "kb": 0.10572775156606935,
+     "z": [
+      -607.4473574756446,
+      -0.9824704730012324
+     ],
+     "abs_z": 607.4481519869609,
+     "delta": 3.1399752795009457,
+     "omega": [
+      -6.40926682504896,
+      3.1399752795009457
+     ],
+     "tt_anteil": 0.684770330413509,
+     "art": "gitter",
+     "s_voll": 2.1883276569962345e-16
+    },
+    {
+     "punkt": "fib11",
+     "betrag": "kl0.07",
+     "kb": 0.10572775156606935,
+     "z": [
+      -0.0016462288818884262,
+      -2.6625702597640486e-06
+     ],
+     "abs_z": 0.0016462310350749698,
+     "delta": 3.139975279500816,
+     "omega": [
+      6.409266825049088,
+      3.139975279500816
+     ],
+     "tt_anteil": 0.4735499646397206,
+     "art": "gitter",
+     "s_voll": 3.6005223797934674e-16
+    },
+    {
+     "punkt": "rk_d3_ohnet_-1-1",
+     "betrag": "kl0.02",
+     "kb": 0.030207929018876957,
+     "z": [
+      -0.001645414954025411,
+      -3.5048968268363182e-06
+     ],
+     "abs_z": 0.0016454186869098734,
+     "delta": 3.139462557763614,
+     "omega": [
+      6.409760406231899,
+      3.139462557763614
+     ],
+     "tt_anteil": 0.3679891543656882,
+     "art": "gitter",
+     "s_voll": 3.80774688953437e-16
+    },
+    {
+     "punkt": "rk_d3_ohnet_-1-1",
+     "betrag": "kl0.02",
+     "kb": 0.030207929018876957,
+     "z": [
+      -607.746672201235,
+      -1.2945606078694953
+     ],
+     "abs_z": 607.7480509708303,
+     "delta": 3.139462557763452,
+     "omega": [
+      -6.409760406232357,
+      3.139462557763452
+     ],
+     "tt_anteil": 0.36173710155879524,
+     "art": "gitter",
+     "s_voll": 2.456997124079579e-16
+    },
+    {
+     "punkt": "rk_d3_ohnet_-1-1",
+     "betrag": "kl0.02",
+     "kb": 0.030207929018876957,
+     "z": [
+      -30.786193042309364,
+      0.07547272439192522
+     ],
+     "abs_z": 30.786285553318454,
+     "delta": 3.1391411464127303,
+     "omega": [
+      -3.427069316572608,
+      -3.1391411464127303
+     ],
+     "tt_anteil": 0.21630122674168267,
+     "art": "gitter",
+     "s_voll": 2.551047234502082e-16
+    },
+    {
+     "punkt": "rk_d3_ohnet_-1-1",
+     "betrag": "kl0.02",
+     "kb": 0.030207929018876957,
+     "z": [
+      -0.032481898257127016,
+      7.962976622407662e-05
+     ],
+     "abs_z": 0.032481995863647604,
+     "delta": 3.1391411464127286,
+     "omega": [
+      3.427069316572644,
+      -3.1391411464127286
+     ],
+     "tt_anteil": 0.4869598955849481,
+     "art": "gitter",
+     "s_voll": 4.0837963791112853e-16
+    },
+    {
+     "punkt": "x+",
+     "betrag": "kl0.005",
+     "kb": 0.007551982254719239,
+     "z": [
+      -0.004313451098264144,
+      1.1157764715505122e-05
+     ],
+     "abs_z": 0.004313465529342919,
+     "delta": 3.1390059220898627,
+     "omega": [
+      5.4460136308223515,
+      -3.1390059220898627
+     ],
+     "tt_anteil": 0.08591480885015564,
+     "art": "gitter",
+     "s_voll": 4.890131781206899e-06
+    },
+    {
+     "punkt": "x+",
+     "betrag": "kl0.005",
+     "kb": 0.007551982254719239,
+     "z": [
+      -97.66238855637869,
+      0.28422117515040085
+     ],
+     "abs_z": 97.66280213168928,
+     "delta": 3.1386824199066807,
+     "omega": [
+      -4.581520750948584,
+      -3.1386824199066807
+     ],
+     "tt_anteil": 0.355808038001906,
+     "art": "gitter",
+     "s_voll": 3.55469501753243e-05
+    }
+   ],
+   "je_betrag": {
+    "kl0.005": {
+     "punkte": 1,
+     "g_tt_max": 0.0,
+     "g_gitter_max": 22.13510822976764,
+     "n_inst_summe": 41,
+     "tt_zuordenbar": 0,
+     "kreis_eukl": 2,
+     "schnitt": 4
+    },
+    "kl0.02": {
+     "punkte": 1,
+     "g_tt_max": 5.392698595940002e-07,
+     "g_gitter_max": 22.09145320095926,
+     "n_inst_summe": 52,
+     "tt_zuordenbar": 1,
+     "kreis_eukl": 2,
+     "schnitt": 0
+    },
+    "kl0.07": {
+     "punkte": 1,
+     "g_tt_max": 5.283615538553807e-06,
+     "g_gitter_max": 22.103295726662715,
+     "n_inst_summe": 56,
+     "tt_zuordenbar": 1,
+     "kreis_eukl": 2,
+     "schnitt": 0
+    },
+    "kl0.2": {
+     "punkte": 1,
+     "g_tt_max": 0.0,
+     "g_gitter_max": 21.86397542815282,
+     "n_inst_summe": 56,
+     "tt_zuordenbar": 0,
+     "kreis_eukl": 2,
+     "schnitt": 0
+    },
+    "bz": {
+     "punkte": 4,
+     "g_tt_max": 0.0,
+     "g_gitter_max": 21.851747224325987,
+     "n_inst_summe": 224,
+     "tt_zuordenbar": 0,
+     "kreis_eukl": 6,
+     "schnitt": 0
+    }
+   },
+   "wuerfelformel_tt_max_rel": null,
+   "bz_rand": {
+    "punkte": 0,
+    "g_max": null,
+    "n_inst_max": null,
+    "n_inst_mittel": null,
+    "gesperrt": 0,
+    "pfad_buendel": 0
+   },
+   "symmetriepunkte": {},
+   "kuhn_gittermode_abs_z": null,
+   "kuhn_gittermode_arg": null
+  }
+ },
+ "info": {
+  "numpy": "2.4.4",
+  "python": "3.12.3",
+  "host": "ubuntu-auto",
+  "start_utc": "2026-10-05T12:55:41Z",
+  "argv": [
+   "code/rk3.py",
+   "auswertung",
+   "--ein",
+   "kw-r=/home/fmh/fmhc-physics-remote/regime-k-3/rauch/r5-kw-raster.json",
+   "kw-b=/home/fmh/fmhc-physics-remote/regime-k-3/rauch/r5-kw-bz.json",
+   "b1-r=/home/fmh/fmhc-physics-remote/regime-k-3/rauch/r5-b1-raster.json",
+   "b1-b=/home/fmh/fmhc-physics-remote/regime-k-3/rauch/r5-b1-bz.json",
+   "va-r=/home/fmh/fmhc-physics-remote/regime-k-3/rauch/r5-va-raster.json",
+   "va-b=/home/fmh/fmhc-physics-remote/regime-k-3/rauch/r5-va-bz.json",
+   "ref-va1=/home/fmh/fmhc-physics-remote/regime-k-2/lauf/welle-V-A-koord-rw24.json",
+   "ref-va2=/home/fmh/fmhc-physics-remote/regime-k-2/lauf/welle-V-A-koord-rk25.json",
+   "ref-kw=/home/fmh/fmhc-physics-remote/regime-k-2/lauf/welle-KW-koord-rw24.json",
+   "ref-b1=/home/fmh/fmhc-physics-remote/regime-k-2/lauf/welle-B1-t1-koord-rw24.json",
+   "--out",
+   "/home/fmh/fmhc-physics-remote/regime-k-3/rauch/r6-auswertung.json"
+  ],
+  "skript_sha256": "b921377be6c6d4caa3b0da8ce7642791b7945dde94dd21be19780ac287bbc30f",
+  "rk_sha256": "afd778897795839f84695db580e401507b5d9ba00266913bd23b8ad6fecac17f",
+  "rk2_sha256": "eb361e43564a2aa76a3109f88df44485cacd068cc293c891d1c3d1a2059cff81",
+  "pt_sha256": "bc360991aaa4eeecb3ed6e74f7491e3df1ba744a378f5bbfa7e0dc085ba53280",
+  "ew_sha256": "fa7b6417d39177102f0b19c5474453cd16a7595e23bc25ca548e081c4060b142",
+  "tp_sha256": "419d7da6caa211c721eb6a8c87403977415cf3050f03365377f51cb77b374dfd"
+ },
+ "laufzeit_s": 0.09817051887512207,
+ "maxrss_MB": 64.921875,
+ "ende_utc": "2026-10-05T12:55:41Z"
+}

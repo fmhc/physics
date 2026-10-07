@@ -1,0 +1,26 @@
+Runde 8 GF-BIC rauch Start 2026-09-30T06:22:08+02:00, Geraet cpu, torch 2.10.0+cu128, numpy 2.2.6; gfbic.py sha256 c719b4e05dd6a25c, resonanz3d.py /home/fmh/fmhc-physics/coordination/runden-v3/RUNDE-06/resonanz3d/resonanz3d.py sha256 99c54b9ccdb517c1
+=== P1: omega^2 = 0.797677, omega = 0.89312765, Kanal a offen ab nu = 0.106872, Kanal b ab 1.893128; 2 omega = 1.78625530
+  Profil: S0 = 1.049058, R_halb = 2.3051, Q = 189.1441, kappa = <f^4>/<f^2> = 0.40464600 (Stufe A 0.40464599); Profilzeit 2.7 + 4.2 s
+  Zwei-Moden-Formel lambda_2(g): g = 0.0: 0.00000000, g = 0.2: 0.04529207
+  FD (Delta 0.2, R 40.0, M 199) g = 0.0: n(L_u) = 1, n(L_v) = 1, L_u min -3.305365e-04, L_v min -3.305365e-04; instabil []; gebunden 0 <= nu < 1 - omega: [0.00018506]; lokalisiert im Fenster: [(1.78607, 1.0)] (0.9 s)
+  FD (Delta 0.2, R 40.0, M 199) g = 0.2: n(L_u) = 1, n(L_v) = 0, L_u min -8.711710e-02, L_v min 7.426657e-02; instabil ['0.00000000 + 4.6300e-02 i']; gebunden 0 <= nu < 1 - omega: []; lokalisiert im Fenster: [(1.787029, 1.0)] (0.9 s)
+  L_0 = -Lap + U'(f^2), Eigenwerte unter 1 (FD): [0.79734646] (E_0 soll omega^2 = 0.797677 sein)
+  FD Instabilitaet g = 0.2: -0.0000000000 + 4.6300e-02 i | 0.0000000000 + 4.6254e-02 i | Richardson 0.0000000000 + 4.6238e-02 i
+  Schiessen Stufe A (h 0.08, R 23.12, r_m 2.32): g = 0: |D(0)| 7.34e-08 (|D(1e-3)| 2.89e-05, Verh. 2e-3/1e-3 4.008), |D(2 omega)| 4.15e-05 (|D(2 omega + 1e-3)| 1.94e-03); 9 Keime, 1.6 s
+  Schiessen Stufe B (h 0.04, R 28.20, r_m 2.32): g = 0: |D(0)| 2.31e-09 (|D(1e-3)| 2.90e-05, Verh. 2e-3/1e-3 4.000), |D(2 omega)| 2.62e-06 (|D(2 omega + 1e-3)| 1.98e-03); 9 Keime, 3.9 s
+  Pole (Stufe B; in Klammern Abstand zu Stufe A). Im > 0 = anwachsend, Im < 0 = abklingend:
+    g = +0.00 [2omega]: nu = 1.7862566169 + 1.4756e-07 i (A: 2.0e-05), |D| 8.2e-17
+    g = +0.20 [instabil]: nu = -0.0000000000 + 4.6238e-02 i (A: 4.2e-08), |D| 9.1e-17, lambda/lambda_2 = 1.020894, |Re|/Im = 7.4e-15
+    g = -0.20 [instabil(-g)]: nu = -0.0000000000 + 4.6238e-02 i (A: 4.2e-08), |D| 9.1e-17, lambda/lambda_2 = 1.020894, |Re|/Im = 7.4e-15
+    g = +0.20 [2omega]: nu = 1.7872064274 - 3.1825e-06 i (A: 2.0e-05), |D| 1.9e-16
+    g = -0.20 [2omega(-g)]: nu = 1.7872064274 - 3.1825e-06 i (A: 2.0e-05), |D| 1.9e-16
+    Negativkontrolle ohne Ball: min |D_frei| an diesen Stellen = 3.383e-01
+=== P1: omega^2 = 0.797677, FD Delta 0.2, R 40.0, M 199, Schwamm 12.0 (sigma0 1.5); Pumpe rho_FD = 1.74417964 + 1.3582e-18 i (Kontinuum 1.744618), Lokalisierung 0.999931, max|A| aussen 7.91e-03; T = 3.602373, nt 37
+  g = +0.00, eps = 0.0000: groesste Raten [-0.0, -0.0, -1.965e-06, -1.965e-06], n(Rate > 1e-05) = 0 (1.9 s)
+  g = +0.00, eps = 0.0200: groesste Raten [-3e-09, -3e-09, -1.97e-06, -1.97e-06], n(Rate > 1e-05) = 0 (1.9 s)
+  g = +0.20, eps = 0.0000: groesste Raten [0.046300012, -5.254e-06, -5.254e-06, -0.000742153], n(Rate > 1e-05) = 1, Bezug FD lambda = 0.046300012 (2.0 s)
+  g = +0.20, eps = 0.0200: groesste Raten [0.046310061, -5.274e-06, -5.274e-06, -0.000742189], n(Rate > 1e-05) = 1, Bezug FD lambda = 0.046300012 (2.1 s)
+  omega^2 = 0.7800: I/A = -7.530595e-02, Gamma_FGR/g^2 = 1.3476e-04, S0 = 1.0790, R_halb = 2.452
+  omega^2 = 0.8000: I/A = -5.301548e-02, Gamma_FGR/g^2 = 7.6217e-05, S0 = 1.0446, R_halb = 2.288
+  Vorzeichenwechsel von I (linear interpoliert): []
+Ende 2026-09-30T06:22:42+02:00, 34.1 s; entfallen: nichts

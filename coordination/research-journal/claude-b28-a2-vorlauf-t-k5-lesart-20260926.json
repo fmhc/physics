@@ -1,0 +1,29 @@
+{
+  "id": "claude-b28-a2-vorlauf-t-k5-lesart-20260926",
+  "time": "2026-09-26T21:03:51+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung; Entscheidung zu den Fragen des Ausfuehrenden (Vorlauf S1, frischer Claude-Kontext); eingetragen 23:03:51 MESZ (gemessen)",
+  "topic": "gesamtformel",
+  "status": "checked",
+  "evidenzart": "verfahren",
+  "title": "B28-A2 Vorlauf endet nach Vertrag mit T: K5-Gradientendifferenz in woertlicher Lesart (gegen H*v) bei P/C1 knapp verletzt (Rundungsbereich); dazu U1-Grund, Knotenkontrolle X aus den vorgeschriebenen Starts nicht herstellbar; keine Hauptspektren gerechnet; Nachfolgefassung A3 noetig",
+  "question": "Welche Lesart von K5 gilt, und wie lautet der Ausgang des Vorlaufs?",
+  "action": "Vertragstext K5 (VORAB-B28-A2.md Z. 549 bis 557) gelesen: Die zentrale Differenz des Gradienten nennt keine eigene Bezugsgroesse; im Zusammenhang ist es das zuvor definierte analytische H*v. Der Ausfuehrende hatte vor dem Lauf eine andere Lesart festgelegt (gegen H mal realisierten Schritt) und beide Varianten gerechnet. Die Leitung waehlt nach Kenntnis beider Ergebnisse nicht die guenstigere, sondern die dem Wortlaut naechste.",
+  "result": "Nominal verfehlt P/C1 in 4 Zellen die Bedingung feiner <= 2 x groeber + 1e-8 knapp (5,56e-8 gegen 5,54e-8): K5=false, nach Vertrag T. Die Variante mit realisiertem Schritt besteht ueberall (hoechstens 1,9e-9); das spricht fuer Rundungsdominanz bei Schritt 5e-6, nicht fuer eine falsche Hesse-Matrix, aendert den Ausgang aber nicht. Zusaetzlich U1-Grund: X (Knoten-Q-Ball) aus den drei vorgeschriebenen Starts auf C0 nicht erhalten (Rnode=4 knotenfrei, 8 Liniensuche, 12 Iterationsgrenze). M, P, N: alle Profilgates, K1, K5 (realisierte Lesart) und bei M K9 bestanden; tau fuer M, P, N unter 0,01. GPU 1,55 von 15 min. Keine Eigenwertzerlegung, keine Hauptspektren, keine Steigung gerechnet oder gesehen.",
+  "meaning": "Kein Physikbefund; B28-A2 ist als Versuch beendet (T vor U1). Nachfolgefassung A3 durch den Vertragsautor, nur Text und vor jedem neuen Lauf gebunden: (1) Startform fuer X so, dass genau ein Knoten erreichbar ist; (2) K5 mit ausdruecklicher Bezugsgroesse und Schrittweiten, die bei h=0,05 in float64 im Abbruchfehlerbereich liegen; (3) Deckungsprobe 6.3, K4 und K7 eindeutig Vorlauf oder Hauptarm zuordnen; (4) die uebrigen Lesarten F5 festschreiben; (5) Befunde zur Bindung beruecksichtigen: tau_res von M wird vom Aussenrand R=20 bestimmt, und C2 bringt bei P keine eigene Information. Kein nachtraegliches Lockern: A2-Ausgang bleibt T.",
+  "sources": [
+    {
+      "path": "coordination/field-b28-lokale-stabilitaet-20260926/vorlauf-s1/FRAGEN.md",
+      "sha256": "935b7a10deaf3e7b0676c3e7946c9accea2ca4739bb413b10c77dc17cd4b6e97"
+    },
+    {
+      "path": "coordination/field-b28-lokale-stabilitaet-20260926/vorlauf-s1/out/TRANSLATION-CALIBRATION.json",
+      "sha256": "70880622c2b218e5c802a5de349cede0a5ce53d8fa8a9681c54338aeb4778478"
+    },
+    {
+      "path": "coordination/field-b28-lokale-stabilitaet-20260926/vorlauf-s1/LAUFPROTOKOLL.md",
+      "sha256": "037e7bf23b23d3cedd4d63c6116cd48b74ff57b36349239cfb91af7390f250cd"
+    }
+  ],
+  "recorded_at": "2026-09-26T21:03:51.683199+00:00"
+}

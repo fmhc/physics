@@ -1,0 +1,24 @@
+2026-10-02T21:33:59+02:00
+f726adb5c310aed3c24e9e4bef1b490abc81f5e7
+main
+5ba2d7e001f6145ff5f75afedadf6850565df8fac25412f84cab1c1c1a21443f  coordination/runden-v3/RUNDE-16/particle-mechanisms-swarm/formation/refined-reference/modes/harmonic-source/code.py
+362d6dcf0bf4e2834b55c9f7ae8e831f70411e43746a64437237056f84ac7766  coordination/runden-v3/RUNDE-16/particle-mechanisms-swarm/formation/refined-reference/modes/harmonic-source/PLAN.txt
+f072157c25c9c03e8afdfe11e09e75e92f8b47b82bf4d90b76e97949a1d0f5f6  coordination/runden-v3/RUNDE-16/particle-mechanisms-swarm/formation/refined-reference/modes/harmonic-source/DERIVATION.txt
+661f5c19fd87e8bbc04ea612ec370f53126d3576b033f70b86a8ee47ada17026  coordination/runden-v3/RUNDE-16/particle-mechanisms-swarm/formation/refined-reference/modes/harmonic-source/ROOT-PAPER.txt
+5ba2d7e001f6145ff5f75afedadf6850565df8fac25412f84cab1c1c1a21443f  harmonic-source.py
+466b25fb813770a1ab13eea962c93b39308dfe1ad22171fe638c60fdafef998d  timestep-half.py
+467ad3e19cd8efcdac4ec2dcc670b50aaa59cc6f7e9e44d625ebbf94ba0d32c6  modecode.py
+77ecf9bbe03b96db901d76728e074a897725eb52213f90dae76c7200ba5364ea  modes-search/RESULT.json
+8c33ace3a5465a8fd481d26b35457425ee3c5d5f0111b3f11c09f4a9dd72fdf4  prepared/MANIFEST.json
+ 19:33:59 up 90 days, 13:14,  6 users,  load average: 1.08, 0.84, 1.52
+Nach unabhängiger finaler Lektüre REVIEW.txt gestartet:
+Remoteordner /tmp/fmhc-physics-m2-reference-refined-20261002
+OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
+/usr/bin/time -f 'user=%U system=%S wall=%e maxrss=%M exit=%x'
+-o harmonic-source.time timeout --kill-after=1 4s taskset -c 8 nice -n 19
+/home/fmh/fmhc-physics-gpu-venv/bin/python harmonic-source.py
+--dynamics timestep-half.py --operator modecode.py --search-dir modes-search
+--reference prepared --out harmonic-source-run
+Kein Commit/keine lokale Interpreterausführung. Gehashte Arbeitskopien
+bilden den ausgeführten Quellstand; Script prüft alle tatsächlichen
+Profil-/Ritzhashes gegen gebundenes Manifest und ursprüngliches RESULT.

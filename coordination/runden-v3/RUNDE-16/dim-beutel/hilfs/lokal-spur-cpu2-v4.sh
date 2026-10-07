@@ -1,0 +1,12 @@
+#!/bin/bash
+# Lokale Laufreihe Spur cpu2, Version 4 (10:22). Je Zeile ein ssh-Aufruf von kleintest.sh.
+D=/home/fmh/fmhc-physics/coordination/runden-v3/RUNDE-16/dim-beutel
+while kill -0 2246085 2>/dev/null; do sleep 5; done
+ssh fmh@192.168.178.69 'cd /home/fmh/fmhc-physics-remote/runde16-dim-beutel && bash /home/fmh/fmhc-physics-remote/kleintests/kleintest.sh cpu2 db-ds code/dimbeutel2.py ds --out aus/ds --ds-g 7 --walk-g 10 --walk-starts s1,s2 --walk-tmax 15625' > $D/aus/logs/ds.log 2>&1
+ssh fmh@192.168.178.69 'cd /home/fmh/fmhc-physics-remote/runde16-dim-beutel && bash /home/fmh/fmhc-physics-remote/kleintests/kleintest.sh cpu2 db-frisch-sie10 code/dimbeutel2.py frisch --graph sierpinski --size 10 --start s1 --tag sie10s1 --out aus/frisch --klist 30,50,70,80 --formen A,B --maxcor 5' > $D/aus/logs/frisch-sie10s1.log 2>&1
+ssh fmh@192.168.178.69 'cd /home/fmh/fmhc-physics-remote/runde16-dim-beutel && bash /home/fmh/fmhc-physics-remote/kleintests/kleintest.sh cpu2 db-z4-g9 code/dimbeutel2.py frisch --graph sierpinski --size 9 --start s1 --tag sie9s1-z4 --out aus/frisch --klist 46,58,70 --formen A --maxcor 5' > $D/aus/logs/frisch-sie9s1-z4.log 2>&1
+ssh fmh@192.168.178.69 'cd /home/fmh/fmhc-physics-remote/runde16-dim-beutel && bash /home/fmh/fmhc-physics-remote/kleintests/kleintest.sh cpu2 db-z4-s2 code/dimbeutel2.py frisch --graph sierpinski --size 10 --start s2 --tag sie10s2-z4 --out aus/frisch --klist 46,58,70 --formen A --maxcor 5' > $D/aus/logs/frisch-sie10s2-z4.log 2>&1
+ssh fmh@192.168.178.69 'cd /home/fmh/fmhc-physics-remote/runde16-dim-beutel && bash /home/fmh/fmhc-physics-remote/kleintests/kleintest.sh cpu2 db-qu192-auf code/dimbeutel2.py ast --graph quadrat --size 192 --tag qu192-auf --out aus/kontrolle --kstart 40 --kende 73 --richtung 1 --maxcor 5' > $D/aus/logs/qu192-auf.log 2>&1
+ssh fmh@192.168.178.69 'cd /home/fmh/fmhc-physics-remote/runde16-dim-beutel && bash /home/fmh/fmhc-physics-remote/kleintests/kleintest.sh cpu2 db-frisch-qu256 code/dimbeutel2.py frisch --graph quadrat --size 256 --tag qu256 --out aus/frisch --klist 30,50,70 --formen A,B --maxcor 5' > $D/aus/logs/frisch-qu256.log 2>&1
+ssh fmh@192.168.178.69 'cd /home/fmh/fmhc-physics-remote/runde16-dim-beutel && bash /home/fmh/fmhc-physics-remote/kleintests/kleintest.sh cpu2 db-sie10s1-oben code/dimbeutel2.py ast --graph sierpinski --size 10 --start s1 --tag sie10s1-oben --out aus/haupt --kstart 87 --kende 0 --richtung -1 --maxcor 5' > $D/aus/logs/sie10s1-oben.log 2>&1
+date --iso-8601=seconds > $D/aus/logs/spur-cpu2-v4.fertig

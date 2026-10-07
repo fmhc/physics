@@ -1,0 +1,66 @@
+Unabhängige Codelektüre particle_binding, 03.10.2026; keine Ausführung.
+Vollständiger gelesener Stand einschließlich main:
+686e0844977da4b15696c247eb287e12501f2b9d413b55b6cd1cd9906c1c27d9.
+Autor hat genau diesen Hash anschließend als finalen Freeze bestätigt.
+Kein konkreter Blocker im
+gelesenen Stand für die vereinbarte reine gespeicherte Felddiagnose.
+
+Loader: drei gehashte JSONs mit gebundenen Vorläufer-/Codeidentitäten,
+Status und h=.05-Input/Gauge-Metadaten. Tatsächliches kausales JSON-Schema
+sum_validation_passed, observed.alpha/result_sha256 und runs.last_time
+gegen Original gelesen; die verwendeten Schlüssel stimmen. Vier NPZs
+werden vor Nutzung gehasht, Quellenfolge DC/H2, Form/Endlichkeit und
+exakte r/t-Gleichheit geprüft. R120/h.05/FV-Zellmitten und Ringauswahl
+stimmen mit dem alten Generator überein. Amplitudenresultat ist nur
+Kontext; keine neuen kleinen Arme oder kausale .005-Referenz eingebaut.
+
+Feldalgebra: c=(Rf−Rc)/3, Z=N−Rf; right=N−4Rf/3+Rc/3 und
+wrong=N−2Rf/3−Rc/3 direkt ausgewertet. Positive Summandenhüllen passen
+zu diesen tatsächlichen Operationen, ohne eine vorherige Auslöschung
+zu verstecken. Der Code nennt ausdrücklich, dass eta frühere
+Paar-/Baseline-Auslöschung und Evolution nicht zertifiziert.
+
+Messung: exaktes sphärisches FV-Volumen4pi*h*(r²+h²/12), passende
+Schalen; norm und Re<Z,c> benutzen identische komplexe Skalarprodukte
+mit positiven Zeittrapezgewichten. Originale gehashte interval/coefficient-
+Funktionen für unveränderte Fenster. Bandhülle coefficient(...,0).real
+ist der positive Zeitmittelwert. Kein Fit, keine Phasenkorrektur oder
+Neusynchronisierung. u=||Nfine−Ncoarse||+max(eta_Z,eta_right,eta_wrong).
+Die vier strikten Vorabkriterien und Nullnennerprüfung sind implementiert;
+Endlichkeit wird vor Zuordnung geprüft. Identitätsdefekt wird berichtet,
+kein Fehlerursachenprozent daraus errechnet. Alle16 Normpositionen werden
+gefordert; ein Gesamtlabel nur bei16/16, sonst NOT_GLOBALLY_ASSIGNED.
+
+Synthetik: feste komplexe F/A mit nichtverschwindender Bandkomponente,
+Rc=F+.02²A,Rf=F+.01²A,N=F. Korrekturzeichen, verschwindender richtiger
+Rest und verdoppelter falscher Rest werden am bekannten Nichtnullmaß
+.01²||A|| auf1e−10 geprüft, alle16Positionen. Falsches Vorzeichen darf
+keine Zuordnung erhalten. A=0 separat in denselben16Positionen: c=0,
+keine Zuordnung. Die Probe verifiziert Auswertealgebra, nicht die
+Mittelpunktordnung tatsächlicher Daten. Reale Messung erfolgt erst nach
+beiden gespeicherten QA-Blöcken. Importierte Module starten keine main.
+
+Budget/Fehlerpfad: nur NPZ-/JSON-Lektüre und Feldalgebra, keine PDE,
+Eigenwertsuche oder Optimierung. 4.5CPU-s Checkpoint, äußeres5CPU-s-Ziel
+durch Root abzusichern. Zwischenstände atomisch und zunächst INCOMPLETE;
+Bindungs-/QAfehler verhindern vollständigen Ergebnisstatus. Unzugeordnete
+reale Daten sind erlaubtes vollständiges Ergebnis, keine Retry-Schleife.
+
+Serialisierungsrevision nach gesondert dokumentiertem Erstfehlschlag:
+Diff gegen erhaltenes code.py.bak686e0844… vollständig gelesen. Neuer
+Autorfreeze und lokal geprüfter SHA256:
+875cbf73be336ce0c6fba60f77dee2b2dc08ae6b108dde22a2838f2bf9e29cdb.
+Nur explizite Pythonfloat-/bool-Konversionen für alignment, eta-Werte/u,
+classify-Flags und improvement_under_reserve. Keine Formel, Bedingung,
+Schwelle, Datenbindung oder Probe geändert. Ursache numpy.bool_ war in
+meiner ursprünglichen statischen Lektüre nicht erkannt worden.
+
+Verschachtelte QA/null-Zeilen verwenden nun ebenfalls diesen bereinigten
+Pfad; qa.passed/wrong_sign_passed sind built-in all/not-Ergebnisse. Normen,
+Skalarprodukte und QA-Fehler sind Pythonfloat, Manifestwerte JSON-Typen.
+allow_nan=False bleibt aktiv; kein unspezifischer Serializer unterdrückt
+Fehler. Ein Exception-Ergebnis kann die bisherige QA-Struktur damit ohne
+den bekannten numpy.bool_-Folgefehler speichern. Keine Behauptung einer
+allgemeinen I/O-Fehlerheilung. Kein konkreter Blocker für den ausdrücklich
+neu budgetierten zweiten Versuch; der Erstlauf bleibt INCOMPLETE und
+liefert keinen realen Diagnosebefund. Keine Ausführung durch Reviewer.

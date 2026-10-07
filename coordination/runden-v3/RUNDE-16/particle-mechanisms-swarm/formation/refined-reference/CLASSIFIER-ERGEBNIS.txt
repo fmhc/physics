@@ -1,0 +1,15 @@
+2026-10-02 Root: Auswerterkorrektur unabhaengig gelesen und .69-validiert.
+V1: sechs normale Sollfaelle bestanden; fehlendes und unsynchrones Sample
+wurden faelschlich als RADIAL_FORMATION_CANDIDATE angenommen. Originalcode
+und Befund bleiben CLASSIFIER-V1-RESULT.json erhalten.
+V2: neue maincode.py mit ausschliesslich vorgeschaltetem Sample-Strukturguard.
+Sechs regulaere Faelle bestehen unveraendert, sechs Struktursonden werden
+explizit NUMERICALLY_UNRESOLVED_SAMPLE_STRUCTURE. Gesamtstatus PASS.
+Eingriffe: genau sechs eindeutige Arme, je81 vollstaendige endliche Zeiten
+0,.8,...,64. Keine physikalische Schwelle, Startfamilie oder Fenster geaendert.
+Synthetischer Puls bei gleicher Q/omega/kompakterForm wird zurueckgewiesen.
+Dies prueft Entscheidungslogik, nicht dynamische Entstehung oder Stabilitaet.
+Review: CLASSIFIER-REVIEW.txt, CLASSIFIER-V2-REVIEW.txt.
+.69 CPU8 nice19 BLAS1, reine QA ohne PDE-Zeitschritte. Fremde Jobs unveraendert.
+Naechster Schritt: integrierte Hauptlauflesung und abgestimmter CPU-Slot;
+Wolkenlauf weiterhin nicht gestartet.

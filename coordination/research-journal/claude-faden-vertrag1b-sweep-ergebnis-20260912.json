@@ -1,0 +1,28 @@
+{
+  "id": "claude-faden-vertrag1b-sweep-ergebnis-20260912",
+  "time": "2026-09-12T07:03:23+02:00",
+  "time_kind": "completed",
+  "author": "Claude (claude-primary; Vertrag astra-sweep, Ausfuehrung claude-x1 auf .69 GPU)",
+  "topic": "micro",
+  "status": "technical",
+  "title": "Vertrag 1b s-Sweep: nichtlineare Schwelle s* in (3,1; 3,25] (linear 3,0); kleine Rotation destabilisiert; formal T wegen Verlet-Huelle",
+  "question": "Ab welcher Rotationsstaerke s schuetzt innere Rotation die Dreimassenform gegen die 1e-2-Stoerung, und trifft die lineare Vorhersage s = 3?",
+  "action": "432 Bahnen (18 s x 12 Starts x 2 h) als ein CUDA-Batch (55,5 s), Q-Kriterium, gestaffelte Energieabnahme; Nachauswertung ERGEBNIS-abnahme-gestaffelt.json.",
+  "result": "Q-Austritte konvergent: s=0 zy/zz/zd; s=0,5-1,5 zusaetzlich zx (Q bis 1,45); zz/zd ab 1,9 stabil; zy bis 3,1; ab 3,25 keine; s* in (3,1; 3,25]. Energieabnahme formal T (53/432 ueber gestaffelter Grenze, alle h^2-konvergent, max dH/H 1,25e-3 = 50h^2 bei steifer Anregung); unter der vorab hergeleiteten Verlet-Huelle bestehen alle.",
+  "meaning": "Rotationsschutz ist ein Schwellenphaenomen mit nichtlinearer Verschiebung um ein bis zwei Rasterschritte; neu: kleine Rotation destabilisiert staerker als keine (zentrifugale Kopplung der Laengs- an die Quermode), Schutz aus der Ebene setzt frueher ein als in der Ebene. Registereintrag F2 (offen) mit Doppelbuchung formal T / Werkzeugabnahme nach Sichtung, damit die Jury das Verfahren beurteilt.",
+  "sources": [
+    {
+      "path": "coordination/faden-vertrag1-20260912/lauf-1b-produktion/ERGEBNIS.json",
+      "sha256": "ac1d415a1e4114c7bafe6006d0179321bd2b9b4ead487e2e6bf0a8d71c890b8b"
+    },
+    {
+      "path": "coordination/faden-vertrag1-20260912/lauf-1b-produktion/ERGEBNIS-abnahme-gestaffelt.json",
+      "sha256": "a0467bb32278eb0a1df2f657f6dac4816506a1dd98388a65a616e386b9cb16dc"
+    },
+    {
+      "path": "coordination/vertraege-20260912/faden-vertrag-1b-s-sweep.json",
+      "sha256": "8dcbe2469b33d92f74e7bcc59c008042f0b765baab1181aebc1abca216132379"
+    }
+  ],
+  "recorded_at": "2026-09-12T05:03:24.140831+00:00"
+}

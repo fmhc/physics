@@ -1,0 +1,310 @@
+{
+ "profil": {
+  "omega2": 0.55,
+  "m": 0,
+  "p": 1.0229943032649387,
+  "klammer": 2.220446049250313e-16,
+  "N": 160.75095563511712,
+  "G": 9.036804914064549,
+  "VU": 88.41302828266826,
+  "Q": 238.43219879606752,
+  "E": 185.86285879604725,
+  "virialrest": 1.517510447379751e-08,
+  "S_max": 1.0465173445125173,
+  "R_max": 0.0,
+  "R_halb": 6.880377998175491,
+  "gueltig": true,
+  "f_dev": "tensor([1.0230e+00, 1.0230e+00, 1.0230e+00,  ..., 1.7950e-25, 1.7829e-25,\n        1.7709e-25], device='cuda:0', dtype=torch.float64)",
+  "fp_dev": "tensor([ 0.0000e+00, -1.2115e-06, -2.4233e-06,  ..., -1.2140e-25,\n        -1.2059e-25, -1.1977e-25], device='cuda:0', dtype=torch.float64)"
+ },
+ "ergebnis": {
+  "grob": {
+   "zeilen": [
+    {
+     "name": "u0.4",
+     "u_cs": 0.4,
+     "u": 0.08328509912602727,
+     "lam": 0.1,
+     "N_ereignisse": 0,
+     "erste_zeit": null,
+     "N_frei_max": 0.0,
+     "N_alle_max": 0.0,
+     "ereignisse_20": [],
+     "mittlerer_abstand": null,
+     "F_x_mittel": 0.0003837719667196896,
+     "F_y_rms": 3.775190577879871e-06,
+     "X_spanne": 0.3362124669200721,
+     "wind_psi": [
+      -0.0
+     ],
+     "zirk_chi_werte": [
+      0.0
+     ],
+     "oben_unten": [
+      0,
+      0
+     ]
+    },
+    {
+     "name": "u0.55",
+     "u_cs": 0.55,
+     "u": 0.11436920407510105,
+     "lam": 0.1,
+     "N_ereignisse": 0,
+     "erste_zeit": null,
+     "N_frei_max": 0.0,
+     "N_alle_max": 0.0,
+     "ereignisse_20": [],
+     "mittlerer_abstand": null,
+     "F_x_mittel": 0.005017761236735833,
+     "F_y_rms": 3.7958653635543316e-06,
+     "X_spanne": 0.4958571429897738,
+     "wind_psi": [
+      -0.0
+     ],
+     "zirk_chi_werte": [
+      0.0
+     ],
+     "oben_unten": [
+      0,
+      0
+     ]
+    },
+    {
+     "name": "u0.7",
+     "u_cs": 0.7,
+     "u": 0.14531321676300418,
+     "lam": 0.1,
+     "N_ereignisse": 2,
+     "erste_zeit": 351.0,
+     "N_frei_max": 2.0,
+     "N_alle_max": 2.0,
+     "ereignisse_20": [
+      [
+       351.0,
+       "N_minus_oben",
+       1
+      ],
+      [
+       352.0,
+       "N_plus_unten",
+       1
+      ]
+     ],
+     "mittlerer_abstand": null,
+     "F_x_mittel": 0.040336898157647745,
+     "F_y_rms": 3.527029632677897e-06,
+     "X_spanne": 0.9523976237765339,
+     "wind_psi": [
+      -0.0
+     ],
+     "zirk_chi_werte": [
+      0.0
+     ],
+     "auftrieb_periodogramm": {
+      "omega": 0.04120440781907839,
+      "periode": 152.4881836615149,
+      "amplitude": 5.2518853701991905e-06,
+      "R2": 0.9392110523614309
+     },
+     "strouhal_aus_auftrieb": 0.6210134208438521,
+     "oben_unten": [
+      1,
+      1
+     ]
+    },
+    {
+     "name": "u0.85",
+     "u_cs": 0.85,
+     "u": 0.17607885321245548,
+     "lam": 0.1,
+     "N_ereignisse": 4,
+     "erste_zeit": 253.0,
+     "N_frei_max": 4.0,
+     "N_alle_max": 4.0,
+     "ereignisse_20": [
+      [
+       253.0,
+       "N_minus_oben",
+       1
+      ],
+      [
+       253.0,
+       "N_plus_unten",
+       1
+      ],
+      [
+       536.0,
+       "N_plus_unten",
+       1
+      ],
+      [
+       537.0,
+       "N_minus_oben",
+       1
+      ]
+     ],
+     "mittlerer_abstand": 283.0,
+     "F_x_mittel": 0.06195939258638088,
+     "F_y_rms": 5.306962531132703e-06,
+     "X_spanne": 1.3427087632817596,
+     "wind_psi": [
+      -0.0
+     ],
+     "zirk_chi_werte": [
+      0.0
+     ],
+     "auftrieb_periodogramm": {
+      "omega": 0.04919963301805319,
+      "periode": 127.70797101015063,
+      "amplitude": 5.740783834248085e-06,
+      "R2": 0.5833398664120744
+     },
+     "strouhal_aus_auftrieb": 0.6119516189185544,
+     "strouhal_aus_ereignissen": 0.27615229543627384,
+     "oben_unten": [
+      2,
+      2
+     ]
+    },
+    {
+     "name": "u1.0",
+     "u_cs": 1.0,
+     "u": 0.20662779223597166,
+     "lam": 0.1,
+     "N_ereignisse": 10,
+     "erste_zeit": 208.0,
+     "N_frei_max": 4.0,
+     "N_alle_max": 6.0,
+     "ereignisse_20": [
+      [
+       208.0,
+       "N_minus_oben",
+       1
+      ],
+      [
+       208.0,
+       "N_plus_unten",
+       1
+      ],
+      [
+       389.0,
+       "N_minus_oben",
+       1
+      ],
+      [
+       389.0,
+       "N_plus_unten",
+       1
+      ],
+      [
+       644.0,
+       "N_plus_oben",
+       1
+      ],
+      [
+       644.0,
+       "N_minus_oben",
+       1
+      ],
+      [
+       644.0,
+       "N_plus_unten",
+       1
+      ],
+      [
+       644.0,
+       "N_minus_unten",
+       1
+      ],
+      [
+       656.0,
+       "N_plus_unten",
+       1
+      ],
+      [
+       659.0,
+       "N_minus_oben",
+       1
+      ]
+     ],
+     "mittlerer_abstand": 112.75,
+     "F_x_mittel": 0.08636508777098577,
+     "F_y_rms": 1.2011568848284848e-05,
+     "X_spanne": 2.4843163049477077,
+     "wind_psi": [
+      -0.0
+     ],
+     "zirk_chi_werte": [
+      0.0
+     ],
+     "auftrieb_periodogramm": {
+      "omega": 0.03070400613499189,
+      "periode": 204.63731278437115,
+      "amplitude": 1.0683601565917943e-05,
+      "R2": 0.7692743148181908
+     },
+     "strouhal_aus_auftrieb": 0.3254383538591263,
+     "strouhal_aus_ereignissen": 0.5906592479884778,
+     "oben_unten": [
+      5,
+      5
+     ]
+    },
+    {
+     "name": "u0.85_lam0",
+     "u_cs": 0.85,
+     "u": 0.17607885321245548,
+     "lam": 0.0,
+     "N_ereignisse": 0,
+     "erste_zeit": null,
+     "N_frei_max": 0.0,
+     "N_alle_max": 0.0,
+     "ereignisse_20": [],
+     "mittlerer_abstand": null,
+     "F_x_mittel": 0.0,
+     "F_y_rms": 0.0,
+     "X_spanne": 1.7847387372427193e-06,
+     "wind_psi": [
+      0.0
+     ],
+     "zirk_chi_werte": [
+      0.0
+     ],
+     "oben_unten": [
+      0,
+      0
+     ]
+    }
+   ],
+   "urteile": [
+    "u0.4: 0 Wirbel -> unter der Schwelle (V-W1)",
+    "Schwelle zwischen u/c_s = 0.55 und 0.7",
+    "lam0: 0 Wirbel (erwartet 0)"
+   ],
+   "D": 13.760755996350982
+  }
+ },
+ "karte": "wirbel",
+ "start": "2026-09-30T01:58:35+00:00",
+ "ende": "2026-09-30T02:00:13+00:00",
+ "rauch": false,
+ "mini": false,
+ "geraet": "Quadro P4000",
+ "torch": "2.5.1+cu121",
+ "dauer_s": {
+  "relax_grob_s": 1.0693257879465818,
+  "entw_grob_s": 71.71169539447874
+ },
+ "medium": {
+  "C0": 0.1,
+  "g4": 0.5,
+  "lam": 0.1,
+  "c_s": 0.20851441405707477,
+  "xi": 3.233348953414316
+ },
+ "L3": {
+  "bestanden": null,
+  "zeilen": []
+ }
+}

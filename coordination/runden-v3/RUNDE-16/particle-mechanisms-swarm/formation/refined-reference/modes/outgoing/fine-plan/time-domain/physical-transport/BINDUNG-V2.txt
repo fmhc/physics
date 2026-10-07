@@ -1,0 +1,20 @@
+Root-Entscheidung 2026-10-03, vor Datenanalyse/Implementation.
+V2 besteht aus unverändertem PLAN.txt und HUELLE.txt als ausdrücklichem
+Ersatz ausschließlich der rohen64eps-Hüllen in Abschnitt4 des Plans.
+Frage,18Arme, Fenster/Schalen, Formeln, physikalische Tore und Budget
+bleiben unverändert. Begründung und Verfahrensstand: ROOT-VORAB-HUELLE.txt.
+Kein vorheriger Transportwert wurde zur Änderung eingesehen.
+
+Zur Implementation gilt zusätzlich konkret: lokale elementare Real-/
+Komplexoperationen mit gamma64 als konservativer gemeinsamer lokaler
+Operationsreserve; Raum-/Zeitreduktionen mit gamma_(n-1) und positiven
+Summanden, zusätzliche Gewichtungsoperationen mit gamma64. Bereits
+absolute Fehlerfortpflanzungen nicht nochmals mitgamma64 skalieren.
+Eine konstante Faktorwahl ist vor dem Code festgelegt, kein Fit an Daten.
+Float64-Eingaben gelten für diese NEUE Auswertesensitivität als gegeben;
+frühere Evolutions-/Speicherfehler bleiben uneingeschlossen. Keine
+rigorose Intervallarithmetik oder Gesamtfehlerschranke behaupten.
+
+Implementation nach finaler Nichtautor-Hüllenprüfung. Code und Tests
+weiter unabhängig prüfen; Syntax/QA/Auswertung ausschließlich .69.
+Kein numerischer Lauf durch diese Textbindung gestartet.

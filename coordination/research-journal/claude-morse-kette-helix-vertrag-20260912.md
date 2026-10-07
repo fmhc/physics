@@ -1,0 +1,6 @@
+# Vertragsentwurf: Rotationsspaltung der Morse-Kette, gerade gegen helikal
+
+- Zeit: 2026-09-12 05:40
+- Quelle: claude-primary auf Nutzerauftrag „morse kette durchdefinieren und mit helix vergleichen"; coordination/vertraege-20260912/morse-kette-helix-VERTRAG.md; Vorlagen IDEATION-claude.md Abschnitt 6 und helix/TESTVERTRAG.md
+- Ergebnis: Vollständiger Papiervertrag: Morse-Bindung (D=1, a=2, k=8, f_max=1), Biegung B=0,8, Torsion C=2B/3 mit sin-gewichtetem Diederterm (in beiden Armen), Arm G gerade und Arm H mit diskreter Ruhehelix (Δ=60°, ψ=30°, R=0,866, d=0,5, l=1 exakt, θ0=51,3°). Präparation als relatives Gleichgewicht von F_J. Handrechnungen: J_krit,G=14,85 (obere Schranke), Aufteilung 5/42; I_H ≈ 13 gegen 42, Helix rotiert bei gleichem J etwa dreimal schneller; Streckgewinn ≈ 5,8 gegen Biegekosten 1,92 ⇒ Vorhersage: Drehimpuls entrollt die Helix, dann Bruch wie in G (Mechanismus 3), helikaler Riss nur nahe J_krit,H,starr. 42 Starts, zwei Schrittweiten, unter 4 Kernstunden CPU. Ausgänge A/B/T (G), H1/H2/H3 (H), V1/V2/V3 (Vergleich) vorab benannt.
+- Bedeutung: HYPOTHESE; Zahlen werden vor dem Einfrieren durch --pruefe ersetzt. Wartet auf Finns Wort (vierter Vertrag) und auf das Viermassen-Ergebnis.

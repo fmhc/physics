@@ -1,0 +1,42 @@
+{
+ "info": {
+  "numpy": "2.4.4",
+  "python": "3.12.3",
+  "host": "ubuntu-auto",
+  "start_utc": "2026-10-04T10:11:03Z",
+  "argv": [
+   "code/tp.py",
+   "statik",
+   "--modell",
+   "pyro1",
+   "--L",
+   "192",
+   "--out",
+   "lauf/statik-pyro-c.json",
+   "--npz",
+   "lauf/statik-pyro-c.npz"
+  ],
+  "skript_sha256": "419d7da6caa211c721eb6a8c87403977415cf3050f03365377f51cb77b374dfd"
+ },
+ "laeufe": [
+  {
+   "modell": "pyro1",
+   "L": 192,
+   "t_kern_s": 449.35112714767456,
+   "stat": {
+    "res_max": 2.2286019737572944e-15,
+    "res_gross_anzahl": 0,
+    "kap_im_max": 2.353307830795309e-12
+   },
+   "G0": -0.055790014078213386,
+   "mittel": 0.0,
+   "n_vektoren": 29101,
+   "spiegel_max": 3.469446951953614e-18,
+   "t_gesamt_s": 449.7552762031555,
+   "maxrss_MB": 641.61328125
+  }
+ ],
+ "laufzeit_s": 449.79896664619446,
+ "maxrss_MB": 641.61328125,
+ "ende_utc": "2026-10-04T10:18:33Z"
+}

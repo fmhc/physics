@@ -1,0 +1,207 @@
+{
+ "info": {
+  "numpy": "2.4.4",
+  "scipy": "1.18.0",
+  "python": "3.12.3",
+  "host": "ubuntu-auto",
+  "argv": [
+   "code/dn.py",
+   "tt",
+   "--netz",
+   "C15",
+   "--bauweg",
+   "delaunay",
+   "--rauch",
+   "--out",
+   "rauch/r2-ttC15.json"
+  ],
+  "start_utc": "2026-10-05T06:00:25Z",
+  "skript_sha256": "0cd5d13e98f41df277ec7d8139970d1e658542f843ed8180bc756a4ea1d4d1ae",
+  "tg_sha256": "ec48a258e266fc2226d0d10564b606052831ffefbf0642e4f7d04f9de85cfd9e",
+  "tti_sha256": "6d6b6f7b99b334d74d91860fc69af1c6c0c46e22207dc45432d60a9824c08ee5",
+  "ew_sha256": "fa7b6417d39177102f0b19c5474453cd16a7595e23bc25ca548e081c4060b142",
+  "tp_sha256": "419d7da6caa211c721eb6a8c87403977415cf3050f03365377f51cb77b374dfd",
+  "bauweg_quelle": "argument"
+ },
+ "schluessel": {
+  "netz": "str",
+  "bauweg": "str",
+  "bau_info": {
+   "n_punkte_kopien": "int",
+   "n_simplices_gesamt": "int",
+   "qhull_coplanar": "int",
+   "n_behalten": "int",
+   "n_schluessel_verschieden": "int"
+  },
+  "pruefung": {
+   "T": "int",
+   "E": "int",
+   "nV": "int",
+   "kanten_je_ecke": "float",
+   "tetra_je_ecke": "float",
+   "selbstkanten": "int",
+   "laengen_abw_max": "float",
+   "volumen_summe_rel_abw": "float",
+   "vol_min": "float",
+   "vol_min_rel_mittel": "float",
+   "dieder_summe_minus_2pi_max": "float",
+   "dieder_min_grad": "float",
+   "dieder_max_grad": "float",
+   "D_sym_max": "float",
+   "schlaefli_lD_max": "float",
+   "D_absmax": "float",
+   "l_min": "float",
+   "l_max": "float",
+   "Vbox": "float",
+   "t_modell_s": "float"
+  },
+  "plan13": [
+   {
+    "richtung": "str",
+    "d": "list",
+    "eps0.001": [
+     "A_red_pd",
+     "B_red_min_rel",
+     "B_red_neg",
+     "dim",
+     "eps",
+     "fit_rest",
+     "kontr_ops",
+     "luecke_min",
+     "nX",
+     "n_luecke",
+     "n_masselos",
+     "n_unklar",
+     "n_wachsend",
+     "rang_Mc",
+     "skala",
+     "sv_rel_min",
+     "t_s",
+     "tt_anteil",
+     "unklar_werte",
+     "w2_kleinste",
+     "w2_min_re",
+     "w2im_max",
+     "w2k2_masselos",
+     "weg"
+    ],
+    "eps0.002": [
+     "A_red_pd",
+     "B_red_min_rel",
+     "B_red_neg",
+     "dim",
+     "eps",
+     "luecke_min",
+     "nX",
+     "n_luecke",
+     "n_masselos",
+     "n_unklar",
+     "n_wachsend",
+     "rang_Mc",
+     "skala",
+     "sv_rel_min",
+     "t_s",
+     "unklar_werte",
+     "w2_kleinste",
+     "w2_min_re",
+     "w2im_max",
+     "w2k2_masselos",
+     "weg"
+    ]
+   }
+  ],
+  "spanne": "float",
+  "w_min": "float",
+  "w_max": "float",
+  "w_mittel": "float",
+  "regel": {
+   "genau_2_masselos_alle": "bool",
+   "zwei_positive_werte_alle": "bool",
+   "wachsend_summe": "int",
+   "unklar_summe": "int",
+   "A_red_pd_alle": "bool",
+   "B_red_neg_summe": "int",
+   "tt_anteil_min": "float",
+   "n_tt_werte": "int",
+   "linear_max": "float",
+   "luecke_min": "float",
+   "n_masselos_je_punkt": "list",
+   "regulaer": "bool"
+  },
+  "zerlegung": {
+   "richtungsspanne_zweigmittel": "float",
+   "aufspaltung_max": "float"
+  },
+  "symmetrie_48": {
+   "abw_rel_max": "float",
+   "n_ohne_2": "int",
+   "w0": "list"
+  },
+  "grundtempo": {
+   "c2_eps1": "list",
+   "c2_eps2": "list",
+   "c2_richardson": "list",
+   "spanne_c_eps1": "float",
+   "spanne_c_richardson": "float",
+   "spanne_c_48_eps1": "float",
+   "c_mittel_richardson": "float",
+   "L_herm_max": "float"
+  },
+  "spanne_23ew": "float",
+  "affin": {
+   "zeilen": [
+    [
+     "K_ueber_k2_V",
+     "richtung"
+    ]
+   ],
+   "min": "float",
+   "max": "float",
+   "spanne_max_min": "float"
+  },
+  "keil91": {
+   "spanne": "float",
+   "min": "float",
+   "max": "float",
+   "klassen": "list"
+  },
+  "pfad": {
+   "winkel_grad": "list",
+   "w2k2": "list",
+   "ecken": "list"
+  },
+  "bz_L8": {
+   "nk": "int",
+   "k_mit_wachsend": "int",
+   "k_A_red_nicht_pd": "int",
+   "k_B_red_neg": "int",
+   "k_rangverlust_Mc": "int",
+   "w2_min_rel": "float"
+  },
+  "superzelle": {
+   "m": "int",
+   "T": "int",
+   "E": "int",
+   "nV": "int",
+   "info": {
+    "n_punkte_kopien": "int",
+    "n_simplices_gesamt": "int",
+    "qhull_coplanar": "int",
+    "n_behalten": "int",
+    "n_schluessel_verschieden": "int"
+   },
+   "abw_rel_max": "float",
+   "zeilen": [
+    [
+     "n_masselos",
+     "n_wachsend",
+     "richtung",
+     "w2k2"
+    ]
+   ]
+  },
+  "t_s": "float"
+ },
+ "laufzeit_s": 36.921966314315796,
+ "maxrss_MB": 195.828125
+}

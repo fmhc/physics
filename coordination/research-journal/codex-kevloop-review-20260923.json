@@ -1,0 +1,30 @@
+{
+  "id": "codex-kevloop-review-20260923",
+  "time": "2026-09-23T05:17:45Z",
+  "time_kind": "completed",
+  "author": "codex-agent-review (astra, OpenAI GPT-6)",
+  "topic": "operations",
+  "status": "checked",
+  "title": "kevloop implementiert und auf der P5000 ausgefuehrt; schneller Standard ohne Sprachentscheider",
+  "question": "Laesst sich die Formelsuche schnell, nachvollziehbar und als Queue-Werkzeug betreiben, ohne Modellvoten als Evidenz auszugeben?",
+  "action": "Review vor Implementierung; Regelroute statt redundanter Modellfragen, Register-/Provenienzpruefung, Queue-Waechter mit Controller-Lease, exklusive Laufordner, systemd-Vorlagen. CPU-Unit-Tests und Pilot 3 auf .69; kein neuer physikalischer Ausgang.",
+  "result": "42 CPU-Tests bestehen. Pilot 3: 0.002 s je Regelentscheidung, 0.1051 s GPU-Bewerter je Generation, Route 2.466 s; 12 Generationen mit 2048 Kandidaten. N1 exakt gleich zu derselben Argsort-Regel (Regression, kein kev-Erfolg). N2 0/24 Abweichungen der Regelroute; Modell-Roh-N2 nicht neu gemessen. N3 und Fail-open bestanden. Hash-/Mengen-/Wertabnahme bestanden.",
+  "meaning": "Der bisherige Sprachentscheider bringt an dieser Stelle keinen belegten Informationsvorteil und ist im Standard abgeschaltet. Optionaler Audit misst nur Entscheidungsfehler. Manuelle Queue-Ausfuehrung ist belegt; Dauerbetrieb nicht aktiviert. Vor Timerbetrieb fehlt SSH-Rueckauthentifizierung .69 -> Laptop. Callable-ODE-Adapter nur softwaregetestet, noch keine dynamische Queue-Familie. Wiederverwendete SPARC-Validation, keine neue Evidenz und kein Ausgang zu H1/H2; keine fremde S2-Reproduktion.",
+  "compute": "ubuntu-auto (.69), Quadro P5000 GPU-127dc217-5693-98a2-3209-573ba346484f, Torch float32/CUDA. CPU fuer IO, Eingabevergleich, Split-Permutation, Ablaufsteuerung. QA CPUQuota=100%, MemoryMax=4G, RuntimeMaxSec=900. Pilot-Kindwallzeit 10.633511936292052 s unter gemeinsamem Etat 300 s; Controller- und GPU-Lock, kein CPU-Fallback, keine fremden Dienste beendet.",
+  "peer_ack": "27cdc65129af4c6c87fd85815ff3a84d",
+  "evidence_fields": {
+    "bericht": "model-lab/kevloop/BERICHT-PILOT-3.md",
+    "zeiten": "model-lab/kevloop/runs/kevloop-pilot-v3-20260923/output/ERGEBNIS.json:routen.kev.zeiten",
+    "nullproben": "model-lab/kevloop/runs/kevloop-pilot-v3-20260923/output/ERGEBNIS.json:nullproben",
+    "tests": "model-lab/kevloop/abnahme-pilot3/ABNAHME.json:softwaretests_final",
+    "wallzeit": "model-lab/kevloop/runs/kevloop-pilot-v3-20260923/ABSCHLUSS.json:wall_s",
+    "etat": "model-lab/kevloop/runs/kevloop-pilot-v3-20260923/output/ERGEBNIS.json:lauf.argumente.etat_s"
+  },
+  "sources": [
+    {"path": "model-lab/kevloop/dashboard.html", "label": "kevloop Betriebskarte", "sha256": "f7358a3add1f17b6a069e730157013be2a1da4beb62c9835b9a0bf06c78bead1"},
+    {"path": "model-lab/kevloop/REVIEW-astra-20260923.md", "label": "Review vor Implementierung", "sha256": "10c0cd42eac68dd613e3e0e738e864db85a023fa530076377b4fb91d6a4a03ae"},
+    {"path": "model-lab/kevloop/BERICHT-PILOT-3.md", "label": "Pilotbericht mit Feldpfaden", "sha256": "76cec29e89a363276626e6a2348a6855bcc3f391effde5dd5255cda8d5cbd9b5"},
+    {"path": "model-lab/kevloop/abnahme-pilot3/ABNAHME.json", "label": "Maschinelle Abnahme", "sha256": "934b77d1e0fce5d58f59140e5725c9d14f88279c86b02b360b900b5c1f880cae"},
+    {"path": "model-lab/kevloop/tests/fmhc-physics-kevloop-tests-1790140483107187041.json", "label": "Abschliessende CPU-Tests", "sha256": "fd6586b6964e39156a39d8b69003b781d832b9ed97379373a5a2aae439000036"}
+  ]
+}

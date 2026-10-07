@@ -1,0 +1,129 @@
+INDEPENDENT TRANSLATION READING — ENGLISH v0.6a
+Reviewer: proposition_review, a separate OpenAI agent for ag-phy-lat
+Recorded with date: 2026-10-01T02:27:29+02:00
+
+SCOPE AND VERDICT
+The German source-v0.6a.html and both English document sources, paper.html
+and main.tex, were read throughout, including their equations, tables,
+caption, references, source-reading annotations and final status notice.
+Relevant passages of REVIEW-CLAUDE-SOURCE.md were read, including K11,
+E2--E5, the v0.6 findings and the v0.6a disposition. This is a translation
+fidelity review, not an independent repetition of the scientific review.
+
+No substantive translation defect remains in the passages reviewed after
+the HTML abstract correction below. The scientific scope limitations in
+the German source are retained. Translation differences between HTML and
+LaTeX otherwise concern phrasing or British/American spelling, without a
+change in the claims identified in this reading.
+
+DOCUMENT BASIS
+German source SHA-256:
+eb04ab2fa4c6f329db550c3dbe3b15f9ce32fb0347918654fba46429989c51c0
+Copied Anthropic review SHA-256:
+c514e2dc6f4aee91db2a853ab358fc2cea0fa5a37dacf056d4545096cc2832cb
+Hashes at the initial completed source reading (before final wording edits):
+paper.html:
+a88e60a645811fccf6967ddab9ab4672f1ad9cc0e17cc6265045b27df4b75c47
+main.tex:
+3492f68647d05a532ea01761b0e005f68da3a293748e7274ad6cc01d5e6c251d
+Final affected passages and hashes are recorded in the addendum below.
+
+FINDING AND EDITORIAL NOTES
+1. The initial HTML abstract rendered Wuerfelgraphen as 'cubic graphs'.
+The parent independently flagged the same issue. Recommended and now
+observed correction: 'cube graphs', matching TeX. This avoids the graph-
+theoretic ambiguity of 'cubic'; the specific cube graph is intended.
+2. Optional wording only: TeX Section 6.1 'particle amount' can be aligned
+with HTML 'particle number'. The existing denial of a particle-count
+interpretation is already understandable; this is not a missing caveat.
+3. The German Section 6.1 calls the displayed spatially integrated
+Lagrangian an action (Wirkung), while its notation paragraph correctly
+calls it a Lagrangian. Both translations preserve this source-level
+inconsistency. It is recorded here rather than silently amended as if the
+German manuscript already used one consistent term. Equation (11) itself
+is translated without adding a time integral.
+
+TARGETED FIDELITY RESULTS
+- Abstract: the isotropy of the static six-direction sum is explicitly
+  separated from failure of the coherent sector in the independent-
+  neighbour network. Matched sitewise connections pass both tests. The
+  external prescribed-shell control model is not made self-consistent.
+  The finite Q-ball box finding does not become a continuum exclusion.
+- K11: both English sources explicitly say 'the triplet in isolation'.
+  The antecedent ambiguity of the former 'it' is removed.
+- Nonlinear and dynamical qualifications: local quartic SU(3) breaking,
+  coupling to excluded modes, finite search scope, projected versus full
+  invariance, imposed contact law and imposed total-density mediator all
+  remain explicit. The static elimination/time-scale caveat is present.
+- Equations: the fifteen numbered source equations occur in the same
+  conceptual order in HTML and LaTeX. The network collective Hamiltonian
+  is (7), mediator expressions are (8)--(10), the field Lagrangian is
+  (11), the two-mode matrix is (12), transfer is (13), and the Q-ball
+  operators/Schur expressions are (14)--(15). TeX uses equation labels
+  and references instead of replacing coordinate arguments by numbers.
+- Corrected boundary term: the inner energy has -u(8)^2/16, and the outer
+  energy the opposite term, in both versions. No u(9) substitution was
+  found in the corresponding passage. The cut remains r=8.
+- Section 6: canonical population, spatial field energy and particle
+  interpretation remain distinct; initial outer energy and percentage-
+  point increase are retained. Grid dependence, non-certified continuous-
+  time extrema, no new box test at the tuned depth, and interval-
+  certification limits remain visible.
+- Section 6.3: the positive-dipole null finding stays confined to the
+  specified discrete boxes and endpoint. Weak binding, the last frequency
+  layer, the exact threshold and open resonances remain unresolved. The
+  translation mode is not turned into a positive internal oscillator.
+- Section 7 topology: the source's claim is restricted to the unchanged
+  target C or C^n including zero, zero boundary value, and unrestricted
+  regular finite-energy configuration space. Contractibility, trivial
+  pi_1/H^2, absence of the named topological quantization routes there,
+  and ordinary bosonic scalar quantization are all retained. C x S^2
+  remains a different theory. The separately reduced fixed-Noether-charge
+  phase space remains an open technical qualification; the contraction
+  does not preserve that charge, and the qualification itself supplies
+  no spin-1/2 proof. No extra topological theorem has been added by this
+  translation review.
+- Literature scope: Hammer remains a distant analogy; PDG is not made the
+  source of the paper's basis-link algebra; Kaminaga's l=0 asymptotic
+  theorem is not used to certify smooth l=1 numbers; Panin/Smolyakov's
+  different two-field spectrum is not transferred. Ho remains an algebraic
+  comparison without identifying atomic scattering lengths or particle
+  spins. Kovtun et al. support the linearization structure, not the
+  project's particular spectrum; origin conditions remain l-dependent.
+  Krusch/Speight's model prerequisites are not asserted for this model.
+- Source-reading claims: the bibliography preserves the declared reading
+  ranges and the specific limitation that the Anthropic reading of [7]
+  was abstract-only. These inherited claims were not independently
+  reverified against primary literature in this translation review.
+- E2: criteria/acceptance criteria and parameter settings replace the old
+  gate/arm jargon. Internal host names are not reinstated in the paper.
+- E5: both English headers identify Codex (OpenAI), German v0.6a, the
+  frozen source and its hash. Authorship/publication status remains open.
+  The inherited project-internal Anthropic review is not presented as
+  external journal peer review. TeX explicitly attributes source-reading
+  status to the German source; HTML denies a new full independent review.
+- The conclusion preserves positive control examples and negative
+  counterexamples and does not add a QCD derivation or novelty claim.
+
+REVIEW LIMITS
+No primary literature was opened for this task. No underlying result
+files were audited, physics calculations repeated, or new proof of the
+source's scientific assertions attempted. Tables and formulas were read
+for correspondence; exhaustive machine comparison, compilation, PDF
+visual checks and numerical QA belong to the parent's separate remote
+QA record. This reviewer ran no interpreter, compiler, browser or tests
+and made no change to either translation. The review is independent of
+the translation drafting agents, within the same AI provider and project;
+it is not an external scientific peer review.
+
+FINAL WORDING ADDENDUM
+The corrected HTML abstract now says 'cube graphs'; Section 2 now says
+'lower cube triplet'. TeX Section 6.1 now says 'particle number'. These
+affected lines were reread after the parent edits and preserve the source.
+The optional terminology suggestion above is therefore resolved as well.
+No unresolved substantive translation finding remains from this reading.
+Final reviewed document-source hashes:
+paper.html:
+def444b1b765b836f218b4b7d50ccac78ea3c0244d8f16f763fddd57aea0d769
+main.tex:
+f6e502857039e46f0dbfd886ac34c2dbb8e2e506cc20ad7f156302593de525ee

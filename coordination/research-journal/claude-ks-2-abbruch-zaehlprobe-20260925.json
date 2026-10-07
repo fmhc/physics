@@ -1,0 +1,40 @@
+{
+  "id": "claude-ks-2-abbruch-zaehlprobe-20260925",
+  "time": "2026-09-25T16:05:13+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung; Vertragsautor Claude-Subagent (Anthropic, Opus 5.5), 17:28:19 bis 18:03:50 MESZ (gemessen)",
+  "topic": "binaries",
+  "status": "reported",
+  "title": "KS-2 (Basislinientest, Idee I-15) vor dem Vertrag abgebrochen: im Hipparcos-Gaia-Katalog zu wenige markierte Tieffeldpaare (13 statt mindestens 100), und auch der DR4-Weg (c) hat im Modell kaum Trennschaerfe",
+  "question": "Traegt eine geschwindigkeitsfreie Zaehlprobe einen zweiseitigen Vertrag, der Paare mit und ohne Anomalie-Kennzeichen vergleicht, ohne Bezug auf den unentschiedenen KS-1-Wert (Finns Ja vom 25.09.)?",
+  "action": "Erwartung und Entscheidungsregel vor der Zaehlung gehasht (ERWARTUNG-vor-zaehlung.md 4ca8319c..., 17:43:06). Zaehlung auf der .69 ohne jede Geschwindigkeit, HGCA-Katalog wie MS-3 (Kopie aus dem TS440-Backup, per Hash gleich). Dazu eine synthetische Probe der DR4-Stufe mit dem KS-1-Begleitermodell (200 Kataloge, ohne Geschwindigkeiten). Aus KS-1 nur die synthetischen Planungswerte sigma_K und Delta_14, offengelegt und mit Deckungsprobe.",
+  "result": "Zone Z: 1 926 Paare, 108 im Katalog, 13 markiert (Erwartung 12), 95 unmarkiert. Regel (a) und (b) verletzt; kleinste erkennbare Differenz 1,604 gegen Delta_14 = 0,3645, es fehlt ein Faktor 17 an markierten Paaren. Ursache: Hipparcos erfasst die M1-Sterne kaum. DR4-Stufe im Modell: im Mittel 94 markierte Kernpaare (Minimum 67); die Streuung des Kriteriums (0,185) ist so gross wie der Unterschied zwischen Newton und gamma = 1,4 (0,173). Nach vorab gebundener Regel ist das unentschieden, kein eigener Abbruchgrund. Die Variante 'markiert gegen alle anderen' waere zu 99 % der schon gesehene KS-1-Gesamtwert.",
+  "meaning": "Kein KS-2-Vertrag; die Datei KS-2-VERTRAG.md gibt es nicht. Die Idee I-15 ist als Test in dieser Form nicht tragfaehig. Im Modell wirkt die Schwerkraft nur ueber die Normierung durch den Referenzbin und mit umgekehrtem Vorzeichen zu I-15; einen Ueberschuss markierter Paare erzeugt keine gerechnete Welt. Die Vorab-Ueberlegung des Autors dazu war falsch und ist offengelegt. Fuer DR4 bleibt KS-1 mit Weg (c) der einzige gebundene Test. Zwei kleine Verfahrensabweichungen auf der .69, beide ohne Daten: ein python3 -c ausserhalb von systemd-run und das Pachtwerkzeug unter flock ohne systemd-run. Lokal keine Interpreterstarts.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260925/ks-2-s0/ABBRUCH-KS-2.md",
+      "sha256": "58b05f3e249cfd5b024eae2e84e4bba16be0e93c200736e461cfdd295d862621"
+    },
+    {
+      "path": "coordination/vertraege-20260925/ks-2-s0/ZAEHLPROBE-KS-2.md",
+      "sha256": "58b9bf1fb737039ac92a64b981ff3c61d4468e8d8ea6473def628019ee6909da"
+    },
+    {
+      "path": "coordination/vertraege-20260925/ks-2-s0/ERWARTUNG-vor-zaehlung.md",
+      "sha256": "4ca8319ccde7ab09a6e51fd142d8fa41a637b38dcfa9286163f426aac2394a2e"
+    },
+    {
+      "path": "coordination/vertraege-20260925/ks-2-s0/zaehlprobe/ERGEBNIS-ZAEHLPROBE-KS2.json",
+      "sha256": "d4528dd9483d38b9e49470b5c8a93e4af00a1f42e1d8a96f5807043ce751553d"
+    },
+    {
+      "path": "coordination/vertraege-20260925/ks-2-s0/schreibtisch/ERGEBNIS-KS2-S01.json",
+      "sha256": "a0cb5cac9f58faf4f1295334f2dd3f8ee8132c750108abc3901f9ab56d3907d4"
+    },
+    {
+      "path": "coordination/vertraege-20260925/ks-2-s0/SHA256SUMS",
+      "sha256": "7739508945b7a0a2bd34e76495e00b81ebf785f158fc8e61b1e72bbb9c822298"
+    }
+  ],
+  "recorded_at": "2026-09-25T16:06:01.066980+00:00"
+}

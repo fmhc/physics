@@ -1,0 +1,27 @@
+Q-Ball clock: reciprocal finite detector, exploratory, 2026-10-02
+Author ag-phy-coordination. New model extension, not a measured apparatus.
+Question: can a density-coupled finite oscillator acquire a resolved signal while the prepared radial density clock remains periodic over T=100?
+
+Hamiltonian addition D=P^2/2+OmegaD^2 (X-alpha F)^2/2 >=0.
+F=integral w(r)(|psi|^2-f_ref^2)d^3x,
+w=exp(-r^2/4)/(8 pi^(3/2)), integral w d^3x=1 on infinite space.
+f_ref is the fixed interpolated initial background, NOT an evolving subtraction.
+Xdot=P; Pdot=-OmegaD^2(X-alpha F).
+Added physical field acceleration +OmegaD^2 alpha (X-alpha F) w psi.
+This follows from delta D/delta psi*; complex kinetic term is |psi_t|^2, real detector kinetic P^2/2. No extra factor two in the field force.
+F uses radial Simpson quadrature of w(|q|^2-r^2 f_ref^2). Same constant w in field RHS. Continuum reciprocal, discretization diagnostic only.
+No damping or external pump. X(0)=alpha F(0), P(0)=0 gives D(0)=0; this prepares detector equilibrium and is not extraction from a stationary vacuum. Detector standalone energy (P^2+OmegaD^2 X^2)/2 is NOT additive stored energy; report D and P^2/2 instead.
+Only main field coupled; existing parallel background is uncoupled diagnostic.
+Total E=existing main-field E+D; sponge energy loss unchanged; U(1) and main Q retained.
+
+Fixed cases: h=.2,.1; epsilon=.005 and arms (alpha,OmegaD/rho)=(0,1),(.1,1),(1,1),(1,1.3); extra null epsilon=0,alpha=1,ratio=1. Ten runs total. R80,T100,dt=.2h, existing absorber. No kick.
+At every 5 steps record density contrast at r=0, F, X, P, D, P^2/2, energy and charge balance maxima.
+Numerical gate: finite, max relative total energy/charge balance <.005.
+Clock: window40..100, hysteresis eta=1e-5 max(1,initial baseline center density); arm below -eta, upward crossing +eta; >=8 intervals, CV<.01, period within2% of2pi/rho; paired-grid mean difference<1%.
+Resolved readout: X peak-to-peak in40..100 >10 times null readout, >1e-8, both grids; grid discrepancy<5% of fine amplitude. No claim of quantum noise or experimental sensitivity.
+Null should not pass clock and is a numerical background bound. Coupling0 X,P remain exactly0. A failed control invalidates associated interpretation.
+Energy transfer diagnostic: detector kinetic max and D max; compare energy-balance absolute error to these scales. Relative-to-large-background conservation alone cannot certify a tiny transfer. Resolved transfer requires absolute total-balance error <10% of peak detector kinetic on BOTH grids, otherwise only numerical readout, no resolved energy-transfer claim.
+This is a spherical collective oscillator with a prescribed footprint/reference, not a causal local apparatus; no fundamental-time/spin/dimension claim. Prepared known eigenmode; not spontaneous formation. Joint space/time refinement, finite sponge boundary.
+
+Pre-run checks: independent derivation/code read; exact uncoupled detector; finite-difference interaction-gradient identity on a deterministic state (relative error <1e-6); wrong-sign reciprocal force must fail that check (relative mismatch>1e-2). No changes to tolerances after results.
+Budget .69 CPU, nice19, one logical CPU after capacity check/peerbus notification; active JS<=45s, wall timeout90s. No services, GPU or local tests. No new runs if capacity unavailable. Save hashes, commit and complete staged source. Review before numerical interpretation.

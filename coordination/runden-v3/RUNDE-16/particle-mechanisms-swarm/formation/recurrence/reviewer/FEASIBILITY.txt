@@ -1,0 +1,126 @@
+Unabhängige Machbarkeitslektüre particle_binding, 03.10.2026.
+Gelesen NEXT-PHYSICS.txt, HALF-RESULT.json/Review, gespeicherte
+Zeitreihenübersicht und timestep-half.py Speichercode. Keine Dateien
+eines neuen recurrence-Autorentwurfs gelesen, keine Rechnung/Implementierung.
+
+Urteil: Eine begrenzte Fortsetzung ist als neue Messfrage plausibel,
+aber noch nicht als ausführbarer Laufplan freigegeben. Die vorhandenen
+Daten zeigen starke Nichtstationarität; sie können weder volle
+Zustandsrückkehr noch Beruhigung entscheiden. Räumliche Unsicherheit
+verbietet nicht jede weitere Beobachtung, aber jede präzise Rückkehr-
+behauptung benötigt ihren eigenen Raum-/Zeitvergleich. Ein positiver
+Periodizitäts- oder asymptotischer Beruhigungsentscheid ist nicht zugesagt.
+
+Was der Bestand tatsächlich trägt
+HALF-RESULT SHA97cfb7ff68bff7a64bb4fb0aaf44130e859f6689ad5482594e5209c79df6e89a:
+cloud base(h.1,dt.01),space(h.05,dt.01),time(h.1,dt.005) komplett bis64.
+Schlussreste rphi≈.370.. .371,rchi≈.896.. .899,tphi≈.206.. .207,
+tchi≈.621.. .622 sind weit von den alten.02-Stationaritätsgrenzen.
+R50_density≈3.291 gegenüber8.701 anfänglich, Qcore≈899.6..899.9 beiQ1100.
+Das beschreibt Kompaktierung und starke interneDynamik, nicht eine
+schon stationäreEndlösung. Der alte Sensitivitätsstatus bleibt bestehen.
+
+Die belegte Raumrestdifferenz bei57.6 beträgt etwa.00456(phi)/.00605(chi)
+und verletzt das alte.004-Tor. Diese Skalarrestdifferenzen sind kein
+Fehlerbalken einer noch ungemessenen vollenZustandsdistanz. Die sichtbaren
+großenExkursionen sind qualitativ deutlich größer; ob eine KLEINE
+Rückkehrdistanz darüber aufgelöst ist, bleibt offen. Gute Q/E-Erhaltung
+beweist das nicht. Alle drei cloud-Stufen müssen unabhängig fortgesetzt
+werden; kein Umschreiben des alten Befunds durch den schönsten Einzelarm.
+
+Zeitmaßstab: gespeicherteDiagnosen nur alle.8. Im zeitfeinenArm chi-
+Nachbarmaximaabstände3.2..9.6, Median4.8; Radiusabstände1.6..23.2,
+Qcore-Maximaabstände6.4 und26.4. Das sind verschiedene skalareSignaturen,
+keine gemeinsamen belegten Perioden. KleineZacken dürfen keine neuen
+Atmungszyklen definieren. Ein weiterer Abschnitt von ungefähr einigen
+Zehnerzeiteinheiten wäre mechanisch informativer als wenige schnelle
+chi-Maxima; mehrere langsame vollständigeRückkehrereignisse sind damit
+aber nicht garantiert. Beispielsweise zusätzliche64Zeiteinheiten könnten
+die beobachteten langsamen Skalen mehrfach enthalten, sind ohne Ereignis-
+und Randplan jedoch weder notwendig noch bereits autorisiert. Kein
+automatisches Verlängern, falls im festen Abschnitt zu wenig Ereignisse.
+
+Checkpointmachbarkeit und konkrete Provenienzlücke
+run_arm speichert nach dem letzten synchronen vollständigenVerletschritt
+cloud-LEVEL-final.npz mit r,phi,pi,chi,chi_t. Verlet advance benötigt nur
+diesen vollständigenState und dasGrid; keine verborgenen Halbgeschwindig-
+keiten, Historie oder Beschleunigung. Eine Fortsetzung ohne Wiederholung
+0..64 ist daher grundsätzlich möglich, auf dem gesamtenR120-Gitter,
+nicht nur einem ausgeschnittenenKern.
+Aber HALF-JSON enthält KEIN final_artifact-Feld und keine NPZ-Hashes.
+Dateinamen allein binden die Fortsetzung nicht. Vor Ausführung sind die
+wirklichen archivierten dreiEnddateien zu lokalisieren/gehasht zu binden,
+Schema/Gitter/Endzustandsdiagnosen mit t64 im HALF-JSON abzugleichen.
+Der NPZ-State selbst enthält kein t, E0, Q0 oder akkumuliertesKernfluss-
+integral. Absolutzeit64 und historische Bezugswerte/Flussintegrale kommen
+aus dem gebundenenJSON; alternativ neueSegmentbilanz explizit neben alter
+Gesamtdrift führen. Kein stiller Reset alter Erhaltungsgrenzen. Keine
+Rotation/Normierung/Interpolation der Startfelder als vermeintlicheReparatur.
+
+Notwendige Messdefinition vor Evolution
+FesteKernregion, naheliegend bisher r<12, und vollerState(phi,pi,chi,chi_t)
+mit positivenFV-Gewichten speichern. Feld-/Geschwindigkeitsgewichte und
+Nenner müssen vorab feststehen; verschiedene Einheiten nicht unbemerkt
+addieren. Ein einziger gemeinsamerU1-Winkel dreht phi UNDpi, chi/w nicht.
+Die gemeinsame Phase kann analytisch aus dem gewichteten komplexen
+Overlap bestimmt werden; verschwindenderOverlap ist unaufgelöst, nicht
+eine frei wählbare günstigePhase. Keine separatePhasenoptimierung jeder
+Komponente und keine Radius-/Zeitreskalierung zur Rückkehrverbesserung.
+Zusätzlich vier getrennteKomponentenabstände berichten, damit eine große
+Komponente keine andere im Gesamtmaß verdeckt.
+
+Ereignis: gleiche Durchgangsrichtung eines vorher definierten radialen
+Signals, Mindestabstand gegen trivialeNachbarsample-Rückkehr und feste
+Prominenz/Exkursionsregel. Radius ist r50_density, kein Ladungsradius.
+Mehrere volleState-Rückkehrkandidaten, große aufgelösteExkursion zwischen
+ihnen und vergleichbareHüllamplituden in zwei festenAbschnitten nötig.
+Ohne nichtverschwindendeExkursion würde auch ein stationärer Q-Ball im
+U1-Quotienten ständig zurückkehren. Alte driftchi-Norm am anfänglichen
+Vakuum ist ungeeignet, da der frühere Nenner fastnull war.
+
+Raum-/Zeitunsicherheit getrennt im neuenDistanzmaß messen: symmetrie-
+verträgliche feste Restriktion der feinerenZellen, keine Renormierung,
+Vergleich sowohl synchronerTrajektorien als auch gleichgerichteter
+Ereignisse. UnterschiedlicheEreigniszeiten offenlegen; Eventabgleich darf
+Phasendrift nicht verstecken. NumerischeUnsicherheit muss gegenüber
+Rückkehrabstand UND Exkursion berichtet werden. DichteresKernsampling
+als.8 ist notwendig zur Ereignis-/Stateprüfung; exakterAbstand samt
+Speicher-/CPU-Budget erst im begrenztenPlan festlegen.
+
+Rand/Zustandsraum und Aussagegrenze
+R120 ist endlich, auslaufendeWellen können später den Rand erreichen.
+Vorher winzigerKragen bei64 garantiert den neuenAbschnitt nicht. Alte
+Randkontrollen weiterführen; kein Fortschreiben durch einen Verletzungs-
+zeitpunkt als ungestörteKernphysik und keine unsichtbare neueAbsorption.
+Eine fehlende Rückkehr bedeutet weder Dämpfung noch Instabilität:
+quasiperiodische Mehrmodenbewegung, unregelmäßigeDynamik und langsameDrift
+bleiben Alternativen. EndlicheRückkehr beweist keine exaktePeriodizität.
+U1-Quotient entfernt eine bekannte interneSymmetrie; er erzeugt weder
+Zeit noch Spin, und radialeDaten beweisen keine nichtradialeStabilität.
+Ein Abnehmen derHülle ist nur endlicheBeruhigungstendenz; stationär erst
+bei zusätzlichen unveränderten absolutenRetention-/Stationaritätstoren.
+
+Empfehlung: genau hierfür einen begrenztenPlan erstellen, zuerst echte
+Checkpointbindung klären. Keine neueMode-/FFT-Suche und kein blinder
+Gitterlauf. Die physischeFrage ist sinnvoll; ein eindeutiger Ausgang
+innerhalb einer kurzenFortsetzung bleibt offen und UNRESOLVED zulässig.
+
+Zusatzlektüre root/PHASENQUOTIENT.txt, unabhängig vom Autorentwurf:
+Die analytische Minimierung ist korrekt. Bei C=<a,b> maximiert die
+Drehung b*conj(C)/|C| den reellenOverlap und minimiert den gemeinsamen
+komplexenAbstand; realechi-Komponenten bleiben unverändert. Die gewählte
+Messnorm mit pi/m und chi_t/(sqrt2*m),m=sqrt2, fixiert die zuvor offene
+relativeGewichtung sinnvoll positiv, ohne Energie-/Stabilitätsanspruch.
+VierKomponentenberichte bleiben notwendig. Direkte Restbildung nach
+Rotation vermeidet die Auslöschung der äquivalenten Normendifferenz.
+Bei C=0 ist nur die Ausrichtungsphase undefiniert, nicht der Minimal-
+abstand; meine frühere Formulierung 'Overlap unaufgelöst' betrifft die
+Phasenidentifikation, nicht das mathematische Distanzmaß. Numerisch
+naheNull ist entsprechend keine belastbarePhasenspur zu behaupten.
+
+Alle vier Kontrollanker stimmen: reinerU1-Orbit Abstand0; stationärer
+Q-Ball Quotientenrückkehr jederzeit; (1,i) gegen(1,−i) bei m=1 hat C=0
+und Minimalabstand²4; reellerGeschwindigkeitswechsel bleibt sichtbar.
+Der dritteAnker ist ausdrücklich algebraisch und keineBehauptung einer
+ladungsbewahrenden Bewegung. Stationaritätszusätze und festeomega-Regel
+sind angemessen. Kein Einwand; U1-Quotient erzeugt keine Uhr/Zeit/Spin.

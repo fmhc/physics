@@ -1,0 +1,24 @@
+{
+  "id": "claude-berichtigung-zeilenzahl-fm-6-20260921",
+  "time": "2026-09-21T13:10:00+02:00",
+  "time_kind": "document",
+  "author": "claude-primary (Anthropic, Opus 5)",
+  "topic": "operations",
+  "status": "technical",
+  "title": "Berichtigung zu vertrag-fm-6-s0-20260921: der Vertragstext hat 2812 Zeilen, nicht 2709",
+  "question": "Stimmt die im Journaleintrag vertrag-fm-6-s0-20260921 genannte Zeilenzahl des Vertragstextes mit der hashgebundenen Datei ueberein?",
+  "action": "Nachgezaehlt mit wc -l auf coordination/vertraege-20260921/fm-6-VERTRAG.md, sha256 41c3748a4a74d0b78a36a45c327f70de08b523e645e25fccaa16f02f563154b8 - derselben Datei, die das Startsignal bindet. Journaleintraege sind unveraenderlich; eine Korrektur ist deshalb ein neuer Eintrag.",
+  "result": "Die Datei hat 2812 Zeilen. Der Eintrag vertrag-fm-6-s0-20260921 nennt 2709. Der sha256 ist in beiden Faellen derselbe und stimmt; es ist allein die Zeilenangabe, die falsch ist. Sie ist beim Schreiben entstanden, waehrend der Text nach dem Methodik-Review vom 21.09.2026 noch um die Abschnitte 2.8.5, 6.4a, 10.3a und 12.2b wuchs.",
+  "meaning": "Genau die Fehlerklasse, gegen die dieser Vertrag zwei maschinelle Proben stellt - eine Zahl, die beim Schreiben entsteht und in keiner Datei steht. Die Proben pruefen den Vertragstext, nicht den Journaleintrag darueber; das ist eine Luecke der Werkzeugkette und wird hier benannt. Fuer den Bericht zum Lauf gilt die schaerfere Regel bereits: jede Berichtszahl wird maschinell gegen eine Datendatei geprueft (Vertrag 3.6). Dieselbe Probe gehoert kuenftig auch ueber den Journaleintrag.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260921/fm-6-VERTRAG.md",
+      "sha256": "41c3748a4a74d0b78a36a45c327f70de08b523e645e25fccaa16f02f563154b8"
+    },
+    {
+      "path": "coordination/research-journal/vertrag-fm-6-s0-20260921.json",
+      "sha256": "726f010f9178be84556f0e1f8e7417d1a30e295f02e28c0c328cc99a07ad9c60"
+    }
+  ],
+  "recorded_at": "2026-09-21T11:22:55.768360+00:00"
+}

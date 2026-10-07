@@ -1,0 +1,61 @@
+Unabhängige Ergebnislesung particle_binding, 03.10.2026. Keine neue Rechnung.
+RESULT-SHA256 a3c6ca67015748a99d652551938eeceb00c7e5c0aeec90ae4f134644b20d622a;
+Code875cbf73be336ce0c6fba60f77dee2b2dc08ae6b108dde22a2838f2bf9e29cdb.
+
+Urteil: vollständige gespeicherte Felddiagnose, aber NOT_GLOBALLY_ASSIGNED
+ist zwingend. Genau1/16 reale Normpositionen besteht alle prospektiven
+Kriterien. Keine nachträgliche Schwellenänderung und kein Mehrheits-Pass.
+JSON-Einzelwerte und Flags gelesen, nicht nur Status übernommen.
+
+QA:16 reguläre synthetische Positionen bestanden, alle falschen
+Vorzeichenproben abgewiesen. Größter gespeicherter relativer QA-Fehler
+9.04934e−13 gegen1e−10. Alle16 Nullproben c=0 und NICHT_ZUGEORDNET,
+sämtliche Zuordnungsflags dort false. Damit sind Vorzeichen-/Norm-
+Algebra und Nullbehandlung kontrolliert, nicht die tatsächliche
+Mittelpunktordnung der physikalischen Referenz. Reale quadratische
+Identitätsdefekte liegen betragsmäßig unter6.27e−26 (Zeit) bzw.
+2.20e−27 (Band); kein auffälliger Auswertewiderspruch.
+
+Zeitmaß: alle acht Positionen haben Ausrichtung .96326.. .99221 und
+erfüllen die Resthalbierung. Das ist ein deskriptiver, vorzeichentreuer
+Hinweis. Sieben davon verfehlen jedoch BEIDE2u-Reservebedingungen;
+ihre Verbesserung ist unter der vorher gewählten Auflösungsschwelle.
+Die Störskala wird vom direkten nichtlinearen dt-Unterschied dominiert,
+nicht von eta≈1.6..2.2e−16. Eine optisch starke Restverkleinerung genügt
+deshalb nicht zur vereinbarten Zuordnung.
+
+Einzige lokale Zuordnung: DC, erstes Fenster88..104.4373455,
+Schale45..50, ZEITNORM. ||Z||=1.41181203e−5,
+||c||=1.34884899e−5,||Z−c||=1.83440988e−6,
+||Z+c||=2.75527912e−5,u=5.39167552e−6. Ausrichtung .9922056.
+Beide Änderungen gegenüber ||Z|| übersteigen2u, Rest<.5||Z||.
+Das gilt genau dort; kein Übertrag auf Bandnorm, andere Schalen/Fenster
+oder H2 und kein unabhängiger Nachweis einer einzigen Fehlerursache.
+
+Bandmaß: alle acht Positionen verfehlen die Resthalbierung und BEIDE
+Reservebedingungen. Zwei verfehlen zusätzlich Ausrichtung>.8:
+DC,Fenster1,Schale40..45 (.74936) und H2,Fenster1,Schale45..50 (.64775).
+Die übrigen positiven Ausrichtungen ändern den Ausgang nicht. Der
+richtige Korrekturarm vermindert die Restnormen deskriptiv, aber die
+festgelegte dominante-DT²-Zuordnung besteht im Band nirgends.
+
+Reichweite: Kein globaler Nachweis, dass die frühere Targetabweichung
+überwiegend Referenzzeitfehler ist; ebenso kein Nachweis, dass solche
+Fehler fehlen. Zwei kausale dt-Stufen erlauben keine unabhängige
+Ordnungs- oder Extrapolationsrestbestimmung. u ist empirisch, kein
+vollständiger Fehlerbalken. Gemeinsame h-/Ritz-/Baseline-/Abtastfehler
+und andere ausgerichtete Beiträge bleiben möglich. Keine neue kausale
+.005-Referenz, kein verbessertes autoritatives Target, keine alpha0-
+oder h0-Extrapolation, keine stationäre Strahlung/BIC/Lebensdauer.
+Alte Phasenzyklus-/Amplituden-Pässe und Stationarität-UNRESOLVED bleiben.
+
+Betrieb: intern2.46768CPU-s; run2-time.txt1.97User+.57System=2.54CPU-s,
+2.55Wandsekunden,211156KiB maximalRSS,Exit0,CPU8/nice19/einThread.
+Der Erstversuch scheiterte vorher an JSON-Typserialisierung und bleibt
+als INCOMPLETE ohne reale Messung archiviert. Zweiter Versuch war
+gesondert freigegeben; ursprüngliche Tore unverändert. Keine Ausführung
+oder erneute remote-NPZ-Byteprüfung durch diesen Reviewer.
+
+Root ERGEBNIS.txt anschließend gegengelesen: Einzelbefunde, Reserven,
+1/16-Gesamtgrenze und zurückhaltende Deutung stimmen mit diesem Review.
+Keine neue Rechnung oder Reserveänderung durch den Text veranlasst.

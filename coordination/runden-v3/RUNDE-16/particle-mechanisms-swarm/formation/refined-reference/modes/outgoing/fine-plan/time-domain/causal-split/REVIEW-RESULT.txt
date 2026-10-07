@@ -1,0 +1,57 @@
+Unabhängige Ergebnislektüre, particle_binding, 02.10.2026
+RESULT SHA256 15593347f6b1caff683315fab65ce74734ae85fb5eff97b8a25d9276c0a568b9
+Code SHA256 ac87c195092b607cdf106a9ad7a88606bcf0579623cd581297485f76bf7cceaa
+Gelesen JSON und causal-split-time.txt gegen gebundenen Plan/Code.
+Alle vier lokalen NPZ-Dateihashes stimmen mit den eingetragenen Ring-/
+Endartefakthashes überein. Keine Neuberechnung der Felder oder Diagnosen.
+
+Urteil: CAUSAL_SPLIT_DIAGNOSIS_COMPLETE und die Zuordnung
+MIXED_OR_WINDOW_DEPENDENT_WITH_INTERFERENCE entsprechen den vorab
+festgelegten Gates. Beide Schrittweiten erreichenT128, keine Exception.
+Extern49.71s user+.27s system,50.04s wall, exit0, maxRSS202272KiB;
+interne CPU49.8815s. Kein Budgetabbruch.
+
+Kontrollen: Jordanfehler9.5154990815e-11 liegt knapp UNTER1e-10 und
+besteht somit unverändert. Dies ist ein knapper Pass, kein großer
+Robustheitsabstand; die Grenze wurde nicht gelockert. Oszillatorfehler
+grob ca..00155/.00161 und fein .000387/.000404 bestehen .005; beide
+Reduktionsverhältnisse liegen praktisch bei4. Phasenanker7.24e-12 und
+Schrittfehler höchstens1.48e-13 bestehen die jeweiligen Grenzen.
+Lineare Löserreste liegen um1.2e-16, Arbeitsbilanzreste höchstens1.04e-12
+gegen1e-8. Diese Werte kontrollieren Numerik, nicht Strahlungsfreiheit.
+
+Summenvalidierung besteht in ALLEN vier ursprünglichen Kombinationen:
+dt-Zeitfeldfehler .00428–.00711 und dt-Bandfehler .000540–.000609 liegen
+unter .01. Feine Summe gegen nichtlineares Ueven: Zeitfehler
+.002399–.003261 und Bandfehler .001607–.001852 liegen unter .05.
+Nenner sind die jeweiligen beobachteten Plus-Zeit-/Bandnormen, nicht
+die wesentlich kleinere stationäre Sollnorm. Diese präzise Aussage
+validiert die kausale Quellenzerlegung am fest gewählten diskreten
+Basisproblem und den zwei gebundenen Zeitfenstern.
+
+Zuordnung: ||C||/||Delta|| liegt zwischen .446 und .503;
+||H-P||/||Delta|| zwischen .498 und .555. Keine der beiden Größen
+ist in allen Kombinationen kleiner als .10; keine vorgeschriebene
+Einzelursachen-Dominanzregel besteht. Alle Delta-Nenner sind aufgelöst.
+Die ausgewiesenen Interferenzterme sind in allen vier Fällen positiv
+(ca.3.43e-7 bis1.03e-6) und von derselben Größenordnung wie die jeweilige
+Summe der Komponentenquadrate. Daher keine Interpretation als additive
+DC-/H2-Prozentanteile: die Feldnormen und der Kreuzterm müssen gemeinsam
+berichtet werden. Der festgelegte gemischte Status ist damit korrekt.
+
+Tragfähiger Befund: Die Summe aus DC-Quellgeschichte und eingeschalteter
+zweiter Harmonischer reproduziert die gespeicherte gerade nichtlineare
+Außenantwort innerhalb der vereinbarten Toleranzen. Beide Beiträge zur
+Abweichung vom stationären Soll sind wesentlich; konstruktive Interferenz
+trägt zur Gesamtabweichung bei. Das erklärt die vorangegangene fehlende
+Sollidentifikation innerhalb dieser definierten Zweitordnungszerlegung,
+nicht als alleinigen DC-Effekt oder ausschließliches Einschaltphänomen.
+
+Reichweite: R120,h=.05, zwei delta-Werte, zwei feste Fenster bis etwa121,
+keine neue h-Serie oder Langzeitaussage. H-P enthält neben dem Einschalten
+auch den Vergleich verschiedener Randdefinitionen (endliches Dirichlet
+gegen frequenzabhängiges outgoing Robin). Einzelne Randreflexionen oder
+Kontinuumsmoden sind nicht isoliert. Weder Lebensdauer noch asymptotisches
+Einschwingen, Dämpfungsrate oder BIC werden daraus bestimmt. Der alte
+nichtlineare Stationaritäts-/Signalstatus bleibt UNRESOLVED; die neue
+validierte Ursachendiagnose überschreibt ihn nicht.

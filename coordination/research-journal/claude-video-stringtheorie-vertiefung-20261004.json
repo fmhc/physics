@@ -1,0 +1,41 @@
+{
+  "id": "claude-video-stringtheorie-vertiefung-20261004",
+  "time": "2026-10-04T22:24:00+02:00",
+  "time_kind": "completed",
+  "author": "claude-video (Anthropic, Opus 5.5), eigene Claude-Sitzung im Direktauftrag Finns, ohne Subagenten; Folge zu claude-video-stringtheorie-einordnung-20261004",
+  "topic": "literatur",
+  "status": "reported",
+  "evidenzart": "literatur",
+  "title": "Vertiefung zum Stringtheorie-Video: Wicklung ist richtig, aber bekannt (Kobayashi/Nitta 2013, Winding Hopfions auf R^2 x S^1, Modell fast gleich dem S2-Teil von CX-1); die 6/7 der Dimensionsleiter haben mit den 6/7 der Stringtheorie nichts zu tun, bei der richtigen Paarung D = 9/10 sind unsere Daten glatt; einziger neuer Gedanke [H]: die Leiterfaktoren Q_s(D+1)/Q_s(D) sind ungefaehr die Umfaenge, ab denen eine aufgerollte Richtung fuer den leichtesten stabilen Q-Ball aufgeht, fuer R^3 x S^1 bei L* ~ 12/m",
+  "question": "Finn: 'ueberleg mal weiter und schau ob das was ist' (zum Wicklungspunkt der Einordnung) und 'analysiere das mit der dimensionsleiter und den stringtheorie dimensionen'. Ist der Wicklungsgedanke neu oder brauchbar, und gibt es einen sachlichen Zusammenhang zwischen der Dimensionsleiter (D = 1..12) und den Dimensionen der Stringtheorie?",
+  "action": "Papierherleitung: Schnittschranke E >= L * E_min(Ladung je Schnitt) fuer topologische Ladungen je Schnitt; Halbsmash-Argument fuer die Sektoren (R^2 x S^1: Z x Z, R^3 x S^1: Z x Z2); Leiter-Arithmetik (Schwellen 4 und 6 als IR-Grenzen von Int d^Dk/k^4 und k^6). Projektdateien gelesen: dim-leiter-qball-1 KARTE.md und ERGEBNIS.md, ENDPUNKT-DIMENSION.txt, CX-1-VERTRAG.md (Modellteil), ZD-1-VERTRAG.md (nur Kopf, keine Vorlaufwerte), claude-zd-1-beendet-20260926.json, QBALL-SCAN-20260925.md (zwei Zeilen). arXiv-API-Abgleich (Titel/Abstract) von 1305.7417, cond-mat/0309499, 0807.3870, 1301.2923, 1301.6803, hep-th/0307044, hep-th/0401037, hep-ph/0106322, 0804.1357, hep-ph/0006344, 1507.04557, 2412.09815, 2503.15069; zwei Websuchen als Hinweisgeber. Keine Rechnung, lokal nichts gestartet, nichts auf .69, keine fremde Datei geaendert, Herleitungen nicht gegengelesen.",
+  "result": "Teil A: Nur topologische Ladungen je Schnitt erzwingen Wicklung (Lump auf R^2 x S^1, Hopfion auf R^3 x S^1); dann ist E_w = L * E_min exakt und der gleichfoermige String das Minimum seines Sektors. Q-Baelle, Q-Strings und die lineare Innenrichtung haben das nicht. Das Objekt ist veroeffentlicht: Kobayashi/Nitta 2013, Lump-Strings mit Ladung Q, P-fach verdrillt, Hopfladung PQ, mit einem im Feld linearen Potential wie in CX-1. Verdrillte Wirbel rollen sich zu Spiralen oder Knoten auf (Hietarinta u. a. 2003). Teil B: Die 6/7 der Stringtheorie sind aufgerollte Zusatzrichtungen aus Quantenkonsistenz der Weltflaeche bzw. Supergravitation; die 6/7 der Leiter sind Integrierbarkeitsschwellen des Laplace-Schwanzes r^(2-D). Bei D = 9 und 10 laufen Faktoren (19,93; 21,19), W, p und omega_s glatt. Bruecke [H]: Auf R^D x S^1 ist der gleichfoermige Q-Ball exakt mit Schwelle L * Q_s(D), der lokalisierte hat Q_s(D+1); Wechsel bei L* ~ Q_s(D+1)/Q_s(D), also 12,05 fuer R^3 x S^1 und eine Treppe 12,05 bis 19,93 (21,19) fuer T^6 (T^7) mit gleichen Umfaengen. Verwandt: Herdeiro/Radu 2025 (Phasen von Bosonstrings mit Gravitation in D = 5).",
+  "meaning": "Fuer Finn: Der Wicklungspunkt ist ein Werkzeug, keine Entdeckung; wer die Stringtheorie-Sache wirklich will, rechnet zuerst Kobayashi/Nitta mit der CX-1-Maschinerie nach. Die Dimensionsleiter zeigt keine Stringtheorie-Dimensionen und kann sie mangels Weltflaeche und Anomalie auch nicht zeigen. Sinnvoll ist nur die Kompaktifizierungslesart: Die Leiterfaktoren werden zu Umfangsschwellen einer Treppe der effektiven Dimension. Das ist billig pruefbar im Weg-2-Setting R^3 x S^1 (Vorhersage L* ~ 12/m), braucht aber nach ZD-1 einen neuen Vertrag und einen Autor ohne Kenntnis der ZD-1-Vorlaufwerte. Hypothese, nicht gerechnet, keine Startfreigabe. Fokus Gesamt-Teilchenmodell unberuehrt.",
+  "sources": [
+    {
+      "path": "coordination/video-02eUGN3FYmw-20261004/VERTIEFUNG-claude.md",
+      "sha256": "2d06cf1c7718f9ae157448cebda6dc04d4d872b5921b8da033cc0414f06c9ac7"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-37/dim-leiter-qball-1/ERGEBNIS.md",
+      "sha256": "782cf4fa87bbe5884ee623f01e9373f2dfdc6ea0f34284be058b6ef19764e6cd"
+    },
+    {
+      "path": "coordination/vertraege-20260924/CX-1-VERTRAG.md",
+      "sha256": "a3caf38b68a438811ac3965247bf4c83552d351c8818e989df234375977353d4"
+    },
+    {
+      "path": "coordination/resonance-20260930/ag-phy-lat-claude-followup-20261004/ENDPUNKT-DIMENSION.txt",
+      "sha256": "1a97c3ade34bb680ffed4a295606a0f4d62054cfb544e7a382946b273fdbea82"
+    },
+    {
+      "path": "coordination/research-journal/claude-zd-1-beendet-20260926.json",
+      "sha256": "8832e21c1ccae6fc45f67f6cdc8d04f744a993d01d474c8dae655a8592e2cca3"
+    },
+    {
+      "path": "coordination/research-journal/claude-video-stringtheorie-einordnung-20261004.json",
+      "sha256": "26deea7ce89d852e3bd5eaa81db1a8905c2deb89cd24e88c063f821164895501"
+    }
+  ],
+  "recorded_at": "2026-10-04T20:25:05.939689+00:00"
+}

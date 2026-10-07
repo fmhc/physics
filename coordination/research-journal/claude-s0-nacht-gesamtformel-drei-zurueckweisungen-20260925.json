@@ -1,0 +1,40 @@
+{
+  "id": "claude-s0-nacht-gesamtformel-drei-zurueckweisungen-20260925",
+  "time": "2026-09-25T00:40:30+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung; S0-Pruefer astra (OpenAI, gpt-6-astra ueber Codex CLI, REVIEW-ONLY)",
+  "topic": "theory",
+  "status": "open",
+  "title": "S0 der Nacht 24./25.09.: alle drei Vertraege zu 'mehreren Parametern pro Punkt' zurueckgewiesen (CX-1 R2, ZD-1 R3, MK-1 R2); Neufassungen laufen",
+  "question": "Sind die Vertraege zu den drei Wegen der Gesamtformel (CX-1 Knoten in C x S^2, ZD-1 Zusatzdimension, MK-1 zwei Kanaele) nach VORLAGE-v2 bindungsfaehig?",
+  "action": "S0-Fremdreview durch astra: CX-1 Fassung 2 und ZD-1 Fassung 3 (Start 01:26:37 MESZ, Dateien 01:32 und 01:31), MK-1 Fassung 2 (Start 02:25:04 MESZ, Datei 02:31). Die lokalen Qwen-S0 zu CX-1 F2 und ZD-1 F3 scheiterten technisch (Ollama-Ladefehler auf der .69). Die Pruefer haben nicht gerechnet.",
+  "result": "Alle drei ZURUECKWEISEN. CX-1: sechs blockierende Auflagen, darunter die nach Kontrollwelt-Daten von 0,03 auf 0,05 gelockerte Toleranz AUFL_U, fehlende Q-Ball- und LK-Vorlaeufe, die ungedeckte Zusage 'Unteraufloesung erzeugt nur U1' und eine nicht atomare Kontrollauswertung. ZD-1: zwei blockierende Auflagen, ein Fehlerbudget erster Ordnung bis GQ samt Nennerterm und disjunkte Pflicht- und Diagnosefelder; das war die dritte und letzte regulaere Runde. MK-1: sechs blockierende Auflagen, darunter die Schwelle 0,20, die selbst nach Sicht gesetzt war, eine Nullwelt N ohne Absicherung gegen Huellkurvenkorrekturen, A nur nominal erreichbar (Nachtrag 21), eine fehlende Kontrollgeltungsmatrix, eine unvalidierte Flusskette und Modulanschluesse.",
+  "meaning": "Kein Vertrag der drei Wege ist bindungsfaehig. Es gibt keinen physikalischen Befund, nur Verfahrensstand. Gemeinsames Muster: Schwellen oder Toleranzen, die nach Sicht auf Vorlaufdaten gesetzt oder gelockert wurden (CX-1 AUFL_U, MK-1 0,20), und Ausgaenge, deren Erreichbarkeit nur nominal gezeigt ist. Die Regel 'Kontrollen nicht nach Befund lockern' gilt also auch fuer Toleranzen und Relevanzschwellen. Leitung: Fuer MK-1 bleibt G = 0,35 gebunden (keine weitere Anpassung nach Sicht); fuer die Schwelle braucht es eine Begruendung ohne Bezug auf die Vertragszelle oder eine Neufassung der Frage. CX-1 F3, ZD-1 F4 und MK-1 F3 sind in Arbeit. Eine vierte S0-Runde fuer ZD-1 braucht Finns Zustimmung. Ein Qwen-S0 allein bleibt nicht tragfaehig: astra fand in allen drei Faellen ausgangsbestimmende Luecken.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260924/cx-1-s0/review-astra-f2/REVIEW-astra-CX-1-F2.md",
+      "sha256": "3e25d1fae2fb75af3ecc90bbbd8d36585209aafb7f58d350bf1f04d7b6d36d9c"
+    },
+    {
+      "path": "coordination/vertraege-20260924/zd-1-s0/review-astra-f3/REVIEW-astra-ZD-1-F3.md",
+      "sha256": "3ecd102ca785d2de8ea4cabc09b5b67070f95a4a3827545dfc74715310a67384"
+    },
+    {
+      "path": "coordination/vertraege-20260924/mk-1-s0/review-astra-f2/REVIEW-astra-MK-1-F2.md",
+      "sha256": "2b3653c2687ab967ac85cb04c0504684d4724cb8e20437beb86670b1b6536ba3"
+    },
+    {
+      "path": "coordination/vertraege-20260924/CX-1-VERTRAG.md.bak-20260925-fassung2",
+      "sha256": "5de7ade0a95260a22ca9db9cfbe9b6e53ad410f697cef00bac4bc8dc17594d05"
+    },
+    {
+      "path": "coordination/vertraege-20260924/ZD-1-VERTRAG.md.bak-20260925-fassung3",
+      "sha256": "2cabc0016d6aac8f839bb0423e476807f5fbf547b431e9c4c9510d44901a4a6b"
+    },
+    {
+      "path": "coordination/vertraege-20260924/MK-1-VERTRAG.md.bak-20260925-fassung2",
+      "sha256": "cd5db84a1e15b8251c299033ac0c6b2517c590d9722874ff7e47fb1e4e411981"
+    }
+  ],
+  "recorded_at": "2026-09-25T00:42:01.322846+00:00"
+}

@@ -1,0 +1,67 @@
+Unabhaengige Nachlesung — 2026-10-02, causal_live_review
+Gelesen PLAN.txt, analyze.py, RESULT.json; keine Rechnung ausgefuehrt.
+Kein Blocker fuer die eng bezeichnete explorative Sekundaerauswertung.
+
+DATEN UND AUSWERTUNG
+SOURCE.json ist hashgleich mit dem unveraenderten Eltern-RESULT.json:
+a5ccfda562e0abe935500a4dc911b1a09f93ff0d5e61bc0feb63c21380bb1b79.
+Plan-/Skripthashes stimmen ebenfalls mit der Ergebnisbindung ueberein.
+Die Auswertung benutzt Spalte 3, also wirklich Detektor X, und unveraendert
+das Fenster t>=40 bis Datenende 100. Kein neuer PDE-Lauf oder neuer Fit.
+Absolute Hysterese eta=1e-4: unter -eta scharfstellen, bei steigender
+Ueberschreitung von +eta einmal ausloesen, linear interpolieren und entschaerfen.
+Start im Fenster unarmed; kein vor dem Fenster begonnenes Teilintervall.
+>=8 Intervalle, CV<.01, Mittelperiode innerhalb2% von 2pi/rho und gepaarte
+Gitterabweichung<1% sind wie geplant umgesetzt. Der Vergleich mit freier
+Detektorperiode ist nur Ausgabe, kein nachtraeglich gewechseltes Erfolgsgate.
+
+BEFUNDE
+Alle angeregten gekoppelten Arme haben je16 Ticks, also15 Intervalle.
+Feines Gitter:
+  alpha=.1, ratio1: T=3.602042, CV=.006239%, detector_clock=true.
+  alpha1, ratio1: T=3.729245, CV=8.285669%, detector_clock=false.
+  alpha1, ratio1.3: T=3.623827, CV=.954981%, detector_clock=true.
+Diese gepaarten Aussagen stimmen mit beiden Gittern ueberein. Der verstimmte
+Arm besteht knapp: nur rund .045 Prozentpunkte unter der1%-CV-Schwelle.
+alpha0 und epsilon0 haben null Detektorticks. Die zwei abgetasteten Sinus-
+Kontrollen bestehen; konstantes positives Signal erzeugt keinen Tick.
+controls=true und alle drei analytic_checks=true sind konsistent.
+Das Skript bindet die bereits bestandenen numerischen PDE-Gates nicht erneut
+in detector_clock ein. Fuer diesen exakt gehashten Datensatz sind sie aus
+der vorangehenden Abnahme bekannt; kein allgemeiner Validator beliebiger
+ungepruefter Eingabedaten wird dadurch geschaffen.
+
+EINORDNUNG
+Dies schliesst die zuvor offen gebliebene Frage nach X-Tickregelmaessigkeit
+fuer diese gespeicherten Zeitreihen. Es ist ein feldreferenziertes endliches
+Detektorkriterium, keine Aussage ueber jede moegliche Definition einer Uhr.
+Der verstimmte Mittelwert liegt bei1.30807 mal freier Detektorperiode; bestanden
+wird das Kriterium gegen die bekannte Feldreferenz, nicht gegen seine freie Uhr.
+Die Wellenformen und Amplituden waren vor Wahl dieser Sekundaeranalyse bekannt.
+Der Plan weist das korrekt aus: keine blinde Vorregistrierung, unabhaengige
+Replikation oder nachtraegliche Aufwertung der urspruenglichen Evidenz.
+Der starke resonante Arm verfehlt die Gates; dies beweist keine Instabilitaet
+oder Zerstoerung des Feldobjekts und keine beliebige Nichtperiodizitaet.
+Naechster-Felddichtetick-Offsets koennen volle Zyklen verlieren. Ihre Streuung
+belegt keine Phasenverriegelung/Synchronisation; arithmetische Mittel sind bei
+Wrap-Spruengen zudem vorsichtig zu lesen. Bekannte gemeinsame Referenz und
+derselbe gekoppelte Lauf liefern keine unabhaengigen physikalischen Uhren.
+Lineare Zeitinterpolation und gemeinsames Raum-/Zeit-/Samplingrefinement
+zertifizieren keine Tickzeitgenauigkeit. Gerade der knappe verstimmte Pass
+ist fenster-/schwellenbezogen, kein Nachweis robuster Grenzueberschreitung
+unter anderen Detektoren, Schwellwerten oder laengeren Zeitfenstern.
+Keine Verriegelungs-, Eigenzeit-, Lebensdauer- oder fundamentale Zeitbehauptung.
+
+Ausfuehrung laut Ergebnis: ubuntu-auto (.69), .0352 s Wandzeit der Analyse.
+Dieser Review hat keine Tests, Statistik-Neuberechnungen oder PDE-Laeufe gestartet.
+
+NACHLEKTUERE ERGEBNIS.txt
+Tabellenwerte und Grenzen stimmen. Die dortige elementare Resonanzloesung
+X=alpha A cos(rho t)+(alpha A rho t/2)sin(rho t) erfuellt analytisch
+X''+rho^2 X=alpha rho^2 A cos(rho t), X(0)=alpha A und X'(0)=0.
+Der wachsende Sinusanteil liegt relativ zum Cosinus-Antrieb um eine Viertel-
+periode zurueck. Die Deutung des .244-Zyklus-Offsets als vereinbar mit einem
+gewoehnlichen getriebenen Oszillator ist angemessen begrenzt: F ist dabei
+extern vorgeschrieben, reale Rueckwirkung unterdrueckt und zentrale Dichte
+nicht identisch mit F. Kein exakter Fit, kein neues Naturdelay, keine
+unbegrenzte Wachstums- oder starke-Kopplungs-Vorhersage wird daraus behauptet.

@@ -1,0 +1,343 @@
+{
+ "info": {
+  "numpy": "2.4.4",
+  "python": "3.12.3",
+  "host": "ubuntu-auto",
+  "start_utc": "2026-10-05T05:37:22Z",
+  "argv": [
+   "code/okta.py",
+   "schwer",
+   "--klein",
+   "--rauch",
+   "--out",
+   "/home/fmh/fmhc-physics-remote/okta-schatten-1/rauch/r3-schwer.json"
+  ],
+  "skript_sha256": "cc1cb0e128bd0ca3f0b594681b74e795c04f23045ea283dbe5739e238dd16992",
+  "ew_sha256": "fa7b6417d39177102f0b19c5474453cd16a7595e23bc25ca548e081c4060b142",
+  "tp_sha256": "419d7da6caa211c721eb6a8c87403977415cf3050f03365377f51cb77b374dfd",
+  "ln_sha256": "98d3960a174fe9d077d32d79acf096b2c611c19f69dd13fb0d7d1a517f436146",
+  "tti_sha256": "6d6b6f7b99b334d74d91860fc69af1c6c0c46e22207dc45432d60a9824c08ee5"
+ },
+ "schluessel": {
+  "varianten": {
+   "H3": [
+    "affin",
+    "kontrolle",
+    "mittel13",
+    "os2_13",
+    "os2_23",
+    "p13",
+    "p23",
+    "richardson13",
+    "spanne13",
+    "spanne13_je_eps",
+    "spanne23",
+    "stabil",
+    "symm48",
+    "z_gueltig13"
+   ],
+   "R12": [
+    "affin",
+    "kontrolle",
+    "mittel13",
+    "os2_13",
+    "os2_23",
+    "p13",
+    "p23",
+    "richardson13",
+    "spanne13",
+    "spanne13_je_eps",
+    "spanne23",
+    "stabil",
+    "symm48",
+    "z_gueltig13"
+   ],
+   "Z8": [
+    "affin",
+    "kontrolle",
+    "mittel13",
+    "os2_13",
+    "os2_23",
+    "p13",
+    "p23",
+    "richardson13",
+    "spanne13",
+    "spanne13_je_eps",
+    "spanne23",
+    "stabil",
+    "symm48",
+    "z_gueltig13"
+   ],
+   "D1x": [
+    "kontrolle",
+    "p13",
+    "spanne13"
+   ],
+   "D1y": [
+    "kontrolle",
+    "p13",
+    "spanne13"
+   ],
+   "D1z": [
+    "affin",
+    "kontrolle",
+    "mittel13",
+    "os2_13",
+    "os2_23",
+    "p13",
+    "p23",
+    "richardson13",
+    "spanne13",
+    "spanne13_je_eps",
+    "spanne23",
+    "stabil",
+    "symm48",
+    "z_gueltig13"
+   ]
+  },
+  "zeiten": {
+   "H3": "float",
+   "R12": "float",
+   "Z8": "float",
+   "D1x": "float",
+   "D1y": "float",
+   "D1z": "float",
+   "K": "float",
+   "V": "float",
+   "B": "float"
+  },
+  "kontrolle_K": {
+   "n": "int",
+   "min": "float",
+   "max": "float",
+   "abw_0_25_max": "float",
+   "ok": "bool"
+  },
+  "referenz_V": {
+   "spanne_tti": "float",
+   "spanne_eigene_kette": "float",
+   "tti_ok": "bool",
+   "tti_neg": "int",
+   "abw_eigene_gegen_tti": "float",
+   "abw_gegen_6339": "float",
+   "w100": "list",
+   "mittel": "float"
+  },
+  "diagonale": {
+   "schur_gegen_R12": [
+    "D1x",
+    "D1y",
+    "D1z",
+    "H3"
+   ],
+   "dieder": [
+    "D1x",
+    "D1y",
+    "D1z",
+    "H3",
+    "R12",
+    "Z8"
+   ],
+   "spanne13": [
+    "D1x",
+    "D1y",
+    "D1z",
+    "H3",
+    "R12"
+   ],
+   "w100_eps1e-3": [
+    "D1x",
+    "D1y",
+    "D1z",
+    "H3",
+    "R12"
+   ]
+  },
+  "duale": {
+   "R12": [
+    "duale",
+    "n_flaechen",
+    "rauten_flaeche",
+    "stern1",
+    "stern1_aussen",
+    "stern1_diagonale",
+    "stern2",
+    "takt",
+    "zellen_je_kante"
+   ],
+   "D1z": [
+    "duale",
+    "n_flaechen",
+    "rauten_flaeche",
+    "stern1",
+    "stern1_aussen",
+    "stern1_diagonale",
+    "stern2",
+    "takt",
+    "zellen_je_kante"
+   ],
+   "H3": [
+    "stern1_diagonalen",
+    "takt"
+   ]
+  },
+  "urteile": "NoneType",
+  "laufzeit_s": "float"
+ },
+ "technik": {
+  "H3": {
+   "E": 9,
+   "V": 1,
+   "T": 14,
+   "arten": {
+    "tet_auf": 1,
+    "tet_ab": 1,
+    "okt_d0": 4,
+    "okt_d1": 4,
+    "okt_d2": 4
+   },
+   "volumen_gewichtet": 0.25000000000000006,
+   "dieder_summe_minus_2pi_max": 0.0,
+   "D_sym_max": 3.1401849173675493e-16,
+   "kantenlaengen": [
+    0.707106781,
+    1.0
+   ],
+   "ops": {
+    "B_herm": 3.0022245318650406e-16,
+    "A_herm": 0.0,
+    "BM_null": 6.091364509248108e-16,
+    "cM_null": 5.497966994713944e-16
+   }
+  },
+  "R12": {
+   "E": 6,
+   "V": 1,
+   "T": 3,
+   "arten": {
+    "tet_auf": 1,
+    "tet_ab": 1,
+    "okt": 1
+   },
+   "volumen_gewichtet": 0.25,
+   "dieder_summe_minus_2pi_max": 0.0,
+   "D_sym_max": 2.7755575615628904e-16,
+   "kantenlaengen": [
+    0.707106781
+   ],
+   "ops": {
+    "B_herm": 2.8218175489527394e-16,
+    "A_herm": 2.9612241321882675e-16,
+    "BM_null": 6.677136721863487e-16,
+    "cM_null": 4.1389439997287206e-16
+   }
+  },
+  "Z8": {
+   "E": 12,
+   "V": 2,
+   "T": 10,
+   "arten": {
+    "tet_auf": 1,
+    "tet_ab": 1,
+    "okt_z": 8
+   },
+   "volumen_gewichtet": 0.25000000000000006,
+   "dieder_summe_minus_2pi_max": 0.0,
+   "D_sym_max": 3.1401849173675493e-16,
+   "kantenlaengen": [
+    0.5,
+    0.707106781
+   ],
+   "ops": {
+    "B_herm": 3.5108334685766997e-16,
+    "A_herm": 0.0,
+    "BM_null": 8.67556005262214e-16,
+    "cM_null": 1.120239238628393e-15
+   }
+  },
+  "D1x": {
+   "E": 7,
+   "V": 1,
+   "T": 6,
+   "arten": {
+    "tet_auf": 1,
+    "tet_ab": 1,
+    "okt_d0": 4
+   },
+   "volumen_gewichtet": 0.24999999999999997,
+   "dieder_summe_minus_2pi_max": 0.0,
+   "D_sym_max": 3.1401849173675493e-16,
+   "kantenlaengen": [
+    0.707106781,
+    1.0
+   ],
+   "ops": {
+    "B_herm": 1.1857187100668865e-16,
+    "A_herm": 0.0,
+    "BM_null": 4.596490333074559e-16,
+    "cM_null": 6.090676596712058e-16
+   }
+  },
+  "D1y": {
+   "E": 7,
+   "V": 1,
+   "T": 6,
+   "arten": {
+    "tet_auf": 1,
+    "tet_ab": 1,
+    "okt_d1": 4
+   },
+   "volumen_gewichtet": 0.24999999999999997,
+   "dieder_summe_minus_2pi_max": 0.0,
+   "D_sym_max": 3.1401849173675493e-16,
+   "kantenlaengen": [
+    0.707106781,
+    1.0
+   ],
+   "ops": {
+    "B_herm": 1.2412670766236363e-16,
+    "A_herm": 0.0,
+    "BM_null": 3.7751907233830495e-16,
+    "cM_null": 6.87191708037363e-16
+   }
+  },
+  "D1z": {
+   "E": 7,
+   "V": 1,
+   "T": 6,
+   "arten": {
+    "tet_auf": 1,
+    "tet_ab": 1,
+    "okt_d2": 4
+   },
+   "volumen_gewichtet": 0.24999999999999997,
+   "dieder_summe_minus_2pi_max": 0.0,
+   "D_sym_max": 3.1401849173675493e-16,
+   "kantenlaengen": [
+    0.707106781,
+    1.0
+   ],
+   "ops": {
+    "B_herm": 1.2412670766236363e-16,
+    "A_herm": 0.0,
+    "BM_null": 4.503365774739002e-16,
+    "cM_null": 5.720550417007373e-16
+   }
+  },
+  "K_ok": true,
+  "V_abw_gegen_6339": 1.9043713354593983e-06,
+  "zeiten": {
+   "H3": 0.7593808174133301,
+   "R12": 0.3281588554382324,
+   "Z8": 0.5567846298217773,
+   "D1x": 0.05167889595031738,
+   "D1y": 0.05066227912902832,
+   "D1z": 0.3460867404937744,
+   "K": 0.06624889373779297,
+   "V": 0.989332914352417,
+   "B": 0.9801175594329834
+  }
+ },
+ "laufzeit_s": 4.148712396621704,
+ "maxrss_MB": 47.48828125
+}

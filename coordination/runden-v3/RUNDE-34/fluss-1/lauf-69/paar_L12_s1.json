@@ -1,0 +1,105 @@
+{
+ "modus": "paar",
+ "netz": "A",
+ "L": 12,
+ "seed": 1,
+ "n_einlauf": 2000000000,
+ "n_block": 500000000,
+ "m_stich": 4,
+ "zeitgrenze_s": 540.0,
+ "gitter_pruefung": {
+  "ecken": 27648,
+  "kanten": 82944,
+  "grad_min_max": [
+   6,
+   6
+  ],
+  "kantenlaenge2_min_max_in_1_64": [
+   8,
+   8
+  ],
+  "kante_parallel_plus_n": true,
+  "kanten_je_klasse": [
+   13824,
+   13824,
+   13824,
+   13824,
+   13824,
+   13824
+  ],
+  "mitten_eindeutig": true,
+  "ecken_soll": 27648,
+  "kanten_soll": 82944,
+  "grad_soll": 6,
+  "kanten_je_klasse_soll": 13824,
+  "gitter_pyrochlor": {
+   "ecken": 27648,
+   "ecken_soll": 27648,
+   "tetraeder": 13824,
+   "tetraeder_soll": 13824,
+   "tetraeder_je_4_ecken": true,
+   "kanten": 82944,
+   "kanten_soll": 82944,
+   "kantenlaenge2_min_max_in_1_64": [
+    8,
+    8
+   ],
+   "nachbarn_je_ecke_min_max": [
+    6,
+    6
+   ],
+   "ecke_mitte_abstand2_min_max": [
+    3,
+    3
+   ],
+   "mitte_ist_schwerpunkt": true
+  },
+  "ketten": 1728,
+  "ketten_soll": 1728,
+  "kettenlaenge_min_max": [
+   48,
+   48
+  ],
+  "kettenlaenge_soll": 48,
+  "nachfolger_gleiche_kette": true,
+  "alles_ok": true
+ },
+ "eis_anfang_ok": true,
+ "paar_nach_umklapp_ok": true,
+ "einlauf_s": 46.07371950149536,
+ "einlauf_zaehler": [
+  1333244559,
+  666677815,
+  77626,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0
+ ],
+ "einlauf_voll_ok": true,
+ "bloecke": 36,
+ "mess_s": 470.9169964790344,
+ "schritte_je_s": 38223296.53544661,
+ "zaehler": {
+  "angenommen": 11999267287,
+  "abgelehnt_richtung": 6000032681,
+  "abgelehnt_vernichtung": 700032,
+  "eisregel_fehler_lokal": 0,
+  "stichproben": 4500000000,
+  "plus_untergitter": [
+   1125003726,
+   1124994102,
+   1124997129,
+   1125005043
+  ]
+ },
+ "voll_pruefung_bloecke_ok": true,
+ "kern_sha256": "6077e26b71bcb1b33617f32fa0ac561b81a39a456bdae1c4106e83f2b11b3147",
+ "skript_sha256": "6fb27a94082c93496b0072776d088e31dbaf9df31e71a0511ac2fd4b88d00464",
+ "gitter_fluss_sha256": "560753af7a37335771cffe431b6b487b41d55f3f7be8f68285b37f277954a15a",
+ "gitter_sha256": "9f6b4b1c47f7928cf8ae03505e5dd72d43e6dda02bc92dc943789c47dbdbb11d",
+ "dauer_s": 519.0387074947357,
+ "ende_utc": "2026-10-03T17:57:07Z"
+}

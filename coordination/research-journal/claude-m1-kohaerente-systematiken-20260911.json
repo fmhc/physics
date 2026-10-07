@@ -1,0 +1,36 @@
+{
+  "id": "claude-m1-kohaerente-systematiken-20260911",
+  "time": "2026-09-11T03:39:00+02:00",
+  "time_kind": "completed",
+  "author": "Claude (Rechnung: codex-ideen-swarm auf TS440)",
+  "topic": "binaries",
+  "status": "reported",
+  "title": "Parallaxen-Nullpunkt und CMD-Kammfehler verschieben den M1-Überschuss um höchstens ein Prozent, nicht um die 0,2265 Abstand",
+  "question": "Die Katalogstreuung des M1-Vorwärtsmodells enthielt keine kohärenten Anteile. Können ein gemeinsamer Parallaxen-Nullpunktversatz oder ein gemeinsamer Fehler des Farb-Helligkeits-Kamms der Massennormierung den Abstand 1,3016 gegen 1,0693 erklären?",
+  "action": "Zwei gepaarte Sensitivitätsläufe auf TS440 (CPU float64), von der Codex-Sitzung nach Anstoß über den Peer-Bus gerechnet und unabhängig reviewt: (1) 8 globale Parallaxenversätze der Referenzamplitude sqrt(142) µas mal 4 Kataloge durch die Stage-C-Pipeline; (2) 64 Elternpaar-Bootstrap-Tafeln der 23 CMD-Farbbin-Mediane durch die feste Messabbildung des beobachteten Katalogs. Ich habe ERGEBNIS.json und NOMINAL.json auf TS440 gegen die Buszettel geprüft.",
+  "result": "(1) Nullmittel 1,0689329823344977, mit Versatz 1,067613671149093, gepaarte Änderung −0,0013193 bei MC-SE 0,0011509; 32 Nullkontrollen archivgleich. (2) Nullfall reproduziert Γ = 1,30158651067974 bei 18.051 Paaren exakt; ΔΓ im schwächsten Bin über 64 Tafeln: Mittel −0,0033037, SD 0,0045512, Bereich −0,0126 bis +0,0030.",
+  "meaning": "Beide gerechneten kohärenten Anteile sind klein gegen den Abstand 0,2265. Das schließt nur diese zwei Quellen aus: die Amplitude sqrt(142) µas ist ein Referenzmaß, keine Kalibrierung dieses Sternpools; die Kammtafeln beruhen auf einer Paar-iid-Annahme; differentielle Astrometrie auf Bogensekundenskalen, Perspektivkorrektur und die gemessene Anisotropie der PM-Fehlerellipse (M3) sind weiterhin unbeziffert. Keine Gesamtunsicherheit, keine Vetoentscheidung; M1 bleibt offen. Ein DeepSeek-Gegenlesen dieser Läufe enthielt zwei Rechenfehler und wurde mit Prüfvermerk abgelegt.",
+  "sources": [
+    {
+      "path": "coordination/ideen-swarm-20260910/m1-coherent-parallax/runs/m1-common-parallax-20260910-a/output/ERGEBNIS.json",
+      "label": "Parallaxenpilot, Ergebnis",
+      "sha256": "f712ae94d246a696db44a8309542b28d16acb7c269d3063382e845b3580411bc"
+    },
+    {
+      "path": "coordination/ideen-swarm-20260910/m1-cmd-fixed-catalogue-map/runs/m1-cmd-fixed-map-20260911-a/output/NOMINAL.json",
+      "label": "CMD-Abbildung, Nullfallkontrolle",
+      "sha256": "1b1bef68820b394eb4cda4d508c686ddf0a3f80663bc6c8ff1499bf9e48d06cb"
+    },
+    {
+      "path": "coordination/ideen-swarm-20260910/m1-cmd-fixed-catalogue-map/runs/m1-cmd-fixed-map-20260911-a/output/ERGEBNIS.json",
+      "label": "CMD-Abbildung, 64 Tafeln",
+      "sha256": "aad27bdd4041303fffef22514bd12b4b3b6fd71019eb83a340fbeed4d9f60fe1"
+    },
+    {
+      "path": "coordination/m1-kohaerent-review-deepseek-20260911.md",
+      "label": "Gegenlesen mit Prüfvermerk",
+      "sha256": "60b68c1516a181695fd41a9d94ba2767cc28e277025e1949eebf351fdddbb525"
+    }
+  ],
+  "recorded_at": "2026-09-11T08:35:37.512851+00:00"
+}

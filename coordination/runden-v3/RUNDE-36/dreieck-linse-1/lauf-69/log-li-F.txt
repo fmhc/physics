@@ -1,0 +1,44 @@
+start 2026-10-03T23:52:34+00:00 spur=p4000a unit=fmhc-physics-klein-r36li-F-235234
+Running as unit: fmhc-physics-klein-r36li-F-235234.service; invocation ID: 52eeb6d9b97442e089dc744f1d2e7f08
+torch 2.5.1+cu121, Geraet cuda (Quadro P4000)
+Netz n=6 h=0.3 R=85: 291241 Ecken, 289279 frei, Grad Spitze 6, Defekt 0.000000, Euler 1 (9.6 s)
+Kartenpruefung: {"winkelsumme_spitze": 6.283185307179585, "Theta_soll": 6.283185307179586, "winkelsumme_minus_soll": -8.881784197001252e-16, "einlauf": {"kanten": 871758, "isometrisch": 871758, "am_schnitt": 0, "max_abw_isometrisch": 2.0450308113595383e-13, "max_abw_geklebt": null}, "auslauf": {"kanten": 871758, "isometrisch": 871758, "am_schnitt": 0, "max_abw_isometrisch": 2.0711210524382295e-13, "max_abw_geklebt": null}}
+Ball b=10: E 157.10183888 omega 0.744872 c -4.2e-16 -1.9e-11 res 1.4e-07 aussen 2 (5.4 s)
+Ball b=-10: E 157.10183888 omega 0.744872 c 4.1e-15 1.8e-11 res 1.8e-07 aussen 2 (6.3 s)
+Ball b=20: E 157.10183888 omega 0.744872 c -3.0e-16 6.8e-12 res 2.1e-07 aussen 2 (6.4 s)
+Ball b=-20: E 157.10183888 omega 0.744872 c 2.3e-15 -9.4e-12 res 1.3e-07 aussen 2 (5.5 s)
+Ball b=30: E 157.10183888 omega 0.744872 c -3.4e-16 -3.3e-12 res 2.7e-07 aussen 2 (5.8 s)
+Ball b=-30: E 157.10183888 omega 0.744872 c 2.5e-15 2.1e-12 res 1.1e-07 aussen 2 (6.2 s)
+Ball b=40: E 157.10183888 omega 0.744872 c -1.7e-11 -2.8e-11 res 5.6e-08 aussen 2 (7.2 s)
+Ball b=-40: E 157.10183888 omega 0.744872 c -1.3e-12 1.1e-11 res 1.1e-07 aussen 2 (5.9 s)
+/home/fmh/fmhc-physics-remote/runde36-linse/code/linse.py:217: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at ../aten/src/ATen/SparseCsrTensorImpl.cpp:53.)
+  Lt = torch.sparse_csr_tensor(torch.tensor(Lff.indptr, dtype=torch.int64), torch.tensor(Lff.indices, dtype=torch.int64),
+Start: E0 ['157.484881', '157.484881', '157.484881', '157.484881', '157.484881', '157.484881', '157.484881', '157.484881'] Q0 ['200.000000', '200.000000', '200.000000', '200.000000', '200.000000', '200.000000', '200.000000', '200.000000'] K_eff ['0.19671', '0.19671', '0.19671', '0.19671', '0.19671', '0.19671', '0.19671', '0.19671']
+t 100.0 d 38.33 38.33 42.06 42.06 47.64 47.64 54.49 54.49 E 1259.879196 Q 1599.999486 (12.85 ms/Schritt)
+t 200.0 d 33.53 33.53 37.74 37.74 43.87 43.87 51.23 51.23 E 1259.879016 Q 1599.999418 (12.84 ms/Schritt)
+t 300.0 d 28.80 28.80 33.61 33.61 40.37 40.37 48.27 48.27 E 1259.878865 Q 1599.999366 (12.83 ms/Schritt)
+t 400.0 d 24.18 24.18 29.74 29.74 37.21 37.21 45.66 45.66 E 1259.879011 Q 1599.999349 (12.83 ms/Schritt)
+t 500.0 d 19.74 19.74 26.26 26.26 34.49 34.49 43.47 43.47 E 1259.878774 Q 1599.999342 (12.83 ms/Schritt)
+t 600.0 d 15.64 15.64 23.33 23.33 32.32 32.32 41.77 41.77 E 1259.878936 Q 1599.999338 (12.82 ms/Schritt)
+t 700.0 d 12.22 12.22 21.20 21.20 30.81 30.81 40.61 40.61 E 1259.878870 Q 1599.999335 (12.87 ms/Schritt)
+t 800.0 d 10.20 10.20 20.10 20.10 30.07 30.07 40.05 40.05 E 1259.878761 Q 1599.999334 (12.93 ms/Schritt)
+t 900.0 d 10.43 10.43 20.22 20.22 30.15 30.15 40.11 40.11 E 1259.879005 Q 1599.999332 (12.98 ms/Schritt)
+t 1000.0 d 12.79 12.79 21.53 21.53 31.04 31.04 40.79 40.79 E 1259.878756 Q 1599.999331 (13.04 ms/Schritt)
+t 1100.0 d 16.37 16.37 23.83 23.83 32.68 32.68 42.05 42.05 E 1259.878867 Q 1599.999330 (13.21 ms/Schritt)
+t 1200.0 d 20.56 20.56 26.88 26.88 34.97 34.97 43.85 43.85 E 1259.878932 Q 1599.999330 (13.24 ms/Schritt)
+t 1300.0 d 25.04 25.04 30.45 30.45 37.78 37.78 46.12 46.12 E 1259.878736 Q 1599.999329 (13.27 ms/Schritt)
+t 1400.0 d 29.69 29.69 34.37 34.37 41.00 41.00 48.80 48.80 E 1259.878967 Q 1599.999328 (13.29 ms/Schritt)
+t 1500.0 d 34.43 34.43 38.55 38.55 44.56 44.56 51.82 51.82 E 1259.878792 Q 1599.999328 (13.31 ms/Schritt)
+t 1600.0 d 39.24 39.24 42.90 42.90 48.37 48.37 55.14 55.14 E 1259.878824 Q 1599.999317 (13.33 ms/Schritt)
+t 1700.0 d 44.09 44.09 47.37 47.37 52.38 52.38 58.69 58.69 E 1259.878074 Q 1599.998149 (13.36 ms/Schritt)
+t 1800.0 d 48.97 48.97 51.95 51.95 56.55 56.55 62.43 62.43 E 1259.741058 Q 1599.814981 (13.38 ms/Schritt)
+t 1900.0 d 53.87 53.87 56.59 56.59 60.85 60.85 65.98 65.98 E 1246.658018 Q 1582.300759 (13.40 ms/Schritt)
+t 2000.0 d 58.79 58.79 61.29 61.29 65.12 65.12 67.66 67.66 E 1167.854206 Q 1477.254158 (13.42 ms/Schritt)
+Ende: T erreicht, t 2000.0, 13.42 ms/Schritt, Dauer 328.2 s, geschrieben /home/fmh/fmhc-physics-remote/runde36-linse/lauf/li-F.json
+Finished with result: success
+Main processes terminated with: code=exited/status=0
+Service runtime: 5min 29.086s
+CPU time consumed: 5min 28.944s
+Memory peak: 360.0K
+Memory swap peak: 0B
+ende 2026-10-03T23:58:03+00:00 rc=0 unit=fmhc-physics-klein-r36li-F-235234

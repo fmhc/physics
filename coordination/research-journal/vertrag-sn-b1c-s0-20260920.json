@@ -1,0 +1,51 @@
+{
+  "id": "vertrag-sn-b1c-s0-20260920",
+  "time": "2026-09-20T23:50:00+02:00",
+  "time_kind": "proposal",
+  "author": "claude-primary (Anthropic, Opus 5)",
+  "topic": "galaxies",
+  "status": "proposal",
+  "title": "SN-B1 Fassung 5: statt der schon bekannten Verschiebung wird der Antwortkern jeder einzelnen Supernova gemessen",
+  "question": "Die vierte Fassung von SN-B1 ist im S2/S3 durchgefallen, weil ihre Kernzahlen Delta w(B1) = +0,0021 und Delta Omega_m(B1) = +0,00485 bitgleich zum frueher verworfenen T-Lauf sind und nach Abschnitt F4-4 beim Schreiben der Fassung bekannt waren - der Lauf ist ein Kontrolllauf, kein Messbefund, und die Zeile ist der Jury nicht vorlegbar. Welche Frage laesst sich an denselben Daten stellen, deren Antwort beim Schreiben des Vertrags nachweislich NICHT bekannt ist, und die zugleich entscheidet, ob die bereits gebuchte Zahl ueberhaupt belastbar ist?",
+  "action": "Nachfolgevertrag SN-B1c nach VORLAGE-v2 geschrieben (alle 13 Pflichtabschnitte, S0, kein Startsignal). Gewaehlter Weg: eine Groesse, die in keinem Lauf ausgegeben wurde - der Antwortkern c_i, der Beitrag JEDER EINZELNEN der 1580 Supernovae zur Verschiebung von w, wenn sie allein um eine Magnitude umgebucht wird. Bisher gibt es nur Summen ueber vorgegebene Mengen; aus der bekannten Summe -0,0503 folgt die Summe der Betraege nicht. Entscheidungsgroesse ist der Aufhebungsgrad A_c = |Delta w(d*)| / |Delta w(B1)|, wobei d* die vorzeichenoptimale Umbuchung derselben 80 Objekte bei derselben Amplitude 0,040 mag ist - nach Hoelder die exakte Decke dieses Bins. Alle bekannten Zahlen sind in Abschnitt 1.5 einzeln aufgelistet und duerfen nur als Bindung, Kontrolle oder Massstab auftreten. Die Vorab-Erwartungstabelle mit Schwellen und Bandbreiten liegt als eigene Datei VORAB-SN-B1C.json mit sha256 im Vertrag; im Lauf schreibt ein erstes Programm die lineare Vorhersage und versiegelt sie, ein zweites misst sie erst danach am Gitter und muss drei uebereinstimmende Hashes vorlegen. Drei Nullproben (Identitaet Summe c = 0, enges z-Fenster, 1000 massenblinde Permutationen), Schreibtischprobe gegen Spiegelung, Skaleninvarianz, Umeichung und Paritaet, fuenfzehn Kontrollen samt Trennkraftnachweis mit absichtlich weggelassenem Marginalisierungsterm. Repariert ist die in S2/S3 belegte Luecke, dass die Randminimum-Regel nur fuer das Grobgitter galt. S0-Fremdreview durch Qwen (Bunker, 0 USD) und DeepSeek (OpenRouter, 0,0250249 von 0,40 USD Deckel), Materialpaket mechanisch durch paket.py. Runde 022 blieb eingefroren, keine Numerik, kein Startsignal.",
+  "result": "Beide Fremdhaeuser antworten auf die Leitfrage unabhaengig mit Nein: die Antwort ist aus dem Material nicht ableitbar, weil nur Summen des Kerns vorliegen und dieselbe Summe mit 80 gleichgerichteten kleinen Beitraegen (A_c = 1) wie mit 80 grossen, teils gegenlaeufigen vertraeglich ist. Beide haben W*1 = 0, die Hoelder-Aussage, die Abschaetzung A_c ~ 0,8*sqrt(n) und die Aufloesungsrechnung 0,0001/0,0021 = 0,048 selbst nachgerechnet und bestaetigt. Beide Urteile: freigeben mit Auflagen. Quote neu/gesamt 4/16 (Qwen) und 8/21 (DeepSeek), zusammen 12/37, ohne eine einzige Ueberschneidung zwischen den neuen Befunden. Eingearbeitet: der Schnitt S_B1 steht jetzt im Ausgangsnamen; Ausgang A traegt einen Pflichtzusatz mit dem Permutationsrang; die Permutationsverteilung wird auf die Gitterkennzahl skaliert und an sechs Ziehungen wirklich am Gitter geprueft; die Hoelder-Kontrolle ist von 'unabhaengige Quelle' auf 'Buchhaltungsprobe' zurueckgestuft und der Vertrag sagt jetzt, dass er KEINE hausunabhaengige Kontrolle hat; die Versiegelung ist von einer Zusage im Ablaufplan auf zwei getrennte Prozesse mit drei Hashvergleichen umgestellt; neu sind eine zweite Injektionsamplitude 0,020 mag und vier Pflichtsaetze im Bericht. Begruendet zurueckgewiesen, aber sichtbar stehen gelassen: DeepSeeks Vorschlag, die Schwelle von 5 auf 10 anzuheben, weil ein strukturloser Kern bei 80 Objekten A_c ~ 7,1 erreicht - ein strukturloser Kern IST ein Restbetrag, und eine hoehere Schwelle wuerde echte Restbetraege als unentscheidbar verbuchen. Beide Haeuser halten die fehlende analytische Ableitung von J fuer die schwerste verbleibende Luecke; sie bleibt offen.",
+  "meaning": "Die Heilung besteht nicht darin, dieselbe Rechnung sauberer zu wiederholen, sondern die Frage zu wechseln. Delta w(B1) = +0,0021 ist gebucht und bleibt gebucht; unbekannt ist, ob diese Kleinheit eine Eigenschaft der 80 Objekte ist oder nur der Rest zweier grosser, gegenlaeufiger Haelften. Faellt A_c gross aus, haette dieselbe Massentabelle mit anderen Vorzeichen ein Vielfaches oder das umgekehrte Vorzeichen ergeben, und der Satz 'die Massenzuordnung ist fuer Omega_m und w fast wirkungslos' waere auch als Bin-Naeherung nicht belegt. Faellt A_c klein aus, ist die Zahl belastbar und liefert eine obere Schranke fuer dieses Bin. Der Vertrag beansprucht dabei ausdruecklich nicht, eine Messung an der Natur zu sein: der Antwortkern haengt von Rotverschiebungsverteilung, Kovarianz und der Lage des Minimums ab, nicht direkt von den gemessenen Helligkeiten - er misst die Belastbarkeit einer Zahl, nicht die Kosmologie. Deshalb erzeugt er keine Registerzeile und darf erst ab S2 die Lesart der bestehenden Zeile SN-B1 einschraenken. Ein Ausgang U2 (Aufhebung etwa zur Haelfte) ist realistisch und liesse sich nicht durch mehr Supernovae aufloesen, sondern nur durch die bisher nicht oeffentliche Unite-Massentabelle oder durch denselben Kern auf einem zweiten Datensatz. S0, kein Startsignal, Start entscheidet Finn.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260921/sn-b1c-antwortkern-VERTRAG.md",
+      "label": "Vertrag SN-B1c (SN-B1 Fassung 5), S0, kein Startsignal",
+      "sha256": "5f8d1be8154e8c75856a728dba0613ce72c89073f39a1a3f7bbfd291e654720a"
+    },
+    {
+      "path": "coordination/vertraege-20260921/VORAB-SN-B1C.json",
+      "label": "Vorab-Erwartungstabelle, vor dem Vertragstext geschrieben, sha256 im Vertrag",
+      "sha256": "554345ae07063473125267def1c8e64cdde20f0e742ab387eaf651157a412c06"
+    },
+    {
+      "path": "coordination/vertraege-20260921/REVIEW-sn-b1-f5.md",
+      "label": "Fremdreview: Befunde, Einarbeitung, Zurueckweisungen, Quote 12/37",
+      "sha256": "fcc6992a6c37e953b014aec0f63e6d2d7ef254cb6fce1b2c6fa129ed3a4d4982"
+    },
+    {
+      "path": "coordination/methodik-review/s2-s3-cms-sn-20260920/S2-S3-SN-B1.md",
+      "label": "Anlass: S2/S3 zu Fassung 4, Empfehlung 'Evidenz traegt nicht'",
+      "sha256": "7d698c413dd5e1b603567c70bafeecf65f61be22f929a7fc93945cccaa084a75"
+    },
+    {
+      "path": "coordination/vertraege-20260921/fremdreview-roh/antwort-sn-b1-f5-qwen.md",
+      "label": "Rohantwort Qwen (Alibaba, Bunker)",
+      "sha256": "ccba3f98f1fe0c337e1fc6c29a4ba919b4a1c2f6d2af79f3a5b4b4713a76f3b1"
+    },
+    {
+      "path": "coordination/vertraege-20260921/fremdreview-roh/antwort-sn-b1-f5-deepseek.md",
+      "label": "Rohantwort DeepSeek (OpenRouter), Teil 1",
+      "sha256": "b543030eb58f16a3eda6cbcd573b65e2517bced34e47fc3ef3e2046b22c19f46"
+    },
+    {
+      "path": "coordination/vertraege-20260921/fremdreview-roh/antwort-sn-b1-f5-deepseek-fortsetzung.md",
+      "label": "Rohantwort DeepSeek, Fortsetzung mit Gesamturteil",
+      "sha256": "ab76365d6772ba05eb9c21a825c887f5636b331a299e1fa48f6e3e820b3e268e"
+    }
+  ],
+  "recorded_at": "2026-09-20T19:50:24.146954+00:00"
+}

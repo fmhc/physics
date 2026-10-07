@@ -1,0 +1,23 @@
+start 2026-10-03T17:14:02+00:00 spur=cpu unit=fmhc-physics-klein-r34li-rauch-lauf-171402
+Running as unit: fmhc-physics-klein-r34li-rauch-lauf-171402.service; invocation ID: c5865ba7da054000b29ff2690bafdbea
+torch 2.5.1+cu121, Geraet cpu (cpu)
+Netz n=3 h=0.5 R=30: 6529 Ecken, 6322 frei, Grad Spitze 3, Defekt 3.141593, innen {3: 1, 6: 6321}, Bauzeit bis jetzt 2.4 s
+Achse: 94 Ecken, xi von -29.500 bis 29.445, Abstaende nah 0.5000 fern 0.8660
+statischer Ball: Q_lat 149.812383 E 119.74363938 omega 0.750844 c -2.1e-08 2.2e-08 res 7.1e-08 aussen 12 (0.3 s)
+/home/fmh/fmhc-physics-remote/runde34-licht/code/licht.py:381: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at ../aten/src/ATen/SparseCsrTensorImpl.cpp:53.)
+  Lt = torch.sparse_csr_tensor(torch.tensor(Lff.indptr, dtype=torch.int64), torch.tensor(Lff.indices, dtype=torch.int64),
+Start: E 120.03400571 Q 150.00000000 E_rest 119.88451070 K_eff 0.149495 K_nominal 0.150137 x -12.0000 xi_c -11.9994 xi_m -12.0041 v_rms 0.04977 Q_ball 149.999894
+t 50.0 x -9.4675 xi_c -9.4286 xi_m -9.5721 E 120.031722 E_damp 2.408e-03 Q 149.996802 E_ball 120.031643 S_max 1.0562 v_rms 0.0539 (3.13 ms/Schritt)
+t 100.0 x -4.6130 xi_c -2.4246 xi_m 0.0818 E 120.030578 E_damp 2.527e-03 Q 149.996662 E_ball 120.021883 S_max 1.0477 v_rms 0.2167 (3.13 ms/Schritt)
+Durchgang 1 bei t 109.50 (xi_c -0.0828 -> 0.1089)
+t 150.0 x 6.8723 xi_c 4.4903 xi_m 0.0372 E 119.197611 E_damp 8.352e-01 Q 149.311343 E_ball 116.976103 S_max 1.0377 v_rms 0.1115 (3.14 ms/Schritt)
+Durchgang 2 bei t 176.00 (xi_c 0.0442 -> -0.0637)
+t 200.0 x -6.6263 xi_c -4.5092 xi_m -0.2441 E 116.339268 E_damp 3.686e+00 Q 146.769022 E_ball 115.843723 S_max 1.0801 v_rms 0.0974 (3.15 ms/Schritt)
+Ende: 2 Durchgaenge + T_nach, t 206.0, 3.15 ms/Schritt, Dauer 9.9 s, geschrieben /home/fmh/fmhc-physics-remote/runde34-licht/rauch/li-rauch-t3.json
+Finished with result: success
+Main processes terminated with: code=exited/status=0
+Service runtime: 10.999s
+CPU time consumed: 10.963s
+Memory peak: 324.0K
+Memory swap peak: 0B
+ende 2026-10-03T17:14:13+00:00 rc=0 unit=fmhc-physics-klein-r34li-rauch-lauf-171402

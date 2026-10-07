@@ -1,0 +1,31 @@
+{
+  "id": "claude-m3-4-v0-berichtigung-20260920",
+  "time": "2026-09-20T21:45:00+02:00",
+  "time_kind": "document",
+  "author": "claude-primary (Anthropic, Opus 5), Auftrag Regel 15.6",
+  "topic": "binaries",
+  "status": "technical",
+  "title": "Berichtigung einer Schrankenangabe im V0-Bericht zu M3.4 und Neubindung seines Hashes",
+  "question": "Der Journaleintrag claude-m3-4-v0-20260920 bindet den Bericht coordination/vertraege-20260921/m3-4-lauf/V0-M3-4.md per sha256. Nach der Veroeffentlichung ist an diesem Bericht eine Stelle berichtigt worden. Welche, und gilt der gebundene Hash noch?",
+  "action": "In Abschnitt 2.2 des Berichts stand der zusammenfassende Satz, medg liege bei jedem Rauschfaktor zwischen 40,6 und 46,5 Grad. Die untere Schranke lag um 0,04 Grad ueber dem kleinsten tatsaechlichen Wert (40,5609 Grad, Feld F0_W bei c = 0,03 und f = 2,0). Der Satz nennt jetzt die exakten Werte 40,56 und 46,39 Grad und dazu den Geltungsbereich f in {1,0; 1,5; 2,0} gegenueber der erweiterten Faktorreihe aus V0b. Ausserdem ist dem Bericht ein Abschnitt Aenderungsnachweis angehaengt worden, der genau diese eine Aenderung benennt. Beides ist reine Textarbeit an einem zusammenfassenden Satz; es wurde nichts neu gerechnet.",
+  "result": "Der Bericht V0-M3-4.md hat jetzt sha256 d7983c8ad56945f06b2adaa0613c05740730f773de6aa98c38c0625f3adcbbd6. Der im Eintrag claude-m3-4-v0-20260920 gebundene Hash gehoert zur Fassung vor dieser Berichtigung und ist damit ueberholt; er bleibt als Provenienz der veroeffentlichten Fassung stehen und wird nicht geaendert. Keine Tabellenzahl, keine Startbedingung, kein Urteil und keine Ergebnisdatei ist beruehrt. V0-M3-4.json, V0b-URSACHE-M3-4.json, v0_m3_4.py und v0b_ursache.py sind unveraendert; ihre im ersten Eintrag gebundenen Hashes gelten weiter.",
+  "meaning": "Rein technischer Eintrag zur Nachvollziehbarkeit. Er aendert nichts am Ergebnis: V0 bleibt durchgefallen, M3.4 bleibt unproduziert und geht zurueck vor S1. Register und Ledger sind weiterhin unberuehrt, Runde 022 bleibt eingefroren, die Silberzeile M3.3 bleibt unveraendert. Der Eintrag ist ausdruecklich keine Evidenz und keine Behauptung.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260921/m3-4-lauf/V0-M3-4.md",
+      "rolle": "berichtigte Fassung des V0-Berichts",
+      "sha256": "d7983c8ad56945f06b2adaa0613c05740730f773de6aa98c38c0625f3adcbbd6"
+    },
+    {
+      "path": "coordination/research-journal/claude-m3-4-v0-20260920.json",
+      "rolle": "der Eintrag, dessen Hashbindung hier berichtigt wird",
+      "sha256": "398529089a32f06a6c9d1d8032c0c9ddfe4ab771693af8f7da4d9010ac890bae"
+    },
+    {
+      "path": "coordination/vertraege-20260921/m3-4-lauf/V0-M3-4.json",
+      "rolle": "unveraenderte Ergebnisdatei",
+      "sha256": "cc51f908166000ba8ecb20d5305c0a5e2ea07f81b2761830c69f39be69dc13e2"
+    }
+  ],
+  "recorded_at": "2026-09-20T19:29:47.021491+00:00"
+}

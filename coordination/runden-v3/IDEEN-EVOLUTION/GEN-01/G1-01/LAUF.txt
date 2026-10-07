@@ -1,0 +1,40 @@
+G1-01 Gitter-Pinning 1D: Aufrufe fuer die Leitung
+Geschrieben vom Test-Agenten T-2, 2026-09-30 08:08:05 CEST (date), ergaenzt 08:17:14. Vorhersage in KARTE.md seit 07:58:24.
+
+Code:  pinning1d.py (neu, nur numpy, float64). Ausdruecklich CPU-faehig, keine GPU noetig.
+       Setzt OMP/OPENBLAS/MKL_NUM_THREADS=1 selbst (systemd-run reicht die Umgebung nicht durch).
+Spur:  cpu (oder cpu2 / cpu5). cpu3 und cpu4 belegt EVO-1.
+
+Formprobe (Laptop, nice 19, 1 Thread, CUDA_VISIBLE_DEVICES leer, timeout 120):
+  08:02:05  "form" (Q 4 bis 14, h = 1 und 0,5, grob): rc 0, 0,2 s, Plausibilitaet bestanden
+  08:02:29  "gegen --h 0.1 --stufen grob --q-ende 5" plus Konvergenzteil: rc 0, 3,2 s
+  08:17:07  nach der Newton-Aenderung (Nachschritt, siehe NACHTRAG.md) erneut: form rc 0; gegen --h 0.1 --stufen grob,fein
+            --q-ende 5: rc 0, 6,5 s, h = 0,1 braucht 15 ms je Schritt
+  Zahlen der Formprobe sind ungueltig (verkuerzter Q-Bereich) und werden nicht geerntet. Dateien in formprobe/.
+
+Geschaetzte Laufzeit (Laptop-Zeiten hochgerechnet, .69-CPU mit Faktor 2 angesetzt):
+  haupt: unter 1 min;  gegen: 3 bis 6 min (h = 0,1 grob 1271 und fein 2542 Schritte je Zweig, 15 ms je Schritt)
+
+Vorbereitung auf der .69 (Ordnername Vorschlag):
+  mkdir -p /home/fmh/fmhc-physics-remote/ie-gen01-g1-01
+  dorthin kopieren: pinning1d.py und KARTE.md (formprobe/ nicht noetig)
+
+1) Hauptlauf: h = 1, 0,75, 0,5, 0,25; grob (dQ = 0,236 h) und fein (dQ/2)
+cd /home/fmh/fmhc-physics-remote/ie-gen01-g1-01 && bash /home/fmh/fmhc-physics-remote/kleintests/kleintest.sh cpu g101-haupt pinning1d.py haupt --out lauf-69 | tee /home/fmh/fmhc-physics-remote/ie-gen01-g1-01/lauf-69-haupt.log
+
+2) Gegenprobe (getrennter Lauf): h = 0,125 und 0,1, grob und fein, dazu Konvergenzordnung gegen das Kontinuum
+cd /home/fmh/fmhc-physics-remote/ie-gen01-g1-01 && bash /home/fmh/fmhc-physics-remote/kleintests/kleintest.sh cpu g101-gegen pinning1d.py gegen --out lauf-69 | tee /home/fmh/fmhc-physics-remote/ie-gen01-g1-01/lauf-69-gegen.log
+
+Lokal statt .69 (Leitung, kleine Laeufe erlaubt):
+date; cd /home/fmh/fmhc-physics/coordination/runden-v3/IDEEN-EVOLUTION/GEN-01/G1-01 && CUDA_VISIBLE_DEVICES= nice -n 19 timeout 600 python3 pinning1d.py haupt --out lauf-lokal | tee lauf-lokal-haupt.log
+date; cd /home/fmh/fmhc-physics/coordination/runden-v3/IDEEN-EVOLUTION/GEN-01/G1-01 && CUDA_VISIBLE_DEVICES= nice -n 19 timeout 600 python3 pinning1d.py gegen --out lauf-lokal | tee lauf-lokal-gegen.log
+
+Ausgaben: <out>/haupt_ergebnis.json, haupt_bericht.txt, gegen_ergebnis.json, gegen_bericht.txt.
+  "kennzahlen": V1 (c_fit 10 bis 18), V2 (A_E bei h = 0,5), V3 (Snaking bei h = 1, nicht bei 0,25), V4 (A_E < 1e-12 bei
+  0,25), Gegenprobe (monoton und A_E < 1e-12 bei 0,125 und 0,1), L3 (grob gegen fein), Kontinuum (Fehlerverhaeltnis 3 bis 5);
+  "plausibilitaet_bestanden" gesamt, je Gitter unter "plausibel".
+
+Falls "gegen" das Zeitbudget meldet (Feld "abgebrochen"; das Skript beginnt nach 540 s keinen neuen Zweig): getrennt
+aufrufen, mit eigenem --out, damit nichts ueberschrieben wird:
+  ... pinning1d.py gegen --h 0.125 --out lauf-69-h0125
+  ... pinning1d.py gegen --h 0.1 --out lauf-69-h01

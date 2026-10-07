@@ -1,0 +1,31 @@
+{
+  "id": "claude-m3-scangesetz-20260911",
+  "time": "2026-09-11T19:49:00+02:00",
+  "time_kind": "completed",
+  "author": "Claude (Rechnung: Agent codex-m3-scangesetz auf TS440; Auswertung: claude-primary)",
+  "topic": "binaries",
+  "status": "checked",
+  "title": "Die 'Ausrichtung' der Gaia-PM-Fehlerellipse zum galaktischen Zentrum ist eine Projektion des ekliptisch organisierten Fehlermusters",
+  "question": "Ist die breitenabhängige Anisotropie quer/längs (1,07 in der Ebene, 0,79 bei 30–50°, 0,925 im Mittel) relativ zur Richtung des galaktischen Zentrums ein Artefakt des Gaia-Scangesetzes?",
+  "action": "Dieselbe Kennzahl mit anderen Bezugsrichtungen (Ekliptikpol, Ekliptiktangente, feste Zufallsrichtung je Region), die Hauptachse jeder Paarellipse, und zwei Kontrafakten (isotrope Ellipse gleicher Spur; nur der auf die Ekliptikpol-Achse projizierte Ellipsenanteil), auf dem Kontrollpool eb_s mit logg-Schnitt (220.921 Paare), TS440 CPU float64, 26 s. Kontrolle 1 reproduziert 0,9248636 (Abweichung 3·10⁻⁸, Zählungen exakt); Kontrolle 2 (Zufallsrichtung) 1,003 ± 0,008.",
+  "result": "Kontrafaktum 'nur ekliptisch organisierter Anteil': 0,926 ± 0,008 und Klassen 1,096 / 0,861 / 0,779 / 0,848, praktisch gleich dem GC-Befund (0,925; 1,072 / 0,861 / 0,790 / 0,872). Ekliptikpol als Bezug 1,069 ± 0,009, Ekliptiktangente 0,935 ± 0,008. Hauptachse der Ellipse selbst 0,622 ± 0,005, breitenunabhängig. Medianwinkel Trennung–Hauptachse 46,0°.",
+  "meaning": "Der GC-Befund samt Breitenmuster wird vollständig vom ekliptisch organisierten Teil der Fehlerellipsen getragen; die galaktische Richtung spielt keine eigene Rolle, das Breitenmuster entsteht aus dem über den Himmel laufenden Winkel zwischen Ekliptikpol und GC-Richtung. Ein physikalischer Ursprung ist unnötig. Grenzen: geprüft über Bezugsrichtungen und Kontrafaktum, nicht über das Scangesetz selbst; das strenge Brief-Kriterium 'Ekliptikrichtung stärker als GC' ist nicht erfüllt (gleiche Stärke, umgekehrtes Vorzeichen, kleinere Spanne). Für M1 folgenlos. Der Agent starb nach dem Lauf am Codex-Kontingent; Auswertung aus der Ergebnisdatei.",
+  "sources": [
+    {
+      "path": "coordination/m3-scangesetz-20260911-v2.md",
+      "label": "Auswertung",
+      "sha256": "882aaf3b5f15bcefc60b01cc91797dd6b308e9e81f67167f2d1e3d193a54bc92"
+    },
+    {
+      "path": "coordination/claude-m3-scangesetz-20260911/runs/codex-m3-scangesetz-20260911-v2/output/ERGEBNIS-v2.json",
+      "label": "Rohergebnis",
+      "sha256": "9c909fb46e5b3c682f105c05a8ba57021a600777642f08c4461004ca9998e386"
+    },
+    {
+      "path": "coordination/m3-scangesetz-20260911.md",
+      "label": "erster Anlauf, Abbruch an Kontrolle",
+      "sha256": "72c30c8137934821d1f49c57045b6f79bae11f00f7d563d918da3c31a9997f43"
+    }
+  ],
+  "recorded_at": "2026-09-11T18:19:31.137347+00:00"
+}

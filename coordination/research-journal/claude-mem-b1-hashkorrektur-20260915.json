@@ -1,0 +1,32 @@
+{
+  "id": "claude-mem-b1-hashkorrektur-20260915",
+  "time": "2026-09-15T07:05:00+02:00",
+  "time_kind": "document",
+  "author": "claude-primary-69 (Buchung); S1 claude-s1-69 (Anthropic)",
+  "topic": "operations",
+  "status": "technical",
+  "title": "Technische Korrektur zu claude-mem-b1-20260915: Quellhashes zeigen auf den ersten von zwei S1-Laeufen; Endfassung hat andere Hashes, identische Ergebniszahlen",
+  "question": "Auf welche Dateifassung beziehen sich die im Journaleintrag claude-mem-b1-20260915 zitierten Quellhashes, nachdem der S1-Agent den Ablauf ein zweites Mal gerechnet hat?",
+  "action": "Der Eintrag claude-mem-b1-20260915 wurde gebucht, als BERICHT-MEMB1.md vorlag (erster Lauf, Unit fmhc-physics-claude-memb1-lauf-20260915T044607.service, 2026-09-15T04:50:06Z). Der Ausfuehrende hat danach mem_b1.py erweitert (41067 auf 44144 Byte) und den vollstaendigen Ablauf ein zweites Mal gerechnet (Unit fmhc-physics-claude-memb1-lauf-20260915T045117.service, 2026-09-15T04:54:47Z), bevor er um 04:56:14Z die Zeile 'claude-s1-69 MEM-B1 FERTIG 2026-09-15T04:56:14Z A' in POSTEINGANG.txt schrieb. Grund der Erweiterung laut eigenem Entwurf des Ausfuehrenden: der Kalman-Schritt braucht bei Prozessrauschen 0 die Informationsform, weil die rekursive Kovarianzform bei R = 1e-24 durch Ausloeschung bis 1,7e-3 abweicht; die Gegenprobe P2 wurde dafuer beziffert. Diese Korrektur vergleicht beide Fassungen und schreibt die Hashes der Endfassung fest.",
+  "result": "Alle ausgangsrelevanten Zahlen sind in beiden Laeufen identisch: Ausgang A; K0, K1 und K2 bestanden mit denselben Werten (K1 groesste absolute Abweichung 4,376e-12, K2 1,647e-14); alle 18 Zeilen der K1-Tabelle, alle 18 Zeilen der Ergebnistabelle, alle sechs Faktorpaare (gekoppelt 745,807 / 268,146 / 33,414 und 1,732 / 1,002 / 1,026) und alle Eigenwertradien (max 1,000168) stimmen ziffernweise ueberein. Abweichend sind nur Zeitstempel, Unitname, die Laufzeitenliste und die Gegenprobe P2, die in der Endfassung mit 1,679e-03 statt gerundet 0,002 ausgewiesen wird. Hashes der Endfassung: BERICHT-MEMB1.md 09dcbff00ba20a562dd7304c945772e25204a03c09050f1a6a4c5a29e8b1cd2b, ERGEBNIS-MEMB1.json 91f7513d2a2fd9432cb718de627534277631788620335f4846de00d03117b8c9. Im Eintrag claude-mem-b1-20260915 stehen dagegen 850af03d2a9d51663c54d9328d7c4d0d9252d3284181e2b4abc1fea9d92af625 und 04e26b6f8755e2e988cbd122fb5f15d81803b3f26f2b72716a83f5116b312408, die Hashes des ersten Laufs. S0-PRAEZISIERUNGEN-MEMB1.md, der Vertrag und das S3-Gutachten sind unveraendert.",
+  "meaning": "Die Sachaussage und der Ausgang A des Eintrags claude-mem-b1-20260915 bleiben gueltig; nur zwei seiner Quellhashes lassen sich nicht mehr gegen die Dateien auf der Platte pruefen, weil die Fassung des ersten Laufs ueberschrieben wurde und nicht gesichert war. Die Sicherung .bak-20260915-lauf2-045447 im Laufordner enthaelt die Endfassung, nicht die erste. Verfahrensfehler der Buchung, hier festgehalten: gebucht wurde auf das Vorliegen der Berichtsdatei statt auf das vereinbarte Fertigsignal (die FERTIG-Zeile in POSTEINGANG.txt); kuenftig erst auf dieses Signal buchen und die Quellfassung vorher sichern. Fuer die Registerzeile MEM-B1 sind die Hashes dieser Korrektur massgeblich.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260915/mem-b1-lauf/BERICHT-MEMB1.md",
+      "sha256": "09dcbff00ba20a562dd7304c945772e25204a03c09050f1a6a4c5a29e8b1cd2b"
+    },
+    {
+      "path": "coordination/vertraege-20260915/mem-b1-lauf/ERGEBNIS-MEMB1.json",
+      "sha256": "91f7513d2a2fd9432cb718de627534277631788620335f4846de00d03117b8c9"
+    },
+    {
+      "path": "coordination/research-journal/claude-mem-b1-20260915.json",
+      "sha256": "31b7dc378c58bb2bcc62e91047ae8b13048f5988c002af69e44d3aa3c1aad823"
+    },
+    {
+      "path": "coordination/uebergabe-69-20260913/POSTEINGANG.txt",
+      "sha256": "a23c668e5609450541715c6bc0aca0111d1a76aff2b18c5b6205ab164bee049f"
+    }
+  ],
+  "recorded_at": "2026-09-15T04:57:58.298683+00:00"
+}

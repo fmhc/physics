@@ -1,0 +1,28 @@
+{
+  "id": "audit-selbsterfuellung-20260920",
+  "time": "2026-09-20T23:30:00+02:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5); Audit-Agent (Opus 5) mit DeepSeek v4.1 flash (OpenRouter, Freigabe Finn 20.09.) und Qwen (Bunker) als Gegenmeinung",
+  "topic": "operations",
+  "status": "checked",
+  "title": "Selbsterfuellungs-Audit: bei 8 von 24 aktiven Registerzeilen konnte die Pruefung nicht anders ausgehen",
+  "question": "Kann das Pruefkriterium jeder aktiven Registerzeile ueberhaupt scheitern, oder ist es durch eine Symmetrie, eine Definition, eine Umbenennung oder eine unerreichbare Schwelle vorab festgelegt?",
+  "action": "Je Zeile ein mechanisch erzeugtes Materialpaket (Registerzeile plus Vertragstext, feste Dateiliste, kein Kommentar der Leitung) an DeepSeek mit immer derselben Frage; jede Meldung SELBSTERFUELLEND oder VERDACHT von der Leitung gegen die Dateien nachgeprueft, bestaetigte Faelle zusaetzlich mit Qwen-Gegenmeinung.",
+  "result": "24 Zeilen geprueft, 22 mit Vertragstext. DeepSeek: 6 selbsterfuellend, 8 Verdacht, 7 sauber, 3 nicht pruefbar. Nach Pruefung an den Dateien halten 8 Vorwuerfe ganz, 6 teilweise, keiner faellt ganz; ein neunter Fall kam aus eigener Pruefung dazu. Qwen stimmte in 7 von 9 Faellen zu, zweimal begruendeter Widerspruch. Schwerster Fall EV1.2 (gold): der Falsifikator ist im Code eine feste Formel (evolution_potential.py Z. 369, Drot_fuehrend = 4 Be^3/we^2), haengt nur vom Molekuel ab; 'fuer alle 120 Formen bitgleich' ist die Zuweisung, keine Messung. GV1 (silber): Q_I' ~ 1/gamma_S liegt fuenf bis sechs Groessenordnungen innerhalb der Schranke. GV2 (silber): die Paritaet laesst nur B oder T zu.",
+  "meaning": "Das trifft die Belastbarkeit der Stufen, nicht einzelne Zahlen: Eine Stufe, die auf einem nicht scheiterbaren Kriterium ruht, sagt nichts ueber die Welt. Gold- und Silberzeilen sind unveraenderlich (Regel 12.5), deshalb werden keine Zeilen editiert; die betroffenen Zeilen kommen in Runde 23 mit der Frage vor die Jury, und je Fall ist ein heilender Nachfolgevertrag zu schreiben. Runde 022 bleibt eingefroren, nichts wurde gebucht. Kosten 0,047 USD.",
+  "sources": [
+    {
+      "path": "coordination/deepseek-20260920/audit/AUDIT-SELBSTERFUELLUNG.md",
+      "sha256": "ff3b0e0675cbe6ee1acf22d844aa50837620a310142a1b02aea8ed7a249a4c7a"
+    },
+    {
+      "path": "coordination/deepseek-20260920/FREIGABE-deepseek-restguthaben.md",
+      "sha256": "a911effd410da62e53d31c855105a1fbfbcd9f494107e4357b554bbe151e184f"
+    },
+    {
+      "path": "coordination/methodik-review/review-20260918/SYNTHESE-ENTWURF.md",
+      "sha256": "eeaa66077d526bee8f54cbd0270bf326fca1b1819ed36535cecbdb41384783bd"
+    }
+  ],
+  "recorded_at": "2026-09-20T18:23:06.631665+00:00"
+}

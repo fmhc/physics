@@ -1,0 +1,196 @@
+{
+ "urteile_plan": {
+  "TR0": "eingetroffen",
+  "TR1": "eingetroffen",
+  "TR2": "nicht eingetroffen"
+ },
+ "urteile_kartenwortlaut": {
+  "TR0": "eingetroffen",
+  "TR1": "eingetroffen",
+  "TR2": "nicht eingetroffen"
+ },
+ "vermerke": {
+  "TR0": {
+   "vorbedingungen_ok": true,
+   "alle_luecken_offen": true,
+   "teile": {
+    "R1_pi_einseitig": true,
+    "R2_0_einseitig": true,
+    "R2_pi_einseitig": true,
+    "R3_0_null": true,
+    "R3_pi_einseitig": true,
+    "R2r_umgekehrt": true
+   },
+   "fluss": {
+    "R1_sonder": {
+     "pi": {
+      "N_oben": -2.0,
+      "N_unten": 2.0,
+      "N_alle": 0.0
+     }
+    },
+    "R2_anomal": {
+     "0": {
+      "N_oben": -2.0,
+      "N_unten": 2.0,
+      "N_alle": 0.0
+     },
+     "pi": {
+      "N_oben": -2.0,
+      "N_unten": 2.0,
+      "N_alle": 0.0
+     }
+    },
+    "R2r_anomal_umkehr": {
+     "0": {
+      "N_oben": 2.0,
+      "N_unten": -2.0,
+      "N_alle": 0.0
+     },
+     "pi": {
+      "N_oben": 2.0,
+      "N_unten": -2.0,
+      "N_alle": 0.0
+     }
+    },
+    "R3_chern": {
+     "0": {
+      "N_oben": 0.0,
+      "N_unten": 0.0,
+      "N_alle": 0.0
+     },
+     "pi": {
+      "N_oben": -2.0,
+      "N_unten": 2.0,
+      "N_alle": 0.0
+     }
+    }
+   },
+   "volumen": {
+    "R1_sonder": {
+     "halb_0": 0.0,
+     "halb_pi": 3.1
+    },
+    "R2_anomal": {},
+    "R2r_anomal_umkehr": {},
+    "R3_chern": {}
+   }
+  },
+  "TR1": {
+   "P4a": {
+    "urteil_regel": "eingetroffen",
+    "unitaer_platte": 1e-15,
+    "unitaer_volumen": 1e-15,
+    "vollstaendig": true,
+    "luecken_offen": [
+     "0",
+     "pi"
+    ],
+    "zaehlung": {
+     "oben|0": {
+      "anzahl": 1,
+      "netto": 1
+     },
+     "unten|0": {
+      "anzahl": 1,
+      "netto": -1
+     },
+     "oben|pi": {
+      "anzahl": 0,
+      "netto": 0
+     },
+     "unten|pi": {
+      "anzahl": 0,
+      "netto": 0
+     }
+    },
+    "summenregel": {
+     "0": 0,
+     "pi": 0
+    },
+    "volumen": {
+     "halb_0": 0.3,
+     "halb_pi": 1.0
+    },
+    "vorbedingungen_ok": true,
+    "luecken_mit_treffer": [
+     "0"
+    ]
+   },
+   "P4b": {
+    "urteil_regel": "nicht auswertbar",
+    "grund": "Datei fehlt"
+   },
+   "P4t": {
+    "urteil_regel": "nicht auswertbar",
+    "grund": "Datei fehlt"
+   },
+   "P4c": {
+    "urteil_regel": "nicht auswertbar",
+    "grund": "Datei fehlt"
+   },
+   "P4cr": {
+    "urteil_regel": "nicht auswertbar",
+    "grund": "Datei fehlt"
+   },
+   "P4aL24": {
+    "urteil_regel": "nicht auswertbar",
+    "grund": "Datei fehlt"
+   }
+  },
+  "TR1_kw_modelle_mit_treffer": [
+   "P4a"
+  ],
+  "TR2_kw_modell": "P4a",
+  "TR2": {
+   "P4a": {
+    "oben": {
+     "luecke": "0",
+     "knoten": {
+      "phase": 0.001
+     },
+     "iso": {
+      "0.05": {
+       "alle_gefunden": true,
+       "spann_rel": 0.01
+      }
+     }
+    },
+    "unten": {
+     "luecke": "0",
+     "knoten": {
+      "phase": -0.001
+     },
+     "iso": {
+      "0.05": {
+       "alle_gefunden": true,
+       "spann_rel": 0.2
+      }
+     }
+    }
+   },
+   "P4b": null,
+   "P4t": null,
+   "P4c": null,
+   "P4cr": null,
+   "P4aL24": null
+  }
+ },
+ "kennzahlen": {
+  "K_chi": {
+   "Gamma": {
+    "chi": 1
+   },
+   "X1": {
+    "chi": -1
+   },
+   "X12": {
+    "chi": 1
+   },
+   "R": {
+    "chi": -1
+   }
+  },
+  "K_chi_ok": true
+ }
+}

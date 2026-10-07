@@ -1,0 +1,161 @@
+M2-PHASENZYKLUS: DC- UND ZWEITE-HARMONISCHE-QUELLGESCHICHTE
+particle_core, 2026-10-02. Nur Papierableitung; kein Code/Interpreter/Lauf.
+Gelesen: modes/excitation/code.py initial/canonical,
+time-domain/code.py load_inputs/run_level/analyse_pair,
+time-domain/CAUSAL-SECOND-ORDER.txt. Keine fremden Dateien geändert.
+
+1. STARTVORSCHRIFT GENAU ZUM VORHANDENEN CODE
+Zuerst denselben gespeicherten komplexen Eigenzustand v_raw=(vq,vp)
+laden, auf ||vq||_2=1 normieren und mit der bereits verwendeten gemeinsamen
+Pivotphase exp(-i arg(vq[pivot])) drehen. Das Ergebnis heiße v0.
+Sämtliche sechs Blöcke erhalten denselben Norm- und Phasenfaktor.
+Für den neuen Zyklus ausschließlich
+ v_theta=exp(i theta)*v0, theta=pi/2, also v_pi2=i*v0.
+NICHT anschließend nochmals den Pivot realpositiv machen: das würde die
+gewollte Phasenänderung rückgängig machen. Neue Phase relativ zum alten
+Anker, alter Pivot und Gesamtphase getrennt dokumentieren.
+
+Mit root=sqrt(V) und n Zellzentren:
+ (x,y,z,px,py,pz)=Re(v_theta).reshape(6,n)/root.
+Wie excitation.initial:
+ s=sqrt(Sum V[2f²+(g-1)²]), alpha=epsilon*s,
+ a_theta=(x+i y)/sqrt2, b_theta=(px+i py)/sqrt2,
+ phi_plus/minus=f ± alpha*a_theta,
+ pi_plus/minus=i omega*phi_plus/minus ± alpha*b_theta,
+ chi_plus/minus=g ± alpha*z,
+ chi_t_plus/minus=±alpha*pz.
+Dies sind genau zwei neue freie Starts mit theta=pi/2 und ±alpha.
+Der rotierende Hintergrund f,g,omega bleibt derselbe. Insbesondere
+kein globales Multiplizieren des vollständigen Hintergrundfeldes phi
+mit i: die Drehung betrifft die komplexe Modenphase des Eigenzustands.
+
+Positionen UND Geschwindigkeiten werden gedreht. Explizit
+Re(i*vq)=-Im(vq), Re(i*vp)=-Im(vp).
+Für einen exakten Eigenvektor vp=i rho*vq gilt am Start zusätzlich
+q_pi2=p_0/rho und p_pi2=-rho*q_0 in kanonischen Variablen.
+Die direkte Vorschrift über alle gespeicherten sechs Blöcke ist wegen
+endlichen Ritzrests maßgeblich, nicht ein nachträgliches Ersetzen von vp.
+
+||exp(i theta)vq||=||vq||=1: derselbe s-Faktor und dieselbe |alpha| wie
+bei theta0. Reale Positionsnorm, Spitze oder Anfangsgeschwindigkeit
+dürfen mit theta variieren; sie werden NICHT auf denselben Spitzenwert
+nachnormalisiert. Sonst wären die untenstehenden Summen falsch gewichtet.
+Anfangs-Q erneut durch dieselbe exakte lineare/quadratische Identität
+des vorhandenen Adapters prüfen. Q und E können zwischen Phasen variieren;
+keine Q-/E-Nachnormalisierung zum künstlichen Angleichen der Starts.
+
+2. WARUM DIE ZERLEGUNG EINSCHALTTRANSIENTEN MIT ERFASST
+Im festen rotierenden System sei die führende Bewegung
+X1_theta(t)=Re[exp(i theta)v0 exp(i rho t)].
+Für die bekannte homogene quadratische Kraft J folgt
+ J_theta(t)=J_DC + exp(2i theta)J2 exp(i nu t)
+                   +exp(-2i theta)conj(J2) exp(-i nu t), nu=2rho,
+ J_DC=[J(Re uhat)+J(Im uhat)]/2, J2=J(uhat)/4,
+ uhat=vq0/sqrt(V).
+Damit J_pi2(t)=J_DC-[J2 exp(i nu t)+conj(J2)exp(-i nu t)].
+DC ist invariant; die gesamte zweite-Harmonische-Quellgeschichte wechselt
+das Vorzeichen, nicht nur ihre stationäre Fourieramplitude.
+
+Beide neuen und alten Anfangsdaten sind in alpha exakt linear. Deshalb
+X2_theta(0)=0 einschließlich der Geschwindigkeitsblöcke. Mit demselben
+endlichen kanonischen Generator L und identischer Randdefinition ist
+X2_theta(t)=Integral_0^t exp[L(t-tau)](0,sqrt(V)J_theta(tau))d tau.
+Setze C(t)=kausale Antwort auf J_DC,
+H(t)=kausale Antwort auf J2 exp(i nu t)+conj(J2)exp(-i nu t).
+Dann auf zweiter Ordnung EXAKT
+ X2_0=C+H, X2_pi2=C-H,
+ C=(X2_0+X2_pi2)/2, H=(X2_0-X2_pi2)/2.
+
+Diese Linearität der Duhamel-Abbildung gilt auch für Phasen-/Nullmoden,
+Jordananteile, geschlossene Kanäle, endliche Boxreflexionen und sämtliche
+kausalen Einschaltanteile. Keine Inverse L^-1 und kein Einschwingen
+werden vorausgesetzt. Die Trennung sortiert nach QUELLGESCHICHTE:
+C(t) ist nicht zwingend zeitkonstant, H(t) nicht zwingend rein sinusförmig.
+Ein endliches nu-Fouriergewicht von C ist ausdrücklich zulässig.
+
+Die neue freie Entwicklung ist auch NICHT einfach die um pi/(2rho)
+zeitverschobene alte nichtlineare Trajektorie. Nur die führende lineare
+Mode ist so verschoben; beide Versuche setzen ihre zweite Ordnung am
+gemeinsamen t=0 auf null. Eine verschobene alte Trajektorie hätte dort
+im Allgemeinen schon eine nichtverschwindende zweite Ordnung.
+
+3. MESSGRÖSSEN BEI ENDLICHEM ALPHA
+U bezeichnet eine LINEARE Feld-/Geschwindigkeitsdarstellung: entweder
+die vier gespeicherten rotierenden physikalischen Komponenten oder den
+vollen kanonischen6Blockzustand. Gleiche feste Rückrotation exp(-i omega t)
+und dieselbe Geschwindigkeitsumrechnung für alle fünf Trajektorien.
+Ubase ist der unveränderte epsilon0-Lauf desselben Gitters und Zeitschritts.
+ E_theta=(U_theta,+ + U_theta,- -2Ubase)/(2alpha²).
+Bei glatter Amplitudenentwicklung für die endliche betrachtete Zeit
+ E_theta=X2_theta+alpha² X4_theta+O(alpha^4).
+Die vorgeschlagenen Messkombinationen liefern somit
+ DC_est=(E0+Epi2)/2=C+O(alpha²),
+ H2_est=(E0-Epi2)/2=H+O(alpha²).
+Die Gleichheit zu C,H ist exakt auf zweiter Ordnung, NICHT als Identität
+der vollständigen nichtlinearen Evolution bei endlicher Amplitude.
+
+Direkt aus den vier angeregten Trajektorien:
+ DC_est=(U_0,+ +U_0,- +U_pi2,+ +U_pi2,- -4Ubase)/(4alpha²),
+ H2_est=(U_0,+ +U_0,- -U_pi2,+ -U_pi2,-)/(4alpha²).
+Die gemeinsame Baseline hebt sich in H2_est algebraisch auf, in DC_est
+nicht. Baselinefehler oder falsche Wiederverwendung treffen deshalb die
+beiden Schätzer unterschiedlich. Gleiche vorliegende Baseline verwenden,
+keinen neuen gefitteten/phasenbereinigten Referenzverlauf.
+
+Die Zerlegung erfolgt VOR Betragsbildung, Normen, Flüssen oder Fit/
+Fourierinterpretationen. Lineare Fourierauswertung kommutiert mit der
+Zerlegung; quadratische Flüsse nicht. Flüsse von C und H dürfen ohne
+ihren Interferenzterm nicht zum Fluss von C+H addiert werden.
+
+4. BEDINGUNGEN FÜR DIE WIEDERVERWENDUNG UND FEHLER
+Die alten theta0-Paar-/Baselineartefakte sind nur dann direkt verwendbar,
+wenn h,dt,R,T,Referenzhash,Ritzhash,Normierung, Rand-/Integratorversion,
+Anfangskonvention und tatsächliche Samplezeiten exakt übereinstimmen.
+Keine Interpolation zwischen physikalisch verschiedenen Phasenläufen
+als Synchronisierung ausgeben. Neue Dateien separat schreiben; keine
+Änderung des abgeschlossenen UNRESOLVED-Datensatzes.
+
+Endliche alpha-Fehler: die Parität entfernt ungerade Ordnungen, lässt
+alpha²-Fehler in den SKALIERTEN Schätzern stehen. Viertordentliche
+Phasenanteile können unter theta→theta+pi/2 invariant sein und somit
+in DC_est verbleiben; diese Zwei-Phasen-Methode ist keine exakte
+Allordnungs-Fourierprojektion. Eine bekannte gute Amplitudenskalierung
+bei theta0 ist kein eigenständiger Fehlernachweis für theta=pi/2.
+
+Numerik: Subtraktions-/Rundungsfehler werden durch alpha² dividiert.
+Gemeinsame Baseline und gleicher numerischer Weg verbessern die
+Vergleichbarkeit, geben aber keine automatische Schranke für ein sehr
+kleines Außensignal. h-/dt-Fehler, finite Referenz-/Ritzreste und
+unterschiedlich angeregte diskrete Modenanteile bleiben zu kontrollieren.
+
+Genauer bei endlichem dt: Auch die zweite Variation derselben diskreten
+Zeitabbildung ist eine quadratische Form der Anfangsrichtung. Ihre
+Phasenmittelung/-differenz funktioniert daher weiterhin als Zerlegung
+in zwei Anfangsquadraturen. Die Bezeichnung "DC- versus2rho-Quelle"
+setzt zusätzlich voraus, dass diese diskreten linearen Richtungen die
+bekannte harmonische Eigenbewegung hinreichend genau abbilden. Falls
+der kontinuierliche Ritzvektor keine exakte Eigenrichtung der diskreten
+Abbildung ist, sind beide Interpretationen nicht wortwörtlich identisch.
+Ein endlicher Generator- oder Baselinefehler darf nicht durch die
+Phasenzyklus-Algebra als verschwunden behauptet werden.
+
+5. WAS DARAUS NICHT FOLGT
+- Keine Behauptung stationärer auslaufender Strahlung, asymptotischen
+  Einschwingens, einer Lebensdauer oder eines Gamma.
+- Keine Beseitigung von Randbeiträgen: identische Randdynamik ist in C,H
+  enthalten; der Zyklus unterscheidet Quellen, nicht Orte oder Laufwege.
+- Keine Projektion des Null-/Jordanraums und keine Q-Fixierung. Ein
+  DC-induzierter Phasenanteil bleibt gerade Teil der zu messenden Antwort.
+- Keine unabhängige Bestätigung eines gebundenen Kandidaten/BIC und
+  keine nachträgliche Änderung alter Stationaritäts-/Lokalisierungsgates.
+- Mit theta0 und pi/2 wird die H2-Quellgeschichte für den alten Anker
+  isoliert, nicht die gesamte unabhängige sin(2theta)-Antwort für beliebige
+  Modenphase vermessen. Dafür wäre eine weitere Phasenrichtung nötig;
+  sie ist hier ausdrücklich NICHT vorgeschlagen/beauftragt.
+
+Fazit dieser Ableitung: Die vorgeschlagene Kombination trennt auf zweiter
+Ordnung DC- und H2-Quellgeschichte einschließlich ihrer kausalen Transienten.
+Zwei neue +/-Starts genügen dafür bei exakt gleicher komplexer kanonischer
+Amplitude und vollständiger Koordinaten-/Geschwindigkeitsdrehung. Ob das
+kleine Außensignal diese Zuordnung bei endlichem alpha und der bestehenden
+Numerik quantitativ auflöst, bleibt ein eigener prospektiver Test.

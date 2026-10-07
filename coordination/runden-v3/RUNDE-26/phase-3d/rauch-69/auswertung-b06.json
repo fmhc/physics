@@ -1,0 +1,155 @@
+{
+ "kommando": "auswertung",
+ "beginn": "2026-10-03T02:54:09+0000",
+ "konfig": {
+  "beta": 0.6,
+  "sprossen_datei": "rauch/sprossen-b06.json",
+  "phase_wand_datei": "rauch/pw-phase-b06.json",
+  "phase_datei": "rauch/phase-b06.json",
+  "profil_dateien": [
+   "rauch/profile-b06.json"
+  ],
+  "haupt": "rk4:0.005",
+  "proben_regel": [
+   "rk4:0.01",
+   "dop853:1e-12"
+  ],
+  "proben_bericht": [
+   "dop853:1e-10",
+   "bic2:0.01"
+  ],
+  "tol_R": 1e-05,
+  "tol_bisektion": 1e-09,
+  "regeln": [
+   {
+    "name": "R-1",
+    "art": "betrag",
+    "sprossen": [
+     1,
+     2
+    ],
+    "grenze": 0.03
+   },
+   {
+    "name": "R-2",
+    "art": "ausgleich",
+    "sprossen": [
+     1,
+     2
+    ],
+    "grenze_b": 0.02,
+    "monoton": true
+   }
+  ],
+  "berichtsausgleiche": [
+   [
+    "neben",
+    "Delta_neben",
+    [
+     1,
+     2
+    ]
+   ],
+   [
+    "zusatz",
+    "Delta_zusatz",
+    [
+     1,
+     2
+    ]
+   ],
+   [
+    "haupt",
+    "Delta",
+    [
+     1,
+     2
+    ]
+   ]
+  ]
+ },
+ "beta": 0.6,
+ "k_in_rho_z": 2.0864733754998235,
+ "phi_rho_z": 2.448463263561859,
+ "theta_inf_karte": 0.720629937250432,
+ "zeilen": [
+  {
+   "id": 1,
+   "omega2": 0.62,
+   "eps": 0.036666666666666736,
+   "R_tw": 17.604469755488225,
+   "rho": 1.65,
+   "quelle": "rauch",
+   "R": 17.94002963276622,
+   "R_minus_R_tw": 0.3355598772779942,
+   "S0": 0.8678548732157395,
+   "S0_minus_Sc_minus_eps": -0.002145126784260598,
+   "aufloesung_bisektion": 1.588063014423824e-12,
+   "x": 12.19415288530073,
+   "Delta": 0.1941528853007295,
+   "n_strich": 12,
+   "proben_dR": {
+    "rk4:0.01": 8.185949695871386e-10,
+    "dop853:1e-12": null,
+    "dop853:1e-10": null,
+    "bic2:0.01": null
+   },
+   "K_profil": false,
+   "Delta_neben": -0.4944957820303397,
+   "n_strich_neben": 13,
+   "k_in_rho_n": 2.131613196473168,
+   "phi_rho_n": 2.6167925970803907,
+   "Delta_zusatz": 0.4232101615379573,
+   "n_strich_zusatz": 12,
+   "k_lokal": 2.1265850515119884,
+   "k_lokal_kontrolle_rho_z": 0.0
+  },
+  {
+   "id": 2,
+   "omega2": 0.65,
+   "eps": 0.06666666666666676,
+   "R_tw": 9.682458365518528,
+   "rho": 1.67,
+   "quelle": "rauch",
+   "fehlt": true
+  }
+ ],
+ "urteile": {
+  "R-1": {
+   "name": "R-1",
+   "sprossen": [
+    1,
+    2
+   ],
+   "fehlend": [
+    2
+   ],
+   "K_profil_nicht_bestanden": [
+    1,
+    2
+   ],
+   "eingetroffen": false,
+   "auswertbar": false,
+   "grund": "Sprosse fehlt oder K-Profil nicht bestanden (nicht auswertbar)"
+  },
+  "R-2": {
+   "name": "R-2",
+   "sprossen": [
+    1,
+    2
+   ],
+   "fehlend": [
+    2
+   ],
+   "K_profil_nicht_bestanden": [
+    1,
+    2
+   ],
+   "eingetroffen": false,
+   "auswertbar": false,
+   "grund": "Sprosse fehlt oder K-Profil nicht bestanden (nicht auswertbar)"
+  }
+ },
+ "berichtsausgleiche": {},
+ "ende": "2026-10-03T02:54:09+0000"
+}

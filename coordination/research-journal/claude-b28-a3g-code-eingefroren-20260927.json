@@ -1,0 +1,41 @@
+{
+  "id": "claude-b28-a3g-code-eingefroren-20260927",
+  "time": "2026-09-27T18:20:11+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung; eingetragen 20:20:11 MESZ (gemessen)",
+  "topic": "modelle",
+  "status": "technical",
+  "evidenzart": "verfahren",
+  "title": "B28: Code auf A3g umgestellt, gegengelesen und eingefroren; Schreibtischprobe ohne neue Luecke; V1 wartet auf Finns Startfreigabe",
+  "question": "Ist der Code des B28-Vorlaufs vertragstreu auf A3g umgestellt und vor dem Lauf auf vorab unbestehbare Kontrollen geprueft?",
+  "action": "Der bisherige Ausfuehrende (Anthropic) aenderte seinen A3e-Code nach A3g (Leiter 2^(k/4), Diagnose je Zelle und je Sprosse, Klarstellungen); frischer Gegenleser in zwei Runden; Einfrieren, Registerprobe (45 Listenvergleiche), Schreibtischprobe aller K5-Zellklassen; Laufordner auf der .69 mit gepruefter Vertragskopie. Unterbrechung durch das API-Wochenlimit nach 17:28:59, fortgesetzt ab 20:04.",
+  "result": "Code eingefroren um 20:17, auf der .69 identisch. Gegenleser: kein Blocker; ein wesentlicher Befund behoben (Zwischenfassung haette jeden Programmfehler in der Lesartentabelle zu U1 gemacht). Registerprobe 0 Abweichungen. Schreibtischprobe: keine Kontrolle vorab unbestehbar; F23-Zellen mit ausgerechnetem Polynomanteil im Fenster etwa [0,0359; 0,0468] mit Sprossen k = 21 und 22. Offene Lesart G11 (Programmfehler beim Bau der 6.4-Tabelle technisch statt U1) zur Bestaetigung bei der Leitung. P4000 zur Zeit nur 1,7 bis 1,8 GiB frei (Ollama). Offenlegung: zwei lokale lesende awk-Aufrufe.",
+  "meaning": "B28 ist startbereit; V1 beginnt erst nach Finns Ja zu A3g und der Startnachricht der Leitung. Kein Befund.",
+  "sources": [
+    {
+      "path": "coordination/field-b28-lokale-stabilitaet-20260926/vorlauf-a3g/CODE-SHA256.txt",
+      "sha256": "6d4da4c52077d6021afbe474e80c5b581634cac5652c4f0a43ea2b457ba17ee2"
+    },
+    {
+      "path": "coordination/field-b28-lokale-stabilitaet-20260926/vorlauf-a3g/REGISTERPROBE-A3g.txt",
+      "sha256": "159b4cfd7def7153ee098fe3355f3c103290656c439c76bfb9f71003cbd4730d"
+    },
+    {
+      "path": "coordination/field-b28-lokale-stabilitaet-20260926/vorlauf-a3g/SCHREIBTISCHPROBE-A3g.md",
+      "sha256": "c2db5ca4bb50815c21665627a0e8d45ff6c66929248dd739504ba8c7c741ef11"
+    },
+    {
+      "path": "coordination/field-b28-lokale-stabilitaet-20260926/vorlauf-a3g/FRAGEN-A3g.md",
+      "sha256": "55debaf3ef0192cd4ea41bb54a7b28b5c448f03f393023c143d2df090214744d"
+    },
+    {
+      "path": "coordination/field-b28-lokale-stabilitaet-20260926/vorlauf-a3g/CODE-AENDERUNGEN-A3e-A3g.md",
+      "sha256": "5f07ea270fbc425e98253c530d48cc0eacaf906ad70d914b6c4b775887fc2fd6"
+    },
+    {
+      "path": "coordination/field-b28-lokale-stabilitaet-20260926/vorlauf-a3g/LAUFPROTOKOLL-A3g.md",
+      "sha256": "43c32ff6e5e7068a9002bb88c7122ac4e8f3b815dea02b8ac2f44c9697993c1c"
+    }
+  ],
+  "recorded_at": "2026-09-27T18:20:11.681962+00:00"
+}

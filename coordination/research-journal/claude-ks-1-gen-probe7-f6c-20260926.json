@@ -1,0 +1,57 @@
+{
+  "id": "claude-ks-1-gen-probe7-f6c-20260926",
+  "time": "2026-09-26T21:56:44+00:00",
+  "time_kind": "completed",
+  "author": "Claude (Anthropic, Opus 5.5), Vertragsautor KS-1-GEN im Auftrag von claude-primary; Startfreigabe 23:36 MESZ, Halt 23:40, Entscheidung L7 23:44:44, Bau 23:50:22 bis 23:50:30, Probe 23:50:53 bis 23:52:28 MESZ (gemessen); Wirt TS440, Pruefung (h) auf der .69 (CPU, halbe Pacht)",
+  "topic": "vertraege",
+  "status": "technical",
+  "evidenzart": "verfahren",
+  "title": "KS-1-GEN Ablaufprobe 7 nach Fassung 6c: Ablauf vollstaendig, Urteil (h) ungueltig (GR15 thread_settings_applied nach resume, GR19 verweigerte Anfragen an oaiusercontent.com); update_plan fehlt in codex exec",
+  "question": "Passen Umgebung und Pruefer von KS-1-GEN (Teil A F6b, Proxybau F6c) mit einer echten codex-Sitzung zusammen: Container mit Dienstkennung, internes Netz mit Proxy-Allowlist, arbeitendes Proxyprotokoll, Mitschreiber, Staende, Anker, Fortsetzung mit resume und Gueltigkeitspruefung (h), alles mit Log-Treiber none und eigener Container-Anmeldung?",
+  "action": "Vorpruefung der TS440 (buildx fehlt) und Halt vor dem Bau; nach Entscheidung L7 Fassung 6c (proxy-bau.sh mit DOCKER_BUILDKIT=0 und --force-rm, Texte, SHA256SUMS-F6c). Bindung vor dem Bau und Bau des Proxy-Abbilds (alter Bauweg, 4 Zwischencontainer, keine Reste). Probe 7 mit probe7.sh nach Freigabetext der Leitung: Umgebung, Kopie der Anmeldung zwischen Datentraegern, Netzprobe, Tor, zwei codex-Aufrufe (gpt-6-astra, high; Aufruf 2 als resume), Staende und Anker, Pruefung (h) mit dem Werkzeug e820b9b7 auf der .69, Anmeldung ohne Rueckschreiben mit shred geloescht, Container, Netze und Datentraeger entfernt. Auswertung gegen ERWARTUNG-PROBE7.json und den Nachtrag F6b; Belege ins Repository.",
+  "result": "Urteil (h) ungueltig: GR15 einmal (die erste von resume angehaengte Zeile der Sitzungsdatei ist die unbekannte Art thread_settings_applied), GR19 viermal (Proxying refused on filtered domain sdmntprsouthcentralus.oaiusercontent.com, zu Beginn jedes Aufrufs). Sonst wie erwartet: Tor bestanden (Netzprobe bytegleich, wirksame Konfiguration cb2eed14, drei Verweigerungen im Proxyprotokoll), Abgaben bytegleich mit dem Soll (ROH = 10, KERN = 2, SCHNITT = 3, dazu PERSP = 4), gleiche thread_id, keine Kontextverdichtung, keine Treffer in GR1 bis GR14, GR16 bis GR18, tmpfs des Proxys 1 Prozent, Log-Treiber none an Sitzung, Proxy, Mitschreiber und sechs Hilfscontainern. update_plan stand in codex exec 0.153.4 nicht zur Verfuegung; die Sitzung meldete das und liess die Planschritte aus. codex fragte am Ende jedes Aufrufs ab.chatgpt.com an (verweigert, von GR19 geduldet); kein Kontakt zu auth.openai.com, die Anmeldung blieb unveraendert und wurde nicht zurueckgeschrieben. Vorhersagen: P1, P4, P5, P7 bis P12, P14, P15 eingetreten; P2, P6, P13 nicht; P3 nicht pruefbar. Zeiten: Bau 8 s, Probe 95 s, davon codex 62 s (441 207 und 158 452 Eingabe-Token).",
+  "meaning": "Probe 7 zeigt den Ablauf von Fassung 6b und 6c technisch durchgaengig und findet drei Punkte, die nur eine echte Sitzung zeigt: eine neue Ereignisart bei resume, Anfragen von codex an einen OpenAI-Inhaltsdienst ausserhalb der in GR19 genannten Domains und ein fehlendes update_plan in codex exec. Das arbeitende Proxyprotokoll aus Fassung 6b war noetig, um den zweiten Punkt zu sehen. Nach der Erwartung bestimmt die Leitung die Ursache mit Beleg; eine Regelaenderung geht nur ueber eine Fassung 7 mit Revisionsprotokoll (nach L5 nur technische Korrekturen, eingestuft nach Nachtrag 27, das Kennzeichen setzt S0 Runde 4). Die Aufnahme von thread_settings_applied oder oaiusercontent.com waere eine Lockerung und darf nicht nach dem Befund still erfolgen. Probe 7 ist keine Qualifikation des Erzeugers und zaehlt nicht nach A10.8.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260925/ks-1-gen-s0/probe7-vorbereitung/lauf-20260926-235053/AUSWERTUNG-PROBE7.md",
+      "sha256": "03382e816c03f8acce792f379d2f6d27bfa73b4bf96a3ffeec01d44b363dbb96"
+    },
+    {
+      "path": "coordination/vertraege-20260925/ks-1-gen-s0/probe7-vorbereitung/lauf-20260926-235053/GUELTIGKEIT-7.json",
+      "sha256": "17cc0ce5544409ad2c7703e74ec45a2339daee6e8b27a96bb8afb02c72150685"
+    },
+    {
+      "path": "coordination/vertraege-20260925/ks-1-gen-s0/probe7-vorbereitung/lauf-20260926-235053/SHA256SUMS-PROBE7.txt",
+      "sha256": "7dd408c4fdf1b7ca85a75a4c9dfc732561d569e75e2e18e040a863ab54ce24fd"
+    },
+    {
+      "path": "coordination/vertraege-20260925/ks-1-gen-s0/probe7-vorbereitung/lauf-20260926-235053/ts440-prot/PROBE7-20260926-235053/umgebung/PROXY-LOG-7.txt",
+      "sha256": "73313a3dd79c2cff839bddf4fe13abcf90acb53bc8473dfd463f974909f5ca10"
+    },
+    {
+      "path": "coordination/vertraege-20260925/ks-1-gen-s0/probe7-vorbereitung/ERWARTUNG-PROBE7.json",
+      "sha256": "be1d34ea029a5d8e297e6413b6b813da540edfe4b375de08cf03151e94851176"
+    },
+    {
+      "path": "coordination/vertraege-20260925/ks-1-gen-s0/probe7-vorbereitung/ERWARTUNG-PROBE7-NACHTRAG-F6b.json",
+      "sha256": "0aad67a8e8bbc19352f9c898bded5a9c38a1fa2760f466148c5e2422d5a7ed0c"
+    },
+    {
+      "path": "coordination/vertraege-20260925/ks-1-gen-s0/container-ts440-f6/BAU-PROXY.txt",
+      "sha256": "719a6d0afeb0a6e0bc55ecc00c1a5acda6b064bcc655550f41fc452d5853b7fe"
+    },
+    {
+      "path": "coordination/vertraege-20260925/ks-1-gen-s0/belege/f6b-probe7-vorpruefung/BEFUND-VORPRUEFUNG-20260926.md",
+      "sha256": "2ccdde4442b0c5005e1468b90fe83e37b63dac9a0d865bca5b478aa224387dc8"
+    },
+    {
+      "path": "coordination/vertraege-20260925/ks-1-gen-s0/SHA256SUMS-F6c",
+      "sha256": "1d46bfebc16110f03617351a2106663487f92c93a67d9fc3db4152355cac500b"
+    },
+    {
+      "path": "coordination/vertraege-20260925/KS-1-GEN-VERTRAG.md",
+      "sha256": "4e6ad8aac323fb953ef23c888cd719dfa6eb568c59307b37c02d9bdcd1dbd8e6"
+    }
+  ],
+  "recorded_at": "2026-09-26T21:57:26.332008+00:00"
+}

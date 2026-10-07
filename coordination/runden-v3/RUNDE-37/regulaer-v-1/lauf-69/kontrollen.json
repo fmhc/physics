@@ -1,0 +1,142 @@
+{
+ "b_zufall": [
+  {
+   "saat": 0,
+   "pruefung": {
+    "ecken": 40,
+    "kanten": 304,
+    "flaechen": 528,
+    "tetraeder": 264,
+    "flaechen_je_anzahl_tetraeder": {
+     "2": 528
+    },
+    "volumen_summe": 0.9999999999999998,
+    "tet_vol_min": 6.730378272790977e-05,
+    "tet_vol_max": 0.021257665948344582,
+    "euler": 0,
+    "volumen_soll": 1.0
+   },
+   "g0_min": 0.00013977722138493187,
+   "n_neg": 0,
+   "zulaessig": true,
+   "lp_t_max": 0.0018852767146376054,
+   "lp_kasten": false
+  },
+  {
+   "saat": 1,
+   "pruefung": {
+    "ecken": 40,
+    "kanten": 314,
+    "flaechen": 548,
+    "tetraeder": 274,
+    "flaechen_je_anzahl_tetraeder": {
+     "2": 548
+    },
+    "volumen_summe": 0.9999999999999994,
+    "tet_vol_min": 1.979598301366519e-05,
+    "tet_vol_max": 0.017923421950623332,
+    "euler": 0,
+    "volumen_soll": 1.0
+   },
+   "g0_min": 4.4784367277922454e-05,
+   "n_neg": 0,
+   "zulaessig": true,
+   "lp_t_max": 0.0007248912567087809,
+   "lp_kasten": false
+  },
+  {
+   "saat": 2,
+   "pruefung": {
+    "ecken": 40,
+    "kanten": 323,
+    "flaechen": 566,
+    "tetraeder": 283,
+    "flaechen_je_anzahl_tetraeder": {
+     "2": 566
+    },
+    "volumen_summe": 0.9999999999999998,
+    "tet_vol_min": 0.00011188312583952088,
+    "tet_vol_max": 0.014118984996464719,
+    "euler": 0,
+    "volumen_soll": 1.0
+   },
+   "g0_min": 1.575067445499373e-05,
+   "n_neg": 0,
+   "zulaessig": true,
+   "lp_t_max": 0.0015444904651805008,
+   "lp_kasten": false
+  }
+ ],
+ "c_mutter": {
+  "pruefung": {
+   "ecken": 12,
+   "kanten": 42,
+   "flaechen": 52,
+   "tetraeder": 21,
+   "flaechen_je_anzahl_tetraeder": {
+    "2": 32,
+    "1": 20
+   },
+   "volumen_summe": 5.196152422706634,
+   "tet_vol_min": 0.1443375672974064,
+   "tet_vol_max": 0.43301270189221924
+  },
+  "innere_flaechen": 32,
+  "lp_status": 0,
+  "t_max": -3.2646654310396736e-08,
+  "kasten_aktiv": true,
+  "g0_min": -9.325000362991887e-07,
+  "2d": {
+   "orientierungen": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "flaechensumme": 5.196152422706632,
+   "aussen": 5.196152422706632
+  }
+ },
+ "c2_mutter_delaunay": {
+  "pruefung": {
+   "ecken": 12,
+   "kanten": 52,
+   "flaechen": 76,
+   "tetraeder": 35,
+   "flaechen_je_anzahl_tetraeder": {
+    "2": 64,
+    "1": 12
+   },
+   "volumen_summe": 5.350893492412065,
+   "tet_vol_min": 0.0003451604638961077,
+   "tet_vol_max": 0.4404743728004607
+  },
+  "innere_flaechen": 64,
+  "lp_status": 0,
+  "t_max": 0.003538356084932248,
+  "kasten_aktiv": true,
+  "g0_min": 0.003136119025219708
+ },
+ "_meta": {
+  "argv": [
+   "code/rv.py",
+   "kontrollen",
+   "lauf/kontrollen.json"
+  ],
+  "python": "3.12.3",
+  "numpy": "2.4.4",
+  "scipy": "1.18.0",
+  "host": "ubuntu-auto",
+  "laufzeit_s": 2.231661081314087,
+  "sha256": {
+   "rv.py": "237a98e58b5c57652f6243e25c038c20a37f709ef2b1784ea9492a87559a7481",
+   "ew.py": "fa7b6417d39177102f0b19c5474453cd16a7595e23bc25ca548e081c4060b142",
+   "tp.py": "419d7da6caa211c721eb6a8c87403977415cf3050f03365377f51cb77b374dfd",
+   "danzer_naeherung.py": "0571953eb693f87e6989d76dd59852bfbe832da1fedf0a46e3da144c63c8fc24",
+   "licht_netz.py": "98d3960a174fe9d077d32d79acf096b2c611c19f69dd13fb0d7d1a517f436146"
+  }
+ }
+}

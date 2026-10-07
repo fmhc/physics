@@ -1,0 +1,23 @@
+#!/bin/bash
+# TT-GLAS-2, einmalige Laufkette A, Spur p4000a (kein Dienst, kein Timer). Jeder Lauf ueber kleintest.sh (<= 600 s).
+# Schlusszeit: nach 2026-10-05 06:50:00 UTC (08:50 CEST) startet kein neuer Lauf.
+set -u
+cd /home/fmh/fmhc-physics-remote/tt-glas-2 || exit 1
+K=/home/fmh/fmhc-physics-remote/kleintests/kleintest.sh
+SCHLUSS=$(date -u -d '2026-10-05 06:50:00' +%s)
+lauf() {
+  local name=$1; shift
+  if [ "$(date -u +%s)" -ge "$SCHLUSS" ]; then echo "$name nicht gestartet (Schlusszeit) $(date -u +%H:%M:%S)"; return; fi
+  bash "$K" p4000a "$name" "$@" > "lauf/$name.log" 2>&1
+  echo "$name rc=$? $(date -u +%H:%M:%S)"
+}
+for s in 1 2 3 4 5 6; do
+  lauf tg2-bz256-s$s code/bz.py --N 256 --saat $s --out lauf/bz-N256-s$s.json
+done
+lauf tg2-dk256-A code/dk.py --N 256 --saaten 1,2,3,4,5,6 --out lauf/dk
+lauf tg2-dk512-A code/dk.py --N 512 --saaten 1,2 --out lauf/dk
+for s in 1 3; do
+  lauf tg2-dk1024-s$s-r0 code/dk.py --N 1024 --saaten $s --ridx 0-6 --varianten a --ohne_lin --out lauf/dk-N1024-s$s-r0.json
+  lauf tg2-dk1024-s$s-r1 code/dk.py --N 1024 --saaten $s --ridx 7-12 --varianten a --ohne_lin --out lauf/dk-N1024-s$s-r1.json
+done
+echo "kette A ende $(date -u +%H:%M:%S)"

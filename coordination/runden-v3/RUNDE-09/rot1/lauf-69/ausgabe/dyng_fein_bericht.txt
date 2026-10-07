@@ -1,0 +1,51 @@
+ROT-1 dyng fein. Start 2026-09-30T06:32:11+00:00, Ende 2026-09-30T06:32:52+00:00, Quadro P4000, torch 2.5.1+cu121
+dx 0.2, dt 0.025, L 38.4, n 384, T 400.0 (erreicht 400.0, Abbruch durch Budget: False), Profile 0.0 s, Entwicklung 39.9 s, zusammen 40.3 s; Hochrechnung x20 799 s
+radial: letzter Stand -1 Iterationen, Residuum max 7.5e-13
+
+lauf | g | Q1_0 | Q2_0 | J_0/Q | omega1 | omega2 | t_teilung | t_Q_halb | Klumpen Ende | l_dom | gamma(l_dom) | t(A=0,1) | d12 max | t(d12>1) | Wirbel zentral | t Wirbel weg | psi2-Wirbel max | Bilanz Q/E(nach Rampe)/J | Q geschluckt
+Q199_g+0.5 | 0.5 | 149.54 | 49.84 | 0.7500 | 0.77003 | 0.69159 | 75 | 218 | 2 | 2 | - | 24 | 2.678 | 215 | 0.19 | 80 | 8 | 2.7e-04/8.3e-04/7.8e-03 | 0.075
+
+A_l: je l Rate gamma, t(A_l = 0,1), Maximum
+Q199_g+0.5: l1 0.0140/214/0.787; l2 -/24/0.934; l3 -0.0003/214/0.367; l4 0.1194/39/0.765; l5 0.0041/216/0.122; l6 0.1220/51/0.541
+
+Fensterwerte (Q1w, Q2w, J/Q, E/Q, omega1, omega2, Cw, A2, d12) zu festen Zeiten:
+  Q199_g+0.5 t0: 149.542 49.844 0.7499 0.8329 0.77003 0.69159 -0.0740 0.0046 0.049
+  Q199_g+0.5 t50: 103.233 95.942 0.7464 0.8051 0.71078 0.66018 24.2538 0.4453 0.027
+  Q199_g+0.5 t100: 101.661 89.145 0.4426 0.7841 0.70765 0.70004 27.7317 0.7767 0.258
+  Q199_g+0.5 t250: 46.867 46.055 0.0504 0.7722 0.68415 0.68196 13.9311 0.0281 0.968
+  Q199_g+0.5 t400: 43.248 48.995 0.0360 0.7690 0.68597 0.69206 13.8625 0.0435 0.558
+
+Musterdrehung: Omega_P = d arg P/dt gegen omega1 - omega2 (Fenstermittel), Q1/Q, Cw:
+  Q199_g+0.5 [60, 160]: Omega_P 0.00743, omega1-omega2 -0.00078, Q1/Q 0.4859, Cw 27.1965
+  Q199_g+0.5 [200, 400]: Omega_P 0.13332, omega1-omega2 0.00044, Q1/Q 0.5015, Cw 14.8990
+  Q199_g+0.5 [200, 400]: Omega_P 0.13332, omega1-omega2 0.00044, Q1/Q 0.5015, Cw 14.8990
+
+Waende je Kreis (r: F90, r k_eff, k_eff, S an der Wand, Minderheit rel., Windung Delta, Mischung, Wechsel):
+  Q199_g+0.5 [0, 0]:
+     r 1.5: F90 0.258, rk 0.98, k 0.655, S 0.777, minder 0.996, W -1.00, W1 1.00, W2 0.00, mix 0.267, wechsel 2
+     r 2.5: F90 0.289, rk 1.00, k 0.400, S 0.880, minder 1.001, W -1.00, W1 1.00, W2 0.00, mix 0.488, wechsel 2
+     r 3.5: F90 0.285, rk 0.99, k 0.283, S 0.938, minder 0.993, W -1.00, W1 1.00, W2 0.00, mix 0.323, wechsel 2
+     r 4.5: F90 0.273, rk 0.98, k 0.218, S 0.932, minder 0.987, W -1.00, W1 1.00, W2 0.00, mix 0.225, wechsel 2
+     r 5.5: F90 0.262, rk 0.98, k 0.178, S 0.808, minder 0.991, W -1.00, W1 1.00, W2 0.00, mix 0.170, wechsel 2
+     r 6.5: F90 0.234, rk 0.97, k 0.149, S 0.502, minder 0.998, W -1.00, W1 1.00, W2 0.00, mix 0.140, wechsel 2
+  Q199_g+0.5 [60, 160]:
+     r 1.5: F90 0.140, rk 0.73, k 0.486, S 0.093, minder 0.275, W -0.10, W1 0.10, W2 -0.00, mix 0.135, wechsel 2
+     r 2.5: F90 0.116, rk 0.48, k 0.193, S 0.052, minder 0.343, W -0.10, W1 0.10, W2 0.00, mix 0.226, wechsel 2
+     r 3.5: F90 0.118, rk 0.39, k 0.111, S 0.026, minder 0.251, W 0.24, W1 -0.05, W2 0.19, mix 0.282, wechsel 2
+     r 4.5: F90 0.134, rk 0.10, k 0.023, S 0.014, minder 0.097, W 0.00, W1 0.10, W2 0.10, mix 0.316, wechsel 2
+     r 5.5: F90 0.158, rk 0.04, k 0.008, S 0.011, minder 0.035, W -0.14, W1 0.33, W2 0.19, mix 0.338, wechsel 2
+     r 6.5: F90 0.178, rk 0.03, k 0.005, S 0.010, minder 0.020, W -0.38, W1 0.57, W2 0.19, mix 0.352, wechsel 2
+  Q199_g+0.5 [200, 400]:
+     r 1.5: F90 0.917, rk 0.57, k 0.383, S 0.001, minder 0.098, W 0.07, W1 -0.07, W2 0.00, mix 0.444, wechsel 0
+     r 2.5: F90 0.871, rk 0.47, k 0.186, S 0.001, minder 0.060, W 0.05, W1 -0.05, W2 -0.00, mix 0.437, wechsel 0
+     r 3.5: F90 0.315, rk 0.41, k 0.116, S 0.001, minder 0.084, W 0.05, W1 -0.05, W2 -0.00, mix 0.419, wechsel 0
+     r 4.5: F90 0.114, rk 1.21, k 0.268, S 0.002, minder 0.531, W -0.00, W1 -0.00, W2 -0.00, mix 0.392, wechsel 0
+     r 5.5: F90 0.075, rk 1.54, k 0.281, S 0.006, minder 1.258, W -0.05, W1 0.05, W2 0.00, mix 0.352, wechsel 0
+     r 6.5: F90 0.065, rk 0.49, k 0.076, S 0.013, minder 0.467, W -0.05, W1 0.05, W2 -0.00, mix 0.300, wechsel 0
+  Q199_g+0.5 [200, 400]:
+     r 1.5: F90 0.917, rk 0.57, k 0.383, S 0.001, minder 0.098, W 0.07, W1 -0.07, W2 0.00, mix 0.444, wechsel 0
+     r 2.5: F90 0.871, rk 0.47, k 0.186, S 0.001, minder 0.060, W 0.05, W1 -0.05, W2 -0.00, mix 0.437, wechsel 0
+     r 3.5: F90 0.315, rk 0.41, k 0.116, S 0.001, minder 0.084, W 0.05, W1 -0.05, W2 -0.00, mix 0.419, wechsel 0
+     r 4.5: F90 0.114, rk 1.21, k 0.268, S 0.002, minder 0.531, W -0.00, W1 -0.00, W2 -0.00, mix 0.392, wechsel 0
+     r 5.5: F90 0.075, rk 1.54, k 0.281, S 0.006, minder 1.258, W -0.05, W1 0.05, W2 0.00, mix 0.352, wechsel 0
+     r 6.5: F90 0.065, rk 0.49, k 0.076, S 0.013, minder 0.467, W -0.05, W1 0.05, W2 -0.00, mix 0.300, wechsel 0

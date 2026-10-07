@@ -1,0 +1,109 @@
+{
+  "id": "claude-runde-v3-13-20261001",
+  "time": "2026-10-01T22:58:15+02:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung, Karten, Abschaetzung, Schreibtisch AFM-BREITE und QUARK-1-Berichtigung; Code- und Recherche-Agenten Anthropic (Opus 5.5); frische Leser pruefer-opus (vier Lesungen der letzten Schicht); Codex (OpenAI) mit Fremdlesung SPIN2-D4, Dreikanal-Vorpruefung und Paper v0.13 bis v0.17",
+  "topic": "theory",
+  "status": "reported",
+  "evidenzart": "modell",
+  "title": "Runde 13 nach v3 (explorativ): 3D-Leiter n = 7 bis 10 mit Vorzeichenwechsel und Umlauf belegt; B-Ball-Potential hat eine eigene stille Stelle (nicht dieselbe wie die Sextik-Stelle); Breitengesetz im AFM-Ball traegt; stille Stelle wandert unter Eigengravitation stark (Regel: unentschieden); CEMZ-Kopplung der Glieder 7 und 10 in D = 4 bedingt (Nachtrag WARUM-SPIN-2)",
+  "question": "Zeigt der Vorzeichentest mit feiner Abtastung die 3D-Stellen n = 7 bis 10? Hat ein Q-Ball im flachen Log-Potential stille Stellen, und ist es dieselbe wie im Sextik-Modell? Folgt die AFM-Strahlungsbreite einem Groessengesetz? Ueberlebt die stille Stelle schwache Eigengravitation? Gilt die CEMZ-Kopplung der Glieder 7 und 10 in D = 4, und traegt die IR-endliche M_E-Methode dafuer?",
+  "action": "Finn 01.10. (schau die neuesten arXiv-Ergebnisse an; mach weiter). Karten mit Regel und Vorhersage vor jedem Lauf bzw. Abruf (LEITER-3D-PRAEZ 19:06:21, B-BALL 19:06:50, AFM-BREITE 19:10:30, B-BALL-2 19:40:07, 2b 20:02:46, 2c 20:15:53, SPIN2-D4 20:11:57, Q-STERN 20:12:26, SPIN2-D4-2 21:27:52). Laeufe auf der .69 ueber kleintest.sh; Plaene vor dem ersten Lauf eingefroren. Fremdlesungen durch Codex (AFM-KANAL-2, LLR-Nachtrag, SPIN2-D4); vier frische Lesungen der letzten Schicht vor dem Spin-2-Nachtrag.",
+  "result": "LEITER-3D-PRAEZ: n = 7, 8, 9, 10 gesehen bei omega^2 = 0,5598482 / 0,5526191 / 0,5469399 / 0,5423644, Umlauf -1/+1/-1/+1, Abstand zu den Breitenminima <= 2,7e-6; n = 6 neu bei 0,5693598. B-BALL: nach Regel nicht gesehen in den Baendern bis 0,80; Log-Stelle nachtraeglich bei 0,925610 (Umlauf -1); Mischpotential: stetig bis t = 0,75, bei t = 0,9 bis 0,975 laeuft die Sextik-Stelle nach unten (0,868, 0,861, 0,848, 0,823), Ausgang 2c Falte. AFM-BREITE: ln Gamma_med = 2,549 - 2,860/sqrt(1 - Omega^2) traegt fuer fuenf neue Mitglieder (Abweichung <= 0,29 Dekaden, c = 2,78 bei kappa = -0,15). Q-STERN: unentschieden fuer alpha = 0,01/0,03/0,1 (Lokalisierung nicht budgetiert); gemessen alpha = 0,01: ~0,7528 (-0,045), Kompaktheit ~0,10. SPIN2-D4: D = 4-Fassungen vorhanden (CEMZ Abschn. 3.5 und Fn. 23; Caron-Huot u. a. 2022 mit IR-Schnitt), Annahmen umstritten (Bellazzini u. a. 2025/26). SPIN2-D4-2: M_E traegt externe Gravitonen, g^3 nur mit neuer Annahme (Meromorphie oder Unitaritaet eine Ordnung weiter).",
+  "meaning": "Explorativ, keine Messdaten. Die 3D-Leiter steht von n = 6 bis 10 auf zwei Kriterien (gemeinsamer Code). Eine stille Stelle gibt es auch im B-Ball-Potential, aber nicht als stetige Fortsetzung der Sextik-Stelle; die Log-Stelle ist nur nachtraeglich gefunden. Die AFM-Fast-Stille ist ein Groessengesetz im Abstand zur Luecke. Unter Eigengravitation reagiert die Stelle stark; die Pruefung braucht eine neue Karte mit Kompaktheitsziel und voller Rechnung. Die Kopplung der Glieder 7 (massive Fassung) und 10 gilt in D = 4 nur unter umstrittenen Kausalitaets-, IR- und UV-Annahmen; die fehlende Rechnung (Spin-2/3-Summenregeln in M_E-Form) ist benannt.",
+  "sources": [
+    {
+      "path": "coordination/runden-v3/RUNDE-13.md",
+      "sha256": "b0d173a229778a1c2b22b174831bb918eeaf1fd54ef78606b8f93335d228202b"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-13/leiter3d-praez/KARTE.md",
+      "sha256": "e93229ef17b30d30268bc8ba226de2ec36ecbb8bba9714d41b54f67db700ad1b"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-13/leiter3d-praez/ERGEBNIS.md",
+      "sha256": "2e428ccfbff1c26623e4b83caa3d8adee74b0f99467a69b2e6e9d6814ef0e037"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-13/bball-leiter/KARTE.md",
+      "sha256": "2794de28cf18ce6395a00b2bed67836d15c61d6b0d1f16ff36a65b71e25ab811"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-13/bball-leiter/ERGEBNIS.md",
+      "sha256": "99b43cd3c55a38ac94125bf9c1d9a15b0f8b9fc7a1063bc154f248d1be442c4f"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-13/bball-leiter/KARTE-2-INTERPOLATION.md",
+      "sha256": "0372c934319ec29208e1c47228244fe91c2e402e4c583dced1354378fb7ad3cc"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-13/bball-leiter/KARTE-2B-LETZTES-VIERTEL.md",
+      "sha256": "5026a6a352c4314e5208e4b2368943486f303e6cf0d0de98279df8ffc90e70a2"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-13/bball-leiter/KARTE-2C-LETZTES-ZEHNTEL.md",
+      "sha256": "066189956fd4d94a09bb56b58f80456fe8719c387c0284e0f0eb919bf3b9cff2"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-13/bball-leiter/ERGEBNIS-KARTE2.md",
+      "sha256": "4b8bfa8eba087d1926af60dccfa222d6a489d740fa4a321ac13ba1de8e61fbc8"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-13/afm-breite/KARTE.md",
+      "sha256": "478efc501c62912378392f41d5f3a403e81043e6e009cba60e8ddea9d340a80e"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-13/afm-breite/auswertung.jsonl",
+      "sha256": "b241c043c51b0cf792f18e2d0f2bf33c1625962de3d9b87a142edd43b4000d3e"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-13/q-stern/KARTE.md",
+      "sha256": "237da761ef12d0b032b9f1bf2d34812ef93e42176759e6ec5301536c1de8d29c"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-13/q-stern/ERGEBNIS.md",
+      "sha256": "d07596710752fc3882c5daa215013b86e49e54a1d4711f86d609e901a6725a8a"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-13/q-stern/HERLEITUNG.md",
+      "sha256": "269db82fdd0c75a1094f308908f1add6faf10057963f460352865343ade23905"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-13/spin2-d4/KARTE.md",
+      "sha256": "fd5ae70f4237250dcb575751538c47b0eb48f7bb0424cd40875cdd2a6fd41e27"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-13/spin2-d4/SPIN2-D4.md",
+      "sha256": "232a99d7c9fb6527a2b17a5bf4e9b3f704b260957ce8c0294a1802c8acd97ed6"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-13/spin2-d4/codex-lesung/LESUNG.md",
+      "sha256": "82867014e9aab24cd19839ff9df898c80f75a5bef594e5349d58e9da42b192b8"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-13/spin2-d4/NACHTRAG-ENTWURF-V5.md",
+      "sha256": "27e8d924a91139b2b3f9dad1993ced8264783909439e12c907ed4a6901978b58"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-13/spin2-d4/LESUNG-LETZTE-SCHICHT-V4.md",
+      "sha256": "7e682b2802c7075ac360cdd0cb6212caef25e0d5be4cff56ed6a8915a34f1b06"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-13/spin2-d4-2/KARTE.md",
+      "sha256": "a621091e29403b9e8ad869838691a4bd09d0877cde802023540ead9422bb3ba4"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-13/spin2-d4-2/SPIN2-D4-2.md",
+      "sha256": "fb336b8632c6295b8db9e2c1681b8c767b8a8b4f24b684e894234e46aad31bf2"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-12/quark1/QUARK-1.md",
+      "sha256": "9f837a576ba05b37aeba9ffd25c9f8924e50615156cd69cd9331f6b130462c64"
+    },
+    {
+      "path": "coordination/art-grenzen-20260921/WARUM-SPIN-2.md",
+      "sha256": "c333aa97b1be9c3d682fa7455b28c25431a268443ae6eac9667cdf92969e96b4"
+    }
+  ],
+  "recorded_at": "2026-10-01T20:58:16.256415+00:00"
+}

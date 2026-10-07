@@ -1,0 +1,22 @@
+Runde 6 M1 medium1d.py nische Start 2026-09-30T01:55:12+00:00 auf Quadro P4000, torch 2.5.1+cu121, Zeitfaktor 1.0, Stufen grob/fein
+
+nische (Bio 21): Medium C = 0,15 + dC sin(2 pi x/lambda) (aeusseres W, glatt eingeschaltet), Ball in Falle bei x = 0 (Nulldurchgang), Falle geloest auf (200.0, 250.0). Delle bei -lambda/4, Buckel bei +lambda/4. T_harmonisch = 2 pi/sqrt(|lam| N dC k^2/E); Pendel mit 90 Grad Ausschlag: x 1,18.
+  Lauf | x frei | x min .. max | x Ende | Umkehrpunkte (t, x) | Halbperiode | Amplitudenverh. | T_harm.
+  [grob]
+  lam=+0.1 sanft (dC 0,02, 30) | -0.100 | -14.934 .. -0.100 | -0.389 | (792, -14.93) | nan | nan | 842
+  lam=-0.1 sanft               | +0.109 | +0.090 .. +14.916 | +0.092 | (763, +14.92) | nan | nan | 842
+  lam=+0.2 steil (dC 0,05, 60) | -0.305 | -30.644 .. +1.036 | +0.086 | (748, -30.64), (1254, +1.04) | 507.0 | 1.044 | 753
+  lam=0                        | +0.000 | -0.000 .. +0.000 | -0.000 | (328, -0.00), (343, -0.00), (361, -0.00), (380, -0.00) | 15.0 | 0.990 | nan
+  Spiegel lam=+0.1             | +0.100 | +0.100 .. +14.934 | +0.389 | (792, +14.93) | nan | nan | 842
+  Medium allein                | +0.000 | +0.000 .. +0.000 | +0.000 |  | nan | nan | 842
+  [fein]
+  lam=+0.1 sanft (dC 0,02, 30) | -0.100 | -14.934 .. -0.100 | -0.390 | (792, -14.93) | nan | nan | 842
+  lam=-0.1 sanft               | +0.109 | +0.090 .. +14.916 | +0.091 | (763, +14.92) | nan | nan | 842
+  lam=+0.2 steil (dC 0,05, 60) | -0.305 | -30.642 .. +1.021 | +0.079 | (748, -30.64), (1254, +1.02) | 507.0 | 1.044 | 753
+  lam=0                        | +0.000 | +0.000 .. +0.000 | +0.000 | (324, +0.00), (343, +0.00), (361, +0.00), (380, +0.00) | 19.0 | 0.990 | nan
+  Spiegel lam=+0.1             | +0.100 | +0.100 .. +14.934 | +0.390 | (792, +14.93) | nan | nan | 842
+  Medium allein                | +0.000 | +0.000 .. +0.000 | +0.000 |  | nan | nan | 842
+  L3 (Effekt >= 5 x Aenderung grob -> fein): 6 von 6 Kenngroessen bestanden
+  Rechenzeit grob 72.3 s, fein 132.5 s
+
+Ende 2026-09-30T01:58:37+00:00, Dauer 205.1 s, Torch-Speicher max 51 MB, Fehler in: keine

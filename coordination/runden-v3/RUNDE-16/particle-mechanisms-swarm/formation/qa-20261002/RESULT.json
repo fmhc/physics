@@ -1,0 +1,217 @@
+{
+  "status": "NUMERICALLY_UNRESOLVED_REFERENCE_INITIAL",
+  "arms": [],
+  "model": "FADEN-KERN-1 / BEUTEL-1 M2",
+  "code_sha256": "ea841390a6dff7f6d552d00e7e79c4c3fdc1f67ec36cb4924bb20701fb979af3",
+  "pid": 1991968,
+  "host": "ubuntu-auto",
+  "execution": "CPU numpy float64",
+  "qa": {
+    "energy_variation": 2.112809927012904e-12,
+    "Q_derivative_error": 7.646059044584088e-18,
+    "flux_derivative_error": 3.823029522292044e-18,
+    "vacuum_exact": true,
+    "time_steps": 0
+  },
+  "reference": {
+    "path": "M2-profile.npz",
+    "sha256": "1bb153a166e15d8ca43848613e638e8e0d20978833be6c564dcf7bc33f926d8c",
+    "row": 0,
+    "original_dtype": "float32",
+    "sampled_dr": 0.16,
+    "stored_omega": 1.0181665421550101,
+    "stored_Q": 1100.0,
+    "interpolation": "linear; constant left; vacuum right"
+  },
+  "initial_checks": [
+    {
+      "level": "base",
+      "h": 0.1,
+      "dt": 0.02,
+      "kind": "reference",
+      "preparation": {
+        "omega": 1.0183432341810634,
+        "original_omega": 1.0181665421550101,
+        "omega_correction": 0.00017669202605330447,
+        "Q_normalized": true
+      },
+      "diagnostics": {
+        "E": 1212.9717487371727,
+        "Q": 1100.0,
+        "Qcore": 1099.999812375107,
+        "omega": 1.0183432341810639,
+        "rphi": 0.04910521797591394,
+        "rchi": 0.04682291759728452,
+        "tphi": 3.2921648969206296e-16,
+        "tchi": 0.0,
+        "driftphi": 0.0,
+        "driftchi": 0.0,
+        "chimin": 0.01974835665896535,
+        "chi0": 0.01974835665896535,
+        "r50": 3.6643447049033147,
+        "rphi_max": 0.13920549086147793,
+        "rchi_max": 0.08324442976159456,
+        "collar": 0.0
+      },
+      "Q_pass": true,
+      "reference_residual_pass": false
+    },
+    {
+      "level": "base",
+      "h": 0.1,
+      "dt": 0.02,
+      "kind": "cloud",
+      "preparation": {
+        "omega": 1.4142135623730951,
+        "Q_normalized": true
+      },
+      "diagnostics": {
+        "E": 1546.6893779273594,
+        "Q": 1100.0000000000005,
+        "Qcore": 866.4921820062989,
+        "omega": 1.4142135623730951,
+        "rphi": 0.04692543306572182,
+        "rchi": 426701094969459.1,
+        "tphi": 0.0,
+        "tchi": 0.0,
+        "driftphi": 0.0,
+        "driftchi": 0.0,
+        "chimin": 1.0,
+        "chi0": 1.0,
+        "r50": 8.651105356185287,
+        "rphi_max": 0.07313669332598616,
+        "rchi_max": 0.2728064555823338,
+        "collar": 3.0532057780125847e-81
+      },
+      "Q_pass": true,
+      "reference_residual_pass": true
+    },
+    {
+      "level": "space",
+      "h": 0.05,
+      "dt": 0.02,
+      "kind": "reference",
+      "preparation": {
+        "omega": 1.018429612406946,
+        "original_omega": 1.0181665421550101,
+        "omega_correction": 0.00026307025193594846,
+        "Q_normalized": true
+      },
+      "diagnostics": {
+        "E": 1213.0682077531822,
+        "Q": 1100.0000000000002,
+        "Qcore": 1099.999812168436,
+        "omega": 1.018429612406946,
+        "rphi": 0.16646403038408877,
+        "rchi": 0.15920958777460575,
+        "tphi": 0.0,
+        "tchi": 0.0,
+        "driftphi": 0.0,
+        "driftchi": 0.0,
+        "chimin": 0.01972035295329988,
+        "chi0": 0.01972035295329988,
+        "r50": 3.6894113410631313,
+        "rphi_max": 0.614224498183987,
+        "rchi_max": 0.3610794173673315,
+        "collar": 0.0
+      },
+      "Q_pass": true,
+      "reference_residual_pass": false
+    },
+    {
+      "level": "space",
+      "h": 0.05,
+      "dt": 0.02,
+      "kind": "cloud",
+      "preparation": {
+        "omega": 1.4142135623730951,
+        "Q_normalized": true
+      },
+      "diagnostics": {
+        "E": 1546.6896004441546,
+        "Q": 1100.0000000000002,
+        "Qcore": 866.4835584371056,
+        "omega": 1.4142135623730954,
+        "rphi": 0.04692505063100526,
+        "rchi": 426700067863124.9,
+        "tphi": 1.7031565641961547e-16,
+        "tchi": 0.0,
+        "driftphi": 0.0,
+        "driftchi": 0.0,
+        "chimin": 1.0,
+        "chi0": 1.0,
+        "r50": 8.676189176239353,
+        "rphi_max": 0.07314137778352992,
+        "rchi_max": 0.2728197764485381,
+        "collar": 3.171748527785017e-81
+      },
+      "Q_pass": true,
+      "reference_residual_pass": true
+    },
+    {
+      "level": "time",
+      "h": 0.1,
+      "dt": 0.01,
+      "kind": "reference",
+      "preparation": {
+        "omega": 1.0183432341810634,
+        "original_omega": 1.0181665421550101,
+        "omega_correction": 0.00017669202605330447,
+        "Q_normalized": true
+      },
+      "diagnostics": {
+        "E": 1212.9717487371727,
+        "Q": 1100.0,
+        "Qcore": 1099.999812375107,
+        "omega": 1.0183432341810639,
+        "rphi": 0.04910521797591394,
+        "rchi": 0.04682291759728452,
+        "tphi": 3.2921648969206296e-16,
+        "tchi": 0.0,
+        "driftphi": 0.0,
+        "driftchi": 0.0,
+        "chimin": 0.01974835665896535,
+        "chi0": 0.01974835665896535,
+        "r50": 3.6643447049033147,
+        "rphi_max": 0.13920549086147793,
+        "rchi_max": 0.08324442976159456,
+        "collar": 0.0
+      },
+      "Q_pass": true,
+      "reference_residual_pass": false
+    },
+    {
+      "level": "time",
+      "h": 0.1,
+      "dt": 0.01,
+      "kind": "cloud",
+      "preparation": {
+        "omega": 1.4142135623730951,
+        "Q_normalized": true
+      },
+      "diagnostics": {
+        "E": 1546.6893779273594,
+        "Q": 1100.0000000000005,
+        "Qcore": 866.4921820062989,
+        "omega": 1.4142135623730951,
+        "rphi": 0.04692543306572182,
+        "rchi": 426701094969459.1,
+        "tphi": 0.0,
+        "tchi": 0.0,
+        "driftphi": 0.0,
+        "driftchi": 0.0,
+        "chimin": 1.0,
+        "chi0": 1.0,
+        "r50": 8.651105356185287,
+        "rphi_max": 0.07313669332598616,
+        "rchi_max": 0.2728064555823338,
+        "collar": 3.0532057780125847e-81
+      },
+      "Q_pass": true,
+      "reference_residual_pass": true
+    }
+  ],
+  "initial_gate_pass": false,
+  "cpu_seconds": 0.161486439,
+  "peak_rss_kib": 36868
+}

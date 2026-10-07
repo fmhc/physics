@@ -1,0 +1,25 @@
+{
+  "id": "claude-qh7-abschluss-kompositionszweig-20260923",
+  "time": "2026-09-23T18:52:26.902523+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5)",
+  "topic": "modelle",
+  "status": "reported",
+  "title": "QH7 schliesst den Kompositionszweig endgueltig: die genauere Rechnung macht den einzigen Bindungskandidaten schwaecher, und ihr Fehler bleibt bei der relevanten Kopplung drei- bis siebenmal groesser als das Signal",
+  "question": "Wird der schwache Bindungsindikator interpretierbar, wenn man die Stoerungsrechnung zweiter Ordnung mit echten Energienennern statt einem pauschalen Wert rechnet?",
+  "action": "Codex fuhr QH7 auf .69/P5000: korrigierte zweite Ordnung mit wechselwirkungsabhaengigen Nennern, geprueft gegen die volle Rechnung an 36 kleinen Faellen (L6, drei Kopplungen, drei Familien) und angewandt auf 36 grosse Faelle (L12/16/18). Unabhaengiges P/Q-Projektionsorakel, unabhaengige Gegenlektuere. Auflage von mir (3d43078d): Zielgroesse fuer den Modellfehler vorab nennen, unter 0,0002; sonst entscheidet auch QH7 die Frage nicht, und das ist ein vollwertiges Ergebnis.",
+  "result": "Die Korrektur verbessert 27 von 36 Grundenergien und 6 von 9 Bindungskontrasten. Bei kappa = 0,025 faellt der Kontrastfehler von 0,000652 auf 0,0000645. Bei kappa = 0,05, dem Wert aller grossen Boxen, bleiben 0,002729 - gegen einen Bindungsindikator von 0,00037901 (L12) bis 0,00086925 (L18), also Faktor drei bis sieben zu gross. Der Kontrast wird durch die Korrektur in allen drei Boxen betragsmaessig kleiner; das Gewicht des Trennkriteriums faellt von 0,29583 auf 0,24704, die inneren Gruppenlaengen steigen von 1,870 auf 2,062, der Zwischenspalt sinkt leicht auf 2,318. Alle 36 alten Energien reproduzieren QH6 bis 8,33e-17, der Unterschied ist damit isoliert.",
+  "meaning": "Der vorab gebundene Fall ist eingetreten: der Modellfehler bleibt ueber dem Signal, also entscheidet auch die genauere Rechnung die Bindungsfrage nicht. Wertvoller als ein positives Ergebnis ist, dass die bessere Naeherung den Befund schwaecht statt ihn zu stuetzen. Der Kompositionszweig ist damit abgeschlossen: keine zweite raeumliche Ebene in klassischen und einfachen quantenmechanischen Modellen mit innerem Zustand, Grund ist der Strukturkonflikt aus QH5, und der scheinbare Ausweg liegt unter dem Rauschen des Modells. Codex' eigener Schlusssatz ist die Antwort auf die urspruengliche Millionenidee: den schwachen Indikator als Sucherfolg zu fixieren und darauf Millionen Varianten zu bewerten, wuerde die ungeklaerte Modellgenauigkeit lediglich vervielfachen. Sieben Laeufe an einem Tag, jeder mit vorab gebundenen Kriterien.",
+  "compute": "Codex auf .69/P5000 CUDA-f64, Programm 10,7 s, Service 20,0 s, 180 Eigenzerlegungen; keine Rechnung von mir",
+  "sources": [
+    {
+      "path": "coordination/stabile-kompositionen-20260923/denominators-a/SMALL.json"
+    },
+    {
+      "path": "coordination/stabile-kompositionen-20260923/denominators-a/LARGE.json"
+    },
+    {
+      "path": "coordination/stabile-kompositionen-20260923/QH7-VORAB.md"
+    }
+  ]
+}

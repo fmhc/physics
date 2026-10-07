@@ -1,0 +1,23 @@
+{
+ "start": "2026-09-30T00:34:09+00:00",
+ "geraet": "Quadro P4000",
+ "torch": "2.5.1+cu121",
+ "unterbefehl": "rauch",
+ "faktor": 0.05,
+ "ergebnisse": {},
+ "fehler": {
+  "bragg": "Traceback (most recent call last):\n  File \"/home/fmh/fmhc-physics-remote/runde5-r5c/r5c.py\", line 1222, in main\n    res, zeilen, st = TESTS[name](faktor)\n                      ^^^^^^^^^^^^^^^^^^^\n  File \"/home/fmh/fmhc-physics-remote/runde5-r5c/r5c.py\", line 1027, in t_bragg\n    erg = {s: auswerten(st[s][\"t\"], st[s][\"daten\"]) for s in st}\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/fmh/fmhc-physics-remote/runde5-r5c/r5c.py\", line 1017, in auswerten\n    zz = transmission_auswerten(t, d, laeufe, ref_von, basis_von, kz)\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/fmh/fmhc-physics-remote/runde5-r5c/r5c.py\", line 935, in transmission_auswerten\n    flu = integral(t, d[:, :, c[\"j\"]].reshape(len(t), len(laeufe), 2))      # (B, 2)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/fmh/fmhc-physics-remote/runde5-r5c/r5c.py\", line 310, in integral\n    return 0.5 * ((y[1:] + y[:-1]) * dt_).sum(0)\n                  ~~~~~~~~~~~~~~~~~^~~~~\nRuntimeError: The size of tensor a (2) must match the size of tensor b (70) at non-singleton dimension 2\n",
+  "anderson": "Traceback (most recent call last):\n  File \"/home/fmh/fmhc-physics-remote/runde5-r5c/r5c.py\", line 1222, in main\n    res, zeilen, st = TESTS[name](faktor)\n                      ^^^^^^^^^^^^^^^^^^^\n  File \"/home/fmh/fmhc-physics-remote/runde5-r5c/r5c.py\", line 1107, in t_anderson\n    erg = {s: auswerten(st[s][\"t\"], st[s][\"daten\"]) for s in st}\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/fmh/fmhc-physics-remote/runde5-r5c/r5c.py\", line 1081, in auswerten\n    zz = transmission_auswerten(t, d, laeufe, lambda b: i_leer, lambda b: None, kz)\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/fmh/fmhc-physics-remote/runde5-r5c/r5c.py\", line 935, in transmission_auswerten\n    flu = integral(t, d[:, :, c[\"j\"]].reshape(len(t), len(laeufe), 2))      # (B, 2)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/fmh/fmhc-physics-remote/runde5-r5c/r5c.py\", line 310, in integral\n    return 0.5 * ((y[1:] + y[:-1]) * dt_).sum(0)\n                  ~~~~~~~~~~~~~~~~~^~~~~\nRuntimeError: The size of tensor a (2) must match the size of tensor b (220) at non-singleton dimension 2\n"
+ },
+ "sek": {
+  "bragg": 7.517962479963899,
+  "anderson": 19.59974058251828
+ },
+ "hochrechnung_s": {
+  "bragg": 150.35924959927797,
+  "anderson": 391.9948116503656
+ },
+ "ende": "2026-09-30T00:34:36+00:00",
+ "dauer_s": 27.119429945014417,
+ "torch_speicher_max_mb": 145.0390625
+}

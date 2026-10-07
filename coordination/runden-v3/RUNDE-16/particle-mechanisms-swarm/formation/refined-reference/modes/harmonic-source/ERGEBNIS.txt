@@ -1,0 +1,48 @@
+M2: lokale zweite Harmonische, 2026-10-02
+
+Reine Quellenanalyse auf .69, keine Zeitentwicklung/Eigenwertsuche.
+LOCAL_SOURCE_DIAGNOSTICS_COMPLETE auf beiden gespeicherten R120-Gittern.
+
+Die explizite quadratische Formel besteht die unabhängige Kraftprüfung:
+relative Fehler bei Schritt .02/.01/.005:
+1,06716e-5 / 2,66791e-6 / 6,66974e-7; jeweils Faktor etwa4 kleiner.
+Falscher Faktor2 ergibt Fehler etwa1, falsches Vorzeichen etwa2; beide
+Gegenproben scheitern wie verlangt. DC-/Fourierfaktoren aus acht Phasen
+stimmen mit relativen Fehlern 9,66e-17 / 3,70e-16 überein.
+Das ist eine Implementierungsprüfung bekannter Algebra, kein neuer Satz.
+
+Für die gespeicherte Mode, ||q||=1 und ausgeklammertes alpha^2:
+                         h=.1             h=.05
+ lokale Plusquellen-L2   .0063872134       .0063800605
+ lokale Minusquellen-L2 .0123203333       .0123079579
+ chi-Quellen-L2         .0012913918       .0012901750
+Die obere Quellenkombination verschwindet somit in diesen numerischen
+Profilen nicht identisch. Sie unterscheidet sich zwischen Gittern um
+rund0,11% ihrer Norm; dies ist eine Diagnose, kein Intervallbeweis.
+Gesamte J2-Profilüberlappung nach Volumenrestriction 0,9999999075;
+DC-Überlappung 0,9999999433. Keine Phasenausrichtung/Fits vorgenommen.
+
+Bei nu=2rho ist k_plus^2=1,17745/1,17789 positiv, die zwei anderen
+k^2 sind negativ. Das obere Laborseitenband liegt bei omega+2rho,
+nicht bei 2rho. Die Quellen sitzen praktisch im Kern; ihre kleinen
+äußeren Normanteile sind keine Messung bereits ausgestrahlter Energie.
+Die Anfangsamplitude des früheren Anregungstests war alpha=epsilon*s;
+die tatsächliche quadratische Quelle ist alpha^2 mal die hiesige Quelle.
+
+KEIN ABSTRAHLUNGSBEFUND
+Eine lokale Quelle kann durch den gekoppelten Hintergrund so wirken,
+dass ihre gesamte auslaufende Amplitude verschwindet. Die aktuelle
+Rechnung enthält überhaupt keinen auslaufenden Lösungsschritt. Daher
+weder Zerfall noch Lebensdauer noch Leistung aus diesen Normen ableiten.
+OUTGOING-PAPER.txt beschreibt den notwendigen nächsten Antwortoperator
+und einen nichttrivialen Nulltest mit Quelle ungleich0, aber Außenwelle0.
+Die Quellenbilanz misst dort E-omega Q; Laborenergie zusätzlich um den
+Ladungsfluss ergänzen. Diese Unterscheidung ist vor dem nächsten Lauf fest.
+
+PROVENIENZ
+Code 5ba2d7e001f6145ff5f75afedadf6850565df8fac25412f84cab1c1c1a21443f
+Result a2270a05c7270eeeb16e5fd04d12bd1367bff38af0205062b2643aea05b2a574
+Plan/Quellen/Commit in BINDUNG.txt, unabhängige Vorlesung REVIEW.txt.
+TIME.txt user=.47 system=.09 =>.56 CPU-s, wall=.57,exit0,maxRSS62688KiB.
+.69 CPU8 nice19,einThread,float64/complex128, keinCUDA. Unter5CPU-s.
+Ergebnislesung separat RESULT-REVIEW.txt. Kein Papertext verändert.

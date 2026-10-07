@@ -1,0 +1,61 @@
+Nichtautor-Papierreview, particle_binding, 02.10.2026
+Planstand laut Auftrag a58778663f20d07055f00563f214ea681b4a6350d3cf30c07c16157fcf94c408.
+Keine Rechnung oder Implementation.
+
+Urteil: die vorgeschlagene Quellenzerlegung ist prinzipiell trennscharf
+für die zwei definierten Quellgeschichten und im festen Umfang
+implementierbar. Eine enge Präzisierung der Null-Jordan-Kontrolle ist
+erforderlich; siehe unten. Kein Bedarf für zusätzliche Fälle/Gates.
+
+Mittelpunktformel: Aus q_next-q=delta(p_next+p)/2 folgt durch Einsetzen
+in die p-Gleichung genau
+[I+delta G/2+delta²K/4]q_next=
+[I+delta G/2-delta²K/4]q+delta p+delta²j_mid/2.
+Das Vorzeichen der Gyroterme und der Quellenfaktor sind richtig. Zwei
+rechte Seiten mit derselben einmal faktorisierten3N-Matrix sind dieselbe
+lineare Dynamik, keine DC-Inverse oder Nullraumprojektion. Die eigentliche
+Ladungs-/Jordanstruktur wird dadurch nicht künstlich entfernt.
+
+Die Energieidentität folgt aus Symmetrie von K und Schiefsymmetrie von G:
+DeltaH=p_mid^T Deltap+q_mid^T K Deltaq=delta p_mid^T j_mid.
+Die angegebene Summen-/Absolutarbeit-Normierung vermeidet eine Annahme
+positiver Energie. Sie kontrolliert den Diskretintegrator, nicht einen
+Strahlungsstrom. Ladungsbedingungen dürfen separat berichtet werden;
+für vorgeschriebene zeitkontinuierliche Modenquellen und endliches delta
+ist keine ungeprüfte exakte diskrete Q2-Identität zu behaupten.
+
+Konkrete Kontrollpräzisierung: Der eliminierte Adapter setzt q_t=p und
+eine ausschließlich untere Kraft voraus. Der Jordan-Test muss daher
+N=[[0,1],[0,0]], F=(0,1), X(0)=0 wählen (allgemein F=(0,f)). Dann
+q=t²/2,p=t und X=tF+t²NF/2 sind exakt kompatibel. Beliebiges F mit
+oberer Komponente wäre zwar eine gültige Matrixidentität, aber kein
+Test desselben q_t=p-Kraftadapters. Dem Autor zur Präzisierung gemeldet.
+Skalaroszillator und homogener echter Phasenanker sind passende
+zusätzliche vorhandene Kontrollen, keine positiven Physiknachweise.
+
+Quellenphase/Normierung: DC invariant, J2 und gespeichertes Sollfeld
+mit derselben tatsächlich benutzten exp(2i theta), kein erneuter Fit.
+Nullanfangsdaten für BEIDE Quellen sind entscheidend. Ihre Summe muss
+zuerst die gespeicherte gerade Antwort reproduzieren; die bloße kleine
+Uodd-Abweichung beweist dies nicht. Identischer Dirichletgenerator für
+beide Quellgeschichten macht diese Zerlegung eindeutig. H-P enthält
+dagegen auch den Unterschied zum Robin-Partikulärproblem; die gesetzte
+Deutungsgrenze ist daher notwendig und korrekt.
+
+Alle Summen-/Zeitschrittgates gelten je Schale und Originalfenster für
+komplexe Zeitfelder UND das feste positive Band. Erst nach bestandenem
+Summenvergleich ist eine Ursachenbezeichnung erlaubt. Null-/unvollständige
+Nenner bleiben offen. Fehlende neue h-Serie ist korrekt als Einschränkung
+auf das feste diskrete Problem benannt. Kein Kontinuumsnachweis.
+
+Die Identität ||Delta||²=||C||²+||H-P||²+2Re<C,H-P> ist richtig und
+verhindert erfundene additive Leistungsanteile. Die zwei prospektiven
+Dominanzregeln beschreiben die normierte Feldabweichung; sie behaupten
+keine exklusive Ursache, Lebensdauer oder bewiesene Randreflexion.
+Eine DC-Quellgeschichte kann durch ihren Nullstart Fouriergewicht im
+endlichen nu-Fenster tragen, ohne zeitinvariante lineare Frequenzmischung.
+Der lokale3CPU-Resttest bleibt ausdrücklich ausgeschlossen.
+
+90CPU-s-Schätzung bleibt eine offene Kostenannahme; Teilstände und harte
+Rootgrenze müssen im Code wie geplant umgesetzt werden. Kein Lauf durch
+diesen Review, keine Veränderung des abgeschlossenen UNRESOLVED-Status.

@@ -1,0 +1,17 @@
+Runde 9 SD-1 umlauf gebunden  Start 2026-09-30T06:49:24+00:00; sd1.py sha256 b5000e3f8a44b87e, bic2.py /home/fmh/fmhc-physics-remote/runde9-sd1/bic2.py sha256 ee1ef6d226e8ec2c, gfbic.py cb62cdfd0a62c3c1
+FEHLER:
+Traceback (most recent call last):
+  File "/home/fmh/fmhc-physics-remote/runde9-sd1/sd1.py", line 552, in main
+    erg["gebunden"] = gebunden(a, dev, zeilen, {})
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fmh/fmhc-physics-remote/runde9-sd1/sd1.py", line 395, in gebunden
+    profs = [profil_fuer(art, x, a.g, 0.5 * a.h, dev) for x in xs]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fmh/fmhc-physics-remote/runde9-sd1/sd1.py", line 227, in profil_fuer
+    return prof_nativ(w2, g, hp)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fmh/fmhc-physics-remote/runde9-sd1/sd1.py", line 191, in prof_nativ
+    raise ValueError(f"Klammer ungueltig: {zust[0]}, {zust[-1]}")
+ValueError: Klammer ungueltig: -1.0, -1.0
+
+Ende 2026-09-30T06:49:24+00:00, 0.4 s; entfallen: nichts

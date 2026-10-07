@@ -1,0 +1,52 @@
+ROT-1 dyn0 grob RAUCH. Start 2026-09-30T08:08:46+02:00, Ende 2026-09-30T08:08:48+02:00, CPU (nur Rauchtest), torch 2.10.0+cu128
+dx 0.6, dt 0.1, L 38.4, n 128, T 20.0 (erreicht 20.0, Abbruch durch Budget: False), Profile 0.0 s, Entwicklung 2.1 s, zusammen 2.2 s; Hochrechnung x20 43 s
+radial: letzter Stand -1 Iterationen, Residuum max 4.3e-08
+
+lauf | g | Q1_0 | Q2_0 | J_0/Q | omega1 | omega2 | t_teilung | t_Q_halb | Klumpen Ende | l_dom | gamma(l_dom) | t(A=0,1) | d12 max | t(d12>1) | Wirbel zentral | t Wirbel weg | psi2-Wirbel max | Bilanz Q/E(nach Rampe)/J | Q geschluckt
+v1_Q110 | 0 | 110.20 | 0.00 | 1.0000 | 0.79057 | 0.00000 | - | - | 1 | 2 | - | - | 0.000 | - | 0.60 | - | 0 | 2.0e-14/-/9.3e-10 | 0.000
+fc_Q110_q10 | 0 | 99.18 | 11.02 | 0.9000 | 0.79440 | 0.70787 | - | - | 1 | 2 | - | - | 0.041 | - | 0.80 | - | 0 | 1.7e-14/-/3.5e-10 | 0.000
+fc_Q110_q25 | 0 | 82.65 | 27.55 | 0.7500 | 0.80521 | 0.69007 | - | - | 1 | 4 | - | - | 0.066 | - | 0.80 | - | 0 | 1.7e-14/-/7.5e-10 | 0.000
+
+A_l: je l Rate gamma, t(A_l = 0,1), Maximum
+v1_Q110: l1 -/-/0.001; l2 -/-/0.012; l3 -/-/0.007; l4 -/-/0.007; l5 -/-/0.007; l6 -/-/0.006
+fc_Q110_q10: l1 -/-/0.002; l2 -/-/0.008; l3 -/-/0.005; l4 -/-/0.006; l5 -/-/0.006; l6 -/-/0.006
+fc_Q110_q25: l1 -/-/0.004; l2 -/-/0.007; l3 -/-/0.004; l4 -/-/0.007; l5 -/-/0.007; l6 -/-/0.005
+
+Fensterwerte (Q1w, Q2w, J/Q, E/Q, omega1, omega2, Cw, A2, d12) zu festen Zeiten:
+  v1_Q110 t0: 110.195 0.000 0.9998 0.9144 0.79057 0.00000 0.0000 0.0081 0.000
+  v1_Q110 t20: 110.189 0.000 0.9998 0.9143 0.79023 0.00000 0.0000 0.0121 0.000
+  fc_Q110_q10 t0: 99.176 11.019 0.8999 0.9066 0.79440 0.70787 -0.0174 0.0068 0.041
+  fc_Q110_q10 t20: 99.170 11.018 0.8999 0.9064 0.79415 0.70719 0.0521 0.0080 0.040
+  fc_Q110_q25 t0: 82.647 27.547 0.7499 0.8912 0.80521 0.69007 -0.0355 0.0063 0.038
+  fc_Q110_q25 t20: 82.641 27.545 0.7499 0.8911 0.80492 0.68961 -0.0131 0.0065 0.066
+
+Musterdrehung: Omega_P = d arg P/dt gegen omega1 - omega2 (Fenstermittel), Q1/Q, Cw:
+  v1_Q110 [60, 160]: Omega_P -, omega1-omega2 nan, Q1/Q nan, Cw nan
+  v1_Q110 [200, 400]: Omega_P -, omega1-omega2 nan, Q1/Q nan, Cw nan
+  fc_Q110_q10 [60, 160]: Omega_P -, omega1-omega2 nan, Q1/Q nan, Cw nan
+  fc_Q110_q10 [200, 400]: Omega_P -, omega1-omega2 nan, Q1/Q nan, Cw nan
+  fc_Q110_q25 [60, 160]: Omega_P -, omega1-omega2 nan, Q1/Q nan, Cw nan
+  fc_Q110_q25 [200, 400]: Omega_P -, omega1-omega2 nan, Q1/Q nan, Cw nan
+
+Waende je Kreis (r: F90, r k_eff, k_eff, S an der Wand, Minderheit rel., Windung Delta, Mischung, Wechsel):
+  v1_Q110 [0, 0]:
+     r 1.5: F90 0.000, rk -, k -, S -, minder -, W -1.00, mix 0.000, wechsel 0
+     r 2.5: F90 0.000, rk -, k -, S -, minder -, W -1.00, mix 0.000, wechsel 0
+     r 3.5: F90 0.000, rk -, k -, S -, minder -, W -1.00, mix 0.000, wechsel 0
+     r 4.5: F90 0.000, rk -, k -, S -, minder -, W -1.00, mix 0.000, wechsel 0
+     r 5.5: F90 0.000, rk -, k -, S -, minder -, W -1.00, mix 0.000, wechsel 0
+     r 6.5: F90 0.000, rk -, k -, S -, minder -, W -1.00, mix 0.000, wechsel 0
+  fc_Q110_q10 [0, 0]:
+     r 1.5: F90 0.234, rk 0.97, k 0.644, S 0.342, minder 0.998, W -1.00, mix 0.305, wechsel 2
+     r 2.5: F90 0.285, rk 0.99, k 0.397, S 0.665, minder 0.997, W -1.00, mix 0.167, wechsel 2
+     r 3.5: F90 0.266, rk 0.98, k 0.279, S 0.793, minder 0.991, W -1.00, mix 0.112, wechsel 2
+     r 4.5: F90 0.250, rk 0.96, k 0.214, S 0.648, minder 0.991, W -1.00, mix 0.085, wechsel 2
+     r 5.5: F90 0.191, rk 0.95, k 0.172, S 0.345, minder 1.003, W -1.00, mix 0.069, wechsel 2
+     r 6.5: F90 0.133, rk 0.93, k 0.143, S 0.119, minder 1.000, W -1.00, mix 0.058, wechsel 2
+  fc_Q110_q25 [0, 0]:
+     r 1.5: F90 0.270, rk 0.98, k 0.656, S 0.664, minder 0.994, W -1.00, mix 0.376, wechsel 2
+     r 2.5: F90 0.281, rk 0.99, k 0.395, S 0.814, minder 0.999, W -1.00, mix 0.384, wechsel 2
+     r 3.5: F90 0.262, rk 0.97, k 0.278, S 0.807, minder 0.991, W -1.00, mix 0.254, wechsel 2
+     r 4.5: F90 0.270, rk 0.97, k 0.216, S 0.590, minder 0.995, W -1.00, mix 0.185, wechsel 2
+     r 5.5: F90 0.230, rk 0.96, k 0.175, S 0.281, minder 1.005, W -1.00, mix 0.145, wechsel 2
+     r 6.5: F90 0.215, rk 0.95, k 0.146, S 0.091, minder 1.000, W -1.00, mix 0.116, wechsel 2

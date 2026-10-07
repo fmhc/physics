@@ -1,0 +1,9 @@
+ladungstausch: Start 2026-09-30T08:31:48+00:00, Ende 2026-09-30T08:31:50+00:00, CPU, 1 Faden (nur Rauchtest), omega^2 = 0.7, T = 60.0, d = [4.0], d_gleich = 4.0, d_theta = 0.0, einzel = True, Stufen ['grob'], kurz = True
+[grob] omega^2 = 0.7, dx = 0.1, dt = 0.05, T = 60.0, 1.6 s, q1 (Ballladung) = 2.4415
+d | Art | E15/E15(0) bei 500/1000/2000/3000/T | t_halb | Gamma_E spaet | |Omega| psi(0) (Vorz.) | P+/P- | Omega_swap (Aufl.) | Q_links Wechsel | max|Q_l| | korr(Q_l,-Q_r) | Q_l, Q_r Ende | S_max Ende
+   4.0 | Q/anti            | nan/nan/nan/nan/0.9415 | - | 0.00144 | 0.7757 (+0.7757) | 1 | 0.1551 (0.16) | 3 | 1.4362 | 1 | +0.2481, -0.2481 | 0.5767
+        psi(0)-Spitzen: +0.7757 (3.011e+02), -0.7757 (3.011e+02), -0.6206 (1.854e+02); Q_links-Spitzen: 0.1551 (7.079e+02), 0.3103 (3.396e+02), 0.4654 (7.080e+00)
+   4.0 | Q/Q gleichphasig  | nan/nan/nan/nan/0.9830 | - | 0.000306 | 0.7757 (-0.7757) | 0.00069 | 0.3103 (0.16) | 0 | 3.6739 | -1 | +3.6632, +3.6632 | 0.9672
+        psi(0)-Spitzen: -0.7757 (1.144e+03), -0.6206 (1.019e+03), -0.9308 (5.213e+01); Q_links-Spitzen: 0.3103 (2.393e-02), 0.1551 (1.026e-02), 0.4654 (3.504e-03)
+   4.0 | ball allein       | nan/nan/nan/nan/1.0000 | - | -1.65e-08 | 0.7757 (-0.7757) | 1.6e-08 | 0.1551 (0.16) | 0 | 2.1520 | 1 | +2.1520, +0.2635 | 0.3679
+        psi(0)-Spitzen: -0.7757 (2.043e+02), -0.9308 (1.545e+02), -0.6206 (1.429e+01); Q_links-Spitzen: 0.1551 (2.946e-06), 0.3103 (9.319e-07), 1.5514 (6.997e-09)

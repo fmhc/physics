@@ -1,0 +1,189 @@
+{
+ "test": "teilung",
+ "start": "2026-09-30T08:06:53+02:00",
+ "ende": "2026-09-30T08:07:02+02:00",
+ "rauch": true,
+ "dauer_s": {
+  "schiessen_s": 8.45492735899461,
+  "entwicklung_grob_s": 0.4792013440019218
+ },
+ "geraet": "CPU (nur Form- und Syntaxprobe)",
+ "torch": "2.10.0+cu128",
+ "notizen": [],
+ "parameter": {
+  "T": 1200.0,
+  "teil": "gegen",
+  "eps": 0.01,
+  "l_max": 6,
+  "L": 38.4,
+  "stufen": [
+   [
+    "grob",
+    0.6,
+    0.1
+   ],
+   [
+    "fein",
+    0.4,
+    0.05
+   ]
+  ],
+  "schwelle_rel": 0.5,
+  "q_min_rel": 0.03,
+  "blur": 1.0
+ },
+ "profile": [
+  {
+   "omega2": 0.59,
+   "m": 0,
+   "p": 1.0317988794464412,
+   "klammer": 9.630074515598608e-13,
+   "x_schwanz": 13.620000000000001,
+   "N": 52.16321772132039,
+   "G": 5.400047975992093,
+   "VU": 30.776303360946923,
+   "Q": 80.13465559905292,
+   "E": 66.95264979251805,
+   "virialrest": 7.969391620618723e-08,
+   "S_zentrum": 1.0646089276269317,
+   "S_max": 1.0646089276269317,
+   "R_halb": 3.7406740942201684,
+   "R_kern_halb": 0.0,
+   "R_max": 0.0,
+   "f_top": 1.0393856141328692,
+   "gueltig": true
+  }
+ ],
+ "ergebnis": {
+  "grob": [
+   {
+    "lauf": "m0_059",
+    "m": 0,
+    "omega2": 0.59,
+    "gestoert": true,
+    "stufe": "grob",
+    "dx": 0.6,
+    "dt": 0.1,
+    "Q_profil": 80.13465559905292,
+    "n_max": 1,
+    "n_ende": 1,
+    "teilung": false,
+    "t_teilung": null,
+    "Q_box_verlust": 4.3647307990113404e-12,
+    "E_box_verlust": 2.776593153841489e-06,
+    "J_box_aenderung": 9.163576200759465e-07,
+    "J_box_start": 1.7938581688044387e-11,
+    "Q_box_start": 80.14627981618048,
+    "windung_ende": [
+     0
+    ],
+    "l_dominant": 6,
+    "A_start_ende": [
+     0.013020747929306272,
+     0.007591179494304428
+    ],
+    "gamma": null,
+    "plausibel": {
+     "Q_nie_wachsend": true,
+     "Q_max_rel": 0.0,
+     "Q_erhalten_bis_t": 24.0,
+     "Q_rel_aenderung": 4.3647307990113404e-12,
+     "Q_erhalten": true,
+     "J_durch_Q_start": 2.2382301123879268e-13,
+     "JQ_gleich_m": true,
+     "gamma_ok": true,
+     "bestanden": true
+    },
+    "gebiete": [
+     [
+      0.0,
+      1,
+      [
+       [
+        57.5182,
+        0,
+        -0.0,
+        -0.016,
+        -0.014,
+        -0.0,
+        -0.0
+       ]
+      ]
+     ],
+     [
+      5.0,
+      1,
+      [
+       [
+        57.4833,
+        0,
+        0.0,
+        -0.003,
+        -0.002,
+        0.00115,
+        0.00103
+       ]
+      ]
+     ],
+     [
+      10.0,
+      1,
+      [
+       [
+        57.4743,
+        0,
+        0.0,
+        -0.006,
+        -0.005,
+        -0.00069,
+        -0.00063
+       ]
+      ]
+     ],
+     [
+      15.0,
+      1,
+      [
+       [
+        56.8822,
+        0,
+        -0.0,
+        -0.03,
+        -0.03,
+        0.0002,
+        0.00019
+       ]
+      ]
+     ],
+     [
+      20.0,
+      1,
+      [
+       [
+        57.5099,
+        0,
+        -0.0,
+        -0.006,
+        -0.006,
+        -4e-05,
+        -4e-05
+       ]
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ "kennzahlen": {
+  "grob_quelle": "dieser Aufruf",
+  "gegenprobe": {
+   "teilung": false,
+   "gamma": null,
+   "bestanden": true
+  },
+  "plausibel": {
+   "grob_m0_059": true
+  },
+  "plausibilitaet_bestanden": true
+ }
+}

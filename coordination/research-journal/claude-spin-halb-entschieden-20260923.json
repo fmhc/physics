@@ -1,0 +1,22 @@
+{
+  "id": "claude-spin-halb-entschieden-20260923",
+  "time": "2026-09-23T21:33:31.100269+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5), Recherche durch Opus-5-Subagent, gegengelesen von claude-primary",
+  "topic": "literatur",
+  "status": "reported",
+  "title": "Unser Feld kann strukturell keinen Spin 1/2 tragen: der Konfigurationsraum ist zusammenziehbar",
+  "question": "Gibt es einen anerkannten Weg, wie ein klassisches Soliton nach der Quantisierung Spin 1/2 und Fermi-Statistik traegt, und gilt er fuer unsere Gesamtformel?",
+  "action": "Literaturrecherche zum Finkelstein-Rubinstein-Mechanismus und zur Sorkin-Fassung ueber H^2(Q;Z); Volltext von Auckly und Speight, hep-th/0411010, gelesen, historische Originale nicht erreichbar. Danach die Bedingung auf die Gesamtformel angewandt und von mir gegengelesen.",
+  "result": "Die fermionische Quantisierung ist genau dann moeglich, wenn die 2-pi-Drehschleife im Konfigurationsraum nicht zusammenziehbar ist (pi_1(Q) ungleich 0, bei Skyrme-Feldern gleich pi_4 des Zielraums), oder wenn eine nichttriviale Klasse in H^2(Q;Z) existiert, wo der Wess-Zumino-Term sitzt. Fuer Skyrme mit SU(2) und fuer Faddeev-Hopf mit S^2 ist pi_4 gleich Z_2, fuer SU(N ab 3) und exzeptionelle Gruppen null. Unser Zielraum ist C^N, ein Vektorraum; die Konfigurationen endlicher Energie bilden H^1(R^3,C^N), also einen konvexen und damit zusammenziehbaren Raum. Folglich pi_1 gleich null und H^2 gleich null, genau eine Quantisierung, und die ist bosonisch. Ein Wess-Zumino-Term braucht eine geschlossene Fuenfform mit nichttrivialen Perioden; auf C^N gibt es sie nicht. Vier Auswege geprueft und geschlossen, darunter dass unsere Windungszahl m kein Sektorlabel ist und dass die innere SU(2) nicht raeumlich ist.",
+  "meaning": "Stufe 7 der Stabilitaetsleiter ist fuer eine Zuordnung zu einem Spin-1/2-Teilchen in dieser Formelfamilie nicht erreichbar, und zwar aus einem topologischen Grund, nicht aus Rechenmangel. Kein Gitter, kein Loeser und kein Parameterscan aendert pi_1(Q) gleich null. Der g-Faktor ist bei uns nicht einmal definiert, weil die U(1) global und nicht geeicht ist; er gehoert nicht mehr auf die Liste der Zielgroessen. Zwei Ergaenzungen aus dem Gegenlesen: der Befund stimmt mit dem Spin-Statistik-Theorem ueberein, was ihn stuetzt, und der naheliegende Einwand ueber einen Sektor fester Norm traegt nicht, weil die Einheitssphaere im unendlichdimensionalen Hilbertraum zusammenziehbar ist. Was offen bleibt, ist Stufe 7 fuer ganzzahligen Spin; dort liegt die aktive Literatur zu Q-Baellen und Bosonensternen als Kandidaten fuer dunkle Materie, und dort ist die Frage datennah. Unser Sektor kann kein Elektron sein, aber er ist ein wohldefinierter Kandidat fuer ein Objekt mit ganzzahligem Spin.",
+  "compute": "keine Rechnung; Literaturabrufe",
+  "sources": [
+    {
+      "path": "coordination/literatur-20260923/SPIN-HALB-AUS-SOLITONEN.md"
+    },
+    {
+      "url": "https://arxiv.org/abs/hep-th/0411010"
+    }
+  ]
+}

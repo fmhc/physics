@@ -1,0 +1,27 @@
+R4-W brandung. Start 2026-09-30T00:19:09+00:00, Ende 2026-09-30T00:19:10+00:00, Geraet Quadro P4000, torch 2.5.1+cu121, T = 12.0
+Dauer [s]: profil_s 0.0, grob_s 0.3, fein_s 0.6
+
+See S = 1 auf [20.0, 100.0], mu = 0.7071; Ball omega^2 = 0.7 startet bei x = -5.0
+v | Phase/pi | Ausgang | Anteil vor, See, hinter | v_vor Ende | Verformung S, Breite vor Kontakt | S_max, Breite am Ende rel | Wandverschiebung
+  0.1 | 0.0 | zerbrochen oder teilweise aufgenommen | 1.000, -0.000, 0.001 | 0.100 | 3.7e-04, 8.9e-03 | 1.000, 0.991 | -0.05
+  0.1 | 0.5 | zerbrochen oder teilweise aufgenommen | 1.000, -0.000, 0.001 | 0.100 | 3.7e-04, 9.1e-03 | 1.000, 0.991 | -0.05
+  0.1 | 1.0 | zerbrochen oder teilweise aufgenommen | 1.000, 0.000, 0.001 | 0.100 | 3.7e-04, 9.6e-03 | 1.000, 0.990 | 0.00
+  0.1 | 1.5 | zerbrochen oder teilweise aufgenommen | 1.000, 0.000, 0.001 | 0.100 | 3.7e-04, 9.5e-03 | 1.000, 0.990 | 0.00
+  0.3 | 0.0 | zerbrochen oder teilweise aufgenommen | 1.000, 0.000, 0.001 | 0.300 | 4.8e-04, 2.9e-02 | 1.000, 0.971 | 0.00
+  0.3 | 0.5 | zerbrochen oder teilweise aufgenommen | 1.000, 0.000, 0.001 | 0.300 | 4.8e-04, 2.8e-02 | 1.000, 0.972 | -0.05
+  0.3 | 1.0 | zerbrochen oder teilweise aufgenommen | 1.000, -0.000, 0.001 | 0.300 | 4.8e-04, 2.7e-02 | 1.000, 0.973 | -0.05
+  0.3 | 1.5 | zerbrochen oder teilweise aufgenommen | 1.000, -0.000, 0.001 | 0.300 | 4.7e-04, 2.8e-02 | 1.000, 0.972 | 0.00
+  0.5 | 0.0 | zerbrochen oder teilweise aufgenommen | 1.000, -0.000, 0.001 | 0.499 | 7.9e-04, 5.1e-02 | 1.001, 0.949 | 0.00
+  0.5 | 0.5 | zerbrochen oder teilweise aufgenommen | 1.000, -0.000, 0.001 | 0.499 | 7.9e-04, 5.2e-02 | 1.001, 0.948 | 0.00
+  0.5 | 1.0 | zerbrochen oder teilweise aufgenommen | 1.000, 0.000, 0.001 | 0.499 | 7.7e-04, 5.3e-02 | 1.001, 0.947 | -0.05
+  0.5 | 1.5 | zerbrochen oder teilweise aufgenommen | 1.000, 0.000, 0.001 | 0.499 | 7.7e-04, 5.2e-02 | 1.001, 0.948 | -0.05
+  0.1 | 0.0 | Kontrolle Ball | 1.000, 0.000, 0.000 | 0.100 | 3.7e-04, 2.0e-04 | 1.000, 1.000 | 0.00
+  0.3 | 0.0 | Kontrolle Ball | 1.000, 0.000, 0.000 | 0.300 | 4.8e-04, 2.9e-04 | 1.000, 1.000 | 0.00
+  0.5 | 0.0 | Kontrolle Ball | 1.000, 0.000, 0.000 | 0.500 | 7.8e-04, 5.2e-04 | 1.001, 0.999 | 0.00
+  See allein: Wand wandert max 0.000, Q_See rel -1.9e-08
+
+Kontrollen und Latten:
+  gegenprobe_see_allein_stabil: {"x_wand_max_abw": 0.0, "Q_see_aenderung_rel": -1.9133130968462808e-08, "bestanden": true}
+  gegenprobe_ball_allein: {"max_verformung_S_vor_kontakt": 0.0007819716157790868, "bestanden": true}
+  L3_aufloesung: {"ausgang_gleich_grob_fein": true, "max_aenderung_anteile": 2.7093611442259447e-06, "bestanden": true}
+  K0_profil_gegen_anker: {"max_abw_f": 1.201214199181115e-10, "bestanden": true, "herkunft": "profil_cache.pt", "f0_quadrat_schuss": [0.6837722339948578, 0.3675444679705876, 0.10557280900028279], "f0_quadrat_anker": [0.683772233983162, 0.36754446796632423, 0.10557280900008414]}

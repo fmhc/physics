@@ -1,0 +1,61 @@
+{
+  "id": "claude-ks-1-gen-f8-shellfrei-20260927",
+  "time": "2026-09-27T12:20:01+00:00",
+  "time_kind": "completed",
+  "author": "Claude (Anthropic, Opus 5.5), Vertragsautor KS-1-GEN im Auftrag von claude-primary; Auftrag abgeschickt 12:50:57 MESZ, Arbeit bis 14:20:01 MESZ (gemessen); Schwarzkastentest auf der TS440, V22/V22b/V22c, Schnitt und paket.py auf der .69 (CPU, halbe Pacht fuer die Vorlaeufe)",
+  "topic": "vertraege",
+  "status": "proposal",
+  "evidenzart": "verfahren",
+  "title": "KS-1-GEN Fassung 8 ohne freie Shell entworfen: Ausfuehrender ohne wirksames Werkzeug (codex --disable code_mode_host), Module als Text mechanisch entnommen, neues Pruefwerkzeug lehnt jeden fehlerhaften Beleg ab (V22b 106/106); Teil A 1304 auf 1086 Zeilen; Probe 8 vorbereitet, nicht gelaufen",
+  "question": "Laesst sich codex exec 0.153.4 so betreiben, dass der Ausfuehrende keinen Befehl ausfuehren kann, und wie sieht Fassung 8 von KS-1-GEN damit aus (Finns Entscheidung vom 27.09.2026, Auftrag der Leitung)?",
+  "action": "Schwarzkastentest mit drei Aufrufen ohne Debug-Protokoll und vorab gebundener Erwartung (13:03:27): w1 Weg 1 (--disable shell_tool u. a.), w1r Fortsetzung, w3 Weg 3 (--disable code_mode_host); Weg 2 (Sandbox) nach Hilfe und Quelltext nicht tragfaehig. Neues Pruefwerkzeug F8 (GR0 bis GR8, Entnahme nach A9.2) mit Ablehnungsprobe je Einstieg; V22 96/103, Werkzeug berichtigt (ein Fehlerelement vor turn.started), V22b mit unveraenderten alten Faellen 106/106, V22c INT d wechselseitig. Teil A A10.3 bis A10.6 neu, A9.2, A9.4, A11.4 bis A11.7 angepasst; Schnitt, Registerprobe und Materialpaket auf der .69; Probe 8 nach F8 vorbereitet und Erwartung gebunden (14:06:15), nicht gelaufen; Leseliste Runde 5. Kein S0-Aufruf, kein git.",
+  "result": "Weg 1 wies Befehle ab, bot aber 48 weitere Werkzeuge (Web, 39 App- und Sites-Werkzeuge des Kontos, Goals, Bilder); Weg 3 liess jeden Werkzeugaufruf mit 'code-mode host is disabled' scheitern, ohne Befehl und Datei. Gewaehlt Weg 3, offen gegen die vorab gebundene Wahlregel (strengere Richtung). Befehlsgrammatik GR8 bis GR14 und GR18 entfaellt; Zulassung L8 woertlich in GR5. Teil A 1086 statt 1304 Zeilen (A10.3 bis A10.6: 271 statt 495); die 600-Zeilen-Grenze ist ohne Eingriff in A0 bis A9 (662 Zeilen) nicht erreichbar. Offengelegt: lokaler awk-Filter 13:51:49; die Leseliste von Runde 4 nannte im Kopf drei Werte der DR3-Binbesetzung (jetzt in (c)).",
+  "meaning": "Die Klasse der Shell-Umgehungen ist entfernt statt einzeln geflickt; die Belegpruefung ist total. Hypothese, nicht Befund: die Fortsetzung unter Weg 3 und der ganze Ablauf zeigen sich erst in Probe 8. Offen: S0-Runde 5 (astra) mit Einstufung je Aenderung, Probe 8, positive PG vor der ersten Auswertung. Direkt angebotene Werkzeuge (collaboration, request_user_input) sind nur nachgewiesen, nicht verhindert.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260925/KS-1-GEN-VERTRAG.md",
+      "sha256": "8effc186881774ba3cf10d83df3460feb0f059a338f52b4051ec65fc0f5400d5"
+    },
+    {
+      "path": "coordination/vertraege-20260925/ks-1-gen-s0/paket-f8/paket/TEIL-A-KS-1-GEN-F8.txt",
+      "sha256": "1308841a23b09ec9f19753b3fd7c452fcf2dcaaa324fd72ddddb7fe731c00299"
+    },
+    {
+      "path": "coordination/vertraege-20260925/ks-1-gen-s0/REVISION-F7b-F8.md",
+      "sha256": "eb66d068e3757e0c2acc639d183787b40d2d27abf9c6f7cbeedcf16473035d7d"
+    },
+    {
+      "path": "coordination/vertraege-20260925/ks-1-gen-s0/f8-vorbereitung/shellfrei-lauf-20260927-130347/BEFUND-SHELLFREI.md",
+      "sha256": "01b09ba24ec1c5488401921679b03306f6d9540e7e80398778b0f6f295db78ec"
+    },
+    {
+      "path": "coordination/vertraege-20260925/ks-1-gen-s0/vorlauf/ks1gen_gueltigkeit_f8.py",
+      "sha256": "882f68cbed578b675f05deed39a5b1e19ac0f0ff83963ffc2e4783e778719360"
+    },
+    {
+      "path": "coordination/vertraege-20260925/ks-1-gen-s0/vorlauf/ks1gen_entscheider_f8.py",
+      "sha256": "f21961b40f16f1bf47c735702429054d71eca4b2f5486e1ac1017add5a377eaf"
+    },
+    {
+      "path": "coordination/vertraege-20260925/ks-1-gen-s0/vorlauf/ks1gen_ablauf_f8.sh",
+      "sha256": "e92a845889a28cbb49a697c3de02f9627b119de9311fd67bee2e4268ad72b1cc"
+    },
+    {
+      "path": "coordination/vertraege-20260925/ks-1-gen-s0/belege/f8-v22b/aus/V22-ERGEBNIS.json",
+      "sha256": "0e6476a093bca651cd3a982c9e63f46cfd50e6cb83198f74a5e865a15b50d1f4"
+    },
+    {
+      "path": "coordination/vertraege-20260925/ks-1-gen-s0/probe8-f8-vorbereitung/ERWARTUNG-PROBE8-F8.json",
+      "sha256": "763e0b42da4240e540030bf3aca12c6661658f7242e3f425c23ab3deb58e685a"
+    },
+    {
+      "path": "coordination/vertraege-20260925/ks-1-gen-s0/dateiliste-ks-1-gen-s0-r5.txt",
+      "sha256": "ceecc7fbdeb9693d991e187530eaf8f72ff981da57b3e39d78e4d5ec44308539"
+    },
+    {
+      "path": "coordination/vertraege-20260925/ks-1-gen-s0/SHA256SUMS-F8",
+      "sha256": "8e4ba294051ef178c1728fe973911ab65e8dcf0c33bd1a5b2374fcd6d52b61a9"
+    }
+  ],
+  "recorded_at": "2026-09-27T12:20:36.706544+00:00"
+}

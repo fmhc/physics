@@ -1,0 +1,17 @@
+R4-W surfen. Start 2026-09-30T00:19:08+00:00, Ende 2026-09-30T00:19:09+00:00, Geraet Quadro P4000, torch 2.5.1+cu121, T = 12.0
+Dauer [s]: profil_s 0.0, grob_s 0.3, fein_s 0.5
+
+Paket k = 0.3, v_g = 0.2873, sigma = 15.0, Start x = -60.0; Ball ruht bei x = 0
+A | v_ende (grob, fein) | mitgenommen | X_min, X_max | E-Gewinn rel | dQ rel | S_max min, max rel | S_max Welle allein
+  0.025 | 5.478e-06, 5.489e-06 | False | 0.000, 0.000 | 3.08e-07 | 1.1e-11 | 1.0000, 1.0004 | 6.250e-04
+  0.050 | 1.095e-05, 1.098e-05 | False | 0.000, 0.000 | 6.08e-07 | 2.2e-11 | 1.0000, 1.0005 | 2.500e-03
+  0.100 | 2.190e-05, 2.195e-05 | False | 0.000, 0.001 | 1.21e-06 | 4.5e-11 | 1.0000, 1.0006 | 1.007e-02
+  0.200 | 4.378e-05, 4.387e-05 | False | 0.000, 0.001 | 2.41e-06 | 9.2e-11 | 0.9999, 1.0008 | 4.150e-02
+  0.000 | 3.898e-18, -1.819e-17 | False | -0.000, 0.000 | 2.24e-09 | 2.2e-16 | 1.0000, 1.0004 | -
+
+Kontrollen und Latten:
+  L2_gegenprobe_ohne_welle: {"v_ende_nur_ball": -1.818925766250771e-17, "E_gewinn_nur_ball": 2.2443855662857004e-09, "v_ende_A0.1": 2.1946883997845783e-05, "bestanden": true}
+  skalierung_v_mit_A2: {"v_0.05_zu_0.025": 1.999714172842007, "v_0.1_zu_0.05": 1.9994281260140845, "soll_zweite_ordnung": 4.0}
+  L3_aufloesung: {"A=0.1": {"v_fein": 2.1946883997845783e-05, "v_grob": 2.1901839424255934e-05, "bestanden": true}, "A=0.2": {"v_fein": 4.386864673099455e-05, "v_grob": 4.377855231503655e-05, "bestanden": true}}
+  mitgenommen: {"A=0.025": false, "A=0.05": false, "A=0.1": false, "A=0.2": false}
+  K0_profil_gegen_anker: {"max_abw_f": 1.201214199181115e-10, "bestanden": true, "herkunft": "profil_cache.pt", "f0_quadrat_schuss": [0.6837722339948578, 0.3675444679705876, 0.10557280900028279], "f0_quadrat_anker": [0.683772233983162, 0.36754446796632423, 0.10557280900008414]}

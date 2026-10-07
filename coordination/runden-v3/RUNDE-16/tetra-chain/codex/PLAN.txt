@@ -1,0 +1,19 @@
+TETRA-RECON-1: Rekonstruktionshypothese, kein Originalgenerator
+Vor der neuen Numerik: regulare Einheits-Tetraeder mit aufeinanderfolgenden
+Viererfenstern, neuer Vertex = Spiegelung des aeltesten an der gemeinsamen
+Flaeche. Zentrierung am arithmetischen Mittel aller Vertices. N=12/20 Vertices.
+200000 Normalen pro Kette, uniforme Kugelflaeche (normalverteilte 3-Vektoren
+normiert), fester Seed 20261002. Ebene n.x=0. P direkt aus verschiedenen
+Kanten mit verschiedenen Vorzeichen. T3/T4 aus Vertexvorzeichen.
+C ueber durch die Ebene geschnittene gemeinsame Flaechen (nicht bloss beide
+Tetraeder getroffen). Zusaetzliche geometrische Kontakte bleiben separat.
+Vergleich mit publizierter Verteilung: keine Parameteroptimierung; Differenzen
+und binomiale Standardfehler berichten, kein exaktes Reproduktionslabel.
+Ticks: explizit neues Referenzexperiment n(t)=(cos(pi t),sin(pi t),0),
+t in [0,1). Vertexereignisse analytisch aus atan2; nicht Originaldrehachse.
+Kontrollen: Kantenlaengen, drei/bzw vier Schnittpunkte, Formel pro Stichprobe,
+Antipodalsymmetrie. Zahlenminima/-maxima nur Stichprobenextrema.
+Rechnung .69 CPU11 nice19 ein Thread, timeout60 Sekunden, keine GPU.
+Keine historischen Physiklaeufe wiederholen. Quellcode/Plan vorher hashen.
+Erwartung: Counts/Kanten passen konstruktiv; Verteilung koennte passen,
+aber unbekannte Zentrierung bleibt echte Reproduktionsgrenze.

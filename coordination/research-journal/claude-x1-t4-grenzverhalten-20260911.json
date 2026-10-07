@@ -1,0 +1,31 @@
+{
+  "id": "claude-x1-t4-grenzverhalten-20260911",
+  "time": "2026-09-11T16:05:00+02:00",
+  "time_kind": "completed",
+  "author": "Claude (Rechnung: claude-x1 auf .69 CUDA; Eintrag: claude-primary)",
+  "topic": "galaxies",
+  "status": "checked",
+  "title": "SPARC trennt das Grenzverhalten der Interpolationsfunktion scharf, die Funktionsklasse nicht: der Rückstand der Logarithmusformen war ein Grenzverhaltensbefund",
+  "question": "T4 (zurückgenommen in Runde 2): Passen die logarithmischen Interpolationsfunktionen an SPARC schlechter, weil sie logarithmisch sind, oder weil ihr Grenzverhalten für kleine Beschleunigungen falsch ist? Der Nachlauf auf .69 fehlte seit Runde 2.",
+  "action": "Zehn Formen mit erzwungenem Grenzverhalten (ν·√y → 1 für y → 0, ν → 1 für y → ∞, symbolisch und numerisch geprüft), darunter zwei logarithmische, plus die beiden Originalformen als Gegenkontrolle; Fit auf .69 (Quadro P5000, CUDA float64) mit den M4-Schnitten (2681 Punkte, 144 Galaxien), Cluster-Bootstrap 300 Ziehungen mit wb = w·√mult, gepaarte Differenzen gegen die beste grenztreue Form.",
+  "result": "M4-Kontrolle bitgenau (a0 1,3035080124157665, 0,11354228719300488 dex). Grenztreue log-Wurzel-Form: +0,00016 ± 0,00066 dex gegen die beste Form (0,24 sd), grenztreue Logform +0,00151 ± 0,00165 (0,92 sd); alle sieben Einparameterformen innerhalb 0,0018 dex. Originale Logarithmusformen: +0,0425 (6,8 sd) und +0,0949 (11,9 sd); ihre alten Werte 0,1537 und 0,206 reproduziert. Die Standardform fällt trotz gleichen Grenzverhaltens mit 2,9 bis 3,6 sd heraus (0,12387 dex).",
+  "meaning": "T4 wird neu gefasst: SPARC trennt das Grenzverhalten (7 bis 12 sd), innerhalb gleichen Grenzverhaltens aber nicht die Funktionsklasse; einzelne Formen können sich trotzdem unterscheiden. Drei Zusatzbefunde: die Originalformen haben kein bestimmbares a0 (Parameter nur als Produkt c·a0, exakte Entartung); die gestreckte Exponentialform ist mit a0 entartet; sympy.limit liefert für die Form mit variablem Exponenten einen falschen Grenzwert. Offen: die alte Angabe 0,112 bis 0,114 dex trifft die Standardform nicht, Ursache ungeklärt, Originalskript nicht ausgeführt. Deskriptiver Vergleich, keine physikalische Begründung einer Form; Massen-Leuchtkraft-Systematik nicht enthalten.",
+  "sources": [
+    {
+      "path": "coordination/t4-grenzverhalten-20260911.md",
+      "label": "Bericht claude-x1",
+      "sha256": "7668759d1538f2907bd1192131056049a1a0da0fd1f671dc00454fa9b29898d1"
+    },
+    {
+      "path": "coordination/t4-grenzverhalten-20260911/ergebnis.json",
+      "label": "Rohergebnis, 300 Ziehungen je Form",
+      "sha256": "bdd6a0afeb5205e533de249c18819ad7ff50a005cf4c4b49b037337e843c5f46"
+    },
+    {
+      "path": "neue-theorie/funktionsfamilie_grenz69.py",
+      "label": "Skript, .69 CUDA",
+      "sha256": "fa580b0976ab15ff5affcd1542fe949c2fa65069be888ca12f9c9b65837a1ce1"
+    }
+  ],
+  "recorded_at": "2026-09-11T13:50:48.660815+00:00"
+}

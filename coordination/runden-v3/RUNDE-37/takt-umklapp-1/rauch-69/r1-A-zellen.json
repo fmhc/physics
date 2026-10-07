@@ -1,0 +1,152 @@
+{
+ "info": {
+  "numpy": "2.4.4",
+  "scipy": "1.18.0",
+  "python": "3.12.3",
+  "host": "ubuntu-auto",
+  "argv": [
+   "code-rauch1/tu.py",
+   "teilA",
+   "--netze",
+   "V,S,VD,SD",
+   "--rauch",
+   "--out",
+   "rauch/r1-A-zellen.json"
+  ],
+  "skript_sha256": "0b2abf1bd2e60b5cef48b98433b04b85bfcc3f1dfd6ffe00506fc8f470b8539e",
+  "module_sha256": {
+   "tg": "ec48a258e266fc2226d0d10564b606052831ffefbf0642e4f7d04f9de85cfd9e",
+   "uk": "f52df7438c3d33b4fe86d4352bed3373b38e27a083f3d60eb12d4143fa6b71e0",
+   "ew": "fa7b6417d39177102f0b19c5474453cd16a7595e23bc25ca548e081c4060b142",
+   "mn": "b36984d3f04276454a792f14c5655bff432332316d1b968dea46d4cb6eb96bbf",
+   "tg_auswertung": "88cbd2ce05766c34750d6c710a008c5615b7cf49ea61f6d3c3bea2a1db601071"
+  },
+  "start_utc": "2026-10-05T05:39:30Z"
+ },
+ "schluessel": {
+  "netz": {
+   "name": "str",
+   "gleich_tg_netz_V": "bool"
+  },
+  "pruefung": {
+   "T": "int",
+   "E": "int",
+   "nV": "int",
+   "kanten_je_ecke": "float",
+   "tetra_je_ecke": "float",
+   "selbstkanten": "int",
+   "laengen_abw_max": "float",
+   "volumen_summe_rel_abw": "float",
+   "vol_min": "float",
+   "vol_min_rel_mittel": "float",
+   "dieder_summe_minus_2pi_max": "float",
+   "dieder_min_grad": "float",
+   "dieder_max_grad": "float",
+   "D_sym_max": "float",
+   "schlaefli_lD_max": "float",
+   "D_absmax": "float",
+   "l_min": "float",
+   "l_max": "float",
+   "Vbox": "float",
+   "t_modell_s": "float"
+  },
+  "hodge": {
+   "E": "int",
+   "F": "int",
+   "nV": "int",
+   "T": "int",
+   "stern1_min": "float",
+   "stern1_max": "float",
+   "stern1_n_neg": "int",
+   "stern1_n_null": "int",
+   "stern2_min": "float",
+   "stern2_max": "float",
+   "stern2_n_neg": "int",
+   "stern2_n_null": "int",
+   "stern0_min": "float",
+   "stern0_n_neg": "int",
+   "stern1_neg_werte": "list",
+   "stern2_neg_werte": "list",
+   "mu_min": "float",
+   "mu_n_verletzt": "int",
+   "mu_n_kugel": "int",
+   "mu_gegen_stern2_widerspruch": "int",
+   "kontrolle": {
+    "sum_lA_durch_3V": "float",
+    "sum_s0_durch_V": "float",
+    "sum_fL_durch_3V": "float",
+    "V": "float",
+    "Vbox": "float"
+   }
+  },
+  "takt_je_tet": {
+   "T": "int",
+   "c": "float",
+   "rest_max": "float",
+   "rest_median": "float"
+  },
+  "takt": {
+   "n_k": "int",
+   "c_median": "float",
+   "c_min": "float",
+   "c_max": "float",
+   "rest_max": "float",
+   "P_psd_alle": "bool",
+   "P_lmin_rel_min": "float",
+   "P_n_neg_max": "int",
+   "k_mit_P_neg": "list"
+  },
+  "takt_zeilen": [
+   {
+    "k": "str",
+    "c": "float",
+    "P_lmin": "float",
+    "P_lmax": "float",
+    "P_lmin_rel": "float",
+    "P_n_neg": "int",
+    "eP": "list",
+    "eL1": "list",
+    "rest_cmed": "float",
+    "rest_ck": "float"
+   }
+  ],
+  "P_mn_gegen_tg": {
+   "E_ew": "int",
+   "nV_ew": "int",
+   "abw_max": "float",
+   "n_k": "int"
+  },
+  "traegheit": [
+   {
+    "n_B_neg": "int",
+    "n_B_null": "int",
+    "n_B_pos": "int",
+    "B_null_groesst_rel": "float",
+    "B_nichtnull_kleinst_rel": "float",
+    "n_P_neg": "int",
+    "n_P_null": "int",
+    "n_P_pos": "int",
+    "P_lmin_rel": "float",
+    "n_Bred_neg": "int",
+    "dim_red": "int",
+    "rang_Mc": "int",
+    "nX": "int",
+    "nV": "int",
+    "E": "int",
+    "t_s": "float",
+    "identitaet": "bool",
+    "ueberschuss": "int",
+    "k": "str"
+   }
+  ],
+  "t_s": "float"
+ },
+ "laufzeit_s": 5.536006927490234,
+ "maxrss_MB": 129.5625,
+ "t_je_netz": [
+  2.162681818008423,
+  1.6882672309875488,
+  0.9158539772033691,
+  0.767430305480957
+ ]
+}

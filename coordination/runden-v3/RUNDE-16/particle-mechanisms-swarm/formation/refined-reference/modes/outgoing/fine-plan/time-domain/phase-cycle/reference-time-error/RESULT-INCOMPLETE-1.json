@@ -1,0 +1,148 @@
+{
+  "status": "INCOMPLETE",
+  "complete": false,
+  "code_sha256": "686e0844977da4b15696c247eb287e12501f2b9d413b55b6cd1cd9906c1c27d9",
+  "bound_hashes": {
+    "time_code": "74ba12a56e60241a967c2ff143a6489adbd7b27a3b72ddeeb0d3d29fee3c43c6",
+    "split_code": "ac87c195092b607cdf106a9ad7a88606bcf0579623cd581297485f76bf7cceaa",
+    "phase_code": "3509332b4732c8497e9246855fc7be6254ff1681e3e2e99b823457180aaa1446",
+    "split": "15593347f6b1caff683315fab65ce74734ae85fb5eff97b8a25d9276c0a568b9",
+    "phase": "b7d938e4bda00bb05598f540f05320b2e3cad7a8a8f3f4be940a9d5884b8eafd",
+    "amplitude": "2fa8c40331f18ed677788629733806109dbc9a622c4d8ff22e065c82979adefd",
+    "amplitude_code": "5e8f8c201f9d0f0090f442f6d6173c9e4f1362cfecbd55fc9ac9f823614dc4c9",
+    "observed": "a3f302b50f184ef2b7fdf9d92afb903068e22436d2b3547fa4248f80e9a56cc3"
+  },
+  "gates": {
+    "alignment": 0.8,
+    "remaining_fraction": 0.5,
+    "reserve_factor": 2.0,
+    "qa": 1e-10,
+    "arithmetic_factor": 64.0
+  },
+  "budget": {
+    "target_cpu_seconds": 5,
+    "checkpoint_cpu_seconds": 4.5
+  },
+  "qa": {},
+  "measurements": [],
+  "interpretation": "Directed consistency with leading reference dt\u00b2 error; not a unique cause or convergence proof",
+  "reserve_limit": "u is empirical; eta covers only new stored-field arithmetic, not previous parity cancellation or evolution",
+  "original_statuses_unchanged": true,
+  "cpu_seconds": 1.769652214,
+  "inputs": {
+    "manifests": {
+      "split": "15593347f6b1caff683315fab65ce74734ae85fb5eff97b8a25d9276c0a568b9",
+      "phase": "b7d938e4bda00bb05598f540f05320b2e3cad7a8a8f3f4be940a9d5884b8eafd",
+      "amplitude": "2fa8c40331f18ed677788629733806109dbc9a622c4d8ff22e065c82979adefd"
+    },
+    "input_identity": {
+      "h": 0.05,
+      "ritz_sha256": "67658ad2e278e7708e82039ae1b487f86d86ef666e42198ea3752bf765e4fbed",
+      "response_sha256": "bac83d335c4a64f1ef232e3c5827ac17d58af90d9873fc357be702847f1f1f44",
+      "phase": [
+        0.8285347202153405,
+        -0.5599376906385991
+      ],
+      "pivot": 2457,
+      "profile_check": {
+        "stationary_max": 1.5177914480801746e-11,
+        "truncated_charge_fraction": 1.0014211682118912e-12,
+        "phase_anchor": 7.216678841204203e-12,
+        "passed": true
+      },
+      "extraction_qa": [
+        {
+          "window": [
+            88.0,
+            104.43734551685922
+          ],
+          "basis_frequencies": [
+            0.0,
+            0.38225060735841676,
+            -0.38225060735841676,
+            0.7645012147168335,
+            -0.7645012147168335
+          ],
+          "errors": [
+            9.523180196948207e-07,
+            4.3886751533852386e-08,
+            1.948799701290206e-06,
+            7.766758006952837e-07,
+            3.0340746140881307e-06
+          ],
+          "passed": true
+        },
+        {
+          "window": [
+            104.5,
+            120.93734551685922
+          ],
+          "basis_frequencies": [
+            0.0,
+            0.38225060735841676,
+            -0.38225060735841676,
+            0.7645012147168335,
+            -0.7645012147168335
+          ],
+          "errors": [
+            9.523180195393615e-07,
+            4.388675145454718e-08,
+            1.9487997013012146e-06,
+            7.766758006953498e-07,
+            3.034074613975159e-06
+          ],
+          "passed": true
+        }
+      ],
+      "stationary_response_extraction_qa": {
+        "relative_errors": [
+          7.766758006979656e-07,
+          7.766758006966592e-07
+        ],
+        "passed": true
+      }
+    },
+    "phase": {
+      "multiplier": [
+        0.0,
+        1.0
+      ],
+      "renormalized": false,
+      "rho": 0.38225060735841676,
+      "omega": 1.018163515240714,
+      "alpha": 0.07394590543783222,
+      "full_vector_size": 14400
+    },
+    "artifacts": [
+      {
+        "role": "Rc",
+        "dt": 0.02,
+        "directory": "causal-split-run",
+        "file": "split-dt0.02-ring.npz",
+        "sha256": "fe4064263e8a580548844c86748a3482be719322b9db33c3fd5b8c049dbd6ce3"
+      },
+      {
+        "role": "Rf",
+        "dt": 0.01,
+        "directory": "causal-split-run",
+        "file": "split-dt0.01-ring.npz",
+        "sha256": "caa56bae57837ea90565f3d2dcbbfcdc9d29dd3f3de12648f8bbaeaec5ecd9a0"
+      },
+      {
+        "role": "Ncoarse",
+        "dt": 0.01,
+        "directory": "phase-cycle-run",
+        "file": "base-separated-ring.npz",
+        "sha256": "41d0558b08ca74f485d163d6a4c18639c7f82ab55f1880a48e65ce18389d15e7"
+      },
+      {
+        "role": "N",
+        "dt": 0.005,
+        "directory": "phase-cycle-run",
+        "file": "time-separated-ring.npz",
+        "sha256": "15dbb9362a83ad8727321112f91353e1d0ca97482de44805c7ac6194a7147ef3"
+      }
+    ],
+    "amplitude_used_as_context_only": true
+  }
+}

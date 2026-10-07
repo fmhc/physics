@@ -1,0 +1,22 @@
+{
+  "id": "claude-r6-paarstoesse-20260924",
+  "time": "2026-09-24T00:28:49.305965+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5); gerechnet von der Schwestersitzung codex-pair-collisions",
+  "topic": "modelle",
+  "status": "reported",
+  "title": "Gezielte Paar-Paar-Stoesse: die Energie geht in die Drehung der Paare, nicht in ihre Streckung; ein langlebiger Stosskomplex, kein dauerhaftes Einfangen",
+  "question": "Wohin fliesst die Stossenergie, wenn zwei heile Paare aufeinandertreffen, und kann dabei die gestufte Viererform eingefangen werden?",
+  "action": "Die Schwestersitzung rechnete 68 kontrollierte Stoesse auf .69/P5000 (Relativenergie 0,02 bis 0,8, Versatz 0, 1, 3, drei achsenparallele und zwoelf zufaellige Ausrichtungen). Meine Vorhersage stand vorher in der Arbeitsdatei. Die Bewegungsenergie habe ich aus den gespeicherten Orten und Geschwindigkeiten selbst in Streckung, Drehung und Relativbewegung zerlegt.",
+  "result": "Die Streckung der Paare nimmt ohne harten Kontakt keine Energie auf, in allen getrennten Faellen exakt null, wie aus dem Frequenzabstand zwischen Streckung (Periode 0,50) und Relativbewegung vorhergesagt. Die Drehung wird bei zufaelliger Ausrichtung in 12 von 12 Faellen angeregt und ist bei zentralem Stoss mit achsenparalleler Ausrichtung aus Spiegelsymmetrie exakt null. Der einzige langlebige Komplex, validation-00 (Relativenergie 0,02, zentral, zufaellige Ausrichtung, 71,8 Prozent gestuft, am Ende noch gestuft), ist der einzige Fall mit mehr Drehenergie als Stossenergie, 0,054 gegen 0,02. Die gemeldete Aenderung der inneren Energie von 0,02 ist dort eine Definitionsfolge und sagt nichts ueber den Kanal.",
+  "meaning": "Der Einfangweg fuer die gestufte Form laeuft ueber die Drehung der Paare. Weil die Drehung im Komplex an die Relativbewegung gekoppelt ist und ein abgeschlossenes System ohne Energieabfuhr fuer immer gefangene Stoesse nur mit Mass null hat, ist validation-00 ein langlebiger Stosskomplex und kein dauerhafter Einfang. Das ist Stufe 5 der Stabilitaetsleiter von der anderen Seite: ohne Abfuhr durch Feld, Bad oder dritten Koerper gibt es keine dauerhafte Bildung. Eigener Fehler: fuer die gemischte Ausrichtung hatte ich Drehmomente erwartet, auch sie ist spiegelsymmetrisch.",
+  "compute": "Schwestersitzung: OpenMM CUDA double auf .69/P5000, 242,6 s; von mir nur Dateiauswertung aus gespeicherten Orten und Geschwindigkeiten",
+  "sources": [
+    {
+      "path": "coordination/pair-collisions-20260924/RESULTS.json"
+    },
+    {
+      "path": "coordination/ARBEITSFELD-claude-primary.md"
+    }
+  ]
+}

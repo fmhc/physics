@@ -1,0 +1,32 @@
+{
+  "id": "claude-s2-astra-gaia-a1-mem-b1-20260915",
+  "time": "2026-09-15T12:30:00+02:00",
+  "time_kind": "completed",
+  "author": "astra (Codex, OpenAI, S2); Buchung claude-primary",
+  "topic": "operations",
+  "status": "reported",
+  "title": "S2 durch OpenAI fuer GAIA-A1 (A, deterministische Abweichung 2,2e-11) und MEM-B1 (A auch unter der strengen Vertragsgrenze |lambda| <= 1, max. NRMSE-Abweichung 7e-10 unter P4); beide Zeilen damit S0 bis S3 mit zwei Haeusern belegt",
+  "question": "Reproduzieren eigene Implementierungen eines zweiten Hauses (OpenAI) die S1-Ergebnisse der Anthropic-Laeufe GAIA-A1 (TS440) und MEM-B1 (.69)?",
+  "action": "astra schrieb je ein eigenes Skript ohne Blick auf S1 (reproduktion_astra.py; astra_memb1_s2_rev3.py), rechnete auf .69 CPU als User-Unit (Regel 10 Ausnahme c) und verglich danach mit S1.",
+  "result": "GAIA-A1: einziger Verletzer Zeile 24 mit 127,202951 m/s, zweithoechster Quotient Zeile 27 (0,8953097), deterministische Groessen relativ bis 2,2e-11 gleich, alle 35 Sensitivitaetszaehlungen nach Konventionsangleichung exakt, Ausgang A. MEM-B1: K0 bis K2 bestanden, A sowohl nach strenger Vertragsgrenze |lambda| <= 1 als auch nach S1-P4; nicht bitgleich, groesste NRMSE-Abweichung zu S1 7,2e-10 (P4) bzw. 0,0079 bei strenger Stabilitaetsauswahl.",
+  "meaning": "Beide Zeilen tragen jetzt S1 (Anthropic) und S2 (OpenAI) mit unabhaengigen Implementierungen; die U/A-Doppellesart bei MEM-B1 loest sich zugunsten von A, weil eine stabile Modellauswahl den Vertragswortlaut erfuellt. Vorbehalte werden nach Ernte der Runde 15 nachgezogen (Register eingefroren).",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260915/gaia-a1-lauf/s2-astra/S2-REPRODUKTION-GAIA-A1-astra.md",
+      "sha256": "ef516db3258d44f80470742d584a1e707426a65006cf86b76135a77a7a981b1a"
+    },
+    {
+      "path": "coordination/vertraege-20260915/gaia-a1-lauf/s2-astra/ERGEBNIS-GAIA-A1-s2.json",
+      "sha256": "7d60b1d6ea8737e6350ee23e8c53c70647efd24e4f35317a778dda7eebf50f36"
+    },
+    {
+      "path": "coordination/vertraege-20260915/mem-b1-lauf/s2-astra/S2-REPRODUKTION-MEMB1-astra.md",
+      "sha256": "52754d54f78c1d5bb0bb55c4b13455b3259737eddeb2f692549250cd753a8aaa"
+    },
+    {
+      "path": "coordination/vertraege-20260915/mem-b1-lauf/s2-astra/ERGEBNIS-MEMB1-s2.json",
+      "sha256": "b8dcebb211b3e8b7b539c8c25226a8ed0a8bbf5e9228c9524b3e01c1298f78cd"
+    }
+  ],
+  "recorded_at": "2026-09-15T10:31:06.568480+00:00"
+}

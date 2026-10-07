@@ -1,0 +1,35 @@
+kielwasser: Start 2026-09-30T01:55:22+00:00, Ende 2026-09-30T01:57:22+00:00, Quadro P4000, torch 2.5.1+cu121
+Medium C0 = 0.1, g4 = 0.5, lam = 0.1: c_s = 0.2085, Heilungslaenge etwa 3.23
+Dauer [s]: relax_grob_s 0.8, entw_grob_s 27.8, relax_fein_s 0.8, entw_fein_s 69.4
+Karte kielwasser (Wellen 4). Ball m = 0, omega^2 = 0.6 (Q 66.62, R_halb 3.36) gehalten (V_h = 0.002 r^2) bei x = -12.0; Medium stroemt in +x (Ruhesystem des Balls). Dichtebild gemittelt ueber die letzten 60.0; Winkelprofil im Ring r = (10.0, 24.0).
+Lauf | u/c_s | u | gamma | Mach Medium | Mach Ballsystem | RMS-Spitze oben/unten | gemessen | Abw. | 50-%-Kante | RMS-Spitze | RMS Achse <8 Grad | Vorlauf RMS | F_x | Wirbel
+[grob]
+  u0.5 | 0.5 | 0.1040 | 1.005 | - | - | 87/-87 | 87.0 | - | 87.0 | 1.86e-03 | 7.54e-04 | 1.2e-03 | -2.33e-04 | 0
+  u1.3 | 1.3 | 0.2669 | 1.038 | 50.3 | 49.2 | 33/-33 | 33.0 | -16.2 | 87.0 | 4.08e-02 | 3.02e-02 | 2.2e-02 | +3.50e-02 | 0
+  u1.8 | 1.8 | 0.3643 | 1.074 | 33.7 | 31.9 | 73/-73 | 73.0 | +41.1 | 87.0 | 3.35e-02 | 1.09e-02 | 1.7e-02 | +4.52e-02 | 0
+  u2.5 | 2.5 | 0.4918 | 1.148 | 23.6 | 20.8 | 50/-50 | 50.0 | +29.2 | 86.0 | 2.83e-02 | 1.24e-02 | 7.3e-03 | +2.40e-02 | 0
+  u1.8_lam0 | 1.8 | 0.3643 | 1.074 | 33.7 | 31.9 | 87/-8 | 47.5 | +15.6 | 87.0 | 0.00e+00 | 0.00e+00 | 0.0e+00 | +0.00e+00 | 0
+  medium_allein_u1.8 | 1.8 | 0.3643 | Medium allein: max|dC| 0.0e+00, C-Spanne 0.0e+00
+  Urteil: u1.3: Winkel 33.0 gegen Mach (Ballsystem) 49.2 Grad -> verfehlt (6 Grad); 50-%-Kante 87.0
+  Urteil: u1.8: Winkel 73.0 gegen Mach (Ballsystem) 31.9 Grad -> verfehlt (6 Grad); 50-%-Kante 87.0
+  Urteil: u2.5: Winkel 50.0 gegen Mach (Ballsystem) 20.8 Grad -> verfehlt (6 Grad); 50-%-Kante 86.0
+  Urteil: u0.5: Amplitude/Amplitude(u1.3) = 0.046 -> kein Kielwasser (V-K2)
+  Urteil: u0.5: |F_x|/|F_x(u1.3)| = 0.007 -> reibungsfrei (V-K3)
+[fein]
+  u1.3 | 1.3 | 0.2669 | 1.038 | 50.3 | 49.2 | 33/-33 | 33.0 | -16.2 | 87.0 | 4.08e-02 | 3.02e-02 | 2.2e-02 | +3.50e-02 | 0
+  u1.8 | 1.8 | 0.3643 | 1.074 | 33.7 | 31.9 | 73/-73 | 73.0 | +41.1 | 87.0 | 3.35e-02 | 1.09e-02 | 1.7e-02 | +4.52e-02 | 0
+  u2.5 | 2.5 | 0.4918 | 1.148 | 23.6 | 20.8 | 50/-50 | 50.0 | +29.2 | 86.0 | 2.83e-02 | 1.24e-02 | 7.3e-03 | +2.40e-02 | 0
+  Urteil: u1.3: Winkel 33.0 gegen Mach (Ballsystem) 49.2 Grad -> verfehlt (6 Grad); 50-%-Kante 87.0
+  Urteil: u1.8: Winkel 73.0 gegen Mach (Ballsystem) 31.9 Grad -> verfehlt (6 Grad); 50-%-Kante 87.0
+  Urteil: u2.5: Winkel 50.0 gegen Mach (Ballsystem) 20.8 Grad -> verfehlt (6 Grad); 50-%-Kante 86.0
+L3 (grob gegen fein; bestanden, wenn |fein - grob| <= max(0,2 |fein|, Toleranz)):
+  u1.3 winkel_mess: grob 33, fein 33 -> ok
+  u1.3 amplitude: grob 0.040814, fein 0.040822 -> ok
+  u1.3 F_x_mittel: grob 0.034974, fein 0.034976 -> ok
+  u1.8 winkel_mess: grob 73, fein 73 -> ok
+  u1.8 amplitude: grob 0.033534, fein 0.03352 -> ok
+  u1.8 F_x_mittel: grob 0.045171, fein 0.045171 -> ok
+  u2.5 winkel_mess: grob 50, fein 50 -> ok
+  u2.5 amplitude: grob 0.028278, fein 0.028262 -> ok
+  u2.5 F_x_mittel: grob 0.024, fein 0.024004 -> ok
+  L3 gesamt: bestanden (9 von 9)

@@ -1,0 +1,29 @@
+Freie Nullquellen-Diagnose, 2. Oktober 2026, Root-Ergebnis
+
+Sechs festgelegte freie Loesungen abgeschlossen. .69/ubuntu-auto, CPU8,
+nice19, ein Thread; extern 0.52 User +0.07 System =0.59 CPU-s,
+0.92 wall-s, Exit0. Keine CUDA, keine M2-Rechnung.
+
+h        globaler relativer L2-Fehler    Fehlerquadrat ausserhalb r4
+0.1      0.0097728382568                 0.8692746305
+0.05     0.0024369064420                 0.8690648491
+0.025    0.0006088327107                 0.8690123698
+
+Reduktionen bei Halbierung: 4.010346 und4.002588. Damit ist die vorab
+gebundene regionale Diagnose gestuetzt: numerischer Aussenrest dominiert.
+Seine regionale Quadratnorm stimmt mit 4pi|A|^2 DeltaR bis relativ
+5.4e-5 (grob),1.4e-5 (mittel),3.4e-6 (fein) ueberein.
+Das ist kein unabhaengiger Strahlungsnachweis: A stammt aus demselben Feld.
+Auch der Kernfehler bleibt vorhanden; kein Rest wird abgezogen.
+
+Alle Algebra-/Workbilanzflags wahr. Gaußkontrollen auf allen drei Gittern
+bestanden; Nullbump-Profilgate auf h.1 weiterhin falsch, auf h.05/.025 wahr.
+Die alte Reihe bleibt UNRESOLVED. Diese Diagnose ist weder ein geaendertes
+Gate noch eine Freigabe der M2-Produktion. Die analytisch nichtstrahlende
+Quelle erzeugt auf endlichem Gitter eine kleine numerische Aussenwelle,
+deren Amplitude und globaler Profilfehler hier quadratisch konvergieren.
+
+Nichtautor: RESULT-REVIEW.txt. Engster Anschluss: noch fehlende freie
+Closed-/Incoming-Kontrollen auf h.05 mit unveraenderten Grenzen und
+anschliessend ein ausdruecklich begrenzter neuer M2-Plan. Aus dieser
+Diagnose folgen weder M2-Strahlung, Lebensdauer noch Stabilitaet.

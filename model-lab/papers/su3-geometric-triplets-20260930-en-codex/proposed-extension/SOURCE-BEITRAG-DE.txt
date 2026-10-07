@@ -1,0 +1,47 @@
+Paper-Weiterentwicklung: überprüfbare Struktur statt zusätzliche Identifikationen
+30.09.2026, ag-phy-coordination. Papierableitungen/Vorschläge, keine neuen Rechenläufe.
+Basis: deutsches Paper v0.5, §§2–5 und 5.4–8 nachgelesen; KRAFT-Konzeptprüfung; quantum-geometry-audit.
+Dateibesitz: Vorschlag zur Einarbeitung durch ag-phy-lat; bestehende Paperdateien hier nicht verändert.
+
+Vorgeschlagene Leitfrage:
+Wann trägt ein geometrisch entarteter Triplettsektor eine geschlossene, symmetrieverträgliche Wechselwirkungsdynamik?
+Ein linearer dreifacher Eigenwert, eine isotrope projizierte Kopplung und eine strahlungsarme Mode sind drei verschiedene Eigenschaften. Die vorhandenen Gegenmodelle erlauben, diese Trennung zum eigentlichen Beitrag zu machen.
+
+A. Papierfähige ergänzende Proposition: eliminierte Moden können Symmetrie brechen
+Sei H ein endlicher hermitescher linearer Generator, P der Triplettprojektor, Q=I-P, H_PP=lambda I_3 und V=PHQ. Für reelles z außerhalb spec(H_QQ) gilt exakt
+H_eff(z)=lambda I_3 - V(H_QQ-zI)^(-1)V^dagger,
+mit Eigenwertbedingung det(H_eff(z)-zI)=0.
+Gleiche Eigenwerte von H_PP allein garantieren daher keine U(3)-Symmetrie der effektiven Dynamik.
+Expliziter Gegenzeuge: H_QQ=Delta (ein einzelner entfernter Modus), V=g(1,0,0)^T. Dann lautet die Korrektur -g²/(Delta-z) diag(1,0,0).
+Sie spaltet einen Kanal ab, obwohl die unmittelbare Projektion exakt isotrop ist.
+Bei delta=dist(z,spec H_QQ)>0 gilt ||H_eff(z)-lambda I||<=||V||²/delta. Dies begrenzt die gesamte Korrektur, nicht ihre zwingende Anisotropie; isotrope Vermittlung ist möglich.
+Ein geeigneter hinreichender Schutz wäre eine volle Symmetriedarstellung auf P UND Q, die H und P erhält. Dann kommutiert der Schur-Operator mit der irreduziblen Triplettdarstellung und ist dort skalar.
+Bekannte lineare Algebra, kein Neuheitsanspruch. Bei unserem Q-Ball muss stattdessen das tatsächliche gekoppelte Frequenzbüschel mitsamt Normierung verwendet werden; kein stiller Import dieser Schrödingerform.
+
+B. Papierfähige endliche Zeitaussage zur Leckage
+Für denselben hermiteschen Generator, normierten Anfangszustand psi(0) in P, i psi_dot=H psi, liefert die Variation-der-Konstanten-Formel
+Q psi(t)=-i integral_0^t exp[-iH_QQ(t-s)] QHP Ppsi(s) ds.
+Daraus folgt ||Qpsi(t)||<=min(1, |t| ||QHP||), also Leckagewahrscheinlichkeit <=min(1,t²||QHP||²).
+Dies ist eine konservative endliche Schranke; sie beweist weder scharfe Langzeitstabilität noch eine optimale Lebensdauer. Für nichtlineare Felder braucht man andere Fehlerabschätzungen. Sie verbindet aber das vorhandene algebraische Invarianztor QHP=0 mit einer sinnvollen tolerierten Fehlergröße für endliche Beobachtungszeiten.
+
+C. Offene Kernfrage: dunkel UND wechselwirkend?
+Als rein effektives passives Zweimodenbeispiel setze
+H_eff=[[omega-i gamma/2, J-i gamma12/2],[J-i gamma12/2,omega-i gamma/2]],
+mit reellen J,gamma12 und gamma>=|gamma12|.
+Die Eigenwerte lauten omega+-J-i(gamma+-gamma12)/2. Für gamma12=gamma ist der antisymmetrische Kanal dunkel, obwohl J ungleich null sein darf. Damit folgt Strahlungsdunkelheit logisch nicht gleichbedeutend mit fehlender kohärenter Kopplung.
+Das ist eine algebraisch bekannte Möglichkeit, keine aus KRAFT abgeleitete Parameterwahl. In einer mikroskopischen Vermittlung sind dispersive und dissipative Teile über den kausalen Antwortkern verbunden und nicht beliebig unabhängig einstellbar.
+Ein fester J belegt auch keine räumliche Kraft. Dazu braucht man die Ortsabhängigkeit, dynamische Positionen und eine konsistente Energie-/Impulsbilanz. KRAFT-still hat den strengen Kraftschalter verfehlt und bleibt genau so eingeordnet.
+Kleinster neuer Modelltest wäre, aus demselben bestehenden Streuoperator Frequenzaufspaltung, Abstrahlung und Abstandskraft zu gewinnen. Keine unterschiedlichen Phasenfenster oder Fits als denselben Befund ausgeben.
+
+D. Zwei weitere gezielte Ideationsrichtungen
+1. Frequenzabhängige Mediumreichweite: Erst den tatsächlichen Mediumoperator und Quellenkanal bestimmen. Für einen ausdrücklich neuen linearen massiven 3D-Mediator unterhalb seiner Schwelle wäre kappa=sqrt(mu²-Omega²)/c_m statt mu/c_m; dadurch ist ein statischer Yukawa-Fit für dynamische Quellen nicht allgemein ausreichend. Das erklärt K3 noch nicht, insbesondere nicht dessen 1D-Geometrie oder Transienten.
+2. Hamiltonsche Phasenbindung mit Memory: H=U n²/2-K cos(phi)+(P²+Omega_m²Q²)/2+lambda Q sin(phi). Die kleine Phasensteifigkeit nach statischer Elimination ist K-lambda²/Omega_m². Positive Steifigkeit und U>0 erlauben kleine gebundene Phasenschwingungen; sie liefern keine dissipative Synchronisation und keine räumliche Selbstbindung. Dynamische Elimination erhält Medium-Anfangsdaten und retadierten Kernel.
+
+E. Hawking-Frage: geeignete Abgrenzung für den Ausblick
+Hawking-Strahlung ist ein quantenmechanischer Emissionsprozess auf einem schwarzen-Loch-Hintergrund, keine Bezeichnung für gespeicherte innere Energie. Bei Nettoabstrahlung sinkt die Masse des Lochs. Quelle: Hawking1975, https://doi.org/10.1007/BF02345020, hier Verlagsabstract gelesen; keine neue Volltextprüfung behauptet.
+Unsere klassische Energie aus Zeitänderungen, Gradienten und Potential bleibt Feldenergie. Eine BIC unterdrückt ausgewählte Strahlungskanäle; sie beweist weder einen Horizont noch Hawking-Temperatur oder Teilchenerzeugung aus einem Quantenvakuum.
+Möglicher späterer Anschluss ist positive-/negative-Norm-Modenmischung: Quantisierung, Ein-/Aus-Zustände und Bogoliubovkoeffizienten müssen definiert werden. Allein zwei Seitenbänder sind kein Nachweis. Klassische angeregte Wellenkonversion ist von spontaner Quantenemission zu trennen. Ein Hawking-Analog benötigt außerdem den passenden Horizont-/Rotverschiebungsmechanismus und dessen spektrale Vorhersage; allgemeinere parametrische Erzeugung kann ohne Horizont auftreten.
+Quellenhinweise, hier nur Abstracts gelesen: https://arxiv.org/abs/2311.04481 (Norm-/Frequenzkonventionen), https://arxiv.org/abs/1510.00621 (berichteter BEC-Analogversuch). Kein Beleg für solche Emission im Projektmodell.
+
+Empfehlung zur Fassung:
+A/B als kurze bedingte Propositionen nach unabhängiger algebraischer Nachlesung; C als zukünftige gekoppelte Messfrage. D/E und CDT/Holographie in einen klar getrennten Ausblick oder Forschungsnotiz, solange keine direkte Modellableitung existiert. KRAFT-Zahlen nicht in die vorhandenen Triplettversuche mischen. Der aktuelle BIC-/Außenraumbeweis bleibt eigenständig.

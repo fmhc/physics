@@ -1,0 +1,33 @@
+{
+  "id": "claude-video-kalibrierung-1-20261005",
+  "time": "2026-10-05T15:59:14+02:00",
+  "time_kind": "completed",
+  "author": "claude-video (Anthropic, Opus 5.5), eigene Claude-Sitzung im Direktauftrag Finns, ohne Subagent fuer die Auswertung",
+  "topic": "methodik",
+  "status": "reported",
+  "evidenzart": "verfahren",
+  "title": "KALIBRIERUNG-1: Die vorab festgelegten Wahrscheinlichkeiten auf 88 Karten (343 Vorhersagen mit eindeutigem Urteil, 30.09.-05.10.) sind gut kalibriert (0,31/0,49/0,67/0,87 angesagt gegen 0,28/0,57/0,73/0,89 eingetroffen) mit leichter Vorsicht bei Hypothesen; K0, K2, K3 eingetroffen, K1 nach eingefrorener Pipeline knapp nicht (Brier -9,7 %, Bereich bis +0,003), mit nachgetragenen Werten fuer fuenf falsch ausgelesene Zeilen [D] -13 % mit Bereich unter null; K4 nicht, K5 nicht entscheidbar. Hauptvorbehalt: Selbstbewertung",
+  "question": "Finn will die KI-Mitarbeit als eigenes Prozess-Paper dokumentieren und sinnvolle Ergebnisse veroeffentlichen. Wie gut waren die auf den Karten vorab festgelegten Wahrscheinlichkeiten gegen die spaeteren Urteile kalibriert, und tragen sie Information?",
+  "action": "Karte mit K0-K5 vor jeder Auswertung eingefroren (15:51:35, Vorkenntnis der Rohzaehlung offengelegt); Plan an claude-primary und ag-phy-coordination per Bus (c5ceba2f, d64790ec). Schnappschuss von 103 Ergebnisdateien mit Spalten Wahrsch. und Urteil nach .69 (sha256-Liste). PLAN vor jeder Extraktion: Gegenlesen, Plaene, Zwischenstaende und Sammeldateien ausgeschlossen (Doppelzaehlung), Urteilsspalte 'Kartenwortlaut' bestaetigt. Rauchtest an drei Dateien, PLAN und Code eingefroren 15:56:09, Hauptlauf .69 cpu3 (Extraktion, Brier, Murphy, logistische Kalibrierung, Cluster-Bootstrap ueber Ordner 2000x). Stichprobe 25 Zeilen von Hand gegen Quellzeilen. Nachtraeglich [D] fuenf Zeilen mit gemischter Zelle 'Karte (Wahrsch.)' korrigiert und mit unveraendertem Code neu ausgewertet. Lokal kein Interpreter.",
+  "result": "K0 eingetroffen (93 Dateien, Stichprobe 25/25; systematischer Fehler in 5 Zeilen ausserhalb der Stichprobe gefunden). K1 nicht eingetroffen: Brier 0,1918 gegen 0,2124, Bereich der Differenz -0,043 bis +0,003; [D] korrigiert 0,1848, -13 %, Bereich -0,047 bis -0,008. K2 eingetroffen: Treffer 0,694 gegen mittleres p 0,638 (korrigiert 0,643). K3 eingetroffen nach Punktwert: Kontrollen 0,824 gegen 0,847 (Bereich schliesst 0 ein). K4 nicht eingetroffen: b = 0,75 (korrigiert 1,08, Bereich 0,74 bis 1,52). K5 nicht entscheidbar: alle Zeilen ab 30.09. Hypothesen 0,66 eingetroffen bei p 0,59. Abdeckung 88 von 334 Karten; 17 % der Zeilen ausgeschlossen (teilweise, unentschieden, sonst).",
+  "meaning": "Fuer Finn: Erster harter Befund fuer ein Prozess-Paper. Die Zahlen auf den Karten sind kein Ritual: Sie sind brauchbar kalibriert, bei Hypothesen eher etwas zu vorsichtig. Vor einer Veroeffentlichung noetig: blinde Neubewertung einer Zufallsauswahl von Urteilen durch ein anderes Haus oder einen Menschen (trennt Prognoseguete von Selbstbewertung), Abdeckung auf Septemberformate, Codex-Karten und Rundendateien erweitern (dann K5 und Hausvergleich), Parser fuer gemischte Zellen verbessern. K1 haengt an 1,5 % fehlerhaft gelesenen Zeilen und ist ehrlich als knapp zu fuehren.",
+  "sources": [
+    {
+      "path": "coordination/kalibrierung-20261005/ERGEBNIS.md",
+      "sha256": "2d2a7aeda4d321214a06a52e0c19f0fc6886f4141706409833f022ff9f88b75f"
+    },
+    {
+      "path": "coordination/kalibrierung-20261005/KARTE.md",
+      "sha256": "1d7378056fa6bd10627f78a69889818dcb1f117f9e171b6bc58331ce9814c8b8"
+    },
+    {
+      "path": "coordination/kalibrierung-20261005/lauf-69/auswertung.json",
+      "sha256": "52d9d0ff3c715c84f4b3577a08afc980560bf901e6888ec35fbbad64e1674d4d"
+    },
+    {
+      "path": "coordination/kalibrierung-20261005/lauf-69/auswertung-korr.json",
+      "sha256": "c48b4f5e0f7078788c208a772e3001b41d5c7f19cb6a312709632dd118145b52"
+    }
+  ],
+  "recorded_at": "2026-10-05T13:59:58.904397+00:00"
+}

@@ -1,0 +1,29 @@
+{
+  "id": "vertrag-vm-1-lauf-berichtigung-20260925",
+  "supersedes": "vertrag-vm-1-lauf-20260922",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung; aus dem Methodik-Review vom 25.09.2026 (Qwen, Claude) und der Berichtigung vom 22.09.",
+  "topic": "binaries",
+  "status": "reported",
+  "title": "Berichtigung zu VM-1: Ausgang U2 (erklaerbar, nicht trennbar); drei Zahlen und eine Zaehlung im Alteintrag falsch; 'Form des Versatzes' ist Hypothese, kein Ergebnis",
+  "question": "Welche Angaben im Eintrag vertrag-vm-1-lauf-20260922 tragen nicht?",
+  "action": "Die Berichtigung vom 22.09. (BERICHTIGUNG-vm-1-20260922.md), das S3-Papier und der Methodik-Review werden in einem Eintrag mit supersedes zusammengefuehrt.",
+  "result": "Ausgang U2 bleibt. Berichtigt: L_0 entspricht 3,795 Katalogstreuungen, nicht 3,777; 3,777 ist Rest_K. Die Quantile lauten -0,0062, 0,0638 und 0,1339 (ABLEITUNGEN-VM-1.json). 'U2 in 18 von 24 Lesarten' hat kein Feld und ist gestrichen. Der Nenner SD_kat1 ist nur die Katalogstreuung des Modells. Gegen die Summe aus Katalogstreuung und Messbootstrap sind es 2,59 Streuungen; fuer SD_kat1 spricht laut S3 nur ein Argument (N1), keine Messung. Die 'Form des Versatzes' ist nach dem eigenen Bericht (BERICHT-VM-1 Z. 141-142) eine Hypothese fuer einen Nachfolger. Der Nachfolger VM-4 wurde abgebrochen.",
+  "meaning": "Aus VM-1 folgt kein Befund ueber die Ursache des Versatzes. Nach Regel 15.8.1 wird seine Kennzahl in Stand, Lagemeldung und Karte nicht als Zahl genannt. Ob Eingangsgroessen eines U-Laufs in Folgevertraege duerfen, hat die Leitung nicht entschieden; die Frage liegt bei Finn. Die Karten 146 und 148 werden durch Nachfolgekarten ersetzt.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260922/BERICHTIGUNG-vm-1-20260922.md",
+      "sha256": "9bfd2701b84e625ded56e6a02bfea2eabafee49017aba1858c3c943c48dfe65c"
+    },
+    {
+      "path": "coordination/methodik-review/s2-s3-vm-1-20260922/S2-S3-VM-1.md",
+      "sha256": "352adbfa8be81eef2ab10461e3c078c2653cdd2beccb34f42cbef7fae55a5191"
+    },
+    {
+      "path": "coordination/methodik-review/review-20260925/REVIEW-20260925-r22-eingefroren.md",
+      "sha256": "7423dcf4ee855c7627ed8202944504b108b41d490a3aa5ce73348ffcbcaad5da"
+    }
+  ],
+  "time": "2026-09-25T07:57:50+00:00",
+  "recorded_at": "2026-09-25T07:57:51.716480+00:00"
+}

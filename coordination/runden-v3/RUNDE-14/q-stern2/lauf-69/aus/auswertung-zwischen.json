@@ -1,0 +1,551 @@
+{
+ "argumente": {
+  "kommando": "auswertung",
+  "modell": "kg",
+  "alpha": 0.0,
+  "r_fak": 1.0,
+  "quelle": "rho",
+  "phi_misch": 1.0,
+  "psi": "voll",
+  "n_rampe": 6,
+  "alphas": "0.00087,0.0027",
+  "t": 0.0,
+  "band": "",
+  "x": "",
+  "h": 0.02,
+  "n1": 4000,
+  "n2": 2000,
+  "dicht_lo": 1.5,
+  "dicht_hi": 1.95,
+  "n_mid": 2,
+  "n_zw": 1500,
+  "ast_tol": 0.3,
+  "max_kand": 4,
+  "rdx": 0.0004,
+  "rdrho": 0.002,
+  "r_nx": 5,
+  "r_extra": 40.0,
+  "pole": "nein",
+  "budget": 520.0,
+  "aus": "/home/fmh/fmhc-physics-remote/runde14-q-stern2/aus",
+  "name": "auswertung-zwischen"
+ },
+ "start": "2026-10-01 22:10:39 UTC",
+ "K1": {
+  "treffer": {
+   "0.02": [
+    {
+     "x": 0.7976767752537803,
+     "rho": 1.7446175408839264,
+     "umlauf": -1,
+     "umlauf_roh": -1.0,
+     "aufgeloest": true,
+     "max_sprung": 0.3589711917247098,
+     "datei": "k1-h0.02.json"
+    }
+   ],
+   "0.01": [
+    {
+     "x": 0.7976767863664561,
+     "rho": 1.7446175445886105,
+     "umlauf": -1,
+     "umlauf_roh": -1.0000000000000002,
+     "aufgeloest": true,
+     "max_sprung": 0.35897125417760195,
+     "datei": "k1-h0.01.json"
+    }
+   ]
+  },
+  "bestanden": true
+ },
+ "K2": {
+  "0.00087": [
+   true
+  ],
+  "0.0027": [
+   true
+  ]
+ },
+ "alpha_ergebnisse": [
+  {
+   "alpha": 0.00087,
+   "psi": "voll",
+   "dateien": [
+    [
+     "a1-voll-o-h0.02.json",
+     "a1-voll-u-h0.02.json"
+    ],
+    [
+     "a1-voll-o-h0.01.json",
+     "a1-voll-u-h0.01.json"
+    ],
+    [
+     "a1-voll-k3.json"
+    ]
+   ],
+   "treffer_h0.02": [
+    {
+     "x": 0.7929050713487262,
+     "rho": 1.7395274724039747,
+     "umlauf": -1,
+     "umlauf_roh": -1.0,
+     "aufgeloest": true,
+     "max_sprung": 0.38024529356548026,
+     "datei": "a1-voll-o-h0.02.json"
+    }
+   ],
+   "treffer_h0.01": [
+    {
+     "x": 0.7929050830061105,
+     "rho": 1.7395274764915705,
+     "umlauf": -1,
+     "umlauf_roh": -1.0,
+     "aufgeloest": true,
+     "max_sprung": 0.38024538888644843,
+     "datei": "a1-voll-o-h0.01.json"
+    }
+   ],
+   "treffer_K3": [
+    {
+     "x": 0.7929050713410691,
+     "rho": 1.7395274724007765,
+     "umlauf": -1,
+     "umlauf_roh": -1.0,
+     "aufgeloest": true,
+     "max_sprung": 0.38024529115803724,
+     "datei": "a1-voll-k3.json"
+    }
+   ],
+   "K2_bestanden": true,
+   "gesehen": [
+    {
+     "h0.02": {
+      "x": 0.7929050713487262,
+      "rho": 1.7395274724039747,
+      "umlauf": -1,
+      "umlauf_roh": -1.0,
+      "aufgeloest": true,
+      "max_sprung": 0.38024529356548026,
+      "datei": "a1-voll-o-h0.02.json"
+     },
+     "h0.01": {
+      "x": 0.7929050830061105,
+      "rho": 1.7395274764915705,
+      "umlauf": -1,
+      "umlauf_roh": -1.0,
+      "aufgeloest": true,
+      "max_sprung": 0.38024538888644843,
+      "datei": "a1-voll-o-h0.01.json"
+     },
+     "K3": {
+      "x": 0.7929050713410691,
+      "rho": 1.7395274724007765,
+      "umlauf": -1,
+      "umlauf_roh": -1.0,
+      "aufgeloest": true,
+      "max_sprung": 0.38024529115803724,
+      "datei": "a1-voll-k3.json"
+     }
+    }
+   ],
+   "k3_verfehlt": [],
+   "stufen": [
+    {
+     "stufe": "h0.02",
+     "zeilen": 13,
+     "x_min": 0.74,
+     "x_max": 0.8,
+     "ungueltig": [],
+     "streifen": 12,
+     "streifen_umlauf_ungleich_0": 1,
+     "streifen_nicht_aufgeloest": 0,
+     "s_wechsel_im_fenster": 1,
+     "deckt_fenster": true,
+     "nicht_gesehen_ok": false
+    },
+    {
+     "stufe": "h0.01",
+     "zeilen": 13,
+     "x_min": 0.74,
+     "x_max": 0.8,
+     "ungueltig": [],
+     "streifen": 6,
+     "streifen_umlauf_ungleich_0": 1,
+     "streifen_nicht_aufgeloest": 0,
+     "s_wechsel_im_fenster": 1,
+     "deckt_fenster": true,
+     "nicht_gesehen_ok": false
+    }
+   ],
+   "ausgang": "Gesehen",
+   "kompaktheit_zeile": {
+    "x": 0.795,
+    "kompaktheit": 0.009998162232069039,
+    "Phi0": -0.0049990811160345195,
+    "Phi_Rw": -0.0035985022037532456,
+    "R_w": 3.0107544938358766,
+    "c_asym": 0.012357124573145657
+   }
+  },
+  {
+   "alpha": 0.00087,
+   "psi": "null",
+   "dateien": [
+    [
+     "a1-null-o-h0.02.json",
+     "a1-null-u-h0.02.json"
+    ],
+    [
+     "a1-null-o-h0.01.json"
+    ],
+    [
+     "a1-null-k3.json"
+    ]
+   ],
+   "treffer_h0.02": [
+    {
+     "x": 0.7928037478095523,
+     "rho": 1.73973298391959,
+     "umlauf": -1,
+     "umlauf_roh": -1.0000000000000002,
+     "aufgeloest": true,
+     "max_sprung": 0.3792646919158051,
+     "datei": "a1-null-o-h0.02.json"
+    }
+   ],
+   "treffer_h0.01": [
+    {
+     "x": 0.7928037597628526,
+     "rho": 1.739732988140401,
+     "umlauf": -1,
+     "umlauf_roh": -1.0000000000000002,
+     "aufgeloest": true,
+     "max_sprung": 0.37926477291293126,
+     "datei": "a1-null-o-h0.01.json"
+    }
+   ],
+   "treffer_K3": [
+    {
+     "x": 0.7928037478094735,
+     "rho": 1.7397329839195719,
+     "umlauf": -1,
+     "umlauf_roh": -1.0000000000000002,
+     "aufgeloest": true,
+     "max_sprung": 0.37926469203505897,
+     "datei": "a1-null-k3.json"
+    }
+   ],
+   "K2_bestanden": true,
+   "gesehen": [
+    {
+     "h0.02": {
+      "x": 0.7928037478095523,
+      "rho": 1.73973298391959,
+      "umlauf": -1,
+      "umlauf_roh": -1.0000000000000002,
+      "aufgeloest": true,
+      "max_sprung": 0.3792646919158051,
+      "datei": "a1-null-o-h0.02.json"
+     },
+     "h0.01": {
+      "x": 0.7928037597628526,
+      "rho": 1.739732988140401,
+      "umlauf": -1,
+      "umlauf_roh": -1.0000000000000002,
+      "aufgeloest": true,
+      "max_sprung": 0.37926477291293126,
+      "datei": "a1-null-o-h0.01.json"
+     },
+     "K3": {
+      "x": 0.7928037478094735,
+      "rho": 1.7397329839195719,
+      "umlauf": -1,
+      "umlauf_roh": -1.0000000000000002,
+      "aufgeloest": true,
+      "max_sprung": 0.37926469203505897,
+      "datei": "a1-null-k3.json"
+     }
+    }
+   ],
+   "k3_verfehlt": [],
+   "stufen": [
+    {
+     "stufe": "h0.02",
+     "zeilen": 13,
+     "x_min": 0.74,
+     "x_max": 0.8,
+     "ungueltig": [],
+     "streifen": 6,
+     "streifen_umlauf_ungleich_0": 1,
+     "streifen_nicht_aufgeloest": 0,
+     "s_wechsel_im_fenster": 1,
+     "deckt_fenster": true,
+     "nicht_gesehen_ok": false
+    },
+    {
+     "stufe": "h0.01",
+     "zeilen": 7,
+     "x_min": 0.77,
+     "x_max": 0.8,
+     "ungueltig": [],
+     "streifen": 6,
+     "streifen_umlauf_ungleich_0": 1,
+     "streifen_nicht_aufgeloest": 0,
+     "s_wechsel_im_fenster": 1,
+     "deckt_fenster": false,
+     "nicht_gesehen_ok": false
+    }
+   ],
+   "ausgang": "Gesehen",
+   "kompaktheit_zeile": {
+    "x": 0.795,
+    "kompaktheit": 0.009998162232069039,
+    "Phi0": -0.0049990811160345195,
+    "Phi_Rw": -0.0035985022037532456,
+    "R_w": 3.0107544938358766,
+    "c_asym": 0.012357124573145657
+   }
+  },
+  {
+   "alpha": 0.0027,
+   "psi": "voll",
+   "dateien": [
+    [
+     "a2-voll-o-h0.02.json",
+     "a2-voll-u-h0.02.json"
+    ],
+    [
+     "a2-voll-o-h0.01.json"
+    ],
+    [
+     "a2-voll-k3.json"
+    ]
+   ],
+   "treffer_h0.02": [
+    {
+     "x": 0.7836434063705571,
+     "rho": 1.7297597906655588,
+     "umlauf": -1,
+     "umlauf_roh": -1.0,
+     "aufgeloest": true,
+     "max_sprung": 0.3693386724091457,
+     "datei": "a2-voll-o-h0.02.json"
+    }
+   ],
+   "treffer_h0.01": [
+    {
+     "x": 0.7836434191195949,
+     "rho": 1.729759795508788,
+     "umlauf": -1,
+     "umlauf_roh": -1.0,
+     "aufgeloest": true,
+     "max_sprung": 0.3695075830961514,
+     "datei": "a2-voll-o-h0.01.json"
+    }
+   ],
+   "treffer_K3": [
+    {
+     "x": 0.7836434061252738,
+     "rho": 1.7297597905561175,
+     "umlauf": -1,
+     "umlauf_roh": -1.0,
+     "aufgeloest": true,
+     "max_sprung": 0.3693386753626438,
+     "datei": "a2-voll-k3.json"
+    }
+   ],
+   "K2_bestanden": true,
+   "gesehen": [
+    {
+     "h0.02": {
+      "x": 0.7836434063705571,
+      "rho": 1.7297597906655588,
+      "umlauf": -1,
+      "umlauf_roh": -1.0,
+      "aufgeloest": true,
+      "max_sprung": 0.3693386724091457,
+      "datei": "a2-voll-o-h0.02.json"
+     },
+     "h0.01": {
+      "x": 0.7836434191195949,
+      "rho": 1.729759795508788,
+      "umlauf": -1,
+      "umlauf_roh": -1.0,
+      "aufgeloest": true,
+      "max_sprung": 0.3695075830961514,
+      "datei": "a2-voll-o-h0.01.json"
+     },
+     "K3": {
+      "x": 0.7836434061252738,
+      "rho": 1.7297597905561175,
+      "umlauf": -1,
+      "umlauf_roh": -1.0,
+      "aufgeloest": true,
+      "max_sprung": 0.3693386753626438,
+      "datei": "a2-voll-k3.json"
+     }
+    }
+   ],
+   "k3_verfehlt": [],
+   "stufen": [
+    {
+     "stufe": "h0.02",
+     "zeilen": 13,
+     "x_min": 0.74,
+     "x_max": 0.8,
+     "ungueltig": [],
+     "streifen": 12,
+     "streifen_umlauf_ungleich_0": 1,
+     "streifen_nicht_aufgeloest": 0,
+     "s_wechsel_im_fenster": 1,
+     "deckt_fenster": true,
+     "nicht_gesehen_ok": false
+    },
+    {
+     "stufe": "h0.01",
+     "zeilen": 7,
+     "x_min": 0.77,
+     "x_max": 0.8,
+     "ungueltig": [],
+     "streifen": 6,
+     "streifen_umlauf_ungleich_0": 1,
+     "streifen_nicht_aufgeloest": 0,
+     "s_wechsel_im_fenster": 1,
+     "deckt_fenster": false,
+     "nicht_gesehen_ok": false
+    }
+   ],
+   "ausgang": "Gesehen",
+   "kompaktheit_zeile": {
+    "x": 0.785,
+    "kompaktheit": 0.030265867994080865,
+    "Phi0": -0.015132933997040432,
+    "Phi_Rw": -0.010911585666720711,
+    "R_w": 2.974635018671763,
+    "c_asym": 0.03699863882041951
+   }
+  },
+  {
+   "alpha": 0.0027,
+   "psi": "null",
+   "dateien": [
+    [
+     "a2-null-o-h0.02.json"
+    ],
+    [
+     "a2-null-o-h0.01.json"
+    ],
+    [
+     "a2-null-k3.json"
+    ]
+   ],
+   "treffer_h0.02": [
+    {
+     "x": 0.7833106430218217,
+     "rho": 1.730137074752922,
+     "umlauf": -1,
+     "umlauf_roh": -1.0,
+     "aufgeloest": true,
+     "max_sprung": 0.367958374038516,
+     "datei": "a2-null-o-h0.02.json"
+    }
+   ],
+   "treffer_h0.01": [
+    {
+     "x": 0.7833106560594107,
+     "rho": 1.7301370797687636,
+     "umlauf": -1,
+     "umlauf_roh": -1.0000000000000002,
+     "aufgeloest": true,
+     "max_sprung": 0.3679583691608609,
+     "datei": "a2-null-o-h0.01.json"
+    }
+   ],
+   "treffer_K3": [
+    {
+     "x": 0.7833106430200216,
+     "rho": 1.7301370747523657,
+     "umlauf": -1,
+     "umlauf_roh": -1.0,
+     "aufgeloest": true,
+     "max_sprung": 0.3679583724673231,
+     "datei": "a2-null-k3.json"
+    }
+   ],
+   "K2_bestanden": true,
+   "gesehen": [
+    {
+     "h0.02": {
+      "x": 0.7833106430218217,
+      "rho": 1.730137074752922,
+      "umlauf": -1,
+      "umlauf_roh": -1.0,
+      "aufgeloest": true,
+      "max_sprung": 0.367958374038516,
+      "datei": "a2-null-o-h0.02.json"
+     },
+     "h0.01": {
+      "x": 0.7833106560594107,
+      "rho": 1.7301370797687636,
+      "umlauf": -1,
+      "umlauf_roh": -1.0000000000000002,
+      "aufgeloest": true,
+      "max_sprung": 0.3679583691608609,
+      "datei": "a2-null-o-h0.01.json"
+     },
+     "K3": {
+      "x": 0.7833106430200216,
+      "rho": 1.7301370747523657,
+      "umlauf": -1,
+      "umlauf_roh": -1.0,
+      "aufgeloest": true,
+      "max_sprung": 0.3679583724673231,
+      "datei": "a2-null-k3.json"
+     }
+    }
+   ],
+   "k3_verfehlt": [],
+   "stufen": [
+    {
+     "stufe": "h0.02",
+     "zeilen": 7,
+     "x_min": 0.77,
+     "x_max": 0.8,
+     "ungueltig": [],
+     "streifen": 6,
+     "streifen_umlauf_ungleich_0": 1,
+     "streifen_nicht_aufgeloest": 0,
+     "s_wechsel_im_fenster": 1,
+     "deckt_fenster": false,
+     "nicht_gesehen_ok": false
+    },
+    {
+     "stufe": "h0.01",
+     "zeilen": 7,
+     "x_min": 0.77,
+     "x_max": 0.8,
+     "ungueltig": [],
+     "streifen": 6,
+     "streifen_umlauf_ungleich_0": 1,
+     "streifen_nicht_aufgeloest": 0,
+     "s_wechsel_im_fenster": 1,
+     "deckt_fenster": false,
+     "nicht_gesehen_ok": false
+    }
+   ],
+   "ausgang": "Gesehen",
+   "kompaktheit_zeile": {
+    "x": 0.785,
+    "kompaktheit": 0.030265867994080865,
+    "Phi0": -0.015132933997040432,
+    "Phi_Rw": -0.010911585666720711,
+    "R_w": 2.974635018671763,
+    "c_asym": 0.03699863882041951
+   }
+  }
+ ],
+ "ende": "2026-10-01 22:10:39 UTC",
+ "laufzeit": 0.10328891687095165,
+ "stand": "2026-10-01 22:10:39 UTC",
+ "laufzeit_bisher": 0.10330760665237904
+}

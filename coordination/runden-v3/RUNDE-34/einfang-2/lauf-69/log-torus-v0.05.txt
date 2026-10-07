@@ -1,0 +1,36 @@
+start 2026-10-03T17:08:38+00:00 spur=p4000a unit=fmhc-physics-klein-r34ef2-torus-v0.05-170838
+Running as unit: fmhc-physics-klein-r34ef2-torus-v0.05-170838.service; invocation ID: 8c5cd1d4631c4688bdf89671c739caf3
+torch 2.5.1+cu121, Geraet cuda (Quadro P4000)
+Netz torus: {"geo": "torus", "N1": 335, "N2": 536, "h": 0.29850746268656714, "Wx": 99.99999999999999, "Wy": 138.56406460551017, "ecken": 179560, "kanten": 538680, "dreiecke": 359120, "euler": 0, "grade": {"6": 179560}, "defekt_max": 7.105427357601002e-15, "kanten_alle_doppelt": true, "w_min": 0.5773502691895604, "w_max": 0.5773502691896927, "w_soll": 0.5773502691896258, "flaeche": 13856.406460551016} (Bauzeit bis jetzt 2.7 s)
+statischer Ball und Start: {"Q_lat": 199.7498435543818, "E_lat": 157.10196721597822, "omega_lat": 0.7448721807257794, "res_max": 8.074513119422175e-08, "dauer_s": 0.7866924051195383, "gitterfehler_flicken": 1.8030021919912542e-13, "gitterfehler_ziel": 4.263256414560601e-14, "R_trans": 19.0, "knoten_mit_feld": 14707, "E_rest": 157.28830179314846, "K_nominal": 0.19697979139184302}
+/home/fmh/fmhc-physics-remote/runde34-einfang2/einfang2.py:495: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at ../aten/src/ATen/SparseCsrTensorImpl.cpp:53.)
+  Lt = torch.sparse_csr_tensor(torch.tensor(Lc.indptr, dtype=torch.int64), torch.tensor(Lc.indices, dtype=torch.int64),
+Start: E 157.48501836 Q 199.99999798 E_rest 157.28830179 K_eff 0.196717 K_nominal 0.196980 Lage 49.8507 Q_ball 199.999577
+t 200.0 cx 59.8442 cy 69.2820 E 157.48509726 Q 199.99999798 E_ball 157.484723 Q_ball 199.999553 S_max 1.0504 (3.13 ms/Schritt)
+t 400.0 cx 69.8381 cy 69.2820 E 157.48511436 Q 199.99999798 E_ball 157.484727 Q_ball 199.999538 S_max 1.0501 (3.17 ms/Schritt)
+t 600.0 cx 79.8311 cy 69.2820 E 157.48510250 Q 199.99999798 E_ball 157.484720 Q_ball 199.999544 S_max 1.0503 (3.25 ms/Schritt)
+t 800.0 cx 89.8252 cy 69.2820 E 157.48507998 Q 199.99999798 E_ball 157.484725 Q_ball 199.999576 S_max 1.0506 (3.31 ms/Schritt)
+t 1000.0 cx 99.8180 cy 69.2820 E 157.48508404 Q 199.99999798 E_ball 157.484729 Q_ball 199.999576 S_max 1.0506 (3.35 ms/Schritt)
+t 1200.0 cx 109.8120 cy 69.2820 E 157.48510747 Q 199.99999798 E_ball 157.484717 Q_ball 199.999537 S_max 1.0502 (3.37 ms/Schritt)
+t 1400.0 cx 119.8050 cy 69.2820 E 157.48511239 Q 199.99999798 E_ball 157.484709 Q_ball 199.999523 S_max 1.0501 (3.39 ms/Schritt)
+t 1600.0 cx 129.7990 cy 69.2820 E 157.48508968 Q 199.99999798 E_ball 157.484716 Q_ball 199.999556 S_max 1.0504 (3.40 ms/Schritt)
+t 1800.0 cx 139.7922 cy 69.2820 E 157.48507807 Q 199.99999798 E_ball 157.484721 Q_ball 199.999574 S_max 1.0507 (3.41 ms/Schritt)
+t 2000.0 cx 149.7861 cy 69.2820 E 157.48509670 Q 199.99999798 E_ball 157.484719 Q_ball 199.999550 S_max 1.0504 (3.42 ms/Schritt)
+t 2200.0 cx 159.7792 cy 69.2820 E 157.48511433 Q 199.99999798 E_ball 157.484735 Q_ball 199.999545 S_max 1.0501 (3.42 ms/Schritt)
+t 2400.0 cx 169.7733 cy 69.2820 E 157.48509521 Q 199.99999798 E_ball 157.484712 Q_ball 199.999544 S_max 1.0502 (3.43 ms/Schritt)
+t 2600.0 cx 179.7663 cy 69.2820 E 157.48507981 Q 199.99999798 E_ball 157.484718 Q_ball 199.999569 S_max 1.0506 (3.43 ms/Schritt)
+t 2800.0 cx 189.7604 cy 69.2820 E 157.48508155 Q 199.99999798 E_ball 157.484720 Q_ball 199.999569 S_max 1.0506 (3.44 ms/Schritt)
+t 3000.0 cx 199.7535 cy 69.2820 E 157.48511024 Q 199.99999798 E_ball 157.484735 Q_ball 199.999550 S_max 1.0502 (3.44 ms/Schritt)
+t 3200.0 cx 209.7475 cy 69.2820 E 157.48510457 Q 199.99999798 E_ball 157.484711 Q_ball 199.999532 S_max 1.0501 (3.44 ms/Schritt)
+t 3400.0 cx 219.7405 cy 69.2820 E 157.48509058 Q 199.99999798 E_ball 157.484729 Q_ball 199.999569 S_max 1.0505 (3.44 ms/Schritt)
+t 3600.0 cx 229.7345 cy 69.2820 E 157.48507869 Q 199.99999798 E_ball 157.484716 Q_ball 199.999568 S_max 1.0507 (3.45 ms/Schritt)
+t 3800.0 cx 239.7273 cy 69.2820 E 157.48509473 Q 199.99999798 E_ball 157.484717 Q_ball 199.999553 S_max 1.0504 (3.45 ms/Schritt)
+t 4000.0 cx 249.7216 cy 69.2820 E 157.48511022 Q 199.99999798 E_ball 157.484721 Q_ball 199.999537 S_max 1.0500 (3.45 ms/Schritt)
+Ende: T erreicht, t 4000.0, 3.45 ms/Schritt, Dauer 143.8 s, Zustand /home/fmh/fmhc-physics-remote/runde34-einfang2/lauf/ef2-torus-v0.05-zustand.npz, geschrieben /home/fmh/fmhc-physics-remote/runde34-einfang2/lauf/ef2-torus-v0.05.json
+Finished with result: success
+Main processes terminated with: code=exited/status=0
+Service runtime: 2min 24.676s
+CPU time consumed: 2min 24.631s
+Memory peak: 288.0K
+Memory swap peak: 0B
+ende 2026-10-03T17:11:03+00:00 rc=0 unit=fmhc-physics-klein-r34ef2-torus-v0.05-170838

@@ -1,0 +1,53 @@
+{
+ "modus": "rauch",
+ "params": {
+  "OMEGA": 6.283185307179586,
+  "EPS": 0.1,
+  "K": 1.0,
+  "MU_X": 1.0,
+  "KAPPA": 0.005,
+  "MU_PHI": 25.13274122871834,
+  "T_NOISE": 3.1415926535897935e-05,
+  "DELTA_F": 0.05,
+  "G_AUF": 0.2,
+  "DT": 0.005,
+  "Z0": 0.05,
+  "JITTER": 0.002,
+  "SUB": 10,
+  "PRUEF_ALLE": 1000,
+  "FD_H": 1e-05
+ },
+ "argv": [
+  "rauch",
+  "--dim",
+  "3",
+  "--B",
+  "0.1",
+  "--saaten",
+  "1",
+  "--takte",
+  "10",
+  "--aus",
+  "/home/fmh/fmhc-physics-remote/raute-atem-1/rauch/rauch_d3.json"
+ ],
+ "laeufe": [
+  {
+   "dim": 3,
+   "B": 0.1,
+   "seed": 1,
+   "takte": 10.0,
+   "npz": "/home/fmh/fmhc-physics-remote/raute-atem-1/rauch/rauch_d3_s1.npz",
+   "werkzeugprobe": {
+    "n": 3,
+    "n_ausgelassen": 0,
+    "max_int_vs_schleife": 2.0122792321330962e-16,
+    "max_schleife_vs_fd": 3.728985176199018e-11,
+    "max_bilanz_mit_reibung": 2.0122792321330962e-16,
+    "max_impuls_summe": 1.3877787807814457e-17
+   },
+   "laufzeit_s": 0.42
+  }
+ ],
+ "laufzeit_s": 0.42,
+ "rss_mb": 36.4
+}

@@ -1,0 +1,262 @@
+{
+ "test": "stokes",
+ "start": "2026-09-30T00:21:47+00:00",
+ "ende": "2026-09-30T00:22:08+00:00",
+ "dauer_s": {
+  "profil_s": 0.018850785680115223,
+  "grob_s": 7.111674156039953,
+  "fein_s": 13.803733962588012
+ },
+ "geraet": "Quadro P4000",
+ "torch": "2.5.1+cu121",
+ "T": 400.0,
+ "dx_dt_grob": [
+  0.1,
+  0.05
+ ],
+ "dx_dt_fein": [
+  0.05,
+  0.025
+ ],
+ "omega2_ball": 0.7,
+ "ergebnis": {
+  "grob": [
+   {
+    "art": "laufend",
+    "a": 0.01,
+    "richtung": 1.0,
+    "dX_fit": 1.4376063865889954,
+    "beschl": 1.5637930169354168e-08,
+    "v_anfang": 0.0041047101810460646,
+    "v_mittel": 0.0041074468188257015,
+    "drift_je_periode": 0.018191590409193693,
+    "zittern": 0.0010933795886689352,
+    "X_ende": 1.6419008141089793,
+    "Q_fenster_aenderung_rel": -2.0945037793707044e-05,
+    "breite_aenderung_rel": 0.0035690186435155535
+   },
+   {
+    "art": "laufend",
+    "a": 0.02,
+    "richtung": 1.0,
+    "dX_fit": 2.9188142405938216,
+    "beschl": 9.439397410035014e-08,
+    "v_anfang": 0.008322950313371928,
+    "v_mittel": 0.00833946925883949,
+    "drift_je_periode": 0.03693491740210595,
+    "zittern": 0.0025959830801593935,
+    "X_ende": 3.3354192680067576,
+    "Q_fenster_aenderung_rel": -8.433425259135596e-05,
+    "breite_aenderung_rel": 0.0021915968641066375
+   },
+   {
+    "art": "laufend",
+    "a": 0.04,
+    "richtung": 1.0,
+    "dX_fit": 6.010078061396821,
+    "beschl": 4.448003042778902e-07,
+    "v_anfang": 0.01709381155074229,
+    "v_mittel": 0.017171651603990916,
+    "drift_je_periode": 0.0760520260901356,
+    "zittern": 0.008437146435057476,
+    "X_ende": 6.88700259279075,
+    "Q_fenster_aenderung_rel": -0.0002763664023035517,
+    "breite_aenderung_rel": 0.042579676701764324
+   },
+   {
+    "art": "laufend",
+    "a": 0.04,
+    "richtung": -1.0,
+    "dX_fit": -6.010078061396914,
+    "beschl": -4.448003042783619e-07,
+    "v_anfang": -0.01709381155074247,
+    "v_mittel": -0.017171651603991183,
+    "drift_je_periode": -0.07605202609013678,
+    "zittern": 0.008437146435057993,
+    "X_ende": -6.887002592790834,
+    "Q_fenster_aenderung_rel": -0.00027636640230332965,
+    "breite_aenderung_rel": 0.04257967670176699
+   },
+   {
+    "art": "stehend_bauch",
+    "a": 0.04,
+    "richtung": 0.0,
+    "dX_fit": 3.6152014677022756e-05,
+    "beschl": 2.452603880438499e-09,
+    "v_anfang": -3.2591420857095807e-07,
+    "v_mittel": 1.032914705057793e-07,
+    "drift_je_periode": 4.574705911205578e-07,
+    "zittern": 0.0003519070181190482,
+    "X_ende": -0.00015014932547899483,
+    "Q_fenster_aenderung_rel": 0.0012681722509164661,
+    "breite_aenderung_rel": 0.08741586579111615
+   },
+   {
+    "art": "stehend_knoten",
+    "a": 0.04,
+    "richtung": 0.0,
+    "dX_fit": 0.14668389004197807,
+    "beschl": 2.712991524006215e-07,
+    "v_anfang": 0.00037161947702125714,
+    "v_mittel": 0.0004190968286913659,
+    "drift_je_periode": 0.0018561501062903645,
+    "zittern": 0.0072173648428508754,
+    "X_ende": 0.06851355193609789,
+    "Q_fenster_aenderung_rel": 0.001507820929126602,
+    "breite_aenderung_rel": 0.01934232051570217
+   },
+   {
+    "art": "ohne",
+    "a": 0.0,
+    "richtung": 0.0,
+    "dX_fit": 2.119880015247039e-09,
+    "beschl": 4.482957501248178e-15,
+    "v_anfang": 5.2722824808445376e-12,
+    "v_mittel": 6.056800043562968e-12,
+    "drift_je_periode": 2.6825137474180317e-11,
+    "zittern": 8.424469029309792e-10,
+    "X_ende": -3.1920679414209115e-10,
+    "Q_fenster_aenderung_rel": -5.978968042885668e-08,
+    "breite_aenderung_rel": -0.0005139672465516165
+   }
+  ],
+  "fein": [
+   {
+    "art": "laufend",
+    "a": 0.01,
+    "richtung": 1.0,
+    "dX_fit": 1.4368247101995393,
+    "beschl": 2.4700379753910183e-08,
+    "v_anfang": 0.0041008908912560345,
+    "v_mittel": 0.004105213457712969,
+    "drift_je_periode": 0.01818169901135199,
+    "zittern": 0.0010962375112893565,
+    "X_ende": 1.641210971538172,
+    "Q_fenster_aenderung_rel": -1.9284765832128237e-05,
+    "breite_aenderung_rel": 0.0039316350107778675
+   },
+   {
+    "art": "laufend",
+    "a": 0.02,
+    "richtung": 1.0,
+    "dX_fit": 2.9167851331870738,
+    "beschl": 8.169592131495858e-08,
+    "v_anfang": 0.008319375022875808,
+    "v_mittel": 0.008333671809105925,
+    "drift_je_periode": 0.03690924090874576,
+    "zittern": 0.002601040521136805,
+    "X_ende": 3.333022178677147,
+    "Q_fenster_aenderung_rel": -8.96251627676703e-05,
+    "breite_aenderung_rel": 0.002912049677076478
+   },
+   {
+    "art": "laufend",
+    "a": 0.04,
+    "richtung": 1.0,
+    "dX_fit": 6.0083239240713855,
+    "beschl": 5.46926780204435e-07,
+    "v_anfang": 0.017070927596525325,
+    "v_mittel": 0.017166639783061103,
+    "drift_je_periode": 0.07602982909098237,
+    "zittern": 0.008469735606240085,
+    "X_ende": 6.886987969960188,
+    "Q_fenster_aenderung_rel": -0.00023542151504452047,
+    "breite_aenderung_rel": 0.04215019031636391
+   },
+   {
+    "art": "laufend",
+    "a": 0.04,
+    "richtung": -1.0,
+    "dX_fit": -6.008323924071435,
+    "beschl": -5.469267802035563e-07,
+    "v_anfang": -0.017070927596525624,
+    "v_mittel": -0.017166639783061245,
+    "drift_je_periode": -0.07602982909098299,
+    "zittern": 0.008469735606240437,
+    "X_ende": -6.886987969960231,
+    "Q_fenster_aenderung_rel": -0.00023542151504485354,
+    "breite_aenderung_rel": 0.04215019031635636
+   },
+   {
+    "art": "stehend_bauch",
+    "a": 0.04,
+    "richtung": 0.0,
+    "dX_fit": -1.095261801728634e-06,
+    "beschl": 4.3287966142889417e-10,
+    "v_anfang": -7.888326018356687e-08,
+    "v_mittel": -3.1293194335103827e-09,
+    "drift_je_periode": -1.3859533648259423e-08,
+    "zittern": 0.00017343100779540236,
+    "X_ende": -3.2049340149257966e-08,
+    "Q_fenster_aenderung_rel": 0.0012448703135170547,
+    "breite_aenderung_rel": 0.07881889551737098
+   },
+   {
+    "art": "stehend_knoten",
+    "a": 0.04,
+    "richtung": 0.0,
+    "dX_fit": 0.14707958711040559,
+    "beschl": 2.904343281705802e-07,
+    "v_anfang": 0.00036940138431416447,
+    "v_mittel": 0.000420227391744016,
+    "drift_je_periode": 0.0018611572898018622,
+    "zittern": 0.007158509810285072,
+    "X_ende": 0.06954945479632386,
+    "Q_fenster_aenderung_rel": 0.0014350864134371477,
+    "breite_aenderung_rel": 0.019263555178081093
+   },
+   {
+    "art": "ohne",
+    "a": 0.0,
+    "richtung": 0.0,
+    "dX_fit": 6.612178615097395e-11,
+    "beschl": 1.3824069225272458e-16,
+    "v_anfang": 1.6472726785855594e-13,
+    "v_mittel": 1.8891938900278272e-13,
+    "drift_je_periode": 8.367105641738542e-13,
+    "zittern": 2.629095567136823e-11,
+    "X_ende": -1.259787990408537e-11,
+    "Q_fenster_aenderung_rel": -3.733368614255994e-09,
+    "breite_aenderung_rel": -0.00012924759057975077
+   }
+  ]
+ },
+ "kontrollen": {
+  "L1_skalierung_a2": {
+   "dX_0.02_zu_0.01": 2.0300215555048498,
+   "dX_0.04_zu_0.02": 2.0599131062857174,
+   "soll": 4.0,
+   "bestanden": false
+  },
+  "L2_gegenprobe": {
+   "dX_stehend_bauch": -1.095261801728634e-06,
+   "dX_ohne_welle": 6.612178615097395e-11,
+   "dX_stehend_knoten_diagnose": 0.14707958711040559,
+   "bestanden": true
+  },
+  "spiegelprobe_links_rechts": {
+   "dX_rechts_plus_links": -4.973799150320701e-14,
+   "bestanden": true
+  },
+  "L3_aufloesung": {
+   "dX_fein": 6.0083239240713855,
+   "dX_grob": 6.010078061396821,
+   "bestanden": true
+  },
+  "K0_profil_gegen_anker": {
+   "max_abw_f": 1.201214199181115e-10,
+   "bestanden": true,
+   "herkunft": "profil_cache.pt",
+   "f0_quadrat_schuss": [
+    0.6837722339948578,
+    0.3675444679705876,
+    0.10557280900028279
+   ],
+   "f0_quadrat_anker": [
+    0.683772233983162,
+    0.36754446796632423,
+    0.10557280900008414
+   ]
+  }
+ }
+}

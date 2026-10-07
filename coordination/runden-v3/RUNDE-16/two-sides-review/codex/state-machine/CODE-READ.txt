@@ -1,0 +1,51 @@
+NICHTAUTORLEKTUERE FSM-43 run.py GEGEN PLAN.txt
+2. Oktober 2026. Nur Quelltext gelesen; kein Interpreter/Run/Test gestartet.
+Pruefer: unabhaengiger Codex-Reviewagent two_sides_review.
+
+Ergebnis: Keine fachliche Startsperre fuer diese kleine exakte Enumeration.
+
+Die Zustandsmenge umfasst alle Kombinationen aus Tokenort und lokalen
+Rotorstaenden. Die Uebergangsfunktion implementiert die vereinbarte
+Reihenfolge 'inkrementieren, dann gehen'. Alle vier Nachbarschaftslisten
+sind symmetrisch und in aufsteigender Reihenfolge; Gradfolgen passen zu
+Dreieck, C4, K4 und Stern K1,3.
+
+Die Wiederholungssuche ab jedem Startzustand findet den ersten Eintritt
+in einen Zyklus. Rotation auf den kleinsten Zustandsindex identifiziert
+denselben gerichteten Zyklus unabhaengig vom Eintrittspunkt. Die Menge
+cycles vermeidet Mehrfachzaehlung. maxtrans misst die groesste Anzahl von
+Schritten bis zum erstmaligen Eintritt in die periodische Komponente.
+
+Indegree=1 fuer jeden Zustand prueft Bijektivitaet der gesamten endlichen
+Abbildung und unterscheidet sie korrekt von periodischer Reversibilitaet.
+Nachdem jede Zykluslaenge auf die Anzahl gerichteter Kanten geprueft ist,
+reicht die Zahl unterschiedlicher traversierter Kanten gleich arcs fuer
+'each directed edge exactly once': alle Uebergaenge sind gueltige Kanten,
+es gibt arcs Schritte und arcs verschiedene traversierte Kanten.
+
+Die Enumeration aller zweibittigen Permutationen mit Popcounterhaltung
+ist vollstaendig. Die erwarteten beiden Tupel entsprechen Identitaet und
+SWAP. Fredkin verwendet Bit2 als Kontrolle und vertauscht Bit1/Bit0;
+Bijektion, Involution und Popcounterhaltung werden ausdruecklich geprueft.
+Diese Aussagen tragen keinerlei physikalische Energieinterpretation.
+
+DREI OPERATIVE GRENZEN:
+1. Im Code erzwungen sind Host ubuntu-auto und 10 Sekunden CPU-Zeit.
+CPU-Affinitaet 11, nice19, Einthread-Umgebung sowie 15 Sekunden Walllimit
+muessen im angekuendigten Startbefehl/Controller stehen. Das ist kein
+Codefehler, sofern es dort tatsaechlich erfolgt.
+2. empty_token und forced_four_phase_counter sind nur ausgegebene
+Textfeststellungen. Es werden weder ein leerer Zustandsuebergang noch
+ein Vierphasenzaehler ausgefuehrt. Als deklarierte Definitionen korrekt;
+im Ergebnisbericht nicht als numerisch bestandene Kontrollen darstellen.
+Falls die Koordination sie testen will, braucht es kleine explizite
+Uebergangsfunktionen und deren Assertions.
+3. Eine verletzte Erwartung bricht vor dem Schreiben von RESULT.json ab.
+Das ist fuer eine Referenzpruefung erlaubt, aber ein solcher Lauf darf
+nicht als 'kein Ergebnis' verschwinden. Exitstatus und Fehlermeldung
+bewahren; fuer forschende Widerlegbarkeit waere Speichern der beobachteten
+Werte vor dem Abbruch hilfreicher.
+
+Source-Hash wird im Ergebnis aus den tatsaechlichen Quelldateibytes gebildet.
+Der geforderte Hash VOR dem Start bleibt Aufgabe der Koordination.
+Kein Ergebnis dieses Reviews behauptet, der Lauf sei bereits durchgefuehrt.

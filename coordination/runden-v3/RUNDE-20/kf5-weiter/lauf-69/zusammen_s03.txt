@@ -1,0 +1,51 @@
+KF-5 weiter, Zusammenfassung s03 (2026-10-02T16:09:55+00:00)
+== grob: K0 {'K0a': True, 'K0b': True, 'K0': True, 'rueckkehr': {'psi_max_rel': 5.518220628837885e-15, 'vel_max_rel': 5.483156813508242e-14}}
+  R6-Tropfen k 0 (Wurzel w0), Akte bis 2000: {"start_t": 760.0, "verschmolzen": 1550.0, "partner": ["w1", "w2"], "geteilt": 1650.0, "erloschen": null}
+    T 800: Q 2129 | E 1548 | E/Q 0.7273 (fam 0.7309) | omega 0.72046 +- 3.7e-03 (fam(Q) 0.71874) | rmax/ra 1.389 | nicht rund | dQ* +0.350 | E/Q-Abst -0.0048 | Runde 6
+    T 1200: Q 2198 | E 1586 | E/Q 0.7215 (fam 0.7305) | omega 0.72395 +- 1.8e-02 (fam(Q) 0.71857) | rmax/ra 1.276 | unentschieden | dQ* +1.299 | E/Q-Abst -0.0124 | rein
+    T 1600: kein Tropfen im Fenster
+    T 2000: Q 3434 | E 2453 | E/Q 0.7143 (fam 0.7259) | omega 0.72508 +- 1.6e-02 (fam(Q) 0.71633) | rmax/ra 1.787 | nicht rund | dQ* +2.929 | E/Q-Abst -0.0160 | verschmolzen mit w1,w2
+  R6-Tropfen k 1 (Wurzel w1), Akte bis 2000: {"start_t": 760.0, "verschmolzen": 960.0, "partner": ["w2"], "geteilt": 1650.0, "erloschen": null}
+    T 800: Q 60.85 | E 52.04 | E/Q 0.8552 (fam 0.8554) | omega 0.77236 +- 1.0e-02 (fam(Q) 0.77809) | rmax/ra 1.192 | unentschieden | dQ* -0.141 | E/Q-Abst -0.0003 | Runde 6
+    T 1200: Q 1500 | E 1110 | E/Q 0.7404 (fam 0.7351) | omega 0.71941 +- 1.9e-02 (fam(Q) 0.72077) | rmax/ra 1.169 | unentschieden | dQ* -0.205 | E/Q-Abst +0.0072 | verschmolzen mit w2
+    T 1600: kein Tropfen im Fenster
+    T 2000: Q 3434 | E 2453 | E/Q 0.7143 (fam 0.7259) | omega 0.72508 +- 1.6e-02 (fam(Q) 0.71633) | rmax/ra 1.787 | nicht rund | dQ* +2.929 | E/Q-Abst -0.0160 | verschmolzen mit w0,w2
+  R6-Tropfen k 2 (Wurzel w2), Akte bis 2000: {"start_t": 760.0, "verschmolzen": 960.0, "partner": ["w1"], "geteilt": 1650.0, "erloschen": null}
+    T 800: Q 1347 | E 982.4 | E/Q 0.7291 (fam 0.7366) | omega 0.71419 +- 5.3e-03 (fam(Q) 0.72146) | rmax/ra 1.277 | unentschieden | dQ* -0.757 | E/Q-Abst -0.0101 | Runde 6
+    T 1200: Q 1500 | E 1110 | E/Q 0.7404 (fam 0.7351) | omega 0.71941 +- 1.9e-02 (fam(Q) 0.72077) | rmax/ra 1.169 | unentschieden | dQ* -0.205 | E/Q-Abst +0.0072 | verschmolzen mit w1
+    T 1600: kein Tropfen im Fenster
+    T 2000: Q 3434 | E 2453 | E/Q 0.7143 (fam 0.7259) | omega 0.72508 +- 1.6e-02 (fam(Q) 0.71633) | rmax/ra 1.787 | nicht rund | dQ* +2.929 | E/Q-Abst -0.0160 | verschmolzen mit w0,w1
+  Ende T 1200: {"N_fenster": 2, "zaehlung": {"auf": 0, "neben": 0, "unentschieden": 2, "ausserhalb": 0, "gestoert": 0, "nicht rund": 0}, "urteil": "nicht entscheidbar", "N_rund": 2, "N_auf": 0, "N_tropfen_2": 2, "N_tropfen_3": 3, "N_komp_2": 2, "umspannt_2": false, "klassen_nach_Q": ["unentschieden", "unentschieden"], "verschmelzungen_maske": 1, "teilungen_maske": 0, "drift_Q_abschnitt": 2.220446e-16, "drift_E_abschnitt": 2.855749e-05}
+  Ende T 1600: {"N_fenster": 0, "zaehlung": {}, "urteil": "keine Tropfen im Fenster", "N_rund": 0, "N_auf": 0, "N_tropfen_2": 0, "N_tropfen_3": 1, "N_komp_2": 1, "umspannt_2": true, "klassen_nach_Q": [], "verschmelzungen_maske": 1, "teilungen_maske": 0, "drift_Q_abschnitt": 2.220446e-16, "drift_E_abschnitt": 2.621565e-05}
+  Ende T 2000: {"N_fenster": 1, "zaehlung": {"auf": 0, "neben": 0, "unentschieden": 0, "ausserhalb": 0, "gestoert": 0, "nicht rund": 1}, "urteil": "nicht entscheidbar", "N_rund": 0, "N_auf": 0, "N_tropfen_2": 1, "N_tropfen_3": 1, "N_komp_2": 1, "umspannt_2": false, "klassen_nach_Q": ["nicht rund"], "verschmelzungen_maske": 2, "teilungen_maske": 2, "drift_Q_abschnitt": 2.220446e-16, "drift_E_abschnitt": 2.367625e-05}
+== fein: K0 {'K0a': True, 'K0b': True, 'K0': True, 'rueckkehr': {'psi_max_rel': 9.486108704058094e-15, 'vel_max_rel': 1.6043539599540976e-13}}
+  R6-Tropfen k 0 (Wurzel w0), Akte bis 2000: {"start_t": 760.0, "verschmolzen": 1520.0, "partner": ["w2"], "geteilt": null, "erloschen": null}
+    T 800: Q 2046 | E 1492 | E/Q 0.7293 (fam 0.7313) | omega 0.72624 +- 1.1e-02 (fam(Q) 0.71896) | rmax/ra 1.350 | nicht rund | dQ* +1.662 | E/Q-Abst -0.0028 | Runde 6
+    T 1200: Q 2168 | E 1546 | E/Q 0.7130 (fam 0.7307) | omega 0.72576 +- 1.6e-02 (fam(Q) 0.71864) | rmax/ra 1.415 | nicht rund | dQ* +1.677 | E/Q-Abst -0.0242 | rein
+    T 1600: Q 2330 | E 1684 | E/Q 0.7226 (fam 0.7299) | omega 0.71303 +- 1.2e-02 (fam(Q) 0.71826) | rmax/ra 1.886 | nicht rund | dQ* - | E/Q-Abst -0.0100 | verschmolzen mit w2
+    T 2000: Q 3409 | E 2255 | E/Q 0.6614 (fam 0.7260) | omega 0.77729 +- 3.5e-02 (fam(Q) 0.71636) | rmax/ra 1.487 | nicht rund | dQ* +53.928 | E/Q-Abst -0.0889 | verschmolzen mit w2
+  R6-Tropfen k 1 (Wurzel w1), Akte bis 2000: {"start_t": 760.0, "verschmolzen": null, "partner": null, "geteilt": null, "erloschen": 860.0}
+    T 800: Q 26.5 | E 24.89 | E/Q 0.9394 (fam 0.9324) | omega 0.82182 +- 1.7e-02 (fam(Q) 0.82705) | rmax/ra 1.472 | nicht rund | dQ* -0.059 | E/Q-Abst +0.0075 | Runde 6
+    T 1200: kein Tropfen im Fenster
+    T 1600: kein Tropfen im Fenster
+    T 2000: kein Tropfen im Fenster
+  R6-Tropfen k 2 (Wurzel w2), Akte bis 2000: {"start_t": 760.0, "verschmolzen": 1520.0, "partner": ["w0"], "geteilt": null, "erloschen": null}
+    T 800: Q 1325 | E 965.5 | E/Q 0.7287 (fam 0.7368) | omega 0.71856 +- 1.5e-02 (fam(Q) 0.72157) | rmax/ra 1.281 | unentschieden | dQ* -0.398 | E/Q-Abst -0.0110 | Runde 6
+    T 1200: Q 1425 | E 1043 | E/Q 0.7323 (fam 0.7358) | omega 0.72019 +- 1.8e-02 (fam(Q) 0.72110) | rmax/ra 1.336 | nicht rund | dQ* -0.137 | E/Q-Abst -0.0047 | rein
+    T 1600: Q 2330 | E 1684 | E/Q 0.7226 (fam 0.7299) | omega 0.71303 +- 1.2e-02 (fam(Q) 0.71826) | rmax/ra 1.886 | nicht rund | dQ* - | E/Q-Abst -0.0100 | verschmolzen mit w0
+    T 2000: Q 3409 | E 2255 | E/Q 0.6614 (fam 0.7260) | omega 0.77729 +- 3.5e-02 (fam(Q) 0.71636) | rmax/ra 1.487 | nicht rund | dQ* +53.928 | E/Q-Abst -0.0889 | verschmolzen mit w0
+  Ende T 1200: {"N_fenster": 2, "zaehlung": {"auf": 0, "neben": 0, "unentschieden": 0, "ausserhalb": 0, "gestoert": 0, "nicht rund": 2}, "urteil": "nicht entscheidbar", "N_rund": 0, "N_auf": 0, "N_tropfen_2": 3, "N_tropfen_3": 4, "N_komp_2": 3, "umspannt_2": false, "klassen_nach_Q": ["nicht rund", "nicht rund"], "verschmelzungen_maske": 0, "teilungen_maske": 0, "drift_Q_abschnitt": 6.661338e-16, "drift_E_abschnitt": 7.883342e-06}
+  Ende T 1600: {"N_fenster": 1, "zaehlung": {"auf": 0, "neben": 0, "unentschieden": 0, "ausserhalb": 0, "gestoert": 0, "nicht rund": 1}, "urteil": "nicht entscheidbar", "N_rund": 0, "N_auf": 0, "N_tropfen_2": 1, "N_tropfen_3": 2, "N_komp_2": 1, "umspannt_2": false, "klassen_nach_Q": ["nicht rund"], "verschmelzungen_maske": 1, "teilungen_maske": 0, "drift_Q_abschnitt": 6.661338e-16, "drift_E_abschnitt": 6.722219e-06}
+  Ende T 2000: {"N_fenster": 1, "zaehlung": {"auf": 0, "neben": 0, "unentschieden": 0, "ausserhalb": 0, "gestoert": 0, "nicht rund": 1}, "urteil": "nicht entscheidbar", "N_rund": 0, "N_auf": 0, "N_tropfen_2": 1, "N_tropfen_3": 10, "N_komp_2": 1, "umspannt_2": false, "klassen_nach_Q": ["nicht rund"], "verschmelzungen_maske": 0, "teilungen_maske": 0, "drift_Q_abschnitt": 6.661338e-16, "drift_E_abschnitt": 5.751308e-06}
+Z0: eingetroffen
+Z1: nicht eingetroffen
+Z2: nicht eingetroffen
+Z3: offen
+Z4: eingetroffen
+  Z3 grob k 0: ausgeschlossen: verschmolzen bei t 1550 (dQ* 0.3495588 -> 2.929279; E/Q-Abst -0.00484178 -> -0.01595414)
+  Z3 grob k 1: ausgeschlossen: verschmolzen bei t 960 (dQ* -0.1408907 -> 2.929279; E/Q-Abst -0.0003108417 -> -0.01595414)
+  Z3 grob k 2: ausgeschlossen: verschmolzen bei t 960 (dQ* -0.7571092 -> 2.929279; E/Q-Abst -0.01008728 -> -0.01595414)
+  Z3 fein k 0: ausgeschlossen: verschmolzen bei t 1520 (dQ* 1.661812 -> 53.9285; E/Q-Abst -0.00281771 -> -0.08888335)
+  Z3 fein k 1: ausgeschlossen: erloschen bei t 860 (dQ* -0.05871219 -> None; E/Q-Abst 0.007488335 -> None)
+  Z3 fein k 2: ausgeschlossen: verschmolzen bei t 1520 (dQ* -0.3976285 -> 53.9285; E/Q-Abst -0.01096414 -> -0.08888335)
+Bedeutung: sonst: parken mit Grund (Karte)

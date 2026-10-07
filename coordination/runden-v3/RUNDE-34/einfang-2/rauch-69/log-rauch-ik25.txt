@@ -1,0 +1,20 @@
+start 2026-10-03T16:51:34+00:00 spur=p4000a unit=fmhc-physics-klein-r34ef2-rauch-ik25-165134
+Running as unit: fmhc-physics-klein-r34ef2-rauch-ik25-165134.service; invocation ID: 333e365dc1364c7c9d9eae7b1fd7dc59
+torch 2.5.1+cu121, Geraet cuda (Quadro P4000)
+Netz ikosaeder: {"nu": 84, "a": 25.0, "h": 0.2976190476190476, "ecken": 70562, "ecken_soll": 70562, "euler": 2, "grade": {"5": 12, "6": 70550}, "anzahl_defekte": 12, "defekt_rest_max": 2.3092638912203256e-14, "w_min": 0.5773502691896004, "w_max": 0.577350269189651, "flaeche": 5412.658773652742, "flaeche_soll": 5412.658773652741} (Bauzeit bis jetzt 2.4 s)
+statischer Ball und Start: {"Q_lat": 149.248115565993, "E_lat": 119.34150455977321, "omega_lat": 0.7510045004306035, "res_max": 3.968513763945698e-08, "dauer_s": 0.7821608884260058, "gitterfehler_flicken": 1.8562928971732617e-13, "gitterfehler_ziel": 7.815970093361102e-14, "R_trans": 11.5, "knoten_mit_feld": 5425, "E_rest": 119.90617315351618, "K_nominal": 0.6040651487865117}
+/home/fmh/fmhc-physics-remote/runde34-einfang2/einfang2.py:495: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at ../aten/src/ATen/SparseCsrTensorImpl.cpp:53.)
+  Lt = torch.sparse_csr_tensor(torch.tensor(Lc.indptr, dtype=torch.int64), torch.tensor(Lc.indices, dtype=torch.int64),
+Karten: [35701, 35701, 35701, 35701, 35701, 35701, 35701, 35701, 35701, 35701, 35701, 35701] Knoten je Spitze (5.5 s)
+Start: E 120.54573532 Q 149.98768110 E_rest 119.90617315 K_eff 0.639562 K_nominal 0.604065 Lage 12.5000 Q_ball 149.987681
+t 200.0 Spitze 0 d 10.6109 th -2.6180 E 120.54338287 Q 149.98768110 E_ball 120.390875 Q_ball 149.877984 S_max 1.0675 (1.24 ms/Schritt)
+t 400.0 Spitze 5 d 12.6172 th 1.1839 E 120.54350329 Q 149.98768110 E_ball 120.184503 Q_ball 149.678336 S_max 1.0642 (1.21 ms/Schritt)
+t 600.0 Spitze 10 d 7.1284 th -1.5708 E 120.54355835 Q 149.98768110 E_ball 120.126338 Q_ball 149.622659 S_max 1.0643 (1.20 ms/Schritt)
+Ende: T erreicht, t 700.0, 1.20 ms/Schritt, Dauer 14.5 s, Zustand /home/fmh/fmhc-physics-remote/runde34-einfang2/rauch/ef2-rauch-ik25-zustand.npz, geschrieben /home/fmh/fmhc-physics-remote/runde34-einfang2/rauch/ef2-rauch-ik25.json
+Finished with result: success
+Main processes terminated with: code=exited/status=0
+Service runtime: 15.367s
+CPU time consumed: 15.037s
+Memory peak: 1.3M
+Memory swap peak: 0B
+ende 2026-10-03T16:51:50+00:00 rc=0 unit=fmhc-physics-klein-r34ef2-rauch-ik25-165134

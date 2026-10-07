@@ -1,0 +1,48 @@
+{
+  "id": "claude-kevloop-pilot-20260923",
+  "time": "2026-09-23T01:15:00+02:00",
+  "time_kind": "completed",
+  "author": "Fable 5.1 (Anthropic), Werkzeugbau kevloop im Auftrag Finn",
+  "topic": "operations",
+  "status": "technical",
+  "title": "kevloop Pilot: Schleife laeuft (GPU 0,09 s je Generation, Entscheidung 19,4 s je Generation ueber Qwen3.6-35B), Protokoll vollstaendig, N3 und Fail-open bestanden, N1 kev nicht besser als Argsort, N2 Abweichungsquote 0,375; kein Ausgang zu H1/H2",
+  "question": "Laeuft eine Architektur, die mit einem kev-artigen 1-Token-Entscheider Formelkandidaten parallel auf der GPU bewertet und gegen Hypothesen prueft (ARCHITEKTUR.md), ist ihr Protokoll vollstaendig, besteht sie die drei Werkzeug-Nullproben N1 bis N3 und den Fail-open-Test, und wie schnell ist eine Iteration?",
+  "action": "Paket model-lab/kevloop (hypothesen.json, formeln.py als JSON-Ausdrucksbaum-DSL mit gebatchter Torch-Auswertung und acht Familien fuer g_obs = f(g_bar), bewerter.py mit Split nach Galaxie vor dem Lauf, kennzahlen.py mit D_ca wie HU-M6, entscheider.py mit vendored brainloop decision.py sha256 7ace00ba..., schleife.py, control.py, 19 Offline-Tests als CPU-Unit auf .69). Backend: Ollama-Rohendpunkt /api/chat auf .69 mit Logprobs (der /v1-Endpunkt liefert in Ollama 0.32.9 keine). Zwei Pilotlaeufe auf der P5000 unter Controller- und Rechenlock, je 12 Generationen, Population 2048, Routen kev und argsort mit gleichem Seed, Fail-open-Probe mit absichtlich falscher URL. Pilot 1 zeigte, dass die H3-Kontrolle mit punktweise permutierten Zielwerten nicht null-wahr ist (mechanisch 12 von 12 beruehrt); Fassung 2 permutiert die Leuchtkraftzuordnung je Galaxie. Berichtszahlen maschinell gegen ERGEBNIS.json geprueft.",
+  "result": "Pilot 2 (E2 = runs/kevloop-pilot-v2-20260923/output/ERGEBNIS.json): GPU 0,0925 s je Generation (routen.kev.zeiten.gpu_je_generation_s), Entscheidung 19,395 s je Generation (routen.kev.zeiten.entscheidung_je_generation_s, 17,266 bis 20,832), kev-Route 234,91 s, Argsort-Route 2,035 s, Unit 237,975 s (lauf.gesamt_s). N1: zurueckgehaltener Verlust des gewaehlten Kandidaten kev 0,012543 gegen argsort 0,012482 dex^2, Differenz +6,15e-05 (nullproben.N1), kev_nicht_schlechter false, Etat gleich. N2: 9 Abweichungen in 24 Vergleichen, Quote 0,375 (nullproben.N2), fast alle auf der Frage expandieren; Pilot 1 0,4167 fast nur auf artefakt. N3: H3 0 von 12 beruehrt in beiden Routen, unberuehrt true (nullproben.N3). Fail-open: 2 Generationen per Argsort-fail-open, warning_backend gesetzt, Protokoll vollstaendig, sauber (nullproben.fail_open). Protokoll 12 + 12 + 2 Zeilen mit State-Hash, Optionstabelle, Fragen, Wahrscheinlichkeiten je Permutation, Backend ohne Schluessel, Modell, Zeit, Route. Split (101 Trainings-, 43 zurueckgehaltene Galaxien) in VORAB.json 143 ms vor der ersten Entscheidung. Hash vor = nach dem Lauf. Kennzahlen zu H1/H2 nur Diagnose, kein Ausgang.",
+  "meaning": "Die Schleife kann Hunderte Formelkandidaten je Generation in einem Zehntel Sekunde auf der P5000 bewerten und jede Entscheidung mit Herkunft protokollieren; das ist die Grundlage fuer schnelle Iteration. Der Engpass ist heute der Entscheider: 19 s je Generation ueber Qwen3.6-35B, und die kev-Schicht bringt in diesem Etat keinen messbaren Vorteil beim zurueckgehaltenen Verlust (N1) und ist reihenfolgeempfindlich (N2) - nach ARCHITEKTUR.md Abschnitt 4 vorerst Ballast, der nur ueber die Permutationsmittelung und das Protokoll gerechtfertigt ist. Offen: schnelleres oder trainiertes Backend (kev :8009, nur URL-Tausch), Fragen, bei denen Argsort systematisch falsch liegt, und die Artefaktschwelle bei Split nach Galaxie. S0-Werkzeug; kein Kandidat, keine Kennzahl ist Evidenz; Runde 022 eingefroren, 0 USD.",
+  "sources": [
+    {
+      "path": "model-lab/kevloop/BERICHT-PILOT.md",
+      "sha256": "e070c0ceef8b39219e287d3a92b5f709d42b56f98a7021e11bf613fc86194b84"
+    },
+    {
+      "path": "model-lab/kevloop/ARCHITEKTUR.md",
+      "sha256": "ca0d5e2c4674667f56693d83d9601f4cf658877615e7085828865f07cd199e5e"
+    },
+    {
+      "path": "model-lab/kevloop/runs/kevloop-pilot-v2-20260923/output/ERGEBNIS.json",
+      "sha256": "7b8485a42ca3f96e0e920f33c26dfb3fbb488847ab38390805a25ed2c08daf2c"
+    },
+    {
+      "path": "model-lab/kevloop/runs/kevloop-pilot-v2-20260923/output/VORAB.json",
+      "sha256": "8fa3077f92c167fc590a5eb438676f2a7132fa866a0f772b8fa5c798f0189321"
+    },
+    {
+      "path": "model-lab/kevloop/runs/kevloop-pilot-v2-20260923/output/kev/ENTSCHEIDUNGEN.jsonl",
+      "sha256": "d37389803e11be86714dabc8ae908342bd231a8885047b0637c37b28bd01f9f5"
+    },
+    {
+      "path": "model-lab/kevloop/runs/kevloop-pilot-20260923/output/ERGEBNIS.json",
+      "sha256": "952131a167f48021a1cf7a8c93f9ccf3c7a3324201578a941e5c6ea760f3fea1"
+    },
+    {
+      "path": "model-lab/kevloop/tests/BERICHT-TESTS-20260923-010525.txt",
+      "sha256": "34cc985ccdc1afc1d9abe2975ce330bfaaabd281e80e98d1a3d4b395d48b0ffe"
+    },
+    {
+      "path": "model-lab/kevloop/vendor/HASHES.txt",
+      "sha256": "198874df083e08b1b95cbb6e5674cca203e85ee23ccbdf17ade247a800d27de2"
+    }
+  ],
+  "recorded_at": "2026-09-22T23:15:21.517501+00:00"
+}

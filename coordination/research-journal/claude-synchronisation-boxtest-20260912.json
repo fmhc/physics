@@ -1,0 +1,32 @@
+{
+  "id": "claude-synchronisation-boxtest-20260912",
+  "time": "2026-09-12T07:43:30+02:00",
+  "time_kind": "completed",
+  "author": "Claude (claude-primary, TS440)",
+  "topic": "micro",
+  "status": "checked",
+  "title": "Bindung bei g = 1,0 ist box-robust (gleicher Cutoff, viermal dichtere Moden); der Cutoff bleibt die Stellgroesse (Ausgang A)",
+  "question": "Ist die persistente Bindung der Punkt-Wellen-Familie ein Artefakt der periodischen Feldbox?",
+  "action": "physics_box.py (Modenindexbereich folgt dem Cutoff), L=32/R^2=16 gegen Basis L=16/R^2=4 und L=16/R^2=9, drei Seeds, T=60, h=0,00015625; Abnahme 1e-5 alle bestanden.",
+  "result": "Basis 3/5/4 gebundene Paare, Box32 bei gleichem Cutoff 6/4/3, Cutoff 9: 6/6/6; R >= 0,97, r_min 0,75 bis 0,79, dH/H <= 8,1e-6.",
+  "meaning": "Das Verschwinden in Lauf i war allein die Cutoff-Halbierung. Bindung ist box- und schrittweitenrobust, cutoff-abhaengig; die beiden vom Qwen-Gutachten verlangten Kontrollen sind erfuellt, das adiabatische Bindungsmass (Paarpotential, Lauf l) folgt. Registereintrag PW1 (offen) mit ausdruecklicher Cutoff-Abhaengigkeit.",
+  "sources": [
+    {
+      "path": "coordination/claude-synchronisation-20260912/runs/k/ERGEBNIS.json",
+      "sha256": "248468b9750661033890c196969dc6ad4bcc69dfa115140075b45b8ca23123df"
+    },
+    {
+      "path": "coordination/synchronisation-warp-archive-20260912.md",
+      "sha256": "84598338338370a99e1b4676348b795f83b31117d88f427e562806bc05716b33"
+    },
+    {
+      "path": "coordination/claude-synchronisation-20260912/physics_box.py",
+      "sha256": "8e59f4e5bb02bde0ff65820541172aed14d31947d86a153598a79c500ca77937"
+    },
+    {
+      "path": "coordination/claude-synchronisation-20260912/run_sync5.py",
+      "sha256": "7a40817b7b7ded18d70447787da9bcf9a322c31c1edeb8a92ed253c16d27fa17"
+    }
+  ],
+  "recorded_at": "2026-09-12T05:43:30.997830+00:00"
+}

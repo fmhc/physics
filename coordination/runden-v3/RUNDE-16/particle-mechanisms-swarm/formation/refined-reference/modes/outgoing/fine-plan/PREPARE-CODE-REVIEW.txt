@@ -1,0 +1,49 @@
+NICHTAUTOR-CODELEKTUERE: PRAEPARATION — 2026-10-02
+fine-plan/code.py SHA256:
+2c50a597e689ccc9dd52e339b9ff3478553a0189a0411c33005b316e4bcb1bef
+Keine Ausfuehrung/Interpreter/Tests.
+Verglichen mit refined-reference/prepare.py, modes/code.py und der
+gehashten harmonic-source/code.py; zugrundeliegende Funktionsimporte
+sind fest an die vorhandenen Modulhashes gebunden.
+
+URTEIL
+Kein konkreter fachlicher Startblocker fuer diesen Praeparationsprozess
+unter aeusserem Rootdeckel12 CPU-s, einem Thread und abgestimmtem .69-Slot.
+Pipeline-Endurteil erst nach separatem responses-Loaderreview. Zum ersten
+Lesezeitpunkt passte dessen altes Schema nicht zum hier erzeugten Ergebnis;
+Autor particle_binding passt es laut Nachricht an.
+
+GEPRUEFTE METHODENTREUE
+- Interpolation des originalen Seeds ist nur der Newtonstart. h=.025
+  erhaelt dieselben diskreten newton_Q-Updates mit max30 Schritten wie
+  die alte prepare.py, unveraenderte Branch-/Feld-/Energie-/Rest-/Q-Gates.
+  Separate Hamiltoniansumme und neuer .05/.025-Energievergleich vorhanden.
+- Gridpruefung verbindet BEUTEL-Zellen und modes-Volumen. Referenz wird
+  fuer R120 und abgeschnitten R60 mit unveraendertem profile_check geprueft:
+  insbesondere Ursprung/Randrest, Ladungsabschneidung und Phasennullanker.
+- Genau ein neuer eigs-Aufruf, vorhandener Operator, sigma=.3i,k4,ncv20,
+  tol1e-9,maxiter300 und alter deterministischer Start. Kein Shift-Scan.
+  Eindeutiger Frequenzbereich .38..39, alte Residuen-/Re-/deltaQ-Gates
+  und Subthreshold-Bedingung werden wirklich getestet.
+- Alte .05-Referenz, Ritzaufgabe und Quellartefakt sind per Manifest-/Datei-
+  hash sowie Frequenzen verbunden. Neue Zuordnung ueber Delta-rho und
+  op.overlap ist phaseninvariant und volumengewichtet, keine Komponenten-
+  Phasenmanipulation. Alte Lokalisierungsschwellen werden nicht gelockert;
+  der neue candidate-Flag wird unveraendert als Diagnose ausgegeben.
+- q wird einmal im Positionsraum kanonisch normiert und durch sqrtVol
+  in physische Felder umgerechnet. Komplexe Quelle J(q)/4, DC und
+  Plus-/Minus-Kombinationen entsprechen der alten Implementierung.
+  Keine Betragsbildung als Ersatz der komplexen Quellphase. Original-
+  Quellen-QA wird importiert und vor weiterer Praeparation verlangt.
+- Referenz-, Ritz- und Quellhash stehen gemeinsam im Ergebnis, omega/rho
+  im Quellartefakt. Zwischenstaende atomisch als JSON publiziert. Ein NPZ
+  wird zwar direkt geschrieben, aber erst nach erfolgreichem Abschluss
+  gehasht und referenziert; unreferenzierte Teil-NPZ sind kein PASS.
+
+BETRIEBSGRENZEN
+Checkpoint10 CPU-s ersetzt keinen harten12s-Deckel, insbesondere bei
+eigs/newton. Code setzt Thread-/Host-/Speicherlimits nicht selbst; Root
+muss sie gemaess Plan setzen. Kein automatischer Retry. Ein numerischer
+Abbruch bleibt UNRESOLVED bzw INCOMPLETE, die Altserie unveraendert.
+Das Ergebnis ist eine normierte diagnostische Ritzquelle, keine nachtraeglich
+bestaetigte Eigenmode und kein Stabilitaets-/Lebensdauernachweis.

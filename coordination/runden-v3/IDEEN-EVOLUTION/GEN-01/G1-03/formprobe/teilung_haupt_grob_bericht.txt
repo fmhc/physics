@@ -1,0 +1,12 @@
+G1-03 Teilung m = 2, Schwelle in omega^2 (haupt). Start 2026-09-30T08:06:17+02:00, Ende 2026-09-30T08:06:32+02:00, CPU (nur Form- und Syntaxprobe), torch 2.10.0+cu128 RAUCHTEST: Zahlen ungueltig
+Dauer [s]: schiessen_s 12.1, entwicklung_grob_s 3.3
+Hochrechnung Hauptlauf: 177 s (nicht entwickelnde Teile 12 s + Entwicklung x 50); ueber 540 s: nicht starten, Leitung entscheidet (Stufen einzeln mit --stufe).
+Stufe Lauf | Q | Teilung t | n_max | Toechter (Q, Windung, Jspin/Q, v) | l_dom | gamma | Q/E-Verlust
+  grob m2_055 | 627.9 | None | 1 | keine (Windung Ende [2]) | 2 | - | 4.2e-09/1.1e-06
+  grob m2_057 | 385.8 | None | 1 | keine (Windung Ende [2]) | 2 | - | 2.6e-10/3.2e-07
+  grob m2_059 | 280.5 | None | 1 | keine (Windung Ende [2]) | 2 | - | 1.8e-11/1.5e-07
+  grob m2_061 | 225.6 | None | 1 | keine (Windung Ende [2]) | 2 | - | 2.3e-12/3.4e-08
+  grob m2_063 | 192.8 | None | 1 | keine (Windung Ende [2]) | 3 | - | 5.4e-13/-7.1e-09
+  grob m2_065 | 171.2 | None | 1 | keine (Windung Ende [2]) | 3 | - | 2.6e-13/2.4e-07
+  grob m2_070 | 139.5 | None | 1 | keine (Windung Ende [2]) | 3 | 0.1196 | 5.8e-13/4.8e-06
+Kennzahlen: {"grob_quelle": "dieser Aufruf", "V1": {"folge": [[0.55, false], [0.57, false], [0.59, false], [0.61, false], [0.63, false], [0.65, false], [0.7, false]], "monoton": true, "hoechste_nicht_teilende": 0.7, "tiefste_teilende": null, "teilt_055": false, "teilt_065": false, "bestanden": false}, "V2": {"gamma_teilende": [], "bestanden": null, "grund": "weniger als zwei teilende Laeufe mit gamma, oder keine nicht teilende Stelle"}, "V3": {"windungen_toechter": [], "bestanden": null}, "scheitert": true, "plausibel": {"grob_m2_055": true, "grob_m2_057": true, "grob_m2_059": true, "grob_m2_061": true, "grob_m2_063": true, "grob_m2_065": true, "grob_m2_070": true}, "plausibilitaet_bestanden": true}

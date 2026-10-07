@@ -1,0 +1,32 @@
+KF-4 kf4.py v1 (2026-09-30, KF-4, ungetestet), Unterbefehl statik, Start 2026-09-30T01:14:23+00:00 auf Quadro P4000, torch 2.5.1+cu121
+g = 0.002, omega^2 = 0.7, Kante 1 - omega = 0.16334, Resonanz 1.4937, T_MESS 0.25
+Zeitplan: t_vor 40.0, t_an 80.0, t_halt je Lauf, t_ab 80.0, t_frei 200.0, t_ende 700.0; Box L 112.0
+Dauer [s]: grob 46.9, fein 87.1
+R_starr bei k = 0, v = 0 (muss QG-1 geben: A 0,2227, C 1): A 0.2227, C 1.0000
+Monopol-Soll je Phi0 (dS/S, domega/omega): A (-3.5642, +0.5918), C (+0.0000, +1.0000)
+
+Ruhende Baelle (fein; Kontrolle g = 0 abgezogen: dS 4.914e-06, domega 2.375e-07). Ball im Minimum von Phi (Phi = -g/2 am Zentrum).
+  Lauf | dS/S (grob) | Soll Monopol | domega/omega | Soll Monopol | dBreite/Breite | Atmung | S nach Abschalten | ring_res | L3 dS
+   0 A lam 4 v 0.0000 Om 0.0000 g 2e-03 | -1.3657e-03 (-1.3641e-03) | +3.5642e-03 | +2.4147e-04 | -5.9179e-04 | +1.373e-03 | 5.600e-05 | +4.92e-06 | 7.549e-05 | ok
+   1 C lam 4 v 0.0000 Om 0.0000 g 2e-03 | +1.7535e-03 (+1.7569e-03) | -0.0000e+00 | -5.3369e-05 | -1.0000e-03 | -7.066e-04 | 5.472e-05 | +4.36e-06 | 7.531e-05 | ok
+   2 A lam 8 v 0.0000 Om 0.0000 g 2e-03 | +1.7180e-03 (+1.7210e-03) | +3.5642e-03 | -2.3865e-05 | -5.9179e-04 | -3.369e-04 | 5.496e-05 | +4.54e-06 | 7.554e-05 | ok
+   3 C lam 8 v 0.0000 Om 0.0000 g 2e-03 | +4.1643e-03 (+4.1633e-03) | -0.0000e+00 | -6.5918e-04 | -1.0000e-03 | -4.235e-03 | 5.613e-05 | +3.45e-06 | 7.492e-05 | ok
+   4 A lam 16 v 0.0000 Om 0.0000 g 2e-03 | +3.3265e-03 (+3.3281e-03) | +3.5642e-03 | -4.1182e-04 | -5.9179e-04 | -2.428e-03 | 5.524e-05 | +3.82e-06 | 7.574e-05 | ok
+   5 C lam 16 v 0.0000 Om 0.0000 g 2e-03 | +2.2546e-03 (+2.2531e-03) | -0.0000e+00 | -9.5782e-04 | -1.0000e-03 | -3.551e-03 | 5.590e-05 | +3.57e-06 | 7.482e-05 | ok
+   6 A gleich v 0.0000 Om 0.0000 g 2e-03 | +3.5765e-03 (+3.5775e-03) | +3.5642e-03 | -5.9330e-04 | -5.9179e-04 | -3.136e-03 | 5.638e-05 | +3.56e-06 | 7.585e-05 | ok
+   7 A lam 4 v 0.0000 Om 0.0000 g 4e-03 | -2.7234e-03 (-2.7203e-03) | +7.1283e-03 | +4.8042e-04 | -1.1836e-03 | +2.745e-03 | 5.774e-05 | +5.33e-06 | 7.536e-05 | ok
+   8 A gleich v 0.0000 Om 0.0000 g 4e-03 | +7.1753e-03 (+7.1773e-03) | +7.1283e-03 | -1.1894e-03 | -1.1836e-03 | -6.263e-03 | 6.260e-05 | +2.64e-06 | 7.588e-05 | ok
+   9 C gleich v 0.0000 Om 0.0000 g 2e-03 | +3.9572e-06 (+4.3317e-06) | -0.0000e+00 | -9.9913e-04 | -1.0000e-03 | -1.009e-03 | 5.428e-05 | +4.21e-06 | 7.475e-05 | ok
+  10 C lam 4 v 0.0000 Om 0.0000 g 4e-03 | +3.5070e-03 (+3.5138e-03) | -0.0000e+00 | -1.0720e-04 | -2.0000e-03 | -1.407e-03 | 5.453e-05 | +4.19e-06 | 7.502e-05 | ok
+  11 C gleich v 0.0000 Om 0.0000 g 4e-03 | +1.4988e-05 (+1.5602e-05) | -0.0000e+00 | -1.9964e-03 | -2.0000e-03 | -2.015e-03 | 5.412e-05 | +3.98e-06 | 7.472e-05 | ok
+  Vorhersage P1 (gleichfoermig, je 3 Prozent bzw. |dS| < 1e-4 fuer C):
+    A g 1 G0: dS/S +3.5765e-03 (Soll +3.5642e-03) erfuellt; domega/omega -5.9330e-04 (Soll -5.9179e-04) erfuellt
+    A g 2 G0: dS/S +7.1753e-03 (Soll +7.1283e-03) erfuellt; domega/omega -1.1894e-03 (Soll -1.1836e-03) erfuellt
+    C g 1 G0: dS/S +3.9572e-06 (Soll -0.0000e+00) erfuellt; domega/omega -9.9913e-04 (Soll -1.0000e-03) erfuellt
+    C g 2 G0: dS/S +1.4988e-05 (Soll -0.0000e+00) erfuellt; domega/omega -1.9964e-03 (Soll -2.0000e-03) erfuellt
+  Vorhersage P2 (Kruemmung): C: D(8)/D(16) zwischen 2,8 und 5,2; A: Gezeitenteil D - D(gleich) ebenso; A(16) innerhalb 10 Prozent des Monopols:
+    A: D(4) -1.3657e-03, D(8) +1.7180e-03, D(16) +3.3265e-03; Gezeitenteil D(4)/D(8) 2.659, D(8)/D(16) 7.435 (NICHT erfuellt)
+    A(16) / Monopol-Soll: 0.9333
+    C: D(4) +1.7535e-03, D(8) +4.1643e-03, D(16) +2.2546e-03; Gezeitenteil D(4)/D(8) 0.421, D(8)/D(16) 1.847 (NICHT erfuellt)
+
+Ende 2026-09-30T01:16:39+00:00, Dauer 136.2 s, Fehler in: keine

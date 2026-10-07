@@ -1,0 +1,74 @@
+M2 Phasenzyklus: neuer begrenzter Kontrollversuch, Entwurf vor dem Lauf
+02.10.2026, Root ag-phy-coordination. Kein Lauf durch diesen Text.
+
+Frage: Trennen zwei quadraturversetzte Startpaare den kausalen konstanten
+und den kausalen doppelfrequenten Anteil in der freien nichtlinearen
+Evolution? Die quadratische Vorhersage steht vorab fest; das ist eine
+Implementierungs-/Perturbationskontrolle, kein neues Naturgesetz.
+
+Gebundenes Modell, Profil, Modenauswahl und Zeitfenster bleiben die des
+T128-Versuchs. Eigenvektor vollständig v -> i v, einschließlich seiner
+Geschwindigkeitskomponenten. Keine erneute Normierung und keine globale
+U(1)-Rotation des Hintergrundes. excitation.initial verwendet
+alpha=epsilon*sqrt(sum vol*(2*f*f+(chi-1)^2)); dieser Faktor bleibt gleich.
+
+Vier neue Arme: h=.05, dt=.01 und .005; je epsilon=+.002,-.002; R120,T128.
+Vorhandene theta=0-Arme und passende Nullarme aus base/time wiederverwenden,
+über ursprüngliche Result-/Artefakthashes prüfen. Keine Wiederholung des
+alten Baseline-Laufs und keine Verlängerung des Fensters.
+
+E_theta=(U(+alpha,theta)+U(-alpha,theta)-2U0)/(2 alpha^2).
+D=(E_0+E_pi/2)/2; H=(E_0-E_pi/2)/2.
+D und H gegen gespeicherte kausale DC/H2-Lösungen mit dt=.01 vergleichen.
+Die Vorhersage betrifft die kausale Lösung samt Anfangstransienten, keine
+reine stationäre Fourierlinie. Die numerische Hintergrunddrift begrenzt
+wie zuvor den Vergleich zum exakt stationären linearen Generator.
+
+Feste Auswertung: Fenster [88,88+2pi/rho] und [104.5,104.5+2pi/rho],
+Schalen [40,45),[45,50). Gewichtet mit Zellvolumen: L2-Zeitnorm von phi
+und komplexer 2rho-Koeffizient. Jede Komponente separat, keine Norm durch
+eine zufällig kleine Summenantwort. Null-/nicht aufgelöster Nenner bleibt
+UNRESOLVED. Vorgeschlagene, vor Lauf unabhängig zu prüfende Tore: je 5%
+Abweichung von kausalem Referenzanteil; je 1% Änderung bei dt-Halbierung.
+Kein Tor aus einem nachträglich gesehenen Phasenzyklus-Ergebnis wählen.
+
+Vollständiger Odd-Modenvergleich gegen Re(i*v*exp(i*rho*t)) wie früher <.05.
+Unveränderte Energie-, Ladungs-, Bilanz-, Rand- und Startadapterkontrollen.
+Initiale Q/E je Phase offen ausweisen: Diese Starts sind nicht zwingend
+exakt gleich-Q oder gleich-E. Keine nachträgliche Projektion auf gleich-Q.
+Dieser Test braucht nur identische kanonische alpha und dasselbe Profil.
+
+Erwartung: Quadratische Trennung plausibel, aber noch keine numerische
+Bestätigung. Fehlende Konvergenz, Nennerauflösung, falscher Adapter oder
+Verletzung einer Kontrolle => UNRESOLVED bzw. INCOMPLETE. Alle vier Arme
+und vorab definierten Vergleiche erforderlich. Alter T128-Status UNRESOLVED
+bleibt unabhängig vom neuen Ausgang bestehen. Kein Nachweis einer
+Strahlungslöschung in einem gleichzeitig vorhandenen Ensemble, einer
+Lebensdauer, BIC-Stabilität oder einer neuen Kraft.
+
+Betrieb: .69 CPU8, nice19, ein Thread, bestehender lock-klein-cpu2.lock,
+flock -w45. Keine CUDA-/lokale Numerik. Vorschlag Obergrenze120 CPU-s für
+die vier neuen Arme und Auswertung, externe Endzeitgrenze plus interner
+Checkpoint; keine automatische Fortsetzung. QA ebenfalls nur .69.
+Vor Start: Theorie- und Nichtautor-Codeprüfung, tatsächliche Eingabehashes,
+Gitstand, endgültige Parameter und Laufaufruf binden; Peerbus-Abstimmung.
+Keine fremden Dienste, Dateien oder gesperrten Daten anfassen.
+
+Vorabpräzisierung nach unabhängiger Ideenlesung, weiterhin ohne neuen Lauf:
+N_ref > 100*max(Delta_ref,Delta_dt,eta_arith), separat je DC/H2 und
+Zeit-/Bandnorm, Schale und Fenster. Delta_ref ist die vorhandene kausale
+Änderung dt=.02->.01 desselben Anteils; Delta_dt die neue Änderung der
+Phasenzyklus-Komponente dt=.01->.005. eta_arith verwendet 64*float64-eps
+mal die Summe der Normen der tatsächlich subtrahierten Summanden, mit
+den vorgegebenen alpha-Faktoren. Keine Normierung durch Summenantwort.
+Diese empirische Auflösungsreserve übernimmt das 1%-Ziel und ist keine
+rigorose Fehlerschranke. Nichtaufgelöst bedeutet UNRESOLVED, keine
+Lockerung nach dem Lauf. Konkrete Formel im unabhängig zu lesenden Code.
+Die positive Summandenhülle für DC enthält vier Vorzeichenfelder und
+4|Ubaseline|, geteilt durch4alpha²; für H2 fällt Baseline algebraisch weg.
+Für das Band wird die positive Hülle zeitlich integriert, nicht selbst
+fouriertransformiert (deren Auslöschung wäre keine Fehlerreserve).
+64eps ist eine festgelegte Auswerte-Sensitivität, keine vollständige
+Summations- oder Evolutionsfehlerschranke. Zusätzlich Diagnose E90 gegen
+D-H relativ zur alten E0-Norm; kein nachträglicher Ersatznenner der
+verbindlichen getrennten Komponentenprüfung.

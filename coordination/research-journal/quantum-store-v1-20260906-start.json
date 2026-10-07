@@ -1,0 +1,31 @@
+{
+  "id": "quantum-store-v1-20260906-start",
+  "time": "2026-09-06T16:34:10.883485+00:00",
+  "time_kind": "document",
+  "author": "Codex",
+  "topic": "operations",
+  "status": "technical",
+  "title": "Hintergrundschleife gestartet: Kandidaten rechnen, bewerten, weiterentwickeln",
+  "question": "Wie setzen wir die Minimalmodelle automatisch in konkrete Gegenversuche und Bewertungen um?",
+  "action": "Geprüften Controller als begrenzten Hintergrunddienst gestartet. Bis zu drei CUDA-Batches; mathematische Kontrollfälle, Qwen-Kritik, vorab gespeicherte Folgevorhersage und automatische numerische Bewertung.",
+  "result": "Start-/Tabellenprüfungen 25/25 und Controller-Prüfungen 34/34 auf .69 bestanden. Laufstart ist dokumentiert; wissenschaftliche Ergebnisse werden je Batch separat veröffentlicht.",
+  "meaning": "Lokal nur IO/Ablaufsteuerung mit 5% CPU-Limit. Numerische Kernarbeit auf .69/CUDA ohne CPU-Fallback. Maximal drei Batches; stop beendet nur den zugehörigen Job.",
+  "sources": [
+    {
+      "path": "model-lab/quantum-loop/runs/quantum-store-v1-20260906/input_snapshot/manifest.json",
+      "label": "Unveränderlicher Laufstand",
+      "sha256": "839827027aef88786e17373b25b8c1edbe60b539d64c36dea64666a2231ec80f"
+    },
+    {
+      "path": "model-lab/quantum-loop/qa/controller-checks.json",
+      "label": "Controller-Abnahme",
+      "sha256": "0f1c245b97a66810bbd2910b14449c7e95fde4ea403bd9dd6870cd9d03b4e5a7"
+    },
+    {
+      "path": "model-lab/quantum-loop/dashboard.html",
+      "label": "Aktueller Lauf und Ergebnisse",
+      "sha256": "f58d18b7454ac1c04ab098dc3fc8152b17557c4953266658231f289411194cc7"
+    }
+  ],
+  "recorded_at": "2026-09-06T16:34:43.756626+00:00"
+}

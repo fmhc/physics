@@ -1,0 +1,99 @@
+{
+ "modus": "kontrolle",
+ "params": {
+  "OMEGA": 6.283185307179586,
+  "EPS": 0.1,
+  "K": 1.0,
+  "MU_X": 2.0,
+  "KAPPA": 0.01,
+  "MU_PHI": 50.26548245743668,
+  "T_NOISE": 6.283185307179587e-05,
+  "DELTA_F": 0.02,
+  "G_AUF": 0.2,
+  "DT": 0.005,
+  "Z0": 0.05,
+  "JITTER": 0.002,
+  "SUB": 10,
+  "PRUEF_ALLE": 1000,
+  "FD_H": 1e-05
+ },
+ "argv": [
+  "kontrolle",
+  "--dim",
+  "2",
+  "--saaten",
+  "1,2,3,4",
+  "--takte",
+  "500",
+  "--aus",
+  "/home/fmh/fmhc-physics-remote/raute-atem-1/lauf/kontrolle_d2.json"
+ ],
+ "laeufe": [
+  {
+   "dim": 2,
+   "B": 0.0,
+   "seed": 1,
+   "takte": 500.0,
+   "npz": "/home/fmh/fmhc-physics-remote/raute-atem-1/lauf/kontrolle_d2_s1.npz",
+   "werkzeugprobe": {
+    "n": 101,
+    "n_ausgelassen": 0,
+    "max_int_vs_schleife": 1.3877787807814457e-17,
+    "max_schleife_vs_fd": 3.9530601014803324e-11,
+    "max_bilanz_mit_reibung": 1.3877787807814457e-17,
+    "max_impuls_summe": 1.691355389077387e-17
+   },
+   "laufzeit_s": 20.89
+  },
+  {
+   "dim": 2,
+   "B": 0.0,
+   "seed": 2,
+   "takte": 500.0,
+   "npz": "/home/fmh/fmhc-physics-remote/raute-atem-1/lauf/kontrolle_d2_s2.npz",
+   "werkzeugprobe": {
+    "n": 101,
+    "n_ausgelassen": 0,
+    "max_int_vs_schleife": 1.3877787807814457e-17,
+    "max_schleife_vs_fd": 4.075466353281598e-11,
+    "max_bilanz_mit_reibung": 1.3877787807814457e-17,
+    "max_impuls_summe": 1.9081958235744878e-17
+   },
+   "laufzeit_s": 20.92
+  },
+  {
+   "dim": 2,
+   "B": 0.0,
+   "seed": 3,
+   "takte": 500.0,
+   "npz": "/home/fmh/fmhc-physics-remote/raute-atem-1/lauf/kontrolle_d2_s3.npz",
+   "werkzeugprobe": {
+    "n": 101,
+    "n_ausgelassen": 0,
+    "max_int_vs_schleife": 2.7755575615628914e-17,
+    "max_schleife_vs_fd": 3.9574787891183405e-11,
+    "max_bilanz_mit_reibung": 2.7755575615628914e-17,
+    "max_impuls_summe": 2.0816681711721685e-17
+   },
+   "laufzeit_s": 20.82
+  },
+  {
+   "dim": 2,
+   "B": 0.0,
+   "seed": 4,
+   "takte": 500.0,
+   "npz": "/home/fmh/fmhc-physics-remote/raute-atem-1/lauf/kontrolle_d2_s4.npz",
+   "werkzeugprobe": {
+    "n": 101,
+    "n_ausgelassen": 0,
+    "max_int_vs_schleife": 2.7755575615628914e-17,
+    "max_schleife_vs_fd": 4.01515903858396e-11,
+    "max_bilanz_mit_reibung": 2.7755575615628914e-17,
+    "max_impuls_summe": 1.734723475976807e-17
+   },
+   "laufzeit_s": 20.88
+  }
+ ],
+ "laufzeit_s": 83.51,
+ "rss_mb": 40.9
+}

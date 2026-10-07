@@ -1,0 +1,590 @@
+--- code/ksh-vorlage-2d-1.py	2026-10-05 11:33:47.137040388 +0200
++++ code/ksh2.py	2026-10-05 12:22:22.279856955 +0200
+@@ -1,6 +1,12 @@
+ #!/usr/bin/env python3
+ # -*- coding: utf-8 -*-
+-"""KRUEMMUNGS-SANDHAUFEN-2D-1 (Runde 48, Finns Idee): Kruemmungs-Sandhaufen auf Dreiecksflaechen, BTW-Eichung, Auswertung.
++"""KRUEMMUNGS-SANDHAUFEN-2D-2 (Runde 49): Kopie von KRUEMMUNGS-SANDHAUFEN-2D-1/code/ksh.py (eingefroren, sha256 f2c3627a...).
++Aenderungen gegenueber der Vorlage (Dynamik, Zufallsstrom, Pruefungen und Auswertefunktionen unveraendert):
++  - zustand(): zusaetzlich Gradhistogramm der inneren Ecken (Grad 3 bis 15, letzte Klasse 16+) je Zeitreihenzeile.
++  - kopf(): Kartenname.
++  - neuer Befehl aus2 (Urteile KS0 bis KS4, Drift-Probe, Identitaetspruefung K-ID, Bilder); PLAN.md der Karte 2D-2.
++Urspruenglicher Kopf der Vorlage:
++KRUEMMUNGS-SANDHAUFEN-2D-1 (Runde 48, Finns Idee): Kruemmungs-Sandhaufen auf Dreiecksflaechen, BTW-Eichung, Auswertung.
+ 
+ Modell (KARTE.md): Kruemmungsladung q_v = 6 - c(v). Eine innere Ecke mit |q_v| >= 2 kippt:
+   q_v >= 2: Flip einer Ringkante (u,w) -> (v,z), v gewinnt eine Kante;
+@@ -365,16 +371,19 @@
+         nd = 0
+         q2 = 0
+         ni = 0
++        gh = [0] * 14   # [2D-2] Grad 3 bis 15, letzte Klasse 16+
+         for v in range(n):
+             if inner[v]:
+-                q = 6 - deg[v]
++                g = deg[v]
++                q = 6 - g
+                 ni += 1
++                gh[(g if g < 16 else 16) - 3] += 1
+                 if q:
+                     nd += 1
+                     q2 += q * q
+         rd = [deg[v] for v in range(n) if rand[v]]
+         return [nd / ni, q2 / ni, len(unst), (sum(rd) / len(rd)) if rd else None, max(rd) if rd else None,
+-                min(deg), max(deg)]
++                min(deg), max(deg), gh]
+ 
+     # Anfangsrelaxation (nicht gemessen)
+     s0, T0, A0, st0 = lawine(RELAXF * N)
+@@ -451,7 +460,7 @@
+                 'vollpruefungen': voll_n, 'vollpruefung_fehler': [x for x in voll if x['fehler']]},
+         'zaehler': zaehl, 'cap': cap,
+         'zeitreihe_spalten': ['schritt', 's_mittel_1000', 'defektanteil', 'q2_mittel', 'instabil', 'rand_grad_mittel',
+-                              'rand_grad_max', 'grad_min', 'grad_max'],
++                              'rand_grad_max', 'grad_min', 'grad_max', 'grad_hist_innen_3_bis_15_und_16plus'],
+         'zeitreihe_einschwingen': reihe_ein, 'zeitreihe_messung': reihe,
+         'grad_hist_innen_start': {str(k): v for k, v in sorted(grad_start.items())},
+         'grad_hist_innen_ende': {str(k): v for k, v in sorted(grad_ende.items())},
+@@ -531,7 +540,7 @@
+ 
+ def kopf(modus, args):
+     import scipy
+-    return {'karte': 'KRUEMMUNGS-SANDHAUFEN-2D-1', 'modus': modus, 'code_sha256': code_sha(),
++    return {'karte': 'KRUEMMUNGS-SANDHAUFEN-2D-2', 'modus': modus, 'code_sha256': code_sha(),
+             'python': platform.python_version(), 'numpy': np.__version__, 'scipy': scipy.__version__,
+             'host': platform.node(), 'start_utc': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),
+             'rauch': bool(getattr(args, 'rauch', False)), 'argv': sys.argv[1:],
+@@ -1069,6 +1078,513 @@
+         json.dump(res, f, indent=1)
+ 
+ 
++# ---------------------------------------------------------------- [2D-2] Auswertung KS0 bis KS4 (PLAN.md der Karte 2D-2)
++REF_SC2_2D1 = 830.0857502893972   # s_c2 kugel-Z-N2000 aus 2D-1 (aus/urteile.json der Vorlage, 15 Stellen)
++KS0_TOL = 0.15
++KS1_D = 0.3
++KS2_F = 1.5
++KS3_LO, KS3_HI = 0.25, 0.40
++KS4_DAIC = 10.0
++B_BLOCK = 20
++B_ZIEH = 200
++
++
++def lade(pf):
++    with open(pf) as f:
++        L = json.load(f)
++    d = os.path.dirname(os.path.abspath(pf))
++    out = []
++    for fall in L['faelle']:
++        z = np.load(os.path.join(d, fall['npz']))
++        out.append((fall, {k: z[k] for k in ('s', 'T', 'A', 'st')}))
++    return L, out
++
++
++def alter_von(fall, roh):
++    ein = fall['einschwingen']['schritte']
++    return (ein + np.arange(1, roh['s'].size + 1)) / float(fall['N'])
++
++
++def saat_von(*teile):
++    return int(hashlib.sha256('|'.join(str(t) for t in teile).encode()).hexdigest()[:12], 16)
++
++
++def sc2_boot_fenster(x, rng, B=B_BLOCK, n=B_ZIEH):
++    """s_c2 = <s^2>/<s> ueber Lawinen s >= 1 in x (Zeitordnung), Block-Bootstrap (B Bloecke, n Ziehungen)."""
++    x = x[x >= 1].astype(float)
++    m = int(x.size)
++    if m == 0:
++        return float('nan'), 0, None
++    v = float((x ** 2).sum() / x.sum())
++    if m < B:
++        return v, m, None
++    g = blockgrenzen(m, B)
++    s1 = np.array([x[g[i]:g[i + 1]].sum() for i in range(B)])
++    s2 = np.array([(x[g[i]:g[i + 1]] ** 2).sum() for i in range(B)])
++    bs = []
++    for _ in range(n):
++        idx = rng.integers(0, B, B)
++        t = s1[idx].sum()
++        bs.append(float(s2[idx].sum() / t) if t > 0 else float('nan'))
++    return v, m, np.array(bs)
++
++
++def fenster_gruppe(faelle):
++    """W1 = gemeinsames Altersfenster (A_start, A_ende] (alle Faelle gleich alt); W2 = spaetere Haelfte von W1."""
++    a0 = max(f['einschwingen']['schritte'] / float(f['N']) for f, r in faelle)
++    a1 = min((f['einschwingen']['schritte'] + r['s'].size) / float(f['N']) for f, r in faelle)
++    return {'W1': [a0, a1], 'W2': [0.5 * (a0 + a1), a1]}
++
++
++def fenster_wert(fall, roh, lo, hi, tag):
++    if hi <= lo:
++        return {'sc2': None, 'lawinen': 0, 'ki95': None}, None
++    a = alter_von(fall, roh)
++    sel = (a > lo) & (a <= hi + 1e-9)
++    rng = np.random.default_rng(saat_von(fall['name'], fall.get('r', 0.0), tag, lo, hi))
++    v, m, bs = sc2_boot_fenster(roh['s'][sel], rng)
++    ki = None
++    if bs is not None:
++        ki = [float(np.nanpercentile(bs, 2.5)), float(np.nanpercentile(bs, 97.5))]
++    return {'sc2': (v if np.isfinite(v) else None), 'lawinen': m, 'schritte': int(sel.sum()), 'ki95': ki}, bs
++
++
++def d_fit_werte(Ns, sc, boots):
++    if any(v is None for v in sc) or any(b is None for b in boots):
++        return None
++    Ns = np.array(Ns, dtype=float)
++    sc = np.array(sc, dtype=float)
++    if not (np.all(np.isfinite(sc)) and np.all(sc > 0)):
++        return None
++    D = float(np.polyfit(np.log(Ns), np.log(sc), 1)[0])
++    bs = np.array(boots, dtype=float)
++    Db = [float(np.polyfit(np.log(Ns), np.log(bs[:, j]), 1)[0]) for j in range(bs.shape[1])
++          if np.all(np.isfinite(bs[:, j])) and np.all(bs[:, j] > 0)]
++    return {'N': Ns.tolist(), 'sc2': sc.tolist(), 'D': D,
++            'D_ki95': [float(np.percentile(Db, 2.5)), float(np.percentile(Db, 97.5))],
++            'D_ki68': [float(np.percentile(Db, 16)), float(np.percentile(Db, 84))],
++            'monoton': bool(np.all(np.diff(sc) > 0)), 'n_boot': len(Db)}
++
++
++def urteil_ks1(d):
++    if d is None:
++        return 'nicht entscheidbar'
++    if d['D_ki95'][0] >= KS1_D and d['monoton']:
++        return 'eingetroffen'
++    if d['D_ki95'][1] < KS1_D:
++        return 'nicht eingetroffen'
++    return 'nicht entscheidbar'
++
++
++def urteil_ks2(ki):
++    if ki is None:
++        return 'nicht entscheidbar'
++    lo, hi = ki
++    if lo > 1.0 / KS2_F and hi < KS2_F:
++        return 'eingetroffen'
++    if lo >= KS2_F or hi <= 1.0 / KS2_F:
++        return 'nicht eingetroffen'
++    return 'nicht entscheidbar'
++
++
++def kombiniere(us):
++    """Drift-Probe (Pflicht): gleiches Urteil in allen Schaetzern = dieses Urteil, sonst 'nicht entscheidbar (Drift)'."""
++    if all(u == us[0] for u in us):
++        return us[0]
++    return 'nicht entscheidbar (Drift)'
++
++
++def quotient(va, ba, vb, bb):
++    if va is None or vb is None or vb <= 0:
++        return None, None
++    q = va / vb
++    if ba is None or bb is None:
++        return q, None
++    qb = ba / bb
++    qb = qb[np.isfinite(qb)]
++    if qb.size < 10:
++        return q, None
++    return q, [float(np.percentile(qb, 2.5)), float(np.percentile(qb, 97.5))]
++
++
++def viertel(fall, roh):
++    s = roh['s']
++    q = [(s.size * i) // 4 for i in range(5)]
++    out = {'s_mittel_viertel': [], 'sc2_viertel': [], 'alter_viertel_ende': []}
++    a = alter_von(fall, roh)
++    for i in range(4):
++        x = s[q[i]:q[i + 1]]
++        out['s_mittel_viertel'].append(float(x.mean()) if x.size else None)
++        y = x[x >= 1].astype(float)
++        out['sc2_viertel'].append(float((y ** 2).sum() / y.sum()) if y.size else None)
++        out['alter_viertel_ende'].append(float(a[q[i + 1] - 1]) if q[i + 1] > q[i] else None)
++    return out
++
++
++def gradanteile(fall):
++    rows = fall.get('zeitreihe_messung') or []
++    m = fall['messung']['schritte']
++
++    def mittel(rs):
++        if not rs:
++            return None
++        acc = np.zeros(14)
++        for r in rs:
++            h = np.array(r[-1], dtype=float)
++            acc += h / h.sum()
++        return (acc / len(rs)).tolist()
++    ganz = mittel(rows)
++    zweite = mittel([r for r in rows if r[0] > m / 2.0])
++    erste = mittel([r for r in rows if r[0] <= m / 2.0])
++
++    def r567(h):
++        return None if h is None else {'rho5': h[2], 'rho6': h[3], 'rho7': h[4], 'rho4': h[1], 'rho8': h[5],
++                                       'rho_rest': 1.0 - (h[1] + h[2] + h[3] + h[4] + h[5]),
++                                       'verzweigung_plus': 2 * h[2] + h[4], 'verzweigung_minus': h[2] + 2 * h[4]}
++
++    def drin(h):
++        return None if h is None else all(KS3_LO <= h[k] <= KS3_HI for k in (2, 3, 4))
++    return {'zeilen': len(rows), 'ganz': r567(ganz), 'erste_haelfte': r567(erste), 'zweite_haelfte': r567(zweite),
++            'hist_ganz': ganz, 'in_ganz': drin(ganz), 'in_zweite': drin(zweite)}
++
++
++def p2d_urteil(p):
++    return {'ja': 'eingetroffen', 'nein': 'nicht eingetroffen'}.get(p, 'nicht entscheidbar')
++
++
++def bild_grad(pfad, faelle, etiketten):
++    import matplotlib
++    matplotlib.use('Agg')
++    import matplotlib.pyplot as plt
++    farben = ('#2a78d6', '#eb6834', '#1baf7a', '#8f5bd6', '#c9a227', '#d6457a')
++    fig, axs = plt.subplots(1, 3, figsize=(10.5, 3.8), dpi=130, sharey=False)
++    fig.patch.set_facecolor('#fcfcfb')
++    for j, (k, nm) in enumerate(((2, 'Grad 5'), (3, 'Grad 6'), (4, 'Grad 7'))):
++        ax = axs[j]
++        ax.set_facecolor('#fcfcfb')
++        for i, ((fall, roh), lab) in enumerate(zip(faelle, etiketten)):
++            ein = fall['einschwingen']['schritte']
++            N = float(fall['N'])
++            for teil, ls in (('zeitreihe_einschwingen', ':'), ('zeitreihe_messung', '-')):
++                rows = fall.get(teil) or []
++                if not rows:
++                    continue
++                off = 0 if teil == 'zeitreihe_einschwingen' else ein
++                x = [(off + r[0]) / N for r in rows]
++                y = [r[-1][k] / float(sum(r[-1])) for r in rows]
++                ax.plot(x, y, linestyle=ls, linewidth=1.1, color=farben[i % 6],
++                        label=lab if (teil == 'zeitreihe_messung' and j == 0) else None)
++        ax.axhspan(KS3_LO, KS3_HI, color='#e4e3df', alpha=0.5, linewidth=0)
++        ax.set_title('Anteil %s' % nm, fontsize=10, color='#0b0b0b')
++        ax.set_xlabel('Alter (Antriebsschritte / N)', color='#0b0b0b')
++        ax.set_xscale('log')
++        ax.grid(True, color='#e4e3df', linewidth=0.6)
++        for sp_ in ax.spines.values():
++            sp_.set_color('#8a8984')
++        ax.tick_params(colors='#52514e')
++    axs[0].legend(frameon=False, fontsize=7, loc='lower right')
++    fig.text(0.995, 0.005, 'gepunktet: Einschwingen, durchgezogen: Messung; grau: KS3-Band 0,25 bis 0,40; synthetisch',
++             ha='right', va='bottom', fontsize=7, color='#52514e')
++    fig.tight_layout(rect=(0, 0.04, 1, 1))
++    fig.savefig(pfad, facecolor=fig.get_facecolor())
++    plt.close(fig)
++
++
++def bild_sc2_N(pfad, reihen):
++    import matplotlib
++    matplotlib.use('Agg')
++    import matplotlib.pyplot as plt
++    farben = ('#2a78d6', '#eb6834', '#1baf7a')
++    fig, ax = plt.subplots(figsize=(6.4, 4.6), dpi=130)
++    fig.patch.set_facecolor('#fcfcfb')
++    ax.set_facecolor('#fcfcfb')
++    for i, (lab, Ns, sc, kis, d) in enumerate(reihen):
++        ok = [j for j in range(len(Ns)) if sc[j] is not None]
++        if not ok:
++            continue
++        x = np.array([Ns[j] for j in ok], dtype=float) * (1.0 + 0.04 * (i - 1))
++        y = np.array([sc[j] for j in ok], dtype=float)
++        lo = np.array([max(0.0, sc[j] - kis[j][0]) if kis[j] else 0.0 for j in ok])
++        hi = np.array([max(0.0, kis[j][1] - sc[j]) if kis[j] else 0.0 for j in ok])
++        txt = (' D = %.3f [%.3f; %.3f]' % (d['D'], d['D_ki95'][0], d['D_ki95'][1])) if d else ''
++        ax.errorbar(x, y, yerr=[lo, hi], marker='os^'[i % 3], linestyle='none', color=farben[i % 3], capsize=3,
++                    label=lab + txt)
++        if d:
++            xx = np.array([min(Ns) * 0.9, max(Ns) * 1.1])
++            c = math.exp(np.mean(np.log(y)) - d['D'] * np.mean(np.log(x / (1.0 + 0.04 * (i - 1)))))
++            ax.plot(xx, c * xx ** d['D'], linestyle='--', linewidth=1.0, color=farben[i % 3])
++    ax.set_xscale('log')
++    ax.set_yscale('log')
++    ax.set_xlabel('N (Ecken)', color='#0b0b0b')
++    ax.set_ylabel('s_c2 = <s^2>/<s> (95-%-Intervall)', color='#0b0b0b')
++    ax.set_title('Kugel, Arm Z, r = 0,01: s_c2 gegen N je Schaetzer', fontsize=10, color='#0b0b0b')
++    ax.grid(True, which='major', color='#e4e3df', linewidth=0.6)
++    for sp_ in ax.spines.values():
++        sp_.set_color('#8a8984')
++    ax.tick_params(colors='#52514e')
++    ax.legend(frameon=False, fontsize=7.5, loc='upper left')
++    ax.text(0.99, 0.01, 'synthetisch, keine Messdaten', transform=ax.transAxes, ha='right', va='bottom',
++            fontsize=7, color='#52514e')
++    fig.tight_layout()
++    fig.savefig(pfad, facecolor=fig.get_facecolor())
++    plt.close(fig)
++
++
++def cmd_aus2(args):
++    res = kopf('aus2', args)
++    laeufe = []
++    rollen = {}
++
++    def hol(pf, rolle):
++        if not pf or not os.path.exists(pf):
++            laeufe.append({'rolle': rolle, 'datei': pf, 'fehlt': True})
++            return None
++        L, fr = lade(pf)
++        for f, _ in fr:
++            f['saat_lauf'] = L.get('seed')
++        laeufe.append({'rolle': rolle, 'datei': pf, 'code_sha256': L['code_sha256'], 'rauch': L['rauch'],
++                       'argv': L['argv'], 'faelle': [f['name'] for f, _ in fr]})
++        return fr[0] if fr else None
++
++    rollen['ks0'] = hol(args.ks0, 'KS0 (N = 2000, r = 0, neue Saat)')
++    rollen['kid'] = hol(args.kid, 'K-ID (N = 2000, r = 0, Saat 11 wie 2D-1)')
++    r001 = [hol(pf, 'KS1 (r = 0,01)') for pf in (args.r001 or [])]
++    r001 = sorted([x for x in r001 if x is not None], key=lambda t: t[0]['N'])
++    rollen['r0003'] = hol(args.r0003, 'KS2 (N = 8000, r = 0,003)')
++    rollen['r003'] = hol(args.r003, 'Rate (N = 8000, r = 0,03)')
++    ref = None
++    if args.ref and os.path.exists(args.ref):
++        Lr, frr = lade(args.ref)
++        ref = next(((f, r) for f, r in frr if f['name'] == 'kugel-Z-N2000'), None)
++        laeufe.append({'rolle': 'Referenz 2D-1', 'datei': args.ref, 'code_sha256': Lr['code_sha256']})
++    res['laeufe'] = laeufe
++
++    an = {}
++
++    def ana(tag, fr):
++        fall, roh = fr
++        a = analyse_fall(fall, roh)
++        for k in ('kh0', 'einschwingen', 'relax', 'instabil_ende', 'zaehler', 'messung'):
++            if k in fall:
++                a[k] = fall[k]
++        a['alter_ende'] = (fall['einschwingen']['schritte'] + roh['s'].size) / float(fall['N'])
++        a['viertel'] = viertel(fall, roh)
++        a['grad'] = gradanteile(fall)
++        an[tag] = a
++        print('analyse %s (%s)' % (tag, fall['name']), flush=True)
++        return a
++
++    faelle_k = []   # alle Kugelfaelle dieser Karte fuer KS3: (tag, (fall, roh))
++    if rollen['ks0']:
++        ana('ks0', rollen['ks0'])
++        faelle_k.append(('ks0', rollen['ks0']))
++    for fr in r001:
++        tag = 'r0.01-N%d' % fr[0]['N']
++        ana(tag, fr)
++        faelle_k.append((tag, fr))
++    if rollen['r0003']:
++        ana('r0.003-N8000', rollen['r0003'])
++        faelle_k.append(('r0.003-N8000', rollen['r0003']))
++    if rollen['r003']:
++        ana('r0.03-N8000', rollen['r003'])
++        faelle_k.append(('r0.03-N8000', rollen['r003']))
++    if ref:
++        a = analyse_fall(ref[0], ref[1])
++        an['ref-2d1-N2000'] = {'sc2': a['sc2'], 'sc2_ki95': a['sc2_ki95'], 'gleich_veroeffentlicht':
++                               bool(abs(a['sc2'] - REF_SC2_2D1) <= 1e-9 * REF_SC2_2D1)}
++    U = {}
++
++    # K-ID: Identitaet der Dynamik mit 2D-1 (gleiche Saat 11)
++    if rollen['kid'] and ref:
++        fk, rk = rollen['kid']
++        fr_, rr = ref
++        n = int(min(rk['s'].size, rr['s'].size))
++        gl = {k: bool(np.array_equal(rk[k][:n], rr[k][:n])) for k in ('s', 'T', 'A', 'st')}
++        nz = min(len(fk['zeitreihe_messung']), len(fr_['zeitreihe_messung']))
++        zr = all(list(fk['zeitreihe_messung'][i][:9]) == list(fr_['zeitreihe_messung'][i]) for i in range(nz))
++        ne_ = min(len(fk['zeitreihe_einschwingen']), len(fr_['zeitreihe_einschwingen']))
++        ze = all(list(fk['zeitreihe_einschwingen'][i][:9]) == list(fr_['zeitreihe_einschwingen'][i])
++                 for i in range(ne_))
++        res['k_id'] = {'verglichene_schritte': n, 'gleich': gl, 'relax_gleich': fk['relax'] == fr_['relax'],
++                       'einschwingen_gleich': fk['einschwingen']['schritte'] == fr_['einschwingen']['schritte'],
++                       'netz_gleich': (fk['netz']['saat'] == fr_['netz']['saat'] and fk['netz']['E'] == fr_['netz']['E']),
++                       'zeitreihe_messung_gleich': zr, 'zeilen_messung': nz, 'zeitreihe_einschwingen_gleich': ze,
++                       'zeilen_einschwingen': ne_,
++                       'identisch': bool(all(gl.values()) and fk['relax'] == fr_['relax'] and zr and ze and n > 0)}
++
++    # KS0
++    if 'ks0' in an and 'sc2' in an['ks0']:
++        q = an['ks0']['sc2'] / REF_SC2_2D1
++        u = 'eingetroffen' if abs(q - 1.0) <= KS0_TOL else 'nicht eingetroffen'
++        U['KS0'] = {'plan': u, 'wortlaut': u, 'sc2_neu': an['ks0']['sc2'], 'sc2_neu_ki95': an['ks0']['sc2_ki95'],
++                    'sc2_2d1': REF_SC2_2D1, 'quotient': q, 'abweichung': q - 1.0}
++    else:
++        U['KS0'] = {'plan': 'nicht entscheidbar (fehlt)', 'wortlaut': 'nicht entscheidbar (fehlt)'}
++
++    # KS1: s_c2 gegen N bei r = 0,01; Hauptschaetzer (Vorlage) + Drift-Probe W1, W2
++    drift = {}
++    if len(r001) == 3:
++        rs = [an['r0.01-N%d' % f['N']] for f, _ in r001]
++        d_haupt = d_fit(rs)
++        fw = fenster_gruppe(r001)
++        dd = {'haupt': d_haupt}
++        werte = {}
++        for w, (lo, hi) in fw.items():
++            sc, bo, tab = [], [], []
++            for fall, roh in r001:
++                v, bs = fenster_wert(fall, roh, lo, hi, 'KS1-' + w)
++                sc.append(v['sc2'])
++                bo.append(bs)
++                tab.append(dict(v, N=fall['N']))
++            werte[w] = {'alter': [lo, hi], 'faelle': tab}
++            dd[w] = d_fit_werte([f['N'] for f, _ in r001], sc, bo)
++        us = [urteil_ks1(dd['haupt']), urteil_ks1(dd['W1']), urteil_ks1(dd['W2'])]
++        wl = ('eingetroffen' if (d_haupt and d_haupt['D'] >= KS1_D and d_haupt['monoton']) else
++              ('nicht eingetroffen' if d_haupt else 'nicht entscheidbar'))
++        U['KS1'] = {'plan': kombiniere(us), 'wortlaut': wl, 'urteile_haupt_W1_W2': us,
++                    'N': [f['N'] for f, _ in r001], 'D': dd, 'fenster': werte}
++        drift['KS1'] = {'fenster': fw, 'werte': werte, 'D': dd}
++    else:
++        U['KS1'] = {'plan': 'nicht entscheidbar (fehlt)', 'wortlaut': 'nicht entscheidbar (fehlt)',
++                    'N': [f['N'] for f, _ in r001]}
++
++    # KS2: N = 8000, s_c2(r = 0,01) / s_c2(r = 0,003); Hauptschaetzer + W1, W2
++    f8 = next((fr for fr in r001 if fr[0]['N'] == 8000), None)
++    if f8 and rollen['r0003']:
++        grp = [f8, rollen['r0003']]
++        fw = fenster_gruppe(grp)
++        fw = dict({'haupt': None}, **fw)
++        k2 = {}
++        for w, lim in fw.items():
++            vals = []
++            for fall, roh in grp:
++                if lim is None:
++                    a = alter_von(fall, roh)
++                    lo, hi = float(a[0]) - 1e-6, float(a[-1])
++                else:
++                    lo, hi = lim
++                v, bs = fenster_wert(fall, roh, lo, hi, 'KS2-' + w)
++                vals.append((v, bs))
++            q, ki = quotient(vals[0][0]['sc2'], vals[0][1], vals[1][0]['sc2'], vals[1][1])
++            k2[w] = {'alter': lim, 'sc2_r0.01': vals[0][0], 'sc2_r0.003': vals[1][0], 'quotient': q, 'ki95': ki,
++                     'urteil': urteil_ks2(ki)}
++        us = [k2['haupt']['urteil'], k2['W1']['urteil'], k2['W2']['urteil']]
++        qh = k2['haupt']['quotient']
++        wl = ('nicht entscheidbar' if qh is None else
++              ('eingetroffen' if (1.0 / KS2_F < qh < KS2_F) else 'nicht eingetroffen'))
++        U['KS2'] = {'plan': kombiniere(us), 'wortlaut': wl, 'urteile_haupt_W1_W2': us, 'schaetzer': k2,
++                    'sc2_haupt_r0.01': an['r0.01-N8000'].get('sc2'), 'sc2_haupt_r0.003': an['r0.003-N8000'].get('sc2')}
++        drift['KS2'] = k2
++    else:
++        U['KS2'] = {'plan': 'nicht entscheidbar (fehlt)', 'wortlaut': 'nicht entscheidbar (fehlt)'}
++
++    # KS3: Gradanteile 5, 6, 7 in allen Kugelfaellen dieser Karte (ganze Messung und zweite Haelfte)
++    k3 = {}
++    fu = []
++    wl_ok = True
++    for tag, fr in faelle_k:
++        g = an[tag]['grad']
++        if g['in_ganz'] is None or g['in_zweite'] is None:
++            u = 'nicht entscheidbar'
++        else:
++            u = kombiniere(['eingetroffen' if g['in_ganz'] else 'nicht eingetroffen',
++                            'eingetroffen' if g['in_zweite'] else 'nicht eingetroffen'])
++        fu.append(u)
++        if not g['in_ganz']:
++            wl_ok = False
++        k3[tag] = {'urteil_fall': u, 'ganz': g['ganz'], 'zweite_haelfte': g['zweite_haelfte'], 'zeilen': g['zeilen']}
++    if not fu:
++        u3 = 'nicht entscheidbar (fehlt)'
++    elif 'nicht eingetroffen' in fu:
++        u3 = 'nicht eingetroffen'
++    elif all(u == 'eingetroffen' for u in fu):
++        u3 = 'eingetroffen'
++    elif any('Drift' in u for u in fu):
++        u3 = 'nicht entscheidbar (Drift)'
++    else:
++        u3 = 'nicht entscheidbar'
++    U['KS3'] = {'plan': u3, 'wortlaut': ('eingetroffen' if wl_ok else 'nicht eingetroffen') if fu else
++                'nicht entscheidbar (fehlt)', 'faelle': k3}
++
++    # KS4: P2D beim groessten N (r = 0,01), ganze Messung und zweite Haelfte (Drift-Probe)
++    if r001:
++        fall, roh = r001[-1]
++        tag = 'r0.01-N%d' % fall['N']
++        a = an[tag]
++        m = roh['s'].size
++        h = {k: v[m // 2:] for k, v in roh.items()}
++        a2 = analyse_fall(dict(fall, name=fall['name'] + '-zweite-haelfte'), h)
++        a2.pop('sc2_boot', None)
++        u_g = p2d_urteil(a['p2d']['urteil'])
++        u_h = p2d_urteil(a2['p2d']['urteil'])
++        kr = a['p2d'].get('kriterien')
++        if kr is None:
++            wl = 'nicht entscheidbar'
++        else:
++            ok = bool(kr['b'] and kr['c'] and kr['a_aic_m3_minus_m1'] > KS4_DAIC)
++            nf = a['n_fit']
++            wl = ('eingetroffen' if (ok and nf >= 5000) else
++                  ('nicht eingetroffen' if ((not ok) and nf >= 1000) else 'nicht entscheidbar'))
++        U['KS4'] = {'plan': kombiniere([u_g, u_h]), 'wortlaut': wl, 'N': fall['N'],
++                    'p2d_ganz': a['p2d'], 'p2d_zweite_haelfte': a2['p2d'],
++                    'tau_ganz': a.get('m1', {}).get('tau'), 'tau_zweite': a2.get('m1', {}).get('tau'),
++                    'sc_ganz': a.get('m1', {}).get('sc'), 'sc_zweite': a2.get('m1', {}).get('sc'),
++                    'eichung': 'BTW-Eichung aus 2D-1 [P]: P2D BTW N = 8000 ja (gleiche Auswertefunktionen)'}
++        an[tag + '-zweite-haelfte'] = a2
++    else:
++        U['KS4'] = {'plan': 'nicht entscheidbar (fehlt)', 'wortlaut': 'nicht entscheidbar (fehlt)'}
++    res['urteile'] = U
++    res['drift'] = drift
++
++    # Bilder
++    os.makedirs(args.bild, exist_ok=True)
++    bilder = []
++    if r001:
++        p = os.path.join(args.bild, 'bild-Ps-kugel-r0.01.png')
++        bild_gruppe(p, 'Kugel, Arm Z, r = 0,01: P(s) je N (KS1, KS4)', r001,
++                    [an['r0.01-N%d' % f['N']] for f, _ in r001])
++        bilder.append(p)
++    fr8 = [x for x in (rollen['r0003'], f8, rollen['r003']) if x]
++    tg8 = [t for t, x in (('r0.003-N8000', rollen['r0003']), ('r0.01-N8000', f8), ('r0.03-N8000', rollen['r003']))
++           if x]
++    if len(fr8) > 1:
++        p = os.path.join(args.bild, 'bild-Ps-kugel-N8000-rate.png')
++        bild_gruppe(p, 'Kugel, Arm Z, N = 8000: P(s) je Antriebsrate r (KS2)', fr8, [an[t] for t in tg8],
++                    etiketten=['r = %g' % x[0].get('r', 0.0) for x in fr8])
++        bilder.append(p)
++    if ref and rollen['ks0']:
++        a_ref = analyse_fall(ref[0], ref[1])
++        p = os.path.join(args.bild, 'bild-Ps-ks0.png')
++        bild_gruppe(p, 'Kugel, Arm Z, N = 2000, r = 0: 2D-1 (Saat 11) gegen 2D-2 (neue Saat), KS0',
++                    [ref, rollen['ks0']], [a_ref, an['ks0']], etiketten=['2D-1 Saat 11', '2D-2 Saat %d' %
++                                                                          rollen['ks0'][0].get('saat_lauf', 0)])
++        bilder.append(p)
++    if faelle_k:
++        p = os.path.join(args.bild, 'bild-grad-zeitreihe.png')
++        bild_grad(p, [fr for _, fr in faelle_k], [t for t, _ in faelle_k])
++        bilder.append(p)
++    if 'KS1' in drift:
++        dk = drift['KS1']
++        Ns = [f['N'] for f, _ in r001]
++        reihen = [('Hauptschaetzer', Ns, [an['r0.01-N%d' % n].get('sc2') for n in Ns],
++                   [an['r0.01-N%d' % n].get('sc2_ki95') for n in Ns], dk['D']['haupt'])]
++        for w in ('W1', 'W2'):
++            t = dk['werte'][w]['faelle']
++            reihen.append(('%s (Alter %.1f bis %.1f)' % (w, dk['fenster'][w][0], dk['fenster'][w][1]), Ns,
++                           [x['sc2'] for x in t], [x['ki95'] for x in t], dk['D'][w]))
++        p = os.path.join(args.bild, 'bild-sc2-N.png')
++        bild_sc2_N(p, reihen)
++        bilder.append(p)
++    res['bilder'] = bilder
++    for k, a in an.items():
++        a.pop('sc2_boot', None)
++    res['faelle'] = an
++    res['ende_utc'] = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
++    os.makedirs(os.path.dirname(os.path.abspath(args.out)), exist_ok=True)
++    with open(args.out, 'w') as f:
++        json.dump(res, f, indent=1)
++
++
+ def main():
+     ap = argparse.ArgumentParser()
+     sp = ap.add_subparsers(dest='cmd', required=True)
+@@ -1092,8 +1608,18 @@
+     c.add_argument('--out', required=True)
+     c.add_argument('--bild', required=True)
+     c.add_argument('--rauch', action='store_true')
++    e = sp.add_parser('aus2')
++    e.add_argument('--ks0')
++    e.add_argument('--kid')
++    e.add_argument('--ref')
++    e.add_argument('--r001', nargs='+')
++    e.add_argument('--r0003')
++    e.add_argument('--r003')
++    e.add_argument('--out', required=True)
++    e.add_argument('--bild', required=True)
++    e.add_argument('--rauch', action='store_true')
+     args = ap.parse_args()
+-    {'lauf': cmd_lauf, 'btw': cmd_btw, 'aus': cmd_aus}[args.cmd](args)
++    {'lauf': cmd_lauf, 'btw': cmd_btw, 'aus': cmd_aus, 'aus2': cmd_aus2}[args.cmd](args)
+ 
+ 
+ if __name__ == '__main__':

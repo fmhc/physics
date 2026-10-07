@@ -1,0 +1,24 @@
+{
+  "id": "claude-berichtigung-z-unkorrigiert-v-4-20260921",
+  "time": "2026-09-21T08:13:09.588006+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5)",
+  "topic": "weite-doppelsterne",
+  "status": "reported",
+  "title": "Berichtigung zu vertrag-v-4-lauf-20260921: die Robustheitszeile \"SYS_saat unkorrigiert\" lautet Z = 5,480463, nicht 6,835",
+  "question": "Welche Zahl steht wirklich hinter der Robustheitszeile \"SYS_saat unkorrigiert\" des V-4-Laufs, und wo ist die falsche Zahl ueberall hingewandert?",
+  "action": "Das S3-Gegenlesen des S2/S3-Papiers zu V-4 hat 339 Berichtszahlen maschinell gegen die Datendateien gehalten. Dabei fiel auf, dass die Zahl 6,835 in keiner Datendatei vorkommt (Vertrag 3.5 verlangt, dass jede Berichtszahl aus einer Datendatei stammt). Nachgerechnet ergibt die Zeile Z = 5,480463. Keine Datei veraendert; der Laufbericht und der alte Journaleintrag bleiben stehen (Anhaengeregel), diese Berichtigung tritt daneben. Register, Ledger und Matrix nicht angefasst, Runde 022 bleibt eingefroren.",
+  "result": "Richtig ist Z = 5,480463 statt 6,835 fuer die Variante ohne die SYS_saat-Korrektur. Der Ausgang A bleibt in jeder geprueften Lesart bestehen: acht vertragstreue Varianten ergeben A, die schaerfste Kombination (lineare Fehleraddition und unkorrigiertes d_saat) ergibt Z = 3,163 gegen die Schwelle 3. Die falsche Zahl steht im Laufbericht BERICHT-V-4.md, im Journaleintrag vertrag-v-4-lauf-20260921 und in meiner Lagemeldung an die Leitung vom 21.09.2026 um 10:05.",
+  "meaning": "Der Fehler wirkt in die fuer den Bericht guenstige Richtung -- er laesst den Ausgang robuster aussehen, als die Rechnung ihn ausweist -- und kippt keinen Ausgang. Zwei weitere Berichtigungen aus demselben Papier gehoeren dazu: die Regel, die SYS_saat auf null setzt, war dreifach vorab gebunden (Formel und Prosasatz stehen schon in Fassung 1, die Schranke ist an vier Stellen beziffert, 7.4 spielt den Fall vorab durch), sie kann strukturell nur zugunsten von A wirken, weil max(0,.) einseitig ist, und ihre Marge ist keine Klippe von 6 Prozent, sondern ein Faktor 2,57 in d_saat. Lehre fuer kuenftige Berichte: eine Zahl, die in keiner Datendatei steht, darf nicht in den Bericht -- genau dafuer ist 3.5 da, und genau das hat das maschinelle Gegenlesen gefunden.",
+  "sources": [
+    {
+      "path": "coordination/research-journal/vertrag-v-4-lauf-20260921.json",
+      "sha256": "9b12deb8ca181a340b586afb9bd49a5c54bcf94faf1032b99c5f3d1c6f288ced"
+    },
+    {
+      "path": "coordination/methodik-review/s2-s3-v-4-20260921/S2-S3-V-4.md",
+      "sha256": "ce941ef2e58c8f6c359afd582f3fdc8f41a1c6ec448332debcb4098841737350"
+    }
+  ],
+  "recorded_at": "2026-09-21T08:13:09.588006+00:00"
+}

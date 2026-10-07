@@ -1,0 +1,99 @@
+{
+ "info": {
+  "numpy": "2.4.4",
+  "python": "3.12.3",
+  "host": "ubuntu-auto",
+  "start_utc": "2026-10-04T21:00:00Z",
+  "argv": [
+   "/home/fmh/fmhc-physics-remote/tt-grund-1/code/tg.py",
+   "best",
+   "--netz",
+   "V",
+   "--profile",
+   "/home/fmh/fmhc-physics-remote/tt-grund-1/rauch/r3-profil-S.json.roh",
+   "/home/fmh/fmhc-physics-remote/tt-grund-1/rauch/r4-profil-K.json.roh",
+   "--rauch",
+   "--out",
+   "/home/fmh/fmhc-physics-remote/tt-grund-1/rauch/r6-best.json"
+  ],
+  "skript_sha256": "4442162536117cef392a297f40cf116ef1686d69b18ac3b24b3bf8e58039209d",
+  "tti_sha256": "6d6b6f7b99b334d74d91860fc69af1c6c0c46e22207dc45432d60a9824c08ee5",
+  "ew_sha256": "fa7b6417d39177102f0b19c5474453cd16a7595e23bc25ca548e081c4060b142",
+  "nk_sha256": "fd0d17b9fb7c92d4b6ad564a46260e3daae3285bcb5ad53f65d9fb3918a32b28",
+  "tp_sha256": "419d7da6caa211c721eb6a8c87403977415cf3050f03365377f51cb77b374dfd",
+  "eingaben_sha256": {
+   "/home/fmh/fmhc-physics-remote/tt-grund-1/rauch/r3-profil-S.json.roh": "4d16a4755a0dc21118b24ac0f304fff97577b1e0f0547f5bd7d592bebea6f605",
+   "/home/fmh/fmhc-physics-remote/tt-grund-1/rauch/r4-profil-K.json.roh": "580e908b0d21921e1e8184d27db0d8a4192af47a99609e16fddb1df434d73d4d"
+  }
+ },
+ "schluessel": {
+  "netz": "str",
+  "kandidat_bester": {
+   "quelle": "str",
+   "y": "list",
+   "spanne": "float"
+  },
+  "nm": {
+   "y": "list",
+   "spanne": "float",
+   "nf": "int"
+  },
+  "n_kandidaten": "int",
+  "best": {
+   "y": "list",
+   "J_kegel": "float",
+   "J_sechs": "float",
+   "spanne": "float",
+   "ok": "bool",
+   "neg_26": "int",
+   "luecke": "float",
+   "plan_gueltig": "bool",
+   "w_min": "float",
+   "w_max": "float",
+   "stabil_L8": [
+    "L",
+    "k_mit_A_oder_K_red_nicht_pd",
+    "k_mit_B_red_nicht_pd",
+    "k_mit_komplex",
+    "k_mit_negativ",
+    "nk",
+    "w2_min_rel"
+   ],
+   "stabil": "bool",
+   "spanne_23ew": "float"
+  },
+  "n_unter_schwelle": "int",
+  "entlang": "list",
+  "regel_abstand": {
+   "N1": [
+    "abstand_dex",
+    "naechster"
+   ],
+   "N2": [
+    "abstand_dex",
+    "naechster"
+   ],
+   "N3": [
+    "abstand_dex",
+    "naechster"
+   ],
+   "N4": [
+    "abstand_dex",
+    "naechster"
+   ],
+   "N5": [
+    "abstand_dex",
+    "naechster"
+   ],
+   "N6": [
+    "abstand_dex",
+    "naechster"
+   ]
+  }
+ },
+ "laufzeit_s": 15.111767768859863,
+ "maxrss_MB": 349.59375,
+ "t_zeilen_s": [],
+ "t": {},
+ "n_punkte": null
+}

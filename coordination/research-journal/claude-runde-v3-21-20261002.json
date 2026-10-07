@@ -1,0 +1,61 @@
+{
+  "id": "claude-runde-v3-21-20261002",
+  "time": "2026-10-02T19:00:23+02:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung, Karten und Abschaetzung; Code- und Literatur-Agenten Anthropic (Opus 5.5)",
+  "topic": "theory",
+  "status": "reported",
+  "evidenzart": "modell",
+  "title": "Runde 21 nach v3 (explorativ, Fast Lane): Sprossenregel fuer l = 1, 2 vorab bestanden (10 von 10, schrumpfender Abstand 2,6-mal genauer); Phasenregel nur auf reifen Leitern; stille FLS-Leitern nach Recherchestand nicht beschrieben; Klassifikator positiv geeicht; Bio 28 verworfen",
+  "question": "Sagt die Sprossenregel auch l = 1- und l = 2-Stellen vorab voraus? Erklaert die Phasenbedingung der Innenwelle alle Abstaende? Sind stille Leitern in FLS-Q-Baellen bekannt? Kann der Familien-Klassifikator 'auf' sagen? Teilt sich ein gewachsener Drehball?",
+  "action": "Karten mit Vorhersagen vor jedem Lauf bzw. Abruf: SPROSSEN-L1L2 (L4-Vorpruefung, P_lin gegen P2), LEITERFORMEL (Delta(k_innen R) = pi an 137 Paaren), FLS-STILLE (Literatur ueber APIs), KF-EICH (exakte Q-Baelle), Zufallskarte Bio 28 weiter.",
+  "result": "SPROSSEN-L1L2: W0-W4 eingetroffen, erste Sprossen 0,005-0,041, zweite 0,012-0,111; P2 0,015 gegen P_lin 0,039. LEITERFORMEL: LF0/LF1 (80,0 %)/LF3/LF4 eingetroffen, LF2 nicht (62,5 %); Rest positiv, faellt mit R; McMahon- und Versatzkorrektur nachtraeglich [H]. FLS-STILLE: F1-F4 eingetroffen; Abgrenzung Azatov 2412.13885, Zhang/Zhou/Zhu 2510.27064, Oszillon-Dips 2004.01202; Papier LITERATURE.tex zu Azatov berichtigen. KF-EICH: E0/E1 eingetroffen (48 von 48 'auf'), E2 nicht ('auf' heisst Q passt zu omega). Bio 28: verworfen nach Wortlaut, Y1 war ableitbar (Selbstanzeige), Y2 misst Randverlust, Folgefrage Bio 28b.",
+  "meaning": "Explorativ, keine Messdaten. Der Huellen-Leitermechanismus ist fuer l = 0, 1, 2 je vorab bestanden [H, im Modell gestuetzt] und nach Recherchestand in der FLS-Literatur nicht beschrieben; ob er als Aussage nach aussen ins Leiterpapier soll, entscheidet Finn (dann formaler Test nach v3).",
+  "sources": [
+    {
+      "path": "coordination/runden-v3/RUNDE-21.md",
+      "sha256": "d481d079d724a73a351c0e524f5a81fc13f8f750888e2957c6476d411b53e542"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-21/sprossen-l1l2/KARTE.md",
+      "sha256": "44d90f794236d70ea0c0b426a734212cb1c0929ee730a2bd66920a3a21ebf83b"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-21/sprossen-l1l2/ERGEBNIS.md",
+      "sha256": "ce0a0b1ceffd501aa4a288ec05662998794361dd9a52b01f6a06f63587961b94"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-21/leiterformel/KARTE.md",
+      "sha256": "e78a184cbcbc70cd1154daea134306bd9c620c554b02bcfeaf05e31f55da5989"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-21/leiterformel/ERGEBNIS.md",
+      "sha256": "d11d51e61a7787def28ca2f0e11d6af32f2376cd7012178ae26c5d061cbf0ee6"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-21/fls-stille/KARTE.md",
+      "sha256": "8e404066a4a2c6938dcf247b7000570abf816fc7033b7f4b7dca2f7a35134b42"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-21/fls-stille/ERGEBNIS.md",
+      "sha256": "6b9beaf270f499565a73c7eb254756978a0d24e31c1a7d5f6ef94ea32318949e"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-21/kf-eich/KARTE.md",
+      "sha256": "a2ffe0ef3a0832e533595b8ebaf2183095407f4968d37cc5d4c7509c93221e82"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-21/kf-eich/ERGEBNIS.md",
+      "sha256": "2353cdb718c2d812d7d7409be2fac23c8546a6bfee0282462828f780202e5d2b"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-21/bio28-weiter/KARTE.md",
+      "sha256": "4b8ca7f705709cc777d4706fc2f50fb47758fc8ddda850b97eef0344da1869f6"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-21/bio28-weiter/ERGEBNIS.md",
+      "sha256": "c075c77d0a7695925e886f9dc95a1445bcb9326dbd1464cd5d0f4a597d608305"
+    }
+  ],
+  "recorded_at": "2026-10-02T17:00:23.359117+00:00"
+}

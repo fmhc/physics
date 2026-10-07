@@ -1,0 +1,2451 @@
+{
+ "abdeckung": {
+  "seiten_abgerufen": 600,
+  "seiten_ok_html": 496,
+  "seiten_mit_abschnitten": 414,
+  "abschnitte": 548,
+  "abschnitte_bewertet": 9,
+  "fehlend": 539,
+  "fehlend_ids": [
+   "0001-01",
+   "0002-01",
+   "0003-01",
+   "0003-02",
+   "0003-03",
+   "0003-04",
+   "0003-05",
+   "0003-06",
+   "0003-07",
+   "0003-08",
+   "0003-09",
+   "0004-01",
+   "0005-01",
+   "0006-01",
+   "0006-02",
+   "0006-03",
+   "0006-04",
+   "0006-05",
+   "0006-06",
+   "0006-07",
+   "0006-08",
+   "0007-01",
+   "0008-01",
+   "0008-02",
+   "0008-03",
+   "0008-04",
+   "0008-05",
+   "0008-06",
+   "0008-07",
+   "0008-08",
+   "0008-09",
+   "0008-10",
+   "0008-11",
+   "0008-12",
+   "0009-01",
+   "0010-01",
+   "0011-01",
+   "0013-01",
+   "0014-01",
+   "0016-01",
+   "0017-01",
+   "0018-01",
+   "0019-01",
+   "0020-01",
+   "0021-01",
+   "0022-01",
+   "0023-01",
+   "0024-01",
+   "0026-01",
+   "0027-01"
+  ],
+  "nan": 0,
+  "kev_rechenzeit_s": 28.5,
+  "ms_je_abschnitt": {
+   "median": 1156.2,
+   "p90": 1547.9,
+   "max": 19581.9
+  },
+  "laeufe": [
+   {
+    "log": "rauch2.log",
+    "geladen_s": 280.26,
+    "ende": {
+     "ereignis": "ende",
+     "bewertet": 9,
+     "nan": 0,
+     "ms_median": 1156.2,
+     "ms_mittel": 3165.7,
+     "ms_max": 19581.9,
+     "gpu_max_mib": 1532,
+     "noch_offen": 0,
+     "t_s": 308.79,
+     "rss_mib": 1791,
+     "cgroup_mib": 2747
+    },
+    "starter": [
+     "start 2026-10-04T12:50:54+00:00 spur=p4000b unit=fmhc-physics-klein-kevrauch2-125054",
+     "ende 2026-10-04T12:56:22+00:00 rc=0 unit=fmhc-physics-klein-kevrauch2-125054"
+    ]
+   }
+  ]
+ },
+ "verteilungen": {
+  "S0": {
+   "mittel": 7.373,
+   "sd": 0.982,
+   "min": 5.65,
+   "q10": 6.19,
+   "median": 7.72,
+   "q90": 8.35,
+   "max": 8.52
+  },
+  "S1": {
+   "mittel": 6.201,
+   "sd": 1.948,
+   "min": 3.01,
+   "q10": 4.13,
+   "median": 5.87,
+   "q90": 8.37,
+   "max": 8.46
+  },
+  "S2": {
+   "mittel": 5.903,
+   "sd": 1.652,
+   "min": 3.48,
+   "q10": 4.34,
+   "median": 5.23,
+   "q90": 8.06,
+   "max": 8.29
+  },
+  "S3": {
+   "mittel": 6.606,
+   "sd": 1.645,
+   "min": 4.16,
+   "q10": 4.72,
+   "median": 6.69,
+   "q90": 8.46,
+   "max": 8.51
+  },
+  "S4": {
+   "mittel": 6.996,
+   "sd": 1.451,
+   "min": 4.45,
+   "q10": 5.09,
+   "median": 7.29,
+   "q90": 8.66,
+   "max": 8.71
+  },
+  "konkret": {
+   "mittel": 0.486,
+   "sd": 0.308,
+   "min": 0.04,
+   "q10": 0.13,
+   "median": 0.41,
+   "q90": 0.83,
+   "max": 0.9
+  },
+  "kausal": {
+   "mittel": 0.423,
+   "sd": 0.353,
+   "min": 0.03,
+   "q10": 0.08,
+   "median": 0.31,
+   "q90": 0.96,
+   "max": 1.0
+  },
+  "art": {
+   "other": 3,
+   "claim": 4,
+   "derivation": 1,
+   "computation": 1
+  },
+  "kausal_anteil_ueber_0_5": 0.333,
+  "konkret_anteil_ueber_0_5": 0.444
+ },
+ "top15": {
+  "S0": [
+   {
+    "id": "0064-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/the-updating-process-for-string-substitution-systems/the-phenomenon-of-causal-invariance/",
+    "ueberschrift": "5.2 The Phenomenon of Causal Invariance",
+    "auszug": "Consider the rule {BA  AB}, starting from BABABA: As before, there are different possible paths through this graph, corresponding to different possible histories for the system. But now all these paths converge to a sin...",
+    "kev": {
+     "S0": 8.52,
+     "S1": 7.73,
+     "S2": 7.18,
+     "S3": 7.95,
+     "S4": 7.29,
+     "konkret": 0.38,
+     "kausal": 0.96,
+     "art": "claim"
+    },
+    "stichwort": {
+     "S0": 2,
+     "S1": 6,
+     "S2": 1,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 0
+    }
+   },
+   {
+    "id": "0112-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/potential-relation-to-physics/reversibility-and-irreversibility/",
+    "ueberschrift": "8.10 Reversibility and Irreversibility",
+    "auszug": "One feature of the traditional formalism for fundamental physics is that it is reversible, in the sense that it implies that individual states of closed systems can be uniquely evolved both forward and backward in time. ...",
+    "kev": {
+     "S0": 8.35,
+     "S1": 8.37,
+     "S2": 8.29,
+     "S3": 8.51,
+     "S4": 8.71,
+     "konkret": 0.13,
+     "kausal": 0.34,
+     "art": "claim"
+    },
+    "stichwort": {
+     "S0": 5,
+     "S1": 1,
+     "S2": 2,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 0
+    }
+   },
+   {
+    "id": "0108-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/potential-relation-to-physics/motion-and-special-relativity/",
+    "ueberschrift": "8.6 Motion and Special Relativity",
+    "auszug": "In the traditional formalism of physics, the principles of special relativity are in a sense introduced as axioms, and then their consequences are derived. In our models, what amount to these principles can in effect eme...",
+    "kev": {
+     "S0": 8.24,
+     "S1": 8.46,
+     "S2": 8.06,
+     "S3": 8.46,
+     "S4": 8.66,
+     "konkret": 0.9,
+     "kausal": 1.0,
+     "art": "derivation"
+    },
+    "stichwort": {
+     "S0": 10,
+     "S1": 15,
+     "S2": 0,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 7
+    }
+   },
+   {
+    "id": "0095-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/the-updating-process-in-our-models/global-symmetries-and-conservation-laws/",
+    "ueberschrift": "6.11 Global Symmetries and Conservation Laws",
+    "auszug": "Given the rule (stated here using numbers rather than our usual letters) if we reverse the elements in each relation we get: But the canonical version of this rule is: In graphical form, the rule and its transform are: M...",
+    "kev": {
+     "S0": 7.97,
+     "S1": 8.26,
+     "S2": 6.99,
+     "S3": 8.27,
+     "S4": 8.47,
+     "konkret": 0.83,
+     "kausal": 0.03,
+     "art": "claim"
+    },
+    "stichwort": {
+     "S0": 6,
+     "S1": 0,
+     "S2": 0,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 0
+    }
+   },
+   {
+    "id": "0065-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/the-updating-process-for-string-substitution-systems/states-graphs/",
+    "ueberschrift": "5.3 States Graphs",
+    "auszug": "If there are multiple successors to a particular state in a substitution system one thing to do would be just to assume that each of these successors is a new, unique state. The result of this will always be to produce a...",
+    "kev": {
+     "S0": 7.72,
+     "S1": 5.87,
+     "S2": 5.23,
+     "S3": 6.69,
+     "S4": 6.37,
+     "konkret": 0.41,
+     "kausal": 0.29,
+     "art": "other"
+    },
+    "stichwort": {
+     "S0": 2,
+     "S1": 1,
+     "S2": 0,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 0
+    }
+   },
+   {
+    "id": "0040-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/typical-behaviors/termination/",
+    "ueberschrift": "3.15 Termination",
+    "auszug": "Not all rules continue to evolve forever from a given initial state. Instead they can reach a fixed point where the rule no longer applies. If the rule depends only on a single relation, this can only happen at the very ...",
+    "kev": {
+     "S0": 7.24,
+     "S1": 3.01,
+     "S2": 3.48,
+     "S3": 4.16,
+     "S4": 4.45,
+     "konkret": 0.77,
+     "kausal": 0.31,
+     "art": "claim"
+    },
+    "stichwort": {
+     "S0": 1,
+     "S1": 0,
+     "S2": 0,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 0
+    }
+   },
+   {
+    "id": "0575-01",
+    "url": "https://www.wolframphysics.org/universes/wm1653/",
+    "ueberschrift": "‹ Registry of Notable Universe Models",
+    "auszug": "6 steps signature 12→2213 rule {{{1, 2}} -> {{3, 2, 1}, {1, 3}, {3, 2}}} {{{1, 2}} -> {{3, 2, 1}, {1, 3}, {3, 2}}} make editable copy download notebook Basic Evolution Basic evolution: [◼] WolframModel [{{{1,2}}{{3,2,1}...",
+    "kev": {
+     "S0": 6.48,
+     "S1": 4.63,
+     "S2": 5.01,
+     "S3": 5.32,
+     "S4": 5.09,
+     "konkret": 0.72,
+     "kausal": 0.71,
+     "art": "computation"
+    },
+    "stichwort": {
+     "S0": 5,
+     "S1": 1,
+     "S2": 0,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 5
+    }
+   },
+   {
+    "id": "0039-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/typical-behaviors/rules-involving-disconnected-pieces/",
+    "ueberschrift": "3.14 Rules Involving Disconnected Pieces",
+    "auszug": "We have mostly restricted ourselves so far to cases where the results generated by a rule remain connected. But in fact if one looks at all possible rules the majority generate disconnected pieces, or at least can do so ...",
+    "kev": {
+     "S0": 6.19,
+     "S1": 4.13,
+     "S2": 4.55,
+     "S3": 5.37,
+     "S4": 7.45,
+     "konkret": 0.04,
+     "kausal": 0.08,
+     "art": "other"
+    },
+    "stichwort": {
+     "S0": 4,
+     "S1": 0,
+     "S2": 0,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 0
+    }
+   },
+   {
+    "id": "0305-01",
+    "url": "https://www.wolframphysics.org/universes/38.html",
+    "ueberschrift": "Registry of Notable Universe Models",
+    "auszug": "Random universe 6721 23→33 6722 22→32 6723 23→33 6729 23→33 6742 23→33 6749 23→33 6752 23→33 67698 1223→2233 6775 13→43 6779 12→32 6787 23→33 6793 23→43 6817 13→23 6821 23→33 6832 1214→1214",
+    "kev": {
+     "S0": 5.65,
+     "S1": 5.35,
+     "S2": 4.34,
+     "S3": 4.72,
+     "S4": 6.47,
+     "konkret": 0.19,
+     "kausal": 0.09,
+     "art": "other"
+    },
+    "stichwort": {
+     "S0": 0,
+     "S1": 0,
+     "S2": 0,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 0
+    }
+   }
+  ],
+  "S1": [
+   {
+    "id": "0108-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/potential-relation-to-physics/motion-and-special-relativity/",
+    "ueberschrift": "8.6 Motion and Special Relativity",
+    "auszug": "In the traditional formalism of physics, the principles of special relativity are in a sense introduced as axioms, and then their consequences are derived. In our models, what amount to these principles can in effect eme...",
+    "kev": {
+     "S0": 8.24,
+     "S1": 8.46,
+     "S2": 8.06,
+     "S3": 8.46,
+     "S4": 8.66,
+     "konkret": 0.9,
+     "kausal": 1.0,
+     "art": "derivation"
+    },
+    "stichwort": {
+     "S0": 10,
+     "S1": 15,
+     "S2": 0,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 7
+    }
+   },
+   {
+    "id": "0112-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/potential-relation-to-physics/reversibility-and-irreversibility/",
+    "ueberschrift": "8.10 Reversibility and Irreversibility",
+    "auszug": "One feature of the traditional formalism for fundamental physics is that it is reversible, in the sense that it implies that individual states of closed systems can be uniquely evolved both forward and backward in time. ...",
+    "kev": {
+     "S0": 8.35,
+     "S1": 8.37,
+     "S2": 8.29,
+     "S3": 8.51,
+     "S4": 8.71,
+     "konkret": 0.13,
+     "kausal": 0.34,
+     "art": "claim"
+    },
+    "stichwort": {
+     "S0": 5,
+     "S1": 1,
+     "S2": 2,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 0
+    }
+   },
+   {
+    "id": "0095-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/the-updating-process-in-our-models/global-symmetries-and-conservation-laws/",
+    "ueberschrift": "6.11 Global Symmetries and Conservation Laws",
+    "auszug": "Given the rule (stated here using numbers rather than our usual letters) if we reverse the elements in each relation we get: But the canonical version of this rule is: In graphical form, the rule and its transform are: M...",
+    "kev": {
+     "S0": 7.97,
+     "S1": 8.26,
+     "S2": 6.99,
+     "S3": 8.27,
+     "S4": 8.47,
+     "konkret": 0.83,
+     "kausal": 0.03,
+     "art": "claim"
+    },
+    "stichwort": {
+     "S0": 6,
+     "S1": 0,
+     "S2": 0,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 0
+    }
+   },
+   {
+    "id": "0064-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/the-updating-process-for-string-substitution-systems/the-phenomenon-of-causal-invariance/",
+    "ueberschrift": "5.2 The Phenomenon of Causal Invariance",
+    "auszug": "Consider the rule {BA  AB}, starting from BABABA: As before, there are different possible paths through this graph, corresponding to different possible histories for the system. But now all these paths converge to a sin...",
+    "kev": {
+     "S0": 8.52,
+     "S1": 7.73,
+     "S2": 7.18,
+     "S3": 7.95,
+     "S4": 7.29,
+     "konkret": 0.38,
+     "kausal": 0.96,
+     "art": "claim"
+    },
+    "stichwort": {
+     "S0": 2,
+     "S1": 6,
+     "S2": 1,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 0
+    }
+   },
+   {
+    "id": "0065-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/the-updating-process-for-string-substitution-systems/states-graphs/",
+    "ueberschrift": "5.3 States Graphs",
+    "auszug": "If there are multiple successors to a particular state in a substitution system one thing to do would be just to assume that each of these successors is a new, unique state. The result of this will always be to produce a...",
+    "kev": {
+     "S0": 7.72,
+     "S1": 5.87,
+     "S2": 5.23,
+     "S3": 6.69,
+     "S4": 6.37,
+     "konkret": 0.41,
+     "kausal": 0.29,
+     "art": "other"
+    },
+    "stichwort": {
+     "S0": 2,
+     "S1": 1,
+     "S2": 0,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 0
+    }
+   },
+   {
+    "id": "0305-01",
+    "url": "https://www.wolframphysics.org/universes/38.html",
+    "ueberschrift": "Registry of Notable Universe Models",
+    "auszug": "Random universe 6721 23→33 6722 22→32 6723 23→33 6729 23→33 6742 23→33 6749 23→33 6752 23→33 67698 1223→2233 6775 13→43 6779 12→32 6787 23→33 6793 23→43 6817 13→23 6821 23→33 6832 1214→1214",
+    "kev": {
+     "S0": 5.65,
+     "S1": 5.35,
+     "S2": 4.34,
+     "S3": 4.72,
+     "S4": 6.47,
+     "konkret": 0.19,
+     "kausal": 0.09,
+     "art": "other"
+    },
+    "stichwort": {
+     "S0": 0,
+     "S1": 0,
+     "S2": 0,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 0
+    }
+   },
+   {
+    "id": "0575-01",
+    "url": "https://www.wolframphysics.org/universes/wm1653/",
+    "ueberschrift": "‹ Registry of Notable Universe Models",
+    "auszug": "6 steps signature 12→2213 rule {{{1, 2}} -> {{3, 2, 1}, {1, 3}, {3, 2}}} {{{1, 2}} -> {{3, 2, 1}, {1, 3}, {3, 2}}} make editable copy download notebook Basic Evolution Basic evolution: [◼] WolframModel [{{{1,2}}{{3,2,1}...",
+    "kev": {
+     "S0": 6.48,
+     "S1": 4.63,
+     "S2": 5.01,
+     "S3": 5.32,
+     "S4": 5.09,
+     "konkret": 0.72,
+     "kausal": 0.71,
+     "art": "computation"
+    },
+    "stichwort": {
+     "S0": 5,
+     "S1": 1,
+     "S2": 0,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 5
+    }
+   },
+   {
+    "id": "0039-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/typical-behaviors/rules-involving-disconnected-pieces/",
+    "ueberschrift": "3.14 Rules Involving Disconnected Pieces",
+    "auszug": "We have mostly restricted ourselves so far to cases where the results generated by a rule remain connected. But in fact if one looks at all possible rules the majority generate disconnected pieces, or at least can do so ...",
+    "kev": {
+     "S0": 6.19,
+     "S1": 4.13,
+     "S2": 4.55,
+     "S3": 5.37,
+     "S4": 7.45,
+     "konkret": 0.04,
+     "kausal": 0.08,
+     "art": "other"
+    },
+    "stichwort": {
+     "S0": 4,
+     "S1": 0,
+     "S2": 0,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 0
+    }
+   },
+   {
+    "id": "0040-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/typical-behaviors/termination/",
+    "ueberschrift": "3.15 Termination",
+    "auszug": "Not all rules continue to evolve forever from a given initial state. Instead they can reach a fixed point where the rule no longer applies. If the rule depends only on a single relation, this can only happen at the very ...",
+    "kev": {
+     "S0": 7.24,
+     "S1": 3.01,
+     "S2": 3.48,
+     "S3": 4.16,
+     "S4": 4.45,
+     "konkret": 0.77,
+     "kausal": 0.31,
+     "art": "claim"
+    },
+    "stichwort": {
+     "S0": 1,
+     "S1": 0,
+     "S2": 0,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 0
+    }
+   }
+  ],
+  "S2": [
+   {
+    "id": "0112-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/potential-relation-to-physics/reversibility-and-irreversibility/",
+    "ueberschrift": "8.10 Reversibility and Irreversibility",
+    "auszug": "One feature of the traditional formalism for fundamental physics is that it is reversible, in the sense that it implies that individual states of closed systems can be uniquely evolved both forward and backward in time. ...",
+    "kev": {
+     "S0": 8.35,
+     "S1": 8.37,
+     "S2": 8.29,
+     "S3": 8.51,
+     "S4": 8.71,
+     "konkret": 0.13,
+     "kausal": 0.34,
+     "art": "claim"
+    },
+    "stichwort": {
+     "S0": 5,
+     "S1": 1,
+     "S2": 2,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 0
+    }
+   },
+   {
+    "id": "0108-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/potential-relation-to-physics/motion-and-special-relativity/",
+    "ueberschrift": "8.6 Motion and Special Relativity",
+    "auszug": "In the traditional formalism of physics, the principles of special relativity are in a sense introduced as axioms, and then their consequences are derived. In our models, what amount to these principles can in effect eme...",
+    "kev": {
+     "S0": 8.24,
+     "S1": 8.46,
+     "S2": 8.06,
+     "S3": 8.46,
+     "S4": 8.66,
+     "konkret": 0.9,
+     "kausal": 1.0,
+     "art": "derivation"
+    },
+    "stichwort": {
+     "S0": 10,
+     "S1": 15,
+     "S2": 0,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 7
+    }
+   },
+   {
+    "id": "0064-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/the-updating-process-for-string-substitution-systems/the-phenomenon-of-causal-invariance/",
+    "ueberschrift": "5.2 The Phenomenon of Causal Invariance",
+    "auszug": "Consider the rule {BA  AB}, starting from BABABA: As before, there are different possible paths through this graph, corresponding to different possible histories for the system. But now all these paths converge to a sin...",
+    "kev": {
+     "S0": 8.52,
+     "S1": 7.73,
+     "S2": 7.18,
+     "S3": 7.95,
+     "S4": 7.29,
+     "konkret": 0.38,
+     "kausal": 0.96,
+     "art": "claim"
+    },
+    "stichwort": {
+     "S0": 2,
+     "S1": 6,
+     "S2": 1,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 0
+    }
+   },
+   {
+    "id": "0095-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/the-updating-process-in-our-models/global-symmetries-and-conservation-laws/",
+    "ueberschrift": "6.11 Global Symmetries and Conservation Laws",
+    "auszug": "Given the rule (stated here using numbers rather than our usual letters) if we reverse the elements in each relation we get: But the canonical version of this rule is: In graphical form, the rule and its transform are: M...",
+    "kev": {
+     "S0": 7.97,
+     "S1": 8.26,
+     "S2": 6.99,
+     "S3": 8.27,
+     "S4": 8.47,
+     "konkret": 0.83,
+     "kausal": 0.03,
+     "art": "claim"
+    },
+    "stichwort": {
+     "S0": 6,
+     "S1": 0,
+     "S2": 0,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 0
+    }
+   },
+   {
+    "id": "0065-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/the-updating-process-for-string-substitution-systems/states-graphs/",
+    "ueberschrift": "5.3 States Graphs",
+    "auszug": "If there are multiple successors to a particular state in a substitution system one thing to do would be just to assume that each of these successors is a new, unique state. The result of this will always be to produce a...",
+    "kev": {
+     "S0": 7.72,
+     "S1": 5.87,
+     "S2": 5.23,
+     "S3": 6.69,
+     "S4": 6.37,
+     "konkret": 0.41,
+     "kausal": 0.29,
+     "art": "other"
+    },
+    "stichwort": {
+     "S0": 2,
+     "S1": 1,
+     "S2": 0,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 0
+    }
+   },
+   {
+    "id": "0575-01",
+    "url": "https://www.wolframphysics.org/universes/wm1653/",
+    "ueberschrift": "‹ Registry of Notable Universe Models",
+    "auszug": "6 steps signature 12→2213 rule {{{1, 2}} -> {{3, 2, 1}, {1, 3}, {3, 2}}} {{{1, 2}} -> {{3, 2, 1}, {1, 3}, {3, 2}}} make editable copy download notebook Basic Evolution Basic evolution: [◼] WolframModel [{{{1,2}}{{3,2,1}...",
+    "kev": {
+     "S0": 6.48,
+     "S1": 4.63,
+     "S2": 5.01,
+     "S3": 5.32,
+     "S4": 5.09,
+     "konkret": 0.72,
+     "kausal": 0.71,
+     "art": "computation"
+    },
+    "stichwort": {
+     "S0": 5,
+     "S1": 1,
+     "S2": 0,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 5
+    }
+   },
+   {
+    "id": "0039-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/typical-behaviors/rules-involving-disconnected-pieces/",
+    "ueberschrift": "3.14 Rules Involving Disconnected Pieces",
+    "auszug": "We have mostly restricted ourselves so far to cases where the results generated by a rule remain connected. But in fact if one looks at all possible rules the majority generate disconnected pieces, or at least can do so ...",
+    "kev": {
+     "S0": 6.19,
+     "S1": 4.13,
+     "S2": 4.55,
+     "S3": 5.37,
+     "S4": 7.45,
+     "konkret": 0.04,
+     "kausal": 0.08,
+     "art": "other"
+    },
+    "stichwort": {
+     "S0": 4,
+     "S1": 0,
+     "S2": 0,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 0
+    }
+   },
+   {
+    "id": "0305-01",
+    "url": "https://www.wolframphysics.org/universes/38.html",
+    "ueberschrift": "Registry of Notable Universe Models",
+    "auszug": "Random universe 6721 23→33 6722 22→32 6723 23→33 6729 23→33 6742 23→33 6749 23→33 6752 23→33 67698 1223→2233 6775 13→43 6779 12→32 6787 23→33 6793 23→43 6817 13→23 6821 23→33 6832 1214→1214",
+    "kev": {
+     "S0": 5.65,
+     "S1": 5.35,
+     "S2": 4.34,
+     "S3": 4.72,
+     "S4": 6.47,
+     "konkret": 0.19,
+     "kausal": 0.09,
+     "art": "other"
+    },
+    "stichwort": {
+     "S0": 0,
+     "S1": 0,
+     "S2": 0,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 0
+    }
+   },
+   {
+    "id": "0040-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/typical-behaviors/termination/",
+    "ueberschrift": "3.15 Termination",
+    "auszug": "Not all rules continue to evolve forever from a given initial state. Instead they can reach a fixed point where the rule no longer applies. If the rule depends only on a single relation, this can only happen at the very ...",
+    "kev": {
+     "S0": 7.24,
+     "S1": 3.01,
+     "S2": 3.48,
+     "S3": 4.16,
+     "S4": 4.45,
+     "konkret": 0.77,
+     "kausal": 0.31,
+     "art": "claim"
+    },
+    "stichwort": {
+     "S0": 1,
+     "S1": 0,
+     "S2": 0,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 0
+    }
+   }
+  ],
+  "S3": [
+   {
+    "id": "0112-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/potential-relation-to-physics/reversibility-and-irreversibility/",
+    "ueberschrift": "8.10 Reversibility and Irreversibility",
+    "auszug": "One feature of the traditional formalism for fundamental physics is that it is reversible, in the sense that it implies that individual states of closed systems can be uniquely evolved both forward and backward in time. ...",
+    "kev": {
+     "S0": 8.35,
+     "S1": 8.37,
+     "S2": 8.29,
+     "S3": 8.51,
+     "S4": 8.71,
+     "konkret": 0.13,
+     "kausal": 0.34,
+     "art": "claim"
+    },
+    "stichwort": {
+     "S0": 5,
+     "S1": 1,
+     "S2": 2,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 0
+    }
+   },
+   {
+    "id": "0108-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/potential-relation-to-physics/motion-and-special-relativity/",
+    "ueberschrift": "8.6 Motion and Special Relativity",
+    "auszug": "In the traditional formalism of physics, the principles of special relativity are in a sense introduced as axioms, and then their consequences are derived. In our models, what amount to these principles can in effect eme...",
+    "kev": {
+     "S0": 8.24,
+     "S1": 8.46,
+     "S2": 8.06,
+     "S3": 8.46,
+     "S4": 8.66,
+     "konkret": 0.9,
+     "kausal": 1.0,
+     "art": "derivation"
+    },
+    "stichwort": {
+     "S0": 10,
+     "S1": 15,
+     "S2": 0,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 7
+    }
+   },
+   {
+    "id": "0095-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/the-updating-process-in-our-models/global-symmetries-and-conservation-laws/",
+    "ueberschrift": "6.11 Global Symmetries and Conservation Laws",
+    "auszug": "Given the rule (stated here using numbers rather than our usual letters) if we reverse the elements in each relation we get: But the canonical version of this rule is: In graphical form, the rule and its transform are: M...",
+    "kev": {
+     "S0": 7.97,
+     "S1": 8.26,
+     "S2": 6.99,
+     "S3": 8.27,
+     "S4": 8.47,
+     "konkret": 0.83,
+     "kausal": 0.03,
+     "art": "claim"
+    },
+    "stichwort": {
+     "S0": 6,
+     "S1": 0,
+     "S2": 0,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 0
+    }
+   },
+   {
+    "id": "0064-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/the-updating-process-for-string-substitution-systems/the-phenomenon-of-causal-invariance/",
+    "ueberschrift": "5.2 The Phenomenon of Causal Invariance",
+    "auszug": "Consider the rule {BA  AB}, starting from BABABA: As before, there are different possible paths through this graph, corresponding to different possible histories for the system. But now all these paths converge to a sin...",
+    "kev": {
+     "S0": 8.52,
+     "S1": 7.73,
+     "S2": 7.18,
+     "S3": 7.95,
+     "S4": 7.29,
+     "konkret": 0.38,
+     "kausal": 0.96,
+     "art": "claim"
+    },
+    "stichwort": {
+     "S0": 2,
+     "S1": 6,
+     "S2": 1,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 0
+    }
+   },
+   {
+    "id": "0065-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/the-updating-process-for-string-substitution-systems/states-graphs/",
+    "ueberschrift": "5.3 States Graphs",
+    "auszug": "If there are multiple successors to a particular state in a substitution system one thing to do would be just to assume that each of these successors is a new, unique state. The result of this will always be to produce a...",
+    "kev": {
+     "S0": 7.72,
+     "S1": 5.87,
+     "S2": 5.23,
+     "S3": 6.69,
+     "S4": 6.37,
+     "konkret": 0.41,
+     "kausal": 0.29,
+     "art": "other"
+    },
+    "stichwort": {
+     "S0": 2,
+     "S1": 1,
+     "S2": 0,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 0
+    }
+   },
+   {
+    "id": "0039-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/typical-behaviors/rules-involving-disconnected-pieces/",
+    "ueberschrift": "3.14 Rules Involving Disconnected Pieces",
+    "auszug": "We have mostly restricted ourselves so far to cases where the results generated by a rule remain connected. But in fact if one looks at all possible rules the majority generate disconnected pieces, or at least can do so ...",
+    "kev": {
+     "S0": 6.19,
+     "S1": 4.13,
+     "S2": 4.55,
+     "S3": 5.37,
+     "S4": 7.45,
+     "konkret": 0.04,
+     "kausal": 0.08,
+     "art": "other"
+    },
+    "stichwort": {
+     "S0": 4,
+     "S1": 0,
+     "S2": 0,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 0
+    }
+   },
+   {
+    "id": "0575-01",
+    "url": "https://www.wolframphysics.org/universes/wm1653/",
+    "ueberschrift": "‹ Registry of Notable Universe Models",
+    "auszug": "6 steps signature 12→2213 rule {{{1, 2}} -> {{3, 2, 1}, {1, 3}, {3, 2}}} {{{1, 2}} -> {{3, 2, 1}, {1, 3}, {3, 2}}} make editable copy download notebook Basic Evolution Basic evolution: [◼] WolframModel [{{{1,2}}{{3,2,1}...",
+    "kev": {
+     "S0": 6.48,
+     "S1": 4.63,
+     "S2": 5.01,
+     "S3": 5.32,
+     "S4": 5.09,
+     "konkret": 0.72,
+     "kausal": 0.71,
+     "art": "computation"
+    },
+    "stichwort": {
+     "S0": 5,
+     "S1": 1,
+     "S2": 0,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 5
+    }
+   },
+   {
+    "id": "0305-01",
+    "url": "https://www.wolframphysics.org/universes/38.html",
+    "ueberschrift": "Registry of Notable Universe Models",
+    "auszug": "Random universe 6721 23→33 6722 22→32 6723 23→33 6729 23→33 6742 23→33 6749 23→33 6752 23→33 67698 1223→2233 6775 13→43 6779 12→32 6787 23→33 6793 23→43 6817 13→23 6821 23→33 6832 1214→1214",
+    "kev": {
+     "S0": 5.65,
+     "S1": 5.35,
+     "S2": 4.34,
+     "S3": 4.72,
+     "S4": 6.47,
+     "konkret": 0.19,
+     "kausal": 0.09,
+     "art": "other"
+    },
+    "stichwort": {
+     "S0": 0,
+     "S1": 0,
+     "S2": 0,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 0
+    }
+   },
+   {
+    "id": "0040-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/typical-behaviors/termination/",
+    "ueberschrift": "3.15 Termination",
+    "auszug": "Not all rules continue to evolve forever from a given initial state. Instead they can reach a fixed point where the rule no longer applies. If the rule depends only on a single relation, this can only happen at the very ...",
+    "kev": {
+     "S0": 7.24,
+     "S1": 3.01,
+     "S2": 3.48,
+     "S3": 4.16,
+     "S4": 4.45,
+     "konkret": 0.77,
+     "kausal": 0.31,
+     "art": "claim"
+    },
+    "stichwort": {
+     "S0": 1,
+     "S1": 0,
+     "S2": 0,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 0
+    }
+   }
+  ],
+  "S4": [
+   {
+    "id": "0112-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/potential-relation-to-physics/reversibility-and-irreversibility/",
+    "ueberschrift": "8.10 Reversibility and Irreversibility",
+    "auszug": "One feature of the traditional formalism for fundamental physics is that it is reversible, in the sense that it implies that individual states of closed systems can be uniquely evolved both forward and backward in time. ...",
+    "kev": {
+     "S0": 8.35,
+     "S1": 8.37,
+     "S2": 8.29,
+     "S3": 8.51,
+     "S4": 8.71,
+     "konkret": 0.13,
+     "kausal": 0.34,
+     "art": "claim"
+    },
+    "stichwort": {
+     "S0": 5,
+     "S1": 1,
+     "S2": 2,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 0
+    }
+   },
+   {
+    "id": "0108-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/potential-relation-to-physics/motion-and-special-relativity/",
+    "ueberschrift": "8.6 Motion and Special Relativity",
+    "auszug": "In the traditional formalism of physics, the principles of special relativity are in a sense introduced as axioms, and then their consequences are derived. In our models, what amount to these principles can in effect eme...",
+    "kev": {
+     "S0": 8.24,
+     "S1": 8.46,
+     "S2": 8.06,
+     "S3": 8.46,
+     "S4": 8.66,
+     "konkret": 0.9,
+     "kausal": 1.0,
+     "art": "derivation"
+    },
+    "stichwort": {
+     "S0": 10,
+     "S1": 15,
+     "S2": 0,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 7
+    }
+   },
+   {
+    "id": "0095-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/the-updating-process-in-our-models/global-symmetries-and-conservation-laws/",
+    "ueberschrift": "6.11 Global Symmetries and Conservation Laws",
+    "auszug": "Given the rule (stated here using numbers rather than our usual letters) if we reverse the elements in each relation we get: But the canonical version of this rule is: In graphical form, the rule and its transform are: M...",
+    "kev": {
+     "S0": 7.97,
+     "S1": 8.26,
+     "S2": 6.99,
+     "S3": 8.27,
+     "S4": 8.47,
+     "konkret": 0.83,
+     "kausal": 0.03,
+     "art": "claim"
+    },
+    "stichwort": {
+     "S0": 6,
+     "S1": 0,
+     "S2": 0,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 0
+    }
+   },
+   {
+    "id": "0039-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/typical-behaviors/rules-involving-disconnected-pieces/",
+    "ueberschrift": "3.14 Rules Involving Disconnected Pieces",
+    "auszug": "We have mostly restricted ourselves so far to cases where the results generated by a rule remain connected. But in fact if one looks at all possible rules the majority generate disconnected pieces, or at least can do so ...",
+    "kev": {
+     "S0": 6.19,
+     "S1": 4.13,
+     "S2": 4.55,
+     "S3": 5.37,
+     "S4": 7.45,
+     "konkret": 0.04,
+     "kausal": 0.08,
+     "art": "other"
+    },
+    "stichwort": {
+     "S0": 4,
+     "S1": 0,
+     "S2": 0,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 0
+    }
+   },
+   {
+    "id": "0064-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/the-updating-process-for-string-substitution-systems/the-phenomenon-of-causal-invariance/",
+    "ueberschrift": "5.2 The Phenomenon of Causal Invariance",
+    "auszug": "Consider the rule {BA  AB}, starting from BABABA: As before, there are different possible paths through this graph, corresponding to different possible histories for the system. But now all these paths converge to a sin...",
+    "kev": {
+     "S0": 8.52,
+     "S1": 7.73,
+     "S2": 7.18,
+     "S3": 7.95,
+     "S4": 7.29,
+     "konkret": 0.38,
+     "kausal": 0.96,
+     "art": "claim"
+    },
+    "stichwort": {
+     "S0": 2,
+     "S1": 6,
+     "S2": 1,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 0
+    }
+   },
+   {
+    "id": "0305-01",
+    "url": "https://www.wolframphysics.org/universes/38.html",
+    "ueberschrift": "Registry of Notable Universe Models",
+    "auszug": "Random universe 6721 23→33 6722 22→32 6723 23→33 6729 23→33 6742 23→33 6749 23→33 6752 23→33 67698 1223→2233 6775 13→43 6779 12→32 6787 23→33 6793 23→43 6817 13→23 6821 23→33 6832 1214→1214",
+    "kev": {
+     "S0": 5.65,
+     "S1": 5.35,
+     "S2": 4.34,
+     "S3": 4.72,
+     "S4": 6.47,
+     "konkret": 0.19,
+     "kausal": 0.09,
+     "art": "other"
+    },
+    "stichwort": {
+     "S0": 0,
+     "S1": 0,
+     "S2": 0,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 0
+    }
+   },
+   {
+    "id": "0065-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/the-updating-process-for-string-substitution-systems/states-graphs/",
+    "ueberschrift": "5.3 States Graphs",
+    "auszug": "If there are multiple successors to a particular state in a substitution system one thing to do would be just to assume that each of these successors is a new, unique state. The result of this will always be to produce a...",
+    "kev": {
+     "S0": 7.72,
+     "S1": 5.87,
+     "S2": 5.23,
+     "S3": 6.69,
+     "S4": 6.37,
+     "konkret": 0.41,
+     "kausal": 0.29,
+     "art": "other"
+    },
+    "stichwort": {
+     "S0": 2,
+     "S1": 1,
+     "S2": 0,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 0
+    }
+   },
+   {
+    "id": "0575-01",
+    "url": "https://www.wolframphysics.org/universes/wm1653/",
+    "ueberschrift": "‹ Registry of Notable Universe Models",
+    "auszug": "6 steps signature 12→2213 rule {{{1, 2}} -> {{3, 2, 1}, {1, 3}, {3, 2}}} {{{1, 2}} -> {{3, 2, 1}, {1, 3}, {3, 2}}} make editable copy download notebook Basic Evolution Basic evolution: [◼] WolframModel [{{{1,2}}{{3,2,1}...",
+    "kev": {
+     "S0": 6.48,
+     "S1": 4.63,
+     "S2": 5.01,
+     "S3": 5.32,
+     "S4": 5.09,
+     "konkret": 0.72,
+     "kausal": 0.71,
+     "art": "computation"
+    },
+    "stichwort": {
+     "S0": 5,
+     "S1": 1,
+     "S2": 0,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 5
+    }
+   },
+   {
+    "id": "0040-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/typical-behaviors/termination/",
+    "ueberschrift": "3.15 Termination",
+    "auszug": "Not all rules continue to evolve forever from a given initial state. Instead they can reach a fixed point where the rule no longer applies. If the rule depends only on a single relation, this can only happen at the very ...",
+    "kev": {
+     "S0": 7.24,
+     "S1": 3.01,
+     "S2": 3.48,
+     "S3": 4.16,
+     "S4": 4.45,
+     "konkret": 0.77,
+     "kausal": 0.31,
+     "art": "claim"
+    },
+    "stichwort": {
+     "S0": 1,
+     "S1": 0,
+     "S2": 0,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 0
+    }
+   }
+  ],
+  "kausal": [
+   {
+    "id": "0108-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/potential-relation-to-physics/motion-and-special-relativity/",
+    "ueberschrift": "8.6 Motion and Special Relativity",
+    "auszug": "In the traditional formalism of physics, the principles of special relativity are in a sense introduced as axioms, and then their consequences are derived. In our models, what amount to these principles can in effect eme...",
+    "kev": {
+     "S0": 8.24,
+     "S1": 8.46,
+     "S2": 8.06,
+     "S3": 8.46,
+     "S4": 8.66,
+     "konkret": 0.9,
+     "kausal": 1.0,
+     "art": "derivation"
+    },
+    "stichwort": {
+     "S0": 10,
+     "S1": 15,
+     "S2": 0,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 7
+    }
+   },
+   {
+    "id": "0064-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/the-updating-process-for-string-substitution-systems/the-phenomenon-of-causal-invariance/",
+    "ueberschrift": "5.2 The Phenomenon of Causal Invariance",
+    "auszug": "Consider the rule {BA  AB}, starting from BABABA: As before, there are different possible paths through this graph, corresponding to different possible histories for the system. But now all these paths converge to a sin...",
+    "kev": {
+     "S0": 8.52,
+     "S1": 7.73,
+     "S2": 7.18,
+     "S3": 7.95,
+     "S4": 7.29,
+     "konkret": 0.38,
+     "kausal": 0.96,
+     "art": "claim"
+    },
+    "stichwort": {
+     "S0": 2,
+     "S1": 6,
+     "S2": 1,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 0
+    }
+   },
+   {
+    "id": "0575-01",
+    "url": "https://www.wolframphysics.org/universes/wm1653/",
+    "ueberschrift": "‹ Registry of Notable Universe Models",
+    "auszug": "6 steps signature 12→2213 rule {{{1, 2}} -> {{3, 2, 1}, {1, 3}, {3, 2}}} {{{1, 2}} -> {{3, 2, 1}, {1, 3}, {3, 2}}} make editable copy download notebook Basic Evolution Basic evolution: [◼] WolframModel [{{{1,2}}{{3,2,1}...",
+    "kev": {
+     "S0": 6.48,
+     "S1": 4.63,
+     "S2": 5.01,
+     "S3": 5.32,
+     "S4": 5.09,
+     "konkret": 0.72,
+     "kausal": 0.71,
+     "art": "computation"
+    },
+    "stichwort": {
+     "S0": 5,
+     "S1": 1,
+     "S2": 0,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 5
+    }
+   },
+   {
+    "id": "0112-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/potential-relation-to-physics/reversibility-and-irreversibility/",
+    "ueberschrift": "8.10 Reversibility and Irreversibility",
+    "auszug": "One feature of the traditional formalism for fundamental physics is that it is reversible, in the sense that it implies that individual states of closed systems can be uniquely evolved both forward and backward in time. ...",
+    "kev": {
+     "S0": 8.35,
+     "S1": 8.37,
+     "S2": 8.29,
+     "S3": 8.51,
+     "S4": 8.71,
+     "konkret": 0.13,
+     "kausal": 0.34,
+     "art": "claim"
+    },
+    "stichwort": {
+     "S0": 5,
+     "S1": 1,
+     "S2": 2,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 0
+    }
+   },
+   {
+    "id": "0040-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/typical-behaviors/termination/",
+    "ueberschrift": "3.15 Termination",
+    "auszug": "Not all rules continue to evolve forever from a given initial state. Instead they can reach a fixed point where the rule no longer applies. If the rule depends only on a single relation, this can only happen at the very ...",
+    "kev": {
+     "S0": 7.24,
+     "S1": 3.01,
+     "S2": 3.48,
+     "S3": 4.16,
+     "S4": 4.45,
+     "konkret": 0.77,
+     "kausal": 0.31,
+     "art": "claim"
+    },
+    "stichwort": {
+     "S0": 1,
+     "S1": 0,
+     "S2": 0,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 0
+    }
+   },
+   {
+    "id": "0065-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/the-updating-process-for-string-substitution-systems/states-graphs/",
+    "ueberschrift": "5.3 States Graphs",
+    "auszug": "If there are multiple successors to a particular state in a substitution system one thing to do would be just to assume that each of these successors is a new, unique state. The result of this will always be to produce a...",
+    "kev": {
+     "S0": 7.72,
+     "S1": 5.87,
+     "S2": 5.23,
+     "S3": 6.69,
+     "S4": 6.37,
+     "konkret": 0.41,
+     "kausal": 0.29,
+     "art": "other"
+    },
+    "stichwort": {
+     "S0": 2,
+     "S1": 1,
+     "S2": 0,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 0
+    }
+   },
+   {
+    "id": "0305-01",
+    "url": "https://www.wolframphysics.org/universes/38.html",
+    "ueberschrift": "Registry of Notable Universe Models",
+    "auszug": "Random universe 6721 23→33 6722 22→32 6723 23→33 6729 23→33 6742 23→33 6749 23→33 6752 23→33 67698 1223→2233 6775 13→43 6779 12→32 6787 23→33 6793 23→43 6817 13→23 6821 23→33 6832 1214→1214",
+    "kev": {
+     "S0": 5.65,
+     "S1": 5.35,
+     "S2": 4.34,
+     "S3": 4.72,
+     "S4": 6.47,
+     "konkret": 0.19,
+     "kausal": 0.09,
+     "art": "other"
+    },
+    "stichwort": {
+     "S0": 0,
+     "S1": 0,
+     "S2": 0,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 0
+    }
+   },
+   {
+    "id": "0039-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/typical-behaviors/rules-involving-disconnected-pieces/",
+    "ueberschrift": "3.14 Rules Involving Disconnected Pieces",
+    "auszug": "We have mostly restricted ourselves so far to cases where the results generated by a rule remain connected. But in fact if one looks at all possible rules the majority generate disconnected pieces, or at least can do so ...",
+    "kev": {
+     "S0": 6.19,
+     "S1": 4.13,
+     "S2": 4.55,
+     "S3": 5.37,
+     "S4": 7.45,
+     "konkret": 0.04,
+     "kausal": 0.08,
+     "art": "other"
+    },
+    "stichwort": {
+     "S0": 4,
+     "S1": 0,
+     "S2": 0,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 0
+    }
+   },
+   {
+    "id": "0095-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/the-updating-process-in-our-models/global-symmetries-and-conservation-laws/",
+    "ueberschrift": "6.11 Global Symmetries and Conservation Laws",
+    "auszug": "Given the rule (stated here using numbers rather than our usual letters) if we reverse the elements in each relation we get: But the canonical version of this rule is: In graphical form, the rule and its transform are: M...",
+    "kev": {
+     "S0": 7.97,
+     "S1": 8.26,
+     "S2": 6.99,
+     "S3": 8.27,
+     "S4": 8.47,
+     "konkret": 0.83,
+     "kausal": 0.03,
+     "art": "claim"
+    },
+    "stichwort": {
+     "S0": 6,
+     "S1": 0,
+     "S2": 0,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 0
+    }
+   }
+  ]
+ },
+ "top15_stichwort": {
+  "S0": [
+   {
+    "id": "0108-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/potential-relation-to-physics/motion-and-special-relativity/",
+    "ueberschrift": "8.6 Motion and Special Relativity",
+    "treffer": 10,
+    "kev": 8.24
+   },
+   {
+    "id": "0095-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/the-updating-process-in-our-models/global-symmetries-and-conservation-laws/",
+    "ueberschrift": "6.11 Global Symmetries and Conservation Laws",
+    "treffer": 6,
+    "kev": 7.97
+   },
+   {
+    "id": "0112-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/potential-relation-to-physics/reversibility-and-irreversibility/",
+    "ueberschrift": "8.10 Reversibility and Irreversibility",
+    "treffer": 5,
+    "kev": 8.35
+   },
+   {
+    "id": "0575-01",
+    "url": "https://www.wolframphysics.org/universes/wm1653/",
+    "ueberschrift": "‹ Registry of Notable Universe Models",
+    "treffer": 5,
+    "kev": 6.48
+   },
+   {
+    "id": "0039-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/typical-behaviors/rules-involving-disconnected-pieces/",
+    "ueberschrift": "3.14 Rules Involving Disconnected Pieces",
+    "treffer": 4,
+    "kev": 6.19
+   },
+   {
+    "id": "0064-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/the-updating-process-for-string-substitution-systems/the-phenomenon-of-causal-invariance/",
+    "ueberschrift": "5.2 The Phenomenon of Causal Invariance",
+    "treffer": 2,
+    "kev": 8.52
+   },
+   {
+    "id": "0065-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/the-updating-process-for-string-substitution-systems/states-graphs/",
+    "ueberschrift": "5.3 States Graphs",
+    "treffer": 2,
+    "kev": 7.72
+   },
+   {
+    "id": "0040-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/typical-behaviors/termination/",
+    "ueberschrift": "3.15 Termination",
+    "treffer": 1,
+    "kev": 7.24
+   },
+   {
+    "id": "0305-01",
+    "url": "https://www.wolframphysics.org/universes/38.html",
+    "ueberschrift": "Registry of Notable Universe Models",
+    "treffer": 0,
+    "kev": 5.65
+   }
+  ],
+  "S1": [
+   {
+    "id": "0108-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/potential-relation-to-physics/motion-and-special-relativity/",
+    "ueberschrift": "8.6 Motion and Special Relativity",
+    "treffer": 15,
+    "kev": 8.46
+   },
+   {
+    "id": "0064-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/the-updating-process-for-string-substitution-systems/the-phenomenon-of-causal-invariance/",
+    "ueberschrift": "5.2 The Phenomenon of Causal Invariance",
+    "treffer": 6,
+    "kev": 7.73
+   },
+   {
+    "id": "0112-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/potential-relation-to-physics/reversibility-and-irreversibility/",
+    "ueberschrift": "8.10 Reversibility and Irreversibility",
+    "treffer": 1,
+    "kev": 8.37
+   },
+   {
+    "id": "0065-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/the-updating-process-for-string-substitution-systems/states-graphs/",
+    "ueberschrift": "5.3 States Graphs",
+    "treffer": 1,
+    "kev": 5.87
+   },
+   {
+    "id": "0575-01",
+    "url": "https://www.wolframphysics.org/universes/wm1653/",
+    "ueberschrift": "‹ Registry of Notable Universe Models",
+    "treffer": 1,
+    "kev": 4.63
+   },
+   {
+    "id": "0039-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/typical-behaviors/rules-involving-disconnected-pieces/",
+    "ueberschrift": "3.14 Rules Involving Disconnected Pieces",
+    "treffer": 0,
+    "kev": 4.13
+   },
+   {
+    "id": "0095-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/the-updating-process-in-our-models/global-symmetries-and-conservation-laws/",
+    "ueberschrift": "6.11 Global Symmetries and Conservation Laws",
+    "treffer": 0,
+    "kev": 8.26
+   },
+   {
+    "id": "0040-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/typical-behaviors/termination/",
+    "ueberschrift": "3.15 Termination",
+    "treffer": 0,
+    "kev": 3.01
+   },
+   {
+    "id": "0305-01",
+    "url": "https://www.wolframphysics.org/universes/38.html",
+    "ueberschrift": "Registry of Notable Universe Models",
+    "treffer": 0,
+    "kev": 5.35
+   }
+  ],
+  "S2": [
+   {
+    "id": "0112-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/potential-relation-to-physics/reversibility-and-irreversibility/",
+    "ueberschrift": "8.10 Reversibility and Irreversibility",
+    "treffer": 2,
+    "kev": 8.29
+   },
+   {
+    "id": "0064-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/the-updating-process-for-string-substitution-systems/the-phenomenon-of-causal-invariance/",
+    "ueberschrift": "5.2 The Phenomenon of Causal Invariance",
+    "treffer": 1,
+    "kev": 7.18
+   },
+   {
+    "id": "0039-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/typical-behaviors/rules-involving-disconnected-pieces/",
+    "ueberschrift": "3.14 Rules Involving Disconnected Pieces",
+    "treffer": 0,
+    "kev": 4.55
+   },
+   {
+    "id": "0108-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/potential-relation-to-physics/motion-and-special-relativity/",
+    "ueberschrift": "8.6 Motion and Special Relativity",
+    "treffer": 0,
+    "kev": 8.06
+   },
+   {
+    "id": "0095-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/the-updating-process-in-our-models/global-symmetries-and-conservation-laws/",
+    "ueberschrift": "6.11 Global Symmetries and Conservation Laws",
+    "treffer": 0,
+    "kev": 6.99
+   },
+   {
+    "id": "0065-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/the-updating-process-for-string-substitution-systems/states-graphs/",
+    "ueberschrift": "5.3 States Graphs",
+    "treffer": 0,
+    "kev": 5.23
+   },
+   {
+    "id": "0575-01",
+    "url": "https://www.wolframphysics.org/universes/wm1653/",
+    "ueberschrift": "‹ Registry of Notable Universe Models",
+    "treffer": 0,
+    "kev": 5.01
+   },
+   {
+    "id": "0040-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/typical-behaviors/termination/",
+    "ueberschrift": "3.15 Termination",
+    "treffer": 0,
+    "kev": 3.48
+   },
+   {
+    "id": "0305-01",
+    "url": "https://www.wolframphysics.org/universes/38.html",
+    "ueberschrift": "Registry of Notable Universe Models",
+    "treffer": 0,
+    "kev": 4.34
+   }
+  ],
+  "S3": [
+   {
+    "id": "0039-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/typical-behaviors/rules-involving-disconnected-pieces/",
+    "ueberschrift": "3.14 Rules Involving Disconnected Pieces",
+    "treffer": 0,
+    "kev": 5.37
+   },
+   {
+    "id": "0112-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/potential-relation-to-physics/reversibility-and-irreversibility/",
+    "ueberschrift": "8.10 Reversibility and Irreversibility",
+    "treffer": 0,
+    "kev": 8.51
+   },
+   {
+    "id": "0108-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/potential-relation-to-physics/motion-and-special-relativity/",
+    "ueberschrift": "8.6 Motion and Special Relativity",
+    "treffer": 0,
+    "kev": 8.46
+   },
+   {
+    "id": "0095-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/the-updating-process-in-our-models/global-symmetries-and-conservation-laws/",
+    "ueberschrift": "6.11 Global Symmetries and Conservation Laws",
+    "treffer": 0,
+    "kev": 8.27
+   },
+   {
+    "id": "0064-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/the-updating-process-for-string-substitution-systems/the-phenomenon-of-causal-invariance/",
+    "ueberschrift": "5.2 The Phenomenon of Causal Invariance",
+    "treffer": 0,
+    "kev": 7.95
+   },
+   {
+    "id": "0065-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/the-updating-process-for-string-substitution-systems/states-graphs/",
+    "ueberschrift": "5.3 States Graphs",
+    "treffer": 0,
+    "kev": 6.69
+   },
+   {
+    "id": "0575-01",
+    "url": "https://www.wolframphysics.org/universes/wm1653/",
+    "ueberschrift": "‹ Registry of Notable Universe Models",
+    "treffer": 0,
+    "kev": 5.32
+   },
+   {
+    "id": "0040-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/typical-behaviors/termination/",
+    "ueberschrift": "3.15 Termination",
+    "treffer": 0,
+    "kev": 4.16
+   },
+   {
+    "id": "0305-01",
+    "url": "https://www.wolframphysics.org/universes/38.html",
+    "ueberschrift": "Registry of Notable Universe Models",
+    "treffer": 0,
+    "kev": 4.72
+   }
+  ],
+  "S4": [
+   {
+    "id": "0039-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/typical-behaviors/rules-involving-disconnected-pieces/",
+    "ueberschrift": "3.14 Rules Involving Disconnected Pieces",
+    "treffer": 0,
+    "kev": 7.45
+   },
+   {
+    "id": "0112-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/potential-relation-to-physics/reversibility-and-irreversibility/",
+    "ueberschrift": "8.10 Reversibility and Irreversibility",
+    "treffer": 0,
+    "kev": 8.71
+   },
+   {
+    "id": "0108-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/potential-relation-to-physics/motion-and-special-relativity/",
+    "ueberschrift": "8.6 Motion and Special Relativity",
+    "treffer": 0,
+    "kev": 8.66
+   },
+   {
+    "id": "0095-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/the-updating-process-in-our-models/global-symmetries-and-conservation-laws/",
+    "ueberschrift": "6.11 Global Symmetries and Conservation Laws",
+    "treffer": 0,
+    "kev": 8.47
+   },
+   {
+    "id": "0064-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/the-updating-process-for-string-substitution-systems/the-phenomenon-of-causal-invariance/",
+    "ueberschrift": "5.2 The Phenomenon of Causal Invariance",
+    "treffer": 0,
+    "kev": 7.29
+   },
+   {
+    "id": "0065-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/the-updating-process-for-string-substitution-systems/states-graphs/",
+    "ueberschrift": "5.3 States Graphs",
+    "treffer": 0,
+    "kev": 6.37
+   },
+   {
+    "id": "0575-01",
+    "url": "https://www.wolframphysics.org/universes/wm1653/",
+    "ueberschrift": "‹ Registry of Notable Universe Models",
+    "treffer": 0,
+    "kev": 5.09
+   },
+   {
+    "id": "0040-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/typical-behaviors/termination/",
+    "ueberschrift": "3.15 Termination",
+    "treffer": 0,
+    "kev": 4.45
+   },
+   {
+    "id": "0305-01",
+    "url": "https://www.wolframphysics.org/universes/38.html",
+    "ueberschrift": "Registry of Notable Universe Models",
+    "treffer": 0,
+    "kev": 6.47
+   }
+  ],
+  "kausal": [
+   {
+    "id": "0108-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/potential-relation-to-physics/motion-and-special-relativity/",
+    "ueberschrift": "8.6 Motion and Special Relativity",
+    "treffer": 7,
+    "kev": 1.0
+   },
+   {
+    "id": "0575-01",
+    "url": "https://www.wolframphysics.org/universes/wm1653/",
+    "ueberschrift": "‹ Registry of Notable Universe Models",
+    "treffer": 5,
+    "kev": 0.71
+   },
+   {
+    "id": "0039-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/typical-behaviors/rules-involving-disconnected-pieces/",
+    "ueberschrift": "3.14 Rules Involving Disconnected Pieces",
+    "treffer": 0,
+    "kev": 0.08
+   },
+   {
+    "id": "0112-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/potential-relation-to-physics/reversibility-and-irreversibility/",
+    "ueberschrift": "8.10 Reversibility and Irreversibility",
+    "treffer": 0,
+    "kev": 0.34
+   },
+   {
+    "id": "0095-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/the-updating-process-in-our-models/global-symmetries-and-conservation-laws/",
+    "ueberschrift": "6.11 Global Symmetries and Conservation Laws",
+    "treffer": 0,
+    "kev": 0.03
+   },
+   {
+    "id": "0064-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/the-updating-process-for-string-substitution-systems/the-phenomenon-of-causal-invariance/",
+    "ueberschrift": "5.2 The Phenomenon of Causal Invariance",
+    "treffer": 0,
+    "kev": 0.96
+   },
+   {
+    "id": "0065-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/the-updating-process-for-string-substitution-systems/states-graphs/",
+    "ueberschrift": "5.3 States Graphs",
+    "treffer": 0,
+    "kev": 0.29
+   },
+   {
+    "id": "0040-01",
+    "url": "https://www.wolframphysics.org/technical-introduction/typical-behaviors/termination/",
+    "ueberschrift": "3.15 Termination",
+    "treffer": 0,
+    "kev": 0.31
+   },
+   {
+    "id": "0305-01",
+    "url": "https://www.wolframphysics.org/universes/38.html",
+    "ueberschrift": "Registry of Notable Universe Models",
+    "treffer": 0,
+    "kev": 0.09
+   }
+  ]
+ },
+ "vergleich_kev_stichwort": {
+  "S0": {
+   "ueberlappung_top15": 9,
+   "spearman_kev_gegen_stichwort_alle": 0.429
+  },
+  "S1": {
+   "ueberlappung_top15": 9,
+   "spearman_kev_gegen_stichwort_alle": 0.621
+  },
+  "S2": {
+   "ueberlappung_top15": 9,
+   "spearman_kev_gegen_stichwort_alle": 0.639
+  },
+  "S3": {
+   "ueberlappung_top15": 9,
+   "spearman_kev_gegen_stichwort_alle": null
+  },
+  "S4": {
+   "ueberlappung_top15": 9,
+   "spearman_kev_gegen_stichwort_alle": null
+  },
+  "kausal": {
+   "ueberlappung_top15": 9,
+   "spearman_kev_gegen_stichwort_alle": 0.639
+  }
+ },
+ "leseliste": [
+  {
+   "seite": "0112",
+   "url": "https://www.wolframphysics.org/technical-introduction/potential-relation-to-physics/reversibility-and-irreversibility/",
+   "titel": "Reversibility and Irreversibility: Wolfram Physics Project Technical Background",
+   "seitenwert": 8.446,
+   "maxima": {
+    "S0": 8.35,
+    "S1": 8.37,
+    "S2": 8.29,
+    "S3": 8.51,
+    "S4": 8.71
+   },
+   "staerkste_schicht": "S4",
+   "abschnitte": 1,
+   "konkret_max": 0.13,
+   "kausal_max": 0.34,
+   "beste_abschnitte": [
+    {
+     "id": "0112-01",
+     "ueberschrift": "8.10 Reversibility and Irreversibility"
+    }
+   ]
+  },
+  {
+   "seite": "0108",
+   "url": "https://www.wolframphysics.org/technical-introduction/potential-relation-to-physics/motion-and-special-relativity/",
+   "titel": "Motion and Special Relativity: Wolfram Physics Project Technical Background",
+   "seitenwert": 8.376,
+   "maxima": {
+    "S0": 8.24,
+    "S1": 8.46,
+    "S2": 8.06,
+    "S3": 8.46,
+    "S4": 8.66
+   },
+   "staerkste_schicht": "S4",
+   "abschnitte": 1,
+   "konkret_max": 0.9,
+   "kausal_max": 1.0,
+   "beste_abschnitte": [
+    {
+     "id": "0108-01",
+     "ueberschrift": "8.6 Motion and Special Relativity"
+    }
+   ]
+  },
+  {
+   "seite": "0095",
+   "url": "https://www.wolframphysics.org/technical-introduction/the-updating-process-in-our-models/global-symmetries-and-conservation-laws/",
+   "titel": "Global Symmetries and Conservation Laws: Wolfram Physics Project Technical Background",
+   "seitenwert": 7.992,
+   "maxima": {
+    "S0": 7.97,
+    "S1": 8.26,
+    "S2": 6.99,
+    "S3": 8.27,
+    "S4": 8.47
+   },
+   "staerkste_schicht": "S4",
+   "abschnitte": 1,
+   "konkret_max": 0.83,
+   "kausal_max": 0.03,
+   "beste_abschnitte": [
+    {
+     "id": "0095-01",
+     "ueberschrift": "6.11 Global Symmetries and Conservation Laws"
+    }
+   ]
+  },
+  {
+   "seite": "0064",
+   "url": "https://www.wolframphysics.org/technical-introduction/the-updating-process-for-string-substitution-systems/the-phenomenon-of-causal-invariance/",
+   "titel": "The Phenomenon of Causal Invariance: Wolfram Physics Project Technical Background",
+   "seitenwert": 7.734,
+   "maxima": {
+    "S0": 8.52,
+    "S1": 7.73,
+    "S2": 7.18,
+    "S3": 7.95,
+    "S4": 7.29
+   },
+   "staerkste_schicht": "S0",
+   "abschnitte": 1,
+   "konkret_max": 0.38,
+   "kausal_max": 0.96,
+   "beste_abschnitte": [
+    {
+     "id": "0064-01",
+     "ueberschrift": "5.2 The Phenomenon of Causal Invariance"
+    }
+   ]
+  },
+  {
+   "seite": "0065",
+   "url": "https://www.wolframphysics.org/technical-introduction/the-updating-process-for-string-substitution-systems/states-graphs/",
+   "titel": "States Graphs: Wolfram Physics Project Technical Background",
+   "seitenwert": 6.376,
+   "maxima": {
+    "S0": 7.72,
+    "S1": 5.87,
+    "S2": 5.23,
+    "S3": 6.69,
+    "S4": 6.37
+   },
+   "staerkste_schicht": "S0",
+   "abschnitte": 1,
+   "konkret_max": 0.41,
+   "kausal_max": 0.29,
+   "beste_abschnitte": [
+    {
+     "id": "0065-01",
+     "ueberschrift": "5.3 States Graphs"
+    }
+   ]
+  },
+  {
+   "seite": "0039",
+   "url": "https://www.wolframphysics.org/technical-introduction/typical-behaviors/rules-involving-disconnected-pieces/",
+   "titel": "Rules Involving Disconnected Pieces: Wolfram Physics Project Technical Background",
+   "seitenwert": 5.538,
+   "maxima": {
+    "S0": 6.19,
+    "S1": 4.13,
+    "S2": 4.55,
+    "S3": 5.37,
+    "S4": 7.45
+   },
+   "staerkste_schicht": "S4",
+   "abschnitte": 1,
+   "konkret_max": 0.04,
+   "kausal_max": 0.08,
+   "beste_abschnitte": [
+    {
+     "id": "0039-01",
+     "ueberschrift": "3.14 Rules Involving Disconnected Pieces"
+    }
+   ]
+  },
+  {
+   "seite": "0575",
+   "url": "https://www.wolframphysics.org/universes/wm1653/",
+   "titel": "Universe 1653 from The Wolfram Physics Project",
+   "seitenwert": 5.306,
+   "maxima": {
+    "S0": 6.48,
+    "S1": 4.63,
+    "S2": 5.01,
+    "S3": 5.32,
+    "S4": 5.09
+   },
+   "staerkste_schicht": "S0",
+   "abschnitte": 1,
+   "konkret_max": 0.72,
+   "kausal_max": 0.71,
+   "beste_abschnitte": [
+    {
+     "id": "0575-01",
+     "ueberschrift": "‹ Registry of Notable Universe Models"
+    }
+   ]
+  },
+  {
+   "seite": "0305",
+   "url": "https://www.wolframphysics.org/universes/38.html",
+   "titel": "The Wolfram Physics Project: Registry of Notable Universes",
+   "seitenwert": 5.306,
+   "maxima": {
+    "S0": 5.65,
+    "S1": 5.35,
+    "S2": 4.34,
+    "S3": 4.72,
+    "S4": 6.47
+   },
+   "staerkste_schicht": "S4",
+   "abschnitte": 1,
+   "konkret_max": 0.19,
+   "kausal_max": 0.09,
+   "beste_abschnitte": [
+    {
+     "id": "0305-01",
+     "ueberschrift": "Registry of Notable Universe Models"
+    }
+   ]
+  },
+  {
+   "seite": "0040",
+   "url": "https://www.wolframphysics.org/technical-introduction/typical-behaviors/termination/",
+   "titel": "Termination: Wolfram Physics Project Technical Background",
+   "seitenwert": 4.468,
+   "maxima": {
+    "S0": 7.24,
+    "S1": 3.01,
+    "S2": 3.48,
+    "S3": 4.16,
+    "S4": 4.45
+   },
+   "staerkste_schicht": "S0",
+   "abschnitte": 1,
+   "konkret_max": 0.77,
+   "kausal_max": 0.31,
+   "beste_abschnitte": [
+    {
+     "id": "0040-01",
+     "ueberschrift": "3.15 Termination"
+    }
+   ]
+  }
+ ],
+ "gegenprobe": {
+  "vorhanden": true,
+  "n": 9,
+  "ids_ohne_kev": [],
+  "je_schicht": {
+   "S0": {
+    "k_relevant": 4,
+    "kev_treffer_top10": 4.0,
+    "stichwort_treffer_top10": 4.0,
+    "zufall_erwartet_top10": 4.0,
+    "maximal_moeglich": 4,
+    "spearman_kev": 0.26,
+    "spearman_stichwort": 0.0,
+    "auc_kev": 0.65,
+    "auc_stichwort": 0.5,
+    "wk1_gefordert": 4,
+    "wk1_erfuellt": true
+   },
+   "S1": {
+    "k_relevant": 5,
+    "kev_treffer_top10": 5.0,
+    "stichwort_treffer_top10": 5.0,
+    "zufall_erwartet_top10": 5.0,
+    "maximal_moeglich": 5,
+    "spearman_kev": -0.087,
+    "spearman_stichwort": 0.276,
+    "auc_kev": 0.45,
+    "auc_stichwort": 0.65,
+    "wk1_gefordert": 5,
+    "wk1_erfuellt": true
+   },
+   "S2": {
+    "k_relevant": 3,
+    "kev_treffer_top10": 3.0,
+    "stichwort_treffer_top10": 3.0,
+    "zufall_erwartet_top10": 3.0,
+    "maximal_moeglich": 3,
+    "spearman_kev": 0.456,
+    "spearman_stichwort": 0.25,
+    "auc_kev": 0.778,
+    "auc_stichwort": 0.611,
+    "wk1_gefordert": 3,
+    "wk1_erfuellt": true
+   },
+   "S3": {
+    "k_relevant": 0,
+    "kev_treffer_top10": 0.0,
+    "stichwort_treffer_top10": 0.0,
+    "zufall_erwartet_top10": 0.0,
+    "maximal_moeglich": 0,
+    "spearman_kev": null,
+    "spearman_stichwort": null,
+    "auc_kev": null,
+    "auc_stichwort": null,
+    "wk1_gefordert": null,
+    "wk1_erfuellt": null
+   },
+   "S4": {
+    "k_relevant": 1,
+    "kev_treffer_top10": 1.0,
+    "stichwort_treffer_top10": 1.0,
+    "zufall_erwartet_top10": 1.0,
+    "maximal_moeglich": 1,
+    "spearman_kev": 0.0,
+    "spearman_stichwort": null,
+    "auc_kev": 0.5,
+    "auc_stichwort": 0.5,
+    "wk1_gefordert": 1,
+    "wk1_erfuellt": true
+   },
+   "kausal": {
+    "k_relevant": 4,
+    "kev_treffer_top10": 4.0,
+    "stichwort_treffer_top10": 4.0,
+    "zufall_erwartet_top10": 4.0,
+    "maximal_moeglich": 4,
+    "spearman_kev": -0.346,
+    "spearman_stichwort": -0.474,
+    "auc_kev": 0.3,
+    "auc_stichwort": 0.3,
+    "wk1_gefordert": 4,
+    "wk1_erfuellt": true
+   }
+  },
+  "schichten_mit_relevanten": [
+   "S0",
+   "S1",
+   "S2",
+   "S4"
+  ],
+  "mittel_treffer_top10_kev": 3.25,
+  "mittel_treffer_top10_stichwort": 3.25,
+  "WK1": true,
+  "WK2": false,
+  "einzelwerte": [
+   {
+    "id": "0039-01",
+    "hand": {
+     "S0": 0,
+     "S1": 1,
+     "S2": 1,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 0
+    },
+    "kev": {
+     "S0": 6.19,
+     "S1": 4.13,
+     "S2": 4.55,
+     "S3": 5.37,
+     "S4": 7.45,
+     "kausal": 0.08
+    },
+    "stichwort": {
+     "S0": 4,
+     "S1": 0,
+     "S2": 0,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 0
+    }
+   },
+   {
+    "id": "0040-01",
+    "hand": {
+     "S0": 1,
+     "S1": 0,
+     "S2": 0,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 1
+    },
+    "kev": {
+     "S0": 7.24,
+     "S1": 3.01,
+     "S2": 3.48,
+     "S3": 4.16,
+     "S4": 4.45,
+     "kausal": 0.31
+    },
+    "stichwort": {
+     "S0": 1,
+     "S1": 0,
+     "S2": 0,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 0
+    }
+   },
+   {
+    "id": "0064-01",
+    "hand": {
+     "S0": 0,
+     "S1": 1,
+     "S2": 0,
+     "S3": 0,
+     "S4": 1,
+     "kausal": 0
+    },
+    "kev": {
+     "S0": 8.52,
+     "S1": 7.73,
+     "S2": 7.18,
+     "S3": 7.95,
+     "S4": 7.29,
+     "kausal": 0.96
+    },
+    "stichwort": {
+     "S0": 2,
+     "S1": 6,
+     "S2": 1,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 0
+    }
+   },
+   {
+    "id": "0065-01",
+    "hand": {
+     "S0": 1,
+     "S1": 0,
+     "S2": 0,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 1
+    },
+    "kev": {
+     "S0": 7.72,
+     "S1": 5.87,
+     "S2": 5.23,
+     "S3": 6.69,
+     "S4": 6.37,
+     "kausal": 0.29
+    },
+    "stichwort": {
+     "S0": 2,
+     "S1": 1,
+     "S2": 0,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 0
+    }
+   },
+   {
+    "id": "0095-01",
+    "hand": {
+     "S0": 1,
+     "S1": 0,
+     "S2": 0,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 1
+    },
+    "kev": {
+     "S0": 7.97,
+     "S1": 8.26,
+     "S2": 6.99,
+     "S3": 8.27,
+     "S4": 8.47,
+     "kausal": 0.03
+    },
+    "stichwort": {
+     "S0": 6,
+     "S1": 0,
+     "S2": 0,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 0
+    }
+   },
+   {
+    "id": "0108-01",
+    "hand": {
+     "S0": 0,
+     "S1": 1,
+     "S2": 1,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 0
+    },
+    "kev": {
+     "S0": 8.24,
+     "S1": 8.46,
+     "S2": 8.06,
+     "S3": 8.46,
+     "S4": 8.66,
+     "kausal": 1.0
+    },
+    "stichwort": {
+     "S0": 10,
+     "S1": 15,
+     "S2": 0,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 7
+    }
+   },
+   {
+    "id": "0112-01",
+    "hand": {
+     "S0": 1,
+     "S1": 0,
+     "S2": 1,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 1
+    },
+    "kev": {
+     "S0": 8.35,
+     "S1": 8.37,
+     "S2": 8.29,
+     "S3": 8.51,
+     "S4": 8.71,
+     "kausal": 0.34
+    },
+    "stichwort": {
+     "S0": 5,
+     "S1": 1,
+     "S2": 2,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 0
+    }
+   },
+   {
+    "id": "0305-01",
+    "hand": {
+     "S0": 0,
+     "S1": 1,
+     "S2": 0,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 0
+    },
+    "kev": {
+     "S0": 5.65,
+     "S1": 5.35,
+     "S2": 4.34,
+     "S3": 4.72,
+     "S4": 6.47,
+     "kausal": 0.09
+    },
+    "stichwort": {
+     "S0": 0,
+     "S1": 0,
+     "S2": 0,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 0
+    }
+   },
+   {
+    "id": "0575-01",
+    "hand": {
+     "S0": 0,
+     "S1": 1,
+     "S2": 0,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 0
+    },
+    "kev": {
+     "S0": 6.48,
+     "S1": 4.63,
+     "S2": 5.01,
+     "S3": 5.32,
+     "S4": 5.09,
+     "kausal": 0.71
+    },
+    "stichwort": {
+     "S0": 5,
+     "S1": 1,
+     "S2": 0,
+     "S3": 0,
+     "S4": 0,
+     "kausal": 5
+    }
+   }
+  ]
+ },
+ "urteile": {
+  "WK0": {
+   "alle_abschnitte_bewertet": false,
+   "laeufe_hoechstens_600s": true,
+   "WK0": false
+  },
+  "WK1": true,
+  "WK2": false
+ }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "claude-gauntlet-v2-runde6-ergebnis-20260912",
+  "time": "2026-09-12T02:54:28+02:00",
+  "time_kind": "document",
+  "author": "Claude (claude-primary)",
+  "topic": "operations",
+  "status": "checked",
+  "title": "Gauntlet Runde 6: berechtigter PATCH zu M1.4 (Paarnormierung), Kalibrierung ok",
+  "question": "Haelt M1.4 der Jury stand?",
+  "action": "rounds/006/patches.md (10 Urteile, 3 Richter gpt-6-astra effort high), coordination/m14-bahnprior-bunker-20260912.md (Qwen-Gegenlesung mit Prüfvermerk)",
+  "result": "Kalibrierung bestanden (K1 3×FAIL mit korrekter Algebra: 2π kürzt sich, a0 = cH0/2π ist keine Unruh-Folgerung). M1.4 FAIL von codex-jury-a (D3/D4): Importance-Gewicht w = p(a)·a ohne paarweise Normierung Z(s_i) gewichtet Paare statt Bahnen um; oberhalb des Knicks ∝ s_i^(1−β). Einwand geprüft und richtig. Qwen-Gegenlesung hatte ihn übersehen (Prüfvermerk). 0 hoch, 0 runter.",
+  "meaning": "M1.4-Zahlen (+0,028; 0,988) hinfällig. Korrigierter Lauf claude-m1-bahnprior-20260912-c gestartet: V1 normierte Gewichte (200 Kataloge, Z per MC K=4096), V2 bedingter Sampler je Paar (100 Kataloge, 16 Vorschläge), plus Richtungsdiagnose. Danach M1.5. Marken heute nach Runde 6: 1.726.339 (Grenze 2 Mio; nächste Runde erst nach Nutzerwort oder Tageswechsel).",
+  "sources": [
+    {
+      "path": "gauntlet/new-runs/entwicklung-v2-20260911/rounds/006/patches.md",
+      "sha256": "97d0599942b8f97c87a622bdb545c2ad5908a8365a0b38471c2a8c87c5fa3e63"
+    }
+  ],
+  "recorded_at": "2026-09-12T03:52:52.935274+00:00"
+}

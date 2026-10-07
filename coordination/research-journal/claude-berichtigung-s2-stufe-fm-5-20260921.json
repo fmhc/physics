@@ -1,0 +1,32 @@
+{
+  "id": "claude-berichtigung-s2-stufe-fm-5-20260921",
+  "time": "2026-09-21T09:46:15.595796+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Fable 5.1)",
+  "topic": "feldmodell",
+  "status": "reported",
+  "title": "Berichtigung: \"S2 erfuellt\" bei FM-5 gilt nur nach Lektuerehilfe; blind reproduziert sind omega_B(80), omega_dom(40/80) und die zwei obersten Zielfrequenzen, die drei unteren erst nach Runde 5",
+  "question": "Wie viel von \"S2 erfuellt\" bei FM-5 stammt aus dem Vertragstext und wie viel aus unseren Rueckmelderunden?",
+  "action": "Methodik-Review 21.09. (Fable, HOCH) an der Quelle geprueft: s2-s3-fm-5-20260921/s2-qwen/AUFTRAG-QWEN-RUNDE5-FM-5.txt zitiert Vertrag 2.4/2.3 und sagt dem fremden Haus, an welchen Aufrufstellen S_newt = 200 statt K_korr = 12 gilt; AUFTRAG-QWEN-RUNDE3-FM-5.txt gibt die Herleitung des exakt-1,0-Fehlers in G_vir mit. Das Papier S2-S3-FM-5.md nennt Runde 5 selbst einen \"Lesefehler\" und fuehrt sie in der Rundentabelle als \"technischen Punkt\". Keine Datei veraendert; diese Berichtigung tritt neben das Papier.",
+  "result": "Dreistufiges Urteil (Nachtrag 25): BLIND (Runde 1 ohne Rueckmeldung): sieben Ziffern am Startpunkt, Modellseite; NACH HANDWERK (Runden 2-4: Laengenfehler, Simpson-Faktor, transponiertes Produkt): omega_B(80) = 0,7153507615798309 auf 5,7e-15, omega_dom(40) und omega_dom(80) bitgleich, die zwei obersten Zielfrequenzen; NACH LEKTUEREHILFE (Runde 5): die drei unteren Zielfrequenzen 0,760/0,740/0,730 und damit 10.3 vollstaendig. Ohne Runde 5 waere 10.3 verfehlt (Runde 4: \"2 von 5\"). Zum Vergleich GF-3: erfuellt nach drei Handwerkshinweisen, Runde 4 mit korrigierter Codezeile woertlich, keine Laufzahl geleckt; V-4: erfuellt nach vier Runden mit nur Tracebacks - die einzige saubere.",
+  "meaning": "\"S2 erfuellt\" ohne Angabe der Stufe misst unser Debugging, nicht den Vertrag. Weitergereicht werden darf aus FM-5 weiterhin omega_B(80), aber mit dem Zusatz \"nach Handwerkshinweisen, ohne Lektuerehilfe\"; die drei unteren Zielfrequenzen nicht als S2-belegt. Der Vertragsvorschlag S2-X (Einschussprobe: Runde 1 ohne Rueckmeldung fuer GF-3 und FM-5 wiederholt) misst diese Stufe direkt.",
+  "sources": [
+    {
+      "path": "coordination/methodik-review/s2-s3-fm-5-20260921/s2-qwen/AUFTRAG-QWEN-RUNDE5-FM-5.txt",
+      "sha256": "26158dc33390a59ee3fb51e72612e2c7cd7f55a7ee11ae03ee8b64062fecdd56"
+    },
+    {
+      "path": "coordination/methodik-review/s2-s3-fm-5-20260921/s2-qwen/AUFTRAG-QWEN-RUNDE3-FM-5.txt",
+      "sha256": "6a218602698a042bc23850b3dfc2c75aa66b805dff666738779003df229e156b"
+    },
+    {
+      "path": "coordination/methodik-review/s2-s3-fm-5-20260921/S2-S3-FM-5.md",
+      "sha256": "a9dd222cabeed62db22ec1ae2c58cd37620d58aee26763da6b87aedffb92887f"
+    },
+    {
+      "path": "coordination/methodik-review/review-20260921/REVIEW-fable-20260921.md",
+      "sha256": "88a198b58807a68cb1379c83e2f673a09d87887c468057c3aca4bc2186297f3a"
+    }
+  ],
+  "recorded_at": "2026-09-21T09:46:15.595796+00:00"
+}

@@ -1,0 +1,132 @@
+{
+ "urteile": {
+  "LD0": {
+   "urteil": "eingetroffen",
+   "werte": {
+    "a": true,
+    "b": true,
+    "c": true,
+    "gitter": {
+     "knoten": 216,
+     "soll": 216,
+     "grad_min": 4,
+     "grad_max": 4,
+     "kanten_nur_A_B": true,
+     "bfs_konflikte": 0,
+     "bfs_farbe_gleich_untergitter": true,
+     "schluessel_abweichungen": 0
+    },
+    "fest": {
+     "regel": "B/S01234",
+     "muster": 68,
+     "fest": 68,
+     "einordnung_still": 68
+    },
+    "kunst_faelle": 7,
+    "kunst_soll": 7
+   }
+  },
+  "LD1": {
+   "urteil": "nicht eingetroffen",
+   "werte": {
+    "gleiter": 0,
+    "regeln_mit_gleitern": 0,
+    "regeln": [],
+    "bahnen": 0
+   }
+  },
+  "LD2": {
+   "urteil": "nicht auswertbar",
+   "vermerk": "keine Gleiter gefunden (bedingte Vorhersage)",
+   "werte": {}
+  },
+  "LD3": {
+   "urteil": "nicht auswertbar",
+   "vermerk": "keine Gleiter gefunden (bedingte Vorhersage)",
+   "werte": {}
+  }
+ },
+ "urteile_nur_stufe1": {
+  "LD1": {
+   "urteil": "nicht eingetroffen",
+   "werte": {
+    "gleiter": 0,
+    "regeln_mit_gleitern": 0,
+    "regeln": [],
+    "bahnen": 0
+   }
+  },
+  "LD2": {
+   "urteil": "nicht auswertbar",
+   "vermerk": "keine Gleiter gefunden (bedingte Vorhersage)",
+   "werte": {}
+  },
+  "LD3": {
+   "urteil": "nicht auswertbar",
+   "vermerk": "keine Gleiter gefunden (bedingte Vorhersage)",
+   "werte": {}
+  }
+ },
+ "nebenlesarten": {},
+ "agenten": {
+  "A1": true,
+  "A2": true,
+  "A3": true,
+  "A4": "nicht eingetroffen",
+  "A5": "nicht auswertbar",
+  "A6": "nicht auswertbar",
+  "A7": "nicht auswertbar",
+  "A8": "nicht auswertbar"
+ },
+ "kontrollen": {
+  "Z0": true,
+  "Z1": true,
+  "Z2": true,
+  "Z3": true,
+  "stufe1_vollstaendig": true,
+  "stufe2_regeln": 224,
+  "stufe2_soll": 224,
+  "stufe2_uebersprungene_saaten": 25913,
+  "sperre": false
+ },
+ "zusammenfassung": {
+  "klassen_stufe1": {
+   "Gleiter": 0,
+   "Wachstum": 256,
+   "offen": 10,
+   "Oszillator": 120,
+   "Stilleben": 103,
+   "ausgestorben": 23
+  },
+  "klassen_stufe2": {
+   "Gleiter": 0,
+   "Wachstum": 22,
+   "offen": 43,
+   "Oszillator": 85,
+   "Stilleben": 61,
+   "ausgestorben": 13
+  },
+  "gleiter": 0,
+  "gleiter_stufe1": 0,
+  "saaten_stufe1": 24576,
+  "saaten_stufe2": 189127,
+  "zeit_stufe1_s": 92.6,
+  "zeit_stufe2_s": 544.9,
+  "stufe1_saatklassen": {
+   "tot": 2996,
+   "still": 6351,
+   "osz": 2843,
+   "gleiter": 0,
+   "gross": 12288,
+   "offen": 98
+  },
+  "stufe2_saatklassen": {
+   "tot": 43740,
+   "still": 96078,
+   "osz": 47181,
+   "gleiter": 0,
+   "gross": 479,
+   "offen": 1649
+  }
+ }
+}

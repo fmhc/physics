@@ -1,0 +1,85 @@
+\paragraph{Prescribed finite phase coherence.}
+A fluctuating drive phase can be specified without identifying it with
+thermal noise. Let the finite-duration source be
+$S_\theta(t)=e^{i\theta(t)}S_d(t)$, where the initial phase is uniform and
+independent and $\theta(t)-\theta(\Delta)=\sqrt{2D}\,B_{t-\Delta}$ during
+the pulse, with $B$ a standard real Wiener process independent of that initial phase. Then
+$\mathbb E e^{i[\theta(t)-\theta(s)]}=e^{-D|t-s|}$ and the anomalous
+source correlation vanishes. Every realization retains the source's
+$L^2$ budget. This does not fix the work delivered to the field.
+
+For the fixed finite real-linear response used above, let $m(\delta)$ denote
+the phase-averaged source work when the \emph{entire} prescribed source
+is multiplied by $e^{i\delta(t-\Delta)}$. Its phase-diffusion mean obeys
+\[
+ m_D=\int_{-\infty}^{\infty}
+ \frac{D}{\pi(D^2+\delta^2)}\,m(\delta)\,d\delta,
+ \qquad D>0.
+\]
+This follows from the characteristic function of the Cauchy distribution
+and the quadratic response kernel. At finite time the finite-dimensional
+propagator is bounded; compact source support and finite $L^2$ norm give
+absolute integrability and justify interchanging the integrals.
+The same weighting convolves the finite-pulse spectral power and preserves
+its integrated weight. Since the weight is even, the odd detuning response
+cancels. The positive local slope found above therefore does not determine
+whether phase diffusion increases or decreases mean work. Nor does a single
+symmetric detuning pair settle this question.
+
+For computation of this mean work, the lag factor $e^{-D(t-s)}$ can instead
+be included in the auxiliary generator $A-DI$, evaluated for two genuine
+source quadratures. With state coordinates $(q,p)$, both equations acquire
+$-D$ terms; the work output remains $p+i\omega q$, although now
+$\dot q=p-Dq$. These auxiliary states are not stochastic field trajectories,
+and their endpoint energies are not ensemble energies. This reduction
+concerns the specified work observable and does not insert physical friction
+into the original field equations.
+
+A Cauchy-distributed constant detuning and a Wiener phase process share the
+relevant two-point statistics but not their trajectory laws. Their quadratic
+response means agree; the auxiliary damped endpoint is a different object.
+Ideal Wiener phase also has no finite ultraviolet cutoff. Thus this identity
+is a finite-model interpretation, not a continuum certificate, a temperature
+assignment, or a derivation of an environmental bath. Physical bandwidth and
+coupling require separate specification before experimental use.
+\paragraph{One finite-coherence comparison.}
+We fixed $D=1$, corresponding to one pulse duration for the exponential
+phase-correlation time, and compared it with $D=0$. The two genuine
+quadratures of each auxiliary response were evolved on the same two
+discretizations as the detuning test. The finer grid gives mean source
+works $m_0=1.133373236\times10^{-4}$ and
+$m_1=2.173314375\times10^{-4}$. Their difference,
+$1.039941139\times10^{-4}$, is positive on both grids and exceeds the
+predeclared diagnostic guard $6.63\times10^{-9}$. The undiffused adapter
+reproduces the earlier work values, and the modified auxiliary balances
+include $-2D$ times each quadratic form. Free and restoring-oscillator
+controls test both the work output and the placement of damping in both
+auxiliary coordinates.
+
+This is an increase in mean work supplied by the prescribed external
+source at fixed source $L^2$ budget. It is not a gain in energetic efficiency
+or a demonstration of self-sustained oscillations. The guard combines
+grid differences and implementation residuals; it is not a certified
+error bound, and space and time resolution change together. The nominal
+profile, finite boundary and linear-response limitations persist. Only
+one nonzero diffusion constant is compared: no noise optimum, temperature,
+nonlinear formation or lifetime conclusion is established.
+The same source-output reduction with output $p$ gives an additional
+observable. In the undamped physical finite model, the rotating quadratic
+generator satisfies $\dot H=2\operatorname{Re}\langle p,S_\theta\rangle$.
+For zero initial perturbation, its ensemble endpoint mean therefore equals
+the half-sum of the two auxiliary integrals of this \emph{original} source
+rate. It does not equal the auxiliary endpoint $H$. Extracting these
+already stored integrals gives, on the finer grid,
+$\mathbb E H(T)=2.09020168\times10^{-4}$ for $D=0$ and
+$2.93069596\times10^{-4}$ for $D=1$. Both grids show this approximately
+$40\%$ increase; this is a descriptive follow-up without a new certified
+comparison bound or field integration.
+
+This rotating quadratic generator need not be positive, and its global
+value does not measure energy localized near the Q-ball. Full laboratory
+endpoint energy additionally requires the physical ensemble charge,
+including the anomalous state-exchange contribution. The latter is not
+given by the exchange evaluated on the damped auxiliary states. Thus
+neither the source-work increase nor this rotating-generator mean establishes
+laboratory energy retention or improved confinement.

@@ -1,0 +1,28 @@
+{
+  "id": "claude-synchronisation-schwelle-20260912",
+  "time": "2026-09-12T06:03:09+02:00",
+  "time_kind": "completed",
+  "author": "Claude (claude-primary, TS440)",
+  "topic": "micro",
+  "status": "checked",
+  "title": "Synchronisationsschwelle der Punkt-Wellen-Familie: Kopplung g entscheidet, Verstimmung nicht; g = 0,7 liegt an der Schwelle",
+  "question": "Bricht Frequenzverstimmung die Synchronisation der inneren Oszillatoren, und welche Groesse setzt die Schwelle?",
+  "action": "24 neue Laeufe (D=3, N=4, physics.py unveraendert; equal/detuned x g 0/0,35/0,7/1,0 x drei Seeds), T=12, h=0,00125 (konvergiert gegen h=0,005), Ordnungsparameter R, exakte Paarkopplung U, Abnahme dH/H <= 1e-5 je Lauf.",
+  "result": "Verstimmt: R spaet 0,55 (g=0), 0,60 (0,35), 0,90 (0,7), 0,98 (1,0); gleich: 0,47 / 0,46 / 0,79 / 0,99. Bei g<=0,35 keine Ordnung und <U> ~ 0; bei g=0,7 seedabhaengig (Seed 13 mit R0=0,23 nur 0,41 bzw. 0,75); bei g=1,0 vollstaendig. <U> -0,25 (0,7) bis -2,7 (1,0), r_min bis 0,79. Abnahme 18/24; alle g=1,0-Laeufe technisch nicht abgenommen (dH bis 1e-4).",
+  "meaning": "Ausgang B: Synchronisation ist Kopplungs-, nicht Frequenzphaenomen; Schwelle zwischen g=0,35 und 0,7 als Fenster, in dem die Anfangsphasen entscheiden. Der Standardwert g=0,7 aller Punkt-Wellen-Laeufe liegt an dieser Schwelle, was die uneinheitlichen Bindungsbefunde erklaert. Keine Bindungsmessung; N=4, T=12.",
+  "sources": [
+    {
+      "path": "coordination/synchronisation-warp-archive-20260912.md",
+      "sha256": "4291c80a7d8662dd9831de3c3b6e3c2e88cf3bf2efd5d6456cefccda647ddd62"
+    },
+    {
+      "path": "coordination/claude-synchronisation-20260912/runs/e/ERGEBNIS.json",
+      "sha256": "5776b2bc05ef9f53309c849e9ba05462257e474a5e20f56db6d1169344613254"
+    },
+    {
+      "path": "coordination/claude-synchronisation-20260912/run_sync2.py",
+      "sha256": "611ecd0dd9ed5260533edf06f3be9766ed3e488fc89b7d537476c3f87dffcd49"
+    }
+  ],
+  "recorded_at": "2026-09-12T04:03:09.295162+00:00"
+}

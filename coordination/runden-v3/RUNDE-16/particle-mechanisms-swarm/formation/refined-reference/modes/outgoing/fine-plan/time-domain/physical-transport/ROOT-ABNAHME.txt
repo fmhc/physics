@@ -1,0 +1,34 @@
+Root-Ausgabeabnahme vor Implementation/Ergebnissen, 2026-10-03
+Plan+Hülle+V2 gelten unverändert. Dies präzisiert nur Vollständigkeit.
+
+Eingaben: genau18 physische Arme =2 Baselines(dt) +
+2Phasen*2Amplituden*2Vorzeichen*2dt. Jede Datei und gemeinsame Referenz
+müssen gebunden sein. Keine doppelte Baseline als unabhängiges Ergebnis.
+Pro Arm beide Abtastungen(.1,.2),2Fenster,2Schalen,3Größen E/Q/G.
+Das sind432 Schalenmessungen; äquivalent verschachtelte vollständige
+Tabellen sind zulässig. Gesichtsdiagnosen:18*2*2*3Gesichter*3Größen=648.
+
+Paarbeobachtungen:4Gruppen(Phase,|epsilon|)*2dt, daraus192Schalen-
+und288Gesichtsdiagnosen einschließlich beiderAbtastungen/Fenster.
+Vergleich/Klassifikation:4Gruppen*2Fenster*2Schalen*3Größen=48
+Schalenentscheidungen mit72 zugehörigen Gesichtreserven. Nur16 davon
+betreffen Energie,16 Ladung,16 E-omegaQ. Kein globaler Mehrheits-Pass.
+Im Code darf die Struktur anders gruppiert sein, aber kein Element fehlen.
+
+Grundabnahme: alle Roharme/Baselines und Paare berichten, nicht nur
+positive oder aufgelöste. Numerische Nullnenner als unbestimmt,
+keine stillenNaNs, NumPy-Skalare vorJSON in Python-Typen überführen.
+Bindungs-/QA-/Ressourcenfehler INCOMPLETE; vollständig unaufgelöste
+Physik bleibt vollständiges Ergebnis. Feste Grenzen nicht nachjustieren.
+
+Zeitregel: lokale physischeE/Q/G und Flüsse zuerst auf gespeicherten
+Zeitpunkten berechnen, danach skalareEndpunktinterpolation/Quadratur.
+Nicht zuerst Felder interpolieren und quadratischeObservable daraus neu
+bilden. Zeitdifferenz der Schalenenergie mit derselben Abbildung.
+Jpos/Jneg auf ergänztem signiertemFluss, nicht getrennteInterpolationen.
+
+Ein positiver Paar-Mehrtransport ist eine Differenz echter Messgrößen,
+kein Beweis dass jederArm positiv strahlt. RoheArme für diese Unterscheidung
+mitlesen. EndlicherTransport beweist keine stationäreAbstrahlung,
+Irreversibilität, Kühlzeit oder Langzeitstabilität. Keines der älteren
+UNRESOLVED-Labels wird durch diesen anderen Test ersetzt.

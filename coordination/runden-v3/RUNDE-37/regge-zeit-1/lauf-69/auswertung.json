@@ -1,0 +1,394 @@
+{
+  "hinweis": "Urteile nach PLAN.md Abschnitt 7 (mechanisch)",
+  "urteile": {
+    "Z0": {
+      "urteil": "eingetroffen",
+      "werte": {
+        "teilpruefungen": {
+          "quelle_4d": true,
+          "d3_ausserhalb": true,
+          "d3_weltlinie": true
+        },
+        "quelle_auf_nullraum_rel_max_je_L": {
+          "16": 5.268078444615273E-16,
+          "24": 5.468376988082332E-16,
+          "32": 5.730793628137536E-16
+        },
+        "d3_ausserhalb_max_rel": 1.3883760067791439E-14,
+        "d3_weltlinie_rel_abw": 5.329070518200751E-15,
+        "d3_eps_weltlinie": 25.13274122871821,
+        "d3_soll": 25.132741228718345,
+        "d3_quelle_auf_nullraum": 4.2367047432750185E-16
+      },
+      "vermerk": "4D: Quelle auf dem analytischen Nullraum (4 Eichmoden + Hyperdiagonale) hoechstens 5,7e-16 (L = 16/24/32). 3D (L3 = 32, komplexer Schritt): ausserhalb der Weltlinie 1,4e-14, an der Weltlinie 25,13274122871821 gegen 8 pi = 25,13274122871835 (5,3e-15). Torus-korrigiert: ohne Korrektur tragen alle Zeitkanten den Hintergrund -8 pi G M/L3^2 (9,8e-4 relativ)."
+    },
+    "Z1": {
+      "urteil": "nicht eingetroffen",
+      "werte": {
+        "gamma_je_r": {
+          "6.0": 1.0872270030956324,
+          "7.0": 1.05642658665781,
+          "8.0": 1.0396771558969347,
+          "9.0": 1.0297362895136413,
+          "10.0": 1.0233834160633328,
+          "11.0": 1.0191380266816634,
+          "12.0": 1.016293129027678,
+          "13.0": 1.0145300247199738,
+          "14.0": 1.013775967857507
+        },
+        "max_abw": 0.08722700309563236,
+        "kondition_max": 1.5133398279275672,
+        "punkte": 9,
+        "kartenlesart_1_durch_naiv": {
+          "6.0": 0.8117893073961281,
+          "7.0": 0.866411369049226,
+          "8.0": 0.9002019692321427,
+          "9.0": 0.9222636597394409,
+          "10.0": 0.9374173940236561,
+          "11.0": 0.9481918883107227,
+          "12.0": 0.9559456618422604,
+          "13.0": 0.9613912699208693,
+          "14.0": 0.9648165797047692
+        },
+        "naiv": {
+          "6.0": 1.2318467253622385,
+          "7.0": 1.1541861472770956,
+          "8.0": 1.110861822323032,
+          "9.0": 1.0842886298724177,
+          "10.0": 1.066760662193094,
+          "11.0": 1.0546388471869101,
+          "12.0": 1.0460845630836797,
+          "13.0": 1.0401592268279163,
+          "14.0": 1.0364664341754957
+        },
+        "gamma_kinematisch_kalibriert": {
+          "6.0": 1.1337573171245876,
+          "7.0": 1.0858509489923562,
+          "8.0": 1.0601120021681156,
+          "9.0": 1.0449385104118227,
+          "10.0": 1.0352813738584312,
+          "11.0": 1.028845049355921,
+          "12.0": 1.024539650466727,
+          "13.0": 1.0218744963254185,
+          "14.0": 1.020735364216371
+        },
+        "ortskorrigiert": {
+          "6.0": 1.133757317122091,
+          "7.0": 1.0858509489899035,
+          "8.0": 1.060112002165688,
+          "9.0": 1.044938510409411,
+          "10.0": 1.0352813738560298,
+          "11.0": 1.0288450493535273,
+          "12.0": 1.0245396504643374,
+          "13.0": 1.0218744963230315,
+          "14.0": 1.0207353642139856
+        }
+      },
+      "vermerk": "gamma(r) faellt von 1,087 (r = 6) auf 1,014 (r = 14); innerhalb 2 % erst ab r = 11. Bei festem r unabhaengig von L (r = 6: 1,0874/1,0872/1,0872 fuer L = 24/32/64): Gittereffekt etwa +2,2/r^2, kein Torusrest. L = 64 (Bericht): 1,0038 bei r = 24, 1,0033 bei r = 28. Kinematisch kalibriert (Bericht) 1,134 bis 1,021."
+    },
+    "Z2": {
+      "urteil": "nicht eingetroffen",
+      "werte": {
+        "teilpruefungen": {
+          "r3_konstant": false,
+          "G_karte": false
+        },
+        "r": [
+          6.5,
+          7.5,
+          8.5,
+          9.5,
+          10.5,
+          11.5,
+          12.5,
+          13.5
+        ],
+        "r3_eps_korr": [
+          2.2340339934506894,
+          2.1653824171635274,
+          2.1241962853339458,
+          2.0976690465322694,
+          2.079793990247611,
+          2.0676236600566082,
+          2.0597312401708785,
+          2.055607553632892
+        ],
+        "r3_max_abw_vom_mittel": 0.058530651855672966,
+        "G_karte": 1.0552523866594785,
+        "G_karte_je_r": [
+          1.1170169967229124,
+          1.0826912085794065,
+          1.0620981426646603,
+          1.0488345232638507,
+          1.039896995121541,
+          1.033811830026053,
+          1.0298656200831968,
+          1.0278037768142083
+        ],
+        "alpha_2x2_mittel": 1.0195472137309431,
+        "alpha_2x2_je_r": {
+          "6.0": 1.0420596854556028,
+          "7.0": 1.030778445789705,
+          "8.0": 1.0235413842381336,
+          "9.0": 1.0186972745546827,
+          "10.0": 1.0153535938840836,
+          "11.0": 1.013032729090022,
+          "12.0": 1.0114839295325915,
+          "13.0": 1.0105981634072927,
+          "14.0": 1.0103797176263747
+        },
+        "r3_eps_roh": [
+          2.184092770347204,
+          2.0957516267457312,
+          2.0350563068872742,
+          1.9933411289724483,
+          1.9709882049687713,
+          1.9746269873092401,
+          2.0170310108196694,
+          2.1187329077452928
+        ]
+      },
+      "vermerk": "(a) r^3 delta eps(tau,x) faellt von 2,234 (r = 6,5) auf 2,056 (r = 13,5), Abweichung vom Mittel 5,9 %; (b) G_Karte = 1,055. Die Newton-Amplitude alpha (2x2) liegt bei 1,042 (r = 6) bis 1,010 (r = 14), Mittel 1,0195; L = 64: 1,0029 bei r = 24. Potentialprobe aus den Zeitkanten (Bericht, L = 64): f = 1,008 bis 1,003 fuer r = 6 bis 14."
+    },
+    "Z3": {
+      "urteil": "nicht eingetroffen",
+      "werte": {
+        "gamma_je_r": {
+          "7.0711": -29.488075390497823,
+          "8.4853": -29.481371328725857,
+          "9.8995": -28.999765633992475,
+          "11.3137": -28.237839005894116,
+          "12.7279": -27.233203854706684
+        },
+        "max_abw": 30.488075390497823,
+        "kondition_max": 670.0486553153212,
+        "punkte": 5,
+        "alpha_je_r": {
+          "7.0711": -0.39727920999899,
+          "8.4853": -0.3834182843798582,
+          "9.8995": -0.38396392121891443,
+          "11.3137": -0.3927773691591698,
+          "12.7279": -0.4088896346948902
+        }
+      },
+      "vermerk": "Mechanisch nach der eingefrorenen Regel geurteilt; der Wert ist nicht deutbar: Auf der Diagonale sind die beiden Zeilen der versklavten Kalibrierung fast parallel (Kondition 204 bis 828, unter der Sperrschwelle 1e3), gamma = -25 bis -29 ist ein Artefakt meiner Festlegungen [F3]/[F6], kein Messwert. Kinematisch kalibriert (Bericht): 0,82 (r = 7,1) bis 0,95 (r = 12,7); L = 64: 0,989 bei r = 28; naives Verhaeltnis 0,87 bis 0,96."
+    }
+  },
+  "geometrie": {
+    "flach_max_abs_eps": 1.7763568394002505E-15,
+    "weg_T_fehlerschaetzung": 7.549627589753527E-12,
+    "weg_T_betroffen": [
+      89,
+      88,
+      87,
+      86,
+      52,
+      51,
+      51,
+      50,
+      50,
+      50,
+      47,
+      47,
+      47,
+      47,
+      58
+    ],
+    "weg_K_gegen_T": 3.848773152033876E-12,
+    "winkel_gram_gegen_winkel": 2.220446049250313E-16
+  },
+  "kalibrierung_kontrollen": {
+    "N": {
+      "rnc_gegen_statisch_rel": 5.268189394332E-12,
+      "rnc_riemann_rel": 1.467845285991866E-16,
+      "verschiebung_rel": 2.050468262202996E-10,
+      "versklavung_rel": 0.5887512120363744,
+      "projektion_rel": 0.04564793489093868
+    },
+    "S": {
+      "rnc_gegen_statisch_rel": 9.504253112283219E-12,
+      "rnc_riemann_rel": 1.6238827952883478E-16,
+      "verschiebung_rel": 1.5767421634761494E-10,
+      "versklavung_rel": 0.4368732155405243,
+      "projektion_rel": 0.024843464953824126
+    }
+  },
+  "antwort_achse_einheit": {
+    "N_versklavt": {
+      "tx": [
+        -0.24999999999943628,
+        -0.2499999999981626
+      ],
+      "yz": [
+        1.2499999999991347,
+        1.249999999999135
+      ],
+      "tz": [
+        0.1250000000001006,
+        0.12499999999946376
+      ],
+      "xy": [
+        -0.6249999999995108,
+        -0.624999999999867
+      ]
+    },
+    "N_kinematisch": {
+      "tx": [
+        -9.251904797835664E-13,
+        5.057759766557979E-13
+      ],
+      "yz": [
+        1.0000000000003955,
+        1.0000000000003957
+      ],
+      "tz": [
+        4.811012699335038E-13,
+        -2.3438195828617836E-13
+      ],
+      "xy": [
+        -0.49999999999988326,
+        -0.5000000000004754
+      ]
+    },
+    "S_versklavt": {
+      "tx": [
+        1.250000000001466,
+        1.250000000000488
+      ],
+      "yz": [
+        -0.2500000000008491,
+        -0.25000000000084904
+      ],
+      "tz": [
+        -0.6250000000011993,
+        -0.6250000000007105
+      ],
+      "xy": [
+        0.12499999999933077,
+        0.12500000000235162
+      ]
+    },
+    "S_kinematisch": {
+      "tx": [
+        1.0000000000016949,
+        1.0000000000005598
+      ],
+      "yz": [
+        -1.0077355616644468E-12,
+        -1.0077355616644468E-12
+      ],
+      "tz": [
+        -0.5000000000008785,
+        -0.5000000000003112
+      ],
+      "xy": [
+        -1.1556172685445176E-12,
+        2.1011109518909166E-12
+      ]
+    }
+  },
+  "fixierung_kontrollen": {
+    "diagonalmode_rel": 4.602454142227786E-16,
+    "eichmode_rel": 5.53822931897635E-12,
+    "periodisch_F_rel": 1.359296387653002E-14,
+    "periodisch_F_ohne_rel": 1.0155821317352845E-14,
+    "reell_F_minus_k_rel": 8.711474232537355E-15,
+    "E_top_norm_min_stichprobe": 4.704746141256103
+  },
+  "hintergrund_kappa_diff": 0.00005130675885833824,
+  "kontrollen_je_L": {
+    "16": {
+      "quelle_auf_nullraum_rel_max": 5.268078444615273E-16,
+      "residuum_gleichung_rel_max": 4.499458327637827E-11,
+      "nullraum_residuum_rel_max": 1.267072696081993E-12,
+      "komplement_min_eigen_rel": 0.0008424649584928113,
+      "nullbasis_min_singulaer_rel": 0.14696453953477503,
+      "M_imag_rel_max": 1.7833198924203666E-12,
+      "M_hermitesch_rel_max": 3.5665894432768106E-12,
+      "eps_eichmode_rel_max": 5.135783222707523E-13,
+      "E_top_norm_min": 4.690415759828003,
+      "eps_imag_max": 1.092235548922863E-15,
+      "eps_real_max": 4.682028793882189,
+      "ds_tau_imag_max": 2.160832199310386E-15
+    },
+    "24": {
+      "quelle_auf_nullraum_rel_max": 5.468376988082332E-16,
+      "residuum_gleichung_rel_max": 1.0153484961467052E-10,
+      "nullraum_residuum_rel_max": 1.267072696081993E-12,
+      "komplement_min_eigen_rel": 0.00037653335895813196,
+      "nullbasis_min_singulaer_rel": 0.10521748131137916,
+      "M_imag_rel_max": 1.7833198924203666E-12,
+      "M_hermitesch_rel_max": 3.5665894432768106E-12,
+      "eps_eichmode_rel_max": 5.142943213685075E-13,
+      "E_top_norm_min": 4.690415759828003,
+      "eps_imag_max": 6.828174940392009E-16,
+      "eps_real_max": 4.683307967086812,
+      "ds_tau_imag_max": 4.7259868581417165E-15
+    },
+    "32": {
+      "quelle_auf_nullraum_rel_max": 5.730793628137536E-16,
+      "residuum_gleichung_rel_max": 1.805946308089573E-10,
+      "nullraum_residuum_rel_max": 1.267072696081993E-12,
+      "komplement_min_eigen_rel": 0.00021221745641163925,
+      "nullbasis_min_singulaer_rel": 0.08061818430034595,
+      "M_imag_rel_max": 1.7833198924203666E-12,
+      "M_hermitesch_rel_max": 3.5665894432768106E-12,
+      "eps_eichmode_rel_max": 5.143832714884956E-13,
+      "E_top_norm_min": 4.690415759828003,
+      "eps_imag_max": 5.451291452355001E-16,
+      "eps_real_max": 4.6836214599664565,
+      "ds_tau_imag_max": 9.196539178237332E-15
+    },
+    "64": {
+      "quelle_auf_nullraum_rel_max": 6.568167990716596E-16,
+      "residuum_gleichung_rel_max": 7.229417467883701E-10,
+      "nullraum_residuum_rel_max": 1.2679110979096423E-12,
+      "komplement_min_eigen_rel": 0.00005315538258311576,
+      "nullbasis_min_singulaer_rel": 0.041074944879949095,
+      "M_imag_rel_max": 1.7833198924203666E-12,
+      "M_hermitesch_rel_max": 3.5665894432768106E-12,
+      "eps_eichmode_rel_max": 5.147698038513505E-13,
+      "E_top_norm_min": 4.690415759828003,
+      "eps_imag_max": 3.3021942332253755E-16,
+      "eps_real_max": 4.683822250606356,
+      "ds_tau_imag_max": 4.538553369015402E-14
+    }
+  },
+  "kontrolle_3d": {
+    "winkel_gram_gegen_winkel": 1.1102230246251565E-16,
+    "weg_K_gegen_T": 3.709033080667723E-12,
+    "weg_T_fehlerschaetzung": 6.291411835945837E-12,
+    "flach_max_abs_eps": 1.7763568394002505E-15,
+    "kontrollen_loesung": {
+      "quelle_auf_nullraum_rel_max": 4.2367047432750185E-16,
+      "residuum_gleichung_rel_max": 8.36325177602489E-14,
+      "nullraum_residuum_rel_max": 3.7449083235205096E-16,
+      "komplement_min_eigen_rel": 0.001289079079494723,
+      "nullbasis_min_singulaer_rel": 0.30365196770095965,
+      "M_imag_rel_max": 4.440892098500625E-16,
+      "M_hermitesch_rel_max": 8.88178419700125E-16,
+      "eps_eichmode_rel_max": 9.224020405903866E-17,
+      "eps_imag_max": 2.111023249876829E-15,
+      "eps_real_max": 25.108197536112176,
+      "ds_tau_imag_max": 1.0221875541132978E-13
+    },
+    "hintergrund": [
+      -2.3022738650192492E-11,
+      -1.4459929077229887E-10,
+      1.9385107873106786E-10,
+      25.13274122858012,
+      3.533517956784211E-10,
+      1.66416698911667E-11,
+      6.229379431212467E-11
+    ],
+    "hintergrund_kappa_diff": 3.013654460971394E-10,
+    "zeit_gelenk": 3,
+    "eps_weltlinie": 25.13274122871821,
+    "soll_8piGM": 25.132741228718345,
+    "weltlinie_rel_abw": 5.329070518200751E-15,
+    "ausserhalb_max_rel": 1.3883760067791439E-14,
+    "roh_ausserhalb_max_rel": 0.000976562500000127,
+    "L3": 32,
+    "laufzeit_s": 0.21671366691589355
+  }
+}

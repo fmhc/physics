@@ -1,0 +1,24 @@
+{
+  "id": "claude-bucky-jojo-vertrag2-ergebnis-20260912",
+  "time": "2026-09-12T07:38:06+02:00",
+  "time_kind": "completed",
+  "author": "Claude (claude-primary; Ausfuehrung claude-x1 auf .69 GPU)",
+  "topic": "micro",
+  "status": "checked",
+  "title": "Vertrag 2 Bucky-Jojo: kein dynamisches Aufrollen in 80 Bahnen; Ausgang A (zwei Rasterpunkte mit chaotischen Kontrollen)",
+  "question": "Erzeugt ein durch innere Moden bezahlter Drehimpuls einen langen gekruemmten Aufenthalt einer Hooke-Kette, obwohl kein Ringminimum existiert?",
+  "action": "40 Starts x 2 h bis T=2000 als GPU-Batch (validierte Fassung), Ereigniskriterium und Drift-/Konvergenzabnahme wie eingefroren.",
+  "result": "0 Ereignisse in 80 Bahnen; D/Lc 0,93 bis 1,00, K max 2,83 (< 4,71). 6/8 Rasterpunkte voll abgenommen, 2/8 mit Atemkontrollen, die die Spaetzeit-Mittelwertkonvergenz verfehlen (chaotisch), bei bestandener Erhaltung und gleicher Ereignisklasse.",
+  "meaning": "Der energetische Ausschluss des Aufrollens (Geradestreckungsargument) wird dynamisch bestaetigt; die Umkehrung (Drehimpuls reisst) ist die verbleibende Frage (Morse-Kette). Registereintrag BJ1 offen.",
+  "sources": [
+    {
+      "path": "coordination/bucky-jojo-20260912/lauf-gpu/ERGEBNIS.json",
+      "sha256": "dd9f584390faeab54ff20e6dbdd79694536bf7781be575cf76d1ea3cf3b73b71"
+    },
+    {
+      "path": "coordination/vertraege-20260912/bucky-jojo-finite-dynamic-coiling-v1.json",
+      "sha256": "675c075567b84104b76be2d1971d4931054968b6e814fc3b0f7ecd03d2f63554"
+    }
+  ],
+  "recorded_at": "2026-09-12T05:38:07.142270+00:00"
+}

@@ -1,0 +1,52 @@
+{
+  "id": "claude-t4-4-s1-20260921",
+  "time": "2026-09-20T21:50:00+02:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5)",
+  "topic": "galaxies",
+  "status": "reported",
+  "title": "T4.4 endet mit T: die Eichkontrolle K1 reisst an einer Rundenzahl, die der Vertrag selbst zu kurz gesetzt hat",
+  "question": "Loest die eingefrorene SPARC-Auswahl (2681 Punkte, 144 Galaxien, ein globales a0) die tiefe Steigung kappa der Interpolationsfamilie G(y;q,s)=(1+y^-q)^s scharf genug auf, um den Frontiers-Wert 3/7 von dem MOND-Wert 1/2 zu trennen? Kennzahl war SD_boot(kappa_dach) mit den Schwellen 1/28 (Ausgang A, zusaetzlich |corr_a0|<=0,95) und 1/14 (Ausgang B).",
+  "action": "Lauf nach Vertrag t4-4-VERTRAG.md (sha256 41a7c459...) auf fmh@192.168.178.69, cuda:0 Quadro P5000, float64, unter gauntlet-gpu.lock, User-Unit fmhc-physics-t4-4-pruefe-20260921. Das Laufskript t4_4.py (2121 Zeilen) hat ein Claude-Subagent in eigenem Kontext allein aus dem Vertragstext geschrieben; der Vertragsautor keine Zeile (Vertrag 10.1). Reihenfolge nach Startsignal: Hashes, D1, Ziehung, dann K1. Nach der gerissenen K1 wurde nach Vertrag 7.4 nicht weitergerechnet. Die Ursache wurde mit einer ausdruecklich vertragsfremden Konvergenzdiagnose belegt (ursache_k1.py: dieselbe K1-Rechnung mit unveraendertem Code, nur mit 10 bis 200 Runden des Goldenen Schnitts).",
+  "result": "Ausgang T. K1 verfehlt: a0 = 1,30350801484015e-10 gegen den M4-Anker 1,3035080124157666e-10, relative Abweichung 1,8599e-9 bei einer Toleranz von 1e-9; sw haelt mit 2,5593e-10. Ursache bewiesen: mit 80 Runden (dem Wert des gebundenen Skripts) trifft dasselbe Skript den Anker exakt, relative Abweichung 0,0 in a0 und in sw; ab 50 Runden haelt K1. Vertrag 2.0 hatte A0_RUNDEN auf 40 gekuerzt und das mit einem falschen Satz begruendet (die Restklammer 2,054e-18 ist nicht unter der float64-Aufloesung von 2,9e-26; sie erlaubt bis zu 7,879e-9 relativen Fehler). Diese Diagnose stand mit allen Zahlen vor dem Lauf im Startsignal (L7) und wurde vom Ausfuehrenden unabhaengig gefunden. Zwei weitere Vertragsmaengel: N3 ist nicht herstellbar, weil die Formen R1 und R2 nirgends als Formel stehen (vor dem Lauf nach 11.5 gefuellt, Startsignal L8); und die Ziehvorschrift in 2.5 stammt entgegen ihrer Behauptung nicht aus dem gebundenen Skript, das mit torch.randint zieht statt mit numpy default_rng - gemessene Folge: Vielfachheiten des ersten Zuges {0:51,1:56,2:26,3:8,4:3} statt der in 4.3 zitierten {0:52,1:56,2:23,3:10,4:3}. Gehalten haben vor dem Abbruch: beide Hashes von pruefdaten.npz, D1 = 0, 2681 Punkte, 144 Galaxien, kein Zug unter m_min = 25 (Minimum 80), und die exakte Belegungsstatistik aus 4.3 (erwartet 91,210 +- 3,744, gemessen 91,133 +- 3,541). SD_boot, corr_a0, SD_boot^{a0fix}, kappa_dach, N1, N2 und die Kontrollen K4, K5, K7, K8 sind NICHT gerechnet worden.",
+  "meaning": "Die Frage des Vertrags ist unbeantwortet: es gibt aus diesem Lauf keinen Wert fuer kappa, keine Streuung und keine Korrelation zu a0. T4.3 (Gold) und T4.2 (Bronze) sind unberuehrt; dieser Lauf kippt T4.3 nicht und stuetzt es nicht, und ob ein spaeteres Ergebnis auf T4.3 wirkt, entscheidet die Jury nach S2 und S3, nicht dieser Lauf. Nicht gebucht, Runde 022 eingefroren, keine Registerwirkung (Vertrag 1.4), keine Jury (7.5). Positiv ist der Nachweis zu Vertrag 2.8: ein Skript, das allein aus dem Vertragstext geschrieben wurde, trifft den M4-Anker bei 80 Runden bitgenau - Zielfunktion, Gewichtskonvention, Formfamilie und das Lesen des Auszugs sind aus dem Text herstellbar. Keiner der drei Maengel wurde vom S0-Fremdreview gefunden, obwohl DeepSeek die Erreichbarkeitsrechnung in allen Schritten nachgerechnet hat: ein Vertrag kann arithmetisch geprueft und trotzdem unausfuehrbar sein. Es wurde nichts nachgebessert, keine Schwelle verschoben und kein zweiter Lauf gestartet; der Vorschlag fuer Fassung 2 (Rundenzahlen zurueck auf 80/60 mit gerechneter Begruendung, N3 mit Formel oder gestrichen, Herkunftsbehauptung in 2.5 korrigiert, eine zweite nach aussen zeigende Kontrolle) liegt als eigener Text vor. Zitiersperre bis S2 durch ein fremdes Haus (Vertrag 10.3).",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260921/t4-4-lauf/BERICHT-T4-4.md",
+      "sha256": "7f72156e651185d060a85cf07224a94d78750e66cc4e70a3bf39d696598ab840"
+    },
+    {
+      "path": "coordination/vertraege-20260921/t4-4-lauf/PRUEFE-T4-4.json",
+      "sha256": "8e0275d40c22413329557a33665e067cc821ba8257c59b45eb197579f53c5288"
+    },
+    {
+      "path": "coordination/vertraege-20260921/t4-4-lauf/URSACHE-K1.json",
+      "sha256": "b81b47afeb1ea1dc25fc938bf9128c2aa6e0d7e9fecd9cf818a899c73b1d6462"
+    },
+    {
+      "path": "coordination/vertraege-20260921/t4-4-lauf/t4_4.py",
+      "sha256": "307b7f1f8173d519b146f6a0531bcf3062116eb6371efee3e473d683d5244fc2"
+    },
+    {
+      "path": "coordination/vertraege-20260921/t4-4-VERTRAG.md",
+      "sha256": "41a7c459aa5d7a3f3064a813542db57ef9ee2a27805382034bc90e0fea83f70d"
+    },
+    {
+      "path": "coordination/vertraege-20260921/REVIEW-t4-4.md",
+      "sha256": "4bf39a98402c7f529a3bb83d51d8f3c0b579725f8e601637a4feaf77f161637f"
+    },
+    {
+      "path": "coordination/vertraege-20260921/startsignal-t4-4.txt",
+      "sha256": "b797a5f14f43a705ac71e80e9bf6e2108dd1139deb368df44ad07b4c5061e3a8"
+    },
+    {
+      "path": "coordination/vertraege-20260921/VORSCHLAG-T4-4-FASSUNG2.md",
+      "sha256": "b2025be88d548e1327d19b771fc112bf5009bbee975b5458f5f5a44b374942ec"
+    },
+    {
+      "path": "coordination/analyse-literatur-20260920/EINORDNUNG.md",
+      "sha256": "143304ab262a6c8113af1771fa968d2e72bb9c231baacb8bfde0744b6bb9e860"
+    }
+  ],
+  "recorded_at": "2026-09-20T20:57:21.103169+00:00"
+}

@@ -1,0 +1,52 @@
+KF-4 kf4.py v1 (2026-09-30, KF-4, ungetestet), Unterbefehl rauch, Start 2026-09-30T01:11:55+00:00 auf Quadro P4000, torch 2.5.1+cu121
+g = 0.002, omega^2 = 0.7, Kante 1 - omega = 0.16334, Resonanz 1.4937, T_MESS 0.25
+Zeitplan: t_vor 5.0, t_an 10.0, t_halt je Lauf, t_ab 10.0, t_frei 20.0, t_ende 65.0; Box L 123.2
+Dauer [s]: grob 7.4, fein 10.0
+R_starr bei k = 0, v = 0 (muss QG-1 geben: A 0,2227, C 1): A 0.2227, C 1.0000
+Monopol-Soll je Phi0 (dS/S, domega/omega): A (-3.5642, +0.5918), C (+0.0000, +1.0000)
+
+Bewegte Laeufe (fein; in Klammern grob):
+  Lauf | R_mess (grob) | R_starr | D1 (grob) | D1_sin | D2 | W1 | a_com | Gamma | dQ_kern | a_mittel | ring_res (Omega) | ring_kante | ring_rms
+   0 A lam 4 v 0.4500 Om 0.7915 g 2e-03 | -0.1271 (-0.1279) | -0.0972 | 1.859e-03 (1.855e-03) | -6.89e-04 | 4.395e-05 | 5.756e-04 | 2.007e-04 | 9.266e+00 | 2.643e-05 | -3.676e-07 | 3.769e-05 (1.5034) | 3.341e-06 | 2.645e-05
+   1 C lam 4 v 0.4500 Om 0.7915 g 2e-03 | -0.0127 (-0.0131) | -0.0537 | 1.398e-03 (1.419e-03) | -8.53e-04 | 4.053e-05 | 1.205e-04 | 2.417e-05 | 5.784e+01 | 1.097e-05 | 9.724e-07 | 3.148e-05 (1.5083) | 4.694e-06 | 2.114e-05
+   2 0 lam 4 v 0.4500 Om 0.7915 g 0e+00 | -0.0001 (-0.0004) | - | 6.869e-06 (2.759e-05) | -5.38e-06 | 3.928e-05 | 8.354e-06 | 3.541e-07 | 1.940e+01 | 1.931e-08 | 1.162e-06 | 4.499e-05 (1.4997) | 2.776e-06 | 3.077e-05
+   3 A lam 4 v 0.4500 Om 0.7915 g 4e-03 | -0.1270 (-0.1276) | -0.0972 | 3.720e-03 (3.717e-03) | -1.37e-03 | 5.355e-05 | 1.155e-03 | 4.010e-04 | 9.277e+00 | 1.056e-04 | -4.460e-06 | 3.060e-05 (1.5038) | 1.040e-05 | 2.374e-05
+   9 A lam 4 v 0.6654 Om 1.4000 g 2e-03 | -0.2970 (-0.2954) | -0.3542 | 2.316e-03 (2.315e-03) | -1.58e-03 | 2.166e-05 | 1.010e-03 | 4.689e-04 | 4.938e+00 | 2.891e-05 | 8.889e-07 | 4.325e-04 (1.4907) | 3.991e-05 | 2.917e-04
+  10 A lam 4 v 0.6783 Om 1.4500 g 2e-03 | -0.3151 (-0.3136) | -0.3877 | 2.409e-03 (2.397e-03) | -1.69e-03 | 2.229e-05 | 1.072e-03 | 4.971e-04 | 4.846e+00 | 2.765e-05 | 1.010e-06 | 5.012e-04 (1.4903) | 4.895e-05 | 3.356e-04
+  11 A lam 4 v 0.6892 Om 1.4940 g 2e-03 | -0.3314 (-0.3306) | -0.4184 | 2.493e-03 (2.472e-03) | -1.80e-03 | 1.788e-05 | 1.130e-03 | 5.226e-04 | 4.770e+00 | 2.646e-05 | 1.112e-06 | 5.176e-04 (1.4926) | 6.882e-05 | 3.520e-04
+  12 A lam 4 v 0.7001 Om 1.5400 g 2e-03 | -0.3489 (-0.3492) | -0.4517 | 2.563e-03 (2.537e-03) | -1.92e-03 | 1.755e-05 | 1.195e-03 | 5.499e-04 | 4.661e+00 | 2.517e-05 | 1.203e-06 | 4.892e-04 (1.4956) | 7.249e-05 | 3.407e-04
+  13 A lam 4 v 0.7136 Om 1.6000 g 2e-03 | -0.3725 (-0.3747) | -0.4966 | 2.615e-03 (2.588e-03) | -2.06e-03 | 1.606e-05 | 1.284e-03 | 5.868e-04 | 4.456e+00 | 2.343e-05 | 1.280e-06 | 3.982e-04 (1.4952) | 6.620e-05 | 2.787e-04
+
+Paarvergleich A gegen C (fein, gleiche lambda und v). Gamma = D1 / a_com = Dehnung je Schwerpunktbeschleunigung.
+  lambda v Omega | Gamma_A/Gamma_C | (D1_A/D1_C)^2 | dQ-Ueberschuss A/C | D1 Kontrolle | R Kontrolle | lin D1 A, C (Soll 2) | lin dQ A, C (Soll 4) | L3 D1 A, C | L3 R A, C
+  4 0.4500 0.7915 | 0.160 | 1.7684 | 2.412 | 6.869e-06 | -9.17e-05 | 2.001, nan | 4.00, nan | ok, ok | ok, ok
+  Vorhersage P3a (Vorzeichen R_mess = Vorzeichen R_starr, |R_starr| > 0,1): 0 von 0
+  Vorhersage P3b (|R_mess/R_starr - 1| <= 0,2 bei Omega < 0,5): 0 von 0
+  Vorhersage P4 (Gamma_A/Gamma_C > 3 bei Omega < Kante): 0 von 0
+
+Spitze A lambda 4 ring_res (fein): Omega 1.4940, Wert 5.176e-04, Verhaeltnis zum groessten Wert bei |dOmega| >= 0,04: 1.03
+Spitze A lambda 4 ring_res (grob): Omega 1.4940, Wert 4.745e-04, Verhaeltnis zum groessten Wert bei |dOmega| >= 0,04: 1.04
+Spitze A lambda 4 dQ_kern (fein): Omega 1.4000, Wert 2.891e-05, Verhaeltnis zum groessten Wert bei |dOmega| >= 0,04: 1.05
+Spitze A lambda 4 dQ_kern (grob): Omega 1.4000, Wert 2.922e-05, Verhaeltnis zum groessten Wert bei |dOmega| >= 0,04: 1.04
+Spitze A lambda 4 D1 (fein): Omega 1.6000, Wert 2.615e-03, Verhaeltnis zum groessten Wert bei |dOmega| >= 0,04: 1.02
+Spitze A lambda 4 D1 (grob): Omega 1.6000, Wert 2.588e-03, Verhaeltnis zum groessten Wert bei |dOmega| >= 0,04: 1.02
+  Verlauf A lambda 4 (fein): 0.792: ring 3.77e-05, dQ 2.64e-05; 1.400: ring 4.32e-04, dQ 2.89e-05; 1.450: ring 5.01e-04, dQ 2.76e-05; 1.494: ring 5.18e-04, dQ 2.65e-05; 1.540: ring 4.89e-04, dQ 2.52e-05; 1.600: ring 3.98e-04, dQ 2.34e-05
+
+Ruhende Baelle (fein; Kontrolle g = 0 abgezogen: dS 8.846e-05, domega 5.942e-06). Ball im Minimum von Phi (Phi = -g/2 am Zentrum).
+  Lauf | dS/S (grob) | Soll Monopol | domega/omega | Soll Monopol | dBreite/Breite | Atmung | S nach Abschalten | ring_res | L3 dS
+   4 A lam 4 v 0.0000 Om 0.0000 g 2e-03 | -1.7713e-03 (-1.7699e-03) | +3.5642e-03 | +2.6357e-04 | -5.9179e-04 | +1.878e-03 | 2.178e-04 | +4.00e-04 | 7.809e-05 | ok
+   5 A gleich v 0.0000 Om 0.0000 g 2e-03 | +4.5316e-03 (+4.5327e-03) | +3.5642e-03 | -6.4096e-04 | -5.9179e-04 | -4.637e-03 | 5.692e-04 | -5.58e-04 | 7.959e-05 | ok
+   6 C lam 4 v 0.0000 Om 0.0000 g 2e-03 | +1.9239e-03 (+1.9282e-03) | -0.0000e+00 | -6.4058e-05 | -1.0000e-03 | -1.043e-03 | 1.410e-04 | -4.80e-06 | 7.835e-05 | ok
+   7 C gleich v 0.0000 Om 0.0000 g 2e-03 | +3.0703e-04 (+3.0728e-04) | -0.0000e+00 | -1.0145e-03 | -1.0000e-03 | -1.548e-03 | 1.920e-04 | -1.01e-04 | 8.660e-05 | ok
+  Vorhersage P1 (gleichfoermig, je 3 Prozent bzw. |dS| < 1e-4 fuer C):
+    A g 1 G0: dS/S +4.5316e-03 (Soll +3.5642e-03) NICHT erfuellt; domega/omega -6.4096e-04 (Soll -5.9179e-04) NICHT erfuellt
+    C g 1 G0: dS/S +3.0703e-04 (Soll -0.0000e+00) NICHT erfuellt; domega/omega -1.0145e-03 (Soll -1.0000e-03) erfuellt
+  Vorhersage P2 (Kruemmung): C: D(8)/D(16) zwischen 2,8 und 5,2; A: Gezeitenteil D - D(gleich) ebenso; A(16) innerhalb 10 Prozent des Monopols:
+
+Hochrechnung aus dem Rauchtest (1.787e+07 Punkt-Schritte/s; auf der GPU ist der kleine Rauchtest startlastig, die Schaetzung ist dort eher zu hoch):
+  statik: 13 Laeufe, t_ende 700, L 112, geschaetzt 114 s (grob und fein)
+  scan-langsam: 25 Laeufe, t_ende 2000, L 300, geschaetzt 1679 s (grob und fein)
+  scan-schnell: 40 Laeufe, t_ende 933, L 450, geschaetzt 1880 s (grob und fein)
+  resonanz: 37 Laeufe, t_ende 1200, L 541, geschaetzt 2687 s (grob und fein)
+  kante: 23 Laeufe, t_ende 1312, L 367, geschaetzt 1239 s (grob und fein)
+Ende 2026-09-30T01:12:14+00:00, Dauer 18.6 s, Fehler in: keine

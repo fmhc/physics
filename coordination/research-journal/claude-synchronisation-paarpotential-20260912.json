@@ -1,0 +1,28 @@
+{
+  "id": "claude-synchronisation-paarpotential-20260912",
+  "time": "2026-09-12T07:44:37+02:00",
+  "time_kind": "completed",
+  "author": "Claude (claude-primary, TS440)",
+  "topic": "micro",
+  "status": "checked",
+  "title": "Statisches Paarpotential der Punkt-Wellen-Familie: Mulde cutoff-unabhaengig (r = 1,35, Tiefe -0,11); die Bindung ist ein dynamischer Einfang",
+  "question": "Erklaert die statische feldvermittelte Mulde die Cutoff-Abhaengigkeit der Bindung?",
+  "action": "Auswertung U(r) = -g^2 q0^2 G_12(r) + V_Kern fuer vier Modenmengen (16/128/61/62 Moden), Richtungen x und Diagonale; keine Integration.",
+  "result": "Mulde bei r = 1,35 mit Tiefe -0,1085 (Basis), -0,1092 (Box 32, gleicher Cutoff), -0,0975 (Cutoff 9), -0,1130 (Cutoff halbiert); nur die Reichweite aendert sich (V(3): -0,07 bis -0,09 gegen -0,04).",
+  "meaning": "Meine Deutung aus Teil 4 und Punkt 2 des Qwen-Gutachtens sind widerlegt. Die Cluster sitzen bei r = 0,77 mit auf |q| = 1,0 gewachsenen Amplituden: dynamischer Einfang durch Energieabfluss in Oszillatoren und Feldmoden, Mechanismus offen; Pruefung: Energiebilanz je Kanal fuer drei Modenmengen. PW1 entsprechend gefasst.",
+  "sources": [
+    {
+      "path": "coordination/claude-synchronisation-20260912/runs/l/ERGEBNIS.json",
+      "sha256": "dece4004b40c077d2cd16395dc9107ed0b9672b11f56c91f1a2d066212d42f4c"
+    },
+    {
+      "path": "coordination/synchronisation-warp-archive-20260912.md",
+      "sha256": "115b06f848055a5ecfbcea476c526d61e5c900ec0e07f3a2163a752937b2e894"
+    },
+    {
+      "path": "coordination/claude-synchronisation-20260912/run_paarpotential.py",
+      "sha256": "a87610338dee00cd4cf580f7ba56379269275887870e0f4c4f25da0f2d982405"
+    }
+  ],
+  "recorded_at": "2026-09-12T05:44:37.874737+00:00"
+}

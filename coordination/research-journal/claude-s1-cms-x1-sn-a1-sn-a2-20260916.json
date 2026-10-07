@@ -1,0 +1,40 @@
+{
+  "id": "claude-s1-cms-x1-sn-a1-sn-a2-20260916",
+  "time": "2026-09-16T20:19:07+02:00",
+  "time_kind": "completed",
+  "author": "claude-worker-ts440 (Anthropic, S1); Vertraege claude-primary; Dreihaus-Review vorab",
+  "topic": "galaxies",
+  "status": "reported",
+  "title": "S1 fertig: CMS-Dijet-Spannung bleibt bei beiden Skalen (p_global 0,02); SN-Mass-Step 0,054 mag (DES) vs -0,003 (Pantheon+), Stufenlage 10,7; Katalog-Massensprung 0,43 dex",
+  "question": "Drei der vier neuen Vertraege (CMS-X1, SN-A1, SN-A2) auf oeffentlichen Daten: welcher Ausgang?",
+  "action": "S1 auf TS440 (CPU, Regel 10 Ausnahme c), Vertraege Fassung 3 nach Dreihaus-Review, Skripte cms_x1.py / sn_a1.py / sn_a2.py mit Kopf und Hashes; Ergebnisse unter coordination/vertraege-20260916/<id>-lauf/.",
+  "result": "CMS-X1: Ausgang B. Gesamt-chi2 vertraeglich (p 0,65 M-Skala, 0,72 <pT>-Skala, 70 dof), aber Bin 3,0-3,6 TeV chi2 28,5/11 (p 0,003) mit M-Skala UND 27,5/11 (p 0,004) mit <pT>-Skala; T_max 2,78/2,66; Look-elsewhere-Simulation (200000 Ziehungen, Seed 2026091601): p_global 0,019/0,027. Die Formabweichung ist also NICHT durch die Skalenwahl erklaert; Vorbehalt: reduzierte Kovarianz fast singulaer (kleinster Eigenwert 2e-7), chi2 ist eine andere Statistik als die Paper-Likelihood (2,0 sigma lokal); Blocklayout der HEPData-Korrelationsmatrix weicht von der Beschreibung ab. SN-A1: Ausgang B. Diagonal-Vorfit (feste Kosmologie): gamma_D 0,054 +/- 0,008 mag (DES-Dovekie, A1-Fenster verfehlt), gamma_P -0,003 +/- 0,011 (Pantheon+, kein Rest-Step, weil Release-Distanzen schon korrigiert), Stufenlage S_min 10,70 (Delta chi2 -22,5 gegen S=10,0; Suchgewinn-Kontrolle: q05 -5,1, also weit ausserhalb), z-Split Pantheon+ |Delta gamma| 0,010. SN-A2: Ausgang B. Median-Massensprung z<0,15 vs >=0,15: Pantheon+ +0,140 dex, DES -0,287 dex, Differenz 0,427 (>= 0,15 erfuellt), aber Bin [0,30;0,50) nur 0,033 (< 0,10). Paarteil (gleiche CID) ist Bericht, kein Kriterium. Selektion beider Kataloge verschieden.",
+  "meaning": "CMS: Die von CMS gemeldete kleine Formabweichung haengt nicht an der Skalenwahl; ob sie Numerik der fast singulaeren Kovarianz oder echt ist, muss S2 (anderes Haus, eigenes Skript) klaeren. SN: Der Mass-Step ist in den unkorrigierten DES-Distanzen mit 0,054 mag deutlich groesser als das Literaturziel 0,03-0,04, und die bevorzugte Stufenlage liegt bei 10,7 statt 10,0, das passt zu Lee et al. (chi2-Gewinn bei 10,2) und ist mit Kovarianz zu wiederholen (SN-B1 laeuft). Katalog-Massensprung bestaetigt die z-abhaengige Inkonsistenz qualitativ, ist aber selektionsbehaftet. Alles S1, keine Registerzeilen vor S2/S3.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260916/cms-x1-lauf/BERICHT-CMS-X1.md",
+      "sha256": "5dd0e68ab67ea4dbc87b3ae81cd2b37859ea772f07a80b4631348346dbd9e8e9"
+    },
+    {
+      "path": "coordination/vertraege-20260916/cms-x1-lauf/ERGEBNIS-CMS-X1.json",
+      "sha256": "b90acc93872809d3c3dcd3fded8667867614e238b793b7fdbbee722c09439782"
+    },
+    {
+      "path": "coordination/vertraege-20260916/sn-a1-lauf/BERICHT-SN-A1.md",
+      "sha256": "6b1543ca92ead16a72fc8ac631de6e78457fd37f14d8bc207da83ca106e7ead1"
+    },
+    {
+      "path": "coordination/vertraege-20260916/sn-a1-lauf/ERGEBNIS-SN-A1.json",
+      "sha256": "2bda4ba8dd9a90295e978784554f4b43c4db7e482ee60fadc7c624b6f445c289"
+    },
+    {
+      "path": "coordination/vertraege-20260916/sn-a2-lauf/BERICHT-SN-A2.md",
+      "sha256": "31964fb07ae3dce3ed840917f6897d461261b19439b0cd32fc818da071694948"
+    },
+    {
+      "path": "coordination/vertraege-20260916/sn-a2-lauf/ERGEBNIS-SN-A2.json",
+      "sha256": "a15c5db39fab84fa23d7f237b6e02092fedc68e0cc54df8a47873702e51364e4"
+    }
+  ],
+  "recorded_at": "2026-09-16T18:19:45.280010+00:00"
+}

@@ -1,0 +1,36 @@
+Grundlage Paare (Paarkraft, Paarbindung). Start 2026-09-30T01:35:32+00:00, Ende 2026-09-30T01:35:36+00:00, Quadro P4000, torch 2.5.1+cu121 RAUCHTEST: Zahlen ungueltig
+Dauer [s]: profil_s 0.0, statik_s 0.4, entwicklung_grob_s 2.0, entwicklung_fein_s 2.1
+Hochrechnung Hauptlauf: 82 s (nicht entwickelnde Teile 0 s + Entwicklung x 20); Schiessen entfaellt bei gefuelltem Profilcache. Ueber 480 s: Stufen einzeln mit --stufe grob / --stufe fein starten.
+Ball omega2 0.7: Q 23.9958, E 22.6258, R_halb 1.916; kappa 0.5477
+Statik (Ueberlagerung, E_bind bei fester Ladung): Spalt | d | dphi=0 | pi/2 | pi
+  1.0 | 4.83 | -3.3704e+00 | -8.1997e-01 | +7.1387e-01
+  1.5 | 5.33 | -2.9507e+00 | -5.7928e-01 | +7.6262e-01
+  2.0 | 5.83 | -2.3766e+00 | -3.9305e-01 | +7.3601e-01
+  2.5 | 6.33 | -1.8192e+00 | -2.5811e-01 | +6.6544e-01
+  3.0 | 6.83 | -1.3499e+00 | -1.6514e-01 | +5.7474e-01
+  3.5 | 7.33 | -9.8371e-01 | -1.0351e-01 | +4.8003e-01
+  4.0 | 7.83 | -7.1018e-01 | -6.3849e-02 | +3.9092e-01
+  4.5 | 8.33 | -5.1089e-01 | -3.8894e-02 | +3.1227e-01
+  5.0 | 8.83 | -3.6757e-01 | -2.3460e-02 | +2.4576e-01
+  5.5 | 9.33 | -2.6509e-01 | -1.4041e-02 | +1.9120e-01
+  6.0 | 9.83 | -1.9186e-01 | -8.3516e-03 | +1.4742e-01
+  6.5 | 10.33 | -1.3943e-01 | -4.9430e-03 | +1.1289e-01
+  7.0 | 10.83 | -1.0175e-01 | -2.9138e-03 | +8.5978e-02
+  7.5 | 11.33 | -7.4539e-02 | -1.7120e-03 | +6.5214e-02
+  8.0 | 11.83 | -5.4804e-02 | -1.0032e-03 | +4.9308e-02
+  8.5 | 12.33 | -4.0423e-02 | -5.8652e-04 | +3.7194e-02
+  9.0 | 12.83 | -2.9898e-02 | -3.4226e-04 | +2.8006e-02
+  9.5 | 13.33 | -2.2167e-02 | -1.9941e-04 | +2.1060e-02
+  10.0 | 13.83 | -1.6468e-02 | -1.1603e-04 | +1.5822e-02
+Dynamik: Stufe Lauf | Klasse | d Start/min/max/Ende | d'' (Fit 10-60) | dQ1/dt Start | max|dQ|/Q | dphase Start/Ende | Umkehrpunkte | t erste Verschmelzung | Q-Verlust
+  grob gleich_s4 | verschmolzen (ganz) | 7.60/0.01/7.60/0.01 | -2.443e-01 | -1.061e-01 | 0.000 | +0.000/+0.000 | 0 | 5.0 | 4.6e-14
+  grob gleich_s5 | verschmolzen (ganz) | 8.72/0.01/8.72/0.01 | -3.889e-02 | -6.260e-02 | 0.000 | +0.000/+0.000 | 0 | 10.0 | 8.0e-14
+  grob gleich_s7 | halten | 10.80/9.58/10.80/9.58 | -6.254e-03 | -2.360e-02 | 0.000 | +0.000/-0.000 | 0 | None | 2.5e-13
+  grob quer_s4 | offen | 7.82/7.79/8.60/8.60 | +9.440e-04 | -4.755e-01 | 0.801 | +1.499/+2.524 | 0 | None | 4.8e-14
+  grob gegen_s4 | auseinander | 8.03/8.03/11.39/11.39 | +1.802e-02 | +2.695e-02 | 0.000 | -3.142/+3.142 | 0 | None | 5.2e-14
+  grob gegen_s5 | offen | 8.94/8.94/11.22/11.22 | +1.368e-02 | +2.120e-02 | 0.000 | -3.142/-3.142 | 0 | None | 8.8e-14
+  grob einzel | ruhig | Q-Verlust 2.3e-15
+  fein gleich_s4 | verschmolzen (ganz) | 7.61/0.00/7.61/0.00 | -2.460e-01 | -1.186e-01 | 0.000 | +0.000/+0.000 | 0 | 5.0 | 4.6e-14
+  fein quer_s4 | offen | 7.82/7.79/8.59/8.59 | +1.055e-03 | -4.707e-01 | 0.802 | +1.499/+2.524 | 0 | None | 4.8e-14
+  fein gegen_s4 | auseinander | 8.03/8.03/11.39/11.39 | +1.808e-02 | +3.418e-02 | 0.000 | -3.142/+3.142 | 0 | None | 5.2e-14
+Kennzahlen: {"kappa_theorie": 0.5477225575051662, "kappa_fit_statik": 0.537401108855025, "statik_s4": {"B_josephson": -0.5505519534106478, "d_beschl_gleich": -0.0417946272293156, "d_beschl_gegen": 0.014828801428731577}, "statik_s5": {"B_josephson": -0.3066648251167521, "d_beschl_gleich": -0.021727431450999708, "d_beschl_gegen": 0.010702270788669057}, "statik_s7": {"B_josephson": -0.09386158659371191, "d_beschl_gleich": -0.005735843193688361, "d_beschl_gegen": 0.004214028185235407}, "dyn_zu_statik_gleich_s4": 5.844782453134329, "dyn_zu_statik_gleich_s5": 1.7897102946991688, "dyn_zu_statik_gleich_s7": 1.0903142026722534, "dyn_zu_statik_gegen_s4": 1.21519528994125, "dyn_zu_statik_gegen_s5": 1.2785227951679694, "J_fluss_quer_s4": 0.4754512700519851, "J_fluss_zu_B_statik": 0.8635901972676386, "antisymmetrie_gleich_zu_gegen_s4": -13.556159809367813, "verh_beschl_s4_s5": 6.281996389677481, "verh_beschl_s5_s7": 6.2178778375726065, "verh_theorie_exp_kappa_1_und_2": [1.7293101253499221, 2.9905135096377635], "L3": {"laeufe": [{"lauf": "gleich_s4", "klasse_gleich": true, "rel_aenderung_beschl": 0.007016754048081442}, {"lauf": "quer_s4", "klasse_gleich": true, "rel_aenderung_beschl": 0.11730473297472965}, {"lauf": "gegen_s4", "klasse_gleich": true, "rel_aenderung_beschl": 0.0033987607505545636}], "bestanden": false}}

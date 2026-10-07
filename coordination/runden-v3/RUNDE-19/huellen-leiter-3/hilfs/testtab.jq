@@ -1,0 +1,5 @@
+# Sprossen-Tabelle aus aus/test-auswertung.json (Markdown-Zeilen)
+def e: if . == null then "-" elif (. | type) == "number" then (if . == 0 then "0" else ((. | fabs | log10 | floor) as $x | ((. / pow(10; $x)) * 10 | round / 10 | tostring) + "e" + ($x | tostring)) end) else tostring end;
+def r(n): if . == null then "-" else (. * pow(10; n) | round / pow(10; n) | tostring) end;
+.sprossen[] |
+"| \(.k) | \(.R_vorhergesagt) | \(.st1.R | r(3)) | \(if .angenommen then (.dR | r(3)) else "-" end) | \(.st1.w2 | r(9)) | \(.st1.rho | r(8)) | \(.st1.umlauf_F // "-") / \(.st2.umlauf_F // "-") (\(.st1.aufgeloest_F // "-") / \(.st2.aufgeloest_F // "-")) | \(.st1.umlauf_S // "-") / \(.st2.umlauf_S // "-") | \(if .d_stufen then ([.d_stufen[0], .d_stufen[1]] | map(fabs) | max | e) else "-" end) | \(.st1.rang // "-") / \(.st2.rang // "-") | \(.st1.knoten // "-") / \(.st2.knoten // "-") | \(.st1.absW | e) / \(.st2.absW | e) | \(.st1.svr | e) / \(.st2.svr | e) | \(.st1.versuch // "-") / \(.st2.versuch // "-") | \(.angenommen) |"

@@ -1,0 +1,11 @@
+umstroemung G1-05 (a). Start 2026-09-30T08:13:46+02:00, Ende 2026-09-30T08:14:07+02:00, cpu, 21.0 s RAUCHTEST: Zahlen ungueltig
+  C0 0.1: c_s 0.2085, hydraulisch 0.3044, u_SN/c_s 0.63 (h) 0.63 (h/2), erstes ohne 0.65; L3 True
+  C0 0.2: c_s 0.2774, hydraulisch 0.4951, u_SN/c_s 0.705 (h) 0.705 (h/2), erstes ohne 0.73; L3 True
+  C0 0.3: c_s 0.3216, hydraulisch 0.5840, u_SN/c_s 0.755 (h) 0.755 (h/2), erstes ohne 0.78; L3 True
+  Kontrolle C0 0.1: lam klein -> 0.905 (ok True), gestreckt -> 0.405 gegen 0.3044 (ok False)
+  Kontrolle C0 0.2: lam klein -> 0.93 (ok True), gestreckt -> 0.555 gegen 0.4951 (ok False)
+  Kontrolle C0 0.3: lam klein -> 0.93 (ok True), gestreckt -> 0.63 gegen 0.5840 (ok True)
+V1: [(0.1, 0.63, False), (0.3, 0.755, True)]
+Plausibilitaetsschranke: bestanden = True []
+Ausgang Teil a: scheitert (V1): C0 0.1 u_SN/c_s 0.63
+Vorgabe fuer Teil b (C0 = 0,2): {'C0': 0.2, 'c_s': 0.2773500981126146, 'u_SN_zu_cs': 0.705, 'u_zu_cs': [0.555, 0.655, 0.755, 0.855, 1.005], 'u': [0.153929, 0.181664, 0.209399, 0.237134, 0.278737]}

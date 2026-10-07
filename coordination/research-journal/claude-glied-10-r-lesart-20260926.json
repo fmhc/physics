@@ -1,0 +1,33 @@
+{
+  "id": "claude-glied-10-r-lesart-20260926",
+  "time": "2026-09-26T10:33:07+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung; Recherche Feldforscher-Subagent (Anthropic), 12:04:26 bis 12:33:07 MESZ (gemessen); Anlass: Vorschlag Fable im Methodik-Review 26.09.",
+  "topic": "theory",
+  "status": "reported",
+  "evidenzart": "literatur",
+  "title": "Glied 10: Das Vorzeichen des Vakuum-Materie-Austauschs ist nur in der fruehen Lesart F wohlgestellt und dort gleichbedeutend mit w < -1; das enge negative Ergebnis von Kashyap & Singh 2026 ist wahrscheinlich ein Artefakt der heutigen Lesart H (nicht belegt); kein fairer Datentest fuer Glied 10",
+  "question": "Welche Lesart der Materiedichte im CMB-Distanzprior (F frueh effektiv, H heutig) benutzen veroeffentlichte Schranken fuer Q = xi H rho_L bzw. rho_de, und ist die Vorzeichenfrage aus S-10 wohlgestellt?",
+  "action": "Primaerquellen gelesen (Kashyap & Singh 2026 arXiv:2603.21675v2; Chen et al. 2019 Distanzprior samt Code; DESI DR2; vier Arbeiten 2024 bis 2026 mit voller CMB-Likelihood; aeltere Vakuumzerfall-Arbeiten), 23 Abrufe mit vorab notierter Erwartung, Gegensweep; keine Rechnung. Arbeitsdatei coordination/literatur-20260926/GLIED-10-R-LESART-20260926.md (b051d489...), Quellkopien mit Hashes.",
+  "result": "(1) Kashyap & Singh nutzen den Planck-2018-Distanzprior nach Chen et al. 2019 ohne Gleichung fuer R, z*, r_s oder r_d; freie Parameter sind heutige Dichten, Code fehlt. Ihre eigene Tabelle spricht gegen F: In F muesste die xi-Spalte der wCDM-Spalte entsprechen. Chens Code setzt die heutige Dichte ein, sein Text die fruehe. (2) Vier Arbeiten mit voller CMB-Likelihood (Li 2024, Silva 2025, Li 2025/26, Li & Zhang 2025) brauchen keine Lesart; ihre xi-Fehler sind rund zehnmal groesser, und das Vorzeichen folgt dem Supernova-Datensatz (ohne SN oder mit SH0ES positiv, Pantheon+ nahe null, DESY5 negativ). Keine Arbeit 2024 bis 2026 nennt das Lesartproblem ausdruecklich (nach Recherchestand nicht belegt); aeltere Warnungen bei Carneiro 2008 und Tong & Noh 2011. (3) Physikalisch zulaessig ist nur F (DESI DR2 nennt omega_bc eine Groesse des fruehen Universums); in F ist das Modell am Hintergrund exakt wCDM mit xi = -3(1+w), also so gut bestimmbar wie w; als Richtung des Energieflusses nur unter der Annahme w = -1 fuer das Vakuum. Die volle CMB-Likelihood liegt bei zwei Datenkombinationen rund 0,35 sigma neben der F-Vorhersage. (4) Fuer Glied 10 selbst kein fairer Datentest: UG-Diffusion und homogener Vakuumaustausch sind bis in lineare Stoerungen gleich; die S-10-Frage ist in F weitgehend veroeffentlicht und damit vorab ableitbar.",
+  "meaning": "S-10 war in der bindenden Lesart F eine Frage nach w < -1, die veroeffentlichte Arbeiten mit voller CMB schon beantworten; ein Vertrag darauf waere vorab ableitbar. Der Befund stuetzt die Haltung 'derzeit kein fairer Datentest fuer Glied 10'. Erwartungen vorab: K&S effektiv H p = 0,6 (wahrscheinlich eingetreten, nicht belegt), F physikalisch richtig p = 0,55 (eingetreten), eine Arbeit nennt das Problem p = 0,4 (nicht eingetreten), kein fairer Test p = 0,7 (eingetreten). Moegliche billige Klaerung: die in S-10 geplante Diagnose K-R3 (F und H mit den Daten von K&S), nur als Option fuer Finn. Neue Scout-Ausloeser: DESI-DR2-Wachstumsdaten (Full-Shape, f sigma8), Austauschmodelle mit voller CMB plus Wachstum, eine neue Fassung oder Code von K&S, eine gemeinsame SN-Neukalibrierung, nichtlineare Signaturen der UG-Diffusion.",
+  "sources": [
+    {
+      "path": "coordination/literatur-20260926/GLIED-10-R-LESART-20260926.md",
+      "sha256": "b051d489066123ee17716dadc73e4ecb6b5f6745823482bd8b21c110654dc130"
+    },
+    {
+      "path": "coordination/literatur-20260926/glied10-r-lesart-quellen/HASHES.txt",
+      "sha256": "f1368fd11dbd8099f678804a57d5f1fa911aed3cf1fe869bc9114e1deae849aa"
+    },
+    {
+      "path": "coordination/vertraege-20260925/S-10-VERTRAG.md",
+      "sha256": "a8589bd42b5bd7eccbcd325c4c0434ee0cf3430b386ae8279a55f88c839c13f3"
+    },
+    {
+      "path": "coordination/research-journal/claude-s-10-vor-s0-beendet-20260925.json",
+      "sha256": "a0f360e2fe1065fe02b105896d3a742ddbd3ad6ad9b2cd6ad18989ee00f956b2"
+    }
+  ],
+  "recorded_at": "2026-09-26T10:34:57.415041+00:00"
+}

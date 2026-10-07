@@ -1,0 +1,19 @@
+{
+  "id": "claude-rotor-relay-vorab-20260924",
+  "time": "2026-09-23T22:10:35.834838+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5)",
+  "topic": "modelle",
+  "status": "reported",
+  "title": "Punktnetz mit rotierenden Kopplungen: drei Effekte sind vor dem Lauf aus der Hamiltonfunktion ableitbar",
+  "question": "Was darf der Pilot der Schwestersitzung codex-rotor-relay zu Finns Idee eines Punktnetzes mit rotierenden Kopplungen als Befund melden, und was folgt schon aus der Hamiltonfunktion?",
+  "action": "Plan der Schwestersitzung gelesen (skalare Knotenanregung q auf kubischem 32^3-Gitter, Kantenrotoren theta mit Kopplung K0(1+eps cos theta), eps 0,9, Rotorfrequenz 0,25 oder 4, Verlet dt 0,025 bis t 12) und vorab ableitbare Effekte arithmetisch nachgerechnet, ohne Simulation.",
+  "result": "Erstens: im rasch gleichphasigen Fall liegt die erste Mathieu-Resonanz bei omega_k gleich 2 mitten im 3D-Band bis 3,46; die Naeherung fuer kleine Modulation gibt Rate 0,45 und bis t 12 einen Amplitudenfaktor um 200, bei eps 0,9 nur als Groessenordnung. Das Rotorreservoir traegt 786 432 Einheiten, 1,6e8-mal die kleine Anregung. Zweitens: bei 120-Grad-versetzten x/y/z-Phasen hebt sich die Modulation fuer isotrope Moden exakt auf, was einen eingebauten Kontrollarm liefert. Drittens: bei ruhenden Rotoren liegt das Minimum von V(theta) bei cos theta gleich minus sign(eps), Energie kippt die Rotoren in die weiche Lage und verlangsamt ihre Umgebung rund dreifach; die Richtung folgt allein aus dem eingesetzten Vorzeichen von eps. Dazu eine offene Frage zur Feldprobe: der Verlet-Phasenfehler bis t 12 betraegt 2,4e-06 fuer die niedrigste Mode und 1,3e-02 fuer die hoechste 3D-Mode, die Schwelle 1e-4 ist ohne Angabe der Testmode unterbestimmt.",
+  "meaning": "Keiner der drei Effekte ist ein Befund ueber Gravitation; alle folgen in wenigen Zeilen aus H und gehoeren vor den Lauf. Die Selbstverlangsamung sieht aus wie eine Shapiro-Verzoegerung, ist aber durch das Vorzeichen von eps eingesetzt; ein Kontrollarm mit eps gleich minus 0,9 entscheidet das. Im gepumpten Fall misst eine feste Ankunftsschwelle Verstaerkung statt Ausbreitung. Fuer eine spaetere Gravitationsdeutung ist nicht q die interessante Groesse, sondern das Kopplungsfeld, das fuer q wie eine raeumliche Metrik wirkt und an dessen Energiedichte koppelt; es fehlen aber die Zeitkomponente fuer Newtonsche Anziehung und drei der sechs Metrikkomponenten, und q selbst ist skalar und kann Licht nicht ablenken. Vorgeschlagener naechster Schritt nach dem Pilot: ein Zwei-Paket-Versuch mit Quelle und Testwelle samt Vorzeichenkontrolle.",
+  "compute": "nur Arithmetik zur Pruefung der eigenen Einwaende, keine Simulation",
+  "sources": [
+    {
+      "path": "coordination/events.jsonl"
+    }
+  ]
+}

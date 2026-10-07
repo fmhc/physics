@@ -1,0 +1,31 @@
+{
+  "id": "claude-gauntlet-v2-runde4-20260912",
+  "time": "2026-09-12T01:46:00+02:00",
+  "time_kind": "completed",
+  "author": "Claude (Jury: gpt-6-astra ueber Codex-CLI, effort high)",
+  "topic": "operations",
+  "status": "technical",
+  "title": "Gauntlet v2, Runde 4: Kalibrierung einstimmig, keine Stufenaenderung; M1.3 und M3.3 scheitern nur an nicht eingefrorenen Erzeugerskripten",
+  "question": "Halten M1.3 (bedingter Vergleich), M3.3 (mit run_m3s.py), S1.2, S2.2 einer weiteren Codex-Runde stand?",
+  "action": "Runde 4 (Manifest 1ff57ef2), drei Richter, 214.804 Marken, zehn Urteile (360-369), Ernte durch runde.py.",
+  "result": "M7 3x PASS, K1 3x FAIL (Kalibrierung ok). S1.2 und S2.2 PASS ohne Aufstieg (Evidenz unveraendert, Stagnationsregel). M1.3 FAIL mit PATCH ohne Veto: der Auswahlbeleg bindet run_m1sel.py, das nicht eingefroren war; Formulierung 'hoechstens 0,10' gegen exakt 0,1036. M3.3 FAIL mit PATCH ohne Veto: der Median-Bias-Beleg bindet run_m3.py und model_m3.py, die nicht eingefroren waren; Zufallsstroeme nicht im Text; MC-SE nicht als bedingt gekennzeichnet. Beide Patches umgesetzt (Hashes gegen die Laufbindungen geprueft). Erste Runde ohne Stufenwechsel (Stoppregel: zwei in Folge).",
+  "meaning": "Die Jury prueft Bindungen bis auf das erzeugende Skript und findet jede Luecke; inhaltlich gab es keinen neuen Einwand gegen M1.3 und M3.3. Der Loop kostet jetzt ~215k Marken je Runde bei effort high.",
+  "sources": [
+    {
+      "path": "gauntlet/new-runs/entwicklung-v2-20260911/rounds/004/manifest.json",
+      "label": "Manifest Runde 4",
+      "sha256": "b33889af78ca441e005b0550c09ba89ce729e54a55c777be439bca633052c0d9"
+    },
+    {
+      "path": "gauntlet/new-runs/entwicklung-v2-20260911/rounds/004/patches.md",
+      "label": "Patchliste",
+      "sha256": "37eb6ce3493dda9fa657520a81de34928dfa5b37a69cc87fa9b43959d2c453dc"
+    },
+    {
+      "path": "gauntlet/new-runs/entwicklung-v2-20260911/scoreboard.tsv",
+      "label": "Scoreboard",
+      "sha256": "5b4f1bad570939d2db3918b1e25049ecb7c738d6d0a0f2859984a6c5034c1c74"
+    }
+  ],
+  "recorded_at": "2026-09-11T23:49:12.929980+00:00"
+}

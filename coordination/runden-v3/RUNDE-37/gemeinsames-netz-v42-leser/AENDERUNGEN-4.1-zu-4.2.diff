@@ -1,0 +1,78 @@
+1c1
+< # Gemeinsames Netz, Fassung 4.1: Was traegt welcher Teil, und was fehlt zur Erklaerung? (Entwurf der Leitung, Runde 48)
+---
+> # Gemeinsames Netz, Fassung 4.2: Was traegt welcher Teil, und was fehlt zur Erklaerung? (Entwurf der Leitung, Runde 48)
+7c7,11
+<   - Die gelesene Fassung liegt als GEMEINSAMES-NETZ-v4.md.wie-gelesen-v4-leser (sha256 87d099c3...). Fassung 4.1 liest ein frischer Leser, bevor sie an Finn geht.
+---
+>   - Die gelesene Fassung liegt als GEMEINSAMES-NETZ-v4.md.wie-gelesen-v4-leser (sha256 87d099c3...).
+> - **Fassung 4.2 ab 2026-10-05 10:04:13 CEST (date):** berichtigt nach dem zweiten frischen Leser GEMEINSAMES-NETZ-V41-LESER (RUNDE-37/gemeinsames-netz-v41-leser/GEGENLESEN.md; Urteil: weitergabefaehig nach A8 bis A11, ohne neue Rechnungen).
+>   - Eingearbeitet: A8 bis A11 inhaltlich, dazu B1, B2, B5 bis B9.
+>   - Die gelesene Fassung 4.1 liegt als GEMEINSAMES-NETZ-v4.md.wie-gelesen-v41-leser (sha256 857a800c...).
+>   - Die Aenderungen von 4.2 sind kurze Textstellen nach den Sollinhalten des Lesers; ein dritter Leser prueft nur diese Stellen.
+16c20
+<   - Ohne frischen Leser: SKALAR-SEKTOR-L, TAKT-DYNAMIK-1, DANZER-NAEHERUNG-2, ATEM-VOLLZAEHLUNG-L, WELTKRISTALL-L, BABY-UNIVERSUM-L, TEILE-SCHRANKE-L, DOPPLER-LAUFZEIT-L.
+---
+>   - Ohne frischen Leser: MATERIE-NETZ-1, SKALAR-SEKTOR-L, TAKT-DYNAMIK-1, DANZER-NAEHERUNG-2, ATEM-VOLLZAEHLUNG-L, WELTKRISTALL-L, BABY-UNIVERSUM-L, TEILE-SCHRANKE-L, DOPPLER-LAUFZEIT-L.
+35,36c39,40
+<    - **Die Energie der Welle bleibt dabei aber nicht erhalten:** je Zug 0,2 bis 0,5 %, ueber 10 Perioden -2,4 bis -12,7 % bei A = 1e-3 (TAKT-DYNAMIK-1, ohne frischen Leser) [G].
+<    - Der Sprung sitzt in der Bewegungsenergie mit J = 1; die Regge-Energie bleibt stetig. HODGE-MASSE-1 prueft eine Abhilfe (laeuft).
+---
+>    - **Die Energie der Welle bleibt dabei aber nicht erhalten:** Je Zug aendert sie sich um 0,2 bis 0,5 %. Ueber 10 Perioden verliert die Welle bei A = 1e-3 2,4 bis 12,7 %, wenn die Raten ueber den Zug stetig gehalten werden; sie gewinnt 15 bis 80 %, wenn die Impulse stetig gehalten werden. Beides sind Festlegungen, keine Physik des Netzes (TAKT-DYNAMIK-1, ohne frischen Leser) [G].
+>    - Der Sprung sitzt in der Bewegungsenergie mit J = 1; die Regge-Energie bleibt beim 2-3-Zug exakt stetig. HODGE-MASSE-1 prueft eine Abhilfe (laeuft); Codex schlaegt zusaetzlich eine kanonische Zustandsuebertragung beim Zug vor.
+49c53
+< 6. **Licht mit Takt-Gewichten** [M, G]: Mit den umkreisbasierten Gewichten des Takts ist das Grundtempo von Skalar- und Maxwell-Wellen auf jedem periodischen Netz exakt isotrop (26 Netze, Spanne <= 5,5e-12). Das folgt aus der Identitaet Summe *1 l l^T = Vol I und ist vorab ableitbar (DANZER-NAEHERUNG-2).
+---
+> 6. **Licht mit Takt-Gewichten** [M, G]: Mit den umkreisbasierten Gewichten des Takts ist das langwellige Grundtempo von Skalar- und Maxwell-Wellen auf jedem periodischen Netz exakt isotrop (26 Netze, Spanne <= 5,5e-12). Das folgt fuer den Skalar aus der Identitaet Summe *1 l l^T = Vol I, fuer Maxwell aus Summe L* A n n^T = Vol I (in der Quelle eigene Mathematik, ungeprueft), und ist vorab ableitbar (DANZER-NAEHERUNG-2). Kurzwellig bleibt ein vom Netz abhaengiges Muster. Fuer Schwerewellen folgt daraus nichts: Eine Rang-2-Identitaet erzwingt keine Rang-4-Isotropie (Codex, nachgerechnet).
+60c64
+< | Schattenformen und duale Zellen [neu in Fassung 4] | Kopplungsgewichte (Hodge-Stern = duales Mass / primales Mass) | Die Rhombendodekaeder der Tetraeder-Oktaeder-Wabe tragen die Takt-Gewichte exakt [G]. Oktaeder helfen den Schwerewellen nur als starre ganze Zellen (exakt isotrop und stabil, vorab ableitbar); jede innere Groesse macht das Netz instabil oder stark anisotrop (95 bis 100 %) [G]. Die Diagonalwahl der Oktaeder kostet im flachen Netz nichts und zeigt sich nur in der Bewegungsenergie [G] (OKTA-SCHATTEN-1). Fuenfeck-Dodekaeder sind die Voronoi-Zellen der Ikosaederplaetze in C15 und A15 (A15 = Weaire-Phelan-Schaum) [L]; auf S^3 bilden sie die 120-Zelle | OKTA-SCHATTEN-1, DEFEKT-NETZ-1, ZELLE600-1 |
+---
+> | Schattenformen und duale Zellen [neu in Fassung 4] | Kopplungsgewichte (Hodge-Stern = duales Mass / primales Mass) | Die Rhombendodekaeder der Tetraeder-Oktaeder-Wabe tragen die Takt-Gewichte exakt [G]. Unter den gerechneten Zerlegungen helfen Oktaeder den Schwerewellen nur als starre ganze Zellen (exakt isotrop und stabil, vorab ableitbar); jede gerechnete innere Groesse macht das Netz instabil oder stark anisotrop (95 bis 100 %) [G]. Die Diagonalwahl der Oktaeder kostet im flachen Netz nichts und zeigt sich nur in der Bewegungsenergie [G] (OKTA-SCHATTEN-1). Fuenfeck-Dodekaeder sind die Voronoi-Zellen der Ikosaederplaetze in C15 und A15 (A15 = Weaire-Phelan-Schaum) [L]; auf S^3 bilden sie die 120-Zelle | OKTA-SCHATTEN-1, DEFEKT-NETZ-1, ZELLE600-1 |
+64c68
+< **Was Finns Antwort aendert (Fassung 3.1, Leser A1 und A2 woertlich, mit Codex):**
+---
+> **Was Finns Antwort aendert (Fassung 3.1 sinngemaess gekuerzt; voller Wortlaut dort, auch zu weiteren Auswegen und den zu klaerenden Observablen):**
+76,77c80,81
+< | L1 | Eine Schrittregel fuer alles, erster Klasse | [neu in Fassung 4] Der Takt ist der Hodge-Laplace (TAKT-UMKLAPP-1) [G]. Die Impulsregel M^H p ist erster Klasse, Materie koppelt widerspruchsfrei (IMPULS-NETZ-1) [G, ableitbar]. Die skalare Regel bleibt zweiter Klasse. Erste Klasse mit Finns Takt ist im Prinzip machbar, denn Khronon- bzw. CMC-Takt erlauben sie mit physikalischem Takt [S]. Auf dem Gitter fehlt dafuer die Passbedingung "A c_v im Bild von M" (langwellig 0,90) [G] (SKALAR-SEKTOR-L). Ein exakter diskreter Komplex (FEEC/Hodge) ist noch keine erstklassige Zwangsalgebra [Codex] | Gitter-Passbedingung; Bewegungsenergie A (HODGE-MASSE-1) |
+< | L2 | Ein Tempo fuer alle Felder | wie Fassung 3.1. [neu in Fassung 4] Licht und Skalar haben mit Takt-Gewichten auf jedem periodischen Netz exakt dasselbe Grundtempo in alle Richtungen [M, G]. GW170817 verlangt fuer Schwerewellen gegen Licht ~1e-15 [S]. Netz V hat ohne Abstimmung 6,34 %, mit J_iso 1,1e-5 [G]; fuer GW170817 waere eine exakte Abstimmung oder ein Grund noetig. Glasnetze werden mit mehr Punkten gleichmaessiger (~N^(-1/2)); jedes einzelne ist anisotrop [G] | SKALAR-MISCH-1, HODGE-MASSE-1, GLAS-STRAHLUNG-1 |
+---
+> | L1 | Eine Schrittregel fuer alles, erster Klasse | [neu in Fassung 4] Der Takt ist der Hodge-Laplace (TAKT-UMKLAPP-1) [G]. Die Impulsregel M^H p ist erster Klasse, Materie koppelt widerspruchsfrei (IMPULS-NETZ-1) [G, ableitbar]. Die skalare Regel bleibt zweiter Klasse. Erste Klasse mit Finns Takt ist im Prinzip machbar, aber nicht wegen der Takt-Deutung. Entscheidend ist allein eine Passbedingung auf dem Gitter ("A c_v im Bild von M"): Im kovarianten 4D-Regge-Takt ist sie asymptotisch erfuellt (PACHNER-TAKT-1), im gefuellten Hamilton-Netz verletzt (langwellig konstant 0,90) [G, ES] (SKALAR-SEKTOR-L). Der Khronon-Weg waere offen, braucht aber ein eigenes Feld [S laut Agent]. Ein exakter diskreter Komplex (FEEC/Hodge) ist noch keine erstklassige Zwangsalgebra [Codex] | Gitter-Passbedingung; Bewegungsenergie A (HODGE-MASSE-1) |
+> | L2 | Ein Tempo fuer alle Felder | wie Fassung 3.1. [neu in Fassung 4] Licht und Skalar haben mit Takt-Gewichten auf jedem periodischen Netz langwellig exakt dasselbe Grundtempo in alle Richtungen [M, G]; kurzwellig bleibt ein netzabhaengiges Muster. GW170817 verlangt fuer Schwerewellen gegen Licht ~1e-15 [S]. Netz V hat ohne Abstimmung 6,34 %, mit J_iso 1,1e-5 [G]; fuer GW170817 waere eine exakte Abstimmung oder ein Grund noetig. Glasnetze werden mit mehr Punkten gleichmaessiger (~N^(-1/2)); jedes einzelne ist anisotrop [G] | SKALAR-MISCH-1, HODGE-MASSE-1, GLAS-STRAHLUNG-1 |
+96c100
+<   - Paar-Licht nur mit Vorbehalt V-1: Im Breitband ist n <= 1/8 je Polarisation [M, einmal gegengelesen; gilt fuer den Bau aus zwei Vernichtern mit Verschmierung nach Bisio Gl. (20)].
+---
+>   - Paar-Licht nur mit Vorbehalt V-1: Licht aus Paaren zweier Fermionen kann im Breitband hoechstens n = 1/8 je Polarisation tragen (unpolarisiert; 1/4 bei einer Linearpolarisation); gemessene Rayleigh-Jeans-Spektren (n >> 1) passen nicht dazu. Vorbehalt: [M], einmal frisch gegengelesen; gilt fuer den Bau aus zwei Vernichtern mit Verschmierung nach Bisio Gl. (20), auch mit gefuelltem See. Offen sind der Dichtebau c^+ c mit Dirac-See (Jordan, Bosonisierung) und die Verduennung ueber N innere Zustaende (8 n/N). Die Literaturpruefung ist unvollstaendig.
+119c123
+<    - Glasnetze sind stabil, jedes einzelne anisotrop, mit mehr Punkten gleichmaessiger.
+---
+>    - Glasnetze sind an den gerechneten 112 k-Klassen ihres 6^3-Gitters stabil; jedes einzelne ist anisotrop und wird mit mehr Punkten gleichmaessiger.
+129,130c133,135
+<    - Ein Gas-Raum klappt staendig um. Er traegt Schwerewellen nur, wenn das Umklappen die Energie erhaelt; mit J = 1 tut es das nicht (TAKT-DYNAMIK-1).
+<    - RAUM-GAS-L (Literatur, laeuft) und HODGE-MASSE-1 klaeren das.
+---
+>    - Ein Gas-Raum klappt staendig um. Mit J = 1 erhaelt das Umklappen die Energie nicht (TAKT-DYNAMIK-1); ein kleiner Verlust oder Gewinn je Zug wuerde Schwerewellen daempfen bzw. verstaerken, wie stark, ist fuer ein Gas nicht gerechnet [ES].
+>    - Offen ist ausserdem, ob die Rueckstellkraft der Schwerewellen wie Scherung oder wie Kruemmung wirkt; nur im ersten Fall gaelte die Fluessigkeits-Regel "Querwellen erst bei schnellen Schwingungen" [H].
+>    - RAUM-GAS-L (Literatur, laeuft, mit Zusatz Navier-Stokes) und HODGE-MASSE-1 pruefen das.
+188c193,204
+<   - "Cristobalit schrumpft beim Erwaermen" (richtig: im Mittel keine Ausdehnung, Schrumpfen erst ueber ~1300 K)
+---
+>   - "Cristobalit schrumpft beim Erwaermen" (richtig: Ueber den alpha-beta-Uebergang waechst er um etwa 5 %; als beta-Cristobalit dehnt er sich zwischen 750 und 2000 K im Mittel nicht aus und schrumpft erst ueber ~1300 K)
+> - **Ergaenzt in 4.2 (zweiter v4-Leser, B8):**
+>   - "beta-Cristobalit hat negative Waermeausdehnung"
+>   - "Die 222-Form ist in der Literatur beschrieben" (ihre Familie ja, der isotrope Ast nicht)
+>   - "widerlegt" fuer Horava, mHG oder das projizierbare Modell
+>   - "alpha1 des Netzes ist gemessen"
+>   - "Der Doppelpulsar schliesst das Netz aus"
+>   - "TES zeigt n h nu"
+>   - "Pound/Rebka begrenzt den Verlust unterwegs"
+>   - "Beim Umklappen geht Energie verloren" als Tatsache (richtig: nicht erhalten; Verlust oder Gewinn je nach Festlegung)
+>   - "Licht laeuft in jedem Netz in alle Richtungen gleich schnell" ohne "langwellig"
+>   - "Die Licht-Identitaet macht auch die Schwerewellen isotrop"
+195,197c211,213
+< - Finns Takt ist eine bekannte Rechenregel der Mathematik. Mit seinen Gewichten laeuft Licht in jedem Netz in alle Richtungen gleich schnell.
+< - Zellen koennen nach einer einfachen Bauregel umklappen, ohne dass das Netz kippt. Beim Umklappen geht aber noch Energie verloren; das liegt an der Traegheit der Zellen im Modell.
+< - Mit abgestimmter Traegheit dreht sich das Netz um eine rotierende Masse wie bei Einstein. Die Schwerewellen eines Doppelsterns haengen aber noch ein kleines bisschen von seiner Lage im Netz ab, mehr als die besten Doppelsterne erlauben.
+---
+> - Finns Takt ist eine bekannte Rechenregel der Mathematik. Mit seinen Gewichten laufen lange Lichtwellen in jedem Netz in alle Richtungen gleich schnell; bei sehr kurzen Wellen bleibt ein Muster, das vom Netz abhaengt.
+> - Zellen koennen nach einer einfachen Bauregel umklappen, ohne dass das Netz kippt. Beim Umklappen bleibt die Energie aber noch nicht erhalten: Je nach Rechenvorschrift geht welche verloren oder kommt hinzu. Das liegt an der Traegheit der Zellen im Modell.
+> - Mit abgestimmter Traegheit dreht sich das Netz um eine rotierende Masse wie bei Einstein. Auf dem gerechneten Kristallnetz haengen die Schwerewellen eines Doppelsterns noch ein kleines bisschen von seiner Lage im Netz ab, mehr als die Messgenauigkeit des besten Doppelsterns. Ob das Netz damit ausgeschlossen ist, ist offen, denn ein Teil der Rechnung fehlt noch.

@@ -1,0 +1,45 @@
+G2-08 prisma.py haupt Start 2026-09-30T09:40:21+00:00 auf Quadro P4000, torch 2.5.1+cu121, Faktor 1.0
+Phi2 = 0.01, Stufe bei x_s = 0.0, w = 1.0, Start x0 = -20.0, Zone |x - x_s| < 6.0
+Codeschwellen (bindend): Variante omega^2 | v_cl | M1 | M2 | (M2/M1 - 1)/Phi2 | Licht hinten
+  A|0.55 | 0.079244 | 3.371076 | 3.381710 | 0.3155 | 1.01980
+  A|0.7 | 0.065530 | 2.298607 | 2.303558 | 0.2154 | 1.01980
+  A|0.9 | 0.036516 | 1.268979 | 1.269825 | 0.0667 | 1.01980
+  C|0.55 | 0.141198 | 3.371076 | 3.405191 | 1.0120 | 1.02020
+  C|0.7 | 0.141267 | 2.298607 | 2.321892 | 1.0130 | 1.02020
+  C|0.9 | 0.141373 | 1.268979 | 1.281853 | 1.0146 | 1.02020
+  v_P1 = 0.051023, v_P2 = 0.072387
+[grob] 63.4 s
+  Lauf | v | T_run | Soll | Ausgang | Anteile zurueck/stufe/durch/frei | v2 | S_max-Schwankung | Ladung, Energie bis Schwamm
+  A w2=0.55 0,95 v_cl            | 0.07528 | 1063 | reflektiert | reflektiert | 1.0000/0.0000/0.0000/3.5e-08 | -0.07526 | 2.75e-04 | 3.5e-08, 2.5e-07
+  A w2=0.55 1,05 v_cl            | 0.08321 | 961 | durch | durch | 0.0000/0.0000/1.0000/3.5e-08 | +0.02586 | 2.63e-04 | 3.5e-08, 2.5e-07
+  A w2=0.7 0,95 v_cl             | 0.06225 | 1285 | reflektiert | reflektiert | 1.0000/0.0000/0.0000/7.8e-08 | -0.06224 | 5.89e-04 | 7.8e-08, 5.8e-07
+  A w2=0.7 1,05 v_cl             | 0.06881 | 1163 | durch | durch | 0.0000/0.0000/1.0000/7.7e-08 | +0.02130 | 5.66e-04 | 7.7e-08, 5.8e-07
+  A w2=0.9 0,95 v_cl             | 0.03469 | 2000 | reflektiert | reflektiert | 0.9683/0.0317/0.0000/4.2e-08 | -0.00625 | 1.77e-02 | 4.2e-08, 3.9e-07
+  A w2=0.9 1,05 v_cl             | 0.03834 | 2000 | durch | durch | 0.0000/0.0001/0.9999/4.7e-08 | +0.01179 | 5.12e-04 | 4.7e-08, 3.9e-07
+  C w2=0.55 0,95 v_cl            | 0.13414 | 596 | reflektiert | reflektiert | 1.0000/0.0000/0.0000/3.8e-08 | -0.13410 | 2.89e-04 | 3.8e-08, 1.1e-06
+  C w2=0.55 1,05 v_cl            | 0.14826 | 540 | durch | durch | 0.0000/0.0000/1.0000/4.9e-08 | +0.04647 | 2.77e-04 | 4.9e-08, 1.1e-06
+  C w2=0.7 0,95 v_cl             | 0.13420 | 596 | reflektiert | reflektiert | 1.0000/0.0000/0.0000/4.9e-07 | -0.13418 | 9.45e-04 | 4.9e-07, 8.2e-07
+  C w2=0.7 1,05 v_cl             | 0.14833 | 539 | durch | durch | 0.0000/0.0000/1.0000/1.2e-06 | +0.04648 | 7.77e-04 | 1.2e-06, 1.1e-06
+  C w2=0.9 0,95 v_cl             | 0.13430 | 596 | reflektiert | reflektiert | 0.9951/0.0011/0.0036/1.7e-04 | -0.12926 | 6.36e-02 | 1.8e-07, 9.1e-07
+  C w2=0.9 1,05 v_cl             | 0.14844 | 539 | durch | durch | 0.0029/0.0003/0.9966/2.0e-04 | +0.04131 | 2.14e-02 | 1.4e-07, 9.4e-07
+  A w2=0.55 P1 v=0.05102         | 0.05102 | 1568 | reflektiert | reflektiert | 1.0000/0.0000/0.0000/3.4e-08 | -0.05101 | 2.73e-04 | 3.4e-08, 6.5e-08
+  A w2=0.7 P1 v=0.05102          | 0.05102 | 1568 | reflektiert | reflektiert | 1.0000/0.0000/0.0000/7.8e-08 | -0.05102 | 5.63e-04 | 7.8e-08, 4.0e-07
+  A w2=0.9 P1 v=0.05102          | 0.05102 | 1568 | durch | durch | 0.0000/0.0000/1.0000/2.2e-06 | +0.03634 | 1.51e-03 | 2.2e-06, 2.6e-06
+  A w2=0.55 P2 v=0.07239         | 0.07239 | 1105 | reflektiert | reflektiert | 1.0000/0.0000/0.0000/3.5e-08 | -0.07237 | 2.69e-04 | 3.5e-08, 2.4e-07
+  A w2=0.7 P2 v=0.07239          | 0.07239 | 1105 | durch | durch | 0.0000/0.0000/1.0000/7.7e-08 | +0.03133 | 5.75e-04 | 7.7e-08, 5.8e-07
+  A w2=0.9 P2 v=0.07239          | 0.07239 | 1105 | durch | durch | 0.0000/0.0000/1.0000/1.1e-05 | +0.06375 | 2.05e-03 | 1.1e-06, 1.5e-06
+  C w2=0.55 P1 v=0.05102         | 0.05102 | 1568 | reflektiert | reflektiert | 1.0000/0.0000/0.0000/3.4e-08 | -0.05101 | 2.73e-04 | 3.4e-08, 6.5e-08
+  C w2=0.7 P1 v=0.05102          | 0.05102 | 1568 | reflektiert | reflektiert | 1.0000/0.0000/0.0000/7.8e-08 | -0.05102 | 5.67e-04 | 7.8e-08, 3.5e-07
+  C w2=0.9 P1 v=0.05102          | 0.05102 | 1568 | reflektiert | reflektiert | 1.0000/0.0000/0.0000/4.5e-06 | -0.05102 | 1.18e-03 | 3.7e-06, 3.8e-06
+  C w2=0.55 P2 v=0.07239         | 0.07239 | 1105 | reflektiert | reflektiert | 1.0000/0.0000/0.0000/3.5e-08 | -0.07237 | 2.71e-04 | 3.5e-08, 2.1e-07
+  C w2=0.7 P2 v=0.07239          | 0.07239 | 1105 | reflektiert | reflektiert | 1.0000/0.0000/0.0000/7.2e-08 | -0.07238 | 5.38e-04 | 7.2e-08, 4.5e-07
+  C w2=0.9 P2 v=0.07239          | 0.07239 | 1105 | reflektiert | reflektiert | 0.9999/0.0000/0.0000/7.3e-05 | -0.07223 | 8.21e-03 | 5.8e-07, 7.6e-07
+  Pruefung [grob]: {"V1_C_schwellen_richtig": true, "V1_C_schwellen_spanne": 0.0012398174139369722, "V2_A_schwellen_richtig": true, "V3_prisma_A_falsch": [], "V3_prisma_C_sortiert": [], "V4_durch_97pz_und_Smax_2pz": false, "falsche_schwellenlaeufe": [], "spaltende_laeufe": [], "scheitert": false, "nicht_entscheidbar": true, "plausibilitaet_bestanden": false}
+[fein] 75.4 s
+  Lauf | v | T_run | Soll | Ausgang | Anteile zurueck/stufe/durch/frei | v2 | S_max-Schwankung | Ladung, Energie bis Schwamm
+  A w2=0.7 0,95 v_cl             | 0.06225 | 1285 | reflektiert | reflektiert | 1.0000/0.0000/0.0000/5.1e-09 | -0.06225 | 1.39e-04 | 5.1e-09, 1.3e-07
+  A w2=0.7 1,05 v_cl             | 0.06881 | 1163 | durch | durch | 0.0000/0.0000/1.0000/5.0e-09 | +0.02140 | 1.40e-04 | 5.0e-09, 1.3e-07
+  C w2=0.7 0,95 v_cl             | 0.13420 | 596 | reflektiert | reflektiert | 1.0000/0.0000/0.0000/5.0e-07 | -0.13419 | 6.62e-04 | 5.0e-07, 5.5e-07
+  C w2=0.7 1,05 v_cl             | 0.14833 | 539 | durch | durch | 0.0000/0.0000/1.0000/1.1e-06 | +0.04655 | 4.24e-04 | 1.1e-06, 9.2e-07
+L3 (fein = dx/2, dt/2; gleicher Ausgang, v2 Effekt >= 5 x Aenderung): 6 von 6 bestanden
+Ende 2026-09-30T09:42:40+00:00

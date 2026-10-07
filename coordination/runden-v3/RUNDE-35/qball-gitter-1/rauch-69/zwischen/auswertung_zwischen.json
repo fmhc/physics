@@ -1,0 +1,678 @@
+{
+ "urteile": {
+  "G0": {
+   "urteil": "eingetroffen",
+   "werte": {
+    "h0.5": {
+     "drift": 7.105427357601002e-13,
+     "ladung_rel": 4.935412663279623e-15,
+     "energie_rel": 4.464909346508278e-15,
+     "t_bis": 500.0,
+     "amax_schwankung_rel": 1.8055009137916205e-08,
+     "M0": 2.2876280421100152,
+     "Q0": 2.4294642584119734,
+     "newton_rest": 4.718447854656915e-16,
+     "phi0": 0.6077781557863027,
+     "erfuellt": true
+    },
+    "h0.25": {
+     "drift": 7.673861546209082e-13,
+     "ladung_rel": 6.191891666823708e-15,
+     "energie_rel": 5.415978466632276e-15,
+     "t_bis": 500.0,
+     "amax_schwankung_rel": 1.804567062340511e-08,
+     "M0": 2.295891306143557,
+     "Q0": 2.4385170069759265,
+     "newton_rest": 3.1780134079895106e-15,
+     "phi0": 0.6066248191558926,
+     "erfuellt": true
+    },
+    "h0.125": {
+     "drift": 1.1937117960769683e-12,
+     "ladung_rel": 8.915444705619002e-15,
+     "energie_rel": 7.923504642523578e-15,
+     "t_bis": 500.0,
+     "amax_schwankung_rel": 1.804253995634061e-08,
+     "M0": 2.2979298208694634,
+     "Q0": 2.440749957087221,
+     "newton_rest": 1.2989609388114332e-14,
+     "phi0": 0.6063464159915458,
+     "erfuellt": true
+    }
+   }
+  },
+  "G1": {
+   "urteil": "eingetroffen",
+   "werte": {
+    "M0": 2.2979298208694634,
+    "Q0": 2.440749957087221,
+    "E": 0.004707425711914795,
+    "t_gamma_1_5": 226.0,
+    "max_abs_abweichung": 0.008806128162481275,
+    "bei_t": 226.0,
+    "abweichung_bei_t15": -0.008806128162481275,
+    "abweichung_t50": -0.001573942065488998,
+    "abweichung_t100": -0.002239002282504954,
+    "kontrolle_energieschwerpunkt_max_abs": 0.008841763757159726,
+    "kontrolle_impuls_P_max_abs": 0.00448179083394773,
+    "Qwin_bei_t15": 0.9999990739918159,
+    "kontinuum_t_gamma_1_5": 223.60679774997897
+   }
+  },
+  "G2": {
+   "urteil": "nicht auswertbar",
+   "vermerk": "Hauptlauf h = 0.5 fehlt",
+   "werte": {}
+  },
+  "G3": {
+   "urteil": "nicht eingetroffen",
+   "werte": {
+    "h0.5": {
+     "ergebnis": "offen",
+     "text": "Lauf fehlt",
+     "t_umkehr": null,
+     "Qwin_bei_umkehr": null,
+     "TB": null,
+     "t_max": null,
+     "v_min_nach_tmax": null
+    },
+    "h0.25": {
+     "ergebnis": "nein",
+     "text": "Ball zerfallen vor einer Umkehr (t = 2498.5)",
+     "t_umkehr": null,
+     "Qwin_bei_umkehr": null,
+     "TB": 5338.808222685314,
+     "t_max": 1459.0,
+     "v_min_nach_tmax": 0.5555581081937877
+    },
+    "h0.125": {
+     "ergebnis": "nein",
+     "text": "Ball zerfallen vor einer Umkehr (t = 3821.5)",
+     "t_umkehr": null,
+     "Qwin_bei_umkehr": null,
+     "TB": 10677.91305345755,
+     "t_max": 2008.0,
+     "v_min_nach_tmax": 0.700771066122396
+    }
+   }
+  },
+  "G4": {
+   "urteil": "nicht auswertbar",
+   "vermerk": "Hauptlauf h = 0.5 fehlt",
+   "werte": {}
+  }
+ },
+ "konvergenzproben": {
+  "dt2": {
+   "G1": {
+    "urteil": "eingetroffen",
+    "werte": {
+     "M0": 2.2979298208694634,
+     "Q0": 2.440749957087221,
+     "E": 0.004707425711914795,
+     "t_gamma_1_5": 226.0,
+     "max_abs_abweichung": 0.008805434114300015,
+     "bei_t": 226.0,
+     "abweichung_bei_t15": -0.008805434114300015,
+     "abweichung_t50": -0.0015739012100730587,
+     "abweichung_t100": -0.0022389224284441456,
+     "kontrolle_energieschwerpunkt_max_abs": 0.00884106764112158,
+     "kontrolle_impuls_P_max_abs": 0.004481788028507849,
+     "Qwin_bei_t15": 0.999999073995583,
+     "kontinuum_t_gamma_1_5": 223.60679774997897
+    }
+   },
+   "G2": {
+    "urteil": "nicht auswertbar",
+    "vermerk": "Hauptlauf h = 0.5 fehlt",
+    "werte": {}
+   },
+   "G3": {
+    "urteil": "nicht eingetroffen",
+    "werte": {
+     "h0.5": {
+      "ergebnis": "offen",
+      "text": "Lauf fehlt",
+      "t_umkehr": null,
+      "Qwin_bei_umkehr": null,
+      "TB": null,
+      "t_max": null,
+      "v_min_nach_tmax": null
+     },
+     "h0.25": {
+      "ergebnis": "nein",
+      "text": "Ball zerfallen vor einer Umkehr (t = 2498.5)",
+      "t_umkehr": null,
+      "Qwin_bei_umkehr": null,
+      "TB": 5338.808222685314,
+      "t_max": 1459.0,
+      "v_min_nach_tmax": 0.5555581081937877
+     },
+     "h0.125": {
+      "ergebnis": "nein",
+      "text": "Ball zerfallen vor einer Umkehr (t = 3824.5)",
+      "t_umkehr": null,
+      "Qwin_bei_umkehr": null,
+      "TB": 10677.91305345755,
+      "t_max": 2008.5,
+      "v_min_nach_tmax": 0.7008746419280314
+     }
+    }
+   },
+   "G4": {
+    "urteil": "nicht auswertbar",
+    "vermerk": "Hauptlauf h = 0.5 fehlt",
+    "werte": {}
+   },
+   "ersetzt": {
+    "0.125": "f1_h0.125_dt2"
+   }
+  },
+  "lang": {
+   "G1": null,
+   "G2": {
+    "urteil": "nicht auswertbar",
+    "vermerk": "Hauptlauf h = 0.5 fehlt",
+    "werte": {}
+   },
+   "G3": {
+    "urteil": "nicht eingetroffen",
+    "werte": {
+     "h0.5": {
+      "ergebnis": "offen",
+      "text": "Lauf fehlt",
+      "t_umkehr": null,
+      "Qwin_bei_umkehr": null,
+      "TB": null,
+      "t_max": null,
+      "v_min_nach_tmax": null
+     },
+     "h0.25": {
+      "ergebnis": "nein",
+      "text": "Ball zerfallen vor einer Umkehr (t = 2498.5)",
+      "t_umkehr": null,
+      "Qwin_bei_umkehr": null,
+      "TB": 5338.808222685314,
+      "t_max": 1459.0,
+      "v_min_nach_tmax": 0.5555581081937877
+     },
+     "h0.125": {
+      "ergebnis": "nein",
+      "text": "Ball zerfallen vor einer Umkehr (t = 3821.5)",
+      "t_umkehr": null,
+      "Qwin_bei_umkehr": null,
+      "TB": 10677.91305345755,
+      "t_max": 2008.0,
+      "v_min_nach_tmax": 0.700771066122396
+     }
+    }
+   },
+   "G4": {
+    "urteil": "nicht auswertbar",
+    "vermerk": "Hauptlauf h = 0.5 fehlt",
+    "werte": {}
+   },
+   "ersetzt": {}
+  }
+ },
+ "feld2_vergleich": {
+  "G2": {
+   "urteil": "nicht auswertbar",
+   "vermerk": "Hauptlauf h = 0.5 fehlt",
+   "werte": {}
+  },
+  "G3": {
+   "urteil": "nicht auswertbar",
+   "vermerk": "mindestens ein Lauf offen",
+   "werte": {
+    "h0.5": {
+     "ergebnis": "offen",
+     "text": "Lauf fehlt",
+     "t_umkehr": null,
+     "Qwin_bei_umkehr": null,
+     "TB": null,
+     "t_max": null,
+     "v_min_nach_tmax": null
+    },
+    "h0.25": {
+     "ergebnis": "offen",
+     "text": "Lauf fehlt",
+     "t_umkehr": null,
+     "Qwin_bei_umkehr": null,
+     "TB": null,
+     "t_max": null,
+     "v_min_nach_tmax": null
+    },
+    "h0.125": {
+     "ergebnis": "offen",
+     "text": "Lauf fehlt",
+     "t_umkehr": null,
+     "Qwin_bei_umkehr": null,
+     "TB": null,
+     "t_max": null,
+     "v_min_nach_tmax": null
+    }
+   }
+  },
+  "G4": {
+   "urteil": "nicht auswertbar",
+   "vermerk": "Hauptlauf h = 0.5 fehlt",
+   "werte": {}
+  },
+  "G1": {
+   "urteil": "nicht auswertbar",
+   "vermerk": "Lauf fehlt",
+   "werte": {}
+  }
+ },
+ "laeufe": {
+  "f1_h0.25_dt1": {
+   "name": "f1_h0.25_dt1",
+   "h": 0.25,
+   "a0": 0.005,
+   "E": 0.004707556477104,
+   "M0": 2.295891306143557,
+   "Q0": 2.4385170069759265,
+   "TB": 5338.808222685314,
+   "status": "zerfallen",
+   "t_letzt": 2498.5,
+   "dt": 0.02,
+   "L_w": 400.0,
+   "abschnitte": 1,
+   "gueltig": true,
+   "v_ueber_1": false,
+   "gamma_max": 2.132601025388711,
+   "t_max": 1459.0,
+   "v_max": 0.8832454409747061,
+   "Qwin_bei_tmax": 0.30508204305266967,
+   "gamma_max_Q50": 2.0353667577199808,
+   "t_letzt_v": 2488.5,
+   "gamma_ende": 1.2026780555799887,
+   "v_ende": 0.5555581081937877,
+   "steigung_letztes_viertel": -0.0008030905373882019,
+   "gefallen": true,
+   "gesaettigt": true,
+   "max_erreicht": true,
+   "t_umkehr": null,
+   "Qwin_bei_umkehr": null,
+   "v_min_nach_tmax": 0.5555581081937877,
+   "Qwin_ende": 0.04998584163047943,
+   "Qwin_min": 0.04998584163047943,
+   "Qwin_bei_TB_halb": null,
+   "Qwin_bei_TB": null,
+   "t_Q_unter_halb": 1090.5,
+   "bilanz_E_max_rel": 9.379551507736492e-05,
+   "bilanz_Q_max_rel": 8.195150735501967e-15,
+   "E_aussen_ende": 15.807286920507387,
+   "Q_aussen_ende": 2.3166256820519973,
+   "W_ende": 14.324765092225066,
+   "Ewin_ende": 0.8135848221688557,
+   "Eabs_ende": 12.420371019050577,
+   "Edrop_ende": 2.333369053530987e-10,
+   "Qabs_ende": 1.8143902707341075,
+   "Qdrop_ende": -3.391598113466898e-11,
+   "weg": 1945.8350697221872,
+   "kontrolle_tau20": {
+    "gamma_max": 2.132484983905464,
+    "t_max": 1459.0,
+    "t_umkehr": null
+   },
+   "kontrolle_energieschwerpunkt": {
+    "gamma_max": 2.136241303451064,
+    "t_max": 1468.5,
+    "t_umkehr": null
+   },
+   "verlauf": {
+    "50": {
+     "gamma": 1.0305125003158686,
+     "v": 0.24153966963730844,
+     "gamma_kontinuum": 1.0307764064044151,
+     "Qwin": 0.999968344348825,
+     "breite": 1.6870892793365755
+    },
+    "100": {
+     "gamma": 1.1164098159054519,
+     "v": 0.4446016175904892,
+     "gamma_kontinuum": 1.118033988749895,
+     "Qwin": 0.9999867581329436,
+     "breite": 1.5494870632491102
+    },
+    "200": {
+     "gamma": 1.396489257855766,
+     "v": 0.6980167698460162,
+     "gamma_kontinuum": 1.4142135623730951,
+     "Qwin": 0.9999985573481921,
+     "breite": 1.2007247198739677
+    },
+    "300": {
+     "gamma": 1.7091981949960733,
+     "v": 0.810983043975543,
+     "gamma_kontinuum": 1.8027756377319946,
+     "Qwin": 0.9999988943999465,
+     "breite": 0.8963263445542514
+    },
+    "400": {
+     "gamma": 1.8945544912200412,
+     "v": 0.8493509250849955,
+     "gamma_kontinuum": 2.23606797749979,
+     "Qwin": 0.9997720787307716,
+     "breite": 0.7872330280516032
+    },
+    "600": {
+     "gamma": 1.9301323942920288,
+     "v": 0.8553205512949287,
+     "gamma_kontinuum": 3.1622776601683795,
+     "Qwin": 0.8699121449451629,
+     "breite": 1.7350295202295298
+    },
+    "800": {
+     "gamma": 1.9604450887265845,
+     "v": 0.860122072481035,
+     "gamma_kontinuum": 4.123105625617661,
+     "Qwin": 0.6998155327999033,
+     "breite": 1.8733294984025706
+    },
+    "1000": {
+     "gamma": 2.008522502404033,
+     "v": 0.8672468413730385,
+     "gamma_kontinuum": 5.0990195135927845,
+     "Qwin": 0.5577773556492182,
+     "breite": 2.0971237547862045
+    },
+    "1500": {
+     "gamma": 2.129116125311143,
+     "v": 0.8828375482875614,
+     "gamma_kontinuum": 7.566372975210778,
+     "Qwin": 0.2867621475678147,
+     "breite": 3.1759739640036173
+    },
+    "2000": {
+     "gamma": 1.5497117346444926,
+     "v": 0.7639450544155544,
+     "gamma_kontinuum": 10.04987562112089,
+     "Qwin": 0.13032465423852913,
+     "breite": 5.54234138485322
+    }
+   }
+  },
+  "f1_h0.125_dt1": {
+   "name": "f1_h0.125_dt1",
+   "h": 0.125,
+   "a0": 0.005,
+   "E": 0.004707425711914795,
+   "M0": 2.2979298208694634,
+   "Q0": 2.440749957087221,
+   "TB": 10677.91305345755,
+   "status": "zerfallen",
+   "t_letzt": 3821.5,
+   "dt": 0.02,
+   "L_w": 400.0,
+   "abschnitte": 1,
+   "gueltig": true,
+   "v_ueber_1": false,
+   "gamma_max": 2.9125512501490505,
+   "t_max": 2008.0,
+   "v_max": 0.9392105978941565,
+   "Qwin_bei_tmax": 0.3391468829974996,
+   "gamma_max_Q50": 2.810132658735581,
+   "t_letzt_v": 3811.5,
+   "gamma_ende": 1.4017652124617492,
+   "v_ende": 0.700771066122396,
+   "steigung_letztes_viertel": -0.0006329431427920418,
+   "gefallen": true,
+   "gesaettigt": true,
+   "max_erreicht": true,
+   "t_umkehr": null,
+   "Qwin_bei_umkehr": null,
+   "v_min_nach_tmax": 0.700771066122396,
+   "Qwin_ende": 0.04999177732075163,
+   "Qwin_min": 0.04999177732075163,
+   "Qwin_bei_TB_halb": null,
+   "Qwin_bei_TB": null,
+   "t_Q_unter_halb": 1592.5,
+   "bilanz_E_max_rel": 0.001191983143214878,
+   "bilanz_Q_max_rel": 1.3464140983996044e-14,
+   "E_aussen_ende": 25.963468972028107,
+   "Q_aussen_ende": 2.3187325287368825,
+   "W_ende": 25.05147243619645,
+   "Ewin_ende": 1.3886723786485704,
+   "Eabs_ende": 20.017799512634603,
+   "Edrop_ende": 5.581699547008157e-10,
+   "Qabs_ende": 1.8021414136605756,
+   "Qdrop_ende": -5.091660426614908e-11,
+   "weg": 3278.1119984771303,
+   "kontrolle_tau20": {
+    "gamma_max": 2.912480052511438,
+    "t_max": 2007.0,
+    "t_umkehr": null
+   },
+   "kontrolle_energieschwerpunkt": {
+    "gamma_max": 2.9189718663871425,
+    "t_max": 2021.5,
+    "t_umkehr": null
+   },
+   "verlauf": {
+    "50": {
+     "gamma": 1.0306810428414144,
+     "v": 0.24217629325509327,
+     "gamma_kontinuum": 1.0307764064044151,
+     "Qwin": 0.9999683328104318,
+     "breite": 1.6904004442260079
+    },
+    "100": {
+     "gamma": 1.1175337812082249,
+     "v": 0.4464120076257394,
+     "gamma_kontinuum": 1.118033988749895,
+     "Qwin": 0.9999862811257739,
+     "breite": 1.557021610705074
+    },
+    "200": {
+     "gamma": 1.4095788561927896,
+     "v": 0.7047741388338213,
+     "gamma_kontinuum": 1.4142135623730951,
+     "Qwin": 0.999998600108864,
+     "breite": 1.224897761041038
+    },
+    "300": {
+     "gamma": 1.7787145209867217,
+     "v": 0.8269987466575359,
+     "gamma_kontinuum": 1.8027756377319946,
+     "Qwin": 0.9999991866710713,
+     "breite": 0.94895737016872
+    },
+    "400": {
+     "gamma": 2.150633918513336,
+     "v": 0.8853216141031401,
+     "gamma_kontinuum": 2.23606797749979,
+     "Qwin": 0.9999991912764666,
+     "breite": 0.7446295107556163
+    },
+    "600": {
+     "gamma": 2.6035421437005843,
+     "v": 0.9232947794137196,
+     "gamma_kontinuum": 3.1622776601683795,
+     "Qwin": 0.9999568052934255,
+     "breite": 0.597491591594773
+    },
+    "800": {
+     "gamma": 2.6458092899548906,
+     "v": 0.9258234810527801,
+     "gamma_kontinuum": 4.123105625617661,
+     "Qwin": 0.9434652428126616,
+     "breite": 1.8225341494265597
+    },
+    "1000": {
+     "gamma": 2.668215135505073,
+     "v": 0.9271128156449926,
+     "gamma_kontinuum": 5.0990195135927845,
+     "Qwin": 0.8091136209356136,
+     "breite": 1.9404044569714287
+    },
+    "1500": {
+     "gamma": 2.781939373400751,
+     "v": 0.9331599304935825,
+     "gamma_kontinuum": 7.566372975210778,
+     "Qwin": 0.5408609878235452,
+     "breite": 2.2906780428363334
+    },
+    "2000": {
+     "gamma": 2.9124846353919356,
+     "v": 0.9392077270983741,
+     "gamma_kontinuum": 10.04987562112089,
+     "Qwin": 0.3417583388056661,
+     "breite": 2.9555946963698685
+    },
+    "3000": {
+     "gamma": 1.884643110161835,
+     "v": 0.8476195664425958,
+     "gamma_kontinuum": 15.033296378372908,
+     "Qwin": 0.12392863071368374,
+     "breite": 5.58315267241367
+    }
+   }
+  },
+  "f1_h0.125_dt2": {
+   "name": "f1_h0.125_dt2",
+   "h": 0.125,
+   "a0": 0.005,
+   "E": 0.004707425711914795,
+   "M0": 2.2979298208694634,
+   "Q0": 2.440749957087221,
+   "TB": 10677.91305345755,
+   "status": "zerfallen",
+   "t_letzt": 3824.5,
+   "dt": 0.01,
+   "L_w": 400.0,
+   "abschnitte": 1,
+   "gueltig": true,
+   "v_ueber_1": false,
+   "gamma_max": 2.9128239627209727,
+   "t_max": 2008.5,
+   "v_max": 0.9392223484317501,
+   "Qwin_bei_tmax": 0.3391495771643006,
+   "gamma_max_Q50": 2.8102203376304766,
+   "t_letzt_v": 3814.5,
+   "gamma_ende": 1.4019651918973048,
+   "v_ende": 0.7008746419280314,
+   "steigung_letztes_viertel": -0.0006317883366661186,
+   "gefallen": true,
+   "gesaettigt": true,
+   "max_erreicht": true,
+   "t_umkehr": null,
+   "Qwin_bei_umkehr": null,
+   "v_min_nach_tmax": 0.7008746419280314,
+   "Qwin_ende": 0.049988560457144636,
+   "Qwin_min": 0.049988560457144636,
+   "Qwin_bei_TB_halb": null,
+   "Qwin_bei_TB": null,
+   "t_Q_unter_halb": 1591.5,
+   "bilanz_E_max_rel": 7.533576726621229e-05,
+   "bilanz_Q_max_rel": 1.419193238853637e-14,
+   "E_aussen_ende": 25.97932453622752,
+   "Q_aussen_ende": 2.3187403802965934,
+   "W_ende": 25.070638745465327,
+   "Ewin_ende": 1.3894171464134497,
+   "Eabs_ende": 20.027334602118028,
+   "Edrop_ende": 5.619646969989844e-10,
+   "Qabs_ende": 1.8019864039836602,
+   "Qdrop_ende": -5.1247006638277526e-11,
+   "weg": 3280.777948786595,
+   "kontrolle_tau20": {
+    "gamma_max": 2.912753072072252,
+    "t_max": 2008.0,
+    "t_umkehr": null
+   },
+   "kontrolle_energieschwerpunkt": {
+    "gamma_max": 2.919249155520964,
+    "t_max": 2022.0,
+    "t_umkehr": null
+   },
+   "verlauf": {
+    "50": {
+     "gamma": 1.0306810453149677,
+     "v": 0.24217630258369982,
+     "gamma_kontinuum": 1.0307764064044151,
+     "Qwin": 0.9999683328298882,
+     "breite": 1.6904004112225497
+    },
+    "100": {
+     "gamma": 1.1175337990321312,
+     "v": 0.44641203623357617,
+     "gamma_kontinuum": 1.118033988749895,
+     "Qwin": 0.9999862811439687,
+     "breite": 1.5570216196929139
+    },
+    "200": {
+     "gamma": 1.4095791704297664,
+     "v": 0.7047742980323333,
+     "gamma_kontinuum": 1.4142135623730951,
+     "Qwin": 0.9999986001130717,
+     "breite": 1.2248981531236096
+    },
+    "300": {
+     "gamma": 1.7787173086309664,
+     "v": 0.8269993456378755,
+     "gamma_kontinuum": 1.8027756377319946,
+     "Qwin": 0.9999991866756798,
+     "breite": 0.948959485634525
+    },
+    "400": {
+     "gamma": 2.150649789243285,
+     "v": 0.8853234162538719,
+     "gamma_kontinuum": 2.23606797749979,
+     "Qwin": 0.9999991912811769,
+     "breite": 0.7446368090528089
+    },
+    "600": {
+     "gamma": 2.6038367117635377,
+     "v": 0.9233128542133615,
+     "gamma_kontinuum": 3.1622776601683795,
+     "Qwin": 0.9999575746877768,
+     "breite": 0.5965935129178145
+    },
+    "800": {
+     "gamma": 2.6461131354860243,
+     "v": 0.925841197232975,
+     "gamma_kontinuum": 4.123105625617661,
+     "Qwin": 0.9437126739012318,
+     "breite": 1.8237013778339888
+    },
+    "1000": {
+     "gamma": 2.6684797042977038,
+     "v": 0.9271278358338169,
+     "gamma_kontinuum": 5.0990195135927845,
+     "Qwin": 0.8094247861973412,
+     "breite": 1.9426984228787898
+    },
+    "1500": {
+     "gamma": 2.7820549202034353,
+     "v": 0.9331656813228175,
+     "gamma_kontinuum": 7.566372975210778,
+     "Qwin": 0.5412244091650162,
+     "breite": 2.293978740053437
+    },
+    "2000": {
+     "gamma": 2.912744477745006,
+     "v": 0.9392189239687223,
+     "gamma_kontinuum": 10.04987562112089,
+     "Qwin": 0.34212527977363316,
+     "breite": 2.959367673274658
+    },
+    "3000": {
+     "gamma": 1.8863584481203728,
+     "v": 0.8479214166185471,
+     "gamma_kontinuum": 15.033296378372908,
+     "Qwin": 0.12420076764793424,
+     "breite": 5.581349999547925
+    }
+   }
+  }
+ },
+ "g0_laeufe": [
+  "g0_h0.125",
+  "g0_h0.25",
+  "g0_h0.5"
+ ],
+ "bilder": "ok",
+ "skript_sha256": "f7126fb99a9cd872b651da070d854d8595bce37ca40badb9b313a4f82668c6fa"
+}

@@ -1,0 +1,70 @@
+Unabhängiger Adapter-Code-Review, 02.10.2026, particle_binding
+code.py vollständig gegen PLAN und importierte APIs/Schemas gelesen.
+Keine Ausführung, keine Rechnung, keine zusätzlichen Prozessauflagen.
+
+Stand der Erstlektüre609fe717…: bis auf die vonRoot bereits beanstandete
+zusätzliche Fine-Phasennachrotation kein konkreter Blocker gefunden.
+Root verlangt deren Entfernung gemäß ursprünglicher Pivotregel;
+finale Quelle vor Lauf unten separat binden. Keine anderen Codeänderungen
+oder zusätzlichen Physikgates aus diesem Review erforderlich.
+
+Imports/Bestandsvertrag
+dynamics466b25…, operator467ad3… undSuchresultat77ecf9… fest gehasht.
+RESULT.tasks mit R/h/shift, artifact/artifact_sha256 und ritz[rho,
+lambda_real] stimmen mit gelesener Suchausgabe überein; NPZ-Reihenfolge
+wird kontrolliert. dyn.load_reference gibt refs[h]=(f,c,omega) und
+refs[-1] mit Manifestbindung zurück: Adapter nutzt das korrekt.
+Keine neue Kraftformel; sämtliche echte Schritte benutzen dyn.advance.
+Weder eigs noch eine lineare Ersatzentwicklung werden aufgerufen.
+
+Kanonische Anfangsdaten/Q
+Alle6Blöcke gemeinsam auf q-Norm1 skalieren und eine gemeinsame Phase
+drehen ist richtig. Realteil/sqrtV und pi=iomega phi+alpha*dpsidot
+erzeugen die beabsichtigte Laborstörung. canonical() nimmt die richtige
+mitrotierende Geschwindigkeit e^-iomegat*pi-iomega*rotating; der chi-
+Hintergrund fällt bei levelgleichem Baselineabzug heraus. Keine zusätzliche
+zeitabhängige Ausrichtung dieser Differenz. alpha=epsilon*s und volle
+6Block-Sollnorm werden konsistent verwendet.
+q1/q2 stimmen mit der exakten quadratischen Ladungsentwicklung. Direkte
+Q-Differenz sowie unabhängige t0-Kanonik werden vor Evolution geprüft.
+E/Q-Anfangsänderungen sind gespeichert; es gibt keine Nachnormalisierung.
+
+Restriction ist LINEAR, KEINE Renormalisierung
+operator.restrict macht Feld=q/sqrtV, exakte Volumenmittelung auf das
+gemeinsame Gitter und zurück mit sqrtV. Der Vektor wird dabei NICHT
+anschließend aufNorm1 gesetzt. Der separat zurückgegebene retained-Wert
+ist eine Diagnose, kein angewendeter Faktor. Adapter ruft dies getrennt
+für q- und p-Dreierblock auf; deren relative Amplitude bleibt erhalten.
+Eine Normeinschränkung durch Mittelung ist erlaubt und wird nicht durch
+unzulässiges Renormieren verborgen. Grob/Fein-Feldvergleich ist damit
+kein Vergleich zweier künstlich gleichnormierter Störungen.
+
+Sollvergleich und Entscheidung
+Re(v exp(i rho t)), Basis(Re(v),-Im(v)), Gramprüfung und Koeffizienten
+gegencos/sin passen zusammen. Kein Frequenzfit. Baselineproben werden
+an denselben81Zeiten t0..32,.4Abstand abgezogen. Beide Amplituden und
+alle3Level sind enthalten. h/dt-Unterschiede der zwei vorgesehenen
+Fehlerdiagnosen sind entscheidend, volle Feldunterschiede zusätzlich
+deskriptiv; das entspricht dem Plan und führt keine neue Schwelle ein.
+Fehlender Arm/Exception erreicht nicht comparisons: kein stiller Teil-PASS.
+
+Budget/Teilzustände
+Globale Uhr startet vor Imports, Checkpoint40CPU-s; Rootdeckel45 bleibt
+maßgeblich. Initial-/Endfelder werden gehasht, TeilJSON regelmäßig und
+zwischenArmen atomisch gesichert. Bei normaler Exception zusätzlich
+LAST-PARTIAL aus active. Ein harter äußererKill kann diesen letzten
+Catch-Pfad nicht ausführen: dann zählt nur zuvor gespeicherter Stand.
+active kann beim Fehler zwischenArmen den letzten abgeschlossenen Arm
+bezeichnen; dessen Label/Zeit sind gespeichert, daraus keine zusätzliche
+unvollständige Physikserie erfinden. Kein Autoretry/Budgetausweiten.
+
+Geltungsbereich: neun nichtlineare Kleinamplitudenarme, keine Bildung,
+keine Stabilitäts-/Lebensdauerzertifizierung, ursprünglichesR20Gate bleibt.
+
+Finalnachtrag VOR Ausführung: Phasenabschnitt erneut gelesen, SHA bestätigt:
+1af408e1269a53036c080ec820e750940d5f8b70ac41c32e457e5ad531dc5bc1.
+Jeder Eigenvektor behält genau die vorgeschriebene gemeinsame Pivotphase;
+der Fine/Coarse-Überlapp wird nur diagnostisch gespeichert, nicht als
+Nachrotation angewandt. Konkreter Planabweichungspunkt damit behoben.
+Kein verbleibender Blocker für den festgelegten begrenzten9Arm-Lauf
+unter Roots bestehendem45CPU-s-Deckel; keine Ausführung durch Reviewer.

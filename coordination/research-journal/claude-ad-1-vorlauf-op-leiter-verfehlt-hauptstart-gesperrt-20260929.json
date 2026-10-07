@@ -1,0 +1,33 @@
+{
+  "id": "claude-ad-1-vorlauf-op-leiter-verfehlt-hauptstart-gesperrt-20260929",
+  "time": "2026-09-29T06:30:27+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung; Ausfuehrender S1 Opus 5.5 (Anthropic, frisch), nicht Autor, nicht S0",
+  "topic": "modelle",
+  "status": "reported",
+  "evidenzart": "modell",
+  "title": "AD-1-Vorlauf: alle technischen Proben bestanden, aber die physikalisch kalibrierte O-P-Leiter verfehlt; nach F3 ist der Hauptlauf gesperrt, AD-1 liefert keine Bildungsaussage",
+  "question": "Erfuellt der AD-1-Vorlauf nach F3 (V0, Pflichtproben 1 bis 7 einschliesslich der O-P-Leiter mit echten Q-Ball-Profilen) die Voraussetzungen fuer den Hauptlauf?",
+  "action": "14 einmalige Units auf der P5000 unter dem gemeinsamen Lock, ohne Pausenfenster (Leitungsentscheid nach der Fremdlast-Diagnose), nvidia-smi vor und nach jeder Unit; Lesarten vor dem ersten Lauf gebunden; 400,7 s von 4500 s im V-Topf.",
+  "result": "V0 und Proben 1 bis 6 bestanden (237 von 237; K4 hoechstens 2,4e-7, K5 hoechstens 4,7e-10; Mutationen X1 bis X5 erkannt). Probe 7 (O-P) verfehlt: das mittlere b-Profil bei omega 0,78 hat E/Q = 0,820290 ueber der gebundenen Grenze 0,82 (F3 6.1 Nr. 3); die nach vorab gebundener Bauregel erzeugten Populationen verfehlen Ladungsbilanz oder E <= E0; die warme b-Population gibt Kandidaten statt B; drei Auswerte-Units (v10, v12, v13) durften nach der Deckungsregel nicht starten (E_k 202,8 bis 317,8 s > 200), jeder Leiterfall endet U1 Pflichtarbeit fehlt. H1: rohe Breite von f zwischen theta 2 und 2,5 bei sicheren Zaehlungen 0,026 bzw. 0,044, ueber der S2-Toleranz 0,02.",
+  "meaning": "Nach F3 setzt der Hauptlauf eine bestandene O-P-Leiter voraus; sie ist verfehlt, also kein Hauptlauf und keine Aussage ueber Q-Ball-Bildung in unserem Modell. F3 war die letzte zulaessige Fassung; jeder Nachfolger waere ein neuer Vertrag und Finns Entscheidung. Keine Regel wird nach diesem Befund gelockert. Die H1-Breiten stuetzen nachtraeglich die Sorge der Tragprobe, dass S2 bei solchen Populationen nicht bestaetigen koennte.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260928/ad-1-lauf/s1/VORLAUF-S1.md",
+      "sha256": "251b26d739db96f950d8683ac8a2f6a947faa7beaaa54f66fd82461ab05706f9"
+    },
+    {
+      "path": "coordination/vertraege-20260928/ad-1-lauf/s1/PROBEN.json",
+      "sha256": "e9f25214ece39b008a5dc86abb519feb8ed761f932a3a7b0079fc85135d2a09c"
+    },
+    {
+      "path": "coordination/vertraege-20260928/ad-1-lauf/s1/kosten/KOSTEN.json",
+      "sha256": "4378886946fc5553b4e6de83a244aea5b03333a923a44c8c60a4ba957eec751e"
+    },
+    {
+      "path": "coordination/vertraege-20260928/ad-1-lauf/s1/op/OP-ENTWURF.json",
+      "sha256": "dcbb98aac540cb1850113d78be4ebfdc0fb1f2f904a48a24d6ddeb15860dd128"
+    }
+  ],
+  "recorded_at": "2026-09-29T06:34:44.658770+00:00"
+}

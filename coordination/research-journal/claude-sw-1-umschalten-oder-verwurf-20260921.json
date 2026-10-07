@@ -1,0 +1,76 @@
+{
+  "id": "claude-sw-1-umschalten-oder-verwurf-20260921",
+  "time": "2026-09-21T00:46:08+02:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5): Vertrag, Machbarkeitssonden, Fremdreview, Auswertung, Bericht; Claude-Subagent (Anthropic, Opus 5) in eigenem Kontext: Laufskript sw_1.py allein aus dem Vertragstext; Frage Finn (20.09.2026)",
+  "topic": "theory",
+  "status": "reported",
+  "title": "SW-1 gerechnet: bei Ueberlast wird die Anregung in den anderen Kanal verschoben, nicht verworfen -- aber nur bei passender Skala. Ausgang A, U = 0,3301 bei rho = 1,5, alle vier Nullproben bestanden, drei davon exakt null",
+  "question": "Kommt bei Ueberlast des ersten von zwei konservativ gekoppelten Schwingungskanaelen mit je eigenem Bad ein messbarer Anteil der zugefuehrten Anregung im zweiten Kanal an (A: U = dD2/dW >= 0,15), oder geht der Ueberschuss im Bad des ersten Kanals verloren (B: U <= 0,02)? Zweite Haelfte von Finns Kernfrage vom 20.09.2026; die erste Haelfte (transportiertes Teil gegen Welle) ist ausdruecklich nicht Gegenstand.",
+  "action": "Vertrag SW-1 nach VORLAGE-v2 mit allen 13 Pflichtabschnitten. Zwei Machbarkeitssonden vorab auf .69 (969,7 s und 520,7 s) fuer die Erreichbarkeitsprobe. S0-Fremdreview durch zwei Haeuser vor dem Startsignal: Qwen (Bunker, 0 USD) 'freigeben' ohne einen einzigen Befund, DeepSeek (OpenRouter, 0,01229475 USD) 'nicht freigeben' mit sieben Befunden, davon fuenf neu; eingearbeitet unter anderem die vierte Nullprobe N4 (Verstimmung) und eine Verschaerfung von K6 von 0,05 auf 0,02, einer begruendet zurueckgewiesen. Eine erste Zwischenfassung des Skripts stuerzte vor jedem Ergebnis ab (Achsenverwechslung in der Entgleisungspruefung); Freigabe des Neustarts nach 11.4 durch Qwen ('11.1', 'Neustart freigeben'). S1 auf .69 CPU als User-Units fmhc-physics-sw1-pruefe2-20260921 (1133,4 s) und fmhc-physics-sw1-20260921 (4392,0 s), Regel-10-Ausnahme dokumentiert, GPU-Lock nicht angefasst, beide Exit 0.",
+  "result": "Ausgang A, keine Flagge. U(Z3, rho = 1,5) = 0,3300580 gegen die A-Schwelle 0,15 und die B-Schwelle 0,02; V = 0,6699355, R = 6,45e-06, 12 von 12 Gliedern definiert. Lastreihe U(rho): 2,6e-14 (0,9), 0,04022 (1,05), 0,16593 (1,2), 0,33006 (1,5), 0,48862 (2,0), 0,63191 (3,0) gegen die Vorhersage 1 - 1/rho mit -0,44 bis -5,2 Prozent Abweichung. Randbilanz: von der zusaetzlich zugefuehrten Anregung kommen zwischen rho 1,2 und 1,5 97,77 Prozent im zweiten Kanal an und 2,23 Prozent gehen verloren. Alle vier Nullproben bestanden: N1 (Kopplung null) U = 0,0 exakt, N2 (Kanal energetisch verschlossen) 0,0 exakt, N4 (Kanal um 12 Prozent verstimmt) 0,0 exakt, N3 (keine Ueberlast) 2,62e-14 gegen 0,02. Kontrollen K0 bis K9 alle bestanden: Bilanzrest hoechstens 6,10e-13 gegen 1e-8, Spiegelprobe K4 bitgleich (Differenz exakt 0,0), Schrittweitenkonvergenz 3,81e-13, beide Trennkraftproben reissen wie gefordert (P1 U = 0,5 exakt wie vorhergesagt; P2 Bilanzrest 0,02987 und Entgleisung bei t = 804 gegen die Vorhersage 737). K6 verfehlt allein in der vorab als U1 deklarierten Zelle Z1 (Spanne 0,0310), wie in 4.6 vorhergesagt. Verstimmungsscan: U exakt null fuer w2 <= 0,46 und w2 >= 0,54, Kante zwischen 0,46 und 0,48 sowie zwischen 0,52 und 0,54 gegen die Handrechnung 0,469 und 0,526.",
+  "meaning": "HYPOTHESE-Ebene, keine Teilchendeutung, keine Registerwirkung, Runde 022 eingefroren. In diesem Modell wird der Ueberschuss bei Ueberlast verschoben und nicht verworfen, und zwar als Energiebilanz gemessen statt als Korrelation: 'angekommen' ist der Verbrauch im eigenen Bad des zweiten Kanals und haengt deshalb nicht davon ab, wie man den Kopplungsanteil aufteilt -- genau die Willkuer, die DR-1 offenlassen musste (dort 2,0e-05 relativ, hier gemessen und ohne Einfluss auf die Kennzahl). Entscheidend ist die Skala: bei voller Kopplung, vollem Antrieb und hoeherer Auslastung geht bei 12 Prozent Verstimmung exakt nichts mehr ueber. Das Fremdurteil von DeepSeek ('nicht freigeben', der Ausgang A sei durch die Amplitudenklemmung vorherbestimmt) bleibt stehen: A ist die Standarderwartung, gemessen sind die Zahl und die Bedingungen. SP-5s Verwurf von 16,6 Prozent bei rho = 1,2 und SW-1s U = 16,59 Prozent bei derselben Auslastung stimmen ueberein, weil in beiden Faellen der Durchsatz bei der Kapazitaet klemmt und der Ueberschuss 1 - 1/rho betraegt; das ist eine Deutung, keine gemessene Verbindung zwischen den Modellen. S2, S3 und jede Registerzeile stehen aus; ohne S2 ist keine Zahl dieses Laufs zitierfaehig.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260921/sw-1-umschalten-oder-verwurf-VERTRAG.md",
+      "role": "Vertrag",
+      "sha256": "21a3534a4e70dfe75f243a5e756e5b3e5af77ce30c49541c631bc273af3a86d9"
+    },
+    {
+      "path": "coordination/vertraege-20260921/startsignal-sw-1.txt",
+      "role": "Startsignal mit den sieben vorab gefuellten Vertragsluecken",
+      "sha256": "3ce7a9521c1d7d7e9d7ab79780556a99e2f44aa9cbd02755f4bb6175f477d303"
+    },
+    {
+      "path": "coordination/vertraege-20260921/REVIEW-sw-1.md",
+      "role": "S0-Fremdreview durch Qwen und DeepSeek, Einarbeitung und Zurueckweisung",
+      "sha256": "31b9e9d2fef71003212497c94fe20311b409e3f59f1611ea639713d9198c68e9"
+    },
+    {
+      "path": "coordination/vertraege-20260921/sw-1-lauf/BERICHT-SW-1.md",
+      "role": "Bericht S1",
+      "sha256": "42970d66e5006f007be32e8ed0841c2a0acedfd6ff5f55fa15d746c2642ca98a"
+    },
+    {
+      "path": "coordination/vertraege-20260921/sw-1-lauf/ERGEBNIS-SW-1.json",
+      "role": "Ergebnisdatei des Laufs",
+      "sha256": "9186b4afa61b81088ec2de50d46c2e058adcc87164274e19d46d72a0138c3650"
+    },
+    {
+      "path": "coordination/vertraege-20260921/sw-1-lauf/PRUEFE-SW-1.json",
+      "role": "Ergebnisdatei der Kontrollstufe",
+      "sha256": "76ecb107d056718a6b09e98f584ed568c7a69c5d014c75724f8e0ea056d41d80"
+    },
+    {
+      "path": "coordination/vertraege-20260921/sw-1-lauf/sw_1.py",
+      "role": "Laufskript",
+      "sha256": "c407a64bb90db347c11f86e61837cf5a86e3537b7546bf2e08b54ef6f8f799ec"
+    },
+    {
+      "path": "coordination/vertraege-20260921/sw-1-lauf/AENDERUNG-sw-1-absturz-p2.md",
+      "role": "Aenderungsnotiz zum Absturz der Zwischenfassung",
+      "sha256": "1dab8cf36b279ea0a3c356e5332abb86474ca779c0b6db85b27236efdae9ada8"
+    },
+    {
+      "path": "coordination/vertraege-20260921/sw-1-lauf/FREIGABE-neustart-qwen.md",
+      "role": "Freigabe des Neustarts durch ein fremdes Haus nach 11.4",
+      "sha256": "a6f84965ab205c91d40749264d1794e5d1ca52252b88ac41fcbc6556ff57ca30"
+    },
+    {
+      "path": "coordination/vertraege-20260921/machbarkeit/SONDE-SW-1.json",
+      "role": "Machbarkeitssonde 1",
+      "sha256": "2abd5c08cf99593ad4caed96c33d8a086c1ec3b7458ab9628eeaa08d704636a0"
+    },
+    {
+      "path": "coordination/vertraege-20260921/machbarkeit/SONDE-SW-1-B.json",
+      "role": "Machbarkeitssonde 2 nach dem Fremdreview",
+      "sha256": "32ef37431acbbe81821a0ae3d0a6d76637ed3ce1eb689c3a95cfc0b592da7b2a"
+    },
+    {
+      "path": "coordination/ideen-20260916/ANALOGIE-SPIELTISCH.md",
+      "role": "Ideation, Abschnitte 6 bis 9",
+      "sha256": "9a29a92727a41f575cc178ab8922a029b10d06396693de45b86465c7457674b2"
+    }
+  ],
+  "recorded_at": "2026-09-20T22:49:29.860844+00:00"
+}

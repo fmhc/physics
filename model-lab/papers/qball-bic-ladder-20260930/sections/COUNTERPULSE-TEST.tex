@@ -1,0 +1,50 @@
+% Candidate only. No canonical paper edit; figure awaits rendering/review.
+\paragraph{A finite-time radial counterpulse test.}
+We tested the two-pulse prediction by evolving the linearized complex radial
+$\ell=1$ equation on the fixed nominal T2 background, with the conjugate
+physical channel retained.
+Four initially zero arms used no pulse, one pulse, two equal-sign local
+rotating-frame pulses separated by $\Delta=\pi/\rho$, and a sign-reversed
+second pulse at the same delay.
+The calculation used $R=20$, $T=6$, grid spacings $h=0.04,0.02$ and
+fourth-order Runge--Kutta time steps $h/8$, with forcing reported per unit
+linear drive amplitude. It is a radial linear PDE calculation, not a
+nonlinear three-dimensional evolution.
+
+Both grids passed the predeclared projection-balance and comparison checks.
+The equal-sign pair reduced the final target projection below $2\%$ of
+the single-pulse reference, while the sign-reversed pair agreed with twice
+the reference complex projection within $2\%$.
+These are numerical acceptance bounds, not interval-certified errors.
+The observed fine-grid ratio was approximately $3.61\times10^{-5}$
+($0.0036\%$); the coarse-grid ratio was approximately $1.44\times10^{-4}$.
+The balance includes the explicitly computed defect of the stored nominal
+mode on the spatial grid; the source-only discrepancy is reported separately.
+The global second-component defect norm, which includes the forced cutoff
+of the nominal mode at the finite boundary, actually increases on refinement;
+we do not claim
+global eigenfunction-error convergence. The short-time paired defect and
+projection checks concern the evolving, spatially confined response.
+Figure~\ref{fig:counterpulse-dynamics} also shows that the radial field
+norm need not vanish when the selected projection is suppressed.
+At $T=6$ its fine-grid value was $0.0119332$ for the equal-sign pair,
+compared with $0.00818567$ for the single pulse.
+The mode-subtracted endpoint norm uses the nominal reconstruction
+$q-cA-\overline cB$ and is not an orthogonal energy decomposition.
+No total energy, charge removal, long-time stability or complete stillness
+of the charged background is inferred.
+
+\begin{figure}[htbp]\centering
+\includegraphics[width=.98\linewidth]{counterpulse-dynamics.pdf}
+\caption{Stored radial linear-PDE histories for the T2 counterpulse test.
+Top: target projection magnitude, normalized by the fine-grid final
+single-pulse value. Bottom: reduced-field $L^2(dr)$ norms; endpoint symbols
+give norms after nominal mode subtraction. Colors identify pulse arms,
+solid/dashed lines the two grids. The exactly zero null arm is omitted
+from the logarithmic panel. Shading marks pulse support; only paired arms
+receive the second pulse. Lines connect recorded times without a new
+evolution. The laboratory second pulse includes the carrier-phase correction
+of the analytic construction. A small target projection coexists with a
+remaining field; these norms are neither radiated energy nor Noether charge.}
+\label{fig:counterpulse-dynamics}
+\end{figure}

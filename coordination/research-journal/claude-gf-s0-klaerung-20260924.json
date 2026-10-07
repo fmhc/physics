@@ -1,0 +1,25 @@
+{
+  "id": "claude-gf-s0-klaerung-20260924",
+  "time": "2026-09-24T01:35:22.166818+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5); Bearbeitung Feldforscher-Subagent (Opus 5.5); Symbolrechnung .69 CPU",
+  "topic": "gesamtformel",
+  "status": "reported",
+  "title": "Gesamtformel: begrenzte Papierklaerung abgeschlossen - die Korrekturformel stimmt und ist fuer zwei unserer Formen schon publiziert, einen Messanschluss gibt es nicht; der Strang bleibt geparkt",
+  "question": "Lohnt eine Wiederaufnahme der Gesamtformel? Konkret: stimmt die von Codex hergeleitete erste Unterordnung c_1 der Ladung, was davon ist Literatur, was war schon gerechnet, und gibt es ein Messsystem, in dem c_1 oder B fuer unsere Formfamilie messbar waere? Dazu: laesst sich der Loop-Schwerpunkt 'Glied 10, Glied 7, Gesamtformel' in eine messbare Frage bringen?",
+  "action": "Ein Feldforscher-Subagent arbeitete die fuenf freigegebenen Teile ab (Vorwissensaudit, Pruefung der Herleitung mit sympy auf .69 CPU, Literaturabgleich, Messanschluss, Annahmenaudit), ohne Q-Rechnung, ohne Profilloeser, ohne GPU. Meine Erwartung stand vorher in der Arbeitsdatei; ich habe Ergebnisdatei und Symbolausgabe gegengelesen.",
+  "result": "c_1 = -1/(4 p(1)) + 3 (M - sigma Gamma)/(2 sigma^2) ist in allen Punkten bestaetigt, einschliesslich c_1 = 5/2 - 79 t^2/240 auf der Kurve gleicher Oberflaechenspannung. Auf d Dimensionen verallgemeinert stimmt die Formel mit Aiello/Heeck 2026, Gl. (46), fuer alle d und n ueberein; deren Fall n = 4 ist unsere Form (1; 1/2) mit c_1 = 1. In zwei Dimensionen verschwindet c_1 fuer jedes Potential. Kein tragfaehiger Messanschluss: He-3-Magnonen sind eine Zwei-Feld-Theorie, Quantentroepfchen haben eine universelle Form, Optik ist zweidimensional. Die Glieder 10 und 7 und die Gesamtformel lassen sich nicht in eine gemeinsame messbare Frage bringen. S2 durch Qwen aus den Definitionen allein, ohne Zielwerte: blind 6 von 7 exakt (c_1 bei (1; 1/2) ergab nan), nach einer rein technischen Rueckmeldung 7 von 7.",
+  "meaning": "Die Gesamtformel bleibt geparkt. Was an c_1 fuer unsere Familie neu ist, ist hoechstens die allgemeine Wandintegralform, methodisch und ohne Messbezug. Die Ursache des Herkunftsfehlers K1 ist gefunden: zwei gleichnamige Funktionen, in denen dasselbe Flag Verschiedenes bedeutet. Eigener Fehler im Auftrag: der beta-Term erzeugt |psi|^10, nicht |psi|^8. Das Parkurteil stuetzt sich fuer mehrere Kandidaten nur auf Abstracts und ist ein Recherchestand, kein Unmoeglichkeitsnachweis.",
+  "compute": ".69 CPU, sympy 1.13.1 und mpmath 1.3.0, 47,5 s, systemd-Unit mit 50 % CPU und 2 GiB; keine GPU, kein Q; S2 Qwen-Skripte auf .69 CPU, 7 min 46 s blind, 4,4 s nach Handwerk",
+  "sources": [
+    {
+      "path": "coordination/gesamtformel-20260921/GF-S0-KLAERUNG-20260924.md"
+    },
+    {
+      "path": "coordination/gesamtformel-20260921/gf-s0-klaerung/C1-PRUEFUNG.json"
+    },
+    {
+      "path": "coordination/gesamtformel-20260921/gf-6-plan-review/REVIEW-codex-astra.md"
+    }
+  ]
+}

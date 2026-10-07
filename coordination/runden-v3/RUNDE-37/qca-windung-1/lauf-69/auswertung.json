@@ -1,0 +1,4489 @@
+{
+ "modus": "haupt",
+ "vorbedingungen": {
+  "dateien": {
+   "kontrollen": true,
+   "stufeA_rueck": true,
+   "stufeA_dirac": true,
+   "stufeB": true
+  },
+  "alle_haupt": true,
+  "unitaer_max": 6.213186062477198e-12,
+  "unitaer_ok": true,
+  "jacobi_probe_max": 2.0082780309088083e-16,
+  "jacobi_ok": true,
+  "nachbau_anzahl": 62,
+  "nachbau_ok": false,
+  "dp_qt3_ok": true,
+  "numerik_ok": false
+ },
+ "urteile": {
+  "WI0": "nicht auswertbar",
+  "WI1": "nicht auswertbar",
+  "WI2": "nicht auswertbar"
+ },
+ "vermerke": {
+  "WI0": {
+   "S1_W3": -0.9999999999999665,
+   "DP_W3": [
+    2.692097574779522e-17,
+    1.9124741908930442e-17
+   ],
+   "inversion_anzahl": 9,
+   "inversion_davon_rueck": 0,
+   "inversion_W3_max_abs": 3.278929730116691e-18,
+   "inversion_namen": [
+    "K-S1inv U(u)+U(-u)",
+    "D0:teil0/konstruktionen/a_spiegel|m=0.1",
+    "D0:teil0/konstruktionen/b_muenze_verschiebung|m=0.1",
+    "D0:teil0/konstruktionen/a_spiegel|m=0.3",
+    "D0:teil0/konstruktionen/b_muenze_verschiebung|m=0.3",
+    "D0:teil0/konstruktionen/a_spiegel|m=0.6",
+    "D0:teil0/konstruktionen/b_muenze_verschiebung|m=0.6",
+    "DBOP:faelle/B|P|K4",
+    "DBOP:faelle/B|P|K5"
+   ]
+  },
+  "WI1": {
+   "menge_haupt": 62,
+   "stufeB_mitgezaehlt": true,
+   "nur_repr": "nicht eingetroffen",
+   "nur_treffer": "nicht eingetroffen",
+   "mit_dirac_zusatz": "nicht eingetroffen",
+   "W3_rund_haeufigkeit": {
+    "0": 62
+   },
+   "nicht_konvergiert": []
+  },
+  "stufeB_kategorien": {
+   "rueck+Kegel iso proj|inv=False": 12,
+   "rueck+Kegel|inv=False": 5,
+   "einseitig|inv=False": 6,
+   "trivial|inv=False": 8
+  },
+  "WI2": {
+   "auswertbar": 26,
+   "gesamt": 95,
+   "nur_projekt_rueck": "nicht eingetroffen",
+   "abweichend": [
+    "0:teil0/konstruktionen/K4_direkte_Summe_0"
+   ],
+   "ausgeschlossen": {
+    "K-S1q Quadrat": {
+     "trivial": false,
+     "vollstaendig": false,
+     "global": true,
+     "pfad": null,
+     "konvergiert": true
+    },
+    "K-S1inv U(u)+U(-u)": {
+     "trivial": false,
+     "vollstaendig": false,
+     "global": true,
+     "pfad": null,
+     "konvergiert": true
+    },
+    "0:teil0/konstruktionen/K4_gemischt_0": {
+     "trivial": false,
+     "vollstaendig": false,
+     "global": true,
+     "pfad": true,
+     "konvergiert": true
+    },
+    "0:teil0/konstruktionen/K4_gemischt_1": {
+     "trivial": false,
+     "vollstaendig": false,
+     "global": true,
+     "pfad": true,
+     "konvergiert": true
+    },
+    "0:teil0/konstruktionen/K4_gemischt_2": {
+     "trivial": false,
+     "vollstaendig": false,
+     "global": true,
+     "pfad": true,
+     "konvergiert": true
+    },
+    "0:teil0/konstruktionen/K5_gemischt_0": {
+     "trivial": false,
+     "vollstaendig": false,
+     "global": true,
+     "pfad": true,
+     "konvergiert": true
+    },
+    "0:teil0/konstruktionen/K5_gemischt_1": {
+     "trivial": false,
+     "vollstaendig": false,
+     "global": true,
+     "pfad": true,
+     "konvergiert": true
+    },
+    "4N:faelle/4|T:1+3|N|frei": {
+     "trivial": false,
+     "vollstaendig": false,
+     "global": true,
+     "pfad": true,
+     "konvergiert": true
+    },
+    "4N:faelle/4|T:1'+3|N|frei": {
+     "trivial": false,
+     "vollstaendig": false,
+     "global": true,
+     "pfad": true,
+     "konvergiert": true
+    },
+    "4O:faelle/4|T:1+1+1+1|O|frei": {
+     "trivial": true,
+     "vollstaendig": null,
+     "global": null,
+     "pfad": null,
+     "konvergiert": true
+    },
+    "4O:faelle/4|T:1+1+1+1'|O|frei": {
+     "trivial": true,
+     "vollstaendig": null,
+     "global": null,
+     "pfad": null,
+     "konvergiert": true
+    },
+    "4O:faelle/4|T:1+1+1+1''|O|frei": {
+     "trivial": true,
+     "vollstaendig": null,
+     "global": null,
+     "pfad": null,
+     "konvergiert": true
+    },
+    "4O:faelle/4|T:1+1+1'+1'|O|frei": {
+     "trivial": true,
+     "vollstaendig": null,
+     "global": null,
+     "pfad": null,
+     "konvergiert": true
+    },
+    "4O:faelle/4|T:1+1+1'+1''|O|frei": {
+     "trivial": true,
+     "vollstaendig": null,
+     "global": null,
+     "pfad": null,
+     "konvergiert": true
+    },
+    "4O:faelle/4|T:1+3|O|frei": {
+     "trivial": false,
+     "vollstaendig": false,
+     "global": true,
+     "pfad": true,
+     "konvergiert": true
+    },
+    "4O:faelle/4|T:1'+3|O|frei": {
+     "trivial": false,
+     "vollstaendig": false,
+     "global": true,
+     "pfad": true,
+     "konvergiert": true
+    },
+    "4O:faelle/4|T:2+2|O|frei": {
+     "trivial": true,
+     "vollstaendig": null,
+     "global": null,
+     "pfad": null,
+     "konvergiert": true
+    },
+    "8Na:faelle/8|K4|N|r50": {
+     "trivial": false,
+     "vollstaendig": false,
+     "global": true,
+     "pfad": true,
+     "konvergiert": true
+    },
+    "8Oa:faelle/8|K1|O|frei": {
+     "trivial": true,
+     "vollstaendig": null,
+     "global": null,
+     "pfad": null,
+     "konvergiert": true
+    },
+    "8Oa:faelle/8|K2|O|frei": {
+     "trivial": false,
+     "vollstaendig": false,
+     "global": true,
+     "pfad": true,
+     "konvergiert": true
+    },
+    "8Oa:faelle/8|K3|O|frei": {
+     "trivial": false,
+     "vollstaendig": false,
+     "global": true,
+     "pfad": true,
+     "konvergiert": true
+    },
+    "8Oa:faelle/8|K5|O|frei": {
+     "trivial": true,
+     "vollstaendig": null,
+     "global": null,
+     "pfad": null,
+     "konvergiert": true
+    },
+    "8Ob:faelle/8|K4|O|r50": {
+     "trivial": false,
+     "vollstaendig": false,
+     "global": true,
+     "pfad": true,
+     "konvergiert": true
+    },
+    "D0:teil0/quelle_dirac/E+|m=0.1": {
+     "trivial": false,
+     "vollstaendig": null,
+     "global": null,
+     "pfad": null,
+     "konvergiert": true
+    },
+    "D0:teil0/quelle_dirac/E+|m=0.3": {
+     "trivial": false,
+     "vollstaendig": null,
+     "global": null,
+     "pfad": null,
+     "konvergiert": true
+    },
+    "D0:teil0/quelle_dirac/E+|m=0.6": {
+     "trivial": false,
+     "vollstaendig": null,
+     "global": null,
+     "pfad": null,
+     "konvergiert": true
+    },
+    "D0:teil0/quelle_dirac/E-|m=0.1": {
+     "trivial": false,
+     "vollstaendig": null,
+     "global": null,
+     "pfad": null,
+     "konvergiert": true
+    },
+    "D0:teil0/quelle_dirac/E-|m=0.3": {
+     "trivial": false,
+     "vollstaendig": null,
+     "global": null,
+     "pfad": null,
+     "konvergiert": true
+    },
+    "D0:teil0/quelle_dirac/E-|m=0.6": {
+     "trivial": false,
+     "vollstaendig": null,
+     "global": null,
+     "pfad": null,
+     "konvergiert": true
+    },
+    "D0:teil0/suchkontrolle_T:2+2'": {
+     "trivial": false,
+     "vollstaendig": null,
+     "global": null,
+     "pfad": null,
+     "konvergiert": true
+    },
+    "D0:teil0/konstruktionen/a_spiegel|m=0.1": {
+     "trivial": false,
+     "vollstaendig": null,
+     "global": null,
+     "pfad": null,
+     "konvergiert": true
+    },
+    "D0:teil0/konstruktionen/a_allgemein|m=0.1": {
+     "trivial": false,
+     "vollstaendig": null,
+     "global": null,
+     "pfad": null,
+     "konvergiert": true
+    },
+    "D0:teil0/konstruktionen/b_muenze_verschiebung|m=0.1": {
+     "trivial": false,
+     "vollstaendig": null,
+     "global": null,
+     "pfad": null,
+     "konvergiert": true
+    },
+    "D0:teil0/konstruktionen/a_spiegel|m=0.3": {
+     "trivial": false,
+     "vollstaendig": null,
+     "global": null,
+     "pfad": null,
+     "konvergiert": true
+    },
+    "D0:teil0/konstruktionen/a_allgemein|m=0.3": {
+     "trivial": false,
+     "vollstaendig": null,
+     "global": null,
+     "pfad": null,
+     "konvergiert": true
+    },
+    "D0:teil0/konstruktionen/b_muenze_verschiebung|m=0.3": {
+     "trivial": false,
+     "vollstaendig": null,
+     "global": null,
+     "pfad": null,
+     "konvergiert": true
+    },
+    "D0:teil0/konstruktionen/a_spiegel|m=0.6": {
+     "trivial": false,
+     "vollstaendig": null,
+     "global": null,
+     "pfad": null,
+     "konvergiert": true
+    },
+    "D0:teil0/konstruktionen/a_allgemein|m=0.6": {
+     "trivial": false,
+     "vollstaendig": null,
+     "global": null,
+     "pfad": null,
+     "konvergiert": true
+    },
+    "D0:teil0/konstruktionen/b_muenze_verschiebung|m=0.6": {
+     "trivial": false,
+     "vollstaendig": null,
+     "global": null,
+     "pfad": null,
+     "konvergiert": true
+    },
+    "DA:faelle/A|O|T:2+2": {
+     "trivial": true,
+     "vollstaendig": null,
+     "global": null,
+     "pfad": null,
+     "konvergiert": true
+    },
+    "DBN:faelle/B|N|K4": {
+     "trivial": false,
+     "vollstaendig": null,
+     "global": null,
+     "pfad": null,
+     "konvergiert": true
+    },
+    "DBN:faelle/B|N|K5": {
+     "trivial": false,
+     "vollstaendig": null,
+     "global": null,
+     "pfad": null,
+     "konvergiert": true
+    },
+    "DBO1:faelle/B|O|K1": {
+     "trivial": true,
+     "vollstaendig": null,
+     "global": null,
+     "pfad": null,
+     "konvergiert": true
+    },
+    "DBO2:faelle/B|O|K2": {
+     "trivial": false,
+     "vollstaendig": null,
+     "global": null,
+     "pfad": null,
+     "konvergiert": true
+    },
+    "DBO2:faelle/B|O|K3": {
+     "trivial": false,
+     "vollstaendig": null,
+     "global": null,
+     "pfad": null,
+     "konvergiert": true
+    },
+    "DBOP:faelle/B|O|K4": {
+     "trivial": false,
+     "vollstaendig": null,
+     "global": null,
+     "pfad": null,
+     "konvergiert": true
+    },
+    "DBOP:faelle/B|O|K5": {
+     "trivial": false,
+     "vollstaendig": null,
+     "global": null,
+     "pfad": null,
+     "konvergiert": true
+    },
+    "DBOP:faelle/B|P|K4": {
+     "trivial": false,
+     "vollstaendig": null,
+     "global": null,
+     "pfad": null,
+     "konvergiert": true
+    },
+    "DBOP:faelle/B|P|K5": {
+     "trivial": true,
+     "vollstaendig": null,
+     "global": null,
+     "pfad": null,
+     "konvergiert": true
+    },
+    "N1:8|K4|N|frei#1": {
+     "trivial": false,
+     "vollstaendig": false,
+     "global": true,
+     "pfad": true,
+     "konvergiert": true
+    },
+    "N1:8|K4|N|frei#3": {
+     "trivial": false,
+     "vollstaendig": false,
+     "global": true,
+     "pfad": true,
+     "konvergiert": true
+    },
+    "N1:8|K4|N|frei#5": {
+     "trivial": false,
+     "vollstaendig": false,
+     "global": true,
+     "pfad": true,
+     "konvergiert": true
+    },
+    "N3:8|K4|N|r50#0": {
+     "trivial": false,
+     "vollstaendig": false,
+     "global": true,
+     "pfad": true,
+     "konvergiert": true
+    },
+    "Oa:8|K1|O|frei#0": {
+     "trivial": true,
+     "vollstaendig": null,
+     "global": null,
+     "pfad": null,
+     "konvergiert": true
+    },
+    "Oa:8|K1|O|frei#1": {
+     "trivial": true,
+     "vollstaendig": null,
+     "global": null,
+     "pfad": null,
+     "konvergiert": true
+    },
+    "Oa:8|K1|O|frei#2": {
+     "trivial": true,
+     "vollstaendig": null,
+     "global": null,
+     "pfad": null,
+     "konvergiert": true
+    },
+    "Oa:8|K2|O|frei#0": {
+     "trivial": false,
+     "vollstaendig": false,
+     "global": true,
+     "pfad": true,
+     "konvergiert": true
+    },
+    "Oa:8|K2|O|frei#1": {
+     "trivial": true,
+     "vollstaendig": null,
+     "global": null,
+     "pfad": null,
+     "konvergiert": true
+    },
+    "Oa:8|K2|O|frei#2": {
+     "trivial": true,
+     "vollstaendig": null,
+     "global": null,
+     "pfad": null,
+     "konvergiert": true
+    },
+    "Oa:8|K2|O|frei#3": {
+     "trivial": false,
+     "vollstaendig": false,
+     "global": true,
+     "pfad": true,
+     "konvergiert": true
+    },
+    "Oa:8|K3|O|frei#0": {
+     "trivial": true,
+     "vollstaendig": null,
+     "global": null,
+     "pfad": null,
+     "konvergiert": true
+    },
+    "Oa:8|K3|O|frei#1": {
+     "trivial": false,
+     "vollstaendig": false,
+     "global": true,
+     "pfad": true,
+     "konvergiert": true
+    },
+    "Oa:8|K3|O|frei#2": {
+     "trivial": false,
+     "vollstaendig": false,
+     "global": true,
+     "pfad": true,
+     "konvergiert": true
+    },
+    "Oa:8|K4|O|frei#1": {
+     "trivial": false,
+     "vollstaendig": false,
+     "global": true,
+     "pfad": true,
+     "konvergiert": true
+    },
+    "Oa:8|K5|O|frei#0": {
+     "trivial": true,
+     "vollstaendig": null,
+     "global": null,
+     "pfad": null,
+     "konvergiert": true
+    },
+    "Oa:8|K5|O|frei#1": {
+     "trivial": true,
+     "vollstaendig": null,
+     "global": null,
+     "pfad": null,
+     "konvergiert": true
+    },
+    "Ob:8|K4|O|r50#1": {
+     "trivial": false,
+     "vollstaendig": false,
+     "global": true,
+     "pfad": true,
+     "konvergiert": true
+    },
+    "Ob:8|K4|O|r50#2": {
+     "trivial": false,
+     "vollstaendig": false,
+     "global": true,
+     "pfad": true,
+     "konvergiert": true
+    },
+    "Ob:8|K4|O|r50#4": {
+     "trivial": false,
+     "vollstaendig": false,
+     "global": true,
+     "pfad": true,
+     "konvergiert": true
+    }
+   },
+   "summenregel_s_mal_W3": {
+    "K-S1 Grad-1 (m=2)": [
+     -2,
+     -2
+    ],
+    "K-S1m U(-u)": [
+     2,
+     2
+    ],
+    "K-MS8 Muenze x Schiebung zweimal": [
+     0,
+     0
+    ],
+    "DP A+": [
+     0,
+     0
+    ],
+    "DP A-": [
+     0,
+     0
+    ],
+    "0:teil0/qr0_suche/L2:Pauli|N|frei": [
+     0,
+     0
+    ],
+    "0:teil0/qr0_suche/L2:Pauli|N|r50": [
+     0,
+     0
+    ],
+    "0:teil0/konstruktionen/K4_direkte_Summe_0": [
+     0,
+     0
+    ],
+    "4N:faelle/4|T:2+2'|N|frei": [
+     0,
+     0
+    ],
+    "4N:faelle/4|T:2+2''|N|frei": [
+     0,
+     0
+    ],
+    "4O:faelle/4|T:2+2'|O|frei": [
+     0,
+     0
+    ],
+    "4O:faelle/4|T:2+2''|O|frei": [
+     0,
+     0
+    ],
+    "8Na:faelle/8|K4|N|frei": [
+     0,
+     0
+    ],
+    "8Na:faelle/8|K5|N|frei": [
+     0,
+     0
+    ],
+    "8Oa:faelle/8|K4|O|frei": [
+     0,
+     0
+    ],
+    "N1:8|K4|N|frei#0": [
+     0,
+     0
+    ],
+    "N1:8|K4|N|frei#2": [
+     0,
+     0
+    ],
+    "N1:8|K4|N|frei#4": [
+     0,
+     0
+    ],
+    "N1:8|K4|N|frei#6": [
+     0,
+     0
+    ],
+    "N2:8|K5|N|frei#0": [
+     0,
+     0
+    ],
+    "N2:8|K5|N|frei#1": [
+     0,
+     0
+    ],
+    "N3:8|K4|N|r50#1": [
+     0,
+     0
+    ],
+    "Oa:8|K4|O|frei#0": [
+     0,
+     0
+    ],
+    "Oa:8|K4|O|frei#2": [
+     0,
+     0
+    ],
+    "Ob:8|K4|O|r50#0": [
+     0,
+     0
+    ],
+    "Ob:8|K4|O|r50#3": [
+     0,
+     0
+    ]
+   }
+  }
+ },
+ "tabellen": {
+  "automaten": [
+   {
+    "name": "K-S1 Grad-1 (m=2)",
+    "quelle": "kontrolle",
+    "s": 2,
+    "kategorie": null,
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": -0.9998587106117591,
+     "24": -0.9999994499272213,
+     "32": -0.999999997859809,
+     "48": -0.9999999999999665
+    },
+    "W3_fein": -0.9999999999999665,
+    "W3_rund": -1,
+    "konvergiert": true,
+    "weyl_anzahl": [
+     8,
+     8
+    ],
+    "weyl_vollstaendig": true,
+    "weyl_global": true,
+    "netto_je_luecke": [
+     -1,
+     -1
+    ],
+    "pfad_unabhaengig": true,
+    "summe_chi": -2,
+    "s_mal_W3": -2,
+    "takt_tabelle": {
+     "Gegentakt (pi)": {
+      "anzahl": 1,
+      "chi_plus": 0,
+      "chi_minus": 1,
+      "netto": -1
+     },
+     "Takt (0)": {
+      "anzahl": 7,
+      "chi_plus": 3,
+      "chi_minus": 4,
+      "netto": -1
+     }
+    },
+    "unitaer_abw": 4.440892098500626e-16,
+    "nachbau_ok": null,
+    "wuerfel_probe": null
+   },
+   {
+    "name": "K-S1q Quadrat",
+    "quelle": "kontrolle",
+    "s": 2,
+    "kategorie": null,
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": -1.9984502095897234,
+     "24": -1.9999908463365643,
+     "32": -1.9999999519425444,
+     "48": -1.9999999999988844
+    },
+    "W3_fein": -1.9999999999988844,
+    "W3_rund": -2,
+    "konvergiert": true,
+    "weyl_anzahl": [
+     1741,
+     1256
+    ],
+    "weyl_vollstaendig": false,
+    "weyl_global": true,
+    "netto_je_luecke": null,
+    "pfad_unabhaengig": null,
+    "summe_chi": -1282,
+    "s_mal_W3": -4,
+    "takt_tabelle": {
+     "Takt (0)": {
+      "anzahl": 8,
+      "chi_plus": 3,
+      "chi_minus": 5,
+      "netto": -2
+     },
+     "Gegentakt (pi)": {
+      "anzahl": 1733,
+      "chi_plus": 166,
+      "chi_minus": 1567,
+      "netto": -1280
+     }
+    },
+    "unitaer_abw": 8.881784197001252e-16,
+    "nachbau_ok": null,
+    "wuerfel_probe": null
+   },
+   {
+    "name": "K-S1m U(-u)",
+    "quelle": "kontrolle",
+    "s": 2,
+    "kategorie": null,
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": 0.9998587106117591,
+     "24": 0.9999994499272211,
+     "32": 0.999999997859809,
+     "48": 0.9999999999999665
+    },
+    "W3_fein": 0.9999999999999665,
+    "W3_rund": 1,
+    "konvergiert": true,
+    "weyl_anzahl": [
+     8,
+     8
+    ],
+    "weyl_vollstaendig": true,
+    "weyl_global": true,
+    "netto_je_luecke": [
+     1,
+     1
+    ],
+    "pfad_unabhaengig": true,
+    "summe_chi": 2,
+    "s_mal_W3": 2,
+    "takt_tabelle": {
+     "Gegentakt (pi)": {
+      "anzahl": 1,
+      "chi_plus": 1,
+      "chi_minus": 0,
+      "netto": 1
+     },
+     "Takt (0)": {
+      "anzahl": 7,
+      "chi_plus": 4,
+      "chi_minus": 3,
+      "netto": 1
+     }
+    },
+    "unitaer_abw": 4.440892098500626e-16,
+    "nachbau_ok": null,
+    "wuerfel_probe": null
+   },
+   {
+    "name": "K-S1inv U(u)+U(-u)",
+    "quelle": "kontrolle",
+    "s": 4,
+    "kategorie": null,
+    "inversion": true,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": 2.484323296022602e-18,
+     "24": -3.9977085240816204e-20,
+     "32": 5.1012720352834986e-18,
+     "48": 4.987227043474661e-19
+    },
+    "W3_fein": 4.987227043474661e-19,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": [
+     810,
+     820
+    ],
+    "weyl_vollstaendig": false,
+    "weyl_global": true,
+    "netto_je_luecke": null,
+    "pfad_unabhaengig": null,
+    "summe_chi": -1,
+    "s_mal_W3": 0,
+    "takt_tabelle": {
+     "Gegentakt (pi)": {
+      "anzahl": 1,
+      "chi_plus": 0,
+      "chi_minus": 1,
+      "netto": -1
+     },
+     "Takt (0)": {
+      "anzahl": 7,
+      "chi_plus": 3,
+      "chi_minus": 4,
+      "netto": 0
+     },
+     "dazwischen": {
+      "anzahl": 802,
+      "chi_plus": 0,
+      "chi_minus": 802,
+      "netto": 0
+     }
+    },
+    "unitaer_abw": 4.440892098500626e-16,
+    "nachbau_ok": null,
+    "wuerfel_probe": null
+   },
+   {
+    "name": "K-MS8 Muenze x Schiebung zweimal",
+    "quelle": "kontrolle",
+    "s": 8,
+    "kategorie": null,
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": -4.254778060024997e-16,
+     "24": -4.1106999056414046e-16,
+     "32": -4.799531325077668e-16,
+     "48": -3.959714893609304e-16
+    },
+    "W3_fein": -3.959714893609304e-16,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": [
+     116,
+     116
+    ],
+    "weyl_vollstaendig": true,
+    "weyl_global": true,
+    "netto_je_luecke": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "pfad_unabhaengig": true,
+    "summe_chi": 0,
+    "s_mal_W3": 0,
+    "takt_tabelle": {
+     "dazwischen": {
+      "anzahl": 116,
+      "chi_plus": 58,
+      "chi_minus": 58,
+      "netto": 0
+     }
+    },
+    "unitaer_abw": 1.1102230246251565e-15,
+    "nachbau_ok": null,
+    "wuerfel_probe": -4.55978560339181e-16
+   },
+   {
+    "name": "DP A+",
+    "quelle": "kontrolle",
+    "s": 2,
+    "kategorie": null,
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": -2.7084998761674538e-17,
+     "24": 3.794623921949966e-18,
+     "32": 7.829307774625359e-17,
+     "48": 2.692097574779522e-17
+    },
+    "W3_fein": 2.692097574779522e-17,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": [
+     4,
+     4
+    ],
+    "weyl_vollstaendig": true,
+    "weyl_global": true,
+    "netto_je_luecke": [
+     0,
+     0
+    ],
+    "pfad_unabhaengig": true,
+    "summe_chi": 0,
+    "s_mal_W3": 0,
+    "takt_tabelle": {
+     "Takt (0)": {
+      "anzahl": 2,
+      "chi_plus": 1,
+      "chi_minus": 1,
+      "netto": 0
+     },
+     "Gegentakt (pi)": {
+      "anzahl": 2,
+      "chi_plus": 1,
+      "chi_minus": 1,
+      "netto": 0
+     }
+    },
+    "unitaer_abw": 8.881784197001252e-16,
+    "nachbau_ok": null,
+    "wuerfel_probe": 1.502951147213193e-16
+   },
+   {
+    "name": "DP A-",
+    "quelle": "kontrolle",
+    "s": 2,
+    "kategorie": null,
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": -2.799801132014708e-17,
+     "24": -7.367518600924859e-17,
+     "32": -3.470974327866576e-17,
+     "48": 1.9124741908930442e-17
+    },
+    "W3_fein": 1.9124741908930442e-17,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": [
+     4,
+     4
+    ],
+    "weyl_vollstaendig": true,
+    "weyl_global": true,
+    "netto_je_luecke": [
+     0,
+     0
+    ],
+    "pfad_unabhaengig": true,
+    "summe_chi": 0,
+    "s_mal_W3": 0,
+    "takt_tabelle": {
+     "Takt (0)": {
+      "anzahl": 2,
+      "chi_plus": 1,
+      "chi_minus": 1,
+      "netto": 0
+     },
+     "Gegentakt (pi)": {
+      "anzahl": 2,
+      "chi_plus": 1,
+      "chi_minus": 1,
+      "netto": 0
+     }
+    },
+    "unitaer_abw": 8.881784197001252e-16,
+    "nachbau_ok": null,
+    "wuerfel_probe": -1.0312033083712048e-16
+   },
+   {
+    "name": "0:teil0/qr0_suche/L2:Pauli|N|frei",
+    "quelle": "rueck_repr",
+    "s": 2,
+    "kategorie": "rueck+Kegel iso proj",
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": 1.5967897967445772e-15,
+     "24": 1.4016064149405062e-15,
+     "32": 1.5068681870302924e-15,
+     "48": 1.575999839840938e-15
+    },
+    "W3_fein": 1.575999839840938e-15,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": [
+     4,
+     4
+    ],
+    "weyl_vollstaendig": true,
+    "weyl_global": true,
+    "netto_je_luecke": [
+     0,
+     0
+    ],
+    "pfad_unabhaengig": true,
+    "summe_chi": 0,
+    "s_mal_W3": 0,
+    "takt_tabelle": {
+     "dazwischen": {
+      "anzahl": 4,
+      "chi_plus": 2,
+      "chi_minus": 2,
+      "netto": 0
+     }
+    },
+    "unitaer_abw": 3.552713678800501e-15,
+    "nachbau_ok": true,
+    "wuerfel_probe": 1.5259424678787771e-15
+   },
+   {
+    "name": "0:teil0/qr0_suche/L2:Pauli|N|r50",
+    "quelle": "rueck_repr",
+    "s": 2,
+    "kategorie": "rueck+Kegel iso proj",
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": -1.2512675097345714e-16,
+     "24": 5.4963456575883614e-17,
+     "32": -6.2721452449791135e-18,
+     "48": 8.628841336219274e-18
+    },
+    "W3_fein": 8.628841336219274e-18,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": [
+     4,
+     4
+    ],
+    "weyl_vollstaendig": true,
+    "weyl_global": true,
+    "netto_je_luecke": [
+     0,
+     0
+    ],
+    "pfad_unabhaengig": true,
+    "summe_chi": 0,
+    "s_mal_W3": 0,
+    "takt_tabelle": {
+     "dazwischen": {
+      "anzahl": 4,
+      "chi_plus": 2,
+      "chi_minus": 2,
+      "netto": 0
+     }
+    },
+    "unitaer_abw": 9.992007221626409e-16,
+    "nachbau_ok": true,
+    "wuerfel_probe": 7.57010521174237e-17
+   },
+   {
+    "name": "0:teil0/konstruktionen/K4_gemischt_0",
+    "quelle": "rueck_repr",
+    "s": 8,
+    "kategorie": null,
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": 7.470854595799462e-20,
+     "24": -8.269927714529955e-20,
+     "32": -1.2325698837608897e-19,
+     "48": 3.112172474004431e-19
+    },
+    "W3_fein": 3.112172474004431e-19,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": [
+     104,
+     100
+    ],
+    "weyl_vollstaendig": false,
+    "weyl_global": true,
+    "netto_je_luecke": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "pfad_unabhaengig": true,
+    "summe_chi": 0,
+    "s_mal_W3": 0,
+    "takt_tabelle": {
+     "dazwischen": {
+      "anzahl": 104,
+      "chi_plus": 52,
+      "chi_minus": 52,
+      "netto": 0
+     }
+    },
+    "unitaer_abw": 3.219646771412954e-15,
+    "nachbau_ok": true,
+    "wuerfel_probe": -1.7455258845906457e-18
+   },
+   {
+    "name": "0:teil0/konstruktionen/K4_gemischt_1",
+    "quelle": "rueck_repr",
+    "s": 8,
+    "kategorie": null,
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": -4.88570735091016e-18,
+     "24": -3.3596094796572854e-18,
+     "32": -2.8350806574792316e-18,
+     "48": -3.4124621600773838e-18
+    },
+    "W3_fein": -3.4124621600773838e-18,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": [
+     100,
+     100
+    ],
+    "weyl_vollstaendig": false,
+    "weyl_global": true,
+    "netto_je_luecke": [
+     0,
+     4,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "pfad_unabhaengig": true,
+    "summe_chi": 4,
+    "s_mal_W3": 0,
+    "takt_tabelle": {
+     "dazwischen": {
+      "anzahl": 100,
+      "chi_plus": 52,
+      "chi_minus": 48,
+      "netto": 4
+     }
+    },
+    "unitaer_abw": 4.316394991896575e-15,
+    "nachbau_ok": true,
+    "wuerfel_probe": -6.3529220584437974e-18
+   },
+   {
+    "name": "0:teil0/konstruktionen/K4_gemischt_2",
+    "quelle": "rueck_repr",
+    "s": 8,
+    "kategorie": null,
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": -2.369623176828796e-18,
+     "24": -2.3896520045721215e-18,
+     "32": -1.994815438593221e-18,
+     "48": -1.8566146187369257e-18
+    },
+    "W3_fein": -1.8566146187369257e-18,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": [
+     88,
+     84
+    ],
+    "weyl_vollstaendig": false,
+    "weyl_global": true,
+    "netto_je_luecke": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "pfad_unabhaengig": true,
+    "summe_chi": 0,
+    "s_mal_W3": 0,
+    "takt_tabelle": {
+     "dazwischen": {
+      "anzahl": 88,
+      "chi_plus": 44,
+      "chi_minus": 44,
+      "netto": 0
+     }
+    },
+    "unitaer_abw": 3.7093953543239596e-15,
+    "nachbau_ok": true,
+    "wuerfel_probe": -1.3153481840789927e-18
+   },
+   {
+    "name": "0:teil0/konstruktionen/K4_direkte_Summe_0",
+    "quelle": "rueck_repr",
+    "s": 8,
+    "kategorie": null,
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": -2.630505785555037e-18,
+     "24": 4.582215089872905e-19,
+     "32": -4.033726308551712e-20,
+     "48": 4.77655629500511e-21
+    },
+    "W3_fein": 4.77655629500511e-21,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": [
+     16,
+     16
+    ],
+    "weyl_vollstaendig": true,
+    "weyl_global": true,
+    "netto_je_luecke": [
+     -2,
+     0,
+     2,
+     0,
+     -2,
+     0,
+     2,
+     0
+    ],
+    "pfad_unabhaengig": true,
+    "summe_chi": 0,
+    "s_mal_W3": 0,
+    "takt_tabelle": {
+     "dazwischen": {
+      "anzahl": 16,
+      "chi_plus": 8,
+      "chi_minus": 8,
+      "netto": 0
+     }
+    },
+    "unitaer_abw": 3.9968028886505635e-15,
+    "nachbau_ok": true,
+    "wuerfel_probe": 1.4331942985675221e-18
+   },
+   {
+    "name": "0:teil0/konstruktionen/K5_gemischt_0",
+    "quelle": "rueck_repr",
+    "s": 8,
+    "kategorie": null,
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": -1.565116131695125e-18,
+     "24": -3.1224089644079104e-19,
+     "32": 1.6565054195389961e-19,
+     "48": -6.263962124104999e-19
+    },
+    "W3_fein": -6.263962124104999e-19,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": [
+     120,
+     112
+    ],
+    "weyl_vollstaendig": false,
+    "weyl_global": true,
+    "netto_je_luecke": [
+     0,
+     -8,
+     0,
+     0,
+     0,
+     -8,
+     0,
+     0
+    ],
+    "pfad_unabhaengig": true,
+    "summe_chi": -16,
+    "s_mal_W3": 0,
+    "takt_tabelle": {
+     "dazwischen": {
+      "anzahl": 120,
+      "chi_plus": 52,
+      "chi_minus": 68,
+      "netto": -16
+     }
+    },
+    "unitaer_abw": 3.718068887382255e-15,
+    "nachbau_ok": true,
+    "wuerfel_probe": -2.436946439713517e-18
+   },
+   {
+    "name": "0:teil0/konstruktionen/K5_gemischt_1",
+    "quelle": "rueck_repr",
+    "s": 8,
+    "kategorie": null,
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": -2.230640103072126e-18,
+     "24": -4.167999342152528e-19,
+     "32": -2.681902521818101e-18,
+     "48": -2.125972914824899e-18
+    },
+    "W3_fein": -2.125972914824899e-18,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": [
+     142,
+     139
+    ],
+    "weyl_vollstaendig": false,
+    "weyl_global": true,
+    "netto_je_luecke": [
+     0,
+     -4,
+     0,
+     0,
+     0,
+     -6,
+     0,
+     0
+    ],
+    "pfad_unabhaengig": true,
+    "summe_chi": -10,
+    "s_mal_W3": 0,
+    "takt_tabelle": {
+     "dazwischen": {
+      "anzahl": 142,
+      "chi_plus": 66,
+      "chi_minus": 76,
+      "netto": -10
+     }
+    },
+    "unitaer_abw": 2.706560019004066e-15,
+    "nachbau_ok": true,
+    "wuerfel_probe": 1.579969460547129e-19
+   },
+   {
+    "name": "4N:faelle/4|T:1+3|N|frei",
+    "quelle": "rueck_repr",
+    "s": 4,
+    "kategorie": "einseitig",
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": 4.078648167671392e-19,
+     "24": -2.3018129915726357e-19,
+     "32": 7.960475055278246e-20,
+     "48": 2.8636204604980825e-20
+    },
+    "W3_fein": 2.8636204604980825e-20,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": [
+     4,
+     4
+    ],
+    "weyl_vollstaendig": false,
+    "weyl_global": true,
+    "netto_je_luecke": [
+     -1,
+     0,
+     -1,
+     1
+    ],
+    "pfad_unabhaengig": true,
+    "summe_chi": -1,
+    "s_mal_W3": 0,
+    "takt_tabelle": {
+     "dazwischen": {
+      "anzahl": 4,
+      "chi_plus": 1,
+      "chi_minus": 3,
+      "netto": -1
+     }
+    },
+    "unitaer_abw": 5.995204332975845e-15,
+    "nachbau_ok": true,
+    "wuerfel_probe": -2.6927138595034486e-19
+   },
+   {
+    "name": "4N:faelle/4|T:1'+3|N|frei",
+    "quelle": "rueck_repr",
+    "s": 4,
+    "kategorie": "einseitig",
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": 1.438658446188386e-17,
+     "24": 2.7278021473487692e-17,
+     "32": 2.1989133618499565e-17,
+     "48": 1.9757044586761096e-17
+    },
+    "W3_fein": 1.9757044586761096e-17,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": [
+     4,
+     4
+    ],
+    "weyl_vollstaendig": false,
+    "weyl_global": true,
+    "netto_je_luecke": [
+     -1,
+     -1,
+     -1,
+     0
+    ],
+    "pfad_unabhaengig": true,
+    "summe_chi": -3,
+    "s_mal_W3": 0,
+    "takt_tabelle": {
+     "dazwischen": {
+      "anzahl": 4,
+      "chi_plus": 0,
+      "chi_minus": 4,
+      "netto": -3
+     }
+    },
+    "unitaer_abw": 6.217248937900877e-15,
+    "nachbau_ok": true,
+    "wuerfel_probe": -9.312541380991046e-18
+   },
+   {
+    "name": "4N:faelle/4|T:2+2'|N|frei",
+    "quelle": "rueck_repr",
+    "s": 4,
+    "kategorie": "einseitig",
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": 7.558767134975912e-19,
+     "24": -1.0950764511319913e-19,
+     "32": -8.765476761134564e-19,
+     "48": -3.1281383795797433e-19
+    },
+    "W3_fein": -3.1281383795797433e-19,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": [
+     8,
+     8
+    ],
+    "weyl_vollstaendig": true,
+    "weyl_global": true,
+    "netto_je_luecke": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "pfad_unabhaengig": true,
+    "summe_chi": 0,
+    "s_mal_W3": 0,
+    "takt_tabelle": {
+     "dazwischen": {
+      "anzahl": 8,
+      "chi_plus": 4,
+      "chi_minus": 4,
+      "netto": 0
+     }
+    },
+    "unitaer_abw": 7.771561172376096e-15,
+    "nachbau_ok": true,
+    "wuerfel_probe": 2.5291476910500698e-18
+   },
+   {
+    "name": "4N:faelle/4|T:2+2''|N|frei",
+    "quelle": "rueck_repr",
+    "s": 4,
+    "kategorie": "einseitig",
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": -1.8651088321417099e-19,
+     "24": 4.260571829178726e-19,
+     "32": -8.661851685525774e-19,
+     "48": -6.178427299942975e-20
+    },
+    "W3_fein": -6.178427299942975e-20,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": [
+     8,
+     8
+    ],
+    "weyl_vollstaendig": true,
+    "weyl_global": true,
+    "netto_je_luecke": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "pfad_unabhaengig": true,
+    "summe_chi": 0,
+    "s_mal_W3": 0,
+    "takt_tabelle": {
+     "dazwischen": {
+      "anzahl": 8,
+      "chi_plus": 4,
+      "chi_minus": 4,
+      "netto": 0
+     }
+    },
+    "unitaer_abw": 5.995204332975845e-15,
+    "nachbau_ok": true,
+    "wuerfel_probe": 9.016547562184044e-19
+   },
+   {
+    "name": "4O:faelle/4|T:1+1+1+1|O|frei",
+    "quelle": "rueck_repr",
+    "s": 4,
+    "kategorie": "trivial",
+    "inversion": false,
+    "trivial": true,
+    "W3_je_gitter": {
+     "16": 2.1996521550464206e-41,
+     "24": -7.691806425483832e-41,
+     "32": 7.753844135343032e-42,
+     "48": 2.69686265494155e-41
+    },
+    "W3_fein": 2.69686265494155e-41,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": null,
+    "weyl_vollstaendig": null,
+    "weyl_global": null,
+    "netto_je_luecke": null,
+    "pfad_unabhaengig": null,
+    "summe_chi": null,
+    "s_mal_W3": null,
+    "takt_tabelle": null,
+    "unitaer_abw": 1.1324274851176597e-14,
+    "nachbau_ok": true,
+    "wuerfel_probe": -3.28265243428363e-41
+   },
+   {
+    "name": "4O:faelle/4|T:1+1+1+1'|O|frei",
+    "quelle": "rueck_repr",
+    "s": 4,
+    "kategorie": "trivial",
+    "inversion": false,
+    "trivial": true,
+    "W3_je_gitter": {
+     "16": -2.7516604056837376e-40,
+     "24": 1.289750779055494e-40,
+     "32": -5.832223451678094e-42,
+     "48": -1.3889295900823816e-41
+    },
+    "W3_fein": -1.3889295900823816e-41,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": null,
+    "weyl_vollstaendig": null,
+    "weyl_global": null,
+    "netto_je_luecke": null,
+    "pfad_unabhaengig": null,
+    "summe_chi": null,
+    "s_mal_W3": null,
+    "takt_tabelle": null,
+    "unitaer_abw": 1.3988810110276972e-14,
+    "nachbau_ok": true,
+    "wuerfel_probe": 1.0428196536146053e-40
+   },
+   {
+    "name": "4O:faelle/4|T:1+1+1+1''|O|frei",
+    "quelle": "rueck_repr",
+    "s": 4,
+    "kategorie": "trivial",
+    "inversion": false,
+    "trivial": true,
+    "W3_je_gitter": {
+     "16": 3.591880548944644e-41,
+     "24": -1.246152046880935e-42,
+     "32": 7.495276839184879e-41,
+     "48": 4.752348634925349e-41
+    },
+    "W3_fein": 4.752348634925349e-41,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": null,
+    "weyl_vollstaendig": null,
+    "weyl_global": null,
+    "netto_je_luecke": null,
+    "pfad_unabhaengig": null,
+    "summe_chi": null,
+    "s_mal_W3": null,
+    "takt_tabelle": null,
+    "unitaer_abw": 1.176836406102666e-14,
+    "nachbau_ok": true,
+    "wuerfel_probe": 3.6867690409260124e-40
+   },
+   {
+    "name": "4O:faelle/4|T:1+1+1'+1'|O|frei",
+    "quelle": "rueck_repr",
+    "s": 4,
+    "kategorie": "trivial",
+    "inversion": false,
+    "trivial": true,
+    "W3_je_gitter": {
+     "16": 1.6802362951414343e-40,
+     "24": -1.465762290807176e-40,
+     "32": -1.6317072052316278e-41,
+     "48": -2.865705387815493e-41
+    },
+    "W3_fein": -2.865705387815493e-41,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": null,
+    "weyl_vollstaendig": null,
+    "weyl_global": null,
+    "netto_je_luecke": null,
+    "pfad_unabhaengig": null,
+    "summe_chi": null,
+    "s_mal_W3": null,
+    "takt_tabelle": null,
+    "unitaer_abw": 1.199040866595169e-14,
+    "nachbau_ok": true,
+    "wuerfel_probe": 1.1554012821746107e-40
+   },
+   {
+    "name": "4O:faelle/4|T:1+1+1'+1''|O|frei",
+    "quelle": "rueck_repr",
+    "s": 4,
+    "kategorie": "trivial",
+    "inversion": false,
+    "trivial": true,
+    "W3_je_gitter": {
+     "16": 8.185540050004045e-41,
+     "24": -1.9311452937680648e-40,
+     "32": 3.5354201549735543e-41,
+     "48": 4.828768118746576e-41
+    },
+    "W3_fein": 4.828768118746576e-41,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": null,
+    "weyl_vollstaendig": null,
+    "weyl_global": null,
+    "netto_je_luecke": null,
+    "pfad_unabhaengig": null,
+    "summe_chi": null,
+    "s_mal_W3": null,
+    "takt_tabelle": null,
+    "unitaer_abw": 1.354472090042691e-14,
+    "nachbau_ok": true,
+    "wuerfel_probe": 6.863191336629743e-41
+   },
+   {
+    "name": "4O:faelle/4|T:1+3|O|frei",
+    "quelle": "rueck_repr",
+    "s": 4,
+    "kategorie": "einseitig",
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": 1.7633298035728146e-19,
+     "24": -1.118635918287883e-19,
+     "32": 5.035157051054054e-21,
+     "48": -3.3901043979256615e-20
+    },
+    "W3_fein": -3.3901043979256615e-20,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": [
+     4,
+     4
+    ],
+    "weyl_vollstaendig": false,
+    "weyl_global": true,
+    "netto_je_luecke": [
+     1,
+     -1,
+     -1,
+     -1
+    ],
+    "pfad_unabhaengig": true,
+    "summe_chi": -2,
+    "s_mal_W3": 0,
+    "takt_tabelle": {
+     "dazwischen": {
+      "anzahl": 4,
+      "chi_plus": 1,
+      "chi_minus": 3,
+      "netto": -2
+     }
+    },
+    "unitaer_abw": 6.8833827526759706e-15,
+    "nachbau_ok": true,
+    "wuerfel_probe": 4.22074951755817e-19
+   },
+   {
+    "name": "4O:faelle/4|T:1'+3|O|frei",
+    "quelle": "rueck_repr",
+    "s": 4,
+    "kategorie": "einseitig",
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": -2.5532605888248426e-17,
+     "24": -2.6009405537626088e-17,
+     "32": -2.5100852924155266e-17,
+     "48": -2.515476366959442e-17
+    },
+    "W3_fein": -2.515476366959442e-17,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": [
+     4,
+     4
+    ],
+    "weyl_vollstaendig": false,
+    "weyl_global": true,
+    "netto_je_luecke": [
+     1,
+     0,
+     1,
+     -1
+    ],
+    "pfad_unabhaengig": true,
+    "summe_chi": 1,
+    "s_mal_W3": 0,
+    "takt_tabelle": {
+     "dazwischen": {
+      "anzahl": 4,
+      "chi_plus": 2,
+      "chi_minus": 2,
+      "netto": 1
+     }
+    },
+    "unitaer_abw": 7.549516567451064e-15,
+    "nachbau_ok": true,
+    "wuerfel_probe": -1.855296228905277e-17
+   },
+   {
+    "name": "4O:faelle/4|T:2+2|O|frei",
+    "quelle": "rueck_repr",
+    "s": 4,
+    "kategorie": "trivial",
+    "inversion": false,
+    "trivial": true,
+    "W3_je_gitter": {
+     "16": -2.820670377550787e-37,
+     "24": -2.813935885089745e-37,
+     "32": -2.811420581637972e-37,
+     "48": -2.8131895225199498e-37
+    },
+    "W3_fein": -2.8131895225199498e-37,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": null,
+    "weyl_vollstaendig": null,
+    "weyl_global": null,
+    "netto_je_luecke": null,
+    "pfad_unabhaengig": null,
+    "summe_chi": null,
+    "s_mal_W3": null,
+    "takt_tabelle": null,
+    "unitaer_abw": 6.661338147750939e-15,
+    "nachbau_ok": true,
+    "wuerfel_probe": -2.8225579995870887e-37
+   },
+   {
+    "name": "4O:faelle/4|T:2+2'|O|frei",
+    "quelle": "rueck_repr",
+    "s": 4,
+    "kategorie": "einseitig",
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": -1.612772438730261e-18,
+     "24": 2.335379753783269e-19,
+     "32": 2.4397076351677237e-19,
+     "48": -1.9394481066490297e-19
+    },
+    "W3_fein": -1.9394481066490297e-19,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": [
+     8,
+     8
+    ],
+    "weyl_vollstaendig": true,
+    "weyl_global": true,
+    "netto_je_luecke": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "pfad_unabhaengig": true,
+    "summe_chi": 0,
+    "s_mal_W3": 0,
+    "takt_tabelle": {
+     "dazwischen": {
+      "anzahl": 8,
+      "chi_plus": 4,
+      "chi_minus": 4,
+      "netto": 0
+     }
+    },
+    "unitaer_abw": 7.327471962526033e-15,
+    "nachbau_ok": true,
+    "wuerfel_probe": -1.5271176798075248e-18
+   },
+   {
+    "name": "4O:faelle/4|T:2+2''|O|frei",
+    "quelle": "rueck_repr",
+    "s": 4,
+    "kategorie": "einseitig",
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": -7.997288307646627e-19,
+     "24": 8.125235316272768e-19,
+     "32": -1.5222914429823855e-19,
+     "48": 1.96868383747661e-19
+    },
+    "W3_fein": 1.96868383747661e-19,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": [
+     8,
+     8
+    ],
+    "weyl_vollstaendig": true,
+    "weyl_global": true,
+    "netto_je_luecke": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "pfad_unabhaengig": true,
+    "summe_chi": 0,
+    "s_mal_W3": 0,
+    "takt_tabelle": {
+     "dazwischen": {
+      "anzahl": 8,
+      "chi_plus": 4,
+      "chi_minus": 4,
+      "netto": 0
+     }
+    },
+    "unitaer_abw": 6.8833827526759706e-15,
+    "nachbau_ok": true,
+    "wuerfel_probe": -1.9092131521825138e-18
+   },
+   {
+    "name": "8Na:faelle/8|K4|N|frei",
+    "quelle": "rueck_repr",
+    "s": 8,
+    "kategorie": "rueck+Kegel iso proj",
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": 1.004310090631603e-15,
+     "24": 1.0175999936595705e-15,
+     "32": 1.0246239640233724e-15,
+     "48": 1.0096154948884226e-15
+    },
+    "W3_fein": 1.0096154948884226e-15,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": [
+     64,
+     64
+    ],
+    "weyl_vollstaendig": true,
+    "weyl_global": true,
+    "netto_je_luecke": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "pfad_unabhaengig": true,
+    "summe_chi": 0,
+    "s_mal_W3": 0,
+    "takt_tabelle": {
+     "dazwischen": {
+      "anzahl": 64,
+      "chi_plus": 32,
+      "chi_minus": 32,
+      "netto": 0
+     }
+    },
+    "unitaer_abw": 5.551115123125783e-15,
+    "nachbau_ok": true,
+    "wuerfel_probe": 1.0061103333544506e-15
+   },
+   {
+    "name": "8Na:faelle/8|K5|N|frei",
+    "quelle": "rueck_repr",
+    "s": 8,
+    "kategorie": "einseitig",
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": -4.211600018800274e-17,
+     "24": -2.686258559469312e-17,
+     "32": -2.4927716169117457e-17,
+     "48": -2.4962938865017517e-17
+    },
+    "W3_fein": -2.4962938865017517e-17,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": [
+     80,
+     80
+    ],
+    "weyl_vollstaendig": true,
+    "weyl_global": true,
+    "netto_je_luecke": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "pfad_unabhaengig": true,
+    "summe_chi": 0,
+    "s_mal_W3": 0,
+    "takt_tabelle": {
+     "dazwischen": {
+      "anzahl": 80,
+      "chi_plus": 40,
+      "chi_minus": 40,
+      "netto": 0
+     }
+    },
+    "unitaer_abw": 1.4210854715202004e-14,
+    "nachbau_ok": true,
+    "wuerfel_probe": -1.1917917008346834e-17
+   },
+   {
+    "name": "8Na:faelle/8|K4|N|r50",
+    "quelle": "rueck_repr",
+    "s": 8,
+    "kategorie": "rueck+Kegel iso proj",
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": 6.726795172246158e-17,
+     "24": 6.916384776182389e-17,
+     "32": 6.844390394576903e-17,
+     "48": 6.980109001744028e-17
+    },
+    "W3_fein": 6.980109001744028e-17,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": [
+     116,
+     120
+    ],
+    "weyl_vollstaendig": false,
+    "weyl_global": true,
+    "netto_je_luecke": [
+     4,
+     0,
+     0,
+     0,
+     4,
+     0,
+     4,
+     0
+    ],
+    "pfad_unabhaengig": true,
+    "summe_chi": 12,
+    "s_mal_W3": 0,
+    "takt_tabelle": {
+     "dazwischen": {
+      "anzahl": 116,
+      "chi_plus": 64,
+      "chi_minus": 52,
+      "netto": 12
+     }
+    },
+    "unitaer_abw": 7.105427357601002e-15,
+    "nachbau_ok": true,
+    "wuerfel_probe": 6.078821028828156e-17
+   },
+   {
+    "name": "8Oa:faelle/8|K1|O|frei",
+    "quelle": "rueck_repr",
+    "s": 8,
+    "kategorie": "trivial",
+    "inversion": false,
+    "trivial": true,
+    "W3_je_gitter": {
+     "16": 2.944139295594844e-37,
+     "24": 2.9325769180740773e-37,
+     "32": 2.9304953955243457e-37,
+     "48": 2.9332396514479765e-37
+    },
+    "W3_fein": 2.9332396514479765e-37,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": null,
+    "weyl_vollstaendig": null,
+    "weyl_global": null,
+    "netto_je_luecke": null,
+    "pfad_unabhaengig": null,
+    "summe_chi": null,
+    "s_mal_W3": null,
+    "takt_tabelle": null,
+    "unitaer_abw": 5.217702182294737e-15,
+    "nachbau_ok": false,
+    "wuerfel_probe": 2.9412801720170266e-37
+   },
+   {
+    "name": "8Oa:faelle/8|K2|O|frei",
+    "quelle": "rueck_repr",
+    "s": 8,
+    "kategorie": "einseitig",
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": -9.67690332656141e-18,
+     "24": -5.152113227043533e-18,
+     "32": -2.387719313768146e-18,
+     "48": -6.583581716473066e-19
+    },
+    "W3_fein": -6.583581716473066e-19,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": [
+     59,
+     59
+    ],
+    "weyl_vollstaendig": false,
+    "weyl_global": true,
+    "netto_je_luecke": [
+     0,
+     0,
+     0,
+     -1,
+     4,
+     0,
+     0,
+     0
+    ],
+    "pfad_unabhaengig": true,
+    "summe_chi": 3,
+    "s_mal_W3": 0,
+    "takt_tabelle": {
+     "dazwischen": {
+      "anzahl": 59,
+      "chi_plus": 31,
+      "chi_minus": 28,
+      "netto": 3
+     }
+    },
+    "unitaer_abw": 6.9131061581061855e-15,
+    "nachbau_ok": true,
+    "wuerfel_probe": 5.8163433681169196e-18
+   },
+   {
+    "name": "8Oa:faelle/8|K3|O|frei",
+    "quelle": "rueck_repr",
+    "s": 8,
+    "kategorie": "einseitig",
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": -3.175067624784429e-18,
+     "24": -2.18850103905347e-19,
+     "32": 1.4677250108374907e-18,
+     "48": -1.6937971421928276e-19
+    },
+    "W3_fein": -1.6937971421928276e-19,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": [
+     55,
+     55
+    ],
+    "weyl_vollstaendig": false,
+    "weyl_global": true,
+    "netto_je_luecke": [
+     0,
+     0,
+     -5,
+     0,
+     0,
+     4,
+     0,
+     0
+    ],
+    "pfad_unabhaengig": true,
+    "summe_chi": -1,
+    "s_mal_W3": 0,
+    "takt_tabelle": {
+     "dazwischen": {
+      "anzahl": 55,
+      "chi_plus": 27,
+      "chi_minus": 28,
+      "netto": -1
+     }
+    },
+    "unitaer_abw": 7.549516567451064e-15,
+    "nachbau_ok": true,
+    "wuerfel_probe": -1.0315878134755724e-17
+   },
+   {
+    "name": "8Oa:faelle/8|K4|O|frei",
+    "quelle": "rueck_repr",
+    "s": 8,
+    "kategorie": "rueck+Kegel iso proj",
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": 1.816128586790589e-17,
+     "24": 1.6080031856419896e-17,
+     "32": 1.5061209361972344e-17,
+     "48": 1.4650559095603675e-17
+    },
+    "W3_fein": 1.4650559095603675e-17,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": [
+     64,
+     64
+    ],
+    "weyl_vollstaendig": true,
+    "weyl_global": true,
+    "netto_je_luecke": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "pfad_unabhaengig": true,
+    "summe_chi": 0,
+    "s_mal_W3": 0,
+    "takt_tabelle": {
+     "dazwischen": {
+      "anzahl": 64,
+      "chi_plus": 32,
+      "chi_minus": 32,
+      "netto": 0
+     }
+    },
+    "unitaer_abw": 7.460698725481052e-14,
+    "nachbau_ok": true,
+    "wuerfel_probe": 5.3434414361650106e-18
+   },
+   {
+    "name": "8Oa:faelle/8|K5|O|frei",
+    "quelle": "rueck_repr",
+    "s": 8,
+    "kategorie": "trivial",
+    "inversion": false,
+    "trivial": true,
+    "W3_je_gitter": {
+     "16": -3.95258316494145e-38,
+     "24": -4.000668118286236e-38,
+     "32": -4.0391360809620655e-38,
+     "48": -3.949377501385131e-38
+    },
+    "W3_fein": -3.949377501385131e-38,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": null,
+    "weyl_vollstaendig": null,
+    "weyl_global": null,
+    "netto_je_luecke": null,
+    "pfad_unabhaengig": null,
+    "summe_chi": null,
+    "s_mal_W3": null,
+    "takt_tabelle": null,
+    "unitaer_abw": 5.773159728050814e-15,
+    "nachbau_ok": true,
+    "wuerfel_probe": -3.9256832962660974e-38
+   },
+   {
+    "name": "8Ob:faelle/8|K4|O|r50",
+    "quelle": "rueck_repr",
+    "s": 8,
+    "kategorie": "rueck+Kegel iso proj",
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": -1.218727683822048e-16,
+     "24": -1.2291911425704503e-16,
+     "32": -1.2207993464985634e-16,
+     "48": -1.22129903290442e-16
+    },
+    "W3_fein": -1.22129903290442e-16,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": [
+     104,
+     92
+    ],
+    "weyl_vollstaendig": false,
+    "weyl_global": true,
+    "netto_je_luecke": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "pfad_unabhaengig": true,
+    "summe_chi": 0,
+    "s_mal_W3": 0,
+    "takt_tabelle": {
+     "dazwischen": {
+      "anzahl": 104,
+      "chi_plus": 52,
+      "chi_minus": 52,
+      "netto": 0
+     }
+    },
+    "unitaer_abw": 5.773159728050814e-15,
+    "nachbau_ok": true,
+    "wuerfel_probe": -1.2268449113453804e-16
+   },
+   {
+    "name": "D0:teil0/quelle_dirac/E+|m=0.1",
+    "quelle": "dirac_repr",
+    "s": 4,
+    "kategorie": null,
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": 4.9877243224038515e-19,
+     "24": -9.967400733025758e-19,
+     "32": -2.3199028396501728e-18,
+     "48": -1.050334728733068e-18
+    },
+    "W3_fein": -1.050334728733068e-18,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": null,
+    "weyl_vollstaendig": null,
+    "weyl_global": null,
+    "netto_je_luecke": null,
+    "pfad_unabhaengig": null,
+    "summe_chi": null,
+    "s_mal_W3": null,
+    "takt_tabelle": null,
+    "unitaer_abw": 8.881784197001252e-16,
+    "nachbau_ok": false,
+    "wuerfel_probe": 2.767473783820327e-18
+   },
+   {
+    "name": "D0:teil0/quelle_dirac/E+|m=0.3",
+    "quelle": "dirac_repr",
+    "s": 4,
+    "kategorie": null,
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": -2.7249595869374355e-18,
+     "24": -1.064190679003716e-18,
+     "32": -1.1764414443111222e-19,
+     "48": -6.362014314164218e-19
+    },
+    "W3_fein": -6.362014314164218e-19,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": null,
+    "weyl_vollstaendig": null,
+    "weyl_global": null,
+    "netto_je_luecke": null,
+    "pfad_unabhaengig": null,
+    "summe_chi": null,
+    "s_mal_W3": null,
+    "takt_tabelle": null,
+    "unitaer_abw": 3.9968028886505635e-15,
+    "nachbau_ok": false,
+    "wuerfel_probe": 1.0771859497023732e-17
+   },
+   {
+    "name": "D0:teil0/quelle_dirac/E+|m=0.6",
+    "quelle": "dirac_repr",
+    "s": 4,
+    "kategorie": null,
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": 5.369523657653412e-18,
+     "24": -1.5579217418814154e-18,
+     "32": 1.2025599727730871e-18,
+     "48": 1.2381415105831075e-19
+    },
+    "W3_fein": 1.2381415105831075e-19,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": null,
+    "weyl_vollstaendig": null,
+    "weyl_global": null,
+    "netto_je_luecke": null,
+    "pfad_unabhaengig": null,
+    "summe_chi": null,
+    "s_mal_W3": null,
+    "takt_tabelle": null,
+    "unitaer_abw": 6.661338147750939e-16,
+    "nachbau_ok": false,
+    "wuerfel_probe": 3.746733738095211e-18
+   },
+   {
+    "name": "D0:teil0/quelle_dirac/E-|m=0.1",
+    "quelle": "dirac_repr",
+    "s": 4,
+    "kategorie": null,
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": -3.4568194272710957e-18,
+     "24": -1.4531218760321942e-18,
+     "32": 3.0415360069192774e-18,
+     "48": 9.112235357121158e-19
+    },
+    "W3_fein": 9.112235357121158e-19,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": null,
+    "weyl_vollstaendig": null,
+    "weyl_global": null,
+    "netto_je_luecke": null,
+    "pfad_unabhaengig": null,
+    "summe_chi": null,
+    "s_mal_W3": null,
+    "takt_tabelle": null,
+    "unitaer_abw": 8.881784197001252e-16,
+    "nachbau_ok": false,
+    "wuerfel_probe": -8.983645667478292e-18
+   },
+   {
+    "name": "D0:teil0/quelle_dirac/E-|m=0.3",
+    "quelle": "dirac_repr",
+    "s": 4,
+    "kategorie": null,
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": -2.5673010126388703e-18,
+     "24": 3.2829946565152407e-19,
+     "32": -3.3482210640063818e-18,
+     "48": 5.986994264843753e-19
+    },
+    "W3_fein": 5.986994264843753e-19,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": null,
+    "weyl_vollstaendig": null,
+    "weyl_global": null,
+    "netto_je_luecke": null,
+    "pfad_unabhaengig": null,
+    "summe_chi": null,
+    "s_mal_W3": null,
+    "takt_tabelle": null,
+    "unitaer_abw": 3.9968028886505635e-15,
+    "nachbau_ok": false,
+    "wuerfel_probe": -8.515303950216389e-20
+   },
+   {
+    "name": "D0:teil0/quelle_dirac/E-|m=0.6",
+    "quelle": "dirac_repr",
+    "s": 4,
+    "kategorie": null,
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": 3.780505817570752e-18,
+     "24": 1.5242087867425586e-18,
+     "32": 1.1768183405610104e-18,
+     "48": 8.443501405030497e-19
+    },
+    "W3_fein": 8.443501405030497e-19,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": null,
+    "weyl_vollstaendig": null,
+    "weyl_global": null,
+    "netto_je_luecke": null,
+    "pfad_unabhaengig": null,
+    "summe_chi": null,
+    "s_mal_W3": null,
+    "takt_tabelle": null,
+    "unitaer_abw": 6.661338147750939e-16,
+    "nachbau_ok": false,
+    "wuerfel_probe": -2.277843806682884e-18
+   },
+   {
+    "name": "D0:teil0/suchkontrolle_T:2+2'",
+    "quelle": "dirac_repr",
+    "s": 4,
+    "kategorie": "Kegel bei 0",
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": -5.19802062473947e-19,
+     "24": 1.221476198926459e-18,
+     "32": -2.0946357284405933e-20,
+     "48": 1.0698422411756369e-19
+    },
+    "W3_fein": 1.0698422411756369e-19,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": null,
+    "weyl_vollstaendig": null,
+    "weyl_global": null,
+    "netto_je_luecke": null,
+    "pfad_unabhaengig": null,
+    "summe_chi": null,
+    "s_mal_W3": null,
+    "takt_tabelle": null,
+    "unitaer_abw": 5.10702591327572e-15,
+    "nachbau_ok": true,
+    "wuerfel_probe": -1.7494270762802488e-18
+   },
+   {
+    "name": "D0:teil0/konstruktionen/a_spiegel|m=0.1",
+    "quelle": "dirac_repr",
+    "s": 8,
+    "kategorie": null,
+    "inversion": true,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": -5.374640994114704e-18,
+     "24": -2.6097358353353916e-18,
+     "32": -4.014668382784379e-18,
+     "48": -3.278929730116691e-18
+    },
+    "W3_fein": -3.278929730116691e-18,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": null,
+    "weyl_vollstaendig": null,
+    "weyl_global": null,
+    "netto_je_luecke": null,
+    "pfad_unabhaengig": null,
+    "summe_chi": null,
+    "s_mal_W3": null,
+    "takt_tabelle": null,
+    "unitaer_abw": 4.218847493575595e-15,
+    "nachbau_ok": false,
+    "wuerfel_probe": -9.886817398023404e-18
+   },
+   {
+    "name": "D0:teil0/konstruktionen/a_allgemein|m=0.1",
+    "quelle": "dirac_repr",
+    "s": 8,
+    "kategorie": null,
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": 2.891672618650082e-18,
+     "24": -1.2564978098135806e-18,
+     "32": -3.218146722019783e-19,
+     "48": -9.775882870599462e-19
+    },
+    "W3_fein": -9.775882870599462e-19,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": null,
+    "weyl_vollstaendig": null,
+    "weyl_global": null,
+    "netto_je_luecke": null,
+    "pfad_unabhaengig": null,
+    "summe_chi": null,
+    "s_mal_W3": null,
+    "takt_tabelle": null,
+    "unitaer_abw": 4.508722185830055e-15,
+    "nachbau_ok": true,
+    "wuerfel_probe": 9.09394028891207e-18
+   },
+   {
+    "name": "D0:teil0/konstruktionen/b_muenze_verschiebung|m=0.1",
+    "quelle": "dirac_repr",
+    "s": 8,
+    "kategorie": null,
+    "inversion": true,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": -1.909947290550207e-19,
+     "24": -1.2330563418808468e-19,
+     "32": 4.899263147044363e-19,
+     "48": -2.0568248615327693e-19
+    },
+    "W3_fein": -2.0568248615327693e-19,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": null,
+    "weyl_vollstaendig": null,
+    "weyl_global": null,
+    "netto_je_luecke": null,
+    "pfad_unabhaengig": null,
+    "summe_chi": null,
+    "s_mal_W3": null,
+    "takt_tabelle": null,
+    "unitaer_abw": 4.6629367034256575e-15,
+    "nachbau_ok": false,
+    "wuerfel_probe": 1.5776354682235426e-18
+   },
+   {
+    "name": "D0:teil0/konstruktionen/a_spiegel|m=0.3",
+    "quelle": "dirac_repr",
+    "s": 8,
+    "kategorie": null,
+    "inversion": true,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": 1.0681925909854588e-18,
+     "24": -1.278951927495532e-18,
+     "32": -6.501211537931835e-19,
+     "48": 8.040918423513354e-19
+    },
+    "W3_fein": 8.040918423513354e-19,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": null,
+    "weyl_vollstaendig": null,
+    "weyl_global": null,
+    "netto_je_luecke": null,
+    "pfad_unabhaengig": null,
+    "summe_chi": null,
+    "s_mal_W3": null,
+    "takt_tabelle": null,
+    "unitaer_abw": 3.806453328822865e-15,
+    "nachbau_ok": false,
+    "wuerfel_probe": 1.3506452797829585e-18
+   },
+   {
+    "name": "D0:teil0/konstruktionen/a_allgemein|m=0.3",
+    "quelle": "dirac_repr",
+    "s": 8,
+    "kategorie": null,
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": -2.4416426079290692e-17,
+     "24": -2.1661787967154697e-17,
+     "32": -2.2096561540730555e-17,
+     "48": -2.171165335662248e-17
+    },
+    "W3_fein": -2.171165335662248e-17,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": null,
+    "weyl_vollstaendig": null,
+    "weyl_global": null,
+    "netto_je_luecke": null,
+    "pfad_unabhaengig": null,
+    "summe_chi": null,
+    "s_mal_W3": null,
+    "takt_tabelle": null,
+    "unitaer_abw": 4.218847493575595e-15,
+    "nachbau_ok": true,
+    "wuerfel_probe": -2.1239052327756673e-17
+   },
+   {
+    "name": "D0:teil0/konstruktionen/b_muenze_verschiebung|m=0.3",
+    "quelle": "dirac_repr",
+    "s": 8,
+    "kategorie": null,
+    "inversion": true,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": -1.2828784333648912e-18,
+     "24": 9.860695630697258e-20,
+     "32": -1.4160245920459718e-19,
+     "48": -1.459323213707631e-19
+    },
+    "W3_fein": -1.459323213707631e-19,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": null,
+    "weyl_vollstaendig": null,
+    "weyl_global": null,
+    "netto_je_luecke": null,
+    "pfad_unabhaengig": null,
+    "summe_chi": null,
+    "s_mal_W3": null,
+    "takt_tabelle": null,
+    "unitaer_abw": 3.802992223567803e-15,
+    "nachbau_ok": false,
+    "wuerfel_probe": 1.1490019293919884e-18
+   },
+   {
+    "name": "D0:teil0/konstruktionen/a_spiegel|m=0.6",
+    "quelle": "dirac_repr",
+    "s": 8,
+    "kategorie": null,
+    "inversion": true,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": -1.780207434086617e-18,
+     "24": 2.1439200570169634e-19,
+     "32": 4.177385618723559e-19,
+     "48": 5.1695123749256976e-20
+    },
+    "W3_fein": 5.1695123749256976e-20,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": null,
+    "weyl_vollstaendig": null,
+    "weyl_global": null,
+    "netto_je_luecke": null,
+    "pfad_unabhaengig": null,
+    "summe_chi": null,
+    "s_mal_W3": null,
+    "takt_tabelle": null,
+    "unitaer_abw": 1.9984014443252818e-15,
+    "nachbau_ok": false,
+    "wuerfel_probe": -1.1200002071484735e-18
+   },
+   {
+    "name": "D0:teil0/konstruktionen/a_allgemein|m=0.6",
+    "quelle": "dirac_repr",
+    "s": 8,
+    "kategorie": null,
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": 1.7190935367360972e-18,
+     "24": 1.1056388317309004e-18,
+     "32": 8.622135882042119e-19,
+     "48": 6.81008589871913e-19
+    },
+    "W3_fein": 6.81008589871913e-19,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": null,
+    "weyl_vollstaendig": null,
+    "weyl_global": null,
+    "netto_je_luecke": null,
+    "pfad_unabhaengig": null,
+    "summe_chi": null,
+    "s_mal_W3": null,
+    "takt_tabelle": null,
+    "unitaer_abw": 2.6645352591003757e-15,
+    "nachbau_ok": true,
+    "wuerfel_probe": -1.3682631368242942e-18
+   },
+   {
+    "name": "D0:teil0/konstruktionen/b_muenze_verschiebung|m=0.6",
+    "quelle": "dirac_repr",
+    "s": 8,
+    "kategorie": null,
+    "inversion": true,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": 3.570863399706433e-20,
+     "24": 2.690767416496236e-19,
+     "32": -2.9553900197352055e-19,
+     "48": -3.7998247754231144e-20
+    },
+    "W3_fein": -3.7998247754231144e-20,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": null,
+    "weyl_vollstaendig": null,
+    "weyl_global": null,
+    "netto_je_luecke": null,
+    "pfad_unabhaengig": null,
+    "summe_chi": null,
+    "s_mal_W3": null,
+    "takt_tabelle": null,
+    "unitaer_abw": 1.29182750273074e-15,
+    "nachbau_ok": false,
+    "wuerfel_probe": -6.728627869571999e-19
+   },
+   {
+    "name": "DA:faelle/A|O|T:2+2",
+    "quelle": "dirac_repr",
+    "s": 4,
+    "kategorie": "trivial",
+    "inversion": false,
+    "trivial": true,
+    "W3_je_gitter": {
+     "16": 7.3353038334811e-39,
+     "24": 7.334614566412801e-39,
+     "32": 7.406943707780847e-39,
+     "48": 7.373226076970454e-39
+    },
+    "W3_fein": 7.373226076970454e-39,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": null,
+    "weyl_vollstaendig": null,
+    "weyl_global": null,
+    "netto_je_luecke": null,
+    "pfad_unabhaengig": null,
+    "summe_chi": null,
+    "s_mal_W3": null,
+    "takt_tabelle": null,
+    "unitaer_abw": 7.105427357601002e-15,
+    "nachbau_ok": true,
+    "wuerfel_probe": 7.04880101600998e-39
+   },
+   {
+    "name": "DBN:faelle/B|N|K4",
+    "quelle": "dirac_repr",
+    "s": 8,
+    "kategorie": "Kegel bei 0",
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": 2.9631020548092293e-18,
+     "24": -1.1126675159366713e-17,
+     "32": 1.5458990661714183e-18,
+     "48": -4.551428583530412e-18
+    },
+    "W3_fein": -4.551428583530412e-18,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": null,
+    "weyl_vollstaendig": null,
+    "weyl_global": null,
+    "netto_je_luecke": null,
+    "pfad_unabhaengig": null,
+    "summe_chi": null,
+    "s_mal_W3": null,
+    "takt_tabelle": null,
+    "unitaer_abw": 6.930284334219548e-15,
+    "nachbau_ok": true,
+    "wuerfel_probe": 2.077563243798694e-17
+   },
+   {
+    "name": "DBN:faelle/B|N|K5",
+    "quelle": "dirac_repr",
+    "s": 8,
+    "kategorie": "Kegel bei 0",
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": 6.772695187041537e-18,
+     "24": -7.78943626560467e-18,
+     "32": 5.034308194649939e-18,
+     "48": 7.421147409440262e-18
+    },
+    "W3_fein": 7.421147409440262e-18,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": null,
+    "weyl_vollstaendig": null,
+    "weyl_global": null,
+    "netto_je_luecke": null,
+    "pfad_unabhaengig": null,
+    "summe_chi": null,
+    "s_mal_W3": null,
+    "takt_tabelle": null,
+    "unitaer_abw": 7.547095857448966e-15,
+    "nachbau_ok": true,
+    "wuerfel_probe": 2.159560147869047e-17
+   },
+   {
+    "name": "DBO1:faelle/B|O|K1",
+    "quelle": "dirac_repr",
+    "s": 8,
+    "kategorie": "trivial",
+    "inversion": false,
+    "trivial": true,
+    "W3_je_gitter": {
+     "16": -2.1308863216541657e-37,
+     "24": -2.128523922009813e-37,
+     "32": -2.129574785768502e-37,
+     "48": -2.132668040441714e-37
+    },
+    "W3_fein": -2.132668040441714e-37,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": null,
+    "weyl_vollstaendig": null,
+    "weyl_global": null,
+    "netto_je_luecke": null,
+    "pfad_unabhaengig": null,
+    "summe_chi": null,
+    "s_mal_W3": null,
+    "takt_tabelle": null,
+    "unitaer_abw": 6.439293542825908e-15,
+    "nachbau_ok": true,
+    "wuerfel_probe": -2.1346368247504086e-37
+   },
+   {
+    "name": "DBO2:faelle/B|O|K2",
+    "quelle": "dirac_repr",
+    "s": 8,
+    "kategorie": "Kegel bei 0",
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": -1.3326871484129633e-18,
+     "24": 2.1929494341202777e-18,
+     "32": 2.0972036683795196e-18,
+     "48": 8.591734063153841e-19
+    },
+    "W3_fein": 8.591734063153841e-19,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": null,
+    "weyl_vollstaendig": null,
+    "weyl_global": null,
+    "netto_je_luecke": null,
+    "pfad_unabhaengig": null,
+    "summe_chi": null,
+    "s_mal_W3": null,
+    "takt_tabelle": null,
+    "unitaer_abw": 5.145857707576372e-15,
+    "nachbau_ok": true,
+    "wuerfel_probe": 5.261682653512142e-18
+   },
+   {
+    "name": "DBO2:faelle/B|O|K3",
+    "quelle": "dirac_repr",
+    "s": 8,
+    "kategorie": "Kegel bei 0",
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": 6.595072561893593e-18,
+     "24": -6.83341178871778e-18,
+     "32": 3.690358285687837e-19,
+     "48": -2.065972573492633e-18
+    },
+    "W3_fein": -2.065972573492633e-18,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": null,
+    "weyl_vollstaendig": null,
+    "weyl_global": null,
+    "netto_je_luecke": null,
+    "pfad_unabhaengig": null,
+    "summe_chi": null,
+    "s_mal_W3": null,
+    "takt_tabelle": null,
+    "unitaer_abw": 6.772360450213455e-15,
+    "nachbau_ok": true,
+    "wuerfel_probe": 1.9957721930410375e-17
+   },
+   {
+    "name": "DBOP:faelle/B|O|K4",
+    "quelle": "dirac_repr",
+    "s": 8,
+    "kategorie": "Kegel bei 0",
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": -8.466093060695266e-15,
+     "24": -8.562930124055357e-15,
+     "32": -8.48513237391376e-15,
+     "48": -8.558711175627374e-15
+    },
+    "W3_fein": -8.558711175627374e-15,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": null,
+    "weyl_vollstaendig": null,
+    "weyl_global": null,
+    "netto_je_luecke": null,
+    "pfad_unabhaengig": null,
+    "summe_chi": null,
+    "s_mal_W3": null,
+    "takt_tabelle": null,
+    "unitaer_abw": 6.439293542825908e-15,
+    "nachbau_ok": true,
+    "wuerfel_probe": -8.474082561258008e-15
+   },
+   {
+    "name": "DBOP:faelle/B|O|K5",
+    "quelle": "dirac_repr",
+    "s": 8,
+    "kategorie": "Kegel bei 0",
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": 6.909627208310275e-17,
+     "24": 2.039379975492266e-17,
+     "32": 5.903142872662717e-17,
+     "48": 2.689300832720715e-17
+    },
+    "W3_fein": 2.689300832720715e-17,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": null,
+    "weyl_vollstaendig": null,
+    "weyl_global": null,
+    "netto_je_luecke": null,
+    "pfad_unabhaengig": null,
+    "summe_chi": null,
+    "s_mal_W3": null,
+    "takt_tabelle": null,
+    "unitaer_abw": 6.661338147750939e-15,
+    "nachbau_ok": true,
+    "wuerfel_probe": 5.618698006382628e-17
+   },
+   {
+    "name": "DBOP:faelle/B|P|K4",
+    "quelle": "dirac_repr",
+    "s": 8,
+    "kategorie": "massiv",
+    "inversion": true,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": 2.6072170876368044e-18,
+     "24": -1.0155197548009635e-18,
+     "32": 9.831951023818202e-19,
+     "48": 9.258937673857711e-20
+    },
+    "W3_fein": 9.258937673857711e-20,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": null,
+    "weyl_vollstaendig": null,
+    "weyl_global": null,
+    "netto_je_luecke": null,
+    "pfad_unabhaengig": null,
+    "summe_chi": null,
+    "s_mal_W3": null,
+    "takt_tabelle": null,
+    "unitaer_abw": 6.661338147750939e-15,
+    "nachbau_ok": false,
+    "wuerfel_probe": 2.966819354195343e-18
+   },
+   {
+    "name": "DBOP:faelle/B|P|K5",
+    "quelle": "dirac_repr",
+    "s": 8,
+    "kategorie": "trivial",
+    "inversion": true,
+    "trivial": true,
+    "W3_je_gitter": {
+     "16": -1.154038880274876e-39,
+     "24": -3.419374460073706e-40,
+     "32": 8.655291602061569e-40,
+     "48": -8.33472524642966e-40
+    },
+    "W3_fein": -8.33472524642966e-40,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": null,
+    "weyl_vollstaendig": null,
+    "weyl_global": null,
+    "netto_je_luecke": null,
+    "pfad_unabhaengig": null,
+    "summe_chi": null,
+    "s_mal_W3": null,
+    "takt_tabelle": null,
+    "unitaer_abw": 4.726420236922855e-15,
+    "nachbau_ok": false,
+    "wuerfel_probe": 5.325032919237098e-40
+   },
+   {
+    "name": "N1:8|K4|N|frei#0",
+    "quelle": "rueck_treffer",
+    "s": 8,
+    "kategorie": "rueck+Kegel iso proj",
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": 1.004310090631603e-15,
+     "24": 1.0175999936595705e-15,
+     "32": 1.0246239640233724e-15,
+     "48": 1.0096154948884226e-15
+    },
+    "W3_fein": 1.0096154948884226e-15,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": [
+     64,
+     64
+    ],
+    "weyl_vollstaendig": true,
+    "weyl_global": true,
+    "netto_je_luecke": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "pfad_unabhaengig": true,
+    "summe_chi": 0,
+    "s_mal_W3": 0,
+    "takt_tabelle": {
+     "dazwischen": {
+      "anzahl": 64,
+      "chi_plus": 32,
+      "chi_minus": 32,
+      "netto": 0
+     }
+    },
+    "unitaer_abw": 5.551115123125783e-15,
+    "nachbau_ok": true,
+    "wuerfel_probe": 1.0061103333544506e-15
+   },
+   {
+    "name": "N1:8|K4|N|frei#1",
+    "quelle": "rueck_treffer",
+    "s": 8,
+    "kategorie": "rueck+Kegel iso proj",
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": 2.9070768700191556e-15,
+     "24": 2.9132982284522393e-15,
+     "32": 2.8857935865862e-15,
+     "48": 2.913925302759132e-15
+    },
+    "W3_fein": 2.913925302759132e-15,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": [
+     120,
+     120
+    ],
+    "weyl_vollstaendig": false,
+    "weyl_global": true,
+    "netto_je_luecke": [
+     -4,
+     0,
+     0,
+     0,
+     -4,
+     0,
+     0,
+     0
+    ],
+    "pfad_unabhaengig": true,
+    "summe_chi": -8,
+    "s_mal_W3": 0,
+    "takt_tabelle": {
+     "dazwischen": {
+      "anzahl": 120,
+      "chi_plus": 56,
+      "chi_minus": 64,
+      "netto": -8
+     }
+    },
+    "unitaer_abw": 6.661338147750939e-15,
+    "nachbau_ok": true,
+    "wuerfel_probe": 2.915341537972243e-15
+   },
+   {
+    "name": "N1:8|K4|N|frei#2",
+    "quelle": "rueck_treffer",
+    "s": 8,
+    "kategorie": "rueck+Kegel iso proj",
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": -4.714933897919032e-19,
+     "24": 1.1502876717433623e-18,
+     "32": 4.3266542650353887e-19,
+     "48": 3.7375768165022597e-19
+    },
+    "W3_fein": 3.7375768165022597e-19,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": [
+     48,
+     48
+    ],
+    "weyl_vollstaendig": true,
+    "weyl_global": true,
+    "netto_je_luecke": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "pfad_unabhaengig": true,
+    "summe_chi": 0,
+    "s_mal_W3": 0,
+    "takt_tabelle": {
+     "dazwischen": {
+      "anzahl": 48,
+      "chi_plus": 24,
+      "chi_minus": 24,
+      "netto": 0
+     }
+    },
+    "unitaer_abw": 5.995204332975845e-15,
+    "nachbau_ok": true,
+    "wuerfel_probe": 5.037843831298858e-18
+   },
+   {
+    "name": "N1:8|K4|N|frei#3",
+    "quelle": "rueck_treffer",
+    "s": 8,
+    "kategorie": "rueck+Kegel iso proj",
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": -6.477848266461718e-18,
+     "24": -5.255774868279953e-18,
+     "32": -4.061801943656429e-18,
+     "48": -6.152574538456221e-18
+    },
+    "W3_fein": -6.152574538456221e-18,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": [
+     112,
+     120
+    ],
+    "weyl_vollstaendig": false,
+    "weyl_global": true,
+    "netto_je_luecke": [
+     4,
+     0,
+     -4,
+     0,
+     4,
+     0,
+     -4,
+     0
+    ],
+    "pfad_unabhaengig": true,
+    "summe_chi": 0,
+    "s_mal_W3": 0,
+    "takt_tabelle": {
+     "dazwischen": {
+      "anzahl": 112,
+      "chi_plus": 56,
+      "chi_minus": 56,
+      "netto": 0
+     }
+    },
+    "unitaer_abw": 8.324452238639424e-13,
+    "nachbau_ok": true,
+    "wuerfel_probe": -1.0636314068440437e-17
+   },
+   {
+    "name": "N1:8|K4|N|frei#4",
+    "quelle": "rueck_treffer",
+    "s": 8,
+    "kategorie": "rueck+Kegel iso proj",
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": -3.962595953350547e-18,
+     "24": -3.869626511534011e-18,
+     "32": -2.724820024390628e-18,
+     "48": -3.336100783675065e-18
+    },
+    "W3_fein": -3.336100783675065e-18,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": [
+     64,
+     64
+    ],
+    "weyl_vollstaendig": true,
+    "weyl_global": true,
+    "netto_je_luecke": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "pfad_unabhaengig": true,
+    "summe_chi": 0,
+    "s_mal_W3": 0,
+    "takt_tabelle": {
+     "dazwischen": {
+      "anzahl": 64,
+      "chi_plus": 32,
+      "chi_minus": 32,
+      "netto": 0
+     }
+    },
+    "unitaer_abw": 6.213186062477198e-12,
+    "nachbau_ok": true,
+    "wuerfel_probe": -1.7383387005797057e-17
+   },
+   {
+    "name": "N1:8|K4|N|frei#5",
+    "quelle": "rueck_treffer",
+    "s": 8,
+    "kategorie": "rueck+Kegel iso proj",
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": -3.1328425249189333e-15,
+     "24": -3.1941345727570965e-15,
+     "32": -3.26026807160549e-15,
+     "48": -3.215151160927327e-15
+    },
+    "W3_fein": -3.215151160927327e-15,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": [
+     136,
+     144
+    ],
+    "weyl_vollstaendig": false,
+    "weyl_global": true,
+    "netto_je_luecke": [
+     0,
+     0,
+     4,
+     0,
+     0,
+     0,
+     4,
+     0
+    ],
+    "pfad_unabhaengig": true,
+    "summe_chi": 8,
+    "s_mal_W3": 0,
+    "takt_tabelle": {
+     "dazwischen": {
+      "anzahl": 136,
+      "chi_plus": 72,
+      "chi_minus": 64,
+      "netto": 8
+     }
+    },
+    "unitaer_abw": 6.414030678290816e-15,
+    "nachbau_ok": true,
+    "wuerfel_probe": -3.1203519710660204e-15
+   },
+   {
+    "name": "N1:8|K4|N|frei#6",
+    "quelle": "rueck_treffer",
+    "s": 8,
+    "kategorie": "rueck+Kegel",
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": -2.918995347709678e-18,
+     "24": -3.117344893337877e-19,
+     "32": -3.000284692336221e-18,
+     "48": -3.4614693785772767e-18
+    },
+    "W3_fein": -3.4614693785772767e-18,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": [
+     88,
+     88
+    ],
+    "weyl_vollstaendig": true,
+    "weyl_global": true,
+    "netto_je_luecke": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "pfad_unabhaengig": true,
+    "summe_chi": 0,
+    "s_mal_W3": 0,
+    "takt_tabelle": {
+     "dazwischen": {
+      "anzahl": 88,
+      "chi_plus": 44,
+      "chi_minus": 44,
+      "netto": 0
+     }
+    },
+    "unitaer_abw": 5.514984683001484e-15,
+    "nachbau_ok": true,
+    "wuerfel_probe": 3.20699111405348e-18
+   },
+   {
+    "name": "N2:8|K5|N|frei#0",
+    "quelle": "rueck_treffer",
+    "s": 8,
+    "kategorie": "einseitig",
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": -4.211600018800274e-17,
+     "24": -2.686258559469312e-17,
+     "32": -2.4927716169117457e-17,
+     "48": -2.4962938865017517e-17
+    },
+    "W3_fein": -2.4962938865017517e-17,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": [
+     80,
+     80
+    ],
+    "weyl_vollstaendig": true,
+    "weyl_global": true,
+    "netto_je_luecke": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "pfad_unabhaengig": true,
+    "summe_chi": 0,
+    "s_mal_W3": 0,
+    "takt_tabelle": {
+     "dazwischen": {
+      "anzahl": 80,
+      "chi_plus": 40,
+      "chi_minus": 40,
+      "netto": 0
+     }
+    },
+    "unitaer_abw": 1.4210854715202004e-14,
+    "nachbau_ok": true,
+    "wuerfel_probe": -1.1917917008346834e-17
+   },
+   {
+    "name": "N2:8|K5|N|frei#1",
+    "quelle": "rueck_treffer",
+    "s": 8,
+    "kategorie": "einseitig",
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": -2.0278105027644908e-17,
+     "24": 7.767195635773143e-18,
+     "32": 6.596398050463736e-19,
+     "48": 1.4694724669467072e-17
+    },
+    "W3_fein": 1.4694724669467072e-17,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": [
+     80,
+     80
+    ],
+    "weyl_vollstaendig": true,
+    "weyl_global": true,
+    "netto_je_luecke": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "pfad_unabhaengig": true,
+    "summe_chi": 0,
+    "s_mal_W3": 0,
+    "takt_tabelle": {
+     "dazwischen": {
+      "anzahl": 80,
+      "chi_plus": 40,
+      "chi_minus": 40,
+      "netto": 0
+     }
+    },
+    "unitaer_abw": 5.551115123125783e-15,
+    "nachbau_ok": true,
+    "wuerfel_probe": -1.9974760033833832e-17
+   },
+   {
+    "name": "N3:8|K4|N|r50#0",
+    "quelle": "rueck_treffer",
+    "s": 8,
+    "kategorie": "rueck+Kegel iso proj",
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": 6.726795172246158e-17,
+     "24": 6.916384776182389e-17,
+     "32": 6.844390394576903e-17,
+     "48": 6.980109001744028e-17
+    },
+    "W3_fein": 6.980109001744028e-17,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": [
+     116,
+     120
+    ],
+    "weyl_vollstaendig": false,
+    "weyl_global": true,
+    "netto_je_luecke": [
+     4,
+     0,
+     0,
+     0,
+     4,
+     0,
+     4,
+     0
+    ],
+    "pfad_unabhaengig": true,
+    "summe_chi": 12,
+    "s_mal_W3": 0,
+    "takt_tabelle": {
+     "dazwischen": {
+      "anzahl": 116,
+      "chi_plus": 64,
+      "chi_minus": 52,
+      "netto": 12
+     }
+    },
+    "unitaer_abw": 7.105427357601002e-15,
+    "nachbau_ok": true,
+    "wuerfel_probe": 6.078821028828156e-17
+   },
+   {
+    "name": "N3:8|K4|N|r50#1",
+    "quelle": "rueck_treffer",
+    "s": 8,
+    "kategorie": "rueck+Kegel",
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": -1.2736432844734266e-17,
+     "24": -1.2727535316829179e-17,
+     "32": -1.2509918689622604e-17,
+     "48": -1.1030616298118317e-17
+    },
+    "W3_fein": -1.1030616298118317e-17,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": [
+     48,
+     48
+    ],
+    "weyl_vollstaendig": true,
+    "weyl_global": true,
+    "netto_je_luecke": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "pfad_unabhaengig": true,
+    "summe_chi": 0,
+    "s_mal_W3": 0,
+    "takt_tabelle": {
+     "dazwischen": {
+      "anzahl": 48,
+      "chi_plus": 24,
+      "chi_minus": 24,
+      "netto": 0
+     }
+    },
+    "unitaer_abw": 8.215650382226158e-15,
+    "nachbau_ok": true,
+    "wuerfel_probe": -4.190244309739838e-18
+   },
+   {
+    "name": "Oa:8|K1|O|frei#0",
+    "quelle": "rueck_treffer",
+    "s": 8,
+    "kategorie": "trivial",
+    "inversion": false,
+    "trivial": true,
+    "W3_je_gitter": {
+     "16": 2.944139295594844e-37,
+     "24": 2.9325769180740773e-37,
+     "32": 2.9304953955243457e-37,
+     "48": 2.9332396514479765e-37
+    },
+    "W3_fein": 2.9332396514479765e-37,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": null,
+    "weyl_vollstaendig": null,
+    "weyl_global": null,
+    "netto_je_luecke": null,
+    "pfad_unabhaengig": null,
+    "summe_chi": null,
+    "s_mal_W3": null,
+    "takt_tabelle": null,
+    "unitaer_abw": 5.217702182294737e-15,
+    "nachbau_ok": false,
+    "wuerfel_probe": 2.9412801720170266e-37
+   },
+   {
+    "name": "Oa:8|K1|O|frei#1",
+    "quelle": "rueck_treffer",
+    "s": 8,
+    "kategorie": "trivial",
+    "inversion": false,
+    "trivial": true,
+    "W3_je_gitter": {
+     "16": 4.262239992427633e-37,
+     "24": 4.252247122836675e-37,
+     "32": 4.2539137073857725e-37,
+     "48": 4.255868625236482e-37
+    },
+    "W3_fein": 4.255868625236482e-37,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": null,
+    "weyl_vollstaendig": null,
+    "weyl_global": null,
+    "netto_je_luecke": null,
+    "pfad_unabhaengig": null,
+    "summe_chi": null,
+    "s_mal_W3": null,
+    "takt_tabelle": null,
+    "unitaer_abw": 6.8833827526759706e-15,
+    "nachbau_ok": true,
+    "wuerfel_probe": 4.278419006136418e-37
+   },
+   {
+    "name": "Oa:8|K1|O|frei#2",
+    "quelle": "rueck_treffer",
+    "s": 8,
+    "kategorie": "trivial",
+    "inversion": false,
+    "trivial": true,
+    "W3_je_gitter": {
+     "16": 1.9347375278414121e-38,
+     "24": 1.9394115489419797e-38,
+     "32": 1.9393207717007193e-38,
+     "48": 1.9420110308592159e-38
+    },
+    "W3_fein": 1.9420110308592159e-38,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": null,
+    "weyl_vollstaendig": null,
+    "weyl_global": null,
+    "netto_je_luecke": null,
+    "pfad_unabhaengig": null,
+    "summe_chi": null,
+    "s_mal_W3": null,
+    "takt_tabelle": null,
+    "unitaer_abw": 5.773159728050814e-15,
+    "nachbau_ok": false,
+    "wuerfel_probe": 1.9350115027881576e-38
+   },
+   {
+    "name": "Oa:8|K2|O|frei#0",
+    "quelle": "rueck_treffer",
+    "s": 8,
+    "kategorie": "einseitig",
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": -9.67690332656141e-18,
+     "24": -5.152113227043533e-18,
+     "32": -2.387719313768146e-18,
+     "48": -6.583581716473066e-19
+    },
+    "W3_fein": -6.583581716473066e-19,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": [
+     59,
+     59
+    ],
+    "weyl_vollstaendig": false,
+    "weyl_global": true,
+    "netto_je_luecke": [
+     0,
+     0,
+     0,
+     -1,
+     4,
+     0,
+     0,
+     0
+    ],
+    "pfad_unabhaengig": true,
+    "summe_chi": 3,
+    "s_mal_W3": 0,
+    "takt_tabelle": {
+     "dazwischen": {
+      "anzahl": 59,
+      "chi_plus": 31,
+      "chi_minus": 28,
+      "netto": 3
+     }
+    },
+    "unitaer_abw": 6.9131061581061855e-15,
+    "nachbau_ok": true,
+    "wuerfel_probe": 5.8163433681169196e-18
+   },
+   {
+    "name": "Oa:8|K2|O|frei#1",
+    "quelle": "rueck_treffer",
+    "s": 8,
+    "kategorie": "trivial",
+    "inversion": false,
+    "trivial": true,
+    "W3_je_gitter": {
+     "16": 2.642749035829466e-37,
+     "24": 2.6397570831769013e-37,
+     "32": 2.634093744227404e-37,
+     "48": 2.611547243881293e-37
+    },
+    "W3_fein": 2.611547243881293e-37,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": null,
+    "weyl_vollstaendig": null,
+    "weyl_global": null,
+    "netto_je_luecke": null,
+    "pfad_unabhaengig": null,
+    "summe_chi": null,
+    "s_mal_W3": null,
+    "takt_tabelle": null,
+    "unitaer_abw": 5.995204332975845e-15,
+    "nachbau_ok": true,
+    "wuerfel_probe": 2.609019072847286e-37
+   },
+   {
+    "name": "Oa:8|K2|O|frei#2",
+    "quelle": "rueck_treffer",
+    "s": 8,
+    "kategorie": "trivial",
+    "inversion": false,
+    "trivial": true,
+    "W3_je_gitter": {
+     "16": 6.59379949288305e-38,
+     "24": 6.630915066246058e-38,
+     "32": 6.610140863746318e-38,
+     "48": 6.601897132595627e-38
+    },
+    "W3_fein": 6.601897132595627e-38,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": null,
+    "weyl_vollstaendig": null,
+    "weyl_global": null,
+    "netto_je_luecke": null,
+    "pfad_unabhaengig": null,
+    "summe_chi": null,
+    "s_mal_W3": null,
+    "takt_tabelle": null,
+    "unitaer_abw": 6.439293542825908e-15,
+    "nachbau_ok": false,
+    "wuerfel_probe": 6.558619761513832e-38
+   },
+   {
+    "name": "Oa:8|K2|O|frei#3",
+    "quelle": "rueck_treffer",
+    "s": 8,
+    "kategorie": "einseitig",
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": -1.6413769614055657e-17,
+     "24": -1.8331123187815267e-17,
+     "32": -1.7944208818414642e-17,
+     "48": -1.7896930799386846e-17
+    },
+    "W3_fein": -1.7896930799386846e-17,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": [
+     51,
+     51
+    ],
+    "weyl_vollstaendig": false,
+    "weyl_global": true,
+    "netto_je_luecke": [
+     0,
+     4,
+     -4,
+     0,
+     0,
+     3,
+     -2,
+     0
+    ],
+    "pfad_unabhaengig": true,
+    "summe_chi": 1,
+    "s_mal_W3": 0,
+    "takt_tabelle": {
+     "dazwischen": {
+      "anzahl": 51,
+      "chi_plus": 26,
+      "chi_minus": 25,
+      "netto": 1
+     }
+    },
+    "unitaer_abw": 6.217248937900877e-15,
+    "nachbau_ok": true,
+    "wuerfel_probe": -1.760675655588997e-17
+   },
+   {
+    "name": "Oa:8|K3|O|frei#0",
+    "quelle": "rueck_treffer",
+    "s": 8,
+    "kategorie": "trivial",
+    "inversion": false,
+    "trivial": true,
+    "W3_je_gitter": {
+     "16": -2.2038536241749272e-37,
+     "24": -2.199298910538657e-37,
+     "32": -2.1951983325728656e-37,
+     "48": -2.196200102434215e-37
+    },
+    "W3_fein": -2.196200102434215e-37,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": null,
+    "weyl_vollstaendig": null,
+    "weyl_global": null,
+    "netto_je_luecke": null,
+    "pfad_unabhaengig": null,
+    "summe_chi": null,
+    "s_mal_W3": null,
+    "takt_tabelle": null,
+    "unitaer_abw": 5.773159728050814e-15,
+    "nachbau_ok": false,
+    "wuerfel_probe": -2.204909407921501e-37
+   },
+   {
+    "name": "Oa:8|K3|O|frei#1",
+    "quelle": "rueck_treffer",
+    "s": 8,
+    "kategorie": "einseitig",
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": -3.175067624784429e-18,
+     "24": -2.18850103905347e-19,
+     "32": 1.4677250108374907e-18,
+     "48": -1.6937971421928276e-19
+    },
+    "W3_fein": -1.6937971421928276e-19,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": [
+     55,
+     55
+    ],
+    "weyl_vollstaendig": false,
+    "weyl_global": true,
+    "netto_je_luecke": [
+     0,
+     0,
+     -5,
+     0,
+     0,
+     4,
+     0,
+     0
+    ],
+    "pfad_unabhaengig": true,
+    "summe_chi": -1,
+    "s_mal_W3": 0,
+    "takt_tabelle": {
+     "dazwischen": {
+      "anzahl": 55,
+      "chi_plus": 27,
+      "chi_minus": 28,
+      "netto": -1
+     }
+    },
+    "unitaer_abw": 7.549516567451064e-15,
+    "nachbau_ok": true,
+    "wuerfel_probe": -1.0315878134755724e-17
+   },
+   {
+    "name": "Oa:8|K3|O|frei#2",
+    "quelle": "rueck_treffer",
+    "s": 8,
+    "kategorie": "einseitig",
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": -1.3303384768258685e-17,
+     "24": -1.777971082894788e-17,
+     "32": -1.9198866851044978e-17,
+     "48": -1.3365916357148277e-17
+    },
+    "W3_fein": -1.3365916357148277e-17,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": [
+     48,
+     48
+    ],
+    "weyl_vollstaendig": false,
+    "weyl_global": true,
+    "netto_je_luecke": [
+     0,
+     0,
+     -4,
+     4,
+     0,
+     0,
+     -1,
+     7
+    ],
+    "pfad_unabhaengig": true,
+    "summe_chi": 6,
+    "s_mal_W3": 0,
+    "takt_tabelle": {
+     "dazwischen": {
+      "anzahl": 48,
+      "chi_plus": 27,
+      "chi_minus": 21,
+      "netto": 6
+     }
+    },
+    "unitaer_abw": 6.217248937900877e-15,
+    "nachbau_ok": true,
+    "wuerfel_probe": -2.433395251631006e-17
+   },
+   {
+    "name": "Oa:8|K4|O|frei#0",
+    "quelle": "rueck_treffer",
+    "s": 8,
+    "kategorie": "rueck+Kegel iso proj",
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": 1.816128586790589e-17,
+     "24": 1.6080031856419896e-17,
+     "32": 1.5061209361972344e-17,
+     "48": 1.4650559095603675e-17
+    },
+    "W3_fein": 1.4650559095603675e-17,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": [
+     64,
+     64
+    ],
+    "weyl_vollstaendig": true,
+    "weyl_global": true,
+    "netto_je_luecke": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "pfad_unabhaengig": true,
+    "summe_chi": 0,
+    "s_mal_W3": 0,
+    "takt_tabelle": {
+     "dazwischen": {
+      "anzahl": 64,
+      "chi_plus": 32,
+      "chi_minus": 32,
+      "netto": 0
+     }
+    },
+    "unitaer_abw": 7.460698725481052e-14,
+    "nachbau_ok": true,
+    "wuerfel_probe": 5.3434414361650106e-18
+   },
+   {
+    "name": "Oa:8|K4|O|frei#1",
+    "quelle": "rueck_treffer",
+    "s": 8,
+    "kategorie": "rueck+Kegel",
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": -4.26755964351658e-15,
+     "24": -4.2596950443961e-15,
+     "32": -4.2406220259692224e-15,
+     "48": -4.25183519929177e-15
+    },
+    "W3_fein": -4.25183519929177e-15,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": [
+     96,
+     100
+    ],
+    "weyl_vollstaendig": false,
+    "weyl_global": true,
+    "netto_je_luecke": [
+     0,
+     0,
+     4,
+     0,
+     4,
+     0,
+     -8,
+     0
+    ],
+    "pfad_unabhaengig": true,
+    "summe_chi": 0,
+    "s_mal_W3": 0,
+    "takt_tabelle": {
+     "dazwischen": {
+      "anzahl": 96,
+      "chi_plus": 48,
+      "chi_minus": 48,
+      "netto": 0
+     }
+    },
+    "unitaer_abw": 7.105427357601002e-15,
+    "nachbau_ok": true,
+    "wuerfel_probe": -4.2763327557780426e-15
+   },
+   {
+    "name": "Oa:8|K4|O|frei#2",
+    "quelle": "rueck_treffer",
+    "s": 8,
+    "kategorie": "rueck+Kegel iso proj",
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": 4.091321111817884e-18,
+     "24": 4.0735154304889806e-18,
+     "32": 4.078350403104469e-18,
+     "48": 4.10185374694103e-18
+    },
+    "W3_fein": 4.10185374694103e-18,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": [
+     48,
+     48
+    ],
+    "weyl_vollstaendig": true,
+    "weyl_global": true,
+    "netto_je_luecke": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "pfad_unabhaengig": true,
+    "summe_chi": 0,
+    "s_mal_W3": 0,
+    "takt_tabelle": {
+     "dazwischen": {
+      "anzahl": 48,
+      "chi_plus": 24,
+      "chi_minus": 24,
+      "netto": 0
+     }
+    },
+    "unitaer_abw": 7.549516567451064e-15,
+    "nachbau_ok": true,
+    "wuerfel_probe": 4.0824211019758594e-18
+   },
+   {
+    "name": "Oa:8|K5|O|frei#0",
+    "quelle": "rueck_treffer",
+    "s": 8,
+    "kategorie": "trivial",
+    "inversion": false,
+    "trivial": true,
+    "W3_je_gitter": {
+     "16": -3.95258316494145e-38,
+     "24": -4.000668118286236e-38,
+     "32": -4.0391360809620655e-38,
+     "48": -3.949377501385131e-38
+    },
+    "W3_fein": -3.949377501385131e-38,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": null,
+    "weyl_vollstaendig": null,
+    "weyl_global": null,
+    "netto_je_luecke": null,
+    "pfad_unabhaengig": null,
+    "summe_chi": null,
+    "s_mal_W3": null,
+    "takt_tabelle": null,
+    "unitaer_abw": 5.773159728050814e-15,
+    "nachbau_ok": true,
+    "wuerfel_probe": -3.9256832962660974e-38
+   },
+   {
+    "name": "Oa:8|K5|O|frei#1",
+    "quelle": "rueck_treffer",
+    "s": 8,
+    "kategorie": "trivial",
+    "inversion": false,
+    "trivial": true,
+    "W3_je_gitter": {
+     "16": 2.8540113965362615e-38,
+     "24": 2.857010860832301e-38,
+     "32": 2.8414648159973843e-38,
+     "48": 2.853758752916443e-38
+    },
+    "W3_fein": 2.853758752916443e-38,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": null,
+    "weyl_vollstaendig": null,
+    "weyl_global": null,
+    "netto_je_luecke": null,
+    "pfad_unabhaengig": null,
+    "summe_chi": null,
+    "s_mal_W3": null,
+    "takt_tabelle": null,
+    "unitaer_abw": 5.9356483046222126e-15,
+    "nachbau_ok": false,
+    "wuerfel_probe": 2.8528674565527426e-38
+   },
+   {
+    "name": "Ob:8|K4|O|r50#0",
+    "quelle": "rueck_treffer",
+    "s": 8,
+    "kategorie": "rueck+Kegel",
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": -4.105405575160393e-17,
+     "24": -5.258603271002141e-17,
+     "32": -5.619442040582886e-17,
+     "48": -5.1431638827238393e-17
+    },
+    "W3_fein": -5.1431638827238393e-17,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": [
+     108,
+     108
+    ],
+    "weyl_vollstaendig": true,
+    "weyl_global": true,
+    "netto_je_luecke": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "pfad_unabhaengig": true,
+    "summe_chi": 0,
+    "s_mal_W3": 0,
+    "takt_tabelle": {
+     "dazwischen": {
+      "anzahl": 108,
+      "chi_plus": 54,
+      "chi_minus": 54,
+      "netto": 0
+     }
+    },
+    "unitaer_abw": 5.995204332975845e-15,
+    "nachbau_ok": true,
+    "wuerfel_probe": -4.200593617633185e-17
+   },
+   {
+    "name": "Ob:8|K4|O|r50#1",
+    "quelle": "rueck_treffer",
+    "s": 8,
+    "kategorie": "rueck+Kegel iso proj",
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": -1.218727683822048e-16,
+     "24": -1.2291911425704503e-16,
+     "32": -1.2207993464985634e-16,
+     "48": -1.22129903290442e-16
+    },
+    "W3_fein": -1.22129903290442e-16,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": [
+     104,
+     92
+    ],
+    "weyl_vollstaendig": false,
+    "weyl_global": true,
+    "netto_je_luecke": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "pfad_unabhaengig": true,
+    "summe_chi": 0,
+    "s_mal_W3": 0,
+    "takt_tabelle": {
+     "dazwischen": {
+      "anzahl": 104,
+      "chi_plus": 52,
+      "chi_minus": 52,
+      "netto": 0
+     }
+    },
+    "unitaer_abw": 5.773159728050814e-15,
+    "nachbau_ok": true,
+    "wuerfel_probe": -1.2268449113453804e-16
+   },
+   {
+    "name": "Ob:8|K4|O|r50#2",
+    "quelle": "rueck_treffer",
+    "s": 8,
+    "kategorie": "rueck+Kegel",
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": 6.912980702734944e-16,
+     "24": 6.996971850449196e-16,
+     "32": 6.982342827253377e-16,
+     "48": 6.964174925368564e-16
+    },
+    "W3_fein": 6.964174925368564e-16,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": [
+     76,
+     80
+    ],
+    "weyl_vollstaendig": false,
+    "weyl_global": true,
+    "netto_je_luecke": [
+     0,
+     0,
+     4,
+     0,
+     4,
+     4,
+     -4,
+     0
+    ],
+    "pfad_unabhaengig": true,
+    "summe_chi": 8,
+    "s_mal_W3": 0,
+    "takt_tabelle": {
+     "dazwischen": {
+      "anzahl": 76,
+      "chi_plus": 42,
+      "chi_minus": 34,
+      "netto": 8
+     }
+    },
+    "unitaer_abw": 6.439293542825908e-15,
+    "nachbau_ok": true,
+    "wuerfel_probe": 6.859457776387312e-16
+   },
+   {
+    "name": "Ob:8|K4|O|r50#3",
+    "quelle": "rueck_treffer",
+    "s": 8,
+    "kategorie": "rueck+Kegel iso proj",
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": 2.4049737552785174e-15,
+     "24": 2.394757902003161e-15,
+     "32": 2.39042745508212e-15,
+     "48": 2.387623705096345e-15
+    },
+    "W3_fein": 2.387623705096345e-15,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": [
+     100,
+     100
+    ],
+    "weyl_vollstaendig": true,
+    "weyl_global": true,
+    "netto_je_luecke": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "pfad_unabhaengig": true,
+    "summe_chi": 0,
+    "s_mal_W3": 0,
+    "takt_tabelle": {
+     "dazwischen": {
+      "anzahl": 100,
+      "chi_plus": 50,
+      "chi_minus": 50,
+      "netto": 0
+     }
+    },
+    "unitaer_abw": 6.589012306738759e-15,
+    "nachbau_ok": true,
+    "wuerfel_probe": 2.410905409776832e-15
+   },
+   {
+    "name": "Ob:8|K4|O|r50#4",
+    "quelle": "rueck_treffer",
+    "s": 8,
+    "kategorie": "rueck+Kegel iso proj",
+    "inversion": false,
+    "trivial": false,
+    "W3_je_gitter": {
+     "16": 6.393847775285221e-18,
+     "24": 1.5005426664228754e-17,
+     "32": -1.3507624376180808e-17,
+     "48": -1.0464639697063217e-18
+    },
+    "W3_fein": -1.0464639697063217e-18,
+    "W3_rund": 0,
+    "konvergiert": true,
+    "weyl_anzahl": [
+     96,
+     116
+    ],
+    "weyl_vollstaendig": false,
+    "weyl_global": true,
+    "netto_je_luecke": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     -4,
+     0
+    ],
+    "pfad_unabhaengig": true,
+    "summe_chi": -4,
+    "s_mal_W3": 0,
+    "takt_tabelle": {
+     "dazwischen": {
+      "anzahl": 96,
+      "chi_plus": 46,
+      "chi_minus": 50,
+      "netto": -4
+     }
+    },
+    "unitaer_abw": 7.216449660063518e-15,
+    "nachbau_ok": true,
+    "wuerfel_probe": 1.9193320473530953e-18
+   }
+  ]
+ },
+ "reproduktion": {
+  "je_lauf": {
+   "N": {
+    "strikt": {
+     "faelle": {
+      "8|K4|N|frei": {
+       "vorhanden": true,
+       "treffer_neu_alt": [
+        7,
+        7
+       ],
+       "n_hits_neu_alt": [
+        7,
+        7
+       ],
+       "log10D_gleich": true,
+       "D_rel_max": 0.0,
+       "anzahl_werte": 24,
+       "repr_A_abw": 0.0,
+       "ok": true
+      },
+      "8|K5|N|frei": {
+       "vorhanden": true,
+       "treffer_neu_alt": [
+        2,
+        2
+       ],
+       "n_hits_neu_alt": [
+        2,
+        2
+       ],
+       "log10D_gleich": true,
+       "D_rel_max": 0.0,
+       "anzahl_werte": 9,
+       "repr_A_abw": 0.0,
+       "ok": true
+      },
+      "8|K4|N|r50": {
+       "vorhanden": true,
+       "treffer_neu_alt": [
+        2,
+        2
+       ],
+       "n_hits_neu_alt": [
+        2,
+        2
+       ],
+       "log10D_gleich": true,
+       "D_rel_max": 0.0,
+       "anzahl_werte": 9,
+       "repr_A_abw": 0.0,
+       "ok": true
+      },
+      "8|K5|N|r50": {
+       "vorhanden": true,
+       "treffer_neu_alt": [
+        0,
+        0
+       ],
+       "n_hits_neu_alt": [
+        0,
+        0
+       ],
+       "log10D_gleich": true,
+       "D_rel_max": 0.0,
+       "anzahl_werte": 3,
+       "ok": true
+      }
+     },
+     "ok": true
+    },
+    "nur_D_ab_1e-20_ok": true,
+    "modus_neu": "haupt",
+    "numpy_neu": "2.4.4",
+    "numpy_alt": "2.4.4"
+   },
+   "Oa": {
+    "strikt": {
+     "faelle": {
+      "8|K1|O|frei": {
+       "vorhanden": true,
+       "treffer_neu_alt": [
+        3,
+        3
+       ],
+       "n_hits_neu_alt": [
+        3,
+        3
+       ],
+       "log10D_gleich": true,
+       "D_rel_max": 0.0,
+       "anzahl_werte": 12,
+       "repr_A_abw": 0.0,
+       "ok": true
+      },
+      "8|K2|O|frei": {
+       "vorhanden": true,
+       "treffer_neu_alt": [
+        4,
+        4
+       ],
+       "n_hits_neu_alt": [
+        4,
+        4
+       ],
+       "log10D_gleich": true,
+       "D_rel_max": 0.0,
+       "anzahl_werte": 15,
+       "repr_A_abw": 0.0,
+       "ok": true
+      },
+      "8|K3|O|frei": {
+       "vorhanden": true,
+       "treffer_neu_alt": [
+        3,
+        3
+       ],
+       "n_hits_neu_alt": [
+        3,
+        3
+       ],
+       "log10D_gleich": true,
+       "D_rel_max": 0.0,
+       "anzahl_werte": 12,
+       "repr_A_abw": 0.0,
+       "ok": true
+      },
+      "8|K4|O|frei": {
+       "vorhanden": true,
+       "treffer_neu_alt": [
+        3,
+        3
+       ],
+       "n_hits_neu_alt": [
+        3,
+        3
+       ],
+       "log10D_gleich": true,
+       "D_rel_max": 0.0,
+       "anzahl_werte": 12,
+       "repr_A_abw": 0.0,
+       "ok": true
+      },
+      "8|K5|O|frei": {
+       "vorhanden": true,
+       "treffer_neu_alt": [
+        2,
+        2
+       ],
+       "n_hits_neu_alt": [
+        2,
+        2
+       ],
+       "log10D_gleich": true,
+       "D_rel_max": 0.0,
+       "anzahl_werte": 9,
+       "repr_A_abw": 0.0,
+       "ok": true
+      }
+     },
+     "ok": true
+    },
+    "nur_D_ab_1e-20_ok": true,
+    "modus_neu": "haupt",
+    "numpy_neu": "2.4.4",
+    "numpy_alt": "2.4.4"
+   },
+   "Ob": {
+    "strikt": {
+     "faelle": {
+      "8|K4|O|r50": {
+       "vorhanden": true,
+       "treffer_neu_alt": [
+        5,
+        5
+       ],
+       "n_hits_neu_alt": [
+        5,
+        5
+       ],
+       "log10D_gleich": true,
+       "D_rel_max": 0.0,
+       "anzahl_werte": 18,
+       "repr_A_abw": 0.0,
+       "ok": true
+      }
+     },
+     "ok": true
+    },
+    "nur_D_ab_1e-20_ok": true,
+    "modus_neu": "haupt",
+    "numpy_neu": "2.4.4",
+    "numpy_alt": "2.4.4"
+   }
+  },
+  "ok_strikt": true,
+  "ok_nur_ab_1e-20": true
+ }
+}

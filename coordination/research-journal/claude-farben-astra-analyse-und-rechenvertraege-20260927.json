@@ -1,0 +1,29 @@
+{
+  "id": "claude-farben-astra-analyse-und-rechenvertraege-20260927",
+  "time": "2026-09-27T20:28:20+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung; astra-Analyse 22:19:40 bis 22:26:08; Finn: ja mach die zwei rechenvertraege; eingetragen 22:28:20 MESZ (gemessen)",
+  "topic": "gesamtformel",
+  "status": "reported",
+  "evidenzart": "modell",
+  "title": "Farben-Frage: astra bestaetigt und berichtigt die Handrechnungen der Leitung und findet den kleinsten exakten Zweier-Dreier-Wechsel; Finn gibt zwei Rechenvertraege frei (PD-1 Paar oder Dreier, WM-1 Windung und Mischung), Autor beauftragt",
+  "question": "Halten die Handrechnungen zur Dreikanal-Formel, und welche kleinen Rechnungen koennen die Farben-Frage pruefbar machen?",
+  "action": "astra (codex exec, frisch, blind zum Feldforscher) rechnete jede Handrechnung nach. Finn gab im Chat zwei Rechenvertraege frei; die Leitung beauftragt einen frischen Anthropic-Autor mit PD-1 und WM-1 nach VORLAGE-v2, mit den Lehren des Tages (wenig Mechanik, Widerspruchsprobe, Kosten vorab, kein Abbruch mitten im Abschnitt).",
+  "result": "astra [E]: Identitaet und Tabelle stimmen. Fuer h = gJ < 0 ist das 90-Grad-Paar das globale Minimum; der neutrale Dreier liegt um kappa S^2/12 hoeher und ist schon innerhalb A = 0 besetzungsinstabil. Die kleinste U(1)-erhaltende Erweiterung Delta V = lambda sum |psi_a|^4 macht den neutralen Dreier fuer lambda > kappa/2 zum exakten Minimum; der Wechsel liegt bei lambda = kappa/2 mit Energiedifferenz (kappa/2 - lambda) S^2/6. Berichtigt: Verschiedene Windungen entkoppeln nicht; die Kopplung erzeugt in erster Ordnung eine neue Winkelmode 2 m_b - m_a. Q und L_z sind klassisch kontinuierlich (L_z = sum m_a Q_a), nur die Windungen ganzzahlig. Re[(psi_1 psi_2 psi_3)^k] bricht U(1) und ist kein Ersatz. Fourier-Leistungsspektren allein trennen die Mechanismen nicht; noetig sind komplexe Moden, Winkelzahlen und Strombilanzen.",
+  "meaning": "Modellintern: Die Farbanalogie reduziert sich auf eine geometrische Summenregel und einen durch einen neuen Parameter lambda steuerbaren Paar-Dreier-Wechsel; keine SU(3)-Farbe. PD-1 und WM-1 sollen die nicht vorab ableitbaren Teile (Stabilitaet des Dreier-Q-Balls, spaeter Transfer zwischen Windungen) pruefbar machen. Kein Befund.",
+  "sources": [
+    {
+      "path": "coordination/farben-20260927/astra/ANALYSE-astra-FARBEN.md",
+      "sha256": "46eaf53833617713ef124bb5be070065851596cd6317beb861c003bca653f446"
+    },
+    {
+      "path": "coordination/farben-20260927/AUFTRAG-RECHENVERTRAEGE.md",
+      "sha256": "76275f9b942e3b58c52e48aa1f644bf88b830c376e04353abd1552842fd9575f"
+    },
+    {
+      "path": "coordination/farben-20260927/IDEE-UND-HANDRECHNUNG.md",
+      "sha256": "afbe756cfa0f05c4a0cd0df1f6be90c3c56d6321228cd01717d7774202a04485"
+    }
+  ],
+  "recorded_at": "2026-09-27T20:28:20.956864+00:00"
+}

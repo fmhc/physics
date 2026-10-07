@@ -1,0 +1,717 @@
+{
+ "urteile": {
+  "KD0": {
+   "urteil": "eingetroffen",
+   "werte": {
+    "dirac_fehler": {
+     "alpha_nicht_hermitesch": 0,
+     "alpha_paar_kommutiert": 0,
+     "alpha_quadrat": 0,
+     "alpha_zeta_muster": 0,
+     "eq24_dirac": 0,
+     "zeta_gleich_i_alpha_g45": 0,
+     "zeta_nicht_hermitesch": 0,
+     "zeta_paar_kommutiert": 0,
+     "zeta_quadrat": 0
+    },
+    "gitter": {
+     "L2": {
+      "L": 2,
+      "sechsecke": 32,
+      "sechsecke_je_knoten": [
+       12
+      ],
+      "H_gegen_W_paare": 2048,
+      "H_gegen_W_antikommut": 0,
+      "W_paare": 496,
+      "W_paar_antikommut": 0,
+      "W_nicht_hermitesch": 0,
+      "W_quadrat_fehler": 0,
+      "W_alpha_ungleich_W_zeta": 0,
+      "W_normierung": {
+       "1": 32
+      },
+      "relationen": 18,
+      "relation_produkt_phasen": {
+       "1": 18
+      },
+      "relation_nicht_phase": 0
+     },
+     "L3": {
+      "L": 3,
+      "sechsecke": 108,
+      "sechsecke_je_knoten": [
+       12
+      ],
+      "H_gegen_W_paare": 23328,
+      "H_gegen_W_antikommut": 0,
+      "W_paare": 5778,
+      "W_paar_antikommut": 0,
+      "W_nicht_hermitesch": 0,
+      "W_quadrat_fehler": 0,
+      "W_alpha_ungleich_W_zeta": 0,
+      "W_normierung": {
+       "1": 108
+      },
+      "relationen": 56,
+      "relation_produkt_phasen": {
+       "1": 56
+      },
+      "relation_nicht_phase": 0
+     }
+    },
+    "struktur_ok": {
+     "L3": true
+    },
+    "lesepruefung_ok": true,
+    "teile_ok": {
+     "a_gamma": true,
+     "b_schleifen": true
+    }
+   }
+  },
+  "KD1": {
+   "urteil": "eingetroffen",
+   "werte": {
+    "abbildung": {
+     "knoten": {
+      "fehler": {
+       "D_gegen_Gamma_antikommut": 0,
+       "D_nicht_hermitesch": 0,
+       "D_quadrat": 0,
+       "lam_nicht_hermitesch": 0,
+       "lam_paar_kommutiert": 0,
+       "lam_quadrat": 0
+      },
+      "sektoren": {
+       "-1": {
+        "Eq24_P4_gegen_G45": "+",
+        "Eq25_G5_gegen_i_G4_P4": [
+         "-",
+         "-",
+         "-",
+         "-"
+        ]
+       },
+       "1": {
+        "Eq24_P4_gegen_G45": "-",
+        "Eq25_G5_gegen_i_G4_P4": [
+         "+",
+         "+",
+         "+",
+         "+"
+        ]
+       }
+      }
+     },
+     "gitter_L3": {
+      "fehler": {
+       "Hterm_gegen_D_antikommut": 0,
+       "bindung_eq27_alpha": 0,
+       "bindung_eq27_zeta": 0,
+       "u_gegen_D_muster": 0,
+       "u_gegen_Hterm_antikommut": 0,
+       "u_nicht_hermitesch": 0,
+       "u_paar_antikommut": 0,
+       "u_quadrat": 0
+      },
+      "schleife_sigma": {
+       "1": 108
+      },
+      "schleife_nicht_pm_prod_u": 0,
+      "normierung_gleich_spin": 108,
+      "anzahl": {
+       "Hterm_gegen_D": 11664,
+       "bindungen": 108,
+       "u_gegen_Hterm": 23328,
+       "u_paare": 5778
+      }
+     },
+     "sechseck_ed": {
+      "typen": [
+       0,
+       1,
+       2,
+       0,
+       1,
+       2
+      ],
+      "uniform": {
+       "E0": -8.00000000001205,
+       "E0_W": 1,
+       "J": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+       ],
+       "W_gegen_Hterme_antikommut": 0,
+       "abw_minus": 1.4853895891064894e-11,
+       "abw_plus": 9.242739906767383e-11,
+       "abw_vertauscht": 2.5358983848599337,
+       "anzahl_minus": 2048,
+       "anzahl_plus": 2048,
+       "imag_max": 0.0,
+       "sigma": 1,
+       "singulaerwerte_U_minus_sigma": [
+        1.7320508075688772,
+        1.732050807568877,
+        3.065796227057452e-17
+       ],
+       "singulaerwerte_U_sigma": [
+        2.0,
+        1.0000000000000002,
+        0.9999999999999998
+       ]
+      }
+     },
+     "cluster112": {
+      "uniform": {
+       "E0_frei_ohne_projektion_min": -12.64911064067337,
+       "E0_spin": -12.649110640673527,
+       "J": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+       ],
+       "abw_spin_gegen_ext": 4.618527782440651e-14,
+       "abw_spin_gegen_frei_projiziert": 7.92392619965439e-13,
+       "c_projektion": -1,
+       "ext_terme_aus_phys_raus": 0,
+       "imag": [
+        0.0,
+        0.0
+       ],
+       "phys_dim": 256,
+       "pred_anzahl": 2048,
+       "spin_dim": 256
+      }
+     },
+     "teile_ok": {
+      "knoten": true,
+      "gitter": true,
+      "sechseck_ed": true,
+      "cluster112": true
+     }
+    },
+    "spektrum_J1": {
+     "gitter_min": {
+      "16": 1.1442377452219667e-17,
+      "17": 0.034053800632196284,
+      "32": 0.0,
+      "33": 0.0090561548538306,
+      "64": 0.0,
+      "65": 0.00233554633534671,
+      "8": 1.1442377452219667e-17,
+      "9": 0.12061475842818313
+     },
+     "kont_min": 1.1442377452219691e-17,
+     "nullen_gefunden": 8,
+     "ungerade_N_schrumpft": true,
+     "volumenanteil": [
+      0.0439101761415811,
+      0.01419150179480758,
+      0.004007012271475081,
+      0.0016695884464479505
+     ],
+     "deltas": [
+      0.4,
+      0.2,
+      0.1,
+      0.05
+     ],
+     "steigung_loglog": 1.543731420625168,
+     "form": "Linien",
+     "nullstellen_lage": {
+      "cx_sy": 2,
+      "cy_sx": 1,
+      "cy_sz": 1,
+      "cz_sx": 1,
+      "cz_sy": 3
+     }
+    },
+    "code_pruefung": {
+     "J1_gegen_4ccc_minus_i_sss": 1.3348671786163112e-15,
+     "reduziert_gegen_eq31": 1.3322676295501878e-15
+    },
+    "code_ok": true,
+    "u1_beschreibend": {
+     "allgemein": {
+      "kommutator_max": 0.0,
+      "pauli_strings_im_kommutator": 216
+     },
+     "gegenprobe_alpha0": {
+      "kommutator_max": 2.6,
+      "pauli_strings_im_kommutator": 216
+     },
+     "uniform": {
+      "kommutator_max": 0.0,
+      "pauli_strings_im_kommutator": 216
+     }
+    },
+    "fluss_realraum_beschreibend": {
+     "L4_J0_2": {
+      "E0_je_knoten_u1": -2.4257605533970756,
+      "E0_je_knoten_zufall_min": -2.380040025786852,
+      "abw_realraum_gegen_kraum": 1.3322676295501878e-15,
+      "anzahl_zufall": 3,
+      "dE_ein_u_gekippt": 0.6987155752732974,
+      "dE_ein_u_gekippt_je_richtung": {
+       "0": 0.6987155752732974,
+       "1": 0.25296059341195587,
+       "2": 0.25296059341195587,
+       "3": 0.25296059341195587
+      },
+      "min_singulaerwert_u1": 0.9999999999999991,
+      "u1_tiefer_als_alle_zufall": true
+     },
+     "L4_J0_4": {
+      "E0_je_knoten_u1": -4.18864345005464,
+      "E0_je_knoten_zufall_min": -4.188832220960347,
+      "abw_realraum_gegen_kraum": 3.552713678800501e-15,
+      "anzahl_zufall": 3,
+      "dE_ein_u_gekippt": -0.019361082000727947,
+      "dE_ein_u_gekippt_je_richtung": {
+       "0": -0.019361082000727947,
+       "1": 0.0038556825103341907,
+       "2": 0.0038556825103341907,
+       "3": 0.0038556825103341907
+      },
+      "min_singulaerwert_u1": 1.0000000000000002,
+      "u1_tiefer_als_alle_zufall": false
+     },
+     "L4_J1": {
+      "E0_je_knoten_u1": -1.7532798363559134,
+      "E0_je_knoten_zufall_min": -1.7421565007065396,
+      "abw_realraum_gegen_kraum": 1.7763568394002505e-15,
+      "anzahl_zufall": 3,
+      "dE_ein_u_gekippt": -0.34292770312646326,
+      "dE_ein_u_gekippt_je_richtung": {
+       "0": -0.34292770312646326,
+       "1": -0.3429277031264917,
+       "2": -0.3429277031265201,
+       "3": -0.3429277031265201
+      },
+      "min_singulaerwert_u1": 4.264444848129593e-17,
+      "u1_tiefer_als_alle_zufall": true
+     },
+     "L5_J0_2": {
+      "E0_je_knoten_u1": -2.4249448862113674,
+      "E0_je_knoten_zufall_min": -2.382426386773668,
+      "abw_realraum_gegen_kraum": 4.440892098500626e-15,
+      "anzahl_zufall": 3,
+      "dE_ein_u_gekippt": 0.7292449886106169,
+      "dE_ein_u_gekippt_je_richtung": {
+       "0": 0.7292449886106169,
+       "1": 0.26809446644665513,
+       "2": 0.2680944664467688,
+       "3": 0.26809446644665513
+      },
+      "min_singulaerwert_u1": 0.7265425280053596,
+      "u1_tiefer_als_alle_zufall": true
+     },
+     "L5_J0_4": {
+      "E0_je_knoten_u1": -4.191991335235268,
+      "E0_je_knoten_zufall_min": -4.188245676490602,
+      "abw_realraum_gegen_kraum": 5.329070518200751e-15,
+      "anzahl_zufall": 3,
+      "dE_ein_u_gekippt": 0.039236960942844235,
+      "dE_ein_u_gekippt_je_richtung": {
+       "0": 0.039236960942844235,
+       "1": 0.02152211315888053,
+       "2": 0.02152211315888053,
+       "3": 0.02152211315888053
+      },
+      "min_singulaerwert_u1": 1.6791843592950264,
+      "u1_tiefer_als_alle_zufall": true
+     },
+     "L5_J1": {
+      "E0_je_knoten_u1": -1.8011204471391618,
+      "E0_je_knoten_zufall_min": -1.7454570917701138,
+      "abw_realraum_gegen_kraum": 3.9968028886505635e-15,
+      "anzahl_zufall": 3,
+      "dE_ein_u_gekippt": 0.4224964487453349,
+      "dE_ein_u_gekippt_je_richtung": {
+       "0": 0.4224964487453349,
+       "1": 0.42249644874544856,
+       "2": 0.4224964487453349,
+       "3": 0.4224964487452212
+      },
+      "min_singulaerwert_u1": 0.3819660112501042,
+      "u1_tiefer_als_alle_zufall": true
+     }
+    }
+   }
+  },
+  "KD2": {
+   "urteil": "eingetroffen",
+   "vermerk": "Schreibtisch [M]: Luecke genau dann, wenn J_max > Summe der anderen drei (hier J0 > 3), Luecke = J0 - 3. Lesart 'Faktor 2' (J0 = 2): Luecke nein.",
+   "werte": {
+    "J0_4_primaer": {
+     "J": [
+      4.0,
+      1.0,
+      1.0,
+      1.0
+     ],
+     "gitter_min": {
+      "16": 1.0,
+      "17": 1.0670213330593628,
+      "32": 1.0,
+      "33": 1.0180317516152408,
+      "64": 1.0,
+      "65": 1.004665663240641,
+      "8": 1.0,
+      "9": 1.2294530790616252
+     },
+     "kont_min": 1.0,
+     "nullen_gefunden": 0
+    },
+    "J0_2_lesart_faktor2": {
+     "J": [
+      2.0,
+      1.0,
+      1.0,
+      1.0
+     ],
+     "gitter_min": {
+      "16": 0.16647286878256626,
+      "17": 0.09465196028833159,
+      "32": 0.06530838172994119,
+      "33": 0.08548476089900747,
+      "64": 0.038083262659088915,
+      "65": 0.030366202110811535,
+      "8": 0.41421356237309487,
+      "9": 0.34729635533385966
+     },
+     "kont_min": 1.2412670766236366e-16,
+     "nullen_gefunden": 8
+    },
+    "luecke_J0_4": true,
+    "luecke_J0_2": false,
+    "andere_richtung_gleich": true,
+    "scan": [
+     {
+      "J0": 1.0,
+      "gitter_min": {
+       "16": 1.1442377452219667e-17,
+       "17": 0.034053800632196284
+      },
+      "kont_min": 1.2246467991473532e-16,
+      "nullen_gefunden": 6,
+      "vorhersage_schreibtisch": 0.0
+     },
+     {
+      "J0": 1.5,
+      "gitter_min": {
+       "16": 0.13984814125449296,
+       "17": 0.015474270204299484
+      },
+      "kont_min": 2.7755575615628914e-16,
+      "nullen_gefunden": 6,
+      "vorhersage_schreibtisch": 0.0
+     },
+     {
+      "J0": 2.0,
+      "gitter_min": {
+       "16": 0.16647286878256626,
+       "17": 0.09465196028833159
+      },
+      "kont_min": 0.0,
+      "nullen_gefunden": 6,
+      "vorhersage_schreibtisch": 0.0
+     },
+     {
+      "J0": 2.5,
+      "gitter_min": {
+       "16": 0.08002811015358177,
+       "17": 0.10878203125760286
+      },
+      "kont_min": 2.482534153247273e-16,
+      "nullen_gefunden": 6,
+      "vorhersage_schreibtisch": 0.0
+     },
+     {
+      "J0": 2.8,
+      "gitter_min": {
+       "16": 0.04775906502257343,
+       "17": 0.15975291026174476
+      },
+      "kont_min": 2.9504581591051765e-16,
+      "nullen_gefunden": 6,
+      "vorhersage_schreibtisch": 0.0
+     },
+     {
+      "J0": 2.9,
+      "gitter_min": {
+       "16": 0.05224093497742621,
+       "17": 0.1796895247854298
+      },
+      "kont_min": 2.2887833992611187e-16,
+      "nullen_gefunden": 6,
+      "vorhersage_schreibtisch": 0.0
+     },
+     {
+      "J0": 3.0,
+      "gitter_min": {
+       "16": 3.6739403974420594e-16,
+       "17": 0.1907173912027715
+      },
+      "kont_min": 6.1232340147716555e-16,
+      "nullen_gefunden": 6,
+      "vorhersage_schreibtisch": 0.0
+     },
+     {
+      "J0": 3.1,
+      "gitter_min": {
+       "16": 0.10000000000000009,
+       "17": 0.2378849795528291
+      },
+      "kont_min": 0.10000000000000009,
+      "nullen_gefunden": 0,
+      "vorhersage_schreibtisch": 0.10000000000000009
+     },
+     {
+      "J0": 3.2,
+      "gitter_min": {
+       "16": 0.20000000000000018,
+       "17": 0.3111356676540137
+      },
+      "kont_min": 0.20000000000000018,
+      "nullen_gefunden": 0,
+      "vorhersage_schreibtisch": 0.20000000000000018
+     },
+     {
+      "J0": 3.5,
+      "gitter_min": {
+       "16": 0.5,
+       "17": 0.5809077588184595
+      },
+      "kont_min": 0.5,
+      "nullen_gefunden": 0,
+      "vorhersage_schreibtisch": 0.5
+     },
+     {
+      "J0": 4.0,
+      "gitter_min": {
+       "16": 1.0,
+       "17": 1.0670213330593628
+      },
+      "kont_min": 1.0,
+      "nullen_gefunden": 0,
+      "vorhersage_schreibtisch": 1.0
+     },
+     {
+      "J0": 5.0,
+      "gitter_min": {
+       "16": 2.0,
+       "17": 2.059295007302346
+      },
+      "kont_min": 2.0,
+      "nullen_gefunden": 0,
+      "vorhersage_schreibtisch": 2.0
+     },
+     {
+      "J0": 6.0,
+      "gitter_min": {
+       "16": 3.0,
+       "17": 3.0566087955440033
+      },
+      "kont_min": 3.0,
+      "nullen_gefunden": 0,
+      "vorhersage_schreibtisch": 3.0
+     }
+    ],
+    "scan_max_abw_von_max(0,J0-3)": 6.1232340147716555e-16
+   }
+  },
+  "KD3": {
+   "urteil": "eingetroffen",
+   "vermerk": "Die Quelle (Ryu) nennt keine String-Operatoren. Huepfer = Bindungsterme in Majorana-Form (Eq. 27) [S], Strings als Produkte der Huepfer nach Levin/Wen Abschnitt IV [S ueber STRINGENDE-1]; Zuordnung [M]. Nach strengem Kartenwortlaut (Test-Abschnitt: 'sofern die Quelle die String-Operatoren angibt. Sonst nur Spektrum und Erhaltungsgroessen') waere KD3 'nicht auswertbar'.",
+   "werte": {
+    "lokal_L4": {
+     "a": {
+      "V1": {
+       "-1": 3072
+      },
+      "anzahl": 3072,
+      "inkonsistent": 0
+     },
+     "az": {
+      "V1": {
+       "1": 3072
+      },
+      "anzahl": 3072,
+      "inkonsistent": 0
+     },
+     "z": {
+      "V1": {
+       "-1": 3072
+      },
+      "anzahl": 3072,
+      "inkonsistent": 0
+     }
+    },
+    "lang_L8": {
+     "a": {
+      "V1": {
+       "-1": 4
+      },
+      "anzahl": 4,
+      "inkonsistent": 0,
+      "endpunkt_fehler": 0,
+      "aequivalenz_fehler": 0,
+      "fluss_antikommut": 0,
+      "fluss_geprueft": 12,
+      "nicht_lokal": 0,
+      "durchgang": {
+       "Huepfer am Ende von k": {
+        "V": [
+         1,
+         1,
+         1
+        ],
+        "beobachtet": "Wechsel",
+        "erwartet": "Wechsel",
+        "passt": true
+       },
+       "Huepfer am gemeinsamen Knoten (4. Richtung)": {
+        "V": [
+         -1,
+         -1,
+         -1
+        ],
+        "beobachtet": "kein Wechsel",
+        "erwartet": "kein Wechsel",
+        "passt": true
+       },
+       "Schleife W_p am Ende von k": {
+        "V": [
+         -1,
+         -1,
+         -1
+        ],
+        "beobachtet": "kein Wechsel",
+        "erwartet": "kein Wechsel",
+        "passt": true
+       },
+       "basis_V1": -1
+      }
+     },
+     "z": {
+      "V1": {
+       "-1": 4
+      },
+      "anzahl": 4,
+      "inkonsistent": 0,
+      "endpunkt_fehler": 0,
+      "aequivalenz_fehler": 0,
+      "fluss_antikommut": 0,
+      "fluss_geprueft": 12,
+      "nicht_lokal": 0,
+      "durchgang": {
+       "Huepfer am Ende von k": {
+        "V": [
+         1,
+         1,
+         1
+        ],
+        "beobachtet": "Wechsel",
+        "erwartet": "Wechsel",
+        "passt": true
+       },
+       "Huepfer am gemeinsamen Knoten (4. Richtung)": {
+        "V": [
+         -1,
+         -1,
+         -1
+        ],
+        "beobachtet": "kein Wechsel",
+        "erwartet": "kein Wechsel",
+        "passt": true
+       },
+       "Schleife W_p am Ende von k": {
+        "V": [
+         -1,
+         -1,
+         -1
+        ],
+        "beobachtet": "kein Wechsel",
+        "erwartet": "kein Wechsel",
+        "passt": true
+       },
+       "basis_V1": -1
+      }
+     },
+     "az": {
+      "V1": {
+       "1": 4
+      },
+      "anzahl": 4,
+      "inkonsistent": 0,
+      "endpunkt_fehler": 0,
+      "aequivalenz_fehler": 0,
+      "fluss_antikommut": 0,
+      "fluss_geprueft": 12,
+      "nicht_lokal": 0,
+      "durchgang": {
+       "Huepfer am Ende von k": {
+        "V": [
+         1,
+         1,
+         1
+        ],
+        "beobachtet": "kein Wechsel",
+        "erwartet": "kein Wechsel",
+        "passt": true
+       },
+       "Huepfer am gemeinsamen Knoten (4. Richtung)": {
+        "V": [
+         1,
+         1,
+         1
+        ],
+        "beobachtet": "kein Wechsel",
+        "erwartet": "kein Wechsel",
+        "passt": true
+       },
+       "Schleife W_p am Ende von k": {
+        "V": [
+         1,
+         1,
+         1
+        ],
+        "beobachtet": "kein Wechsel",
+        "erwartet": "kein Wechsel",
+        "passt": true
+       },
+       "basis_V1": 1
+      }
+     }
+    },
+    "pfadlaengen_bezug": {
+     "j": 6,
+     "k": 8,
+     "l": 6
+    },
+    "inkonsistent_V1_V2_V3": 0,
+    "kontrolle_verbund_az_bosonisch": true,
+    "durchgang_ok": true,
+    "fermion_teile_ok": {
+     "a": true,
+     "z": true
+    }
+   }
+  }
+ },
+ "quelle": "rauch/rauch3.json",
+ "rc": 0,
+ "laufzeit_s": 18.0,
+ "meta": {
+  "modus": "rauch",
+  "numpy": "2.4.4",
+  "python": "3.12.3",
+  "saat": 37101
+ }
+}

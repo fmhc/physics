@@ -1,0 +1,37 @@
+{
+  "id": "claude-nature-science-sweep-20260922",
+  "time": "2026-09-22T17:53:05.189906+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary Subagent (Anthropic, Fable 5.1)",
+  "topic": "literatur",
+  "status": "reported",
+  "title": "Journalsichtung 15.-22.09.2026 (Nature, Science, APS, Physics, Physics World, Quanta): rund 320 Eintraege, 32 tabelliert - ein Treffer stuetzt als Klassenaussage (Protonenspin teils Bahndrehimpuls), 17 neutral nutzbar, CSS-Quanten-WEP spricht gegen Teilchenzahl-Gravitation, Punktfoermigkeit unberuehrt",
+  "question": "Finn: ist unter den Veroeffentlichungen der letzten Tage in Nature, Science, Physics usw. etwas mit unseren Grundideen von kleinsten Teilchen (zirkulierende Feldstruktur, Spin aus Zirkulation, Masse aus Einsperrung, Teilchenzahl-Gravitation, Feld mit innerem Index) kompatibel?",
+  "action": "README.md, KANDIDAT.md 0-2, GRENZFAELLE.md, MODELL.md, KONZEPT-ANKER 2 und das Programm-Memory gelesen. RSS-Roh-XML von Nature, Nature Physics, Nature Communications (Physik), Science, Science Advances, PRL, PRX, PRX Quantum per curl geholt und nach Datum gefiltert; physics.aps.org-Startseite, Physics-World-Feed und Research-Updates, Quanta-Feed und Physikseite per WebFetch; Abstracts ueber Nature-Seitenquelltext, APS-Feed-Beschreibungen, Crossref-API und arXiv-API (science.org und journals.aps.org blocken). Kein WebSearch, keine Numerik. Bericht mit Materialtabelle, 32-zeiliger Treffertabelle, drei Vertiefungen mit Vertragsskizzen nach VORLAGE-v2, Einordnung, ABSTRACT und Einfach-gesagt geschrieben. Register, Ledger, Matrix, Manifest, Scout-Code nicht angefasst.",
+  "result": "Rund 340 Feed-Eintraege gesichtet, rund 320 im Fenster. Klassen: stuetzt 1 (Science Advances aeh1991, Spin in QCD: Protonenspin aus Quark-/Gluonspin und Bahndrehimpuls - gilt fuer zusammengesetzte Teilchen, nicht fuer das Elektron), neutral nutzbar 17 (u.a. CSS-Quanten-WEP eta = (-2,7 +/- 4,7)e-7, Quantenphase des freien Falls aec8045, Muonium-Strahl s41567-026-03433-x mit angekuendigter 1-%-g-Messung, He-4-Gyrometer-Vorschlag PRL q3v9-rjm9 mit 0,2 % Lense-Thirring in 1 s, Kelvin-Wellen-Turbulenz t3bt-m431, Spinonen/Triplonen CuGeO3, fraktionale Antiskyrmionen, Th-229-CW-Spektroskopie, Antiprotonen-Transport BASE-STEP, Vakuumtronik +5,4 % Tc), spricht dagegen 1 direkt (CSS-WEP gegen Teilchenzahl-Gravitation, README Z. 37) plus 2 perspektivisch (Muonium, Frame-Dragging gegen README Z. 36), kein Bezug 13 tabelliert. Nichts beruehrt die LEP-Punktfoermigkeit oder die g-2-Latte; das Elektron-Halbladungsmodell bleibt widerlegt. Warnung: WebFetch-Zusammenfasser hatte fuer PRL-Eintraege 41-100 erfundene Titel geliefert; Zaehlung nur aus Roh-XML.",
+  "meaning": "Keine Bestaetigung, kein neuer Keil. Nutzbar: Spin aus Zirkulation ist beim Proton Messrealitaet (Klassenaussage fuer die Kompass-Karte), fraktionale Quantenzahlen entstehen nur als Anregungen eines Mediums (Massstab fuer das Feld mit innerem Index, kein Beleg), das Aequivalenzprinzip haelt im Quantenregime und Folman erwartet Bruch erst bei hoeheren Massen (QN-1-Terrain, Glied A4). Kein neuer Vertrag nach Neuausrichtung 22.09.; vormerken: Muonium-g-Messung bei Erscheinen, Volltexte aeh1991/aeh6139, He-4-Gyrometer.",
+  "compute": "keine Numerik",
+  "sources": [
+    {
+      "path": "coordination/literatur-20260922/NATURE-SCIENCE-PHYSICS-20260915-0922.md",
+      "sha256": "135edc4f83e6a4392642960084157f59f7a85db0d1a71b445a9b9afca04163ed"
+    },
+    {"url": "https://www.nature.com/nature.rss"},
+    {"url": "https://www.nature.com/nphys.rss"},
+    {"url": "https://www.nature.com/subjects/physics/ncomms.rss"},
+    {"url": "https://www.science.org/action/showFeed?type=etoc&feed=rss&jc=science"},
+    {"url": "https://www.science.org/action/showFeed?type=etoc&feed=rss&jc=sciadv"},
+    {"url": "https://feeds.aps.org/rss/recent/prl.xml"},
+    {"url": "https://feeds.aps.org/rss/recent/prx.xml"},
+    {"url": "https://feeds.aps.org/rss/recent/prxquantum.xml"},
+    {"url": "https://physics.aps.org/"},
+    {"url": "https://physicsworld.com/feed/"},
+    {"url": "https://www.quantamagazine.org/feed/"},
+    {"url": "https://doi.org/10.1126/sciadv.aeh1991"},
+    {"url": "https://doi.org/10.1126/sciadv.aeh4502"},
+    {"url": "https://doi.org/10.1126/sciadv.aec8045"},
+    {"url": "https://doi.org/10.1038/s41567-026-03433-x"},
+    {"url": "https://doi.org/10.1103/q3v9-rjm9"}
+  ],
+  "recorded_at": "2026-09-22T17:53:05.189906+00:00"
+}

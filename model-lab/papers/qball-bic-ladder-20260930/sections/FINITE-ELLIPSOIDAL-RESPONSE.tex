@@ -1,0 +1,117 @@
+% Independently reviewed complete composite; two production assignments retained.
+\paragraph{A finite ellipsoidal response at matched initial charge and energy.}
+We additionally evolved finite, axisymmetric ellipsoidal preparations at
+$\varepsilon=\pm0.02,\pm0.04$, with initial charge and full discrete energy
+matched to each discretization's radial reference within the declared root
+tolerance. Unlike the preceding second variation, this tests finite initial
+data rather than energy compensation only through order $\varepsilon^2$.
+At the fixed endpoint $T=32$ define
+\[
+ D(e)=\frac{C(+e)+C(-e)-2C(0)}{2e^2},\qquad C=Q_{\mathrm{core}}/Q_0.
+\]
+This is a symmetric final core response, not initial-subtracted net transport.
+On the spatially refined grid,
+$D(0.02)=0.0727746617$ and $D(0.04)=0.0730141978$, against the new
+same-grid, same-timestep variational reference $c_{\mathrm{ref}}=0.0726948531$.
+The prescribed heuristic envelope at $e=0.02$ is $1.2055721\times10^{-4}$;
+the discrepancy $7.9808621\times10^{-5}$ plus this allowance meets the
+predeclared one-percent agreement criterion. This envelope is not a certified
+error bound or a confidence interval. The resolved-remainder criterion is
+not met, so no measured Taylor order is claimed.
+
+The separate core-fraction differences at $\varepsilon=+0.02,-0.02$ are
+$2.8253326\times10^{-5}$ and $2.9966404\times10^{-5}$, respectively,
+both positive in the stored endpoint data; the symmetric envelope is not
+a separate certified bound for each sign. These are dimensionless charge-fraction
+differences, not energy percentages; a positive symmetric coefficient alone
+would not establish both signs. Figure~\ref{fig:fa-response} separates them.
+The preparation changes geometry and radial chirp together. This finite-time
+comparison establishes neither persistent enhancement, stationary formation,
+binding nor general three-dimensional stability. The even-$\ell$, $m=0$
+evolution excludes non-axisymmetric dynamics.
+
+The complete twenty-trajectory matrix and separate variational reference
+were assembled from two bounded production assignments: fourteen completed
+trajectories and the reference were inherited unchanged, and six remaining
+trajectories were completed separately. The first assignment retains its
+\texttt{INCOMPLETE} status; the full matrix, not a favourable subset,
+is used in the comparison.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=.98\linewidth]{fa-response.pdf}
+\caption{Finite symmetric endpoint coefficients for four discretizations
+(left) and separate signed core-fraction differences on the spatially refined
+grid (right). Caps are heuristic sensitivities, not confidence intervals.
+Straight segments join stored time samples; no extrapolation or Taylor-order
+fit is used. Initial redistribution is retained rather than subtracted.}
+\label{fig:fa-response}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=.95\linewidth]{fa-fields-t0.pdf}
+\caption{Stored initial amplitude (upper row) and relative phase (lower row)
+for the radial and $\varepsilon=\pm0.04$ preparations. The meridional cut
+uses $r\le12$ inside the computational domain $R=80$; the circle marks the
+measurement radius $r=6$. The common amplitude scale is shared with
+Fig.~\ref{fig:fa-fields-final}. Relative phase is
+$\arg(\phi_\varepsilon\overline{\phi_0})$ in the common initial phase
+convention, masked if either amplitude is below $10^{-4}$ of the shared
+maximum. The centre $r<0.1$ is masked; grey is not zero amplitude or phase.}
+\label{fig:fa-fields-initial}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=.95\linewidth]{fa-fields-t32.pdf}
+\caption{The same stored-field reconstruction at $T=32$, with the common
+scales and masks of Fig.~\ref{fig:fa-fields-initial}. Complex radial mode
+coefficients are interpolated before evaluating the angular basis and phase.
+These are axisymmetric amplitude/relative-phase cuts, not a general 3D
+simulation, an absolute-phase observable, or a binding diagnostic.
+Visually similar colours on the full $[-\pi,\pi]$ scale do not establish
+exact phase equality.}
+\label{fig:fa-fields-final}
+\end{figure}
+
+\paragraph{Phase rotation and the fixed-charge kinetic gap.}
+A similar phase colour does not test rigid harmonic motion. We evaluated
+necessary conditions on the six stored states with $\varepsilon=0,\pm0.04$
+at $t=0,32$, using the complete $R=80$ box. For the reduced mode arrays
+$U=r\phi$, $V=\partial_t U$, write
+$\|X\|_h^2=4\pi h\sum_{j=1}^{J-1}\sum_\ell|X_{j\ell}|^2$,
+$I=\|U\|_h^2$, $K=\|V\|_h^2$ and, for $I>0$,
+$\omega_{\mathrm{fit}}=Q/(2I)$.
+With $A_h(U)$ the actual discrete nonlinear acceleration, define
+\[
+ r_v=\frac{\|V-\ii\omega_{\mathrm{fit}}U\|_h^2}{K+\omega_{\mathrm{fit}}^2 I},
+ \qquad
+ r_a=\frac{\|A_h(U)+\omega_{\mathrm{fit}}^2 U\|_h^2}
+                 {\|A_h(U)\|_h^2+\omega_{\mathrm{fit}}^4 I}.
+\]
+Rigid single-frequency motion requires both numerators to vanish. Initially
+$r_v$ vanishes by construction, whereas $r_a\simeq0.0830$; the prescribed
+phase velocity does not solve the stationary-profile equation. At $T=32$
+the three states give $r_v=0.0282474$--$0.0282631$ and
+$r_a=0.0586355$--$0.0588005$. These are squared-residual quotients, not
+amplitude percentages or kinetic-energy fractions. This completed endpoint
+postprocessing involved no further time integration. It provides neither a core-only classification,
+a relaxation law, a certified continuum residual bound nor a general 3D
+stability result.
+
+The unnormalized velocity residual has a separate exact algebraic meaning.
+In the positive canonical kinetic norm, minimizing velocities at fixed
+instantaneous $U$ and total $Q$ gives $V_Q=\ii Q U/(2I)$ and
+\[
+ E_h(U,V)-E_{Q,h}[U]
+ =J_v=\|V-\ii\omega_{\mathrm{fit}}U\|_h^2
+ =K-\frac{Q^2}{4I},\qquad
+ E_{Q,h}[U]=W_h(U)+\frac{Q^2}{4I},
+\]
+where $W_h$ contains the radial and angular gradient plus potential energy.
+This is a comparison at fixed profile, not a physical projection or measured
+relaxation: it generally changes regional charge and need not preserve
+other conserved quantities. It does not minimize the spatial profile,
+show how energy is radiated, or establish binding. In particular, $r_v$
+normalizes $J_v$ by $K+Q^2/(4I)$, not by kinetic or total energy.

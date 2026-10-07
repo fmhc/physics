@@ -1,0 +1,25 @@
+{
+  "id": "claude-ew-2-satzcheck-20260923",
+  "time": "2026-09-23T18:21:03.208516+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5)",
+  "topic": "gesamtformel",
+  "status": "reported",
+  "title": "EW-2 Ausgang A: unser m=0-Ast ist nach exakter Umskalierung die Grundzustandskurve der kubisch-quintischen NLS, das Frequenzfenster genau deren Gueltigkeitsbereich; Quellenberichtigung zur Vergleichskonstante",
+  "question": "Ist der FM-Befund 'die untere Kante ist eine Rechengebietsgrenze, keine Falte' ein Satz statt einer Messung, und trifft unser Rechenwerk die unabhaengige Konstante?",
+  "action": "Vertrag EW-2 (sha256 85b24949...), Startsignal 18:05Z, Lauf auf .69 CPU 184,7 s. Ableitbarkeitsprobe zuerst (Lehre aus VM-5), Satzcheck S1 bis S4 an Zitatstellen (Berestycki-Lions ueber Sekundaerquellen, Serrin-Tang, Killip-Oh-Pocovnicu-Visan, Holmer-Roudenko), Nullprobe freies Feld, Trennkraftarm mit halbiertem kubischen Koeffizienten, Positivkontrolle, Fremdreview vor dem Startsignal (chatcmpl-1e2cde36...), beidseitiges Gegenlesen.",
+  "result": "A. Ableitbarkeitsprobe: C_inf = 18,890440836651113 ist an zwanzig Frequenzen aus drei bereits gebundenen FM-Dateien ausrechenbar, also Auswertung statt Vertrag; die A-Teilbedingung wird im Vertrag als Buchhaltung gefuehrt. Satzcheck: S1, S2, S3 an allen 37 geprueften Omega erfuellt, S4 mit Zusatzvoraussetzung (nur der knotenfreie Ast). Das Fenster endet bei 3/16, die Serrin-Tang-Diskriminante bei 1/4 - Verhaeltnis 4/3, koeffizientenunabhaengig, damit war Ausgang B arithmetisch unerreichbar (im Vertrag offengelegt, vom Fremdhaus bestaetigt). Loeser: C = 18,89725130254328 (minus 0,2257 Prozent gegen 18,94); Trennkraftarm 37,794502605088944 mit Verhaeltnis 2,000000000000126; Nullprobe X = 0 an allen vier Zellen. K12 (zweiter Loeserpfad) nicht konvergiert und NICHT nachgebessert. Quellenberichtigung: 18,94 steht nicht in Weinstein 1983 (Volltext geprueft, dort nur der zweidimensionale Wert), sondern in Holmer-Roudenko 2008 Fussnote 4 als numerische Berechnung; unsere zwei Programme stimmen auf 7,9e-11 auf 18,897 ueberein.",
+  "meaning": "Der N=1-, m=0-Sektor unseres Feldes ist das best untersuchte Soliton der nichtlinearen Analysis. Existenz und Eindeutigkeit sind ab jetzt an die Literatur delegierbar; FM-5 und FM-6 haben die Erreichbarkeit durch unser Rechenwerk gemessen, nicht die Existenz. Registerwirkung keine, FM-1 bis FM-4 nicht mitgeordnet. Neu bleibt allein, was in der Literatur nicht steht: innerer Index, Kanalkopplung, Massenquelle, alles Zeitabhaengige; keine NLS-Stabilitaetsaussage gilt fuer unser zeitabhaengiges Feld. Offen: ob 18,94 oder 18,897 richtig ist - genau das haette die gerissene Kontrolle entschieden.",
+  "compute": "eine CPU-Unit auf .69, 184,7 s; 0,00 USD",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260923/ew-2-VERTRAG.md"
+    },
+    {
+      "path": "coordination/vertraege-20260923/ew-2-lauf/BERICHT-EW-2.md"
+    },
+    {
+      "path": "coordination/vertraege-20260923/ew-2-machbarkeit/ABLEITBARKEIT-EW-2.md"
+    }
+  ]
+}

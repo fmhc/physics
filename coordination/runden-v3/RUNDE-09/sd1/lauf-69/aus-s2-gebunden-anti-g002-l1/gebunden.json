@@ -1,0 +1,30 @@
+{
+ "argumente": {
+  "kommando": "gebunden",
+  "omega2_liste": "0.52,0.55,0.58,0.60,0.62,0.64,0.66,0.68,0.70,0.72,0.74",
+  "n_geb": 400,
+  "nu_min": 0.001,
+  "name": "Z1",
+  "h": 0.02,
+  "frand": 1e-06,
+  "offs": "0,-5e-4,5e-4,-2e-3,2e-3",
+  "dxs": "5e-4,1e-4",
+  "iter_newton": 20,
+  "u_n": 60,
+  "u_drho": 2e-05,
+  "u_drho_ohne_fit": 0.0005,
+  "g": 0.02,
+  "x0": null,
+  "nu0": null,
+  "cgam": null,
+  "l": 1,
+  "kanal": "anti",
+  "dnu": null,
+  "geraet": "cpu",
+  "out": "/home/fmh/fmhc-physics-remote/runde9-sd1/aus-s2-gebunden-anti-g002-l1",
+  "budget": 540.0
+ },
+ "start": "2026-09-30T06:49:24+00:00",
+ "fehler": "Traceback (most recent call last):\n  File \"/home/fmh/fmhc-physics-remote/runde9-sd1/sd1.py\", line 552, in main\n    erg[\"gebunden\"] = gebunden(a, dev, zeilen, {})\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/fmh/fmhc-physics-remote/runde9-sd1/sd1.py\", line 395, in gebunden\n    profs = [profil_fuer(art, x, a.g, 0.5 * a.h, dev) for x in xs]\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/fmh/fmhc-physics-remote/runde9-sd1/sd1.py\", line 227, in profil_fuer\n    return prof_nativ(w2, g, hp)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/fmh/fmhc-physics-remote/runde9-sd1/sd1.py\", line 191, in prof_nativ\n    raise ValueError(f\"Klammer ungueltig: {zust[0]}, {zust[-1]}\")\nValueError: Klammer ungueltig: -1.0, -1.0\n",
+ "ende": "2026-09-30T06:49:24+00:00"
+}

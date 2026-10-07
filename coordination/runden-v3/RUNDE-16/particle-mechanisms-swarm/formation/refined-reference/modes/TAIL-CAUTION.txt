@@ -1,0 +1,61 @@
+PAPIERPRUEFUNG: GETRIEBENER CHI-TAIL — 2026-10-02
+Keine Numerik, keine Autorcodelektuere, keine Simulation.
+Basis: eigener gekoppelter Operator in OPERATOR-INDEPENDENT.txt.
+
+URTEIL
+Ja: Die freien Kanalexponenten beschreiben die homogenen Grenzgleichungen,
+aber nicht zwingend den fuehrenden Tail JEDER Feldkomponente. Eine langsam
+abfallende komplexe Mode kann ueber den exponentiell kleinen Hintergrund
+einen chi-Partikulaertail treiben, der langsamer abfaellt als der freie
+homogene chi-Tail. Ein reiner kappa_chi-Abgleich waere dann ein falsches
+Ausschlusskriterium fuer eine lokalisierte gekoppelte Mode.
+
+ABLEITUNG
+Bezeichne den stationaeren phi-Hintergrund mit f, die kanonische reelle
+phi-Modenkomponente mit U und die chi-Modenkomponente mit w, damit B und w
+nicht verwechselt werden. Fuer rho unter allen Schwellen gilt asymptotisch
+
+ f ~ F exp(-kappa_bg r)/r,  kappa_bg=sqrt(2-omega²),
+ U ~ Uplus exp(-kappa_plus r)/r + schnellere Beitraege,
+ kappa_plus=sqrt(2-(omega+rho)²),
+ B=2sqrt2 gf ~ 2sqrt2 f,
+ (-Delta+kappa_chi²) w = -B U + kleinere Operatorkorrekturen,
+ kappa_chi=sqrt(2-rho²).
+
+Wenn F*Uplus nicht null ist, besitzt die rechte Seite einen Beitrag
+ S exp(-lambda r)/r² mit lambda=kappa_bg+kappa_plus und
+ S=-2sqrt2 F Uplus (bis zur gewaelten Pluskanalnormierung).
+Fuer ein radiales q=exp(-lambda r)/r² gilt exakt
+
+ (-Delta+kappa_chi²)q =
+ [kappa_chi²-lambda²-2lambda/r-2/r²]q.
+
+Bei lambda != kappa_chi folgt deshalb fuer grosse r ein Partikulaertail
+
+ w_part ~ S/(kappa_chi²-lambda²) * exp(-lambda r)/r²
+
+mit relativen inversen-r-Korrekturen, zusaetzlich zu
+ w_hom ~ W exp(-kappa_chi r)/r.
+Ist lambda<kappa_chi, dominiert der getriebene Tail fuer hinreichend grosse
+r trotz seines zusaetzlichen Faktors1/r. Mit den vorgegebenen Naeherungs-
+werten ist lambda etwa1.18 gegen kappa_chi etwa1.36: genau dieser Fall.
+Die Rueckkopplung B*w_part in den phi-Kanal faellt nochmals um kappa_bg
+schneller ab und widerspricht dem angenommenen fuehrenden Plus-Tail nicht.
+
+GRENZEN
+Verschwindet die langsame Plusprojektion oder der relevante Quellkoeffizient,
+entfaellt dieser konkrete getriebene Beitrag. Bei lambda=kappa_chi versagt
+die obige Nennerformel; der resonante Partikulaeransatz braucht eigene
+algebraische/logarithmische Faktoren. Ein kleiner Vorfaktor kann den
+Uebergang zum fuehrenden Partikulaertail weit nach aussen verschieben.
+Knoten und Mischung beider Beitraege machen lokale Logsteigungen unzuverlaessig.
+Ein endlicher Dirichletkasten erzwingt weitere Randverformung.
+
+FOLGERUNG FUER TAILDEUTUNG
+Kappa_plus/minus/chi bleiben die richtigen freien homogenen Kanalraten.
+Ein chi-Tail mit anderer Rate widerlegt allein weder Subthreshold-Lage
+noch Lokalisation. Fuer diese Komponente ist die gekoppelte inhomogene
+Gleichung massgeblich. Aus einer langsameren Rate allein folgt umgekehrt
+auch kein positiver Modennachweis. Normierbarkeit, gekoppelte Residuen,
+Rand-/Kastensensitivitaet und die jeweilige Quellstruktur bleiben relevant.
+Dieser Hinweis aendert keine Schwelle und ordnet keinen neuen Lauf an.

@@ -1,0 +1,29 @@
+Runde 8 GF-BIC spektrum Start 2026-09-30T04:26:01+00:00, Geraet cpu, torch 2.5.1+cu121, numpy 2.4.4; gfbic.py sha256 cb62cdfd0a62c3c1, resonanz3d.py /home/fmh/fmhc-physics-remote/runde8-gfbic/resonanz3d.py sha256 99c54b9ccdb517c1
+=== P3: omega^2 = 0.631449, omega = 0.79463765, Kanal a offen ab nu = 0.205362, Kanal b ab 1.794638; 2 omega = 1.58927531
+  Profil: S0 = 1.110684, R_halb = 5.4602, Q = 1383.0984, kappa = <f^4>/<f^2> = 0.73710200 (Stufe A 0.73710200); Profilzeit 15.0 + 27.8 s
+  Zwei-Moden-Formel lambda_2(g): g = 0.0: 0.00000000, g = 0.2: 0.09260245, g = 0.5: 0.22951770, g = 1.0: 0.44650983
+  FD (Delta 0.1, R 40.0, M 399) g = 0.0: n(L_u) = 1, n(L_v) = 1, L_u min -3.031761e-05, L_v min -3.031761e-05; instabil []; gebunden 0 <= nu < 1 - omega: [1.908e-05]; lokalisiert im Fenster: [(0.207383, 0.535), (1.589256, 1.0)] (8.0 s)
+  FD (Delta 0.1, R 40.0, M 399) g = 0.2: n(L_u) = 1, n(L_v) = 0, L_u min -1.566724e-01, L_v min 1.360523e-01; instabil ['0.00000000 + 9.6363e-02 i']; gebunden 0 <= nu < 1 - omega: [0.2011798]; lokalisiert im Fenster: [(1.592561, 0.999)] (7.9 s)
+  FD (Delta 0.1, R 40.0, M 399) g = 0.5: n(L_u) = 1, n(L_v) = 0, L_u min -4.179613e-01, L_v min 2.877143e-01; instabil ['0.00000000 + 2.6826e-01 i']; gebunden 0 <= nu < 1 - omega: [0.13457761]; lokalisiert im Fenster: [(1.609169, 0.997)] (7.5 s)
+  FD (Delta 0.1, R 40.0, M 399) g = 1.0: n(L_u) = 2, n(L_v) = 0, L_u min -8.938541e-01, L_v min 3.729388e-01; instabil ['-0.00000000 + 5.6088e-01 i', '0.00000000 + 2.8583e-01 i']; gebunden 0 <= nu < 1 - omega: []; lokalisiert im Fenster: [(1.655813, 0.992)] (7.7 s)
+  L_0 = -Lap + U'(f^2), Eigenwerte unter 1 (FD): [0.63141868] (E_0 soll omega^2 = 0.631449 sein)
+  FD Instabilitaet g = 0.2: 0.0000000000 + 9.6363e-02 i | 0.0000000000 + 9.6362e-02 i | Richardson 0.0000000000 + 9.6361e-02 i
+  FD Instabilitaet g = 0.5: -0.0000000000 + 2.6826e-01 i | -0.0000000000 + 2.6825e-01 i | Richardson -0.0000000000 + 2.6824e-01 i
+  FD Instabilitaet g = 1.0: -0.0000000000 + 5.6088e-01 i | -0.0000000000 + 5.6086e-01 i | Richardson -0.0000000000 + 5.6085e-01 i
+  Schiessen Stufe A (h 0.02, R 25.98, r_m 5.46): g = 0: |D(0)| 1.62e-11 (|D(1e-3)| 4.11e-05, Verh. 2e-3/1e-3 4.000), |D(2 omega)| 7.35e-08 (|D(2 omega + 1e-3)| 2.59e-03); 19 Keime, 63.1 s
+  Schiessen Stufe B (h 0.01, R 33.56, r_m 5.46): g = 0: |D(0)| 5.06e-13 (|D(1e-3)| 4.11e-05, Verh. 2e-3/1e-3 4.000), |D(2 omega)| 4.59e-09 (|D(2 omega + 1e-3)| 2.59e-03); 19 Keime, 122.6 s
+  Pole (Stufe B; in Klammern Abstand zu Stufe A). Im > 0 = anwachsend, Im < 0 = abklingend:
+    g = +0.00 [2omega]: nu = 1.5892753083 + 4.3322e-11 i (A: 2.7e-08), |D| 3.6e-16
+    g = +0.20 [instabil]: nu = -0.0000000000 + 9.6361e-02 i (A: 2.0e-12), |D| 2.3e-17, lambda/lambda_2 = 1.040591, |Re|/Im = 1.5e-22
+    g = -0.20 [instabil(-g)]: nu = -0.0000000000 + 9.6361e-02 i (A: 2.0e-12), |D| 2.3e-17, lambda/lambda_2 = 1.040591, |Re|/Im = 1.5e-22
+    g = +0.20 [2omega]: nu = 1.5926081036 - 9.8175e-06 i (A: 2.7e-08), |D| 3.0e-16
+    g = -0.20 [2omega(-g)]: nu = 1.5926081036 - 9.8175e-06 i (A: 2.7e-08), |D| 3.0e-16
+    g = +0.50 [instabil]: nu = -0.0000000000 + 2.6824e-01 i (A: 3.6e-11), |D| 2.7e-16, lambda/lambda_2 = 1.168733, |Re|/Im = 1.8e-22
+    g = +0.50 [2omega]: nu = 1.6090445171 - 6.7752e-05 i (A: 2.7e-08), |D| 8.1e-17
+    g = +1.00 [instabil]: nu = -0.0000000000 + 5.6085e-01 i (A: 1.6e-10), |D| 3.7e-15, lambda/lambda_2 = 1.256083, |Re|/Im = 5.4e-23
+    g = +1.00 [2omega]: nu = 1.6562008911 - 1.9852e-04 i (A: 2.7e-08), |D| 1.6e-16
+    g = +1.00 [FD-instabil]: nu = -0.0000000000 + 2.8555e-01 i (A: 2.6e-09), |D| 1.3e-16
+    g = +0.20 [gebunden, reell]: nu = 0.2011852130 (Klammer 7.3e-13)
+    g = +0.50 [gebunden, reell]: nu = 0.1347439929 (Klammer 1.7e-16)
+    Negativkontrolle ohne Ball: min |D_frei| an diesen Stellen = 2.762e-01
+Ende 2026-09-30T04:30:21+00:00, 260.1 s; entfallen: nichts

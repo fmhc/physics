@@ -1,0 +1,1 @@
+.hintergrund.zeilen_neu[] | "| \(.w2) | \(.R1*1000|round/1000) | \(.R2*1000|round/1000) | \(.R_formel*1000|round/1000) | \(.dQ|tostring|.[0:7]) | \(.dE|tostring|.[0:7]) | \(.it1)/\(.it2) | \(.gleich_r18_st1 and .gleich_r18_st2) |"

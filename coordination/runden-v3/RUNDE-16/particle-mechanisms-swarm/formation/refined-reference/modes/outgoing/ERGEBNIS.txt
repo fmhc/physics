@@ -1,0 +1,35 @@
+Erster auslaufender Antworttest, 2026-10-02: UNRESOLVED
+
+Der Lauf wurde nach den vorab gebundenen Regeln in der freien QA gestoppt.
+Keine der vier M2-Antworten wurde gerechnet (cases=[]). Keine Aussage zur
+Abstrahlung der Q-Ball-Mode, insbesondere keine gemessene Auslöschung.
+
+R30,h=.1, freie Gaussian-Kontrolle: bestanden.
+Betragsfehler .001394/.001384 <.005, komplexe Fehler .01042/.01331 <.02.
+Work-/FV-Bilanz6.75e-15, Algebrarest3.24e-14; Kontinuums-/FV-Flussabweichung
+.001603/.001582 <.005. Phasendrift entspricht der vorab erwarteten Größenordnung.
+
+Nichttriviale analytische Nullquelle, gleicher R/h:
+- Algebrarest1.33e-14, Workbilanz4.87e-13: bestanden.
+- Quellen-L2=2.83889>1e-3, keine triviale Nullquelle.
+- Auslaufende Restamplitude .00179588, relativ zum Gaussian-Anker
+  .00175064<.005: bestanden als endliche Negativkontrolle.
+- VOLLER Profilfehler ||p-b||_V/||b||_V=.009772838>.005: VERFEHLT.
+Dieser letzte Punkt erzwingt UNRESOLVED, unabhängig von den anderen Grenzen.
+Die h=.05-Kontrollen sowie closed/wrong-Robin wurden noch nicht ausgeführt.
+Kein vorliegender Konvergenzvergleich für diese neue QA-Serie.
+
+Nächste begrenzte Diagnose, nicht Ergebnisrettung:
+Der kleine künstliche 1/r-Außenrest trägt auf einer endlichen Box einen
+Normquadratbetrag etwa4pi|A|² DeltaR. Die vollständige Profilnorm könnte
+dadurch dominiert sein. Das ist noch keine regionale Messung, da die
+QA-Felder im ersten Lauf nicht gespeichert wurden. Ein separater Mini-
+Diagnoseplan prüft Kern/Außenanteile und Gitterverfeinerung; er ändert
+weder dieses Ergebnis noch die ursprüngliche .005-Grenze und startet
+keinen M2-Hauptarm automatisch.
+
+Code75b1dce542aa728fe6bf58ecea4aec4a2ddf8a6a5a6e236666075c6902bbd292
+Result9f0b975784c3b5111fc95ae804db89b33cbbca750637ff2161c084c211a55e9f
+.69 CPU8,nice19,einThread,keineCUDA. user.45+system.05=.50CPU-s,
+wall.50s,exit2,maxRSS63404KiB. TIME.txt undINPUT-BINDUNG.txt erhalten.
+Vorab unabhängige Plan-/Codelektüre; Ergebnislesung separat.

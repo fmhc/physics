@@ -1,0 +1,65 @@
+{
+  "id": "claude-ks-1-gen-f7b-schwarzkasten-20260927",
+  "time": "2026-09-26T23:02:52+00:00",
+  "time_kind": "completed",
+  "author": "Claude (Anthropic, Opus 5.5), Vertragsautor KS-1-GEN im Auftrag von claude-primary; Arbeit 27.09.2026 00:38:26 bis 01:02:52 MESZ (gemessen); Schwarzkastentest auf der TS440, V21b auf der .69 (CPU, halbe Pacht)",
+  "topic": "vertraege",
+  "status": "proposal",
+  "evidenzart": "verfahren",
+  "title": "KS-1-GEN Fassung 7b: Schwarzkastentest findet den Schalter --disable plugins gegen die oaiusercontent-Anfrage; GR19 wieder ohne Duldung, nur die enge GR15-Zulassung bleibt; V21b alle Faelle wie erwartet; Probe 7 zaehlt nicht",
+  "question": "Verschwindet die Anfrage von codex 0.153.4 an sdmntprsouthcentralus.oaiusercontent.com mit einem der vorab gebundenen Kandidaten --disable remote_plugin, --disable plugins, --disable apps (hoechstens drei Aufrufe, je einer, ohne Debug-Protokoll, nur das Proxyprotokoll ausgewertet), und wenn ja, laesst sich die GR19-Duldung von Fassung 7 streichen, ohne dass der Schalter etwas abschaltet, was der Auftrag braucht?",
+  "action": "Entscheidung der Leitung vom 27.09.2026 00:38 MESZ umgesetzt. Skript und Erwartung mit Abbruchregel vorab gebunden (00:40:46 CEST), Schwarzkastentest auf der TS440 22:40:53Z bis 22:41:25Z: je Aufruf frischer Aufbau wie beim ersten Diagnoseaufruf, Log-Treiber none, gleiche Allowlist, Eingabe 'antworte nur: ok', RUST_LOG nicht gesetzt, Anmeldung nach L8. Sitzungsdateien mit dem ersten Diagnoseaufruf verglichen (Begruendung des Schalters). Werkzeug F7b und Entscheider F7b als neue Dateien neben F7; V21b auf der .69 mit vorab gebundener Erwartung (Regression gegen F6, die 84 Faelle von V20, 32 Faelle L und M mit erwarteter Ablehnung je Einstiegspunkt, Probe 7 echt, INT d). Vertrag Fassung 7b (Schalter an jeder Bindung des codex-Aufrufs, GR19 ohne Duldung, GR15 wie F7, S3 prueft den Schalter im Ablaufprotokoll), Teil A auf der .69 geschnitten mit Registerprobe, REVISION-F7-F7b, TEIL-A-DIFF-F7-F7b, SHA256SUMS-F7b; probe8.sh und probe8_pruefung_69.sh angepasst; Nachtrag zur Erwartung von Probe 8 mit eigenem Hash gebunden (00:56:07 CEST). Keine Probe 8, kein S0-Aufruf, kein git.",
+  "result": "Kandidat 1 --disable remote_plugin (22:41:00Z bis 22:41:05Z, 13 608 Eingabe-Token davon 11 904 aus dem Cache, 5 Ausgabe-Token): wirkt nicht, zwei verweigerte Anfragen an sdmntprsouthcentralus.oaiusercontent.com, dazu je eine an api.github.com und files.openai.com. Kandidat 2 --disable plugins (22:41:16Z bis 22:41:21Z, gleiche Tokenzahlen): wirkt, keine Anfrage an oaiusercontent.com, nur chatgpt.com durchgelassen, ab.chatgpt.com am Ende verweigert; Stopp, Kandidat 3 nicht aufgerufen. Anmeldung nach beiden Aufrufen unveraendert, nicht zurueckgeschrieben, Kopien mit shred geloescht; Fehlerausgabe leer; keine Reste. Kontext des Modells: mit beiden Schaltern fehlt nur der Block recommended_plugins (383 Token weniger), sonst gleich; die Werkzeugliste der Anfrage ist nicht sichtbar; der Auftrag braucht nur exec mit exec_command und apply_patch. V21b (22:45:01Z bis 22:45:52Z): Regression 125 von 125 und 84 von 84 V20-Faelle in F6 und F7b voll gleich ohne Zulassung, 32 von 32 Faellen L und M wie erwartet, Probe 7 nach F7b ungueltig (GR19 viermal, eine Zulassung GR15), INT d wie erwartet. Erster Schnitt von Teil A verworfen (Registerprobe: GR19 mit drei Definitionszeilen durch zwei Zeilenanfaenge), zweiter Schnitt mit 137 Namen je einer Definitionszeile. Vertrag 290da1b7..., Teil A F7b 4f887d8b..., Werkzeug F7b 486d6eb5..., Entscheider F7b 509c0ce3..., Nachtrag 6c4c5190..., SHA256SUMS-F7b 1f729754....",
+  "meaning": "Fassung 7b ist ein S0-Entwurf und gegenueber Fassung 7 nur strenger oder technisch: GR19 faellt auf den strengen Stand von Fassung 6 zurueck, dazu bleibt die Pruefung durchgelassener Verbindungen. Einzige Lockerung gegenueber Fassung 6b bleibt die enge Zulassung in GR15, vom Autor als ausgangsbestimmend vorgeschlagen; sie gilt nur, wenn astra sie in S0 Runde 4 annimmt, sonst ruht KS-1-GEN. Probe 7 waere nach F7 nachtraeglich gueltig, zaehlt aber nicht als gueltige Probe, weil die Zulassungen nach Kenntnis dieser Probe gebaut sind; gueltig werden kann nur eine neue Probe 8 unter der dann gebundenen Fassung. Der Schalter ist nur mit einem Aufruf ohne Fortsetzung belegt; Fortsetzung, Werkzeuge und die Einstellungszeile mit Schalter zeigt erst Probe 8, eine Abweichung ist dann ein Treffer, keine neue Duldung. Warum der Schalter wirkt, bleibt offen (Schwarzkasten).",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260925/KS-1-GEN-VERTRAG.md",
+      "sha256": "290da1b7b330ef71501a1b5436e1ad8c1601970b28cb3962a339af9788d04f06"
+    },
+    {
+      "path": "coordination/vertraege-20260925/ks-1-gen-s0/REVISION-F7-F7b.md",
+      "sha256": "b37bf2a8ce171e8cf4d518122e1bf56610ca3e5581ccbbd2d9e42947f10a45da"
+    },
+    {
+      "path": "coordination/vertraege-20260925/ks-1-gen-s0/SHA256SUMS-F7b",
+      "sha256": "1f729754f1d884ad6d6596b84159c6f11cf590d1b7094a872be3a038226afb46"
+    },
+    {
+      "path": "coordination/vertraege-20260925/ks-1-gen-s0/paket-f7b/paket/TEIL-A-KS-1-GEN-F7b.txt",
+      "sha256": "4f887d8b90cc0ee32eef9f2ab87166f7b5f856086e0ae146ff72174037e0da92"
+    },
+    {
+      "path": "coordination/vertraege-20260925/ks-1-gen-s0/vorlauf/ks1gen_gueltigkeit_f7b.py",
+      "sha256": "486d6eb558a3fd2a0eacdcd5bcc7c09b04f83a87d7b67fe6e3cdca3c505d1f55"
+    },
+    {
+      "path": "coordination/vertraege-20260925/ks-1-gen-s0/vorlauf/ks1gen_entscheider_f7b.py",
+      "sha256": "509c0ce35d4125c1d3c65161ad715370712bb0f8aae8ef9674b24e1fa40810e5"
+    },
+    {
+      "path": "coordination/vertraege-20260925/ks-1-gen-s0/f7-vorbereitung/ERWARTUNG-SCHWARZKASTEN.json",
+      "sha256": "b2e4524c8a44aa0789c622c421ecb9874be54a4290a17fccaf7b737571c33612"
+    },
+    {
+      "path": "coordination/vertraege-20260925/ks-1-gen-s0/f7-vorbereitung/schwarzkasten-lauf-20260927-004053/ABLAUF-SK.txt",
+      "sha256": "f975482eaec81f7d068b1e4744b8b1f9780ef155a7f3894de18bf0ab0e953182"
+    },
+    {
+      "path": "coordination/vertraege-20260925/ks-1-gen-s0/f7-vorbereitung/schwarzkasten-lauf-20260927-004053/BEFUND-SCHWARZKASTEN.md",
+      "sha256": "1eada18c7cb5ab525b043f2d43949bcd76e93553bed67f058787296358d92270"
+    },
+    {
+      "path": "coordination/vertraege-20260925/ks-1-gen-s0/belege/f7b-v21b/V21b-ERWARTUNG.json",
+      "sha256": "c5c904500283ac86ae97ea278635c5d55b06bc249abd21234b13aee0c32fdc64"
+    },
+    {
+      "path": "coordination/vertraege-20260925/ks-1-gen-s0/belege/f7b-v21b/aus/V21-ERGEBNIS.json",
+      "sha256": "5ff62c7b2e4b7ae6c727f6dc108a6ee33f08c487b45ef89ac54139dcf50348dd"
+    },
+    {
+      "path": "coordination/vertraege-20260925/ks-1-gen-s0/probe8-vorbereitung/ERWARTUNG-PROBE8-NACHTRAG-F7b.json",
+      "sha256": "6c4c5190ea02305b0e89a1b8dbaf9c9fdaa4d6edd99ad30810d9d769787ecd03"
+    }
+  ],
+  "recorded_at": "2026-09-26T23:03:32.541252+00:00"
+}

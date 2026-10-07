@@ -1,0 +1,25 @@
+start 2026-10-03T23:42:57+00:00 spur=p4000a unit=fmhc-physics-klein-r36li-rauch3-234257
+Running as unit: fmhc-physics-klein-r36li-rauch3-234257.service; invocation ID: 2ba38ade91494bc6abfb35c56676c559
+torch 2.5.1+cu121, Geraet cuda (Quadro P4000)
+Netz n=6 h=0.3 R=85: 291241 Ecken, 289279 frei, Grad Spitze 6, Defekt 0.000000, Euler 1 (9.7 s)
+Kartenpruefung: {"winkelsumme_spitze": 6.283185307179585, "Theta_soll": 6.283185307179586, "winkelsumme_minus_soll": -8.881784197001252e-16, "einlauf": {"kanten": 871758, "isometrisch": 871758, "am_schnitt": 0, "max_abw_isometrisch": 2.0450308113595383e-13, "max_abw_geklebt": null}, "auslauf": {"kanten": 871758, "isometrisch": 871758, "am_schnitt": 0, "max_abw_isometrisch": 2.0711210524382295e-13, "max_abw_geklebt": null}}
+Ball b=12: E 119.34132224 omega 0.751004 c -2.8e-12 -7.5e-12 res 2.1e-07 aussen 2 (8.7 s)
+Ball b=-12: E 119.34132224 omega 0.751004 c 3.9e-15 7.2e-12 res 3.3e-07 aussen 2 (7.6 s)
+Ball b=22: E 119.34132224 omega 0.751004 c 3.5e-16 -7.9e-12 res 3.6e-08 aussen 2 (5.6 s)
+Ball b=-22: E 119.34132224 omega 0.751004 c -2.3e-16 2.5e-11 res 1.7e-07 aussen 2 (5.4 s)
+Ball b=32: E 119.34132224 omega 0.751004 c -7.1e-16 2.7e-11 res 6.6e-08 aussen 2 (5.7 s)
+Ball b=-32: E 119.34132224 omega 0.751004 c 2.3e-15 -2.2e-11 res 6.6e-08 aussen 2 (6.1 s)
+Ball b=42: E 119.34132224 omega 0.751004 c -2.9e-12 -6.4e-12 res 8.7e-08 aussen 2 (6.6 s)
+Ball b=-42: E 119.34132224 omega 0.751004 c -2.8e-12 6.3e-12 res 9.1e-08 aussen 2 (5.6 s)
+/home/fmh/fmhc-physics-remote/runde36-linse/code/linse.py:217: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at ../aten/src/ATen/SparseCsrTensorImpl.cpp:53.)
+  Lt = torch.sparse_csr_tensor(torch.tensor(Lff.indptr, dtype=torch.int64), torch.tensor(Lff.indices, dtype=torch.int64),
+Start: E0 ['120.508866', '120.508866', '120.508866', '120.508866', '120.508866', '120.508866', '120.508866', '120.508866'] Q0 ['150.000000', '150.000000', '150.000000', '150.000000', '150.000000', '150.000000', '150.000000', '150.000000'] K_eff ['0.60288', '0.60288', '0.60288', '0.60288', '0.60288', '0.60288', '0.60288', '0.60288']
+t 100.0 d 34.19 34.19 38.84 38.84 45.26 45.26 52.81 52.81 E 964.070595 Q 1199.999283 (12.85 ms/Schritt)
+Ende: T erreicht, t 100.0, 12.85 ms/Schritt, Dauer 75.4 s, geschrieben /home/fmh/fmhc-physics-remote/runde36-linse/rauch/li-rauch3.json
+Finished with result: success
+Main processes terminated with: code=exited/status=0
+Service runtime: 1min 16.023s
+CPU time consumed: 1min 15.993s
+Memory peak: 516.0K
+Memory swap peak: 0B
+ende 2026-10-03T23:44:13+00:00 rc=0 unit=fmhc-physics-klein-r36li-rauch3-234257

@@ -1,0 +1,52 @@
+Detector tick readout — secondary analysis, 2026-10-02
+Existing ten trajectories reused. No new PDE runs. Source waveforms were
+already seen: criteria fixed before this extraction, but NOT a blind test.
+
+Outcome on both spatial/time sampling grids, window40..100, eta=1e-4:
+alpha ratio    detector mean period(h.1)  CV percent    detector-clock
+.1    1        3.60204199                 .00623894    PASS
+1     1        3.72924466                 8.285669     FAIL
+1     1.3      3.62382670                 .954981      PASS, near1%boundary
+All three fine-grid arms give16 detector ticks (15 intervals). Alpha0 and
+unexcited null give zero detector ticks. Analytic sampled-sine and constant
+controls pass. Grid agreement in mean period alone is NOT regularity:
+stark resonant fails despite fine/coarse mean agreement1.44e-5 relative.
+Fine/coarse mean differences in other coupled arms<6e-6 relative.
+
+WHAT IS NOW ADDED
+Weak readout: a finite field-density clock AND finite regular detector tick
+stream with an energetically resolved reciprocal transfer, within this model.
+The tuned strong detector fails both the previous field-clock and the new
+readout-clock conditions. The detuned detector passes here but has little
+margin in interval variation; no robustness to threshold/window claimed.
+Not an independent replication; same trajectories and solver as parent.
+A classical prepared coherent mode, no evidence for emerging time or spin.
+
+PHASE AND SIMPLE EXPLANATION
+Nearest central-density tick offsets, fine grid, in units of referenceperiod:
+weak .243865 mean, .0001865 std; strong .02452 mean,.17253 std;
+detuned .000998 mean,.005256 std. Nearest-tick pairing wraps modulo a period:
+these are NOT unwrapped phase-locking or absence-of-slip proofs.
+
+For an externally prescribed F=A cos(rho t) and OmegaD=rho, the detector
+ODE is X''+rho^2 X=alpha rho^2 A cos(rho t). With X(0)=alpha A,P(0)=0,
+X=alpha A cos(rho t)+(alpha A rho t/2)sin(rho t).
+Direct differentiation verifies it. Its resonant growing part has a quarter
+period lag relative to F. Thus the measured approximately .244-cycle offset
+is compatible with an ordinary driven oscillator, not evidence for a new
+fundamental delay or time dimension. Central density is not exactly F,
+and the actual coupled system includes backreaction; this formula is only
+an interpretation under the explicitly suppressed-backreaction assumption.
+It cannot predict unlimited growth or the strong-coupling trajectory.
+
+BOUNDARY
+Collective nonlocal detector, no propagation delay, no irreversible record,
+no noise or real detector calibration, T100 only. The detuned passing outcome
+does not mean the detector follows its own free period: mean/(Tref/1.3)=1.308.
+It is evaluated against the prepared field period, as explicitly specified.
+The next meaningful model extension is a local propagating detector field;
+that extension is not implemented or run in this secondary analysis.
+
+Compute: .69 ubuntu-auto, CPU8 nice19 one Python process, timeout20s.
+SOURCE.json is byte-copy of parent RESULT.json. INPUT.sha256 and result hashes
+bind source, extraction code and plan. Peerbus plan c2a6713a4d214a05b9e381a1a98603c3.

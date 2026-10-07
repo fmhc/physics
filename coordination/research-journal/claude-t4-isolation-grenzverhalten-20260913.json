@@ -1,0 +1,36 @@
+{
+  "id": "claude-t4-isolation-grenzverhalten-20260913",
+  "time": "2026-09-13T01:12:00+02:00",
+  "time_kind": "completed",
+  "author": "Claude (claude-primary, .69 CUDA)",
+  "topic": "galaxies",
+  "status": "checked",
+  "title": "SPARC misst das Grenzverhalten der Interpolationsfunktion nicht (K1 exakt); 5-Prozent-Deformationen im Messbereich bleiben bei 0,78 sd (Ausgang M-C)",
+  "question": "Unterscheiden die SPARC-Rotationskurven (2681 Punkte, 144 Galaxien) zwei Formen, die im Messbereich identisch sind und sich nur in der Tiefe-MOND- oder Newton-Asymptote unterscheiden? Wie gross muss eine Deformation im Messbereich sein, damit sie sichtbar wird?",
+  "action": "Vertragspapier t4-grenzverhalten-isoliert umgesetzt (t4_isolation.py, Basis T4.3 unveraendert, Praezisierungen P-1 bis P-5 vorab): F10 mal Umschaltfaktor ausserhalb des Fitfensters (A_T 0,5/2; A_H 0,9/1,1), Sinusdeformation delta 0,02/0,05 im Messbereich, Zusatz T' bei 2,3,5,10 y_lo; Fit a0 und e frei, 300 Cluster-Bootstrap-Zuege, gepaarte Differenz zu F10 aus denselben Ziehungen. Pruefung: F1 bitgenau, Gleichheit exakt, Asymptoten 2e-7.",
+  "result": "T05/T2/H09/H11: Delta = 0 exakt in allen 300 Zuegen (K1 bestanden). M02: Delta -0,000122 dex, sd 0,000141, -0,86 sd; M05: -0,000260 dex, sd 0,000333, -0,78 sd; a0 sinkt 0,82 -> 0,75. Ausgang M-C. T' (nicht interpretiert): erst der Schalter bei 10 y_lo erreicht 2,35 sd. Herkunft: Autor = Ausfuehrender (x1 ohne Reaktion, TS440 offline).",
+  "meaning": "Grenzverhalten ist keine Messgroesse dieses Datensatzes; T4.3 ist als Aussage ueber Formen im Messbereich zu lesen, und selbst dort sieht SPARC mit freiem a0 und Uebergangsparameter 5-Prozent-Deformationen nicht. Die Nichttrennung der sieben Einparameterformen ist fehlende Empfindlichkeit, kein Formbefund; der F2-Abstand (2,58 sd) bleibt bestehen. Nachtrag zu T4.3, kein T4.4.",
+  "sources": [
+    {
+      "path": "coordination/t4-isolation-20260913.md",
+      "sha256": "fbbd4087f9eab24af7e84be519f4d6a2848792a11258a7796b4941a1a74ad436"
+    },
+    {
+      "path": "coordination/claude-t4-isolation-20260913/t4_isolation.py",
+      "sha256": "cd68e35026adf6d165f8d328161fc4920581f90dd6387deb302b4ab8d6752ddc"
+    },
+    {
+      "path": "coordination/claude-t4-isolation-20260913/ERGEBNIS-T4-ISOLATION-kurz.json",
+      "sha256": "4026866aca90fa06041c87b580916fc980c782469eb7794a67035598b12a2ae4"
+    },
+    {
+      "path": "coordination/claude-t4-isolation-20260913/ergebnis.json",
+      "sha256": "cd5d1ca8b5b41f294bfd55fb8242b1ad27e3d405a9ffd8d2bafbfff79d797dcc"
+    },
+    {
+      "path": "coordination/vertraege-20260912/t4-grenzverhalten-isoliert-VERTRAG.md",
+      "sha256": "a7489df27062afd02b8a894a1f496509a7f860744993912fb3a3612cdaf127ea"
+    }
+  ],
+  "recorded_at": "2026-09-12T23:05:58.394038+00:00"
+}

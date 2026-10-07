@@ -1,0 +1,195 @@
+{
+ "urteile": {
+  "LF0": {
+   "urteil": "eingetroffen",
+   "werte": {
+    "a": true,
+    "b": true,
+    "c": true,
+    "gitter": {
+     "knoten": 256,
+     "soll": 256,
+     "grad_min": 12,
+     "grad_max": 12,
+     "nachbarn_je_knoten": 12,
+     "schluessel_abweichungen": 0,
+     "schalen": {
+      "2": 12,
+      "4": 6,
+      "6": 24,
+      "8": 12
+     },
+     "bfs_knoten_bis_4": 309,
+     "soll_knorm_bis_4": 309,
+     "bfs_fehler": 0
+    },
+    "kunstfolgen": 7,
+    "kunstfolgen_soll": 7,
+    "durchgangsprobe": [
+     {
+      "typ": "p1_110",
+      "gefunden": 4,
+      "mit_erwartung": 4,
+      "ok": true
+     },
+     {
+      "typ": "p3_111",
+      "gefunden": 4,
+      "mit_erwartung": 4,
+      "ok": true
+     },
+     {
+      "typ": "p4_100",
+      "gefunden": 4,
+      "mit_erwartung": 4,
+      "ok": true
+     }
+    ]
+   }
+  },
+  "LF1": {
+   "urteil": "nicht auswertbar",
+   "vermerk": "Sperre: LF0, Z0 bis Z4 oder Vollstaendigkeit Stufe 1 nicht erfuellt",
+   "werte": {}
+  },
+  "LF2": {
+   "urteil": "nicht auswertbar",
+   "vermerk": "Sperre: LF0, Z0 bis Z4 oder Vollstaendigkeit Stufe 1 nicht erfuellt",
+   "werte": {}
+  },
+  "LF3": {
+   "urteil": "nicht auswertbar",
+   "vermerk": "Sperre: LF0, Z0 bis Z4 oder Vollstaendigkeit Stufe 1 nicht erfuellt",
+   "werte": {}
+  }
+ },
+ "urteile_nur_stufe1": {
+  "LF1": {
+   "urteil": "nicht auswertbar",
+   "vermerk": "Sperre: LF0, Z0 bis Z4 oder Vollstaendigkeit Stufe 1 nicht erfuellt",
+   "werte": {}
+  },
+  "LF2": {
+   "urteil": "nicht auswertbar",
+   "vermerk": "Sperre: LF0, Z0 bis Z4 oder Vollstaendigkeit Stufe 1 nicht erfuellt",
+   "werte": {}
+  },
+  "LF3": {
+   "urteil": "nicht auswertbar",
+   "vermerk": "Sperre: LF0, Z0 bis Z4 oder Vollstaendigkeit Stufe 1 nicht erfuellt",
+   "werte": {}
+  }
+ },
+ "nebenlesarten": {},
+ "agenten": {
+  "A1": false,
+  "A2": false,
+  "A3": false,
+  "A4": "nicht auswertbar",
+  "A5": "nicht auswertbar",
+  "A6": "nicht auswertbar",
+  "A7": "nicht auswertbar",
+  "A8": "nicht auswertbar"
+ },
+ "kontrollen": {
+  "LF0": true,
+  "Z0": true,
+  "Z1": false,
+  "Z2": false,
+  "Z3": true,
+  "Z4": false,
+  "stufe1_vollstaendig": false,
+  "stufe2_kandidaten": 4,
+  "stufe2_gerechnet": 0,
+  "stufe2_nicht_erreicht": 4,
+  "sperre": true
+ },
+ "zusammenfassung": {
+  "klassen_stufe1": {
+   "Gleiter": 2,
+   "Wachstum": 7,
+   "offen": 0,
+   "Oszillator": 4,
+   "Stilleben": 2,
+   "ausgestorben": 5
+  },
+  "klassen_stufe2": {
+   "Gleiter": 0,
+   "Wachstum": 0,
+   "offen": 0,
+   "Oszillator": 0,
+   "Stilleben": 0,
+   "ausgestorben": 0
+  },
+  "gleiter_geprueft": 4,
+  "gleiter_roh": 4,
+  "gleiter_stufe1": 4,
+  "bahnen": [
+   {
+    "bahn_id": "504a4021bb84127a",
+    "regeln": 2,
+    "regel_beispiele": [
+     "Kunst-0",
+     "Kunst-355"
+    ],
+    "p": 1,
+    "f": 1.0,
+    "richtung": "<110>",
+    "zellen_min": 42,
+    "funde": 2
+   },
+   {
+    "bahn_id": "df8319c5ace80387",
+    "regeln": 2,
+    "regel_beispiele": [
+     "Kunst-0",
+     "Kunst-355"
+    ],
+    "p": 1,
+    "f": 1.0,
+    "richtung": "<110>",
+    "zellen_min": 44,
+    "funde": 2
+   }
+  ],
+  "n_bahnen": 2,
+  "saaten_stufe1": 436,
+  "saaten_stufe2": 0,
+  "gekappt_stufe1": 0,
+  "gekappt_stufe2": 0,
+  "objekt_gekappt_stufe1": 0,
+  "objekt_gekappt_stufe2": 0,
+  "objekt_laeufe_stufe1": 0,
+  "objekt_laeufe_stufe2": 0,
+  "zeit_stufe1_s": 0.4,
+  "zeit_stufe2_s": 0,
+  "stufe1_saatklassen": {
+   "tot": 150,
+   "still": 114,
+   "osz": 11,
+   "gleiter": 4,
+   "gross": 157,
+   "offen": 0
+  },
+  "stufe2_saatklassen": {
+   "tot": 0,
+   "still": 0,
+   "osz": 0,
+   "gleiter": 0,
+   "gross": 0,
+   "offen": 0
+  }
+ },
+ "zusatz_s_leer": null,
+ "bild_gleiter": {
+  "regel": "Kunst-0",
+  "id": "649cc65b7fdf363c",
+  "bahn_id": "504a4021bb84127a",
+  "p": 1,
+  "d": [
+   1,
+   1,
+   0
+  ]
+ }
+}

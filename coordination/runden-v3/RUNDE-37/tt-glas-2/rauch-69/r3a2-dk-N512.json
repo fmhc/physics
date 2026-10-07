@@ -1,0 +1,109 @@
+{
+ "info": {
+  "numpy": "2.4.4",
+  "scipy": "1.18.0",
+  "torch": "2.5.1+cu121",
+  "python": "3.12.3",
+  "host": "ubuntu-auto",
+  "argv": [
+   "code/dk.py",
+   "--N",
+   "512",
+   "--saaten",
+   "901",
+   "--ridx",
+   "0",
+   "--ohne_lin",
+   "--rauch",
+   "--out",
+   "rauch/r3a2-dk-N512.json"
+  ],
+  "geraet": "cuda",
+  "gpu": "Quadro P4000",
+  "skript_sha256": "747f4f032dec5a51cdd0f4a1de5a63562918a0de7a661fb2d1aab7b7012e11dd",
+  "dz_sha256": "629cd82dc417c9951386d7ea0cc2cf454d4a17da5ed9e2afbb528d53f184a280",
+  "tg_sha256": "ec48a258e266fc2226d0d10564b606052831ffefbf0642e4f7d04f9de85cfd9e",
+  "tp_sha256": "419d7da6caa211c721eb6a8c87403977415cf3050f03365377f51cb77b374dfd",
+  "start_utc": "2026-10-05T05:17:08Z"
+ },
+ "schluessel": {
+  "N": "int",
+  "saat": "int",
+  "ridx_geplant": "list",
+  "ridx_fertig": "list",
+  "abgebrochen_frist": "bool",
+  "varianten": "list",
+  "zeilen": [
+   {
+    "ridx": "int",
+    "richtung": "str",
+    "d": "list",
+    "eps1": [
+     "A_red_pd",
+     "Bz_k2V",
+     "a",
+     "b",
+     "c",
+     "d",
+     "diag_rel_min",
+     "e",
+     "eps",
+     "nX",
+     "proj_anteil_weg",
+     "rang_Mc",
+     "t_s",
+     "weg"
+    ]
+   }
+  ],
+  "pruefung": {
+   "saum": "float",
+   "umkugel_ausserhalb_saum": "int",
+   "R_umkugel_max": "float",
+   "punkte_mit_kopien": "int",
+   "T": "int",
+   "E": "int",
+   "nV": "int",
+   "kanten_je_ecke": "float",
+   "tetra_je_ecke": "float",
+   "selbstkanten": "int",
+   "laengen_abw_max": "float",
+   "volumen_summe_rel_abw": "float",
+   "vol_min": "float",
+   "vol_min_rel_mittel": "float",
+   "dieder_summe_minus_2pi_max": "float",
+   "dieder_min_grad": "float",
+   "dieder_max_grad": "float",
+   "D_sym_max": "float",
+   "schlaefli_lD_max": "float",
+   "D_absmax": "float",
+   "l_min": "float",
+   "l_max": "float",
+   "Vbox": "float",
+   "t_modell_s": "float"
+  },
+  "k3": {
+   "phi_cond_max": "float",
+   "K3_absmax": "float",
+   "vol_mittel": "float"
+  },
+  "E": "int",
+  "nV": "int",
+  "T": "int",
+  "Vbox": "float64"
+ },
+ "laufzeit_s": 11.875178813934326,
+ "maxrss_MB": 851.265625,
+ "gpu_max_MB": 702.20703125,
+ "t_punkt_s": [
+  11.438076496124268
+ ],
+ "t_eps2_s": [],
+ "weg": [
+  "qr"
+ ],
+ "abgebrochen_frist": false,
+ "E": 3952,
+ "nV": 512,
+ "T": 3440
+}

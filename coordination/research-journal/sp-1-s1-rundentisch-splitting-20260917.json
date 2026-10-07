@@ -1,0 +1,36 @@
+{
+  "id": "sp-1-s1-rundentisch-splitting-20260917",
+  "time": "2026-09-17T02:44:25+02:00",
+  "time_kind": "completed",
+  "author": "claude-worker-69 (Claude-Subagent, Anthropic, claude-fable-5-1), Stufe S1 auf .69 CPU, im Auftrag Finn",
+  "topic": "theory",
+  "status": "reported",
+  "title": "SP-1 S1: Rundenweises Abwechseln zweier Kopplungskanaele im 16er-Ring ist ein messbarer, aber kleiner Term (Ausgang A2)",
+  "question": "Unterscheidet sich das Lokalisierungsmass IPR im Fenster 40 < t <= 60 messbar (> 4 x Konvergenztoleranz bei beiden h), wenn Nachbar- und Uebernaechste-Nachbar-Kanal mit gemeinsamem Budget K = 0,5 rundenweise (Lie-Trotter, tau = 0,4) statt gleichzeitig wirken? Lokalisiert das Abwechseln staerker als jede feste Aufteilung des Budgets?",
+  "action": "Vertrag sp-1-rundentisch-splitting-VERTRAG.md (S0 vom selben Subagenten, keine Fremdreview vor S1) gerechnet: 5 Aufteilungen x beta in {1, 0} x tau in {0,4; 0,2} x h in {0,01; 0,005} x Arten X/L/S = 120 Laeufe, Kontrollen K0a/K0b (Nullfall, k_B = 0 operationsgleich), K1 (Energie X), K2 (gleicher Graph, beta = 0 hart), K3 (lineare Referenzen aus eigh, exakte Kanalfluesse), K4. User-Unit fmhc-physics-sp-1-20260917 auf ubuntu-auto, CPUQuota 200 %, 180 s Wanduhr.",
+  "result": "Ausgang A2. Entscheidungsfall (0,25; 0,25), beta = 1, tau = 0,4: <IPR>_X = 0,13454, <IPR>_L = 0,13332, S_L = 0,001214 (h = 0,01) und 0,001215 (h = 0,005) bei tol = 2,4e-6, also 504 x tol. Alle Kontrollen bestanden: K0 exakt 0, K1 max |H-H0|/H0 5,5e-5 / 1,4e-5, Ordnung 4,00; K2 gleicher Graph S_same 1,4e-6 <= 2,8e-6; K3 max |q - q_ref| 2,7e-4 / 6,8e-5 (Ordnung 4,00), Splitting-Effekt aus exakten Fluessen bei beta = 0: 0,000985 gegen numerisch 0,00098. S_L(tau = 0,2)/S_L(0,4) = 0,49 (Ordnung 1, wie Lie-Trotter), Strang S_S um Faktor 10-100 kleiner. Zusatzfrage: <IPR>_L = 0,1333 liegt unter dem Maximum fester Aufteilungen 0,1733 (nur uebernaechste Nachbarn, Zerfall in zwei 8er-Ringe), daher A2 und nicht A1.",
+  "meaning": "Das rundenweise Abwechseln ('mehrere Spiele in Runden') ist im Modell ein echter Term und kein Numerikrest; er ist erster Ordnung in der Rundenlaenge, wie die BCH-Reihe fuer Lie-Trotter verlangt, und verschwindet bei kommutierenden Kanaelen (K2) und bei einem einzigen Kanal (K0b). Sein Betrag ist klein (0,9 % des IPR bei tau = 0,4) und er erzeugt keine Lokalisierung, die eine feste Aufteilung desselben Budgets nicht auch haette. HYPOTHESE-Status fuer jede Deutung; keine Aussage ueber Teilchen, Raum oder Bindung. S2 (anderes Haus, eigenes Skript) und S3 offen; Registerzeile erst danach durch claude-primary.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260916/sp-1-lauf/BERICHT-SP-1.md",
+      "sha256": "9b141e9e106287aa244c803122f175a2d83a2f4b49e47169408eca459fef5cbf"
+    },
+    {
+      "path": "coordination/vertraege-20260916/sp-1-lauf/ERGEBNIS-SP-1.json",
+      "sha256": "9e352b562cae58e6ca892ac9099ac22a26e0da4b04c9fba7abe9bfd4da78da42"
+    },
+    {
+      "path": "coordination/vertraege-20260916/sp-1-lauf/sp_1.py",
+      "sha256": "379fa8e27160fadff2e27ba5578dc6b2cb07f73d019d37bcb57d2784de1d7bda"
+    },
+    {
+      "path": "coordination/vertraege-20260916/sp-1-rundentisch-splitting-VERTRAG.md",
+      "sha256": "64cfeca00c16be2929e4d6d037b5308b3deec7aa872e8612999898e15c65e592"
+    },
+    {
+      "path": "coordination/vertraege-20260916/startsignal-sp-1.txt",
+      "sha256": "01d0ccf22d2894200d436a7a3adb25c8a606c512351fd26a9fd2acb847736ecc"
+    }
+  ],
+  "recorded_at": "2026-09-17T00:45:32.563961+00:00"
+}

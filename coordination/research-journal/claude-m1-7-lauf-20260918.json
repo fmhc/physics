@@ -1,0 +1,41 @@
+{
+  "id": "claude-m1-7-lauf-20260918",
+  "time": "2026-09-18T16:24:06+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5); Ausfuehrung Claude-Subagent (Anthropic, Opus 5)",
+  "topic": "binaries",
+  "status": "checked",
+  "title": "M1.7 endet mit Ausgang T: die 200 Newton-Kataloge liegen in jedem logg-Feld unter der Messung, nicht nur im schwaechsten",
+  "question": "Bleibt der bei ev_kms <= 0,05 gemessene Ueberschuss des Geschwindigkeitsverhaeltnisses im schwaechsten logg-Feld bestehen, wenn das Fehlerbudget auf ev_kms <= 0,03 halbiert wird, oder geht er mit dem Fehlerbudget?",
+  "action": "Vertrag M1.7 (S0, Startsignal Finn 18.09.2026 'Weiter') auf fmh@192.168.178.69 gerechnet, User-Unit fmhc-physics-m1-7-20260918, CPU, NumPy 2.4.4 float64, ein Thread, kein CUDA, 627,2 s von 3600 s. Beurteilt in der vorgeschriebenen Reihenfolge: zuerst die vier Nullproben N1 bis N4, dann die elf Kontrollen K0 bis K10, dann erst der Ausgang. Vier Schnitte c in {0,10; 0,05; 0,04; 0,03}, zwei Binnungen (P mit 8, W mit 7 Feldern), 200 archivgebundene Newton-Kataloge, 2000 gepaarte Bootstrap-Ziehungen. Eingabe full-input.npz sha256 c66edd7d... vor und nach dem Lauf gleich.",
+  "result": "Ausgang T. Verfehlt: Nullprobe N4 (7 von 200 ev-Permutationen erreichen Ausgang B, erlaubt sind 5; |Median D| = 0,025640 gegen Grenze 0,024530), Kontrolle K9 (SD_D von nur 5 der 20 geprueften Nullkataloge innerhalb 20 % der Messseite, groesste Abweichung 42,4 %) und Kontrolle K10 (q_ref = 0 von 200 bei beiden Schnitten; alle fuenf Zwischenfelder F1_W bis F5_W ebenfalls ausserhalb). Eine Ursache erklaert alle drei: der gemessene absolute Median liegt in jedem logg-Feld ueber allen 200 Newton-Katalogen, Verhaeltnis 1,04 bis 1,13, im Referenzfeld +16,8 Katalogstreuungen bei c = 0,10 und +3,9 bei c = 0,05; zugleich streuen die Kataloge zu wenig (SD_boot/SD_kat = 1,26 bis 1,27). Die Messseite ist sauber: K2 = 1,301586510679706 (Abweichung 3,4e-14), K3 200 von 200 archivgleich, K5 Abweichung 0, K6 Ersatzwert 1,5755870 wie vorhergesagt. Nur zur Einordnung, kein Ergebnis: Gamma_obs,W(0,05) = 1,22053 mit q_W = 0/200, Gamma_obs,W(0,03) = 1,25151 mit q_W = 1/200, D_W = -0,05988 bei SD_D_W = 0,09812; Feldbesetzung F0_W 888 und 309, m_min = 60 nirgends verfehlt.",
+  "meaning": "Der Vertrag hat genau das gefunden, wogegen er gebaut wurde. K10 war die einzige Kontrolle, die die hashgebundene Blackbox der Nullverteilung dort prueft, wo ihre Antwort unstrittig ist, und sie hat beim ersten Einsatz angeschlagen: wenn die Messung schon im Referenzfeld ein Ausreisser gegen alle 200 Kataloge ist, sagt ein Ausreisser im schwaechsten Feld nichts mehr ueber das schwaechste Feld aus. Damit ist keine Zahl dieses Laufs Evidenz, weder fuer noch gegen den Ueberschuss der Zeile M1; die Silberzeile M1.5 bleibt unveraendert, es entsteht keine Registerzeile, und nichts davon wird zitiert. Offen bleibt, ob der Versatz aus einem globalen Skalenfehler des bedingten Newton-Vorwaertsmodells, aus einer fehlenden Rauschkomponente oder aus dem fehlenden Elternkatalog stammt. Der naechste Schritt ist kein anderer Schwellenwert, sondern der in Abschnitt 12.7 benannte Vertrag M1.8, der das Newton-Modell selbst im Vertragstext ausschreibt; ein Entwurf liegt als VORSCHLAG-M1-8.md im Laufordner. Nebenbefund als Diagnose D3: mit Binnung P haette derselbe Lauf U2 ergeben.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260918/m1-7-lauf/BERICHT-M1-7.md",
+      "label": "Bericht mit vollem Kopf, Nullproben, Kontrollen, Ausgang",
+      "sha256": "616beb799960c108e1f21998325d645377ca56577948784984a8ea2047e2a13b"
+    },
+    {
+      "path": "coordination/vertraege-20260918/m1-7-lauf/ERGEBNIS-M1-7.json",
+      "label": "Ergebnisdatei, jede Berichtszahl daraus ableitbar",
+      "sha256": "224121048591adc72e82e3591b3f5399f79cfaeecba21086debcb81dbb7f1517"
+    },
+    {
+      "path": "coordination/vertraege-20260918/m1-7-VERTRAG.md",
+      "label": "Vertrag M1.7, Kriterien vorab",
+      "sha256": "3f59f02aff0adee4c902f5d54358db181ee35fe5a254fcd400f32a8449d160ac"
+    },
+    {
+      "path": "coordination/vertraege-20260918/startsignal-m1-7.txt",
+      "label": "Startsignal Finn 18.09.2026",
+      "sha256": "2a49b9c05ed518bf8225a161a09096e3cf61b5f844dc493f7b69cdce33f4e9a4"
+    },
+    {
+      "path": "coordination/vertraege-20260918/m1-7-lauf/VORSCHLAG-M1-8.md",
+      "label": "Vorschlag fuer den Nachfolgevertrag",
+      "sha256": "da1653a444b9291a3c6cb0d6cbe73862ce686762134458bfa1b9890786307958"
+    }
+  ],
+  "recorded_at": "2026-09-18T16:38:12.784988+00:00"
+}

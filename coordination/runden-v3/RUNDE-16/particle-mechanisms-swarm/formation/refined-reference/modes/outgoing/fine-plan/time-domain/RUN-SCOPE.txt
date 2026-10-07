@@ -1,0 +1,33 @@
+Root-Ausfuehrungsabnahme, 2026-10-02, vor dem Lauf.
+Git HEAD f726adb5c310aed3c24e9e4bef1b490abc81f5e7; kein Commit/Indexeingriff.
+Neue vollstaendige gehashte Quellkopie (nicht Behauptung im Commit enthalten):
+code.py 74ba12a56e60241a967c2ff143a6489adbd7b27a3b72ddeeb0d3d29fee3c43c6
+PLAN 097108448c6604b8f417a67f64291c6daef4b490fcb00158070e01837f7ae96b.
+Root las kompletten Adapter und Schlussdelta. Nichtautor REVIEW-CODE
+bestaetigt finalen Hash, keine offenen konkreten Blocker. PLAN und
+REVIEW-NORMALIZATION bleiben unveraendert. Keine neue Modellgleichung.
+Syntax-QA auf .69 CPU8 erfolgreich:0.07CPU-s,0.08wall,15232KiB,exit0.
+
+Ort ubuntu-auto (.69), CPU8, nice19, ein BLAS/OMP/MKL-Thread, float64/
+complex128 mit bestehender SciPy/NumPy-Umgebung. Keine CUDA-Numerik.
+300CPU-s Gesamtdeckel: Syntax0.07, Hauptprozess extern299CPU-s (hard/soft),
+internerCheckpoint280; maximal512MiBAdressraum. Externe /usr/bin/time-
+Quittung separat vom Ergebnisprozess. Keine Wiederholung bei Budgetende.
+Aktuelle Last vor Start erneut pruefen. Koordination Peerbus39472b8c.
+Alle konkreten Referenzen/Ritz/Quellen/Antworten werden gegen die konstanten
+SHA256 und deren Artefaktketten vor Zeitentwicklung gelesen/geprueft.
+
+Remote Arbeitsordner /tmp/fmhc-physics-m2-reference-refined-20261002,
+Adapter time-domain.py, neuer Ausgabeordner time-domain-run (vorher absent).
+CLI:
+ --excitation excitation.py --dynamics timestep-half.py
+ --operator modecode.py --outgoing outgoing.py
+ --response-code fine-responses.py --reference prepared
+ --source-dir harmonic-source-run --prepared-dir fine-prepared
+ --response-dir fine-responses-run --search-dir modes-search
+ --out time-domain-run
+
+Elf feste Arme und Gates aus PLAN. Status INCOMPLETE/UNRESOLVED ist kein
+Beweis gegen die Existenz einer Oberwelle, insbesondere bei QA-/Transienten-
+problemen. Nur alle bestandenen endlichen Signalgates erlauben das enge
+positive Label; keine Lebensdauer, kein neuer gebundener Modenkandidat.

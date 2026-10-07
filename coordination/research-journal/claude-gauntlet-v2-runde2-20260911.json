@@ -1,0 +1,36 @@
+{
+  "id": "claude-gauntlet-v2-runde2-20260911",
+  "time": "2026-09-11T18:11:00+02:00",
+  "time_kind": "completed",
+  "author": "Claude (Jury: astra, gemini-3.1-pro, grok-4.6 via OpenRouter; Runner: claude-x1)",
+  "topic": "operations",
+  "status": "technical",
+  "title": "Gauntlet v2, Runde 2: T4.2 auf bronze, S1.2 und S2.2 ohne Gegenstimme, M1.2 mit korrigierbarem Einwand, M3.2 mit Veto; Kosten 9,49 USD",
+  "question": "Halten die nachgebesserten Versionen M1.2, M3.2, S1.2, S2.2, T4.2 der Jury aus drei Häusern stand?",
+  "action": "Runde 2 mit derselben Jury wie Runde 1 (Manifest d2ed4d60), Richter ohne Werkzeuge, große Ergebnisdateien als byte-gleiche Verdichtungen vorgelegt; elf Urteile in koordination (328-338), Ernte durch runde.py.",
+  "result": "M7 3x PASS, K1 3x FAIL (Kalibrierung einstimmig). T4.2 PASS (gemini, prüft C1 über wb = w*sqrt(mult) und C5 über gepaarte sd) -> bronze. S1.2 (grok) und S2.2 (astra) PASS ohne Gegenstimme; beide Richter stellen fest, dass C2 auf eine Sensitivitätsbehauptung nicht zutrifft. M1.2 FAIL (astra, PATCH ohne Veto): der dritte Kanal ist ein Kovarianzkontrast (PM-Isotropisierung plus Entfernung der PLX-PM-Korrelationen), keine isolierte Anisotropiewirkung, und das Plusminus ist ein MC-SE; im Ledger umgesetzt. M3.2 FAIL mit Veto (gemini): Robustheit des Anisotropieverhältnisses gegen Himmels- und Populationseigenschaften nicht beziffert. Buchungsfehler: S1.2/S2.2 hatten die Vetohistorie ihrer Vorgängerinnen geerbt und wurden deshalb als umstritten statt als Aufstieg verbucht; korrigiert, Aufstieg erst bei erneutem PASS. Kosten 9,49 USD statt geschätzter 3,23 (astra 7,41: Cache-Write-Aufschlag auf 286k Marken; gemini Long-Context-Aufschlag ab 200k).",
+  "meaning": "Der Loop greift: zwei von fünf Nachbesserungen tragen sofort, eine ist ein Textfehler, eine verlangt eine neue Rechnung (M3: Anisotropieverhältnis nach Himmelsregion und Population). Stufen sind Workflowmarken. Für weitere Runden ist astra bei diesen Promptgrößen nicht vertretbar; Stufe-2-Verdichtungen (nur Kopf-, Kontroll- und Zusammenfassungsfelder) liegen bereit.",
+  "sources": [
+    {
+      "path": "gauntlet/new-runs/entwicklung-v2-20260911/rounds/002/manifest.json",
+      "label": "Manifest Runde 2",
+      "sha256": "207a631dcf6dcf4560ea9826bbeb8d10559d4fccfa64f0dd65745d7367fc6fc6"
+    },
+    {
+      "path": "gauntlet/new-runs/entwicklung-v2-20260911/rounds/002/patches.md",
+      "label": "Patchliste",
+      "sha256": "2d7eb2f8cdcd4017554cc37b41ee3c2a33229f56c1ab9971929a0fa60d4054fe"
+    },
+    {
+      "path": "gauntlet/new-runs/entwicklung-v2-20260911/scoreboard.tsv",
+      "label": "Scoreboard",
+      "sha256": "e079c94467370bf23ccf10b86af5874e5902a63a618cba1f05811a769f63b930"
+    },
+    {
+      "path": "gauntlet/new-runs/entwicklung-v2-20260911/rounds/002/urteile-or-jury-c.json",
+      "label": "Grok-Antwort mit Transportreparatur",
+      "sha256": "52a89f3574635db9c25527328c6e47b6c00917e38cfa151fcbdbd8ff52a17991"
+    }
+  ],
+  "recorded_at": "2026-09-11T16:12:44.699353+00:00"
+}

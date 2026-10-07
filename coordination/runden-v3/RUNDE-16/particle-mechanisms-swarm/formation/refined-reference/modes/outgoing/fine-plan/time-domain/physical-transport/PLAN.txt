@@ -1,0 +1,188 @@
+M2: PHYSISCHE FV-SCHALENSTRÖME AUS GESPEICHERTEN TRAJEKTORIEN
+particle_core, 2026-10-03. Prospektive Herleitung/Plan, kein Code/Lauf.
+Gelesen: timestep-half.py Grid/potential/forces/energy/charge;
+time-domain/code.py rotating_ring/flux_arrays und aktuelle Vorläuferberichte.
+ROOT-FV-IDENTITAET.txt gegengelesen: gleiche Vorzeichen, halbeKanten und
+Laborableitung; kein sachlicher Widerspruch zur folgenden Herleitung.
+
+1. FRAGE, EINGABEN UND PHYSIKGRENZE
+Gibt es in den festen äußeren Schalen einen gegenüber den vorhandenen
+Numerikdiagnosen aufgelösten, netto auswärts gerichteten Energietransport
+der bereits berechneten freien Anregungen? Ladungstransport separat messen.
+Nettoauswärts und oszillierende/reversible Anteile schließen sich nicht aus.
+Kein Nachweis irreversibler Abgabe, stationärer Strahlung oder Lebensdauer.
+Die finiteBox/kausalen Transienten bleiben Teil der realisierten Dynamik.
+
+Nur h=.05,R120,T128, vorhandene dt=.01/.005; epsilon=+/-.001,+/-.002,
+theta=0/pi2 und jeweils passendeBaseline. Keine neue Evolution. Quellen:
+- time-domain/out/RESULT.json a3f302b50f184ef2b7fdf9d92afb903068e22436d2b3547fa4248f80e9a56cc3:
+  Baselines beide dt, große theta0 beide dt, kleine theta0 dt=.01;
+- phase-cycle/RESULT.json b7d938e4bda00bb05598f540f05320b2e3cad7a8a8f3f4be940a9d5884b8eafd:
+  große theta90 beide dt;
+- phase-cycle/amplitude/RESULT.json 2fa8c40331f18ed677788629733806109dbc9a622c4d8ff22e065c82979adefd:
+  kleine theta90 beide dt, kleine theta0 dt=.005.
+Hashgebundene einzelne ring_artifact-NPZ und Code-/Inputmetadaten prüfen.
+Erhaltungs-/Odd-Kontrollen gemäß jeweiligem gebundenem Quellcode und
+Manifest-Schema verlangen (Arm-Samples oder gespeicherte Maxima/Pairflags,
+nicht pauschal ein identisches QA-JSON-Schema für alle Vorläufer).
+Alle Ringzeiten/Endzeit unabhängig exakt prüfen. Keine erneute
+Integratorkontrollserie.
+Das ursprüngliche time-domain-GesamtlabelUNRESOLVED betrifft den alten
+stationären Vergleich und blockiert keine dort vollständig validierten
+Einzelarme. Niemals einen alten Gesamtpass zusätzlich voraussetzen.
+
+Ring hat t=0..128 in.1, vier Felder, r40-2h..50+2h als Zellzentren.
+Speicherschema EXPLIZIT:
+ rp=phi*exp(-i omega t), rd=pi*exp(-i omega t)-i omega rp,
+ c=chi, w=chi_t.
+Laborableitung im rotierenden Koordinatenausdruck ist v=rd+i omega rp,
+NICHT rd. Für die folgenden U(1)-invarianten Größen darf der gemeinsame
+Faktor exp(i omega t) weggelassen werden: p=rp,v wieoben,c,w real.
+Imaginärteile von c,w müssen exakt0 sein (so gespeichert), sonst Abbruch.
+Gleicher fester omega/Gauge/alpha=epsilon*s; keine Q/E-Nachnormalisierung.
+
+2. DISKRETE ENERGIE, LADUNG UND GESICHTSFLUSS
+Zellzentren r_i=(i+1/2)h, V_i=4pi h(r_i²+h²/12),
+Gesicht i+1/2 bei(i+1)h, A_i=4pi((i+1)h)², k_i=A_i/h.
+Delta_i p=p_(i+1)-p_i, entsprechend Delta_i c.
+U(p,c)=.25(c²-1)²+(1+c²)|p|²-|p|^4+.5|p|^6.
+Fest für die Auswertung: ersterTerm=.25*((c-1)*(c+1))², algebraisch
+identisch, aber vermeidet unnötige Auslöschung bei c nahe1. Nur lokale
+Schalenwerte, keine Differenz großer Gesamtsystemenergien bilden.
+Onsiteenergie K_i=V_i[|v_i|²+.5w_i²+U(p_i,c_i)].
+Kantenenergie G_i=k_i[|Delta_i p|²+.5(Delta_i c)²].
+Lokale symmetrische Zellenergie e_i=K_i+.5G_(i-1)+.5G_i.
+Ladung q_i=2V_i Im(conj(p_i)v_i).
+
+Für die Schale a<=r_i<b mit a,b exakt auf GESICHTEN (40,45,50):
+ E_[a,b]=Sum K_i + Sum vollständig innerer G_i
+                  +.5G_linkesGesicht+.5G_rechtesGesicht,
+ Q_[a,b]=Sum q_i.
+Nicht die diagnostische collar-Zuordnung des alten Codes übernehmen:
+dort liegen ganze Kanten links; hier sind halbe Kanten für diese
+symmetrische lokale Bilanz erforderlich. Globale Energie unverändert.
+
+Nach außen positive Flüsse über EIN Gesicht:
+ FQ_i=-2k_i Im(conj(p_i)p_(i+1)),
+ FE_i=-k_i Re[conj(v_i+v_(i+1))*Delta_i p]
+      -.5k_i(w_i+w_(i+1))*Delta_i c,
+ FG_i=FE_i-omega FQ_i.
+Äquivalent FE=-A[2Re(conj(v_mittel)Delta p/h)+w_mittel Delta c/h].
+Der vorhandene flux_arrays-Ausdruck für phi stimmt damit überein;
+der reale chi-Beitrag muss hier zusätzlich enthalten sein.
+
+Ableitung aus den tatsächlich verwendeten FV-Kräften:
+V_i p_tt=k_i Delta_i p-k_(i-1)Delta_(i-1)p-V_i U_(p*),
+V_i c_tt=k_i Delta_i c-k_(i-1)Delta_(i-1)c-V_i U_c.
+Die Onsitepotentialableitung hebt sich gegen die lokale Kraftarbeit auf.
+An der rechten Kante liefern kinetischeArbeit plus halbeG-Ableitung
+ k_i Re[conj(v_i+v_(i+1))Delta_i p]
+ +.5k_i(w_i+w_(i+1))Delta_i c = -FE_i.
+Damit exakt für das SEMIDISKRETE System:
+ dE_[a,b]/dt=FE_a-FE_b, dQ_[a,b]/dt=FQ_a-FQ_b,
+ d(E-omega Q)_[a,b]/dt=FG_a-FG_b.
+Die diskrete Zeitschrittkarte und gespeicherte Zeitquadratur erfüllen
+diese kontinuierlicheZeitidentität nur mit ihren jeweiligen Resten.
+Keine exakte verlet-Energiebilanz aus dieser Ableitung behaupten.
+
+3. FESTE AUSWERTUNG UND KOMBINATIONEN
+Unveränderte Fenster[88,88+2pi/rho] und[104.5,104.5+2pi/rho],
+Schalen[40,45),[45,50). Die drei Gesichter40/45/50 jeGröße nur einmal
+pro jeweiligem physischem Arm auswerten (gemeinsames45-Gesicht identisch).
+E,Q,G und Flüsse zuerst pro gespeichertem Sample/Arm bilden. Fenster-
+endpunkte durch dieselbe lineareInterpolation der BEREITS BERECHNETEN
+Skalarzeitreihen; trapezintegrieren. Keine neue Fourier-/Fitabbildung.
+Die rechtenFensterenden liegen zwischen Samples. DerenInterpolation
+ist ein eigener Fehlerbeitrag; .2-Ausdünnung erfasst nur seine Änderung,
+keine gesicherte absolute Schranke.
+
+Je Arm/Fenster/Schale und X=E,Q,G ausgeben:
+ Speicheränderung D_X=X_shell(t_b)-X_shell(t_a),
+ J_X,a/b=Integral F_X,a/b dt,
+ Bilanzrest B_X=D_X+J_X,b-J_X,a,
+ an jedemGesicht Jpos=Integral max(F,0), Jneg=Integral max(-F,0),
+ Jnet=Jpos-Jneg, Jabs=Jpos+Jneg.
+Die kleinen Interpolationsunterschiede bei Vorzeichenwechseln ausweisen;
+keine getrennteJpos/Jneg-Interpolation als identisch zum signierten
+Fluss am offgridEndpunkt voraussetzen. Definition: zuerst signierten
+Fluss auf Endpunkten ergänzen, dann Vorzeichenanteile/Trapez bilden.
+
+Danach je phase,|epsilon|:
+ F_pair=(F_plus+F_minus)/2-F_base; entsprechend X_pair.
+Keine Division durch alpha² oder alpha4 in primären Transportgrößen.
+Jpos/Jneg des PAAR-FLUSSES sind separat aus seiner Zeitreihe zu bilden;
+sie sind nicht der Mittelwert positiver/negativer Armflüsse.
+Pair ist eine Differenz physischer Beobachtungsgrößen, kein neuer
+realisierter Zustand. Zusätzlich sämtliche rohen Arm-/Baselinewerte.
+Keine D/H-Feldsuperposition vor quadratischer Strom-/Energiebildung.
+
+4. NUMERIKRESERVE UND VORABBEDEUTUNG
+Drei getrennte empirische Diagnosen, keine rigorosen Schranken:
+(i) dt=.01 gegenüber.005 derselben Arm-/Paarkombination;
+(ii) Ausdünnung gespeicherterZeitpunkte von.1 auf.2 (Indices0,2,...),
+     mit denselben physischen Fenstern und derselben Endpunktregel;
+(iii) diskreteSchalenbilanzreste B_X bei beiden dt/Abtastungen.
+Ausdünnung kann gemeinsame Aliasingfehler übersehen; kein Nyquist- oder
+Integrationsfehlerzertifikat. Keine Extrapolation von.1/.2 nach null.
+
+Zusätzliche eta64: positive Betrags-Summandenhülle der tatsächlich
+benutzten algebraischen Energie-/Stromausdrücke einschließlich V/k,
+Paarfaktoren und Baseline; positive Zeitintegration für J (KEIN Mittel).
+Keine kleine |FE| oder |Pair| als Hülle ihrer großen subtrahierten
+Beiträge verwenden. Sie zertifiziert weder Evolution noch Datensampling.
+Vor Implementation die Hüllenformeln im Code-Review explizit prüfen.
+Festgelegte elementare Hüllen mit P_i=|p_i|, Vabs_i=|v_i|,
+C_i=|c_i|, W_i=|w_i|, DP=P_L+P_R, DCabs=C_L+C_R:
+ H_FE=k[(Vabs_L+Vabs_R)DP+.5(W_L+W_R)DCabs],
+ H_FQ=2k P_L P_R, H_FG=H_FE+|omega|H_FQ;
+ H_K=V[Vabs²+.5W²+.25|(c-1)(c+1)|²+(1+c²)P²+P^4+.5P^6],
+ H_Gedge=k[DP²+.5DCabs²], H_q=2V P Vabs.
+HalbeKanten auch in H_Eshell. H_(E-omegaQ)=H_E+|omega|H_Q.
+Paarhülle=.5(H_plus+H_minus)+H_base. Für J positiveZeitintegration;
+für B zusätzlich die beiden positivenEndpunkt-Speicherhüllen und beide
+positivenGesichts-Zeitintegrale. eta64=64eps mal Maximum der zugehörigen
+J-/B-Hüllen über beide dt/Abtastungen. Diese konservative Konstruktion
+kann gerade bei chi nahe1 Unterauflösung ergeben; nicht nachjustieren.
+
+Je X,Gesicht,Fenster,phase,epsilon feste absolute Reserve
+ u_X=max(|J_.005,.1-J_.01,.1|,
+         |J_.005,.1-J_.005,.2|,|J_.01,.1-J_.01,.2|)
+      + max |B_X| + eta64.
+Das Bilanzmaximum läuft über beide angrenzenden VERFÜGBAREN Schalen
+und beide dt/Abtastungen; bei40/50 nur eine. Für Pair gilt diese Formel
+mit dem Paar-Bilanzrest, zusätzlich roheArmreste offen berichten.
+Keine Interpretation als unabhängige Fehlerquadrate; bewusst konservativ.
+GemeinsameBlindstelle: auch kleine Schalen-/Paarbilanzreste können gleiche
+Fehler beiderGesichtsflüsse oder Baseline-/Vorzeichenfehler wegsubtrahieren.
+Sie zertifizieren keinen absolutenGesichtsfluss; diese mögliche gemeinsame
+Fehlerkomponente ist durch die Reserve nicht rigoros eingeschlossen.
+
+'NETTO_AUSWAERTS_AUFGELOEST' für ENERGIE nur wenn J_E>10u_E bei beiden
+Gesichtern einerSchale im selbenFenster für dieselbePaarkombination;
+'J' im Klassifikationstor ist stets der Primärwert dt=.005, Abtastung.1.
+'EINWAERTS' analog negativesJ. Sonst UNRESOLVED für Nettozuordnung.
+Alle Größen müssen endlich sein; u<=0 oder fehlendeReserve ausdrücklich
+UNRESOLVED, ebenso Nullsignal. Q und G erhalten dieselben signierten Einzelkennzeichnungen,
+werden aber NICHT zu zusätzlicher Bedingung für positivenE-Transport.
+NegativeG ist möglich und kein negativer physischerEnergiebestand.
+Richtungswechselanteile Jpos/Jneg und Jnet/Jabs (Nullnenner undefined)
+bleiben zusätzliche Messwerte: Netto und Oszillation nicht exklusiv.
+Kein globalesMehrheitslabel, keine Auswahl nur günstiger Fenster/Phasen.
+Ein Pass ist finite empirische Transportevidenz, keine Irreversibilität.
+
+5. QA, AUFWAND UND STOPP
+Vor realen Ausgaben kleine feste algebraische QA: lokale semidiskrete
+Ableitungen mit den vorhandenen potential/forces gegen obigeFlüsse für
+reguläre deterministische p,v,c,w prüfen; relativeAbweichung<1e-10 bei
+Nichtnullmaßstab. dE/dt ANALYTISCH aus RHS und Kettenregel bilden, keine
+zeitliche finiteDifferenz mit pauschaler1e-10-Schwelle. Dazu ruhendesVakuum E/Q/Flüsse exakt0 und bewegtes
+chi-Feld mit nichtnullE-Fluss, damit dessen Beitrag nicht fehlt.
+Keine PDE-Testentwicklung. Vollständigkeit aller18gespeichertenArme,
+Ringe/Gauges/Hashes und aller festenMesspositionen zwingend; QA-/Bindungs-
+Fehler INCOMPLETE. Physische Signalunterauflösung ist gültiger Ausgang.
+
+Vorschlag Gesamt<=10CPU-s auf.69, einThread, interner8CPU-s-Checkpoint,
+äußereGrenzen vor eventuellemAuftrag festlegen. ArmweiseI/O/Reduktion,
+keine Vollfeldtrajektorien und kein neuerSolver. Kein automatischerRetry,
+keine weiterenFenster/dt/PDE wegen ungünstigerMessung. Vor Codeauftrag
+Nichtautorprüfung dieserHerleitung/Gates; alleVorläufer bleiben erhalten.

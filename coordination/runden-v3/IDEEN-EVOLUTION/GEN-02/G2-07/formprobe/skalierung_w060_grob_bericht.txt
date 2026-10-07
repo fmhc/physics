@@ -1,0 +1,9 @@
+G2-07 skalierung omega2 0.6, Stufe grob. Start 2026-09-30T11:18:55+02:00, Ende 2026-09-30T11:19:03+02:00, CPU (nur Formprobe), torch 2.10.0+cu128 RAUCHTEST: Zahlen ungueltig
+Dauer [s]: profile_s 5.9, entwicklung_grob_s 1.6
+Hochrechnung Hauptlauf: 85 s (nicht entwickelnde Teile 6 s + Entwicklung x 50); Profile aus dem Cache. Ueber 480 s: Stufen einzeln (--stufe grob / --stufe fein) oder Laeufe teilen (--laeufe).
+Ball omega2 0.6: Q 66.616, R_halb 3.358; kappa 0.6325; T 40, dx 0.6, dt 0.1
+Lauf | Klasse | d_start | d_mittel | gamma | t_Bruch 0,1 | Spreizung Start/max | Drehrate | plausibel
+  w060_l4 | driftend | 10.710 | 10.183 | - | None | 2.0e-06/4.82e-06 | -9.61e-03 | True
+  w060_l5 | gebunden | 11.710 | 11.594 | - | None | 2.0e-06/2.01e-06 | -3.02e-03 | True
+  w060_l6 | gebunden | 12.714 | 12.689 | - | None | 2.0e-06/2.01e-06 | -1.24e-03 | True
+Kennzahlen: {"omega2": 0.6, "kappa": 0.6324555320336759, "minus_kappa_halbe": -0.31622776601683794, "punkte": [], "nicht_gezaehlt": [{"lauf": "w060_l4", "klasse": "driftend", "gamma": null, "abstand_ok": true}, {"lauf": "w060_l5", "klasse": "gebunden", "gamma": null, "abstand_ok": true}, {"lauf": "w060_l6", "klasse": "gebunden", "gamma": null, "abstand_ok": true}], "ohne_ladungstausch": ["w060_l4", "w060_l5", "w060_l6"], "nicht_entscheidbar": true, "V2": {"band": [-0.38, -0.253], "steigung": null, "bestanden": null}, "ladungstausch_alle": {"bestanden": false, "hinweis": "KARTE: ohne Tausch fehlt der Messwert; mehr als ein Punkt -> nicht entscheidbar"}, "ausgang": "nicht entscheidbar", "plausibel": {"w060_l4": true, "w060_l5": true, "w060_l6": true}, "plausibilitaet_bestanden": true}

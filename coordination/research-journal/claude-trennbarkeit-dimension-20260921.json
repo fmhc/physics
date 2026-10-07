@@ -1,0 +1,36 @@
+{
+  "id": "claude-trennbarkeit-dimension-20260921",
+  "time": "2026-09-21T02:20:00+02:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5)",
+  "topic": "theory",
+  "status": "reported",
+  "title": "Kompakte Zusatzrichtung und innerer Rotor sind unitaer aequivalent - die Ununterscheidbarkeit ist ein Satz, kein Messproblem",
+  "question": "Gibt es in diesem Rahmen ueberhaupt eine Messgroesse, die eine kompakte Zusatzrichtung von einem inneren Freiheitsgrad trennt, oder ist die Ununterscheidbarkeit grundsaetzlich - und laesst sich einer der bisherigen Ausschluesse (Leiterabstand, Entartung, Auswahlregel, inelastische Summe) durch eine Erweiterung des Rahmens aufheben?",
+  "action": "Vier Hebel einzeln durchgerechnet auf .69 (0,178 s CPU): (a) Leiterabstand bei aufgehobener Normierungsfreiheit und bei zwei Uebertraegen, (b) Auswahlregeln bei mehreren Sondenkanaelen und im Transversal-/Drehimpulskanal, (c) zwei nacheinander uebertragene Quanten sowie zwei Zusatzrichtungen mit Isotropiebedingung, (d) thermisch besetzter Anfangszustand. Drei Arme in QSR-0-Einheiten: gebundene harmonische Richtung, freie kompakte Raumrichtung, innerer Rotor ueber einen eigenen Basisvektor-Codepfad.",
+  "result": "Die Abbildung |n> auf dem Kreis nach |n> des Rotors ist unitaer, bildet den Hamiltonoperator und den Sondenoperator aufeinander ab und macht damit alle Matrixelemente gleich; gemessen liefern zwei getrennt geschriebene Codepfade max |Q_D - Q_R| = 0,0 und max |<eps>_D - <eps>_R| = 0,000e+00. Keiner der vier Hebel trennt: (a) das erste Moment ist durch die f-Summenregel in allen drei Armen identisch (1,78e-15 Rundungsboden), (b) die Transversalzahl R_perp zaehlt nur die gebundenen Raumrichtungen (2 gegen 3) und ist fuer kompakte Richtung und Rotor gleichermassen blind, (c) der Additivitaetsdefekt trennt die n^2-Leiter von der aequidistanten mit Faktor rund 1 gegen 0, kompakte Richtung und Rotor stehen in derselben Spalte, und die Isotropie zweier Zusatzrichtungen ist eine Abstimmbedingung (Aufspaltung 3*delta), (d) Q_D = Q_R in jeder Temperaturzeile. Neuer Nebenbefund: das Kriterium Q ist ein Tieftemperaturkriterium - bei k_B T = hbar omega0 sind 83 Prozent der Trennkraft weg, danach stirbt es wie 1/(6 theta), weil beide Arme in die Gleichverteilung laufen.",
+  "meaning": "Die Frage nach einer trennenden Messgroesse ist im Rahmen 'eine innere Koordinate, ein Teilchen, ein Sondenoperator auf dieser Koordinate' negativ entschieden, und zwar durch einen Satz statt durch eine Messung. Jede Trennung muss die Beziehung der Zusatzkoordinate zu den drei bekannten Richtungen benutzen; davon gibt es genau drei Auswege, alle mit neuem Modell: eine Sonde, die im Volumen propagiert und deren Impulsuebertrag entlang der Zusatzrichtung Komponente desselben Vektors ist; Drehungen, die unterhalb der Kompaktifizierungslaenge mischen; und der Austauschweg zweier identischer Teilchen durch die Zusatzrichtung. Praktisch heisst das: weitere Varianten von QSR-D1 koennen die Frage nicht beantworten, wohl aber zwei Nachbarfragen scharf - die Form der Leiter und die Reichweite des Kriteriums. Drei Vertragsvorschlaege stehen im Papier. Runde 022 bleibt eingefroren, nichts gebucht.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260921/TRENNBARKEIT-DIMENSION.md",
+      "sha256": "ef62a9525ae0e08f11af326949e787092f584988bd3bbcc48468c5388aca7c83"
+    },
+    {
+      "path": "coordination/vertraege-20260921/trennbarkeit.py",
+      "sha256": "91185ad09622ae8d92c87d21a43623dedd28c4460d4f94fae65d1234404305af"
+    },
+    {
+      "path": "coordination/vertraege-20260921/machbarkeit/TRENNBARKEIT.json",
+      "sha256": "0cc6bd754dae74662bda4e2f2f48e6aa4b4032f6e4a56120a86ede0d67322401"
+    },
+    {
+      "path": "coordination/vertraege-20260921/MACHBARKEIT-DIMENSION.md",
+      "sha256": "ca32ebba7d24eda322ad3d1a794e87e211d2d2576c99aa88aa5e82312863f39c"
+    },
+    {
+      "path": "coordination/quark-response-20260916/dimensions/EINORDNUNG.md",
+      "sha256": "ff89f9e7c0e099ec7a8494656d1a4c1126791ddc6f51cc0261250eca759877f7"
+    }
+  ],
+  "recorded_at": "2026-09-20T19:37:37.446587+00:00"
+}

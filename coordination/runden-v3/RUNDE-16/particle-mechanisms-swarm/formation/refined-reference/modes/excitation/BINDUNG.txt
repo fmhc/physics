@@ -1,0 +1,30 @@
+2026-10-02T21:22:56+02:00
+f726adb5c310aed3c24e9e4bef1b490abc81f5e7
+main
+1ff6f17d814171f7618b4c18eaa76672235873e4ac44a0c86815c610c50fe1b0  coordination/runden-v3/RUNDE-16/particle-mechanisms-swarm/formation/refined-reference/modes/excitation/PLAN.txt
+1af408e1269a53036c080ec820e750940d5f8b70ac41c32e457e5ad531dc5bc1  coordination/runden-v3/RUNDE-16/particle-mechanisms-swarm/formation/refined-reference/modes/excitation/code.py
+1af408e1269a53036c080ec820e750940d5f8b70ac41c32e457e5ad531dc5bc1  excitation.py
+466b25fb813770a1ab13eea962c93b39308dfe1ad22171fe638c60fdafef998d  timestep-half.py
+467ad3e19cd8efcdac4ec2dcc670b50aaa59cc6f7e9e44d625ebbf94ba0d32c6  modecode.py
+77ecf9bbe03b96db901d76728e074a897725eb52213f90dae76c7200ba5364ea  modes-search/RESULT.json
+868230c0e14a68ebe754cabeac833cf2aaf63cfec86d5026e949f506990f6cae  modes-search/R120-h0.1-shift0.3.npz
+67658ad2e278e7708e82039ae1b487f86d86ef666e42198ea3752bf765e4fbed  modes-search/R120-h0.05-shift0.3.npz
+8c33ace3a5465a8fd481d26b35457425ee3c5d5f0111b3f11c09f4a9dd72fdf4  prepared/MANIFEST.json
+8265a508c85b5823e1a46f47ea3a9cadb26c790fe89f8ad711699164483d3adb  prepared/reference-h0.1.npz
+bf03078bb52e4fe515cb3a5fbd01608efec3df18b8845a3ae37aaef6c9661011  prepared/reference-h0.05.npz
+
+Ausführung nach Nichtautor-Codelektüre von particle_binding, final 1af408e.
+Root hat Phasendelta, Restriction und RESULT-/Referenzschema gegengelesen.
+Rechenort ubuntu-auto/.69, CPU8, nice19, ein Thread; kein CUDA.
+Vollständiger neuer Adapter liegt neben den gebundenen bestehenden Quellen.
+Kein Commit durchgeführt; gehashte Arbeitsquellen sind der ausgeführte Stand.
+Befehl im Remoteordner /tmp/fmhc-physics-m2-reference-refined-20261002:
+OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
+/usr/bin/time -f 'user=%U system=%S wall=%e maxrss=%M exit=%x'
+-o excitation.time timeout --kill-after=1 44s taskset -c 8 nice -n 19
+/home/fmh/fmhc-physics-gpu-venv/bin/python excitation.py
+--dynamics timestep-half.py --operator modecode.py --search-dir modes-search
+--reference prepared --out excitation-run
+Äußerlich 44s plus höchstens 1s Killreserve; intern 40 CPU-s Checkpoint.
+Import-/Adapterprüfungen sind Bestandteil dieses einzigen Laufes;
+keine vorgeschaltete, zusätzliche numerische QA oder eigenständige Simulation.

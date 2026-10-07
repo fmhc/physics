@@ -1,0 +1,6 @@
+# Ideation: Verformungsgrenzen als Bauplan stabiler Formen; verschränkte Formen zu zweit und zu dritt
+
+- Zeit: 2026-09-12 06:05
+- Quelle: claude-primary auf Nutzerfrage; coordination/verformungsgrenzen-verschraenkung-ideation-20260912.md; Bezüge: Derrick, Zeeman, Călugăreanu–White, Maxwell/Calladine, heutige Läufe (Faden-Vertrag 1, T1, Bucky-Jojo-Beweis)
+- Ergebnis: Sieben Grenztypen (Kern, Morse, Reichweite, Biegung, Torsion, Seil+Stab = Tensegrity, Undurchdringlichkeit) je mit erzeugter Formklasse. Neue Kandidaten entstehen aus dem Paar Grenze + Erhaltungsgröße; die uns fehlende Grenze ist die Undurchdringlichkeit (Segmentkern als Kraft), ohne die Verkettungszahl keine Erhaltungsgröße ist. Zwei Formen: Bindung (Mulde) oder Einsperrung (Hopf, Lk erhalten bis zum Reißen); drei Formen: Borromäisch = „drei stabil, zwei nicht" als Zwang, nicht Spektrum; Vorhersage: Dreiheit fragiler als Zweiheit (niedrigste Reißschwelle), Drehimpuls treibt zur Anordnung mit maximalem Trägheitsmoment. Drei Fragen mit zwei Ausgängen; nächster Schritt Segmentkern in die Morse-Familie, dann fünfter Vertrag nach Nutzerwort.
+- Bedeutung: Hypothese. Verkettung liefert erhaltene ganze Zahlen ohne Quantenmechanik, aber keine Wechselwirkung auf Abstand, keine Masse, keine Ladung; 3D-Privileg (Zeeman).

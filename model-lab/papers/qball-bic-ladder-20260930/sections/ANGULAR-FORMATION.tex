@@ -1,0 +1,74 @@
+% Insert after the formation/non-dilution discussion, before Remaining tasks.
+% Exploratory numerical diagnostic; distinct from the certified BIC background.
+\paragraph{One angular direction during chirped concentration.}
+To examine a freedom excluded by radial evolution, we evolved one prescribed
+quadrupolar tangent on a time-dependent inward chirp. This is an exploratory
+formation diagnostic on a different background from the stationary BIC
+studied above. In the units of Eq.~\eqref{eq:action}, the radial initial data are
+$F(r)=(3/5)^{3/2}\exp(-r^2/50)\exp(\ii\beta r^2)$,
+$\phi_b(r,0)=F(r)$ and $\partial_t\phi_b(r,0)=0.8\ii F(r)$,
+with $\beta=0.015$. Their whole-space analytic values are
+$Q\simeq240.55177$ and $E/Q\simeq1.038669965>1$; hence the preceding
+$E<|Q|$ non-dilution argument does not force a remnant. The calculation
+uses a radial Dirichlet box $R=80$ and ends at $T=32$.
+
+For $\delta\phi=\eta(r,t)Y_{20}$, with real unit-normalized $Y_{20}$,
+put $w=r\eta$ and $S_b=|\phi_b|^2$. The laboratory-frame tangent equation is
+\begin{equation}
+ w_{tt}=w_{rr}-\frac{6w}{r^2}
+ -(1-4S_b+\tfrac92 S_b^2)w
+ -(-2+3S_b)\phi_b^2\overline w .
+ \label{eq:angular-chirp-tangent}
+\end{equation}
+We fix $w(r,0)=r^3(-1/25+2\ii\beta)F(r)$ and
+$w_t(r,0)=0.8\ii w(r,0)$, the regular $O(r^3)$ quadrupolar deformation.
+The nonlinear radial background is advanced simultaneously, without angular
+backreaction. Its stored diagnostics reproduce the earlier chirp evolution;
+this replay is a control, not independent formation evidence.
+
+Centered second differences and RK4 are compared at the fixed choices
+\[
+(h,\Delta t)=(0.1,0.02),(0.05,0.02),(0.1,0.01).
+\]
+Origin polynomial, independent free-evolution and conjugate-coupling controls
+precede the calculation. Our positive reduced diagnostic is
+\begin{equation}
+ N_h^2=h\sum_{j=1}^{J-1}
+ \left[|w_{t,j}|^2+\left(1+\frac6{r_j^2}\right)|w_j|^2\right]
+ +\frac1h\sum_{j=0}^{J-1}|w_{j+1}-w_j|^2,
+ \qquad r_J=80 .
+ \label{eq:angular-chirp-norm}
+\end{equation}
+It is not a conserved perturbation energy. Positive core, exterior and
+collar contributions use fixed intervals $[0,6]$, $[6,76]$ and $[76,80]$,
+with shared-node half weights and complete edge contributions.
+
+On the finer spatial grid, the largest \emph{sampled} $N_h(t)/N_h(0)$ is
+$1.356829$ at $t=21.6$; its value at $T=32$ is $1.139233$.
+Samples are separated by $0.8$, so this is not a continuous-time supremum.
+The deformation concentrates in the core and subsequently redistributes
+outward (Fig.~\ref{fig:angular-chirp-l2}). Common-grid endpoint differences,
+measured in Eq.~\eqref{eq:angular-chirp-norm} and divided by the base-grid
+initial norm, are $0.0062849$ for spatial refinement and
+$4.0021\times10^{-7}$ for timestep halving. These are sensitivity measures,
+not certified error bounds. The sampled collar contribution satisfies
+$N_{\mathrm{collar}}^2(t)/N_h^2(0)\le10^{-6}$, the prescribed
+contamination threshold. This single direction shows transient amplification,
+not a stability classification: the background remains nonstationary,
+and other radial shapes, angular sectors, finite amplitudes and later times
+remain untested.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=.98\linewidth]{angular-chirp-l2.pdf}
+\caption{Angular response of the inward chirp. Top: the actual signed linear
+ density variation $\delta S=2\operatorname{Re}(\overline{\phi_b}\eta)Y_{20}$
+ from fine-grid snapshots at $t=0,8,16,24,32$, in the fixed $xz$ window
+ $[-12,12]^2$. Radial nodal values are interpolated for rendering; the common
+ symmetric colour scale is per unit tangent amplitude. Bottom: global norm
+ for all three discretizations, and fine-grid core/exterior squared-norm
+ contributions divided by the \emph{global initial} $N_h^2(0)$.
+ These are linear tangent data, not a finite-amplitude nonlinear
+ three-dimensional evolution or a physical energy partition.}
+\label{fig:angular-chirp-l2}
+\end{figure}

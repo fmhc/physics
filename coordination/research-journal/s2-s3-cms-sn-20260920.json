@@ -1,0 +1,28 @@
+{
+  "id": "s2-s3-cms-sn-20260920",
+  "time": "2026-09-20T23:55:00+02:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5); S2/S3-Agent (Opus 5) mit Bunker-Qwen als reproduzierendem Haus",
+  "topic": "galaxies",
+  "status": "checked",
+  "title": "S2/S3 der vier arXiv-Vertraege: zwei tragen, SN-B1 ist ein Kontrolllauf, CMS-X1 nicht reproduzierbar",
+  "question": "Lassen sich CMS-X1, SN-A1, SN-A2 und SN-B1 von einem anderen Haus allein aus dem Vertragstext reproduzieren, und halten ihre Berichtszahlen dem Abgleich mit den Ergebnisdateien stand?",
+  "action": "S3: 2617 Zahlliterale der vier Berichte gegen die Ergebnisdateien geprueft. S2: Qwen (Bunker) schrieb je Fall aus dem Vertragstext allein ein eigenes Skript; Ausfuehrung als begrenzte CPU-Units auf .69 (RuntimeMaxSec 1800), Vergleich der ausgangsrelevanten Zahlen.",
+  "result": "S3 ohne echte Abweichung (2360 direkt belegt, 257 als Zeitstempel, Versionen, Vertragsschwellen oder korrekte Rundungen aufgeklaert). SN-A2 traegt: alle ausgangsrelevanten Zahlen bitgleich reproduziert, Vorbehalt kleine DES-Unterseite (21 Objekte). SN-A1 traegt mit Vorbehalt: Ausgang B und alle sieben A-Bedingungen bestaetigt, S_min = 10,70 exakt, aber eine A-Bedingung war durch die Spaltenwahl unerreichbar und eine Kalibriergroesse ist im Vertrag undefiniert. SN-B1 traegt nicht: die Kernzahlen sind bitgleich zum frueher verworfenen Lauf und waren beim Schreiben der Fassung 4 bekannt, also Kontrolllauf statt Messbefund. CMS-X1 traegt nicht: Reproduktion scheitert an einer Vertragsluecke (Zuordnung csv-Zeile zu Kovarianzindex nicht gebunden); zusaetzlich sitzt der Ausschlag bei 3,0 bis 3,6 TeV (Z = 2,78), nicht oberhalb 7 TeV wie im Paper.",
+  "meaning": "Fuer Runde 23 sind nur SN-A2 und SN-A1 vorlegbar, SN-A1 mit ausgewiesenem Vorbehalt. SN-B1 und CMS-X1 brauchen vorher neue Fassungen: CMS-X1 mit gebundener Spalten- und Indexzuordnung, SN-B1 mit einer Frage, deren Antwort beim Schreiben noch nicht bekannt ist. Register und Ledger blieben gesperrt, nichts gebucht.",
+  "sources": [
+    {
+      "path": "coordination/methodik-review/s2-s3-cms-sn-20260920/UEBERSICHT-CMS-SN.md",
+      "sha256": "e9e7d2a1d8eea26c5b7a232ae2ab6c93c84fc13b58ecf1613270711022279632"
+    },
+    {
+      "path": "coordination/methodik-review/s2-s3-cms-sn-20260920/VERFAHREN.md",
+      "sha256": "871bd4596a66c0e71c2553bf9ac2db06ce135115d4acfe62f1d3ca19b811441c"
+    },
+    {
+      "path": "coordination/vertraege-20260916/cms-x1-dijet-skalenambiguitaet-VERTRAG.md",
+      "sha256": "09e7a0b503104c662a47b71894aba7d5344bcd24f5f39ea00b9b4f09df6a7ea4"
+    }
+  ],
+  "recorded_at": "2026-09-20T18:59:12.005188+00:00"
+}

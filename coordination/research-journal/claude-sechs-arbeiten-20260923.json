@@ -1,0 +1,64 @@
+{
+  "id": "claude-sechs-arbeiten-20260923",
+  "time": "2026-09-23T21:03:14.692388+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5)",
+  "topic": "literatur",
+  "status": "reported",
+  "title": "Sechs Arbeiten an den Primaerquellen geprueft: die Unordnungsarbeit traegt nicht auf Codex' Kompositionsaufbau, weil dessen Energie ein einziges Skalarpotential ist - das spart einen Lauf; wertvollster Anschluss ist der Beweisstandard fuer entstandene Laengenskalen aus der Glueball-Arbeit",
+  "question": "Was sagen die sechs heute vom Scout gefundenen Arbeiten fuer unser Programm - und traegt insbesondere 'Disorder-promoted stability' auf Codex' Bausteine mit innerem Zustand, oder scheitert die Uebertragung an der Hermitizitaet?",
+  "action": "Codex hatte acht eigene Rechenlaeufe und kam nicht dazu; Finns Auftrag 'lass alles von codex agent pruefen' uebernommen. Alle sechs arXiv-Abstractseiten selbst abgerufen, Volltext nur fuer 2609.25226 (arxiv.org/html/2609.25226v1, ueber den WebFetch-Zusammenfasser, der am 22.09. schon einmal Titel erfunden hatte - Vorbehalt ausgewiesen). Kein WebSearch. Dann eine Schreibtischprobe auf Papier an loop1.py und loop1-a/{RESULT.json, QA.json}: keine Numerik, lokal ohnehin gesperrt. Gegengelesen gegen QH5, QH7, QH8, ANALYSE.md, STAND-V.md, README.md, den Spin-2-Kompass und die Neuausrichtung vom 22.09.",
+  "result": "Schreibtischprobe negativ, dreifach. Codex' Energie E = sum d^-12 - ln Z_spin + N ln 2 ist EINE skalare Funktion der 3N Koordinaten, also ist die Stabilitaetsmatrix nach dem Satz von Schwarz exakt symmetrisch; der Code ist darauf festgelegt (torch.linalg.eigvalsh in curvature(), torch.linalg.eigh in quantum_hierarchy.py). Beleg aus dem Lauf: loop1-a/RESULT.json, N=8, kind=full, Start cloud, symmetry_rank 6, 18 innere Eigenwerte alle reell von 2,76549 bis 72,366, hierarchy.score 0,6110 gegen verlangte 2. Der innere Zustand wird per logsumexp ueber alle 2^N Spinkonfigurationen exakt aussummiert und traegt null dynamische Dimensionen bei. Der zweite Weg der Arbeit, nichtreziproke Kopplung A_ij != A_ji, ist ebenfalls zu: QA-Fehler translation 4,44e-16, rotation 0,0, permutation 0,0. Der Volltext sagt fuer den hermiteschen Fall das Gegenteil des Erhofften voraus: 'the optimization problem is nonconvex only if J is non-Hermitian', und im konvexen Fall liegt das Optimum bei homogenen Parametern. Auch die naheliegende Reparatur haelt nicht: fuer eine Relaxationsdynamik y' = -M grad F mit M symmetrisch positiv definit ist J = -M Hess F aehnlich zu -M^(1/2) Hess F M^(1/2), also reelles Spektrum, und nach dem Traegheitssatz von Sylvester haengt die Zahl der instabilen Richtungen gar nicht von M ab. Knotenweise verschiedene Raten koennen das Urteil nicht kippen. Zahlen der Arbeit: N=100, p=0,2, rund 25 Prozent der Stoerungen geben Gewinn, bis fuenffach bei mutualistischen Systemen, rund 1000 oekologische Realisierungen. Zwei der sechs sind nicht neu: 2512.11068 ist vom 11.12.2025 und 2604.24812 vom 27.04.2026, beide erschienen heute nur wegen nachgetragener Journalangabe (is_new_version true).",
+  "meaning": "Ein Lauf 'QH9 Unordnung im Kompositionsmodell' haette nichts gefunden, und der Grund stand vorab auf Papier fest - der Lauf ist gespart. Die Hermitizitaet ist dort kein Implementierungszufall, sondern Folge von drei tragenden Entwurfsentscheidungen: eine einzige skalare Energie (ohne sie kein Fragmentvergleich), exakte Elimination des inneren Zustands (ohne sie keine PMF) und reziproke Kraefte (von der QA geprueft). Der passende Vertrag liegt anderswo und existiert schon: UN-1 (coordination/vertraege-20260921/un-1-VERTRAG.md, S0 vom 21.09., nie gestartet, aus dem blossen Abstract geschrieben) ist ein System zweiter Ordnung mit Daempfung und liegt damit in der Klasse J = [[0,I],[-L,-B]], die die Arbeit ausdruecklich als nicht-hermitesch auch bei ungerichtetem Netz ausweist; UN-1s Ehrlichkeitsklausel 2.7, die nichtnormal_rel fuer aussagekraeftiger haelt als antihermitesch_rel, wird vom Volltext bestaetigt ('non-Hermiticity is equivalent to nonnormality'). UN-1 bleibt dennoch geparkt, weil die Neuausrichtung vom 22.09. ihn namentlich parkt. Wertvollster Anschluss ist die Glueball-Arbeit: dimensionale Transmutation zeigt, wie eine Laengenskala entsteht, die niemand vorgegeben hat, und liefert den Beweisstandard gleich mit, naemlich ein dimensionsloses Verhaeltnis ZWEIER gemessener Skalen, sqrt(sigma)/m_1 = 0,249(1). Uebertragen auf QH8: Spalt 3 gegen Schalenradius 4 ist entstanden gegen eingesetzt und taugt nicht; zu messen waere das Verhaeltnis Gruppenspalt zu innerer Gruppenlaenge (QH7: 2,318 zu 2,062, Verhaeltnis 1,124) und seine Konstanz ueber mindestens drei eingesetzte Schalenradien. Das kostet keinen neuen Vertrag, es schaerft nur die bereits freigegebene QH8-Nachpruefung. Gegen uns: der Hauptvorwurf der Arbeit, die alten Befunde stammten aus 'model reductions introduced for mathematical tractability', trifft unsere eigene Methode - loop1.py und QH7 sind genau solche Reduktionen, und der Volltext nennt die hermitesche Klasse ein 'measure-zero set'. QH7s Abschluss des Kompositionszweigs bleibt richtig fuer die untersuchte Klasse, seine Reichweite ist kleiner als sein Wortlaut. Das ist kein Freibrief, den Zweig wieder aufzumachen: ein nicht-hermitesches Kompositionsmodell braeuchte knotenweise Dissipation, und ANALYSE.md Abschnitt 3 Kriterium 5 verbietet sie als kostenlose Physik. Keine der sechs Arbeiten liefert eine Messung, die unser Programm bestaetigt. Vormerken, nicht starten: QG-1 zu 2609.22501 (0,0197 eV entspricht d ~ 40 µm, Nebenbedingung m_0 < 4^(1/3) m_2 = 1,5874 m_2), zulaessig nach Punkt 1 der Neuausrichtung, aber sechster Faden bei drei erlaubten Agenten.",
+  "compute": "keine Rechnung; reine Lektuere plus eine Papierrechnung (Satz von Schwarz, Traegheitssatz von Sylvester) und eine Division aus zwei Journalzahlen. Sieben WebFetch-Abrufe auf arxiv.org, kein WebSearch, 0,00 USD. Runde 022 eingefroren, Register, Ledger, gauntlet/behauptungen.jsonl, Manifest und Matrix unberuehrt; coordination/stabile-kompositionen-*, coordination/vertraege-* und model-lab/kevloop/ nur gelesen.",
+  "sources": [
+    {
+      "path": "coordination/literatur-20260923/SECHS-ARBEITEN.md"
+    },
+    {
+      "path": "coordination/stabile-kompositionen-20260923/loop1.py"
+    },
+    {
+      "path": "coordination/stabile-kompositionen-20260923/loop1-a/RESULT.json"
+    },
+    {
+      "path": "coordination/stabile-kompositionen-20260923/loop1-a/QA.json"
+    },
+    {
+      "path": "coordination/stabile-kompositionen-20260923/ANALYSE.md"
+    },
+    {
+      "path": "coordination/stabile-kompositionen-20260923/QH8-BERICHT.md"
+    },
+    {
+      "path": "coordination/vertraege-20260921/un-1-VERTRAG.md"
+    },
+    {
+      "path": "coordination/research-scout-claude-20260913/runs/20260923T160009Z-tick/canonical.json"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.25226",
+      "note": "Montanari, Zanin, Motter, Disorder-promoted stability, Science 393 (6817) 1241-1249 (2026), DOI 10.1126/science.aeg3946; Volltext ueber arxiv.org/html/2609.25226v1"
+    },
+    {
+      "url": "https://arxiv.org/abs/2512.11068",
+      "note": "Siew, Chandrasekharan, Bhattacharya, Phys. Rev. D 113, 114522 (2026), DOI 10.1103/2cy4-cp7f; nur Abstract"
+    },
+    {
+      "url": "https://arxiv.org/abs/2604.24812",
+      "note": "Hinrichsen, Kastrati, Phys. Rev. D 114, 036016 (2026), DOI 10.1103/wc7j-fz7y; nur Abstract"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.25193",
+      "note": "Homeier, Linsel, Pollet, Rey; nur Abstract"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.22501",
+      "note": "van Manen, Blankenstein, Mazumdar; nur Abstract"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.04104",
+      "note": "Salih; nur Abstract"
+    }
+  ]
+}

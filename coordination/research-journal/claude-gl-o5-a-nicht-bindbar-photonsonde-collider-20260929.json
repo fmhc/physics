@@ -1,0 +1,57 @@
+{
+  "id": "claude-gl-o5-a-nicht-bindbar-photonsonde-collider-20260929",
+  "time": "2026-09-29T13:26:44+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung; Kartenentwurf OpenAI astra (frisch); Literaturrecherche Anthropic Opus (Feldforscher, frisch); blinde Pruefung der eigenen Schluesse OpenAI astra (frisch)",
+  "topic": "gesamtformel",
+  "status": "reported",
+  "evidenzart": "literatur",
+  "title": "GL-O5-A (Glied 10, V2-Lesart mit Lichtkopplung gegen GW170817): derzeit nicht bindbar; die gelesene Literatur liefert nur Teilskalen und keinen Cutoff des lichtgekoppelten Halo-Systems, unter P1 muss auch die Gammastrahlung kontrolliert sein, und Collider-Grenzen an den disformen Operator wuerden eine GW170817-Verletzung nur unter Matching-Annahmen ausschliessen; Literaturstand und Kopfrechnung, keine Modellrechnung",
+  "question": "Laesst sich die einzige verbliebene Rechnung zu Glied 10, die EFT-Fensterfrage der V2-Lesart gegen GW170817 (GL-O5-A aus dem Scoping), als Karte mit offenem Ausgang binden?",
+  "action": "Kartenentwurf durch eine frische astra-Sitzung mit zwei Kinetik-Armen als Hypothesen (SFDM nach Berezhiani/Khoury, kanonisch), weil Finns Kinetikwahl offen ist; eine Vorabbindung kam nicht zustande. Erwartung vor Abruf. Danach Literaturrecherche eines frischen Anthropic-Feldforschers (Opus) zum Cutoff des Halo-Systems mit Erwartung vor Abruf, Gegensweep und 24-Monats-Suche. Danach blinde Pruefung der drei entscheidenden eigenen Schluesse der Recherche durch eine weitere frische astra-Sitzung an den Primaerquellen, mit Erwartung vor Abruf. Nur Papier und Kopfrechnung, keine Modellrechnung, keine GPU.",
+  "result": "Entwurf: beide Arme nicht bindungsreif; es fehlen ein belegter Cutoff M_cut, ein beziffertes Fehlerbudget, zulaessige Beispielpunkte fuer beide Ausgaenge und ein Halo-Modell; der SFDM-Nulltemperatur-MOND-Zweig hat ein falsches kinetisches Vorzeichen. Recherche: nur Teilskalen (Bogoliubov-Skala der Phononen k* = 2 m c_s, etwa 4e-4 eV; Starkkopplung Lambda_s etwa meV); die gelesenen SFDM-Hauptquellen nach 2017 koppeln Photonen nicht an die Phononen. Pruefung, alle drei Schluesse TRAEGT TEILWEISE: (1) Unter P1 muss die Photonausbreitung bei Gammaenergien (E_peak etwa 215 keV) kontrolliert sein; einen Photoncutoff nennt keine gelesene Quelle. (2) Nach Matching, gerechnet fuer den kanonischen Arm mit der Kartenwahl F (der zusaetzlich konform koppelt), ist es derselbe fuehrende Operator (M_BB^4 = 2F^2/b); Brax/Burrage 2014 geben 490 GeV aus Mono-Photonen, ATLAS 2021 schliesst M2 < 1486 GeV aus, abhaengig von der UV-Vervollstaendigung; fuer SFDM unbewiesen. (3) Kopfrechnung der Pruefsitzung mit den angenommenen Halo-Werten des Kartenentwurfs: Eine GW170817-Verletzung verlangte M_BB <~ 87 eV; bei M_BB >= 100 GeV waere eta <= 1,6e-49 statt der noetigen 2,8e-13, also um mehr als 35 Groessenordnungen zu klein (mit 490 GeV 39); die Laborgrenze ist aber nicht per Kontaktoperator bis 87 eV extrapolierbar, ein vorab leeres Fenster ist nicht belegt.",
+  "meaning": "Fuer Glied 10 gibt es derzeit keine bindbare, datennahe Rechnung mit offenem Ausgang, auch nicht nach einer Kinetikwahl. Die V2-Lesart mit schwacher, mit GW170817 vertraeglicher Lichtkopplung (nach dem P1-Bericht f <~ 1e-6) ist nicht ausgeschlossen; eine fuer Linsen ausreichende Lichtkopplung gilt in verwandten Modellen durch GW170817 als ausgeschlossen (Recherche). Nach dem V2-P1-Eintrag besteht die Linsenspannung ohne und mit solch schwacher Lichtkopplung, denn diese wirkt auf die Linsen wie keine, und eine Lichtkopplung in Linsenstaerke ist mit GW170817 unvertraeglich, ausser bei fein abgestimmter Kompensation; eine schwache Kopplung ist also kein Ausweg aus der Linsenspannung; unter den Matching-Annahmen der Collider-Grenzen laege der Effekt bei der angenommenen Halostaerke weit unter der fuer eine GW170817-Verletzung noetigen Staerke. Offene Voraussetzungen: Photoncutoff, Collider-Matching, Halo-Modell, Uebertragung auf SFDM. Eine Wiederaufnahme braucht fuer eine universelle Kopplung einen Photonsektor bis zu Collider-Energien, fuer eine rein kondensatgebundene Kopplung Kontrolle bis ins Gammaband, jeweils mit Halo-Modell; das ist Modellbau, keine weitere Kopfrechnung. Keine Aussage ueber die Gesamtformel ohne V2.",
+  "sources": [
+    {
+      "path": "coordination/glieder-7-10-gesamtformel-20260928/gl-o5-a-karte/VORAB-KARTE-GL-O5-A.md",
+      "sha256": "944537e64ca3f5226fbe9a3d66c3ba55ae6267ec6b48fa073f2c8ae33693b1dc"
+    },
+    {
+      "path": "coordination/glieder-7-10-gesamtformel-20260928/gl-o5-a-karte/ERWARTUNG-VOR-ABRUF.md",
+      "sha256": "acbe7bd23ad061be3b8199bd9d54ae68f0d69927f16bb9a584007207b7329d11"
+    },
+    {
+      "path": "coordination/glieder-7-10-gesamtformel-20260928/gl-o5-a-karte/RECHERCHE-MCUT-SFDM.md",
+      "sha256": "0a0c2b258543aa1b3e2e41248247b17c81ee0a8147cc9405a5af47e10713307e"
+    },
+    {
+      "path": "coordination/glieder-7-10-gesamtformel-20260928/gl-o5-a-karte/ERWARTUNG-MCUT.md",
+      "sha256": "063cbdc0f683773e38bf16448756910e2bf7de229154137c74a6198f504971a4"
+    },
+    {
+      "path": "coordination/glieder-7-10-gesamtformel-20260928/gl-o5-a-karte/S2-PRUEFUNG-RECHERCHE-MCUT.md",
+      "sha256": "3d73b31f90dff09f5471b3d726929afb7969f8d8c4ae4026c600a2a21efcfc1c"
+    },
+    {
+      "path": "coordination/glieder-7-10-gesamtformel-20260928/gl-o5-a-karte/ERWARTUNG-S2-PRUEFUNG.md",
+      "sha256": "9f86b72772eb874f00eaf0485d2737239ff644d067eddc1101dce3659a35c434"
+    },
+    {
+      "path": "coordination/glieder-7-10-gesamtformel-20260928/gl-o5-scoping/SCOPING-GL-O5.md",
+      "sha256": "d4e5cc58f4c7380e8e45b961aef1af1db4b36c3d4da33174ef05f7562127d8e1"
+    },
+    {
+      "path": "coordination/glieder-7-10-gesamtformel-20260928/ENTSCHEIDUNGSFRAGE-V2-KINETIK-FINN-NACHTRAG-1.md",
+      "sha256": "d16bd60330c5d6fd8231515216766506c749d898ad1dcef837097faeddcf03f5"
+    },
+    {
+      "path": "coordination/research-journal/claude-v2-p1-dilemma-linsen-gw170817-20260929.json",
+      "sha256": "b03028a239e4d4cf63d69999c5d6e5231fcdeeadad35506606ede46df221fdb6"
+    },
+    {
+      "path": "coordination/glieder-7-10-gesamtformel-20260928/gl-o5-p1-linsen/BERICHT-P1-LINSEN.md",
+      "sha256": "0a531c9d236c5d9d4d5d6da80a362a74cbb65841f542d0cd7aaf1b74c8914f71"
+    }
+  ],
+  "recorded_at": "2026-09-29T14:25:41.769914+00:00"
+}

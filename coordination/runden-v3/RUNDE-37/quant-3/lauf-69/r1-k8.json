@@ -1,0 +1,112 @@
+{
+ "kopf": {
+  "python": "3.12.3",
+  "numpy": "2.4.4",
+  "torch": "2.5.1+cu121",
+  "gpu": "Quadro P4000",
+  "host": "ubuntu-auto",
+  "start_utc": "2026-10-05T17:37:27Z",
+  "argv": [
+   "code/su2.py",
+   "lauf",
+   "--gitter",
+   "kubisch",
+   "--L",
+   "8",
+   "--Nt",
+   "4",
+   "--betas",
+   "2.2",
+   "2.3",
+   "2.4",
+   "2.5",
+   "--starts",
+   "heiss",
+   "--ntherm",
+   "50",
+   "--nmess",
+   "200",
+   "--nbin",
+   "10",
+   "--out",
+   "/home/fmh/fmhc-physics-remote/quant-3/lauf/r1-k8"
+  ],
+  "skript_sha256": "ebcdec30cdcf9c1e2ba7c86aea794238691805c55b2911101c1ded988358df05",
+  "qu2_sha256": "76ee69416803374d90082f856bf33f97f063da83980baf26566d863606e5390c",
+  "gpu_frei_MB_start": 2356.34688
+ },
+ "gitter": "kubisch",
+ "L": 8,
+ "Nt": 4,
+ "tau": 1.0,
+ "gew": "eins",
+ "nE": 8192,
+ "nF": 12288,
+ "nS": 512,
+ "NV": 1,
+ "farben": 10,
+ "w_summe": 12288.0,
+ "n_neg_w": 0,
+ "mh_max_je_plakette": 2,
+ "multihit": false,
+ "R": 4,
+ "S": 1,
+ "folgen": [
+  [
+   2.2
+  ],
+  [
+   2.3
+  ],
+  [
+   2.4
+  ],
+  [
+   2.5
+  ]
+ ],
+ "starts": [
+  "heiss",
+  "heiss",
+  "heiss",
+  "heiss"
+ ],
+ "ntherm": 50,
+ "nmess": 200,
+ "nbin": 10,
+ "nor": 2,
+ "mabst": 1,
+ "seed": 20261005,
+ "korr": false,
+ "zeit_bau_s": 0.19113636016845703,
+ "stufen": [
+  {
+   "stufe": 0,
+   "betas": [
+    2.2,
+    2.3,
+    2.4,
+    2.5
+   ],
+   "nmess": 200,
+   "nbin": 10,
+   "zeit_s": 38.179868936538696,
+   "zeit_therm_s": 7.566023588180542,
+   "pw_mittel": [
+    0.5689032251197492,
+    0.6032877580322884,
+    0.6311714942884578,
+    0.6531756321583007
+   ],
+   "L_mittel": [
+    0.04807233760994748,
+    0.1315545021369844,
+    0.25877326547383456,
+    0.3194572996565712
+   ]
+  }
+ ],
+ "abbruch": null,
+ "zeit_gesamt_s": 38.37267184257507,
+ "gpu_speicher_max_MB": 15.04256
+}

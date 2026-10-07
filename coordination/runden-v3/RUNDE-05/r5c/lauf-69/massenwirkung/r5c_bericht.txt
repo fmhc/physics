@@ -1,0 +1,16 @@
+R5-C r5c.py Start 2026-09-30T00:37:39+00:00 auf CPU, 1 Thread, torch 2.5.1+cu121, Unterbefehl massenwirkung, Laufzeitfaktor 1.0
+
+Massenwirkung (Chemie 9): Kondensat S = 1.1 (omega_bg = 0.7842), Baelle omega^2 = (0.55, 0.7, 0.9), Ring L = 200.0, T = 800.
+  omega^2 | omega - omega_bg | Ueberschuss 0 | rel. Ende | Buckel rel. Ende | omega Mitte Ende | geloest
+  [grob]
+  0.55 | -0.0426 | 3.8144 | -0.03737 | -0.06654 | 0.7894 | True
+  0.7 | +0.0524 | 2.4415 | 0.1204 | 0.009409 | 0.7863 | True
+  0.9 | +0.1645 | 1.2910 | 0.04754 | 0.009289 | 0.7845 | True
+  [fein]
+  0.55 | -0.0426 | 3.8144 | -0.03627 | -0.06457 | 0.7894 | True
+  0.7 | +0.0524 | 2.4415 | 0.1201 | 0.009454 | 0.7863 | True
+  0.9 | +0.1645 | 1.2910 | 0.04706 | 0.009556 | 0.7845 | True
+  L3 (omega Mitte Ende gegen omega Ball): 3 von 3
+  massenwirkung: 103.5 s
+
+Ende 2026-09-30T00:39:23+00:00, Dauer 103.5 s, Torch-Speicher max nan MB, Fehler in: keine

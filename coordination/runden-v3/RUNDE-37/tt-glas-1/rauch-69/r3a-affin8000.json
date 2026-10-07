@@ -1,0 +1,71 @@
+{
+ "info": {
+  "numpy": "2.4.4",
+  "scipy": "1.18.0",
+  "python": "3.12.3",
+  "host": "ubuntu-auto",
+  "argv": [
+   "code/tg.py",
+   "affin",
+   "--N",
+   "8000",
+   "--saaten",
+   "901",
+   "--rauch",
+   "--out",
+   "rauch/r3a-affin8000.json"
+  ],
+  "skript_sha256": "ec48a258e266fc2226d0d10564b606052831ffefbf0642e4f7d04f9de85cfd9e",
+  "ew_sha256": "fa7b6417d39177102f0b19c5474453cd16a7595e23bc25ca548e081c4060b142",
+  "tp_sha256": "419d7da6caa211c721eb6a8c87403977415cf3050f03365377f51cb77b374dfd",
+  "start_utc": "2026-10-05T02:35:31Z"
+ },
+ "schluessel": {
+  "N": "int",
+  "saat": "int",
+  "pruefung": {
+   "saum": "float",
+   "umkugel_ausserhalb_saum": "int",
+   "R_umkugel_max": "float",
+   "punkte_mit_kopien": "int",
+   "T": "int",
+   "E": "int",
+   "nV": "int",
+   "kanten_je_ecke": "float",
+   "tetra_je_ecke": "float",
+   "selbstkanten": "int",
+   "laengen_abw_max": "float",
+   "volumen_summe_rel_abw": "float",
+   "vol_min": "float",
+   "vol_min_rel_mittel": "float",
+   "dieder_summe_minus_2pi_max": "float",
+   "dieder_min_grad": "float",
+   "dieder_max_grad": "float",
+   "D_sym_max": "float",
+   "schlaefli_lD_max": "float",
+   "D_absmax": "float",
+   "l_min": "float",
+   "l_max": "float",
+   "Vbox": "float",
+   "t_modell_s": "float"
+  },
+  "affin": {
+   "zeilen": [
+    [
+     "K_ueber_k2_V",
+     "richtung"
+    ]
+   ],
+   "min": "float",
+   "max": "float",
+   "spanne_max_min": "float"
+  }
+ },
+ "laufzeit_s": 8.373294591903687,
+ "maxrss_MB": 439.91796875,
+ "t_punkt_s": [],
+ "t_modell_s": 3.374859571456909,
+ "E": 62148,
+ "nV": 8000,
+ "T": 54148
+}

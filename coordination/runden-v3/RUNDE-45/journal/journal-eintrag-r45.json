@@ -1,0 +1,156 @@
+{
+  "id": "claude-runde-v3-45-20261005",
+  "time": "2026-10-05T05:40:41+02:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung, Karten, Schreibtisch, Quellenlektuere; Code-Agenten, feldforscher und pruefer-opus (frischer Leser) Anthropic (Opus 5.5); Pruefhinweise und Ideation-Antwort Codex ag-phy-coordination (OpenAI)",
+  "topic": "theory",
+  "status": "reported",
+  "evidenzart": "modell",
+  "title": "Runde 45 nach v3 (explorativ, Gittermodelle und Literatur, keine Messdaten). Finns Weichen in beiden Zweigen getestet. Masse auf Finns Netz: Newtons Takt mit Einsteins Vorzeichen; volle Lichtablenkung nur mit Energie in der Eckregel und Licht mit Laengengewichten. Zufallsnetze (Glas) tragen genau zwei masselose TT-Moden ohne Abstimmung, mit Anisotropie je Netz ~ N^-0,47. Ikosaedrisches Tetraeder-Netz isotrop bis Stufe 5, solange die Phasonen ruhen. Zwischen den Zellen 4 freie Rahmendrehungen je Zelle. PT-Ausgleich ist keine Massenquelle. Paar-Licht laeuft gleich schnell, hat aber bedingt eine Pauli-Grenze. Doppelspalt-Alternativen mit I3 als Latte. Referenzpruefung von 2512.21805",
+  "question": "Welche Zweige von Finns Weichen tragen: R1 (Energie in der Eckregel gegen nur Ecktakt), Kristall/Glas und Baender? Hilft ein PT-Ausgleich bei Masse ohne Verlust? Kann Licht aus Teilchenpaaren ein gemeinsames Tempo liefern? Was ergeben Finns Auftraege zu Doppelspalt-Alternativen und zur Referenzpruefung von arXiv 2512.21805 sowie zwei neue Scout-Arbeiten?",
+  "action": "Code-Agenten auf der .69 (kleintest.sh), Vorhersagen vor jeder Rechnung, Plan eingefroren: TT-GLAS-1, MATERIE-NETZ-1, TORSION-STEIF-1, RUECKFLUSS-INFO-1. Literatur- und Schreibtischkarten (feldforscher): BOUFOUROU-DR4-L, DREI-KEGEL-L, DREI-KEGEL-NEUTRINO-L, PT-AUSGLEICH-L, DANZER-L, PAAR-LICHT-L, REGGE-HADRON-REF-L (Finn-Auftrag, 238 Referenzen ueber INSPIRE, arXiv und Crossref), HISH-GLUEBALL-L, DOPPELSPALT-L (Finn-Auftrag). Frischer Leser (pruefer-opus): GEGENLESEN-R45 fuer die ungeprueften Handrechnungen von PAAR-LICHT-L, PT-AUSGLEICH-L und DANZER-L. Leitung: zwei Scout-Arbeiten im Volltext gelesen (Gielen/Ried 2610.03479, Boguna/Krioukov 2610.03247), eine Quelle selbst geprueft (1509.01203), Kurzreview und Ideation-Runde 1 an Codex. Finns Weichen (04:15) neu gestellt: R1, Netzart und Baender jeweils beide Varianten; Q-Baelle nur als Teilchenmodell.",
+  "result": "TT-GLAS-1: TG-G0, TG-G1 ja (Spanne je Netz ~ N^-0,475), TG-G2 verfehlt (allein N = 128), TG-G3 nicht entscheidbar (hochgerechnet 2,2 % bei N = 8000); alle 48 Zufallsnetze haben bei kleinem k genau zwei masselose TT-Moden; Spanne 29,7 % (N = 32) bis 7,2 % (N = 512), meist Doppelbrechung. MATERIE-NETZ-1: MN0 und MN2 ja, MN1 nein (vorab entschieden); Takt mu = -A/r mit A = 1/(8 sqrt2 pi), Einsteins Vorzeichen; Maxwell mit Einheitsgewichten gibt die halbe Ablenkung, mit Laengengewichten n = lambda/N. TORSION-STEIF-1: TS0 nein (Auswerteformel), TS1 ja (vorab ableitbar), TS2 nein; 4 freie Rahmendrehungen je Zelle. RUECKFLUSS-INFO-1: RI0 und RI3 ja, RI1 nein, RI2 nicht auswertbar; r = 0,44 bis 0,43 fuer sigma 4 bis 12. PT-AUSGLEICH-L: PA1 im Kern ja, PA2 nein, PA3 teilweise; bricht bei k = 0; eichinvariant nur als masseloses Weyl-Fermion (1509.01203). DANZER-L: DZ1 bis DZ3 ja (DZ2 bedingt); erste Invariante unter I bei l = 6. PAAR-LICHT-L: PL1, PL2, PL4 ja, PL3 offen. GEGENLESEN-R45: 8n-Zaehlung haelt; Paar-Licht aus zwei Vernichtern traegt im Breitband hoechstens n = 1/8 je Polarisation, mit Vorbehalt (Dirac-See-Dichtebau und viele innere Zustaende offen). REGGE-HADRON-REF-L: 238 Referenzen, keine erfunden, 9 kleine Fehler, 4 Stellen ohne Stuetze. HISH-GLUEBALL-L: G1 bis G4 ja; PAAR-REGGE-1 teils bekannt; geschlossener String mit zwei Massen ist Literatur. DOPPELSPALT-L: DS1, DS4, DS5 ja, DS2 Groessenordnung (I3 einzelner Photonen ~4e-4 +- 5e-4), DS3 offen. DREI-KEGEL-NEUTRINO-L: l < ~20 bis 40 l_P (Regime B).",
+  "meaning": "Explorativ, Modellrechnungen und Literatur, keine Messdaten. Fuer Finns Netz ist die Schwerkraft-Probe klarer: Eine Masse verlangsamt den Takt wie bei Newton und Einstein. Die gemessene Lichtablenkung erfordert aber zweierlei: Die Massenenergie geht in die Eckregel ein, und das Licht spuert die Kantenlaengen. Mit rein topologischem Licht gaebe es nur die halbe Ablenkung. Der Glas-Zweig traegt die zwei Schwerewellen-Arten ohne Abstimmung, jedes einzelne Netz ist aber merklich richtungsabhaengig (~ N^-0,47); Stabilitaet ist nur bei kleinem k gezeigt. Ein ikosaedrisches Tetraeder-Netz waere eine dritte Antwort auf die Weiche Kristall/Glas, isotrop ohne Abstimmung, aber nur mit ruhenden Phasonen und mit unregelmaessigen Tetraedern. Baender auf den Linien messen die Kruemmung; zwischen den Zellen bleibt die Verdrehung teilweise frei. Der PT-Ausgleich ist fuer Masse ohne Verlust kein Weg; die 44 % Rueckfluss sind eine robuste Kennzahl fester Takte und bringen nur fuer einen Beobachter, der die Takte kennt, Information zurueck. Paar-Licht waere ein dritter Weg zu einem Tempo fuer alles, hat in der einfachen Bauweise aber eine bedingte Pauli-Grenze fuer helles Breitbandlicht (kein widerlegt). Fuer Doppelspalt-Alternativen ist I3 eine messnahe Latte; der Q-Ball-Test laeuft. Finns rotierendes Paar ist als geschlossener String mit zwei Massen Literatur; der Gittertest mit dem Literatur-Intercept ist offen. Methodik: zwei vorab ableitbare Vorhersagen der Leitung (TS1, MN1); eine Projektsuche nur ueber Markdown uebersah einen Dreifachspalt-Eintrag; der frische Leser bestaetigte die 8n-Rechnung und setzte die Vorbehalte. Codex arbeitet nach Finns Regel am eigenen Strang weiter (keine Doppelarbeit).",
+  "sources": [
+    {
+      "path": "coordination/runden-v3/RUNDE-45.md",
+      "sha256": "4478123ce9174f0e39a0690203b182d67a1172411676f6a59c2bf3020e5119d0"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-45/quellen-leitung/ABRUFE-0435.md",
+      "sha256": "467e03d876bc1347b064cbd82591bb37b6a65854fd14b9df48ee65a69858b060"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-45/quellen-leitung/gielen-ried-2610.03479v1.pdf",
+      "sha256": "22853a5674c4673ca59efc4fac4467ae33292036894f183a285dcab7ea45965d"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-45/quellen-leitung/boguna-krioukov-2610.03247v1.pdf",
+      "sha256": "dc76e16cce07b4cafaabbcfe96ce029c9c38d3752f67ef2a79b092bf503e3200"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-45/quellen-leitung/arxiv-api-1509.01203.xml",
+      "sha256": "32d51ccf976b4a2f21a5b6eebfe9f3a1774f8c8aa0d0b28103bae7f70a2181fe"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-45/bus/an-codex-review-anstoss-1.md",
+      "sha256": "5e6371877e9dc44e5a28e32c77d77f20dec2a8e90036100dffc2b5839326425c"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-45/bus/an-claude-video-kompakt-codex-hinweis.md",
+      "sha256": "21035b987a7c4050cc2df10a4e1d46dfabf820f80bff7384c912414f7d98d960"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-37/boufourou-dr4-l/KARTE.md",
+      "sha256": "cfd85adbe89ef2c7cf83e26f1d9e78c823f1ae63a1fd9be7c3106f93d80c2a46"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-37/boufourou-dr4-l/DOSSIER.md",
+      "sha256": "b15fac3ddd48d27e97c9faa4ce7c00b46a89ca914299415c1b19d89a4ec682de"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-37/drei-kegel-l/KARTE.md",
+      "sha256": "d5f2dbc15b28e8339c4f5dbdd3fdf9cd2ff28c76dbf29e2cf1e0b94a75730830"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-37/drei-kegel-l/DOSSIER.md",
+      "sha256": "15e5aa28a8a8d754c27228ee467e70c417a6133635b82db4b6c7da204154f1f4"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-37/drei-kegel-neutrino-l/KARTE.md",
+      "sha256": "8bb0087df33b80ec7df9bead0cf660fc9de70dea4453ea45a50d27cba2a65609"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-37/drei-kegel-neutrino-l/DOSSIER.md",
+      "sha256": "98575e4118f65ac4fe5fb20c542e0f2fa535bcba91a0fadbfe52cc58f780769d"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-37/pt-ausgleich-l/KARTE.md",
+      "sha256": "e1f3f21707a02ac1d410da7278d2c4e74c29e57c308f0473844151189ca37f57"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-37/pt-ausgleich-l/DOSSIER.md",
+      "sha256": "270d8d5b3d21b80ec15bc96dc128f79d48fb469c5f6d6559bae975f6e239ce6b"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-37/danzer-l/KARTE.md",
+      "sha256": "3255e6f15821df1032a3c4192d540893ac8f0f5da48b71af463bf5ee8321f940"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-37/danzer-l/DOSSIER.md",
+      "sha256": "f6cdfd085d41f336ac6767c6e32555a756934b66a008fce384d8f29bc58f1e35"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-37/paar-licht-l/KARTE.md",
+      "sha256": "70e3d97ad2f4158be2203f646c6ee2b09deeb0928e5d681bc5b108ebdd305f3d"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-37/paar-licht-l/DOSSIER.md",
+      "sha256": "b6d05395f1b64722776961ac5c90453ec875a5f3ff3a89b66cafb6ec9d593190"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-37/regge-hadron-ref-l/KARTE.md",
+      "sha256": "c1b89ce7b73d141eca1deacead9b4b143e8dcc143204c6b913c3563213c30ccb"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-37/regge-hadron-ref-l/DOSSIER.md",
+      "sha256": "f065121b2dfe6a3387a362265d645a283bac11250e7e42264aef22bf84fe0751"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-37/doppelspalt-l/KARTE.md",
+      "sha256": "e2a10da7dc62a4fccc4f63e066471551b13e185cc964e2da8bcc32897b5d681e"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-37/doppelspalt-l/DOSSIER.md",
+      "sha256": "9b2b12f9d535e83236d99a853d15b0fb2134f7a064e357b7e1fa62a532a9a6a0"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-37/hish-glueball-l/KARTE.md",
+      "sha256": "b00080b2fdee60c6363c62f98db7e0bfa57562a6fe05c94fbb700c5b24eb4f3a"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-37/hish-glueball-l/DOSSIER.md",
+      "sha256": "7ba9b18dd13ff250089629b857b77dee3f37f8b9d8495f89929e81a8ebade7c4"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-37/torsion-steif-1/KARTE.md",
+      "sha256": "71c623244c7e2d52feae7b571df0444b990361e13bd318bad00db1360d33a3b9"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-37/torsion-steif-1/ERGEBNIS.md",
+      "sha256": "ecdb3ca1835a549f1784a075fa676dd4e2993586cef0c8c9ac9565a2a1de6b73"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-37/materie-netz-1/KARTE.md",
+      "sha256": "f0328fdc24d70ab8fb37a12e7530107d63be953e36f35c5c0a0b9a11dc2ecc58"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-37/materie-netz-1/ERGEBNIS.md",
+      "sha256": "90d6343c58ac5d76b954bbbe64523ac92ab362cac87e237bebc09a102372e683"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-37/rueckfluss-info-1/KARTE.md",
+      "sha256": "d6e81644fc65193796b6335e905bdb887c17bc21cc327a28869573f6afe8951f"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-37/rueckfluss-info-1/ERGEBNIS.md",
+      "sha256": "938e249af0e566df06fae8a808178b49959032898bcb51d3a2acd5b0a231ecb9"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-37/tt-glas-1/KARTE.md",
+      "sha256": "167d35962c8f0f5436781422df0880f08720cb694d4283abc8e340f0428fb353"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-37/tt-glas-1/ERGEBNIS.md",
+      "sha256": "9794edb2cd61684bf7b22a8dfdc2b632b2be219171c4a472daf37c803841a2a1"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-37/gegenlesen-r45/KARTE.md",
+      "sha256": "80dee89611161e4d48131025eb7b2bd83115739fd71fa682fc282d608fbafae2"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-37/gegenlesen-r45/GEGENLESEN.md",
+      "sha256": "d29c87af89fab87315aa96721412e23dabd2791d0731e3f1c05cf1ff7df67474"
+    }
+  ]
+}

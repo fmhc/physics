@@ -1,0 +1,26 @@
+{
+  "id": "claude-funktionsform-nn-20260906",
+  "time": "2026-09-06T15:55:00+02:00",
+  "time_kind": "completed",
+  "author": "Claude",
+  "topic": "galaxies",
+  "status": "checked",
+  "title": "In SPARC steckt keine Information über die Form der Interpolationsfunktion mehr — deshalb findet auch das neuronale Netz nichts",
+  "question": "Gehören Logarithmen oder Exponentiale in die MOND-Interpolationsfunktion, und warum verbessert die genetische und neuronale Suche des Modelllabors nichts?",
+  "action": "Zehn Funktionsfamilien direkt auf die Interpolationsfunktion gefittet, 2681 SPARC-Punkte aus 144 Galaxien, statt Rotationskurven zu fitten. Bootstrap über Galaxien, nicht über Punkte.",
+  "result": "Exponential ja, Logarithmus nein: rein logarithmische Formen geben 0,154 und 0,206 dex Streuung gegen 0,112 bis 0,114 für alle brauchbaren. Die beste Zweiparameterfamilie gewinnt gegenüber der einfachen Form nur 1,4 Prozent (0,11189 gegen 0,11354 dex), bei einem Zusatzparameter mit dem kleinen Wert −0,062. Der frei gefittete Exponent in 1−exp(−y^p) ergibt p = 0,450 ± 0,030 gegen den von Tully-Fisher verlangten 0,5, also −1,7 Sigma; a₀ und p sind mit −0,92 antikorreliert, und über die Wahl des Massen-Leuchtkraft-Verhältnisses läuft p von 0,394 bis 0,511.",
+  "meaning": "Zwei unabhängige Wege, dieselbe Antwort: meine Restanalyse findet über fünf Galaxieneigenschaften keine Struktur über 0,03 dex bei 0,1135 Gesamtstreuung, und diese gezielte Formsuche gewinnt selbst mit einer eigens gebauten Familie nur 1,4 Prozent. Die 92.160 symbolischen Individuen und 288 Netzanpassungen des Modelllabors mit null Übernahmen sind damit kein Misserfolg, sondern eine Messung. Vorschlag: den Modellfinder von SPARC-Rotationskurven abziehen — für Kreisbahnen fallen alle Kandidaten zusammen. Wo noch etwas zu holen ist: exzentrische Bahnen, Außenfeldgeometrien, hohe Rotverschiebung.",
+  "sources": [
+    {
+      "path": "neue-theorie/funktionsform.md",
+      "label": "Familienvergleich und Deutung",
+      "sha256": "631e983310f16dbeaa8e9324e3cf946b5e5b00b11044ab740af041f99f466038"
+    },
+    {
+      "path": "neue-theorie/funktionsfamilie.py",
+      "label": "Fit",
+      "sha256": "fdf2f01d99a21064facc95b9ae2f8cb9fd55293a3765e8e724a10bdef80eb29a"
+    }
+  ],
+  "recorded_at": "2026-09-06T14:46:49.452658+00:00"
+}

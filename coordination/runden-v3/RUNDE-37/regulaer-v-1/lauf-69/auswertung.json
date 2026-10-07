@@ -1,0 +1,141 @@
+{
+ "urteile": {
+  "RV0": {
+   "a_V_w0": true,
+   "b_zufall": true,
+   "c_mutter": true,
+   "c2_positivkontrolle": true,
+   "urteil": "eingetroffen"
+  },
+  "RV1": {
+   "t_max_L1": 1.7142857142857135,
+   "t_max_L2": 1.7142857142857137,
+   "urteil": "eingetroffen",
+   "L_gleich": true
+  },
+  "RV2": {
+   "t_sym": 1.7142857142857133,
+   "urteil": "eingetroffen",
+   "zusatz_beste_marge_symmetrisch": true
+  },
+  "RV3": {
+   "beta_mid": 0.0012439559243890882,
+   "rms_l4_mid": 0.000217162749893403,
+   "n_proben": 206,
+   "n_ausserhalb": 0,
+   "delta_beta_max": 3.1687588987703657,
+   "ort_beta_max": {
+    "gruppe": "S1",
+    "marge": 0.017142857142855572,
+    "ziel": "ecke",
+    "xy": [
+     -11.0,
+     -8.0
+    ],
+    "s": 0.99,
+    "beta": 0.005185752329475128,
+    "rms_l4": 0.0009052991460997155,
+    "nichtkub4_rms": 5.364507841635135e-10,
+    "rms_l2": 4.6132893274833177e-10,
+    "rms_l6": 1.1221766466097187e-09,
+    "a2_mittel": -0.004700707052172758,
+    "c_mittel": 0.9999999999909903,
+    "c_spanne_rel": 1.4103451739926834e-10,
+    "fit_rms_rel_max": 1.4382862710583284e-11,
+    "zerlegung_rest": 6.715926052033609e-10
+   },
+   "delta_rms_l4_max": 3.168758898771049,
+   "ort_rms_l4_max": {
+    "gruppe": "S1",
+    "marge": 0.017142857142855572,
+    "ziel": "ecke",
+    "xy": [
+     -11.0,
+     -8.0
+    ],
+    "s": 0.99,
+    "beta": 0.005185752329475128,
+    "rms_l4": 0.0009052991460997155,
+    "nichtkub4_rms": 5.364507841635135e-10,
+    "rms_l2": 4.6132893274833177e-10,
+    "rms_l6": 1.1221766466097187e-09,
+    "a2_mittel": -0.004700707052172758,
+    "c_mittel": 0.9999999999909903,
+    "c_spanne_rel": 1.4103451739926834e-10,
+    "fit_rms_rel_max": 1.4382862710583284e-11,
+    "zerlegung_rest": 6.715926052033609e-10
+   },
+   "delta_beta_je_gruppe": {
+    "S1 s=0.5": 1.8327831653777984,
+    "S1 s=0.9": 2.9869163926358815,
+    "S1 s=0.99": 3.1687588987703657,
+    "S2 s=0.5": 0.3786271254971657,
+    "S2 s=0.9": 0.7061986930601787,
+    "S2 s=0.99": 0.7822346939012327,
+    "S3 s=0.99": 2.148994358655519,
+    "S4 s=0.5": 0.08425838934878155,
+    "S4 s=0.9": 0.15295514300039273,
+    "S4 s=0.99": 0.16852730712551992
+   },
+   "urteil_plan": "nicht eingetroffen",
+   "urteil_wortlaut_rms_l4": "nicht eingetroffen"
+  },
+  "K5_hand": {
+   "t_L1": true,
+   "t_L2": true,
+   "t_sym": true,
+   "x_sym": true,
+   "y_sym": true,
+   "w0_klasse1": true,
+   "w0_klasse2": true,
+   "w0_klasse3": true,
+   "w0_klasse4": true,
+   "w0_klasse5": true,
+   "w_hand_klasse1": true,
+   "w_hand_klasse2": true,
+   "w_hand_klasse3": true,
+   "w_hand_klasse4": true,
+   "w_hand_klasse5": true,
+   "schnitt_x": true,
+   "schnitt_y": true
+  },
+  "K5_alle": true,
+  "K4": {
+   "beta_L1": 0.0012439559243890882,
+   "beta_L2_mitte": 0.0012439559786607947,
+   "rel": 4.362831947856663e-08,
+   "ok": false
+  }
+ },
+ "eingaben": {
+  "lauf/lp1.json": "695ab4f6c85cc32d45cd434ed0632a208d632e5e9bef9119cf21dc1d7da487c4",
+  "lauf/lp2.json": "2dac9049faa930510b27700b0d9fac4c6e87b156624eb341e73573cb8618c501",
+  "lauf/kontrollen.json": "084d16cb0a9ef218bfdae18846e31ed466787350524d62ca98d7ab23863413f6",
+  "lauf/kammer1.json": "d6a73b1d71a9a4fddfa2716d22955461d35d3d53d1a5fe8d6b29a52763e4aa97",
+  "lauf/kammer2.json": "fa161ddd593d64e5dcfbe9b600d3ee97181a39616e75f4d2f7059d678b5ef033"
+ },
+ "_meta": {
+  "argv": [
+   "code/rv.py",
+   "auswerten",
+   "lauf/auswertung.json",
+   "lauf/lp1.json",
+   "lauf/lp2.json",
+   "lauf/kontrollen.json",
+   "lauf/kammer1.json",
+   "lauf/kammer2.json"
+  ],
+  "python": "3.12.3",
+  "numpy": "2.4.4",
+  "scipy": "1.18.0",
+  "host": "ubuntu-auto",
+  "laufzeit_s": 0.007145881652832031,
+  "sha256": {
+   "rv.py": "237a98e58b5c57652f6243e25c038c20a37f709ef2b1784ea9492a87559a7481",
+   "ew.py": "fa7b6417d39177102f0b19c5474453cd16a7595e23bc25ca548e081c4060b142",
+   "tp.py": "419d7da6caa211c721eb6a8c87403977415cf3050f03365377f51cb77b374dfd",
+   "danzer_naeherung.py": "0571953eb693f87e6989d76dd59852bfbe832da1fedf0a46e3da144c63c8fc24",
+   "licht_netz.py": "98d3960a174fe9d077d32d79acf096b2c611c19f69dd13fb0d7d1a517f436146"
+  }
+ }
+}

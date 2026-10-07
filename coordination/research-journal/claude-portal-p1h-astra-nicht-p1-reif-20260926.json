@@ -1,0 +1,28 @@
+{
+  "id": "claude-portal-p1h-astra-nicht-p1-reif-20260926",
+  "time": "2026-09-26T00:21:47+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung; Nachreview astra (OpenAI, gpt-6-astra, high), 02:07:58 bis 02:21:47 MESZ (gemessen)",
+  "topic": "operations",
+  "status": "reported",
+  "title": "Portal P1h: astras Nachreview sagt weiter NICHT P1-REIF; B3 geschlossen, neue Gegenfaelle bei Ruecksicherung, Widerrufskontingent, JSON-Fehlerausgabe und Loeschung; die Art.-13-Zusage zur Nichtzuordenbarkeit stimmt nicht",
+  "question": "Tragen die Behauptungen des Umsetzers, B1 bis B8 und Auflage 7 seien geschlossen, so dass P1 nur noch an Finns Punkten haengt?",
+  "action": "astra REVIEW-ONLY ueber Bericht P1-HAERTUNG, Code, Nachweise, Texte und Bauplan; nur lesende Befehle, keine Anfragen an die Vorschau.",
+  "result": "NICHT P1-REIF, vorbehaltlich Finns Punkten (REVIEW 2cf7f0d6...). Geschlossen: B3 (Wettlauf Loeschung gegen Annahme) und die Wartungspunkte. Blockierend: (1) neuer Ruecksicherungs-Gegenfall: Sicherung bei Anker n, danach Widerruf bei m > n, Journal auf das gueltige Praefix n gekuerzt; der Restore vergleicht nur mit dem Sicherungsanker und nimmt den Widerruf zurueck; (3) Zustimmungswiderrufe zaehlen gegen das Kontingent von 30 Aenderungen am Tag, ein berechtigter Widerruf kann mit 429 enden, dazu Budget und ENOSPC-Pfade; (4) die 422-Fehlerantwort gibt Pydantic-Fehlerorte samt unbekannter Schluessel ohne Ausgabeschutz aus, also kann eine gesperrte Zahlform durchrutschen; die nach Sicht auf den Export gesetzte Pruefliste (§3a) wertet astra als Lockerung nach Sichtung des Pruefguts; (5) die Fristloeschung laesst person_id im Einreichungsmanifest stehen, die Art.-13-Aussage 'nach Loeschung keiner Person mehr zuzuordnen' ist damit falsch; ein weiterer Wettlauf Zustimmung gegen Personenloeschung; (6) isoliertes Konto fuer die Abholung nachweisen; (7) konkrete P1-Konfiguration fehlt; (8) Paketbauer mit M8/gitleaks, M10, RO-Crate und REUSE fehlen; (9) Regression, Archivierung und erneutes Nachreview.",
+  "meaning": "Nichts online, P1 nicht gestartet. Das zweite Code-Review in Folge findet konkrete Gegenfaelle, die der Umsetzer als geschlossen gemeldet hatte. Kein tatsaechlicher Datenabfluss festgestellt; der kleine vertraute Kreis senkt das Risiko. Vor einer weiteren Haertungsrunde entscheidet Finn den Weg: Portal weiter haerten oder fuer die ersten zwei Gutachter:innen zunaechst ein geprueftes Archiv persoenlich uebergeben, wie astra schon im Konzeptreview als billigeren Weg nannte. Bis dahin startet die Leitung keinen weiteren Portal-Agenten.",
+  "sources": [
+    {
+      "path": "coordination/portal-20260925/review-astra-p1h/REVIEW-astra-P1H.md",
+      "sha256": "2cf7f0d6c3f07eebbbf7afe5d8a5099050452d40854deff0033893619ee2ccf3"
+    },
+    {
+      "path": "coordination/portal-20260925/BERICHT-P1-HAERTUNG.md",
+      "sha256": "da116eab3900971444d0d53d7e7800cff1f7dc0c41205b3e7069a1dbe26cdeed"
+    },
+    {
+      "path": "coordination/portal-20260925/review-astra-p0/REVIEW-astra-P0-CODE.md",
+      "sha256": "bbb8b9bcfd75efedff8041aacd46e3cb3507fcef7303172da7a706c20e6457a2"
+    }
+  ],
+  "recorded_at": "2026-09-26T00:23:33.372304+00:00"
+}

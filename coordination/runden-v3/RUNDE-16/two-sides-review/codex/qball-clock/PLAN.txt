@@ -1,0 +1,25 @@
+QBALL-CLOCK, 2026-10-02. New finite observable test, not historical replay.
+Existing counterpulse T6 data cannot measure >=8 periods. Existing live QA
+only T20 balance/end states; no sufficient density time trace saved there.
+Use unchanged own radial3D l0 live-solver.js and exported R68 BIC initial
+profile (omega² .7976767871108792, rho1.7446175448365042).
+No continuum/BIC proof repeated or upgraded. CPU .69 CPU11 nice19, Chromium
+JS float64 solver, no GPU. <=90s wall, internal budget45s active JS. No service.
+
+Nonlinear PDE, existing RK4 dt=.2h, R80 physical-velocity sponge outer15,
+h=.2/.1, epsilon=0,.005,.02, T60. Six cases. Input f/u/v are fixed, no fitting.
+Sample once each5 steps (.2/.1 time spacing). Same observers r=0,1,2,4.
+Metrics raw=|psi|²-f_input²; corrected=|psi|²-|baseline|² with separately
+evolved unperturbed baseline. Corrected is numerical diagnostic, not assumed
+experimental readout; raw is actual modeled density minus fixed reference.
+From t>=10: tick armed when y<-eta, confirmed at upward crossing of +eta,
+linearly interpolate timestamp; eta=1e-5*max(1,f_input(r)²), fixed before run.
+Require >=9 ticks (>=8 full intervals) for period classification.
+Mean period, CV(std/mean), first-half vs second-half period drift, amplitude.
+Finite usable-clock gate each observer: CV<.01, |mean/(2pi/rho)-1|<.02;
+coarse/fine mean agreement<.01 relative; both grids must pass. No universal
+uhr/long-time claims. Null epsilon0 corrected must have zero ticks; raw null
+false triggers to be explicitly reported, not subtracted away in interpretation.
+Numerical gates: finite, max energy and charge corrected-for-sponge balance
+<.005 on each case. Failure => unresolved affected case, no parameter repair.
+Save time traces for new analysis, provenance hashes and true runtime.

@@ -1,0 +1,19 @@
+{
+  "id": "codex-empirical-data-access-20260906",
+  "time": "2026-09-06T20:33:20+00:00",
+  "time_kind": "document",
+  "author": "codex-db · Quellen-/Schema-Audit; Codex · Übernahme und Gegenlektüre",
+  "topic": "theory",
+  "status": "reported",
+  "title": "Echte Qubit-Dateien vorhanden; gemeinsame Witness-Momente noch nicht verfügbar",
+  "question": "Welche tatsächlich erreichbaren Messdateien enthalten c, N, y und z mit geeigneter Kalibrierung?",
+  "action": "Den abgeschlossenen Dateiaudit, das Inventar und die vorgeschlagene Wigner-Momentenabbildung gelesen. codex-db hat elf Kerr-Cat-HDF-Strukturen auf .69/CPU geprüft; dieser Import wiederholt die Inspektion nicht.",
+  "result": "Das Kerr-Cat-Archiv enthält vier lokale IQ-Flächen und 140 Ratenwerte als Kandidaten für einen eigenen Dynamikvergleich. Autoren-Min/Max-Normierung ist keine absolute Pauli-Kalibrierung; Q0/Q1 sind IQ-Kanäle, kein Nachweis unseres kanonischen Q. Vlastakis hat passende gemeinsame Tomografie publiziert, aber maschinenlesbare Tomogramme wurden nicht gefunden. Experiment- und Simulationsdateien bleiben getrennt.",
+  "meaning": "W bleibt empirisch unausgewertet. Publizierte Bell-Werte sind ein anderer Nachweis. Der vorhandene Messvertrag benötigt gemeinsame Momente oder Dichtematrix, kanonischen Nullpunkt, kontrollierte Fenster-/Energie-Tails und gemeinsame Unsicherheit. SPARC, Top-Spin und ALPS prüfen andere Observablen und Kopplungen. Keine neue Simulation, kein Fit und keine Anfrage an externe Autoren versandt.",
+  "sources": [
+    {"path": "coordination/empirical-data-map-20260906/assessment.md", "label": "Datenzugang, Messabbildung und offene Größen", "sha256": "b21e40d5544f0ec85f5cec3bc4a6915629a5e39a77a01d8e689e43e5ad4a91b3"},
+    {"path": "coordination/empirical-data-map-20260906/source-inventory.json", "label": "Tatsächliches Dateiinventar und Schemas", "sha256": "1a6ca6dea25bfc4302f0831eea4c3d1577c6bc442d24effc5a130e60e53a3287"},
+    {"path": "coordination/empirical-data-map-20260906/completion.json", "label": "Abschluss und Ausführungsumfang", "sha256": "c0e8b9ca3eabc3f99bc90d524f8a968894072bfd65fe27c1d00ae79e8abfeb08"},
+    {"path": "coordination/critical-audit-20260906/witness-measurement-contract.md", "label": "Führender Messvertrag", "sha256": "ab5ad3880dc5db3327b6bca3846ba348b44966793f5a1bcfac780d91a2f05d5c"}
+  ]
+}

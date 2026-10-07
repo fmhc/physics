@@ -1,0 +1,78 @@
+NICHTAUTOR-PAPIERLESUNG — 2026-10-02
+Gelesen: CHANNEL-QUESTION.txt sowie potential/forces/energy in maincode.py.
+Eigene Algebra; keine Simulation, Interpreter, Tests oder Webrecherche.
+
+URTEIL
+Die drei asymptotischen Kanaele, ihre Massen und Oeffnungsschwellen sind
+fuer den genannten stationaeren Hintergrund richtig. Auch die Grenzen der
+transienten omega-Diagnose und der FFT-Interpretation tragen. Eine konkrete
+Formulierung sollte praeziser werden: Eine echte diskrete reelle Mode
+UNTER allen Schwellen strahlt im idealen linearen Problem nicht nur
+"langsam", sondern ueberhaupt nicht in diese Vakuumkanaele ab.
+
+1. VAKUUM UND GEKOPPELTE LINEARISIERUNG
+Mit chi=1+eta und phi klein ist V=eta²+2|phi|²+Terme hoeherer Ordnung.
+Wegen Kinetik |dphi|²+(deta)²/2 folgen beide Massenterme2, also m=sqrt2.
+Der scheinbare Faktorunterschied zwischen reellem und komplexem Feld ist
+hier korrekt beruecksichtigt; die Implementierung von forces stimmt dazu.
+
+Explizite Kontrolle des gekoppelten Problems: schreibe
+phi=e^(i omega t)(f+a+i b), chi=g+c, mit reellen Stoerungen a,b,c.
+Setze A=1+g²-2f²+1.5f^4. Um einen exakten stationaeren Hintergrund gilt
+
+ a_tt-2omega b_t+[-Delta+A-omega²+2f²(-2+3f²)]a+2gf c=0,
+ b_tt+2omega a_t+[-Delta+A-omega²]b=0,
+ c_tt+[-Delta+3g²-1+2f²]c+4gf a=0.
+
+Die unterschiedlichen Kopplungsfaktoren2/4 folgen aus der Feldnormierung,
+nicht aus fehlender Rueckwirkung. Die omega-Zeitableitungskopplung zeigt,
+weshalb drei unabhaengige skalare Hessians das Modenproblem nicht ersetzen.
+Bei einem nur naeherungsweise stationaeren Profil verbleiben zusaetzlich
+Hintergrundreste; die homogene Modendeutung ist dann nur entsprechend genau.
+
+2. KANAELE UND SCHWELLEN
+Fuer f->0,g->1 entkoppelt das Vakuum. Die komplexe Stoerung hat die beiden
+Laborfrequenzen omega+rho und omega-rho, die reelle Stoerung rho (mit ihrer
+notwendigen konjugierten Frequenz). Daraus folgen exakt die angegebenen
+k_plus², k_minus² und k_chi². Bei0<omega<m und rho>=0:
+
+ rho=m-omega: erster komplexer Seitenkanal;
+ rho=m: reeller chi-Kanal;
+ rho=m+omega: zweiter komplexer Seitenkanal.
+
+Am zweiten komplexen Schwellenpunkt ist omega-rho=-m: Entscheidend ist
+der Betrag der Laborfrequenz, nicht deren Vorzeichen. Die Zahlen
+.396,1.414,2.432 fuer omega≈1.018 sind konsistent. Exakt an der Schwelle
+ist k=0 und eine gesonderte Asymptotik noetig. Bei k²<0 existieren formal
+wachsende und abfallende Loesungen; ein lokalisierter physischer Modus
+waehlt nur den abfallenden Schwanz. Die Aussage ueber Kanaele gilt fuer
+das unendliche asymptotische Gebiet, nicht unmittelbar fuer diskrete
+Eigenfrequenzen eines endlichen Kastens.
+
+Unterhalb der ersten Schwelle waere eine reelle lokalisierte interne Mode
+ein gewoehnlicher gebundener linearer Modus, KEIN BIC. Nichtlineare
+Harmonische, Modenkopplung oder andere Anregungsanteile koennen trotzdem
+strahlen. Oberhalb einer Schwelle muessen bei einer lokalisierten stillen
+Mode alle propagierenden Kanalanteile verschwinden; bloss null NETTOfluss
+einer stehenden Welle reicht nicht. Modenexistenz, reelles Spektrum und
+Anregung durch die Wolke werden durch die Schwellenalgebra nicht bewiesen.
+
+3. TRANSIENT UND FFT
+Qcore/(2Icore) ist im instationaeren Verlauf eine gewichtete Diagnose,
+kein Nachweis einer gemeinsamen harmonischen Phase. Die Zurueckweisung
+einer stationaeren Kanalanalyse mit dem transienten Wert≈1.495 ist richtig.
+Die angegebene Zahl selbst wurde hier nicht anhand von Laufdaten verifiziert.
+Zusammengesetzte Observablen koennen Mischfrequenzen, Harmonische und
+Nullstellen der linearen Messantwort erzeugen; ihr Peak ist keine
+Modenidentifikation und erst recht kein BIC-Nachweis.
+Nyquist pi/.8≈3.927 stimmt. 2pi/64≈.098 ist eine passende grobe
+Fensteraufloesung. Rein technisch liegen die Bins einer ungepolsterten
+81-Punkt-DFT bei Abstand2pi/(81*.8)=2pi/64.8, nicht exakt2pi/64;
+das aendert die Aussage zur begrenzten Aufloesung nicht. Zero-padding
+erzeugt keine zusaetzliche Linienbreiteninformation. Trend, endliches
+Fenster und Aliasing bleiben eigenstaendige Grenzen.
+
+FAZIT DER LESUNG
+Papieranschluss fachlich tragfaehig mit der Praezisierung "keine lineare
+Abstrahlung unter allen Schwellen". Kein neuer Rechen- oder Prozessbedarf
+wird mit diesem Review angeordnet.

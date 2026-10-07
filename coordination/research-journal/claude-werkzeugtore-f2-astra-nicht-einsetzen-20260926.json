@@ -1,0 +1,28 @@
+{
+  "id": "claude-werkzeugtore-f2-astra-nicht-einsetzen-20260926",
+  "time": "2026-09-26T00:07:17+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung; Umsetzung Fassung 2 Claude-Subagent (Anthropic, Opus 5.5), 25.09. 23:18:12 bis 26.09. 00:45:51 MESZ; Nachreview astra (OpenAI, gpt-6-astra, high), 01:58:46 bis 02:07:17 MESZ (gemessen); ein erster Start um 00:52:44 brach nach 30 s mit 401 ab",
+  "topic": "operations",
+  "status": "reported",
+  "title": "Werkzeugtore Fassung 2: astra sagt wieder NICHT EINSETZEN; Auflagen 1, 10 und 11 erledigt, 2 bis 9 teilweise; ein reiner Markierbetrieb waere nach Behebung von Schreibpfad und Installation vertretbar",
+  "question": "Sind die elf Auflagen aus astras erstem Review (NICHT EINSETZEN, 25.09. 22:44) in Fassung 2 so erfuellt, dass die Tore M1 bis M7 und M10 eingesetzt werden koennen, zunaechst eine Woche markierend?",
+  "action": "astra REVIEW-ONLY ueber Bericht, NEU, DIFF (gegen Basis und F1), einsetzen.sh, Protokolle und Manifeste; nur lesende Befehle, Gegenbeispiele statisch hergeleitet.",
+  "result": "NICHT EINSETZEN (REVIEW 5ab5ca9748f4518e). Manifeste und Diffs konsistent (SHA256SUMS aeed30a3..., BASIS 71c9fdfd...). Erledigt: 1 (Konfigurations-Rueckfallregel), 10 und 11 (Dokumentation). Teilweise und blockierend: 2 Schreibpfad des Journals einschliesslich Markieren (vor erneutem link Indexbelegung pruefen, jeder Fehler nach Sichtbarkeit braucht Rueckgabe 3 oder 4, halbe Zeile plus ftruncate-Fehler); 3 M2-Sperrbetrieb (leerer oder ungueltiger Kopf auch in pruefen ablehnen); 4 M3-Sperr- und Berichtigungsbetrieb; 5 Kartenweg (S3-Pruefstand belegen oder vorsichtig anzeigen, evidenzart fuer Pakete); 6 positiver M6-Regeldiff (kollisionsfreier Restklassenvertreter, q-Gegenfall); 7 M10-Paketfreigabe (nummerierten Zusatztext im Kopf zurueckweisen); 8 Austausch der Dashboard-Wache (Speicher anerkannt; Zeitverhalten bei 5 %, Leerlauf, konsistenter Befundstand, Rueckweg fehlen; Stand wird nach der Auswertung gelesen); 9 Installation (einsetzen.sh verwirft einen Exitcode, keine Pause und kein gemeinsamer Wartungslock beim Rueckweg, Rueckweg-Rennen mit laufendem neuem Generator).",
+  "meaning": "Nichts eingesetzt; die Betriebsdateien bleiben auf dem Stand der Basis. astra erkennt Fassung 2 als echte Nachbesserung an und haelt einen getrennten, beaufsichtigten Markiereinsatz nach Behebung der Schreib- und Installationsfehler fuer vertretbar. Erwartung vorab: EINSETZEN MIT AUFLAGEN p = 0,5, NICHT EINSETZEN p = 0,4 (eingetreten), EINSETZEN p = 0,1. Folge: Die von Finn vorgesehene Markierwoche vor dem Sperrtermin 02.10.2026 ist nicht mehr zu halten; der Sperrtermin muss sich nach dem tatsaechlichen Markierbeginn richten (Entscheidung bei Finn). Wieder zeigt sich: Selbst gemeldete Abnahmen tragen erst nach fremder Pruefung.",
+  "sources": [
+    {
+      "path": "coordination/werkzeugtore-20260925/F2/review-astra/REVIEW-astra-WERKZEUGTORE-F2.md",
+      "sha256": "5ab5ca9748f4518e0ecaab2eb112bdb650f5f1b7307dd78bacd37f2dcafddc39"
+    },
+    {
+      "path": "coordination/werkzeugtore-20260925/F2/BERICHT-F2.md",
+      "sha256": "26427754d8cb480b99dcd7fb05672c56ce335f652d9cb39f919c35dcb0dc6ddd"
+    },
+    {
+      "path": "coordination/werkzeugtore-20260925/review-astra/REVIEW-astra-WERKZEUGTORE.md",
+      "sha256": "bb617cdb983b2363dc0b076550bf509094e2c20e25fa26c80a756250bc6d6960"
+    }
+  ],
+  "recorded_at": "2026-09-26T00:08:35.989232+00:00"
+}

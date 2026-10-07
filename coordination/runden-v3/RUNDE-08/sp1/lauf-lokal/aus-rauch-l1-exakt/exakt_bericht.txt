@@ -1,0 +1,19 @@
+Runde 7 bic2 exakt Start 2026-09-30T06:48:28+02:00, Geraet cpu, torch 2.10.0+cu128
+=== exakt U = S - S^2 + 0.5 S^3, h = 0.08, f_rand = 1e-08, x0 = 0.7556, rho0 = 1.8276, l = 1
+  5 Profile (je bis 2.9 s), R = 36.00, r_m = 2.720
+  Newton (Pluecker) 1.1 s, konvergiert 5/5
+  Newton (direkt) 1.2 s, konvergiert 5/5, max |rho_direkt - rho_pluecker| = 1.51e-05
+  omega^2 | Re rho | Gamma Newton | Gamma Fluss | N_K | A_norm | arg A | sig_min/sig_2 | Wachstum
+    0.7555000 | 1.8275085929 | 9.1645e-07 | 9.1678e-07 | 1.36132e+03 | -1.758028e-04 +8.373547e-04i | +1.777741 | 2.9e-15 | 6.2e+01
+    0.7555800 | 1.8276014260 | 1.0665e-06 | 1.0669e-06 | 1.35522e+03 | -1.890013e-04 +9.034238e-04i | +1.777028 | 5.8e-15 | 6.2e+01
+    0.7556000 | 1.8276246315 | 1.1058e-06 | 1.1062e-06 | 1.35370e+03 | -1.922835e-04 +9.199265e-04i | +1.776850 | 2.4e-15 | 6.2e+01
+    0.7556200 | 1.8276478358 | 1.1457e-06 | 1.1462e-06 | 1.35218e+03 | -1.955587e-04 +9.364234e-04i | +1.776673 | 2.8e-15 | 6.2e+01
+    0.7557000 | 1.8277406416 | 1.3125e-06 | 1.3129e-06 | 1.34613e+03 | -2.085907e-04 +1.002352e-03i | +1.775969 | 2.6e-16 | 6.2e+01
+  Phasentest: Sprung zwischen Nachbarn - pi = +nan; Phase mod pi (rel. links aussen): +0.00e+00, -7.13e-04, -8.91e-04, -1.07e-03, -1.77e-03
+  Naechster Abstand zum Ursprung: d_min = 6.551e-07 bei omega^2 = 0.7544955374, |A'| = 8.4289e-01, d_min/|A'| = 7.772e-07 (Einheit omega^2), Fitrest 8.9e-11
+  s(x) = L(y_a) an L(y_b) = 0: 0.7555000: -1.0228e-03 (rho 1.827457533), 0.7555800: -1.1045e-03 (rho 1.827546375), 0.7556000: -1.1249e-03 (rho 1.827568568)
+  Nullstelle von W (linearer Fit, 15 Punkte): rho* = 1.8263458516, omega*^2 = 0.754499463, det J = 3.888e+01, cond J = 8.8e+01, Fitrest 1.3e-05, |Im|/|W| max 0.0e+00
+  Umlauf W auf Rechteck dx = 1.0e-04, drho = 3.350e-04 (43 Punkte): -0.0000, groesster Phasensprung 0.294 rad (aufgeloest: True), min |W| = 1.002e-03
+  Rechteck dx = 1.0e-04 NEU GELEGT um den Fit-Mittelpunkt omega^2 = 0.754499463 (3 neue Profile); zweiter Fit: omega*^2 = 0.754495574, rho* = 1.8263412712, cond J = 8.8e+01
+  Umlauf W auf Rechteck dx = 1.0e-04, drho = 3.353e-04 (48 Punkte): -1.0000, groesster Phasensprung 0.300 rad (aufgeloest: True), min |W| = 9.537e-05
+Ende 2026-09-30T06:48:56+02:00, 27.7 s; entfallen: nichts

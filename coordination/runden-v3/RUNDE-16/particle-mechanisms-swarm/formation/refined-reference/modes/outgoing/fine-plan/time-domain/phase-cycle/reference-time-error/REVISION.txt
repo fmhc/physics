@@ -1,0 +1,27 @@
+Gezielte Serialisierungsrevision, particle_core, 2026-10-03.
+Root meldete Exit1 beim JSON-Speichern der synthetischen QA vor realer
+Messung: numpy.bool_ ist nicht JSON-serialisierbar. Alter INCOMPLETE-Stand
+bleibt bei Root gesichert; kein automatischer Wiederanlauf.
+
+Unveränderte vorherige Datei gesichert als code.py.bak:
+686e0844977da4b15696c247eb287e12501f2b9d413b55b6cd1cd9906c1c27d9
+Revidierte code.py:
+875cbf73be336ce0c6fba60f77dee2b2dc08ae6b108dde22a2838f2bf9e29cdb
+
+Ursache aus Codelektüre: np.finfo(...).eps erzeugt in eta/u NumPy-
+Skalare. Vergleiche gegen u erzeugen numpy.bool_, insbesondere die
+Flags improvement/wrong_direction und improvement_under_reserve.
+Minimaldelta: eta-Einzelskalen, eta/u und alignment explizit Pythonfloat;
+classify gibt ausschließlich bool-Flags zurück; improvement_under_reserve
+explizit bool. Keine Formel, Schwelle, Eingabebindung oder Probe geändert.
+
+Verschachtelte QA-Werte ebenfalls leseseitig nachverfolgt: Normen und
+Skalarprodukte bereits float; errors/known aus Pythonfloat-Arithmetik;
+qa.passed/wrong_sign_passed kommen aus built-in all()/not, also bool.
+Die gespeicherten Nullkontrollzeilen nutzen denselben normalisierten
+classify-/row-Pfad. consistent_count kommt aus sum von Pythonbool.
+Manifestmetadaten stammen aus json.loads. allow_nan=False bleibt aktiv;
+kein generischer Serializer, der unbekannte Typen/Fehler verschluckt.
+IMPLEMENTIERUNG.txt beschreibt den alten Abgabestand; diese Revision
+nennt den nun maßgeblichen Codehash. Keine lokale Ausführung/Tests.
+Neue Nichtautorprüfung und Root-Entscheidung vor möglichem .69-Neustart.

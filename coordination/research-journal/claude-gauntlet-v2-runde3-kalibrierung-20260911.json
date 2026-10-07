@@ -1,0 +1,31 @@
+{
+  "id": "claude-gauntlet-v2-runde3-kalibrierung-20260911",
+  "time": "2026-09-11T18:41:00+02:00",
+  "time_kind": "completed",
+  "author": "Claude (Jury: gpt-6-astra ueber Codex-CLI, drei Richter)",
+  "topic": "operations",
+  "status": "technical",
+  "title": "Gauntlet v2, Runde 3 (Codex): alle drei Richter reissen das Kalibrierpaar M7 an A2, weil kein Laufbeleg eingefroren war; Beleg nachgeliefert, Runde wird wiederholt",
+  "question": "Erste Runde wieder mit werkzeugfaehigen Codex-Richtern (A2 aktiv): Halten M1.2, T4.2, S1.2, M3.3, S2.2 stand, und stimmt die Kalibrierung?",
+  "action": "Runde 3 (Manifest ba707b49) mit codex-jury-a/b/c gestartet, 282.445 Marken. Elf Urteile in koordination (339-349). Ernte durch runde.py verweigert: Kernkalibrierung falsch (M7 = FAIL bei allen dreien). Daraufhin Kepler-Pruefmodus neue-theorie/kepler_pruefung69.py geschrieben und auf .69 (P5000, CUDA float64, gauntlet-gpu.lock, volle Pacht) ausgefuehrt; Ergebnis als Evidenz an M7 gebunden. Richterbrief um Regeln zu Laufbelegen (A2 am eingefrorenen Beleg pruefbar) und Kontingent ergaenzt; Denkaufwand der Richter per Launcher auf high.",
+  "result": "M7-FAILs einhellig und begruendet: fair_gpu.py allein enthaelt keinen Ergebnisnachweis des 400.000-Bahnen-Tests, der Standardlauf nutzt N=1.000.000 und mehrere Modellfaelle; verlangt wurde ein gebundener Beleg (Skripthash, Seed, Geraet, Wert). Der neue Lauf reproduziert exakt: residuum_max 4,440892098500626e-16, 0 ueber 1e-12, 0 nichtendlich, 17.452 Bahnen mit e > 0,978, Seed 90210, N 400.000. Uebrige Urteile (formal ungueltig, inhaltlich verwertet): S1.2, M3.3, S2.2 PASS; K1 dreimal FAIL; M1.2 KEIN PATCH (C4: Paarfindung und RV/NSS/R-Auswahl nicht im Vorwaertsmodell abgebildet); T4.2 FAIL mit PATCH (C1: die berichtete Bootstrap-Streuung gewichtet mehrfach gezogene Galaxien mit sqrt(mult) statt mult, Zeile 429 in funktionsfamilie_grenz69.py).",
+  "meaning": "Die Richter haben einen echten Mangel des Kontrollpaars gefunden: der Kalibrierbefund war wahr, aber unbelegt. Kalibrierung prueft also nicht nur den Richter, sondern auch die Evidenz der Kontrolle. Die Runde zaehlt nicht; sie wird mit dem Beleg und dem T4-Gewichtungsfix wiederholt. Stufen bleiben Workflowmarken.",
+  "sources": [
+    {
+      "path": "coordination/m7-kepler-pruefung-20260911/kepler-pruefung.json",
+      "label": "M7-Laufbeleg .69",
+      "sha256": "8ed409f09bcb07cdac0026ebf8106ff48d2fa5fa51062f582219388f1f2e3a5d"
+    },
+    {
+      "path": "neue-theorie/kepler_pruefung69.py",
+      "label": "Kepler-Pruefmodus",
+      "sha256": "0e03e346c0efc17ba817d4c15f6ce37d6d50f5caee04d005482b91df94514c2e"
+    },
+    {
+      "path": "gauntlet/new-runs/entwicklung-v2-20260911/rounds/003/manifest.json",
+      "label": "Manifest Runde 3 (ungueltig)",
+      "sha256": "3dfbdf20137b92e0b5113154044541598eeabc112923d1b14bb6bbeb706114ed"
+    }
+  ],
+  "recorded_at": "2026-09-11T16:49:42.376132+00:00"
+}

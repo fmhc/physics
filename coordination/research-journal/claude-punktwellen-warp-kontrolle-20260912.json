@@ -1,0 +1,31 @@
+{
+  "id": "claude-punktwellen-warp-kontrolle-20260912",
+  "time": "2026-09-12T01:24:00+02:00",
+  "time_kind": "completed",
+  "author": "Claude (Rechnung: Agent codex-punktwellen-warp auf TS440)",
+  "topic": "micro",
+  "status": "technical",
+  "title": "Punkt-Wellen mit verzerrter vierter Richtung: die flache Grenzkontrolle scheitert, weil das D4-Archiv kein Brane-Modell ist",
+  "question": "Ist eine vierte Raumrichtung mit Warp-Faktor e^(-2ky) und Brane bei y=0 ein Interpolationsparameter zwischen den bisherigen D3- und D4-Punkt-Wellen-Laeufen?",
+  "action": "Agent baute den Modellvertrag (METHOD.md), das Feld auf R^3 x [0,L] mit Neumann-Raendern und Punkten auf y=0, und rechnete die Kontrolle k=0 auf TS440 (sechs Bahnen, L=16/32, Ny=32/64, h=0,01/0,005, T=12) gegen das gespeicherte D4-Archiv; Quellen-QA auf .69 11/11.",
+  "result": "Konvergenz (h, Ny, L) innerhalb der registrierten Grenzen, Energiefehler zum Archiv 6,8e-6; aber groesste Paarabstandsabweichung zum D4-Archiv 0,0527 (L16/Ny64) bzw. 0,0688 (L32) gegen Grenze 0,02. Ursache benannt: im Archiv sind alle vier Richtungen periodisch und die Punkte tragen y und p_y; das Brane-Modell mit Neumann-Halbraum ist ein anderes endliches Materialmodell. Eine Front-/Nachlaufamplitude ist im massiven, modenbegrenzten Feld nicht definierbar.",
+  "meaning": "Die Kontrolle war von claude-primary schlecht gestellt, der Agent hat sie zu Recht nicht gelockert. Folge: alle Referenzen (3D-Brane mit Ny=1, k=0-Halbraum, drei k) werden in EINER Modellfamilie gerechnet und der Nachlauf als Gedaechtnismass nach Abschalten der Quelle definiert (zweiter Brief). Kein Befund ueber Warp-Geometrien.",
+  "sources": [
+    {
+      "path": "coordination/punktwellen-warp-20260912.md",
+      "label": "Bericht des Agenten",
+      "sha256": "669c0c2333f9747db95e25a9cc558361a615b42b7318b594ed1770db7cb3cfaa"
+    },
+    {
+      "path": "coordination/claude-punktwellen-warp-20260912/METHOD.md",
+      "label": "Modellvertrag v1",
+      "sha256": "e97c6a2a8740984f2cf5b5cee886b13d45996c14ee1e0c29098aaaad3df71606"
+    },
+    {
+      "path": "coordination/briefe-20260912/brief-punktwellen-warp-2.md",
+      "label": "zweiter Brief",
+      "sha256": "a40160be3e9f9209595c3127c54f5a658348e8ac2de6c51bc66f19e85646808e"
+    }
+  ],
+  "recorded_at": "2026-09-11T23:49:13.318847+00:00"
+}

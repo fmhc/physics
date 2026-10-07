@@ -1,0 +1,40 @@
+{
+  "id": "claude-gaia-a1-bindungsgrenze-20260915",
+  "time": "2026-09-15T06:28:34+02:00",
+  "time_kind": "completed",
+  "author": "claude-worker-ts440 (Anthropic, S1); S2 OpenAI-Paket + claude-s2; S3 Bunker-Qwen; Buchung claude-primary",
+  "topic": "binaries",
+  "status": "reported",
+  "title": "GAIA-A1: Von 32 HARPS-Weitpaaren (Chae 2025) verletzt genau eines (Zeile 24) die notwendige Newtonsche Bindungsgrenze, um 127,2 m/s; Ausgang A, S0 bis S3 durchlaufen",
+  "question": "Wie viele der 32 HARPS-Weitpaare verletzen v < sqrt(2GM/s) (r >= s), und wie gross sind Ueberschreitung, Mindestmasse und noetige RV-Aenderung fuer Verletzer?",
+  "action": "Vertrag GAIA-A1 (Formeln, Seeds, Kontrollen K0 bis K2, Ausgaenge vorab); S1 eigene Implementierung auf TS440 CPU (0,4 s); S2 zweite Implementierung (OpenAI-Paket) bitgleich neu gelaufen auf .69; S3 Qwen-Gegenlesen.",
+  "result": "1 von 32 Paaren ueber der Grenze: s = 5779,382 AU, M = 2,18 Msun, v = 0,945283 km/s gegen v_esc = 0,818080 km/s (+127,203 m/s), M_min = 2,910641 Msun (+33,5 %), noetige RV-Senkung 141,9 m/s, Perspektivkorrektur +3,1 m/s; Anteil unter der Grenze 0 (Masse fest, 5 %), 0,0028 (10 %, rho = 0). K0 bis K2 bestanden, Qwen: Zahlen und Logik korrekt.",
+  "meaning": "Messung, deterministisch; notwendige Bedingung, kein Bindungsnachweis und kein Signifikanzwert. Bekannter Ausreisser; ungebundenes Paar, verdeckter Begleiter oder Massenfehler bleiben offen. Registerzeile GAIA-A1 (offen) nach Ernte Runde 13.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260915/gaia-a1-bindungsgrenze-VERTRAG.md",
+      "sha256": "3d46b2d9140a5b06a17c399a18aaf4f71e69f4e66aef5a3d41ddddeb83c05cdd"
+    },
+    {
+      "path": "coordination/vertraege-20260915/gaia-a1-lauf/BERICHT-GAIA-A1.md",
+      "sha256": "ace4c99509aaecb691e01655cfa99c89607943df352d89b7142ac250bdabb0e5"
+    },
+    {
+      "path": "coordination/vertraege-20260915/gaia-a1-lauf/ERGEBNIS-GAIA-A1-kurz.json",
+      "sha256": "c5f2c00ba162ba053d738dc034c9e950c2ad31fce6a3f79b68d88c1079817a63"
+    },
+    {
+      "path": "coordination/review-gaia-memory-20260915/S2-REPRODUKTION.md",
+      "sha256": "aab8bb80af91e37de6169f6d47170d0bbd1992080d690d93c331ba1031f6214e"
+    },
+    {
+      "path": "coordination/gaia-a1-s3-bunker-20260915.md",
+      "sha256": "aa1fff02eef755172f40b5311667240cd898c7b4324db823c65273c6dbdf825e"
+    },
+    {
+      "path": "coordination/vertraege-20260915/gaia-a1-ERGEBNIS-VERMERK.md",
+      "sha256": "7b86dc4cd28c9de8134f85c099c48a0300f3974df21b00c7b1864faf4925e435"
+    }
+  ],
+  "recorded_at": "2026-09-15T04:34:05.567318+00:00"
+}

@@ -1,0 +1,16 @@
+2026-10-03 Root: erster Auswerteversuch terminal exit1.
+Syntax auf .69 bestand (0.05CPU-s); Auswertung 2.17CPU-s,2.19wall,
+212172KiB. Beim Speichern des synthetischen QA-Blocks scheitert JSON
+an einem numpy.bool_. Finale Fehlerbehandlung versucht denselben
+nichtserialisierbaren Block erneut. Letzte gültige Datei bleibt INCOMPLETE,
+nur Eingabeprovenienz. Keine reale 16-Punkte-Auswertung als Befund vorhanden.
+Kein Budgetabbruch und kein automatischer Retry. Fehler im eigenen Code.
+
+Explizite Korrekturbeauftragung: Typnormalisierung, keine Formel-/Toränderung,
+Altfassung erhalten, unabhängiger Diffreview, erneute .69-Syntaxprüfung.
+Für genau einen danach geprüften zweiten Versuch neues Auswertebudget
+5CPU-s einschließlich Syntax; gesamte Aufgabe inklusive Erstversuch
+höchstens8CPU-s. Begründung: technische Serialisierung verhindert gültige
+Übergabe; keine datenabhängige Wahl eines günstigeren physikalischen Arms.
+Neue Datei/Outputpfad v2, Erstversuch unverändert archivieren.
+Keine PDE, kein Fit, kein Nachsuchen an Ergebnissen.

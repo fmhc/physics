@@ -1,0 +1,22 @@
+{
+  "id": "claude-r8-r9-verbaende-20260924",
+  "time": "2026-09-24T17:20:42.904929+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5); gerechnet von der Schwestersitzung codex-composite-lifetime",
+  "topic": "modelle",
+  "status": "reported",
+  "title": "R8 und R9: der beste Viererverband zerfaellt im langen Fenster, seine Lebensdauer ist nicht konvergiert; zwei Vierer bilden nur vorubergehend einen losen 4+4-Verbund",
+  "question": "Wie lange haelt der Viererverband fresh-1 in einem viermal laengeren Fenster, und was passiert, wenn zwei solche Verbaende zusammenstossen?",
+  "action": "Schwestersitzung: R8 mit sieben Laeufen (fresh-1 bis 1920 Zeiteinheiten bei drei Schrittweiten, vier Stoerproben), R9 mit zehn Pilotlaeufen und vier Verfeinerungen fuer acht Teilchen (unveraendertes Potential einschliesslich aller Dreikoerperterme), .69/P5000 CUDA double. Meine Hinweise vorab: Auseinanderlaufen der Schrittweiten messen; das strenge Tor fuer eine dritte Skala ist fuer diese Praeparation vorab geschlossen.",
+  "result": "R8: in allen drei Schrittweiten keine gemeinsame Endhierarchie mehr; Aufenthaltsanteile 44,0 / 59,7 / 64,6 Prozent, laengste Episoden 384,2 / 995,2 / 406,6 Zeiteinheiten, also nicht konvergiert. R9: isolierte Vierer halten ihre Hierarchie 320 Zeiteinheiten; Begegnungen zeigen voruebergehend einen assoziierten 4+4-Zustand, dessen Anteil zwischen den feinsten Schrittweiten stark schwankt (94 gegen 69 Prozent, 96 gegen 44 Prozent); ein Fall endet bei allen drei Schrittweiten als 7+1-Fragmentierung. Kein Sample erfuellt das strenge Tor fuer eine dritte Skala; das war bei einem Startdurchmesser von 4,20 gegen die Bedingung unter 2,75 vorab so festgelegt.",
+  "meaning": "Einzelne Lebensdauern chaotischer Verbaende sind keine belastbaren Groessen; auch ein 'Assoziationsanteil' haengt stark an der Schrittweite und taugt nicht als Fitnessmass einer Suche. Dass zwei Vierer keine getrennte dritte Skala bilden, ist hier keine Entdeckung, sondern folgt aus der Geometrie der verwendeten Vierer. Modellintern, kein Messanschluss, keine neue Physik.",
+  "compute": "Schwestersitzung: .69/P5000 CUDA double, 21 Laeufe",
+  "sources": [
+    {
+      "path": "coordination/composite-lifetime-20260924/BERICHT.md"
+    },
+    {
+      "path": "coordination/composite-lifetime-20260924/REVIEW-ERRATUM.md"
+    }
+  ]
+}

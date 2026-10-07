@@ -1,0 +1,1501 @@
+{
+ "start": "2026-09-30T11:25:17+02:00",
+ "geraet": "CPU, 1 Thread",
+ "torch": "2.10.0+cu128",
+ "unterbefehl": "bilanz",
+ "faktor": 0.05,
+ "ergebnisse": {
+  "bilanz": {
+   "laeufe": [
+    {
+     "name": "masselos w2=0.500001",
+     "w2": 0.500001,
+     "eps": 0.05,
+     "mc2": 0.0025000000000000005,
+     "kc": 0.0,
+     "art": "masselos"
+    },
+    {
+     "name": "masselos w2=0.5001",
+     "w2": 0.5001,
+     "eps": 0.05,
+     "mc2": 0.0025000000000000005,
+     "kc": 0.0,
+     "art": "masselos"
+    },
+    {
+     "name": "masselos w2=0.51",
+     "w2": 0.51,
+     "eps": 0.05,
+     "mc2": 0.0025000000000000005,
+     "kc": 0.0,
+     "art": "masselos"
+    },
+    {
+     "name": "masselos w2=0.55",
+     "w2": 0.55,
+     "eps": 0.05,
+     "mc2": 0.0025000000000000005,
+     "kc": 0.0,
+     "art": "masselos"
+    },
+    {
+     "name": "masselos w2=0.6",
+     "w2": 0.6,
+     "eps": 0.05,
+     "mc2": 0.0025000000000000005,
+     "kc": 0.0,
+     "art": "masselos"
+    },
+    {
+     "name": "masselos w2=0.7",
+     "w2": 0.7,
+     "eps": 0.05,
+     "mc2": 0.0025000000000000005,
+     "kc": 0.0,
+     "art": "masselos"
+    },
+    {
+     "name": "masselos w2=0.8",
+     "w2": 0.8,
+     "eps": 0.05,
+     "mc2": 0.0025000000000000005,
+     "kc": 0.0,
+     "art": "masselos"
+    },
+    {
+     "name": "masselos w2=0.9",
+     "w2": 0.9,
+     "eps": 0.05,
+     "mc2": 0.0025000000000000005,
+     "kc": 0.0,
+     "art": "masselos"
+    }
+   ],
+   "ergebnis": {
+    "grob": [
+     {
+      "name": "masselos w2=0.500001",
+      "art": "masselos",
+      "omega2": 0.500001,
+      "omega": 0.7071074882929752,
+      "Q0": 14.69284158044159,
+      "E0": 11.159076392926943,
+      "Q_win_T": 14.692841580441584,
+      "Q_psi_win_T": 14.394435340380278,
+      "Q_chi_win_T": 0.29840624006130706,
+      "Q_neg_win_T": -3.05822435568987e-08,
+      "Q_schale_T": 8.211491924493981e-22,
+      "Q_schwamm_T": 8.369384766632813e-65,
+      "Q_abs_T": 5.329070518200751e-15,
+      "E_abs_T": 1.3208646228335397e-05,
+      "dQ_schale_T_rel": -1.519049948973024e-25,
+      "x_max_T": 0.0,
+      "S_max_0": 0.9985857864376068,
+      "S_max_T": 0.996197114138588,
+      "x_betrag_0": 2.7248330005785277,
+      "x_betrag_T": 2.6905393014406274,
+      "omega_T": 0.7129906236958174,
+      "t_ereignis": NaN,
+      "Gamma_fit": 1.4325458382260084e-17,
+      "Gamma_formel": 0.005393562722995611,
+      "spaet": {
+       "R_EQ": 14785902222.9,
+       "omega_quer": 0.7119233802014152,
+       "R_EQ_zu_omega": 20768951595.207924,
+       "steigung_Q": -1.4325458382260084e-17,
+       "steigung_E": -2.118148269383208e-07
+      },
+      "frueh": {
+       "R_EQ": -1503911276.0454543,
+       "omega_quer": 0.7111656162659755,
+       "R_EQ_zu_omega": -2114713143.6722784,
+       "steigung_Q": -7.105427357601002e-16,
+       "steigung_E": 1.0685932324218004e-06
+      },
+      "ball_ganz": {
+       "x_max_betrag_max": 0.0,
+       "Q_neg_min": -3.384601134979603e-08,
+       "bestanden": true
+      },
+      "ball_frueh": {
+       "x_max_betrag_max": 0.0,
+       "Q_neg_min": 0.0,
+       "bestanden": true
+      },
+      "plaus": {
+       "Q_ges_bis_Kontakt_1e-9": {
+        "max_rel": 3.626984262387036e-16,
+        "bestanden": true
+       },
+       "E_ges_bis_Kontakt_1e-4": {
+        "max_rel": 1.5625890731378776e-06,
+        "bestanden": true
+       },
+       "E_ges_steigt_nie_1e-6": {
+        "max_anstieg_rel": 1.1591373826809737e-06,
+        "bestanden": false
+       },
+       "omega_unter_1": {
+        "max": 0.7156538099452631,
+        "bestanden": true
+       },
+       "buchfuehrung_1e-9": {
+        "max_rest_rel": 0.0,
+        "bestanden": true
+       }
+      },
+      "diagnose_E_glatt_anstieg_rel": 5.822875001314665e-08,
+      "V4_R5D_Q_win_T": 13.272808923029146,
+      "V4_rel": 0.10698810369737137,
+      "V4_bestanden": null
+     },
+     {
+      "name": "masselos w2=0.5001",
+      "art": "masselos",
+      "omega2": 0.5001,
+      "omega": 0.7071774883294858,
+      "Q0": 10.042059366966818,
+      "E0": 7.854007716152669,
+      "Q_win_T": 10.042059366966818,
+      "Q_psi_win_T": 9.848017598144388,
+      "Q_chi_win_T": 0.1940417688224328,
+      "Q_neg_win_T": -0.00017161303021754712,
+      "Q_schale_T": 8.277753873569338e-23,
+      "Q_schwamm_T": 8.499243496416045e-66,
+      "Q_abs_T": 0.0,
+      "E_abs_T": 6.571950585509967e-06,
+      "dQ_schale_T_rel": -2.2344446519729707e-27,
+      "x_max_T": 0.0,
+      "S_max_0": 0.9858578643762699,
+      "S_max_T": 0.9765524651339096,
+      "x_betrag_0": 1.983534033384141,
+      "x_betrag_T": 1.980989974329381,
+      "omega_T": 0.7074936526395915,
+      "t_ereignis": NaN,
+      "Gamma_fit": 8.452020445533449e-17,
+      "Gamma_formel": 0.0001915915917587573,
+      "spaet": {
+       "R_EQ": -2273988155.3898306,
+       "omega_quer": 0.7100277658113008,
+       "R_EQ_zu_omega": -3202674972.564626,
+       "steigung_Q": -8.452020445533449e-17,
+       "steigung_E": 1.9219794382255742e-07
+      },
+      "frueh": {
+       "R_EQ": -19041815883.5,
+       "omega_quer": 0.7100056439562409,
+       "R_EQ_zu_omega": -26819245798.380703,
+       "steigung_Q": -6.45947941600091e-17,
+       "steigung_E": 1.2300021774274745e-06
+      },
+      "ball_ganz": {
+       "x_max_betrag_max": 0.0,
+       "Q_neg_min": -0.0001822940113609145,
+       "bestanden": true
+      },
+      "ball_frueh": {
+       "x_max_betrag_max": 0.0,
+       "Q_neg_min": 0.0,
+       "bestanden": true
+      },
+      "plaus": {
+       "Q_ges_bis_Kontakt_1e-9": {
+        "max_rel": 1.7689168869520387e-16,
+        "bestanden": true
+       },
+       "E_ges_bis_Kontakt_1e-4": {
+        "max_rel": 2.002155330760398e-06,
+        "bestanden": true
+       },
+       "E_ges_steigt_nie_1e-6": {
+        "max_anstieg_rel": 1.2812065046517463e-06,
+        "bestanden": false
+       },
+       "omega_unter_1": {
+        "max": 0.7128870542897406,
+        "bestanden": true
+       },
+       "buchfuehrung_1e-9": {
+        "max_rest_rel": 0.0,
+        "bestanden": true
+       }
+      },
+      "diagnose_E_glatt_anstieg_rel": 1.5784160055244465e-07,
+      "V4_R5D_Q_win_T": 9.949925348464646,
+      "V4_rel": 0.009259769824945368,
+      "V4_bestanden": null
+     },
+     {
+      "name": "masselos w2=0.51",
+      "art": "masselos",
+      "omega2": 0.51,
+      "omega": 0.714142842854285,
+      "Q0": 5.431181738651986,
+      "E0": 4.569135114032391,
+      "Q_win_T": 5.431181738651985,
+      "Q_psi_win_T": 5.217639790316546,
+      "Q_chi_win_T": 0.21354194833544074,
+      "Q_neg_win_T": -2.946386723379452e-08,
+      "Q_schale_T": 1.452417541572837e-23,
+      "Q_schwamm_T": 3.9934553983967135e-66,
+      "Q_abs_T": 8.881784197001252e-16,
+      "E_abs_T": 1.1915464165568324e-05,
+      "dQ_schale_T_rel": -7.056584113234253e-29,
+      "x_max_T": 0.0,
+      "S_max_0": 0.8585786437626902,
+      "S_max_T": 0.8409696083934878,
+      "x_betrag_0": 1.350575225842333,
+      "x_betrag_T": 1.3340598027679538,
+      "omega_T": 0.7228273600987922,
+      "t_ereignis": NaN,
+      "Gamma_fit": 4.297637514678025e-17,
+      "Gamma_formel": 0.006487911557815663,
+      "spaet": {
+       "R_EQ": 2947405502.65,
+       "omega_quer": 0.7184662202534147,
+       "R_EQ_zu_omega": 4102357799.9399924,
+       "steigung_Q": -4.297637514678025e-17,
+       "steigung_E": -1.266688045915708e-07
+      },
+      "frueh": {
+       "R_EQ": -4501223673.750001,
+       "omega_quer": 0.7159169214162748,
+       "R_EQ_zu_omega": -6287354774.134097,
+       "steigung_Q": -1.291895883200182e-16,
+       "steigung_E": 5.815112333480825e-07
+      },
+      "ball_ganz": {
+       "x_max_betrag_max": 0.0,
+       "Q_neg_min": -3.1851507774452525e-08,
+       "bestanden": true
+      },
+      "ball_frueh": {
+       "x_max_betrag_max": 0.0,
+       "Q_neg_min": 0.0,
+       "bestanden": true
+      },
+      "plaus": {
+       "Q_ges_bis_Kontakt_1e-9": {
+        "max_rel": 0.0,
+        "bestanden": true
+       },
+       "E_ges_bis_Kontakt_1e-4": {
+        "max_rel": 3.2186780257442455e-06,
+        "bestanden": true
+       },
+       "E_ges_steigt_nie_1e-6": {
+        "max_anstieg_rel": 1.9560891811843197e-06,
+        "bestanden": false
+       },
+       "omega_unter_1": {
+        "max": 0.7228530508461305,
+        "bestanden": true
+       },
+       "buchfuehrung_1e-9": {
+        "max_rest_rel": 0.0,
+        "bestanden": true
+       }
+      },
+      "diagnose_E_glatt_anstieg_rel": 1.156867229957176e-07,
+      "V4_R5D_Q_win_T": 2.7553994478452926,
+      "V4_rel": 0.971105039924117,
+      "V4_bestanden": null
+     },
+     {
+      "name": "masselos w2=0.55",
+      "art": "masselos",
+      "omega2": 0.55,
+      "omega": 0.7416198487095663,
+      "Q0": 3.877552025268969,
+      "E0": 3.436784778564746,
+      "Q_win_T": 3.877552025268969,
+      "Q_psi_win_T": 3.7300667263708855,
+      "Q_chi_win_T": 0.1474852988980829,
+      "Q_neg_win_T": -2.4051998175321773e-08,
+      "Q_schale_T": 6.654001681863022e-23,
+      "Q_schwamm_T": 1.088751372431423e-63,
+      "Q_abs_T": 0.0,
+      "E_abs_T": 1.0892323831779294e-05,
+      "dQ_schale_T_rel": -1.8079959855778383e-28,
+      "x_max_T": 0.0,
+      "S_max_0": 0.683772233983162,
+      "S_max_T": 0.6621289613685315,
+      "x_betrag_0": 1.2234966282538606,
+      "x_betrag_T": 1.2169087471211968,
+      "omega_T": 0.7563684897245715,
+      "t_ereignis": NaN,
+      "Gamma_fit": 1.0887348370517664e-16,
+      "Gamma_formel": 0.004958836707201315,
+      "spaet": {
+       "R_EQ": 1779099957.9276316,
+       "omega_quer": 0.7472876064602466,
+       "R_EQ_zu_omega": 2380743294.2115498,
+       "steigung_Q": -1.0887348370517664e-16,
+       "steigung_E": -1.9369681027931445e-07
+      },
+      "frueh": {
+       "R_EQ": -1214165977.5,
+       "omega_quer": 0.7440843882350708,
+       "R_EQ_zu_omega": -1631758435.8676548,
+       "steigung_Q": 1.1304088978001593e-16,
+       "steigung_E": -1.372504024372228e-07
+      },
+      "ball_ganz": {
+       "x_max_betrag_max": 0.0,
+       "Q_neg_min": -2.4937009028962326e-08,
+       "bestanden": true
+      },
+      "ball_frueh": {
+       "x_max_betrag_max": 0.0,
+       "Q_neg_min": 0.0,
+       "bestanden": true
+      },
+      "plaus": {
+       "Q_ges_bis_Kontakt_1e-9": {
+        "max_rel": 4.581129609156004e-16,
+        "bestanden": true
+       },
+       "E_ges_bis_Kontakt_1e-4": {
+        "max_rel": 2.444525417702667e-06,
+        "bestanden": true
+       },
+       "E_ges_steigt_nie_1e-6": {
+        "max_anstieg_rel": 1.9006171342999945e-06,
+        "bestanden": false
+       },
+       "omega_unter_1": {
+        "max": 0.7563684897245715,
+        "bestanden": true
+       },
+       "buchfuehrung_1e-9": {
+        "max_rest_rel": 0.0,
+        "bestanden": true
+       }
+      },
+      "diagnose_E_glatt_anstieg_rel": 7.531934516614556e-08,
+      "V4_R5D_Q_win_T": -0.9319376484334119,
+      "V4_rel": 5.160741903481566,
+      "V4_bestanden": null
+     },
+     {
+      "name": "masselos w2=0.6",
+      "art": "masselos",
+      "omega2": 0.6,
+      "omega": 0.7745966692414834,
+      "Q0": 3.204752191891986,
+      "E0": 2.923988736894483,
+      "Q_win_T": 3.204752191891984,
+      "Q_psi_win_T": 3.1191198691216977,
+      "Q_chi_win_T": 0.0856323227702861,
+      "Q_neg_win_T": -1.862028250820422e-08,
+      "Q_schale_T": 9.935496093601537e-22,
+      "Q_schwamm_T": 3.5010604239276294e-60,
+      "Q_abs_T": 1.7763568394002505e-15,
+      "E_abs_T": 7.738836978798957e-06,
+      "dQ_schale_T_rel": -1.9735652727284937e-27,
+      "x_max_T": 0.0,
+      "S_max_0": 0.5527864045000421,
+      "S_max_T": 0.5383425762309866,
+      "x_betrag_0": 1.226291044732145,
+      "x_betrag_T": 1.230088208171346,
+      "omega_T": 0.7853365908799687,
+      "t_ereignis": NaN,
+      "Gamma_fit": 7.055288253263092e-17,
+      "Gamma_formel": 0.003038888785782063,
+      "spaet": {
+       "R_EQ": 2533480265.0304565,
+       "omega_quer": 0.7803593845484655,
+       "R_EQ_zu_omega": 3246555773.140844,
+       "steigung_Q": -7.055288253263092e-17,
+       "steigung_E": -1.7874433553743245e-07
+      },
+      "frueh": {
+       "R_EQ": 21604633031.0,
+       "omega_quer": 0.7780145714054446,
+       "R_EQ_zu_omega": 27768931103.65826,
+       "steigung_Q": -1.6148698540002276e-17,
+       "steigung_E": -3.4888670588499464e-07
+      },
+      "ball_ganz": {
+       "x_max_betrag_max": 0.0,
+       "Q_neg_min": -1.9009270894020527e-08,
+       "bestanden": true
+      },
+      "ball_frueh": {
+       "x_max_betrag_max": 0.0,
+       "Q_neg_min": 0.0,
+       "bestanden": true
+      },
+      "plaus": {
+       "Q_ges_bis_Kontakt_1e-9": {
+        "max_rel": 5.54288360858112e-16,
+        "bestanden": true
+       },
+       "E_ges_bis_Kontakt_1e-4": {
+        "max_rel": 2.1102161250875265e-06,
+        "bestanden": true
+       },
+       "E_ges_steigt_nie_1e-6": {
+        "max_anstieg_rel": 1.9435071593924155e-06,
+        "bestanden": false
+       },
+       "omega_unter_1": {
+        "max": 0.7870992987182414,
+        "bestanden": true
+       },
+       "buchfuehrung_1e-9": {
+        "max_rest_rel": 0.0,
+        "bestanden": true
+       }
+      },
+      "diagnose_E_glatt_anstieg_rel": 1.1032456253923934e-07,
+      "V4_R5D_Q_win_T": 2.493945259500739,
+      "V4_rel": 0.2850130449669696,
+      "V4_bestanden": null
+     },
+     {
+      "name": "masselos w2=0.7",
+      "art": "masselos",
+      "omega2": 0.7,
+      "omega": 0.8366600265340756,
+      "Q0": 2.4604550688901705,
+      "E0": 2.321206788160218,
+      "Q_win_T": 2.4604550688901714,
+      "Q_psi_win_T": 2.4313078887567166,
+      "Q_chi_win_T": 0.02914718013345451,
+      "Q_neg_win_T": -1.106709224060575e-08,
+      "Q_schale_T": 5.727927941843573e-19,
+      "Q_schwamm_T": 2.8617384438342987e-52,
+      "Q_abs_T": -8.881784197001252e-16,
+      "E_abs_T": 1.9631596672731177e-06,
+      "dQ_schale_T_rel": -7.1049781039212415e-25,
+      "x_max_T": 0.0,
+      "S_max_0": 0.3675444679663242,
+      "S_max_T": 0.36218409728388595,
+      "x_betrag_0": 1.3440107988407948,
+      "x_betrag_T": 1.360823468138858,
+      "omega_T": 0.838192482921414,
+      "t_ereignis": NaN,
+      "Gamma_fit": -3.724619179387622e-17,
+      "Gamma_formel": 0.0009645262799656788,
+      "spaet": {
+       "R_EQ": -1714219109.0673075,
+       "omega_quer": 0.84087795964883,
+       "R_EQ_zu_omega": -2038606303.5630102,
+       "steigung_Q": 3.724619179387622e-17,
+       "steigung_E": -6.384813371304856e-08
+      },
+      "frueh": {
+       "R_EQ": -1723015250.8461537,
+       "omega_quer": 0.8404655557368284,
+       "R_EQ_zu_omega": -2050072414.1343334,
+       "steigung_Q": 1.049665405100148e-16,
+       "steigung_E": -1.8085895012731612e-07
+      },
+      "ball_ganz": {
+       "x_max_betrag_max": 0.0,
+       "Q_neg_min": -1.106709224060575e-08,
+       "bestanden": true
+      },
+      "ball_frueh": {
+       "x_max_betrag_max": 0.0,
+       "Q_neg_min": 0.0,
+       "bestanden": true
+      },
+      "plaus": {
+       "Q_ges_bis_Kontakt_1e-9": {
+        "max_rel": 3.6098136110274634e-16,
+        "bestanden": true
+       },
+       "E_ges_bis_Kontakt_1e-4": {
+        "max_rel": 1.5014192518050845e-06,
+        "bestanden": true
+       },
+       "E_ges_steigt_nie_1e-6": {
+        "max_anstieg_rel": 1.4195087503032104e-06,
+        "bestanden": false
+       },
+       "omega_unter_1": {
+        "max": 0.8448696584596631,
+        "bestanden": true
+       },
+       "buchfuehrung_1e-9": {
+        "max_rest_rel": 0.0,
+        "bestanden": true
+       }
+      },
+      "diagnose_E_glatt_anstieg_rel": 1.3352784307048875e-07,
+      "V4_R5D_Q_win_T": 2.220658539925476,
+      "V4_rel": 0.10798442203218811,
+      "V4_bestanden": null
+     },
+     {
+      "name": "masselos w2=0.8",
+      "art": "masselos",
+      "omega2": 0.8,
+      "omega": 0.8944271909999159,
+      "Q0": 1.8952079526597885,
+      "E0": 1.829756057875817,
+      "Q_win_T": 1.8952079526597871,
+      "Q_psi_win_T": 1.8839781208368174,
+      "Q_chi_win_T": 0.011229831822969709,
+      "Q_neg_win_T": -2.966794243044115e-09,
+      "Q_schale_T": 1.255016106566797e-15,
+      "Q_schwamm_T": 8.005588711233455e-43,
+      "Q_abs_T": 2.220446049250313e-16,
+      "E_abs_T": 1.611378447785583e-06,
+      "dQ_schale_T_rel": -9.366778458985215e-22,
+      "x_max_T": 0.0,
+      "S_max_0": 0.2254033307585166,
+      "S_max_T": 0.2222373349854032,
+      "x_betrag_0": 1.6006473940593071,
+      "x_betrag_T": 1.6192822949510521,
+      "omega_T": 0.8973224643886965,
+      "t_ereignis": NaN,
+      "Gamma_fit": 3.062066729208093e-17,
+      "Gamma_formel": 0.00018584463698346064,
+      "spaet": {
+       "R_EQ": -92727368.85964912,
+       "omega_quer": 0.896898207135198,
+       "R_EQ_zu_omega": -103386725.63058367,
+       "steigung_Q": -3.062066729208093e-17,
+       "steigung_E": 2.839373910721382e-09
+      },
+      "frueh": {
+       "R_EQ": 1058455752.7500001,
+       "omega_quer": 0.8973234932123121,
+       "R_EQ_zu_omega": 1179569866.1146758,
+       "steigung_Q": -6.45947941600091e-17,
+       "steigung_E": -6.837073147636375e-08
+      },
+      "ball_ganz": {
+       "x_max_betrag_max": 0.0,
+       "Q_neg_min": -2.966794243044115e-09,
+       "bestanden": true
+      },
+      "ball_frueh": {
+       "x_max_betrag_max": 0.0,
+       "Q_neg_min": 0.0,
+       "bestanden": true
+      },
+      "plaus": {
+       "Q_ges_bis_Kontakt_1e-9": {
+        "max_rel": 2.3432215405534536e-16,
+        "bestanden": true
+       },
+       "E_ges_bis_Kontakt_1e-4": {
+        "max_rel": 1.043484540856531e-06,
+        "bestanden": true
+       },
+       "E_ges_steigt_nie_1e-6": {
+        "max_anstieg_rel": 1.0624730486609121e-06,
+        "bestanden": false
+       },
+       "omega_unter_1": {
+        "max": 0.8996534826233676,
+        "bestanden": true
+       },
+       "buchfuehrung_1e-9": {
+        "max_rest_rel": 3.51483231083018e-16,
+        "bestanden": true
+       }
+      },
+      "diagnose_E_glatt_anstieg_rel": 1.0677748638308946e-07,
+      "V4_R5D_Q_win_T": 1.8385379676592313,
+      "V4_rel": 0.030823396632219845,
+      "V4_bestanden": null
+     },
+     {
+      "name": "masselos w2=0.9",
+      "art": "masselos",
+      "omega2": 0.9,
+      "omega": 0.9486832980505138,
+      "Q0": 1.2955931780421304,
+      "E0": 1.2750963492943843,
+      "Q_win_T": 1.2955931780135186,
+      "Q_psi_win_T": 1.291056399599634,
+      "Q_chi_win_T": 0.004536778413884476,
+      "Q_neg_win_T": 0.0,
+      "Q_schale_T": 2.861140536182412e-11,
+      "Q_schwamm_T": 1.6176976945907342e-30,
+      "Q_abs_T": 4.440892098500626e-16,
+      "E_abs_T": 3.188125512476603e-07,
+      "dQ_schale_T_rel": -9.534122917235794e-18,
+      "x_max_T": 0.0,
+      "S_max_0": 0.10557280900008409,
+      "S_max_T": 0.10493796292278929,
+      "x_betrag_0": 2.2220018978076137,
+      "x_betrag_T": 2.231047990885203,
+      "omega_T": 0.949453679509888,
+      "t_ereignis": NaN,
+      "Gamma_fit": 4.924376318901904e-17,
+      "Gamma_formel": 6.969185082268157e-06,
+      "spaet": {
+       "R_EQ": 33726325.61090909,
+       "omega_quer": 0.950207884452373,
+       "R_EQ_zu_omega": 35493628.460414596,
+       "steigung_Q": -4.924376318901904e-17,
+       "steigung_E": -1.6608111916193553e-09
+      },
+      "frueh": {
+       "R_EQ": 1414296225.2500002,
+       "omega_quer": 0.9502936820006067,
+       "R_EQ_zu_omega": 1488272785.6009226,
+       "steigung_Q": 3.229739708000455e-17,
+       "steigung_E": 4.5678086775650815e-08
+      },
+      "ball_ganz": {
+       "x_max_betrag_max": 0.0,
+       "Q_neg_min": 0.0,
+       "bestanden": true
+      },
+      "ball_frueh": {
+       "x_max_betrag_max": 0.0,
+       "Q_neg_min": 0.0,
+       "bestanden": true
+      },
+      "plaus": {
+       "Q_ges_bis_Kontakt_1e-9": {
+        "max_rel": 1.7138451227458594e-16,
+        "bestanden": true
+       },
+       "E_ges_bis_Kontakt_1e-4": {
+        "max_rel": 7.468113769429468e-07,
+        "bestanden": true
+       },
+       "E_ges_steigt_nie_1e-6": {
+        "max_anstieg_rel": 7.553221629206599e-07,
+        "bestanden": true
+       },
+       "omega_unter_1": {
+        "max": 0.9518717757810632,
+        "bestanden": true
+       },
+       "buchfuehrung_1e-9": {
+        "max_rest_rel": 3.427690245491719e-16,
+        "bestanden": true
+       }
+      },
+      "diagnose_E_glatt_anstieg_rel": 2.05891465942434e-08,
+      "V4_R5D_Q_win_T": 1.293255787803732,
+      "V4_rel": 0.0018073688374950036,
+      "V4_bestanden": null
+     }
+    ],
+    "fein": [
+     {
+      "name": "masselos w2=0.500001",
+      "art": "masselos",
+      "omega2": 0.500001,
+      "omega": 0.7071074882929752,
+      "Q0": 14.692841580441588,
+      "E0": 11.159148104331353,
+      "Q_win_T": 14.692841580441593,
+      "Q_psi_win_T": 14.394568468890538,
+      "Q_chi_win_T": 0.2982731115510559,
+      "Q_neg_win_T": -4.061008432964998e-08,
+      "Q_schale_T": 7.932952184212661e-22,
+      "Q_schwamm_T": 8.083723483527639e-65,
+      "Q_abs_T": -5.329070518200751e-15,
+      "E_abs_T": 3.368418857618849e-06,
+      "dQ_schale_T_rel": -1.3478597984927729e-25,
+      "x_max_T": 0.0,
+      "S_max_0": 0.9985857864376068,
+      "S_max_T": 0.9962203153064219,
+      "x_betrag_0": 2.7249546707026733,
+      "x_betrag_T": 2.690366220818574,
+      "omega_T": 0.713121998334984,
+      "t_ereignis": NaN,
+      "Gamma_fit": -4.4265666401183663e-16,
+      "Gamma_formel": 0.005393562722995611,
+      "spaet": {
+       "R_EQ": -121063026.5857605,
+       "omega_quer": 0.7120292013250892,
+       "R_EQ_zu_omega": -170025367.44344434,
+       "steigung_Q": 4.4265666401183663e-16,
+       "steigung_E": -5.3589355483629034e-08
+      },
+      "frueh": {
+       "R_EQ": -2087533956.7500002,
+       "omega_quer": 0.7112596065088072,
+       "R_EQ_zu_omega": -2934981738.9414077,
+       "steigung_Q": -1.291895883200182e-16,
+       "steigung_E": 2.696876524765912e-07
+      },
+      "ball_ganz": {
+       "x_max_betrag_max": 0.0,
+       "Q_neg_min": -4.138075988799561e-08,
+       "bestanden": true
+      },
+      "ball_frueh": {
+       "x_max_betrag_max": 0.0,
+       "Q_neg_min": 0.0,
+       "bestanden": true
+      },
+      "plaus": {
+       "Q_ges_bis_Kontakt_1e-9": {
+        "max_rel": 1.208994754129012e-16,
+        "bestanden": true
+       },
+       "E_ges_bis_Kontakt_1e-4": {
+        "max_rel": 3.978934949144097e-07,
+        "bestanden": true
+       },
+       "E_ges_steigt_nie_1e-6": {
+        "max_anstieg_rel": 2.9261533521044544e-07,
+        "bestanden": true
+       },
+       "omega_unter_1": {
+        "max": 0.7158001125356283,
+        "bestanden": true
+       },
+       "buchfuehrung_1e-9": {
+        "max_rest_rel": 0.0,
+        "bestanden": true
+       }
+      },
+      "diagnose_E_glatt_anstieg_rel": 1.4658103429487844e-08,
+      "V4_R5D_Q_win_T": 13.274816378473796,
+      "V4_rel": 0.10682070181153251,
+      "V4_bestanden": null
+     },
+     {
+      "name": "masselos w2=0.5001",
+      "art": "masselos",
+      "omega2": 0.5001,
+      "omega": 0.7071774883294858,
+      "Q0": 10.042059366966818,
+      "E0": 7.854079680348622,
+      "Q_win_T": 10.042059366966818,
+      "Q_psi_win_T": 9.848038633755433,
+      "Q_chi_win_T": 0.19402073321138544,
+      "Q_neg_win_T": -0.00016239315490939422,
+      "Q_schale_T": 7.995402139440623e-23,
+      "Q_schwamm_T": 8.209177960570521e-66,
+      "Q_abs_T": 0.0,
+      "E_abs_T": 1.681438900114074e-06,
+      "dQ_schale_T_rel": -1.982685757164973e-27,
+      "x_max_T": 0.0,
+      "S_max_0": 0.9858578643762699,
+      "S_max_T": 0.9765594022764759,
+      "x_betrag_0": 1.9837100132995213,
+      "x_betrag_T": 1.981104838966215,
+      "omega_T": 0.7075614909829909,
+      "t_ereignis": NaN,
+      "Gamma_fit": -0.0,
+      "Gamma_formel": 0.0001915915917587573,
+      "spaet": {
+       "R_EQ": NaN,
+       "omega_quer": 0.710120031226584,
+       "R_EQ_zu_omega": NaN,
+       "steigung_Q": 0.0,
+       "steigung_E": 4.8391786943910354e-08
+      },
+      "frueh": {
+       "R_EQ": 9577102056.500002,
+       "omega_quer": 0.7100987366513235,
+       "R_EQ_zu_omega": 13487000556.660055,
+       "steigung_Q": 3.229739708000455e-17,
+       "steigung_E": 3.0931546799450873e-07
+      },
+      "ball_ganz": {
+       "x_max_betrag_max": 0.0,
+       "Q_neg_min": -0.00017511977279568563,
+       "bestanden": true
+      },
+      "ball_frueh": {
+       "x_max_betrag_max": 0.0,
+       "Q_neg_min": 0.0,
+       "bestanden": true
+      },
+      "plaus": {
+       "Q_ges_bis_Kontakt_1e-9": {
+        "max_rel": 1.7689168869520387e-16,
+        "bestanden": true
+       },
+       "E_ges_bis_Kontakt_1e-4": {
+        "max_rel": 5.091873150365364e-07,
+        "bestanden": true
+       },
+       "E_ges_steigt_nie_1e-6": {
+        "max_anstieg_rel": 3.2413875492043573e-07,
+        "bestanden": true
+       },
+       "omega_unter_1": {
+        "max": 0.7130467057249629,
+        "bestanden": true
+       },
+       "buchfuehrung_1e-9": {
+        "max_rest_rel": 0.0,
+        "bestanden": true
+       }
+      },
+      "diagnose_E_glatt_anstieg_rel": 3.916058726724883e-08,
+      "V4_R5D_Q_win_T": 9.949331404078288,
+      "V4_rel": 0.009320019519152822,
+      "V4_bestanden": null
+     },
+     {
+      "name": "masselos w2=0.51",
+      "art": "masselos",
+      "omega2": 0.51,
+      "omega": 0.714142842854285,
+      "Q0": 5.431181738651986,
+      "E0": 4.569211220643774,
+      "Q_win_T": 5.431181738651988,
+      "Q_psi_win_T": 5.217632730345449,
+      "Q_chi_win_T": 0.2135490083065386,
+      "Q_neg_win_T": -3.7929696352142386e-08,
+      "Q_schale_T": 1.4033242899574184e-23,
+      "Q_schwamm_T": 3.858490267441942e-66,
+      "Q_abs_T": -1.7763568394002505e-15,
+      "E_abs_T": 3.022484781567414e-06,
+      "dQ_schale_T_rel": -6.275013573372887e-29,
+      "x_max_T": 0.0,
+      "S_max_0": 0.8585786437626902,
+      "S_max_T": 0.8408398054474804,
+      "x_betrag_0": 1.350862277267617,
+      "x_betrag_T": 1.3343861290256516,
+      "omega_T": 0.7229568434563874,
+      "t_ereignis": NaN,
+      "Gamma_fit": -1.511335859328439e-16,
+      "Gamma_formel": 0.006487911557815663,
+      "spaet": {
+       "R_EQ": -211764695.63033172,
+       "omega_quer": 0.7185550125914865,
+       "R_EQ_zu_omega": -294709092.4417841,
+       "steigung_Q": 1.511335859328439e-16,
+       "steigung_E": -3.2004757824589274e-08
+      },
+      "frueh": {
+       "R_EQ": -1520971956.6666667,
+       "omega_quer": 0.7159892630408548,
+       "R_EQ_zu_omega": -2124294364.7045712,
+       "steigung_Q": -9.689219124001366e-17,
+       "steigung_E": 1.4737030569604445e-07
+      },
+      "ball_ganz": {
+       "x_max_betrag_max": 0.0,
+       "Q_neg_min": -3.848740948223258e-08,
+       "bestanden": true
+      },
+      "ball_frueh": {
+       "x_max_betrag_max": 0.0,
+       "Q_neg_min": 0.0,
+       "bestanden": true
+      },
+      "plaus": {
+       "Q_ges_bis_Kontakt_1e-9": {
+        "max_rel": 3.2706635956563304e-16,
+        "bestanden": true
+       },
+       "E_ges_bis_Kontakt_1e-4": {
+        "max_rel": 8.158195638954811e-07,
+        "bestanden": true
+       },
+       "E_ges_steigt_nie_1e-6": {
+        "max_anstieg_rel": 4.967121886066114e-07,
+        "bestanden": true
+       },
+       "omega_unter_1": {
+        "max": 0.7229947634453674,
+        "bestanden": true
+       },
+       "buchfuehrung_1e-9": {
+        "max_rest_rel": 0.0,
+        "bestanden": true
+       }
+      },
+      "diagnose_E_glatt_anstieg_rel": 2.973731046130122e-08,
+      "V4_R5D_Q_win_T": 2.755269528309429,
+      "V4_rel": 0.9711979836631223,
+      "V4_bestanden": null
+     },
+     {
+      "name": "masselos w2=0.55",
+      "art": "masselos",
+      "omega2": 0.55,
+      "omega": 0.7416198487095663,
+      "Q0": 3.877552025268969,
+      "E0": 3.436854041892054,
+      "Q_win_T": 3.8775520252689684,
+      "Q_psi_win_T": 3.7301218849713997,
+      "Q_chi_win_T": 0.1474301402975681,
+      "Q_neg_win_T": -2.8973249329504274e-08,
+      "Q_schale_T": 6.438145777647603e-23,
+      "Q_schwamm_T": 1.0534592206284513e-63,
+      "Q_abs_T": 4.440892098500626e-16,
+      "E_abs_T": 2.7643461715243234e-06,
+      "dQ_schale_T_rel": -1.6213829281843486e-28,
+      "x_max_T": 0.0,
+      "S_max_0": 0.683772233983162,
+      "S_max_T": 0.6618493937226251,
+      "x_betrag_0": 1.2238290759778803,
+      "x_betrag_T": 1.217395336403471,
+      "omega_T": 0.7565792071464316,
+      "t_ereignis": NaN,
+      "Gamma_fit": 5.622742415037083e-17,
+      "Gamma_formel": 0.004958836707201315,
+      "spaet": {
+       "R_EQ": 860126015.3694267,
+       "omega_quer": 0.7474076209235523,
+       "R_EQ_zu_omega": 1150812476.7400568,
+       "steigung_Q": -5.622742415037083e-17,
+       "steigung_E": -4.836267028894514e-08
+      },
+      "frueh": {
+       "R_EQ": NaN,
+       "omega_quer": 0.7441800497602903,
+       "R_EQ_zu_omega": NaN,
+       "steigung_Q": 0.0,
+       "steigung_E": -3.172176088674725e-08
+      },
+      "ball_ganz": {
+       "x_max_betrag_max": 0.0,
+       "Q_neg_min": -2.9190047531206886e-08,
+       "bestanden": true
+      },
+      "ball_frueh": {
+       "x_max_betrag_max": 0.0,
+       "Q_neg_min": 0.0,
+       "bestanden": true
+      },
+      "plaus": {
+       "Q_ges_bis_Kontakt_1e-9": {
+        "max_rel": 2.290564804578002e-16,
+        "bestanden": true
+       },
+       "E_ges_bis_Kontakt_1e-4": {
+        "max_rel": 6.217700354760702e-07,
+        "bestanden": true
+       },
+       "E_ges_steigt_nie_1e-6": {
+        "max_anstieg_rel": 4.864362047651961e-07,
+        "bestanden": true
+       },
+       "omega_unter_1": {
+        "max": 0.7565792071464316,
+        "bestanden": true
+       },
+       "buchfuehrung_1e-9": {
+        "max_rest_rel": 0.0,
+        "bestanden": true
+       }
+      },
+      "diagnose_E_glatt_anstieg_rel": 1.9734428048793625e-08,
+      "V4_R5D_Q_win_T": -0.9451417598737053,
+      "V4_rel": 5.102614221370461,
+      "V4_bestanden": null
+     },
+     {
+      "name": "masselos w2=0.6",
+      "art": "masselos",
+      "omega2": 0.6,
+      "omega": 0.7745966692414834,
+      "Q0": 3.204752191891986,
+      "E0": 2.924044337076761,
+      "Q_win_T": 3.204752191891986,
+      "Q_psi_win_T": 3.1192030377349313,
+      "Q_chi_win_T": 0.08554915415705476,
+      "Q_neg_win_T": -2.1350184306626835e-08,
+      "Q_schale_T": 9.631041424209575e-22,
+      "Q_schwamm_T": 3.3939593405953524e-60,
+      "Q_abs_T": 0.0,
+      "E_abs_T": 1.9808820730382593e-06,
+      "dQ_schale_T_rel": -1.7883928128943526e-27,
+      "x_max_T": 0.0,
+      "S_max_0": 0.5527864045000421,
+      "S_max_T": 0.5380138429495338,
+      "x_betrag_0": 1.2266295996157548,
+      "x_betrag_T": 1.230693251554456,
+      "omega_T": 0.7856318180694492,
+      "t_ereignis": NaN,
+      "Gamma_fit": -4.369264806589326e-17,
+      "Gamma_formel": 0.003038888785782063,
+      "spaet": {
+       "R_EQ": -1018987473.2459016,
+       "omega_quer": 0.7805229132887591,
+       "R_EQ_zu_omega": -1305518974.3916218,
+       "steigung_Q": 4.369264806589326e-17,
+       "steigung_E": -4.4522261052087e-08
+      },
+      "frueh": {
+       "R_EQ": -1302961989.5000002,
+       "omega_quer": 0.7781541622160145,
+       "R_EQ_zu_omega": -1674426550.3758879,
+       "steigung_Q": 6.45947941600091e-17,
+       "steigung_E": -8.416456151006845e-08
+      },
+      "ball_ganz": {
+       "x_max_betrag_max": 0.0,
+       "Q_neg_min": -2.14246620554072e-08,
+       "bestanden": true
+      },
+      "ball_frueh": {
+       "x_max_betrag_max": 0.0,
+       "Q_neg_min": 0.0,
+       "bestanden": true
+      },
+      "plaus": {
+       "Q_ges_bis_Kontakt_1e-9": {
+        "max_rel": 2.77144180429056e-16,
+        "bestanden": true
+       },
+       "E_ges_bis_Kontakt_1e-4": {
+        "max_rel": 5.441014999661724e-07,
+        "bestanden": true
+       },
+       "E_ges_steigt_nie_1e-6": {
+        "max_anstieg_rel": 5.015190784668284e-07,
+        "bestanden": true
+       },
+       "omega_unter_1": {
+        "max": 0.7874149737868504,
+        "bestanden": true
+       },
+       "buchfuehrung_1e-9": {
+        "max_rest_rel": 0.0,
+        "bestanden": true
+       }
+      },
+      "diagnose_E_glatt_anstieg_rel": 2.8904495946221734e-08,
+      "V4_R5D_Q_win_T": 2.4989057251261455,
+      "V4_rel": 0.2824622232318144,
+      "V4_bestanden": null
+     },
+     {
+      "name": "masselos w2=0.7",
+      "art": "masselos",
+      "omega2": 0.7,
+      "omega": 0.8366600265340756,
+      "Q0": 2.4604550688901705,
+      "E0": 2.3212350428971043,
+      "Q_win_T": 2.4604550688901696,
+      "Q_psi_win_T": 2.431360856606306,
+      "Q_chi_win_T": 0.029094212283864024,
+      "Q_neg_win_T": -1.1988878320338763e-08,
+      "Q_schale_T": 5.575281596008439e-19,
+      "Q_schwamm_T": 2.7857111183063636e-52,
+      "Q_abs_T": 8.881784197001252e-16,
+      "E_abs_T": 5.135234628639296e-07,
+      "dQ_schale_T_rel": -6.571859428737457e-25,
+      "x_max_T": 0.0,
+      "S_max_0": 0.3675444679663242,
+      "S_max_T": 0.36193043559500626,
+      "x_betrag_0": 1.3443257693779098,
+      "x_betrag_T": 1.3618506926546268,
+      "omega_T": 0.838350225411565,
+      "t_ereignis": NaN,
+      "Gamma_fit": -3.223228136008519e-18,
+      "Gamma_formel": 0.0009645262799656788,
+      "spaet": {
+       "R_EQ": -4992367986.222221,
+       "omega_quer": 0.8411051943910374,
+       "R_EQ_zu_omega": -5935485857.7906065,
+       "steigung_Q": 3.223228136008519e-18,
+       "steigung_E": -1.6091540958499656e-08
+      },
+      "frueh": {
+       "R_EQ": -1078975318.6,
+       "omega_quer": 0.8406834524609756,
+       "R_EQ_zu_omega": -1283450168.361778,
+       "steigung_Q": 4.0371746350005693e-17,
+       "steigung_E": -4.356011788043578e-08
+      },
+      "ball_ganz": {
+       "x_max_betrag_max": 0.0,
+       "Q_neg_min": -1.1988878320338763e-08,
+       "bestanden": true
+      },
+      "ball_frueh": {
+       "x_max_betrag_max": 0.0,
+       "Q_neg_min": 0.0,
+       "bestanden": true
+      },
+      "plaus": {
+       "Q_ges_bis_Kontakt_1e-9": {
+        "max_rel": 3.6098136110274634e-16,
+        "bestanden": true
+       },
+       "E_ges_bis_Kontakt_1e-4": {
+        "max_rel": 3.974812259293176e-07,
+        "bestanden": true
+       },
+       "E_ges_steigt_nie_1e-6": {
+        "max_anstieg_rel": 3.763104338829023e-07,
+        "bestanden": true
+       },
+       "omega_unter_1": {
+        "max": 0.8452486301459666,
+        "bestanden": true
+       },
+       "buchfuehrung_1e-9": {
+        "max_rest_rel": 0.0,
+        "bestanden": true
+       }
+      },
+      "diagnose_E_glatt_anstieg_rel": 3.57602344876454e-08,
+      "V4_R5D_Q_win_T": 2.2212237413335933,
+      "V4_rel": 0.1077024898954776,
+      "V4_bestanden": null
+     },
+     {
+      "name": "masselos w2=0.8",
+      "art": "masselos",
+      "omega2": 0.8,
+      "omega": 0.8944271909999159,
+      "Q0": 1.8952079526597885,
+      "E0": 1.8297664137063643,
+      "Q_win_T": 1.8952079526597885,
+      "Q_psi_win_T": 1.8839934024638367,
+      "Q_chi_win_T": 0.01121455019595192,
+      "Q_neg_win_T": -3.1245913286928154e-09,
+      "Q_schale_T": 1.227571411358175e-15,
+      "Q_schwamm_T": 7.830543774525813e-43,
+      "Q_abs_T": -1.1102230246251565e-15,
+      "E_abs_T": 4.3746182365467234e-07,
+      "dQ_schale_T_rel": -8.84171082287193e-22,
+      "x_max_T": 0.0,
+      "S_max_0": 0.2254033307585166,
+      "S_max_T": 0.22202492940734808,
+      "x_betrag_0": 1.6009146969131967,
+      "x_betrag_T": 1.620555740194426,
+      "omega_T": 0.8976144433213724,
+      "t_ereignis": NaN,
+      "Gamma_fit": 5.013910433791029e-18,
+      "Gamma_formel": 0.00018584463698346064,
+      "spaet": {
+       "R_EQ": -226432911.39285713,
+       "omega_quer": 0.8971242971381653,
+       "R_EQ_zu_omega": -252398594.16937006,
+       "steigung_Q": -5.013910433791029e-18,
+       "steigung_E": 1.135314336986326e-09
+      },
+      "frueh": {
+       "R_EQ": -187896449.39130437,
+       "omega_quer": 0.8975909192135485,
+       "R_EQ_zu_omega": -209334169.24041027,
+       "steigung_Q": 9.285501660501309e-17,
+       "steigung_E": -1.744712792825257e-08
+      },
+      "ball_ganz": {
+       "x_max_betrag_max": 0.0,
+       "Q_neg_min": -3.1245913286928154e-09,
+       "bestanden": true
+      },
+      "ball_frueh": {
+       "x_max_betrag_max": 0.0,
+       "Q_neg_min": 0.0,
+       "bestanden": true
+      },
+      "plaus": {
+       "Q_ges_bis_Kontakt_1e-9": {
+        "max_rel": 4.686443081106907e-16,
+        "bestanden": true
+       },
+       "E_ges_bis_Kontakt_1e-4": {
+        "max_rel": 2.871480839136243e-07,
+        "bestanden": true
+       },
+       "E_ges_steigt_nie_1e-6": {
+        "max_anstieg_rel": 2.9139810961698986e-07,
+        "bestanden": true
+       },
+       "omega_unter_1": {
+        "max": 0.9001113064499465,
+        "bestanden": true
+       },
+       "buchfuehrung_1e-9": {
+        "max_rest_rel": 3.51483231083018e-16,
+        "bestanden": true
+       }
+      },
+      "diagnose_E_glatt_anstieg_rel": 2.9358983736975458e-08,
+      "V4_R5D_Q_win_T": 1.8386657303754945,
+      "V4_rel": 0.03075176817090447,
+      "V4_bestanden": null
+     },
+     {
+      "name": "masselos w2=0.9",
+      "art": "masselos",
+      "omega2": 0.9,
+      "omega": 0.9486832980505138,
+      "Q0": 1.2955931780421306,
+      "E0": 1.275098191939559,
+      "Q_win_T": 1.2955931780139645,
+      "Q_psi_win_T": 1.2910574891849758,
+      "Q_chi_win_T": 0.004535688828988485,
+      "Q_neg_win_T": 0.0,
+      "Q_schale_T": 2.8166097618179935e-11,
+      "Q_schwamm_T": 1.5919684400513178e-30,
+      "Q_abs_T": 0.0,
+      "E_abs_T": 9.142889534352605e-08,
+      "dQ_schale_T_rel": -9.192485389414034e-18,
+      "x_max_T": 0.0,
+      "S_max_0": 0.10557280900008409,
+      "S_max_T": 0.10488768361310712,
+      "x_betrag_0": 2.222195835446778,
+      "x_betrag_T": 2.2318214893063595,
+      "omega_T": 0.9495594723014811,
+      "t_ereignis": NaN,
+      "Gamma_fit": 3.5097373036537204e-17,
+      "Gamma_formel": 6.969185082268157e-06,
+      "spaet": {
+       "R_EQ": 11815620.80612245,
+       "omega_quer": 0.9504434233697112,
+       "R_EQ_zu_omega": 12431692.950466461,
+       "steigung_Q": -3.5097373036537204e-17,
+       "steigung_E": -4.1469725109075006e-10
+      },
+      "frueh": {
+       "R_EQ": 1106654426.6666667,
+       "omega_quer": 0.9505373682652483,
+       "R_EQ_zu_omega": 1164240842.7207186,
+       "steigung_Q": 1.2111523905001707e-17,
+       "steigung_E": 1.3403271543149292e-08
+      },
+      "ball_ganz": {
+       "x_max_betrag_max": 0.0,
+       "Q_neg_min": 0.0,
+       "bestanden": true
+      },
+      "ball_frueh": {
+       "x_max_betrag_max": 0.0,
+       "Q_neg_min": 0.0,
+       "bestanden": true
+      },
+      "plaus": {
+       "Q_ges_bis_Kontakt_1e-9": {
+        "max_rel": 1.7138451227458592e-16,
+        "bestanden": true
+       },
+       "E_ges_bis_Kontakt_1e-4": {
+        "max_rel": 2.166987154605282e-07,
+        "bestanden": true
+       },
+       "E_ges_steigt_nie_1e-6": {
+        "max_anstieg_rel": 2.182603801413319e-07,
+        "bestanden": true
+       },
+       "omega_unter_1": {
+        "max": 0.9523520574294735,
+        "bestanden": true
+       },
+       "buchfuehrung_1e-9": {
+        "max_rest_rel": 3.4276902454917183e-16,
+        "bestanden": true
+       }
+      },
+      "diagnose_E_glatt_anstieg_rel": 5.980610215584386e-09,
+      "V4_R5D_Q_win_T": 1.293261311701391,
+      "V4_rel": 0.0018030898252927537,
+      "V4_bestanden": null
+     }
+    ]
+   },
+   "pruefung": {
+    "grob": {
+     "V1": {
+      "0.6": false,
+      "0.7": false,
+      "0.8": false
+     },
+     "V2": {
+      "0.6": true,
+      "0.7": true,
+      "0.8": true,
+      "0.9": true
+     },
+     "V3": {
+      "0.51": false,
+      "0.55": false
+     },
+     "V4": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "plausibilitaet_bestanden": false,
+     "scheitert": true,
+     "nicht_entscheidbar": true,
+     "hinweis": "Zeitfaktor != 1 (Formprobe): Pruefung nur Durchlauf, Zahlen ungueltig"
+    },
+    "fein": {
+     "V1": {
+      "0.6": false,
+      "0.7": false,
+      "0.8": false
+     },
+     "V2": {
+      "0.6": true,
+      "0.7": true,
+      "0.8": true,
+      "0.9": true
+     },
+     "V3": {
+      "0.51": false,
+      "0.55": false
+     },
+     "V4": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "plausibilitaet_bestanden": true,
+     "scheitert": true,
+     "nicht_entscheidbar": false,
+     "hinweis": "Zeitfaktor != 1 (Formprobe): Pruefung nur Durchlauf, Zahlen ungueltig"
+    }
+   },
+   "L3": [
+    {
+     "lauf": "masselos w2=0.500001",
+     "Gamma": {
+      "effekt": 1.4325458382260084e-17,
+      "aenderung": 4.569821223940967e-16,
+      "bestanden": false
+     },
+     "R_EQ": {
+      "effekt": 14785902222.9,
+      "aenderung": 14906965249.48576,
+      "bestanden": false
+     },
+     "R_EQ_auf_1pz": {
+      "bestanden": false
+     }
+    },
+    {
+     "lauf": "masselos w2=0.5001",
+     "Gamma": {
+      "effekt": 8.452020445533449e-17,
+      "aenderung": 8.452020445533449e-17,
+      "bestanden": false
+     },
+     "R_EQ": {
+      "effekt": 2273988155.3898306,
+      "aenderung": NaN,
+      "bestanden": false
+     },
+     "R_EQ_auf_1pz": {
+      "bestanden": false
+     }
+    },
+    {
+     "lauf": "masselos w2=0.51",
+     "Gamma": {
+      "effekt": 4.297637514678025e-17,
+      "aenderung": 1.9410996107962416e-16,
+      "bestanden": false
+     },
+     "R_EQ": {
+      "effekt": 2947405502.65,
+      "aenderung": 3159170198.2803316,
+      "bestanden": false
+     },
+     "R_EQ_auf_1pz": {
+      "bestanden": false
+     }
+    },
+    {
+     "lauf": "masselos w2=0.55",
+     "Gamma": {
+      "effekt": 1.0887348370517664e-16,
+      "aenderung": 5.26460595548058e-17,
+      "bestanden": false
+     },
+     "R_EQ": {
+      "effekt": 1779099957.9276316,
+      "aenderung": 918973942.5582049,
+      "bestanden": false
+     },
+     "R_EQ_auf_1pz": {
+      "bestanden": false
+     }
+    },
+    {
+     "lauf": "masselos w2=0.6",
+     "Gamma": {
+      "effekt": 7.055288253263092e-17,
+      "aenderung": 1.1424553059852418e-16,
+      "bestanden": false
+     },
+     "R_EQ": {
+      "effekt": 2533480265.0304565,
+      "aenderung": 3552467738.276358,
+      "bestanden": false
+     },
+     "R_EQ_auf_1pz": {
+      "bestanden": false
+     }
+    },
+    {
+     "lauf": "masselos w2=0.7",
+     "Gamma": {
+      "effekt": 3.724619179387622e-17,
+      "aenderung": 3.40229636578677e-17,
+      "bestanden": false
+     },
+     "R_EQ": {
+      "effekt": 1714219109.0673075,
+      "aenderung": 3278148877.154914,
+      "bestanden": false
+     },
+     "R_EQ_auf_1pz": {
+      "bestanden": false
+     }
+    },
+    {
+     "lauf": "masselos w2=0.8",
+     "Gamma": {
+      "effekt": 3.062066729208093e-17,
+      "aenderung": 2.56067568582899e-17,
+      "bestanden": false
+     },
+     "R_EQ": {
+      "effekt": 92727368.85964912,
+      "aenderung": 133705542.53320801,
+      "bestanden": false
+     },
+     "R_EQ_auf_1pz": {
+      "bestanden": false
+     }
+    },
+    {
+     "lauf": "masselos w2=0.9",
+     "Gamma": {
+      "effekt": 4.924376318901904e-17,
+      "aenderung": 1.4146390152481836e-17,
+      "bestanden": false
+     },
+     "R_EQ": {
+      "effekt": 33726325.61090909,
+      "aenderung": 21910704.804786637,
+      "bestanden": false
+     },
+     "R_EQ_auf_1pz": {
+      "bestanden": false
+     }
+    }
+   ],
+   "sek": {
+    "grob": 1.1494605129992124,
+    "fein": 5.448076721993857
+   }
+  }
+ },
+ "fehler": {},
+ "ende": "2026-09-30T11:25:24+02:00",
+ "dauer_s": 6.6671700599981705,
+ "torch_speicher_max_mb": NaN
+}

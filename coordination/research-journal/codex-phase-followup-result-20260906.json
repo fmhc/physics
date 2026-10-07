@@ -1,0 +1,51 @@
+{
+  "id": "codex-phase-followup-result-20260906",
+  "time": "2026-09-06T17:00:45+00:00",
+  "time_kind": "completed",
+  "author": "Codex (codex-db), Agenten phase_proof, phase_cuda und entropy_work",
+  "topic": "theory",
+  "status": "checked",
+  "title": "Gleiche Kraft bei gleicher Energie, aber unterschiedliche innere Signale",
+  "question": "Kann vorhandene Quantenkohärenz für den Kraftkanal unsichtbar bleiben, obwohl andere Messkanäle sie erkennen?",
+  "action": "Ein vorab festgelegter pi/2-Phasenzustand wurde mit seiner Zweigmischung und einer Plus-Cat-Referenz auf .69/P5000/CUDA verglichen: alpha=0,5, delta=0,1, drei Fock-Cutoffs, 401 Zeitpunkte. 258 numerische Kontrollen bestanden bei 3,275 Sekunden Runnerzeit. Zusätzlich 32 exakte Phasenprüfungen und 33 Entropieprüfungen auf .69 CPU; diese sind getrennte Nachweise.",
+  "result": "Die maximale Kraftkorrelationsdifferenz des pi/2-Paares beträgt 8,88e-16. Dagegen unterscheidet sich die dimensionslose innere Auslenkung um bis zu 0,92559 und Spin-y anfangs um -0,60653. Beide Zustände haben dieselbe mittlere Anfangsenergie. Der Allzeitbeweis folgt aus der Paritätssymmetrie; die endliche CUDA-Rechnung reproduziert ihn. Eine separate Gleichgewichtsableitung zeigt einen entropischen Kraftanteil bei geometrieabhängiger Einschlussfrequenz, auch in einem separablen Gibbszustand mit globaler Ergotropie null.",
+  "meaning": "Der gewählte Messkanal begrenzt, welche inneren Zustände identifiziert werden können. Kraft, Auslenkung, Korrelationen und entnehmbare Arbeit dürfen nicht gleichgesetzt werden. Ein analytisch untersuchter Symmetriebruch ist ein weiterer Vorschlag und wurde hier nicht simuliert. Keine experimentellen Daten, keine neue Naturkraft und kein Äthernachweis in diesem Lauf.",
+  "sources": [
+    {
+      "path": "model-lab/quantum-followup/runs/rabi-phase-pi2-v1-20260906/output/result.json",
+      "label": "Kanonische CUDA-Ergebnisse",
+      "sha256": "dd88aab013bee6f781b269fe94cacab145a7bf6c55affe1087b8735683f6e536"
+    },
+    {
+      "path": "model-lab/quantum-followup/runs/rabi-phase-pi2-v1-20260906/manifest.json",
+      "label": "Eingefrorene Eingaben",
+      "sha256": "976ed024d5e85fa6b81b2b7e77faa22573cf85b7bd4c55e7500f18993c10f3a6"
+    },
+    {
+      "path": "model-lab/quantum-followup/phase-curves.svg",
+      "label": "Gespeicherte Kurven",
+      "sha256": "cf623c80a844a0df0c37c3f7e88317bd44d459260a7a8951234dd7c2d216f95a"
+    },
+    {
+      "path": "coordination/quantum-followup/phase-proof.md",
+      "label": "Phasensatz und begrenzter Symmetriebruch",
+      "sha256": "fc39ce869820b09abce8a7dd4a7efd7f18db4e2f6404ed4f094c5efa788e731a"
+    },
+    {
+      "path": "coordination/quantum-followup/phase_proof_checks.json",
+      "label": "32 exakte Phasenprüfungen",
+      "sha256": "41584472b2e4ffb7073b174624048e2296044380146e57cb7528ddb7e03dcc04"
+    },
+    {
+      "path": "coordination/quantum-followup/entropy-work.md",
+      "label": "Entropie, Energie und Arbeit",
+      "sha256": "b63bd97aac9f59963cbc7f9fd79d4165defb58a8802dc8c3de7366943cafb307"
+    },
+    {
+      "path": "coordination/quantum-followup/entropy_checks.json",
+      "label": "33 symbolische Entropieprüfungen",
+      "sha256": "1af0a0fff973dc57571a1b35b8e1d24643994efb61f65198ca4d0015bb4c2407"
+    }
+  ],
+  "recorded_at": "2026-09-06T17:10:26.872054+00:00"
+}

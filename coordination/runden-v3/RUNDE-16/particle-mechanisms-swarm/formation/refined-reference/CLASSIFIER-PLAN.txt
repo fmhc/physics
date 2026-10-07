@@ -1,0 +1,46 @@
+Prospektiver Klassifikatorcheck, 02.10.2026, vor Ausführung
+Keine PDE, keine neuen Anfangsdaten, keine Schwellenänderung.
+Import repairedcode.py mit Main-Guard; ausschließlich classify auf selbst
+geschriebenen synthetischen Ergebniswörterbüchern. Hauptprogramm, qa,
+advance und run_arm werden nicht aufgerufen. Autor führt nichts aus.
+
+Ein Basisdatensatz enthält genau sechs complete-Arme (drei Gitter und jeweils
+Wolke/Referenz) und81 Samples t=0,.8,...,64. Q1100, omega1.02 in allen
+Fällen. Kernladung .85Q, Ausgangsradius10, später Radius7; chi_first_cell
+und chimin .1. Wolkenreste .001; Referenzreste/Formdrift .001. Diese Werte
+sind synthetisch, keinerlei Simulationsbefund oder Kalibrierung.
+
+Vorab erwartete exakte Rückgaben:
+1. Positivbasis -> RADIAL_FORMATION_CANDIDATE.
+2. Pulsation auf ALLEN Wolkengittern: Q,omega,Radius,Kernladung unverändert,
+   beide Zeitreste abwechselnd .01/.03 -> NO_CANDIDATE_IN_FIXED_WINDOW.
+   Gleichheit der drei Gitter verhindert einen vorgeschalteten Sensitivitäts-
+   abbruch. So trennt der Check Stationarität von kompakter Form.
+3. EIN Referenzarm mit einem Raumrest .005 -> NUMERICALLY_UNRESOLVED_REFERENCE.
+4. EIN Numerikarm complete=False -> INCOMPLETE, kein Mehrheitsentscheid.
+5. EIN Wolkengitter mit Qcore-Abweichung .003Q -> NUMERICALLY_UNRESOLVED_SENSITIVITY.
+6. EIN Wolkengitter verfehlt nur Verdichtung (R50=8.1 statt7, Start10),
+   Q/alle Residuen identisch -> NO_CANDIDATE_IN_FIXED_WINDOW.
+
+Grenze: classify wiederholt NICHT die Energie-/Ladungsdriftgates von run_arm;
+es setzt komplette, vorher geprüfte Arme voraus. Ein künstliches Edrift>1e-5
+bei complete=True wird vom vorhandenen classify nicht geprüft. Deshalb
+Numerikfehlerfall4 modelliert das wirkliche Produktionsprotokoll: run_arm
+bricht ab, complete bleibt False. Kein falscher isolierter QA-Nachweis für
+Energiebilanzen aus diesem Test. Fehlende Schema-/Samplevalidierung wird
+mit diesen wohlgeformten Synthetikdaten ebenfalls nicht bewiesen.
+Zusätzlich zwei Defektsonden ohne Codeänderung: im space-Wolkenarm letztes
+Sample entfernen bzw. Zeit eines Samples um.1 versetzen. Erwartete sichere
+Reaktion wäre unentschieden/abgewiesen. Nach Papierlektüre ignoriert zip
+fehlende Endsamples bzw. fehlende Zeitgleichheit; Kandidatenmeldung wäre
+ein gemeldeter Schnittstellendefekt. Status CLASSIFIER_GAPS_FOUND (Exit2)
+falls eine Sonde nicht zurückgewiesen wird, auch wenn alle sechs normalen
+Fälle passen. Kein stiller Umbau, Reviewer entscheidet über engen Guard.
+
+Neue Ausgabe enthält jeden Soll-/Iststatus, PASS nur bei exakter Gleichheit,
+Quellhash des importierten repairedcode.py und eigenen Script-Hash.
+Sollquelle 4f2ca1da379617413e642be02fc6b2cec565fcd9183a2300ac0eda6906a9ff0c.
+Bei Hashabweichung abbrechen, damit kein still geänderter Klassifikator
+geprüft wird. Frischer Outputpfad. Root-Ausführung ausschließlich .69,
+CPU-einThread, äußere kurze Laufzeitbegrenzung und eigene Receipt.
+Dieser Check ist Software-QA, kein Bildungsresultat. Hauptlauf bleibt offen.

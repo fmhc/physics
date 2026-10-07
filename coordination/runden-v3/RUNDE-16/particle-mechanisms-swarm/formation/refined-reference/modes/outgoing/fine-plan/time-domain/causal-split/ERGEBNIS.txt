@@ -1,0 +1,23 @@
+KAUSALE ZWEITORDNUNGS-ZERLEGUNG — Root, 2026-10-02
+Ausgang: CAUSAL_SPLIT_DIAGNOSIS_COMPLETE; attribution MIXED_OR_WINDOW_DEPENDENT_WITH_INTERFERENCE.
+Vorabplan und Nachtrag unverändert; unabhängige Codelektüre vor Ausführung. Alte nichtlineare Stationaritätsentscheidung UNRESOLVED bleibt unverändert.
+
+Rechnung: .69 CPU8, nice19, ein Thread, keine CUDA-Numerik. 49.71 user+0.27 system=49.98 CPU-s,50.04 s Wandzeit,202272 KiB RSS,exit0. Syntax zuvor .05 CPU-s. Unter Gesamtdeckel90; kein Nachlauf.
+R120,h=.05,T128,dt=.02/.01; gleiche gespeicherte Q1100-Referenz und Ritzmode. Zwei lineare inhomogene Antworten, DC und zweite Harmonische, beide Nullstart. Keine neue nichtlineare Simulation oder Modensuche.
+
+Kontrollen bestehen. Jordanfehler9.5155e-11 unter1e-10 mit knapper Reserve; nicht als großzügig robust darstellen. Oszillatorfehler sinken um Faktor etwa4. Phasenanker, lineare Reste und Energiearbeitsbilanz im RESULT je Lauf.
+Alle vier ursprünglichen Schalen-/Fensterkombinationen bestehen beide Zeitkonvergenz- und beide Summenvergleichstore.
+Maximaler relativer Unterschied der dt-Stufen: Zeitfeld0.00711035, positives2rho-Band0.000608989 (Grenze0.01).
+Maximaler relativer Unterschied Summe gegen gespeicherte nichtlineare parity-even Antwort: Zeitfeld0.00326135, positives2rho-Band0.00185244 (Grenze0.05).
+Das gilt für das geprüfte komplexe phi-Feld in r40..45 und45..50, Fensterbeginn88 und104.5; keine globale oder Kontinuums-Fehlerschranke. Weitere Komponenten diagnostisch im JSON.
+
+Ursachenzuordnung nach Summenvalidierung:
+Delta=C+(H-P), C=DC-Antwort im2rho-Fenster, H=H2-Antwort, P=stationäres Soll.
+||C||/||Delta||: .474195,.445993,.502566,.481570.
+||H-P||/||Delta||: .526868,.554731,.497989,.518949.
+Keiner der Beiträge liegt in allen Fällen unter0.10. Beide sind notwendig; Interferenzterm2Re<C,H-P> in allen vier Fällen positiv. Diese Amplitudenverhältnisse sind KEINE additiven Energieanteile. Quadratnorm der Summe enthält die im JSON separat ausgewiesene Kreuzgröße.
+
+Erkenntnis: Die kausale quadratische Quellenantwort erklärt die zuvor vom stationären Ansatz verfehlte endliche Feldantwort quantitativ. Ein allein dominierender DC-Einschaltbeitrag oder allein dominierender H2-minus-stationär-Beitrag wird durch die vorab festgelegte Regel nicht gestützt. Keine neue Wechselwirkung postulieren.
+Eine konstante Quelle besitzt durch Einschalten und endliches Messfenster einen2rho-Fourieranteil; daraus folgt keine Frequenzumwandlung eines zeitunabhängigen linearen Operators. H-P enthält zudem den Unterschied zwischen endlichem Dirichlet-Generator und frequenzabhängigem Robin-Soll, nicht ausschließlich Einschwingung.
+
+Nicht gezeigt: stationäre Abstrahlung der freien Zeitentwicklung, asymptotische Lebensdauer, BIC, nichtlineare Stabilität, Randunabhängigkeit oder Kontinuumskonvergenz. Keine Änderung alter Tore. Sinnvoller nächster Papierpunkt ist die Trennung kausaler Anfangswertantwort von stationärer Frequenzantwort; ein längeres Zeitfenster ist durch diesen Befund nicht automatisch beauftragt.

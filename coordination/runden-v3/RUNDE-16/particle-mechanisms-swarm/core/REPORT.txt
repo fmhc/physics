@@ -1,0 +1,111 @@
+FADEN-KERN: Selbstbindung ist belegt, Bildung bleibt eine andere Frage
+02.10.2026; particle_core; reine Aktenlektüre und Papieralgebra, keine Läufe.
+
+1. Modell und Energiebilanz
+L=|d phi|²+(d chi)²/2-V, S=|phi|²,
+V=(chi²-1)²/4+(1+chi²)S-S²+S³/2.
+Dies ist exakt FADEN-KERN-1 und BEUTEL-1 M2 (im Code Model.U/d gelesen).
+V=(chi²-1)²/4+chi²S+S[(S-1)²+1]/2 >=0. Rand: phi->0,
+chi->+1; beide Vakuummassen sqrt(2), Vakuumenergie null. Kein masseloser
+Vermittler, keine topologisch geschützte Schnur im gewählten Randsektor.
+
+Für phi=exp(i omega t)f, I=Integral f² und Q=2 omega I gilt exakt
+E_Q=Q²/(4I)+Integral[|grad f|²+|grad chi|²/2+V(chi,f²)].
+Variation ergibt -Delta f+(1+chi²-2f²+1.5f⁴-omega²)f=0 und
+-Delta chi+chi(chi²-1+2f²)=0. omega=Q/(2I) ist nicht zusätzlich fest.
+Lokales Minimum: chi²=max(0,1-2S); Gradienten verhindern, dies als exaktes
+lokales Einfeldmodell zu behandeln. Dünnwandvolumen: min(V/S) liegt bei
+chi=0 und 4S³-4S²-1=0, S≈1.17965; E/Q->omega0≈0.853267.
+Freie Ladungsschwelle dagegen sqrt(2)|Q|. omega²<2 ist eine notwendige
+Schwanzbedingung, E<sqrt(2)Q eine freie-Zerfalls-Schranke; keine der beiden
+ist ein vollständiger Stabilitäts- oder Bildungsbeweis.
+
+Gemeinsame radiale Umordnung von f und eta=1-chi senkt E_Q im trivialen
+P=J=0-Sektor: Gradientkosten sinken, der attraktive Überlapp
+-(2eta-eta²)f² wird größer im Betrag. Der kompakte Kern besitzt deshalb
+einen energetischen Vergleichsvorteil gegenüber einer länglichen Kette.
+Metastabile Ketten sind damit nicht allgemein ausgeschlossen. Im exakten
+Vakuum bleiben E=Q=0: dieses konservative Modell erzeugt daraus keinen
+geladenen Kern. „Spontan“ kann hier nur freie Selbstorganisation einer
+vorher präparierten, endlich geladenen Wolke heißen.
+
+2. Was bereits gerechnet wurde — nichts davon wiederholen
+A. RUNDE-16/beutel-1/ERGEBNIS.md, KARTE.md, code/beutel.py und
+aus/auswertung/punkte-M2.csv: stationäre radiale M2-Äste vorhanden.
+Faltung Q≈66; E<sqrt(2)Q erst zwischen Q≈74 und 80. Dünnwandextrapolation
+E/Q=0.853266, S(0)=1.179653; chi(0)<0.1 ab Q≈372. Bei Q=1100:
+omega=1.018166542, E=1213.006928, chi(0)=0.01971475.
+Lauf 1 .69 CPU6, M2 etwa 6 s; Originalbericht enthält Quell-/Resultathashes.
+M2.json SHA256 a38b36cd1ffc7b18927d7e2d9663b925c3542ffd951b0601ca9836eefa9e76a0.
+Zwei radiale Relaxationsstarts konvergieren bei Q=150,1100,10000 gleich.
+Das ist KEINE physikalische Bildung: Gradientenfluss entzieht Energie.
+„Stabil“ im Bericht bezeichnet dQ/domega<0, keine volle Stabilitätsprüfung.
+Erstes fest-omega-Gittergate wurde verfehlt, drittes Gitter nachgetragen.
+Bericht nennt außerdem lokale Rauchtests; diese historische Regelabweichung
+wird hier nicht übernommen. Eine erneute breite stationäre Suche oder die
+alte Frage „existiert bei Q100 überhaupt ein Kern?“ ist überholt.
+Schon constituents-20261001/radial-pilot/ERGEBNIS.txt hatte im identischen
+kappa1-Modell bei Q100 E/Q=1.384293324, omega=1.248505, minchi=.390142
+gefunden; dieser Arm bestand seine Diagnosen, Gesamtstatus UNRESOLVED
+wegen kappa0. dipole-dynamics/ERGEBNIS.txt prüft vorhandene Q100-Kerne
+linear auf relative l1-Feldverschiebung bis T12; ebenfalls keine Bildung.
+
+B. RUNDE-17/stille-zweifeld und zweifeld-nachbau: lineare radiale
+Abstrahlungsnullstellen auf bestehenden M2-Kernen. Das ist Information über
+Anregungen eines Objekts, nicht über seine Entstehung aus einer Wolke.
+
+C. resonance-20260930/formation-nonlinear-3d/isolated-pilot/
+mediator-formation/: ERGEBNIS, dressed-start/ERGEBNIS,
+charge-continuation/ERGEBNIS und stationary-reference/refined-r2/
+radial-hessian/{ERGEBNIS,perturbation-next/ERGEBNIS} gelesen.
+Dort ANDERES Zweifeldmodell mit Vakuum phi=chi=0, phi-Masse 1 und
+Mediator M=.5/1. Kompakte Referenzen existieren; diffuse inward-chirp-
+Wolken halten bis T32 weniger Kernladung als der Einfeldvergleich.
+Statische Mediatorpräparation ändert das nur um 0.15–0.23 Prozentpunkte.
+Referenzen bei Q144/148 und kurzfristige radiale Robustheit bei Q240.55
+sind schon gerechnet. Weder diese Formation-Misserfolge noch ihre positiven
+Hessian-/Störungsergebnisse dürfen M2 zugerechnet werden.
+
+D. formation-next-20261002/PLAN.txt und INTERPRETATION-ROOT.txt:
+bereits vorgesehene quadrupolare Rückwirkung zweiter Ordnung auf eine
+EINFELD-Chirpwolke, U=S-S²+S³/2, T32. Das ist ebenfalls keine M2-Bildung
+und wird weder wiederholt noch als M2-Nachweis übernommen.
+
+3. Genau eine neue, falsifizierbare Frage
+Bildet M2 aus EINER diffusen geladenen Wolke ohne vorbereitete chi-Hülle
+innerhalb eines festen Fensters einen annähernd stationären gemeinsamen Kern?
+In den gezielt gelesenen M2-Akten wurde dafür kein Realzeitlauf gefunden;
+vor Umsetzung bestätigt die Leitung über den Peer-Bus die Nicht-Dopplung.
+
+Konkreter Vorschlag: Q0=1100 wie vorhandener Referenzpunkt, radial,
+phi(r,0)=A exp[-r²/(2*8²)], phi_t=i sqrt(2) phi, chi=1, chi_t=0,
+A²=Q0/[2 sqrt(2) pi^(3/2) 8³]. Kein inward chirp, kein Faden, keine
+Dämpfung. Auf dem Gitter Ladungsnormalisierung ausdrücklich dokumentieren.
+Beide Felder frei entwickeln. Ein ungestörter gespeicherter Q1100-M2-Kern
+ist die numerische Realzeitkontrolle; keinen stationären Ast neu scannen.
+Dieser Vergleich hat gleiches Q, aber verschiedene Anfangsenergien und
+testet keine kausale Wirkung nur eines einzelnen Präparationsdetails.
+
+Vorab festlegen: R=120, T=64, Messradius12, letztes Fenster48..64;
+(h,dt)=(.1,.02),(.05,.02),(.1,.01), sechs Arme einschließlich Kontrolle.
+Strahlung bleibt im Gesamtsystem, Fluss durch Radius12 separat bilanzieren.
+Bildungskandidat nur wenn im Schlussfenster Kern-Q mindestens 80% Q0 hält,
+um höchstens 1% Q0 schwankt, beide normierten stationären Raumresiduen
+und der phi_t-i omega phi-/chi_t-Rest <.02 bleiben; omega nur als gemeinsame
+Phasendrehung bestimmen. Diagnose-Normen vor Start explizit definieren.
+Auch chi-Hülle muss neu entstanden sein; Dichtemaximum allein zählt nicht.
+E/Q-Erhaltung <1e-5, h/dt-Empfindlichkeit <20% der jeweiligen Physikschwelle,
+keine relevante Randankunft, keine Kontrolldrift nahe den Schwellen verlangen.
+Gates sind VORSCHLÄGE zum Einfrieren, keine bereits bestandenen Prüfungen.
+Bei verfehlter Numerik: unentschieden. Bei guter Numerik ohne Plateau/kleine
+Reste: dieser Bildungsweg im festen Fenster verfehlt; nicht Nichtexistenz.
+Bei Erfolg: nur radialer Bildungskandidat, keine 3D-/Langzeitgarantie.
+
+Kosten: radial O(R/h) Speicher und O((R/h)(T/dt)) Arbeit je Arm.
+Aus ähnlichen gespeicherten TS440-Radialläufen grob 30–120 CPU-s insgesamt
+geschätzt, noch ungemessen; hartes Vorschlagslimit 180 CPU-s, <=256 MB.
+TS440 ein vorhandener Labor-CPU-Thread nach Abstimmung; Code-QA auf .69.
+Keine CUDA-Ausführung behaupten. Keine Berechnung/Remoteänderung beauftragt
+oder durchgeführt. Primärquellenliteratur hier nicht neu beansprucht;
+die Algebra wurde an den oben genannten vollständig vorliegenden Akten
+geprüft, keine Neuheitsbehauptung.

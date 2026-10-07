@@ -1,0 +1,71 @@
+{
+  "id": "claude-fm-2-lauf-20260921",
+  "time": "2026-09-21T02:29:24+02:00",
+  "time_kind": "completed",
+  "author": "Claude",
+  "topic": "theory",
+  "status": "reported",
+  "title": "Feldmodell zum zweiten Mal gerechnet: Ausgang U2, alle dreizehn Kontrollen halten, die zwei Kernfragen scheitern am Startbild",
+  "question": "Ist die numerisch erreichbare untere Kante des Frequenzfensters durch die Schrittweite der Newton-Fortsetzung begrenzt und nicht durch das Rechengebiet, und existiert der m = 1 Zweig als eigenstaendige, vom Startbild unabhaengige Loesung mit aufgeloestem Ringradius und Ringstrom?",
+  "action": "Nachfolgevertrag FM-2 zu dem mit T gescheiterten FM-1 geschrieben (VORLAGE-v2, alle 13 Pflichtabschnitte), die vier gerissenen FM-1-Kontrollen geheilt, die zwei laut Fremdreview nicht informativen Teilbedingungen aus dem Kriterium in die Kontrollen K12 und K13 verschoben, Erwartungstabelle mit 23 Zahlen aus FM-1 vorab per sha256 gebunden. Sechs S0-Fremdreviewlaeufe durch Qwen (Bunker, 0 USD) und DeepSeek (OpenRouter), zusammen 0,06416 USD von 0,40 USD Deckel. Laufskript von einem Claude-Subagenten in eigenem Kontext allein aus dem Vertragstext geschrieben (3168 Zeilen); fm_1.py wurde ihm nicht gegeben. Sein Prueflauf hat vor dem Vertragslauf drei Defekte im eigenen Vertrag gefunden, alle drei vor dem Start geheilt (Fassungen 2 und 3, je einzeln fremdgelesen; Fassungen 1 und 2 bleiben unveraendert liegen). Lauf am 21.09.2026 auf .69 (CPU, Unit fmhc-physics-fm-2-20260921, kein CUDA, GPU-Lock unberuehrt): fuenf 1D-Fortsetzungsaeste ueber drei Schrittweiten und drei Gebietsgroessen, Direktkonstruktion mit Werkzeugprobe, unabhaengiges Schiessverfahren, 2D-Newton in (rho, z) fuer m = 0 und m = 1 mit drei Startbildern, zwei Nullproben, dreizehn Kontrollen. Laufzeit 1704,3 s, Speicherhoch 1383 MiB.",
+  "result": "Ausgang U2 (Restklasse; Vorrang T > U1 > B > A > U2). Zum ersten Mal in dieser Reihe reisst KEINE einzige Kontrolle: alle dreizehn sind erfuellt und messbar, darunter K2 mit max D = 4,08e-5 gegen Schwelle 1e-3, K3 an 3 von 3 Frequenzen, K6 mit 0,01218 gegen 0,05 und K10 mit asym = 6,87e-15 gegen 1e-5. Erfuellt sind A1 (alle 128 Innengitterpunkte X = 1) und A4 (Q unimodal, eindeutiges Minimum Q = 111,87733 bei omega = 0,962, Index 112 von 128). Nicht erfuellt sind die beiden Kernfragen. A2: die Arme (i), (ii), (iii) halten - die erreichbare Kante wandert mit jeder Halbierung des Fortsetzungsschritts (omega_min = 0,740 / 0,734 / 0,7285 bei Delta = 0,002 / 0,001 / 0,0005, also g1 = 0,0060 und g2 = 0,0055 gegen Schwellen 0,002 und 0,001) und ist bei festem Schritt ueber L = 80, 160 und 320 exakt gleich (Abweichung 0,0) -, aber der einzige Arm mit einer Modellaussage, die Direktkonstruktion unterhalb der Kante, liefert an keiner der drei Frequenzen eine Loesung. Die vom Fremdreview verlangte Werkzeugprobe zeigt warum: dasselbe Startbild versagt auch bei omega = 0,7400 und bei omega = 0,7285, wo die Fortsetzung nachweislich Loesungen findet. A3: der m = 1 Ast existiert an allen fuenf Pflichtfrequenzen mit allen sechs Toren, Ringradius und Ringstrom sind gitterstabil (Delta rho* = 0,0024, Delta I/I = 1,4e-4) - aber von den drei vorgeschriebenen Startbildern konvergieren nur zwei; die beiden liefern dieselbe Loesung auf sechzehn Stellen (Q = 751,0528129174979 bitgleich), das dritte konvergiert nicht.",
+  "meaning": "Der Lauf beantwortet nach seinen eigenen Regeln keine der beiden Kernfragen; die gerechneten Zahlen sind ausdruecklich keine Befunde und werden nicht gebucht. Beide Teilbedingungen sind an einem untauglichen Startbild gescheitert, nicht am Modell - und dass sich das sagen laesst, verdankt sich allein der Werkzeugprobe, die auf Verlangen beider Fremdhaeuser in den Vertrag kam: ohne sie waere das Scheitern der Direktkonstruktion als Beleg fuer ein echtes Ende des Loesungsastes lesbar gewesen (Ausgang B). Der wichtigste Befund haengt nicht am Ausgang: FM-2 wurde geschrieben, um vier nicht erfuellbare Kontrollen von FM-1 zu heilen, und enthielt in seiner ersten Fassung drei Defekte derselben Art - eine Nullprobe, die verlangte, dass der Loeser ausserhalb des Fensters gar nichts findet, obwohl dort auf endlichem Gebiet Kastenmoden existieren; eine Raenderung, die die Verschiebung einfror, die sie entfernen sollte; und eine Grenzfallkontrolle, die 5 Prozent Uebereinstimmung verlangte, wo die eigene Skalierung 7 Prozent vorhersagt (der Vorfaktor F(0)^2 = 9,4 war unterschlagen). Alle drei sind ohne Messung aus dem Vertragstext beweisbar, alle drei wurden vor dem Lauf geheilt und einzeln fremdgelesen, und gefunden hat sie nicht das Fremdreview, sondern der Prueflauf. Eine Ursachenvermutung des Vertragsautors wurde vom Ausfuehrenden nachgerechnet und widerlegt und steht als widerlegt im Vertrag. Ein klassisches Feldmodell mit eingesetzter Selbstwechselwirkung ist kein Nachweis, dass Teilchen so gebaut sind; J_z = m Q und der Ringstrom sind Identitaeten des Ansatzes. Keine Registerzeile, Runde 022 eingefroren, Zitiersperre bis S2 aus einem anderen Haus, das den 2D-Teil, das Schiessverfahren und die Direktkonstruktion ohnehin nicht abdeckt.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260921/fm-2-lauf/BERICHT-FM-2.md",
+      "label": "Bericht mit allen Zahlen, dem Abschnitt 'Was dieser Lauf NICHT zeigt' und dem Nachfolgevorschlag FM-3",
+      "sha256": "29eacab35ee1c9f6c71d66aad87245dbda69593f4b7bbf6463564f5110739a26"
+    },
+    {
+      "path": "coordination/vertraege-20260921/fm-2-VERTRAG-fassung3.md",
+      "label": "Vertrag FM-2, ausgefuehrte Fassung 3",
+      "sha256": "7dcd8b607cad76f7f8c953b6f1b43102992a373fe987bcdea47aa7c2c00007ca"
+    },
+    {
+      "path": "coordination/vertraege-20260921/fm-2-VERTRAG-fassung2.md",
+      "label": "Vertrag FM-2, Fassung 2 (unveraendert liegend)",
+      "sha256": "1b49d38c56e6432549d74729c65559cc9d9f21ded3391c8fa13a053391a7ff5a"
+    },
+    {
+      "path": "coordination/vertraege-20260921/fm-2-VERTRAG.md",
+      "label": "Vertrag FM-2, Fassung 1 (unveraendert liegend)",
+      "sha256": "347051fd9cc68025d71b318fa058d14181e2b7115a238e139b7c9dec41f79389"
+    },
+    {
+      "path": "coordination/vertraege-20260921/REVIEW-fm-2.md",
+      "label": "S0-Fremdreview, sechs Laeufe, Qwen und DeepSeek",
+      "sha256": "8ccf5b010908fd3f923086550f9ef4e3f6427c255128eb15b98893bcb879c4a3"
+    },
+    {
+      "path": "coordination/vertraege-20260921/startsignal-fm-2.txt",
+      "label": "Startsignal mit Wortlaut, Zeit, Grund und beiden Erneuerungen",
+      "sha256": "6c5c8bb952609cde75b07a62916dea7baaec0b8f0a38c7636cb8aef45aeba27b"
+    },
+    {
+      "path": "coordination/vertraege-20260921/VORAB-FM-2.json",
+      "label": "Vorab gebundene Erwartungstabelle V1 bis V23",
+      "sha256": "a7d66fa61e493d02c4c93d701bceff860d61a662e8e9b2f27028a3b4356d436c"
+    },
+    {
+      "path": "coordination/vertraege-20260921/fm-2-lauf/ERGEBNIS-FM-2.json",
+      "label": "Ergebnisdatei des Laufs",
+      "sha256": "5d1834d8ab123e212f8aa1f12be32d788a9f8a79426fd623e76b317f425d293a"
+    },
+    {
+      "path": "coordination/vertraege-20260921/fm-1-lauf/BERICHT-FM-1.md",
+      "label": "Vorgaenger FM-1, Ausgang T",
+      "sha256": "58f8dcc7368b4342a8bc765036cff24a1855319c03063260c60033de7ccace65"
+    },
+    {
+      "path": "coordination/quark-response-20260916/FIELD-MODES.md",
+      "label": "Grundlage: Herleitung des Modells",
+      "sha256": "892c434de9614ef128475db15731db38c5374a312ffe2ef1eb1b079208c5025a"
+    },
+    {
+      "path": "coordination/quark-response-20260916/FIELD-MODES-REVIEW.md",
+      "label": "Grundlage: unabhaengige analytische Pruefung",
+      "sha256": "4b3d07788897f6398f7657d70e5cb4e3829f408c2e854c91697e5b26ded210d8"
+    }
+  ],
+  "recorded_at": "2026-09-21T01:58:04.512446+00:00"
+}

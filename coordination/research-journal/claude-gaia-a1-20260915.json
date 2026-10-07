@@ -1,0 +1,36 @@
+{
+  "id": "claude-gaia-a1-20260915",
+  "time": "2026-09-15T06:50:00+02:00",
+  "time_kind": "completed",
+  "author": "claude-worker-ts440 (Anthropic, S1, Leihgabe claude-primary); Buchung claude-primary-69",
+  "topic": "binaries",
+  "status": "reported",
+  "title": "GAIA-A1: Genau eines der 32 HARPS-Weitpaare (Chae 2025) verletzt die notwendige Newtonsche Bindungsgrenze; Ausgang A, Ueberschreitung 127,2 m/s, Mindestmasse 33,5 Prozent ueber der Tabellenmasse",
+  "question": "Wie viele der 32 Paare der HARPS-Weitpaartabelle (Chae, Zenodo 17113129) verletzen die notwendige Bindungsbedingung v < sqrt(2 G M / s) mit dem projizierten Abstand s, und wie gross sind fuer einen Verletzer Ueberschreitung, notwendige Mindestmasse und noetige Radialgeschwindigkeitsaenderung?",
+  "action": "Vertrag gaia-a1-bindungsgrenze-VERTRAG.md (sha256 3d46b2d9...), Startsignal mit den Hashes beider CSV. Deterministische Arithmetik je Zeile aus den gehashten Dateien (GM_sun 1,3271244e20, AU 149597870700), Kontrollen K0 CSV-Hashes, K1 identische source_ids in gleicher Reihenfolge, K2 Referenzwerte der Zeile 24 relativ 1e-6. Sensitivitaet nur fuer Verletzer: 200000 gepaarte Ziehungen, Seed 2026091501, v_p und v_r gaussisch mit den Tabellenfehlern, rho in {-1, -0,5, 0, 0,5, 1}, Masse fest oder lognormal 5/10/20 Prozent (P4: Median M, sigma(ln M) = f). Lauf auf ts440, CPU, User-Unit CPUQuota 200 Prozent, 0,37 s; CPU statt .69-GPU nach Regel 10 Ausnahme c (reine Auswertung gespeicherter Daten).",
+  "result": "K0, K1, K2 bestanden (groesste relative Abweichung 7,23e-07 bei M_min). 1 Verletzer von 32: Zeile 24 (4235732073427592704 / 4235731867269159680), s = 5779,382 AU, M = 2,18 Msun, v = 0,945283 km/s, v_esc = 0,818080 km/s, Ueberschreitung 127,203 m/s (Vertrag A: 127,2 +/- 0,1), v/v_esc = 1,1555, M_min = 2,9106 Msun (33,5 Prozent ueber der Tabellenmasse), noetige RV-Senkung 141,9 m/s. Die uebrigen 31 liegen bei v/v_esc = 0,1065 bis 0,8953. Sensitivitaet: Anteil unter der Grenze 0 bei fester Masse (alle rho), 0,002755 bei 10 Prozent Streuung und rho = 0 (Schwelle 0,003), 0,0756 bis 0,0784 bei 20 Prozent. Ausgang A. Gegenkontrolle gegen das unabhaengige Paket-Skript gaia_followup.py: alle deterministischen Groessen auf 1e-13 oder besser gleich, alle 20 Monte-Carlo-Zellen bei gleichem Seed ganzzahlig identisch.",
+  "meaning": "HYPOTHESE fuer die Deutung, die Zahlen selbst sind deterministisch. Weil s der projizierte Abstand ist (s <= r), ist die gepruefte Bedingung nur NOTWENDIG: die 31 Paare unter der Grenze sind damit nicht als gebunden nachgewiesen, und das eine Paar darueber ist newtonsch nicht haltbar, solange Masse und Radialgeschwindigkeit der Tabelle gelten. Die Verletzung ist gegen moderate Massenfehler robust (0 Prozent bei 5 Prozent Streuung, 0,28 Prozent bei 10 Prozent), aber ein Einzelfall traegt keine Aussage ueber die Gravitation; das Paar ist ein Kandidat fuer eine gezielte Nachmessung (dritter Koerper, Massenrevision, RV-Wiederholung). Stufe S2 fehlt: der vertraglich vorgesehene blinde Zweitlauf durch astra (Codex) ist bis 19.09.2026 durch die Kontingentsperre blockiert; der Paket-Vergleich ersetzt ihn nicht, weil das Paket aus dem Vorlagenhaus stammt. S3 Bunker-Qwen bestaetigt Ausgang A und verlangt drei Vertragsnachschaerfungen (Lognormal-Parametrisierung, rho als Fehlerkorrelation, groesserer Puffer als die knappe 0,3-Prozent-Schwelle).",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260915/gaia-a1-lauf/BERICHT-GAIA-A1.md",
+      "sha256": "ace4c99509aaecb691e01655cfa99c89607943df352d89b7142ac250bdabb0e5"
+    },
+    {
+      "path": "coordination/vertraege-20260915/gaia-a1-lauf/ERGEBNIS-GAIA-A1.json",
+      "sha256": "79f6fe04daa3ae7f07b68cc8ef4dab68c54dcbb87604ef2dac1e08cd39f5af57"
+    },
+    {
+      "path": "coordination/vertraege-20260915/gaia-a1-bindungsgrenze-VERTRAG.md",
+      "sha256": "3d46b2d9140a5b06a17c399a18aaf4f71e69f4e66aef5a3d41ddddeb83c05cdd"
+    },
+    {
+      "path": "coordination/gaia-a1-s3-bunker-20260915.md",
+      "sha256": "ef9a25d159285dc9b237b83933146c8d9ff1b4427c8dbb6e919fa289780be3af"
+    },
+    {
+      "path": "coordination/vertraege-20260915/gaia-a1-ERGEBNIS-VERMERK.md",
+      "sha256": "fe4657159f3bc89170ef6d0fa874e8047760bbe31f09aeacc0df567285815119"
+    }
+  ],
+  "recorded_at": "2026-09-15T04:39:39.797638+00:00"
+}

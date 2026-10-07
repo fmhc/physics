@@ -1,0 +1,100 @@
+{
+ "info": {
+  "numpy": "2.4.4",
+  "scipy": "1.18.0",
+  "python": "3.12.3",
+  "host": "ubuntu-auto",
+  "argv": [
+   "code/sz.py",
+   "--N",
+   "512",
+   "--saaten",
+   "901",
+   "--ridx",
+   "0",
+   "--varianten",
+   "a",
+   "--rauch",
+   "--out",
+   "rauch/r1c-sz-N512.json"
+  ],
+  "skript_sha256": "764ebe7d358d28d07402f558fa280d7f5a65ff91ea804cb748f3c9e2a66edbd7",
+  "tg_sha256": "ec48a258e266fc2226d0d10564b606052831ffefbf0642e4f7d04f9de85cfd9e",
+  "tp_sha256": "419d7da6caa211c721eb6a8c87403977415cf3050f03365377f51cb77b374dfd",
+  "start_utc": "2026-10-05T05:07:42Z"
+ },
+ "schluessel": {
+  "N": "int",
+  "saat": "int",
+  "ridx_geplant": "list",
+  "ridx_fertig": "list",
+  "abgebrochen_frist": "bool",
+  "varianten": "list",
+  "zeilen": [
+   {
+    "ridx": "int",
+    "richtung": "str",
+    "d": "list",
+    "eps1": [
+     "a",
+     "eps",
+     "lu",
+     "t_s"
+    ]
+   }
+  ],
+  "pruefung": {
+   "saum": "float",
+   "umkugel_ausserhalb_saum": "int",
+   "R_umkugel_max": "float",
+   "punkte_mit_kopien": "int",
+   "T": "int",
+   "E": "int",
+   "nV": "int",
+   "kanten_je_ecke": "float",
+   "tetra_je_ecke": "float",
+   "selbstkanten": "int",
+   "laengen_abw_max": "float",
+   "volumen_summe_rel_abw": "float",
+   "vol_min": "float",
+   "vol_min_rel_mittel": "float",
+   "dieder_summe_minus_2pi_max": "float",
+   "dieder_min_grad": "float",
+   "dieder_max_grad": "float",
+   "D_sym_max": "float",
+   "schlaefli_lD_max": "float",
+   "D_absmax": "float",
+   "l_min": "float",
+   "l_max": "float",
+   "Vbox": "float",
+   "t_modell_s": "float"
+  },
+  "k3": {
+   "phi_cond_max": "float",
+   "K3_absmax": "float"
+  },
+  "E": "int",
+  "nV": "int",
+  "T": "int",
+  "Vbox": "float64"
+ },
+ "laufzeit_s": 108.96472668647766,
+ "maxrss_MB": 1799.42578125,
+ "t_punkt_s": [
+  108.45605301856995
+ ],
+ "lu": [
+  {
+   "t_B": 50.09621000289917,
+   "nnz_B": 23203129,
+   "solves_B": 74,
+   "t_A": 45.65701150894165,
+   "nnz_A": 22552480,
+   "solves_A": 74
+  }
+ ],
+ "abgebrochen_frist": false,
+ "E": 3952,
+ "nV": 512,
+ "T": 3440
+}

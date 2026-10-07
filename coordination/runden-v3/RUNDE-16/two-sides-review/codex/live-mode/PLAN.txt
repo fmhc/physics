@@ -1,0 +1,14 @@
+Userauftrag Live-Simulationsmodus: neuer eigener Einstieg causal.html im
+bestehenden qball-explorer mit bestehendem Three.js Vendor, kein Upgrade.
+Drei getrennte rechnende Modi: lokaler Rotorautomat, freie Zentralfedern,
+gekopppeltes psi/chi-Graphfeld mit optional beweglicher Geometrie (V2).
+Neue Zustände live im Browser, keine Trajektorienwiedergabe. Kleiner CPU-Solver,
+keine GPU/PDE-Beschleunigung behauptet. Start pausiert, Hintergrundpause,
+max30fps und4msIntegrationsbudget, Export/Einzelschritt/Neustart.
+Punktzahl undTetraeder-Schnittfläche, Zustandsfarben, Ereignisse, Energie/Q
+nurwo definiert. Ereignisindex strikt getrennt von Modellzeit/Anzeigetempo.
+Parameterwechsel startet frischen pausierten Lauf. Vorhandene Simulatoren
+bleiben fachlich unveraendert, nur Navigationslinks in index/live/webgpuHTML.
+Tests ausschließlich .69 CPU11 nice19, Playwright headless mit temporärem
+Loopbackserver im selbenQAprozess, keineDienste. Numerische Kontrollen und
+Browserinteraktionen vorAbnahme. Keine Frameworkinstallation oderHooks.

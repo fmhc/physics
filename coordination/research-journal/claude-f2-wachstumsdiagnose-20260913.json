@@ -1,0 +1,32 @@
+{
+  "id": "claude-f2-wachstumsdiagnose-20260913",
+  "time": "2026-09-13T18:31:00+02:00",
+  "time_kind": "completed",
+  "author": "Claude (claude-primary; Ausfuehrung claude-f2w auf .69)",
+  "topic": "micro",
+  "status": "checked",
+  "title": "F2-Nachtrag: Wachstumsraten aus Q(t) fuer alle 552 Sweep-Bahnen; Fenster-Definition erwies sich als ungeeignet (formal B), ln-Q-Verlaeufe eingefroren",
+  "question": "Zeigt die fruehe Wachstumsrate von Q(t) der Ebenenstarts zy+- einen Vorzeichenwechsel in (3,0; 3,1], wie die Registerhypothese zu F2 annimmt?",
+  "action": "Auswertung der eingefrorenen npz-Bahnen (432 Produktion + 120 Feinraster, Hashes gegen ERGEBNIS.json/ERGEBNIS-test.json geprueft) auf .69 CPU: Regression von ln Q bis zum ersten Erreichen von Q = 0,02 und im Fenster [0, 50], beide Schrittweiten, plus ln-Q-Tabellen; Ausgaenge vorab (VORAB.md).",
+  "result": "Kontrolle K: Q_max je Start auf 1e-9 reproduziert. Fenster-1-Rate zy+- positiv fuer ALLE s (0,095 bei s = 0 bis 1,83 bei s = 20; s = 3,0: 0,740, s = 3,1: 0,751), h-Uebereinstimmung ueberall: formal Ausgang B. Die Definition misst nur die erste Schwingung (0,02 wird in 0,5 bis 1,3 Zeiteinheiten erreicht). ln-Q-Verlaeufe: s = 1,9/2,5 nahezu linear ueber >= 5 e-Faltungen (Sekante 0,53/0,43), s = 3,0 langsamer (0,20) bis Saettigung bei t etwa 25, s = 3,1 gebundene Schwingung (Max ln Q -2,70, Periode etwa 35), s = 3,25 <= -3,09.",
+  "meaning": "Die vorab gewaehlte Ratendefinition war fuer die Hypothese unbrauchbar; das ist als B gebucht, nicht umgedeutet. Die Verlaeufe stuetzen qualitativ die Lesart Wachstum bei s <= 3,0, gebundene Schwingung ab 3,1, beweisen sie aber nicht. Eine echte Rate braeuchte einen neuen Vorab-Vertrag (Huellkurve nach dem ersten Maximum, Vergleich mit dem linearen Eigenwert); Daten liegen eingefroren vor. F2 bleibt Hypothese; Nachtrag wird nach Runde 11 im Register vermerkt.",
+  "sources": [
+    {
+      "path": "coordination/faden-vertrag1-20260912/nachtrag-wachstum-20260913/BERICHT-wachstum.md",
+      "sha256": "45a69fc33cad7de800dc3356fa73a71ab7faaad0050213cbf3bda0d38bef1741"
+    },
+    {
+      "path": "coordination/faden-vertrag1-20260912/nachtrag-wachstum-20260913/ERGEBNIS-wachstum-kurz.json",
+      "sha256": "6fd76dfb55238a4e630b5698d760898c5ee3001eb4aebd750008316b2d6539e3"
+    },
+    {
+      "path": "coordination/faden-vertrag1-20260912/nachtrag-wachstum-20260913/VORAB.md",
+      "sha256": "fccd9dad42c77c4ec795dbf76757f791b115f583ce81f2213791892f8851b56e"
+    },
+    {
+      "path": "coordination/faden-vertrag1-20260912/nachtrag-wachstum-20260913/f2_wachstum.py",
+      "sha256": "2960aa95f9afc3576271797a9813acba765c7823c93ec4fb95b77526cc1c8520"
+    }
+  ],
+  "recorded_at": "2026-09-13T16:34:15.611686+00:00"
+}

@@ -1,0 +1,75 @@
+Unabhängige Ergebnislesung particle_binding, 03.10.2026
+
+Urteil: CONTROLLED_PHASE_CYCLE_CAUSAL_COMPONENTS wird durch die gespeicherten
+Einzelwerte und unveränderten prospektiven Gates getragen. Kein neuer Lauf,
+keine Nachwahl von Fenstern oder Schwellen. Gelesener RESULT-SHA256:
+b7d938e4bda00bb05598f540f05320b2e3cad7a8a8f3f4be940a9d5884b8eafd.
+Gebundener Code: 3509332b4732c8497e9246855fc7be6254ff1681e3e2e99b823457180aaa1446.
+Alte observed-/split-Hashes und Importhashes stimmen mit der zuvor
+begutachteten Kette überein. Lokale Prüfung hier anhand JSON/Code/Receipt;
+die nur remote liegenden NPZ wurden nicht erneut byteweise geprüft.
+
+Vollständigkeit: genau base/time x epsilon=+/−.002, vier complete-Arme,
+je321 verschiedene QA-Zeiten von0 bis128 und gespeicherte Initial-/Final-
+sowie Ringartefakthashes. Beide Odd-Paare vollständig mit321 Einträgen.
+Alle16 Komponentenmessungen (D/H x2 Fenster x2 Schalen x2dt) und alle8
+dt-Vergleiche vorhanden; sämtliche vier Flags jeder Zeile true, ebenso
+sämtliche Referenzauflösungsflags. Acht Direct90-Diagnosen vorhanden.
+Keine nur teilweise erfolgreiche Untermenge wird als Gesamtpass gezählt.
+
+Anfangsdaten: gleicher Referenznormwert36.97295271891611 und |alpha|
+0.07394590543783222 in beiden dt-Stufen und alten theta0-Armen. Die beiden
+neuen dt-Stufen haben je Vorzeichen sogar identische Initialartefakthashes.
+v->iv ist laut gebundener Implementierung eine Rotation aller14400
+Komponenten ohne Nachnormierung. Neue Qinitial=1100.0017642551384 (+) bzw.
+1100.0017642551848 (−), gegenüber Baseline1100.0000000011014. Die positive
+quadratische Verschiebung ist erwartet, nicht versehentliche Nachnormierung:
+deltaQ2=.3226508870328169; exakte Q-Identität Fehler<1.8e−16, kanonischer
+Startfehler<2.7e−14. Alte theta0-Qinitial=1100.0043757319402 ist ausdrücklich
+anders. Auch Einitial unterscheidet sich zwischen Phasen und geringfügig
+zwischen neuen Vorzeichen. Dies ist kein fixed-Q/E-Phasenvergleich.
+
+Alle gespeicherten neuen Erhaltungsproben liegen unter ihren Toren:
+max Edrift1.3192222e−8, Qdrift3.33067e−15, Bilanz3.43188e−15 (Tor1e−5),
+Kragen2.270614e−9 (Tor1e−8). Endzustände liegen beiT128; erhaltene Ladung
+ist jeweils die eigene Anfangsladung. Max voller kanonischer Odd-Fehler
+.0008858463(base), .0002128428(time), beide<.05.
+
+Vergleichsnormen sind die eigene kausale DC- bzw. H2-phi-Referenz in der
+jeweiligen Schale: volumen-/zeitgewichtete L2-Zeitnorm sowie räumliche
+L2-Norm des komplexen +2rho-Koeffizienten. Weder Gesamtzustandsnorm noch
+kleine D+H-Differenz dient als Nenner. Größter Komponentenfehler:
+Zeit .0039339751 (DC,base,Fenster0,Schale45..50), Band .0019814392
+(H2,base,Fenster1,Schale40..45), jeweils<.05. Größte dt-Änderungen:
+Zeit .0013261048, Band .0013669072, jeweils<.01.
+
+Alle acht unterschiedlichen Komponenten/Schalen/Fenster-Reserven wurden
+auch anhand ihrer Zahlen gelesen. Engster Zeitnenner ist DC,Fenster0,
+Schale45..50: Nref=.004338140509 > Reserve .004046546984. Das Tor ist
+bestanden, aber hier nicht mit großem Abstand; bestimmend ist die kausale
+dt-Änderung .0093278375 relativ zu Nref. Die Bandnenner liegen ebenfalls
+über ihrer jeweiligen Reserve. 64eps-Hüllwerte sind winzig und nicht der
+bestimmende Term. Diese Reserve bleibt eine empirische Auflösungskontrolle,
+kein Fehlerzertifikat. Direct90 ist zusätzliche unabhängige Diagnose gegen
+gespeichertes D−H: max Fehler/alte theta0-even-Norm .0007415506 (Zeit),
+.0004992320 (Band); sie ersetzt keines der Komponenten-Gates.
+
+Reichweite: Die vollständig nichtlinearen Phasenzyklen stützen bei diesem
+epsilon, h=.05, R120 und T128 die vorher festgelegte kausale DC/H2-
+Zerlegung in beiden Fenstern88..104.4373455 und104.5..120.9373455 sowie
+Schalen40..45/45..50. DC/H2 benennen Quellgeschichten; ihre Antworten
+enthalten kausale Transienten. Kein Beweis eines stationären Endzustands,
+einer Lebensdauer, einer Strahlungsrate, additiver Leistungsanteile oder
+einer h-/alpha-Grenzwertkonvergenz. Die mitgeladene h=.025-Metadatenzeile
+ist kein neuer phase90-Feingitterarm. Der alte stationäre Vergleich bleibt
+UNRESOLVED; der jetzige kontrollierte Komponentenvergleich ändert ihn nicht.
+
+Ressourcen: interner Timer65.47613CPU-s. run-time.txt: Exit0,64.15 User+
+1.50 Systemsekunden,66.16s Wandzeit,459312KiB maximaler RSS, ein CPU8/nice19.
+65.48 ist damit der interne und65.65 der äußere CPU-Wert; beide im Budget.
+
+Root-Text ERGEBNIS.txt anschließend gegengelesen: Zahlen und Deutung passen
+zu dieser Prüfung. Keine stationäre/BIC-Aufwertung, keine neue Raum- oder
+Amplitudenkonvergenz behauptet; knappste Reserve korrekt erwähnt. Die
+Archivsicherung wird dort als gesondert durch Root geprüfter Vorgang
+ausgewiesen, nicht als von diesem Reviewer wiederholte NPZ-Prüfung.

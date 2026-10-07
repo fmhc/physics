@@ -1,0 +1,29 @@
+NICHTAUTORLEKTUERE: KLEINER NACHTRAG VOR DEM LAUF
+2. Oktober 2026. Nur Textvergleich zum zuvor gelesenen Stand und Datei-I/O.
+Kein Interpreter/Run/Test gestartet.
+
+Aktuell gelesene Datei: run.py im selben Verzeichnis.
+SHA256: 32a0ac085c9527d36a6da3cde821ad0bd7a83f6b49b8c9e1413f7b2d7cdb7a20
+
+Die vorher inline ausgefuehrte Rotoraktualisierung wurde korrekt nach
+transition(v,r,g) ausgelagert. Bei vorhandenem Token sind Reihenfolge,
+Nachbarwahl und Tupelrueckgabe gegenueber dem gelesenen Vorstand identisch.
+Die Enumerations-/Zykluslogik ist sonst unveraendert.
+
+Der neue Fall v=None gibt (None,r) zurueck. Die Assertion ueber states
+ueberdeckt fuer jeden Graphen alle Rotorbelegungen; jede wird wegen der
+verschiedenen Tokenorte mehrfach geprueft, was korrekt und unschaedlich ist.
+Dies prueft nun tatsaechlich die Implementierung der definierten
+Leertoken-Stationaritaet. Es bleibt eine Regelkontrolle, keine physikalische
+Erklaerung dafuer, wann ein materieller Motor ausloest oder stehen bleibt.
+
+Der Vierphasenzaehler wird nun durch vier Modulo-4-Uebergaenge berechnet
+und gegen [0,1,2,3,0] geprueft. Damit ist auch diese Kontrolle ausgefuehrter
+Code und kein blosses Ausgabelabel mehr.
+
+Punkt 2 des vorherigen CODE-READ.txt ist durch diesen Nachtrag erledigt.
+CPU-Affinitaet/nice/Walllimit bleiben Startcontroller-Aufgabe. Die
+Koordination hat Sicherung von stderr bei Assertionfehlern angekuendigt.
+
+Keine fachliche Startsperre fuer den oben gehashten Stand.
+Dies ist weiterhin eine Papier-Codelekture vor dem Lauf, kein Laufresultat.

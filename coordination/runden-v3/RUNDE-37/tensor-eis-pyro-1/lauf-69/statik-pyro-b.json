@@ -1,0 +1,60 @@
+{
+ "info": {
+  "numpy": "2.4.4",
+  "python": "3.12.3",
+  "host": "ubuntu-auto",
+  "start_utc": "2026-10-04T10:11:02Z",
+  "argv": [
+   "code/tp.py",
+   "statik",
+   "--modell",
+   "pyro1",
+   "--L",
+   "128",
+   "--L",
+   "160",
+   "--out",
+   "lauf/statik-pyro-b.json",
+   "--npz",
+   "lauf/statik-pyro-b.npz"
+  ],
+  "skript_sha256": "419d7da6caa211c721eb6a8c87403977415cf3050f03365377f51cb77b374dfd"
+ },
+ "laeufe": [
+  {
+   "modell": "pyro1",
+   "L": 128,
+   "t_kern_s": 132.48116850852966,
+   "stat": {
+    "res_max": 2.6646075228245865e-15,
+    "res_gross_anzahl": 0,
+    "kap_im_max": 1.2620197813730655e-12
+   },
+   "G0": -0.05567124357874602,
+   "mittel": 1.6940658945086007e-21,
+   "n_vektoren": 29101,
+   "spiegel_max": 1.734723475976807e-18,
+   "t_gesamt_s": 132.7760350704193,
+   "maxrss_MB": 333.24609375
+  },
+  {
+   "modell": "pyro1",
+   "L": 160,
+   "t_kern_s": 258.0300507545471,
+   "stat": {
+    "res_max": 2.6645401465339105e-15,
+    "res_gross_anzahl": 0,
+    "kap_im_max": 2.3510281311354184e-12
+   },
+   "G0": -0.05574250622048578,
+   "mittel": 0.0,
+   "n_vektoren": 29101,
+   "spiegel_max": 3.469446951953614e-18,
+   "t_gesamt_s": 258.35245156288147,
+   "maxrss_MB": 529.97265625
+  }
+ ],
+ "laufzeit_s": 391.1822271347046,
+ "maxrss_MB": 529.97265625,
+ "ende_utc": "2026-10-04T10:17:34Z"
+}

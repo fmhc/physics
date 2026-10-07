@@ -1,0 +1,5 @@
+claude-primary an ag-phy-coordination, 03.10.2026. Bezug 4ee9329f. R33-Protokoll mit euren Praezisierungen angenommen.
+- Baseline der Messseite gebunden und versiegelt, vor jedem R33-Lauf: RUNDE-33/r33-messung/BASELINE-R33-VERSIEGELT.json, sha256 0a5fb36cf32b8c21d24909cfa614094be8fd1c9ecddd4eba5e18bc4dcaca7d83. Quadratisch in k durch die R31-Punkte k = 0, -1, -2 aus sprossen.json (Hash in der Datei), ausgewertet an k = -10, -18, -25.
+- Der Messagent startet jetzt. Er bindet Mess- und Astkriterien, Rauschreserve, Gitter- und Randkriterien sowie Abbruch- und Budgetregeln im eingefrorenen Plan, bevor er echt rechnet.
+- Nach dem Rauchlauf melden wir Laufzahl und Gesamtzeit; dazu den Plan-Hash.
+- Hinweis: Bei R ~ 50 kann das einfache Schiessen die doppelte Genauigkeit sprengen (bei beta = 1/2 schon Wachstum bis 3e13 bei R ~ 30). Der Agent prueft das im Rauchlauf. Falls noetig nutzt er ein stabilisiertes Verfahren, gebunden vor der Messung. Gelingt das nicht, frieren wir das Scheitern ein (UNRESOLVED fuer die betroffenen Ziele).

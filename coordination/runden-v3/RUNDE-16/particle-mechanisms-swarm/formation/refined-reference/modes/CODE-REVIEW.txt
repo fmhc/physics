@@ -1,0 +1,57 @@
+Unabhängiger Code-Lesereview, 02.10.2026, particle_binding
+Keine Rechnung/Testausführung. code.py vollständig gegen PLAN gelesen.
+
+QA-only: fachlich geeignet, kein Blocker gefunden. --qa-only führt die
+gemischte kanonische Ableitungsprobe mit Faktor2-Negativkontrolle, volle
+Hesse-Richtungsableitung, kleinen freien Kanalvergleich und alle vier
+Hintergrund-/Phasen-/Abschneiderandprüfungen aus; keine sparse eigs-Suche.
+Der freie Anker enthält eine dichte240x240-Eigenwertkontrolle neben der
+40x40-Laplacekontrolle; dies ist die angekündigte kleine QA, keine
+versteckte Q1100-Modensuche. Root hält vereinbarten30s-Gesamtdeckel.
+
+Operatorprüfung
+FV-Diagonale/offdiagonale mit sqrtV entsprechen BEUTEL-Vollghostabstand;
+c-Hintergrundrest verwendet c-1 und damit korrekt den chi=1-Fernrand.
+K/G/A-Kopplungen stimmen mit unabhängiger kanonischer Ableitung überein.
+Die allgemeine Hesse-QA differenziert das rotierende lokale Potential
+und ergänzt die getrennte Gradientmatrix. Phasenanker (0,sqrtVf,0;0)
+ist bis Normfaktor dieselbe U1-Richtung. R60 wird ohne neue Frequenz
+abgeschnitten und einschließlich letzter Zelle geprüft.
+
+Kandidatendiagnostik
+Für lambda≈i rho erfolgt v=i q_y passend zur cos/sin-Konvention.
+Das separate quadratische Residuum ist aus den vier Raumblöcken und
+den richtigen beiden -2omega rho-Termen zusammengesetzt. Der kleine
+zugelassene Realteil wird durch direktes erstes UND rein harmonisches
+Residuum zusätzlich kontrolliert. deltaQ enthält beide erforderlichen
+Anteile2omega q_x+p_y, ohne unzulässige Einzelprojektionen.
+Lokalisierung nutzt die volle kanonische drei-Feld-Norm. Restriction
+nimmt erst physische Zellfelder q/sqrtV, dann exakte Volumenmittel und
+transformiert zurück. Absolute komplexe Überlappung entfernt nur die
+gemeinsame Phase. Rohe Ritzwerte/Vektoren und gesicherte Teilaufgaben
+bleiben erhalten; kein Vollständigkeitsanspruch.
+
+Ein konkreter Vollsuchpunkt vor Freigabe
+Im zuerst gelesenen compare() werden mehrere passende Zielkandidaten
+nach Frequenzdifferenz sortiert und matches[0] gewählt. Das implementiert
+NICHT die im Plan zugesagte Near-degeneracy->unentschieden-Regel.
+Der Kommentar 'nearby ambiguity unresolved' ersetzt diese Prüfung nicht.
+Minimal: pro Zielgitter gleiche Shift-Duplikate anhand bereits vorhandener
+Frequenz-/Überlappkriterien deduplizieren; bei mehr als einem verbleibenden
+zulässigen Match ambiguous/unbestätigt ausweisen. Keine neue Physikschwelle.
+QA-only wird von diesem reinen Nachsuch-Matchingpunkt nicht berührt.
+Autor und Root informiert; finale Änderung separat per Delta lesen.
+
+Finalnachtrag VOR Ausführung: compare() erneut gelesen. Nun auf JEDEM
+Zielgitter Deduplikation mit |Delta rho|<1e-6 UND Überlapp>.999;
+bei mehr als einem danach passenden Kandidaten confirmed=False mit
+ambiguous_matches. Der gemeldete Punkt ist damit behoben. Finaler Hash:
+467ad3e19cd8efcdac4ec2dcc670b50aaa59cc6f7e9e44d625ebbf94ba0d32c6.
+Kein verbleibender Blocker für QA-only und anschließend die geplante
+begrenzte Suche, sofern QA besteht und Roots Restbudget reicht.
+
+Budget/Umfang
+Bestehender äußerer Root-Timeout genügt; keine zusätzlichen Dienste oder
+Prozessmechanismen gefordert. Native Zeitüberschreitung bleibtINCOMPLETE,
+nur vollständige gespeicherte Aufgaben werten. QA-only-PASS allein
+berechtigt nicht zu Aussagen über innere Moden oder vollständige Stabilität.

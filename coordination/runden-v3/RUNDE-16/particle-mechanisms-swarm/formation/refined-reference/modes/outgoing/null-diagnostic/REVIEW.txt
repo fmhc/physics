@@ -1,0 +1,39 @@
+Nichtautorreview der freien Nullfehlerdiagnose, 02.10.2026
+particle_binding; reine Lektüre, keine Ausführung.
+
+Gelesene/gehashte Ausgangsfassung:
+PLAN eba4e9bd2e50d1539dbc8611ed7840390001000f2cdb36ec5c989229e00d7edf
+code d46ebacf9910f964561c69b19852f4cd23a8646b95c5e07084f0cd8a3425ff28
+Altergebnis 9f0b975784c3b5111fc95ae804db89b33cbbca750637ff2161c084c211a55e9f.
+
+Quellen, Operator und Normen sind korrekt umgesetzt. Genau sechs freie
+Lösungen R30 auf h=.1/.05/.025, keine M2-Referenzen/-Quellen und kein
+Aufruf outgoing.main. Der gehashte alte solve bleibt unverändert.
+Die analytische Bumpquelle wird nicht diskret aus ihrer eigenen Lösung
+hergestellt. Regionmasken zerlegen die Box lückenlos; alle regionalen
+L2-Fehler verwenden dieselbe globale Bumpnorm. Außenanteil verwendet
+Fehlerquadrate, Konvergenzfrage dagegen L2-Verhältnisse. Tailvorhersage
+4pi|A|^2 DeltaR ist ausschließlich Diagnose aus dem festen ersten Fenster,
+kein Tailabzug oder Fit. Die bekannte globale .005-Verletzung bleibt
+ausdrücklich gespeichert und führt nicht zu einem umdefinierten PASS.
+
+Ein konkreter Unterschied zur Planvorgabe war in d46ebacf vorhanden:
+Rest-/Workbilanzflags wurden nur gespeichert, nicht vor Fortsetzung
+geprüft. So könnte auch bei algebraisch ungültiger Lösung eine positive
+Regionaldiagnose entstehen. Erforderliche enge Korrektur: nach Speicherung
+jedes Falls bei false in algebra_flags abbrechen. Profil-/Amplituden-
+Originalflags dürfen für die Fehlerdiagnose weiterhin false bleiben.
+Dies ergänzt keine Schwelle; es setzt vorhandene Rest-/Bilanzgates um.
+
+Budget: process_time beginnt vor Imports, Checkpoint bei 2.5 CPU-s vor
+jedem Solve und vor Abschluss; äußerer Rootdeckel <=3 CPU-s bleibt für
+native Löser/Imports notwendig. Teilstände und Feldhashes sind vorgesehen.
+Nach der obigen Korrektur kein weiterer konkreter Blocker im vereinbarten
+Umfang. Kein Lauf und keine M2-Freigabe durch diesen Review.
+
+Finales Delta gelesen und Hash bestätigt:
+5ce698913dae029f62aba86da2a1e56ebbdd8f15168f75f13a29b67e12d6b575.
+Einzige Änderung: nach gesichertem Fall wird bei false in algebra_flags
+mit ValueError abgebrochen. Der konkrete Punkt ist damit behoben.
+Endurteil: kein verbleibender Blocker für den begrenzten Diagnoselauf;
+alte QA-Fails und deren Grenzen bleiben unverändert.

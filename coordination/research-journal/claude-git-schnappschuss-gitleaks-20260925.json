@@ -1,0 +1,36 @@
+{
+  "id": "claude-git-schnappschuss-gitleaks-20260925",
+  "time": "2026-09-25T20:34:17+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung",
+  "topic": "operations",
+  "status": "technical",
+  "title": "Erster Git-Tagesschnappschuss seit dem 20.09.: Commit c9ab68e, gepusht ins LAN-GitLab; 774 gitleaks-Treffer einzeln als Fehlalarme eingeordnet",
+  "question": "Wie wird Finns Entscheidung 'taeglich committen, plus Push ins LAN' umgesetzt, ohne Laufausgaben oder Geheimnisse in die Historie zu bringen?",
+  "action": "Skript coordination/git-tagesschnappschuss.sh (Fassung 2) nach GIT-WORKFLOW.md: Lock, leerer Index als Vorbedingung, Auswahl nach Art und Groesse, Commit und Push in systemd-run mit 50 % CPU. Versuch 1 (21:41, 1,96 GB) vor dem Commit abgebrochen. Versuch 2 (22:07) von gitleaks blockiert (774 Treffer). Pruefmodus mit geschwaerztem JSON-Bericht (22:15 bis 22:23), Einordnung nach Feldname und maskiertem Kontext, Freigabe per .gitleaksignore (249 Fingerabdruecke) und Begruendung in coordination/versionierung-20260909/GEHEIMNISPRUEFUNG.md. Versuch 3 um 22:25.",
+  "result": "Commit c9ab68e (22:26:15), 19 200 Dateien geaendert, Push 6225268..c9ab68e auf gitlab (t480), Pack 194,6 MiB. Aufgenommen: Text und Code bis 5 MB, sonst bis 256 KB ausser in den Rohordnern (Scout-Rohdaten, gauntlet/new-runs). 7 837 Dateien nur mit sha256 in NICHT-VERSIONIERT-20260925-222525.sha256; die zwei Listen 220721 und 221555 stammen aus den abgebrochenen bzw. Pruefdurchlaeufen und sind mitversioniert. gitleaks: alle 774 Treffer Regel generic-api-key, davon 698 json_token_sha256 (Hashes), 50 lease_token (abgelaufene interne Pachtkennungen), 16 genome_key, 10 Prosa- oder ID-Bruchstuecke; kein Wert angesehen.",
+  "meaning": "Der Geheimnis-Schutz hat gegriffen und wurde nicht umgangen (kein --no-verify). Die Historie ist wieder aktuell, Laufausgaben bleiben lokal und sind per Hash belegt. Neue gitleaks-Treffer in kuenftigen Schnappschuessen werden wieder einzeln geprueft; dashboard.html wird laufend neu gebaut und kann neue Fehlalarme erzeugen. Nach dem Schnappschuss bleiben 2 428 Eintraege in git status (die bewusst ausgeschlossenen Dateien und neue Aenderungen).",
+  "sources": [
+    {
+      "path": "coordination/git-tagesschnappschuss.sh",
+      "sha256": "9897cfd8d6f0153792f257d16f1b7bee70ca9be446721aa48547fa4ac940d2cb"
+    },
+    {
+      "path": "GIT-WORKFLOW.md",
+      "sha256": "e8945d59d9618d9c650846a2c303982b2eab990a79d6ed34aab5bce701fec35a"
+    },
+    {
+      "path": ".gitleaksignore",
+      "sha256": "53f9e9a0406b1844ee8e29b2f99c4b97ae4e71b85f562ed9fb74260cfd419b3e"
+    },
+    {
+      "path": "coordination/versionierung-20260909/GEHEIMNISPRUEFUNG.md",
+      "sha256": "e64f57c6ba5ad63e7991038b5e99135695c23d2d75e27479e67caf2009b4ab8e"
+    },
+    {
+      "path": "coordination/versionierung-20260909/NICHT-VERSIONIERT-20260925-222525.sha256",
+      "sha256": "ff8cf4dfec2d293c6a8f7a698fdc8fde26401e4ab264964ba5e31295e7918b67"
+    }
+  ],
+  "recorded_at": "2026-09-25T20:34:49.201490+00:00"
+}

@@ -1,0 +1,970 @@
+{
+ "erstellt_utc": "2026-10-04T17:38:40Z",
+ "ordner": "lauf",
+ "eingaben": {
+  "bisekt3.json": "16ac46029dce4e2e232d12a3634795a21f15293cfe853b2afa4720780b3dce10",
+  "bisekt2.json": "222f35bc543084e0f17db891f88333c4ddb7834a333e63d9cee613fd25c5b9f3",
+  "stab3.json": "be017ec2651542deab2b309123fa122119a76c6e2bd158786fa0cd4f8a3fdd3d"
+ },
+ "urteile": {
+  "DR0": {
+   "plan": "eingetroffen",
+   "kartenwortlaut": "eingetroffen",
+   "teile": {
+    "3d_800": {
+     "ausgang": "Tropfen",
+     "luecke": 3.3220932396111493,
+     "urteil": "eingetroffen"
+    },
+    "3d_400": {
+     "ausgang": "verschmolzen",
+     "paarabstand_R": [
+      5.7832966539862257e-05,
+      5.783296653992649e-05,
+      5.7833007720838414e-05
+     ],
+     "urteil": "eingetroffen"
+    },
+    "2d_60": {
+     "ausgang": "Tropfen",
+     "E_ende": 138.83507143701712,
+     "luecke": 0.14561685227738508,
+     "paarabstand_R": [
+      1.2452931446355917,
+      1.2452931446355922,
+      1.2452931446355948
+     ],
+     "max_rel_abw_paarabstand": 0.0002354575386303015,
+     "rel_abw_luecke": 0.002624299469965119,
+     "urteil": "eingetroffen"
+    }
+   },
+   "regel": "3D Q1 = 800: Tropfen, E_Misch - E_Ende = 3,32 +- 0,1; 3D Q1 = 400: verschmolzen; 2D Q1 = 60: Tropfen, Paarabstand/R auf 2 % bei 1,245, Luecke auf 10 % bei 0,146"
+  },
+  "DR1": {
+   "plan": "nicht auswertbar",
+   "kartenwortlaut": "eingetroffen",
+   "je_stoerung": {
+    "V1": {
+     "text": "Pol 1 um 0.15 R tangential (+x) und 0.15 R aus der Ebene (+z)",
+     "status": "wandzeit",
+     "it": 8450,
+     "sek": 60.0566246509552,
+     "d_rms_start": 0.05050087807934065,
+     "d_form_start": 0.09173555505276004,
+     "dE_start": 2.2648013950363293,
+     "d_rms_ende": 2.2601285105254618e-07,
+     "d_form_ende": 3.697443710206693e-07,
+     "dE_ende": -1.2939690350322053e-06,
+     "res_ende": 3.216419715290635e-08,
+     "reinheit_start": [
+      0.7019136460811232,
+      0.6997080646251873,
+      0.6908436937528017
+     ],
+     "reinheit_ende": [
+      0.6956753536989583,
+      0.6956322460162265,
+      0.6958446015073244
+     ],
+     "paarabstand_R_ende": [
+      1.093016567615342,
+      1.093017199160285,
+      1.0930160849465873
+     ],
+     "plan": "offen",
+     "kartenwortlaut": "zurueck",
+     "start_unter_misch": true,
+     "beschreibend": false
+    },
+    "V2": {
+     "text": "Pol 2 um 0.15 R radial nach aussen und 0.15 R aus der Ebene (+z)",
+     "status": "wandzeit",
+     "it": 8250,
+     "sek": 60.19744038581848,
+     "d_rms_start": 0.07552448302383122,
+     "d_form_start": 0.1413493598360898,
+     "dE_start": 3.55774904525083,
+     "d_rms_ende": 1.088495664927929e-07,
+     "d_form_ende": 2.4634225672065706e-07,
+     "dE_ende": -1.7711802229314344e-06,
+     "res_ende": 2.920609883105833e-08,
+     "reinheit_start": [
+      0.7066586464764425,
+      0.7436700106450916,
+      0.7062898515791036
+     ],
+     "reinheit_ende": [
+      0.6938482522337229,
+      0.6969417948587135,
+      0.6965506653243885
+     ],
+     "paarabstand_R_ende": [
+      1.0930171837019698,
+      1.093016904753369,
+      1.0930162999706556
+     ],
+     "plan": "offen",
+     "kartenwortlaut": "zurueck",
+     "start_unter_misch": false,
+     "beschreibend": false
+    },
+    "L1": {
+     "text": "5 % der Farbe 2 von Klumpen 2 nach Klumpen 1",
+     "status": "wandzeit",
+     "it": 8100,
+     "sek": 60.17810869216919,
+     "d_rms_start": 0.08361075118675534,
+     "d_form_start": 0.19045495729866405,
+     "dE_start": 34.5445646488763,
+     "d_rms_ende": 5.492753313775805e-07,
+     "d_form_ende": 9.392506172830847e-07,
+     "dE_ende": 3.876964456139831e-07,
+     "res_ende": 2.4629686595778486e-08,
+     "reinheit_start": [
+      0.6704294339022865,
+      0.6186508983501403,
+      0.7058571686805793
+     ],
+     "reinheit_ende": [
+      0.6954732353405598,
+      0.693544150225456,
+      0.6979619884667957
+     ],
+     "paarabstand_R_ende": [
+      1.0930159981090957,
+      1.0930162369132534,
+      1.0930167502997243
+     ],
+     "plan": "offen",
+     "kartenwortlaut": "zurueck",
+     "start_unter_misch": false,
+     "beschreibend": false
+    },
+    "L2": {
+     "text": "5 % der Farbe 1 von Klumpen 1 nach Klumpen 2",
+     "status": "wandzeit",
+     "it": 8100,
+     "sek": 60.20913743972778,
+     "d_rms_start": 0.08361075109495796,
+     "d_form_start": 0.1904549594635919,
+     "dE_start": 34.54456490064331,
+     "d_rms_ende": 1.2566486325100483e-07,
+     "d_form_ende": 2.7126035782485925e-07,
+     "dE_ende": 4.3359955270716455e-07,
+     "res_ende": 1.817755501676288e-08,
+     "reinheit_start": [
+      0.62271837726735,
+      0.6500263513019441,
+      0.720841742858379
+     ],
+     "reinheit_ende": [
+      0.6971532290815593,
+      0.6991736431377398,
+      0.6906879915252007
+     ],
+     "paarabstand_R_ende": [
+      1.0930170534070858,
+      1.0930168851316455,
+      1.093016557608412
+     ],
+     "plan": "offen",
+     "kartenwortlaut": "zurueck",
+     "start_unter_misch": false,
+     "beschreibend": false
+    },
+    "P1": {
+     "text": "Phase von Komponente 2 um pi/2 versetzt",
+     "status": "konvergiert",
+     "it": 0,
+     "sek": 0.017421483993530273,
+     "d_rms_start": 3.282291347957962e-16,
+     "d_form_start": 0.0,
+     "dE_start": 0.0,
+     "d_rms_ende": 3.282291347957962e-16,
+     "d_form_ende": 0.0,
+     "dE_ende": 0.0,
+     "res_ende": 3.5926230324004463e-09,
+     "reinheit_start": [
+      0.6957880625047754,
+      0.6780756200958828,
+      0.7123519669498968
+     ],
+     "reinheit_ende": [
+      0.6957880625047754,
+      0.6780756200958828,
+      0.7123519669498968
+     ],
+     "paarabstand_R_ende": [
+      1.093016937359713,
+      1.0930169373531455,
+      1.0930162863480541
+     ],
+     "plan": "zurueck",
+     "kartenwortlaut": "zurueck",
+     "start_unter_misch": true,
+     "beschreibend": false
+    },
+    "P2": {
+     "text": "Phasen von Komponente 2 und 3 um 2pi/3 und 4pi/3 versetzt",
+     "status": "konvergiert",
+     "it": 0,
+     "sek": 0.017412185668945312,
+     "d_rms_start": 1.4558762196783192e-16,
+     "d_form_start": 2.0099847474092062e-16,
+     "dE_start": 0.0,
+     "d_rms_ende": 1.4558762196783192e-16,
+     "d_form_ende": 2.0099847474092062e-16,
+     "dE_ende": 0.0,
+     "res_ende": 3.5926230324004463e-09,
+     "reinheit_start": [
+      0.6957880625047754,
+      0.6780756200958828,
+      0.7123519669498968
+     ],
+     "reinheit_ende": [
+      0.6957880625047754,
+      0.6780756200958828,
+      0.7123519669498968
+     ],
+     "paarabstand_R_ende": [
+      1.0930169373597132,
+      1.0930169373531455,
+      1.0930162863480544
+     ],
+     "plan": "zurueck",
+     "kartenwortlaut": "zurueck",
+     "start_unter_misch": true,
+     "beschreibend": false
+    },
+    "Z1": {
+     "text": "Pol 1 um 0.15 R aus der Ebene (+z), beschreibend",
+     "status": "konvergiert",
+     "it": 1250,
+     "sek": 9.33883285522461,
+     "d_rms_start": 0.005567850482517185,
+     "d_form_start": 0.010244602507974172,
+     "dE_start": 1.1842330548181508,
+     "d_rms_ende": 1.2167022718516763e-07,
+     "d_form_ende": 2.696124790656409e-07,
+     "dE_ende": -5.936083198321285e-07,
+     "res_ende": 9.58898779823692e-09,
+     "reinheit_start": [
+      0.6992802266059124,
+      0.6776627075914325,
+      0.7135131061923071
+     ],
+     "reinheit_ende": [
+      0.6970091931441185,
+      0.6766959797877863,
+      0.7125106150099422
+     ],
+     "paarabstand_R_ende": [
+      1.093016965212501,
+      1.093016965205933,
+      1.0930160167355751
+     ],
+     "plan": "zurueck",
+     "kartenwortlaut": "zurueck",
+     "start_unter_misch": true,
+     "beschreibend": true
+    },
+    "R5": {
+     "text": "glattes Rauschen 5 % der lokalen Feldstaerke, Saat 11, beschreibend",
+     "status": "konvergiert",
+     "it": 1000,
+     "sek": 9.657157897949219,
+     "d_rms_start": 0.001728904763671802,
+     "d_form_start": 0.003936365771200458,
+     "dE_start": 75.96488937986646,
+     "d_rms_ende": 1.653885190802475e-07,
+     "d_form_ende": 3.1610908920424317e-07,
+     "dE_ende": -4.792582330992445e-09,
+     "res_ende": 9.905933783161756e-09,
+     "reinheit_start": [
+      0.6949801206221912,
+      0.709002192302892,
+      0.6805860863147957
+     ],
+     "reinheit_ende": [
+      0.6939719114203692,
+      0.6947575150772407,
+      0.6975941494229553
+     ],
+     "paarabstand_R_ende": [
+      1.0930168371916138,
+      1.093016816379266,
+      1.0930166024571433
+     ],
+     "plan": "zurueck",
+     "kartenwortlaut": "zurueck",
+     "start_unter_misch": false,
+     "beschreibend": true
+    },
+    "R20": {
+     "text": "glattes Rauschen 20 % der lokalen Feldstaerke, Saat 12, beschreibend",
+     "status": "konvergiert",
+     "it": 1400,
+     "sek": 24.579330921173096,
+     "d_rms_start": 0.07028456220898215,
+     "d_form_start": 0.1474665204355245,
+     "dE_start": 1228.7898556076768,
+     "d_rms_ende": 1.1845703911173115e-07,
+     "d_form_ende": 1.8415098981756412e-07,
+     "dE_ende": -1.0677240425138734e-08,
+     "res_ende": 9.040762095555803e-09,
+     "reinheit_start": [
+      0.663469954869612,
+      0.64751315130261,
+      0.6450189258876117
+     ],
+     "reinheit_ende": [
+      0.695005988988395,
+      0.6961063525889762,
+      0.6956106002709274
+     ],
+     "paarabstand_R_ende": [
+      1.0930169171348,
+      1.0930171215041353,
+      1.093016116555759
+     ],
+     "plan": "zurueck",
+     "kartenwortlaut": "zurueck",
+     "start_unter_misch": false,
+     "beschreibend": true
+    }
+   },
+   "E_ref": 1919.9857464232593,
+   "referenz": {
+    "status": "wandzeit",
+    "it": 13650,
+    "E": 1919.9857464232593,
+    "res": 3.5926230324004463e-09,
+    "paarabstand_R": [
+     1.093016937359713,
+     1.0930169373531455,
+     1.0930162863480541
+    ],
+    "reinheit": [
+     0.6957880625047754,
+     0.6780756200958828,
+     0.7123519669498968
+    ],
+    "gestalt": "dreieck",
+    "radien": {
+     "R_eq": 6.89635885170323,
+     "R_vol": 6.729521850107548,
+     "R_rms": 5.804174446847166,
+     "S_max": 1.1662623109144947,
+     "schwerpunkt": [
+      -5.085743084750652e-11,
+      -4.358057231805579e-05,
+      -1.9158166596667635e-11
+     ]
+    }
+   },
+   "E_misch": 1923.3078396687279,
+   "E_ref_minus_misch": -3.3220932454685226,
+   "R_halb": 4.418831639617929,
+   "regel_plan": "je Stoerung: Fluss konvergiert (Residuum < tol_st), d_form < 0,02 R, d_rms < 0,02 R, |E_Ende - E_ref| < 1e-3; alle sechs (V1, V2, L1, L2, P1, P2)",
+   "regel_kw": "je Stoerung am Flussende: d_rms < 0,02 R und |dE|/E_ref < 1e-3; alle sechs"
+  },
+  "DR2": {
+   "plan": "nicht auswertbar",
+   "kartenwortlaut": "nicht auswertbar",
+   "schwelle_3d": {
+    "klammer": {
+     "Q_lo": 600.0,
+     "Q_hi": 800.0,
+     "n_bisekt": 2,
+     "stop": "offen bei Q1 = 700",
+     "Q_stern": 700.0,
+     "halbbreite": 100.0
+    },
+    "auswertbar": false,
+    "rel_breite": 0.25,
+    "Q_lo": 600.0,
+    "Q_hi": 800.0,
+    "om_ball_Q_hi": 0.7570483698215246,
+    "R_halb_ball": 4.418831639617929,
+    "R_stern_abs": 6.896356997815943,
+    "R_eq_ball": 4.678106535063722,
+    "R_stern_norm": 1.474176987233149,
+    "R_vol_abs": 6.729521850107548,
+    "R_vol_norm": 1.502323167458111,
+    "R_rms_abs": 5.804179443429235,
+    "R_rms_norm": 1.4124708424714776,
+    "R_eq_misch": 6.943260078558425,
+    "tropfen_minus_misch": -3.3220932396111493,
+    "grund": "Klammer zu breit, erzwungen oder kein Tropfen am oberen Ende"
+   },
+   "schwelle_2d": {
+    "klammer": {
+     "Q_lo": 52.5,
+     "Q_hi": 60.0,
+     "n_bisekt": 3,
+     "stop": "offen bei Q1 = 56.25",
+     "Q_stern": 56.25,
+     "halbbreite": 3.75
+    },
+    "auswertbar": false,
+    "rel_breite": 0.125,
+    "Q_lo": 52.5,
+    "Q_hi": 60.0,
+    "om_ball_Q_hi": 0.7151214425755387,
+    "R_halb_ball": 3.1758182642377255,
+    "R_stern_abs": 6.082330834487172,
+    "R_eq_ball": 3.379413030329986,
+    "R_stern_norm": 1.7998187199666613,
+    "R_vol_abs": 5.959148150313025,
+    "R_vol_norm": 1.880067409787887,
+    "R_rms_abs": 4.62636421460985,
+    "R_rms_norm": 1.6159500489337175,
+    "R_eq_misch": 6.029295850425806,
+    "tropfen_minus_misch": -0.14561685227738508,
+    "grund": "Klammer zu breit, erzwungen oder kein Tropfen am oberen Ende"
+   },
+   "verhaeltnis_abs": null,
+   "verhaeltnis_norm": null,
+   "verhaeltnisse_beschreibend": null,
+   "duennwand_geometrie_norm": 1.2009369551760027,
+   "regel_plan": "R* absolut (R_eq des Tropfens am oberen Klammerende, Laengeneinheit 1/m), max/min(2D, 3D) <= 1,3; beide Klammern (Q_hi - Q_lo)/Q_hi <= 0,1",
+   "regel_kw": "R* in Einheiten des Einpolradius gleicher Ladung Q1 (R_eq Tropfen / R_eq Einpolball bei Q_hi), max/min(2D, 3D) <= 1,3"
+  }
+ },
+ "beschreibend": {
+  "bisektion": {
+   "3d": {
+    "zeilen": [
+     {
+      "Q1": 800.0,
+      "rolle": "kontrolle_oben",
+      "om_ball": 0.7570483698215246,
+      "R_halb": 4.418831639617929,
+      "E_start": 1956.2454563792335,
+      "E_Misch": 1923.3078396687279,
+      "E_Misch_radial": 1923.3075073072137,
+      "E_Tropfen": 1919.9857464279953,
+      "E_drei_getrennt": 1982.2221063201666,
+      "start_minus_misch": 32.93761671050561,
+      "start_minus_tropfen": 36.259709951238165,
+      "tropfen_minus_misch": -3.3220932407325563,
+      "erzwungen": false,
+      "erzwungen_gegen_misch": false,
+      "erzwungen_gegen_tropfen": false,
+      "sektorstart_minus_misch": 90.91153449864487,
+      "sektorlauf_erzwungen": false,
+      "ausgang": "Tropfen",
+      "gestalt": "dreieck",
+      "status": "konvergiert",
+      "it": 900,
+      "E_ende": 1919.9857464291167,
+      "ende_minus_misch": -3.3220932396111493,
+      "paarabstand_R": [
+       1.0930362912273306,
+       1.0930362912207625,
+       1.0930356563319974
+      ],
+      "reinheit": [
+       0.695798093778763,
+       0.6780800221042937,
+       0.7123560260591897
+      ],
+      "res": 6.478401836651492e-07,
+      "sektor_ausgang": "Tropfen",
+      "sektor_gestalt": "dreieck",
+      "sektor_status": "konvergiert",
+      "sektor_it": 800,
+      "sektor_E_ende": 1919.9857464279953,
+      "sektor_paarabstand_R": [
+       1.0930343205241937,
+       1.0930343205176252,
+       1.0930336833994236
+      ],
+      "gueltig": true,
+      "R_eq_ball": 4.678106535063722,
+      "R_eq_ende": 6.896356997815943,
+      "R_eq_misch": 6.943260078558425,
+      "R_vol_ball": 4.479410286598796,
+      "R_vol_ende": 6.729521850107548,
+      "R_rms_ball": 4.109238413214495,
+      "R_rms_ende": 5.804179443429235,
+      "sek": 22.204406023025513
+     },
+     {
+      "Q1": 400.0,
+      "rolle": "klammer_unten",
+      "om_ball": 0.7938339694387677,
+      "R_halb": 3.2944095287597044,
+      "E_start": 1035.2638470755696,
+      "E_Misch": 1001.3131979395928,
+      "E_Misch_radial": 1001.3129952663771,
+      "E_Tropfen": null,
+      "E_drei_getrennt": 1055.2399838131316,
+      "start_minus_misch": 33.950649135976846,
+      "start_minus_tropfen": null,
+      "tropfen_minus_misch": null,
+      "erzwungen": false,
+      "erzwungen_gegen_misch": false,
+      "erzwungen_gegen_tropfen": false,
+      "sektorstart_minus_misch": 68.42009708989349,
+      "sektorlauf_erzwungen": false,
+      "ausgang": "verschmolzen",
+      "gestalt": "verschmolzen",
+      "status": "konvergiert",
+      "it": 800,
+      "E_ende": 1001.3131979538791,
+      "ende_minus_misch": 1.4286342775449157e-08,
+      "paarabstand_R": [
+       5.7832966539862257e-05,
+       5.783296653992649e-05,
+       5.7833007720838414e-05
+      ],
+      "reinheit": [
+       0.32989462835503114,
+       0.31391394685657764,
+       0.35623757220535124
+      ],
+      "res": 9.306059788050103e-07,
+      "sektor_ausgang": "verschmolzen",
+      "sektor_gestalt": "verschmolzen",
+      "sektor_status": "konvergiert",
+      "sektor_it": 800,
+      "sektor_E_ende": 1001.3131979479671,
+      "sektor_paarabstand_R": [
+       4.4277567694589915e-05,
+       4.427756769465006e-05,
+       4.427753928793804e-05
+      ],
+      "gueltig": true,
+      "R_eq_ball": 3.6386416038255667,
+      "R_eq_ende": 5.424296235933908,
+      "R_eq_misch": 5.42429623578931,
+      "R_vol_ball": 3.365140437906649,
+      "R_vol_ende": 5.196344008685939,
+      "R_rms_ball": 3.438848919484682,
+      "R_rms_ende": 4.678491562583792,
+      "sek": 22.917441606521606
+     },
+     {
+      "Q1": 600.0,
+      "rolle": "bisektion",
+      "om_ball": 0.771079462380969,
+      "R_halb": 3.920079411640932,
+      "E_start": 1500.7565084612077,
+      "E_Misch": 1465.4169962874103,
+      "E_Misch_radial": 1465.4167230170915,
+      "E_Tropfen": null,
+      "E_drei_getrennt": 1524.0646807891035,
+      "start_minus_misch": 35.3395121737974,
+      "start_minus_tropfen": null,
+      "tropfen_minus_misch": null,
+      "erzwungen": false,
+      "erzwungen_gegen_misch": false,
+      "erzwungen_gegen_tropfen": false,
+      "sektorstart_minus_misch": 81.97233779576436,
+      "sektorlauf_erzwungen": false,
+      "ausgang": "verschmolzen",
+      "gestalt": "verschmolzen",
+      "status": "konvergiert",
+      "it": 4900,
+      "E_ende": 1465.4169964676503,
+      "ende_minus_misch": 1.8024002201855183e-07,
+      "paarabstand_R": [
+       0.0004602648715106889,
+       0.00046026487151125503,
+       0.00046026489537141665
+      ],
+      "reinheit": [
+       0.3345116329586133,
+       0.31665732989662526,
+       0.3492204841705546
+      ],
+      "res": 9.361954035197461e-07,
+      "sektor_ausgang": "verschmolzen",
+      "sektor_gestalt": "verschmolzen",
+      "sektor_status": "konvergiert",
+      "sektor_it": 4850,
+      "sektor_E_ende": 1465.4169964692232,
+      "sektor_paarabstand_R": [
+       0.00046226872238966816,
+       0.0004622687223901007,
+       0.00046226875039743803
+      ],
+      "gueltig": true,
+      "R_eq_ball": 4.214074263254628,
+      "R_eq_ende": 6.269120439931549,
+      "R_eq_misch": 6.26912042314063,
+      "R_vol_ball": 3.9432017584895376,
+      "R_vol_ende": 6.069946379924662,
+      "R_rms_ball": 3.8007580457655963,
+      "R_rms_ende": 5.272431651512329,
+      "sek": 67.99755454063416
+     },
+     {
+      "Q1": 700.0,
+      "rolle": "bisektion",
+      "om_ball": 0.7633636124282386,
+      "R_halb": 4.1790762314146725,
+      "E_start": 1729.4573363442044,
+      "E_Misch": 1694.974402442861,
+      "E_Misch_radial": 1694.9740995839563,
+      "E_Tropfen": null,
+      "E_drei_getrennt": 1754.1896390337188,
+      "start_minus_misch": 34.48293390134336,
+      "start_minus_tropfen": null,
+      "tropfen_minus_misch": null,
+      "erzwungen": false,
+      "erzwungen_gegen_misch": false,
+      "erzwungen_gegen_tropfen": false,
+      "sektorstart_minus_misch": 86.90087160036728,
+      "sektorlauf_erzwungen": false,
+      "ausgang": "offen",
+      "gestalt": "zwischenform",
+      "status": "konvergiert",
+      "it": 1400,
+      "E_ende": 1694.2148925654494,
+      "ende_minus_misch": -0.759509877411574,
+      "paarabstand_R": [
+       0.8742879972586893,
+       0.874287997255169,
+       0.8742889615757161
+      ],
+      "reinheit": [
+       0.6123743425928503,
+       0.5967611590148925,
+       0.6365967961605102
+      ],
+      "res": 8.248606617744513e-07,
+      "sektor_ausgang": "offen",
+      "sektor_gestalt": "zwischenform",
+      "sektor_status": "konvergiert",
+      "sektor_it": 1300,
+      "sektor_E_ende": 1694.2148925752194,
+      "sektor_paarabstand_R": [
+       0.8743007801267481,
+       0.8743007801232279,
+       0.8743017455213501
+      ],
+      "gueltig": false,
+      "R_eq_ball": 4.456735337133224,
+      "R_eq_ende": 6.610330388213948,
+      "R_eq_misch": 6.622190880339492,
+      "R_vol_ball": 4.128883202300278,
+      "R_vol_ende": 6.413551098324494,
+      "R_rms_ball": 3.9606675555322153,
+      "R_rms_ende": 5.542160028229242,
+      "sek": 19.317584991455078
+     }
+    ],
+    "klammer": {
+     "Q_lo": 600.0,
+     "Q_hi": 800.0,
+     "n_bisekt": 2,
+     "stop": "offen bei Q1 = 700",
+     "Q_stern": 700.0,
+     "halbbreite": 100.0
+    },
+    "N": 80,
+    "L": 48.0,
+    "h": 0.6,
+    "g4": -0.1
+   },
+   "2d": {
+    "zeilen": [
+     {
+      "Q1": 60.0,
+      "rolle": "kontrolle_oben",
+      "om_ball": 0.7151214425755387,
+      "R_halb": 3.1758182642377255,
+      "E_start": 141.83139031636404,
+      "E_Misch": 138.9806882892945,
+      "E_Misch_radial": 138.98066763718643,
+      "E_Tropfen": 138.83507143703693,
+      "E_drei_getrennt": 145.53882879806247,
+      "start_minus_misch": 2.8507020270695307,
+      "start_minus_tropfen": 2.996318879327106,
+      "tropfen_minus_misch": -0.14561685225757515,
+      "erzwungen": false,
+      "erzwungen_gegen_misch": false,
+      "erzwungen_gegen_tropfen": false,
+      "sektorstart_minus_misch": 6.78367726995458,
+      "sektorlauf_erzwungen": false,
+      "ausgang": "Tropfen",
+      "gestalt": "dreieck",
+      "status": "konvergiert",
+      "it": 1050,
+      "E_ende": 138.83507143701712,
+      "ende_minus_misch": -0.14561685227738508,
+      "paarabstand_R": [
+       1.2452931446355917,
+       1.2452931446355922,
+       1.2452931446355948
+      ],
+      "reinheit": [
+       0.6488102477863719,
+       0.6560625330294427,
+       0.6406582137694289
+      ],
+      "res": 6.139476127486888e-08,
+      "sektor_ausgang": "Tropfen",
+      "sektor_gestalt": "dreieck",
+      "sektor_status": "konvergiert",
+      "sektor_it": 1000,
+      "sektor_E_ende": 138.83507143703693,
+      "sektor_paarabstand_R": [
+       1.245295953504771,
+       1.2452959535047718,
+       1.2452959535041435
+      ],
+      "gueltig": true,
+      "R_eq_ball": 3.379413030329986,
+      "R_eq_ende": 6.082330834487172,
+      "R_eq_misch": 6.029295850425806,
+      "R_vol_ball": 3.1696460027384594,
+      "R_vol_ende": 5.959148150313025,
+      "R_rms_ball": 2.8629376370034145,
+      "R_rms_ende": 4.62636421460985,
+      "sek": 3.3274571895599365
+     },
+     {
+      "Q1": 30.0,
+      "rolle": "klammer_unten",
+      "om_ball": 0.75875798807329,
+      "R_halb": 2.1048972566751654,
+      "E_start": 76.48398055511979,
+      "E_Misch": 73.0182179341876,
+      "E_Misch_radial": 73.01820205537683,
+      "E_Tropfen": null,
+      "E_drei_getrennt": 79.6254852256688,
+      "start_minus_misch": 3.465762620932182,
+      "start_minus_tropfen": null,
+      "tropfen_minus_misch": null,
+      "erzwungen": false,
+      "erzwungen_gegen_misch": false,
+      "erzwungen_gegen_tropfen": false,
+      "sektorstart_minus_misch": 6.267460794964663,
+      "sektorlauf_erzwungen": false,
+      "ausgang": "verschmolzen",
+      "gestalt": "verschmolzen",
+      "status": "konvergiert",
+      "it": 500,
+      "E_ende": 73.01821793419498,
+      "ende_minus_misch": 7.37543359718984e-12,
+      "paarabstand_R": [
+       4.672284118695447e-06,
+       4.672284118719714e-06,
+       4.672284118837198e-06
+      ],
+      "reinheit": [
+       0.3335655819687361,
+       0.34206021694461275,
+       0.3243769027697858
+      ],
+      "res": 8.527338112018783e-08,
+      "sektor_ausgang": "verschmolzen",
+      "sektor_gestalt": "verschmolzen",
+      "sektor_status": "konvergiert",
+      "sektor_it": 500,
+      "sektor_E_ende": 73.01821793419609,
+      "sektor_paarabstand_R": [
+       5.011011442925886e-06,
+       5.011011443013311e-06,
+       5.011011455771812e-06
+      ],
+      "gueltig": true,
+      "R_eq_ball": 2.4062004619400708,
+      "R_eq_ende": 4.183937437968657,
+      "R_eq_misch": 4.183937437964203,
+      "R_vol_ball": 2.096820283885486,
+      "R_vol_ende": 3.9819356104198964,
+      "R_rms_ball": 2.317475218695087,
+      "R_rms_ende": 3.4057327758564404,
+      "sek": 1.728062629699707
+     },
+     {
+      "Q1": 45.0,
+      "rolle": "bisektion",
+      "om_ball": 0.7302681537464769,
+      "R_halb": 2.6733407060111865,
+      "E_start": 109.6816473297443,
+      "E_Misch": 106.19988420358688,
+      "E_Misch_radial": 106.19986575196891,
+      "E_Tropfen": null,
+      "E_drei_getrennt": 113.04572359293712,
+      "start_minus_misch": 3.481763126157418,
+      "start_minus_tropfen": null,
+      "tropfen_minus_misch": null,
+      "erzwungen": false,
+      "erzwungen_gegen_misch": false,
+      "erzwungen_gegen_tropfen": false,
+      "sektorstart_minus_misch": 6.768548981731854,
+      "sektorlauf_erzwungen": false,
+      "ausgang": "verschmolzen",
+      "gestalt": "verschmolzen",
+      "status": "konvergiert",
+      "it": 1750,
+      "E_ende": 106.19988420363873,
+      "ende_minus_misch": 5.185540885577211e-11,
+      "paarabstand_R": [
+       1.8877459150817507e-05,
+       1.8877459150622947e-05,
+       1.887745915053366e-05
+      ],
+      "reinheit": [
+       0.3335664299339625,
+       0.3405087792956765,
+       0.3259366139206057
+      ],
+      "res": 9.507871373548585e-08,
+      "sektor_ausgang": "verschmolzen",
+      "sektor_gestalt": "verschmolzen",
+      "sektor_status": "konvergiert",
+      "sektor_it": 1750,
+      "sektor_E_ende": 106.1998842036382,
+      "sektor_paarabstand_R": [
+       1.8780834951917433e-05,
+       1.8780834952072373e-05,
+       1.8780834946438346e-05
+      ],
+      "gueltig": true,
+      "R_eq_ball": 2.9149875056733574,
+      "R_eq_ende": 5.181087609034119,
+      "R_eq_misch": 5.181087608901073,
+      "R_vol_ball": 2.665012070418412,
+      "R_vol_ende": 5.048235856473997,
+      "R_rms_ball": 2.590865126413303,
+      "R_rms_ende": 4.037490480496936,
+      "sek": 4.933862209320068
+     },
+     {
+      "Q1": 52.5,
+      "rolle": "bisektion",
+      "om_ball": 0.7217601012014359,
+      "R_halb": 2.9323094833209757,
+      "E_start": 125.84532030071585,
+      "E_Misch": 122.62842415402062,
+      "E_Misch_radial": 122.62840456503423,
+      "E_Tropfen": null,
+      "E_drei_getrennt": 129.37673169482963,
+      "start_minus_misch": 3.216896146695234,
+      "start_minus_tropfen": null,
+      "tropfen_minus_misch": null,
+      "erzwungen": false,
+      "erzwungen_gegen_misch": false,
+      "erzwungen_gegen_tropfen": false,
+      "sektorstart_minus_misch": 6.821134860724015,
+      "sektorlauf_erzwungen": false,
+      "ausgang": "verschmolzen",
+      "gestalt": "verschmolzen",
+      "status": "konvergiert",
+      "it": 22900,
+      "E_ende": 122.62842415539514,
+      "ende_minus_misch": 1.3745165006184834e-09,
+      "paarabstand_R": [
+       0.00040538569580973955,
+       0.00040538569581047816,
+       0.00040538569581052326
+      ],
+      "reinheit": [
+       0.3336650238463214,
+       0.3400571591289105,
+       0.32653875927174025
+      ],
+      "res": 9.881043007420323e-08,
+      "sektor_ausgang": "verschmolzen",
+      "sektor_gestalt": "verschmolzen",
+      "sektor_status": "konvergiert",
+      "sektor_it": 22900,
+      "sektor_E_ende": 122.62842415539205,
+      "sektor_paarabstand_R": [
+       0.00040493137653709917,
+       0.00040493137653741846,
+       0.0004049313765242822
+      ],
+      "gueltig": true,
+      "R_eq_ball": 3.153005637556929,
+      "R_eq_ende": 5.619932820838568,
+      "R_eq_misch": 5.619932807726515,
+      "R_vol_ball": 2.9485316288611836,
+      "R_vol_ende": 5.486362967600185,
+      "R_rms_ball": 2.728631980014562,
+      "R_rms_ende": 4.322144754206393,
+      "sek": 58.904579162597656
+     },
+     {
+      "Q1": 56.25,
+      "rolle": "bisektion",
+      "om_ball": 0.7182529211163516,
+      "R_halb": 3.0564859950002785,
+      "E_start": 133.85567130181346,
+      "E_Misch": 130.81307714348912,
+      "E_Misch_radial": 130.81305701453638,
+      "E_Tropfen": null,
+      "E_drei_getrennt": 137.47641742181958,
+      "start_minus_misch": 3.0425941583243343,
+      "start_minus_tropfen": null,
+      "tropfen_minus_misch": null,
+      "erzwungen": false,
+      "erzwungen_gegen_misch": false,
+      "erzwungen_gegen_tropfen": false,
+      "sektorstart_minus_misch": 6.8123745474170505,
+      "sektorlauf_erzwungen": false,
+      "ausgang": "offen",
+      "gestalt": "zwischenform",
+      "status": "konvergiert",
+      "it": 1850,
+      "E_ende": 130.77489097198287,
+      "ende_minus_misch": -0.03818617150625414,
+      "paarabstand_R": [
+       0.9813005557446467,
+       0.9813005557446473,
+       0.981300555744651
+      ],
+      "reinheit": [
+       0.5733446995770445,
+       0.5807783382634043,
+       0.5650285368012539
+      ],
+      "res": 9.721278393381997e-08,
+      "sektor_ausgang": "offen",
+      "sektor_gestalt": "zwischenform",
+      "sektor_status": "konvergiert",
+      "sektor_it": 1850,
+      "sektor_E_ende": 130.7748909719786,
+      "sektor_paarabstand_R": [
+       0.9813000028159803,
+       0.9813000028159807,
+       0.981300002815943
+      ],
+      "gueltig": false,
+      "R_eq_ball": 3.267608914900065,
+      "R_eq_ende": 5.8815413481617265,
+      "R_eq_misch": 5.827944835258837,
+      "R_vol_ball": 3.0934108930758306,
+      "R_vol_ende": 5.750168643382667,
+      "R_rms_ball": 2.7962705384825353,
+      "R_rms_ende": 4.476757510076754,
+      "sek": 5.1685545444488525
+     }
+    ],
+    "klammer": {
+     "Q_lo": 52.5,
+     "Q_hi": 60.0,
+     "n_bisekt": 3,
+     "stop": "offen bei Q1 = 56.25",
+     "Q_stern": 56.25,
+     "halbbreite": 3.75
+    },
+    "N": 256,
+    "L": 64.0,
+    "h": 0.25,
+    "g4": -0.1
+   }
+  }
+ },
+ "vermerke": [
+  "DR1: P1 und P2 (gleichfoermiger Phasenversatz je Komponente) sind exakte Symmetrien von E_Q (U(1)^3); ihre Rueckkehr war vorab ableitbar (PLAN 2). L1 und L2 sind eine Symmetrieklasse (D3 x S3).",
+  "DR2 Kartenwortlaut: Duennwand-Geometrie gibt R_Tropfen/R_1 = 3^(1/D) (2D 1,732, 3D 1,442, Verhaeltnis 1,201 < 1,3); das normierte R* ist weitgehend vorab ableitbar (PLAN 2)."
+ ]
+}

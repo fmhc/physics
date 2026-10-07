@@ -1,0 +1,20 @@
+# G2-04 Laufzettel fuer die Leitung (Test-Agent T-1). Rechnen tut die Leitung.
+# Skript: gleiten_mc2.py = Kopie RUNDE-06/medium1d/medium1d.py (Original unveraendert) + Abschnitt "G2-04" (zwei neue
+#   Unterbefehle). torch, float64/complex128, --geraet cuda|cpu.
+# Ordner auf der .69: /home/fmh/fmhc-physics-remote/ie-gen02-g2-04/ (gleiten_mc2.py, KARTE.md, NACHTRAG.md, LAUF.txt)
+# Hauptlauf und Gegenprobe sind getrennte Aufrufe; jeder Aufruf rechnet grob und fein (L3 im selben Bericht).
+#
+# Formprobe lokal (CPU, 1 Faden, nice 19, Zeitfaktor 0,02; 11:21:38 bis 11:22:12): beide rc 0. Keine Aussage daraus.
+#   haupt: grob 4,5 s, fein 21,9 s  -> CPU voll etwa 225 s + 1100 s: passt auf CPU nicht in 10 min, deshalb GPU
+#   gegen: grob 0,6 s, fein 2,7 s   -> CPU voll etwa 3 min (CPU moeglich, GPU bevorzugt)
+# GPU-Schaetzung aus RUNDE-06 landau (24 Laeufe, gleiche Box und Zeit: grob 32 s, fein 77 s auf P4000):
+#   haupt (23 Laeufe) etwa 2 min, gegen (4 Laeufe) unter 1,5 min. Beide unter 10 min.
+cd /home/fmh/fmhc-physics-remote/ie-gen02-g2-04 && bash /home/fmh/fmhc-physics-remote/kleintests/kleintest.sh p4000a g204-haupt gleiten_mc2.py gleiten_mc2 --out ausgabe | tee lauf-69-haupt.log
+cd /home/fmh/fmhc-physics-remote/ie-gen02-g2-04 && bash /home/fmh/fmhc-physics-remote/kleintests/kleintest.sh p4000b g204-gegen gleiten_mc2.py gleiten_mc2_gegen --out ausgabe | tee lauf-69-gegen.log
+# Ist p4000b gesperrt (WM-1-MB laeuft, rc 3): denselben Gegenproben-Aufruf auf p4000a nach dem Hauptlauf.
+# Falls haupt doch ueber 10 min laeuft (RuntimeMaxSec 600): teilen mit --stufen grob und --stufen fein (zwei Aufrufe,
+#   L3 dann von Hand aus zwei Berichten).
+# Ergebnis: ausgabe/medium1d_gleiten_mc2_bericht.txt und _ergebnis.json (je Stufe: V1 bis V5, Gegenbilder G-Mach und
+#   G-u, Sammelprobe ueber k' und u, Fallenbilanz an den Rahmenpunkten von u_10, Plausibilitaet, URTEIL-Flags);
+#   ausgabe/medium1d_gleiten_mc2_gegen_bericht.txt (lam = 0, Spiegel mit Partner, Medium allein).
+# formprobe/ und formprobe-*.log sind Rauchtests mit Zeitfaktor 0,02: keine Aussage daraus.

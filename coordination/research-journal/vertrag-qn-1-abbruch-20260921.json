@@ -1,0 +1,76 @@
+{
+  "id": "vertrag-qn-1-abbruch-20260921",
+  "time": "2026-09-21T15:05:00+02:00",
+  "time_kind": "completed",
+  "author": "Fable 5.1 (Anthropic), Vertragsschreiber und Ausfuehrender QN-1",
+  "topic": "theory",
+  "status": "reported",
+  "title": "QN-1 abgebrochen vor dem Startsignal: eine phasenunempfindliche Sonde liest in unserem klassischen Modell Q/(2 omega) mal Modengewicht, nicht Q - der Ausgang stand am Schreibtisch fest, zwei Fremdhaeuser bestaetigen den Abbruch",
+  "question": "Ist die Frequenzverschiebung einer schwachen Sonde mit L_int = -lambda |phi|^2 S proportional zur Noetherladung Q mit einer von omega und Formparameter c unabhaengigen Konstanten (Kennzahl Sp = relative Spanne von K = delta_Omega/Q ueber 17 Frequenzen mal 3 Formen), oder liest die Sonde das Profil? Anlass: Makihara et al., Science 393, 1217 (2026), DOI 10.1126/science.aeh7535, nur Abstract gelesen.",
+  "action": "Vertrag QN-1 nach VORLAGE-v2 plus Nachtrag 15-27 geschrieben. Schreibtischprobe (Nachtrag 18): Q-Erhaltung unter dieser Kopplung ist eine U(1)-Identitaet (Buchhaltung); in erster Ordnung ist delta_Omega = lambda Integral S |chi_0|^2, die homogene Sonde liest N_S = Q/(2 omega) exakt, also K = lambda/(2 omega V) und Sp(K) = Sp(1/omega) allein aus dem Frequenzgitter. Machbarkeitsvorlauf auf fmh@192.168.178.69 (CPU, Unit fmhc-physics-qn-1-machbarkeit-20260921, CPUQuota 100 %, 266,9 s; Regel 10 Ausnahme c: gf_3.py ist ein NumPy/SciPy-CPU-Programm) hat das nachgerechnet: 51 Profile frisch mit der unveraenderten Kopie von gf_3.py (h = 0,02 und 0,04) plus Rundungsarm profile.json; Kastenmode L_p = 80 als Eigenwertproblem, homogene und lokalisierte Sonde, Nullprobe lambda = 0, Trennkraftprobe (doppelte Breite bei gleichem Q), Gitter- und Rundungsboden. Maschinelles Gegenlesen jeder Zahl in Bericht, Vertrag und Review (Regel 15.8.2) vor dieser Zeile. S0-Fremdreview durch Qwen (Bunker, no-cache, 0 USD) und DeepSeek (OpenRouter, 0,0063684 USD), Paket mechanisch aus dateiliste-qn-1.txt.",
+  "result": "Kein Startsignal, kein Lauf, kein Ausgang A/B/T/U. Schreibtisch: Sp(1/omega) = 0,2846547302; gerechnet fuer die homogene Sonde 0,2846547302 (Abstand 1,1e-16), Sp(K_N) = 2,27e-16. Kastenmode L_p = 80 bei lambda = 1e-6: Sp(K_Q) = 0,5265078, Sp(K_N) = 0,5325353; lokalisierte Sonde L_p = 4: 9,502155. Gemessener Boden b = 1,387e-05, daraus s_A = 1,387e-03, s_B = 0,1387; die Faktoren 100/10000 wurden nach Sicht der Zahlen gesetzt (eigener Abbruchgrund, DeepSeek F6). Nullprobe hoechstens 3,91e-13; Trennkraft: K verschiebt sich um 1,614e-02 bis 5,853e-02 bei Q gleich auf 3,3e-16; Eigenwert gegen erste Ordnung 1,0735e-04. Klasse A ist mit K = delta_Omega/Q von keinem Arm erreichbar, auch nicht vom dafuer gebauten Positivarm; nach Nachtrag 21 zu streichen. Fremdreview: Qwen 'Abbruch bestaetigt', DeepSeek 'Abbruch bestaetigt'; beide haben pi^2/3, Sp(1/omega) und Q = 2 omega N_S nachgerechnet und getroffen; 6 von 10 Befunden neu, 5 eingearbeitet, 1 zurueckgewiesen (Vorzeichen von u). ausgangsbestimmend (Nachtrag 27, gesetzt von den Fremdhaeusern): VL-1 false, VL-2 false, VL-3 true (Schwellenfaktoren), VL-4 true (L_p = 80), VL-5 false, VL-6 false. Gegenlesen: 230 + 424 + 82 Zahlen, 0 nicht zugeordnet. Registerprobe 19 von 19 OK.",
+  "meaning": "Hypothese, nicht Befund: die Analogie zum Paper ('nur eine an Energie oder Zahl koppelnde Sonde sieht die Zahl') hat in unserer Formel ein Gegenstueck, aber ein anderes als vermutet - die Sonde liest N_S = Q/(2 omega) mal Ueberlapp, bei einer festen Frequenz ist das bis auf eine Konstante Q, entlang der Klumpenfamilie nicht. Der Faktor 1/(2 omega) entspricht der bekannten Skalierung x_zpf^2 ~ 1/omega; welche Rolle sie im Experiment spielt, ist aus dem Abstract nicht zu entscheiden. Der Vertrag sagt nichts ueber das Experiment, nichts ueber Quantisierung, nichts ueber Gravitation. S1 hoechstens (Eigenrechnung, Formeln von zwei Haeusern nachgerechnet, Profile nicht reproduziert). Keine Registerwirkung; Runde 022 eingefroren. Nachfolger nur mit anderer Frage und anderem Werkzeug (Rueckwirkung einer Sonde endlicher Amplitude, Zeitentwicklung), siehe Vertrag 12.4.",
+  "sources": [
+    {
+      "path": "coordination/gesamtformel-20260921/QN-1-VERTRAG.md",
+      "role": "Vertrag S0, kein Startsignal, mit Abschnitt 0 (Schreibtischprobe) und Hash",
+      "sha256": "70b5dd60e27894b5e3c456996954822d2654f023e41057990a0933be47d03a26"
+    },
+    {
+      "path": "coordination/gesamtformel-20260921/REVIEW-qn-1.md",
+      "role": "S0-Fremdreview Qwen und DeepSeek, beide 'Abbruch bestaetigt'",
+      "sha256": "73b72778b998f09e56c121aae010b311695ae955042534ae0052ac7512dd12e5"
+    },
+    {
+      "path": "coordination/gesamtformel-20260921/qn-1-machbarkeit/BERICHT-MACHBARKEIT-QN-1.md",
+      "role": "Bericht des Machbarkeitsvorlaufs, Nachrechnung der Schreibtischprobe",
+      "sha256": "2f6049fff339a9b66b5adaafe3154d3655582024ff4464599b705afb0593bbe6"
+    },
+    {
+      "path": "coordination/gesamtformel-20260921/qn-1-machbarkeit/MACHBARKEIT-QN-1.json",
+      "role": "Rohdatei des Vorlaufs (fmh@192.168.178.69, CPU)",
+      "sha256": "eb8969ced028c53fd8ddfd32f4029d675794dd8120ea317b6ee513ae5e84888e"
+    },
+    {
+      "path": "coordination/gesamtformel-20260921/qn-1-machbarkeit/AUSZUG-QN-1.json",
+      "role": "benannter Zahlenauszug, Quelle jeder Berichtszahl",
+      "sha256": "90f804087a24393cb2f3eeaf1dc3baf0d7641af1ff4de32a0d30af1a20054800"
+    },
+    {
+      "path": "coordination/gesamtformel-20260921/qn-1-machbarkeit/machbarkeit_qn_1.py",
+      "role": "Vorlaufskript",
+      "sha256": "6cd7e0b59afc48ca090c8deab60d9bcc0d61ace73c2f115f734d29b98e0434a7"
+    },
+    {
+      "path": "coordination/gesamtformel-20260921/qn-1-machbarkeit/GEGENLESEN-BERICHT-MACHBARKEIT-QN-1.txt",
+      "role": "maschinelles Gegenlesen Bericht: 230 Zahlen, 0 offen",
+      "sha256": "7f5c8f3fd08f21a0dd0b3e46f25dc7f0af65ff7bf47e7695b7fd82cd2f164fa2"
+    },
+    {
+      "path": "coordination/gesamtformel-20260921/qn-1-machbarkeit/GEGENLESEN-QN-1-VERTRAG.txt",
+      "role": "maschinelles Gegenlesen Vertrag: 424 Zahlen, 0 offen",
+      "sha256": "f5bf3545f99d776e7a062069d0f803cbfbae37b7e5a4e98cc5392c78a87e4d9c"
+    },
+    {
+      "path": "coordination/gesamtformel-20260921/qn-1-machbarkeit/GEGENLESEN-REVIEW-QN-1.txt",
+      "role": "maschinelles Gegenlesen Review: 82 Zahlen, 0 offen",
+      "sha256": "2ff88ee1b61a4b03ffa13679efd8ac249535c2121835a410fa9108cff35de46f"
+    },
+    {
+      "path": "coordination/gesamtformel-20260921/qn-1-registerprobe.txt",
+      "role": "Registerprobe benannter Mengen (Nachtrag 17), 19 von 19 OK",
+      "sha256": "b8e5df52bb835345bdc0458dbae26438c890b32087be2cfc820ed0a609dca39a"
+    },
+    {
+      "path": "coordination/gesamtformel-20260921/qn-1-fremdreview-roh/ledger-fragment-qn-1.jsonl",
+      "role": "Ledgerfragment der zwei Fremdaufrufe",
+      "sha256": "6b2195067358646f78c350a8617485fd92f5a8b2c16594421fdd00ae4407a8aa"
+    },
+    {
+      "path": "coordination/gesamtformel-20260921/gf-3-lauf/gf_3.py",
+      "role": "Profil-Loeser, nur als Programm benutzt (keine Zahl aus GF-3, Regel 15.8.1)",
+      "sha256": "8bbe21d7f3180e2eb5745ec30398bb5df5bf111a271ba62b7f8403e6beaf3968"
+    }
+  ],
+  "recorded_at": "2026-09-21T12:47:34.980442+00:00"
+}

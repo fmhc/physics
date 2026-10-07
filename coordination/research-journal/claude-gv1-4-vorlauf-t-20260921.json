@@ -1,0 +1,56 @@
+{
+  "id": "claude-gv1-4-vorlauf-t-20260921",
+  "time": "2026-09-21T01:05:00+02:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5)",
+  "topic": "theory",
+  "status": "technical",
+  "title": "GV1.4 gerechnet: Ausgang T im Pflicht-Vorlauf - die vorgeschriebene Anfangsbedingung startet alle 20 Vermittler gleichzeitig auf derselben Kappe und zwingt den Koerper per Impulssatz auf das 19,6-fache der zu messenden Geschwindigkeit",
+  "question": "Schwingt ein starrer Hohlraum mit 20 eingesperrten Photonen in einer harmonischen Falle mit der Traegheit seiner Gesamtruheenergie (Q_T = 1,000209) oder nur mit der Ruhemasse seiner Materie (Q_T = 0,833333)? Der Vertrag GV1.4 sollte diese Frage mit einer Kennzahl stellen, die - anders als die selbsterfuellende Silberzeile GV1 - scheitern kann: 167 Schwellenbreiten zwischen den beiden vorab bezifferten Vorhersagen, die Alternative als eigener Rechenarm, eine Nullprobe, die die Alternative treffen muss.",
+  "action": "Startsignal 'mach weiter' (Finn, 21.09.2026) schriftlich mit Wortlaut, Zeit und Grund festgehalten, neun Vertragsluecken vorab gefuellt. Laufskript aus dem Vertragstext und den hashgebundenen Bausteinen der Vorgaengerlinie (vermittler.py Rev. 5, gv1_3_f2.py) neu geschrieben, ohne ein Zeichen an den Originalen zu aendern. Gerechnet auf fmh@192.168.178.69 als begrenzte CPU-User-Unit (Regel-10-Ausnahme dokumentiert, GPU-Lock nicht angefasst). Modus pruefe: K0a, K0b, K1, K2, K5 und eine technische Sonde. Danach der Pflicht-Vorlauf mit den sechs Gattern V1 bis V6 ueber die Arme G1, GL und G0, je 12 Bahnen, Seed 23.",
+  "result": "Der Modus pruefe ist vollstaendig bestanden: K0a 5,3e-15, K0b 2,3e-15, K1 reproduziert den archivierten Rev.-5-Lauf auf 5,6e-16 relativ mit exakt denselben Stosszahlen 126/111/137, und K2 trifft die im Vertrag vorab genannte Frequenz des leeren Arms 0,019999625 auf 3,99e-8 relativ - eine geschlossene Formel, die der Lauf nicht selbst erzeugt. Der Pflicht-Vorlauf riss dann an Gatter V1: 217 von 240 Vermittlern verlassen den Hohlraum (verlangt: null). Folge nach Vertrag 6.5 und Vorrang 7.2: Ausgang T, keine Produktion, kein omega, kein <E_r>, kein Q_T. Ursache belegt und aus dem Vertragstext plus Impulssatz herleitbar: Abschnitt 2.6 setzt alle 20 Vermittler auf dieselbe Kappe A, und die neu eingefuehrte Paarung gibt dem Partner die entgegengesetzte Richtung am selben Aufsetzpunkt - er fliegt also in die Kappe hinein und prallt nach 1e-6 Zeiteinheiten ab (im Nullprobenarm G0 als genau 10 = n/2 Stoesse je Bahn gemessen, obwohl der Vertrag dort null Stoesse behauptet). Danach fliegen alle 20 im Gleichschritt, P_gas,z = 199,88, und wegen P(0) = 0 folgt V_K = -0,196 gegen die Sollamplitude V_0 = 0,01, also Faktor 19,6. Der Koerper ist damit ein Spiegel mit beta bis 0,2; gemessen: |k|_letzt/|k|_erst = 0,0222 (K6b verlangt 0,97 bis 1,03), Fitresiduum 1,614 (K3b erwartet 0,11), und |sum k|/(n|k|) bei t_a noch 0,8953 statt 0,2236. Es wurde an keiner Schwelle gedreht.",
+  "meaning": "Erstens zur Sache: der Lauf sagt nichts darueber, welche der beiden Vorhersagen zutrifft - es gibt kein Q_T, und weder 1,000209 noch 0,833333 ist gestuetzt oder widerlegt. Gerissen ist eine Anordnung, nicht eine Frage. Zweitens zur Methodik, und das ist der eigentliche Ertrag: der Pflicht-Vorlauf hat zum zweiten Mal in Folge (nach GV1.3 Fassung 2) eine wertlose Produktion verhindert, und beide Male hat die Erreichbarkeitsprobe am Schreibtisch dasselbe Falsche gerechnet - sie benutzt eine Verteilungsannahme ('n unabhaengige Vermittler, gleichverteilt zwischen den Kappen'), die die vorgeschriebene Anfangsbedingung nicht erfuellt. Drittens: Kontrolle K7b ist einseitig gebaut und hat den Stoerfall bestanden, obwohl der gemessene Wert selbst die Stoerung war. Daraus folgt fuer den Nachfolger GV1.5 (Vorschlag geschrieben): Anfangsbedingung entkoppeln, Rueckstoss 2/(5n) klein gegen V_0 machen, ein Vorlauf-Gate auf max|V_K| <= 3 V_0, K7b zweiseitig, und eine Machbarkeitsprobe vor dem Vertrag statt einer Erreichbarkeitsprobe im Vertrag. Runde 022 bleibt eingefroren: nichts gebucht, keine Registerzeile, keine Evidenzbindung, keine Jury; die Silberzeile GV1 bleibt unveraendert, und ueber ihre Stufe entscheidet die Jury in Runde 23.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260921/gv1-4-VERTRAG.md",
+      "role": "Vertrag S0, fremdgeprueft",
+      "sha256": "1415d5f8377077e6dcee7062dd4f4724ffcb087b56c53b22f0ebc894cf365f52"
+    },
+    {
+      "path": "coordination/vertraege-20260921/REVIEW-gv1-4.md",
+      "role": "S0-Fremdreview, Qwen und DeepSeek",
+      "sha256": "2f83ca1156a67b84321da4fe5f2545e59c15631b277f5e8788494d90bf00a3d0"
+    },
+    {
+      "path": "coordination/vertraege-20260921/startsignal-gv1-4.txt",
+      "role": "Startsignal mit Wortlaut, Zeit, Grund und den neun Vertragsluecken",
+      "sha256": "644a9d417afc318de19c75aa41686a7fc6ce9058fc0a21701bfd0b4a110140b8"
+    },
+    {
+      "path": "coordination/vertraege-20260921/gv1-4-lauf/BERICHT-GV1-4.md",
+      "role": "Bericht, mechanisch aus den Ergebnisdateien",
+      "sha256": "67177857e469b52b8eb3b4d8b9d1bab62a86055edc6e53c9b87ac12a03416527"
+    },
+    {
+      "path": "coordination/vertraege-20260921/gv1-4-lauf/VORLAUF-GV1-4.json",
+      "role": "Messwerte des Pflicht-Vorlaufs und der sechs Gatter",
+      "sha256": "52eaafed615192d3d949dd6213deb1c4bc22add6e39667cca7bf10280b911136"
+    },
+    {
+      "path": "coordination/vertraege-20260921/gv1-4-lauf/PRUEFE-GV1-4.json",
+      "role": "Messwerte der bestandenen Kontrollen K0a, K0b, K1, K2, K5",
+      "sha256": "4da0e5abea390cfd7202de2705d9d269de8ae18c4e51c419d62207fe2096e413"
+    },
+    {
+      "path": "coordination/vertraege-20260921/gv1-4-lauf/gv1_4.py",
+      "role": "Laufskript",
+      "sha256": "f95d76c6bb35cf7517f3c927fb7099b6f9c4c158e9ff146e786c5f59cbf5c2f7"
+    },
+    {
+      "path": "coordination/vertraege-20260921/VORSCHLAG-GV1-5.md",
+      "role": "Nachfolgevorschlag",
+      "sha256": "3cbb22803464edd165827b676126a4bd22934ba67b0c87056b5b277481d3b6e7"
+    }
+  ],
+  "recorded_at": "2026-09-20T23:04:29.570702+00:00"
+}

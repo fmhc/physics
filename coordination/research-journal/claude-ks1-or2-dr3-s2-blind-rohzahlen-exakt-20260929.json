@@ -1,0 +1,85 @@
+{
+  "id": "claude-ks1-or2-dr3-s2-blind-rohzahlen-exakt-20260929",
+  "time": "2026-09-29T12:45:23+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung und Pruefer; S2-Autor Anthropic Opus 5.5 (frisch, blind); S3 Anthropic Opus 5.5 (frisch); Vorablesungen und Zugriffsbelege OpenAI astra (je frisch); Sollerzeuger OR2-V OpenAI astra",
+  "topic": "binaries",
+  "status": "reported",
+  "evidenzart": "modell",
+  "title": "KS-1-OR2-Vorlauf DR3, S2: Der blind geschriebene Nachbau des Hauses Anthropic trifft alle Rohzaehler des Sollerzeugers exakt und denselben Ausgang T/3; nach S3 nur Diagnose, keine S2-Bestaetigung, weil die zweite Abgabe nach A8.6 nicht zaehlt; Export, M1-Auswahl und Vertragsentscheidungen sind nicht geprueft",
+  "question": "Reproduziert eine vom Sollerzeuger unabhaengige Implementierung (S2, Haus Anthropic, blind), gebaut aus Teil A, Datenwoerterbuch, gebundener Konfiguration und zwei wertfreien Schnittstellen der Leitung mit entschiedenen Lesarten, die Rohzaehler, die Aggregate und den Ausgang des OR2-Vorlaufs DR3-L1?",
+  "action": "Rolle: Die Leitung besetzte S2 um 11:08 CEST mit dem Haus Anthropic (Opus 5.5, frische Sitzung, kein Fork), nachdem der Ausgang T/3/V01 bekannt war. Von A12.2 (Alibaba/Qwen mit G1-G5) wich schon der vor dem Lauf gestempelte VERMERK-S2-HAUS-OR2.md nach Finns Regel ab (OpenAI mit G1'-G5'); von diesem Vermerk wich die Leitung erst nach dem Ausgang ab, weil bei T allein der Sollerzeuger (OpenAI) rechnete. Statt G1'-G5' setzte sie nachtraeglich GA1-GA5. Paket: Teil A, Datenwoerterbuch, gebundene Konfiguration, erlaubte Eingaben, zwei wertfreie Schnittstellen der Leitung; kein Referenzcode, keine Zielzahlen, kein Ausgang. 'Blind' im Sinn 'Code und Ergebnisse des Sollerzeugers nicht gesehen' ist eine Verhaltensaussage ausserhalb A8.8, gestuetzt auf Paketliste, frische Sitzung und die Transkriptstichprobe von S3 (0 Treffer fuer sollerzeuger-DR3-PRODUKTIV-L1, ks1-or2-boegen nur in der Verbotsliste). Offengelegt: Z. 9 des S2-Auftrags liess auf 'nicht KEINE_MESSUNG' schliessen. Drei OpenAI-Vorablesungen nach A8.8 (nicht erteilt, erteilt, Delta erteilt). Abgabe 1: z erteilt; Eingangspruefung T, Stufe 1, FORM, feld e.eingaben_nach[0], neuabgabe=false; danach Diagnose des Pruefers per jq mit Bitvergleich (10:41Z). Erst danach (10:43Z) liess die Leitung nach eigener Lesart (S2-Sonderregel vor A8.6) eine Abgabe 2 zu, mit Werkzeugmeldung, Serialisierungsanweisung und Hinweis auf A8.3. Abgabe 2: neue Vorablesung, z, Eingangspruefung, Vergleich T8_OR2. Danach S3.",
+  "result": "Abgabe 2: Eingangspruefung bestanden; Vergleich T8_OR2 bestanden mit 0 Abweichungen (Rohzaehler exakt, analytische Zahlen innerhalb 1e-9, Kontrollstatus exakt); Endbescheid T, Stufe 3, V01 wie in beiden Boegen. Der Modellblock ist in allen drei e (Sollerzeuger, Abgabe 1, Abgabe 2) bitgleich; die Rohzahlen stammen also aus der blinden Abgabe 1. Zugriffe in beiden Abgaben genau die acht erlaubten L1-Paare. S3 (bestanden mit Vermerken): Die strenge Lesart von A8.6 traegt, die zweite Abgabe zaehlt nicht; S2 ist nur Diagnose, keine S2-Bestaetigung nach A12.2. Die Rueckmeldung entspricht der Klasse nach Handwerk, nicht Stufe i. GA1-GA5 sind am Transkript erfuellt, GA4 mit Vermerk (Dauern je Phase, Token ungeprueft). Die Rollenzuordnung traegt in der Sache und steht unter Vorbehalt, bis Finn sie bestaetigt. Leitung, Pruefer, ein Bogen, S2 und S3 sind alle Anthropic. Kosten S2: 80,7 s GPU und 7,9 s CPU von 30 min, 2 von 3 Abgaben. Offen: Finns Bestaetigung der S2-Zuordnung und seine Entscheidung, ob die Sonderregel nachtraeglich gelten soll.",
+  "meaning": "Eine zweite, blind geschriebene Implementierung hat die Rohzaehler des OR2-Vorlaufs auf der DR3-M1-Geometrie bitgenau reproduziert. Nach S3 ist das eine starke Diagnose, aber keine S2-Bestaetigung nach dem Vertrag, weil die zweite Abgabe nach A8.6 nicht zaehlt. Gemeinsame Ursachen erfasst der Nachbau nicht: derselbe Teil A, die von der Leitung entschiedenen Lesarten und Schnittstellen, dieselbe Bibliothekskette. Export, M1-Auswahl und die Vertragsentscheidungen (Kennzahl, Fenster, Schwellen) sind nicht geprueft. An der Bedeutung des T aendert das nichts: Es ist ein Kontrollversagen auf dieser Geometrie, keine Antwort auf die Herkunftsfrage, und OR2 bleibt nach A7.4 fachlich beendet.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260928/ks-1-or2-lauf/S2-ERGEBNIS-OR2-DR3-L1.md",
+      "sha256": "786d6031ac227ca67bc9dc3bbf9534946c28fcdac589d378c84de6bc203bb464"
+    },
+    {
+      "path": "coordination/vertraege-20260928/ks-1-or2-lauf/s2-lauf-dr3-l1-a2/VERGLEICH-OR2-S2-A2.json",
+      "sha256": "62fb942c8269cb3ce1911b3328033b37e1595e4ea1dc60610dce23f08ac6e73e"
+    },
+    {
+      "path": "coordination/vertraege-20260928/ks-1-or2-lauf/s2-lauf-dr3-l1-a2/ZUGRIFFSBELEG-OR2.md",
+      "sha256": "5c2f8f89d7671afb20844abbfdcc7eaecc660dc7f99fcbf66a449cc1a6c6c935"
+    },
+    {
+      "path": "coordination/vertraege-20260928/ks-1-or2-lauf/LEITUNG-ENTSCHEIDUNG-S2-ABGABE-1-FORM.md",
+      "sha256": "fc4eaed02fa8e15e20cefa83cd3340e43cda8c9e889e5055b9d099df21fa0ac0"
+    },
+    {
+      "path": "coordination/vertraege-20260928/ks-1-or2-lauf/LEITUNG-VERMERK-S2-DR3-L1.md",
+      "sha256": "f2e1a44d4066f36a215aee9d2b78ebc0efc9a86c44cbaf4dd5839f1a85d699cb"
+    },
+    {
+      "path": "coordination/vertraege-20260928/ks-1-or2-bindung/VERMERK-S2-HAUS-OR2.md",
+      "sha256": "c1e3a4939b02ef244b605b6b8c1eb91bc9cd080c10e20c1c8713bd00f1bd16a1"
+    },
+    {
+      "path": "coordination/vertraege-20260928/ks-1-or2-bindung/TEIL-A-OR2-F3.txt",
+      "sha256": "c61e6e488d2cffbe6c73f0698e9d0902f48287f2cd48a8dd18f12c541dc282ea"
+    },
+    {
+      "path": "coordination/vertraege-20260928/ks-1-or2-lauf/s2-dr3-l1/GA-BELEG-S2.md",
+      "sha256": "5af790890255d1b49b39dcaed5c010c531ded847de3d93740dcf0833e7e59c91"
+    },
+    {
+      "path": "coordination/vertraege-20260928/ks-1-or2-lauf/LEITUNG-ENTSCHEIDUNG-VORABLESUNG-S2-NEIN.md",
+      "sha256": "e277a1327c082d4890a7c46aaf5d7012b31653db5484855a446d8c9dd4fa4be9"
+    },
+    {
+      "path": "coordination/vertraege-20260928/ks-1-or2-lauf/vorablesung-a88-s2/ZUGRIFFSVORPRUEFUNG-OR2-S2-L1-V3.md",
+      "sha256": "702dfdbafbef8bb32552a4a5bb46988dde6b2bd69cd3e7e6d75e6ddc291e749e"
+    },
+    {
+      "path": "coordination/vertraege-20260928/ks-1-or2-lauf/ZUGRIFFSVORPRUEFUNG-OR2.md",
+      "sha256": "20eb95e60195a90bbeb832702921e2cfe9ce40e1b4b1f8f8bf461e58ece02b17"
+    },
+    {
+      "path": "coordination/vertraege-20260928/ks-1-or2-lauf/s2-dr3-l1/GA-BELEG-S2-BERICHTIGUNG-1.md",
+      "sha256": "add468edecd5cbe576c121f61ae9be9b43d58d480690e905910e534bb87ae742"
+    },
+    {
+      "path": "coordination/vertraege-20260928/ks-1-or2-lauf/s3-dr3-l1/S3-OR2-DR3-L1.md",
+      "sha256": "4ad64c571b0561461fa84446b3be8f8b26029ff0ad9c9f5a63201cffe8111ca5"
+    },
+    {
+      "path": "coordination/vertraege-20260928/ks-1-or2-lauf/S2-ERGEBNIS-OR2-DR3-L1-BERICHTIGUNG-1.md",
+      "sha256": "42629a07e1554e769b1835c791caaff216205d9bdbfe6a1070c61d27114dd6e6"
+    },
+    {
+      "path": "coordination/vertraege-20260928/ks-1-or2-lauf/s2-dr3-l1/GA-BELEG-S2-BERICHTIGUNG-2.md",
+      "sha256": "00b8e40241143a2a3d3cd5bc1f73b9b73bb3b2231b6fefe7bf591599294568b4"
+    },
+    {
+      "path": "coordination/vertraege-20260928/ks-1-or2-lauf/s2-dr3-l1/AUFTRAG-S2-DR3-L1.md",
+      "sha256": "c22f2b093ac60ecfac1fd6921a162f392cacc38744f4187a4a395771b80224ca"
+    },
+    {
+      "path": "coordination/vertraege-20260928/ks-1-or2-lauf/S2-ERGEBNIS-OR2-DR3-L1-BERICHTIGUNG-2.md",
+      "sha256": "ee40806fa62be5a9e0fd6d97c9a69afd96b923c551cd800d62cfbf18be9aab86"
+    }
+  ],
+  "recorded_at": "2026-09-29T13:29:55.735016+00:00"
+}

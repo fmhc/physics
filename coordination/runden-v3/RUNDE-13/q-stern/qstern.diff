@@ -1,0 +1,913 @@
+--- ../bball-leiter/bball2.py	2026-10-01 19:43:03.557376859 +0200
++++ qstern.py	2026-10-01 20:31:31.055071465 +0200
+@@ -1,5 +1,17 @@
+ #!/usr/bin/env python3
+-"""B-BALL-LEITER (Runde 13 nach v3, explorativ): stille Stellen (W = 0 bei reellem rho) im Q-Ball mit flachem
++"""Q-STERN (Runde 13 nach v3, explorativ): Kopie von RUNDE-13/bball-leiter/bball2.py, erweitert um ein statisches
++Newton-Potential Phi (selbstkonsistent, Poisson-Integral) und die Linearisierung in Cowling-Naeherung (delta Phi = 0).
++Sextik-Modell U(S) = S - S^2 + S^3/2. Neu (Diff qstern.diff):
++   Hintergrund: f'' + (2/r) f' = (1 - 2 Phi) U'(f^2) f - (1 - 4 Phi) omega^2 f,
++                Phi'' + (2/r) Phi' = alpha rho_E, rho_E = omega^2 f^2 + f'^2 + U(f^2), Phi(inf) = 0.
++   Linear:      A = (1 - 2 Phi) dp - (1 - 4 Phi) omega^2, B = 2 omega (1 - 4 Phi), C = (1 - 2 Phi) sp, D = 1 - 4 Phi,
++                y1'' = (A + B rho - D rho^2) y1 + C y2,  y2'' = C y1 + (A - B rho - D rho^2) y2.
++   z (geschlossen abklingend, offen exakt null bei R) startet mit z1'/z1 = -kappa_c + eta_c/R (Coulomb-Korrektur).
++   Der offene Kanal von z ist bei R exakt null; das langreichweitige Phi koppelt die Kanaele nicht. Die Coulomb-Phase
++   des offenen Kanals geht darum nicht in W ein (HERLEITUNG.md).
++   --alpha, --r-fak (K3: Aussenrand R -> r_fak R), --quelle (rho | rho3p; Regel nur rho).
++Alter Kopf (bball2.py):
++B-BALL-LEITER (Runde 13 nach v3, explorativ): stille Stellen (W = 0 bei reellem rho) im Q-Ball mit flachem
+ Log-Potential U(S) = ln(1 + S) und, im selben Codepfad, im Sextik-Modell U(S) = S - S^2 + S^3/2 (Kontrolle K1).
+ 
+ Aufbau nach RUNDE-12/afm-kanal2/afm_bic.py (Verfahren unveraendert uebernommen: W_reell, W_multi, wurzeln, rechteck,
+@@ -83,6 +95,14 @@
+ # ----------------------------------------------------------------------------------------------------------------------
+ 
+ T_MIX = 0.0          # B-BALL-2: Parameter t des Mischpotentials (Modell "mix"), gesetzt in main aus --t
++ALPHA = 0.0          # Q-STERN: Kopplung alpha der Poisson-Gleichung, gesetzt in main aus --alpha
++R_FAK = 1.0          # Q-STERN: Aussenrand-Faktor (K3: 1,5), gesetzt in main aus --r-fak
++QUELLE = "rho"       # Q-STERN: Quelle der Poisson-Gleichung: "rho" (Karte) oder "rho3p" (rho + 3 p, nur Nebenlauf)
++PHI_TOL = 1e-9       # Q-STERN: Konvergenz der Phi-Iteration (max |Phi_neu - Phi_alt|, absolut)
++PHI_ITER = 80        # Q-STERN: hoechstens so viele Phi-Iterationen
++PHI_MISCH = 1.0      # Q-STERN: Mischung Phi <- Phi_alt + misch (Phi_neu - Phi_alt)
++N_RAMPE = 6          # Q-STERN: ohne Warmstart alpha in N_RAMPE Iterationen linear hochfahren (Kontinuitaet in alpha)
++BG_CACHE = {}        # Q-STERN: konvergierte Hintergruende je (hp, alpha, r_fak, quelle): Liste (x, f0, PhiF, Phi2)
+ 
+ 
+ def U_(m, S):
+@@ -127,15 +147,53 @@
+     return -2.0 * S + 3.0 * S * S
+ 
+ 
+-def G_(m, f, x):
+-    """f'' + (2/r) f' = G(f) = (U'(f^2) - omega^2) f, x = omega^2."""
+-    return (Up_(m, f * f) - x) * f
++def G_(m, f, x, F=0.0):
++    """f'' + (2/r) f' = G(f) = ((1 - 2 Phi) U'(f^2) - (1 - 4 Phi) omega^2) f, x = omega^2, F = Phi(r)."""
++    return ((1.0 - 2.0 * F) * Up_(m, f * f) - (1.0 - 4.0 * F) * x) * f
+ 
+ 
+-def Gs_(m, f, x):
+-    """dG/df = U' + 2 S U'' - omega^2."""
++def Gs_(m, f, x, F=0.0):
++    """dG/df = (1 - 2 Phi)(U' + 2 S U'') - (1 - 4 Phi) omega^2."""
+     S = f * f
+-    return Up_(m, S) + 2.0 * S * Upp_(m, S) - x
++    return (1.0 - 2.0 * F) * (Up_(m, S) + 2.0 * S * Upp_(m, S)) - (1.0 - 4.0 * F) * x
++
++
++def rho_quelle(m, x, S, p2):
++    """Quelle der Poisson-Gleichung (ohne alpha). Karte: rho_E = omega^2 f^2 + f'^2 + U. Nebenlauf: rho + 3 p."""
++    if QUELLE == "rho3p":
++        return 4.0 * x * S - 2.0 * U_(m, S)
++    return x * S + p2 + U_(m, S)
++
++
++def cum_int(g, h):
++    """Kumulatives Integral int_0^r g auf dem Gitter j h: Trapez plus Euler-Maclaurin-Endkorrektur (Fehler O(h^4))."""
++    T = np.concatenate([[0.0], np.cumsum(0.5 * (g[1:] + g[:-1]) * h)])
++    dg = np.gradient(g, h, edge_order=2)
++    return T - h * h / 12.0 * (dg - dg[0])
++
++
++def phi_aus_profil(m, x, rr, f, p, al=None):
++    """Phi(r) = -alpha [m(r)/r + int_r^inf rho r' dr'], m(r) = int_0^r rho r'^2 dr'; c = alpha m(inf) (Phi ~ -c/r)."""
++    hp = float(rr[1] - rr[0])
++    rho = rho_quelle(m, x, f * f, p * p)
++    I1 = cum_int(rho * rr * rr, hp)
++    I2 = cum_int(rho * rr, hp)
++    Ph = np.empty_like(rr)
++    al = ALPHA if al is None else al
++    Ph[1:] = -al * (I1[1:] / rr[1:] + I2[-1] - I2[1:])
++    Ph[0] = -al * I2[-1]
++    return Ph, al * float(I1[-1]), float(I1[-1])
++
++
++def phi_fein(rr, Ph, c, nf, hp):
++    """Phi auf dem Feingitter j hp/2 (j = 0 .. nf - 1): kubischer Spline im Profilbereich, -c/r ausserhalb."""
++    from scipy.interpolate import CubicSpline
++    rf = np.arange(nf) * (0.5 * hp)
++    out = np.empty(nf)
++    innen = rf <= rr[-1]
++    out[innen] = CubicSpline(rr, Ph)(rf[innen])
++    out[~innen] = -c / rf[~innen]
++    return out
+ 
+ 
+ def grenzen(m, x):
+@@ -193,39 +251,54 @@
+ # Profil: Schiessen (wie nls2.profile, 3D, verallgemeinert)
+ # ----------------------------------------------------------------------------------------------------------------------
+ 
+-def _rk4_prof(m, r, phi, p, hp, x):
+-    def f(rr, a, b):
+-        return b, G_(m, a, x) - 2.0 * b / rr
+-    k1a, k1b = f(r, phi, p)
+-    k2a, k2b = f(r + 0.5 * hp, phi + 0.5 * hp * k1a, p + 0.5 * hp * k1b)
+-    k3a, k3b = f(r + 0.5 * hp, phi + 0.5 * hp * k2a, p + 0.5 * hp * k2b)
+-    k4a, k4b = f(r + hp, phi + hp * k3a, p + hp * k3b)
++def _rk4_prof(m, r, phi, p, hp, x, F0=0.0, Fm=0.0, F1=0.0):
++    def f(rr, a, b, F):
++        return b, G_(m, a, x, F) - 2.0 * b / rr
++    k1a, k1b = f(r, phi, p, F0)
++    k2a, k2b = f(r + 0.5 * hp, phi + 0.5 * hp * k1a, p + 0.5 * hp * k1b, Fm)
++    k3a, k3b = f(r + 0.5 * hp, phi + 0.5 * hp * k2a, p + 0.5 * hp * k2b, Fm)
++    k4a, k4b = f(r + hp, phi + hp * k3a, p + hp * k3b, F1)
+     return (phi + hp / 6.0 * (k1a + 2 * k2a + 2 * k3a + k4a), p + hp / 6.0 * (k1b + 2 * k2b + 2 * k3b + k4b))
+ 
+ 
+-def _start(m, c, x, hp):
+-    a = G_(m, c, x) / 6.0
+-    b = Gs_(m, c, x) * a / 20.0
++def _start(m, c, x, hp, F0=0.0, Phi2=0.0):
++    """f = c + a r^2 + b r^4, Phi = Phi(0) + Phi2 r^2: 6 a = G(c, Phi(0)), 20 b = Gs a + G_Phi Phi2."""
++    a = G_(m, c, x, F0) / 6.0
++    GF = (-2.0 * Up_(m, c * c) + 4.0 * x) * c
++    b = (Gs_(m, c, x, F0) * a + GF * Phi2) / 20.0
+     return c + a * hp * hp + b * hp ** 4, 2.0 * a * hp + 4.0 * b * hp ** 3
+ 
+ 
+-def _klassen(m, xs, lo, hi, K, hp, r_max, f_lin):
++def _klassen(m, xs, lo, hi, K, hp, r_max, f_lin, PhiF=None, Phi2=None):
+     t = np.arange(1, K + 1) / (K + 1.0)
+     c = lo[:, None] + (hi - lo)[:, None] * t[None, :]
+     x = xs[:, None] * np.ones_like(c)
+     kap = np.sqrt(1.0 - x)
+-    phi, p = _start(m, c, x, hp)
++    if PhiF is None:
++        def Fz(j):
++            return 0.0
++        P2 = 0.0
++    else:
++        def Fz(j):
++            return PhiF[j][:, None]
++        P2 = Phi2[:, None]
++    phi, p = _start(m, c, x, hp, Fz(0), P2)
+     r = hp
+     kl = np.zeros(c.shape, dtype=np.int8)
+     offen = np.ones(c.shape, dtype=bool)
+     n = int(r_max / hp)
+-    for _ in range(1, n):
+-        phi, p = _rk4_prof(m, r, phi, p, hp, x)
++    for k in range(1, n):
++        phi, p = _rk4_prof(m, r, phi, p, hp, x, Fz(2 * k), Fz(2 * k + 1), Fz(2 * k + 2))
+         r += hp
+         ueber = offen & (phi < 0)
+         unter = offen & (p > 0) & (phi > 0)
+         lin = offen & ~ueber & ~unter & (phi < f_lin * c)
+-        B = p + phi * (kap + 1.0 / r)
++        if PhiF is None:
++            B = p + phi * (kap + 1.0 / r)
++        else:
++            # Coulomb-Yukawa-Schwanz f ~ e^{-kappa r} r^(eta - 1), eta = -r Phi (4 omega^2 - 2) / (2 kappa)
++            eta = -r * Fz(2 * k + 2) * (4.0 * x - 2.0) / (2.0 * kap)
++            B = p + phi * (kap + (1.0 - eta) / r)
+         kl[ueber] = 1
+         kl[unter] = -1
+         kl[lin & (B > 0)] = -1
+@@ -244,53 +317,76 @@
+     return float(r[j - 1] + (f[j - 1] - wert) / (f[j - 1] - f[j]) * (r[j] - r[j - 1]))
+ 
+ 
+-def profile(m, xs, hp, K=64, runden=40, r_max=200.0, f_lin=1e-4, f_rand=1e-9, prot=None):
+-    """Grundzustaende (knotenfrei) fuer x = omega^2. Gitter r_j = j hp. Rueckgabe je x ein dict oder None."""
+-    xs = np.asarray(xs, dtype=float)
++def _schiessen(m, xs, hp, lo, hi, erw, frei, K, runden, r_max, f_lin, PhiF, Phi2):
++    """Klammer-Schiessen wie bball2.profile; 'frei' = Startklammer ohne Garantie (Q-STERN, Phi != 0): Ausweiten nach
++    oben bzw. unten, bis beide Enden durch eine klassifizierte Probe bestaetigt sind."""
+     M = len(xs)
+-    lo = np.empty(M)
+-    hi = np.empty(M)
+-    erw = np.zeros(M, dtype=bool)
+-    for i, x in enumerate(xs):
+-        a, b, e = grenzen(m, x)
+-        lo[i], hi[i], erw[i] = a * (1 + 1e-13), b * (1 - 1e-15), e
++    lo, hi = lo.copy(), hi.copy()
+     bestaetigt = ~erw
++    lo_ok = ~frei
++    hi_ok = ~frei
+     fehler = [None] * M
+     for rd in range(runden):
+-        c, kl = _klassen(m, xs, lo, hi, K, hp, r_max, f_lin)
++        c, kl = _klassen(m, xs, lo, hi, K, hp, r_max, f_lin, PhiF, Phi2)
+         for i in range(M):
+             k = kl[i]
+             iu = np.where(k == -1)[0]
+             io = np.where(k == 1)[0]
++            w = hi[i] - lo[i]
+             if len(io) == 0 and len(iu) == K:
+                 lo[i] = c[i, -1]
+-                if not bestaetigt[i]:
++                lo_ok[i] = True
++                if frei[i] and not hi_ok[i]:
++                    hi[i] = hi[i] + 4.0 * w
++                elif not bestaetigt[i]:
+                     hi[i] = 2.0 * hi[i]
+                 continue
+             if len(iu) == 0 and len(io) == K:
+                 hi[i] = c[i, 0]
++                hi_ok[i] = True
+                 bestaetigt[i] = True
++                if frei[i] and not lo_ok[i]:
++                    lo[i] = max(lo[i] - 4.0 * w, 0.5 * lo[i])
+                 continue
+             if len(iu) == 0 or len(io) == 0:
+                 fehler[i] = f"keine Klammer (unter {len(iu)}, ueber {len(io)}, Runde {rd})"
+                 continue
+             j = io[0]
+             ju = iu[iu < j]
+-            nlo = c[i, ju[-1]] if len(ju) else lo[i]
+-            lo[i], hi[i] = nlo, c[i, j]
++            if len(ju):
++                lo[i] = c[i, ju[-1]]
++                lo_ok[i] = True
++            hi[i] = c[i, j]
++            hi_ok[i] = True
+             bestaetigt[i] = True
+-        if np.all((hi - lo) <= 4e-16 * hi) and bestaetigt.all():
++        if np.all((hi - lo) <= 4e-16 * hi) and bestaetigt.all() and lo_ok.all() and hi_ok.all():
+             break
++    ok = np.array([fehler[i] is None and bool(bestaetigt[i]) and bool(lo_ok[i]) and bool(hi_ok[i])
++                   and (hi[i] - lo[i] <= 1e-12 * hi[i]) for i in range(M)])
++    return lo, hi, ok, fehler, bestaetigt
++
++
++def _aufbau(m, xs, hp, lo, hi, ok, fehler, bestaetigt, PhiF, Phi2, cs, r_max, f_lin, f_rand, prot):
++    """Profil aus der Klammer (wie bball2.profile), mit Phi im RK4 und Coulomb-Yukawa-Schwanz (eta aus c = alpha m)."""
++    M = len(xs)
+     cc = np.stack([lo, hi], 1)
+     x2 = xs[:, None] * np.ones_like(cc)
+-    phi, p = _start(m, cc, x2, hp)
++    if PhiF is None:
++        def Fz(j):
++            return 0.0
++        P2 = 0.0
++    else:
++        def Fz(j):
++            return PhiF[j][:, None]
++        P2 = Phi2[:, None]
++    phi, p = _start(m, cc, x2, hp, Fz(0), P2)
+     r = hp
+     n = int(r_max / hp)
+     PH = [cc * 1.0, phi.copy()]
+     PP = [np.zeros_like(cc), p.copy()]
+     aktiv = np.ones(M, dtype=bool)
+     for k in range(1, n):
+-        phi, p = _rk4_prof(m, r, phi, p, hp, x2)
++        phi, p = _rk4_prof(m, r, phi, p, hp, x2, Fz(2 * k), Fz(2 * k + 1), Fz(2 * k + 2))
+         r += hp
+         PH.append(phi.copy())
+         PP.append(p.copy())
+@@ -302,13 +398,14 @@
+     PP = np.array(PP)
+     aus = []
+     for i, x in enumerate(xs):
+-        if fehler[i] is not None or not bestaetigt[i] or not (hi[i] - lo[i] <= 1e-12 * hi[i]):
++        if not ok[i]:
+             if prot is not None:
+                 prot.append(f"Profil x = {x}: ungueltig ({fehler[i]}, bestaetigt {bool(bestaetigt[i])}, "
+                             f"Klammer {hi[i] - lo[i]:.1e})")
+             aus.append(None)
+             continue
+         kap = math.sqrt(1.0 - x)
++        eta = (0.0 if PhiF is None else float(cs[i])) * (4.0 * x - 2.0) / (2.0 * kap)
+         ph = 0.5 * (PH[:, i, 0] + PH[:, i, 1])
+         pp = 0.5 * (PP[:, i, 0] + PP[:, i, 1])
+         dif = np.abs(PH[:, i, 1] - PH[:, i, 0])
+@@ -327,18 +424,23 @@
+         if jm is None:
+             jm = len(ph) - 1
+         rm = jm * hp
+-        Atl = ph[jm] * rm * math.exp(kap * rm)
++        Atl = ph[jm] * rm ** (1.0 - eta) * math.exp(kap * rm)
+         R_aus = rm + max(0.0, (math.log(ph[jm] / (f_rand * f0)) / kap)) + 2.0
++        if R_FAK > 1.0:
++            R_aus = R_FAK * R_aus + 2.0
+         J = int(math.ceil(R_aus / hp))
+         J += J % 2
++        if PhiF is not None:
++            J = min(J, (PhiF.shape[0] - 1) // 2 - 2)
++            J -= J % 2
+         rr = np.arange(J + 1) * hp
+         phi_g = np.empty(J + 1)
+         p_g = np.empty(J + 1)
+         phi_g[:jm + 1] = ph[:jm + 1]
+         p_g[:jm + 1] = pp[:jm + 1]
+         rt = rr[jm + 1:]
+-        phi_g[jm + 1:] = Atl * np.exp(-kap * rt) / rt
+-        p_g[jm + 1:] = -phi_g[jm + 1:] * (kap + 1.0 / rt)
++        phi_g[jm + 1:] = Atl * np.exp(-kap * rt) * rt ** (eta - 1.0)
++        p_g[jm + 1:] = phi_g[jm + 1:] * (-kap + (eta - 1.0) / rt)
+         w = np.ones(J + 1)
+         w[1:-1:2] = 4.0
+         w[2:-1:2] = 2.0
+@@ -346,26 +448,149 @@
+         S = phi_g ** 2
+         r2 = rr ** 2
+         om = math.sqrt(x)
+-        Q = 8.0 * PI * om * float(np.sum(w * S * r2))
++        Fr = np.zeros(J + 1) if PhiF is None else PhiF[0:2 * J + 1:2, i]
++        Q = 8.0 * PI * om * float(np.sum(w * (1.0 - 4.0 * Fr) * S * r2))
+         T = 4.0 * PI * float(np.sum(w * p_g ** 2 * r2))
+         E = 4.0 * PI * float(np.sum(w * (x * S + p_g ** 2 + U_(m, S)) * r2))
+         Rw = schnitt(rr, phi_g, 0.5 * f0)
+         aus.append({"x": float(x), "Omega": om, "hp": hp, "f0": float(f0), "r": rr, "phi": phi_g, "dphi": p_g,
+                     "j_anschluss": int(jm), "r_anschluss": rm, "grund": grund, "f_anschluss": float(ph[jm] / f0),
+                     "R_aus": float(rr[-1]), "R_w": Rw, "Q": Q, "E": E, "T": T,
+-                    "virial_rel": (E - om * Q - 2.0 * T / 3.0) / E, "kappa0": kap})
++                    "virial_rel": (E - om * Q - 2.0 * T / 3.0) / E, "kappa0": kap, "eta_schwanz": eta})
+     return aus
+ 
+ 
++def _warm(cache, x):
++    """Startwerte aus konvergierten Hintergruenden: lineare Interpolation zwischen Nachbarn (Abstand <= 0,03),
++    sonst naechster Nachbar. Rueckgabe (PhiF, Phi2, c, f0) oder None."""
++    if not cache:
++        return None
++    unten = [e for e in cache if e[0] <= x]
++    oben = [e for e in cache if e[0] >= x]
++    if unten and oben:
++        a = max(unten, key=lambda e: e[0])
++        b = min(oben, key=lambda e: e[0])
++        if b[0] - a[0] <= 0.03:
++            if b[0] == a[0]:
++                return a[2].copy(), a[3], a[4], a[1]
++            t = (x - a[0]) / (b[0] - a[0])
++            return ((1 - t) * a[2] + t * b[2], (1 - t) * a[3] + t * b[3], (1 - t) * a[4] + t * b[4],
++                    (1 - t) * a[1] + t * b[1])
++    e = min(cache, key=lambda q: abs(q[0] - x))
++    return e[2].copy(), e[3], e[4], e[1]
++
++
++def profile(m, xs, hp, K=64, runden=40, r_max=120.0, f_lin=1e-4, f_rand=1e-9, prot=None):
++    """Grundzustaende (knotenfrei) fuer x = omega^2, mit selbstkonsistentem Phi (alpha > 0). Gitter r_j = j hp.
++    alpha = 0: ein Durchgang wie bball2 (Phi = 0). Rueckgabe je x ein dict oder None."""
++    xs = np.asarray(xs, dtype=float)
++    M = len(xs)
++    lo = np.empty(M)
++    hi = np.empty(M)
++    erw = np.zeros(M, dtype=bool)
++    for i, x in enumerate(xs):
++        a, b, e = grenzen(m, x)
++        lo[i], hi[i], erw[i] = a * (1 + 1e-13), b * (1 - 1e-15), e
++    if ALPHA == 0.0:
++        lo, hi, ok, fehler, best = _schiessen(m, xs, hp, lo, hi, erw, np.zeros(M, dtype=bool), K, runden, r_max,
++                                              f_lin, None, None)
++        aus = _aufbau(m, xs, hp, lo, hi, ok, fehler, best, None, None, None, r_max, f_lin, f_rand, prot)
++        for p in aus:
++            if p is not None:
++                p.update({"Phi": np.zeros(len(p["r"])), "Phi0": 0.0, "Phi_Rw": 0.0, "kompaktheit": 0.0,
++                          "c_asym": 0.0, "m_quelle": float("nan"), "phi_iter": 0, "phi_dmax": 0.0})
++        return aus
++    n = int(r_max / hp)
++    nf = 2 * n + 3
++    cache = BG_CACHE.setdefault((hp, ALPHA, R_FAK, QUELLE), [])
++    PhiF = np.zeros((nf, M))
++    Phi2 = np.zeros(M)
++    cs = np.zeros(M)
++    frei = np.zeros(M, dtype=bool)
++    letzte = np.full(M, np.nan)
++    rampe = np.full(M, N_RAMPE)
++    hist = [None] * M
++    for i, x in enumerate(xs):
++        wv = _warm(cache, x)
++        if wv is not None:
++            PhiF[:, i], Phi2[i], cs[i], f0w = wv
++            lo[i], hi[i] = f0w * 0.97, f0w * 1.03
++            frei[i] = True
++            rampe[i] = 0
++    akt = np.ones(M, dtype=bool)
++    erg = [None] * M
++    iters = np.zeros(M, dtype=int)
++    dmax = np.full(M, np.inf)
++    for it in range(PHI_ITER):
++        idx = np.nonzero(akt)[0]
++        if len(idx) == 0:
++            break
++        sub = xs[idx]
++        Fs = np.ascontiguousarray(PhiF[:, idx])
++        lo_s, hi_s, ok_s, feh_s, best_s = _schiessen(m, sub, hp, lo[idx], hi[idx], erw[idx], frei[idx], K, runden,
++                                                     r_max, f_lin, Fs, Phi2[idx])
++        aus_s = _aufbau(m, sub, hp, lo_s, hi_s, ok_s, feh_s, best_s, Fs, Phi2[idx], cs[idx], r_max, f_lin, f_rand,
++                        prot)
++        for q, i in enumerate(idx):
++            p = aus_s[q]
++            iters[i] = it + 1
++            if p is None:
++                akt[i] = False
++                erg[i] = None
++                continue
++            al_k = ALPHA if rampe[i] == 0 else ALPHA * min(1.0, (it + 1.0) / rampe[i])
++            Ph, c_neu, mq = phi_aus_profil(m, xs[i], p["r"], p["phi"], p["dphi"], al_k)
++            Fn = phi_fein(p["r"], Ph, c_neu, nf, hp)
++            d = float(np.max(np.abs(Fn - PhiF[:, i])))
++            dmax[i] = d
++            f0n = p["f0"]
++            jw = int(np.argmin(np.abs(p["r"] - p["R_w"]))) if math.isfinite(p["R_w"]) else 0
++            p.update({"Phi": Ph, "Phi0": float(Ph[0]), "Phi_Rw": float(Ph[jw]), "kompaktheit": float(2.0 * abs(Ph[0])),
++                      "c_asym": c_neu, "m_quelle": mq, "phi_iter": int(it + 1), "phi_dmax": d})
++            erg[i] = p
++            if d < PHI_TOL and al_k == ALPHA:
++                akt[i] = False
++                cache.append((float(xs[i]), f0n, Fn.copy(), float((Fn[2] - Fn[0]) / hp ** 2), c_neu))
++                continue
++            # Anderson(1)-Mischung (Q-STERN): x_neu = x + b r - g (dx + b dr), g = <dr, r>/<dr, dr>; waehrend der
++            # alpha-Rampe einfache Mischung
++            r_k = Fn - PhiF[:, i]
++            x_k = PhiF[:, i].copy()
++            if al_k == ALPHA and hist[i] is not None:
++                dx = x_k - hist[i][0]
++                dr = r_k - hist[i][1]
++                nn = float(np.dot(dr, dr))
++                g = float(np.dot(dr, r_k)) / nn if nn > 0 else 0.0
++                PhiF[:, i] = x_k + PHI_MISCH * r_k - g * (dx + PHI_MISCH * dr)
++            else:
++                PhiF[:, i] = x_k + PHI_MISCH * r_k
++            hist[i] = (x_k, r_k) if al_k == ALPHA else None
++            Phi2[i] = (PhiF[2, i] - PhiF[0, i]) / hp ** 2
++            cs[i] = -PhiF[-1, i] * (PhiF.shape[0] - 1) * 0.5 * hp
++            dl = abs(f0n - letzte[i]) if math.isfinite(letzte[i]) else 0.03 * f0n
++            rel = min(0.03, max(10.0 * dl / f0n, 1e-9))
++            lo[i], hi[i] = f0n * (1.0 - rel), f0n * (1.0 + rel)
++            frei[i] = True
++            letzte[i] = f0n
++    for i in range(M):
++        if erg[i] is not None and dmax[i] >= PHI_TOL:
++            if prot is not None:
++                prot.append(f"Profil x = {xs[i]}: Phi-Iteration nicht konvergiert ({iters[i]} It., d {dmax[i]:.1e})")
++            erg[i] = None
++    if prot is not None:
++        prot.append(f"Phi-Iterationen (alpha {ALPHA}, hp {hp}): " + ", ".join(f"{x:.6f}:{n_}" for x, n_ in zip(xs, iters)))
++    return erg
++
++
+ def prof_kurz(p):
+-    return {k: v for k, v in p.items() if k not in ("r", "phi", "dphi")}
++    return {k: v for k, v in p.items() if k not in ("r", "phi", "dphi", "Phi")}
+ 
+ 
+ # ----------------------------------------------------------------------------------------------------------------------
+-# Profile -> Koeffizienten A, B, C (wie afm_bic.lin_aufbau)
++# Profile -> Koeffizienten A, B, C, D (wie afm_bic.lin_aufbau; Q-STERN: mit Phi und D = 1 - 4 Phi)
+ # ----------------------------------------------------------------------------------------------------------------------
+ 
+-def lin_aufbau(x, Om, r, amp, A, B, C, Rw, h, info):
++def lin_aufbau(x, Om, r, amp, A, B, C, D, Rw, h, info, Ph, c_asym):
+     hp = float(r[1] - r[0])
+     if abs(hp - 0.5 * h) > 1e-12:
+         raise ValueError("Profil braucht Schritt h/2")
+@@ -374,11 +599,15 @@
+     j_r = int(klein[0]) if len(klein) else J
+     j_r = min(max(j_r, int(math.ceil(20.0 / hp))), J)
+     K = j_r // 2
++    if R_FAK != 1.0:
++        K = min(int(round(R_FAK * K)), J // 2)
+     Km = max(2, min(K - 2, int(round(Rw / h))))
+     j = 2 * K
+-    abw = max(abs(A[j] - (1.0 - Om * Om)), abs(B[j] - 2.0 * Om), abs(C[j]))
++    Af = (1.0 - 2.0 * Ph[j]) - (1.0 - 4.0 * Ph[j]) * Om * Om
++    abw = max(abs(A[j] - Af), abs(B[j] - 2.0 * Om * (1.0 - 4.0 * Ph[j])), abs(C[j]))
+     return {"x": float(x), "Omega": float(Om), "h": h, "K": K, "Km": Km, "R": K * h, "r_m": Km * h, "R_w": float(Rw),
+             "Al": [float(v) for v in A[:j + 1]], "Bl": [float(v) for v in B[:j + 1]], "Cl": [float(v) for v in C[:j + 1]],
++            "Dl": [float(v) for v in D[:j + 1]], "c_asym": float(c_asym), "Phi_R": float(Ph[j]),
+             "rand_abw": float(abw), "info": info}
+ 
+ 
+@@ -397,11 +626,17 @@
+         f = p["phi"]
+         S = f * f
+         om = math.sqrt(x)
++        Ph = p["Phi"]
+         info = {"f0": p["f0"], "R_w": p["R_w"], "R_aus": p["R_aus"], "grund": p["grund"],
+-                "f_anschluss": p["f_anschluss"], "Q": p["Q"], "E": p["E"], "virial_rel": p["virial_rel"]}
+-        aus.append(lin_aufbau(x, om, p["r"], f, dp_(modell, S) - x, np.full(len(f), 2.0 * om), sp_(modell, S),
+-                              p["R_w"], h, info))
+-    prot.append(f"Profile ({modell}, {len(xs)} Stueck, h = {h}): {uhr() - t0:.1f} s")
++                "f_anschluss": p["f_anschluss"], "Q": p["Q"], "E": p["E"], "virial_rel": p["virial_rel"],
++                "Phi0": p["Phi0"], "Phi_Rw": p["Phi_Rw"], "kompaktheit": p["kompaktheit"], "c_asym": p["c_asym"],
++                "phi_iter": p["phi_iter"], "phi_dmax": p["phi_dmax"], "eta_schwanz": p["eta_schwanz"]}
++        A = (1.0 - 2.0 * Ph) * dp_(modell, S) - (1.0 - 4.0 * Ph) * x
++        B = 2.0 * om * (1.0 - 4.0 * Ph)
++        C = (1.0 - 2.0 * Ph) * sp_(modell, S)
++        D = 1.0 - 4.0 * Ph
++        aus.append(lin_aufbau(x, om, p["r"], f, A, B, C, D, p["R_w"], h, info, Ph, p["c_asym"]))
++    prot.append(f"Profile ({modell}, {len(xs)} Stueck, h = {h}, alpha = {ALPHA}): {uhr() - t0:.1f} s")
+     return aus
+ 
+ 
+@@ -409,14 +644,15 @@
+ # Lineare Loesungen (unveraendert aus afm_bic.py)
+ # ----------------------------------------------------------------------------------------------------------------------
+ 
+-def _rk4(y, A, B, C, rr, q2, j0, n, sg, hs, fak=None):
+-    """n RK4-Schritte fuer y'' = M y, M = [[A + B rho - rho^2, C], [C, A - B rho - rho^2]]; Koeffizienten auf dem
++def _rk4(y, A, B, C, rr, q2, j0, n, sg, hs, fak=None, D=None):
++    """n RK4-Schritte fuer y'' = M y, M = [[A + B rho - D rho^2, C], [C, A - B rho - D rho^2]] (Q-STERN: D = 1 - 4 Phi;
++    D = None heisst D = 1); Koeffizienten auf dem
+     Gitter h/2 (Index j0, j0 + sg, ...). y = (y1, y2, y1', y2'), vektorisiert ueber rho."""
+     y1, y2, p1, p2 = y
+     h2 = 0.5 * hs
+     h6 = hs / 6.0
+     j = j0
+-    a_ = A[j] - q2
++    a_ = A[j] - (q2 if D is None else D[j] * q2)
+     b_ = B[j] * rr
+     m11a = a_ + b_
+     m22a = a_ - b_
+@@ -424,12 +660,12 @@
+     for _ in range(n):
+         jm = j + sg
+         je = jm + sg
+-        a_ = A[jm] - q2
++        a_ = A[jm] - (q2 if D is None else D[jm] * q2)
+         b_ = B[jm] * rr
+         m11b = a_ + b_
+         m22b = a_ - b_
+         cb = C[jm]
+-        a_ = A[je] - q2
++        a_ = A[je] - (q2 if D is None else D[je] * q2)
+         b_ = B[je] * rr
+         m11c = a_ + b_
+         m22c = a_ - b_
+@@ -484,10 +720,12 @@
+         p2 = np.zeros(2 * N)
+         p2[:N] = 1.0
+         y1, y2, p1, p2 = _rk4((np.zeros(2 * N), np.zeros(2 * N), p1, p2), L["Al"], L["Bl"], L["Cl"], rr, q2, 0,
+-                              L["Km"], 1, L["h"])
++                              L["Km"], 1, L["h"], D=L["Dl"])
+         kc = np.sqrt(1.0 - (rho - L["Omega"]) ** 2)
+-        z1, z2, zp1, zp2 = _rk4((np.ones(N), np.zeros(N), -kc, np.zeros(N)), L["Al"], L["Bl"], L["Cl"], rho, rho * rho,
+-                                2 * L["K"], L["K"] - L["Km"], -1, -L["h"], fak=np.exp(-kc * L["h"]))
++        eta_c = L["c_asym"] * (4.0 * (rho - L["Omega"]) ** 2 - 2.0) / (2.0 * kc)
++        z1, z2, zp1, zp2 = _rk4((np.ones(N), np.zeros(N), -kc + eta_c / L["R"], np.zeros(N)), L["Al"], L["Bl"], L["Cl"],
++                                rho, rho * rho,
++                                2 * L["K"], L["K"] - L["Km"], -1, -L["h"], fak=np.exp(-kc * L["h"]), D=L["Dl"])
+         La[s0:s0 + N] = y1[:N] * zp1 - p1[:N] * z1 + y2[:N] * zp2 - p2[:N] * z2
+         Lb[s0:s0 + N] = y1[N:] * zp1 - p1[N:] * z1 + y2[N:] * zp2 - p2[N:] * z2
+         g = np.maximum.reduce([np.abs(y1), np.abs(y2), np.abs(p1), np.abs(p2)])
+@@ -503,26 +741,34 @@
+     Am = np.empty((len(Ls), n))
+     Bm = np.empty((len(Ls), n))
+     Cm = np.zeros((len(Ls), n))
++    Dm = np.empty((len(Ls), n))
++    rgit = np.arange(n) * (0.5 * h)
+     for p, L in enumerate(Ls):
+         m = 2 * L["K"] + 1
+-        Am[p, :m], Bm[p, :m], Cm[p, :m] = L["Al"][:m], L["Bl"][:m], L["Cl"][:m]
+-        Am[p, m:] = 1.0 - L["Omega"] ** 2
+-        Bm[p, m:] = 2.0 * L["Omega"]
++        Am[p, :m], Bm[p, :m], Cm[p, :m], Dm[p, :m] = L["Al"][:m], L["Bl"][:m], L["Cl"][:m], L["Dl"][:m]
++        # Q-STERN: Fortsetzung mit Phi = -c/r (statt Phi = 0) jenseits des eigenen Randes
++        Pa = -L["c_asym"] / rgit[m:] if m < n else np.zeros(0)
++        Am[p, m:] = (1.0 - 2.0 * Pa) - (1.0 - 4.0 * Pa) * L["Omega"] ** 2
++        Bm[p, m:] = 2.0 * L["Omega"] * (1.0 - 4.0 * Pa)
++        Dm[p, m:] = 1.0 - 4.0 * Pa
+     pidx = np.concatenate([np.full(len(r_), p, dtype=int) for p, r_ in enumerate(rho_listen)])
+     rho = np.concatenate([np.asarray(r_, dtype=float) for r_ in rho_listen])
+     Om = np.array([Ls[p]["Omega"] for p in pidx])
+-    AT, BT, CT = Am[pidx].T.copy(), Bm[pidx].T.copy(), Cm[pidx].T.copy()
++    cA = np.array([Ls[p]["c_asym"] for p in pidx])
++    AT, BT, CT, DT = Am[pidx].T.copy(), Bm[pidx].T.copy(), Cm[pidx].T.copy(), Dm[pidx].T.copy()
+     N = rho.size
+     rr = np.concatenate([rho, rho])
+     A2, B2, C2 = np.concatenate([AT, AT], 1), np.concatenate([BT, BT], 1), np.concatenate([CT, CT], 1)
++    D2 = np.concatenate([DT, DT], 1)
+     p1 = np.zeros(2 * N)
+     p1[N:] = 1.0
+     p2 = np.zeros(2 * N)
+     p2[:N] = 1.0
+-    y1, y2, p1, p2 = _rk4((np.zeros(2 * N), np.zeros(2 * N), p1, p2), A2, B2, C2, rr, rr * rr, 0, Kmc, 1, h)
++    y1, y2, p1, p2 = _rk4((np.zeros(2 * N), np.zeros(2 * N), p1, p2), A2, B2, C2, rr, rr * rr, 0, Kmc, 1, h, D=D2)
+     kc = np.sqrt(1.0 - (rho - Om) ** 2)
+-    z1, z2, zp1, zp2 = _rk4((np.ones(N), np.zeros(N), -kc, np.zeros(N)), AT, BT, CT, rho, rho * rho, 2 * Kx,
+-                            Kx - Kmc, -1, -h, fak=np.exp(-kc * h))
++    eta_c = cA * (4.0 * (rho - Om) ** 2 - 2.0) / (2.0 * kc)
++    z1, z2, zp1, zp2 = _rk4((np.ones(N), np.zeros(N), -kc + eta_c / (Kx * h), np.zeros(N)), AT, BT, CT, rho,
++                            rho * rho, 2 * Kx, Kx - Kmc, -1, -h, fak=np.exp(-kc * h), D=DT)
+     La = y1[:N] * zp1 - p1[:N] * z1 + y2[:N] * zp2 - p2[:N] * z2
+     Lb = y1[N:] * zp1 - p1[N:] * z1 + y2[N:] * zp2 - p2[N:] * z2
+     aus, o = [], 0
+@@ -551,9 +797,10 @@
+     p1[N:] = 1.0
+     p2 = z0.copy()
+     p2[:N] = 1.0
+-    y = _rk4((z0.copy(), z0.copy(), p1, p2), L["Al"], L["Bl"], L["Cl"], rr, q2, 0, L["Km"], 1, L["h"])
++    y = _rk4((z0.copy(), z0.copy(), p1, p2), L["Al"], L["Bl"], L["Cl"], rr, q2, 0, L["Km"], 1, L["h"], D=L["Dl"])
+     kc = np.sqrt(1.0 - (rho - L["Omega"]) ** 2)
+-    q = np.sqrt((rho + L["Omega"]) ** 2 - 1.0)
++    q = np.sqrt((rho + L["Omega"]) ** 2 - 1.0 + L["c_asym"] * (4.0 * (rho + L["Omega"]) ** 2 - 2.0) / L["R"])
++    kc = kc - L["c_asym"] * (4.0 * (rho - L["Omega"]) ** 2 - 2.0) / (2.0 * kc * L["R"])
+     one, nul = np.ones(N, dtype=complex), np.zeros(N, dtype=complex)
+     Z = (np.concatenate([one, nul]), np.concatenate([nul, one]), np.concatenate([-kc, nul]),
+          np.concatenate([nul, 1j * q]))
+@@ -561,7 +808,7 @@
+     rest = L["K"] - L["Km"]
+     while rest > 0:
+         n = min(n_gs, rest)
+-        Z = _rk4(Z, L["Al"], L["Bl"], L["Cl"], rr, q2, 2 * k, n, -1, -L["h"])
++        Z = _rk4(Z, L["Al"], L["Bl"], L["Cl"], rr, q2, 2 * k, n, -1, -L["h"], D=L["Dl"])
+         k -= n
+         rest -= n
+         Z = _gs2(Z, N)
+@@ -843,7 +1090,8 @@
+         xs = KG_X
+     else:
+         raise ValueError("--x fehlt")
+-    erg.update({"modell": modell, "band": a.band, "h": h, "x_mitglieder": xs})
++    erg.update({"modell": modell, "band": a.band, "h": h, "x_mitglieder": xs, "alpha": ALPHA, "r_fak": R_FAK,
++                "quelle": QUELLE})
+     prot = []
+     Ls = profile_lin(modell, kap, xs, h, prot)
+     zeilen += prot
+@@ -863,7 +1111,9 @@
+         rw["mitglied"] = True
+         reihen.append(rw)
+         npz[f"m{i}_rho"], npz[f"m{i}_La"], npz[f"m{i}_Lb"] = rw["_rho"], rw["_La"], rw["_Lb"]
+-        zeilen.append(f"Mitglied x = omega^2 = {x:.6f} (omega {L['Omega']:.6f}, f0 {L['info']['f0']:.6f}): "
++        zeilen.append(f"Mitglied x = omega^2 = {x:.6f} (omega {L['Omega']:.6f}, f0 {L['info']['f0']:.6f}, "
++                      f"2|Phi(0)| {L['info']['kompaktheit']:.5f}, Phi(R_w) {L['info']['Phi_Rw']:.5f}, "
++                      f"c {L['info']['c_asym']:.5f}, Phi-It. {L['info']['phi_iter']}): "
+                       f"R = {L['R']:.2f}, r_m = {L['r_m']:.2f}, R_w = {L['R_w']:.3f}, "
+                       f"Rand-Abw. {L['rand_abw']:.1e}, {rw['n_rho']} rho-Punkte (max Abstand {rw['drho_max']:.1e}), "
+                       f"Wachstum {rw['wachstum_max']:.1e}, {len(rw['wurzeln'])} Nullstellen von L(y_b): "
+@@ -1101,9 +1351,14 @@
+ # ----------------------------------------------------------------------------------------------------------------------
+ 
+ def cmd_k2(a, erg, zeilen, sichern, npz):
++    """Q-STERN K2: Hintergrund auf zwei Gittern (Profilschritt h/2 und h/4). omega ist Vorgabe (gleich), verglichen
++    werden Q, E (Masse der Quelle) und Phi(0) auf 1e-6 relativ."""
+     xs = [float(v) for v in a.x.split(",")]
+     prot = []
+     p1 = profile(a.modell, xs, 0.5 * a.h, prot=prot)
++    zeilen += prot
++    prot.clear()
++    sichern()
+     p2 = profile(a.modell, xs, 0.25 * a.h, prot=prot)
+     zeilen += prot
+     tab = []
+@@ -1115,116 +1370,163 @@
+             continue
+         dQ = abs(u["Q"] - v["Q"]) / abs(v["Q"])
+         dE = abs(u["E"] - v["E"]) / abs(v["E"])
+-        b = bool(dQ < 1e-4 and dE < 1e-4)
++        dP = abs(u["Phi0"] - v["Phi0"]) / abs(v["Phi0"]) if v["Phi0"] != 0.0 else abs(u["Phi0"])
++        b = bool(dQ < 1e-6 and dE < 1e-6 and dP < 1e-6)
+         ok &= b
+         tab.append({"x": x, "Q_h": u["Q"], "Q_h2": v["Q"], "dQ_rel": dQ, "E_h": u["E"], "E_h2": v["E"], "dE_rel": dE,
+-                    "f0_h": u["f0"], "f0_h2": v["f0"], "R_w": v["R_w"], "virial_h": u["virial_rel"],
+-                    "virial_h2": v["virial_rel"], "E_durch_omegaQ": v["E"] / (math.sqrt(x) * v["Q"]), "bestanden": b})
+-        zeilen.append(f"K2 x = {x:.4f}: Q = {u['Q']:.8e} / {v['Q']:.8e} (rel {dQ:.1e}), E = {u['E']:.8e} / "
+-                      f"{v['E']:.8e} (rel {dE:.1e}), f0 = {u['f0']:.8f} / {v['f0']:.8f}, R_w = {v['R_w']:.3f}, "
+-                      f"Virial {u['virial_rel']:.1e} / {v['virial_rel']:.1e} -> {'ok' if b else 'VERFEHLT'}")
+-    erg.update({"modell": a.modell, "h": a.h, "profilschritte": [0.5 * a.h, 0.25 * a.h], "tabelle": tab,
+-                "K2_bestanden": bool(ok)})
+-    zeilen.append(f"K2 ({a.modell}, Profilschritte {0.5 * a.h} und {0.25 * a.h}): {'bestanden' if ok else 'VERFEHLT'}")
++                    "Phi0_h": u["Phi0"], "Phi0_h2": v["Phi0"], "dPhi0_rel": dP, "f0_h": u["f0"], "f0_h2": v["f0"],
++                    "R_w": v["R_w"], "Phi_Rw": v["Phi_Rw"], "kompaktheit": v["kompaktheit"], "c_asym": v["c_asym"],
++                    "phi_iter": [u["phi_iter"], v["phi_iter"]], "eta_schwanz": v["eta_schwanz"], "bestanden": b})
++        zeilen.append(f"K2 x = {x:.4f}: Q = {u['Q']:.10e} / {v['Q']:.10e} (rel {dQ:.1e}), E = {u['E']:.10e} / "
++                      f"{v['E']:.10e} (rel {dE:.1e}), Phi(0) = {u['Phi0']:.10e} / {v['Phi0']:.10e} (rel {dP:.1e}), "
++                      f"f0 = {u['f0']:.8f} / {v['f0']:.8f}, R_w = {v['R_w']:.3f}, Phi(R_w) = {v['Phi_Rw']:.5f}, "
++                      f"2|Phi(0)| = {v['kompaktheit']:.5f}, c = {v['c_asym']:.5f}, It. {u['phi_iter']}/{v['phi_iter']}"
++                      f" -> {'ok' if b else 'VERFEHLT'}")
++    erg.update({"modell": a.modell, "alpha": ALPHA, "quelle": QUELLE, "h": a.h, "profilschritte": [0.5 * a.h, 0.25 * a.h],
++                "tabelle": tab, "K2_bestanden": bool(ok)})
++    zeilen.append(f"K2 ({a.modell}, alpha {ALPHA}, Profilschritte {0.5 * a.h} und {0.25 * a.h}): "
++                  f"{'bestanden' if ok else 'VERFEHLT'}")
+     sichern()
+ 
+ 
+ # ----------------------------------------------------------------------------------------------------------------------
+-# Kommando auswertung (bindende Regel aus KARTE.md, Umsetzung PLAN.md Abschnitt Auswertung)
++# Kommando auswertung (bindende Regel aus q-stern/KARTE.md, Umsetzung PLAN.md Abschnitt Auswertung)
+ # ----------------------------------------------------------------------------------------------------------------------
+ 
++FENSTER_X = (0.70, 0.90)
++FENSTER_R = (1.6, 1.9)
++
++
++def _im_fenster(x, r):
++    return FENSTER_X[0] <= x <= FENSTER_X[1] and FENSTER_R[0] <= r <= FENSTER_R[1]
++
++
+ def cmd_auswertung(a, erg, zeilen, sichern, npz):
+     laeufe = []
+     for p in sorted(glob.glob(os.path.join(a.aus, "*.json"))):
+         if os.path.basename(p).startswith("auswertung"):
+             continue
+         d = json.load(open(p))
+-        if "modell" in d and "mitglieder" in d:
++        if "mitglieder" in d:
+             d["_datei"] = os.path.basename(p)
+             laeufe.append(d)
+     zeilen.append(f"Auswertung: {len(laeufe)} Laeufe: " + ", ".join(d["_datei"] for d in laeufe))
+ 
+-    def treffer(d):
++    def gruppe(al, h, rf):
++        return [d for d in laeufe if abs(d["alpha"] - al) < 1e-15 and abs(d["h"] - h) < 1e-15
++                and abs(d["r_fak"] - rf) < 1e-15 and d.get("quelle", "rho") == "rho"]
++
++    def treffer(ds):
+         aus = []
+-        for k in d.get("kandidaten", []):
+-            r = k.get("rechteck", {})
+-            if "lokal" in k and "umlauf" in r:
+-                aus.append({"x": k["lokal"]["x_stern"], "rho": k["lokal"]["rho_stern"], "umlauf": r["umlauf"],
+-                            "umlauf_roh": r["umlauf_roh"], "aufgeloest": r["aufgeloest"], "datei": d["_datei"]})
++        for d in ds:
++            for k in d.get("kandidaten", []):
++                r = k.get("rechteck", {})
++                if "lokal" in k and "umlauf" in r:
++                    aus.append({"x": k["lokal"]["x_stern"], "rho": k["lokal"]["rho_stern"], "umlauf": r["umlauf"],
++                                "umlauf_roh": r["umlauf_roh"], "aufgeloest": r["aufgeloest"],
++                                "max_sprung": r["max_sprung"], "datei": d["_datei"]})
+         return aus
+-    # K1
+-    kg = {d["h"]: d for d in laeufe if d["modell"] == "kg"}
+-    pk = {}
+-    for h, d in sorted(kg.items()):
+-        ok = [t for t in treffer(d) if abs(t["x"] - KG_ZIEL[0]) < 1e-4 and abs(t["rho"] - KG_ZIEL[1]) < 1e-4
+-              and t["aufgeloest"] and abs(t["umlauf"]) == 1]
+-        pk[h] = {"treffer": treffer(d), "bestanden": bool(ok)}
+-        zeilen.append(f"K1 h = {h}: {'bestanden' if ok else 'VERFEHLT'}; Treffer: {treffer(d)}")
+-    k1_ok = len(pk) >= 2 and all(v["bestanden"] for v in pk.values())
+-    erg["K1"] = {"stufen": pk, "bestanden": k1_ok}
+-    # K2 (Lesart PLAN: verfehlt -> hoechstens unentschieden)
+-    k2 = [json.load(open(p)) for p in sorted(glob.glob(os.path.join(a.aus, "k2*.json")))]
+-    k2_ok = bool(k2) and all(d.get("K2_bestanden") for d in k2)
+-    erg["K2_bestanden"] = k2_ok
+-    zeilen.append(f"K2: {len(k2)} Laeufe, bestanden {k2_ok}")
+-    # Log-Baender
+-    lg = [d for d in laeufe if d["modell"] == "log"]
+-    baender = sorted({d["band"] for d in lg})
+-    hs = sorted({d["h"] for d in lg})
+-    gesehen = []
+-    irgendwas = []
+-    tab = []
+-    for band in baender:
+-        ds = {}
+-        for d in lg:
+-            if d["band"] == band:
+-                ds.setdefault(d["h"], []).append(d)
+-        for h, dl in sorted(ds.items()):
+-            st = [s for d in dl for s in d.get("streifen", []) if "umlauf" in s]
+-            st_n0 = [s for s in st if s["umlauf"] != 0]
+-            st_unaufl = [s for s in st if not s["aufgeloest"]]
+-            st_fehl = [s for d in dl for s in d.get("streifen", []) if "umlauf" not in s]
+-            vw = [w for d in dl for w in d.get("vorzeichenwechsel", [])]
+-            rk = [t for d in dl for t in treffer(d)]
+-            mx = {round(m["x"], 12) for d in dl for m in d.get("mitglieder", []) if m.get("gueltig")}
+-            ung = [m["x"] for d in dl for m in d.get("mitglieder", []) if not m.get("gueltig")]
+-            tab.append({"band": band, "h": h, "dateien": [d["_datei"] for d in dl], "zeilen_gueltig": len(mx),
+-                        "streifen": len(st), "streifen_umlauf_ungleich_0": len(st_n0),
+-                        "streifen_nicht_aufgeloest": len(st_unaufl), "streifen_fehlend": len(st_fehl),
+-                        "vorzeichenwechsel": len(vw), "rechtecke": rk})
+-            if st_n0 or vw or any(t["umlauf"] != 0 for t in rk):
+-                irgendwas.append((band, h, "Umlauf != 0 oder s-Wechsel"))
+-            if st_unaufl or st_fehl or len(mx) < 11 or len(st) < 10 or ung:
+-                irgendwas.append((band, h, "Raster unvollstaendig oder nicht aufgeloest"))
+-        if len(ds) >= 2:
+-            h1, h2 = sorted(ds)[:2]
+-            for t1 in [t for d in ds[h1] for t in treffer(d)]:
+-                for t2 in [t for d in ds[h2] for t in treffer(d)]:
+-                    if (t1["aufgeloest"] and t2["aufgeloest"] and abs(t1["umlauf"]) == 1 and abs(t2["umlauf"]) == 1
+-                            and abs(t1["x"] - t2["x"]) < 1e-3 and abs(t1["rho"] - t2["rho"]) < 1e-3):
+-                        gesehen.append({"band": band, "h": [h1, h2], "t1": t1, "t2": t2})
+-    erg["tabelle"] = tab
+-    erg["gesehen"] = gesehen
+-    if not k1_ok:
+-        ausgang = "nicht auswertbar (K1 verfehlt)"
+-    elif gesehen:
+-        ausgang = "Gesehen"
+-    elif not irgendwas and len(baender) == 3 and len(hs) == 2 and k2_ok:
+-        ausgang = "Nicht gesehen"
+-    else:
+-        ausgang = "Unentschieden"
+-    erg["ausgang"] = ausgang
+-    erg["hinweise"] = [list(v) for v in irgendwas]
+-    for t in tab:
+-        zeilen.append("  " + json.dumps(jsonfest(t)))
+-    zeilen.append(f"Ausgang nach der bindenden Regel: {ausgang}; Hinweise: {irgendwas}")
++    # K1 (alpha = 0)
++    k1 = {}
++    for h in (0.02, 0.01):
++        t = [q for q in treffer(gruppe(0.0, h, 1.0)) if abs(q["x"] - KG_ZIEL[0]) < 1e-4
++             and abs(q["rho"] - KG_ZIEL[1]) < 1e-4 and q["aufgeloest"] and q["umlauf"] == -1]
++        k1[h] = t
++        zeilen.append(f"K1 h = {h}: {'bestanden' if t else 'VERFEHLT'}; {t}")
++    k1_ok = bool(k1[0.02]) and bool(k1[0.01])
++    erg["K1"] = {"treffer": k1, "bestanden": k1_ok}
++    # K2 je alpha
++    k2 = {}
++    for p in sorted(glob.glob(os.path.join(a.aus, "k2*.json"))):
++        d = json.load(open(p))
++        if "alpha" in d and d.get("quelle", "rho") == "rho":
++            k2.setdefault(d["alpha"], []).append(bool(d.get("K2_bestanden")))
++    erg["K2"] = {str(k): v for k, v in k2.items()}
++    zeilen.append(f"K2: {k2}")
++    ergebnisse = []
++    for al in (0.1, 0.03, 0.01):
++        s1, s2, s3 = gruppe(al, 0.02, 1.0), gruppe(al, 0.01, 1.0), gruppe(al, 0.02, 1.5)
++        e = {"alpha": al, "dateien": [[d["_datei"] for d in s] for s in (s1, s2, s3)]}
++        k2_ok = bool(k2.get(al)) and all(k2[al])
++        t1, t2, t3 = treffer(s1), treffer(s2), treffer(s3)
++        e.update({"treffer_h0.02": t1, "treffer_h0.01": t2, "treffer_K3": t3, "K2_bestanden": k2_ok})
++        gesehen, k3_verfehlt = [], []
++        for u in t1:
++            for v in t2:
++                if not (u["aufgeloest"] and v["aufgeloest"] and abs(u["umlauf"]) == 1 and abs(v["umlauf"]) == 1
++                        and _im_fenster(u["x"], u["rho"]) and _im_fenster(v["x"], v["rho"])
++                        and abs(u["x"] - v["x"]) < 1e-4 and abs(u["rho"] - v["rho"]) < 1e-4):
++                    continue
++                w3 = [q for q in t3 if abs(q["x"] - u["x"]) < 1e-4 and abs(q["rho"] - u["rho"]) < 1e-4]
++                if w3:
++                    gesehen.append({"h0.02": u, "h0.01": v, "K3": w3[0]})
++                elif s3:
++                    k3_verfehlt.append({"h0.02": u, "h0.01": v})
++                else:
++                    k3_verfehlt.append({"h0.02": u, "h0.01": v, "K3": "nicht gerechnet"})
++        # Nicht gesehen: beide Stufen, Fenster in omega^2 ganz abgedeckt, kein s-Wechsel im Fenster, alle Streifen
++        # aufgeloest mit Umlauf 0
++        ng = True
++        info = []
++        for nm, s in (("h0.02", s1), ("h0.01", s2)):
++            xs_ = sorted({round(m["x"], 12) for d in s for m in d.get("mitglieder", []) if m.get("gueltig")})
++            ung = [m["x"] for d in s for m in d.get("mitglieder", []) if not m.get("gueltig")]
++            st = [q for d in s for q in d.get("streifen", [])]
++            st_ok = all("umlauf" in q and q["aufgeloest"] and q["umlauf"] == 0 for q in st)
++            vw = [w for d in s for w in d.get("vorzeichenwechsel", [])
++                  if FENSTER_X[0] <= 0.5 * (w["x1"] + w["x2"]) <= FENSTER_X[1]
++                  and FENSTER_R[0] <= 0.5 * (w["rho1"] + w["rho2"]) <= FENSTER_R[1]]
++            deckt = bool(xs_) and xs_[0] <= FENSTER_X[0] + 1e-12 and xs_[-1] >= FENSTER_X[1] - 1e-12
++            ok_s = deckt and st_ok and not vw and not ung and len(st) >= len(xs_) - 1
++            info.append({"stufe": nm, "zeilen": len(xs_), "x_min": xs_[0] if xs_ else None,
++                         "x_max": xs_[-1] if xs_ else None, "ungueltig": ung, "streifen": len(st),
++                         "streifen_umlauf_ungleich_0": sum(1 for q in st if q.get("umlauf", 0) != 0),
++                         "streifen_nicht_aufgeloest": sum(1 for q in st if not q.get("aufgeloest", False)),
++                         "s_wechsel_im_fenster": len(vw), "deckt_fenster": deckt, "nicht_gesehen_ok": ok_s})
++            ng &= ok_s
++        e.update({"gesehen": gesehen, "k3_verfehlt": k3_verfehlt, "stufen": info})
++        if not k1_ok:
++            aus_ = "nicht auswertbar (K1 verfehlt)"
++        elif not k2_ok:
++            aus_ = "nicht auswertbar (K2 verfehlt oder fehlt)"
++        elif gesehen:
++            aus_ = "Gesehen"
++        elif any(isinstance(q, dict) and "K3" not in q for q in k3_verfehlt):
++            aus_ = "nicht auswertbar (K3 verfehlt)"
++        elif ng and s1 and s2:
++            aus_ = "Nicht gesehen"
++        else:
++            aus_ = "Unentschieden"
++        if not (s1 and s2):
++            aus_ = "nicht gerechnet" if not (s1 or s2) else aus_
++        e["ausgang"] = aus_
++        # Kompaktheit und Phi am Ballrand: Zeile naechst der Stelle (sonst Fenstermitte), h = 0,02
++        ziel = gesehen[0]["h0.02"]["x"] if gesehen else (t1[0]["x"] if t1 else 0.80)
++        ms = [m for d in s1 for m in d.get("mitglieder", []) if m.get("gueltig")]
++        if ms:
++            m = min(ms, key=lambda q: abs(q["x"] - ziel))
++            e["kompaktheit_zeile"] = {"x": m["x"], "kompaktheit": m["info"]["kompaktheit"], "Phi0": m["info"]["Phi0"],
++                                      "Phi_Rw": m["info"]["Phi_Rw"], "R_w": m["R_w"], "c_asym": m["info"]["c_asym"]}
++        ergebnisse.append(e)
++        zeilen.append(f"alpha {al}: Ausgang {aus_}; gesehen {len(gesehen)}; Stufen {json.dumps(jsonfest(info))}")
++        for g in gesehen:
++            zeilen.append(f"  Stelle h0.02 {g['h0.02']['x']:.8f} / {g['h0.02']['rho']:.8f}, h0.01 {g['h0.01']['x']:.8f} / "
++                          f"{g['h0.01']['rho']:.8f}, K3 {g['K3']['x']:.8f} / {g['K3']['rho']:.8f}, Umlauf "
++                          f"{g['h0.02']['umlauf']} / {g['h0.01']['umlauf']}, Sprung {g['h0.02']['max_sprung']:.3f} / "
++                          f"{g['h0.01']['max_sprung']:.3f}")
++        sichern()
++    erg["alpha_ergebnisse"] = ergebnisse
+     sichern()
+ 
+ 
+ def argumente():
+     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+     ap.add_argument("kommando", choices=["familie", "schritt0", "k2", "auswertung"])
+-    ap.add_argument("--modell", choices=["log", "kg", "mix"], default="log")
++    ap.add_argument("--modell", choices=["log", "kg", "mix"], default="kg")
++    ap.add_argument("--alpha", type=float, default=0.0)
++    ap.add_argument("--r-fak", type=float, default=1.0)
++    ap.add_argument("--quelle", choices=["rho", "rho3p"], default="rho")
++    ap.add_argument("--phi-misch", type=float, default=1.0)
+     ap.add_argument("--t", type=float, default=0.0)
+     ap.add_argument("--band", type=str, default="")
+     ap.add_argument("--x", type=str, default="")
+@@ -1249,12 +1551,16 @@
+ 
+ 
+ def main():
+-    global T_MIX
++    global T_MIX, ALPHA, R_FAK, QUELLE, PHI_MISCH
+     a = argumente()
+     T_MIX = float(a.t)
++    ALPHA = float(a.alpha)
++    R_FAK = float(a.r_fak)
++    QUELLE = a.quelle
++    PHI_MISCH = float(a.phi_misch)
+     name = a.name or a.kommando
+     os.makedirs(a.aus, exist_ok=True)
+-    zeilen = [f"bball.py {a.kommando} ({name}), Start {jetzt()}", "Argumente: " + json.dumps(vars(a))]
++    zeilen = [f"qstern.py {a.kommando} ({name}), Start {jetzt()}", "Argumente: " + json.dumps(vars(a))]
+     erg = {"argumente": vars(a), "start": jetzt()}
+     npz = {}
+ 

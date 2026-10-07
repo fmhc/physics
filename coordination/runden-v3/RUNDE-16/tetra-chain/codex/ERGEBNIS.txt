@@ -1,0 +1,50 @@
+TETRA-RECON-1 — Root-Auswertung 2026-10-02
+Ausgang: bedingte geometrische Rekonstruktion gut vereinbar, Originalherkunft
+nicht identifiziert. Keine Physik-/Bindungs-/Feldsimulation.
+
+Rechenort ubuntu-auto/.69, CPU11 nice19, BLAS/OMP ein Thread, timeout60.
+Hauptrechnung 1.6413 CPU-Sekunden, Exit0. Nichtautor-Startbewertung durch
+tetra_proof vor Start erhalten; CODE-REVIEW.txt und PROOF-REVIEW.txt separat.
+Quellhash in INPUT.sha256 und RUN.log identisch. Keine GPU benutzt.
+
+Konstruktion: Einheits-Tetraeder; jeder neue Vertex ist Spiegelung des
+viertaeltesten an der Flaeche der letzten drei. 12/20 Vertices, 9/17
+Tetraeder, 30/54 eindeutige Kanten. Vertexmittel als Ebenenzentrum.
+200000 uniforme Kugelnormalen je Modell, Seed20261002. Keine Anpassung.
+
+                Bundle           Nachbau
+11+1 Mittel     10.204375        10.223790
+19+1 Mittel     12.633465        12.661880
+11+1 C>1        0.000990         0.001010
+19+1 C>1        0.012170         0.012775
+Beide Mediane10; identische P-Unterstuetzungen (9 bzw16 verschiedene Werte),
+Stichprobenextrema6/16 und6/28. Kein Beweis globaler Extrema.
+C im Code ist face-graph-Komponentenzahl; nicht unabhaengig geometrisch
+gegen Selbstkontakte geprueft. Daher Inseldeutung bleibt bedingt.
+
+Unter der unbestaetigten Annahme zweier unabhaengiger Stichproben von je
+200000 liegen Mittelabweichungen bei1.71/1.21 Standardfehlern; C>1 bei
+0.20/1.72. Groesste einzelne Binabweichung2.17 Standardfehler, ohne
+multiples Testurteil. Das ist Vereinbarkeit, kein Nachweis gleicher Generatoren.
+
+Kontrollen: maximale Kantenfehler8.89e-16/1.45e-15; Antipodalsymmetrie
+bestanden; Formel in allen400000 Proben erfuellt. Diese numerische Kontrolle
+ersetzt nicht den Beweis oder eine geometrische Einbettungspruefung.
+
+Ticks: RESULT.json liefert vollstaendige Vertexereignisse fuer die NEUE
+festgelegte Ebene n(t)=(cos(pi t),sin(pi t),0). Ohne Originaldrehachse,
+Startbasis und Offset ist das kein Nachbau der Original-Tickzeiten.
+±1e-8 vor/nach Ereignissen: endliche numerische Probe, keine zertifizierte
+Gruppierung beliebig naher Ereignisse. Keine Anpassung an Originalzeiten.
+
+Beweis: Die Regel gilt unter den in PROOF-REVIEW genannten Einbettungs-
+und Stapelbedingungen auch ohne lokale Konvexitaet. Konvexitaet ist nur
+hinreichend, um C mit Indexlaeufen gleichzusetzen. Explizites verzerrtes
+Paar zeigt P6,T3=2,C2 trotz einem Indexlauf: die Laufbegruendung scheitert,
+die richtig definierte Formel nicht. Fremde Einordnungsdatei nicht geaendert.
+
+Physikanschluss und Herkunftsfragen: ANSCHLUSS.txt. Prioritaet: Rotation
+gegen innere elastische Moden mittels k/m-Variation unterscheiden. Kein
+Schluss auf Fundamentalzeit, Spin, Quarks, Q-Ball-Bindung oder Gravitation.
+Originalcode/Koordinaten erforderlich fuer exakte Replikation. Neue
+mechanische Dynamik waere ein eigener Test, nicht im Bundle enthalten.

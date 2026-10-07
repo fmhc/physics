@@ -1,0 +1,21 @@
+Karte 3 Polaritaet im Gradienten (Bio 23). Start 2026-09-30T02:55:48+02:00, Ende 2026-09-30T02:55:50+02:00, CPU (nur Form- und Syntaxprobe), torch 2.10.0+cu128 RAUCHTEST: Zahlen ungueltig
+Dauer [s]: schiessen_s 0.0, entwicklung_grob_s 0.3, entwicklung_fein_s 1.2
+Hochrechnung Hauptlauf: 74 s (nicht entwickelnde Teile 0 s + Entwicklung x 50); ueber 540 s: nicht starten, Leitung entscheidet (Stufen einzeln mit --stufe).
+Stufe Lauf | a_mess/a_vorh | d_QE (Mittel, Streuung) | d_SE | Schiefe | Langstreckung | y-Kontrolle
+  grob w55_g0 | - | 2.533e-12 (6.8e-12) | 2.533e-12 | -2.492e-17 | -1.904e-17 | 2.5e-12
+  grob w55_g+5e-4 | - | 2.713e-04 (1.0e-04) | -6.223e-03 | 2.471e-04 | 3.232e-06 | 2.5e-12
+  grob w55_g+1e-3 | - | 5.431e-04 (2.1e-04) | -1.245e-02 | 4.942e-04 | 1.293e-05 | 2.5e-12
+  grob w55_g-1e-3 | - | -5.431e-04 (2.1e-04) | 1.245e-02 | -4.942e-04 | 1.293e-05 | 2.5e-12
+  grob w70_g0 | - | 1.337e-12 (1.6e-12) | 1.337e-12 | -2.575e-17 | -6.932e-18 | 1.3e-12
+  grob w70_g+5e-4 | - | 1.206e-04 (7.5e-05) | -9.748e-04 | -1.495e-04 | 1.335e-06 | 1.3e-12
+  grob w70_g+1e-3 | - | 2.412e-04 (1.5e-04) | -1.950e-03 | -2.974e-04 | 4.481e-06 | 1.3e-12
+  grob w70_g-1e-3 | - | -2.412e-04 (1.5e-04) | 1.950e-03 | 2.974e-04 | 4.481e-06 | 1.3e-12
+  fein w55_g0 | - | 7.258e-16 (5.0e-15) | 6.855e-16 | -7.432e-18 | 4.329e-20 | 6.5e-16
+  fein w55_g+5e-4 | - | 2.647e-04 (1.0e-04) | -6.237e-03 | 2.478e-04 | 3.233e-06 | 1.0e-15
+  fein w55_g+1e-3 | - | 5.300e-04 (2.0e-04) | -1.247e-02 | 4.955e-04 | 1.293e-05 | 1.2e-15
+  fein w55_g-1e-3 | - | -5.300e-04 (2.0e-04) | 1.247e-02 | -4.955e-04 | 1.293e-05 | 1.2e-15
+  fein w70_g0 | - | 2.666e-13 (4.9e-13) | 2.665e-13 | -1.808e-16 | -6.457e-18 | 2.7e-13
+  fein w70_g+5e-4 | - | 1.193e-04 (7.5e-05) | -9.769e-04 | -1.480e-04 | 1.049e-06 | 2.7e-13
+  fein w70_g+1e-3 | - | 2.386e-04 (1.5e-04) | -1.954e-03 | -2.963e-04 | 4.143e-06 | 2.7e-13
+  fein w70_g-1e-3 | - | -2.386e-04 (1.5e-04) | 1.954e-03 | 2.963e-04 | 4.143e-06 | 2.7e-13
+Kennzahlen: {"w55": {"null_d_QE": 2.5326275998867176e-12, "null_schiefe": -2.491558803288693e-17, "linear_2g_zu_g": 2.002042898766935, "antisymmetrie": -0.9999999911224223, "d_QE_bei_1e-3": 0.0005430755147603873, "d_SE_bei_1e-3": -0.012445638330786666, "schiefe_bei_1e-3": 0.0004942009961315881, "langstreckung_bei_1e-3": 1.2928955177976367e-05, "a_verhaeltnis_1e-3": null}, "w70": {"null_d_QE": 1.3374351009773339e-12, "null_schiefe": -2.5751327008880475e-17, "linear_2g_zu_g": 1.999890275832523, "antisymmetrie": -0.9999999835266693, "d_QE_bei_1e-3": 0.00024119810261367678, "d_SE_bei_1e-3": -0.0019496048523819573, "schiefe_bei_1e-3": -0.0002973664869201475, "langstreckung_bei_1e-3": 4.48060379408241e-06, "a_verhaeltnis_1e-3": null}, "L3": {"laeufe": [{"lauf": "w55_g+5e-4", "aenderung_d_QE": 6.519177059354018e-06, "bestanden": true}, {"lauf": "w55_g+1e-3", "aenderung_d_QE": 1.3036617781395825e-05, "bestanden": true}, {"lauf": "w55_g-1e-3", "aenderung_d_QE": 1.3036612960661844e-05, "bestanden": true}, {"lauf": "w70_g+5e-4", "aenderung_d_QE": 1.3351699566048199e-06, "bestanden": true}, {"lauf": "w70_g+1e-3", "aenderung_d_QE": 2.626434289936978e-06, "bestanden": true}, {"lauf": "w70_g-1e-3", "aenderung_d_QE": 2.6264308176156433e-06, "bestanden": true}], "bestanden": true}}

@@ -1,0 +1,28 @@
+{
+  "id": "claude-gauntlet-v2-runde8-ergebnis-20260912",
+  "time": "2026-09-12T06:35:57+02:00",
+  "time_kind": "completed",
+  "author": "Claude (claude-primary; Jury via claude-x1 ueber OpenRouter)",
+  "topic": "operations",
+  "status": "checked",
+  "title": "Gauntlet Runde 8: F1, M1.5 und T4.3 auf bronze; Kalibrierung 3/3; Jury kimi-k3, gemini-3.1-pro, grok-4.6",
+  "question": "Halten die neue Behauptung F1 und die gepatchten M1.5/T4.3 einer fremden Jury stand?",
+  "action": "Wiederaufnahme des Laufs nach needs_evidence (dokumentiert), Runde 8 eingefroren (Manifest a61b266a, acht Behauptungen), zwoelf Urteile unter den Manifest-Slots (Finanzierung und Adapter claude-x1, Kosten 2,79 USD, Prompts 229k/258k/238k Token), Ernte durch loop.py stand.",
+  "result": "M7 3x PASS, K1 3x FAIL (davon 3x KEIN PATCH: algebraisch, zuruecknehmen). Sachurteile: F1 PASS (grok), M1.5 PASS (gemini), T4.3 PASS (grok), S1.2 und M3.3 PASS (kimi), S2.2 PASS (gemini). 3 hoch, 0 runter: F1, M1.5, T4.3 jetzt bronze; alle Sachbehauptungen des Laufs bronze, M7 silber.",
+  "meaning": "Erste Runde mit dem neuen Modellergebnis F1 (nichtlinearer Formschutz durch Rotation). Keine weitere Runde ohne neue Evidenz; OpenRouter-Key ausgeschoepft (Finn: kein Limit-Anhebung), Codex-Tagessumme ueber 2 Mio; kuenftige Jury nach Handlungsanweisung ohne bezahlte Aufrufe (in Arbeit bei claude-x1).",
+  "sources": [
+    {
+      "path": "gauntlet/new-runs/entwicklung-v2-20260911/rounds/008/patches.md",
+      "sha256": "15d7a19b17dbfe8d3c663c33220249f88b0a9304e05def18c2b9db94da8f2510"
+    },
+    {
+      "path": "gauntlet/new-runs/entwicklung-v2-20260911/rounds/008/manifest.json",
+      "sha256": "330e5221de0940e7609514a986b94b7e65239ef70a26728b0a96999381884991"
+    },
+    {
+      "path": "gauntlet/new-runs/entwicklung-v2-20260911/scoreboard.tsv",
+      "sha256": "b2af7a3256328ae46d48b778f267af17e3a9ab8f2461a029dafdfd5442aff814"
+    }
+  ],
+  "recorded_at": "2026-09-12T04:35:57.362255+00:00"
+}

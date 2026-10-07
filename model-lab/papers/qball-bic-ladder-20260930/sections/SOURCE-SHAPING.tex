@@ -1,0 +1,427 @@
+% Candidate for v0.14; not a canonical edit or publication approval.
+% RESULT.json SHA256 7c9ff31f20b4ce7ee65e146a13ba1ccdda18ae04c07757e7ad1abf56b4702e88
+% RESULT-REVIEW.txt SHA256 4bb05fb4bcaa8c187c7fd850c0d2908283bedf98b3e1d494e5e3676658373e33
+\paragraph{Changing the complete pulse shape.}
+A subsequent fixed comparison used the same nominal linear radial
+$\ell=1$ evolution, $R=20$, $T=6$ and $h=0.04,0.02$.
+It compared the annular drive above with a mode-adapted drive, using
+single pulses and equal-sign pairs separated by $\pi/\rho$.
+The new drive retains both sideband terms of a quintic turn-on construction
+and has a spatial cutoff equal to one for $r\leq4$ and zero for $r\geq8$.
+The reference instead uses the annulus $1<r<2$ and a $\sin^2$ temporal
+window with one rotating frequency. Thus both spatial and temporal
+waveforms change; the comparison does not isolate a spatial cause.
+
+Each single pulse was normalized to the same reduced-source norm
+\begin{equation}
+ B_{\mathrm{src}}=\int\!\int |s(r,t)|^2\,\dd r\,\dd t,
+ \qquad B_{\mathrm{src}}\simeq1.35281\times10^{-3}
+ \quad(h=0.02).
+\end{equation}
+Pairs have twice this budget. The integrated budgets agreed with their
+prescribed values within $6\times10^{-9}$ relatively on both grids.
+This norm is neither mechanical work nor injected energy or charge,
+and equal norms do not imply equal actuator support or hardware cost.
+For the single pulse, the fine-grid diagnostic $|d(T)|^2/B_{\mathrm{src}}$
+is about $32$ times larger for the shaped drive
+(Table~\ref{tab:source-shaping}); this is not an energy-efficiency ratio
+or an optimality result.
+
+\begin{table}[htbp]\centering\small
+\caption{Fixed source-shaping comparison at $T=6$, $h=0.02$.
+Here $p=\partial_tq$, and ``remainder'' means subtraction of the nominal
+mode reconstruction. Field norms are $L^2(\dd r)$ norms, not energies;
+the pair rows give the total remaining field and velocity norms.}
+\label{tab:source-shaping}
+\begin{tabular}{lrr}\toprule
+Diagnostic&Annular drive&Shaped drive\\\midrule
+Single-pulse $|d|^2/B_{\mathrm{src}}$&$0.001214$&$0.03872$\\
+Single-pulse $q$ remainder norm&$0.007992$&$0.002596$\\
+Single-pulse $p$ remainder norm&$0.01502$&$0.004954$\\
+Pair $\|q\|$&$0.01193$&$0.001055$\\
+Pair $\|p\|$&$0.02153$&$0.001930$\\\bottomrule
+\end{tabular}
+\end{table}
+
+The shaped pair leaves approximately $8.8\%$ and $9.0\%$ of the
+reference pair's field and velocity norms, respectively; both remain
+nonzero. Nominal mode subtraction is not an orthogonal energy
+partition. Both grids passed the fixed comparison and defect-balance
+checks, but the global second-component nominal eigenmode residual norm increases
+from approximately $0.529$ to $1.495$ on refinement. The successful
+paired-defect balance therefore does not establish global eigenfunction
+convergence. These finite-box, short-time results show reduced residual
+motion for the specified composite drive; they establish neither full
+stillness of the field nor removal of the charged background, nonlinear
+stability or a lifetime. This original two-source comparison did not
+separate changes of spatial and temporal design. The subsequently
+specified cross-comparison below addresses that limitation within a
+fixed actuator family.
+
+% Reviewed stored-profile attribution, incorporated in draft 0.17.
+% RESULT 03e1c3129984f7b96713f901e7e7767b5f32d4bb6b33afa380178d34dc8ffbb7
+% RESULT-REVIEW 3b665e564d1471fcfbf80cb42d118615c011bfb7b4a2cffea75522ca27619b9c
+A subsequent stored-profile audit identifies the origin of the growing
+second-component defect in this box. The exported reference mode has
+$v(20)=0.004228503237$, whereas the evolution operator imposes a zero
+Dirichlet value. For the three-point stencil this discrepancy adds
+$b_j=\delta_{j,n-1}v(20)/h^2$ to the continued-ghost residual, giving
+$\|b\|_h^2=|v(20)|^2/h^3$. Its squared norm is $0.2793787442$ and
+$2.2350299533$ on the two grids; the continued residual squared norms
+are $1.52\times10^{-8}$ and $9.50\times10^{-10}$, with signed cross
+terms $-9.74\times10^{-10}$ and $-4.84\times10^{-10}$.
+The boundary discrepancy therefore dominates this component's growing
+residual. It does not dominate the first component. This is an algebraic
+attribution, not a modification of the evolution boundary condition or a
+new eigenfunction calculation. The original global defect remains valid
+for the original operator. Two decreasing interior residuals neither
+certify the exported mode nor bound the integrated influence of the
+boundary discrepancy on the pulse response.
+
+\begin{figure}[htbp]\centering
+\includegraphics[width=.98\linewidth]{source-shaping.pdf}
+\caption{Endpoint diagnostics from the fixed spatiotemporal pulse comparison.
+Both spatial support and temporal waveform change. The common source norm
+is not energy or work. The shaped source increases the selected projection
+per source norm and reduces the residual response in this comparison;
+the complete field does not vanish. Bars show the stored fine-grid result,
+not a new evolution or a certified continuum limit.}
+\label{fig:source-shaping}
+\end{figure}
+
+% Factorial RESULT477978704a19d5b2f2b474c41cf5917367335c521902e0f712303f7a563ec263
+% Non-author RESULT-REVIEW66fe64890bbbc3568c19a33610968cd7360f68462ea8f7fb7b467b900dd02a28
+\paragraph{A fixed factorial actuator comparison.}
+The new comparison uses two spatial pairs, $A=(w,0)$ and
+$B=(\zeta u,\zeta v)$, where $w$ is the preceding annulus profile,
+$\zeta$ the cutoff defined above (one below $r=4$ and zero above $r=8$),
+and $u,v$ the stored nominal sidebands.
+Two temporal pairs are prescribed on $0<t<1$:
+\begin{align}
+ T_0&=\bigl(\sin^2(\pi t)e^{i\rho t},
+                  \sin^2(\pi t)e^{-i\rho t}\bigr),\\
+ T_1&=\bigl([g''+2i(\rho+\omega)g']e^{i\rho t},
+                  [g''-2i(\rho-\omega)g']e^{-i\rho t}\bigr),
+ \qquad g=10t^3-15t^4+6t^5.
+\end{align}
+Both temporal pairs vanish outside $0<t<1$; $g$ is extended constantly
+as zero before the pulse and one afterward.
+Each complex source is the component sum
+$s_{ij}=\mathcal N_{ij}(R_{i1}T_{j1}+R_{i2}T_{j2})$,
+where $R_i=A$ or $B$. There is no conjugation in this sum; the second
+physical equation receives $s_{ij}^*$.
+The positive factor $\mathcal N_{ij}$ fixes the same single-pulse
+$B_{\mathrm{src}}$ \emph{after} summation, retaining component interference.
+The two old corners $A/T_0$ and $B/T_1$ are implementation controls;
+$A/T_1$ and $B/T_0$ are the new crossed drives. Each uses both a single
+pulse and an equal-sign pair at the unchanged delay $\pi/\rho$.
+The nominal operator, $R=20$, $T=6$, $h=0.04,0.02$ and time step $h/8$
+remain fixed. Both grids passed the predeclared numerical checks.
+
+\begin{table}[htbp]\centering\small
+\caption{Four fixed normalized actuator designs at $T=6$, $h=0.02$.
+The projection diagnostic is for a single pulse; the final two columns
+are total remaining pair norms, not mode-subtracted norms or energies.}
+\label{tab:source-factorial}
+\begin{tabular}{lrrr}\toprule
+Design&$|d_{\mathrm{single}}|^2/B_{\mathrm{src}}$&Pair $\|q\|$&Pair $\|p\|$\\\midrule
+$A/T_0$&$0.001214$&$0.01193$&$0.02153$\\
+$A/T_1$&$0.0004100$&$0.006390$&$0.01426$\\
+$B/T_0$&$0.1586$&$0.02024$&$0.005692$\\
+$B/T_1$&$0.03872$&$0.001055$&$0.001930$\\\bottomrule
+\end{tabular}
+\end{table}
+
+Within this family, $B/T_0$ gives the largest single-pulse projection
+diagnostic, whereas $B/T_1$ leaves the smallest pair norms in both $q$
+and $p$. Strong projected excitation and small residual field are thus
+different objectives. The spatial-pair change $A\to B$ increases the
+pair $q$ norm at $T_0$ but decreases it at $T_1$: its effect depends on
+the temporal partner. These are conditional design comparisons, not
+universal additive spatial and temporal effects. In particular $A$
+omits a spatial component, $T_1$ changes sideband weights and phase
+structure, and normalization depends on both factors. Equal source norm
+still implies neither equal work nor energy efficiency. All four pairs
+suppress their selected projection under the fixed criterion, while their
+full responses differ and remain nonzero. The nominal-mode defect and
+finite-box limitations above remain. That fixed-phase comparison did not
+test phase-error robustness; it established neither exact preparation,
+complete stillness nor a lifetime.
+
+\begin{figure}[htbp]\centering
+\includegraphics[width=.98\linewidth]{factorial-comparison.pdf}
+\caption{Stored endpoint diagnostics for the fixed $2\times2$ actuator
+family. The largest single-pulse projection per source norm occurs at
+$B/T_0$, while $B/T_1$ gives the smallest remaining pair field and
+velocity norms. The source is normalized after adding its two components;
+these comparisons are not energy efficiencies or a universal separation
+of independent spatial and temporal mechanisms. No additional evolution
+or phase-error test is represented by this figure.}
+\label{fig:source-factorial}
+\end{figure}
+
+% Phase RESULTf492a34c52a608a36d3d6054c1342cc6bf3dd963021e3576d5d6447423a25301
+% Reviewed ea5b091239d228e8da5ac68c60108c238c3052a2ee4272f9012366e61459ec37
+% Endpoint SUMMARY3329b5213520fe157b71c0a79d530a36e03ce9a644fd13d48cc71031e0c53aae
+\paragraph{A constant relative pulse phase.}
+A further bounded test changes only the additional phase $\theta$ of the
+second pulse, keeping the delay and the carrier-phase correction fixed.
+The coupling to $q^*$ makes the nominal Bogoliubov evolution real-linear,
+not complex-linear: the response to $i s$ need not equal $i q$.
+For each of the four fixed designs, one new delayed-$i s$ response
+therefore completes the real basis. At the same endpoint,
+\begin{equation}
+ q_\theta=q_{\mathrm{single}}
+   +\cos\theta\,(q_{\mathrm{pair},0}-q_{\mathrm{single}})
+   +\sin\theta\,q_{\mathrm{delayed},90}.
+ \label{eq:phase-real-basis}
+\end{equation}
+The same identity holds for $p$ and the real-linear projection $d$.
+Four directly evolved $\theta=\pi/4$ pairs check this reconstruction:
+the largest reported relative discrepancy in $q,p,d$ across both grids
+was $1.14\times10^{-13}$. This tests a known linear identity, not a new
+physical effect. Other constant phases below are evaluations of stored
+endfields, not additional time evolutions. The setting remains
+$R=20$, $T=6$, $h=0.04,0.02$.
+
+\begin{table}[htbp]\centering\small
+\caption{Selected constant-phase endpoints for $B/T_1$ at $T=6$,
+$h=0.02$. Norms are total remaining radial fields, not energy.
+The phase values were fixed before the endpoint analysis.}
+\label{tab:phase-selected}
+\begin{tabular}{rrr}\toprule
+$\theta$&$\|q\|$&$\|p\|$\\\midrule
+$0^\circ$&$0.001055$&$0.001930$\\
+$-5^\circ$&$0.001062$&$0.002068$\\
+$+5^\circ$&$0.001423$&$0.002462$\\
+$-15^\circ$&$0.001986$&$0.003720$\\
+$+15^\circ$&$0.002562$&$0.004413$\\
+$45^\circ$&$0.006301$&$0.01125$\\\bottomrule
+\end{tabular}
+\end{table}
+These values need not be symmetric about zero phase. Cancellation of the
+selected coefficient and minimization of the full field norm are different
+conditions; no new minimum search was performed.
+
+For a uniformly distributed phase that is \emph{constant within each
+pulse pair}, write any endpoint field as $a+b\cos\theta+c\sin\theta$.
+Its root mean square norm is exactly
+\begin{equation}
+ \sqrt{\mathbb E_\theta\|a+b\cos\theta+c\sin\theta\|^2}
+ =\sqrt{\|a\|^2+\tfrac12(\|b\|^2+\|c\|^2)}.
+\end{equation}
+The Gram-matrix evaluation was also checked against eight equally spaced
+phases. Table~\ref{tab:phase-rms} keeps all four designs in the comparison.
+\begin{table}[htbp]\centering\small
+\caption{Uniform constant-phase RMS endpoint norms, $T=6$, $h=0.02$.
+These are square roots of mean squared norms, not mean norms.}
+\label{tab:phase-rms}
+\begin{tabular}{lrr}\toprule
+Design&$\sqrt{\mathbb E_\theta\|q\|^2}$&$\sqrt{\mathbb E_\theta\|p\|^2}$\\\midrule
+$A/T_0$&$0.01128$&$0.02168$\\
+$A/T_1$&$0.007123$&$0.01447$\\
+$B/T_0$&$0.02552$&$0.04088$\\
+$B/T_1$&$0.01106$&$0.01954$\\\bottomrule
+\end{tabular}
+\end{table}
+Although $B/T_1$ leaves smaller pair norms than $A/T_1$ at zero phase,
+its two RMS norms are larger in this ensemble. Its fixed-phase advantage
+is thus conditional on phase preparation.
+The comparison fixes source norm, not the previously excited target
+amplitude: $A/T_1$ has a much smaller single-pulse projection diagnostic
+($0.0004100$ versus $0.03872$ for $B/T_1$). Its lower RMS therefore does
+not establish a better storage or erasure protocol at equal preparation.
+An RMS ranking is not necessarily
+an ordering of mean norms. This ensemble is neither a time average nor a
+simulation of fluctuating environmental noise. The constant phase does
+not change the disjoint pulses' source budget $2B_{\mathrm{src}}$, but that
+budget remains distinct from work or energy. The global nominal eigenmode
+residual limitation remains unchanged; neither exact BIC preparation,
+complete stillness nor nonlinear or long-time robustness follows.
+
+\begin{figure}[htbp]\centering
+\includegraphics[width=.98\linewidth]{phase-response.pdf}
+\caption{Constant-phase endpoint reconstruction for all four fixed
+actuator designs, from their stored real-linear response bases.
+The two grids compare nominal finite-box observables; plotted phase
+samples are not independent time evolutions. The additional phase is
+constant within a pulse pair, not a time-dependent noise source.
+Field norms and uniform-phase RMS values do not measure energy cost.}
+\label{fig:phase-response}
+\end{figure}
+
+\paragraph{Quadratic endpoint energy and the rotating generator.}
+A further analysis uses the stored single- and pair-pulse endpoints,
+without repeating the time evolution. With $p=q_t$ and the same
+$h$-weighted inner product and Dirichlet operator as the evolution,
+define
+\begin{align}
+ H_2&=\|p\|_h^2+\langle q,Kq\rangle_h
+       +\operatorname{Re}\,h\sum_j C_j q_j^2,
+       \label{eq:endpoint-generator}\\
+ Q_2&=2\operatorname{Im}\langle q,p\rangle_h
+       +2\omega\|q\|_h^2,\qquad E_2=H_2+\omega Q_2.
+       \label{eq:endpoint-energy}
+\end{align}
+Here $K=-\Delta_h+2/r^2+1-4f^2+(9/2)f^4-\omega^2$ and
+$C=-2f^2+3f^4$. There is no factor $1/2$: $H_2$ is the coefficient
+of second order in $E-\omega Q$ for the stated action convention,
+using one physical complex field rather than counting its conjugate twice.
+This rotating quadratic generator need not be positive.
+
+\begin{table}[htbp]\centering
+\caption{Stored endpoint coefficients at $T=6$, $h=0.02$.
+All entries are in units of $10^{-4}$, rounded to four significant digits.
+Within a fixed pulse count the designs have equal source-L2 budgets;
+a pair has twice the single-pulse budget.}
+\label{tab:endpoint-energy}
+\begin{tabular}{lrrrr}\toprule
+Design&$H_2$ single&$H_2$ pair&$E_2$ single&$E_2$ pair\\\midrule
+$A/T_0$&4.782&9.315&5.958&11.51\\
+$A/T_1$&2.668&5.180&3.614&6.910\\
+$B/T_0$&8.917&1.382&6.467&8.608\\
+$B/T_1$&2.129&0.05203&1.201&0.03759\\\bottomrule
+\end{tabular}
+\end{table}
+The distinction matters even for the direction of change:
+$B/T_0$ decreases $H_2$ while increasing $E_2$ from single to pair.
+Its $Q_2$ changes from approximately $-2.821\times10^{-4}$ to
+$8.319\times10^{-4}$. For $B/T_1$ both endpoint coefficients decrease;
+for the two $A$ designs both increase. These directions also occur on
+$h=0.04$, but two-grid differences are not validated error bounds.
+
+Equal source-L2 budgets do not imply equal work, and the single-to-pair
+comparison itself is not a same-budget comparison. For the fixed
+semidiscrete model, $\dot H_2=2\operatorname{Re}\langle p,S\rangle_h$.
+Thus $H_2(T)$ at zero initial data predicts net rotating-generator work
+by an identity; that endpoint-only analysis did not measure an independent
+time-integrated power balance. The subsequent test below adds this observable.
+The quadratic laboratory source power additionally contains
+$2\omega\operatorname{Im}\langle q,S\rangle_h$, while $\dot E_2$
+also contains the background-exchange term
+$2\omega\operatorname{Im}\,h\sum_j C_jq_j^2$.
+In particular, $E_2$ is a coefficient on the linear ansatz, not the complete
+laboratory energy change including a second-order background response.
+No positive or gross actuator work, energy efficiency, or full shutdown
+of the Q-ball is established by Table~\ref{tab:endpoint-energy}.
+\paragraph{Time-integrated source work in the nominal linear model.}
+A subsequent bounded run retains the same eight single/pair arms,
+$R=20$, $T=6$, $h=0.04,0.02$ and $\Delta t=h/8$, and adds power
+accumulators at the four Runge--Kutta stages. With the conventions of
+Eqs.~\eqref{eq:endpoint-generator}--\eqref{eq:endpoint-energy}, these
+integrate
+\begin{align}
+ P_H&=2\operatorname{Re}\langle p,S\rangle_h,&
+ J_Q&=2\operatorname{Im}\langle q,S\rangle_h,&
+ X_Q&=2\operatorname{Im}\,h\sum_jC_jq_j^2,\\
+ P_{E,\mathrm{src}}&=P_H+\omega J_Q,&
+ P_{E,\mathrm{ex}}&=\omega X_Q.
+\end{align}
+The independently evaluated state coefficients satisfy the numerical
+balances $\Delta H_2=\int P_H\,\dd t$,
+$\Delta Q_2=\int(J_Q+X_Q)\,\dd t$, and
+$\Delta E_2=\int(P_{E,\mathrm{src}}+P_{E,\mathrm{ex}})\,\dd t$.
+Unlike the preceding endpoint-only analysis, these integrals use the
+actual time-dependent fields and source at the integration stages.
+The exchange term remains active after the source ends.
+
+The first pulse is identical in the single and pair arms; the first and
+second pulse windows are disjoint. Their trajectories therefore agree before
+the second pulse. Subtracting their independently integrated total source
+works gives the second pulse's net work on the already excited field:
+\begin{equation}
+ W_{H,2}=W_{H,\mathrm{pair}}-W_{H,\mathrm{single}},\qquad
+ W_{E,\mathrm{src},2}=W_{E,\mathrm{src},\mathrm{pair}}
+                       -W_{E,\mathrm{src},\mathrm{single}}.
+\end{equation}
+This is not the work of an isolated second pulse applied to a fresh
+zero state, nor merely a relabeling of endpoint energy differences.
+
+\begin{table}[htbp]\centering
+\caption{Net second-pulse source work inferred from time-integrated
+pair-minus-single works at $h=0.02$. Units are $10^{-4}$, as in
+Table~\ref{tab:endpoint-energy}; entries are rounded to four significant
+digits. Negative values denote net extraction in the specified quadratic
+source-work convention, not efficiency of a physical actuator.}
+\label{tab:second-pulse-work}
+\begin{tabular}{lrr}\toprule
+Design&$W_{H,2}$&$W_{E,\mathrm{src},2}$\\\midrule
+$A/T_0$&$4.533$&$4.207$\\
+$A/T_1$&$2.512$&$3.602$\\
+$B/T_0$&$-7.535$&$5.939$\\
+$B/T_1$&$-2.077$&$-1.122$\\\bottomrule
+\end{tabular}
+\end{table}
+Thus the second $B/T_1$ pulse is a net source-work sink in both
+conventions. In contrast, $B/T_0$ removes rotating-generator work while
+its laboratory source-work coefficient is positive. The change in $E_2$
+also includes the difference of integrated exchange terms; it is not
+identical to $W_{E,\mathrm{src},2}$.
+Positive and negative parts of the total spatially integrated power
+were separately accumulated, so a small net value need not mean little
+positive input or little extraction. This splitting applies after spatial
+summation, rather than to positive and negative local power densities.
+
+Both grids pass the predeclared $10^{-6}$ normalized balance tolerance,
+and the new endfields agree with the stored reference endpoints within
+the fixed $10^{-8}$ single-response-normalized tolerance. The reported
+scaled two-grid differences of work contributions are below
+$4.4\times10^{-4}$, within the prescribed $0.03$ consistency limit.
+These are discrete numerical checks, not rigorous continuum error bounds;
+the positive/negative power split also need not inherit a smooth fourth-order
+convergence rate. The original nominal-mode boundary defect is unchanged.
+Equal source-L2 budgets are still not equal work. Finally, the laboratory
+source-work coefficient and $E_2$ belong to the frozen linear ansatz:
+second-order background response, full nonlinear laboratory energy,
+actuator losses and conversion efficiency are not determined. No complete
+shutdown or long-time stability follows from this short-window balance.
+\paragraph{Phase dependence of the second-pulse source work.}
+For the same four source designs, we vary the constant phase $\theta$ of
+the delayed pulse while keeping its source norm fixed. Real linearity of
+the frozen evolution gives the quadratic source-work coefficient
+\begin{equation}
+ W_{E,\mathrm{src},2}(\theta)
+ =c_0+c_1\cos\theta+s_1\sin\theta
+       +c_2\cos(2\theta)+s_2\sin(2\theta).
+ \label{eq:phase-work-five}
+\end{equation}
+Writing the measured quadrature coefficients as $(A,B,D,E,F)$, these are
+$(c_0,c_1,s_1,c_2,s_2)=((D+E)/2,A,B,(D-E)/2,F/2)$.
+The five coefficients are integrated from the first-pulse response and two
+delayed quadrature responses, with a direct $45^\circ$ two-pulse control,
+through $T=3$ after both source windows end ($\Delta+1<3$), using
+$h=0.04,0.02$ and $\Delta t=h/8$. This is not a renewed $T=6$ energy history.
+Thus the plotted curves are postprocessing of measured coefficients, not
+thousands of independent evolution runs.
+
+On both nominal grids, only B/T1 has a negative-work interval:
+approximately $-66.53^\circ<\theta<57.03^\circ$.
+For the fine grid its second-pulse net source work is
+$-1.1224\times10^{-4}$ at $0^\circ$ and
+$-3.9278\times10^{-5}$ in the direct $45^\circ$ control.
+This broad nominal interval concerns signed net source work; it does not
+assert equally small residual fields throughout the interval.
+In particular, the previously reported residual field norms increase at
+$45^\circ$ even though this work remains negative.
+All four uniform \emph{constant-phase} means $c_0$ are positive;
+for B/T1 the fine-grid mean is $1.1334\times10^{-4}$.
+This phase ensemble is not a model of time-dependent phase noise.
+
+Polynomial sign isolation treats the measured floating-point coefficients
+as exact rational dyads. Its exactness applies to those nominal polynomials,
+not to their discretization errors or to the continuum or nonlinear field
+equations. The result concerns quadratic source work in the frozen linear
+ansatz, with background exchange distinguished separately; it is neither a
+full nonlinear laboratory-energy balance nor an actuator-efficiency claim.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{phase-work.pdf}
+\caption{Second-pulse source work versus constant phase. Left: all four
+designs; solid curves use $h=0.02$, dashed curves $h=0.04$.
+Right: B/T1 with nominal fine-grid zero boundaries (dotted), its uniform
+constant-phase mean (dash-dotted), and direct $45^\circ$ controls (symbols).
+Work is displayed in units of $10^{-4}$. Shading denotes the nominal
+negative-work window, not certified physical tolerances.}
+\label{fig:phase-work}
+\end{figure}

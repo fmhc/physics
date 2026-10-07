@@ -1,0 +1,66 @@
+{
+  "id": "claude-m3-4-v0-20260920",
+  "time": "2026-09-20T21:30:00+02:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5), Auftrag Regel 15.6",
+  "topic": "binaries",
+  "status": "reported",
+  "title": "Startbedingung V0 zu M3.4 durchgefallen: der projizierte Paarwinkel ist schon ohne Rauschen gleichverteilt, es wurde nicht produziert",
+  "question": "Vertrag M3.4 wollte pruefen, ob das bedingte Newton-Vorwaertsmodell in den zwei schwaechsten logg-Feldern weniger Streuung des Winkels zwischen Paartrennung und Relativgeschwindigkeit erzeugt als die Messung. Das S0-Fremdreview (Qwen und DeepSeek) hatte dem Vertrag dafuer eine Startbedingung angehaengt: die Vorabrechnung V0 muss zuerst zeigen, dass der Kanal einen verdoppelten Paarfehler ueberhaupt sehen wuerde. Vorfrage dieses Eintrags: haelt V0?",
+  "action": "V0 nach Vertrag M3.4 Abschnitt 6.4(f) gerechnet, auf fmh@192.168.178.69 (ubuntu-auto) als begrenzte User-Unit, CPU/NumPy float64/ein Thread, kein CUDA (Grund Vertrag 9.4), Laufzeit 8,266 s. Modellseite allein: Katalog 0 aus der eingefrorenen M1-Auswahl (nominal_selected, 18051 Zeilen) mit sig = f*ev/sqrt(2) fuer f in {1,0; 1,5; 2,0}, Seed 424245, Bahnen und Standardnormalen einmal gezogen und ueber alle f identisch. Eingabe full-input.npz und das gebundene Modell newton_vorwaerts.py vor und nach dem Lauf gehasht, beide gleich dem Vertrag. Anschliessend ein zweiter Modellseitenlauf V0b (8,471 s) als Ursachenbeleg mit f in {0; 0,125; 0,25; 0,5; 1; 2; 4}, der 3D-Gegenprobe der Winkelrechnung und der gemessenen Winkelunschaerfe. Die Messseite wurde nicht angefasst, kein r_i gebildet, keine Nullprobe und keine Kontrolle K1-K9 gerechnet.",
+  "result": "V0 durchgefallen. Startbedingung 1 (medg >= 50 Grad, keine Saettigung) in allen vier Pflichtzellen verfehlt: 43,85 und 44,18 Grad bei c = 0,05; 40,98 und 45,09 Grad bei c = 0,03. Startbedingung 2 (Delta >= 3*SD) verfehlt: F0_W Delta = +0,816 Grad gegen 3*SD = 3,211 Grad, F1_W Delta = -0,313 Grad gegen 3,028 Grad, also mit falschem Vorzeichen. Startbedingung 3 erfuellt, aber unter einer Streuung und damit ohne Aussagewert. Ursache belegt: der gefaltete Winkel ist auf der Modellseite bereits ohne jedes Rauschen nahezu gleichverteilt auf [0,90] Grad (groesste Abweichung des Feldmedians von 45,0 Grad: 1,499 Grad; groesste Abweichung der Streuung von 90/sqrt(12) = 25,98 Grad: 0,314 Grad). Nicht das Rauschen saettigt, sondern die Projektion: derselbe Code liefert fuer die vollen 3D-Vektoren einen Median von 60,450 Grad und fuer e < 0,01 die geforderten 89,798 Grad. Die gemessene Winkelunschaerfe ist kleiner als der Vertrag geschaetzt hatte (F0_W 0,193 statt 0,33). Selbstkontrollen bestanden: Feldbesetzungen exakt gleich Vertrag 4.3 (18051 bzw. 6840 Zeilen), Masse/vc/logg konsistent auf 1,78e-15.",
+  "meaning": "Es wurde NICHT produziert. Der Vertrag geht nach 6.4(f) zurueck vor S1, ohne Ausgang T oder U, weil es keinen Lauf gab. Keine Registerzeile, kein Ledgereintrag und keine Stufe ist geaendert worden; Runde 022 bleibt eingefroren, die Silberzeile M3.3 bleibt unveraendert. Dieser Lauf prueft das Rauschmodell, nicht die Schwerkraft, und misst keine Gaia-Fehlerskala. Ohne V0 haette M3.4 mit hoher Wahrscheinlichkeit ein bedeutungsloses B geliefert, weil die Kennzahl unter der Modellnullhypothese konstant bei 45 Grad liegt. Die Startbedingung hat also genau das getan, wofuer das Fremdreview sie verlangt hat, und 16,7 Sekunden statt 890 gekostet. Der Posten aus EINORDNUNG.md 2.6 bleibt offen: keine unserer Registerzeilen hat die globale Gaia-Fehlerskala je gemessen. Nachfolgevorschlag M3.5 geschrieben; er ersetzt den Feldmedian durch den Anteil kleiner Winkel, schreibt eine einzige Modellseite fest und berichtigt drei weitere Vertragsfehler (widerspruechliche Modellseite in 2.3 gegen 2.8, falscher Archivpfad in 3.1, nicht ausfuehrbares K3).",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260921/m3-4-lauf/V0-M3-4.md",
+      "rolle": "Bericht V0 mit allen Zahlen",
+      "sha256": "f457dcb16cb22301c59c84db3f2c83a6e60662ebd28033a6daf7383bb780d757"
+    },
+    {
+      "path": "coordination/vertraege-20260921/m3-4-lauf/V0-M3-4.json",
+      "rolle": "Ergebnisdatei V0",
+      "sha256": "cc51f908166000ba8ecb20d5305c0a5e2ea07f81b2761830c69f39be69dc13e2"
+    },
+    {
+      "path": "coordination/vertraege-20260921/m3-4-lauf/V0b-URSACHE-M3-4.json",
+      "rolle": "Ergebnisdatei Ursachenbeleg",
+      "sha256": "6e1af0fb9f70b24e11be0663ae86df1b709a092435cb1dc7bf342cf5340b4766"
+    },
+    {
+      "path": "coordination/vertraege-20260921/m3-4-lauf/v0_m3_4.py",
+      "rolle": "Skript V0",
+      "sha256": "ea2df468778b82da47b807f9d615d600606d94fc870c4800c061862b1d4185b0"
+    },
+    {
+      "path": "coordination/vertraege-20260921/m3-4-lauf/v0b_ursache.py",
+      "rolle": "Skript Ursachenbeleg",
+      "sha256": "5c17979d43cab20f94588edf42094aabea97de313c30a5e0463882a2c3d74d53"
+    },
+    {
+      "path": "coordination/vertraege-20260921/startsignal-m3-4.txt",
+      "rolle": "Startsignal mit Wortlaut, Zeit, Grund und V0-Ergebnis",
+      "sha256": "edc9f79e647bbe58b38ca25b953890513126fce52d3b6f087ca157e4e9c0475c"
+    },
+    {
+      "path": "coordination/vertraege-20260921/m3-4-VERTRAG.md",
+      "rolle": "Vertrag, Fassung nach dem S0-Fremdreview",
+      "sha256": "e59ec165af8569cca9b6b4b617ca688a323e002d93b868ebe10dc2dc853e084d"
+    },
+    {
+      "path": "coordination/vertraege-20260921/REVIEW-m3-4.md",
+      "rolle": "S0-Fremdreview, das V0 verlangt hat",
+      "sha256": "c46a7efb98344d4374d49c5a037e94115c2f8bf97144c45c445ce7d6232bd4ec"
+    },
+    {
+      "path": "coordination/vertraege-20260921/FASSUNG-2-VORSCHLAG-m3-5.md",
+      "rolle": "Nachfolgevorschlag",
+      "sha256": "ee4b9ebb15c88fd1256b5d6a87d945b8c15fa63dba81abca41cecce4465e466f"
+    },
+    {
+      "path": "coordination/analyse-literatur-20260920/EINORDNUNG.md",
+      "rolle": "Herkunft der Fragestellung",
+      "sha256": "143304ab262a6c8113af1771fa968d2e72bb9c231baacb8bfde0744b6bb9e860"
+    }
+  ],
+  "recorded_at": "2026-09-20T19:27:03.369512+00:00"
+}

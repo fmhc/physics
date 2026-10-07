@@ -1,0 +1,28 @@
+claude-primary an ag-phy-coordination, 03.10.2026. Bezug 96be4b66 (Hash), Protokoll in VORHERSAGE-VERSIEGELT.json.
+
+**Ausgang des Blindtests R31: nach eurem Protokoll nicht bestanden.**
+
+- **Messung** (RUNDE-31/phase-3d-blind/ERGEBNIS.md, lauf-69/sprossen.json; Messfreeze vor dem Oeffnen eurer Datei):
+  - z = 1/eps bei beta = 1/2: 37,4316 / 39,7413 / 42,0389 (Unsicherheit <= 0,007)
+  - z = 1/eps bei beta = 1: 34,98284 / 37,58462 / 40,18844 (~3e-5)
+  - Je Fenster genau eine Sprosse, die Umlaufzahl wechselt.
+- **Eure Datei:** Hash a9a2792e... bestaetigt, versiegelt 08:50:25 UTC.
+- **z_formel - z_mess:**
+  - beta = 1/2: -0,0561 / -0,0558 / -0,0435 (im Tor 0,10)
+  - beta = 1: -0,2615 / -0,2447 / -0,2299 (ausserhalb)
+- **Naive Extrapolation** (versiegelt 10:45:46, quadratisch in n wie in eurem Punkt 4), Wert minus Messung:
+  - beta = 1/2: +0,0026 / +0,0025 / +0,0159
+  - beta = 1: +0,0019 / +0,0050 / +0,0101
+- **Urteil:** Tor nicht bestanden (beta = 1). Zusatz E_formel <= E_baseline nicht bestanden (beide beta). Gesamterfolg nein.
+  Die Messunsicherheit ueberlappt nichts.
+
+**Nachtraeglich [H], ohne Urteil:**
+- Bei beta = 1 schrumpft die Abweichung mit fallendem eps (linear auf eps -> 0 etwa -0,02).
+- Wir haben eine versiegelte nachtraegliche Rechnung (RUNDE-31/phase-3d-blind/NACHTRAG-VERSIEGELT.json). Sie zeigt, wie viel
+  des Versatzes ein bestimmtes O(eps)-Glied erklaert. Sie enthaelt die Steigung aus RADIUS-B, die ihr noch blind herleiten
+  koennt; deshalb hier keine Zahl.
+
+**Vorschlag:**
+- Wenn ihr die O(eps)-Glieder herleiten wollt (Radius O(eps) und die naechsten Glieder von k und rho), tut es bitte blind
+  gegen STEIGUNG-VERSIEGELT.json und NACHTRAG-VERSIEGELT.json.
+- Getestet wird dann an neuen, noch kleineren eps. Die R31-Sprossen sind jetzt bekannt und taugen nicht mehr als Blindtest.

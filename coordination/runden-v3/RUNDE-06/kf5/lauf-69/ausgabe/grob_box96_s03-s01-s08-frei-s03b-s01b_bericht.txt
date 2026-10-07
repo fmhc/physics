@@ -1,0 +1,79 @@
+KF-5 Geburt in 2D, Aufruf grob_box96_s03-s01-s08-frei-s03b-s01b. Start 2026-09-30T01:20:36+00:00, Ende 2026-09-30T01:22:48+00:00, Quadro P4000, torch 2.5.1+cu121
+Gitter: Box 96.0, dx 0.25, dt 0.04, n 384, T_Ende 800.0, Fenster 40.0; GPU-Speicher max 155 MB
+Dauer [s]: auswertung 41.5, fenster 2.8, entwicklung 87.1, gesamt 131.8
+Arm s03: S0 0.3, frei False, Seed 31. Theorie: omega0 0.7314, gamma_max 0.2256, lambda_max 11.89, q lambda^2 62.07, Zellen 65.16, E/Q Kondensat 0.875
+  Wachstum: Kontrast Start 0.02, max 1.443; T_sat (Kontrast >= 0,5) 20.47; gamma_mess 0.2038 (8 Punkte), gamma_mess/gamma_max 0.9036
+  Netz: umspannend zuerst -, zuletzt -; N_Tropfen max 41 bei t 30; Verlauf {"30": 41, "50": 20, "100": 15, "200": 9, "400": 4, "600": 4, "800": 3}
+  Erste Generation (t 30, N 41): Q-Quartile [29.69959, 34.81801, 42.89046], Vorhersage q lambda^2 62.07
+  Ende t 800: Urteil getrennte Tropfen (obere Schwelle: getrennte Tropfen); N_Tropfen 3 (oben 6), N_Netz 0, groesste 0.6044; Q-Quartile [59.95988, 1332.703, 2190.378]; Ladung in Tropfen 0.8858, Energie in Tropfen 0.7427
+  Verschmelzungen 80, Teilungen 49 (Maskendiagnose); Drift Q 2.2e-16, E 8.9e-05; Kontrolle (Kontrast < 0,05, keine Komponente): nicht bestanden
+  Familie (Fenster): {"auf": 0, "neben": 0, "unentschieden": 2, "ausserhalb": 0, "gestoert": 0, "nicht rund": 1}; Urteil nicht entscheidbar (mit Q_roh: nicht entscheidbar)
+    k   0 | Q 2129 | v 0.111 | omega_ruhe 0.72046 +- 3.7e-03 (geo 0.72530) | omega_fam(Q) 0.71874 | dQ - | E/Q 0.7273 fam 0.7309 | nicht rund
+    k   1 | Q 60.85 | v 0.050 | omega_ruhe 0.77236 +- 1.0e-02 (geo 0.77964) | omega_fam(Q) 0.77809 | dQ -0.141 | E/Q 0.8552 fam 0.8554 | unentschieden
+    k   2 | Q 1347 | v 0.024 | omega_ruhe 0.71419 +- 5.3e-03 (geo 0.72188) | omega_fam(Q) 0.72146 | dQ -0.757 | E/Q 0.7291 fam 0.7366 | unentschieden
+Arm s01: S0 0.1, frei False, Seed 31. Theorie: omega0 0.9028, gamma_max 0.09415, lambda_max 15.65, q lambda^2 44.24, Zellen 37.62, E/Q Kondensat 0.9526
+  Wachstum: Kontrast Start 0.02, max 2.271; T_sat (Kontrast >= 0,5) 51.13; gamma_mess 0.09094 (17 Punkte), gamma_mess/gamma_max 0.9658
+  Netz: umspannend zuerst -, zuletzt -; N_Tropfen max 49 bei t 110; Verlauf {"30": 0, "50": 16, "100": 45, "200": 32, "400": 20, "600": 17, "800": 12}
+  Erste Generation (t 110, N 49): Q-Quartile [15.54593, 22.6028, 31.8583], Vorhersage q lambda^2 44.24
+  Ende t 800: Urteil gemischt (obere Schwelle: getrennte Tropfen); N_Tropfen 12 (oben 13), N_Netz 1, groesste 0.2278; Q-Quartile [50.18424, 86.80085, 110.0343]; Ladung in Tropfen 0.6141, Energie in Tropfen 0.5377
+  Verschmelzungen 57, Teilungen 47 (Maskendiagnose); Drift Q 2.2e-16, E 2.1e-05; Kontrolle (Kontrast < 0,05, keine Komponente): nicht bestanden
+  Familie (Fenster): {"auf": 0, "neben": 0, "unentschieden": 6, "ausserhalb": 0, "gestoert": 1, "nicht rund": 7}; Urteil nicht entscheidbar (mit Q_roh: nicht entscheidbar)
+    k   0 | Q 240.9 | v 0.023 | omega_ruhe 0.73314 +- 2.1e-02 (geo 0.74478) | omega_fam(Q) 0.74144 | dQ - | E/Q 0.7935 fam 0.7791 | nicht rund
+    k   1 | Q 109.1 | v 0.018 | omega_ruhe 0.75025 +- 2.2e-02 (geo 0.76062) | omega_fam(Q) 0.75887 | dQ -0.294 | E/Q 0.8256 fam 0.8163 | unentschieden
+    k   2 | Q 103.3 | v 0.032 | omega_ruhe 0.75130 +- 1.4e-02 (geo 0.76368) | omega_fam(Q) 0.76038 | dQ -0.299 | E/Q 0.8380 fam 0.8195 | unentschieden
+    k   3 | Q 40.73 | v 0.182 | omega_ruhe 0.78938 +- 8.0e-03 (geo 0.80122) | omega_fam(Q) 0.79686 | dQ - | E/Q 0.9024 fam 0.8895 | nicht rund
+    k   4 | Q 48.93 | v 0.071 | omega_ruhe 0.78169 +- 1.6e-03 (geo 0.78881) | omega_fam(Q) 0.78751 | dQ -0.122 | E/Q 0.8567 fam 0.8732 | unentschieden
+    k   5 | Q 96.5 | v 0.020 | omega_ruhe 0.75357 +- 1.2e-05 (geo 0.76411) | omega_fam(Q) 0.76232 | dQ - | E/Q 0.8284 fam 0.8235 | nicht rund
+    k   6 | Q 112.2 | v 0.046 | omega_ruhe 0.75412 +- 1.9e-02 (geo 0.76087) | omega_fam(Q) 0.75808 | dQ -0.144 | E/Q 0.8261 fam 0.8146 | unentschieden
+    k   7 | Q 77.05 | v 0.069 | omega_ruhe 0.75982 +- 3.6e-02 (geo 0.77373) | omega_fam(Q) 0.76942 | dQ -0.269 | E/Q 0.8627 fam 0.8382 | unentschieden
+    k   8 | Q 93.88 | v 0.053 | omega_ruhe 0.75086 +- 9.2e-03 (geo 0.76621) | omega_fam(Q) 0.76314 | dQ - | E/Q 0.8429 fam 0.8252 | nicht rund
+    k   9 | Q 6.721 | v 0.227 | omega_ruhe 1.06997 +- 2.9e-02 (geo 1.11104) | omega_fam(Q) - | dQ - | E/Q 1.0386 fam - | gestoert
+    k  10 | Q 57.76 | v 0.020 | omega_ruhe 0.77642 +- 5.1e-04 (geo 0.78456) | omega_fam(Q) 0.78020 | dQ - | E/Q 0.8686 fam 0.8595 | nicht rund
+    k  11 | Q 170.3 | v 0.024 | omega_ruhe 0.74036 +- 1.9e-02 (geo 0.75413) | omega_fam(Q) 0.74814 | dQ - | E/Q 0.8116 fam 0.7935 | nicht rund
+    k  12 | Q 28.17 | v 0.057 | omega_ruhe 0.82396 +- 8.0e-03 (geo 0.83324) | omega_fam(Q) 0.82177 | dQ +0.026 | E/Q 0.9320 fam 0.9260 | unentschieden
+    k  13 | Q 116.8 | v 0.062 | omega_ruhe 0.74838 +- 8.2e-03 (geo 0.75847) | omega_fam(Q) 0.75701 | dQ - | E/Q 0.8251 fam 0.8124 | nicht rund
+Arm s08: S0 0.8, frei False, Seed 31. Theorie: omega0 0.6, gamma_max -, lambda_max -, q lambda^2 -, Zellen -, E/Q Kondensat 0.7333
+  Wachstum: Kontrast Start 0.02, max 0.02; T_sat (Kontrast >= 0,5) -; gamma_mess - (0 Punkte), gamma_mess/gamma_max -
+  Netz: umspannend zuerst -, zuletzt -; N_Tropfen max 0 bei t 0; Verlauf {"30": 0, "50": 0, "100": 0, "200": 0, "400": 0, "600": 0, "800": 0}
+  Erste Generation (t 0, N 0): Q-Quartile null, Vorhersage q lambda^2 -
+  Ende t 800: Urteil keine Verdichtung (obere Schwelle: keine Verdichtung); N_Tropfen 0 (oben 0), N_Netz 0, groesste -; Q-Quartile null; Ladung in Tropfen 0, Energie in Tropfen 0
+  Verschmelzungen 0, Teilungen 0 (Maskendiagnose); Drift Q 2.2e-16, E 1.0e-07; Kontrolle (Kontrast < 0,05, keine Komponente): bestanden
+  Familie (Fenster): {}; Urteil keine Tropfen im Fenster (mit Q_roh: keine Tropfen im Fenster)
+Arm frei: S0 0.3, frei True, Seed 31. Theorie: omega0 1, gamma_max -, lambda_max -, q lambda^2 -, Zellen -, E/Q Kondensat 1
+  Wachstum: Kontrast Start 0.02, max 0.02; T_sat (Kontrast >= 0,5) -; gamma_mess - (0 Punkte), gamma_mess/gamma_max -
+  Netz: umspannend zuerst -, zuletzt -; N_Tropfen max 0 bei t 0; Verlauf {"30": 0, "50": 0, "100": 0, "200": 0, "400": 0, "600": 0, "800": 0}
+  Erste Generation (t 0, N 0): Q-Quartile null, Vorhersage q lambda^2 -
+  Ende t 800: Urteil keine Verdichtung (obere Schwelle: keine Verdichtung); N_Tropfen 0 (oben 0), N_Netz 0, groesste -; Q-Quartile null; Ladung in Tropfen 0, Energie in Tropfen 0
+  Verschmelzungen 0, Teilungen 0 (Maskendiagnose); Drift Q 1.0e-15, E 7.1e-08; Kontrolle (Kontrast < 0,05, keine Komponente): bestanden
+  Familie (Fenster): {}; Urteil keine Tropfen im Fenster (mit Q_roh: keine Tropfen im Fenster)
+Arm s03b: S0 0.3, frei False, Seed 73. Theorie: omega0 0.7314, gamma_max 0.2256, lambda_max 11.89, q lambda^2 62.07, Zellen 65.16, E/Q Kondensat 0.875
+  Wachstum: Kontrast Start 0.02, max 1.43; T_sat (Kontrast >= 0,5) 20.08; gamma_mess 0.2044 (8 Punkte), gamma_mess/gamma_max 0.9062
+  Netz: umspannend zuerst -, zuletzt -; N_Tropfen max 40 bei t 30; Verlauf {"30": 40, "50": 24, "100": 22, "200": 10, "400": 7, "600": 5, "800": 2}
+  Erste Generation (t 30, N 40): Q-Quartile [19.76224, 27.686565, 43.76641], Vorhersage q lambda^2 62.07
+  Ende t 800: Urteil gemischt (obere Schwelle: getrennte Tropfen); N_Tropfen 2 (oben 5), N_Netz 1, groesste 0.5581; Q-Quartile [662.5594, 805.37135, 948.1833]; Ladung in Tropfen 0.3982, Energie in Tropfen 0.3346
+  Verschmelzungen 75, Teilungen 47 (Maskendiagnose); Drift Q 5.6e-16, E 8.1e-05; Kontrolle (Kontrast < 0,05, keine Komponente): nicht bestanden
+  Familie (Fenster): {"auf": 0, "neben": 0, "unentschieden": 1, "ausserhalb": 0, "gestoert": 0, "nicht rund": 3}; Urteil nicht entscheidbar (mit Q_roh: nicht entscheidbar)
+    k   0 | Q 592.4 | v 0.141 | omega_ruhe 0.71496 +- 4.8e-02 (geo 0.72140) | omega_fam(Q) 0.72882 | dQ - | E/Q 0.7487 fam 0.7521 | nicht rund
+    k   1 | Q 683.7 | v 0.009 | omega_ruhe 0.72334 +- 2.4e-02 (geo 0.73136) | omega_fam(Q) 0.72736 | dQ -0.338 | E/Q 0.7547 fam 0.7490 | unentschieden
+    k   2 | Q 948.6 | v 0.044 | omega_ruhe 0.71806 +- 6.7e-03 (geo 0.72633) | omega_fam(Q) 0.72401 | dQ - | E/Q 0.7462 fam 0.7419 | nicht rund
+    k   3 | Q 1373 | v 0.098 | omega_ruhe 0.72651 +- 9.4e-03 (geo 0.73091) | omega_fam(Q) 0.72133 | dQ - | E/Q 0.7345 fam 0.7363 | nicht rund
+Arm s01b: S0 0.1, frei False, Seed 73. Theorie: omega0 0.9028, gamma_max 0.09415, lambda_max 15.65, q lambda^2 44.24, Zellen 37.62, E/Q Kondensat 0.9526
+  Wachstum: Kontrast Start 0.02, max 2.272; T_sat (Kontrast >= 0,5) 50.65; gamma_mess 0.09015 (18 Punkte), gamma_mess/gamma_max 0.9574
+  Netz: umspannend zuerst -, zuletzt -; N_Tropfen max 51 bei t 130; Verlauf {"30": 0, "50": 19, "100": 49, "200": 34, "400": 22, "600": 16, "800": 13}
+  Erste Generation (t 130, N 51): Q-Quartile [13.35695, 23.10944, 33.00072], Vorhersage q lambda^2 44.24
+  Ende t 800: Urteil getrennte Tropfen (obere Schwelle: getrennte Tropfen); N_Tropfen 13 (oben 12), N_Netz 0, groesste 0.175; Q-Quartile [49.29474, 108.2516, 141.3136]; Ladung in Tropfen 0.7904, Energie in Tropfen 0.6904
+  Verschmelzungen 68, Teilungen 40 (Maskendiagnose); Drift Q 5.6e-16, E 2.0e-05; Kontrolle (Kontrast < 0,05, keine Komponente): nicht bestanden
+  Familie (Fenster): {"auf": 0, "neben": 1, "unentschieden": 5, "ausserhalb": 0, "gestoert": 0, "nicht rund": 7}; Urteil nicht entscheidbar (mit Q_roh: nicht entscheidbar)
+    k   0 | Q 171.6 | v 0.095 | omega_ruhe 0.73632 +- 1.3e-02 (geo 0.75407) | omega_fam(Q) 0.74797 | dQ - | E/Q 0.8287 fam 0.7932 | nicht rund
+    k   1 | Q 201.4 | v 0.043 | omega_ruhe 0.73210 +- 1.1e-02 (geo 0.74592) | omega_fam(Q) 0.74470 | dQ -0.554 | E/Q 0.8132 fam 0.7861 | unentschieden
+    k   2 | Q 48.6 | v 0.072 | omega_ruhe 0.78432 +- 6.9e-03 (geo 0.79023) | omega_fam(Q) 0.78783 | dQ -0.074 | E/Q 0.8821 fam 0.8737 | unentschieden
+    k   3 | Q 79.69 | v 0.067 | omega_ruhe 0.76136 +- 4.2e-03 (geo 0.77199) | omega_fam(Q) 0.76830 | dQ - | E/Q 0.8497 fam 0.8359 | nicht rund
+    k   4 | Q 65.77 | v 0.080 | omega_ruhe 0.76771 +- 6.8e-03 (geo 0.77825) | omega_fam(Q) 0.77507 | dQ -0.189 | E/Q 0.8701 fam 0.8495 | unentschieden
+    k   5 | Q 120.6 | v 0.069 | omega_ruhe 0.74108 +- 1.4e-03 (geo 0.75300) | omega_fam(Q) 0.75619 | dQ - | E/Q 0.8182 fam 0.8107 | nicht rund
+    k   6 | Q 106.3 | v 0.017 | omega_ruhe 0.75319 +- 6.1e-04 (geo 0.75897) | omega_fam(Q) 0.75958 | dQ -0.219 | E/Q 0.8219 fam 0.8178 | neben
+    k   7 | Q 106.4 | v 0.051 | omega_ruhe 0.74801 +- 2.2e-02 (geo 0.75626) | omega_fam(Q) 0.75956 | dQ -0.379 | E/Q 0.8376 fam 0.8178 | unentschieden
+    k   8 | Q 109.8 | v 0.129 | omega_ruhe 0.75212 +- 7.3e-03 (geo 0.75821) | omega_fam(Q) 0.75869 | dQ - | E/Q 0.8071 fam 0.8159 | nicht rund
+    k   9 | Q 10.03 | v 0.149 | omega_ruhe 0.98382 +- 2.0e-02 (geo 1.01164) | omega_fam(Q) - | dQ - | E/Q 0.9803 fam - | nicht rund
+    k  10 | Q 143.9 | v 0.041 | omega_ruhe 0.74171 +- 4.1e-02 (geo 0.75043) | omega_fam(Q) 0.75189 | dQ - | E/Q 0.8214 fam 0.8015 | nicht rund
+    k  11 | Q 118.9 | v 0.045 | omega_ruhe 0.74979 +- 1.2e-02 (geo 0.75768) | omega_fam(Q) 0.75655 | dQ - | E/Q 0.8277 fam 0.8114 | nicht rund
+    k  12 | Q 24.9 | v 0.156 | omega_ruhe 0.82797 +- 1.8e-02 (geo 0.83852) | omega_fam(Q) 0.83293 | dQ -0.051 | E/Q 0.9238 fam 0.9390 | unentschieden

@@ -1,0 +1,67 @@
+Q-Ball density clock with reciprocal finite detector — 2026-10-02
+Exploratory radial 3D (spherical l=0) continuum-model simulation, ten runs.
+No Cartesian geometry, apparatus calibration or quantum measurement model.
+
+OUTCOME
+Weak resonant readout survives the predefined finite clock gate. Strong
+resonant readout fails it, while a 30% detuned strong detector passes.
+All three coupled arms resolve detector motion and an energy transfer relative
+to the numerical energy-balance error on BOTH grids. This is an explicitly
+coupled model with a prepared known mode, not a new self-generated clock.
+The clock gate tests CENTRAL FIELD DENSITY. The X readout gate tests amplitude,
+not tick regularity of the detector itself. A reliable detector-clock output
+has therefore not yet been demonstrated.
+
+Fine grid h=.1, epsilon=.005, T100, tick window40..100:
+alpha  OmegaD/rho   mean tick period  interval CV    X peak-to-peak  verdict
+0      1           3.60147941        .0002275%      0               clock only
+.1     1           3.60186586        .0004498%      .0926157        clock+readout+transfer
+1      1           3.72813478        3.29482%       .1719185        readout+transfer, clock FAIL
+1      1.3         3.61990388        .143394%       .0302317        clock+readout+transfer
+Reference 2pi/rho=3.60146860. Strong tuned also exceeds 2% period tolerance.
+This does NOT prove Q-ball destruction or long-time instability. A coupled
+signal can be modulated and cease to pass a single-period clock criterion.
+No lifetime extension, phase recovery or universal synchronization claim.
+
+CONTROLS
+No epsilon: no density ticks, detector X_pp=5.12724e-6 coarse,3.22938e-7 fine.
+This null is specifically alpha1,ratio1; used as common comparator, not a
+measured independent noise floor for each different detector parameter.
+Alpha0: X=P=0 exactly. Numerical gates pass for all ten cases.
+Gradient identity tested actual added RHS vs energy derivative, relative
+error6.82885e-11. Wrong-sign control mismatch about2 rejects wrong reciprocity.
+No post-result change to gates, cases, parameters or time window.
+
+ENERGY
+Total conserved diagnostic is main field E + D + absorbed E,
+D=P^2/2+OmegaD^2(X-alpha F)^2/2. No double-counted free detector energy.
+Initial D=0 by detector equilibrium preparation X=alpha F(0),P=0.
+Fine peak kinetic K: .00326076 weak, .0112714 strong tuned,
+.000777596 strong detuned. Absolute balance errors respectively
+2.28203e-7,2.73773e-7,2.89450e-7.
+Worst coarse absolute error / peak K among coupled arms is .00582,
+below preset .1. Hence transfer is resolved at this diagnostic level.
+Fine relative total E error <=1.568e-9, relative Q error <=4.259e-12.
+No exact discrete invariant or rigorous interval certification asserted.
+Readout amplitude coarse/fine disagreement: .316%,1.050%,.00169%.
+Time step and output sampling halved with h, not independently extrapolated.
+
+LIMITS AND NEXT DISCRIMINATING STEP
+The detector is one spherical collective degree of freedom, coupled instantly
+to weighted density with prescribed gaussian footprint. It is not yet a local
+relativistic detector field. Next useful step: replace it by a dynamical local
+neutral field with explicit propagation, reciprocal source and open/closed
+radiation threshold, and test whether readable signal and finite clock survive.
+That is a NEW model/test, not performed here. Lossless detector exchange does
+not give a persistent irreversible recording, nor a perpetuum mobile.
+No change to the published/paper BIC or stability claims.
+
+PROVENANCE
+Plan/code independently read before run; REVIEW.txt. Minor JS parser correction
+-(OmegaD**2) occurred after first launch failed BEFORE any simulation; preserved
+PRESTART-SYNTAX-ERROR.log and old hash manifest. No numerical/model change.
+Inputs bound by INPUT.sha256 and RESULT.json hashes; source copies stored here.
+.69 ubuntu-auto, browser JS float64 CPU, taskset CPU8, nice19, no GPU.
+14.9626 seconds active JS wall interval,17.2319 seconds total wall. These are
+wall measurements, not CPU-time measurements. One bounded process tree,
+no persistent server or service installed. Plot generated separately on .69.

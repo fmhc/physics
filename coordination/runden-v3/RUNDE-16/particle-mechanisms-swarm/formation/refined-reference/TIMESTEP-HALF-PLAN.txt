@@ -1,0 +1,39 @@
+Prospektive feste Zeitschritthalbierung, 02.10.2026, nur geschrieben
+Root meldet MAIN-RESULT.json: NUMERICALLY_UNRESOLVED, cloud/base bei T40.8
+mit relativer Energiedrift1.0911e-5 >1e-5. Dieser ursprüngliche Fehllauf
+und sein Status bleiben unverändert. Keine physikalische Negativentscheidung
+aus dem numerisch abgebrochenen Fenster; hier keine neue Ergebnisrechnung.
+
+Genau eine Quellenänderung, separate Datei timestep-half.py:
+LEVELS alt ((base,.1,.02),(space,.05,.02),(time,.1,.01))
+LEVELS neu ((base,.1,.01),(space,.05,.01),(time,.1,.005)).
+Alle anderen Bytes wie maincode.py. diff -u durch Autor gelesen, einzig
+die LEVELS-Zeile weicht ab. Originalquelle nicht geändert.
+
+Gebundene Hashes:
+maincode.py
+0ce21bee477cb41ade234611fd832abc5a7a90ed10d83d526f532cf28c6fd899
+timestep-half.py
+466b25fb813770a1ab13eea962c93b39308dfe1ad22171fe638c60fdafef998d
+
+Gleiche Frage: konservative Verdichtung/Stationarität der vorgebundenen
+M2-Gaußwolke. Q1100, Breite8, R120,T64,RC12, kein Chirp,chi=1 anfangs.
+Gleiche geprüfte float64-Gitterreferenzen, gleicher manifestgebundener Loader.
+Sechs Arme, gleicher Sampleabstand.8, gleiche Normen/Radiusdefinition und
+gleicher Strukturguard. Keine Änderung von Kopplung, Geometrie, Amplitude,
+Gate, Schlussfenster oder Klassifikationsbedeutung. Alle bestehenden
+Energie-/Ladungs-/Kragen-/Referenz-/Sensitivitäts-/Bildungsgates unverändert.
+
+Dies ist die eine vorab festgelegte nächste Numerikstufe nach dokumentiertem
+Fehler, kein automatischer Retry und keine offene Verfeinerungsschleife.
+Bei erneutem Abbruch bleiben Teilserie/Status unentschieden erhalten; keine
+still weitere Halbierung oder Toleranzlockerung. Rechenarbeit etwa doppelt
+gegenüber gleicher vollständiger Armfolge; gemessene Kosten noch unbekannt.
+Unveränderter bestehender Gesamtdeckel180CPU-s, interner165s-Checkpoint,
+Root bindet tatsächliches Restbudget, Slot/Host und äußere Receipts neu.
+Keine automatische Verlängerung wegen des kleineren dt.
+
+Nichtautorreview vor Rootentscheidung. Autor hat ausschließlich Dateien
+geschrieben, Hashes und Textdiff gelesen. Keine Interpreter, Tests, SSH
+oder Simulationen ausgeführt. Neue Resultate müssen frische Ausgabepfade
+und diesen tatsächlichen Quellhash führen; alte Artefakte bleiben bestehen.

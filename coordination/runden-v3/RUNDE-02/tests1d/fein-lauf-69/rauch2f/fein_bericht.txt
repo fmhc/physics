@@ -1,0 +1,108 @@
+Runde 2 tests1d_fein Start 2026-09-30T00:07:42+00:00 auf Quadro P4000, torch 2.5.1+cu121, Test 2f, Rauchtest True, Argumente {'test': '2f', 'stufen': '0,1,2', 'nu': 'kern', 'w2': 0.7, 'T': 1500.0, 'probe': True, 'vorher': [], 'profil': '/home/fmh/fmhc-physics-remote/tests1d-20260930/rauchtest/profil_1d.pt', 'rauch': True, 'out': '/home/fmh/fmhc-physics-remote/tests1d-20260930/fein/rauch2f'}
+
+Test 2F Absorption feiner, Ball omega^2 = 0.7, Kern |x| < 4.78, Ebenen x = -30/+30. dA = gespeicherter Anteil des Einstroms (freier Durchlauf abgezogen).
+  Stufe 0: dx = 0.1, dt = 0.05, T = 75, 3.3 s, Punkte je Wellenlaenge bei nu = 2.3: 30.3, Randrueckstrom ohne Ball max 0.0e+00
+    Resonanzkandidat Omega_2 (nu - omega ~ 1,48), Stoss bei fester Ladung 1.49437, Ladungsrate 7.01e-04; alter Stoss 1.48093; ruhender Ball 1.49350; Kante 1 - omega 0.1633, gemessen 0.1783
+    nu_res = omega + Omega_2 = 2.33103; Gitterverschiebung des Pakets dort -0.00220; Spitze nu = 2.71733, dA = 5.642e-06, Breite sigma_nu = -
+    Amplitudenprobe dA500(eps)/dA500(1e-3) (linear 1; A ~ eps^2: 0,25 bzw. 4; A ~ 1/eps: 2 bzw. 0,5): nu 2.250 eps 5e-04: 2.047, nu 2.325 eps 5e-04: -1.563, nu 2.375 eps 5e-04: 1.955, nu 2.750 eps 5e-04: 2.171, nu 2.900 eps 5e-04: 2.713, nu 2.325 eps 2e-03: 2.276
+    nu | eps | T_Q | R_Q | dA_Q(t) je Auslese [Kern, aussen] | dA_E Ende | Speicherverhaeltnis, Rate | tau Schwerpunkt, tau Phase | Wiederabstrahlung rechts nu (Rate) | Randrueckstrom mit Ball
+    1.500 | 1e-03 | 0.000000 | -1.14e-04 | t75: +1.14e-04 [+3.5e+00, -3.5e+00] | +6.43e-05 | -, - | +1.644, - | - (-) | 0.0e+00
+      Kanaele: Teilchen durch 0.000000, reflektiert 4.41e-09; Antiteilchen rechts +1.31e-11, links +8.27e-06; frei: Teilchen 0.000000, Antiteilchen +8.3e-06
+    1.900 | 1e-03 | -0.000002 | -2.73e-06 | t75: +4.67e-06 [+7.3e+00, -7.3e+00] | +2.51e-06 | -, - | +1.424, - | - (-) | 0.0e+00
+      Kanaele: Teilchen durch 0.000000, reflektiert -9.19e-10; Antiteilchen rechts +3.06e-09, links +1.08e-08; frei: Teilchen 0.000000, Antiteilchen +1.2e-08
+    2.250 | 1e-03 | -0.000004 | -4.01e-07 | t75: +4.89e-06 [-3.0e+00, +3.0e+00] | +2.84e-06 | -, - | +0.312, - | - (-) | 0.0e+00
+      Kanaele: Teilchen durch 0.000001, reflektiert -2.47e-11; Antiteilchen rechts +2.91e-08, links +3.41e-10; frei: Teilchen 0.000000, Antiteilchen +2.0e-08
+    2.325 | 1e-03 | 0.000001 | 2.24e-07 | t75: -8.78e-08 [-5.1e+00, +5.1e+00] | -6.81e-08 | -, - | -24.755, -0.41 | - (-) | 0.0e+00
+      Kanaele: Teilchen durch 0.000001, reflektiert -1.36e-11; Antiteilchen rechts +4.03e-08, links +2.69e-10; frei: Teilchen 0.000001, Antiteilchen +2.9e-08
+    2.375 | 1e-03 | 0.000009 | 1.43e-07 | t75: -8.35e-06 [-6.0e+00, +6.0e+00] | -5.24e-06 | -, - | +0.541, - | - (-) | 0.0e+00
+      Kanaele: Teilchen durch 0.000001, reflektiert -2.13e-11; Antiteilchen rechts +4.91e-08, links +1.56e-10; frei: Teilchen 0.000001, Antiteilchen +3.5e-08
+    2.750 | 1e-03 | -0.000002 | -6.70e-08 | t75: +5.51e-06 [-1.9e+00, +1.9e+00] | +2.29e-06 | -, - | +5.083, - | - (-) | 0.0e+00
+      Kanaele: Teilchen durch 0.000004, reflektiert -6.44e-13; Antiteilchen rechts +1.41e-07, links +3.38e-11; frei: Teilchen 0.000003, Antiteilchen +1.1e-07
+    2.900 | 1e-03 | 0.000003 | -1.12e-08 | t75: +1.66e-06 [-2.6e+00, +2.6e+00] | +4.77e-07 | -, - | +1.202, - | - (-) | 0.0e+00
+      Kanaele: Teilchen durch 0.000006, reflektiert 1.75e-12; Antiteilchen rechts +1.86e-07, links +4.72e-11; frei: Teilchen 0.000005, Antiteilchen +1.5e-07
+    2.250 | 5e-04 | -0.000009 | -8.03e-07 | t75: +1.00e-05 [-6.0e+00, +6.0e+00] | +5.97e-06 | -, - | +0.284, - | - (-) | 0.0e+00
+      Kanaele: Teilchen durch 0.000001, reflektiert 1.34e-10; Antiteilchen rechts +2.91e-08, links +3.41e-10; frei: Teilchen 0.000000, Antiteilchen +2.0e-08
+    2.325 | 5e-04 | 0.000000 | 4.48e-07 | t75: +1.37e-07 [-1.0e+01, +1.0e+01] | +2.37e-07 | -, - | +14.579, - | - (-) | 0.0e+00
+      Kanaele: Teilchen durch 0.000001, reflektiert 1.39e-10; Antiteilchen rechts +4.03e-08, links +2.69e-10; frei: Teilchen 0.000001, Antiteilchen +2.9e-08
+    2.375 | 5e-04 | 0.000017 | 2.86e-07 | t75: -1.63e-05 [-1.2e+01, +1.2e+01] | -1.00e-05 | -, - | +0.584, - | - (-) | 0.0e+00
+      Kanaele: Teilchen durch 0.000001, reflektiert 1.38e-10; Antiteilchen rechts +4.91e-08, links +1.56e-10; frei: Teilchen 0.000001, Antiteilchen +3.5e-08
+    2.750 | 5e-04 | -0.000008 | -1.34e-07 | t75: +1.20e-05 [-3.7e+00, +3.7e+00] | +5.58e-06 | -, - | +2.743, - | - (-) | 0.0e+00
+      Kanaele: Teilchen durch 0.000004, reflektiert 1.62e-10; Antiteilchen rechts +1.41e-07, links +3.38e-11; frei: Teilchen 0.000003, Antiteilchen +1.1e-07
+    2.900 | 5e-04 | 0.000000 | -2.28e-08 | t75: +4.50e-06 [-5.2e+00, +5.2e+00] | +2.19e-06 | -, - | +4.246, - | - (-) | 0.0e+00
+      Kanaele: Teilchen durch 0.000006, reflektiert 1.67e-10; Antiteilchen rechts +1.86e-07, links +4.72e-11; frei: Teilchen 0.000005, Antiteilchen +1.5e-07
+    2.325 | 2e-03 | 0.000001 | 1.12e-07 | t75: -2.00e-07 [-2.6e+00, +2.6e+00] | -3.92e-07 | -, - | -3.886, - | - (-) | 0.0e+00
+      Kanaele: Teilchen durch 0.000001, reflektiert -6.11e-10; Antiteilchen rechts +4.03e-08, links +2.70e-10; frei: Teilchen 0.000001, Antiteilchen +2.9e-08
+  Stufe 1: dx = 0.05, dt = 0.025, T = 75, 4.7 s, Punkte je Wellenlaenge bei nu = 2.3: 60.7, Randrueckstrom ohne Ball max 0.0e+00
+    Resonanzkandidat Omega_2 (nu - omega ~ 1,48), Stoss bei fester Ladung 1.49447, Ladungsrate 6.82e-04; alter Stoss 1.48100; ruhender Ball 1.49361; Kante 1 - omega 0.1633, gemessen 0.1945
+    nu_res = omega + Omega_2 = 2.33113; Gitterverschiebung des Pakets dort -0.00055; Spitze nu = -, dA = -, Breite sigma_nu = -
+    Amplitudenprobe dA500(eps)/dA500(1e-3) (linear 1; A ~ eps^2: 0,25 bzw. 4; A ~ 1/eps: 2 bzw. 0,5): nu 2.250 eps 5e-04: 2.281, nu 2.325 eps 5e-04: -3.029, nu 2.375 eps 5e-04: 1.824, nu 2.750 eps 5e-04: 3.062, nu 2.900 eps 5e-04: 1.104, nu 2.325 eps 2e-03: 3.013
+    nu | eps | T_Q | R_Q | dA_Q(t) je Auslese [Kern, aussen] | dA_E Ende | Speicherverhaeltnis, Rate | tau Schwerpunkt, tau Phase | Wiederabstrahlung rechts nu (Rate) | Randrueckstrom mit Ball
+    1.500 | 1e-03 | 0.000000 | -2.84e-05 | t75: +2.84e-05 [+3.6e+00, -3.6e+00] | +1.60e-05 | -, - | +1.611, - | - (-) | 0.0e+00
+      Kanaele: Teilchen durch 0.000000, reflektiert 1.37e-09; Antiteilchen rechts +1.40e-11, links +8.11e-06; frei: Teilchen 0.000000, Antiteilchen +8.1e-06
+    1.900 | 1e-03 | -0.000000 | -6.59e-07 | t75: +1.17e-06 [+7.5e+00, -7.5e+00] | +6.25e-07 | -, - | +1.508, - | - (-) | 0.0e+00
+      Kanaele: Teilchen durch 0.000000, reflektiert -2.12e-10; Antiteilchen rechts +3.43e-09, links +9.89e-09; frei: Teilchen 0.000000, Antiteilchen +1.2e-08
+    2.250 | 1e-03 | -0.000000 | -9.53e-08 | t75: +9.81e-07 [-3.3e+00, +3.3e+00] | +4.73e-07 | -, - | +0.543, - | - (-) | 0.0e+00
+      Kanaele: Teilchen durch 0.000001, reflektiert 5.48e-13; Antiteilchen rechts +3.44e-08, links +2.77e-10; frei: Teilchen 0.000001, Antiteilchen +2.4e-08
+    2.325 | 1e-03 | 0.000001 | 5.61e-08 | t75: -7.48e-08 [-5.3e+00, +5.3e+00] | -1.84e-07 | -, - | -1.921, -0.42 | - (-) | 0.0e+00
+      Kanaele: Teilchen durch 0.000001, reflektiert -3.83e-12; Antiteilchen rechts +4.84e-08, links +2.20e-10; frei: Teilchen 0.000001, Antiteilchen +3.4e-08
+    2.375 | 1e-03 | 0.000004 | 2.60e-08 | t75: -2.57e-06 [-6.1e+00, +6.1e+00] | -1.76e-06 | -, - | +0.301, - | - (-) | 0.0e+00
+      Kanaele: Teilchen durch 0.000001, reflektiert -4.83e-12; Antiteilchen rechts +5.94e-08, links +1.37e-10; frei: Teilchen 0.000001, Antiteilchen +4.3e-08
+    2.750 | 1e-03 | 0.000003 | -1.69e-08 | t75: +1.16e-06 [-1.7e+00, +1.7e+00] | -4.37e-08 | -, - | -1.228, - | - (-) | 0.0e+00
+      Kanaele: Teilchen durch 0.000005, reflektiert 1.46e-14; Antiteilchen rechts +1.83e-07, links +2.22e-11; frei: Teilchen 0.000004, Antiteilchen +1.5e-07
+    2.900 | 1e-03 | 0.000008 | -6.06e-09 | t75: -1.77e-06 [-3.0e+00, +3.0e+00] | -1.63e-06 | -, - | +0.291, - | - (-) | 0.0e+00
+      Kanaele: Teilchen durch 0.000008, reflektiert 4.36e-13; Antiteilchen rechts +2.49e-07, links +3.73e-11; frei: Teilchen 0.000006, Antiteilchen +2.0e-07
+    2.250 | 5e-04 | -0.000001 | -1.91e-07 | t75: +2.24e-06 [-6.6e+00, +6.6e+00] | +1.29e-06 | -, - | +0.187, - | - (-) | 0.0e+00
+      Kanaele: Teilchen durch 0.000001, reflektiert 3.04e-11; Antiteilchen rechts +3.44e-08, links +2.77e-10; frei: Teilchen 0.000001, Antiteilchen +2.4e-08
+    2.325 | 5e-04 | 0.000001 | 1.12e-07 | t75: +2.27e-07 [-1.1e+01, +1.1e+01] | +7.16e-08 | -, - | -9.356, - | - (-) | 0.0e+00
+      Kanaele: Teilchen durch 0.000001, reflektiert 2.65e-11; Antiteilchen rechts +4.84e-08, links +2.20e-10; frei: Teilchen 0.000001, Antiteilchen +3.4e-08
+    2.375 | 5e-04 | 0.000006 | 5.20e-08 | t75: -4.69e-06 [-1.2e+01, +1.2e+01] | -3.01e-06 | -, - | +0.388, - | - (-) | 0.0e+00
+      Kanaele: Teilchen durch 0.000001, reflektiert 2.81e-11; Antiteilchen rechts +5.94e-08, links +1.37e-10; frei: Teilchen 0.000001, Antiteilchen +4.3e-08
+    2.750 | 5e-04 | 0.000001 | -3.38e-08 | t75: +3.55e-06 [-3.4e+00, +3.4e+00] | +1.20e-06 | -, - | -10.394, - | - (-) | 0.0e+00
+      Kanaele: Teilchen durch 0.000005, reflektiert 3.79e-11; Antiteilchen rechts +1.83e-07, links +2.22e-11; frei: Teilchen 0.000004, Antiteilchen +1.5e-07
+    2.900 | 5e-04 | 0.000009 | -1.21e-08 | t75: -1.96e-06 [-6.0e+00, +6.0e+00] | -1.60e-06 | -, - | +0.562, - | - (-) | 0.0e+00
+      Kanaele: Teilchen durch 0.000008, reflektiert 3.97e-11; Antiteilchen rechts +2.49e-07, links +3.73e-11; frei: Teilchen 0.000006, Antiteilchen +2.0e-07
+    2.325 | 2e-03 | 0.000001 | 2.80e-08 | t75: -2.25e-07 [-2.7e+00, +2.7e+00] | -4.83e-07 | -, - | -0.750, - | - (-) | 0.0e+00
+      Kanaele: Teilchen durch 0.000001, reflektiert -1.22e-10; Antiteilchen rechts +4.84e-08, links +2.20e-10; frei: Teilchen 0.000001, Antiteilchen +3.4e-08
+  Stufe 2: dx = 0.025, dt = 0.0125, T = 75, 9.2 s, Punkte je Wellenlaenge bei nu = 2.3: 121.3, Randrueckstrom ohne Ball max 0.0e+00
+    Resonanzkandidat Omega_2 (nu - omega ~ 1,48), Stoss bei fester Ladung 1.49450, Ladungsrate 6.78e-04; alter Stoss 1.48102; ruhender Ball 1.49360; Kante 1 - omega 0.1633, gemessen 0.2769
+    nu_res = omega + Omega_2 = 2.33116; Gitterverschiebung des Pakets dort -0.00014; Spitze nu = -, dA = -, Breite sigma_nu = -
+    Amplitudenprobe dA500(eps)/dA500(1e-3) (linear 1; A ~ eps^2: 0,25 bzw. 4; A ~ 1/eps: 2 bzw. 0,5): nu 2.250 eps 5e-04: 13.176, nu 2.325 eps 5e-04: 0.611, nu 2.375 eps 5e-04: 1.528, nu 2.750 eps 5e-04: -0.039, nu 2.900 eps 5e-04: 1.073, nu 2.325 eps 2e-03: 1.194
+    nu | eps | T_Q | R_Q | dA_Q(t) je Auslese [Kern, aussen] | dA_E Ende | Speicherverhaeltnis, Rate | tau Schwerpunkt, tau Phase | Wiederabstrahlung rechts nu (Rate) | Randrueckstrom mit Ball
+    1.500 | 1e-03 | 0.000000 | -7.37e-06 | t75: +7.36e-06 [+3.6e+00, -3.6e+00] | +4.24e-06 | -, - | +1.542, - | - (-) | 0.0e+00
+      Kanaele: Teilchen durch 0.000000, reflektiert 6.16e-10; Antiteilchen rechts +1.42e-11, links +8.07e-06; frei: Teilchen 0.000000, Antiteilchen +8.1e-06
+    1.900 | 1e-03 | -0.000000 | -1.75e-07 | t75: +2.85e-07 [+7.5e+00, -7.5e+00] | +1.36e-07 | -, - | +2.552, - | - (-) | 0.0e+00
+      Kanaele: Teilchen durch 0.000000, reflektiert -3.74e-11; Antiteilchen rechts +3.53e-09, links +9.67e-09; frei: Teilchen 0.000000, Antiteilchen +1.2e-08
+    2.250 | 1e-03 | 0.000001 | -2.69e-08 | t75: +2.57e-08 [-3.5e+00, +3.5e+00] | -1.11e-07 | -, - | -0.033, - | - (-) | 0.0e+00
+      Kanaele: Teilchen durch 0.000001, reflektiert 6.73e-12; Antiteilchen rechts +3.59e-08, links +2.63e-10; frei: Teilchen 0.000001, Antiteilchen +2.5e-08
+    2.325 | 1e-03 | 0.000001 | 6.30e-09 | t75: -2.84e-07 [-5.3e+00, +5.3e+00] | -3.48e-07 | -, - | -0.369, -0.42 | - (-) | 0.0e+00
+      Kanaele: Teilchen durch 0.000001, reflektiert -9.97e-13; Antiteilchen rechts +5.06e-08, links +2.09e-10; frei: Teilchen 0.000001, Antiteilchen +3.6e-08
+    2.375 | 1e-03 | 0.000002 | -8.14e-10 | t75: -1.01e-06 [-6.1e+00, +6.1e+00] | -8.24e-07 | -, - | +0.111, - | - (-) | 0.0e+00
+      Kanaele: Teilchen durch 0.000002, reflektiert -8.50e-13; Antiteilchen rechts +6.23e-08, links +1.33e-10; frei: Teilchen 0.000001, Antiteilchen +4.5e-08
+    2.750 | 1e-03 | 0.000005 | -8.72e-09 | t75: -6.44e-07 [-1.7e+00, +1.7e+00] | -1.01e-06 | -, - | -0.203, - | - (-) | 0.0e+00
+      Kanaele: Teilchen durch 0.000006, reflektiert 1.52e-13; Antiteilchen rechts +1.96e-07, links +1.99e-11; frei: Teilchen 0.000005, Antiteilchen +1.5e-07
+    2.900 | 1e-03 | 0.000009 | -2.16e-09 | t75: -1.85e-06 [-3.1e+00, +3.1e+00] | -1.79e-06 | -, - | +0.074, - | - (-) | 0.0e+00
+      Kanaele: Teilchen durch 0.000009, reflektiert -1.61e-14; Antiteilchen rechts +2.67e-07, links +3.52e-11; frei: Teilchen 0.000007, Antiteilchen +2.2e-07
+    2.250 | 5e-04 | 0.000000 | -5.38e-08 | t75: +3.39e-07 [-6.9e+00, +6.9e+00] | +1.30e-07 | -, - | -0.078, - | - (-) | 0.0e+00
+      Kanaele: Teilchen durch 0.000001, reflektiert 4.39e-12; Antiteilchen rechts +3.59e-08, links +2.63e-10; frei: Teilchen 0.000001, Antiteilchen +2.5e-08
+    2.325 | 5e-04 | 0.000001 | 1.26e-08 | t75: -1.73e-07 [-1.1e+01, +1.1e+01] | -2.37e-07 | -, - | -0.822, - | - (-) | 0.0e+00
+      Kanaele: Teilchen durch 0.000001, reflektiert -1.11e-12; Antiteilchen rechts +5.06e-08, links +2.09e-10; frei: Teilchen 0.000001, Antiteilchen +3.6e-08
+    2.375 | 5e-04 | 0.000003 | -1.63e-09 | t75: -1.54e-06 [-1.2e+01, +1.2e+01] | -1.11e-06 | -, - | +0.188, - | - (-) | 0.0e+00
+      Kanaele: Teilchen durch 0.000002, reflektiert 1.36e-12; Antiteilchen rechts +6.23e-08, links +1.33e-10; frei: Teilchen 0.000001, Antiteilchen +4.5e-08
+    2.750 | 5e-04 | 0.000005 | -1.74e-08 | t75: +2.52e-08 [-3.4e+00, +3.4e+00] | -6.41e-07 | -, - | -0.449, - | - (-) | 0.0e+00
+      Kanaele: Teilchen durch 0.000006, reflektiert 7.29e-12; Antiteilchen rechts +1.96e-07, links +1.99e-11; frei: Teilchen 0.000005, Antiteilchen +1.5e-07
+    2.900 | 5e-04 | 0.000009 | -4.31e-09 | t75: -1.98e-06 [-6.1e+00, +6.1e+00] | -1.79e-06 | -, - | +0.156, - | - (-) | 0.0e+00
+      Kanaele: Teilchen durch 0.000009, reflektiert 7.91e-12; Antiteilchen rechts +2.67e-07, links +3.52e-11; frei: Teilchen 0.000007, Antiteilchen +2.2e-07
+    2.325 | 2e-03 | 0.000001 | 3.15e-09 | t75: -3.39e-07 [-2.7e+00, +2.7e+00] | -5.74e-07 | -, - | -0.182, - | - (-) | 0.0e+00
+      Kanaele: Teilchen durch 0.000001, reflektiert -1.47e-13; Antiteilchen rechts +5.06e-08, links +2.09e-10; frei: Teilchen 0.000001, Antiteilchen +3.6e-08
+  Stufenvergleich dA_Q bei t = 500 (Urteil nach PLAN-FEIN.md; Richardson fuer dx^2):
+    nu 1.500: 1.142e-04 -> 2.837e-05 -> 7.361e-06 (Stufen 0,1,2); q = 0.245, p = 2.03, Richardson 3.580e-07: kein Effekt
+    nu 1.900: 4.668e-06 -> 1.167e-06 -> 2.846e-07 (Stufen 0,1,2); q = 0.252, p = 1.99, Richardson -9.546e-09: kein Effekt
+    nu 2.250: 4.890e-06 -> 9.811e-07 -> 2.571e-08 (Stufen 0,1,2); q = 0.244, p = 2.03, Richardson -2.928e-07: kein Effekt
+    nu 2.325: -8.777e-08 -> -7.481e-08 -> -2.837e-07 (Stufen 0,1,2); q = 16.116, p = -4.01, Richardson -3.533e-07: kein Effekt
+    nu 2.375: -8.346e-06 -> -2.572e-06 -> -1.009e-06 (Stufen 0,1,2); q = 0.271, p = 1.89, Richardson -4.878e-07: kein Effekt
+    nu 2.750: 5.514e-06 -> 1.158e-06 -> -6.443e-07 (Stufen 0,1,2); q = 0.414, p = 1.27, Richardson -1.245e-06: kein Effekt
+    nu 2.900: 1.659e-06 -> -1.774e-06 -> -1.846e-06 (Stufen 0,1,2); q = 0.021, p = 5.58, Richardson -1.870e-06: kein Effekt
+    Stufe 0: Spitze 2.7173 gegen nu_res 2.3310 (Gitterverschiebung -0.0022)
+    Stufe 1: Spitze - gegen nu_res 2.3311 (Gitterverschiebung -0.0005)
+    Stufe 2: Spitze - gegen nu_res 2.3312 (Gitterverschiebung -0.0001)
+Ende 2026-09-30T00:08:01+00:00, Dauer 19.2 s, Torch-Speicher max 47 MB, Fehler: keine

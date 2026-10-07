@@ -1,0 +1,626 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,graphicx,booktabs,longtable,array}
+\usepackage[margin=24mm]{geometry}
+\usepackage{microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\setlength{\emergencystretch}{2em}
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\ii}{\mathrm{i}}
+\title{Radiative cancellations and localized linear modes\\in three-dimensional sextic Q-balls}
+\author{Finn Malte Hinrichsen\\\small Hamburg, Germany}
+\date{4 October 2026 --- Draft 0.45}
+\begin{document}
+\maketitle
+\begin{abstract}
+We study localized linear excitations of a complex scalar Q-ball in three
+spatial dimensions with potential $\mathcal U(S)=S-S^2+S^3/2$.
+The linearized problem couples two frequency sidebands. In a region with
+one propagating and one evanescent exterior channel, radiation can cancel
+at particular parameter values. We assemble computer-assisted existence
+arguments for two radial modes and one dipole mode, together with a
+numerically observed sequence of fifteen radial candidate locations.
+The existence statements concern the infinite radial domain, using
+analytic exterior estimates and ball-arithmetic interior enclosures;
+they are not inferred from small finite-box linewidths. A thin-wall
+phase-matching description, partly calibrated, describes the observed near-uniform
+spacing in inverse detuning. Sequential and reportedly author-blinded comparisons
+test predictions for further linewidth minima, but do not certify the complete sequence
+or an infinite ladder. We distinguish these linear results from nonlinear
+confinement: a direct expansion produces second-harmonic sources in open
+channels, including monopole and quadrupole channels for a real dipole
+excitation. A numerical forced-response calculation supports nonzero
+outgoing amplitudes for an approximate dipole input. A complete monopole
+error budget additionally separates one second-harmonic coefficient from
+zero, conditional on the stated exact-mode and analytic enclosure
+hypotheses. This supplies an obstruction to a specified uniformly
+localized smooth continuation of a real dipole; circular polarization
+remains outside this monopole conclusion. The
+manuscript makes no claim of linear or nonlinear stability, a particle model, or an
+experimental realization.
+\end{abstract}
+\noindent\textbf{Status.} This is a complete working draft, not a submitted or
+journal-refereed article. The proof components have project-internal
+cross-house reviews; the assembled manuscript has its own narrower
+editorial checks. A second independent interval implementation is not
+provided. Numerical values are dimensionless throughout.
+\tableofcontents
+
+\section{Question and scope}\label{sec:scope}
+A long-lived oscillation and an exactly localized linear mode are different
+objects. A numerically small resonance width may result from a cancellation,
+a reflecting boundary, or insufficient resolution. Conversely, even a
+localized linear mode need not extend to a localized finite-amplitude
+oscillation: nonlinear harmonics can couple to the continuum.
+Our objective is to separate these statements within a single specified
+scalar field model. We report three concrete existence enclosures,
+a broader numerical sequence, and an approximate mechanism for its spacing.
+The sequence index $n$ is a continuation label, not a separately certified
+node count or a statement that no intermediate modes exist.
+
+A limited mechanical analogy is a bell with several vibration patterns:
+exciting a particular pattern differs from exciting an arbitrary disturbance.
+Here the additional ingredient is cancellation of the outgoing amplitude
+in an available radiation channel, a general interference mechanism
+discussed in Ref.~\cite{FriedrichWintgen1985}. The cancellation can be lost
+under perturbations that do not preserve its condition. The analogy concerns
+linear modes; it implies neither undamped finite-amplitude ringing nor
+immunity to environmental disturbances.
+
+The central contribution claimed here is this combination of model-specific
+linear existence enclosures and numerically tested spacing structure.
+We do not claim that embedded modes, interference suppression, Q-ball
+excitations, or thin-wall approximations are new concepts. No priority claim
+is made for the general mechanism. The nonlinear analysis is retained as
+a limit on interpretation, not used to advertise stable particles.
+\input{sections/LITERATURE.tex}
+
+\section{Field model and two-channel linearization}\label{sec:model}
+With metric signature $(+,-,-,-)$, define
+\begin{equation}\label{eq:action}
+\mathcal L=\partial_\mu\phi^*\partial^\mu\phi-\mathcal U(|\phi|^2),
+\qquad \mathcal U(S)=S-S^2+\beta S^3,\qquad \beta=\tfrac12.
+\end{equation}
+The free scalar mass is one. A spherical stationary background is
+$\phi_0=e^{\ii\omega t}f(r)$ with real $f$, satisfying
+\begin{equation}\label{eq:profile}
+f''+\frac2r f'=(1-\omega^2)f-2f^3+3\beta f^5,
+\quad f'(0)=0,\quad f(r)\longrightarrow0.
+\end{equation}
+For definiteness the charge sign is chosen so that
+$Q=2\omega\int f^2\dd^3x>0$ when $\omega>0$.
+The thin-wall frequency threshold is
+$\omega_c^2=\min_{S>0}\mathcal U(S)/S=1-1/(4\beta)=1/2$.
+
+Use a real orthonormal spherical-harmonic basis and write
+\begin{equation}\label{eq:ansatz}
+\delta\phi=e^{\ii\omega t}
+ [a(r)e^{\ii\rho t}+b(r)e^{-\ii\rho t}]Y_{lm}(\hat x),
+\qquad A=ra,\quad B=rb,
+\end{equation}
+for real-frequency, real-radial-function modes. In a complex harmonic basis
+the second sideband instead carries $Y_{lm}^*$.
+Let $S=f^2$, $D=1-4S+9\beta S^2$, and $C=-2S+6\beta S^2$.
+The radial equations are
+\begin{align}
+ A''&=\left[D+\frac{l(l+1)}{r^2}-(\omega+\rho)^2\right]A+CB,
+ \label{eq:radialA}\\
+ B''&=CA+\left[D+\frac{l(l+1)}{r^2}-(\omega-\rho)^2\right]B.
+ \label{eq:radialB}
+\end{align}
+Regular solutions satisfy $A,B=O(r^{l+1})$ at the origin.
+In the range $1-\omega<\rho<1+\omega$, define
+\begin{equation}\label{eq:channels}
+k^2=(\omega+\rho)^2-1>0,\qquad
+\kappa_c^2=1-(\omega-\rho)^2>0,\qquad
+\kappa_0^2=1-\omega^2>0.
+\end{equation}
+The $A$ channel is open and the $B$ channel closed. A localized mode
+requires cancellation of both oscillatory exterior components of $A$
+and exclusion of the growing component of $B$.
+Throughout, ``embedded'' means a localized solution in this explicitly
+open-channel regime. A separate operator-domain and essential-spectrum
+theorem for the full time-evolution generator is not asserted.
+
+Spatial localization does not require compact support. A scalar component
+of laboratory frequency $E$ with $|E|<1$ has the vacuum decay scale
+$\kappa=\sqrt{1-E^2}$ and free decaying asymptotic proportional to
+$e^{-\kappa r}/r$, with angular-momentum corrections. The threshold
+$|E|=1$ requires separate treatment. For $|E|>1$ a propagating channel
+exists, but its oscillatory exterior coefficients vanish for the localized
+linear modes considered here; exponentially forced tails can remain in
+the coupled problem. Infinite spatial support implies neither an
+unsuppressed long-range force nor a universal interaction. A stationary
+tail is also distinct from the causal propagation of a new disturbance.
+
+\input{sections/MODE-FIGURES.tex}
+
+\section{Evidence hierarchy and numerical sequence}\label{sec:sequence}
+We separate three levels: a width minimum is a numerical candidate;
+a resolved winding test of a specified two-component matching map gives
+additional numerical evidence; an interval enclosure with analytic tails
+supports an infinite-domain existence statement. These labels cannot be
+interchanged. A complex pole search and a real matching zero are also
+not identical numerical tasks.
+
+% Table revised in v0.10 from independently audited primary records.
+% Sources: DATENPAKET.json e34aa7f14712736b5c0a4d9bc69014c58e8fcc23859ad229188985f3da214a4f
+% C0: ZERT-A2-L40.json 7fd55b3f494333fb86ce8ea4152a6c7908462df1fa3b403ae2d172e6053d0798
+% C1: ZERT-T1-A-L32.json 97e13cb196318114d4ad1dba5311ad52a4881aaa14ef38ed66d98fe02d065177
+% Full paths and provenance in data-audit/SOURCE-SHA256SUMS.txt and AUDIT-B2-B10-B11-B13.txt.
+Table~\ref{tab:ladder} distinguishes the continuation locations by their
+estimator and evidence class. Rows 1 and 2 use the subsequent existence
+certificates C0 and C1. Rows 6--10 now use the subsequent R13 calculation;
+the other numerical rows retain their archived data-package records.
+Rows 3 and 4 have resolved \emph{numerical} winding
+tests in the truncated radial problem, not interval-certified winding
+enclosures. Row 5 has sign-change evidence, but its sampled winding test
+did not meet the resolution criterion. Historically, for indices 7--9, pole-width
+interpolation replaced a problematic direct sign calculation with strong
+interior growth. For indices 7--9 and 11--15, locations were reconstructed
+from short linewidth samples using signs selected to match neighboring
+slopes; those archived records did not report resolved numerical BIC
+winding tests. The old row-10 reference was an unrefined continuation
+estimate, distinct from the observed width depression at the scan edge.
+
+R13 adds real matching sign changes and resolved numerical windings for
+$n=6,7,8,9,10$ in the truncated radial problem. On both radial steps
+$h=0.04$ and $0.02$, the windings for $n=7,8,9,10$ are respectively
+$-1,+1,-1,+1$, with maximum sampled phase increments below $0.301$
+radians. The $n=1$ control agrees with the certified location to its
+prescribed tolerance; the $n=6$ control gives approximately
+$\omega^2=0.569360$ and a resolved positive winding. This is new
+numerical evidence, not additional interval-certified existence results.
+For $n\geq11$, the earlier linewidth evidence retains its previous status.
+
+The R13 locations are linearly interpolated between $\omega^2$ samples
+separated by $2.5\times10^{-4}$. Agreement between the two radial steps
+within $2.3\times10^{-8}$ is therefore not a location error bound of that
+size. The report's interpolation-uncertainty estimate of a few $10^{-6}$
+is not a validated enclosure. Signed-width reconstructions differ from
+these locations by at most $2.2\times10^{-6}$, but share profiles,
+equations and implementation with the matching calculation; this is not
+an independent replication. Candidate interior growth and window-maximum
+growth are different diagnostics, and the adopted growth threshold is
+a numerical convention, not an analytic error bound.
+% R13 ERGEBNIS.md SHA256 2e428ccfbff1c26623e4b83caa3d8adee74b0f99467a69b2e6e9d6814ef0e037
+\begin{table}[htbp]\centering\small
+\caption{Radial sequence at $\beta=1/2$. Approximate candidate locations
+are rounded from the indicated archived records or new R13 calculation;
+displayed digits
+do not specify confidence intervals or validated location errors.
+For C0 and C1, the full enclosures are given in
+Section~\ref{sec:certified-existence}.}
+\label{tab:ladder}
+\begin{tabular}{rll}\toprule
+$n$&$\omega^2$&Evidence and source record\\\midrule
+1&$0.797676787\ldots$&Existence enclosure C0\\
+2&$0.685128904\ldots$&Existence enclosure C1\\
+3&$\sim0.631450$&Resolved numerical winding; A03\\
+4&$\sim0.601421$&Resolved numerical winding; A04\\
+5&$\sim0.582417$&Sign change / curve refinement; A05\\
+6&$\sim0.569360$&Resolved numerical winding; R13-K2\textsuperscript{a}\\
+7&$\sim0.559848$&Resolved numerical winding; R13-n7\\
+8&$\sim0.552619$&Resolved numerical winding; R13-n8\\
+9&$\sim0.546940$&Resolved numerical winding; R13-n9\\
+10&$\sim0.542364$&Resolved numerical winding; R13-n10\textsuperscript{b}\\
+11&$\sim0.53860$&Linewidth reconstruction; A11\\
+12&$\sim0.535449$&Linewidth reconstruction; A12\\
+13&$\sim0.532772$&Linewidth reconstruction; A13\\
+14&$\sim0.530470$&Linewidth reconstruction; A14\\
+15&$\sim0.528469$&Linewidth reconstruction; A15\\\bottomrule
+\end{tabular}
+\par\smallskip
+\begin{minipage}{.96\linewidth}\footnotesize
+\textsuperscript{a}Historical A06 evidence, not the new R13 result:
+two refinement runs ended near $0.569397$ and
+$0.569379$, differing by about $1.8\times10^{-5}$. Neither reached the
+prescribed $|\operatorname{Im}\rho|<10^{-8}$ refinement criterion;
+convergence of the internal pole search does not establish convergence
+of the location refinement. These two estimates do not define a validated
+error interval.\par
+\textsuperscript{b}Historical A10 evidence, not the new R13 result:
+the scan showed a width depression at its edge $\omega^2=0.5425$;
+the former reference $\sim0.5424$ was a continuation estimate,
+not a previously refined pole-width minimum.
+\end{minipage}
+\end{table}
+
+\begin{figure}[htbp]\centering
+\includegraphics[width=.96\linewidth]{ladder.pdf}
+\caption{Reported radial locations and inverse detuning
+$1/(\omega^2-1/2)$. Filled symbols distinguish the two radial locations
+with existence enclosures from the remaining numerical candidates.
+No error bars are invented for rows lacking defensible intervals.
+The plot uses the new R13 interpolated locations for $n=6$--$10$
+($\sim0.569360$, $0.559848$, $0.552619$, $0.546940$, $0.542364$),
+archived estimator values for the other numerical rows, and C0/C1 from
+their certificates. R13 supplies numerical sign-change and winding
+evidence, not new existence enclosures. Inverse detuning does not improve location
+accuracy; this is neither a new fit nor a proof of accumulation.}
+% Plot generated from the revised figure-data.json during the bound build.
+\label{fig:ladder}
+\end{figure}
+
+\section{Sequential predictions and their limits}\label{sec:predictions}
+Two prediction procedures were compared to the same target calculations.
+The first extrapolated approximately constant inverse-detuning steps and
+was updated after new results: first $n=11$, then $n=12,13$, then $n=14,15$.
+It was not a single frozen five-point forecast. The second, a thin-wall
+model fitted using indices 5,7,8,9, was reportedly blinded to later results
+at the author level. Some target results were already known to the
+coordinating team. This is information separation, not a claim of global
+chronological preregistration or an independent numerical replication.
+The frozen thin-wall forecast also included $n=10$ at
+$0.542382\pm0.000020$. The new R13 interpolated location
+$\sim0.542364$ is numerically compatible with this window. The old
+$\sim0.5424$ reference was a continuation prediction, not a refined pole
+minimum. The new comparison supplies neither a validated location error
+nor a claim of exact zero linewidth. It also does not create retroactive
+global blinding: the R13 code author's $n=7$ prediction followed a positive
+smoke test, and is distinct from the coordinating team's earlier forecast.
+
+\begin{table}[htbp]\centering\small
+\caption{Reported locations and prediction windows. The $\pm$ values are
+preassigned diagnostic windows, not statistical confidence intervals.
+The two procedures used different acceptance rules.}\label{tab:forecast}
+\begin{tabular}{rlll}\toprule
+$n$&Numerical location&Sequential extrapolation&Thin-wall prediction\\\midrule
+11&$\sim0.53860$&$0.53867\pm0.00030$&$0.538619\pm0.000025$\\
+12&$0.535449$&$0.53544\pm0.00012$&$0.535468\pm0.000030$\\
+13&$0.532772$&$0.53276\pm0.00012$&$0.532792\pm0.000035$\\
+14&$0.530470$&$0.530460\pm0.000040$&$0.530490\pm0.000040$\\
+15&$\sim0.528469$&$0.528458\pm0.000050$&$0.528489\pm0.000050$\\\bottomrule
+\end{tabular}
+\end{table}
+The sequential location rule used one stated window; the thin-wall
+comparison used its stated three-window rule. The handling of a failed
+linewidth-threshold check also changed in the last sequential stage,
+from failure to indeterminate, as documented before that stage.
+All five reported comparisons passed their respective rules. The
+thin-wall predictions lie systematically about $2\times10^{-5}$ above
+the reconstructed locations. This is a visible model discrepancy, not
+five independent random errors. The first sequential prediction lies
+above its target, whereas the later ones lie slightly below.
+Neither successful comparison establishes a zero linewidth.
+
+\section{A thin-wall phase-matching description}\label{sec:thinwall}
+Put $\epsilon=\omega^2-\omega_c^2$ and $S_c=1/(2\beta)$.
+The leading thin-wall profile and radius in three dimensions are
+\begin{equation}\label{eq:thinwall}
+R_{\mathrm{tw}}\simeq\frac{1}{2\sqrt\beta\,\epsilon},\qquad
+f^2(r)\simeq\frac{S_c}{1+\exp[(r-R_{\mathrm{tw}})/\sqrt\beta]}.
+\end{equation}
+These are asymptotic approximations, not substitutes for the certified
+profiles. The leading radius relation is established prior work: with
+$\Delta=m_\phi^2-\omega_0^2$, Heeck et al. use
+$\kappa^2=(\omega^2-\omega_0^2)/\Delta$ and
+$R^*=\sqrt\Delta R$, and obtain $R^*\simeq1/\kappa^2$
+in their Eq.~(40)~\cite{Heeck2021}.
+Here $\Delta=1/(4\beta)$, which gives the radius in
+Eq.~\eqref{eq:thinwall}. Their inflection-point radius and our
+half-density radius need not have identical subleading coefficients.
+Diagonalizing the constant interior channel matrix gives the
+propagating interior wavenumber
+\begin{equation}\label{eq:interior}
+k_{\mathrm{in}}^2=\omega^2+\rho^2-D_c+
+ \sqrt{4\omega^2\rho^2+C_c^2},\qquad
+D_c=1+\frac1{4\beta},\quad C_c=\frac1{2\beta}.
+\end{equation}
+At the stated interior amplitude, this is the same dispersion branch as
+Eq.~(101) of Zhang, Zhou, and Zhu~\cite{ZhangZhouZhu2025}; the interior
+wavenumber is an established ingredient, not a new result here.
+A regular interior standing wave reaches the wall with phase
+$\Psi=k_{\mathrm{in}}R_{\mathrm{tw}}$. The bare closed-channel wall approximation
+supplies a localized state, while matching it to the open interior
+wave permits a sign-changing radiation amplitude. A useful leading
+parametrization is
+\begin{equation}\label{eq:phase}
+k_{\mathrm{in}}(\omega_n,\rho_n)R_{\mathrm{tw}}(\omega_n)
+ \simeq\pi[n+\theta(\epsilon_n)],\qquad
+\rho_n\simeq\omega_n+c(\epsilon_n).
+\end{equation}
+The radius and interior dispersion follow from the model approximations;
+the wall phase $\theta$ and dressed level shift contained in $c$ remain
+calibrated. A separate coupled planar-wall calculation now supplies a
+numerical transmission zero, but does not determine both finite-curvature
+functions independently. Consequently, agreement of the calibrated
+phase rule with the sequence is not a parameter-free prediction.
+
+For $\beta=1/2$ and $\omega^2=1/2$, the exact planar profile is
+$S(x)=[1+\exp(\sqrt2 x)]^{-1}$. Solving the two-channel scattering
+problem, with one open and one evanescent channel on each side, gives
+\begin{equation}\label{eq:planarzero}
+\rho_z\simeq1.52414976213,\qquad
+k_{\mathrm{in}}(\rho_z)\simeq1.92332459129.
+\end{equation}
+An independently implemented Numerov boundary-value calculation confirmed
+this zero before reading the comparison calculation. It used a continuously
+phase-normalized transmission amplitude, actual complex-transmission
+residuals, flux and reciprocity controls, and separate mesh and boundary
+refinements. A conservative empirical frequency uncertainty is $10^{-9}$;
+this is not a certified enclosure. Two finite frequency scans found no
+additional zero, but do not prove uniqueness throughout the open-channel
+window. The planar scattering state has an incident and reflected wave;
+it is not itself a square-integrable embedded mode.
+
+If $k_{\mathrm{in}}\to k_\infty>0$ and the wall phase has a finite limit,
+Equation~\eqref{eq:phase} predicts, within the approximation,
+\begin{equation}\label{eq:spacing}
+\epsilon_n\sim\frac1{b_\infty n},\qquad
+b_\infty=\frac{2\sqrt\beta\,\pi}{k_\infty}.
+\end{equation}
+From the rounded locations in Table~\ref{tab:ladder}, the inverse-detuning
+steps for indices 12--15 are approximately 2.3043, 2.3053 and 2.3068;
+these descriptive values do not specify accuracy beyond the input locations.
+The calibrated model gives 2.298, while its bare
+wall-state estimate gives 2.334. Substituting the independently computed
+planar zero into Equation~\eqref{eq:spacing} instead gives
+$b_\infty^{\mathrm{wall}}\simeq2.31000162857$, with a conservative empirical
+numerical uncertainty of $2\times10^{-9}$. This wall-based candidate was not
+fitted to ladder locations. Identifying it with the actual radial limiting
+step still requires a controlled curvature and phase-matching limit.
+This supports a useful spacing description;
+it does not prove existence of infinitely many localized modes or identify
+an exact limiting constant. The phase model also motivates alternating
+signs of a matching Jacobian and quadratic linewidth minima, but neither
+property independently replaces a tail-controlled existence proof.
+The inverse-first-power scaling follows from the calibrated model, not
+from an independently established asymptotic exponent. Exploratory free
+power fits yielded exponents between $-0.76$ and $-0.88$; the reciprocal
+fit improved the comparison metric only by factors of approximately
+$1.2$--$2$, below the originally sought factor of ten. Finite-data agreement
+therefore does not establish an exact asymptotic law.
+
+A local numerical check also supports a planar transmission cancellation
+for the modified potential $U(S)=S-S^2+S^3$ at
+$\omega_{\min}=\sqrt{3}/2$. An independent Numerov implementation,
+with the candidate frequency already known, gives
+$\rho_z\simeq1.77345307180$ and $k_{\mathrm{in}}\simeq2.3994321234$.
+The last grid change, $h=0.04$ to $0.02$, shifts $\rho_z$ by
+$1.64\times10^{-10}$, while increasing the half-domain from $32$ to $40$
+at the finest spacing changes it by $4.2\times10^{-14}$; these are
+empirical sensitivities, not certified bounds. The corresponding thin-wall
+spacing candidate is $2\pi/k_{\mathrm{in}}\simeq2.618613482$. This known-target
+local replication neither counts all planar zeros nor establishes the
+radial ladder limit for the modified potential.
+
+An exploratory two-dimensional follow-up found further numerical
+candidates near $\omega^2=0.529265$ and $0.525780$ after refining the
+frequency sampling. The original decision rule remained inconclusive;
+the resolved numerical winding for the former candidate and the
+sign-change/linewidth evidence for the latter came from adaptively
+specified follow-up runs. The last estimated inverse-detuning steps are
+about $4.62$, compared with about $2.305$ in the three-dimensional sequence.
+This is not a dimensional scaling theorem. A similar sampling limitation
+in the earlier three-dimensional search remains a hypothesis.
+
+\input{sections/PROOF.tex}
+\input{sections/NONLINEAR.tex}
+
+\section{Interpretation, limitations and next discriminating tests}
+The localized modes are excitations of an extended classical field
+background. Nothing in this calculation identifies them with quarks,
+spin-$1/2$ particles, gauge bosons, or dark matter. Angular degeneracy is
+not a derivation of a local internal gauge symmetry. Likewise, geometric
+simplicity of a radial solution space does not imply algebraic simplicity
+of a frequency eigenvalue or nonlinear orbital stability.
+The positive conserved form on a selected mode is neither a linear nor a
+nonlinear stability theorem for the background or its full perturbation space.
+
+\subsection{Environmental sensitivity and possible formation mechanisms}
+Equation~\eqref{eq:action} contains a scalar field with global U(1)
+symmetry, but no electromagnetic field or coupling to other particle
+species. Its nonzero tail does not by itself imply interaction with
+cosmic-microwave-background photons. Such a calculation would require
+an explicit coupling and a dimensional scale.
+
+On a fixed background, the conditional mode-projection identity separates
+homogeneous scattering from prescribed local forcing: a homogeneous
+solution with initially zero projection cannot populate it when the Green
+boundary form vanishes, whereas a local source with nonzero overlap can.
+The assumptions, forcing comparisons and source-work diagnostics are
+retained in Appendix~\ref{app:driving}. They are distinct from the linear
+existence enclosures and the nonlinear radiation obstruction above.
+
+\paragraph{An additional radiation channel.}
+A separate leading-order probe adds a neutral scalar through
+$\mathcal L_{\mathrm{int}}=-g\chi|\phi|^2$. On three fixed radial profiles,
+the finite-grid form factor
+$I(k)=\int_0^\infty f(a+b)j_0(kr)r^2\,dr$,
+$k=\sqrt{\rho^2-m_\chi^2}$, had respectively one, one and two detected
+sign-changing zeros in the sampled interval $0<k<\rho$.
+These are candidate Born-amplitude cancellations, not a complete count
+of zeros of the exact integral. The coupling already sources a static
+neutral field through $(-\Delta+m_\chi^2)\chi_0=-gf^2$; thus the
+unchanged Q-ball with $\chi=0$ is not a solution of the coupled theory.
+Background and mode backreaction must be included before claiming a
+coupled bound state. Closing this channel with a strict threshold gap
+removes propagation at this harmonic, but does not by itself preserve
+the old channel cancellation or prohibit radiation at higher harmonics.
+
+The exploratory concentration tests use a different, nonstationary initial
+background. Appendix~\ref{app:formation} retains the non-dilution bound,
+angular response, exterior diagnostic and constrained transport comparisons,
+including their preparation dependence and finite-time limits. None
+establishes formation of a stationary Q-ball or binding. These tests do
+not supply additional evidence for the certified BIC backgrounds.
+The appendix also records a later spherically symmetric relaxation study:
+two individual Gaussian starts passed its charge--frequency diagnostic,
+but its predeclared combined formation criterion was not met. That
+limited observation does not resolve the broader formation question.
+
+\subsection{Exploratory sensitivity to the numerical lattice}
+
+Exploratory two-dimensional calculations at the seventh radial location
+also indicate sensitivity to numerical spatial discretization. Here the
+width is the amplitude decay rate $\Gamma=-\operatorname{Im}\rho$ for
+the convention $\exp(-i\rho t)$. The reported minimum widths scale
+approximately as $h^4$ for a five-point square stencil and $h^8$ for both
+a weighted nine-point square stencil and a seven-point triangular stencil.
+The leading angular radiation components are $\cos(4\theta)$ for both
+square stencils and $\cos(6\theta)$ for the triangular stencil. These
+observations are consistent with a perturbative interpretation in which
+the leading anisotropic operator correction induces a radiation amplitude
+linear in its strength, and the width is quadratic in that amplitude.
+The analogous quadratic asymmetry law is established for optical
+quasi-BICs by Koshelev et al.~\cite{Koshelev2018}, Eqs.~(2)--(3);
+its application here remains a model-specific interpretation.
+The reported exponent uncertainties are fit errors, and comparisons of
+absorbing layers and shifted eigenvalue solves are sensitivity diagnostics
+rather than certified error bounds. The calculations concern one
+two-dimensional mode and do not establish three-dimensional or nonlinear
+persistence. They motivate explicit stencil and resolution checks before
+angular radiation patterns are interpreted as physical structure.
+
+\subsection{Remaining mathematical and experimental tasks}
+
+There are three distinct remaining mathematical tasks. First, a full
+operator-theoretic realization would sharpen the operational use of
+``embedded'' by specifying the generator, its domain and its essential
+spectrum. Second, an independent interval implementation would test the
+proof software beyond source review and parameter repetitions. Third,
+the additional radial case requires its nonlinear outgoing amplitudes,
+while the dipole requires a complete quadrupole certificate to address
+the circular polarizations not covered by the conditional monopole
+bound in Section~\ref{nl:conditional-monopole}. Neither that
+calculation nor the earlier evidence for radial location C0 provides a general
+continuum theorem of finite-amplitude localization. A short long-lived
+trajectory cannot settle that question.
+
+For the dipole calculation, the finite-problem source--current balance
+has been checked without refitting the boundary coefficients. Propagated
+bounds for the reconstructed input and full exterior now close the
+conditional monopole comparison. The resulting nonzero coefficient
+obstructs only the uniformly localized smooth continuation class stated
+in Section~\ref{nl:polarization}, under the inherited exact-mode and
+analytic hypotheses. An independently implemented enclosure and the
+unresolved quadrupole response remain separate next checks.
+
+An experimental analogue would additionally need a dimensional mapping,
+an identified platform implementing the two-channel operator, measurable
+loss channels and a separation from instrumental linewidth floors. None
+is established here. The field model and all displayed parameters remain
+dimensionless; no laboratory frequency or length is inferred.
+
+\section{Conclusion}
+The strongest results are three specific computer-assisted linear
+existence enclosures with analytic exterior treatment, rather than a
+claim that every observed width minimum is an exact bound state. A larger
+numerical sequence and successive predictions support a thin-wall
+phase-matching description, while leaving an infinite-ladder theorem
+open. The nonlinear expansion identifies additional radiative channels;
+a numerical dipole calculation supports second-harmonic leakage for an
+approximate input, and a complete error budget establishes a conditional
+nonzero monopole coefficient at the enclosed dipole mode. This does not
+cover circular polarization or establish a lifetime. Linear cancellation, approximate
+spacing, and nonlinear persistence are separate questions throughout.
+
+\appendix
+\input{sections/APPENDIX-DRIVING.tex}
+\clearpage
+\input{sections/APPENDIX-FORMATION.tex}
+\clearpage
+\section{Reproducibility and provenance}\label{app:provenance}
+The spatial and phase figures use the stored T2 reconstruction
+\path{dipole-forced/reconstruction/mode-1.npz}, the C0 entry of
+\path{RUNDE-09/krein1/profile/PROFILE.json}, and the archived
+\path{resonance-20260930/winding/RESULT.json}.
+The full paths, source hashes, interpolation rules, display thresholds,
+rendering code and checks are recorded in
+\path{coordination/resonance-20260930/paper-v11-figures/}.
+No new field evolution was performed for these figures.
+The exploratory two-dimensional comparison is recorded in
+\path{coordination/runden-v3/RUNDE-12/leiter2d-praez/}; the additional-channel
+probe is in \path{coordination/runden-v3/RUNDE-12/qk1/}.
+Both are single-house numerical results with subsequent scope reviews,
+not new interval existence certificates. The numerical-lattice comparison
+is documented in \path{RUNDE-23/stille-auf-gitter/} and
+\path{RUNDE-24/stille-gitter-2/}, relative to the same rounds directory;
+the bounded report, symbol and data review is in
+\path{coordination/resonance-20260930/grid-robustness-review-20261003/}.
+This review does not constitute an independent rerun of the grid spectra.
+The prescribed dipole pulse and
+its detuning bound are documented in
+\path{coordination/resonance-20260930/environment-source-overlap/},
+including the result, non-author review and detuning derivation.
+The conditional monopole comparison is recorded in
+\path{dipole-forced/forced/interior-error/error-budget-components/},
+relative to the nonlinear-followup directory below. Its result and
+non-author review bind the full input hashes and directed arithmetic.
+\path{BEWEISKETTE-KOMPONENTEN.txt} in the parent directory distinguishes
+inherited existence and span arguments from the new numerical bounds
+and the additional continuation hypotheses. This is a project-internal
+review of the assembled argument, not an independent interval
+reimplementation of its entire dependency chain.
+
+The $\beta=1$ check is documented under
+\path{coordination/resonance-20260930/}, in the dossier
+\path{planar-wall-beta1-20261003/}. It includes the fixed local search
+plan, four grid/domain stages, stored
+complex transmission samples, and non-author code and result reviews.
+It is a separate modified-potential calculation, not an additional
+existence certificate for the main $\beta=1/2$ model.
+
+The accompanying source manifest records the versions read for this
+manuscript. Proof packages retain their own original code hashes,
+parameter boxes, interval exports and failed repetitions. The manuscript
+assembly neither reruns nor relabels those calculations.
+The first proof package covers radial location C0. The second
+covers radial location C1 and dipole location C2. Its original
+dipole repetition failed a sufficient enclosure test; the subsequently
+expanded parameter box is a separately recorded run, not a retroactively
+successful preregistered repetition. The primary successful dipole
+certificate is logically sufficient on its own.
+
+\begin{longtable}{p{.25\linewidth}p{.67\linewidth}}
+\toprule Material&Project-relative source location\\\midrule\endhead
+Radial certificate&\path{coordination/runden-v3/RUNDE-07/beweis/}\\
+Additional certificates&\path{coordination/runden-v3/RUNDE-10/beweis2/}\\
+Cross-house source reviews&\path{coordination/resonance-20260930/beweis1-fremdlesung/}; \path{coordination/resonance-20260930/beweis2-fremdlesung/}\\
+Sequence and predictions&\path{coordination/runden-v3/RUNDE-09.md}; \path{coordination/runden-v3/RUNDE-09/VORHERSAGEN-MOD2.md}\\
+R13 numerical refinement&\path{coordination/runden-v3/RUNDE-13/leiter3d-praez/ERGEBNIS.md}; \path{coordination/resonance-20260930/paper-r13-review/REVIEW.txt}\\
+Spatiotemporal pulse comparison&\path{coordination/resonance-20260930/source-shaping-20261001/}; result and independent result review\\
+Factorial actuator comparison&\path{coordination/resonance-20260930/source-shaping-20261001/factorial/}; \path{RESULT.json} and \path{RESULT-REVIEW.txt}\\
+Constant pulse-phase comparison&\path{coordination/resonance-20260930/source-shaping-20261001/phase-quadrature/}; result/review and \path{analysis/figure/SUMMARY.json}\\
+Stored mode-defect attribution&\path{coordination/resonance-20260930/source-shaping-20261001/mode-defect-audit/}; result, independent review and proposed insertion\\
+Quadratic endpoint energy&\path{coordination/resonance-20260930/source-shaping-20261001/phase-quadrature/endpoint-energy/}; \path{RESULT.json} and \path{RESULT-REVIEW.txt}\\
+Time-integrated power balance&\path{coordination/resonance-20260930/source-shaping-20261001/phase-quadrature/endpoint-energy/power-balance/}; \path{RESULT.json} and \path{RESULT-REVIEW.txt}\\
+Phase-dependent source work&\path{coordination/resonance-20260930/source-shaping-20261001/phase-quadrature/endpoint-energy/power-balance/phase-work/}; coefficient, interval and visualization receipts with reviews\\
+Prescribed temporal phase drift&\path{coordination/resonance-20260930/source-shaping-20261001/phase-quadrature/endpoint-energy/power-balance/phase-work/detuning/}; \path{out/RESULT.json}, fixed plan and non-author result review\\
+Directional derivative and mirror&The preceding detuning directory, \path{directional/}; \path{out/RESULT.json}, tangent/mirror plan and non-author result review\\
+Prescribed phase diffusion&\path{coordination/resonance-20260930/source-shaping-20261001/phase-diffusion/}; \path{out/RESULT.json}, kernel derivations, fixed plan and non-author reviews\\
+Rotating mean and finite correlation&The preceding directory, \path{rotating-mean/} and \path{finite-correlation/}; scalar extraction, analytical remainder and failed numerical-acceptance receipt with reviews\\
+Gauss finite-correlation comparison&Relative to the phase-diffusion directory above: \path{finite-correlation/gauss-physical/}; \path{out/RESULT.json} and \path{RESULT-REVIEW.txt}, for the separately accepted finite-domain source-work comparison\\
+Exterior-domain sensitivity&Relative to the preceding Gauss directory: \path{exterior-sensitivity/}; \path{out/RESULT.json} and \path{RESULT-REVIEW.txt}, for the fixed-time, fixed-resolution domain comparison\\
+Signed source-time contributions&Relative to the same Gauss directory: \path{kernel-mechanism/}; \path{out/RESULT.json} and \path{RESULT-REVIEW.txt}, for the signed lag-kernel diagnostic\\
+Angular chirp diagnostic&\path{coordination/resonance-20260930/formation-nonlinear-3d/angular-chirp-l2/}; \path{prod/RESULT.json}, non-author result review and visualization receipt\\
+Exterior window diagnostic&\path{coordination/resonance-20260930/formation-nonlinear-3d/angular-chirp-l2/exterior-analysis/}; \path{out/RESULT.json}, non-author result review and fixed-window specification\\
+Thin-wall derivation&\path{coordination/runden-v3/RUNDE-09/MODELL-DUENNWAND.md}\\
+Independent planar-wall scattering&\path{coordination/resonance-20260930/planar-wall-blind-20261002/}; \path{BLIND-ENDE.sha256}, \path{out-v2/RESULT.json}, \path{ERROR-RESULT.json} and non-author review; comparison in \path{coordination/runden-v3/RUNDE-23/tropfen-leiter/ERGEBNIS.md}\\
+Finite ellipsoidal response&\path{coordination/resonance-20260930/formation-next-20261002/fixed-energy/finite-amplitude/}; original and rest production records, composite result, independent result review and rendering receipts\\
+Phase/profile diagnostics&The preceding directory, \path{rigidity-execution/out/RESULT.json}, \path{PHASE-RIGIDITY-RESULT-REVIEW.txt} and \path{paper-prep/KINETIC-GAP-NOTE.txt}; stored endpoint measurements and separate fixed-charge algebra\\
+Radial Gaussian relaxation&\path{coordination/runden-v3/RUNDE-23/bildung-3d/}; \path{KARTE.md}, frozen plan \path{PLAN.md.eingefroren-20261002-220532}, \path{ERGEBNIS.md}; document-scope review in \path{coordination/resonance-20260930/paper-v38-literature/BILDUNG-3D-READING.txt}\\
+Evidence audit&\path{coordination/resonance-20260930/novelty-audit/LEITER-STATUS.txt}\\
+Quadratic-source check&\path{coordination/resonance-20260930/bic-nonlinear-followup/}\\
+Dipole input and response&\path{coordination/resonance-20260930/bic-nonlinear-followup/dipole-forced/}\\\bottomrule
+\end{longtable}
+These are local project identifiers, not publicly accessible archival
+citations. Before submission, the underlying supporting files must be
+packaged in a durable public supplement with a license and an archival
+identifier. Their current local availability must not be described as a
+published independent replication.
+
+\input{sections/NUMERICAL-METHOD-CONTROLS.tex}
+
+\section*{Contributions and disclosure}
+\addcontentsline{toc}{section}{Contributions and disclosure}
+The working draft was assembled with OpenAI agents from computational and
+Anthropic-authored thin-wall section and proof packages. AI-assisted
+source reviews are project-internal checks, not journal peer review.
+Authorship is assigned to Finn Malte Hinrichsen, Hamburg, at his explicit
+direction. No institutional affiliation is asserted. Submission and public
+release remain separate decisions.
+\input{sections/bibliography.tex}
+\end{document}

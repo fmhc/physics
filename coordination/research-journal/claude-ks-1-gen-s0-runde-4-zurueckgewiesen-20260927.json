@@ -1,0 +1,29 @@
+{
+  "id": "claude-ks-1-gen-s0-runde-4-zurueckgewiesen-20260927",
+  "time": "2026-09-26T23:40:17+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung; Synthese nach astra (bindend) und Fable (Zweitmeinung, Autorhaus); eingetragen 01:40:17 MESZ (gemessen)",
+  "topic": "vertraege",
+  "status": "reported",
+  "evidenzart": "verfahren",
+  "title": "KS-1-GEN Fassung 7b in S0-Runde 4 von astra zurueckgewiesen (Shell-Umgehung ueber Schleifenvariable und Anfuehrungszeichen, nicht ablehnende Belegeinstiege); GR15-Zulassung angenommen; Fable-Zweitmeinung frei mit Auflagen, ohne die Umgehung zu sehen; weitere Runde nur mit Finns Entscheidung",
+  "question": "Ist KS-1-GEN Fassung 7b nach Probe 7, Fassung 7 und dem Schalter --disable plugins bindungsfaehig?",
+  "action": "S0-Runde 4 gleichzeitig und blind nach Leseliste d68b9e24 (Entscheider wegen DR3-Konstante gesperrt): astra 01:17:35 bis 01:35:59, Fable 01:17:46 bis 01:39:03. Leitung bestaetigt den Umgehungsmechanismus lesend am Pruefer (f6_argumente_befunde, for-Liste frei, VAR_RE eng, INTERP_RE auf Rohtext). Keine Probe, keine Rechnung.",
+  "result": "astra ZURUECKWEISEN (4 Auflagen, 2 verhindern Freigabe): for opt in -exec; do find ... $opt b\"as\"h {} ...; done besteht GR12/GR14/GR18; TypeError bei type = [] im GR15-Zweig, unlesbarer Anker und abgeschnittene Verbindungszeile ohne Ablehnung; PG-Auflage 8 aus Runde 3 offen. GR15-Zulassung angenommen (Lockerung, ausgangsbestimmend). Fable FREIGEBEN MIT AUFLAGEN (7, keine blockierend), fand zusaetzlich das fehlende Feld auftrag_sha256 im Versuchsbeleg, aber nicht die Umgehung.",
+  "meaning": "Probe 8 und Lauf Q bleiben gesperrt; an KS-1-GEN laeuft nichts bis zu Finns Entscheidung (Pause, Fassung 8 ohne freie Shell als Empfehlung der Leitung, strengere Grammatik, oder Ende mit eingefrorenem Programm). Methodisch: zweiter Fall am selben Tag, in dem Stoerproben nur Absturzfreiheit und nicht Ablehnung je Einstieg pruefen; textbasiertes Filtern von Shellbefehlen ist grundsaetzlich umgehbar (Hypothese als Begruendung der Empfehlung).",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260925/ks-1-gen-s0/S0-RUNDE-4-SYNTHESE.md",
+      "sha256": "02ef1f1bdf7a6c43131370436d63f4459d7f93afe646fc94ddbc89163ba00832"
+    },
+    {
+      "path": "coordination/vertraege-20260925/ks-1-gen-s0/review-astra-f7b/REVIEW-astra-KS-1-GEN-F7b.md",
+      "sha256": "020d3193c4a7bdabb88124eefa0d64cc8594d2cc94eee484a6f98c4e680fb7d2"
+    },
+    {
+      "path": "coordination/vertraege-20260925/ks-1-gen-s0/review-fable-f7b/REVIEW-fable-KS-1-GEN-F7b.md",
+      "sha256": "9fe6c81fb0c6807f01d6ee3f8a72883117110b582eb0efebc1e92391f898b623"
+    }
+  ],
+  "recorded_at": "2026-09-26T23:40:17.964841+00:00"
+}

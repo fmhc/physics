@@ -1,0 +1,66 @@
+Nichtautor-Papierreview, particle_binding, 02.10.2026
+Gelesen CAUSAL-SECOND-ORDER.txt gegen vorhandene Operator-/Quellen- und
+Anfangsdatenkonventionen. Keine Rechnung, Implementation oder Ausführung.
+
+Urteil: Die Duhamel- und Anregungszerlegung ist unter den ausdrücklich
+genannten Bedingungen fundiert. Sie liefert mögliche Beiträge, keine
+Identifikation der Ursache im abgeschlossenen Zeitlauf. Der lokale
+3CPU-Resttest wird nicht implementiert: er trennt DC-Anregung und andere
+Einschaltanteile nicht, wie der Text selbst korrekt einschränkt.
+
+Generator und Vorzeichen: q_t=p, p_t=-Kq-Gp+F_p mit G_xy=-2omega und
+G_yx=+2omega entsprechen der lab/corot-Transformation. Die quadratische
+rechte Seite hat das Vorzeichen der vorhandenen source-Funktion.
+Anfangsdaten sind in alpha auch in kanonischen corot-Variablen linear;
+somit gilt X2(0)=0 einschließlich Geschwindigkeit. J0, J2=J(uhat)/4
+und deren Phase exp(2i theta) sind korrekt. Eine exakt periodische X1
+setzt den idealen rein imaginären Eigenwert voraus; tatsächlicher
+Ritzrest, Referenzrest und endliches dt sind separate Abweichungen.
+
+Duhamel: Substitution s=t-tau gibt genau exp(i nu t)E_t(L-i nu I)F2
+und den konjugierten Term. Die gesamte Funktion E_t vermeidet eine
+unzulässige Nullinverse. Auf gemeinsamem invertierbarem Komplement mit
+gleichem Generator/Rand stimmt auch die Partikulär-minus-homogen-Formel.
+Die Einschränkung ist wesentlich: frequenzabhängiger outgoing Robinrand
+und zeitlicher Vakuumghost definieren nicht dieselbe endliche Matrix.
+Auch die nicht-L2-Ganzraumwelle wird korrekt von einer globalen
+Energienormzerlegung ausgeschlossen. Der kausale homogene Anteil ist
+mathematisch erforderlich, aber seine Größe im Messfenster folgt nicht
+allein aus dieser Darstellung.
+
+Jordanpartner: Setze a=(sqrt(2V)f_omega,0,sqrt(V)g_omega). Ableiten der
+stationären Gleichungen liefert K a=-G qtheta. Damit ist
+L(a,qtheta)=(qtheta,0)=e_theta; Vorzeichen und p-Komponente stimmen.
+Voraussetzung ist eine differenzierbare stationäre omega-Familie, nicht
+eine willkürliche Ableitung bei nochmals nachnormalisiertem festem Q.
+Die Formel behauptet weder deren numerische Bestimmung noch Instabilität.
+
+Ladung: ell L=0 folgt aus Lminus(sqrt(V)f)=0 und der Aufhebung der beiden
+2omega*p_x-Terme. Im physisch-kanonischen Feld lautet der quadratische
+Beitrag Q2=Sum V[omega(x²+y²)+x*y_t-y*x_t]. Ableiten mit der linearen
+Bewegung ergibt -sqrt2 Sum V f Jy, also tatsächlich ell F=-dQ2/dt.
+Für periodisches X1 verschwindet das Zeitmittel und damit ell F0.
+Das ist eine notwendige Solvabilitäts-/Ladungsbedingung, kein vollständiger
+Beweis statischer Lösbarkeit oder fehlender säkularer Terme. Insbesondere
+ist ell(e_omega)=dQ/domega; ohne die konkrete Familien-/Nullraumstruktur
+darf aus ell F0=0 kein allgemeines Verschwinden aller Jordanbeiträge
+geschlossen werden. Die im Text zurückhaltende Aussage zum t²-Term ist
+daher angemessen.
+
+Physikalische Deutung: DC-getriebene Anpassung und die Einschaltantwort
+der2rho-Komponente sind beide von Ordnung alpha². Ihre Summe kann daher
+die beobachtete Skalierung tragen, obwohl eine späte stationäre Bandform
+noch nicht identifiziert ist. Zeitfensterorthogonalität gegenüber reinem
+DC entfernt keine Drift oder Kontinuumstransiente. Incoming aus fester
+k-Zerlegung ist ebenfalls kein isolierter Reflexionsnachweis. Keiner
+dieser Punkte bestimmt aus den vorhandenen Ergebnissen die tatsächlichen
+Anteile; eine Aussage 'DC verursacht den gemessenen Fehler' wäre unbelegt.
+
+Engste sinnvolle Papierfortsetzung wäre eine vorab eindeutige Trennung
+X2_DC=E_t(L)F0 und X2_2rho der beiden restlichen Duhamelterme, jeweils
+mit Nullanfangsdaten und demselben Zeitrand. Erst ihre gesonderte
+Projektion durch die bereits gebundenen Fenster könnte die Beiträge
+zuordnen. Das ist hier nur die erforderliche Definition eines möglichen
+Diskriminationstests, kein Auftrag für neue Propagation oder Berechnung.
+Der vorgeschlagene lokale Gleichungsrest allein erfüllt diesen Zweck
+nicht. Historische Status/Gates bleiben unverändert.

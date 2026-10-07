@@ -1,0 +1,38 @@
+start 2026-10-04T00:07:24+00:00 spur=p4000a unit=fmhc-physics-klein-r36li-K-h-000724
+Running as unit: fmhc-physics-klein-r36li-K-h-000724.service; invocation ID: 2f6c9148dfff48b48e4f5c169d8c4dff
+torch 2.5.1+cu121, Geraet cuda (Quadro P4000)
+Netz n=5 h=0.2 R=85: 546001 Ecken, 543551 frei, Grad Spitze 5, Defekt 1.047198, Euler 1 (16.4 s)
+Kartenpruefung: {"winkelsumme_spitze": 5.235987755982988, "Theta_soll": 5.235987755982989, "winkelsumme_minus_soll": -8.881784197001252e-16, "einlauf": {"kanten": 1635550, "isometrisch": 1634571, "am_schnitt": 979, "max_abw_isometrisch": 1.5210055437364645e-13, "max_abw_geklebt": 1.4377388168895777e-13}, "auslauf": {"kanten": 1635550, "isometrisch": 1634701, "am_schnitt": 849, "max_abw_isometrisch": 1.5706880240884402e-13, "max_abw_geklebt": 9.198197759019422e-14}}
+Ball b=10: E 157.10901063 omega 0.744886 c 3.1e-12 -1.2e-12 res 2.0e-07 aussen 2 (18.2 s)
+Ball b=-10: E 157.10901063 omega 0.744886 c 1.6e-12 3.4e-13 res 1.5e-07 aussen 2 (15.7 s)
+/home/fmh/fmhc-physics-remote/runde36-linse/code/linse.py:217: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at ../aten/src/ATen/SparseCsrTensorImpl.cpp:53.)
+  Lt = torch.sparse_csr_tensor(torch.tensor(Lff.indptr, dtype=torch.int64), torch.tensor(Lff.indices, dtype=torch.int64),
+Start: E0 ['157.492206', '157.492206'] Q0 ['200.000000', '200.000000'] K_eff ['0.19686', '0.19686']
+t 100.0 d 38.33 38.33 E 314.984411 Q 399.999994 (10.46 ms/Schritt)
+t 200.0 d 33.53 33.53 E 314.984403 Q 399.999989 (10.43 ms/Schritt)
+t 300.0 d 28.80 28.80 E 314.984394 Q 399.999983 (10.55 ms/Schritt)
+t 400.0 d 24.17 24.17 E 314.984394 Q 399.999982 (10.75 ms/Schritt)
+t 500.0 d 19.73 19.73 E 314.984393 Q 399.999982 (10.90 ms/Schritt)
+t 600.0 d 15.63 15.63 E 314.984393 Q 399.999982 (11.00 ms/Schritt)
+t 700.0 d 12.22 12.22 E 314.984392 Q 399.999982 (11.08 ms/Schritt)
+t 800.0 d 10.17 10.17 E 314.984395 Q 399.999982 (11.13 ms/Schritt)
+t 900.0 d 10.19 10.19 E 314.984396 Q 399.999982 (11.18 ms/Schritt)
+t 1000.0 d 12.27 12.27 E 314.984392 Q 399.999981 (11.23 ms/Schritt)
+t 1100.0 d 15.70 15.70 E 314.984392 Q 399.999981 (11.26 ms/Schritt)
+t 1200.0 d 19.81 19.81 E 314.984393 Q 399.999981 (11.29 ms/Schritt)
+t 1300.0 d 24.26 24.26 E 314.984392 Q 399.999981 (11.32 ms/Schritt)
+t 1400.0 d 28.88 28.88 E 314.984392 Q 399.999981 (11.35 ms/Schritt)
+t 1500.0 d 33.62 33.62 E 314.984392 Q 399.999981 (11.37 ms/Schritt)
+t 1600.0 d 38.42 38.42 E 314.984392 Q 399.999981 (11.38 ms/Schritt)
+t 1700.0 d 43.26 43.26 E 314.984392 Q 399.999981 (11.40 ms/Schritt)
+t 1800.0 d 48.14 48.14 E 314.984391 Q 399.999981 (11.41 ms/Schritt)
+t 1900.0 d 53.04 53.04 E 314.984392 Q 399.999981 (11.50 ms/Schritt)
+t 2000.0 d 57.95 57.95 E 314.984157 Q 399.999666 (11.50 ms/Schritt)
+Ende: T erreicht, t 2000.0, 11.50 ms/Schritt, Dauer 511.4 s, geschrieben /home/fmh/fmhc-physics-remote/runde36-linse/lauf/li-K-h.json
+Finished with result: success
+Main processes terminated with: code=exited/status=0
+Service runtime: 8min 32.147s
+CPU time consumed: 8min 31.915s
+Memory peak: 324.0K
+Memory swap peak: 0B
+ende 2026-10-04T00:15:56+00:00 rc=0 unit=fmhc-physics-klein-r36li-K-h-000724

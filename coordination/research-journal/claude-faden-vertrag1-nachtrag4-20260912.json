@@ -1,0 +1,24 @@
+{
+  "id": "claude-faden-vertrag1-nachtrag4-20260912",
+  "time": "2026-09-12T07:17:34+02:00",
+  "time_kind": "completed",
+  "author": "Claude (claude-primary; Ausfuehrung claude-x1 auf .69)",
+  "topic": "micro",
+  "status": "checked",
+  "title": "Vertrag 1 Nachtrag 4: dx+- bestehen die Energiegrenze bei feinem Schritt, 12/12 J-Starts abgenommen",
+  "question": "Erreichen die zwei steif angeregten Laengsstoerungen die Vertragsgrenze 1e-8 ohne Lockerung?",
+  "action": "Zwei Bahnen auf CUDA bei h 0,0004/0,0002/0,0001 (validierte Engine), Konvergenzfaktoren gegen die CPU-Laeufe.",
+  "result": "dH/H 4,4e-8 / 1,1e-8 / 2,7e-9 (dx+) und 3,8e-8 / 9,5e-9 / 2,4e-9 (dx-); Faktoren exakt 4 je Halbierung ueber fuenf Schrittweiten; Bahnform bei allen h identisch; Grenze erreicht bei h <= 0,0001 bzw. 0,0002.",
+  "meaning": "Vertrag 1 vollstaendig abgenommen; F1-Text und Vorbehalt aktualisiert.",
+  "sources": [
+    {
+      "path": "coordination/faden-vertrag1-20260912/lauf-a/nachtrag4-dx/ERGEBNIS-nachtrag4.json",
+      "sha256": "d9e0f37ebeed83a2f816d83d9f48342ca7a7e06e43df8ea8099a861662e12a58"
+    },
+    {
+      "path": "coordination/vertraege-20260912/faden-vertrag-1-s4-rotor-nichtlinear.json",
+      "sha256": "21c732c26023ad180469bac083b40576ac7b61a41fd6f1ebe467a73cb4cfce36"
+    }
+  ],
+  "recorded_at": "2026-09-12T05:17:34.966398+00:00"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "codex-quantum-loop-transport-stop-20260906",
+  "time": "2026-09-06T16:51:29.293882+00:00",
+  "time_kind": "completed",
+  "recorded_at": "2026-09-06T17:03:32.279502+00:00",
+  "author": "Codex",
+  "topic": "theory",
+  "status": "interrupted",
+  "title": "Kandidatenschleife: zwei GPU-Ergebnisse, dritter Upload abgebrochen",
+  "question": "Laufen Kandidatenauswahl, Rechnung und vorab definierte Qwen-Bewertung automatisch zusammen?",
+  "action": "Zwei Batches auf .69/CUDA mit jeweils 16 Fällen und drei Cutoffs; dritte Übertragung brach vor dem GPU-Start am IO-Zeitlimit ab.",
+  "result": "Zwei erfolgreiche Batches mit je 1268 technischen/numerischen Checks. Die vorab gespeicherte Qwen-Prognose für den zweiten Kandidaten wurde numerisch bestätigt. Gesamtschleife endete mit Transportfehler, nicht mit einem dritten Rechenergebnis.",
+  "meaning": "Der Originalstand bleibt unverändert. Für künftige Läufe sind Upload/Download auf 60 Sekunden Inaktivität und 90 Sekunden Prozessdauer begrenzt, weiterhin nur ein Versuch; 36/36 isolierte Controllerprüfungen auf .69 bestanden. Kein empirischer Theoriebeweis.",
+  "sources": [
+    {
+      "path": "model-lab/quantum-loop/runs/quantum-store-v1-20260906/loop.json",
+      "label": "Archivierter Schleifenstatus",
+      "sha256": "fe451eecd72717968e821e9de072efd4d842f2dcb236320792937ec1ebc78e0f"
+    },
+    {
+      "path": "model-lab/quantum-loop/runs/quantum-store-v1-20260906/final-publication.json",
+      "label": "Veröffentlichter Fehlerstatus",
+      "sha256": "f9f33b44010929d5d77b2281804cdd9bd754370dc9f57bef444aeb24d15f71ce"
+    },
+    {
+      "path": "model-lab/quantum-loop/qa/controller-transfer-checks.json",
+      "label": "Prüfung der Transferkorrektur",
+      "sha256": "52893c7278d57e5f5616af1517a9e1ef3a930540e6c4c4aa675f0bf126d25786"
+    },
+    {
+      "path": "coordination/quantum-loop-result-review-20260906.md",
+      "label": "Gegenlektüre der Kandidaten",
+      "sha256": "09c17b64c840c31527e44caaef385fcc0157cf4bb44300995735a124af2305a2"
+    }
+  ]
+}

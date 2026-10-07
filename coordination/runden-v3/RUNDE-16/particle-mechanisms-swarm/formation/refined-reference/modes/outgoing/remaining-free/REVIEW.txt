@@ -1,0 +1,49 @@
+NICHTAUTOR-REVIEW — remaining-free
+2026-10-02, particle_core; reine Code-/Planlektüre, kein Lauf.
+
+Ergebnis: Kein Blocker für den begrenzten Root-Lauf auf .69.
+Das ist keine Ausführungsbestätigung und keine M2-Freigabe.
+
+Gebundener Stand (SHA256):
+PLAN.txt bc3068f141549296aa81e45b1426378ae39fc64b5a6bf3ff357fc37df79f4986
+code.py b7a44a5dca18894e9ba2423ae9e6ba6017728d8f3c5db74e12ce9f378260e1e8
+outgoing/code.py 75b1dce542aa728fe6bf58ecea4aec4a2ddf8a6a5a6e236666075c6902bbd292
+modes/code.py 467ad3e19cd8efcdac4ec2dcc670b50aaa59cc6f7e9e44d625ebbf94ba0d32c6
+Original-RESULT.json 9f0b975784c3b5111fc95ae804db89b33cbbca750637ff2161c084c211a55e9f
+Die lokalen Dateien stimmen mit den gebundenen Import-/Resultathashes
+überein; der Adapter prüft diese vor Verwendung erneut.
+
+Scope: Genau zwei solve-Aufrufe bei R=30, h=.05, omega=.8, nu=1,
+f=0 und chi=1. Quelle exp(-r²/4) nur im chi-Kanal beziehungsweise im
+Pluskanal mit incoming=True. Keine M2-Quelldatei, Referenzprofile,
+Evolution, Eigenwertsuche, weiteren Gitter oder Retries. Die importierten
+Module starten ihre main-Funktionen wegen deren Guards nicht.
+
+Gates: Gegen analytic_controls im unveränderten outgoing/code.py gelesen.
+Beide Fälle übernehmen vollständig algebra_flags: finite, Residuum<1e-10,
+Workbilanz<1e-7 mit demselben Nenner. Closed verwendet unverändert die
+beiden 1e-12-Norm-/Flussbedingungen. Wrong-Robin verlangt unverändert
+FV_rot_flux<0. Produktionsfenster-/Nichtnull-/Positivfluss-Gates werden
+nicht zusätzlich angewandt. Geschlossene Nullamplituden ergeben über
+quotient None bei undefinierten Zusatzdiagnosen; das ist JSON-kompatibel
+und kein verschleierter Pass einer verpflichtenden Bedingung.
+
+Abbruch und Speicherung: Neue Ausgabedirectory muss unbenutzt sein.
+Nach jedem abgeschlossenen Fall werden vollständige NPZ-Felder mit Hash
+und der JSON-Teilstand geschrieben, anschließend all(flags.values())
+geprüft. Fehlgeschlagene Algebra- oder Fallgates führen zu UNRESOLVED und
+verhindern den nächsten Fall beziehungsweise Erfolg. Beide bestandene
+Fälle allein ergeben REMAINING_FREE_CONTROLS_PASSED_H005. Der Original-
+Status wird nur referenziert, die Originaldatei nicht geschrieben.
+
+Budget: process_time beginnt vor NumPy-/SciPy-Import; Checkpoint 2.5 CPU-s
+vor jedem Solve und vor Erfolgsabschluss. Ein einzelner nativer Aufruf
+kann den Checkpoint überlaufen; deshalb bleibt Roots angekündigter
+äußerer 3-CPU-s-Deckel einschließlich Ein-Thread-Umgebung erforderlich.
+Bei harter Beendigung bleibt zumindest der letzte gespeicherte Teilstand.
+Laufzeit und tatsächliche Gate-Ergebnisse sind noch nicht geprüft.
+
+Interpretationsgrenze: Ein Erfolg betrifft ausschließlich diese beiden
+freien h=.05-Kontrollen. Der ursprüngliche coarse-Profilfehler und das
+alte UNRESOLVED bleiben unverändert; keine Gesamtfreigabe der früheren
+Kontrollserie und kein Rückschluss auf eine M2-Ausstrahlungsamplitude.

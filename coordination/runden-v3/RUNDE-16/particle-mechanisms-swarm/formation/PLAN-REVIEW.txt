@@ -1,0 +1,93 @@
+Unabhängiger Papierreview: M2-Bildungspilot, 02.10.2026
+particle_binding; nur Lektüre/Handalgebra, keine Programme oder Tests.
+Gelesen: core/REPORT.txt §3; BEUTEL-1/code/beutel.py, ERGEBNIS.md und
+aus/auswertung/punkte-M2.csv. formation/PLAN.txt und code.py lagen bei
+den beiden Prüfzeitpunkten noch nicht vor. Dies ist KEIN Codereview.
+
+Urteil: Frage sinnvoll, Plan vor Ausführung konkretisieren. Kein
+wissenschaftlicher Grund für einen breiten Parameterscan oder Ast-Neulauf.
+
+1. Anfangsenergie legt einen Teil des Ausgangs bereits fest
+Mit m=sqrt(2), Rg=8, f=A exp[-r²/(2Rg²)], chi=1,
+phi_t=i m f ist I=pi^(3/2)Rg³ A², Q=2mI. Die vorgeschlagene
+Amplitude A²=1100/[2m pi^(3/2)8³] ist im Kontinuum korrekt.
+Die korrekte Energie bei chi=1 lautet
+ E0=4I+3I/(2Rg²)-A² I/2^(3/2)+A⁴ I/(2*3^(3/2)),
+ E0/Q=m+3/(4mRg²)-A²/(2m*2^(3/2))+A⁴/(4m*3^(3/2)).
+Handabschätzung: A² etwa .1364, E0/Q etwa 1.4061 <sqrt(2).
+Diese Näherungszahlen sind keine ausgeführte numerische QA; exakte Formel
+vorab an diskreter E/Q-Ausgabe prüfen. Negative quartische Energie ist
+bereits in der ungedressten Wolke relevant: „chi=1“ heißt nicht ungebunden.
+
+Vollständige Zerstreuung in freie Vakuumwellen ist damit energetisch
+ausgeschlossen (freie Wellen benötigen E>=m|Q|, einschließlich eventueller
+Gegenladung). Weder 80% Ladung in Radius12 noch Annäherung an eine
+stationäre Lösung bis T64 folgt daraus. Breathing, ausgedehnte nichtlineare
+Reste, Ladungsverlust aus dem Messkern und lange Transienten bleiben möglich.
+Der bekannte Q1100-Kern hat E=1213.00693; die Wolke ungefähr1546.7.
+Gleiches Q ist also keine gleiche Anfangsenergie. Überschussenergie muss
+bei Annäherung an den Kern nach außen gelangen; chi kann neutral abstrahlen.
+
+2. Das 80%-Gate braucht Kontext und sauber definierte Normen
+Schon t0 hat Q(r<12)/Q=erf(1.5)-3 exp(-2.25)/sqrt(pi)≈.788.
+80% ist daher kaum ein Verdichtungsnachweis. Zusätzliche eindeutige
+Diagnose: Ladungs-RMSradius bzw. R50 relativ zum Anfang, zusammen mit
+neu entstandener chi-Absenkung; positive Mindestabsenkung vorab fixieren.
+Stationäre Feldreste und Geschwindigkeitsreste sind die wesentlichen
+Gates. Eine bloß dichte oder kaum veränderte Wolke darf sie nicht bestehen.
+
+Normen nur in der vorher bestimmten Kernregion mit radialem Volumenmaß
+4pi r²dr bilden; kein durch die riesige Vakuumbox verdünnter RMS-Wert.
+chi nicht durch ||chi|| der ganzen Box normieren: das ist fast nur Vakuum.
+Eine explizite feste Referenznorm oder ||1-chi|| mit vorab fixiertem Floor
+verhindert 0/0 beim ungedressten Start; Norm/Floor samt Einheiten einfrieren.
+Gemeinsame omega beispielsweise aus Im<phi,phi_t>/<phi,phi> im Messkern;
+nicht separat pro Feld oder Radius anpassen. Für komplexes phi muss der
+räumliche Residualtest auch Phasengradienten erfassen und zum gleichen
+omega gehören. phi_t-i omega phi, chi_t separat berichten. Maximalwerte
+zusätzlich zum normierten Rest verhindern versteckte Rand-/Ursprungsfehler.
+„E/Q-Erhaltung“ durch getrennte relative E- und Q-Bilanzen ersetzen.
+Q(r<12)-Änderung muss den signierten Stromfluss spiegeln; E-Fluss enthält
+beide Felder. Keine nachträgliche Normierung während echter Zeitentwicklung.
+
+3. Gespeichertes Kontrollprofil: vorhanden im Produzentenvertrag, reduziert
+beutel.py main speichert den seed vor beiden Fortsetzungen in profs/pts.
+CSV bestätigt seed Q=1100, omega²=1.03666310756389. Das NPZ enthält
+r,f,g,Q,omega2,sweep mit derselben Reihenfolge; Auswahl eindeutig über
+Q UND sweep='seed' und Frequenzbindung, nicht einen angenommenen Index.
+ABER Zeilen374ff: sub=slice(0,None,4), f/g ausdrücklich float32.
+Bei ursprünglichem dr=.04 sind nur .16-Abstandssamples gespeichert.
+Fein-/großbox-Kontrollen speichern im JSON Observablen, keine entsprechenden
+vollen Profile. NPZ-Namen BEUTELM2-profile.npz ggf. nur Transferalias:
+Hash gegen ursprüngliches M2-profile.npz binden, nicht aus Name folgern.
+Dokumentierter ursprünglicher SHA256:
+1bb153a166e15d8ca43848613e638e8e0d20978833be6c564dcf7bc33f926d8c.
+Archivbytes hier nicht geöffnet; ob dieser Transferalias wirklich vorliegt,
+ist separat zu prüfen. Der Produzentcode zeigt nur, was gespeichert wird.
+
+Das Profil eignet sich als kontrollierter Rekonstruktionsseed, nicht ohne
+Prüfung als „ungestörter stationärer Kern“ auf h=.1/.05. Besonders lineare
+Interpolation kann zweite Ableitungsreste erzeugen. Vor Realzeit mindestens
+Interpolationsverfahren, Ursprung/Fernrand, tatsächliche Q/E/omega und
+punktweise/gewichtete Raumreste protokollieren. Ein einziges stationäres
+Fest-Q-Nachpolieren des vorhandenen Astpunkts je Zielgitter wäre gezielte
+Präparation, kein historischer Astscan; muss im Plan und Budget ausdrücklich
+enthalten sein. Falls darauf verzichtet wird: „interpolierte Referenz“
+nennen und Kontrolldrift als potenziellen Startfehler behandeln. Nach jeder
+Q-Korrektur Residuen neu prüfen, da sie Stationarität verändert.
+
+4. Numerik-/Auslegungsgates
+R120,T64 hat reichlich kausalen Abstand zum ursprünglich relevanten Kern;
+Gaußschwänze sind jedoch nicht kompakt. Initiale Außenladung und Randwerte
+quantifizieren, nicht „keine Randankunft“ lediglich behaupten. Drei
+(h,dt)-Paare trennen h- und dt-Einfluss prinzipiell. Kontrollreste müssen
+deutlich unter .02 liegen, nicht nur unter der gleichen Bestehensschwelle.
+Bei versagender Kontrolle: Numerik/Präparation unentschieden, kein negativer
+Bildungsbefund. Bei guter Kontrolle ohne Kernplateau: genau dieser
+Präparationsweg im festen Fenster verfehlt. Bei Erfolg nur radialer
+Bildungskandidat aus bereits energetisch subthreshold vorbereiteter Wolke.
+Keine 3D-/Langzeitstabilität und keine autonome Ladungserzeugung.
+
+Offen vor Ausführung: eigenständiger Review des tatsächlichen Codes;
+Normen/Floors, Kontrollrekonstruktion und Inputbindung im eingefrorenen Plan;
+Ressourcen-/Nichtdopplungsabgleich. Hier wurde keine Ausführung freigegeben.

@@ -1,0 +1,42 @@
+Runde 6 Reflexion r5 Start 2026-09-30T01:14:31+00:00 auf CPU, 1 Faden, torch 2.5.1+cu121
+
+R-5 Lokalisierung: Mittelball 0,7 bei 0, je N Gasbaelle links und rechts, Abstaende gleichverteilt in (30.0, 45.0); 'gleich' = alle 0,7, 'gemischt' = omega^2 aus (0.65, 0.66, 0.67, 0.68, 0.69, 0.71, 0.72, 0.73, 0.74, 0.75); Seeds (1, 2, 3, 4, 5).
+ [grob]
+  Anker (h = 0.01, R = 24.0, m = 32): rho = 1.49377696455 -6.715968e-05 i, |rho - Codex| = 1.3e-12, |dIm|/Gamma0 = 1.2e-08, direkter ODE-Rest 8.0e-17 -> bestanden (Tabelle 9.5 s, 2400 RK4-Schritte)
+  resonante Typen (Einzelpol in |nu - nu0| <= 0.012): [0.7]
+  Einzelball: Ueberleben bei 5/Gamma0 = e^-10 = 4.54e-05
+  Art | N je Seite | Median Gamma_c | Median Gamma_min | Median Ueberleben CMT (5/Gamma0) | Median Polsumme (5/Gamma0) | Median dunkle Pole
+  gleich     |  2 | 0.0000 | 4.75e-05 | 2.53e-01 | 1.67e-01 | 1.0
+  gleich     |  5 | 0.0001 | 5.92e-07 | 2.52e-01 | 1.60e-01 | 4.0
+  gleich     | 10 | 0.0000 | 6.50e-15 | 3.41e-01 | 3.39e-01 | 10.0
+  gleich     | 20 | 0.0000 | 3.67e-15 | 7.99e-02 | 2.49e-01 | 23.0
+  gemischt   |  2 | 0.9991 | 9.99e-01 | 4.54e-05 | 4.59e-05 | 0.0
+  gemischt   |  5 | 0.9981 | 9.98e-01 | 4.54e-05 | 4.61e-05 | 0.0
+  gemischt   | 10 | 0.9980 | 9.98e-01 | 4.54e-05 | 4.61e-05 | 0.0
+  gemischt   | 20 | 0.9978 | 9.98e-01 | 4.54e-05 | 4.68e-05 | 0.0
+  periodisch |  2 | 0.0573 | 5.73e-02 | 1.92e-01 | 1.75e-01 | 0.0
+  periodisch |  5 | 0.0045 | 4.49e-03 | 8.79e-02 | 1.06e-01 | 1.0
+  periodisch | 10 | 0.0006 | 6.21e-04 | 9.67e-02 | 8.92e-02 | 5.0
+  periodisch | 20 | 0.0001 | 8.25e-05 | 1.01e-01 | 8.41e-02 | 13.0
+ [fein]
+  Anker (h = 0.005, R = 32.0, m = 32): rho = 1.49377696455 -6.715968e-05 i, |rho - Codex| = 6.9e-13, |dIm|/Gamma0 = 7.0e-09, direkter ODE-Rest 8.0e-17 -> bestanden (Tabelle 17.9 s, 6400 RK4-Schritte)
+  resonante Typen (Einzelpol in |nu - nu0| <= 0.012): [0.7]
+  Einzelball: Ueberleben bei 5/Gamma0 = e^-10 = 4.54e-05
+  Art | N je Seite | Median Gamma_c | Median Gamma_min | Median Ueberleben CMT (5/Gamma0) | Median Polsumme (5/Gamma0) | Median dunkle Pole
+  gleich     |  2 | 0.0000 | 4.75e-05 | 2.53e-01 | 1.67e-01 | 1.0
+  gleich     |  5 | 0.0001 | 5.92e-07 | 2.52e-01 | 1.60e-01 | 4.0
+  gleich     | 10 | 0.0000 | 3.23e-14 | 3.41e-01 | 3.39e-01 | 10.0
+  gleich     | 20 | 0.0000 | 1.64e-14 | 7.99e-02 | 2.49e-01 | 23.0
+  gemischt   |  2 | 0.9991 | 9.99e-01 | 4.54e-05 | 4.59e-05 | 0.0
+  gemischt   |  5 | 0.9981 | 9.98e-01 | 4.54e-05 | 4.61e-05 | 0.0
+  gemischt   | 10 | 0.9980 | 9.98e-01 | 4.54e-05 | 4.61e-05 | 0.0
+  gemischt   | 20 | 0.9978 | 9.98e-01 | 4.54e-05 | 4.68e-05 | 0.0
+  periodisch |  2 | 0.0573 | 5.73e-02 | 1.92e-01 | 1.75e-01 | 0.0
+  periodisch |  5 | 0.0045 | 4.49e-03 | 8.79e-02 | 1.06e-01 | 1.0
+  periodisch | 10 | 0.0006 | 6.21e-04 | 9.67e-02 | 8.92e-02 | 5.0
+  periodisch | 20 | 0.0001 | 8.25e-05 | 1.01e-01 | 8.41e-02 | 13.0
+  L3 (Median Gamma_c gegen 1): 12 von 12
+
+(r5: 123.0 s)
+Hinweise: keine
+Ende 2026-09-30T01:16:34+00:00, Dauer 123.0 s, Fehler in: keine

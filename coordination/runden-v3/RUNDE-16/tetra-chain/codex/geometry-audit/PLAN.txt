@@ -1,0 +1,33 @@
+GEOMETRIE-AUDIT — Plan vor Code, 2026-10-02
+Nur eigene Dateien unter geometry-audit. Ausfuehrung ausschliesslich durch
+Root auf .69, CPU float64, ein Thread, hoechstens 60 CPU-Sekunden.
+Eingaben: unveraenderte RESULT.json und PROOF-REVIEW.txt aus dem Elternordner.
+
+1. Fuer jede rekonstruierte Kette sind die Tetraeder die Indexfenster [i,i+4).
+   Pruefe alle Paare mit baryzentrischen linearen Nebenbedingungen:
+   A lambda=B mu, sum(lambda)=sum(mu)=1, lambda,mu>=0.
+   Ohne gemeinsame Vertex-IDs muss das LP unzulaessig sein. Mit gemeinsamen
+   IDs maximiere die Summe aller lambda-Koordinaten ausserhalb des gemeinsamen
+   Simplex. Da lambda nichtnegativ und eindeutig ist, ist Maximum null genau
+   die gesuchte Teilmengenbedingung. Die Gegeninklusion folgt aus identischen
+   gemeinsamen Eingabekoordinaten. Damit werden auch flaechen-/kanten-/punkt-
+   foermige falsche Kontakte geprueft, nicht nur positive Volumina.
+   Zusaetzlich maximiere die gemeinsame kleinste baryzentrische Koordinate:
+   ein positives Maximum erkennt einen positiven Volumenueberlapp.
+2. Pro LP Solverstatus, primal residual, Zielfunktionswert und (bei optimalen
+   LPs) dualen Zielfunktionsabstand dokumentieren. float64, HiGHS-Toleranz
+   1e-9 und Akzeptanz 1e-7 dimensionslos. Kein Intervall- oder exakter Beweis;
+   kleine Ueberlapps/Kontakte unter Solveraufloesung bleiben unentschieden.
+3. Kontrollen: absichtlich deckungsgleiche und verschobene ueberlappende
+   Tetraeder; getrennte Tetraeder; echte gemeinsame Flaeche; geometrisch
+   gemeinsame Flaeche ohne gemeinsame IDs (falscher Kontakt).
+4. Ticks fuer n(t)=(cos(pi*t),sin(pi*t),0), Schwerpunkt als Ebenenursprung.
+   Zirkulaere Koinzidenzgruppen bis 1e-12; Proben aus den Vierteln der jeweils
+   angrenzenden ereignisfreien Intervalle, keine feste +/-1e-8 Distanz.
+   Pruefe die tatsaechlich umgeschaltete Vertexgruppe und DeltaP=d-2k:
+   d=#Kanten von Gruppe nach aussen, k=davon vorab schneidende Kanten.
+   Interne Gruppenkanten aendern ihren Status nicht. CSV ist ausschliesslich
+   diese geometrische Parametrisierung; keine Behauptung eines Bundle-Achsenmatches.
+5. Keine neue Orientierungsverteilung in diesem Lauf. Bestehendes Monte Carlo
+   wird nicht wiederholt. Deterministische Zellintegration braucht einen
+   getrennten Plan mit Fehlergrenzen und ist keine Voraussetzung dieses Audits.

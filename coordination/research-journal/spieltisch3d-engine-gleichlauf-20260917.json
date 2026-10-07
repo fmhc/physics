@@ -1,0 +1,32 @@
+{
+  "id": "spieltisch3d-engine-gleichlauf-20260917",
+  "time": "2026-09-17T09:30:00+02:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5); Engine-Agent 1 des Auftrags Spieltisch 3D (Claude-Subagent, Opus 5); Zweitmeinungen Qwen (Bunker) und DeepSeek (OpenRouter, Freigabe Finn 17.09.)",
+  "topic": "operations",
+  "status": "checked",
+  "title": "Spieltisch 3D: Engine mit Mikro-Agenten, JS und Python laufen in 13 Faellen bitgleich, Selbsttest 25/25",
+  "question": "Rechnen die neue Browser-Engine (engine.js, Mikro-Agenten mit Ticks und Kicks) und der Python-Spiegel spieltisch.py dieselben Regeln der Vertraege SP-5, SP-6 und SP-7 mit korrigierten Kennzahlen (Polarisierung aus Gegenzuegen, Einrasten als Peakanteil, Verstecken synchron und nicht absorbierend), wie es die drei Qwen-Reviews und das Claude-Review vom 17.09. verlangt haben?",
+  "action": "Engine und Python-Spiegel mit gemeinsamem mulberry32-Zufall neu geschrieben; Gleichlauf auf .69 als begrenzte CPU-Unit (node 24.18.1 aus dem Playwright-Treiber, Python 3.12.3): 13 Faelle x 2000 Takte (SP-5, SP-6, Ueberlast, frei K = 2..4, SP-7, mit Kicks); erweiterter Selbsttest in spieltisch.py; Code-Review Qwen, Kennzahl-Pruefung DeepSeek (0,04 USD).",
+  "result": "Zaehler, Zustand, History, Ereignisse, Zeitreihen und Kennzahlen in allen 13 Faellen exakt gleich; 5 trigonometrische Werte weichen hoechstens 1e-16 relativ ab. Selbsttest 25/25 (u. a. Kolmogorov-Vorzeichen unter Uhr-Spiegelung, w = 2 bitgleich w = -1, Verstecken nicht absorbierend, Little 0,13 %). Einrasten 0,271/0,936 nahe SP-6 (0,266/0,940). Lag-Vorzeichen bei streng periodischer Bedienung nur modulo K bestimmt, Test prueft die Restklasse. 73 Kennzahlen mit Art (gemessen/Regelgroesse/Vermutung) und Vertragsquelle katalogisiert.",
+  "meaning": "Die Darstellung rechnet jetzt nachpruefbar dasselbe wie der Referenzcode und die korrigierten Kennzahlen; die Review-Befunde A2 bis A4 und R3-1/-2 sind im Code behoben. Das ist eine Werkzeugpruefung, kein physikalischer Befund: vertragsexakt sind nur Laeufe mit festem Preset und Seed, Live-Laeufe nutzen 300 Takte Einschwingen.",
+  "sources": [
+    {
+      "path": "model-lab/spieltisch3d/test/gleichlauf-BERICHT.md",
+      "sha256": "933ed90359b763a9d46d4489e40f36590a43b2813e8a7ec2d7dcdd53ea8419b9"
+    },
+    {
+      "path": "model-lab/spieltisch3d/DONE-engine.md",
+      "sha256": "5b693d6e8f029fea9d55cab361b8608e53af098690563527624797eaa52534ac"
+    },
+    {
+      "path": "coordination/design-3d-20260917/ENGINE-REVIEW.md",
+      "sha256": "9c1672fb47a4a4364f1d5644f97d88370bf7041e6f1cf6fc70da68a22f7ab8a4"
+    },
+    {
+      "path": "coordination/ideen-20260916/qwen-review-20260917/BEWERTUNG.md",
+      "sha256": "01be3cad4955675cf14cad9063fe11e14326f2ccdbfd1ce7ec1464c0440fc002"
+    }
+  ],
+  "recorded_at": "2026-09-17T02:15:20.367071+00:00"
+}

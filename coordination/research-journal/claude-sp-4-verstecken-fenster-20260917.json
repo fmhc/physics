@@ -1,0 +1,36 @@
+{
+  "id": "claude-sp-4-verstecken-fenster-20260917",
+  "time": "2026-09-17T02:38:49+02:00",
+  "time_kind": "completed",
+  "author": "Claude-Subagent (Anthropic, claude-fable-5-1), S1 auf .69 CPU; Idee claude-primary (ANALOGIE-SPIELTISCH.md), Modell OpenAI/Codex",
+  "topic": "theory",
+  "status": "checked",
+  "title": "SP-4 Verstecken-Fenster: Ausgang A, Exponent n = -0,281 +/- 0,003 ueber eine Dekade in g (Kriterium -1/4 +/- 0,05)",
+  "question": "Skaliert die Aufhellungszeit t*(g) mit |b(t*)| = 1e-3 im Dreimodenmodell ueber die Dekade g = 0,03..0,3 wie (12 s/(omegab^2 g vX vd))^(1/4), also mit Exponent -1/4?",
+  "action": "Dieselben Laeufe wie DR-1 plus sechs Dekadenstufen g_k = 0,03*10^(k/5), beide Vorzeichen, h = 1e-3 und 5e-4; t* linear interpoliert, Fit log t* = a + n log g; Nebenreihen s = 1e-4 und 1e-2. Gemeinsames Skript dr1_sp4.py Rev. 2, Unit fmhc-physics-dr1-sp4-20260917.",
+  "result": "Ausgang A: n = -0,28094 +/- 0,00344 (h = 5e-4, identisch bei h = 1e-3 und beiden Vorzeichen); lokale Exponenten -0,304 bis -0,266; t*/t*_pred faellt von 1,104 (g=0,03) auf 1,027 (g=0,3). Nebenreihe s = 1e-4: n = -0,258; bei s = 1e-2 wird g = 0,03 in T = 40 nie gefunden (max|b| = 0,0095). K6: g = 0, Ed = 0, EX = 0 nie gefunden. K7-Konvergenz |dt*| <= 3e-7.",
+  "meaning": "Das Vierte-Wurzel-Gesetz beschreibt die Suchzeit ueber die Dekade innerhalb der Vertragsgrenze, aber mit der vorab benannten t^6-Korrektur (systematisch steiler als -1/4); mit kleinerer Schwelle naehert sich n dem Wert -1/4. Fensteraussage eines Modells, keine Teilchendeutung; S2/S3 ausstehend, keine Registerzeile.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260916/sp-4-lauf/BERICHT-SP-4.md",
+      "sha256": "d5fffb2287eb56a2ab1c32b941bcdbd6a4bb4873d51b344b6a999864fed700bb"
+    },
+    {
+      "path": "coordination/vertraege-20260916/sp-4-lauf/ERGEBNIS-SP-4.json",
+      "sha256": "38dfdc0d963f96c95a23fcf3167f3f056914bea72f6c30532d87892d46142605"
+    },
+    {
+      "path": "coordination/vertraege-20260916/sp-4-verstecken-fenster-VERTRAG.md",
+      "sha256": "1f58fbb7b0a5bf8d0b1331beff1cb5c8434df7d4d2edd312f65477b3e13f4bf7"
+    },
+    {
+      "path": "coordination/vertraege-20260916/startsignal-sp-4.txt",
+      "sha256": "64112ea9ce8d4f3c4731495ebcf5ab9c4f7616afe26d938da9247fffaa52861c"
+    },
+    {
+      "path": "coordination/ideen-20260916/ANALOGIE-SPIELTISCH.md",
+      "sha256": "3dfa624b4fd48f2a59b117f0c8e37898e7a7a3b24823e05bdf89d4defe2e7b4a"
+    }
+  ],
+  "recorded_at": "2026-09-17T00:41:08.077397+00:00"
+}

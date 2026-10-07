@@ -1,0 +1,203 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+/* SPDX-FileCopyrightText: 2026 Finn Malte Hinrichsen */
+/* Startseite der Netz-Ansicht: dieselbe Instrumentensprache wie die Ansicht, Raster wie eine Zeitschriftenseite. */
+:root {
+  --grund: #03060b;
+  --text: #d9e0ea;
+  --text-leise: #8a97aa;
+  --text-sehr-leise: #5d697c;
+  --linie: rgba(150, 172, 206, 0.13);
+  --linie-mittel: rgba(150, 172, 206, 0.24);
+  --bernstein: #f2b134;
+  --bernstein-hell: #ffd27a;
+  --bernstein-hauch: rgba(242, 177, 52, 0.12);
+  --sans: 'IBM Plex Sans Condensed', 'Arial Narrow', 'Liberation Sans Narrow', sans-serif;
+  --mono: 'IBM Plex Mono', 'DejaVu Sans Mono', ui-monospace, monospace;
+  --serif: 'IBM Plex Serif', 'DejaVu Serif', Georgia, serif;
+}
+
+* { box-sizing: border-box; }
+
+html { background: var(--grund); }
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text);
+  font: 400 15px/1.55 var(--sans);
+  -webkit-font-smoothing: antialiased;
+  background:
+    linear-gradient(rgba(150, 172, 206, 0.035) 1px, transparent 1px) 0 0 / 100% 64px,
+    linear-gradient(90deg, rgba(150, 172, 206, 0.035) 1px, transparent 1px) 0 0 / 64px 100%,
+    radial-gradient(1100px 620px at 22% -8%, #13213a 0%, rgba(8, 14, 25, 0.6) 48%, rgba(3, 6, 11, 0) 78%),
+    radial-gradient(900px 600px at 92% 38%, rgba(48, 30, 8, 0.35) 0%, rgba(3, 6, 11, 0) 70%),
+    var(--grund);
+}
+
+a { color: var(--bernstein-hell); text-decoration: none; border-bottom: 1px solid rgba(242, 177, 52, 0.35); }
+a:hover { color: #fff1cf; border-bottom-color: var(--bernstein); }
+a:focus-visible { outline: 1px solid var(--bernstein-hell); outline-offset: 3px; }
+code { font: 400 0.88em/1 var(--mono); color: var(--text); }
+
+/* ---------- Kopf ---------- */
+.kopf {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 64px 40px 40px;
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  column-gap: 56px;
+}
+.kopf > * { grid-column: 1; }
+.marke {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font: 600 11px/1 var(--sans);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-leise);
+}
+.marke-trenner { width: 28px; height: 1px; background: var(--linie-mittel); }
+h1 {
+  margin: 22px 0 22px;
+  font: italic 400 clamp(34px, 4.6vw, 58px)/1.04 var(--serif);
+  letter-spacing: -0.01em;
+  color: #f4f6f9;
+  text-wrap: balance;
+}
+.einleitung { margin: 0 0 14px; font-size: 17px; line-height: 1.6; color: #c9d2de; max-width: 62ch; }
+.einleitung strong { font-weight: 500; color: #eef2f7; }
+.englisch { margin: 0 0 22px; font-size: 14px; line-height: 1.5; color: var(--text-leise); max-width: 70ch; }
+.vermerk {
+  justify-self: start;
+  margin: 0;
+  padding: 5px 10px;
+  border: 1px solid rgba(242, 177, 52, 0.7);
+  background: var(--bernstein-hauch);
+  color: var(--bernstein-hell);
+  font: 500 11px/1.2 var(--sans);
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+/* ---------- Filme: asymmetrisches Raster ---------- */
+.filme {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 24px 40px 40px;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: 32px;
+  row-gap: 56px;
+  counter-reset: film;
+}
+.film { display: flex; flex-direction: column; gap: 16px; }
+.film:nth-child(1) { grid-column: 1 / span 7; }
+.film:nth-child(2) { grid-column: 8 / span 5; margin-top: 92px; }
+.film:nth-child(3) { grid-column: 1 / span 5; }
+.film:nth-child(4) { grid-column: 6 / span 7; margin-top: -64px; }
+
+.plakat {
+  display: block;
+  position: relative;
+  border: 1px solid var(--linie-mittel);
+  background: #05080e;
+  overflow: hidden;
+  box-shadow: 0 30px 60px -36px rgba(0, 0, 0, 0.95);
+}
+.plakat::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid transparent;
+  transition: border-color 0.25s ease;
+  pointer-events: none;
+}
+.plakat:hover { border-bottom-color: var(--linie-mittel); }
+.plakat:hover::after, .plakat:focus-visible::after { border-color: var(--bernstein); }
+.plakat img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  filter: saturate(0.92) brightness(0.94);
+  transition: filter 0.35s ease, transform 0.6s cubic-bezier(0.2, 0.7, 0.15, 1);
+}
+.plakat:hover img { filter: none; transform: scale(1.015); }
+
+.film-text { display: grid; grid-template-columns: 52px 1fr; column-gap: 6px; }
+.film-text > * { grid-column: 2; }
+.nr {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  padding-top: 6px;
+  font: 500 13px/1 var(--mono);
+  color: var(--bernstein);
+  letter-spacing: 0.04em;
+}
+.film h2 { margin: 0 0 8px; font: italic 400 27px/1.15 var(--serif); color: #f1f4f8; }
+.film p { margin: 0 0 8px; color: #c4cdd9; font-size: 15px; }
+.film p.en, .hinweise p.en { color: var(--text-leise); font-size: 13.5px; }
+.film p.daten { margin-top: 4px; font: 400 11.5px/1.5 var(--mono); color: var(--text-sehr-leise); font-variant-numeric: tabular-nums; }
+.wege { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 18px; margin-top: 6px !important; font-size: 13px; }
+.wege a { color: var(--text-leise); border-bottom-color: var(--linie-mittel); }
+.wege a:hover { color: var(--text); border-bottom-color: var(--text-leise); }
+.wege a.los {
+  padding: 5px 12px 5px;
+  border: 1px solid var(--bernstein);
+  color: var(--bernstein-hell);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+.wege a.los:hover { background: var(--bernstein); color: #140d02; }
+
+/* ---------- Hinweise und Fuss ---------- */
+.hinweise {
+  max-width: 1240px;
+  margin: 24px auto 0;
+  padding: 36px 40px 8px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 40px;
+  border-top: 1px solid var(--linie);
+}
+.hinweise h3 {
+  margin: 0 0 10px;
+  font: 600 11px/1 var(--sans);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-leise);
+}
+.hinweise p { margin: 0 0 10px; color: #b9c3d0; font-size: 14.5px; }
+.fuss {
+  max-width: 1240px;
+  margin: 28px auto 0;
+  padding: 18px 40px 40px;
+  border-top: 1px solid var(--linie);
+  color: var(--text-sehr-leise);
+  font-size: 12.5px;
+  line-height: 1.7;
+}
+.fuss a { color: var(--text-leise); border-bottom-color: var(--linie-mittel); }
+
+/* ---------- Auftritt ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .kopf, .film { animation: auftritt 0.8s cubic-bezier(0.2, 0.7, 0.15, 1) both; }
+  .film:nth-child(1) { animation-delay: 0.08s; }
+  .film:nth-child(2) { animation-delay: 0.16s; }
+  .film:nth-child(3) { animation-delay: 0.24s; }
+  .film:nth-child(4) { animation-delay: 0.32s; }
+}
+@keyframes auftritt { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+
+/* ---------- schmal ---------- */
+@media (max-width: 900px) {
+  .kopf { grid-template-columns: 1fr; padding: 40px 22px 28px; }
+  .filme { grid-template-columns: 1fr; padding: 16px 22px 32px; row-gap: 44px; }
+  .film:nth-child(n) { grid-column: 1; margin-top: 0; }
+  .hinweise { grid-template-columns: 1fr; padding: 28px 22px 4px; gap: 18px; }
+  .fuss { padding: 18px 22px 32px; }
+}

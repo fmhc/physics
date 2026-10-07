@@ -1,0 +1,73 @@
+{
+  "id": "claude-ks1-or2-dr3-v-abnahme-technisch-offen-20260929",
+  "time": "2026-09-29T12:50:04+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5), Pruefer und Leitung; Planer der Abnahme Anthropic Opus 5.5 (frisch); Fehlerarm-Kopien und Sollerzeuger OR2-V OpenAI astra",
+  "topic": "binaries",
+  "status": "reported",
+  "evidenzart": "modell",
+  "title": "KS-1-OR2-Vorlauf DR3, V-Abnahme (nach S3 ohne Reproduktion neu ausgestellt): technisch offen, weil P-Proben ohne Einstieg, die SYN-Kette nicht gerechnet und die Reproduktion vertraglich nicht bestaetigt sind; alle pruefbaren Teile bestanden, fachlich weiter T, keine L2-Freigabe; gilt fuer die Technik dieser Kette, nicht fuer die Erreichbarkeit der Klassen oder die Herkunftsfrage",
+  "question": "Besteht die Kette DR3-L1 des OR2-Vorlaufs die technische Abnahme nach V5 (Integritaet, P-Proben, Fehlerketten, SYN-Kette, Reproduktion, beide Boegen, Register- und Berichtszahlenprobe)?",
+  "action": "Minimalplan nach LEITUNG-ENTSCHEIDUNG-V-ABNAHME-L1-L6.md, vorab gestempelt; der Ausgang T war bekannt und ist offengelegt. FA1-FA8 aus den markierten OR2-V-Kopien je in eigener Modell-Unit auf der P5000 neu gerechnet, der Hauptcode als Gegenseite. FA6 und FA7 nach Lesart F1 zusaetzlich mit einem vorab gehashten Pruefer-Aufrufer auf P-I02 und P-R01, auf Torebene; die Laufebene dieser Proben bildet der Aufrufer nicht nach (direkter Toraufruf, uebrige Welten ohne Zeilen, W_UR-Zeilen passend nur fuer P_ORT). P4 ohne SYN-Paket unter dem Werkzeugfreeze ee98bc88. Registerprobe gegen v und Codeabgleich. Berichtszahlenprobe fuer 120 Zahlen aus den Berichten der Kette mit Negativprobe (gleicher Wert, falscher Arm); Abnahmebericht und dieser Eintrag sind darin nicht gebunden. Integritaetsliste mit 210 Dateien als Schnappschuss unmittelbar vor dem Lauf. Erste Abnahme mit der S2 als Reproduktion (Lesart R1); nach S3 (S2 nur Diagnose) neue Abnahme R2 mit reproduktion null, die erste bleibt liegen.",
+  "result": "Abnahme R2 (massgeblich): technisch offen, fachlich T/3/V01, keine L2-Freigabe. Bestanden: Integritaet (210 Dateien); Fehlerketten FA1-FA8, jede Kopie meldete ihren benannten Fehler (FA6 auf P-I02: Kopie T, Hauptcode U1; FA7 auf P-R01: Kopie T bei P_ORT, Hauptcode U1); Register; Berichtszahlen (120 Zeilen, 0 Beanstandungen, Negativprobe beanstandet); Boegen (Runde 1). Offen: P-Proben (106 bestanden, 68 ohne Einstieg, davon 52 ohne SYN-Paket sowie 12 Generator- und 4 Zaehlproben ohne Einstieg), SYN-Kette, Reproduktionsvergleich (S2 nur Diagnose). Nicht gerechnet und benannt: V2.2-Positivkontrollen, V2.1-Erreichbarkeit, FA8-Zufallszahlvergleich an realer Besetzung, Bogenverfahren in P4, Laufebene von P-I02 und P-R01, ungebundene Berichtszahlen. GPU rund 47 s in 12 Modell-Units. S3 (bestanden mit Vermerken): L1 und L3 bis L5 begruendet, L2 faellt mit der S2, \"technisch offen\" ist die richtige Klasse. Selbstanzeige: ein wirkungsloses awk-Pipeline-Glied auf dem Laptop.",
+  "meaning": "Das Kontrollversagen T/3/V01 stammt aus gebundenem Code und gebundenen Eingaben und ist in zwei Haeusern gleich ausgewertet; die eingebauten Fehlerpfade melden ihre Fehler. Seine Rohzaehler sind blind und bitgenau nachgerechnet, nach S3 aber nur als Diagnose, nicht als vertragliche Reproduktion. Die Abnahme sagt nichts darueber, ob die Klassen A, B oder U2 gerechnet erreichbar sind, ob die Generatoren ihre Eingaben pruefen oder ob SYN- und DR4-Kette funktionieren, und nichts zur Herkunftsfrage. OR2 bleibt nach A7.4 fachlich beendet.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260928/ks-1-or2-lauf/v-abnahme-dr3-l1/ABNAHME-OR2-DR3-L1-R2.json",
+      "sha256": "5d37a1609fc65a621af1fb2daa52bada016c1a02d6eff0c77e83cf744b23c1d4"
+    },
+    {
+      "path": "coordination/vertraege-20260928/ks-1-or2-lauf/v-abnahme-dr3-l1/AUFTRAG-ABNAHME-DR3-L1-R2.json",
+      "sha256": "11004815a018e0f64894021ddc53c8d019d4c98a21a49459f8511a78377e519d"
+    },
+    {
+      "path": "coordination/vertraege-20260928/ks-1-or2-lauf/v-abnahme-dr3-l1/ABNAHME-BERICHT-DR3-L1-BERICHTIGUNG-1.md",
+      "sha256": "9fee8e7fcc6d3e139622e9c2c7135080ca5f46ce70a7aa896c20af6cef19194b"
+    },
+    {
+      "path": "coordination/vertraege-20260928/ks-1-or2-lauf/s3-dr3-l1/S3-OR2-DR3-L1.md",
+      "sha256": "4ad64c571b0561461fa84446b3be8f8b26029ff0ad9c9f5a63201cffe8111ca5"
+    },
+    {
+      "path": "coordination/vertraege-20260928/ks-1-or2-lauf/v-abnahme-dr3-l1/ABNAHME-BERICHT-DR3-L1.md",
+      "sha256": "f0c784c5795fd8daadc8a5c2e2a72a9c4c893ccc89d409cf4617bea9e378ed0e"
+    },
+    {
+      "path": "coordination/vertraege-20260928/ks-1-or2-lauf/v-abnahme-dr3-l1/ABNAHME-OR2-DR3-L1.json",
+      "sha256": "28d2943d6f2afbfb8d12258890f8957de0fc5b1c970d2698b9c29ea1f4c7edd3"
+    },
+    {
+      "path": "coordination/vertraege-20260928/ks-1-or2-lauf/v-abnahme-dr3-l1/AUFTRAG-ABNAHME-DR3-L1.json",
+      "sha256": "386a8ee00ac0e06ed117baa9dd17c03a6aaa36a28d75d5791d5fc826714a9472"
+    },
+    {
+      "path": "coordination/vertraege-20260928/ks-1-or2-lauf/v-abnahme-dr3-l1/LEITUNG-ENTSCHEIDUNG-V-ABNAHME-L1-L6.md",
+      "sha256": "1128b4f210defb7af8c2d7308f30590bd133d1a2c0fcb70ff7be2e476b3ac195"
+    },
+    {
+      "path": "coordination/vertraege-20260928/ks-1-or2-lauf/v-abnahme-dr3-l1/PLAN-V-ABNAHME-DR3-L1.md",
+      "sha256": "c6125e9669dea4ee446ddcba6edee8ac4f0b603ab9edfb87b4390888e74a63f7"
+    },
+    {
+      "path": "coordination/vertraege-20260928/ks-1-or2-lauf/v-abnahme-dr3-l1/FA-BELEGE-SHA256.txt",
+      "sha256": "56ee495f5d0386cf1a55dc5ba0eeb9926051e3d7230a605f147f895c162b3643"
+    },
+    {
+      "path": "coordination/vertraege-20260928/ks-1-or2-lauf/v-abnahme-dr3-l1/p4/P4-DR3-L1.json",
+      "sha256": "9670c0aa542c2d7e4bac998d318e159a6d1bc5dd30e829dbdceefce75c50ff6b"
+    },
+    {
+      "path": "coordination/vertraege-20260928/ks-1-or2-lauf/v-abnahme-dr3-l1/register/REGISTERPROBE-DR3-L1.json",
+      "sha256": "b2e7870ef0ee78e1b36d20044f19217e65be776d2b43b8732612bf3d67584806"
+    },
+    {
+      "path": "coordination/vertraege-20260928/ks-1-or2-lauf/v-abnahme-dr3-l1/berichtszahlen/BERICHTSZAHLEN-DR3-L1.md",
+      "sha256": "a38246c29d33d2e60deb789a6273c06b4c1a80dd4cf14ca393720d0ab2a0b2c7"
+    },
+    {
+      "path": "coordination/vertraege-20260928/ks-1-or2-lauf/v-abnahme-dr3-l1/berichtszahlen/PROBE-BERICHTSZAHLEN-DR3-L1.json",
+      "sha256": "951df9dbc4c277ed7fd428101fde67ad1f178eb19810894d256879ed2a48ad39"
+    }
+  ],
+  "recorded_at": "2026-09-29T13:14:53.313555+00:00"
+}

@@ -1,0 +1,48 @@
+start 2026-10-03T16:12:31+00:00 spur=p4000a unit=fmhc-physics-klein-r34ef-f5-v0.01-dt0.05-161231
+Running as unit: fmhc-physics-klein-r34ef-f5-v0.01-dt0.05-161231.service; invocation ID: 1c741c0e383e4e339e486b9b702b7285
+torch 2.5.1+cu121, Geraet cuda (Quadro P4000)
+Netz n=5 h=0.3 R=60: 120876 Ecken, 119726 frei, Grad Spitze 5, Defekt 1.047198, Bauzeit bis jetzt 5.5 s
+statischer Ball: Q_lat 199.990000 E 157.28072096 omega 0.744849 c -5.8e-08 -9.1e-11 res 3.4e-08 aussen 12 (5.9 s)
+/home/fmh/fmhc-physics-remote/runde34-einfang/einfang.py:144: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at ../aten/src/ATen/SparseCsrTensorImpl.cpp:53.)
+  Lt = torch.sparse_csr_tensor(torch.tensor(Lff.indptr, dtype=torch.int64), torch.tensor(Lff.indices, dtype=torch.int64),
+Start: E 157.29602458 Q 200.00000000 E_rest 157.28816963 K_eff 0.007855 K_nominal 0.007865 x -16.0001 Q_ball 199.999579
+t 100.0 x -15.0011 x_S -15.0011 E 157.296029 E_damp 1.043e-06 Q 200.000000 E_ball 157.295705 Q_ball 199.999567 S_max 1.0503 (2.36 ms/Schritt)
+t 200.0 x -14.0019 x_S -14.0020 E 157.296027 E_damp 1.981e-06 Q 199.999999 E_ball 157.295717 Q_ball 199.999581 S_max 1.0504 (2.36 ms/Schritt)
+t 300.0 x -13.0017 x_S -13.0016 E 157.296027 E_damp 2.210e-06 Q 199.999999 E_ball 157.295718 Q_ball 199.999583 S_max 1.0504 (2.35 ms/Schritt)
+t 400.0 x -11.9962 x_S -11.9961 E 157.296028 E_damp 2.285e-06 Q 199.999999 E_ball 157.295707 Q_ball 199.999569 S_max 1.0503 (2.35 ms/Schritt)
+t 500.0 x -10.9700 x_S -10.9699 E 157.296026 E_damp 2.313e-06 Q 199.999999 E_ball 157.295722 Q_ball 199.999590 S_max 1.0505 (2.35 ms/Schritt)
+t 600.0 x -9.8521 x_S -9.8518 E 157.296030 E_damp 2.326e-06 Q 199.999999 E_ball 157.295715 Q_ball 199.999577 S_max 1.0502 (2.35 ms/Schritt)
+t 700.0 x -8.1930 x_S -8.1889 E 157.296060 E_damp 2.335e-06 Q 199.999999 E_ball 157.295757 Q_ball 199.999592 S_max 1.0490 (2.37 ms/Schritt)
+t 800.0 x 1.9529 x_S 1.9403 E 157.295871 E_damp 2.361e-06 Q 199.999999 E_ball 157.295009 Q_ball 199.999041 S_max 1.0475 (2.37 ms/Schritt)
+t 900.0 x 8.5770 x_S 8.5743 E 157.295696 E_damp 3.046e-04 Q 199.999728 E_ball 157.294131 Q_ball 199.998100 S_max 1.0530 (2.37 ms/Schritt)
+t 1000.0 x 9.7015 x_S 9.7006 E 157.295181 E_damp 8.702e-04 Q 199.999190 E_ball 157.293782 Q_ball 199.997680 S_max 1.0488 (2.39 ms/Schritt)
+t 1100.0 x 10.2402 x_S 10.2394 E 157.294872 E_damp 1.187e-03 Q 199.998885 E_ball 157.293774 Q_ball 199.997670 S_max 1.0482 (2.39 ms/Schritt)
+t 1200.0 x 10.5420 x_S 10.5419 E 157.294513 E_damp 1.460e-03 Q 199.998620 E_ball 157.294021 Q_ball 199.998074 S_max 1.0544 (2.40 ms/Schritt)
+t 1300.0 x 10.7144 x_S 10.7145 E 157.294516 E_damp 1.576e-03 Q 199.998510 E_ball 157.293396 Q_ball 199.997224 S_max 1.0457 (2.41 ms/Schritt)
+t 1400.0 x 10.7826 x_S 10.7822 E 157.294355 E_damp 1.639e-03 Q 199.998451 E_ball 157.293867 Q_ball 199.997876 S_max 1.0530 (2.41 ms/Schritt)
+t 1500.0 x 10.7337 x_S 10.7333 E 157.294320 E_damp 1.706e-03 Q 199.998389 E_ball 157.293708 Q_ball 199.997695 S_max 1.0506 (2.42 ms/Schritt)
+t 1600.0 x 10.5755 x_S 10.5753 E 157.294272 E_damp 1.806e-03 Q 199.998295 E_ball 157.293515 Q_ball 199.997415 S_max 1.0469 (2.42 ms/Schritt)
+t 1700.0 x 10.2938 x_S 10.2935 E 157.294063 E_damp 1.899e-03 Q 199.998208 E_ball 157.293744 Q_ball 199.997833 S_max 1.0553 (2.42 ms/Schritt)
+t 1800.0 x 9.8077 x_S 9.8068 E 157.294133 E_damp 1.955e-03 Q 199.998155 E_ball 157.293308 Q_ball 199.997180 S_max 1.0462 (2.43 ms/Schritt)
+t 1900.0 x 8.8267 x_S 8.8255 E 157.294016 E_damp 1.998e-03 Q 199.998116 E_ball 157.293419 Q_ball 199.997411 S_max 1.0518 (2.43 ms/Schritt)
+t 2000.0 x 3.9880 x_S 3.9620 E 157.293898 E_damp 2.063e-03 Q 199.998056 E_ball 157.292601 Q_ball 199.996633 S_max 1.0456 (2.43 ms/Schritt)
+t 2100.0 x -7.7490 x_S -7.7369 E 157.293724 E_damp 2.361e-03 Q 199.997789 E_ball 157.290433 Q_ball 199.994576 S_max 1.0494 (2.43 ms/Schritt)
+t 2200.0 x -9.2745 x_S -9.2740 E 157.291816 E_damp 4.222e-03 Q 199.996065 E_ball 157.289747 Q_ball 199.993914 S_max 1.0499 (2.44 ms/Schritt)
+t 2300.0 x -9.6456 x_S -9.6456 E 157.290994 E_damp 5.048e-03 Q 199.995281 E_ball 157.289471 Q_ball 199.993676 S_max 1.0496 (2.44 ms/Schritt)
+t 2400.0 x -9.4743 x_S -9.4735 E 157.290423 E_damp 5.568e-03 Q 199.994793 E_ball 157.289413 Q_ball 199.993735 S_max 1.0531 (2.44 ms/Schritt)
+t 2500.0 x -8.5625 x_S -8.5592 E 157.290163 E_damp 5.930e-03 Q 199.994456 E_ball 157.288955 Q_ball 199.993132 S_max 1.0464 (2.44 ms/Schritt)
+t 2600.0 x -1.9331 x_S -1.9196 E 157.289527 E_damp 6.193e-03 Q 199.994216 E_ball 157.287785 Q_ball 199.992413 S_max 1.0579 (2.45 ms/Schritt)
+t 2700.0 x 8.0455 x_S 8.0425 E 157.289177 E_damp 6.915e-03 Q 199.993565 E_ball 157.285355 Q_ball 199.989773 S_max 1.0466 (2.46 ms/Schritt)
+t 2800.0 x 8.9133 x_S 8.9116 E 157.286863 E_damp 9.135e-03 Q 199.991490 E_ball 157.284544 Q_ball 199.989160 S_max 1.0528 (2.46 ms/Schritt)
+t 2900.0 x 7.8010 x_S 7.7890 E 157.286178 E_damp 9.980e-03 Q 199.990703 E_ball 157.283821 Q_ball 199.988269 S_max 1.0439 (2.46 ms/Schritt)
+t 3000.0 x -3.6502 x_S -3.6312 E 157.285022 E_damp 1.078e-02 Q 199.989961 E_ball 157.278700 Q_ball 199.983905 S_max 1.0546 (2.47 ms/Schritt)
+t 3100.0 x -8.4359 x_S -8.4328 E 157.280649 E_damp 1.546e-02 Q 199.985770 E_ball 157.274741 Q_ball 199.979887 S_max 1.0454 (2.47 ms/Schritt)
+t 3200.0 x -7.0515 x_S -7.0307 E 157.277533 E_damp 1.855e-02 Q 199.982870 E_ball 157.273112 Q_ball 199.978519 S_max 1.0506 (2.47 ms/Schritt)
+Ende: T erreicht, t 3200.0, 2.47 ms/Schritt, Dauer 171.0 s, geschrieben /home/fmh/fmhc-physics-remote/runde34-einfang/lauf/ef-f5-v0.01-dt0.05.json
+Finished with result: success
+Main processes terminated with: code=exited/status=0
+Service runtime: 2min 51.648s
+CPU time consumed: 2min 51.471s
+Memory peak: 324.0K
+Memory swap peak: 0B
+ende 2026-10-03T16:15:23+00:00 rc=0 unit=fmhc-physics-klein-r34ef-f5-v0.01-dt0.05-161231

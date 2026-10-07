@@ -1,0 +1,36 @@
+{
+  "id": "claude-synchronisation-bindung-20260912",
+  "time": "2026-09-12T06:17:20+02:00",
+  "time_kind": "completed",
+  "author": "Claude (claude-primary, TS440)",
+  "topic": "micro",
+  "status": "checked",
+  "title": "Punkt-Wellen: bei Kopplung g = 1,0 persistente dynamische Bindung eines phasengeordneten Clusters; bei g = 0,35 Trennung (Kontrolle)",
+  "question": "Bindet die Punkt-Wellen-Familie oberhalb der Synchronisationsschwelle, und wo liegt das Schwellenfenster?",
+  "action": "Laeufe f/g/h auf TS440 (physics.py unveraendert): g-Fenster 0,45 bis 0,65 (50 Laeufe, T=12), Bindung g=1,0 (6 Laeufe, T=60, h=0,0003125, Kriterium vorab: r<3 in [30,60] und <E_rel><0), Kontrollen g=0,35 und 0,7 bei T=60 sowie N=2 bei g=1,0.",
+  "result": "Fenster: g* equal 0,65, seedabhaengig zwischen 0,45 und 0,65. Bindung: alle sechs g=1,0-Laeufe Cluster (Abstaende <= 4,1, E_rel -1,2 bis -2,0, R >= 0,97, r_min 0,78), 3 bis 5 von 6 Paaren erfuellen das strenge Kriterium; N=2: 2 von 3 Seeds gebunden. Kontrolle g=0,35: Trennung (Abstaende bis 28, E_rel > 0). g=0,7: Schwebe. Abnahme 1e-5: f 50/50, g 5/6 (1,1e-5), h 9/9. Fehler: R in Lauf h ungueltig (Division durch Schrittzahl), Rest unberuehrt.",
+  "meaning": "Erste persistente dynamische Bindung der Punkt-Wellen-Reihe mit negativer Kontrolle; der Standardwert g=0,7 liegt im Uebergangsfenster und erklaert die frueheren uneinheitlichen Befunde. Grenzen: instantane Kopplung als Potential, Feldbox L=16/49 Moden ohne Konvergenzpruefung, T=60, drei Seeds. Vor einem Registereintrag: Moden-/Boxkonvergenz und T=200.",
+  "sources": [
+    {
+      "path": "coordination/synchronisation-warp-archive-20260912.md",
+      "sha256": "132f3c85d9bfa6a12e0b8de533475b071104ed9e3abe1be0a0aa044b8277a183"
+    },
+    {
+      "path": "coordination/claude-synchronisation-20260912/runs/g/ERGEBNIS.json",
+      "sha256": "1381d6a959c156399a4a53db52f7f3ce363ebd9be2708dd1012db0855aa3dccb"
+    },
+    {
+      "path": "coordination/claude-synchronisation-20260912/runs/h/ERGEBNIS.json",
+      "sha256": "004fba6032ede98e530a452cf839b65d094f923be8a0ccc7e862d9556141a615"
+    },
+    {
+      "path": "coordination/claude-synchronisation-20260912/runs/f/ERGEBNIS.json",
+      "sha256": "3c89b1dba9cbc0f8a0669b759308589e4b181848479a58951c0b8fd053fa18ad"
+    },
+    {
+      "path": "coordination/claude-synchronisation-20260912/run_sync3.py",
+      "sha256": "cde57ab3d73de87856be51e85453efb66e9aec447524a6b49d6a71d45869eea3"
+    }
+  ],
+  "recorded_at": "2026-09-12T04:17:20.933200+00:00"
+}

@@ -1,0 +1,49 @@
+{
+  "id": "claude-runde-v3-16-20261002",
+  "time": "2026-10-02T09:51:39+02:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung, Karten, Abschaetzung und eigene Rechnungen STABIL-6-8-12, TETRAKETTE-1; Code-Agenten Anthropic (Opus 5.5); Gegenleser pruefer-opus",
+  "topic": "theory",
+  "status": "reported",
+  "evidenzart": "modell",
+  "title": "Runde 16 nach v3 (explorativ): Q-Ball baut sich im Zweifeldmodell eine Huelle, bleibt aber Tropfen (Beutelgesetz Q^(3/4) nur mit freiem Inhalt); 12 im Raum und 6 in der Ebene stabil, 8 nicht; Tetraederkette 11+1/19+1 nicht stabiler als Nachbarn, nur Geometrie 4/11; Log-Stelle blind reproduziert; Finns Drei-Teile-Hypothese teilweise gestuetzt",
+  "question": "Finns Fragen vom 02.10.: Arbeitsmodell Zwei Seiten pruefen und ausprobieren; sind Q-Baelle und Hadronenhuellen dasselbe; wann ist ein System aus drei Teilen stabil oder chaotisch; welche Zahlen (6, 8, 12, 11+1, 19+1) sind stabil; laesst sich die Log-Stelle unabhaengig wiederfinden?",
+  "action": "Acht Karten mit Vorhersagen vor jedem Lauf (LOG-NACHBAU blind mit versiegelter Vorhersage, AUSPROBIEREN V1-V5, DREI-TAKT, BEUTEL-1, STABIL-6-8-12, TETRAKETTE-1, dazu Codex TETRA und Review); Laeufe .69 kleintest.sh; zwei frische Gegenlesungen des Arbeitsmodells (v2 -> v2.1 -> v2.2).",
+  "result": "LOG-NACHBAU: Stelle 0,9256098/1,8379959 blind auf ~1e-6, Umlauf -1 nur post hoc aufgeloest. BEUTEL-1: M2 E/Q -> 0,853, Huelle ab Q ~ 370, p 0,90-1 (Tropfen); M3 p = 0,7503, Huellenanteil 0,2497. STABIL: Thomson D2-Gipfel 12 (1,119) und 6, 8 kein Gipfel (Wuerfel Sattel), 11 Minimum; LJ 13 (2,84), 19, 7, 23; nur fcc unter den Nachbarfedergittern starr. TETRAKETTE: 12/20 Ecken in Steifigkeit, Feld, LJ, Schnitten nicht besonders (12 nur im Kurzkettenverbund markiert); theta = arccos(-2/3), 11 Schritte ~ 4 Umlaeufe (9,9 Grad). DREI-TAKT: Rastdauer ~ Abstand^(-1/2); gleicher Takt hilft nur in Phase; Exzentrizitaet stabilisiert L4 bis mu = 0,0458 (jenseits Routh) und destabilisiert 59 % darunter; Chaos ab drei Phasen plus Takt. V1/V2 Positivkontrollen bestanden (Maxwell N >= 7, c_N -> 2,30).",
+  "meaning": "Explorativ, keine Messdaten. Klassische Spielzeugmodelle; keine Aussage ueber reale Elementarteilchen. Stabilitaetszahlen 12/6 sind Packungsgeometrie; der Beutelexponent d/(d+1) misst die Dimension (3/4 in 3D, Kehrwert 4/3), herleiten laesst sich die Dimension nicht. Finns 11+1/19+1 zeigt keine Stabilitaetsrolle, nur eine geometrische Ausrichtung der Tetraederhelix.",
+  "sources": [
+    {
+      "path": "coordination/runden-v3/RUNDE-16.md",
+      "sha256": "b3a802b812d198b925a68e60376afed2017fc4e37f69583620d9b29127e9e7bd"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-16/beutel-1/ERGEBNIS.md",
+      "sha256": "f467070c6019fd72cec3a9624039229f4b1b5f21850cd12eceac3dda23b9f8cf"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-16/stabil-6-8-12/ERGEBNIS.md",
+      "sha256": "e8a05baea0410fcaf993329edc7a72285a8421d5cd438c79e6e940a5f01110f7"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-16/tetrakette-1/ERGEBNIS.md",
+      "sha256": "33ffe6d91ea21fea188edcd51a3e4278d747e6d701157d3b57462810e0dc2da0"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-16/drei-takt/ERGEBNIS.md",
+      "sha256": "3f63820f8feae114c8faaf785d7d522b468e9fad154541d1faa8d4a3fe3f1a98"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-16/log-nachbau/ERGEBNIS.md",
+      "sha256": "10217aafbd93f4ee242284ad23ee8a0ac8480305282fd5d6429d3a9b16765516"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-16/zwei-seiten/ausprobieren/ERGEBNIS.md",
+      "sha256": "e651453cc9b5250019ddb484e2aeb08f9b60bd7d6cb3554ae9e16b53fe43baee"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-16/zwei-seiten/ZWEI-SEITEN-DES-FELDES-v2.md",
+      "sha256": "ce233a5558c6291923cc683bb898e7e8e4475b00fa5aa7b5f1fa0cae555f2c06"
+    }
+  ],
+  "recorded_at": "2026-10-02T07:51:42.276434+00:00"
+}

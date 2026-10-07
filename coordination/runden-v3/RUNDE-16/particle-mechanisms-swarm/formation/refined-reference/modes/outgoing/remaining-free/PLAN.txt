@@ -1,0 +1,34 @@
+Fehlende freie Kontrollen, particle_binding, 02.10.2026
+Nur Autorentwurf; keine Ausführung. Nichtautorreview vor .69-Lauf.
+
+Genau zwei freie Fälle bei R30,h=.05,omega=.8,nu=1: (1) ausschließlich
+geschlossene chi-Gaußquelle exp(-r²/4), (2) offene Plus-Gaußquelle mit
+absichtlich einlaufendem Robinvorzeichen. f=0,chi=1. Kein h=.025 nötig:
+die beiden ursprünglichen Kontrollen hatten keine h-Verhältnisregel.
+Keine M2-Quelle/-Referenz, kein Produktionsfall, keine Evolution.
+
+Unverändertes outgoing.solve importieren, SHA256
+75b1dce542aa728fe6bf58ecea4aec4a2ddf8a6a5a6e236666075c6902bbd292;
+grid aus modes/code.py SHA256
+467ad3e19cd8efcdac4ec2dcc670b50aaa59cc6f7e9e44d625ebbf94ba0d32c6.
+Originalresultat als unveränderte Provenienz prüfen:
+9f0b975784c3b5111fc95ae804db89b33cbbca750637ff2161c084c211a55e9f.
+
+Unveränderte alte Tore: beide algebra_flags aus solve (finite, Rest<1e-10,
+Workbilanz<1e-7 mit ursprünglichem Nenner). Closed zusätzlich
+||p||V/||c||V<1e-12 und |Frot_FV|/(2nu||a||V||s||V)<1e-12.
+Incoming zusätzlich Frot_FV<0. KEIN positiver-Fluss-Gate für Incoming;
+KEIN Nichtnull-/Fenster-/Produktionsgate für Closed. Fenster15..20/20..25
+werden nur wie im alten solve mitgeführt. Keine Gateänderung.
+
+JSON und vollständige Felder nach jedem abgeschlossenen Fall, NPZ-Hashes;
+bei fehlgeschlagenem Gate UNRESOLVED und keine automatische Fortsetzung.
+Beide bestanden: REMAINING_FREE_CONTROLS_PASSED_H005. Diese Aussage gilt
+nur für die zwei freien Kontrollen auf h=.05. Weder Gesamtfreigabe des
+ursprünglichen Vierfallplans noch M2-Nachweis. Alter coarse-ProfilFAIL und
+UNRESOLVED bleiben unverändert, keine Kopie ihres Status als PASS.
+
+CLI --outgoing CODE --operator MODES_CODE --previous OLD_RESULT --out NEW.
+<=3CPU-s insgesamt auf .69, ein Thread, nice19; interner Checkpoint2.5CPU-s
+vor jedem Solve und vor Abschluss, äußerer Rootdeckel für native Operationen.
+Teilstand bei Abbruch INCOMPLETE. Keine Retries, keine weiteren Gitter.

@@ -1,0 +1,31 @@
+{
+  "id": "claude-gauntlet-v2-runde5-20260912",
+  "time": "2026-09-12T02:12:00+02:00",
+  "time_kind": "completed",
+  "author": "Claude (Jury: gpt-6-astra ueber Codex-CLI, effort high)",
+  "topic": "operations",
+  "status": "technical",
+  "title": "Gauntlet v2, Runde 5: M1.3 und M3.3 auf bronze; alle Sachbehauptungen des Laufs jetzt bronze, nur die Kontrolle K1 faellt planmaessig",
+  "question": "Reichen die eingefrorenen Erzeugerskripte fuer M1.3 (bedingter Gaia-Vergleich) und M3.3 (Fehlerellipse, Median-Bias, Scangesetz), um Runde 5 ohne Einwand zu bestehen?",
+  "action": "Runde 5 (Manifest 52cb4f0f), drei Richter, zehn Urteile, Ernte durch runde.py.",
+  "result": "M7 3x PASS, K1 3x FAIL (Kalibrierung ok); S1.2, S2.2 PASS (bleiben bronze, Evidenz unveraendert); M1.3 PASS -> bronze; M3.3 PASS -> bronze. Keine Patchliste ausser K1. Stand: M7 silber; S1.2, S2.2, T4.2, M1.3, M3.3 bronze; Vorgaengerversionen mit Veto archiviert.",
+  "meaning": "Bronze heisst reproduzierbar und intern konsistent, nicht bestaetigt. Ein weiterer Aufstieg braucht neue Evidenz (Stagnationsregel), also Reproduktionen oder Systematikbezifferung, nicht weitere Richterrunden auf gleichem Stand; die Schleife pausiert bis dahin, um Kontingent zu sparen.",
+  "sources": [
+    {
+      "path": "gauntlet/new-runs/entwicklung-v2-20260911/rounds/005/manifest.json",
+      "label": "Manifest Runde 5",
+      "sha256": "c0d0ea0586d58edc2bc726bb98618bcc516914d2abaa31d253844222cc2b31b1"
+    },
+    {
+      "path": "gauntlet/new-runs/entwicklung-v2-20260911/scoreboard.tsv",
+      "label": "Scoreboard",
+      "sha256": "9e6f928efd038656595327e677e90bb66087f1b4e40ca68d6fb802d4405904e3"
+    },
+    {
+      "path": "gauntlet/new-runs/entwicklung-v2-20260911/zustand.json",
+      "label": "Zustand",
+      "sha256": "fc979c2e2574ac97d1bee6a7e59a61abe0200d47fe333b534d9837c12a2b813a"
+    }
+  ],
+  "recorded_at": "2026-09-12T00:12:37.922222+00:00"
+}

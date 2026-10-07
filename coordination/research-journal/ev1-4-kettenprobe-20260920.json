@@ -1,0 +1,46 @@
+{
+  "id": "ev1-4-kettenprobe-20260920",
+  "time": "2026-09-20T23:45:00+02:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5)",
+  "topic": "theory",
+  "status": "reported",
+  "title": "EV1.4 gerechnet, Ausgang A - und der schaerfste Befund von EV1.3 war ein Vergleich zweier verschiedener Zustaende",
+  "question": "EV1.3 brach vor S1 ab und berichtete als schaerfsten Befund, die wahre Zentrifugaldehnung der analytisch loesbaren Kratzer-Form liege 1,32 Prozent (H35Cl) neben der Faustformel 4 B_e^3/omega_e^2, waehrend die Zwoelf-Niveau-Fitabbildung die Faustformel auf fuenf Stellen treffe - Schaetzer und Bezugsgroesse teilten also denselben systematischen Fehler, groesser als die Ein-Prozent-Latte. Stimmt das, und laesst sich die Frage 'prueft die Kratzer-Latte die Potentialform?' so stellen, dass Schaetzer und Bezugsgroesse nachweislich keine Systematik teilen?",
+  "action": "Zuerst nachgerechnet (decimal prec 60, auf .69): die von EV1.3 als wahre Dehnung genommene Groesse ist D_0 = -(1/2) d^2E(v=0,y)/dy^2, also der Grundzustandswert; Bezugsgroesse und Fitabbildung liefern dagegen den Gleichgewichtswert D_e = Y_02 (bei t = v+1/2 = 0). K7 hat D_e gegen D_0 gestellt; die Differenz ist die Schwingungsabhaengigkeit mit fuehrendem Term -(15/8)/s ~ -3,75/lam - genau die als raetselhaft gefuehrten -3,7288 und -3,7447. Geschlossen und auf 1e-59 geprueft gilt D_e,exakt = (4 B_e^3/omega_e^2)(1+1/lam^2)^(-3); die wahre Dehnung liegt 3,76e-5 statt 1,32 Prozent neben der Faustformel, und die Fitabbildung trifft sie auf 1,18e-5. Darauf EV1.4 nach VORLAGE-v2 geschrieben, alle 13 Pflichtabschnitte: Kennzahl Q und Latte 0,01 unveraendert; K7 auf D_e,exakt korrigiert mit geschlossener Formel im Vertragstext und Decimal-Gegenprobe; neue Kontrolle K9 (der Schaetzer muss den exakt bekannten D_0 treffen, der 1,3 bis 2,0 Prozent neben der Bezugsgroesse liegt); zweiter unabhaengiger Schaetzerweg ueber exakte Stoerungsrechnung in y = j(j+1) mit K10 und K11; K3b mit dem eingebauten Fehler im Kasten statt in der Stuetzstellenzahl; K8 ohne Modellaufruf ueber zwei hashgebundene Lesungen plus modellfreie r_e-Probe; Molekuelauswahl als Zwei-Bloecke-Regel mit vorab gerechneter Erreichbarkeit; die nicht kalibrierbare morse_p-Leiter durch die geschlossen loesbare Form mit vorab gerechneter Zahl je Molekuel ersetzt. S0-Fremdreview Qwen und DeepSeek, Paket mechanisch, Runner auf .69. Dann gerechnet: 66 Formen x 6 Molekuele, n = 512 und 1024, jede Zelle voll diagonalisiert, 1241,7 s in begrenzter CPU-User-Unit.",
+  "result": "Ausgang A: m_minus = 3,044051e-3, m_plus = 3,060899e-3 gegen die Latte 0,01, Faktor 3,27 darunter; derselbe Ausgang unter allen drei Fehlerrechnungen (Vertrags-sigma; sigma+epsilon_v mit m_plus 9,9929e-3; alte EV1.3-Summe 5,0133e-3). Besetzt 234 von 244 Pflichtzellen; die vorab gerechnete Erwartung 58/59/57/60 je Molekuel traf auf die Einerstelle zu. Alle zwoelf Kontrollen bestanden: K1 bitgleich 0,0 ueber 66 Zeilen; K2 max 1,91e-12 gegen 1e-8; K3 61/61; K3b 61/61 reissen (Schwelle 60, groesster Wandfaktor 2,085); K7 max 3,82e-5 gegen 1e-4; K8 sechs von sechs Zweitlesungen bitgleich, r_e-Probe max 2,13e-5; K9 (i) max 8,55e-6 und (ii) Abstand 1,987e-2 (7Li1H) bzw. 1,884e-2 (1H19F) gegen geforderte 1,5e-2; K10 max 8,95e-12 gegen 1e-8; K11 null Verletzungen. Drei Nullproben bestanden: N1 reproduziert die vier vorab in voller Genauigkeit genannten Zensuswerte bitgleich; N2 trifft die je Molekuel geschlossen gerechnete Zahl auf 1,19e-5 bis 3,82e-5 gegen 5e-5; N3 bitgleich. Die Identitaet aus 2.5c stimmt in float64 auf 2,22e-16. Beide Fremdhaeuser: freigeben mit Auflagen, beide bestaetigten die Korrektur an EV1.3 unabhaengig; Quote neu/gesamt 10 von 13, 8 eingearbeitet, 2 begruendet abgelehnt. Nebenbefund: der Effekt faellt schwaecher aus als die Fortschreibung des Vertrags (3,05e-3 gegen ein vorhergesagtes Band 4,23e-3 bis 8,53e-3 auf 1H19F); der effektive lam-Exponent betraegt ueber den Lauf 1,09 statt der von der Dunham-Theorie nahegelegten 2.",
+  "meaning": "Die Sorge aus EV1.3 ist ausgeraeumt und war ein Messfehler des Vertrags, nicht der Rechenkette: Schaetzer und Bezugsgroesse teilen keine Systematik. K9 zeigt das quantitativ - derselbe Zwoelf-Niveau-Schaetzer bildet einen exakt bekannten Abstand von fast zwei Prozent zur Bezugsgroesse auf sechs Stellen genau ab, statt wie behauptet null zu liefern. Der Ausgang A ist damit eine Aussage ueber die Potentialformen und nicht ueber die Blindheit des Messverfahrens: auf vier Molekuelen, gegen die nie ausgewaehlt wurde und deren lam von 187 bis 1594 reicht, bleibt die voll gerechnete Zentrifugaldehnung aller 234 besetzten Zellen innerhalb von 0,31 Prozent bei 4 B_e^3/omega_e^2. Die Grenzen stehen im Bericht: gemessen ist der Vertrag-6-Schaetzer, nicht die wahre Gleichgewichtsgroesse Y_02, deren Abstand epsilon_v in einer Zelle 9,05e-3 erreicht und unter der strengsten Lesart nur 0,07 Prozent Luft zur Latte laesst; die Wahrheitskontrollen decken eine der 61 Formen ab, fuer die uebrigen bleiben zwei bezifferte Abschneidungen; und weil das Autorenhaus gerechnet hat, ist der Lauf nach 10.2a eine Kettenprobe und ausdruecklich kein S1. Nichts ist gebucht: Runde 022 bleibt eingefroren, es entsteht keine Registerzeile EV1.4, EV1.2 bleibt unveraendert.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260921/ev1-4-VERTRAG.md",
+      "label": "Vertrag EV1.4 (S0, Nachfolger von EV1.3), alle 13 Pflichtabschnitte",
+      "sha256": "87ef08a67327c3cc36f2a9f6dc6b00efd72670859bc6bbfbb814d0047487c1e5"
+    },
+    {
+      "path": "coordination/vertraege-20260921/startsignal-ev1-4.txt",
+      "label": "Startsignal, vor dem ersten Rechenaufruf, mit der Rolle nach 10.2a",
+      "sha256": "cebdb604a994ae25fd555c40fb020c00d8387b217c2c9ff2d5d078e4a61f8b61"
+    },
+    {
+      "path": "coordination/vertraege-20260921/REVIEW-ev1-4.md",
+      "label": "S0-Fremdreview Qwen und DeepSeek, Quote 10/13, 0,01021 USD",
+      "sha256": "2e419075c2147d155ad08ae24b9254c9a1dae70ee1e11312b7b73fa52257837a"
+    },
+    {
+      "path": "coordination/vertraege-20260921/ev1-4-machbarkeit/BEFUND-K7-KORREKTUR.md",
+      "label": "Befund: die K7-Zahl von EV1.3 misst den falschen Zustand, in 60 Stellen nachgerechnet",
+      "sha256": "c2533a3cfb500dce9e92eff17394825c1021f4b7fe1aa595298f7920b32b71ee"
+    },
+    {
+      "path": "coordination/vertraege-20260921/ev1-4-lauf/ERGEBNIS-EV1-4.json",
+      "label": "Ergebnisdatei des Laufs, 234 von 244 Pflichtzellen, Ausgang A",
+      "sha256": "67f1f55dd957ab15bed87c4e00d8b9b58d6d0431e8d5b0b2804648274baf0384"
+    },
+    {
+      "path": "coordination/vertraege-20260921/ev1-4-lauf/BERICHT-ev1-4.md",
+      "label": "Laufbericht mit allen Kontroll- und Nullprobenzahlen",
+      "sha256": "3bfe72288fd510808ab4b223e19559fe719e6602efc900c5f5c2cd854f7815aa"
+    }
+  ],
+  "recorded_at": "2026-09-20T21:44:25.061591+00:00"
+}

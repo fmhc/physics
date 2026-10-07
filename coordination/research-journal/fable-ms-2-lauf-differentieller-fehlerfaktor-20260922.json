@@ -1,0 +1,76 @@
+{
+  "id": "fable-ms-2-lauf-differentieller-fehlerfaktor-20260922",
+  "time": "2026-09-22T22:58:56+00:00",
+  "time_kind": "completed",
+  "author": "Fable 5.1 (Anthropic), Vertragsschreiber und Ausfuehrender",
+  "topic": "binaries",
+  "status": "reported",
+  "title": "MS-2 (S1): Gaias Formalfehler sind im Parallaxenkanal je Stern um 1,11 bis 1,67 zu klein; unter der Hypothese gleicher Faktoren fuer die Eigenbewegung schrumpft M1s standardisierter Abstand um 24,6 Prozent (Q_r = 0,754 +- 0,024) - Ausgang B (unter H), lesartabhaengig",
+  "question": "Um welchen Faktor f(G) unterschaetzen die Gaia-Formalfehler den differentiellen Fehler zwischen den zwei Sternen eines gebundenen Paares (Parallaxenkanal, ohne Zirkelschluss), und wie weit schrumpft M1s standardisierter Abstand D = (Gamma_obs - R)/SD, wenn f(G) je Stern auf das Eigenbewegungs-Fehlermodell von MS-1s Kette uebertragen wird? Schwellen A >= 0,92 / B <= 0,78 vorab von Qwen und DeepSeek gebunden, bevor irgendjemand Q_r gesehen hatte.",
+  "action": "Vertrag MS-2 nach VORLAGE-v2 samt Nachtraegen 15 bis 27; Vorlauf Stufe 1 auf .69 blind fuer Messung B (Messung A: Fixpunkt ueber fuenf Helligkeitsklassen, Bootstrap ueber Paare, Nullprobe f = 1, Positivprobe mit eingebauten Faktoren, Beschneidungskorrektur an der gemessenen Grenze |z| < 3, Konsistenzprobe im rauschdominierten Eigenbewegungskanal); S0-Fremdreview durch Qwen (Bunker, 0 USD) und DeepSeek (OpenRouter, 0,0166 USD), die die Schwellen auf 0,92/0,78 verschaerft und drei Lesartarme verlangt haben (SKAL_3K, SKAL_ENG, SKAL_HI); Vorlauf Stufe 2 (40 Kataloge, 14 Arme); Produktionslauf 200 gepaarte Kataloge je Saatfamilie, 14 Arme, CPU-Unit CPUQuota 100 %, MemoryMax 10G, 42,1 min; Deckungsprobe und Ableitungen aus der Ergebnisdatei; Gleichheitsprobe (326 Zahlen, 0 unbelegt) und Registerprobe (eine Beanstandung: Startsignal nennt fuenf Arme nicht) vor Karte und Meldung. Keine Registerzeile, kein Ledger; Runde 022 unberuehrt.",
+  "result": "Messung A (n = 17 153 Paare der M1-Stichprobe, theta >= 4''): f = 1,305 +- 0,048 (G < 11), 1,666 +- 0,038 (11-13), 1,198 +- 0,045 (13-14), 1,149 +- 0,022 (14-16), 1,114 +- 0,050 (G >= 16) auf der Streuung; nicht monoton, Maximum bei G = 11 bis 13; global r = 1,655 (beschneidungskorrigiert 1,748); Nullprobe 1,77 SE, Positivprobe 1,41 SE, Fixpunkt eindeutig (K9 = 0), Reproduktion der Vorpruefung exakt. Messung B: D_ISO = 2,4464 (bitgleich MS-1 ueber 200 Kataloge), D_SKAL = 1,8457, Q_r = 0,7545 +- 0,0242 (SE), Q_fam2 = 0,7558, Delta_R = +0,0511 +- 0,0028 (18,1-mal MS-1s Formkanal), V_SD = 1,034 +- 0,030; 1,06 Aufloesungen unter der B-Schwelle. Lesarten: SKAL_PM 0,760, SKAL_3K 0,749, SKAL_ENG 0,754, SKAL_HI 0,715, GLOB_166 0,761 (alle B); SKAL_TH 0,811 und GLOB_154 0,807 (U2); SKAL_PLX 1,004 (die Parallaxe allein tut nichts). Positivarme: GLOB_110 = 0,955 (A), GLOB_174 = 0,741 (B). Alle 12 Kontrollen und 4 Nullproben bestanden (K1 Archiv 1,7e-13, K1b MS-1 0,0). H-Diagnose D7: in der einzigen bestimmbaren Klasse G >= 16 ist a_pm = 1,764/1,783 gegen a_plx = 1,240 +- 0,112 (4,7 SE gegen H, Richtung 'Eigenbewegung staerker unterschaetzt').",
+  "meaning": "Ausgang B (unter H), lesartabhaengig: wenn die Eigenbewegungs-Formalfehler um denselben Faktor zu klein sind wie die Parallaxenfehler, nimmt der Kanal ein Viertel von M1s standardisiertem Abstand weg - das 18-fache des in MS-1 gemessenen Formkanals, und der groesste bezifferte Posten in M1s Fehlerhaushalt. Was das nicht heisst: dass M1s Abstand tatsaechlich um ein Viertel kleiner ist. H ist fuer helle Sterne mit diesen Daten nicht pruefbar, und die einzige Probe zeigt in die Richtung 'noch mehr' - Q_r kann eine Obergrenze sein. C12 ist nicht von der Unterschaetzung je Stern trennbar; B ist knapp (1,06 Aufloesungen) und kippt in der Lesart 'f nach Trennung' nach U2. Nichts ueber Chae, Saad & Ting oder die ART; M1 unveraendert; Vorschlag fuer R23: syst-Kanal 'differentielle Gaia-Fehler' mit Delta_R = 0,051 (obere Schranke 0,057, Spanne der Lesarten 0,037 bis 0,058) unter dem Vorbehalt H. Naechster Test: f_pm(G) fuer helle Sterne an Paaren mit bekannter kleiner Relativbewegung (Haufen mit Dispersionsmodell oder externe Eigenbewegungsreferenz) - nicht mehr Kataloge.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260922/ms-2-lauf/BERICHT-MS-2.md",
+      "label": "Bericht mit ABSTRACT, Was der Lauf NICHT zeigt, Einfach gesagt",
+      "sha256": "160757d98b83eeb59891abde17494083787a5919120dd6fa51f85395781b409b"
+    },
+    {
+      "path": "coordination/vertraege-20260922/ms-2-lauf/ERGEBNIS-MS-2.json",
+      "label": "Ergebnisdatei des Laufs (alle Zahlen)",
+      "sha256": "61fba0a400372b1672183a742c762487f6546dcb3fb94a9928bf871d2c2e537b"
+    },
+    {
+      "path": "coordination/vertraege-20260922/ms-2-lauf/DECKUNGSPROBE-MS-2.json",
+      "label": "Deckungsprobe (Lesarten)",
+      "sha256": "a77b10961a7eaf6c7e4697fcbcf66b800f1e0035b7871063d90ab0e6e1ffde17"
+    },
+    {
+      "path": "coordination/vertraege-20260922/ms-2-lauf/ABLEITUNGEN-MS-2.json",
+      "label": "gerechnete Berichtszahlen mit Feldpfad, Einheit, Arm, Formel",
+      "sha256": "de83cc626c5421b31781de9e063a6ca3ad1bde149fdc3c620057f73a65dbefd3"
+    },
+    {
+      "path": "coordination/vertraege-20260922/ms-2-lauf/GLEICHHEITSPROBE-MS-2.txt",
+      "label": "maschinelles Gegenlesen, gruen",
+      "sha256": "0f85a0916c699c8daf919291bf7800e3bc61f4639b9402dee7e78761e41cc693"
+    },
+    {
+      "path": "coordination/vertraege-20260922/ms-2-lauf/REGISTERPROBE-MS-2-lauf.txt",
+      "label": "Registerprobe ueber fuenf Dateien, eine Beanstandung",
+      "sha256": "cd81fb0ac872bb6fb979aebde57c16745b571f0b371c4061caf3310936979a5e"
+    },
+    {
+      "path": "coordination/vertraege-20260922/ms-2-VERTRAG.md",
+      "label": "Vertrag Fassung 2 (Schwellen gebunden durch Qwen und DeepSeek)",
+      "sha256": "3e1f6ecb8f6c324de6e07e855e3cebc3bf975009f83cefb964e0fc66e19ad818"
+    },
+    {
+      "path": "coordination/vertraege-20260922/startsignal-ms-2.txt",
+      "label": "Startsignal mit Hashbindung",
+      "sha256": "141196a9fa593f175b3487b1d8ae4834c0c4ac72cb7eee38698150d646048c7e"
+    },
+    {
+      "path": "coordination/vertraege-20260922/REVIEW-ms-2.md",
+      "label": "S0-Fremdreview: Bindungen, Befunde, Quoten",
+      "sha256": "bc64fcf90cadddc1a456ff1ccb859dbf92f30a8e81089793a9658f85c2107679"
+    },
+    {
+      "path": "coordination/vertraege-20260922/ms-2-machbarkeit/MACHBARKEIT-MS-2.md",
+      "label": "Vorlauf Stufe 1 (blind) und Stufe 2",
+      "sha256": "1f9e8b24274d5fcf9e52ef41981b224c66cb5399e4d11a1518d64d69b4dfa42a"
+    },
+    {
+      "path": "coordination/vertraege-20260922/ms-2-lauf/ms_2.py",
+      "label": "Laufskript",
+      "sha256": "a07650094ac9fdbb6631e65fb857673c7b582c66d4af96fcbcc9e339d016e73e"
+    },
+    {
+      "path": "coordination/vertraege-20260922/ledger-fragment-ms-2.jsonl",
+      "label": "Fremdkosten 0,0166 USD",
+      "sha256": "3cb88e9e3480c8087d7119d8eb57ef0b7a54358187474b56ccb94a38d8ebffac"
+    }
+  ],
+  "recorded_at": "2026-09-22T23:06:52.213156+00:00"
+}

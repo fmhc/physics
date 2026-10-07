@@ -1,0 +1,61 @@
+Q-BALL ALS DICHTEUHR, 2026-10-02, ag-phy-coordination
+Sechs neue nichtlineare radiale3D-l0-Zeitlaeufe, unveraenderter Live-Solver.
+Keine kartesische3D-Rechnung und keine neue BIC-Zertifizierung.
+.69 ubuntu-auto, CPU11 nice19, Chromium-JS float64, keine GPU.
+4.9407s aktive JS-Wandzeit, 6.6452s gesamter Ablauf; keine gemessene CPU-Zeit.
+Darstellung aus gespeicherten neuen Spuren danach separat auf .69 erstellt.
+
+Modell und vorherige Festlegung in PLAN.txt; Quellhashes INPUT.sha256,
+RESULT.json bindet tatsaechliche Remote-Dateien. Bekannte Eigenmode u/v und
+rho1.7446175448365042 wurden als ANFANGSANREGUNG benutzt. Evolution danach
+ueber PDE-RK4, kein vorgegebener Sinusverlauf. Frequenzvergleich ist keine
+blinde Vorhersage oder spontane Entstehung einer Uhr.
+
+h=.2/.1, dt=.2h, R80, physischer Absorber ab65; T60.
+epsilon0,.005,.02; Ablesefenster10..60, Radien0,1,2,4.
+Alle angeregten Beobachter zeigen13Ticks, also12Intervalle.
+Alle16 gepaarten Tore (2Amplituden x4Radien x2Messarten) bestanden.
+Messarten sind aus denselben Trajektorien, keine unabhaengigen Replikationen.
+Nullarm epsilon0: raw UND corrected zeigen0Ticks an allenRadien/beidenGittern.
+
+FeinesGitter, Rohdichte minus festes numerisches Startprofil:
+eps     r0-Periode       r1-Periode       r2-Periode       r4-Periode
+.005    3.601466435      3.601460949      3.601451945      3.601473043
+.02     3.601604063      3.601575615      3.601530942      3.601619518
+LineareReferenz2pi/rho=3.601468600. VieleStellen sind Diagnostik, keine
+zertifizierte Genauigkeitsangabe. Maximalefeine CV ~6.33e-5; grob/fein
+relativeMittelperiodenaenderung maximal4.45e-6 (einschliesslich corrected).
+DasPerioden-/CV-Tor war1%/2% nachPLAN, nachBefundnichtverschaerft.
+
+Raw subtrahiert first.baselineDensity, also DISKRET REKONSTRUIERTE ruhende
+Startdichte, am Ursprung aus Solver-Extrapolation. Nicht woertlich exportiertes
+f_input(0)^2: diesePraezisierung zurPlanformulierung aendert keine Auswertung.
+Corrected subtrahiert die separat mitentwickelte unangeregte Referenz. Das ist
+numerischeDiagnostik, keine vorausgesetzte experimentelleBaseline-Messung.
+Hysterese eta=1e-5 max(1,Startdichte): zuerstunter-eta, dannaufwaertsueber+eta.
+Daher zusaetzliches Speicherelement im DETEKTOR; kein neuer Feldzustand.
+
+Bilanzgates bestanden: maximaleEnergiebilanzabweichung9.52e-8 grob,
+5.99e-9 fein; maximaleLadungsbilanz1.33e-9 grob,4.14e-11 fein.
+AbsorbierteFluesse eingerechnet. Dies sind bekannte Solverdiagnosen,
+keine rigorosen Fehlerhüllen des unendlichen Aussenraums.
+
+Grenzen:
+- KurzesFenster, kleinesAmplitudeintervall, vorbereiteteEigenmode.
+- Keine Fremdstoerung, Detektorrueckwirkung, freieBildung oder asymptotische
+  Haltbarkeit geprueft; SI-Sekunden nicht kalibriert.
+- h, Integrationsdt UND Messabtastzeit gemeinsamhalbiert; kleineCV ist keine
+  absoluteGenauigkeit. LinearinterpolierteSchwellenzeiten, keinZeitintervallbeweis.
+- GleichePeriode an4Radien ist Auslesen EINER kollektivenMode, nicht
+  Synchronisation unabhaengigerUhren. Form-/Dichteamplitude unterscheidet sich.
+- Fein/grob veraendern nichtQuelle/Profil/R/Absorberfamilie; keine volle
+  Rand- oderProfilkonvergenzstudie.
+
+Bedeutung: Die bereits bekannte Q-Ball-Schwingung laesst sich im kurzen
+nichtlinearenTest als lokalesDichtesignal mit reproduzierbarenTicks auslesen.
+Die unangeregte Phasenrotation liefert im Dichtedetektor keinen falschenTick.
+Naechster enger Test waere Stoerung UND deren Energiebilanz sowie ein endlicher
+Detektor, nicht aus diesem Befund emergenteZeit oder Gravitation zu folgern.
+
+Unabhaengige statische Nachlesung: REVIEW.txt. Root hat CLOCK.png visuell
+geprueft. Kein Simulatormodul, Papertext, Register oder fremderPfad veraendert.

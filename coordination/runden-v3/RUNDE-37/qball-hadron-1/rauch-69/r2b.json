@@ -1,0 +1,85 @@
+{
+ "befehl": "/home/fmh/fmhc-physics-remote/qball-hadron-1/code/festq.py --modus radial --D 2 --m 2 --Q 627.8780091633197 --h 0.05 --L 50 --gtol_rel 1e-10 --out /home/fmh/fmhc-physics-remote/qball-hadron-1/rauch/r2b.json",
+ "start": "2026-10-05T04:17:23+00:00",
+ "ende": "2026-10-05T04:17:24+00:00",
+ "dauer_s": 0.5797823378816247,
+ "rechner": "ubuntu-auto",
+ "python": "3.12.3",
+ "numpy": "2.4.4",
+ "ergebnisse": [
+  {
+   "modus": "radial",
+   "D": 2,
+   "m1": 2,
+   "m2": 0,
+   "Q": 627.8780091633197,
+   "Lx": 50.0,
+   "Ly": 50.0,
+   "grob": {
+    "E": 506.82987133901776,
+    "N": 423.31658833984585,
+    "K": 41.1892104068971,
+    "V": 232.81799035300403,
+    "omega": 0.7416175345569596,
+    "E_durch_Q": 0.8072107382999367,
+    "gebunden": true,
+    "virial_rest": -9.23431387382777e-06,
+    "feld_rest_max": 4.434538452901374e-06,
+    "feld_rest_rms": 5.367543717187136e-08,
+    "f_max": 0.9965023218702196,
+    "rand_rel": 7.531424448951827e-12,
+    "R_max": 9.950000000000001,
+    "R_innen": 6.259442877188485,
+    "R_aussen": 13.185227589077593,
+    "S_max": 0.9930168774927387,
+    "A": 1.4037882547003302,
+    "h": 0.1,
+    "loeser": {
+     "nit": 368,
+     "nfev": 392,
+     "status": 0,
+     "msg": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+     "dauer_s": 0.23855460342019796
+    },
+    "n": [
+     500
+    ]
+   },
+   "fein": {
+    "E": 506.83338599916965,
+    "N": 423.315582658205,
+    "K": 41.18812592724929,
+    "V": 232.82203637003917,
+    "omega": 0.7416192964366767,
+    "E_durch_Q": 0.8072163359799011,
+    "gebunden": true,
+    "virial_rest": -2.3426472580322545e-06,
+    "feld_rest_max": 2.7369754066272916e-06,
+    "feld_rest_rms": 4.699328387068684e-08,
+    "f_max": 0.9965148984304428,
+    "rand_rel": 1.3237582351110168e-12,
+    "R_max": 9.925,
+    "R_innen": 6.259293533120936,
+    "R_aussen": 13.184914906159799,
+    "S_max": 0.9930419427938358,
+    "A": 1.4037880062990578,
+    "h": 0.05,
+    "loeser": {
+     "nit": 360,
+     "nfev": 381,
+     "status": 0,
+     "msg": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+     "dauer_s": 0.3396451510488987
+    },
+    "n": [
+     1000
+    ]
+   },
+   "E_richardson": 506.83455755255363,
+   "omega_richardson": 0.7416198837299156,
+   "dE_fein_grob_rel": 6.934547425214261e-06,
+   "J1": 1255.7560183266394,
+   "J2": 0.0
+  }
+ ]
+}

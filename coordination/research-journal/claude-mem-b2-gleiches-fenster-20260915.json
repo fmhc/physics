@@ -1,0 +1,36 @@
+{
+  "id": "claude-mem-b2-gleiches-fenster-20260915",
+  "time": "2026-09-15T12:59:00+02:00",
+  "time_kind": "completed",
+  "author": "astra (Codex, OpenAI, S1); Buchung claude-primary",
+  "topic": "theory",
+  "status": "reported",
+  "title": "MEM-B2 (gleiches Messfenster, nur Q, acht Werte): Ausgang B; Zustandsraummodell und AR(8) liegen innerhalb Faktor 2 (AR/ZR 0,82 bei 0,1 %, 0,78 bei 1 % Rauschen), selbst das exakte Oracle mit acht Q-Werten ist schlechter (NRMSE 2,4 bzw. 26); der MEM-B1-Vorteil war Information (P und 16 Werte), nicht Zustandsrekonstruktion",
+  "question": "Bleibt der in MEM-B1 gemessene Vorteil des Zustandsraummodells gegenueber AR(8) bestehen, wenn beide dasselbe Fenster (Q, Indizes 9 bis 16) sehen?",
+  "action": "Vertrag mem-b2-gleiches-fenster-VERTRAG.md (Anlass Codex-S3 HOCH zu MEM-B1); astra: eigene Implementierung mem_b2.py, Subspace ZR-Q8, Delay-Embedding DE-8, Oracle-Q8, Stabilitaetsregel |lambda| <= 1 + 1e-9 ohne Lockerung; K0 bis K2 bestanden; .69 CPU als User-Unit.",
+  "result": "gekoppelt, 0,1 % Rauschen: AR(8) 0,474, ZR-Q8 0,576, DE-8 0,366, Oracle-Q8 2,45; 1 %: 0,497 / 0,635 / 0,435 / 26,3; alle gewaehlten Modelle stabil (Radius <= 1). Ausgang B nach Vertrag Abschnitt 4 (ZR-Q8 und AR(8) innerhalb Faktor 2; kein Zustandsraum-Vorteil bei gleichem Fenster).",
+  "meaning": "Der MEM-B1-Befund (Faktor 268/33) ist ein Informationsvorteil durch P und 16 Werte, keine Eigenschaft der Modellklasse; acht Q-Werte bestimmen den verborgenen Zustand bei Rauschen nicht (Oracle-Q8 schlechter als AR). Registertext MEM-B1 wird begrenzt, MEM-B2 als eigene Zeile (offen) aufgenommen; S2 Claude und S3 Qwen folgen.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260915/mem-b2-gleiches-fenster-VERTRAG.md",
+      "sha256": "fc4ffe117dce0cd2a9462fac12e333416fca2877aac5ff9bdaeee6f821f98001"
+    },
+    {
+      "path": "coordination/vertraege-20260915/mem-b2-lauf/BERICHT-MEMB2.md",
+      "sha256": "58a52e35622719b1e57eebf53f41529de5b64aedb138d44c69919a35f0d1a562"
+    },
+    {
+      "path": "coordination/vertraege-20260915/mem-b2-lauf/ERGEBNIS-MEMB2-kurz.json",
+      "sha256": "9cee02310a3cc023fd62418f09c208c9461cba0447eb34d7fd9e0ffad7c31f0e"
+    },
+    {
+      "path": "coordination/vertraege-20260915/mem-b2-lauf/mem_b2.py",
+      "sha256": "99b9b324c6468252d8bfceb0900aff150d5a1db75776796a17523e523a66167f"
+    },
+    {
+      "path": "coordination/vertraege-20260915/s3-codex-gaia-a1-mem-b1-20260915.md",
+      "sha256": "36ddf2acc41aa4dd72cca6d4a548ac1847039dc6200a295fc011152d563f9a72"
+    }
+  ],
+  "recorded_at": "2026-09-15T11:00:36.686569+00:00"
+}

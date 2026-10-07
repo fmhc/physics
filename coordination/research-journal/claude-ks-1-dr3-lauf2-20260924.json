@@ -1,0 +1,28 @@
+{
+  "id": "claude-ks-1-dr3-lauf2-20260924",
+  "time": "2026-09-24T17:31:00.920043+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung; Vertrag A1 (Claude-Subagent), Laufskript und Laeufe astra (Codex, GPT-6), S0 Qwen und astra, T8-Pruefung claude-primary",
+  "topic": "doppelsterne",
+  "status": "reported",
+  "title": "KS-1 auf Gaia DR3: Ausgang U2 - der Kern der Geschwindigkeitsverteilung im Tieffeld ist positiv versetzt (1,9 s_tot), aber unter der A-Schwelle; voller Median und Kern zeigen dieselbe Verschiebung",
+  "question": "Verschiebt sich im Tieffeld weiter Doppelsterne der Kern der Verteilung von x = v/v_c (unterer Median unter der Kepler-Decke) gegenueber der Newton-Referenz, oder nur ihr Rand (Schwanz)? (Vertrag KS-1 Fassung 6)",
+  "action": "Vertrag in sechs Fassungen, S0 durch Qwen und astra in vier Runden (Freigabe), Hashbindung 18:57:09; blinde Implementierung durch astra allein aus Teil A; T8 zweimal bestanden (42 von 42, groesste Abweichung 0,0); Lauf 2 auf .69/P5000 (Unit fmhc-physics-ks1-1727, 8,9 s) mit Startsignal (Skript-sha256 0768a2de...). Finns Entscheidung: DR3 rechnen und fuer DR4 binden; DR4 ist damit kein Blindtest mehr.",
+  "result": "Ausgang U2 (Stufe 6, keine Entscheidung), Pflichtvermerk 'Kern positiv versetzt unterhalb der A-Schwelle'. Q_K = 1,19168 gegen Newton-Referenz mu_K = 1,06525: D_K = 0,1264 = 1,91 s_tot (s_tot 0,0663); A-Schwelle max(Delta_14/2, 2 s_tot) = 0,182, B verlangt D_K < 0,050 und D_M1 >= 2 s_M1. Voller Median: Q_M1 = 1,19141, D_M1 = 0,1228. Alle Kontrollen bestanden, K1 reproduziert den M1-Wert 1,30158651067974 exakt; N3 bestanden.",
+  "meaning": "Vor S2 nicht zitierfaehig, nicht gebucht (Runde 022 eingefroren). Nach der Ausgangsregel keine Entscheidung. Lesart ohne Buchung: der Tieffeldueberschuss steckt nicht nur im Schwanz der Verteilung, denn Kern und voller Median verschieben sich gleich stark; seine Groesse liegt aber bei etwa einem Drittel dessen, was ein MOND-artiges Signal (Delta_14 = 0,365) erwarten liesse, und nur knapp zwei Standardabweichungen ueber der Newton-Referenz. Die Newton-Referenz enthaelt Tripel, Exzentrizitaeten und Fehlerfaktoren als Modellannahmen; eine Abweichung davon ist keine Gravitationsanomalie, sondern eine Abweichung von diesem Modell. Der DR4-Lauf am 2.12. wiederholt den Test mit besseren Daten, ist aber kein Blindtest mehr. Nachtrag 20:38: S2 durch Qwen, Versuch 1: nicht erreicht. Blindabgabe bei 16384 Tokens abgeschnitten; die einzige vollstaendige Fassung verknuepfte die Datensaetze zeilenweise statt ueber s' = s (A2.1.1) und brach ab; vier weitere Fassungen abgeschnitten. Keine Zahl verglichen: U2 ist weder bestaetigt noch widerlegt. Eine Antwort des Gateways kam still von openai/gpt-oss-120b (Ausweichmodell) und wurde verworfen. Ein zweiter, vorab gebundener Versuch mit technischem Fortsetzungsmechanismus folgt.",
+  "compute": ".69/P5000 CUDA float64; Lauf 2 8,9 s; T8-Pruefungen auf .69 CPU",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260924/KS-1-VERTRAG.md"
+    },
+    {
+      "path": "coordination/vertraege-20260924/ks-1-lauf-dr3/lauf2-astra/ERGEBNIS-LAUF2.json"
+    },
+    {
+      "path": "coordination/vertraege-20260924/ks-1-lauf-dr3/STARTSIGNAL-LAUF2.md"
+    },
+    {
+      "path": "coordination/vertraege-20260924/ks-1-lauf-dr3/T8-PRUEFUNG-LAUF1b.json"
+    }
+  ]
+}

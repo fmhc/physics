@@ -1,0 +1,273 @@
+{
+ "info": {
+  "numpy": "2.4.4",
+  "python": "3.12.3",
+  "host": "ubuntu-auto",
+  "start_utc": "2026-10-04T21:09:31Z",
+  "argv": [
+   "/home/fmh/fmhc-physics-remote/tt-grund-1/code/tg.py",
+   "best",
+   "--netz",
+   "V",
+   "--profile",
+   "/home/fmh/fmhc-physics-remote/tt-grund-1/lauf/profil-S-V.json",
+   "/home/fmh/fmhc-physics-remote/tt-grund-1/lauf/profil-K-V.json",
+   "--out",
+   "/home/fmh/fmhc-physics-remote/tt-grund-1/lauf/best-V.json"
+  ],
+  "skript_sha256": "4442162536117cef392a297f40cf116ef1686d69b18ac3b24b3bf8e58039209d",
+  "tti_sha256": "6d6b6f7b99b334d74d91860fc69af1c6c0c46e22207dc45432d60a9824c08ee5",
+  "ew_sha256": "fa7b6417d39177102f0b19c5474453cd16a7595e23bc25ca548e081c4060b142",
+  "nk_sha256": "fd0d17b9fb7c92d4b6ad564a46260e3daae3285bcb5ad53f65d9fb3918a32b28",
+  "tp_sha256": "419d7da6caa211c721eb6a8c87403977415cf3050f03365377f51cb77b374dfd",
+  "eingaben_sha256": {
+   "/home/fmh/fmhc-physics-remote/tt-grund-1/lauf/profil-S-V.json": "02d40a0293973edb4f981c826cfdcbf9b1f3d9bf81fc9a4ed74b97d52047a143",
+   "/home/fmh/fmhc-physics-remote/tt-grund-1/lauf/profil-K-V.json": "4eeaf558571efcc455e606c510ea962169d367787818aca91ccfaf6588cf9b48"
+  }
+ },
+ "ergebnis": {
+  "netz": "V",
+  "kandidat_bester": {
+   "quelle": "profil_K",
+   "y": [
+    -1.65,
+    0.05648956914974277
+   ],
+   "spanne": 1.715898261256399e-07
+  },
+  "nm": {
+   "y": [
+    -1.6679900494901467,
+    0.05722536983034508
+   ],
+   "spanne": 7.061419404763569e-08,
+   "nf": 524
+  },
+  "n_kandidaten": 359,
+  "best": {
+   "y": [
+    -1.6679900494901467,
+    0.05722536983034508
+   ],
+   "J_kegel": 0.02147879685562005,
+   "J_sechs": 1.1408416546020903,
+   "spanne": 7.061419404763569e-08,
+   "ok": true,
+   "neg_26": 0,
+   "luecke": 1.373446225128509e-07,
+   "plan_gueltig": true,
+   "w_min": 0.11754522768257449,
+   "w_max": 0.11754523598293601,
+   "stabil_L8": {
+    "L": 8,
+    "nk": 511,
+    "k_mit_negativ": 0,
+    "k_mit_komplex": 0,
+    "w2_min_rel": 0.015163746479214101,
+    "k_mit_B_red_nicht_pd": 0,
+    "k_mit_A_oder_K_red_nicht_pd": 0
+   },
+   "stabil": true,
+   "spanne_23ew": 7.061419404763569e-08
+  },
+  "n_unter_schwelle": 36,
+  "entlang": [
+   {
+    "y": [
+     -2.0,
+     0.06644957199299995
+    ],
+    "J_kegel": 0.01,
+    "J_sechs": 1.1653317307467528,
+    "spanne": 1.54140948693815e-06,
+    "ok": true,
+    "neg_26": 0,
+    "luecke": 1.3748289050601678e-07,
+    "plan_gueltig": true,
+    "w_min": 0.11972513352823985,
+    "w_max": 0.11972531807369649,
+    "stabil_L8": {
+     "L": 8,
+     "nk": 511,
+     "k_mit_negativ": 0,
+     "k_mit_komplex": 0,
+     "w2_min_rel": 0.015173453614247134,
+     "k_mit_B_red_nicht_pd": 0,
+     "k_mit_A_oder_K_red_nicht_pd": 0
+    },
+    "stabil": true
+   },
+   {
+    "y": [
+     -1.55,
+     0.05177116061802934
+    ],
+    "J_kegel": 0.028183829312644536,
+    "J_sechs": 1.126603667322849,
+    "spanne": 9.736158339546108e-07,
+    "ok": true,
+    "neg_26": 0,
+    "luecke": 1.3726196720773217e-07,
+    "plan_gueltig": true,
+    "w_min": 0.11627782552459777,
+    "w_max": 0.11627793873452984,
+    "stabil_L8": {
+     "L": 8,
+     "nk": 511,
+     "k_mit_negativ": 0,
+     "k_mit_komplex": 0,
+     "w2_min_rel": 0.015157823871689331,
+     "k_mit_B_red_nicht_pd": 0,
+     "k_mit_A_oder_K_red_nicht_pd": 0
+    },
+    "stabil": true
+   },
+   {
+    "y": [
+     -1.15,
+     0.01592228714100627
+    ],
+    "J_kegel": 0.0707945784384138,
+    "J_sechs": 1.03734277660465,
+    "spanne": 7.655585744004156e-06,
+    "ok": true,
+    "neg_26": 0,
+    "luecke": 1.3670009232222244e-07,
+    "plan_gueltig": true,
+    "w_min": 0.10833289249178615,
+    "w_max": 0.10833372184353353,
+    "stabil_L8": {
+     "L": 8,
+     "nk": 511,
+     "k_mit_negativ": 0,
+     "k_mit_komplex": 0,
+     "w2_min_rel": 0.015115332404109004,
+     "k_mit_B_red_nicht_pd": 0,
+     "k_mit_A_oder_K_red_nicht_pd": 0
+    },
+    "stabil": true
+   },
+   {
+    "y": [
+     -0.8440671325730701,
+     -0.04999999999999982
+    ],
+    "J_kegel": 0.14319665309805968,
+    "J_sechs": 0.8912509381337459,
+    "spanne": 2.318405402834678e-05,
+    "ok": true,
+    "neg_26": 0,
+    "luecke": 1.355872037143612e-07,
+    "plan_gueltig": true,
+    "w_min": 0.09533215827995249,
+    "w_max": 0.0953343684658607,
+    "stabil_L8": {
+     "L": 8,
+     "nk": 511,
+     "k_mit_negativ": 0,
+     "k_mit_komplex": 0,
+     "w2_min_rel": 0.01501915515719813,
+     "k_mit_B_red_nicht_pd": 0,
+     "k_mit_A_oder_K_red_nicht_pd": 0
+    },
+    "stabil": true
+   },
+   {
+    "y": [
+     -0.5436196480533275,
+     -0.19999999999999996
+    ],
+    "J_kegel": 0.28600942966011106,
+    "J_sechs": 0.6309573444801934,
+    "spanne": 8.241873252168297e-05,
+    "ok": true,
+    "neg_26": 0,
+    "luecke": 1.3439921788962532e-07,
+    "plan_gueltig": true,
+    "w_min": 0.0721773793012965,
+    "w_max": 0.07218332806941526,
+    "stabil_L8": {
+     "L": 8,
+     "nk": 511,
+     "k_mit_negativ": 0,
+     "k_mit_komplex": 0,
+     "w2_min_rel": 0.014689576403624355,
+     "k_mit_B_red_nicht_pd": 0,
+     "k_mit_A_oder_K_red_nicht_pd": 0
+    },
+    "stabil": true
+   }
+  ],
+  "regel_abstand": {
+   "N1": {
+    "abstand_dex": 0.579242886662947,
+    "naechster": {
+     "quelle": "profil_S",
+     "y": [
+      -0.5436196480533275,
+      -0.19999999999999996
+     ],
+     "spanne": 8.241873252168297e-05
+    }
+   },
+   "N2": {
+    "abstand_dex": 0.5523899714792778,
+    "naechster": {
+     "quelle": "profil_S",
+     "y": [
+      -0.5436196480533275,
+      -0.19999999999999996
+     ],
+     "spanne": 8.241873252168297e-05
+    }
+   },
+   "N3": {
+    "abstand_dex": 0.6449127382533001,
+    "naechster": {
+     "quelle": "profil_S",
+     "y": [
+      -0.5436196480533275,
+      -0.19999999999999996
+     ],
+     "spanne": 8.241873252168297e-05
+    }
+   },
+   "N4": {
+    "abstand_dex": 0.569867981628316,
+    "naechster": {
+     "quelle": "profil_S",
+     "y": [
+      -0.5436196480533275,
+      -0.19999999999999996
+     ],
+     "spanne": 8.241873252168297e-05
+    }
+   },
+   "N5": {
+    "abstand_dex": 0.8354647630249965,
+    "naechster": {
+     "quelle": "profil_S",
+     "y": [
+      -0.5436196480533275,
+      -0.19999999999999996
+     ],
+     "spanne": 8.241873252168297e-05
+    }
+   },
+   "N6": {
+    "abstand_dex": 0.48814586291244105,
+    "naechster": {
+     "quelle": "profil_S",
+     "y": [
+      -0.5436196480533275,
+      -0.19999999999999996
+     ],
+     "spanne": 8.241873252168297e-05
+    }
+   }
+  }
+ },
+ "laufzeit_s": 21.807697296142578,
+ "maxrss_MB": 349.8125,
+ "ende_utc": "2026-10-04T21:09:53Z"
+}

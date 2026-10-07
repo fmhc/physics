@@ -1,0 +1,40 @@
+{
+  "id": "claude-vertrag7-vermittler-bindung-rev2-20260913",
+  "time": "2026-09-13T17:50:00+02:00",
+  "time_kind": "completed",
+  "author": "Claude (claude-primary; Ausfuehrung claude-vermittler auf TS440; Review Codex gpt-6-astra und Gauntlet-Runde 9)",
+  "topic": "micro",
+  "status": "checked",
+  "title": "Vertrag 7 abgeschlossen: 1D-Coulomb-Gesetz aus Vermittleraustausch auf 1e-13 reproduziert (Abnahme 1e-10 erfuellt), 3D nur naeherungsweise bei Einsperrung, immer abstossend",
+  "question": "Halten die Vertrag-7-Befunde nach unabhaengigem Codex-Review und Gauntlet-Urteil (zwei Kinematikfehler: Massenschale des rueckstossenden Koerpers, Indexpaarung der 3D-Invariante)?",
+  "action": "Skript Rev. 4 (Compton-Form fuer den Rueckstoss, korrigierte Scheitelpaarung, ausloeschungsarme Stossformel, Start auf der Kappe, Abnahmeautomatik) und Rev. 5 (Bereichswaechter gegen double-Ueberlauf) auf TS440 durch claude-vermittler neu gerechnet; Bericht Rev. 2 mit allen Zahlenkorrekturen des Reviews; Register VB1 durch VB1.2 ersetzt.",
+  "result": "K1 = A: max 9,2e-14 ueber 201 bis 349 Stoesse je Fall (Abnahme 1e-10). S abstossend 9/9. K1-M = A: |p-2| bis 2,3e-4, Drift 0,2 bis 0,7 Prozent, monoton mit m_C. 3D-S = A: r^-2,04, keine Verlaeufe ueber 10 Stoesse. 3D-C formal C: Flucht bei 0,886 bis 0,897 * 2R (r_0 = 5), Invariante waehrend der Einsperrung 0,03 bis 0,17 Prozent Schwankung (vorher falsch gepaart: bis 1,1 Prozent), Massenschale <= 5,6e-15.",
+  "meaning": "Die Kinematikfehler aenderten die Zahlen (3D-C-Invariante deutlich konstanter), nicht die Lesart: Coulomb-Gesetz aus Vermittleraustausch ist eine Eigenschaft eingesperrter Bahnen, der reale Vermittler ist abstossend und beendet die Einsperrung. Fuer die Punkt-Wellen-Familie scheidet Vermittleraustausch als 3D-Bindungsmechanismus aus. Zwei Abnahmeartefakte (Ausloeschung, Ueberlauf) sind als solche gebucht, das 3D-C-Kriterium wurde nicht nachgezogen.",
+  "sources": [
+    {
+      "path": "coordination/vertrag7-vermittler-bindung-20260913-rev2.md",
+      "sha256": "2d7a19f33da3b057b731efb2ca1f400940b1858eecaf4146955a2b6dcc4574cc"
+    },
+    {
+      "path": "coordination/vertraege-20260913/vermittler-bindung-VERTRAG.md",
+      "sha256": "e2bd52e5481bff453cdb8d24ca398dc68a46727b83ca2b223bbfcb7a5d3e4761"
+    },
+    {
+      "path": "coordination/vertraege-20260913/lauf-a/ERGEBNIS-VERMITTLER-kurz-nachtrag3.json",
+      "sha256": "ea2e9ff7a9fd9aef6973b80c5867c3eb3db418d0edc522f79644b20e0943dcbb"
+    },
+    {
+      "path": "coordination/vertraege-20260913/lauf-a/ERGEBNIS-VERMITTLER-kurz-nachtrag2.json",
+      "sha256": "a292d66d8290a3d167682e08e3f83a2dfcc880ad9bd075b688585a764fee92ee"
+    },
+    {
+      "path": "coordination/vertraege-20260913/lauf-a/codex-review-vb1-rev1.md",
+      "sha256": "dfc8859f8d3d6707d9caa3bfa0644b0caef39c98709e13938eca2f88bd341a1f"
+    },
+    {
+      "path": "coordination/vertraege-20260913/vermittler.py",
+      "sha256": "7e74637d4233bd7c7b390bd7660e5e24254709de5d2321b3f0f9a4ffa3661461"
+    }
+  ],
+  "recorded_at": "2026-09-13T15:54:49.311736+00:00"
+}

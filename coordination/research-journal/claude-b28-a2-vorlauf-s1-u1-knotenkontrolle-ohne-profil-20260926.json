@@ -1,0 +1,64 @@
+{
+  "id": "claude-b28-a2-vorlauf-s1-u1-knotenkontrolle-ohne-profil-20260926",
+  "time": "2026-09-26T21:00:53+00:00",
+  "time_kind": "completed",
+  "author": "Claude (Anthropic, Opus 5.5), S1-Ausfuehrender und Codeautor fuer B28-A2, Auftrag claude-primary; Zeit per date -u gemessen",
+  "topic": "gesamtformel",
+  "status": "technical",
+  "evidenzart": "verfahren",
+  "ausgang": "U1",
+  "vertrag": {
+    "id": "B28-A2",
+    "fassung": "A2",
+    "pfad": "coordination/field-b28-lokale-stabilitaet-20260926/VORAB-B28-A2.md",
+    "sha256": "5962f1b8a135c26728b49135325ea12330f8845eeaeb64f6fffb7f064c4f00b6"
+  },
+  "title": "B28-A2 Vorlauf S1: Profile M, P, N samt K1, K5 und Translationsgrenzen bestimmt; Knotenkontrolle X ohne gueltiges Profil, Vorlauf endet mit U1",
+  "question": "Liefert der freigegebene Vorlauf nach VORAB-B28-A2 (stationaere Profile, K1, K5, K3-Translationskalibrierung ohne Eigenwertzerlegung) gebundene Grenzen fuer alle vier Familien M, P, N und X?",
+  "action": "Vertragshash geprueft (5962f1b8...). Code allein aus dem Vertragstext geschrieben (vorlauf-s1/code/b28_vorlauf.py, sha256 981b456b...), vor jedem Lauf gehasht; kein Code des Vertragsautors oder der B-Reihe gelesen. Auslegungen vor dem ersten Lauf im Laufprotokoll festgelegt. Rauchtest auf Spielgittern (keine Vertragsgitter), danach zwei Vertragsabschnitte auf der .69 (Quadro P4000, UUID GPU-8fab62d5, CUDA float64) als einmalige systemd-run-Units unter flock auf gauntlet-gpu.lock: M auf G0/G1/G2 bei festem Q; P, N, X auf C0/C1/C2 bei festem omega nach Abschnitt 6.1; danach Zusammenbau von TRANSLATION-CALIBRATION.json. Keine Eigenwertzerlegung, keine Spektren, keine Steigung, kein K4, K7, K8, keine Deckungsprobe.",
+  "result": "M: Start sigma=2 gewaehlt (sigma=3 endete am Kriterium fuer das relative Linearresiduum); alle Profilgates, K1, K5 und K9 auf G0/G1/G2 bestanden, keine Monotonieverletzung. P und N: gueltige Profile auf C0/C1/C2, K1 und K5 bestanden. Fuer M, P und N liegen tau_rho und tau_res unter der Obergrenze des Vertrags; die Werte stehen in vorlauf-s1/out/TRANSLATION-CALIBRATION.json. X: keiner der drei vorgeschriebenen Starts liefert ein Profil mit genau einem Knoten (Rnode=4 konvergiert in einen knotenfreien Zustand mit negativem Zentrum, Rnode=8 scheitert an der Liniensuche, Rnode=12 an der Iterationsgrenze). Nach Vertrag 6.1 und K8 endet der Vorlauf mit U1. K5-Gradientendifferenz nach der vorab festgelegten Auslegung (realisierter Schritt) ueberall bestanden; die zusaetzlich berichtete nominale Variante verfehlt bei P/C1 vier Zellen knapp, Frage F2 an die Leitung. Verbrauchte Lock-Wandzeit 93284 ms von 900000 ms, davon 61006 ms Rauchtest.",
+  "meaning": "Ohne neue Vertragsfassung kein Hauptarm. Das weitere Vorgehen entscheidet die Leitung (vorlauf-s1/FRAGEN.md, F1 bis F5). Die Profile von M, P und N und ihre Kalibriergrenzen sind gehasht und bleiben unveraendert auf der .69. Kein Physikbefund; ein U-Ausgang ist keine Evidenz.",
+  "sources": [
+    {
+      "path": "coordination/field-b28-lokale-stabilitaet-20260926/VORAB-B28-A2.md",
+      "sha256": "5962f1b8a135c26728b49135325ea12330f8845eeaeb64f6fffb7f064c4f00b6"
+    },
+    {
+      "path": "coordination/field-b28-lokale-stabilitaet-20260926/vorlauf-s1/code/b28_vorlauf.py",
+      "sha256": "981b456b5deff28006445603c03a319e77078bf1e85f7198fd3569edf543e85a"
+    },
+    {
+      "path": "coordination/field-b28-lokale-stabilitaet-20260926/vorlauf-s1/out/TRANSLATION-CALIBRATION.json",
+      "sha256": "70880622c2b218e5c802a5de349cede0a5ce53d8fa8a9681c54338aeb4778478"
+    },
+    {
+      "path": "coordination/field-b28-lokale-stabilitaet-20260926/vorlauf-s1/out/M.json",
+      "sha256": "b2d6c75d0c2f4676daf6a39383641b23da48691f7ecdcb5e9a5468d7f8ec985f"
+    },
+    {
+      "path": "coordination/field-b28-lokale-stabilitaet-20260926/vorlauf-s1/out/P.json",
+      "sha256": "4c96ef10dd79b61109aa895acb867119ae67a29af41e8eb9cf1f865f77320320"
+    },
+    {
+      "path": "coordination/field-b28-lokale-stabilitaet-20260926/vorlauf-s1/out/N.json",
+      "sha256": "9db50f596767819b1b1f1631c3f5fb7298ac8bc699e9c48724cef7c5990e1ab9"
+    },
+    {
+      "path": "coordination/field-b28-lokale-stabilitaet-20260926/vorlauf-s1/out/X.json",
+      "sha256": "4b2549c60f31c173a12d1cf7bc83dab3a13295d108c1e20baf09d3e210ea6672"
+    },
+    {
+      "path": "coordination/field-b28-lokale-stabilitaet-20260926/vorlauf-s1/LAUFPROTOKOLL.md",
+      "sha256": "037e7bf23b23d3cedd4d63c6116cd48b74ff57b36349239cfb91af7390f250cd"
+    },
+    {
+      "path": "coordination/field-b28-lokale-stabilitaet-20260926/vorlauf-s1/FRAGEN.md",
+      "sha256": "935b7a10deaf3e7b0676c3e7946c9accea2ca4739bb413b10c77dc17cd4b6e97"
+    },
+    {
+      "path": "coordination/field-b28-lokale-stabilitaet-20260926/vorlauf-s1/PROFILE-SHA256.txt",
+      "sha256": "3717e9340906d68bddda650540cd445f1873e43294d7c9dc1f9b73db3541a279"
+    }
+  ],
+  "recorded_at": "2026-09-26T21:01:22.483146+00:00"
+}

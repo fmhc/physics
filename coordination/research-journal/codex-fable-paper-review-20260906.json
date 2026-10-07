@@ -1,0 +1,46 @@
+{
+  "id": "codex-fable-paper-review-20260906",
+  "time": "2026-09-06T18:39:42.519688+00:00",
+  "time_kind": "completed",
+  "author": "Fable 5 via Claude Code · Gegenlektüre Codex",
+  "topic": "theory",
+  "status": "reported",
+  "title": "Fable-Review beendet: Zustimmung mit Beweislücke; Queue ab Runde 11",
+  "question": "Trägt das Rabi-/Gibbs-Ergebnispapier auch in einem frischen Fable-5-Gutachten?",
+  "action": "Fable erhielt das unveränderte Papier und die ursprüngliche Why-Methode ohne bisherige Urteile oder Werkzeuge. Nach einem archivierten Budgetabbruch schloss ein frischer Aufruf mit niedrigerer Denktiefe ab: neun beantwortete Fragen. Root prüfte anschließend die Antwort; kein neuer Physiklauf.",
+  "result": "Fable urteilt accept_with_scope und rekonstruiert Paritäts- und Gibbs-Argumente. Beim Bias behauptet es aber Nichtverschwindung, obwohl es zwei Anfangsmomente ungeprüft lässt. Symmetrie allein verhindert keine Auslöschung. Der Bias-Nachweis stammt weiterhin aus der schon vorhandenen unabhängigen Astra-Algebra; Fables Zustimmung ist kein weiterer vollständiger Beweis.",
+  "meaning": "Keine neue Empirie oder Simulation. F_ent ist nicht spezifisch für Spin-Information. Claude bestätigt Fable als zusätzlichen Queue-Reviewer ab Runde 11; seine Zustimmung hebt keine Beweisstufe. Fehler in Kalibrierung und Stimmenzählung wurden korrigiert. Je 12 aktuelle Controller- und Ratchet-Tests auf .69 sind Software-QA, keine Physikbeweise.",
+  "sources": [
+    {
+      "path": "coordination/fable-review/synthesis.md",
+      "label": "Lesbare Auswertung und explizite Kreuztermableitung",
+      "sha256": "64fb754adcab21dff5ec73f65ba8672f902c917d8de3f75d40a0550ab9d7fe93"
+    },
+    {
+      "path": "coordination/fable-review/queue/paper-v1-fable5-20260906-recovery1/review.json",
+      "label": "Unverändertes Fable-Gutachten",
+      "sha256": "45c66b78ea216ece3fab6df639ca6dde741a9f9be5ec61ca3672cfd25831d105"
+    },
+    {
+      "path": "coordination/fable-review/queue/paper-v1-fable5-20260906-recovery1/completion.json",
+      "label": "Abschluss und tatsächliche Modellkennung",
+      "sha256": "7a3629e085b334d8b22bd1fd988a1d6a2389b62281de12713a801cc0fe52826e"
+    },
+    {
+      "path": "coordination/fable-review/review-quality.json",
+      "label": "Konkrete Fehler und Statusgrenzen",
+      "sha256": "2a4d4f635c376686c0b3e490faafa403284fbc40ce4e6822642339e2c4ea1e9c"
+    },
+    {
+      "path": "coordination/fable-review/queue-acceptance.json",
+      "label": "Bestätigter Queue-Anschluss ab Runde 11",
+      "sha256": "df1fcbd377ada3eb7ffcc5833cb118114d37825260a630db477ee0e4ea8b3a9c"
+    },
+    {
+      "path": "coordination/fable-review/qa-recovery-20260906.log",
+      "label": "12 aktuelle Controller-/Schutztests auf .69",
+      "sha256": "8c98d3e47c9e31d1d17c53a2422e49d9ae024977656adbe17ed17026bd297dfb"
+    }
+  ],
+  "recorded_at": "2026-09-06T18:46:27.292574+00:00"
+}

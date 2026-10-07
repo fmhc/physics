@@ -1,0 +1,44 @@
+{
+  "id": "claude-s2-s3-fm-6-20260921",
+  "time": "2026-09-21T15:36:20+02:00",
+  "time_kind": "completed",
+  "author": "Fable 5.1 (Anthropic), S3 Gegenlesen und S2-Protokoll zu FM-6",
+  "topic": "operations",
+  "status": "checked",
+  "title": "S2-S3 FM-6: Bericht vollstaendig belegt, A zwingend aus der Datei; S2 durch Qwen blind 3/57 (nicht blind), nach Handwerk (ii) 9/57 mit omega_B(120/200/480) auf 1e-14, Zielpunkte 0/45, keine Lektuerehilfe; G1-Schrittgrenze ohne Hilfe richtig",
+  "question": "Traegt der Bericht FM-6 seine Zahlen, ist A zwingend, sind die drei Luecken ausgangsbestimmend, ist A(iv) unabhaengig, und was reproduziert ein fremdes Haus allein aus dem Vertragstext - je Stufe?",
+  "action": "VORAB-S2-FM-6.md vor dem ersten Aufruf gehasht (3ac13b09..., 13:46:34; erster Aufruf 14:40:48 nach Sitzungsunterbrechung). S3: eigenes Skript auf .69, jede Berichtszahl gegen ERGEBNIS/PRUEFLAUF und Vertrags-/Startsignalkonstanten, 37 Margen einzeln nachgerechnet, K1 gegen die 14 Startsignal-Hashes, A(i)-(iv) aus Rohgroessen, omega_dom-Bisektion nachgerechnet, Aufloesungsschaetzung fuer A(iv). Zwei getrennte Qwen-Fremdurteile (Luecken nach Nachtrag 27; die ungesehene Vertragsfassung 12.2b), beide no-cache. S2: Paket mechanisch (nur der Vertrag), fuenf Runden qwen3.6-27b-bunker mit no-cache und ID-Vergleich (sieben verschiedene IDs), Skripte unveraendert in begrenzten Units auf .69; Runde 1 blind, Runde 2-3 nur Laufausgabe (i), Runde 4 ein Bibliothekshinweis zur solve_banded-Ablage (ii), Runde 5 nur Traceback (i); Vergleich Zahl fuer Zahl nach 10.3 je Runde; eigenes Papier maschinell gegengelesen.",
+  "result": "S3: 343 Berichtszahlen, 333 belegt, 10 von Hand geklaert, 0 unbelegt; 114 Pruefungen, 108 ok, 6 Abweichungen ohne Kriteriumsbezug (u. a. '2,5-fache der oberen Erwartungsgrenze' ist 1,76; Staffel 2,9- statt 2,5-fach; G_vir und trace_v fehlen in der Ergebnisdatei; 12.2a sagt fuenf, listet sieben). A zwingend; 6.4(b) sagte N(L) auf 0,969/0,988/1,004 voraus. Luecken: Fremdhaus dreimal false, VL1 objektiv geschlossen (14/14 Hashes) - aber zum Start galt nach 11.5 true. A(iv): frei von der Duennwandformel, jedoch bei G4-Stopp eine Umschreibung von A(ii); Aufloesungsgrenze 1,25e-08/2,4e-09, gemessen 4,1e-07/8,6e-09. S2: Runde 1 3/57 (omega_dom, im Text sechzehnstellig, nicht blind); Runde 2-4 3/57; Runde 5 9/57: omega_B 0,7120775230721701 / 0,7098762840489589 / 0,7081925744285051 (Abstand 5e-15 bis 1e-14), q_form, omega_kette 2/2, Bogenschritte 78/127/236 identisch; Torliste leer, Q/max f/G_vir 0/45. Ursache der vier Fehlrunden: Nebendiagonalen von ab um eine Spalte verschoben, stiller Abbruch. G1-Stelle (S_tor) in allen Runden ohne Hilfe richtig.",
+  "meaning": "Weitergereicht werden darf omega_B(120/200/480) mit der Stufe 'S2 teilweise erfuellt nach Handwerk (ii), 9 von 57, nicht blind' - keine Zielpunktzahl, kein G_vir, kein A(iv) als unabhaengige Bestaetigung. Die FM-5-Schwaeche (Lektuerehilfe zur G1-Schrittgrenze) ist behoben; die Schwaeche darunter (solve_banded-Ablage, viertes Mal am 21.09.) kann kein Vertragstext heilen, ausser er schreibt die Bandablage als Pseudocode oder verlangt einen anderen Loeser. Ein Nachfolgevertrag sollte A(iv) als Kontrolle fuehren, omega_kette in 10.3 aufnehmen, das Lueckenurteil vor das Startsignal ziehen und jeden Abbruchgrund auf stdout verlangen. n = 1 je Runde. Runde 022 eingefroren, nichts gebucht.",
+  "sources": [
+    {
+      "path": "coordination/methodik-review/s2-s3-fm-6-20260921/S2-S3-FM-6.md",
+      "sha256": "a4506ec86185ad3d93ab7bf777c91444ac7f38f93602ede7c68e9dc73c0e01c3"
+    },
+    {
+      "path": "coordination/methodik-review/s2-s3-fm-6-20260921/VORAB-S2-FM-6.md",
+      "sha256": "3ac13b0924133d8b7945211e47e66566ac8f4b0ec646821e8dee32b5b04d48b0"
+    },
+    {
+      "path": "coordination/methodik-review/s2-s3-fm-6-20260921/belege/S3-GEGENLESEN.txt",
+      "sha256": "717207202b8394a55eb055f564a1a0a8fbafdf3d59d130266492fd534982d359"
+    },
+    {
+      "path": "coordination/methodik-review/s2-s3-fm-6-20260921/belege/S2-VERGLEICH-runde1.txt",
+      "sha256": "e9b2379749ccc9b32238ba5799d955330d074f011bb57838b6babab9b153b82f"
+    },
+    {
+      "path": "coordination/methodik-review/s2-s3-fm-6-20260921/belege/S2-VERGLEICH-runde5.txt",
+      "sha256": "d9ef913f34cb5ceca5df7710ad42f47fb8e095ac0661016787254a66ec6e532b"
+    },
+    {
+      "path": "coordination/methodik-review/s2-s3-fm-6-20260921/luecken-qwen/ANTWORT-QWEN-luecken.md",
+      "sha256": "ba2661533276fc0bc1014cc7cb5d5ff751787c17cc9841a3c8866aa26410d116"
+    },
+    {
+      "path": "coordination/methodik-review/s2-s3-fm-6-20260921/luecken-qwen/ANTWORT-QWEN-nachtrag.md",
+      "sha256": "aee22017775a7d4006eaf20d1e721c4d20156fe8b9c42dd5f2569773346ac1c7"
+    }
+  ],
+  "recorded_at": "2026-09-21T13:37:48.409670+00:00"
+}

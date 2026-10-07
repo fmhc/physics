@@ -1,0 +1,64 @@
+--- qstern2.py	2026-10-02 01:23:57.450805155 +0200
++++ qstern2b.py	2026-10-02 01:24:08.475792791 +0200
+@@ -1,5 +1,7 @@
+ #!/usr/bin/env python3
+-"""Q-STERN-2 (Runde 14 nach v3, explorativ): Kopie von RUNDE-13/q-stern/qstern.py, erweitert um delta Phi =
++"""Q-STERN-2b (Runde 15): qstern2.py mit Fenster, K1-Ziel und K1-Umlauf als Aufrufparameter (--fenster, --k1-ziel,
++--k1-umlauf); Physik unveraendert (Diff qstern2b.diff).
++Q-STERN-2 (Runde 14 nach v3, explorativ): Kopie von RUNDE-13/q-stern/qstern.py, erweitert um delta Phi =
+ psi(r) cos(rho t) (volle Rechnung erster Ordnung, HERLEITUNG.md). Neu (Diff qstern2.diff):
+    --psi voll: u = r psi, u'' = 2 alpha [(Pa - Pb rho) y1 + (Pa + Pb rho) y2 + f' (y1' + y2')],
+                y1'' += (Ea - Eb rho) u, y2'' += (Ea + Eb rho) u,
+@@ -1637,6 +1639,7 @@
+ 
+ FENSTER_X = (0.74, 0.80)     # Q-STERN-2 (Karte)
+ FENSTER_R = (1.65, 1.80)
++K1_UMLAUF = -1                # Q-STERN-2b: Umlauf der K1-Stelle bei alpha = 0 (n = 1: -1), aus --k1-umlauf
+ 
+ 
+ def _im_fenster(x, r):
+@@ -1672,7 +1675,7 @@
+     k1 = {}
+     for h in (0.02, 0.01):
+         t = [q for q in treffer(gruppe(0.0, h, 1.0)) if abs(q["x"] - KG_ZIEL[0]) < 1e-4
+-             and abs(q["rho"] - KG_ZIEL[1]) < 1e-4 and q["aufgeloest"] and q["umlauf"] == -1]
++             and abs(q["rho"] - KG_ZIEL[1]) < 1e-4 and q["aufgeloest"] and q["umlauf"] == K1_UMLAUF]
+         k1[h] = t
+         zeilen.append(f"K1 h = {h}: {'bestanden' if t else 'VERFEHLT'}; {t}")
+     k1_ok = bool(k1[0.02]) and bool(k1[0.01])
+@@ -1772,6 +1775,9 @@
+     ap.add_argument("--psi", choices=["voll", "null"], default="voll")
+     ap.add_argument("--n-rampe", type=int, default=6)
+     ap.add_argument("--alphas", type=str, default="")
++    ap.add_argument("--fenster", type=str, default="")         # Q-STERN-2b: "x_lo,x_hi,rho_lo,rho_hi"
++    ap.add_argument("--k1-ziel", type=str, default="")         # Q-STERN-2b: "x,rho" der K1-Stelle
++    ap.add_argument("--k1-umlauf", type=int, default=-1)       # Q-STERN-2b: Umlauf der K1-Stelle
+     ap.add_argument("--t", type=float, default=0.0)
+     ap.add_argument("--band", type=str, default="")
+     ap.add_argument("--x", type=str, default="")
+@@ -1796,9 +1802,15 @@
+ 
+ 
+ def main():
+-    global T_MIX, ALPHA, R_FAK, QUELLE, PHI_MISCH, PSI, N_RAMPE
++    global T_MIX, ALPHA, R_FAK, QUELLE, PHI_MISCH, PSI, N_RAMPE, FENSTER_X, FENSTER_R, KG_ZIEL, K1_UMLAUF
+     a = argumente()
+     PSI = a.psi
++    if a.fenster:
++        fw = [float(v) for v in a.fenster.split(",")]
++        FENSTER_X, FENSTER_R = (fw[0], fw[1]), (fw[2], fw[3])
++    if a.k1_ziel:
++        KG_ZIEL = tuple(float(v) for v in a.k1_ziel.split(","))
++    K1_UMLAUF = int(a.k1_umlauf)
+     N_RAMPE = int(a.n_rampe)
+     T_MIX = float(a.t)
+     ALPHA = float(a.alpha)
+@@ -1807,7 +1819,7 @@
+     PHI_MISCH = float(a.phi_misch)
+     name = a.name or a.kommando
+     os.makedirs(a.aus, exist_ok=True)
+-    zeilen = [f"qstern2.py {a.kommando} ({name}), Start {jetzt()}", "Argumente: " + json.dumps(vars(a))]
++    zeilen = [f"qstern2b.py {a.kommando} ({name}), Start {jetzt()}", "Argumente: " + json.dumps(vars(a))]
+     erg = {"argumente": vars(a), "start": jetzt()}
+     npz = {}
+ 

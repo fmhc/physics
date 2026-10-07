@@ -1,0 +1,51 @@
+{
+  "id": "claude-v-3-n-krit-teilstichprobenleiter-20260921",
+  "time": "2026-09-21T03:55:00+00:00",
+  "time_kind": "completed",
+  "author": "Claude",
+  "topic": "binaries",
+  "status": "reported",
+  "title": "Eine Luecke von 0,56 in gamma braucht rund 1600 Sternpaare, um mehr als Rauschen zu sein - die Literaturstichprobe hat 36",
+  "question": "Zwischen Chae 2026 (gamma = 1,60, Deprojektion) und Saad & Ting 2026 (gamma = 1,00, Vorwaertsmodell) liegen rund 0,56 - am identischen 36-Paar-Datensatz. Unser eigener Lauf V-2 fand auf 18051 Paaren einen Verfahrensunterschied von nur 0,046. Kann der Verfahrensunterschied die Literaturluecke ueberhaupt erklaeren, und ab welchem Stichprobenumfang waere eine solche Luecke von reinem Stichprobenrauschen zu unterscheiden?",
+  "action": "Vertrag V-3 nach coordination/vertraege-vorlage/VORLAGE-v2.md geschrieben, auf Grundlage des Nachfolgevorschlags des Ausfuehrenden von V-2. Kern der Neuerung gegenueber V-2: jede der zwoelf Kontrollen und drei Nullproben nennt jetzt drei Dinge - welche Groesse sie schuetzt, welchen Wert sie erwartet und woher diese Erwartung stammt; genau daran war V-2 gescheitert (Kontrolle K3 riss auf einem Hilfsmass, fuer das es keine Vorabrechnung gab). Vor dem Start von Qwen (Bunker, 0 USD) und DeepSeek (OpenRouter, 0,018 USD) gepruefte Fassung; 11 von 14 Befunden neu, 9 eingearbeitet, 2 begruendet abgelehnt. Gerechnet am 21.09.2026 auf fmh@192.168.178.69 als begrenzte User-Unit, CPU einthreadig, 3974,6 s. Neues Messmittel: eine Teilstichprobenleiter, die aus den eigenen Daten 2000-mal je Sprosse Teilstichproben von 25, 40, 60, 100, 200, 444 und 888 Paaren je Pflichtzelle zieht und die Streuung des deprojizierten Wertes als Funktion des Stichprobenumfangs vermisst. Daraus ein Skalengesetz und die Kennzahl n_krit.",
+  "result": "Ausgang A. n_krit = 784 Paare je Pflichtzelle, also rund 1568 Paare insgesamt, bei der Vergleichszahl G_lit = 0,56 - gegenueber 18 Paaren je Zelle, die der 36-Paar-Stichprobe der Literatur entsprechen (Faktor 43,6). n_krit liegt zwischen den gemessenen Sprossen 444 und 888 und damit INNERHALB des vermessenen Bereichs; extrapoliert wird nur nach unten auf n = 18. Das Skalengesetz haelt: p = 0,514876 +- 0,009574 gegen die Erwartung 0,5 (Bedingung C1 mit Faktor 6,7 Abstand erfuellt). Der Schaetzer streut, er driftet nicht: der Median des Kennwertes bewegt sich von 888 auf 25 Paare nur um 0,027340, waehrend seine Streuung um den Faktor 6,2 waechst (Bedingung C2 mit Faktor 20,5 Abstand erfuellt). S_DEP(888) = 0,090572 gegen die Vorabschaetzung 0,0881, also 2,8 Prozent daneben. Alle zwoelf Kontrollen K1 bis K12 und alle drei Nullproben bestanden. Die einzige Abweichung von einer Vorabschaetzung: K11 erwartete ein groesstes Anpassungsresiduum unter 0,02 und mass 0,036719 - innerhalb der Schranke 0,05, also bestanden, und die Ursache stand vorab im Vertrag (Schiefe des Medianverhaeltnisses bei kleinem n, von Diagnose D21 bestaetigt: 1,570 bei n = 25 gegen 1,044 bei n = 888). Robustheit: ueber die Unsicherheit der Literaturwerte schwankt n_krit zwischen 341 und 3479, ueber die Wahl des Signifikanzfaktors zwischen 357 und 2115, quantilbasiert 697 - kein Wert kippt den Ausgang.",
+  "meaning": "Der Lauf entscheidet ueber Statistik und ein Verfahren, nicht ueber die Schwerkraft, und er ist NICHT gebucht: keine Registerzeile, keine Evidenzbindung, keine Stufenaenderung, Runde 022 bleibt eingefroren, die Silberzeile M1.5 unveraendert. Er sagt ausdruecklich NICHTS darueber, ob Chae oder Saad & Ting recht haben - er sagt nur, dass eine Stichprobe von 36 Paaren in einer Kette unserer Bauart eine Luecke von 0,56 nicht als Befund tragen kann, unabhaengig davon, welcher der beiden Werte der richtige ist. Die Uebertragung auf die fremden Arbeiten ist eine Analogie mit benannten Grenzen: fremder Schaetzer, fremde Auswahl, fremder Beschleunigungsbereich. Methodisch ist der Befund der eigentliche Gewinn: V-2 scheiterte an einer Kontrolle ohne Vorabrechnung, V-3 hat fuer jede Kontrolle eine, und genau diese Regel hat im Fremdreview einen Selbstwiderspruch im Vertragstext sichtbar gemacht, der den Lauf sonst ohne jeden Fehler haette durchfallen lassen. Offen bleibt, wie in V-2, die Blackbox: die Erzeugung der Modellkataloge steht nicht im Vertragstext. Neu und besser als in V-2: die Kennzahl n_krit haengt nicht daran, sie ist modellfrei und damit vollstaendig durch ein fremdes Haus reproduzierbar.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260921/v-3-VERTRAG.md",
+      "label": "Vertrag V-3, Fassung 2",
+      "sha256": "58af301525d20db937c74d17d5aa53e9822f34c65e26d6bd46919a2a76da906d"
+    },
+    {
+      "path": "coordination/vertraege-20260921/startsignal-v-3.txt",
+      "label": "Startsignal mit Wortlaut, Zeit und Grund",
+      "sha256": "27f9f1d385d79d6b7f4f27ed6f64c4500e043b077830101c7ec626b055aad799"
+    },
+    {
+      "path": "coordination/vertraege-20260921/REVIEW-v-3.md",
+      "label": "S0-Fremdreview Qwen und DeepSeek, Neu-Quote 11 von 14",
+      "sha256": "625da4563520352d53b1c00d66fc8102f75a438b76cd6c6edcd07e9114c30386"
+    },
+    {
+      "path": "coordination/vertraege-20260921/v-3-lauf/BERICHT-V-3.md",
+      "label": "Bericht mit Leiter, Anpassung und n_krit",
+      "sha256": "517e084de3670550b22186d74f656e252c82cdb956e213d82c774ba6f6787ea1"
+    },
+    {
+      "path": "coordination/vertraege-20260921/v-3-lauf/ERGEBNIS-V-3.json",
+      "label": "Ergebnisdatei, Quelle jeder Zahl",
+      "sha256": "28eb89dcfab15e82452fb1a1ce1e6d719cde28155295e63ad74686def65d38b9"
+    },
+    {
+      "path": "coordination/vertraege-20260921/v-2-lauf/BERICHT-V-2.md",
+      "label": "Vorgaengerlauf V-2, Ausgang T, Quelle aller Vorabschaetzungen",
+      "sha256": "605b2393a04720477fbce1b04633bd3871f7a0981fa6287cce8dc48e50528814"
+    },
+    {
+      "path": "coordination/art-grenzen-20260921/BEOBACHTUNGSSPANNUNGEN.md",
+      "label": "Saad & Ting 2026, Herkunft von G_lit",
+      "sha256": "bb9ae5e881c5721bca1b6faa1cceb4731e820e252ffc7dfafc3c0fe17cd20521"
+    }
+  ],
+  "recorded_at": "2026-09-21T04:01:51.637020+00:00"
+}

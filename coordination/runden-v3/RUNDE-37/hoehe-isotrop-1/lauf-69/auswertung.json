@@ -1,0 +1,246 @@
+{
+ "urteile": {
+  "HI0": {
+   "a_rel_1e-6": true,
+   "a_abs_1e-6": true,
+   "b_nullpunkt": true,
+   "reproduktion": [
+    {
+     "name": "kammermitte",
+     "beta_neu": 0.0012439559243890882,
+     "beta_alt": 0.0012439559243890882,
+     "abw_abs": 0.0,
+     "abw_rel": 0.0
+    },
+    {
+     "name": "w0",
+     "beta_neu": 0.0012815219918503938,
+     "beta_alt": 0.0012815219918503938,
+     "abw_abs": 0.0,
+     "abw_rel": 0.0
+    },
+    {
+     "name": "f43_ort_min",
+     "beta_neu": -0.00028400104082167924,
+     "beta_alt": -0.00028400097060586827,
+     "abw_abs": 7.021581097587867e-11,
+     "abw_rel": 2.472379260749886e-07
+    }
+   ],
+   "urteil_plan": "eingetroffen",
+   "urteil_wortlaut": "eingetroffen",
+   "w0_stern": {
+    "quelle": "slsqp",
+    "z": [
+     -3.490242971784059,
+     1.5322580695912105,
+     -3.486243952181089
+    ],
+    "beta": -3.969990843884364e-12,
+    "marge": 0.4927484989153341
+   }
+  },
+  "HI1": {
+   "beta_L_mitte": 0.001138581658906366,
+   "beta_L_w0": 8.462665296327657e-05,
+   "R": 0.07432637993182012,
+   "urteil_plan": "nicht eingetroffen",
+   "wortlaut_rms_l4": {
+    "maxwell_lo": {
+     "rms_l4_w0": 2.0433804482791902e-05,
+     "rms_l4_mitte": 0.0002058075535387193,
+     "verh": 0.09928597921430332
+    },
+    "maxwell_hi": {
+     "rms_l4_w0": 9.135346825517475e-06,
+     "rms_l4_mitte": 0.000191728822088224,
+     "verh": 0.047647227610431185
+    }
+   },
+   "urteil_wortlaut": "nicht eingetroffen",
+   "R_alle_nullpunkte": {
+    "n": 7,
+    "min": 0.05248834767234811,
+    "max": 0.34049266516765403
+   }
+  },
+  "HI2": {
+   "n_plan": 1131,
+   "n_gueltig": 1131,
+   "ungueltig": [],
+   "a2_mitte": -0.002012136814030797,
+   "a2_min_betrag": -0.0011876543072644869,
+   "ort_min_betrag": {
+    "gruppe": "G",
+    "richtung": null,
+    "s": null,
+    "ziel": null,
+    "ecke_index": null,
+    "x": -0.03285714285714292,
+    "y": -1.5307142857142857,
+    "z": null,
+    "marge": 0.8421428571428566
+   },
+   "a2_max_betrag": -0.006608551767961577,
+   "ort_max_betrag": {
+    "gruppe": "G",
+    "richtung": null,
+    "s": null,
+    "ziel": null,
+    "ecke_index": null,
+    "x": -10.675357142857143,
+    "y": -7.965714285714286,
+    "z": null,
+    "marge": 0.017142857142855572
+   },
+   "alle_negativ": true,
+   "faktor_zur_mitte_max": 3.2843451408868405,
+   "urteil_plan": "nicht eingetroffen",
+   "wortlaut_n": 1136,
+   "wortlaut_l2_n": 5,
+   "wortlaut_alle_zweige_negativ": true,
+   "wortlaut_spanne": 5.564373174533415,
+   "urteil_wortlaut": "nicht eingetroffen",
+   "l2_ungueltig": []
+  },
+  "HI3": {
+   "l_mittel_mitte_m": 1.5779089435207933e-27,
+   "l_mittel_w0_m": 1.650387011721081e-27,
+   "faktor": 1.0459329852320673,
+   "urteil_plan": "eingetroffen",
+   "wortlaut": {
+    "maxwell_lo/konservativ_min_abs_a2": {
+     "l_mitte_m": 1.8120795070633935e-27,
+     "l_w0_m": 1.6668609519920857e-27,
+     "faktor": 1.0871209772463357
+    },
+    "maxwell_lo/streng_max_abs_a2": {
+     "l_mitte_m": 1.48568517509902e-27,
+     "l_w0_m": 1.629769216555965e-27,
+     "faktor": 1.0969815435139827
+    },
+    "maxwell_hi/konservativ_min_abs_a2": {
+     "l_mitte_m": 1.8120805806413033e-27,
+     "l_w0_m": 1.6668873942542113e-27,
+     "faktor": 1.087104376028984
+    },
+    "maxwell_hi/streng_max_abs_a2": {
+     "l_mitte_m": 1.4856955286970616e-27,
+     "l_w0_m": 1.6418618819813226e-27,
+     "faktor": 1.1051132956031826
+    }
+   },
+   "urteil_wortlaut": "eingetroffen",
+   "kugelmittel": {
+    "mitte": {
+     "a2_lP": -0.016097094512246377,
+     "l_m": 1.5938543592349614e-27
+    },
+    "w0": {
+     "a2_lP": -0.014988875418759843,
+     "l_m": 1.651725435140741e-27
+    }
+   }
+  },
+  "beschreibend": {
+   "beta_L": {
+    "min": 5.6987480466805505e-06,
+    "max": 0.005178846943237146,
+    "n_negativ": 0,
+    "min_betrag": 5.6987480466805505e-06,
+    "ort_min_betrag": {
+     "gruppe": "F43",
+     "richtung": 46,
+     "s": 0.9,
+     "ziel": null,
+     "ecke_index": null,
+     "x": null,
+     "y": null,
+     "z": [
+      -2.843795545101244,
+      2.8627748089919747,
+      -2.8190817966260626
+     ],
+     "marge": 0.1714285714285717
+    },
+    "min_betrag_rel_mitte": 0.005005128970858647
+   },
+   "beta_L_F43": {
+    "min": 5.6987480466805505e-06,
+    "max": 0.004471276694599975,
+    "n_negativ": 0,
+    "n": 640,
+    "skalar_min": -9.204615446716521e-05,
+    "skalar_n_negativ": 6
+   },
+   "beta_L_G": {
+    "min": 9.672108132048737e-05,
+    "max": 0.005178846943237146,
+    "n_negativ": 0,
+    "n": 325,
+    "skalar_min": 0.00012467341624363218,
+    "skalar_n_negativ": 0
+   },
+   "F43_strahlen_mit_vorzeichenwechsel_beta_L": 0,
+   "doppelbrechung_a2_max": 0.0019080363470818135,
+   "doppelbrechung_mitte": 0.0001036667411251609,
+   "doppelbrechung_w0": 8.32549026246489e-05,
+   "c_abw_max": 1.8723578243395878e-10,
+   "c_spanne_max": 1.6123946621893814e-09,
+   "id_T2_max": 2.6645352591003757e-15,
+   "symmetrie_mitte": {
+    "rms_l2": 6.102880694755096e-11,
+    "nichtkub4_rms": 6.211256215088314e-11,
+    "rms_l6": 6.617885854943597e-11
+   },
+   "symmetrie_w0": {
+    "rms_l2": 6.441065705144691e-11,
+    "nichtkub4_rms": 1.4311253880064493e-10,
+    "rms_l6": 1.6937597131573972e-10
+   },
+   "skalar_vergleich_regulaer_v1": {
+    "n_alt": 158,
+    "n_neu": 158,
+    "n_verglichen": 158,
+    "beta_rel_max": 0.0
+   }
+  }
+ },
+ "eingaben": {
+  "lauf/mitte.json": "3eab0a7de0ba1185031d37bafccb01591db0119e2b3cb8237766910b7b9ed563",
+  "lauf/proben.json": "78a1da9ce6bff770b1d468eb377b830c2263c8a5450bfeb0d2bf55fc56b61aad",
+  "lauf/f43-0.json": "63ba03d385421e23a08bbd1ee5e795fdbae22b1375b92139115848ce5dc8abdd",
+  "lauf/f43-1.json": "9df58a81afe5ffc94af2313bf5a5c8c59dd102f585d4277b4f70931db7432515",
+  "lauf/null.json": "74eeafc43f8899b9a48325643e6292da169256b9cf7ce444ebd9648b1e6de5f0",
+  "lauf/gitter.json": "7afdde6079bef760dc3c621b0d063308dddcb19136065184b1f907a96e7dc669",
+  "lauf/l2.json": "2b70141130ca590e666229b7a9f630a6d9a00509c48b0aeb2f3963f303ec1092"
+ },
+ "_meta": {
+  "argv": [
+   "code/hi.py",
+   "auswerten",
+   "lauf/auswertung.json",
+   "lauf/mitte.json",
+   "lauf/proben.json",
+   "lauf/f43-0.json",
+   "lauf/f43-1.json",
+   "lauf/null.json",
+   "lauf/gitter.json",
+   "lauf/l2.json"
+  ],
+  "python": "3.12.3",
+  "numpy": "2.4.4",
+  "scipy": "1.18.0",
+  "host": "ubuntu-auto",
+  "laufzeit_s": 0.1483628749847412,
+  "rauch": false,
+  "sha256": {
+   "hi.py": "8034c745f7ab1814ab9e17a31cb121043a34b2a0cabd87dcd274175537c955fe",
+   "rv.py": "237a98e58b5c57652f6243e25c038c20a37f709ef2b1784ea9492a87559a7481",
+   "ew.py": "fa7b6417d39177102f0b19c5474453cd16a7595e23bc25ca548e081c4060b142",
+   "tp.py": "419d7da6caa211c721eb6a8c87403977415cf3050f03365377f51cb77b374dfd",
+   "danzer_naeherung.py": "0571953eb693f87e6989d76dd59852bfbe832da1fedf0a46e3da144c63c8fc24",
+   "licht_netz.py": "98d3960a174fe9d077d32d79acf096b2c611c19f69dd13fb0d7d1a517f436146"
+  }
+ }
+}

@@ -1,0 +1,52 @@
+Unabhängiger V2-Nichtautorreview, 02.10.2026, particle_binding
+Nur Lektüre/Hashes, keine Ausführung oder neue Rechnung.
+
+Urteil: Für die begrenzte synthetische .69-QA geeignet. Der Guard
+behebt die konkret geprüfte Zeit-/Armstrukturlücke, ohne Modell,
+Integrator, Referenzen oder physikalische Schwellen zu ändern.
+Kein Hauptlauf-GO und kein bereits beobachtetes QA-Ergebnis.
+
+Gelesene Dateien, SHA256 unabhängig bestätigt:
+maincode.py
+0ce21bee477cb41ade234611fd832abc5a7a90ed10d83d526f532cf28c6fd899
+classifier-check-v2.py
+9f6095a0591b737688b9a3067526232687a0136a45703e46de51eae710900160
+MAIN-ADDENDUM-V2.txt
+264ce30cd5928f704bd088f1101806d473caa595f84f29dca4e027d9bd127f02
+Diff gegen vorher geprüfte repairedcode.py vollständig gelesen: allein
+Vorschaltguard in classify. Alter Code/alter Defektcheck bleiben erhalten.
+
+Guardprüfung
+Genau sechs eindeutige(kind,level)-Paare aus dem erwarteten Produkt;
+genau81 Samples je Arm; jeder Zeitwert muss numerisch, endlich,
+nicht bool und innerhalb1e-10 von.8*i liegen. Daher besitzen alle
+akzeptierten Arme dieselbe geordnete Folge einschließlich t64; zip
+kann keine unterschiedlich langen Listen mehr still abschneiden.
+Der absolute1e-10-Spielraum ist Darstellungstoleranz, kein gelockerter
+physikalischer Rest-/Energiegrenzwert. Ungültige Struktur liefert
+NUMERICALLY_UNRESOLVED_SAMPLE_STRUCTURE vor bisherigen Vergleichen.
+Bei gültiger Struktur bleibt complete=False -> INCOMPLETE.
+
+Synthetikprüfung nach Papierlektüre
+Sechs ursprüngliche Normalfälle sollten unverändert ihre Sollstatus
+liefern. Die sechs Sonden missing_sample, unsynchronised_sample,
+duplicate_arm, empty_samples, wrong_end_time und nan_time sollten
+alle exakt den neuen Strukturstatus ergeben. V2 zählt eine Exception
+richtigerweise nicht als bestandene Ablehnung. Zielcodehash wird vor
+Import geprüft. Keine main-/qa-/advance-/run_arm-Ausführung im Checker;
+synthetic_only/time_steps0 beziehen sich auf Software-QA ohne PDE.
+Pulsationsfall bleibt eine künstliche Statusprobe, kein Physikbefund.
+
+Explizite Grenzen
+Dies ist kein Schema-Validator beliebiger externer Ergebnisdateien:
+result['arms'] wird bereits vor try erwartet, Diagnosefelder und
+complete-Typen werden nicht vollständig validiert. Insbesondere die
+Endlichkeit aller Physikdiagnosen und Energie-/Q-/Kragenbilanzen sind
+nicht durch diesen Guard neu abgesichert. Der vorhandene Laufpfad
+und dessen vorgelagerte Prüfungen bleiben Teil des Vertrags. Das
+Addendum nennt diese Begrenzung korrekt; sie ist kein Hindernis für
+die gezielt beauftragte synthetische Zeitstruktur-QA.
+
+Weitere reale PDE-Ausführung bedarf weiterhin Roots separater
+Main-Entscheidung. Aus PASS dieser zwölf Softwarefälle folgt weder
+Bildung noch Langzeit- oder vollständige numerische Stabilität.

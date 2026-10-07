@@ -1,0 +1,157 @@
+{
+ "start": "2026-09-30T08:26:45+02:00",
+ "kommando": "kurve",
+ "kanal": "psi1",
+ "g": 0.2,
+ "l": 1,
+ "argumente": {
+  "kommando": "kurve",
+  "beta": 0.5,
+  "x0": 0.79768,
+  "rho0": 1.744625,
+  "drho": 0.4049,
+  "cgam": 1.07,
+  "offsets": "0,2e-5,-2e-5,1e-4,-1e-4,3e-4,-3e-4,5e-4,-5e-4,2e-3,-2e-3,8e-3,-8e-3",
+  "w_drho": "-3e-4,-1e-4,-3e-5,0,3e-5,1e-4,3e-4",
+  "w_dx": 0.0005,
+  "u_dx": "5e-4,1e-4",
+  "u_drho": 2e-05,
+  "u_n": 60,
+  "reserve": 90.0,
+  "rc": null,
+  "neu_legen": "ja",
+  "neu_profile": 3,
+  "u_drho_ohne_fit": 0.0005,
+  "pot": "poly",
+  "omega2_liste": "0.72,0.75",
+  "xmin": 0.62,
+  "xmax": 0.905,
+  "dx": 0.02,
+  "abstand": 0.12,
+  "n_rho": 40,
+  "stapel": 3000,
+  "max_kand": 3,
+  "ast_tol": 0.03,
+  "n_wechsel_fein": 2,
+  "n_fein": 1,
+  "fein_fenster": 0.01,
+  "n_fein_rho": 11,
+  "dateien": "",
+  "geraet": "cpu",
+  "out": "/home/fmh/fmhc-physics/coordination/runden-v3/RUNDE-09/sd1/lauf-lokal/aus-rauch-psi1-l1-kurve",
+  "budget": 540.0,
+  "omega2": "0.7",
+  "l": "1",
+  "h": "0.08",
+  "bereich": "alles",
+  "n_gebunden": 300,
+  "n_resonanz": 700,
+  "n_flaeche": 160,
+  "n_kante": 240,
+  "kasten_im": -0.1,
+  "kontur_runden": 8,
+  "kontur_max": 6000,
+  "rho_max": 9.0,
+  "iter_newton": 25,
+  "iter_illinois": 30,
+  "null_eps": 0.001,
+  "dims": "1,1.25,1.5,1.75,2,2.25,2.5,2.75,3",
+  "start": null,
+  "ciurla": false,
+  "eta": "0,0.001,0.01",
+  "dr": "0.05,0.025,0.0125",
+  "T": 800.0,
+  "rmax": 200.0,
+  "rsd": 130.0,
+  "mess": 0.2
+ },
+ "ergebnisse": {
+  "kurve": {
+   "potential": "U = S - S^2 + 0.5 S^3",
+   "pot": {
+    "art": "poly",
+    "beta": 0.5
+   },
+   "h": 0.08,
+   "f_rand": 1e-08,
+   "x_geplant": [
+    0.72,
+    0.75
+   ],
+   "l": 1,
+   "x": [
+    0.72,
+    0.75
+   ],
+   "S0": [
+    1.1315725394485154,
+    1.1139799740201566
+   ],
+   "Q": [
+    375.48956087935403,
+    277.91455595225966
+   ],
+   "R_halb": [
+    3.170959602141106,
+    2.763564982612319
+   ],
+   "R_aus": 35.68,
+   "r_m": 3.2,
+   "sek_profil_max": 2.98850059400138,
+   "kandidaten": [
+    {
+     "x": 0.72,
+     "ix": 0,
+     "rho_b": 1.7811983079528304,
+     "s": 0.024714890926687966,
+     "s_durch_steigung": 0.0006627955179609196,
+     "pol": [
+      1.7855601393793923,
+      -0.0016945288319682964
+     ],
+     "pol_konvergiert": true,
+     "Gamma": 0.0016945288319682964
+    },
+    {
+     "x": 0.75,
+     "ix": 1,
+     "rho_b": 1.8199454353191304,
+     "s": 0.0042334879827384195,
+     "s_durch_steigung": 1.6295219195597805e-05,
+     "pol": [
+      1.8210998975035058,
+      -1.6899569589258258e-05
+     ],
+     "pol_konvergiert": true,
+     "Gamma": 1.6899569589258258e-05
+    }
+   ],
+   "wachstum_max": 255.1416518761598,
+   "aeste": [
+    [
+     {
+      "x": 0.72,
+      "rho_b": 1.7811983079528304,
+      "s": 0.024714890926687966,
+      "Gamma": 0.0016945288319682964
+     }
+    ],
+    [
+     {
+      "x": 0.75,
+      "rho_b": 1.8199454353191304,
+      "s": 0.0042334879827384195,
+      "Gamma": 1.6899569589258258e-05
+     }
+    ]
+   ],
+   "vorzeichenwechsel": [],
+   "fein": []
+  }
+ },
+ "sha256_sd1": "ee06078d54e019a37657f4e97740108f8bf2ca4dd5dd7ca3c9ffda0668222edb",
+ "sha256_bic2": "ee1ef6d226e8ec2c262e40a6d0e1b571a2a6fe40d334831f8e4ccb0856df12ce",
+ "ende": "2026-09-30T08:26:53+02:00",
+ "sek": 7.49580214699381,
+ "entfallen": []
+}

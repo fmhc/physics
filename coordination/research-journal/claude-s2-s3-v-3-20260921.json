@@ -1,0 +1,51 @@
+{
+  "id": "claude-s2-s3-v-3-20260921",
+  "time": "2026-09-21T04:20:00+00:00",
+  "time_kind": "completed",
+  "author": "Claude",
+  "topic": "binaries",
+  "status": "checked",
+  "title": "S2/S3 zu V-3: Haus Alibaba rechnet n_krit = 784 aus dem Vertragstext allein nach, Abweichung 1,3e-13 - Evidenz traegt",
+  "question": "Ist das Ergebnis von V-3 zitierfaehig? Stimmen alle Berichtszahlen mit der Ergebnisdatei, ist n_krit = 784 innerhalb des vermessenen Bereichs belegt, traegt die Extrapolation nach unten, war die K11-Abweichung wirklich vorab erklaert, haelt der Ausgang in jeder Robustheitsvariante - und bekommt ein fremdes Haus aus dem Vertragstext allein dieselbe Zahl?",
+  "action": "S3 Gegenlesen durch claude-primary: maschineller Abgleich von 71 Berichtszahlen gegen ERGEBNIS-V-3.json, unabhaengige Nachrechnung der Anpassung, der geschlossenen Form von n_krit und der definierenden Ungleichung bei 783 und 784, Empfindlichkeitsprobe mit quadratischer Anpassung, Pruefung aller elf Robustheitsvarianten. S2 Reproduktion durch Haus Alibaba: Qwen (qwen3.6-27b-bunker im Bunker, Schluessel nur als Shellvariable, 0 USD) bekam ausschliesslich den Vertragstext und ein mechanisch erzeugtes Datenwoerterbuch der 77 Datenfelder - kein Laufskript, keine Ergebniszahl - und schrieb daraus ein eigenstaendiges Skript mit 476 Zeilen fuer Messseite, Teilstichprobenleiter und n_krit. Zeilenweise auf Vertragstreue geprueft, dann unveraendert als begrenzte User-Unit auf fmh@192.168.178.69 ausgefuehrt (CPUQuota 100 Prozent, MemoryMax 8G, RuntimeMaxSec 7200, eigenes Verzeichnis, ein Thread, kein CUDA).",
+  "result": "Die Kennzahl ist exakt reproduziert. Nach genau einer korrigierten Zeile stimmen n = 18051, alle sieben Feldbesetzungen, Gamma_obs_W, alle sieben S_DEP(n), a, p = 0,514876, n_krit = 784, S_DEP(18), beide Median-Drift-Eingaenge, C1, C2 und die Nullprobe N3 ueberein; groesste relative Abweichung 1,3e-13, also Gleitkomma-Rundung. Die Vertragstoleranzen (1e-9 fuer Gamma_obs, 2 Prozent fuer S_DEP, 0,01 fuer p, 15 Prozent fuer n_krit) sind um Groessenordnungen unterschritten. Die eine Korrektur: Qwen schrieb rv = (a1*rv1 + a2*rv2)/m mit booleschen Masken, und in NumPy ist False mal NaN gleich NaN - dadurch fielen alle 3796 Paare heraus, bei denen nur eine der beiden Radialgeschwindigkeiten endlich ist (3425 nur rv1, 371 nur rv2), exakt die Differenz zwischen 18051 und Qwens 14255. Bemerkenswert: selbst mit dieser um 21 Prozent verkleinerten Auswahl faellt n_krit nur auf 741, also um 5,5 Prozent, und der Ausgang bleibt A. S3: 71 von 71 Berichtszahlen stimmen; n_krit = 784 ist der kleinste Wert, der die definierende Ungleichung erfuellt, und liegt zwischen den gemessenen Sprossen 444 und 888, ruht also auf Interpolation; die Extrapolation von 25 auf 18 betraegt 18,4 Prozent und ihr Fehler zeigt konservativ, weil die angepasste Gerade S_DEP(25) um 2,1 Prozent unterschaetzt (quadratische Anpassung gaebe n_krit = 829); der Ausgang A haelt in allen elf Varianten, kleinster Wert 341 und damit 18,9-mal die Entscheidungsgrenze 18.",
+  "meaning": "Empfehlung fuer R23: Evidenz traegt - aber NICHT gebucht: keine Registerzeile, keine Evidenzbindung, keine Stufenaenderung, Runde 022 bleibt eingefroren, Register und Ledger gesperrt. Die Behauptung des Vertrags in Abschnitt 2.14, die Kennzahl sei modellfrei und damit vollstaendig durch ein fremdes Haus reproduzierbar, ist damit belegt - das ist der Gewinn gegenueber V-2, wo die Kennzahl an der Blackbox der Katalogerzeugung hing. Zwei eigene Befunde stehen gegen den Lauf: die Vorabschaetzung von Kontrolle K11 erwartete ein groesstes Anpassungsresiduum unter 0,02 und begruendete Abweichungen mit der Schiefe bei kleinem n, gemessen sind 0,0367, und das Residuenmuster ist eine Kruemmung ueber den ganzen Bereich mit dem groessten Wert bei n = 200 und positiven Residuen an beiden Enden - der genannte Mechanismus erklaert es nicht; und Kontrolle K3b war in diesem Lauf redundant zu K3a, beide exakt 0,0, bei 647 Sekunden Rechenzeit. Unbestaetigt bleibt die gesamte Modellseite, wie im Vertrag angekuendigt. Drittens lehrt der Qwen-Fehler etwas ueber den Vertragstext selbst: die Indikatorschreibweise in Abschnitt 2.2 Schritt 3 laedt zu False mal NaN ein, obwohl der Vertrag daneben ausdruecklich warnt; ein Nachfolger sollte dort where() ausschreiben.",
+  "sources": [
+    {
+      "path": "coordination/methodik-review/s2-s3-v-3-20260921/S2-S3-V-3.md",
+      "label": "S2/S3-Bericht mit Vergleichstabelle und Abstract",
+      "sha256": "da6a2141f31333ba7d61f1cfd2261294803783f152cfb71dd719a7d89a443862"
+    },
+    {
+      "path": "coordination/methodik-review/s2-s3-v-3-20260921/s2-qwen/s2_v_3_qwen.py",
+      "label": "Qwens eigenstaendiges Skript, unveraendert",
+      "sha256": "ec8ead7aa6c8d8a8ebe7a4a0372900959550e2aae7e4f6fa60830d35d52fff4e"
+    },
+    {
+      "path": "coordination/methodik-review/s2-s3-v-3-20260921/s2-qwen/s2_v_3_qwen_korrigiert.py",
+      "label": "dieselbe Fassung mit der einen dokumentierten Korrektur",
+      "sha256": "54fe33743bac7669912c551b6a2c6ce0fbbccd750c74759f0d7bd8445d1cc4d1"
+    },
+    {
+      "path": "coordination/methodik-review/s2-s3-v-3-20260921/s2-qwen/ERGEBNIS-S2-V-3.json",
+      "label": "S2-Ergebnis unkorrigiert",
+      "sha256": "c6a05a7d8aa8a3e382c88ff197f22075f722d940bc7c50bfad93bf93a8a4689c"
+    },
+    {
+      "path": "coordination/methodik-review/s2-s3-v-3-20260921/s2-qwen/ERGEBNIS-S2K-V-3.json",
+      "label": "S2-Ergebnis nach der Korrektur",
+      "sha256": "b4228e455e3f534aa9373a34701065bb65f4a3d376f89098428be65d3ed57505"
+    },
+    {
+      "path": "coordination/vertraege-20260921/v-3-VERTRAG.md",
+      "label": "Vertrag V-3, Fassung 2",
+      "sha256": "58af301525d20db937c74d17d5aa53e9822f34c65e26d6bd46919a2a76da906d"
+    },
+    {
+      "path": "coordination/vertraege-20260921/v-3-lauf/ERGEBNIS-V-3.json",
+      "label": "unser Lauf, Quelle jeder Vergleichszahl",
+      "sha256": "28eb89dcfab15e82452fb1a1ce1e6d719cde28155295e63ad74686def65d38b9"
+    }
+  ],
+  "recorded_at": "2026-09-21T04:14:40.250828+00:00"
+}

@@ -1,0 +1,151 @@
+KAUSALE ANTWORT ZWEITER ORDNUNG — Papierdiagnose, 2026-10-02
+particle_core. Keine Rechnung, Implementation oder Fensterverlängerung.
+Der abgeschlossene Zeitlauf bleibt UNRESOLVED, RESULT SHA256
+a3f302b50f184ef2b7fdf9d92afb903068e22436d2b3547fa4248f80e9a56cc3.
+Gelesen: RESULT-REVIEW.txt, modes/code.py operators/diagnostic,
+harmonic-source/code.py source/qa und time-domain/code.py.
+
+1. GLEICHUNG UND KONVENTION
+Physische kanonische Felder u=(x,y,z) mit
+phi=e^(i omega t)[f+(x+i y)/sqrt2], chi=g+z.
+Volumenvariable q=sqrt(V)u, p=q_t, X=(q,p). Der vorhandene Generator ist
+ L = [0,I; -K,-G],
+ G=[0,-2omega,0;2omega,0,0;0,0,0] tensor I,
+K mit Lplus,Lminus,Hchi und C=2sqrt2*g*f wie modes.operators.
+Keine drei getrennten Hessian-Evolutionen. K ist in der sqrt(V)-Basis
+symmetrisch, G schiefsymmetrisch. L ist deshalb nicht einfach ein
+selbstadjungierter Schrödingeroperator; Null-Jordanstrukturen sind möglich.
+
+Für die Amplitudenentwicklung X=alpha X1+alpha² X2+... um dieselbe
+stationäre Referenz ist X1(t)=Re(v exp(i rho t)); ||vq||=1. Sei
+u1=q1/sqrt(V), mit der tatsächlich angewandten gemeinsamen Ritzphase.
+Die gespeicherte homogene quadratische Kraft J liefert
+ X2_t = L X2 + F(t),       X2(0)=0,
+ F(t)=(0,sqrt(V)J(u1(t))).
+Die p-Komponente von X2 ist ebenfalls anfangs null: die verwendeten
+Lab-Anfangsdaten sind in alpha genau linear, auch nach Rückrotation.
+Das ist die KONTINUIERLICHE zweite Variation. Verlet und endlicher
+Ritzrest erzeugen separate Diskretisierungsabweichungen; die Formel ist
+kein Anspruch identischer diskreter Zeitabbildung bei endlichem dt.
+
+Für uhat=vq/sqrt(V), nu=2rho:
+ J(u1(t))=J0+J2 exp(i nu t)+conj(J2) exp(-i nu t),
+ J0=[J(Re uhat)+J(Im uhat)]/2, J2=J(uhat)/4.
+Also F=F0+F2 exp(i nu t)+conj(F2) exp(-i nu t). Gemeinsame Modendrehung
+exp(i theta) lässt J0 unverändert und dreht J2 mit exp(2i theta).
+Die gespeicherte stationäre Antwort untersucht ausschließlich F2.
+
+2. DUHAMEL OHNE UNZULÄSSIGE NULLINVERSE
+Die kausale Lösung ist exakt
+ X2(t)=Integral_0^t exp[L(t-tau)] F(tau) d tau.
+Mit E_t(B)=Integral_0^t exp(s B)ds = t*phi1(t B), einer ganzen
+Matrixfunktion, lautet dieselbe Darstellung
+ X2(t)=E_t(L)F0
+       +exp(i nu t) E_t(L-i nu I)F2
+       +exp(-i nu t) E_t(L+i nu I)conj(F2).
+Diese Form braucht weder L^-1 noch eine Inverse am Spektrumpunkt i nu;
+sie bleibt auch bei Nullmode oder Resonanz gültig (mit entsprechenden
+polynomiellen Zeitfaktoren). Auf dem endlichen FV-Gitter ist sie eine
+gewöhnliche Matrixidentität; im Ganzraum ist der kausale Propagator und
+sein zulässiger Zustandsraum maßgeblich.
+
+Nur auf einem invertierbaren Spektralkomplement und bei gleicher
+Randdefinition darf man setzen X0=-L^-1 F0, Xnu=(i nu I-L)^-1 F2.
+Dann dort
+ X2(t)=X0+2Re[exp(i nu t)Xnu]
+       -exp(Lt)[X0+2Re Xnu].
+Der letzte Term erzwingt den anfänglichen Nullwert. Er ist im Allgemeinen
+nicht klein und kein numerischer Fehler. Selbst bei rein DC+2rho-Quelle
+enthält er freie Eigen-/Kontinuumsfrequenzen des gesamten Generators.
+
+Wichtige Randgrenze: Der Zeitlauf verwendet endliche FV-Vakuumghostwerte;
+die stationäre Rechnung einen frequenzabhängigen auslaufenden Robinrand.
+Deren Resolvent ist nicht wortwörtlich die Inverse desselben endlichen L.
+Zieht man das Robin-Partikulärfeld von der endlichen Zeitlösung ab,
+bleibt zusätzlich der entsprechende Randfehler/-antrieb. Auch ist eine
+monochromatische auslaufende 1/r-Welle im unendlichen Raum kein global
+quadratintegrierbarer Anfangszustand. Die obige Subtraktionsformel darf
+daher nicht unbesehen als Ganzraum-Energienormzerlegung benutzt werden.
+Die lokale Partikulär-/Transientdeutung bleibt nützlich, mit diesen Grenzen.
+
+3. PHASE, LADUNG UND DC
+Die U(1)-Phase besitzt den Nullvektor e_theta=(qtheta,0),
+qtheta=(0,sqrt(2V)*f,0). Bei differenzierbarer stationärer omega-Familie
+ist der verallgemeinerte Vektor
+ e_omega=((sqrt(2V)*f_omega,0,sqrt(V)*g_omega),qtheta)
+mit L e_omega=e_theta ein möglicher Jordanpartner. Dies folgt durch
+Differenzieren der stationären Gleichungen; keine neue Profilrechnung.
+Damit kann eine Hintergrund-/Frequenzverschiebung eine lineare
+Phasendrift im ursprünglichen rotierenden System erzeugen.
+
+Man darf den DC-Anteil nicht blind invertieren, die Phasenkomponente
+nicht nachträglich wegdrehen und nicht jeden Nullraumterm als Divergenz
+oder Instabilität bezeichnen. Für einen Null-Jordanblock L=N, N²=0,
+enthält E_t(N)F0 formal tF0+t²NF0/2. Ob diese Koeffizienten im konkreten
+ladungsverträglichen Problem verschwinden, verlangt Projektionen und
+Solvabilität; ein tatsächlicher t²-Term wird hier NICHT behauptet.
+
+Die Ladungserhaltung lautet auf zweiter Ordnung
+ ell(X2(t)) + Qquadratisch[X1(t)] = Qquadratisch[X1(0)],
+ ell(X)=sqrt2 Sum sqrt(V)f(2omega*q_x+p_y), ell L=0.
+Folglich ell F(t)=-d Qquadratisch[X1(t)]/dt; bei periodischem X1 hat
+ell F0=0. Das ist eine Solvabilitätsbedingung, keine Erlaubnis zu
+Fest-Q-Nachnormalisierung. Die freien +/-Anfangsarme tragen bereits
+ihre reale O(alpha²)-Ladungsänderung. Ein beliebig ausgewähltes statisches
+DC-Partikulärfeld braucht deren Ladungs-/Phasenbedingung nicht zu treffen.
+
+4. WAS DIE GEMESSENEN ABWEICHUNGEN ERKLÄREN KÖNNTE
+- Einschalten aus X2(0)=0 statt vorbesetztem stationärem Strahlungsfeld
+  erzeugt einen zusätzlichen kausalen homogenen/dispersiven Anteil.
+- DC treibt statische Anpassung und gegebenenfalls Phasen-/Familienterme;
+  deren Einschaltantwort ist nicht automatisch ein zeitkonstanter Offset.
+- Ein endliches Fourierfenster unterdrückt reines konstantes DC und reine
+  Grundharmonische, aber weder langsame Drift noch breitbandige Transienten.
+- Eine feste k-Zerlegung eines noch transienten endlichen Fourierbandes
+  kann einen scheinbaren Incominganteil liefern, ohne damit eine konkrete
+  Randreflexion nachgewiesen zu haben. Randtails bleiben eine weitere
+  mögliche Kontamination, keine hier identifizierte Ursache.
+
+Alle diese Beiträge sind in führender Ordnung alpha². Daher sind die
+beobachtete ausgezeichnete Paritätsskalierung und Bandflussverhältnisse
+nahe16 vollkommen vereinbar mit einer noch NICHT stationären Antwort.
+Die Reproduzierbarkeit über h/dt spricht gegen einen groben Auflösungsfehler,
+isoliert aber keinen der obigen Mechanismen. Weder Duhamel noch endliche
+Propagation beweisen Einschwingen oder dessen Zeitpunkt. In einer endlichen
+konservativen Box gibt es ohnehin keinen allgemeinen dissipativen
+Attraktor zur auslaufenden monochromatischen Lösung.
+
+5. GENAU EIN KLEINER PROSPEKTIVER DIAGNOSETEST
+Vorschlag: lokaler Zweitordnungs-Gleichungsrest aus bereits gespeicherten
+Ringfeldern, KEINE neue PDE, keine längere Evolution, keine neuen Fenster.
+Ein Datensatz: base,h=.05,dt=.01,epsilon=0,+.002,-.002, alle drei gehashten
+Ring-NPZ plus vorhandener Ritzvektor/Referenz/Quelle. Ueven wie bisher;
+q2,p2 aus den vier rotierenden Feldern rekonstruieren. Auf den ORIGINALEN
+beiden Zeitfenstern und Schalen40..45/45..50 mit gespeicherten Halos prüfen:
+ Rkin=d_t q2-p2,
+ Rdyn=d_t p2+G p2+K q2-sqrt(V)J(Re(uhat exp(i rho t))).
+Die bekannte Quelle beinhaltet DC UND beide zweiten Harmonischen.
+Zeitdifferenzen zentriert mit gespeicherter .1-Abtastung; zusätzlich dieselbe
+Auswertung durch Auslassen jedes zweiten Samples (.2), nur als
+Differenzen-Kontrolle, keine neue physikalische Testserie. Raumoperator
+identisch FV, keine glatte Fitkurve oder neue Spektralsuche.
+
+Vorab falsifizierbare enge Zuordnung: Wenn beide normierten Gleichungsreste
+je ursprünglichem Fenster/Schale<.01 und deren .1/.2-Differenz<.005 sind,
+ist die abweichende Außenantwort lokal mit der kausalen quadratischen
+Feldgleichung verträglich. Nenner: Summe der L2-Normen der tatsächlich
+addierten Gleichungsterme (plus festem1e-14), über Zeit und Schalenvolumen;
+kinematischen und dynamischen Rest getrennt ausgeben. Große oder nicht
+auflösbare Reste verwerfen DIESE lokale Zweitordnungszuordnung für die
+gespeicherten Daten, nicht automatisch die zugrunde liegende Theorie.
+
+Das wäre KEIN vollständiger Duhamel-Nachweis: auf r40..50 kann die lokale
+Quelle sehr klein sein, sodass vor allem freie Propagation geprüft wird.
+Ein Bestehen trennt weder DC-Anregung im Kern von anderem Einschaltanteil
+noch Randbeiträge voneinander und beweist kein späteres Einschwingen.
+Es prüft konkret, ob die reproduzierbare Abweichung lokal als zulässige
+zweite-Ordnungs-Außenbewegung statt als stationäre Fehlidentifikation
+beschreibbar ist. Alle alten Signal-/Stationaritätsgates bleiben FAIL.
+Geschätzt wenige Arrayoperationen, prospektiver Deckel3 CPU-s auf .69
+inklusive Imports/IO, neue separate Diagnoseartefakte, keine automatische
+Folgerechnung. Nur Vorschlag; hier weder Code noch Ausführung.

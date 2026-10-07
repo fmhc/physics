@@ -1,0 +1,36 @@
+{
+  "id": "claude-portal-p0-vorschau-20260925",
+  "time": "2026-09-25T21:32:34+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung; Bau durch einen Claude-Subagenten (Anthropic, Opus 5.5), 18:22:04 bis 23:30:14 MESZ mit Pause 18:36 bis 21:26 (gemessen)",
+  "topic": "operations",
+  "status": "technical",
+  "title": "Forschungsportal P0 als Vorschau im Heimnetz (TS440) gebaut: nur der Weg fuer menschliche Gutachter, alle automatischen Abnahmen gruen; astra-Code-Review laeuft, P1 nicht begonnen",
+  "question": "Laesst sich das Portal nach astras Konzeptauflagen als Heimnetz-Vorschau bauen, sodass Finn es ansehen kann, bevor irgendetwas online geht?",
+  "action": "Bau nach Bauplan F2 mit astras Auflagen 1 bis 11. Code unter portal/; Tests (pytest, Live-Tests, Browserprobe) auf der .69; Vorschau als zwei Container auf der TS440 (pp0-web mit nginx, pp0-api), nur an 192.168.178.41:8443 gebunden, eigene Vorschau-CA (Schluessel nach dem Signieren vernichtet). Danach Testzugang (Rolle test, Kuerzel FT1, 14 Tage) und ein einmal einloesbarer Einladungslink fuer Finns Sichtpruefung; der Link steht nur im Chat, nicht in Dateien.",
+  "result": "P0-Umfang: Einladung einmal einloesbar, Sitzungen, Widerruf mit Kaskade, Paket KS-1 DR3 mit Tuer A (Methode) und Tuer B (Portal), privater Eingang, Antworten der Leitung, Loeschung, Sicherung und Ruecksicherung, Kommandozeile. Der Agenteneingang ist nur lesend ('geschlossen bis P3'). Tests: 63 von 63 Unit-Tests, 17 von 17 Live-Tests durch nginx und API, Browserprobe gegen gespeichertes XSS (einmal Zeitueberschreitung, fuenfmal gruen, Ursache offen), zwei Baue bitgleich. Nachbesserung: Datenbank nur fuer den Dienstnutzer lesbar, beiseitegelegte Staende verfallen nach acht Wochen. Kein Modellaufruf im Code; Uebermittlung an Modellanbieter gesperrt; nur synthetische Personen. Portal-Dateien SHA256SUMS 8665b6d2....",
+  "meaning": "Die Vorschau ist bereit fuer Finns Sichtpruefung (AK-22). Vor P1, also online fuer die zwei von Finn benannten Gutachter:innen, fehlen: astras unabhaengiges Code-Review (gestartet 23:32), Finns Entscheidungen D1 (Lizenz) und D8 (Verantwortlicher), Rechtstexte, Hoster-Vertrag, Vorfallsweg, ein Paketbauer mit gitleaks, M10, RO-Crate und REUSE, der Gaia-Lizenzbeleg an der Quelle und eine Entscheidung ueber 54 /home/fmh-Pfade und eine LAN-Adresse in den Originalen. Regelverstoesse des Bauagenten: einmal lokal python3 -c 1 (Phase 1), eine Zeitmessung auf der .69 ohne systemd-run. Keine Pruefung gelockert.",
+  "sources": [
+    {
+      "path": "coordination/portal-20260925/BAUPLAN.md",
+      "sha256": "905d2c85cbc2964a01b9aa4a9ae4a88028a4a48b8bb49cefb4e772f52aa02056"
+    },
+    {
+      "path": "coordination/portal-20260925/KONZEPT-FORSCHUNGSPORTAL.md",
+      "sha256": "c8b171c4b6b8b628c9e2ce387e10acf81dbfb14d98b8c8a37d3bb871fb9ccf42"
+    },
+    {
+      "path": "coordination/portal-20260925/SHA256SUMS",
+      "sha256": "8665b6d2fde64face533ad0d12a22fb579fe741407a0d766f108fcede5b3d607"
+    },
+    {
+      "path": "coordination/portal-20260925/review-astra-p0/BRIEF.md",
+      "sha256": "40164dbab4a75db11befa72a6045b578fbbdcc895ee4df4c9c630d7eb4ba5b47"
+    },
+    {
+      "path": "portal/deploy/p0.sh",
+      "sha256": "aaf7a7e6bf334cf42bdec9d86fa1267c126724b3377ba0dda7ffb1e2614e75df"
+    }
+  ],
+  "recorded_at": "2026-09-25T21:32:56.685540+00:00"
+}

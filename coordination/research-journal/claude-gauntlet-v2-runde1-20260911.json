@@ -1,0 +1,36 @@
+{
+  "id": "claude-gauntlet-v2-runde1-20260911",
+  "time": "2026-09-11T17:07:00+02:00",
+  "time_kind": "completed",
+  "author": "Claude (Jury: astra, gemini-3.1-pro, grok-4.6 via OpenRouter; Runner: claude-x1)",
+  "topic": "operations",
+  "status": "technical",
+  "title": "Gauntlet v2, Runde 1: drei Häuser, beide Kalibrierpaare einstimmig, alle sechs Sachbehauptungen mit Veto; M7 auf bronze",
+  "question": "Halten M1, S1, S2, M3, T4 einer Jury aus drei Modellfamilien stand, die keine der geprüften Zahlen erzeugt haben?",
+  "action": "Runde 1 des Laufs entwicklung-v2-20260911 mit Richterplätzen or-jury-a (openai/gpt-6-astra), or-jury-b (google/gemini-3.1-pro-preview, dritter Kandidat nach Abbruch und einem an der Kalibrierung gescheiterten qwen-Kandidaten) und or-jury-c (x-ai/grok-4.6); Richter ohne Werkzeuge, Evidenz im Prompt, Regel 'ohne eigene Rechnung, A2 nicht bewertet'. Elf Urteile in koordination (317-327), Ernte durch runde.py.",
+  "result": "M7 = PASS und K1 = FAIL bei allen drei Richtern; M7 steigt auf bronze. M1, M3 (astra), S1, T4 (gemini), S2 (grok) FAIL mit KEIN-PATCH-Vetos: kalibrierte Restsystematik und Median-Bias nicht bestimmbar (M1, M3), Sensitivitäten ohne syst (S1, S2), Vergleich ungleichen Grenzverhaltens und SciPy auf CPU (T4). K1 von vier Modellen aus vier Häusern gleich beurteilt: das 2π kürzt sich heraus. Ein qwen-Kandidat riss M7 (A2-Argument unter B4) und wurde nach der Regel 'Kalibrierung vor Stimmrecht' nicht gezählt. Kosten 4,96 USD, davon 1,82 für die elf gezählten Urteile.",
+  "meaning": "Die Vetos treffen genau die Lücken, die die Läufe vom selben Tag schließen (M3-Medianbias, T4-Grenzverhalten), die aber nicht im Manifest der Runde lagen. Runde 2 bekommt neue Versionen M1.2, M3.2, S1.2, S2.2, T4.2 mit dieser Evidenz; die Vorgängerinnen bleiben mit Veto im Ledger und werden nicht mehr vorgelegt. Stufen sind Workflowmarken, keine physikalische Bestätigung.",
+  "sources": [
+    {
+      "path": "gauntlet/new-runs/entwicklung-v2-20260911/rounds/001/manifest.json",
+      "label": "Manifest Runde 1",
+      "sha256": "562af94ae592b1223c850fcedaafad6057d43acd6951ecf15640482adf32db6f"
+    },
+    {
+      "path": "gauntlet/new-runs/entwicklung-v2-20260911/rounds/001/patches.md",
+      "label": "Patchliste",
+      "sha256": "e07de9d96507ae4020d70086a34ae7b587e64f22617be4d78e5a701f9cd8b1b0"
+    },
+    {
+      "path": "gauntlet/new-runs/entwicklung-v2-20260911/scoreboard.tsv",
+      "label": "Scoreboard",
+      "sha256": "e88d83dd6944bb9200c875496ee9eb7c6b8e76d36de9d658bb3c50b31e0e48e0"
+    },
+    {
+      "path": "gauntlet/new-runs/entwicklung-v2-20260911/run.json",
+      "label": "Provenienz der Richterplätze",
+      "sha256": "242be96c278dad576e1c927b326c394d247d6854a118ee9976259fd6f9cebe80"
+    }
+  ],
+  "recorded_at": "2026-09-11T15:10:20.182336+00:00"
+}

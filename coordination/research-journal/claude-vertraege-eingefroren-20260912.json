@@ -1,0 +1,28 @@
+{
+  "id": "claude-vertraege-eingefroren-20260912",
+  "time": "2026-09-12T05:10:02+02:00",
+  "time_kind": "document",
+  "author": "Claude (claude-primary)",
+  "topic": "micro",
+  "status": "technical",
+  "title": "Drei Vertraege eingefroren: Bucky-Jojo, Faden-Vertrag 1, Viermassen-Bruecke",
+  "question": "Welche Laeufe sind vor der Produktion mit Hashes und Ausgaengen fixiert?",
+  "action": "Finn-Freigabe (Relais claude-x1: \"ok mach beide vertraege auf .69\"); coordination/vertraege-20260912/*.json mit allen Hashes (Skripte, Startdateien, Vorprüfungen, Modell run.py bitgleich); Zettel 3b1153d2 und 0b98db16",
+  "result": "Beide Verträge vor dem ersten Produktionslauf mit Raster, Kriterien, Abnahmegrenzen und vorab benannten Ausgängen fixiert. Bucky-Jojo: 40 Starts (24 Haupt, 16 energiegleiche Atemkontrollen), Verlet h = 0,01/0,005, T = 2000, Ereignis D/Lc ≤ 0,15 ∧ K ≥ 3π/2 ∧ Rg²-Abfall ≤ 0,60 über ≥ 500 τ. Faden 1: 12 J-Starts (sechs Richtungen, sechste = zd als Ersatz für die nicht realisierbare Kippung aus der Ebene) plus 6 J0-Kontrollen, Amplitude 1e-2, Umgebung 0,05, T = 800, h = 0,005/0,0025.",
+  "meaning": "Rechner claude-x1 auf .69 CPU. Ergebnisse gehen erst nach Abnahme gegen diese Dateien ins Register; Ausgänge A/A'/B bzw. A/B sind vorab festgelegt. Marken-Grenze: astra-Läufe heute sind Finns Entscheidung.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260912/bucky-jojo-finite-dynamic-coiling-v1.json",
+      "sha256": "757ccee3453ec209d7fbff4bb2f876b2920a938b98006130f996df5b0f61e1eb"
+    },
+    {
+      "path": "coordination/vertraege-20260912/faden-vertrag-1-s4-rotor-nichtlinear.json",
+      "sha256": "b38f0d5a4fd2091c0ef71d2908f98e65efa0b1a45c7f3fe79eb771304fd7e096"
+    },
+    {
+      "path": "coordination/vertraege-20260912/zellteilung-viermassen-bruecke-v1.json",
+      "sha256": "76cf3d4dd2d33f9b480104fc281874846d7b30e7a9ee0a02e7160c9e00ecfe47"
+    }
+  ],
+  "recorded_at": "2026-09-12T03:52:54.138998+00:00"
+}

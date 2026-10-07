@@ -1,0 +1,65 @@
+NONLINEAR.tex — source ledger, 2026-09-30
+Author: Codex /root/nonlinear_normalform. No new calculations or runs.
+This is an English manuscript fragment, not an independent numerical
+replication or a literature-priority claim. All labels use prefix nl:.
+
+Exact algebra and T1/T2 angular/frequency statements:
+coordination/resonance-20260930/bic-nonlinear-followup/SOURCE-INDEPENDENT.txt
+Own direct Taylor derivation, completed before reading Root's calculation.
+The subsequent nonauthor read of check.py found no algebra/code blocker;
+it is an exact rational polynomial check plus midpoint threshold check,
+not a rigorous interval treatment of radiation amplitudes.
+coordination/runden-v3/RUNDE-10/beweis2/BEWEIS-2.md, sections1–2:
+T1/T2 parameter ranges used for channel identification only. The certificate
+audit in beweis2-fremdlesung/CERTIFICATES.txt does not certify nonlinear
+overlaps. The phase convention in this section is exp(+i omega t);
+earlier numerical reports use the conjugate convention. Physical sideband
+energies and amplitude magnitudes are compared, not raw convention-dependent
+complex coefficients. T1 uses normalized Y00; existing radial simulations
+instead specify their own max|(u+v)/r|=1 amplitude normalization.
+
+Requested pre-existing inventory, read in full:
+coordination/resonance-20260930/novelty-audit/PAPER-LEITER-EINARBEITUNG.txt
+Used to locate the old nonlinear evidence, not as sole numerical authority.
+
+First radial mode finite-amplitude evidence:
+coordination/resonance-20260930/bic-amplitude/ERGEBNIS.txt
+Read in full. Two radial grids h=.1/.05, |epsilon|=.01/.02/.04, T65.
+Fourth-order-compatible ratios15.97/15.89 refer to the integrated quadratic
+nonlinear-remainder flux, not exact total radiated energy. This manuscript
+review did not rerun the solver or newly validate its implementation.
+
+Harmonic identification:
+coordination/resonance-20260930/bic-harmonics/ERGEBNIS.txt
+coordination/resonance-20260930/bic-harmonics/SUMMARY.json
+Report read in full; JSON harmonic results directly inspected. Dominant
+negative sideband identified_outgoing=true in both windows85..125/125..165,
+both grids and radii20/30. Positive sideband remains false in both windows.
+Large even-field fit residuals explicitly retained; no periodicity claim.
+
+Forced radiation problem:
+coordination/resonance-20260930/bic-proof/forced/ERGEBNIS.txt
+coordination/resonance-20260930/bic-proof/forced/COMPARISON.json
+Report read in full; JSON strong_branch_agreement and prediction_controls_pass
+both true, weak_branch_prior_outgoing_status explicitly unresolved. No claim
+that successful amplitude comparison repairs the weak-sideband failure.
+Quantitative amplitudes in manuscript taken from the report; no new fit.
+
+Frozen finite-operator certificate:
+coordination/resonance-20260930/bic-proof/certificate/ERGEBNIS.txt
+coordination/resonance-20260930/bic-proof/certificate/CERTIFICATE.json
+Report read in full; raw JSON scope, final overlap intervals, excludes_zero,
+finite_bounds and certificate_pass inspected. I2 excludes zero, I1 does not,
+certificate_pass=false. Conditional IEEE754 interval implementation and
+exact frozen inputs; original-continuum transfer not established by this
+certificate. No fresh execution or independent full interval-code audit.
+Also read bic-proof/robust-input/ERGEBNIS.txt: the later prescribed input-box
+extension remains conditional on continuum membership. Omitted from the
+bounded manuscript fragment to avoid adding another numerical claim.
+
+Model boundary and scope:
+The earlier real Klein–Gordon external-shell local-quartic normal form is
+a different model. It is not evidence for nonlinear Q-ball continuation.
+No first-discovery claim, no external literature claims, no statement that
+nonlinear evidence is absent. The open work is specifically continuum
+transfer of existing n1 evidence and new T1/T2 source-overlap evaluation.

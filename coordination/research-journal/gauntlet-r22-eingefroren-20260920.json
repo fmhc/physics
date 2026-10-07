@@ -1,0 +1,56 @@
+{
+  "id": "gauntlet-r22-eingefroren-20260920",
+  "time": "2026-09-20T21:10:00+02:00",
+  "time_kind": "document",
+  "author": "claude-primary (Opus 5)",
+  "topic": "operations",
+  "status": "open",
+  "title": "Gauntlet-Runde 22 eingefroren und wartend: drei Haeuser haben geurteilt, astra fehlt das Kontingent",
+  "question": "Traegt die neue Evidenz aus V1.2 und MEM-B3 einen Aufstieg, und traegt die Registerzeile M1.5 weiter, obwohl die neue Kontrolle K10 aus dem M1.7-Lauf zeigt, dass das Newton-Vorwaertsmodell die gemessenen absoluten Mediane in keinem logg-Feld deckt?",
+  "action": "Runde 22 mit vier Haeusern eingefroren (Manifest 00242c6f..., Ledger 3836d6f7..., Matrix 0ef091ce..., Wasserlinie 955, 24 Behauptungen je Slot). Vorher gebunden: fuenf V1.2-Belege samt hashgebundener Feldauswahl der 182-kB-Ergebnisdatei, fuenf MEM-B3-Belege, und fuer M1.5 ein Stufe-3-Beweispaket (4 997 Zeichen) mit den K10-Zahlen plus Pfad und sha256 der drei Volldateien; dazu eine Schnittstellenverdichtung von run_m1prior_v2.py, um im Qwen-Kontextfenster Platz zu schaffen. Scratch-QA auf .69 vorher 7/7 gruen. Geurteilt haben Qwen (Alibaba) 24/24, Opus 5 (Anthropic) 24/24 und DeepSeek 23/24; astra (OpenAI) hat in drei Anlaeufen keine vollstaendige Urteilliste geliefert. Keine Stimme ist in die Datenbank gebucht, das Register ist unveraendert.",
+  "result": "Drei Werkzeugbefunde und ein Kontingentbefund. Erstens: der Brief widerspricht sich fuer den Codex-Slot, weil run.json ohne_rechnung fuehrt und deshalb in jedem Brief 'kein Werkzeug, ohne Dateizugriff' steht, waehrend der Codex-Prompt vollstaendiges Lesen je Quelle verlangt; astra gehorchte dem strengeren Satz und lieferte nur M7. Zweitens: der Codex-Prompt war 617 695 Bytes gross (Brief, Vertrag und Leseplan im Volltext) und wurde abgeschnitten; verkuerzt auf 4 281 Bytes mit Pfad plus sha256 ist er handhabbar. Drittens: der Einzeilertest am Starttag war bestanden, das Kontingent reichte trotzdem nicht fuer 24 Urteile, Wiederfreigabe 26.09.2026 10:18. Viertens: zwei Transportklassen ohne Antwort - das Bunker-Gateway lief bei GV3 in einen Timeout, und OpenRouter routete mehrfach auf einen Anbieter, der das gesamte Ausgabebudget in eine Gedankenkette legte und leeren Inhalt zurueckgab (bei F2.2 dreimal). Beides wurde mit eigenen Anlauf-Archiven und je einer dokumentierten Leadentscheidung behandelt; nichts wurde geloescht. Kosten Slot d 0,8801 USD von 1,10 USD Deckel.",
+  "meaning": "Die Runde ist nicht geerntet und praejudiziert nichts. Sie zeigt aber, dass die Jury-Werkzeuge an drei Stellen vor Runde 23 zu reparieren sind: Werkzeugverbot und Leseverbot im Brief trennen, im Codex-Slot Volltext durch Pfad plus Hash ersetzen, und vor dem Start nicht nur die Verfuegbarkeit, sondern das Kontingent fuer eine ganze Runde pruefen. Fachlich liegt die eigentliche Frage der Runde bei M1.5: die neue Kontrolle K10 stellt die Deckung der absoluten Niveaus in Frage, und ueber einen Abstieg entscheidet erst das Quorum, nicht die Leitung.",
+  "sources": [
+    {
+      "path": "coordination/steuerung-20260918-r22/ZWISCHENSTAND-R22.md",
+      "rolle": "Lage je Slot, Ursachen, Checkliste fuer den 26.09.",
+      "sha256": "4533dfc3412626b7e5012a3e60374e8a2800418617d74ec8ab9edf368bbaca0f"
+    },
+    {
+      "path": "coordination/steuerung-20260918-r22/ENTSCHEIDUNG-R22-SLOT-A.md",
+      "rolle": "Briefwiderspruch und zweiter Anlauf",
+      "sha256": "5fc86fbeae0e4bbad79162206b1edd90df5ccfa8b56c941f5998547b38c040d5"
+    },
+    {
+      "path": "coordination/steuerung-20260918-r22/ENTSCHEIDUNG-R22-SLOT-A-ANLAUF3.md",
+      "rolle": "Promptgroesse und dritter Anlauf",
+      "sha256": "2c7e71b062e160cd2cd4985498a22ab956a97431a9ec6f10e8da6c90444a055a"
+    },
+    {
+      "path": "coordination/steuerung-20260918-r22/ENTSCHEIDUNG-R22-SLOT-B.md",
+      "rolle": "Timeout des Bunker-Gateways",
+      "sha256": "498596b7fa0dd6a3af32cf3682203ed5fcb6d4b251c280ebeafea4a46ea25dfe"
+    },
+    {
+      "path": "coordination/steuerung-20260918-r22/ENTSCHEIDUNG-R22-SLOT-D.md",
+      "rolle": "leere Anbieterantworten bei OpenRouter",
+      "sha256": "d38549060ca9d288c141c851292623cd5b75b1780e3d2806193ebb7e1aace448"
+    },
+    {
+      "path": "coordination/steuerung-20260918-r22/verdichtung-r22/M1-7-BEFUND-FUER-M1-5.md",
+      "rolle": "Stufe-3-Beweispaket mit den K10-Zahlen",
+      "sha256": "0bb032d27195a6f026bb175c78a5515393e208c640208a1aa47e39bb7fd9db3c"
+    },
+    {
+      "path": "coordination/steuerung-20260918-r22/qa-r22-20260920/QA-R22.json",
+      "rolle": "Scratch-QA auf .69, 7 von 7 gruen",
+      "sha256": "6b737acec25e9b7e65fa18e4458e80138fd9b833377b16475abc1624d5ce7286"
+    },
+    {
+      "path": "gauntlet/new-runs/entwicklung-v2-20260911/rounds/022/manifest.json",
+      "rolle": "eingefrorenes Rundenmanifest",
+      "sha256": "539c477de17d7367ab80e2884d814ab1a2b1aa662a4be8013c4e33221eb92bbe"
+    }
+  ],
+  "recorded_at": "2026-09-20T17:02:34.944654+00:00"
+}

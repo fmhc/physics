@@ -1,0 +1,16 @@
+G2-08 prisma.py gegen Start 2026-09-30T11:25:51+02:00 auf CPU, 1 Thread, torch 2.10.0+cu128, Faktor 0.01  FORMPROBE: Zahlen ungueltig
+Phi2 = 0.01, Stufe bei x_s = 0.0, w = 1.0, Start x0 = -20.0, Zone |x - x_s| < 6.0
+Codeschwellen (bindend): Variante omega^2 | v_cl | M1 | M2 | (M2/M1 - 1)/Phi2 | Licht hinten
+  A|0.55 | 0.079244 | 3.371076 | 3.381710 | 0.3155 | 1.01980
+  A|0.7 | 0.065530 | 2.298607 | 2.303558 | 0.2154 | 1.01980
+  A|0.9 | 0.036516 | 1.268979 | 1.269825 | 0.0667 | 1.01980
+  C|0.55 | 0.141198 | 3.371076 | 3.405191 | 1.0120 | 1.02020
+  C|0.7 | 0.141267 | 2.298607 | 2.321892 | 1.0130 | 1.02020
+  C|0.9 | 0.141373 | 1.268979 | 1.281853 | 1.0146 | 1.02020
+  v_P1 = 0.051023, v_P2 = 0.072387
+[grob] 0.2 s
+  Lauf | v | T_run | Soll | Ausgang | Anteile zurueck/stufe/durch/frei | v2 | S_max-Schwankung | Ladung, Energie bis Schwamm
+  ohne Stufe A w2=0.7 v_P1       | 0.05102 | 16 | durch | vor der Stufe | 1.0000/0.0000/0.0000/2.2e-16 | +0.05101 | 3.40e-04 | 3.6e-16, 1.2e-07
+  umgekehrt A w2=0.55 v_P1       | 0.05102 | 16 | durch | vor der Stufe | 1.0000/0.0000/0.0000/2.2e-16 | +0.05101 | 2.87e-04 | 3.5e-16, 6.5e-08
+  Pruefung [grob]: {"ohne_Stufe_durch_v2_gleich_v_1e-3": {"ausgang": "vor der Stufe", "v2": 0.05101093229176534, "v": 0.0510228599864732, "rel": 0.0002337715822087938, "bestanden": false}, "umgekehrt_durch_v2_groesser_v": {"ausgang": "vor der Stufe", "v2": 0.05101355847653366, "v": 0.0510228599864732, "bestanden": false}, "plausibilitaet_bestanden": true}
+Ende 2026-09-30T11:25:51+02:00

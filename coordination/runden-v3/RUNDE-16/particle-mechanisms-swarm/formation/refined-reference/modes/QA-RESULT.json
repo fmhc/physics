@@ -1,0 +1,65 @@
+{
+  "status": "QA_ONLY_COMPLETE",
+  "code_sha256": "467ad3e19cd8efcdac4ec2dcc670b50aaa59cc6f7e9e44d625ebbf94ba0d32c6",
+  "tasks": [],
+  "profile_checks": [
+    {
+      "stationary_max": 2.4932778064368222e-11,
+      "truncated_charge_fraction": 0.0,
+      "phase_anchor": 1.1791728431625515e-11,
+      "passed": true,
+      "R": 120.0,
+      "h": 0.1
+    },
+    {
+      "stationary_max": 1.5177914480801746e-11,
+      "truncated_charge_fraction": 0.0,
+      "phase_anchor": 7.216678841204203e-12,
+      "passed": true,
+      "R": 120.0,
+      "h": 0.05
+    },
+    {
+      "stationary_max": 2.4932778064368222e-11,
+      "truncated_charge_fraction": 0.0,
+      "phase_anchor": 1.1791728431625515e-11,
+      "passed": true,
+      "R": 60.0,
+      "h": 0.1
+    },
+    {
+      "stationary_max": 1.5177914480801746e-11,
+      "truncated_charge_fraction": 0.0,
+      "phase_anchor": 7.216678841204203e-12,
+      "passed": true,
+      "R": 60.0,
+      "h": 0.05
+    }
+  ],
+  "execution": "CPU float64/complex128; no CUDA",
+  "completeness_claim": false,
+  "reference": {
+    "manifest_sha256": "8c33ace3a5465a8fd481d26b35457425ee3c5d5f0111b3f11c09f4a9dd72fdf4",
+    "profiles": [
+      {
+        "h": 0.1,
+        "sha256": "8265a508c85b5823e1a46f47ea3a9cadb26c790fe89f8ad711699164483d3adb",
+        "file": "prepared/reference-h0.1.npz"
+      },
+      {
+        "h": 0.05,
+        "sha256": "bf03078bb52e4fe515cb3a5fbd01608efec3df18b8845a3ae37aaef6c9661011",
+        "file": "prepared/reference-h0.05.npz"
+      }
+    ]
+  },
+  "qa": {
+    "mixed_derivative_error": 3.213108241339268e-12,
+    "mutant_error": 1.0000000000032132,
+    "hessian_error": 7.091492622939093e-12,
+    "free_frequency_error": 1.7763568394002505e-13,
+    "free_real_error": 3.552713678800501e-14,
+    "free_lowest": 0.5947320746798146
+  },
+  "cpu_seconds": 0.53583006
+}

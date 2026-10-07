@@ -1,0 +1,97 @@
+{
+ "modus": "kontrolle",
+ "params": {
+  "OMEGA": 6.283185307179586,
+  "EPS": 0.1,
+  "K": 1.0,
+  "MU_X": 2.0,
+  "KAPPA": 0.01,
+  "MU_PHI": 50.26548245743668,
+  "T_NOISE": 6.283185307179587e-05,
+  "DELTA_F": 0.02,
+  "G_AUF": 0.2,
+  "DT": 0.005,
+  "Z0": 0.05,
+  "JITTER": 0.002,
+  "SUB": 10,
+  "PRUEF_ALLE": 1000,
+  "FD_H": 1e-05
+ },
+ "argv": [
+  "kontrolle",
+  "--dim",
+  "2",
+  "--takte",
+  "10",
+  "--aus",
+  "/home/fmh/fmhc-physics-remote/raute-atem-1/rauch/test/kontrolle_d2.json"
+ ],
+ "laeufe": [
+  {
+   "dim": 2,
+   "B": 0.0,
+   "seed": 1,
+   "takte": 10.0,
+   "npz": "/home/fmh/fmhc-physics-remote/raute-atem-1/rauch/test/kontrolle_d2_s1.npz",
+   "werkzeugprobe": {
+    "n": 3,
+    "n_ausgelassen": 0,
+    "max_int_vs_schleife": 6.938893903907228e-18,
+    "max_schleife_vs_fd": 3.821619062871484e-11,
+    "max_bilanz_mit_reibung": 6.938893903907228e-18,
+    "max_impuls_summe": 3.469446951953614e-18
+   },
+   "laufzeit_s": 0.84
+  },
+  {
+   "dim": 2,
+   "B": 0.0,
+   "seed": 2,
+   "takte": 10.0,
+   "npz": "/home/fmh/fmhc-physics-remote/raute-atem-1/rauch/test/kontrolle_d2_s2.npz",
+   "werkzeugprobe": {
+    "n": 3,
+    "n_ausgelassen": 0,
+    "max_int_vs_schleife": 1.3877787807814457e-17,
+    "max_schleife_vs_fd": 4.075466353281598e-11,
+    "max_bilanz_mit_reibung": 1.3877787807814457e-17,
+    "max_impuls_summe": 1.235990476633475e-17
+   },
+   "laufzeit_s": 0.76
+  },
+  {
+   "dim": 2,
+   "B": 0.0,
+   "seed": 3,
+   "takte": 10.0,
+   "npz": "/home/fmh/fmhc-physics-remote/raute-atem-1/rauch/test/kontrolle_d2_s3.npz",
+   "werkzeugprobe": {
+    "n": 3,
+    "n_ausgelassen": 0,
+    "max_int_vs_schleife": 3.469446951953614e-18,
+    "max_schleife_vs_fd": 3.826587657851377e-11,
+    "max_bilanz_mit_reibung": 3.469446951953614e-18,
+    "max_impuls_summe": 2.0816681711721685e-17
+   },
+   "laufzeit_s": 0.76
+  },
+  {
+   "dim": 2,
+   "B": 0.0,
+   "seed": 4,
+   "takte": 10.0,
+   "npz": "/home/fmh/fmhc-physics-remote/raute-atem-1/rauch/test/kontrolle_d2_s4.npz",
+   "werkzeugprobe": {
+    "n": 3,
+    "n_ausgelassen": 0,
+    "max_int_vs_schleife": 3.469446951953614e-18,
+    "max_schleife_vs_fd": 3.860831446211854e-11,
+    "max_bilanz_mit_reibung": 3.469446951953614e-18,
+    "max_impuls_summe": 1.734723475976807e-18
+   },
+   "laufzeit_s": 0.76
+  }
+ ],
+ "laufzeit_s": 3.13,
+ "rss_mb": 36.4
+}

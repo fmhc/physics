@@ -1,0 +1,25 @@
+{
+  "id": "claude-strukturkonflikt-qh5-20260923",
+  "time": "2026-09-23T18:15:43.483784+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5)",
+  "topic": "modelle",
+  "status": "reported",
+  "title": "Strukturkonflikt: in allen geprueften Modellen schliessen sich Bindung und erhaltene Unterstruktur aus; das erklaert rueckwirkend, warum 117 klassische Optimierungen und vier Quantenvarianten keine zweite Ebene gaben",
+  "question": "Kann eine Vielkoerperantwort zwei Komposite binden, ohne ihre innere Struktur zu zerstoeren?",
+  "action": "Codex fuhr QH5 auf .69/P5000: fuenf Kandidatenfamilien mit exakt gleicher Paarbasis (blockierte Paarbewegung, kappa = 0,05, g = 0,05), addiert wird nur der Ueberschuss ueber die isolierte Paarantwort; 80 Sektorauswertungen, L8/L12, n1 bis n4. Dazu eine vollstaendige mikroskopische Gegenpruefung ohne Fluss-Cutoff (L6, 24 Sektoren). Auflage von mir (0a21d36f): die nicht abgeleitete Grundannahme (thermisches Potential auf Quantenbewegung) gehoert als erster Satz ins ABSTRACT, die fuenf Kandidaten sind als fuenf zu zaehlen.",
+  "result": "Bei L12, lambda = 2, vier neutrale Paare: Paarbaseline E4-2E2 = -0,012609 bei kompaktem Vierblock 0,63021; Dreieckssumme -0,031835 bei 0,85006; volle gleichgerichtete Spinsumme -0,033391 bei 0,86169; frustrierte Spins -0,000586 bei 0,06548 (getrennte Doppelpaare 0,25512); Valenzsaettigung +0,001970 bei 0,000446 (getrennte Doppelpaare 0,36891). Mikroskopisch bei g = 0,1 und w = -0,05: innere Paare erhalten mit 0,9462, davon 0,8524 als getrennte Doppelpaare, aber E4-2E2 = +0,01012. Der Frustrationskontrast wechselt zwischen L8 und L12 das Vorzeichen (+0,001981 auf -0,000586), ist also boxabhaengig.",
+  "meaning": "Der Strukturkonflikt ist der eigentliche Befund: je staerker die Vielkoerperantwort bindet, desto kompakter wird das Gebilde und desto weniger bleibt von der Unterstruktur; wer die Unterstruktur erhaelt, bindet nicht. Das erklaert rueckwirkend die 117 klassischen Optimierungen und die vier Quantenvarianten. Zusaetzlich bestaetigt: die tripolare Variante erzeugt keine echten Dreikoerperkraefte, weil die Feldenergie in einer Dimension paarweise zerlegbar ist (mein Einwand, von Codex geprueft). Der naechste Nachweis waere eine bei groesserem Volumen bestaendige Bindung zweier erhaltener Doppelpaare - genau der Punkt, an dem der Konflikt brechen muesste. Keine neue Modellfamilie ohne Finns Entscheidung.",
+  "compute": "Codex auf .69/P5000 CUDA-f64, Programmzeit 2,5 s, Service 5,4 s; 76 analytische Kontrollen bis 4,84e-17; keine Rechnung von mir",
+  "sources": [
+    {
+      "path": "coordination/stabile-kompositionen-20260923/combined-a/induced.json"
+    },
+    {
+      "path": "coordination/stabile-kompositionen-20260923/combined-a/microscopic.json"
+    },
+    {
+      "path": "coordination/stabile-kompositionen-20260923/QH5-VORAB.md"
+    }
+  ]
+}

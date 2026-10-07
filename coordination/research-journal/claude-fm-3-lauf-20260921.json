@@ -1,0 +1,66 @@
+{
+  "id": "claude-fm-3-lauf-20260921",
+  "time": "2026-09-21T05:47:45+02:00",
+  "time_kind": "completed",
+  "author": "Claude",
+  "topic": "theory",
+  "status": "reported",
+  "title": "Feldmodell zum dritten Mal gerechnet: Ausgang U1, alle messbaren Kontrollen bestanden, und eine Loesung bei omega = 0,71646",
+  "question": "Wandert die numerisch erreichbare untere Kante des Frequenzfensters unter Verfeinerung des Fortsetzungsschritts weiter, oder konvergiert sie gegen ein Ende des Loesungsastes oberhalb der analytischen Kante 1/sqrt(2) - und ist der m = 1 Zweig wegunabhaengig?",
+  "action": "Nachfolgevertrag FM-3 zu dem mit U2 geendeten FM-2 geschrieben. Vier Aenderungen: das in FM-2 als untauglich erwiesene Duennwand-Startbild ersatzlos gestrichen und durch ein deterministisches Startverfahren S ersetzt (Staffelfortsetzung ueber vier feste Schrittweiten 0,002/0,0005/0,0001/0,00002, jede Stufe aus der konvergierten Loesung der vorherigen); die Werkzeugprobe zur Pflichtkontrolle K14 gemacht, sodass ein untaugliches Werkzeug den Lauf ungueltig statt negativ macht; A2 mit zwei Zahlen neu gefasst (Gewinnverhaeltnis r und extrapolierte Grenzkante w_unend), die zwischen 'Kante wandert weiter' und 'Kante konvergiert' trennen, mit einer ausdruecklich offengelassenen Luecke dazwischen; A3 auf Wegunabhaengigkeit umgestellt (Hauptast, Gegenlaufast, Gittervergleich) statt auf drei geratene Startbilder. Die in FM-2 gemessene Kantenreihe vorab per sha256 gebunden. Fuenf S0-Fremdreviewlaeufe durch Qwen (Bunker, 0 USD) und DeepSeek (OpenRouter), zusammen 0,04663 USD. Laufskript von einem Claude-Subagenten allein aus dem Vertragstext geschrieben (3273 Zeilen); fm_1.py und fm_2.py wurden ihm nicht gegeben. Sein Prueflauf hat vor dem Lauf einen Selbstwiderspruch im Vertragstext gefunden (Fassung 2). Lauf am 21.09.2026 auf .69 (CPU, Unit fmhc-physics-fm-3-20260921, kein CUDA, GPU-Lock unberuehrt), 1338,5 s, Speicherhoch 749 MiB.",
+  "result": "Ausgang U1 (ungueltig, nicht negativ). Vierzehn von fuenfzehn Kontrollen sind erfuellt und messbar, darunter K14 - genau die Werkzeugprobe, an der FM-2 gescheitert war - sowie K2 (max D = 4,08e-5 gegen 1e-3), K6 (0,0122 gegen 0,05), K10 (alle drei Arme) und K12 (9 von 9 Nullpunkten). K11 (Achsenpotenz) ist nicht messbar, weil an zwei der fuenf m = 1 Pflichtfrequenzen keine Loesung vorliegt; nach Vertrag 4.5 setzt eine nicht messbare Pflichtkontrolle den Lauf auf U1. Ursache: der Aufwaertsast von Weg 1 ist nach zwei Fehlschlaegen bei omega = 0,875 und 0,880 abgebrochen, obwohl derselbe Ast im Prueflauf des Ausfuehrenden am selben Gitter bis 0,925 mit X = 1 durchlief. Der Unterschied ist an den Zahlen ablesbar (max f = 1,0685 im Lauf gegen 0,9592 im Prueflauf) und liegt im Startbild des Aufwaertsastes; Vertrag 2.3 ist an dieser Stelle mehrdeutig. Erfuellt sind A1 (128 von 128 Innengitterpunkten) und A4 (Q-Minimum eindeutig bei omega = 0,962, Q = 111,87733, Index 112 von 128). Die Kernzahl des Laufs: das neue Startverfahren S hat alle vier Stufen durchlaufen und eine Loesung bei omega_S = 0,716460 mit allen sechs Guetetoren vorgelegt (normF = 1,66e-11, G_vir = -1,32e-6, R_50/h = 8486, Randverhaeltnis 1,72e-33) - 0,0121 unterhalb der tiefsten in FM-2 erreichten Kante und 0,0094 oberhalb der analytischen Kante. A2(iii) ist damit erfuellt, ebenso A2(ii) und A2(iv). A2(i) dagegen landet in der vorab offengelassenen Luecke: die vierte Stufe der Kantenreihe ergibt omega_min(0,00025) = 0,725, also g3 = 0,0035 und r = 0,6364 - zwischen den Schwellen 0,50 (B) und 0,75 (A).",
+  "meaning": "Der Lauf ist ungueltig und beantwortet nach seinen eigenen Regeln keine der beiden Kernfragen; die gerechneten Zahlen sind keine Befunde und werden nicht gebucht. Drei Dinge sind trotzdem festzuhalten. Erstens hat die in FM-2 als untauglich erwiesene Instrumentierung funktioniert: das neue Startverfahren besteht die Werkzeugprobe an beiden vorgeschriebenen Frequenzen und legt die tiefste Loesung dieser Reihe vor - allerdings steht der Loeser dort an seiner vertraglichen Grenze von 50 Newton-Schritten, omega_S ist also eine Rechengrenze und kein Modellwert. Zweitens hat die absichtlich offengelassene Luecke im Kantenkriterium beim ersten Lauf getroffen; die vorab gebundene Erwartung W5 (r = 0,917 plus minus 0,15) lag ausserhalb ihrer eigenen Unsicherheit, weil sie ein reines Potenzgesetz unterstellte - ein Fremdhaus hatte genau darauf hingewiesen, und die Annahme ist widerlegt. Drittens ist der Lauf an einer Mehrdeutigkeit gescheitert, die weder das Fremdreview noch der Prueflauf gefangen hat, weil beide an dieser Stelle verschieden gerechnet haben. Damit sind es neun Defekte desselben Typs in drei Vertraegen. FM-4 soll als erstes den Startpunkt jedes Fortsetzungsastes ausdruecklich festlegen und den Prueflauf auf denselben Codepfad zwingen wie den Vertragslauf. Ein klassisches Feldmodell mit eingesetzter Selbstwechselwirkung ist kein Nachweis, dass Teilchen so gebaut sind; J_z = m Q und der Ringstrom sind Identitaeten des Ansatzes. Keine Registerzeile, Runde 022 eingefroren, Zitiersperre bis S2.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260921/fm-3-lauf/BERICHT-FM-3.md",
+      "label": "Bericht mit allen Zahlen, dem Abschnitt 'Was dieser Lauf NICHT zeigt' und dem Nachfolgevorschlag FM-4",
+      "sha256": "4a900061993526422850e7e9c39a0ee1e8b6a75d469ca3a956022a2ff566ae78"
+    },
+    {
+      "path": "coordination/vertraege-20260921/fm-3-VERTRAG-fassung2.md",
+      "label": "Vertrag FM-3, ausgefuehrte Fassung 2",
+      "sha256": "470189bb32416330c58dd953b33ea6289a0655c5ec5a27f2990e506a9f61e856"
+    },
+    {
+      "path": "coordination/vertraege-20260921/fm-3-VERTRAG.md",
+      "label": "Vertrag FM-3, Fassung 1 (unveraendert liegend)",
+      "sha256": "42edc096f7de32f1ad647186d77b0d8d915e25fdf63365ca43d3dc7202b4b683"
+    },
+    {
+      "path": "coordination/vertraege-20260921/REVIEW-fm-3.md",
+      "label": "S0-Fremdreview, fuenf Laeufe, Qwen und DeepSeek",
+      "sha256": "f4f30d1de952d7d8371c274161f2b2ba8a491c0c546685935c548a81aafc1a14"
+    },
+    {
+      "path": "coordination/vertraege-20260921/startsignal-fm-3.txt",
+      "label": "Startsignal mit Wortlaut, Zeit, Grund und der Erneuerung auf Fassung 2",
+      "sha256": "612d94bff09a802d07e4e98290b56ba4182c74b02a12186e372f6401916dccbb"
+    },
+    {
+      "path": "coordination/vertraege-20260921/VORAB-FM-3.json",
+      "label": "Vorab gebundene Erwartungstabelle W1 bis W18",
+      "sha256": "43f9de3d83ca1a2de7757666c3392c67176eca2876e67fa0e15bc4ede439faa7"
+    },
+    {
+      "path": "coordination/vertraege-20260921/fm-3-lauf/ERGEBNIS-FM-3.json",
+      "label": "Ergebnisdatei des Laufs",
+      "sha256": "ca3a790f10ef6830b3e060ba6553c119c203c19dbe8e660ac37400a7d68628d8"
+    },
+    {
+      "path": "coordination/vertraege-20260921/fm-2-lauf/BERICHT-FM-2.md",
+      "label": "Vorgaenger FM-2, Ausgang U2",
+      "sha256": "29eacab35ee1c9f6c71d66aad87245dbda69593f4b7bbf6463564f5110739a26"
+    },
+    {
+      "path": "coordination/quark-response-20260916/FIELD-MODES.md",
+      "label": "Grundlage: Herleitung des Modells",
+      "sha256": "892c434de9614ef128475db15731db38c5374a312ffe2ef1eb1b079208c5025a"
+    },
+    {
+      "path": "coordination/quark-response-20260916/FIELD-MODES-REVIEW.md",
+      "label": "Grundlage: unabhaengige analytische Pruefung",
+      "sha256": "4b3d07788897f6398f7657d70e5cb4e3829f408c2e854c91697e5b26ded210d8"
+    }
+  ],
+  "recorded_at": "2026-09-21T03:54:59.929481+00:00"
+}

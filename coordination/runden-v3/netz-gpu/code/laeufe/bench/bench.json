@@ -1,0 +1,88 @@
+{
+ "gpu": "Quadro P4000",
+ "torch": "2.5.1+cu121",
+ "frei_MB_start": 2532.507648,
+ "laeufe": [
+  {
+   "n": 8,
+   "dtype": "fp64",
+   "bau_s": 0.7857818603515625,
+   "N": [
+    20480,
+    139264,
+    237568,
+    118784
+   ],
+   "sterne_licht_s": 0.3061559200286865,
+   "licht_ms_je_schritt": 0.4088592529296875,
+   "skalar_ms_je_schritt": 1.4964914321899414,
+   "rahmen_gradient_ms": 0.8658933639526367,
+   "gpu_speicher_max_MB": 205.455872
+  },
+  {
+   "n": 16,
+   "dtype": "fp64",
+   "bau_s": 8.417092561721802,
+   "N": [
+    163840,
+    1114112,
+    1900544,
+    950272
+   ],
+   "sterne_licht_s": 0.20828557014465332,
+   "licht_ms_je_schritt": 2.648324966430664,
+   "skalar_ms_je_schritt": 2.2882080078125,
+   "rahmen_gradient_ms": 4.31185245513916,
+   "gpu_speicher_max_MB": 1110.689792
+  },
+  {
+   "n": 24,
+   "dtype": "fp64",
+   "fehler": "OutOfMemoryError('CUDA out of memory. Tried to allocate 294.00 MiB. GPU 0 has a total capacity of 7.92 GiB of which 261.19 MiB is free. Process 1867277 has 744.57 MiB memory in use. Process 2451856 has 4.74 GiB memory in use. Including non-PyTorch memory, this process has 2.18 GiB memory in use. Of "
+  },
+  {
+   "n": 8,
+   "dtype": "fp32",
+   "bau_s": 2.2704780101776123,
+   "N": [
+    20480,
+    139264,
+    237568,
+    118784
+   ],
+   "sterne_licht_s": 2.5696208477020264,
+   "licht_ms_je_schritt": 0.41000843048095703,
+   "skalar_ms_je_schritt": 2.1296262741088867,
+   "rahmen_gradient_ms": 1.6550588607788086,
+   "gpu_speicher_max_MB": 147.506688
+  },
+  {
+   "n": 16,
+   "dtype": "fp32",
+   "bau_s": 9.372340202331543,
+   "N": [
+    163840,
+    1114112,
+    1900544,
+    950272
+   ],
+   "sterne_licht_s": 0.2561302185058594,
+   "licht_ms_je_schritt": 1.5920019149780273,
+   "skalar_ms_je_schritt": 2.7460336685180664,
+   "rahmen_gradient_ms": 2.9930973052978516,
+   "gpu_speicher_max_MB": 949.167616
+  },
+  {
+   "n": 24,
+   "dtype": "fp32",
+   "bau_s": 39.208781719207764,
+   "N": [
+    552960,
+    3760128,
+    6414336,
+    3207168
+   ],
+   "fehler": "OutOfMemoryError('CUDA out of memory. Tried to allocate 148.00 MiB. GPU 0 has a total capacity of 7.92 GiB of which 115.19 MiB is free. Process 1867277 has 744.57 MiB memory in use. Process 2451856 has 4.74 GiB memory in use. Including non-PyTorch memory, this process has 2.32 GiB memory in use. Of "
+  }
+ ]
+}

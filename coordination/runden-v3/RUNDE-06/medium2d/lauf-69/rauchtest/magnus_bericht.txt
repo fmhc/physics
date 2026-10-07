@@ -1,0 +1,38 @@
+magnus: Start 2026-09-30T01:40:52+00:00, Ende 2026-09-30T01:41:00+00:00, Quadro P4000, torch 2.5.1+cu121 RAUCHTEST: Zahlen ungueltig
+Medium C0 = 0.1, g4 = 0.5, lam = 0.1: c_s = 0.2085, Heilungslaenge etwa 3.23
+Dauer [s]: relax_grob_s 0.6, entw_grob_s 2.6, relax_fein_s 0.5, entw_fein_s 4.7
+Hochrechnung Hauptlauf (nur --rauch ohne --mini gilt): 147 s = nicht entwickelnde Teile 1 s + Entwicklung x 20; Relaxation im Rauchtest gekuerzt. Ueber 540 s je Aufruf: Stufen einzeln (--stufe grob / --stufe fein).
+Karte magnus (Wellen 8/9). Ball omega^2 = 0.6: m = 1 Q 138.76, E 123.07, R_halb 5.96, R_max 4.01; m = 0 Q 66.62, E 56.53, R_halb 3.36.
+Lauf | u/c_s | u | dX | dY gesamt | Moeller m Q v_x/E | dY nach Rampe | v_x | v_x/u | v_y | a_y | F_y | Zirk. chi | Wind. psi | c2 max | N frei
+[grob]
+  m+1_u0.4 | 0.4 | 0.0833 | +0.006 | +1.769e-03 | +4.619e-04 | +1.74e-03 | +4.10e-04 | 0.005 | +1.2e-04 | +1.1e-05 | -3.7e-06 | [0.0] | [1.0] | 0.000 | 0
+  m-1_u0.4 | 0.4 | 0.0833 | +0.006 | -1.769e-03 | -4.619e-04 | -1.74e-03 | +4.10e-04 | 0.005 | -1.2e-04 | -1.1e-05 | +3.7e-06 | [0.0] | [-1.0] | 0.000 | 0
+  m+1_u0.8 | 0.8 | 0.1658 | +0.012 | +3.295e-03 | +9.204e-04 | +3.24e-03 | +8.16e-04 | 0.005 | +2.2e-04 | +1.9e-05 | -7.2e-06 | [0.0] | [1.0] | 0.000 | 0
+  m-1_u0.8 | 0.8 | 0.1658 | +0.012 | -3.295e-03 | -9.204e-04 | -3.24e-03 | +8.16e-04 | 0.005 | -2.2e-04 | -1.9e-05 | +7.2e-06 | [-0.0] | [-1.0] | 0.000 | 0
+  m0_u0.8 | 0.8 | 0.1658 | +0.016 | -1.087e-15 | +0.000e+00 | -4.47e-15 | +1.10e-03 | 0.007 | -2.7e-17 | -1.5e-17 | -7.5e-19 | [0.0] | [0.0] | 0.000 | 0
+  m+1_ruhe | 0.0 | 0.0000 | -0.000 | -5.253e-11 | -1.496e-11 | -5.08e-11 | -1.33e-11 | - | -1.7e-12 | -7.8e-13 | +1.5e-14 | [0.0] | [1.0] | 0.000 | 0
+  m+1_u0.8_lam0 | 0.8 | 0.1658 | -0.000 | -5.163e-11 | -1.602e-11 | -5.04e-11 | -1.42e-11 | -0.000 | -1.7e-12 | -7.9e-13 | +0.0e+00 | [0.0] | [1.0] | 0.000 | 0
+  medium_allein_u0.8 | 0.8 | 0.1658 | Medium allein: C-Spanne max 0.0e+00, Q_chi Ende/Start 1.000000, Wirbel 0
+  Kontrollen: {"K_spiegel_u0.4_max|Y+ + Y-|": 2.4845729359055975e-12, "K_spiegel_u0.8_max|Y+ + Y-|": 2.4826051160928332e-12, "K_m0_max|Y|": 6.465686640222411e-15, "K_lam0_|dX|,|Y|max": [2.5197088859840733e-10, 5.22884025814677e-11], "K_medium_allein_C_spanne_max": 0.0}
+  Urteil: m+1_u0.4: Zwischenbereich: dY - Moeller +1.307e-03, v_y +1.2e-04
+  Urteil: m-1_u0.4: Zwischenbereich: dY - Moeller -1.307e-03, v_y -1.2e-04
+  Urteil: m+1_u0.8: Zwischenbereich: dY - Moeller +2.375e-03, v_y +2.2e-04
+  Urteil: m-1_u0.8: Zwischenbereich: dY - Moeller -2.375e-03, v_y -2.2e-04
+[fein]
+  m+1_u0.8 | 0.8 | 0.1658 | +0.012 | +3.295e-03 | +9.200e-04 | +3.24e-03 | +8.16e-04 | 0.005 | +2.2e-04 | +1.9e-05 | -7.2e-06 | [0.0] | [1.0] | 0.000 | 0
+  m-1_u0.8 | 0.8 | 0.1658 | +0.012 | -3.295e-03 | -9.200e-04 | -3.24e-03 | +8.16e-04 | 0.005 | -2.2e-04 | -1.9e-05 | +7.2e-06 | [-0.0] | [-1.0] | 0.000 | 0
+  m0_u0.8 | 0.8 | 0.1658 | +0.016 | +9.700e-15 | +0.000e+00 | +9.62e-15 | +1.10e-03 | 0.007 | +3.9e-16 | +7.3e-17 | -1.4e-17 | [-0.0] | [0.0] | 0.000 | 0
+  Kontrollen: {"K_spiegel_u0.8_max|Y+ + Y-|": 5.477488254634899e-12, "K_m0_max|Y|": 2.2426797704901e-14}
+  Urteil: m+1_u0.8: Zwischenbereich: dY - Moeller +2.375e-03, v_y +2.2e-04
+  Urteil: m-1_u0.8: Zwischenbereich: dY - Moeller -2.375e-03, v_y -2.2e-04
+L3 (grob gegen fein; bestanden, wenn |fein - grob| <= max(0,2 |fein|, Toleranz)):
+  m+1_u0.8 v_x: grob 0.00081634, fein 0.00081602 -> ok
+  m+1_u0.8 dY: grob 0.0032952, fein 0.0032948 -> ok
+  m+1_u0.8 v_y: grob 0.00022441, fein 0.00022438 -> ok
+  m-1_u0.8 v_x: grob 0.00081634, fein 0.00081602 -> ok
+  m-1_u0.8 dY: grob -0.0032952, fein -0.0032948 -> ok
+  m-1_u0.8 v_y: grob -0.00022441, fein -0.00022438 -> ok
+  m0_u0.8 v_x: grob 0.001102, fein 0.0011015 -> ok
+  m0_u0.8 dY: grob -1.0871e-15, fein 9.7004e-15 -> ok
+  m0_u0.8 v_y: grob -2.6687e-17, fein 3.9469e-16 -> ok
+  L3 gesamt: bestanden (9 von 9)

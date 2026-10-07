@@ -1,0 +1,61 @@
+{
+  "id": "claude-v1-2-eta-scan-20260917",
+  "time": "2026-09-17T03:49:27+02:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5): Ursachenanalyse Lauf 1, Skriptfassung 2, Lauf 2 und Auswertung; Vertrag und Skriptfassung 1 claude-subagent (Anthropic, Fable 5.1); Ursprungszeile V1 OpenAI gpt-6-astra / claude-x1; Auftrag Finn",
+  "topic": "theory",
+  "status": "reported",
+  "title": "V1.2 eta-Scan der Viermassen-Bruecke: Ausgang B; Trennschwelle eta_c = 1,5 (E = +0,50), Breite 0,2, nicht scharf nahe E = 0; Lauf 1 war wegen eines Bilanzfehlers im Skript faelschlich T",
+  "question": "Ist die Trennschwelle eta_c der Viermassen-Bruecke (V1: Trennung bei eta = 2 und 4, nicht bei 0,5) scharf, und liegt sie nahe eta = 1 (E = 0)? Gemessen als Trennanteil f(eta) ueber acht Startphasen (innere Amplitude delta = 0,05) im Gitter eta = 0,5 bis 4,0, T = 30, h = 1e-5.",
+  "action": "S1 auf .69 CPU (Regel-10-Ausnahme c, Numba, zwei Arbeiter). Lauf 1 (Unit fmhc-physics-v1-2-20260917, 01:08-01:20Z, Fassung 1) ergab T (K1). claude-primary hat die Ursache belegt: Die 206 verfehlten Bahnen sind genau die 206 zertifizierten; das Bilanzresiduum betraegt -delta^2 = -0,0025, weil die uebernommene Bilanzspalte E = eta - 1 statt der Vertragsenergie eta - 0,9975 nutzt; H/P/J-Defekte < 2,4e-9. Fassung 2 aendert nur die Bilanzreferenz (eta + delta^2) und Berichtstexte; Toleranzen, Modell, Zertifikate und Kriterien sind unveraendert. Genau ein Neustart: fmhc-physics-v1-2-20260917-lauf2 (01:38-01:49Z, Exit 0), dokumentiert in startsignal-v1-2-lauf2.txt. Lauf 1 ist vollstaendig in lauf1-k1-bilanzfehler/ erhalten.",
+  "result": "Ausgang B. K0 bestanden. K1 bestanden: 298 Bahnen, max. H-Defekt 2,3e-9, P 2,2e-16, J 1,1e-16, Produktbilanz 1,6e-9, E_int-Variation 8,5e-12, kein Zertifikat bei E < 0. K2 bestanden: V1 reproduziert, t = 2,0/0,8, Energien auf alle Stellen gleich. f(eta) = 0 fuer eta 0,5 bis 1,4; 7/8 bei 1,5 und 1,6; 1 ab 1,7. eta_erste = eta_c = 1,5, eta_voll = 1,7, Breite 0,2, monoton. A verfehlt, weil eta_c nicht in [0,9; 1,3] liegt und die Breite nicht < 0,2 ist. Feinkontrolle h/2 bei eta 1,0 bis 1,3: 8/8 gleiche Urteile. Trennungen bei eta 1,5 und 1,6 erst bei t = 13,9 bis 29,0, ab 1,7 prompt bei t ~ 2,3. Lauf 2 hat Zertifikate, Ereigniszeiten und Defekte bitgleich zu Lauf 1.",
+  "meaning": "HYPOTHESE-Ebene, Modellmechanik ohne Zell- oder Teilchendeutung. Positive Gesamtenergie reicht in diesem Modell nicht zur schnellen Trennung: Zwischen E = 0 und eta = 1,5 bleiben die Hanteln innerhalb von T = 30 gebunden, und von 1,5 bis 1,7 trennen sie sich nur verzoegert nach mehreren Stoessen. Die Deutung als scharfe Ueberlast-Schwelle bei E = 0 wird daher nicht gestuetzt. Vorbehalt: Mit T = 100 wie in V1 koennten verzoegerte Trennungen eta_erste und eta_c senken. Die Feinkontrolle deckt eta 1,5/1,6 nicht ab. Lehre fuer Folgevertraege: Bilanzspalten muessen die Vertragsenergie einschliesslich innerer Anregung nutzen. S2, S3 und Registerzeile offen.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260917/v1-2-lauf/BERICHT-V1-2.md",
+      "role": "Bericht S1 Lauf 2 mit Vorgeschichte und Auswertung",
+      "sha256": "b1e12b65e29bef921d2a3eba5e3a6a6ac34c7e6de52716db6d2291f8fa050084"
+    },
+    {
+      "path": "coordination/vertraege-20260917/v1-2-lauf/ERGEBNIS-V1-2.json",
+      "role": "Ergebnis Lauf 2",
+      "sha256": "712787cc09e4ba005954c59451856e10bf1122b3d08d3c3048006de91e05eea1"
+    },
+    {
+      "path": "coordination/vertraege-20260917/v1-2-lauf/PRUEFE-V1-2.json",
+      "role": "Pruefmodus Lauf 2 (K0, K2)",
+      "sha256": "daa5915e4c3c3c4451859b643501e5ca348f592bcd8dd6564f70489ced3a6247"
+    },
+    {
+      "path": "coordination/vertraege-20260917/V1-2-VERTRAG.md",
+      "role": "Vertrag",
+      "sha256": "3e0efdefb3bc86786ad177a5ec81289a0e24719af77dcba7f222f33a5b4a121b"
+    },
+    {
+      "path": "coordination/vertraege-20260917/startsignal-v1-2.txt",
+      "role": "Startsignal Lauf 1",
+      "sha256": "553a2591deb1987054fcbba3d88dc6941bf574710d150f72229d911c79e6a976"
+    },
+    {
+      "path": "coordination/vertraege-20260917/startsignal-v1-2-lauf2.txt",
+      "role": "Startsignal Lauf 2 mit Ursachenbeleg",
+      "sha256": "abe24724a54ef985b52a947072e2f748937824e41c9e1d45b95b6ca6b880c394"
+    },
+    {
+      "path": "coordination/vertraege-20260917/v1-2-lauf/v1_2.py",
+      "role": "Skript Fassung 2",
+      "sha256": "46efba58deac4a2937b6514223258e3a6c2a02ffb1990c606025e5eef40b63c3"
+    },
+    {
+      "path": "coordination/vertraege-20260917/v1-2-lauf/lauf1-k1-bilanzfehler/ERGEBNIS-V1-2.json",
+      "role": "Ergebnis Lauf 1 (T, Bilanzfehler)",
+      "sha256": "68dfcb438be526910f8ba04a8abf502ac5cdf601f8a74e97c20a6c9b7013ed79"
+    },
+    {
+      "path": "coordination/ideen-20260916/UEBERTRAGUNG-GOLD-SILBER.md",
+      "role": "Vorlage",
+      "sha256": "8f673d07e0805730ef2b7aad15ee6d7f749bb87b1a71d9c4139211f28a00202f"
+    }
+  ],
+  "recorded_at": "2026-09-17T05:18:29.062334+00:00"
+}

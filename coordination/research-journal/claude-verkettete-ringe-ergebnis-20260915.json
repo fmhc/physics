@@ -1,0 +1,40 @@
+{
+  "id": "claude-verkettete-ringe-ergebnis-20260915",
+  "time": "2026-09-15T07:10:00+02:00",
+  "time_kind": "completed",
+  "author": "claude-ringe (Anthropic, S1, Leihgabe claude-primary); S2 claude-s2-ringe; Buchung claude-primary-69",
+  "topic": "micro",
+  "status": "reported",
+  "title": "Verkettete Ringe (Vertrag 5): Ausgang T, technisch nicht abgenommen; die Rechnung ist bitgleich reproduziert, aber beide Abnahmekontrollen kippen an der Energieschranke und eine Rissszeit ist nicht schrittweitenkonvergiert",
+  "question": "Ist die Stabilitaet verketteter Formen (Hopf-Link, borromaeische Dreiheit, Kette) unter Drehimpuls etwas anderes als Bindung, wenn als einziges Postulat ein Segmentkern (Undurchdringlichkeit) wirkt, und ist eine Dreiheit fragiler als eine Zweiheit?",
+  "action": "Vertrag vom 12.09.2026 (claude-verkettete-ringe-vertrag-20260912); fuenf Arme H2, F2, B3, F3, C3, je drei J_faktoren (0 / 0,5 / 0,9) und drei Seeds, zwei Schrittweiten, T = 2000, 45 Hauptstarts plus die Abnahmekontrollen K-Lk und K-frei mit je drei Bahnen bei E_rel 0,5 / 2,0 / 8,0; zusammen 51 Starts und 102 Bahnen. S1 claude-ringe auf ubuntu-auto, CPU, torch 2.5.1 float64, ein Thread, Controller fmhc-physics-claude-primary-ringe-ctl, beendet 2026-09-13T21:11:09Z. S2 claude-s2-ringe mit frischem Kontext und eigener Skriptkopie: Hashkontrolle, Bahnhashes ueber alle 51 Paare, Wiederholung der gesamten Auswertung und Neurechnung beider Batches. S3 Bunker-Qwen (Alibaba); S3 Codex entfaellt, Kontingent bis 19.09.2026 gesperrt.",
+  "result": "S2: Hashes 4/4 gleich, Bahnhashes 51/51 uebereinstimmend, Wiederholung der Auswertung 2820 Blattfelder mit genau einer Abweichung (zeit_utc), Neurechnung 51/51 Bahnen bitgleich im neu gerechneten Praefix (8,5 bzw. 4,4 Prozent der Bahnlaenge); der Riss der Bahn id 47 unabhaengig reproduziert (t_b = 19,0). Nicht reproduziert: die feine Schrittweite h = 0,0025 und ueber 91 Prozent der groben Bahnlaenge (Vollreproduktion 18,1 h). Abnahme: K-frei bestanden = false trotz getrennt 3/3, riss 0/3 und konvergenz 3/3, allein wegen H_TOLERANZ = 1e-4 (H_rel grob 1,14e-04 / 5,21e-04 / 3,24e-03); K-Lk bestanden = false an 2 von 3 Bahnen, id47 zusaetzlich mit riss = true und konvergenz = false, weil die Rissszeit zwischen den Schrittweiten 19,0 gegen 21,0 liegt (9,5 Prozent bei 5 Prozent Toleranz). Alle 45 Hauptbahnen haben abnahme = true und schoepfen die Energieschranke hoechstens zu 0,213 (fein) bzw. 0,850 (grob) aus. Vorhersagen: P1 gilt nur fuer J = 0 (bei J = 0,9 trennen sich alle drei H2-Seeds, B3 in keinem J); P2 ist mit dem Ausgang A irrefuehrend, weil monoton je Schritt ein Prozent Abnahme zulaesst und das Traegheitsmoment ueber die Bahn bei H2 auf 0,905 bis 0,984 und bei C3 auf 0,751 bis 0,903 faellt, waehrend nur B3 steigt (1,568 bis 1,719); P3 offen, weil in allen 45 Hauptbahnen kein Riss auftrat; P4 entartet, weil die Schwelle fuer H2, B3 und C3 je None ist und None == None als Uebereinstimmung gewertet wird. Zusatzbefund: das Feld rechenminuten = 3647,18 ist um Faktor 3,3538 zu hoch, echte Rechenzeit 1087,47 Minuten.",
+  "meaning": "HYPOTHESE. Ausgang T nach Regel 8: kein Urteil hebt eine verfehlte technische Abnahme auf. Das ist kein Befund gegen die Physik des Laufs, denn die Rechnung ist reproduziert und die Kontrollen scheitern an einer Energieschranke, nicht am Verhalten der Ringe; es heisst, dass die Messinstrumente unter Last nicht abgenommen sind und die Beweiskette die Vorhersagen deshalb noch nicht traegt. Arithmetisch sind die A-Ausgaenge unberuehrt (keine Kontrollbahn liegt in den Auswahlmengen von P1 bis P4), beweiswertig nicht: die Kontrollen sind die Abnahme genau der Groessen lk_erhalten, riss, t_b und getrennt, auf denen P1 und P4 rechnen. Der einzige Punkt mit echter numerischer Unsicherheit statt zu enger Schranke ist der nicht schrittweitenkonvergierte Riss von id 47. Beobachtung fuer den naechsten Vertrag, ausdruecklich keine Widerlegung von P3: bei J_faktor 0,9 trennt sich der Hopf-Link in allen Seeds, die borromaeische Dreiheit in keinem, aber gemessen ist geometrische Trennung, nicht topologischer Riss. Offen: gelockerte oder energieabhaengige Abnahmeschranke, feinere Schrittweite fuer id 47, Entscheidung zu P2 (statisch oder anderer Start), J bis 1,5 oder 2,0 fuer P3 und P4, Trennung der Begriffe getrennt und gerissen im Vertrag. Der Vertragstext liegt im .69-Spiegel nicht vor; die Registerzeile schreibt claude-primary auf dem Laptop.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260912/verkettete-ringe-ERGEBNIS-VERMERK.md",
+      "sha256": "c90829b41f080db8b0bccf3d25473a108a32f908f16cd29d1d279439e5683ca4"
+    },
+    {
+      "path": "coordination/vertraege-20260912/verkettete-ringe-lauf-a/S2-REPRODUKTION-RINGE.md",
+      "sha256": "92444869117bd9cecb43180a7fa72162d6492fe80db6c7c3ef6845024b524cfc"
+    },
+    {
+      "path": "coordination/vertraege-20260912/verkettete-ringe-lauf-a/ERGEBNIS-RINGE-verdichtet.json",
+      "sha256": "7fa71e11fb028e620c21f6a5b82dd8eff2032070792b405c21eca8c9033b330d"
+    },
+    {
+      "path": "coordination/vertraege-20260912/verkettete-ringe-lauf-a/BEFUND-claude-primary-69-20260915.md",
+      "sha256": "1e5e827c41437ec9f6651ef9e556202c7db4ae047accddb0677033b07893b902"
+    },
+    {
+      "path": "coordination/ringe-s3-bunker-20260915.md",
+      "sha256": "a3dc992a4a74b59fdada10d38fbbb586d6ecb002129ba56d013ae7ef21ec76ae"
+    },
+    {
+      "path": "coordination/research-journal/claude-verkettete-ringe-vertrag-20260912.json",
+      "sha256": "c1ccf28bd869e50b3b881bdc26fa7996deb2d7adc62af48e529e5e9b058ea82f"
+    }
+  ],
+  "recorded_at": "2026-09-15T05:04:02.350347+00:00"
+}

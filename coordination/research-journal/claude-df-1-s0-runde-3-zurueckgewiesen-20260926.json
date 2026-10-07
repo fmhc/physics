@@ -1,0 +1,33 @@
+{
+  "id": "claude-df-1-s0-runde-3-zurueckgewiesen-20260926",
+  "time": "2026-09-26T03:28:59+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung; Koordination Claude-Subagent (Anthropic, Opus 5.5); Review astra (OpenAI, gpt-6-astra, high) 05:15:20 bis 05:25:00 MESZ; Review Qwen (batiai/qwen3.6-35b:q4, Ollama auf der .69) 05:17:13 bis 05:25:23 MESZ (gemessen)",
+  "topic": "theory",
+  "status": "reported",
+  "evidenzart": "verfahren",
+  "title": "DF-1 Fassung 4, S0 Runde 3 (letzte regulaere): astra weist zum dritten Mal zurueck (sechs Auflagen, fuenf blockierend), Qwen gibt nur mit einer blockierenden Auflage frei; nicht bindungsfaehig, eine Zusatzrunde braucht Finns Ja",
+  "question": "Ist DF-1 Fassung 4 nach der letzten regulaeren S0-Runde bindungsfaehig?",
+  "action": "Koordinator: astra REVIEW-ONLY (23 lesende Befehlsbloecke) mit Pruefung jeder Runde-2-Auflage, der Einstufungen F4-1 bis F4-6, der Zeitfolge und der SIGTERM-Aenderung; Qwen in neuer Sitzung einzeln zu allen Punkten (39 Zeilen). Synthese S0-RUNDE-3-SYNTHESE.md (0a3efb05...).",
+  "result": "astra ZURUECKWEISEN: Runde-2-Auflagen 2, 4, 5, 6, 7 erledigt, 1, 3, 8 teilweise. Blockierend: (1) Schemapruefung im Entscheider unvollstaendig (newton_grund als leere Liste fuehrt zu einem Absturz statt K5 = T, leere umgebung wird angenommen); (2) neu: keine Regel fuer Division durch null (E_ref = 0 im VP, K2 mit dE = 0); (3) Abrechnungszeitraum, Inventarfehler und Ersatznachweis ungeregelt; (4) neu: die Ersatzinventarregel in A8.1a (e) kam nach den Probelaeufen, lockert und stand nicht in Arbeitsdatei 31, also haelt die Aussage 'keine Regel nachtraeglich zugunsten eines Ausgangs geaendert' nicht, obwohl kein Beleg einer Anpassung an Zielzahlen vorliegt; (5) zweites Haus und Abschluss durch die Leitung. SIGTERM-Korrektur sinnvoll, aber nicht vollstaendig abgenommen und nicht nur strenger. Qwen FREIGEBEN MIT AUFLAGEN (eine blockierend: Arbeitsdatei als Nachweis der Vorabbindung; ihr Hash belegt aber nur den spaeteren Stand).",
+  "meaning": "Nicht gebunden, keine Zielrechnung. Erwartung vorab: astra gibt frei p = 0,55 (nicht eingetreten). Die Maengel sind klein und mechanisch, zeigen aber dasselbe Muster wie bei CX-1, MK-1 und ZD-1: Eine Regel wird nach Probelaeufen ergaenzt und ist dann nicht nur strenger. Nach der Praxis (ZD-1, KS-1, KS-1-GEN) braucht eine Fassung 5 mit S0 Runde 4 Finns ausdrueckliches Ja. Empfehlung der Leitung: ja, eng begrenzt auf die fuenf blockierenden Punkte, die Ersatzinventarregel zurueck auf die strengere Fassung, und DF-1 endet, wenn Runde 4 scheitert.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260926/df-1-s0/S0-RUNDE-3-SYNTHESE.md",
+      "sha256": "0a3efb057542bb75e66e04d2ac9e9a2ccad10980f40778fb9b0d147971eca4fe"
+    },
+    {
+      "path": "coordination/vertraege-20260926/df-1-s0/review-astra-f4/REVIEW-astra-DF-1-F4.md",
+      "sha256": "f886912e00ef2c986b791e0c5259ede05a1a98b9325fc72ee568b363ab31b26c"
+    },
+    {
+      "path": "coordination/vertraege-20260926/df-1-s0/review-qwen69-f4/antwort.md",
+      "sha256": "60738772f28f373d038b4ed38cfb4e665ac692d5932dee93876c6afdd752c3e5"
+    },
+    {
+      "path": "coordination/vertraege-20260926/DF-1-VERTRAG.md",
+      "sha256": "19aac974fa5436f1131fc8041e5d1ddda68007696a0bfc0b2bd6fc4254303da3"
+    }
+  ],
+  "recorded_at": "2026-09-26T03:29:46.596864+00:00"
+}

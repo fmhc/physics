@@ -1,0 +1,65 @@
+M2: aufgelöste kleine Amplitudenänderung auf festem Radialgitter
+2026-10-03, Root. Unabhängige Code- und Ergebnislesung separat dokumentiert.
+
+Ergebnis: RESOLVED_AMPLITUDE_DIFFERENCE_ON_FIXED_GRID.
+Sechs neue Arme vollständig bis T128, drei vollständige Odd-Paare und alle
+32 vorab definierten Normprüfungen bestanden. Kein nachträgliches Tor.
+Die große und kleine Anregung haben alpha=.07394590544 bzw .03697295272.
+Neue Starts: theta90 bei dt=.01, theta0/theta90 bei dt=.005, jeweils beide
+Vorzeichen; alle alten Referenz-, großen und verfügbaren kleinen Arme
+hashgebunden wiederverwendet. h=.05, R120 und die Fenster bleiben fest.
+
+Gemessen wurde die Feld-Differenz Delta=E(alphaH)-E(alphaL), nachdem
+jeweils durch alpha² normiert wurde. theta0, theta90 und deren D/H-
+Kombinationen wurden getrennt geprüft. Es handelt sich nicht nur um die
+Differenz zweier Beträge oder ein besseres Treffen der kausalen Referenz.
+
+Die direkte dt-Änderung DER DELTA-FELDER beträgt relativ zu Delta maximal
+0.009062257 (0.9063%) im Zeitmaß und 0.003545716 (0.3546%) im Band.
+Vorabgrenze: jeweils10%; alle32 Positionen bestehen auch die separate
+100-fache64eps-Auswertehülle. Letztere ist eine Sensitivität, keine
+rigorose Schranke für während der Evolution akkumulierte Rundungsfehler.
+
+Deskriptive Größenordnung, ausdrücklich nach dem Ergebnis ausgewertet:
+Delta_D und Delta_H relativ zur jeweils passenden kausalen Komponenten-
+referenz aus dem Vorversuch liegen im Zeitmaß bei3.28..5.31ppm und im
+Band bei2.81..7.91ppm. RELATIVE-SCALE.json enthält alle acht Zuordnungen,
+gleiche Fenster/Schalen/Normen und die Kennzeichnung 'kein neues Gate'.
+Die Auswertung lief als kleine JSON-Nachanalyse auf .69, ohne PDE oder Fit.
+
+Damit ist die skaliert betrachtete Außenantwort zwischen diesen zwei
+Amplituden sehr ähnlich, aber ihre kleine Änderung ist gegenüber der
+geprüften Zeitschrittvariation aufgelöst. Dies ist ein begrenzter
+numerischer Amplitudenbefund, kein Konvergenzexponent aus zwei Punkten.
+
+Ein nützlicher enger Schluss folgt aus der Dreiecksungleichung:
+Für dieselbe Referenz C gilt
+ abs(norm(EH-C)-norm(EL-C)) <= norm(EH-EL).
+Also kann allein diese Amplitudenhalbierung den jeweiligen gemessenen
+Targetrest höchstens um die genannten wenigen ppm seiner Referenznorm
+ändern. Das identifiziert NICHT die Ursache der früheren größeren Reste.
+Insbesondere sind weder 'alles numerisch' noch ein Abstand zum Grenzwert
+alpha->0 oder ein bestimmter quartischer Strahlungsterm bewiesen.
+Hintergrund-/Phasenanpassung kann Teil des Amplitudeneffekts sein.
+
+Neue numerische Kontrollen:
+max relative Energiedrift6.70694e-9, Ladungsdrift2.221e-15,
+Kernbilanz1.973e-15. Größter voller Odd-Fehler8.94599e-4 (<.05).
+Jeder Arm wurde gegen sein eigenes Anfangs-Q/E geprüft, keine Fest-Q/E-
+Nachnormalisierung zwischen Amplituden oder Phasen. Keine neuen radialen
+oder nichtradialen Stabilitäts-, Bindungs-, BIC- oder Lebensdaueraussagen.
+Der alte stationäre Vergleich bleibt UNRESOLVED, der kausale Phasenzyklus
+bleibt bestanden. Das M1-Leiterpapier wurde hierfür nicht geändert.
+
+Betrieb: .69/ubuntu-auto, CPU8, nice19, ein Thread, gemeinsamer cpu2-Lock.
+108.60 externe CPU-s,108.74wall,694600KiB RSS,exit0; inklusive Syntax und
+kleiner JSON-Auswertung im160CPU-s-Rahmen. Keine lokale Numerik oder GPU.
+Keine Wiederholung oder weiteren Arme nach Kenntnis des Ausgangs.
+RESULT SHA256 2fa8c40331f18ed677788629733806109dbc9a622c4d8ff22e065c82979adefd.
+Code SHA256 5e8f8c201f9d0f0090f442f6d6173c9e4f1362cfecbd55fc9ac9f823614dc4c9.
+
+Dauerhafte, gegen das Originalmanifest geprüfte Kopie auf .69:
+/home/fmh/fmhc-physics-remote/m2-second-harmonic-20261002/amplitude-20261003/
+Code, Result, sämtliche Anfangs-/End-/Ring-/Delta-NPZ und Zeitquittungen
+enthalten; Quellen bleiben über die Vorläuferarchive gebunden. Originale
+unverändert. ARCHIVE-SHA256SUMS und COPY-CHECK liegen lokal.

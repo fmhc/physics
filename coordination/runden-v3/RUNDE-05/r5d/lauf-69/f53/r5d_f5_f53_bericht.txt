@@ -1,0 +1,34 @@
+F-5 r5d_f5.py f53 Start 2026-09-30T01:05:42+00:00 auf CPU, 1 Thread, torch 2.5.1+cu121, Laufzeitfaktor 1.0
+
+F5-3 Mischung (1D): Pakete im leichten Feld (A = 1e-3, sigma = 10, ruhend), Anteil P(t) = Q_psi/Q; Baelle omega^2 = 0,7 mit Bekleidung, Gamma = -dQ_Ball/dt auf [T/4, T], p = Q_psi/Q im Ballfenster |x| < 40.
+  [grob]
+  Paket m=0.6 eps=0.02               | P_max 4.1395e-03 (Formel sin^2 2theta 3.8911e-03) | Periode 15.73 (Formel 15.68)
+  Paket m=0.6 eps=0.05               | P_max 2.5380e-02 (Formel sin^2 2theta 2.3832e-02) | Periode 15.52 (Formel 15.51)
+  Paket m=0.9 eps=0.02               | P_max 4.2538e-02 (Formel sin^2 2theta 4.2440e-02) | Periode 61.64 (Formel 61.48)
+  Paket m=0.9 eps=0.05               | P_max 2.1728e-01 (Formel sin^2 2theta 2.1692e-01) | Periode 56.04 (Formel 55.58)
+  Paket m=0.97 eps=0.02              | P_max 3.1421e-01 (Formel sin^2 2theta 3.1417e-01) | Periode 179.56 (Formel 173.44)
+  Paket m=0.97 eps=0.05              | P_max 7.4155e-01 (Formel sin^2 2theta 7.4114e-01) | Periode 105.30 (Formel 106.52)
+  Paket m=0.9 eps=0.0                | P_max 0.0000e+00 (Formel sin^2 2theta 0.0000e+00) | Periode 400.50 (Formel 62.83)
+  psi-Ball, chi m=0,6, eps=0,02      | Gamma +7.135e-04 (Formel 1.059e-03, k 0.584) | Q_Ball 2.4415 -> 2.1797 | Lebensdauer 3.359e+03 | p 1.00000 -> 0.98336
+  psi-Ball, chi m=0,6, eps=0,05      | Gamma +1.462e-03 (Formel 6.481e-03, k 0.586) | Q_Ball 2.4415 -> 1.7811 | Lebensdauer 1.546e+03 | p 1.00000 -> 0.96701
+  psi-Ball, chi m=0,6, eps=0         | Gamma +2.885e-10 (Formel 0.000e+00, k 0.583) | Q_Ball 2.4415 -> 2.4415 | Lebensdauer 8.462e+09 | p 1.00000 -> 1.00000
+  psi-Ball, chi m=1,2, eps=0,05      | Gamma +5.620e-08 (Formel 0.000e+00, k 0.000) | Q_Ball 2.4517 -> 2.4516 | Lebensdauer 4.362e+07 | p 0.99584 -> 0.99636
+  chi-Ball m=0,6 (Kopie), eps=0,05   | Gamma +5.918e-09 (Formel 0.000e+00, k 0.000) | Q_Ball 2.4517 -> 2.4517 | Lebensdauer 4.143e+08 | p 0.00416 -> 0.00416
+  [fein]
+  Paket m=0.6 eps=0.02               | P_max 4.1395e-03 (Formel sin^2 2theta 3.8911e-03) | Periode 15.73 (Formel 15.68)
+  Paket m=0.6 eps=0.05               | P_max 2.5382e-02 (Formel sin^2 2theta 2.3832e-02) | Periode 15.52 (Formel 15.51)
+  Paket m=0.9 eps=0.02               | P_max 4.2538e-02 (Formel sin^2 2theta 4.2440e-02) | Periode 61.66 (Formel 61.48)
+  Paket m=0.9 eps=0.05               | P_max 2.1727e-01 (Formel sin^2 2theta 2.1692e-01) | Periode 56.05 (Formel 55.58)
+  Paket m=0.97 eps=0.02              | P_max 3.1421e-01 (Formel sin^2 2theta 3.1417e-01) | Periode 179.60 (Formel 173.44)
+  Paket m=0.97 eps=0.05              | P_max 7.4155e-01 (Formel sin^2 2theta 7.4114e-01) | Periode 105.32 (Formel 106.52)
+  Paket m=0.9 eps=0.0                | P_max 0.0000e+00 (Formel sin^2 2theta 0.0000e+00) | Periode 400.50 (Formel 62.83)
+  psi-Ball, chi m=0,6, eps=0,02      | Gamma +7.126e-04 (Formel 1.059e-03, k 0.584) | Q_Ball 2.4415 -> 2.1801 | Lebensdauer 3.363e+03 | p 1.00000 -> 0.98337
+  psi-Ball, chi m=0,6, eps=0,05      | Gamma +1.462e-03 (Formel 6.481e-03, k 0.586) | Q_Ball 2.4415 -> 1.7817 | Lebensdauer 1.547e+03 | p 1.00000 -> 0.96704
+  psi-Ball, chi m=0,6, eps=0         | Gamma +1.803e-11 (Formel 0.000e+00, k 0.583) | Q_Ball 2.4415 -> 2.4415 | Lebensdauer 1.354e+11 | p 1.00000 -> 1.00000
+  psi-Ball, chi m=1,2, eps=0,05      | Gamma +5.560e-08 (Formel 0.000e+00, k 0.000) | Q_Ball 2.4517 -> 2.4516 | Lebensdauer 4.409e+07 | p 0.99584 -> 0.99636
+  chi-Ball m=0,6 (Kopie), eps=0,05   | Gamma +5.437e-09 (Formel 0.000e+00, k 0.000) | Q_Ball 2.4517 -> 2.4517 | Lebensdauer 4.509e+08 | p 0.00416 -> 0.00416
+  L3 (Effekt >= 5 x Aenderung grob -> fein): 20 von 20 Kenngroessen bestanden
+  Rechenzeit grob 65.3 s, fein 254.7 s
+  Dauer f53: 320.1 s
+
+Ende 2026-09-30T01:11:03+00:00, Dauer 320.1 s, Torch-Speicher max nan MB, Fehler in: keine

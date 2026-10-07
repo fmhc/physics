@@ -1,0 +1,97 @@
+{
+ "info": {
+  "numpy": "2.4.4",
+  "python": "3.12.3",
+  "host": "ubuntu-auto",
+  "start_utc": "2026-10-04T20:59:12Z",
+  "argv": [
+   "/home/fmh/fmhc-physics-remote/tt-grund-1/code/tg.py",
+   "karte",
+   "--netz",
+   "V",
+   "--npkt",
+   "9",
+   "--gitter_alt",
+   "/home/fmh/fmhc-physics-remote/tt-grund-1/ref/gitter-V-A1R1.json",
+   "--rauch",
+   "--out",
+   "/home/fmh/fmhc-physics-remote/tt-grund-1/rauch/r2-karte-V.json"
+  ],
+  "skript_sha256": "4442162536117cef392a297f40cf116ef1686d69b18ac3b24b3bf8e58039209d",
+  "tti_sha256": "6d6b6f7b99b334d74d91860fc69af1c6c0c46e22207dc45432d60a9824c08ee5",
+  "ew_sha256": "fa7b6417d39177102f0b19c5474453cd16a7595e23bc25ca548e081c4060b142",
+  "nk_sha256": "fd0d17b9fb7c92d4b6ad564a46260e3daae3285bcb5ad53f65d9fb3918a32b28",
+  "tp_sha256": "419d7da6caa211c721eb6a8c87403977415cf3050f03365377f51cb77b374dfd",
+  "eingaben_sha256": {
+   "/home/fmh/fmhc-physics-remote/tt-grund-1/ref/gitter-V-A1R1.json": "d00b8c9d5023ef66fff160d03cd097be2c486d719f3c5f53c6a89172c53df8e2"
+  }
+ },
+ "schluessel": {
+  "netz": "str",
+  "npkt": "int",
+  "achse": "list",
+  "schritt": "float",
+  "t_auswertung_s": "float",
+  "n_prep_none": "int",
+  "n_gueltig": "int",
+  "n_punkte": "int",
+  "n_unter_plan": {
+   "0.01": "int",
+   "0.001": "int",
+   "0.0001": "int",
+   "1e-05": "int",
+   "1e-06": "int"
+  },
+  "block3_plan": "int",
+  "komponenten_plan": {
+   "anzahl": "int",
+   "groessen": "list"
+  },
+  "min_plan": {
+   "y": "list",
+   "spanne": "float"
+  },
+  "n_unter_wort": {
+   "0.01": "int",
+   "0.001": "int",
+   "0.0001": "int",
+   "1e-05": "int",
+   "1e-06": "int"
+  },
+  "block3_wort": "int",
+  "komponenten_wort": {
+   "anzahl": "int",
+   "groessen": "list"
+  },
+  "min_wort": {
+   "y": "list",
+   "spanne": "float"
+  },
+  "spanne_plan": "list",
+  "spanne_wort": "list",
+  "w_min": "list",
+  "potenzlinie": {
+   "p": "list",
+   "spanne_plan": "list",
+   "min": [
+    "p",
+    "spanne",
+    "y"
+   ]
+  },
+  "tti_gitter_vergleich": {
+   "frei_arten": "list",
+   "n_vergleich": "int",
+   "n_gueltigkeit_verschieden": "int",
+   "n_nicht_im_raster": "int",
+   "abw_abs_max": "float"
+  }
+ },
+ "laufzeit_s": 4.972600221633911,
+ "maxrss_MB": 86.55859375,
+ "t_zeilen_s": [],
+ "t": {
+  "t_auswertung_s": 0.4614090919494629
+ },
+ "n_punkte": 81
+}

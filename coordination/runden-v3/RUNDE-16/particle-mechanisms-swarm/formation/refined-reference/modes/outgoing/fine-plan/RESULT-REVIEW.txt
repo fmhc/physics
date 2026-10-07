@@ -1,0 +1,79 @@
+NICHTAUTOR-ERGEBNISLEKTUERE — 2026-10-02
+Read-only: prepared/RESULT.json, responses-out/RESULT.json,
+PREPARE-TIME.txt und RESPONSE-TIME.txt; keine neue Rechnung/Tests.
+Codegrundlage: die separat vor Start gelesenen beiden Adapterfassungen.
+
+URTEIL
+CONTROLLED_FINE_FORCED_RESPONSE ist fuer diese vier festen erzwungenen
+Antwortfaelle durch die gespeicherten Gates gedeckt. Keine nachtraegliche
+Freigabe der alten UNRESOLVED-Serie oder bestaetigte gebundene Mode.
+
+PROVENIENZ
+prepared/RESULT.json:
+0c148cf401d6bca109dc311401df1ea59b4b6d10b4ffb919ec1589c8b0b769da
+responses-out/RESULT.json:
+2cd3dfc3b9d1d2a315daeb8be9c0661a8358c10e2879189202157708cb04ca5a
+Read-only Hashes stimmen; Antwort bindet genau dieses Praeparationsergebnis.
+Codehashes entsprechen PREPARE-CODE-REVIEW und RESPONSES-CODE-REVIEW.
+Feine Referenz-, Ritz- und Quell-NPZ ebenfalls direkt gehasht und mit
+Praeparationsmanifest verglichen; keine Abweichung.
+
+EINGABEN UND MODENSTATUS
+Neue diskrete .025-Referenz: zwei Newtonupdates, finaler Rest2.704e-11,
+Q=1100.000000000944, omega=1.0181698214987964; keine Interpolation als
+fertige Loesung ausgegeben. rho=.382262835769155, Differenz zur .05-Mode
+1.22284e-5, volumengewichtete Ueberlappung .9999999414925684.
+Die kanonische Positionsnorm ist1, die physische Quelle J(qphys)/4.
+Der Kandidatenflag bleibt FALSE: R20-Aussenanteil .00103828 liegt weiterhin
+ueber dem alten Lokalisierungsgate1e-4. Die Antwortrechnung hebt das nicht auf.
+
+GATES UND WERTE
+Alle vier R60/120 x h.05/.025-Faelle haben saemtliche Produktionsflags=true.
+Beide neuen Freikontrollen bestanden; wiederverwendete sechs Kontrollen
+haben die geforderten alten Einzelflags. Neue Nullamplitudenratio4.00310
+liegt im unveraenderten Intervall2..6.
+Gitter-BETRAGSabweichungen .72273% und .71897%, unter2%.
+Komplexe R-Abweichungen .0104763% bei .05 und .00262474% bei .025,
+unter1%. Also "rund .01%" beschreibt das groebere Gitter; beim feinen
+ist der R-Effekt kleiner. Signalreserve7.14664e-7 wird in allen Faellen
+von Amplituden um1.96..1.98e-5 uebertroffen.
+
+Fuer R120,h=.025, Fenster40..45:
+ |Aplus|=1.977693710331084e-5,
+ FV-Rotationsfluss=8.156119613815508e-9,
+ FV-Laborenergiefluss=1.9018168019086414e-8,
+ Kontinuums-Laborfluss aus Fenstermittel=1.901990440632191e-8.
+Letztere sind zwei eng uebereinstimmende Schaetzer, keine identische Zahl.
+Work/FV-Rest dieses Falls6.008e-13; ueber die vier Faelle maximal3.317e-12.
+Die Quellenwork ist der Fluss von E-omega Q, nicht der Laborenergie.
+Umrechnung FV_E=(omega+nu) FV_rot/nu, nu=2rho, entspricht dem geprueften
+Operator und ist in der Ausgabe eingehalten.
+
+AMPLITUDENNORM UND AUSSAGE
+Alle Leistungszahlen sind Koeffizienten fuer die vorgegebene normierte
+Quelle. Bei Gesamtgrundamplitude alpha=epsilon*s ist die wirkliche
+zweite-Harmonische-Quelle alpha²J2 und die Leistungsprognose
+ alpha^4 * 1.9018e-8
+in Modelleinheiten (feiner R120-FV-Schaetzer). Kein fehlender Faktor s^4,
+keine unbedingte epsilon^4-Normierung. Das ist eine stationaere Antwort
+auf eine diagnostische Ritzquelle, keine gemessene Grundmoden-Zerfallsrate.
+Beobachtete R/h-/Fensterstabilitaet liefert keine rigorose Intervallhuelle
+oder Nichtnullzertifizierung im Kontinuum; keine Lebensdauer-/BIC-Umwertung.
+
+RECHENBUDGET
+Remoteprozesszeiten laut Root-TIME-Receipts:
+Praeparation user1.22+system.11=1.33 CPU-s, wall1.34, maxRSS91092KiB;
+Antwort user.64+system.10=.74 CPU-s, wall.75, maxRSS78044KiB; jeweils exit0.
+Gesamt2.07 CPU-s innerhalb gemeinsamer20 und Teildeckel12+8.
+Interne Zeiten1.27453 bzw .67982 CPU-s sind separat und nicht als gesamte
+Prozesskosten auszugeben. Rechenort laut Root-Run .69; TIME-Zeilen selbst
+enthalten keinen Hostnamen. Dieser Review hat keinen Prozess neu gestartet.
+
+ROOT-ZUSAMMENFASSUNG GEGENGELESEN
+ERGEBNIS.txt nachtraeglich direkt gelesen: Tabelle,2.07 CPU-s,
+alpha^4-Normierung und E=rot+omega*Q stimmen mit den Artefakten ueberein.
+Rechenort wird dort ausdruecklich als ubuntu-auto/.69 CPU8 nice19 genannt.
+Die Formulierung "numerisch aufgeloester Abstrahlkanal" wird durch den
+anschliessenden engen Scope auf genau diese vier diagnostischen Antworten
+begrenzt. Keine zusätzliche Modenlokalisation oder Langzeitfolge daraus
+abgeleitet. Keine Korrektur der Root-Zusammenfassung erforderlich.

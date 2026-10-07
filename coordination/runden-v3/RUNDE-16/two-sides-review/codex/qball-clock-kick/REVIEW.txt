@@ -1,0 +1,61 @@
+Nichtautor-Review — 2026-10-02, causal_live_review
+Nur Lektuere von PLAN.txt, run.py, RESULT.json, Vorstart-Fehlerlog und
+relevanten Solverstellen. Keine eigene Rechnung oder Testausfuehrung.
+Kein Blocker fuer die enge finite-clock-Aussage nach definiertem Impuls.
+
+IMPULS UND BILANZ
+Die _y-Indizes 2N+i/3N+i sind die beiden p-Komponenten. Der reelle Faktor
+d=k exp(-r^2/4) multipliziert q und aendert nur p. Damit bleibt q stetig und
+delta pi=delta p=d q. Der naechste RK4-Schritt liest direkt den geaenderten
+Zustand; keine gespeicherte Integratorstage oder Phasenruecksetzung greift ein.
+Endpunkte bleiben den vorhandenen Dirichlet-/Regularitaetsregeln unterworfen.
+Im(conj(q) delta pi)=0 zeigt DeltaQ=0 auch mit der Solver-Vorzeichenkonvention.
+Die externe Arbeit E_nach-E_vor wird einmal separat gespeichert und von der
+spaeteren E+AbsE-Bilanz abgezogen. Das ist keine behauptete kostenlose Energie.
+Negative Arbeit bei k=-.01 ist physikalisch moeglich: Der kinetische Sprung
+enthaelt den vorzeichenabhaengigen Kreuzterm 2d Re(conj(pi)q) neben d^2|q|^2.
+Die Ladungsbilanz zieht gemessenes DeltaQ ab, aber das separate strenge Gate
+|DeltaQ/Q0|<1e-10 verhindert, dass ein grosser Ladungsfehler versteckt wird.
+Die hier tatsaechlichen E0/Q0 sind ungleich null. Keine allgemeine Freigabe
+dieser relativen Formeln fuer Nullenergie-/Nullladungszustandsfamilien.
+
+GATES UND DATEN
+Impulszeit ist in allen acht Armen 20.000000000000004. k=0 hat Arbeit und
+Ladungssprung exakt null. Nichtnull-Ladungsspruenge liegen maximal bei rund
+1.51e-16 relativ. Alle acht numerischen Gates und alle 16 gridpaarigen
+finite_clock-Gates bestehen im gespeicherten Ergebnis.
+Fuenfschritt-Sampling, Rohreferenz und Hysteresedetektor entsprechen dem
+vorherigen Test; im neuen Fenster t>=40 beginnt der Detektor unarmed.
+Mindestens acht Intervalle, CV<1%, Referenzabweichung<2% und Gitterabweichung
+<1% entsprechen dem Plan. Die zentralen Beobachter haben 16 oder 17 Ticks.
+Numerische Maximalfehler werden an gespeicherten Abtastpunkten gemessen.
+Fuer h=.1 betragen die zentralen mittleren Referenz-Tickabstaende in Zyklen:
+k=+.01: -0.02621; k=-.01: +0.02961; k=+.05: -0.09435.
+Diese Offsets sind zeitliche Tickverschiebungen, nicht automatisch die
+kanonische komplexe Feldphase. Ihre Mittelwerte werden nicht separat gegated.
+
+INTERPRETATION
+Die beobachtete Periodizitaet bleibt unter diesen drei einmaligen radialen
+Impulsen im Fenster 40..100 innerhalb der vorgegebenen Toleranzen erhalten.
+Eine Rueckkehr zur urspruenglichen Tickphase wird nicht gezeigt; die Daten
+zeigen vielmehr vorzeichenabhaengige verbleibende Tickverschiebungen.
+Auch k=.05 verfehlt die Clock-Gates hier nicht: eine Zerstoerung des Takts
+oder eine bestimmte Multimodenerklaerung ist damit nicht nachgewiesen.
+Der naechste Referenztick wird nach minimalem Zeitabstand gewaehlt und die
+ersten/letzten Randbereiche werden ausgeschlossen. Dieser lokale Vergleich
+verliert volle Zykluszahlen; bei Wrap-Spruengen waere ein arithmetischer
+Offsetmittelwert problematisch. Er beweist keine verlustfreie Phasenverfolgung.
+Die Anfangsmode und rho sind weiterhin vorbekannt/praepariert. Raumgitter,
+Integrator-dt und Abtastabstand werden gemeinsam halbiert. Keine zertifizierte
+Tickzeitgenauigkeit, keine unbegrenzte Stoerrobustheit, keine Lebensdauer-,
+Strahlungsfreiheits- oder fundamentale Zeit-/Dimensionsbehauptung.
+
+PROVENIENZ
+Ergebnis meldet ubuntu-auto (.69), 10.56 s aktive JS-Zeit, 12.75 s Wandzeit.
+Laufskript-/Plan-Hashes stimmen mit RESULT.json ueberein:
+run.py 2e58855498c6572647451d561540377799268afad79388d5cf7bb332d97d2cfa
+PLAN.txt c4fa062bcfc89ec2bdc364d08f36725b76d4806c2ee7ba417ccb94b1e485408b
+Solver/Profile entsprechen den bereits geprueften unveraenderten Hashes.
+PRESTART-SYNTAX-ERROR.log dokumentiert JS-Parsing vor Funktionsausfuehrung;
+der korrigierte Klammerausdruck steht im gehashten Laufskript. Dieser
+Vorstartfehler ist kein gescheiterter Physiklauf und wird nicht verschwiegen.

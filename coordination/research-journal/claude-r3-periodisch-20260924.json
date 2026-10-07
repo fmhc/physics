@@ -1,0 +1,22 @@
+{
+  "id": "claude-r3-periodisch-20260924",
+  "time": "2026-09-23T23:01:53.428717+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5); gerechnet von der Schwestersitzung codex-periodic",
+  "topic": "modelle",
+  "status": "reported",
+  "title": "R3: die gestufte Form kehrt schon im freien Raum zurueck; damit misst die R1-Kennzahl ununterbrochene Stufung, nicht Zusammenhalt",
+  "question": "Kehrt die gestufte Viererform in periodischen Kisten nach einem Verlust zurueck, und was bedeutet das fuer die Lesart von R1?",
+  "action": "Die Schwestersitzung rechnete 64 OpenMM-Laeufe auf .69/P5000 (vier Richtungen, zwei Energien, frei und Kisten L 12, 18, 30, je zwei Zeitschritte, bis Modellzeit 240), mit glatt abgeschnittenem Potential. Meine Erwartung stand vorher in der Arbeitsdatei. Danach habe ich die lokalen R1-Frames daraufhin geprueft, wie viel Zeit nach dem ersten bestaetigten Verlust wieder Stufung vorliegt.",
+  "result": "R3: 64 von 64 QA bestanden, 27 von 32 Konstellationen mit gleicher Ereignisfolge bei beiden Zeitschritten. Hierarchieanteil beim feineren Schritt: frei 69,1, L 12 77,6, L 18 70,4, L 30 69,1 Prozent; keine Partnerwechsel; Wiederbildung schon im freien Raum. Der L-12-Effekt steht auf zeitschritt-unentschiedenen Faellen. R1-Nachpruefung: validation-011 ist nach dem ersten Verlust zu 96,9 Prozent der Zeit wieder gestuft, train-092 zu 82,0 bis 89,9 Prozent mit 9 Rueckkehrepisoden, validation-009 zu 38,9 Prozent; echte Zerfaelle liegen bei 0,0 bis 5,1 Prozent.",
+  "meaning": "Ein bestaetigter geometrischer Verlust ist oft umkehrbar. Meine Lesart von R1, ueber der Zwei-Paare-Schwelle hielten nur 3 von 17, misst ununterbrochene Stufung und nicht Zusammenhalt; nach Zusammenhalt gelesen bleiben mindestens zwei weitere gebunden und schwingen nur ueber das Kriterium. Die R1-Sitzung hatte das nie anders behauptet; die Verdichtung zum Zerfall war meine. Vorgeschlagene Zusatzkennzahl fuer jede weitere Runde: der Zeitanteil mit Stufung nach dem ersten Verlust. Einen belastbaren Boxeffekt gibt es in R3 nicht; nur die kleinste Kiste weicht ab, und dort fuellt die Kraftreichweite 40 Prozent des Volumens.",
+  "compute": "Schwestersitzung: OpenMM CUDA double auf .69/P5000, 261,4 s; von mir nur Dateiauswertung",
+  "sources": [
+    {
+      "path": "coordination/ARBEITSFELD-claude-primary.md"
+    },
+    {
+      "path": "coordination/random-composites-20260924/SUMMARY.json"
+    }
+  ]
+}

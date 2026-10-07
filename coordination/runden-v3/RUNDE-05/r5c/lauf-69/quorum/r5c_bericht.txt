@@ -1,0 +1,19 @@
+R5-C r5c.py Start 2026-09-30T00:37:30+00:00 auf CPU, 1 Thread, torch 2.5.1+cu121, Unterbefehl quorum, Laufzeitfaktor 1.0
+
+Quorum (Bio 39): gegenphasiger Ring L = 120.0, K = (8, 12, 16) (D = 15 / 10 / 7,5), Atemstoss eta = 0.02 mit Zufallsphasen (Seed 1239), T = 600. r = Kuramoto-Ordnung der Atemphasen, C = Kohaerenz, je in vier Zeitfenstern.
+  [grob] Atemfrequenz (Median) 0.1755
+  K 8 (D 15.0, zufall): r 0.071, 0.014, 0.091, 0.102; C 0.027, 0.034, 0.027, 0.121; Atemamplitude 1.64e-02 -> 2.73e-02
+  K 12 (D 10.0, zufall): r 0.912, 0.312, 0.576, 0.777; C 0.689, 0.001, 0.154, 0.551; Atemamplitude 6.91e-02 -> 4.13e-01
+  K 16 (D 7.5, zufall): r 0.102, 0.257, 0.175, 0.635; C 0.076, 0.048, 0.049, 0.315; Atemamplitude 1.29e-01 -> 2.95e-01
+  K 12 (D 10.0, gleich): r 1.000, 1.000, 1.000, 1.000; C 1.000, 1.000, 1.000, 1.000; Atemamplitude 1.59e-02 -> 1.58e-02
+  K 2 (D 60.0, entkoppelt): r 0.995, 0.388, 0.605, 0.611; C 0.893, 0.289, 0.394, 0.374; Atemamplitude 1.16e-02 -> 1.16e-02
+  [fein] Atemfrequenz (Median) 0.1754
+  K 8 (D 15.0, zufall): r 0.068, 0.031, 0.090, 0.098; C 0.026, 0.034, 0.025, 0.116; Atemamplitude 1.64e-02 -> 2.74e-02
+  K 12 (D 10.0, zufall): r 0.927, 0.249, 0.455, 0.595; C 0.732, 0.005, 0.074, 0.242; Atemamplitude 8.06e-02 -> 4.39e-01
+  K 16 (D 7.5, zufall): r 0.203, 0.265, 0.495, 0.541; C 0.085, 0.046, 0.182, 0.196; Atemamplitude 1.27e-01 -> 2.95e-01
+  K 12 (D 10.0, gleich): r 1.000, 1.000, 1.000, 1.000; C 1.000, 1.000, 1.000, 1.000; Atemamplitude 1.57e-02 -> 1.56e-02
+  K 2 (D 60.0, entkoppelt): r 0.995, 0.411, 0.604, 0.606; C 0.897, 0.295, 0.392, 0.368; Atemamplitude 1.19e-02 -> 1.18e-02
+  L3 (r_Ende gegen r_Anfang): 4 von 5
+  quorum: 59.2 s
+
+Ende 2026-09-30T00:38:30+00:00, Dauer 59.3 s, Torch-Speicher max nan MB, Fehler in: keine

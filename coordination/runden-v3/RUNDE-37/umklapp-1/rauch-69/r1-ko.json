@@ -1,0 +1,117 @@
+{
+ "info": {
+  "numpy": "2.4.4",
+  "scipy": "1.18.0",
+  "python": "3.12.3",
+  "host": "ubuntu-auto",
+  "argv": [
+   "code/uk.py",
+   "kontrolle",
+   "--N",
+   "128",
+   "--saaten",
+   "901",
+   "--rauch",
+   "--out",
+   "rauch/r1-ko.json"
+  ],
+  "skript_sha256": "f52df7438c3d33b4fe86d4352bed3373b38e27a083f3d60eb12d4143fa6b71e0",
+  "tg_sha256": "ec48a258e266fc2226d0d10564b606052831ffefbf0642e4f7d04f9de85cfd9e",
+  "start_utc": "2026-10-05T04:11:08Z"
+ },
+ "schluessel": {
+  "N": "int",
+  "saat": "int",
+  "netz0": {
+   "S": "float",
+   "skala_2pi_sum_l": "float",
+   "eps_absmax": "float",
+   "E": "int",
+   "T": "int",
+   "vol_summe_rel_abw": "float",
+   "vol_min_rel_mittel": "float",
+   "laengen_abw_max": "float",
+   "l_mittel": "float"
+  },
+  "affin0": {
+   "min": "float",
+   "max": "float",
+   "spanne_max_min": "float"
+  },
+  "nach": [
+   {
+    "f": "float",
+    "zuege": [
+     "T",
+     "anteil_konvex",
+     "anteil_zug_ok",
+     "f",
+     "f_eff",
+     "n_ziel",
+     "n_zuege",
+     "t_s"
+    ],
+    "regge": [
+     "E",
+     "S",
+     "T",
+     "eps_absmax",
+     "l_mittel",
+     "laengen_abw_max",
+     "skala_2pi_sum_l",
+     "vol_min_rel_mittel",
+     "vol_summe_rel_abw"
+    ],
+    "dS": "float",
+    "dS_rel": "float",
+    "affin": [
+     "max",
+     "min",
+     "spanne_max_min"
+    ],
+    "pruefung": [
+     "D_absmax",
+     "D_sym_max",
+     "E",
+     "R_umkugel_max",
+     "T",
+     "Vbox",
+     "dieder_max_grad",
+     "dieder_min_grad",
+     "dieder_summe_minus_2pi_max",
+     "kanten_je_ecke",
+     "l_max",
+     "l_min",
+     "laengen_abw_max",
+     "nV",
+     "punkte_mit_kopien",
+     "saum",
+     "schlaefli_lD_max",
+     "selbstkanten",
+     "t_modell_s",
+     "tetra_je_ecke",
+     "umkugel_ausserhalb_saum",
+     "vol_min",
+     "vol_min_rel_mittel",
+     "volumen_summe_rel_abw"
+    ]
+   }
+  ],
+  "zugstat": {
+   "T0": "int",
+   "F0": "int",
+   "vbar": "float",
+   "vmin": "float",
+   "start": {
+    "konvex": "float",
+    "volok": "float",
+    "neu_und_konvex": "float",
+    "zug_ok": "float"
+   }
+  },
+  "t_s": "float"
+ },
+ "laufzeit_s": 5.68665075302124,
+ "maxrss_MB": 79.66015625,
+ "t_punkt_s": []
+}

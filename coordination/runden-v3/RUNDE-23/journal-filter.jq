@@ -1,0 +1,15 @@
+split("\n") | map(select(length>0) | split(" ") | {path: .[2], sha256: .[0]}) as $src | {
+  id: "claude-runde-v3-23-20261002",
+  time: $t,
+  time_kind: "completed",
+  author: "claude-primary (Anthropic, Opus 5.5), Leitung, Karten, eigene Rechnungen KUGELSCHALE-1, SCHWEBUNGSUHR-3 und TROPFEN-LEITER, Abschaetzung; Code-, Theorie-, Literatur- und Pruefagenten Anthropic (Opus 5.5)",
+  topic: "theory",
+  status: "reported",
+  evidenzart: "modell",
+  title: "Runde 23 nach v3 (explorativ): stille Frequenz der ebenen Q-Ball-Wand als Mechanismus der Leiter, Stille auf dem Gitter (h^4 gegen h^8), keine stille Oberflaeche bei Quantentropfen, Q-Ball-Uhren ohne Synchronisation, Bildung in 3D, Spin-2-Schranke in M_E, Kugelschale aus Dreiecken, Literatur zu Dark Dimension und Eot-Wash",
+  question: "Woher kommt die Leiter der stillen Moden, und ueberlebt die Stille einen koernigen Raum? Haben Quantentropfen eine stille Oberflaeche? Synchronisieren sich Q-Ball-Uhren ueber Kontakt oder ein Bad? Bilden sich Q-Baelle auch in 3D? Laesst sich die Graviton-Dreipunktkopplung IR-sicher in D = 4 beschraenken? Was folgt aus Finns Fragen zu Kugel, Logik und Teilchen?",
+  action: "Karten mit Vorhersagen vor jedem Lauf bzw. Abruf: SCHWEBUNGSUHR, SCHWEBUNGSUHR-2 und -3, BAD-TAKT, BILDUNG-3D, KUGELSCHALE-1, STILLE-AUF-GITTER, TROPFEN-LEITER (drei Rauchlaeufe, zwei Codefehler vor dem Einfrieren behoben), M_E-G3 (Theorie, Haus Anthropic), DD-SPUREN und BLASE-EW (Literatur, Pruefer), Zufallskarte K-2 (Schreibtisch, parken), Ideensammlung IDEEN-LOGIK-TEILCHEN fuer Finn; Codex-Ernte und Abstimmung ueber den Peerbus.",
+  result: "TROPFEN-LEITER: Die ebene M1-Wand hat genau eine Transmissionsnullstelle bei rho_z = 1,5241498 (zwei Verfahren auf 9e-9), TR0 (1,5275 +- 0,002) streng verfehlt; die Tropfenwaende (1D, 3D-LHY) haben keine (TR1, TR2 verfehlt), T -> 1. Nachtraeglich b_inf = 2,3100 gegen gemessen 2,3043 bis 2,3068. STILLE-AUF-GITTER: SG0 bis SG3 eingetroffen, Restbreite h^4,15 (5-Punkt) bzw. h^8,36 (isotroper 9-Punkt), Faktor 5848 bei h = 0,3. SCHWEBUNGSUHR-3: J1 bis J6 eingetroffen (Josephson-Pendeln, Startphase setzt die Richtung). BAD-TAKT: BT2 verfehlt, keine Synchronisation und keine Vergroeberung. BILDUNG-3D: B3D-1 und B3D-3 ja, B3D-2 nein. KUGELSCHALE-1: K1, K2, K4 ja, K3 streng nein. M_E-G3: Klasse A, c = 895 statt 24,9 (vorlaeufig). BLASE-EW: L <= 9,3 Mikrometer aus Eot-Wash 2007. Literatur Tropfen: keine Arbeit zu stillen Tropfenoberflaechen; Fabry-Perot an der Schwelle bei Tylutki u. a. 2020.",
+  meaning: "Explorativ, keine Messdaten ausser Literaturschranken. Der Mechanismus der stillen Leiter ist eine Transmissionsnullstelle der ebenen Wand plus Fabry-Perot [H, gestuetzt durch eine unabhaengige ebene Rechnung; blinde Nachrechnung durch Codex angefragt]. Die Stille ist kein Artefakt der radialen Rechnung. Die Datenbruecke ueber Quantentropfen traegt in Standardmodellen nicht. Fruehere Leitungsaussagen zu auseinanderlaufenden Uhren und Reifung sind berichtigt.",
+  sources: $src
+}

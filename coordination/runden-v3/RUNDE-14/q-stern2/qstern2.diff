@@ -1,0 +1,515 @@
+--- /home/fmh/fmhc-physics/coordination/runden-v3/RUNDE-13/q-stern/qstern.py	2026-10-01 20:31:31.055071465 +0200
++++ qstern2.py	2026-10-01 23:51:41.323122030 +0200
+@@ -1,5 +1,16 @@
+ #!/usr/bin/env python3
+-"""Q-STERN (Runde 13 nach v3, explorativ): Kopie von RUNDE-13/bball-leiter/bball2.py, erweitert um ein statisches
++"""Q-STERN-2 (Runde 14 nach v3, explorativ): Kopie von RUNDE-13/q-stern/qstern.py, erweitert um delta Phi =
++psi(r) cos(rho t) (volle Rechnung erster Ordnung, HERLEITUNG.md). Neu (Diff qstern2.diff):
++   --psi voll: u = r psi, u'' = 2 alpha [(Pa - Pb rho) y1 + (Pa + Pb rho) y2 + f' (y1' + y2')],
++               y1'' += (Ea - Eb rho) u, y2'' += (Ea + Eb rho) u,
++               Pa = (omega^2 + U') f - f'/r, Pb = omega f, Ea = f (2 omega^2 - U'), Eb = 2 omega f.
++               W aus der exakten Abhaengigkeitsbedingung (3 regulaere, 2 stille Loesungen, u eliminiert,
++               W = Omega(Ya^, Z_perp) + i Omega(Yb^, Z_perp)); bei alpha = 0 gleich dem alten W.
++   --psi null: Cowling, unveraenderter Q-STERN-Pfad (W_reell_cowling, W_multi_cowling).
++   cmd_familie: Lokalisierung und kleines Rechteck direkt nach den Zeilen (vor Zwischenreihen und Streifen);
++   Kandidaten im Fenster zuerst. K5 an jeder lokalisierten Stelle (nur --psi voll). --n-rampe.
++Alter Kopf (qstern.py):
++Q-STERN (Runde 13 nach v3, explorativ): Kopie von RUNDE-13/bball-leiter/bball2.py, erweitert um ein statisches
+ Newton-Potential Phi (selbstkonsistent, Poisson-Integral) und die Linearisierung in Cowling-Naeherung (delta Phi = 0).
+ Sextik-Modell U(S) = S - S^2 + S^3/2. Neu (Diff qstern.diff):
+    Hintergrund: f'' + (2/r) f' = (1 - 2 Phi) U'(f^2) f - (1 - 4 Phi) omega^2 f,
+@@ -103,6 +114,7 @@
+ PHI_MISCH = 1.0      # Q-STERN: Mischung Phi <- Phi_alt + misch (Phi_neu - Phi_alt)
+ N_RAMPE = 6          # Q-STERN: ohne Warmstart alpha in N_RAMPE Iterationen linear hochfahren (Kontinuitaet in alpha)
+ BG_CACHE = {}        # Q-STERN: konvergierte Hintergruende je (hp, alpha, r_fak, quelle): Liste (x, f0, PhiF, Phi2)
++PSI = "voll"         # Q-STERN-2: "voll" (mit delta Phi = psi cos(rho t)) oder "null" (Cowling, Q-STERN-Pfad)
+ 
+ 
+ def U_(m, S):
+@@ -635,7 +647,21 @@
+         B = 2.0 * om * (1.0 - 4.0 * Ph)
+         C = (1.0 - 2.0 * Ph) * sp_(modell, S)
+         D = 1.0 - 4.0 * Ph
+-        aus.append(lin_aufbau(x, om, p["r"], f, A, B, C, D, p["R_w"], h, info, Ph, p["c_asym"]))
++        L = lin_aufbau(x, om, p["r"], f, A, B, C, D, p["R_w"], h, info, Ph, p["c_asym"])
++        # Q-STERN-2: Kopplungen der psi-Rechnung (HERLEITUNG.md Abschnitte 3, 4)
++        r = p["r"]
++        fp = p["dphi"]
++        Upv = Up_(modell, S)
++        fpr = np.empty_like(f)
++        fpr[1:] = fp[1:] / r[1:]
++        fpr[0] = float(G_(modell, f[0], x, Ph[0])) / 3.0
++        j = 2 * L["K"]
++        L["Eal"] = [float(v) for v in (f * (2.0 * x - Upv))[:j + 1]]
++        L["Ebl"] = [float(v) for v in (2.0 * om * f)[:j + 1]]
++        L["Pal"] = [float(v) for v in ((x + Upv) * f - fpr)[:j + 1]]
++        L["Pbl"] = [float(v) for v in (om * f)[:j + 1]]
++        L["Fl"] = [float(v) for v in fp[:j + 1]]
++        aus.append(L)
+     prot.append(f"Profile ({modell}, {len(xs)} Stueck, h = {h}, alpha = {ALPHA}): {uhr() - t0:.1f} s")
+     return aus
+ 
+@@ -704,7 +730,190 @@
+     return y1, y2, p1, p2
+ 
+ 
++def _rk4_voll(Y, L, rr, j0, n, sg, hs, fak=None):
++    """Q-STERN-2: n RK4-Schritte fuer das System mit psi (HERLEITUNG.md Abschnitte 3, 4), u = r psi:
++    y1'' = (A + B rho - D rho^2) y1 + C y2 + (Ea - Eb rho) u
++    y2'' = C y1 + (A - B rho - D rho^2) y2 + (Ea + Eb rho) u
++    u''  = 2 alpha [(Pa - Pb rho) y1 + (Pa + Pb rho) y2 + F (y1' + y2')]
++    Y = (y1, y2, u, y1', y2', u'), vektorisiert ueber rho (rr). Koeffizienten auf dem Gitter h/2 wie _rk4."""
++    A, B, C, D = L["Al"], L["Bl"], L["Cl"], L["Dl"]
++    Ea, Eb, Pa, Pb, F = L["Eal"], L["Ebl"], L["Pal"], L["Pbl"], L["Fl"]
++    y1, y2, u, p1, p2, pu = Y
++    q2 = rr * rr
++    h2 = 0.5 * hs
++    h6 = hs / 6.0
++    al2 = 2.0 * ALPHA
++
++    def koef(j):
++        a_ = A[j] - D[j] * q2
++        b_ = B[j] * rr
++        return (a_ + b_, a_ - b_, C[j], Ea[j] - Eb[j] * rr, Ea[j] + Eb[j] * rr, al2 * (Pa[j] - Pb[j] * rr),
++                al2 * (Pa[j] + Pb[j] * rr), al2 * F[j])
++
++    def abl(k, y1, y2, u, p1, p2):
++        m11, m22, c, e1, e2, s1, s2, sf = k
++        return m11 * y1 + c * y2 + e1 * u, c * y1 + m22 * y2 + e2 * u, s1 * y1 + s2 * y2 + sf * (p1 + p2)
++    j = j0
++    ka = koef(j)
++    for _ in range(n):
++        jm = j + sg
++        je = jm + sg
++        kb = koef(jm)
++        kc = koef(je)
++        a1, a2, a3 = abl(ka, y1, y2, u, p1, p2)
++        t1, t2, t3 = y1 + h2 * p1, y2 + h2 * p2, u + h2 * pu
++        s1, s2, s3 = p1 + h2 * a1, p2 + h2 * a2, pu + h2 * a3
++        b1, b2, b3 = abl(kb, t1, t2, t3, s1, s2)
++        t1, t2, t3 = y1 + h2 * s1, y2 + h2 * s2, u + h2 * s3
++        r1, r2, r3 = p1 + h2 * b1, p2 + h2 * b2, pu + h2 * b3
++        c1, c2, c3 = abl(kb, t1, t2, t3, r1, r2)
++        t1, t2, t3 = y1 + hs * r1, y2 + hs * r2, u + hs * r3
++        w1, w2, w3 = p1 + hs * c1, p2 + hs * c2, pu + hs * c3
++        d1, d2, d3 = abl(kc, t1, t2, t3, w1, w2)
++        y1 = y1 + h6 * (p1 + 2.0 * (s1 + r1) + w1)
++        y2 = y2 + h6 * (p2 + 2.0 * (s2 + r2) + w2)
++        u = u + h6 * (pu + 2.0 * (s3 + r3) + w3)
++        p1 = p1 + h6 * (a1 + 2.0 * (b1 + c1) + d1)
++        p2 = p2 + h6 * (a2 + 2.0 * (b2 + c2) + d2)
++        pu = pu + h6 * (a3 + 2.0 * (b3 + c3) + d3)
++        if fak is not None:
++            y1, y2, u, p1, p2, pu = y1 * fak, y2 * fak, u * fak, p1 * fak, p2 * fak, pu * fak
++        ka = kc
++        j = je
++    return y1, y2, u, p1, p2, pu
++
++
++def _start_aussen(L, rho):
++    """Start von Z1 bei R: y1 = 1, y1' = -kappa_c + eta_c/R (wie qstern.W_reell)."""
++    kc = np.sqrt(1.0 - (rho - L["Omega"]) ** 2)
++    eta_c = L["c_asym"] * (4.0 * (rho - L["Omega"]) ** 2 - 2.0) / (2.0 * kc)
++    return kc, -kc + eta_c / L["R"]
++
++
++def _u_elim(X, Yu, Z2):
++    """X^ = X + p Yu + q Z2 mit u = u' = 0 bei r_m; Rueckgabe der y-Komponenten (y1, y2, y1', y2')."""
++    det = Yu[2] * Z2[5] - Z2[2] * Yu[5]
++    p = (-X[2] * Z2[5] + Z2[2] * X[5]) / det
++    q = (-Yu[2] * X[5] + Yu[5] * X[2]) / det
++    return tuple(X[k] + p * Yu[k] + q * Z2[k] for k in (0, 1, 3, 4))
++
++
++def W_reell_voll(L, rhos, chunk=3000):
++    """Q-STERN-2: W = Omega(Ya^, Z_perp) + i Omega(Yb^, Z_perp) (HERLEITUNG.md Abschnitt 6). Rueckgabe wie W_reell."""
++    rho_all = np.atleast_1d(np.asarray(rhos, dtype=float))
++    n_all = rho_all.size
++    La = np.empty(n_all)
++    Lb = np.empty(n_all)
++    wa = np.empty(n_all)
++    for s0 in range(0, n_all, chunk):
++        rho = rho_all[s0:s0 + chunk]
++        N = rho.size
++        rr = np.concatenate([rho, rho, rho])
++        z3 = np.zeros(3 * N)
++        p1 = z3.copy()
++        p1[N:2 * N] = 1.0
++        p2 = z3.copy()
++        p2[:N] = 1.0
++        pu = z3.copy()
++        pu[2 * N:] = 1.0
++        Yi = _rk4_voll((z3.copy(), z3.copy(), z3.copy(), p1, p2, pu), L, rr, 0, L["Km"], 1, L["h"])
++        kc, lam = _start_aussen(L, rho)
++        r2 = np.concatenate([rho, rho])
++        z2 = np.zeros(2 * N)
++        y1 = z2.copy()
++        y1[:N] = 1.0
++        q1 = z2.copy()
++        q1[:N] = lam
++        uu = z2.copy()
++        uu[N:] = 1.0
++        fak = np.concatenate([np.exp(-kc * L["h"]), np.ones(N)])
++        Za = _rk4_voll((y1, z2.copy(), uu, q1, z2.copy(), z2.copy()), L, r2, 2 * L["K"], L["K"] - L["Km"], -1, -L["h"],
++                       fak=fak)
++        Ya = [v[:N] for v in Yi]
++        Yb = [v[N:2 * N] for v in Yi]
++        Yu = [v[2 * N:] for v in Yi]
++        Z1 = [v[:N] for v in Za]
++        Z2 = [v[N:] for v in Za]
++        # Vertreter von Z2 ohne den nach innen wachsenden geschlossenen Anteil (Z1-artig): Z2 - gamma Z1, gamma aus
++        # (y1, y1') bei r_m (kleinste Quadrate). Spaltenoperation im stillen Raum: die Lage bleibt exakt; sie verhindert
++        # Pole von W, wo der u-Block von (Yu, Z2) singulaer wuerde (Rauchtest rauch-a2-voll, 23:49).
++        gam = (Z2[0] * Z1[0] + Z2[3] * Z1[3]) / (Z1[0] ** 2 + Z1[3] ** 2)
++        Z2 = [Z2[k] - gam * Z1[k] for k in range(6)]
++        a = np.array(_u_elim(Ya, Yu, Z2))
++        b = np.array(_u_elim(Yb, Yu, Z2))
++        z = np.array(_u_elim(Z1, Yu, Z2))
++        e1 = a / np.sqrt(np.sum(a * a, 0))
++        bb = b - np.sum(e1 * b, 0) * e1
++        e2 = bb / np.sqrt(np.sum(bb * bb, 0))
++        zp = z - np.sum(e1 * z, 0) * e1 - np.sum(e2 * z, 0) * e2
++        La[s0:s0 + N] = a[0] * zp[2] - a[2] * zp[0] + a[1] * zp[3] - a[3] * zp[1]
++        Lb[s0:s0 + N] = b[0] * zp[2] - b[2] * zp[0] + b[1] * zp[3] - b[3] * zp[1]
++        g = np.maximum.reduce([np.abs(v) for v in Yi])
++        wa[s0:s0 + N] = np.maximum.reduce([g[:N], g[N:2 * N], g[2 * N:]])
++    return La, Lb, wa
++
++
++def k5_voll(L, rho):
++    """Q-STERN-2 K5: Loesung an der Stelle zusammensetzen, u gegen die Integralform der Poisson-Gleichung pruefen."""
++    h, K, Km = L["h"], L["K"], L["Km"]
++    r3 = np.full(3, float(rho))
++    st = (np.zeros(3), np.zeros(3), np.zeros(3), np.array([0.0, 1.0, 0.0]), np.array([1.0, 0.0, 0.0]),
++          np.array([0.0, 0.0, 1.0]))
++    tin = [st]
++    for k in range(Km):
++        st = _rk4_voll(st, L, r3, 2 * k, 1, 1, h)
++        tin.append(st)
++    r2 = np.full(2, float(rho))
++    kc, lam = _start_aussen(L, np.array([float(rho)]))
++    st = (np.array([1.0, 0.0]), np.zeros(2), np.array([0.0, 1.0]), np.array([float(lam[0]), 0.0]), np.zeros(2),
++          np.zeros(2))
++    taus = {K: st}
++    for k in range(K, Km, -1):
++        st = _rk4_voll(st, L, r2, 2 * k, 1, -1, -h)
++        taus[k - 1] = st
++    Mi = np.array([[float(tin[Km][c][i]) for i in range(3)] for c in range(6)])
++    Ma = np.array([[float(taus[Km][c][i]) for i in range(2)] for c in range(6)])
++    M = np.concatenate([Mi, -Ma], 1)
++    nrm = np.sqrt(np.sum(M * M, 0))
++    _, sv, Vt = np.linalg.svd(M / nrm[None, :])
++    v = Vt[-1] / nrm
++    ci, da = v[:3], v[3:]
++    sol = np.empty((6, K + 1))
++    for k in range(K + 1):
++        if k <= Km:
++            sol[:, k] = [float(np.dot(tin[k][c], ci)) for c in range(6)]
++        else:
++            sol[:, k] = [float(np.dot(taus[k][c], da)) for c in range(6)]
++    y1, y2, u, p1, p2 = sol[0], sol[1], sol[2], sol[3], sol[4]
++    idx = 2 * np.arange(K + 1)
++    Pa = np.asarray(L["Pal"])[idx]
++    Pb = np.asarray(L["Pbl"])[idx]
++    F = np.asarray(L["Fl"])[idx]
++    g = 2.0 * ALPHA * ((Pa - Pb * rho) * y1 + (Pa + Pb * rho) * y2 + F * (p1 + p2))
++    I = cum_int(g, h)
++    upG = I - I[-1]
++    uG = cum_int(upG, h)
++    um = float(np.max(np.abs(u)))
++    return {"rho": float(rho), "x": L["x"], "rest_rel": float(np.max(np.abs(u - uG)) / um) if um > 0 else float("nan"),
++            "sv_verh": float(sv[-1] / sv[0]), "u_max": um, "y_max": float(max(np.max(np.abs(y1)), np.max(np.abs(y2)))),
++            "u_R": float(u[-1]), "up_R": float(sol[5][-1]), "y2_R": float(y2[-1]), "K": K, "Km": Km}
++
++
+ def W_reell(L, rhos, chunk=6000):
++    """Q-STERN-2: Verteiler (voll: W_reell_voll; null: Q-STERN-Pfad)."""
++    if PSI == "voll":
++        return W_reell_voll(L, rhos)
++    return W_reell_cowling(L, rhos, chunk)
++
++
++def W_multi(Ls, rho_listen):
++    """Q-STERN-2: Verteiler. voll: je Profil W_reell_voll mit eigenem R und r_m."""
++    if PSI == "voll":
++        return [W_reell_voll(L, r_)[:2] for L, r_ in zip(Ls, rho_listen)]
++    return W_multi_cowling(Ls, rho_listen)
++
++
++def W_reell_cowling(L, rhos, chunk=6000):
+     rho_all = np.atleast_1d(np.asarray(rhos, dtype=float))
+     n_all = rho_all.size
+     La = np.empty(n_all)
+@@ -733,7 +942,7 @@
+     return La, Lb, wa
+ 
+ 
+-def W_multi(Ls, rho_listen):
++def W_multi_cowling(Ls, rho_listen):
+     h = Ls[0]["h"]
+     Kx = max(L["K"] for L in Ls)
+     Kmc = max(2, min(min(L["K"] for L in Ls) - 2, int(round(float(np.median([L["R_w"] for L in Ls])) / h))))
+@@ -1079,6 +1288,30 @@
+ # Kommando familie (wie afm_bic.cmd_familie; Mitglieder = Zeilen omega^2 aus --x)
+ # ----------------------------------------------------------------------------------------------------------------------
+ 
++def _wechsel(alle, tol):
++    """Q-STERN-2: s-Wechsel zwischen benachbarten Reihen (gepaarte Nullstellen gleicher Richtung), wie qstern.py."""
++    wechsel = []
++    ungepaart = []
++    for r1, r2 in zip(alle, alle[1:]):
++        pa = paaren(r1["wurzeln"], r2["wurzeln"], tol)
++        gi = {i for i, _ in pa}
++        gj = {j for _, j in pa}
++        ungepaart.append({"x1": r1["x"], "x2": r2["x"], "n1": len(r1["wurzeln"]), "n2": len(r2["wurzeln"]),
++                          "gepaart": len(pa), "rho_ungepaart_1": [w["rho"] for k, w in enumerate(r1["wurzeln"]) if k not in gi],
++                          "rho_ungepaart_2": [w["rho"] for k, w in enumerate(r2["wurzeln"]) if k not in gj]})
++        for i, j in pa:
++            w1, w2 = r1["wurzeln"][i], r2["wurzeln"][j]
++            if w1["s"] * w2["s"] < 0:
++                wechsel.append({"x1": r1["x"], "rho1": w1["rho"], "s1": w1["s"], "x2": r2["x"], "rho2": w2["rho"],
++                                "s2": w2["s"], "richtung": w1["richtung"]})
++    return wechsel, ungepaart
++
++
++def _wechsel_im_fenster(w):
++    return (FENSTER_X[0] <= 0.5 * (w["x1"] + w["x2"]) <= FENSTER_X[1]
++            and FENSTER_R[0] <= 0.5 * (w["rho1"] + w["rho2"]) <= FENSTER_R[1])
++
++
+ def cmd_familie(a, erg, zeilen, sichern, npz):
+     budget = Budget(a.budget)
+     modell = a.modell
+@@ -1091,7 +1324,7 @@
+     else:
+         raise ValueError("--x fehlt")
+     erg.update({"modell": modell, "band": a.band, "h": h, "x_mitglieder": xs, "alpha": ALPHA, "r_fak": R_FAK,
+-                "quelle": QUELLE})
++                "quelle": QUELLE, "psi": PSI})
+     prot = []
+     Ls = profile_lin(modell, kap, xs, h, prot)
+     zeilen += prot
+@@ -1120,6 +1353,69 @@
+                       + "; ".join(f"rho {w['rho']:.7f} s {w['s']:+.3e} (rel {w['s_rel']:+.1e}, {w['richtung']:+d})"
+                                   for w in rw["wurzeln"]) + f"; {rw['zeit_abtastung']:.1f} + {rw['zeit_wurzeln']:.1f} s")
+         sichern()
++    # Q-STERN-2: Vorzeichenwechsel aus den Zeilen, danach sofort Lokalisierung und kleines Rechteck (Karte:
++    # Lokalisierung zuerst); Kandidaten im Fenster zuerst
++    wechsel, ungepaart = _wechsel([rw for rw in reihen if rw.get("gueltig")], a.ast_tol)
++    erg["paarung"] = ungepaart
++    erg["vorzeichenwechsel"] = wechsel
++    zeilen.append(f"Vorzeichenwechsel von s aus den Zeilen (Ast-Toleranz {a.ast_tol}): {len(wechsel)}")
++    for w in wechsel:
++        zeilen.append(f"  zwischen omega^2 {w['x1']:.7f} (rho {w['rho1']:.6f}, s {w['s1']:+.3e}) und {w['x2']:.7f} "
++                      f"(rho {w['rho2']:.6f}, s {w['s2']:+.3e}), Richtung {w['richtung']:+d}")
++    n_ung = sum(len(u["rho_ungepaart_1"]) + len(u["rho_ungepaart_2"]) for u in ungepaart)
++    zeilen.append(f"Ungepaarte Nullstellen (alle Zeilenpaare zusammen): {n_ung}")
++    sichern()
++    kand = []
++    erg["kandidaten"] = kand
++    for w in sorted(wechsel, key=lambda q: 0 if _wechsel_im_fenster(q) else 1)[:a.max_kand]:
++        if not budget.ok("Lokalisierung", 90.0):
++            kand.append({"wechsel": w, "fehler": "Zeit"})
++            break
++        lok = lokalisieren(modell, kap, h, w["x1"], w["rho1"], w["s1"], w["x2"], w["rho2"], w["s2"], w["richtung"],
++                           prot, budget)
++        zeilen += prot
++        prot.clear()
++        e = {"wechsel": w, "lokal": lok}
++        kand.append(e)
++        zeilen.append(f"Lokalisiert: omega*^2 = {lok['x_stern']:.8f}, rho* = {lok['rho_stern']:.8f} (Klammer "
++                      f"{lok['klammer_breite']:.1e}, {len(lok['schritte'])} Schritte, {uhr():.0f} s)")
++        sichern()
++        if not budget.ok("Rechteck", 60.0):
++            e["rechteck"] = {"fehler": "Zeit"}
++            continue
++        dx = a.rdx
++        drho = min(max(a.rdrho, 3.0 * abs(lok["steigung_rho_x"]) * dx), 0.02)
++        xc, rc = lok["x_stern"], lok["rho_stern"]
++        rlo, rhi = max(rc - drho, fenster(xc - dx)[0]), min(rc + drho, fenster(xc - dx)[1])
++        Lr = profile_lin(modell, kap, [xc - dx, xc + dx] + [xc + dx * (2.0 * k / (a.r_nx - 1) - 1.0)
++                                                           for k in range(1, a.r_nx - 1)], h, prot)
++        zeilen += prot
++        prot.clear()
++        if Lr[0] is None or Lr[1] is None:
++            e["rechteck"] = {"fehler": "Profil ungueltig"}
++            continue
++        mitte = [(xc + dx * (2.0 * k / (a.r_nx - 1) - 1.0), L, None) for k, L in zip(range(1, a.r_nx - 1), Lr[2:])]
++        ru = rechteck(modell, kap, h, xc - dx, xc + dx, rlo, rhi, Lr[0], Lr[1], prot, budget, mitte=mitte)
++        zeilen += prot
++        prot.clear()
++        e["rechteck"] = ru
++        zeilen.append(f"  Rechteck omega^2 {xc - dx:.7f} .. {xc + dx:.7f}, rho {rlo:.6f} .. {rhi:.6f}: Umlauf "
++                      f"{ru['umlauf_roh']:+.4f} (Kreuzungszaehlung {ru['umlauf_kreuzung']:+.1f}), groesster Sprung "
++                      f"{ru['max_sprung']:.3f} rad, aufgeloest {ru['aufgeloest']}, "
++                      f"{ru['punkte']} Punkte, min|W|/median {ru['min_absW'] / ru['median_absW']:.1e}, {uhr():.0f} s")
++        mi = Lr[1 + (a.r_nx - 1) // 2]
++        e["kompaktheit_ort"] = None if mi is None else {"x": mi["x"], "kompaktheit": mi["info"]["kompaktheit"],
++                                                        "Phi0": mi["info"]["Phi0"], "Phi_Rw": mi["info"]["Phi_Rw"],
++                                                        "c_asym": mi["info"]["c_asym"]}
++        if PSI == "voll" and ALPHA > 0.0 and mi is not None:
++            try:
++                e["K5"] = k5_voll(mi, rc)
++                zeilen.append(f"  K5 an {mi['x']:.8f} / {rc:.8f}: Rest relativ {e['K5']['rest_rel']:.2e}, "
++                              f"sigma_min/sigma_max {e['K5']['sv_verh']:.2e}, max|u| {e['K5']['u_max']:.3e}, "
++                              f"max|y| {e['K5']['y_max']:.3e}")
++            except Exception as ex:          # K5 darf den Lauf nicht beenden
++                e["K5"] = {"fehler": repr(ex)}
++        sichern()
+     zw = []
+     for i in range(len(xs) - 1):
+         if Ls[i] is None or Ls[i + 1] is None:
+@@ -1175,72 +1471,18 @@
+                       f"{e['neue_profile']} neue Profile), min|W|/median {e['min_absW'] / e['median_absW']:.1e}, "
+                       f"{e['zeit']:.1f} s")
+         sichern()
++    # Q-STERN-2: s-Wechsel ueber Zeilen und Zwischenreihen nur noch zur Dokumentation (Lokalisierung lief vorher)
+     alle = [rw for rw in reihen if rw.get("gueltig")]
+     for i in zw_reihen:
+         alle += [rw for (_, _, rw) in zw_reihen[i] if rw is not None]
+     alle.sort(key=lambda q: q["x"])
+-    wechsel = []
+-    ungepaart = []
+-    for r1, r2 in zip(alle, alle[1:]):
+-        pa = paaren(r1["wurzeln"], r2["wurzeln"], a.ast_tol)
+-        gi = {i for i, _ in pa}
+-        gj = {j for _, j in pa}
+-        ungepaart.append({"x1": r1["x"], "x2": r2["x"], "n1": len(r1["wurzeln"]), "n2": len(r2["wurzeln"]),
+-                          "gepaart": len(pa), "rho_ungepaart_1": [w["rho"] for k, w in enumerate(r1["wurzeln"]) if k not in gi],
+-                          "rho_ungepaart_2": [w["rho"] for k, w in enumerate(r2["wurzeln"]) if k not in gj]})
+-        for i, j in pa:
+-            w1, w2 = r1["wurzeln"][i], r2["wurzeln"][j]
+-            if w1["s"] * w2["s"] < 0:
+-                wechsel.append({"x1": r1["x"], "rho1": w1["rho"], "s1": w1["s"], "x2": r2["x"], "rho2": w2["rho"],
+-                                "s2": w2["s"], "richtung": w1["richtung"]})
+-    erg["paarung"] = ungepaart
+-    erg["vorzeichenwechsel"] = wechsel
+-    zeilen.append(f"Vorzeichenwechsel von s ({len(alle)} Reihen, Ast-Toleranz {a.ast_tol}): {len(wechsel)}")
+-    for w in wechsel:
++    wechsel2, _ = _wechsel(alle, a.ast_tol)
++    erg["vorzeichenwechsel_alle"] = wechsel2
++    zeilen.append(f"Vorzeichenwechsel von s mit Zwischenreihen ({len(alle)} Reihen): {len(wechsel2)}")
++    for w in wechsel2:
+         zeilen.append(f"  zwischen omega^2 {w['x1']:.7f} (rho {w['rho1']:.6f}, s {w['s1']:+.3e}) und {w['x2']:.7f} "
+                       f"(rho {w['rho2']:.6f}, s {w['s2']:+.3e})")
+-    n_ung = sum(len(u["rho_ungepaart_1"]) + len(u["rho_ungepaart_2"]) for u in ungepaart)
+-    zeilen.append(f"Ungepaarte Nullstellen (alle Reihenpaare zusammen): {n_ung}")
+     sichern()
+-    kand = []
+-    erg["kandidaten"] = kand
+-    for w in wechsel[:a.max_kand]:
+-        if not budget.ok("Lokalisierung", 90.0):
+-            kand.append({"wechsel": w, "fehler": "Zeit"})
+-            break
+-        lok = lokalisieren(modell, kap, h, w["x1"], w["rho1"], w["s1"], w["x2"], w["rho2"], w["s2"], w["richtung"],
+-                           prot, budget)
+-        zeilen += prot
+-        prot.clear()
+-        e = {"wechsel": w, "lokal": lok}
+-        kand.append(e)
+-        zeilen.append(f"Lokalisiert: omega*^2 = {lok['x_stern']:.8f}, rho* = {lok['rho_stern']:.8f} (Klammer "
+-                      f"{lok['klammer_breite']:.1e}, {len(lok['schritte'])} Schritte)")
+-        sichern()
+-        if not budget.ok("Rechteck", 60.0):
+-            e["rechteck"] = {"fehler": "Zeit"}
+-            continue
+-        dx = a.rdx
+-        drho = min(max(a.rdrho, 3.0 * abs(lok["steigung_rho_x"]) * dx), 0.02)
+-        xc, rc = lok["x_stern"], lok["rho_stern"]
+-        rlo, rhi = max(rc - drho, fenster(xc - dx)[0]), min(rc + drho, fenster(xc - dx)[1])
+-        Lr = profile_lin(modell, kap, [xc - dx, xc + dx] + [xc + dx * (2.0 * k / (a.r_nx - 1) - 1.0)
+-                                                           for k in range(1, a.r_nx - 1)], h, prot)
+-        zeilen += prot
+-        prot.clear()
+-        if Lr[0] is None or Lr[1] is None:
+-            e["rechteck"] = {"fehler": "Profil ungueltig"}
+-            continue
+-        mitte = [(xc + dx * (2.0 * k / (a.r_nx - 1) - 1.0), L, None) for k, L in zip(range(1, a.r_nx - 1), Lr[2:])]
+-        ru = rechteck(modell, kap, h, xc - dx, xc + dx, rlo, rhi, Lr[0], Lr[1], prot, budget, mitte=mitte)
+-        zeilen += prot
+-        prot.clear()
+-        e["rechteck"] = ru
+-        zeilen.append(f"  Rechteck omega^2 {xc - dx:.7f} .. {xc + dx:.7f}, rho {rlo:.6f} .. {rhi:.6f}: Umlauf "
+-                      f"{ru['umlauf_roh']:+.4f} (Kreuzungszaehlung {ru['umlauf_kreuzung']:+.1f}), groesster Sprung "
+-                      f"{ru['max_sprung']:.3f} rad, aufgeloest {ru['aufgeloest']}, "
+-                      f"{ru['punkte']} Punkte, min|W|/median {ru['min_absW'] / ru['median_absW']:.1e}")
+-        sichern()
+     if a.pole == "ja":
+         for i, (rw, L) in enumerate(zip(reihen, Ls)):
+             if not rw.get("gueltig") or not rw["wurzeln"]:
+@@ -1393,8 +1635,8 @@
+ # Kommando auswertung (bindende Regel aus q-stern/KARTE.md, Umsetzung PLAN.md Abschnitt Auswertung)
+ # ----------------------------------------------------------------------------------------------------------------------
+ 
+-FENSTER_X = (0.70, 0.90)
+-FENSTER_R = (1.6, 1.9)
++FENSTER_X = (0.74, 0.80)     # Q-STERN-2 (Karte)
++FENSTER_R = (1.65, 1.80)
+ 
+ 
+ def _im_fenster(x, r):
+@@ -1412,9 +1654,9 @@
+             laeufe.append(d)
+     zeilen.append(f"Auswertung: {len(laeufe)} Laeufe: " + ", ".join(d["_datei"] for d in laeufe))
+ 
+-    def gruppe(al, h, rf):
++    def gruppe(al, h, rf, ps="voll"):
+         return [d for d in laeufe if abs(d["alpha"] - al) < 1e-15 and abs(d["h"] - h) < 1e-15
+-                and abs(d["r_fak"] - rf) < 1e-15 and d.get("quelle", "rho") == "rho"]
++                and abs(d["r_fak"] - rf) < 1e-15 and d.get("quelle", "rho") == "rho" and d.get("psi", "voll") == ps]
+ 
+     def treffer(ds):
+         aus = []
+@@ -1444,9 +1686,9 @@
+     erg["K2"] = {str(k): v for k, v in k2.items()}
+     zeilen.append(f"K2: {k2}")
+     ergebnisse = []
+-    for al in (0.1, 0.03, 0.01):
+-        s1, s2, s3 = gruppe(al, 0.02, 1.0), gruppe(al, 0.01, 1.0), gruppe(al, 0.02, 1.5)
+-        e = {"alpha": al, "dateien": [[d["_datei"] for d in s] for s in (s1, s2, s3)]}
++    for al, ps in [(float(v), q) for v in a.alphas.split(",") if v for q in ("voll", "null")]:
++        s1, s2, s3 = gruppe(al, 0.02, 1.0, ps), gruppe(al, 0.01, 1.0, ps), gruppe(al, 0.02, 1.5, ps)
++        e = {"alpha": al, "psi": ps, "dateien": [[d["_datei"] for d in s] for s in (s1, s2, s3)]}
+         k2_ok = bool(k2.get(al)) and all(k2[al])
+         t1, t2, t3 = treffer(s1), treffer(s2), treffer(s3)
+         e.update({"treffer_h0.02": t1, "treffer_h0.01": t2, "treffer_K3": t3, "K2_bestanden": k2_ok})
+@@ -1508,7 +1750,7 @@
+             e["kompaktheit_zeile"] = {"x": m["x"], "kompaktheit": m["info"]["kompaktheit"], "Phi0": m["info"]["Phi0"],
+                                       "Phi_Rw": m["info"]["Phi_Rw"], "R_w": m["R_w"], "c_asym": m["info"]["c_asym"]}
+         ergebnisse.append(e)
+-        zeilen.append(f"alpha {al}: Ausgang {aus_}; gesehen {len(gesehen)}; Stufen {json.dumps(jsonfest(info))}")
++        zeilen.append(f"alpha {al} psi {ps}: Ausgang {aus_}; gesehen {len(gesehen)}; Stufen {json.dumps(jsonfest(info))}")
+         for g in gesehen:
+             zeilen.append(f"  Stelle h0.02 {g['h0.02']['x']:.8f} / {g['h0.02']['rho']:.8f}, h0.01 {g['h0.01']['x']:.8f} / "
+                           f"{g['h0.01']['rho']:.8f}, K3 {g['K3']['x']:.8f} / {g['K3']['rho']:.8f}, Umlauf "
+@@ -1527,6 +1769,9 @@
+     ap.add_argument("--r-fak", type=float, default=1.0)
+     ap.add_argument("--quelle", choices=["rho", "rho3p"], default="rho")
+     ap.add_argument("--phi-misch", type=float, default=1.0)
++    ap.add_argument("--psi", choices=["voll", "null"], default="voll")
++    ap.add_argument("--n-rampe", type=int, default=6)
++    ap.add_argument("--alphas", type=str, default="")
+     ap.add_argument("--t", type=float, default=0.0)
+     ap.add_argument("--band", type=str, default="")
+     ap.add_argument("--x", type=str, default="")
+@@ -1551,8 +1796,10 @@
+ 
+ 
+ def main():
+-    global T_MIX, ALPHA, R_FAK, QUELLE, PHI_MISCH
++    global T_MIX, ALPHA, R_FAK, QUELLE, PHI_MISCH, PSI, N_RAMPE
+     a = argumente()
++    PSI = a.psi
++    N_RAMPE = int(a.n_rampe)
+     T_MIX = float(a.t)
+     ALPHA = float(a.alpha)
+     R_FAK = float(a.r_fak)
+@@ -1560,7 +1807,7 @@
+     PHI_MISCH = float(a.phi_misch)
+     name = a.name or a.kommando
+     os.makedirs(a.aus, exist_ok=True)
+-    zeilen = [f"qstern.py {a.kommando} ({name}), Start {jetzt()}", "Argumente: " + json.dumps(vars(a))]
++    zeilen = [f"qstern2.py {a.kommando} ({name}), Start {jetzt()}", "Argumente: " + json.dumps(vars(a))]
+     erg = {"argumente": vars(a), "start": jetzt()}
+     npz = {}
+ 

@@ -1,0 +1,13 @@
+KF-5 Geburt in 2D, Aufruf fein_box96_s03. Start 2026-09-30T01:22:52+00:00, Ende 2026-09-30T01:25:48+00:00, Quadro P4000, torch 2.5.1+cu121
+Gitter: Box 96.0, dx 0.125, dt 0.02, n 768, T_Ende 800.0, Fenster 40.0; GPU-Speicher max 130 MB
+Dauer [s]: auswertung 32.6, fenster 1.7, entwicklung 141.6, gesamt 176.1
+Arm s03: S0 0.3, frei False, Seed 31. Theorie: omega0 0.7314, gamma_max 0.2256, lambda_max 11.89, q lambda^2 62.07, Zellen 65.16, E/Q Kondensat 0.875
+  Wachstum: Kontrast Start 0.02, max 1.452; T_sat (Kontrast >= 0,5) 20.47; gamma_mess 0.2038 (8 Punkte), gamma_mess/gamma_max 0.9035
+  Netz: umspannend zuerst -, zuletzt -; N_Tropfen max 40 bei t 30; Verlauf {"30": 40, "50": 20, "100": 15, "200": 8, "400": 6, "600": 4, "800": 3}
+  Erste Generation (t 30, N 40): Q-Quartile [29.25005, 34.034009999999995, 42.3892], Vorhersage q lambda^2 62.07
+  Ende t 800: Urteil getrennte Tropfen (obere Schwelle: getrennte Tropfen); N_Tropfen 3 (oben 2), N_Netz 0, groesste 0.6214; Q-Quartile [26.74999, 1301.241, 2045.258]; Ladung in Tropfen 0.8339, Energie in Tropfen 0.6984
+  Verschmelzungen 78, Teilungen 47 (Maskendiagnose); Drift Q 1.1e-15, E 2.2e-05; Kontrolle (Kontrast < 0,05, keine Komponente): nicht bestanden
+  Familie (Fenster): {"auf": 0, "neben": 0, "unentschieden": 1, "ausserhalb": 0, "gestoert": 0, "nicht rund": 2}; Urteil nicht entscheidbar (mit Q_roh: nicht entscheidbar)
+    k   0 | Q 2046 | v 0.093 | omega_ruhe 0.72624 +- 1.1e-02 (geo 0.73202) | omega_fam(Q) 0.71896 | dQ - | E/Q 0.7293 fam 0.7313 | nicht rund
+    k   1 | Q 26.5 | v 0.088 | omega_ruhe 0.82182 +- 1.7e-02 (geo 0.82680) | omega_fam(Q) 0.82705 | dQ - | E/Q 0.9394 fam 0.9324 | nicht rund
+    k   2 | Q 1325 | v 0.028 | omega_ruhe 0.71856 +- 1.5e-02 (geo 0.72553) | omega_fam(Q) 0.72157 | dQ -0.398 | E/Q 0.7287 fam 0.7368 | unentschieden

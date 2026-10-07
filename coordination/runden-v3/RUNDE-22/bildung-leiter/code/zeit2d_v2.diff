@@ -1,0 +1,265 @@
+--- zeit2d.py	2026-10-02 20:20:07.333617949 +0200
++++ zeit2d_v2.py	2026-10-02 20:39:04.483754797 +0200
+@@ -1,5 +1,35 @@
+ #!/usr/bin/env python3
+-"""BILDUNG-LEITER (Runde 22), Leitung claude-primary, 02.10.2026. Karte: RUNDE-22/bildung-leiter/KARTE.md.
++"""BILDUNG-LEITER (Runde 22), v2. Code-Agent im Auftrag der Leitung claude-primary, 02.10.2026.
++
++Kopie von code/zeit2d.py der Leitung (sha256 e0010635041833379cbcdfa72c184187c9d882174d1bd7eadc6af39fea97fce5); die
++Leitungsfassung bleibt unveraendert. Aenderungen (alle mit "V2" markiert), festgelegt vor jedem Lauf:
++  V2-1 Start: phi(-dt) = phi - q dt vel + dt^2/2 a(phi, 0) mit q = sqrt(1 - w2 dt^2/4) statt q = 1. Fuer das diskrete
++       Newton-Profil ist das genau die Leapfrog-Drehung f exp(+i w_d dt), w_d = (2/dt) asin(w dt/2), und die Loesung
++       bleibt exakt stationaer. Mit q = 1 fehlt der Startgeschwindigkeit relativ w2 dt^2/8 (dr 0,04: 1,7e-5; dr 0,02:
++       4,2e-6); das regt Schwingungen der Zentraldichte von relativ ~1e-5 an, ueber der K0-Schranke 1e-6. Fuer alle
++       anderen Anfangszustaende aendert q nur Terme der Ordnung dt^3, wie der Taylor-Start selbst.
++  V2-2 Drehfrequenz: Hintergrundphase im lin-Arm exp(-2 i w_d t) und Messdrehung exp(+i w_d t) mit w_d statt w. Damit
++       ist der lin-Arm exakt die Linearisierung des diskreten nl-Schemas um dessen stationaere Loesung f exp(-i w_d t).
++       Mit w blieb ein Rest der Ordnung w2 dt^2/12, der die Phasenmode (Jordan-Block bei rho = 0) stoert. Re rho
++       verschiebt sich dadurch nur um w_d - w (dr 0,02: ~1e-6).
++  V2-3 nl-Arm: leere oder zu kurze Fenster (T kleiner als ein Fensteranfang) brechen nicht mehr ab (vorher max() auf
++       einem leeren Tensor, z. B. im Rauchlauf T = 20).
++  V2-4 JSON: nicht endliche Zahlen als Text (m.jsonfest), damit jq die Datei lesen kann.
++  V2-5 Nur zusaetzliche Ausgaben, die Rechnung bleibt gleich:
++       - Laufzeiten (Profil, Schleife, je Schritt, Analyse); Fortschrittszeile nach 2000 Schritten.
++       - "band": je Pencil die Komponente im BIC_BAND mit |re| am naechsten an 1,556 (Regel der Leitung), bei
++         Gleichstand die groessere Amplitude.
++       - Gegenprobe: Pencil mit K = 24 fuer die Projektion in den Fenstern [50, 400] und [200, T].
++       - Rohsignale als <aus.json>.roh.pt. Teilaufruf "auswerten <roh.pt> <aus.json>" wertet eine solche Datei aus;
++         Option "ohne-analyse" (ab 8. Argument) rechnet nur, fuer Laeufe nahe der 600-s-Grenze. Option
++         "start-taylor" setzt q = 1 wie in der Leitungsfassung; nur fuer den A/B-Rauchlauf zu V2-1, nicht gewertet.
++  V2-6 Abschnitte (Grenze 600 s je Aufruf): Option "bis=<t>" rechnet bis zur Zeit t und sichert den Zustand (phi,
++       phi_alt, naechster Schritt, bisherige Reihen, Profil) in <aus.json>.zustand.pt; Option "weiter" laedt ihn,
++       rechnet das Profil neu, prueft es bitgleich gegen das gesicherte und setzt die Schleife beim naechsten Schritt
++       fort. Die Folge der Rechenschritte ist dieselbe wie in einem Aufruf.
++
++--- Kopf der Leitungsfassung ---
++BILDUNG-LEITER (Runde 22), Leitung claude-primary, 02.10.2026. Karte: RUNDE-22/bildung-leiter/KARTE.md.
+ 
+ Radiale 2D-Zeitentwicklung (l = 0) des Einfeldmodells M1, U(S) = S - S^2 + S^3/2, mit Hilfsfunktionen aus
+ RUNDE-12/leiter2d-praez/bic2_2d_praez_v2.py (unveraendert importiert: profil, f_werte, r_halb, matrix_pencil).
+@@ -16,7 +46,9 @@
+         Phi(0) = g, Phi_t(0) = -i w g.
+   nl  : nichtlinear psi_tt = lap psi - U'(|psi|^2) psi. Reihen 'gauss' (|psi|^2 Gauss mit Q = Q_F und
+         rms-Radius = R_rms des Profils, psi_t = -i w psi) und 'exakt' (diskretes Profil, K0).
+-Aufruf: python zeit2d.py <lin|nl> <omega2> <dr> <T> <r_sd> <r_max> <aus.json>
++Aufruf: python zeit2d_v2.py <lin|nl> <omega2> <dr> <T> <r_sd> <r_max> <aus.json> [ohne-analyse] [start-taylor]
++        [bis=<t>] [weiter]
++        python zeit2d_v2.py auswerten <aus.json.roh.pt> <aus.json>
+ """
+ import os
+ 
+@@ -38,6 +70,7 @@
+ 
+ F64, C128, PI, BETA, SIGMA0 = m.F64, m.C128, m.PI, m.BETA, m.SIGMA0
+ BIC_BAND = (1.45, 1.65)          # Frequenzband der stillen Mode bei n = 7 (Runde 12: Re rho ~ 1,556)
++BIC_ZIEL = 1.556                 # V2-5: Bandwahl nach der Regel der Leitung
+ 
+ 
+ def u1(S):
+@@ -88,14 +121,22 @@
+     return f, verlauf
+ 
+ 
+-def fenster_pencil(y, mess, fenster):
++def bandwahl(pencil):
++    """V2-5: Komponente im BIC_BAND mit |re| am naechsten an BIC_ZIEL; bei Gleichstand die groessere Amplitude."""
++    kand = [e for e in pencil if BIC_BAND[0] <= abs(e["re"]) <= BIC_BAND[1]]
++    if not kand:
++        return None
++    return min(kand, key=lambda e: (abs(abs(e["re"]) - BIC_ZIEL), -e["amp"]))
++
++
++def fenster_pencil(y, mess, fenster, K=12):
+     aus = []
+     n = y.shape[0]
+     for (t0, t1) in fenster:
+         i0 = int(round(t0 / mess))
+         i1 = min(n, int(round(t1 / mess)) + 1)
+-        p = m.matrix_pencil(y[i0:i1], mess)[:12] if i1 - i0 >= 12 else []
+-        aus.append({"t0": t0, "t1": t1, "pencil": p})
++        p = m.matrix_pencil(y[i0:i1], mess, K=K)[:K] if i1 - i0 >= 12 else []
++        aus.append({"t0": t0, "t1": t1, "K": K, "pencil": p, "band": bandwahl(p)})    # V2-5: K, band
+     return aus
+ 
+ 
+@@ -109,9 +150,7 @@
+     return {"gebunden": geb / tot, "still": sti / tot}
+ 
+ 
+-def main():
+-    arm, w2, dr, T, r_sd, r_max, pfad = (sys.argv[1], float(sys.argv[2]), float(sys.argv[3]), float(sys.argv[4]),
+-                                         float(sys.argv[5]), float(sys.argv[6]), sys.argv[7])
++def rechnen(arm, w2, dr, T, r_sd, r_max, taylor=False, bis=None, zustand=None):
+     t_wand = time.time()
+     dev = torch.device("cpu")
+     prof = m.profil(w2, 2.0, BETA, dr, dev)
+@@ -131,6 +170,8 @@
+     R_rms = math.sqrt(float((r * r * S_p * wfl).sum() / (S_p * wfl).sum()))
+     rh = m.r_halb(prof)
+     dt = 0.4 * dr
++    om_d = 2.0 / dt * math.asin(0.5 * om * dt)          # V2-2: Drehfrequenz der exakt stationaeren Leapfrog-Loesung
++    q_start = 1.0 if taylor else math.sqrt(1.0 - 0.25 * w2 * dt * dt)   # V2-1: = cos(om_d dt / 2); taylor nur Rauchlauf
+     n_mess = max(1, int(round(0.2 / dt)))
+     mess = n_mess * dt
+     n_schritte = int(round(T / dt))
+@@ -164,18 +205,32 @@
+             S = p.real ** 2 + p.imag ** 2
+             a = a - u1(S) * p
+         else:
+-            a = a - dpot * p - (spot * cmath.exp(-2j * om * t)) * p.conj()
++            a = a - dpot * p - (spot * cmath.exp(-2j * om_d * t)) * p.conj()      # V2-2: om_d statt om
+         a[:, -1] = 0.0
+         return a
+ 
+-    phi_alt = phi - dt * vel + 0.5 * dt * dt * beschl(phi, 0.0)
++    phi_alt = phi - q_start * dt * vel + 0.5 * dt * dt * beschl(phi, 0.0)          # V2-1: Faktor q_start
++    sek_profil = time.time() - t_wand
+     ts, sig, szen, ladung, proj = [], [], [], [], []
+-    for n in range(n_schritte + 1):
++    n_von, sek_vorher = 0, 0.0
++    param = [arm, w2, dr, T, r_sd, r_max, taylor]
++    if zustand is not None:                                                          # V2-6: Fortsetzung
++        if zustand["param"] != param or not torch.equal(zustand["f"], f):
++            raise SystemExit("Zustand passt nicht zu diesem Aufruf (Parameter oder Profil verschieden)")
++        phi, phi_alt = zustand["phi"], zustand["phi_alt"]
++        n_von, sek_vorher = zustand["n_naechster"], zustand["sek_schleife"]
++        ts = list(zustand["ts"])
++        sig, szen = list(zustand["sig"].unbind(0)), list(zustand["szen"].unbind(0))
++        ladung = list(zustand["ladung"].unbind(0))
++        proj = list(zustand["proj"].unbind(0)) if zustand["proj"] is not None else []
++    n_bis = n_schritte + 1 if bis is None else min(n_schritte + 1, int(round(bis / dt)))     # V2-6: Abschnittsende
++    t_schleife = time.time()
++    for n in range(n_von, n_bis):
+         t = n * dt
+         a = beschl(phi, t)
+         phi_neu = (2.0 * phi - fak_m * phi_alt + dt * dt * a) * fak_p
+         if n % n_mess == 0:
+-            dreh = cmath.exp(1j * om * t)
++            dreh = cmath.exp(1j * om_d * t)                                          # V2-2: om_d statt om
+             ts.append(t)
+             sig.append(torch.stack([phi[:, j] for j in orte.values()], dim=1) * dreh)
+             szen.append(phi[:, 0].abs() ** 2)
+@@ -184,21 +239,45 @@
+             if arm == "lin":
+                 proj.append(((phi[:, :j_sd] * dreh) * G[:, :j_sd] * wfl[:j_sd]).sum(1)
+                             / (G[:, :j_sd] ** 2 * wfl[:j_sd]).sum(1))
++        if n == n_von + 2000:                                                        # V2-5: Fortschritt
++            je = (time.time() - t_schleife) / 2000.0
++            print(f"  nach 2000 Schritten: {je * 1e3:.3f} ms je Schritt, dieser Abschnitt geschaetzt "
++                  f"{je * (n_bis - n_von):.0f} s", flush=True)
+         phi_alt, phi = phi, phi_neu
+-    sig = torch.stack(sig)            # (zeiten, reihen, orte)
+-    szen = torch.stack(szen)          # (zeiten, reihen)
+-    ladung = torch.stack(ladung)
++    sek_schleife = sek_vorher + time.time() - t_schleife
++    out = {"arm": arm, "w2": w2, "omega": om, "omega_diskret": om_d, "q_start": q_start, "dr": dr, "dt": dt,
++           "mess": mess, "T": T, "r_sd": r_sd, "r_max": r_max,
++           "N": N, "Q_F": Q_F, "R_rms": R_rms, "r_halb": rh, "S0": float(S_p[0]), "schwelle_a": 1.0 - om,
++           "newton_residuen": newton_verlauf, "profil_ode_grund": prof.get("grund"),
++           "f0_ode": prof["f0"], "f0_diskret": float(f[0]), "reihen": namen, "analyse": [],
++           "sek_profil": sek_profil, "sek_schleife": sek_schleife, "n_schritte": n_schritte,
++           "sek_je_schritt": sek_schleife / max(1, n_schritte + 1), "version": "zeit2d_v2",
++           "start": "taylor (q = 1)" if taylor else "exakt diskret (q = cos(w_d dt/2))",
++           "abschnitt": {"n_von": n_von, "n_bis": n_bis, "fortsetzung": zustand is not None}}
++    if n_bis < n_schritte + 1:                                                       # V2-6: Zwischenstand sichern
++        zustand_neu = {"param": param, "f": f, "phi": phi, "phi_alt": phi_alt, "n_naechster": n_bis,
++                       "sek_schleife": sek_schleife, "ts": ts, "sig": torch.stack(sig), "szen": torch.stack(szen),
++                       "ladung": torch.stack(ladung), "proj": torch.stack(proj) if proj else None, "meta": out}
++        return None, out, t_wand, zustand_neu
++    roh = {"arm": arm, "namen": namen, "ts": ts, "mess": mess, "T": T, "omega": om,
++           "sig": torch.stack(sig), "szen": torch.stack(szen), "ladung": torch.stack(ladung),
++           "proj": torch.stack(proj) if proj else None}
++    return roh, out, t_wand, None
++
++
++def analyse(roh, out):
++    t_an = time.time()
++    arm, namen, ts, mess, T, om = roh["arm"], roh["namen"], roh["ts"], roh["mess"], roh["T"], roh["omega"]
++    sig, szen, ladung, proj = roh["sig"], roh["szen"], roh["ladung"], roh["proj"]   # sig: (zeiten, reihen, orte)
+     fenster = [(50.0, 400.0), (400.0, 1200.0), (1200.0, T), (200.0, T)]
+     schwelle = 1.0 - om
+-    out = {"arm": arm, "w2": w2, "omega": om, "dr": dr, "dt": dt, "mess": mess, "T": T, "r_sd": r_sd, "r_max": r_max,
+-           "N": N, "Q_F": Q_F, "R_rms": R_rms, "r_halb": rh, "S0": float(S_p[0]), "schwelle_a": schwelle,
+-           "newton_residuen": newton_verlauf, "profil_ode_grund": prof.get("grund"),
+-           "f0_ode": prof["f0"], "f0_diskret": float(f[0]), "reihen": namen, "analyse": []}
++    out["analyse"] = []
+     for i, name in enumerate(namen):
+         e = {"reihe": name, "ladung_anfang": float(ladung[0, i]), "ladung_ende": float(ladung[-1, i])}
+         if arm == "lin":
+-            p = torch.stack(proj)[:, i]
++            p = proj[:, i]
+             e["projektion"] = fenster_pencil(p, mess, fenster)
++            e["projektion_k24"] = fenster_pencil(p, mess, [(50.0, 400.0), (200.0, T)], K=24)      # V2-5
+             e["zentrum"] = fenster_pencil(sig[:, i, 0], mess, fenster)
+             e["wand"] = fenster_pencil(sig[:, i, 2], mess, fenster)
+         else:
+@@ -208,20 +287,63 @@
+             mitte = []
+             for (t0, t1) in [(100.0, 600.0), (600.0, 1300.0), (1300.0, T)]:
+                 i0, i1 = int(round(t0 / mess)), min(len(ts), int(round(t1 / mess)) + 1)
+-                y = (sz[i0:i1] - sz[i0:i1].mean()).to(C128)
+-                pen = m.matrix_pencil(y, mess)[:12] if i1 - i0 >= 12 else []
++                leer = i1 <= i0                                                       # V2-3
++                pen = (m.matrix_pencil((sz[i0:i1] - sz[i0:i1].mean()).to(C128), mess)[:12]
++                       if i1 - i0 >= 12 else [])
+                 mitte.append({"t0": t0, "t1": t1, "pencil": pen, "anteile": anteile(pen, schwelle),
+-                              "S_mittel": float(sz[i0:i1].mean()), "S_spanne": float(sz[i0:i1].max() - sz[i0:i1].min())})
++                              "band": bandwahl(pen),                                   # V2-5
++                              "S_mittel": None if leer else float(sz[i0:i1].mean()),
++                              "S_spanne": None if leer else float(sz[i0:i1].max() - sz[i0:i1].min())})
+             e["S_zentrum_spektrum"] = mitte
+             sch = max(1, len(ts) // 4000)
+             e["roh_t"] = ts[::sch]
+             e["roh_S_zentrum"] = sz[::sch].tolist()
+         out["analyse"].append(e)
+-    out["sek"] = time.time() - t_wand
++    out["sek_analyse"] = time.time() - t_an
++
++
++def schreiben(out, pfad):
+     with open(pfad + ".tmp", "w") as fh:
+-        json.dump(out, fh, indent=1)
++        json.dump(m.jsonfest(out), fh, indent=1)                                    # V2-4
+     os.replace(pfad + ".tmp", pfad)
+-    print(f"zeit2d fertig: arm {arm}, w2 {w2}, dr {dr}, T {T}, {out['sek']:.1f} s", flush=True)
++
++
++def main():
++    if sys.argv[1] == "auswerten":                                                  # V2-5
++        roh = torch.load(sys.argv[2], weights_only=False)
++        out = roh["meta"]
++        analyse(roh, out)
++        out["ausgewertet_aus"] = sys.argv[2]
++        schreiben(out, sys.argv[3])
++        print(f"zeit2d_v2 ausgewertet: {sys.argv[2]}, Analyse {out['sek_analyse']:.1f} s", flush=True)
++        return
++    arm, w2, dr, T, r_sd, r_max, pfad = (sys.argv[1], float(sys.argv[2]), float(sys.argv[3]), float(sys.argv[4]),
++                                         float(sys.argv[5]), float(sys.argv[6]), sys.argv[7])
++    opts = sys.argv[8:]
++    ohne = "ohne-analyse" in opts
++    taylor = "start-taylor" in opts                                                # V2-5: nur fuer den Rauchlauf (A/B zu V2-1)
++    bis = None                                                                     # V2-6: Abschnitte
++    for o in opts:
++        if o.startswith("bis="):
++            bis = float(o[4:])
++    zustand = torch.load(pfad + ".zustand.pt", weights_only=False) if "weiter" in opts else None
++    roh, out, t_wand, zustand_neu = rechnen(arm, w2, dr, T, r_sd, r_max, taylor, bis, zustand)
++    if zustand_neu is not None:
++        torch.save(zustand_neu, pfad + ".zustand.pt.tmp")
++        os.replace(pfad + ".zustand.pt.tmp", pfad + ".zustand.pt")
++        print(f"zeit2d_v2 Abschnitt gesichert: arm {arm}, w2 {w2}, dr {dr}, Schritte {out['abschnitt']['n_von']} bis "
++              f"{out['abschnitt']['n_bis']} von {out['n_schritte'] + 1}, Profil {out['sek_profil']:.1f} s, "
++              f"Schleife bisher {out['sek_schleife']:.1f} s", flush=True)
++        return
++    roh["meta"] = out
++    torch.save(roh, pfad + ".roh.pt.tmp")
++    os.replace(pfad + ".roh.pt.tmp", pfad + ".roh.pt")
++    if not ohne:
++        analyse(roh, out)
++    out["sek"] = time.time() - t_wand
++    schreiben(out, pfad)
++    print(f"zeit2d_v2 fertig: arm {arm}, w2 {w2}, dr {dr}, T {T}, {out['sek']:.1f} s (Profil {out['sek_profil']:.1f}, "
++          f"Schleife {out['sek_schleife']:.1f}, Analyse {out.get('sek_analyse', 0.0):.1f})", flush=True)
+ 
+ 
+ if __name__ == "__main__":

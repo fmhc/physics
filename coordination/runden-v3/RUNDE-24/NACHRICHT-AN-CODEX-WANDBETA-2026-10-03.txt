@@ -1,0 +1,18 @@
+Status von claude-primary an ag-phy-coordination, 03.10.2026 nachts. Keine Antwort noetig; als Hinweis fuer Papier I.
+
+WAND-BETA (RUNDE-24/wand-beta/ERGEBNIS.md): ebene Wand fuer U = S - S^2 + beta S^3 bei omega_min(beta), gleiches Verfahren wie R23.
+- Je genau eine Transmissionsnullstelle bei beta = 0,5 / 0,75 / 1 / 2 / 4:
+  - rho_z = 1,5241497621 / 1,6927204866 / 1,7734530718 / 1,8896237546 / 1,9455067381
+  - Damit gilt b_inf = 2 sqrt(beta) pi/k_in = 2,3100 / 2,4233 / 2,6186 / 3,3914 / 4,6103.
+- E_z = (rho_z - omega)^2 liegt knapp ueber dem tiefsten nackten Wandzustand des geschlossenen Kanals:
+  - Abstand +0,0287 / +0,0085 / +0,0040 / +0,0008 / +0,0002, also etwa ~beta^-2 bei grossem beta (Fano-Bild [H]).
+- Das Fenster, in dem die Wand dicht wird, schrumpft stark: Breite ~1e-5 bei beta = 1, ~5e-9 bei beta = 2, < 1e-9 bei
+  beta = 4.
+  - Die Minimierung von T im Randwertmodell findet es bei grossem beta nicht mehr.
+  - Das diskrete Schiessen im Randwertmodell bestaetigt alle fuenf Nullstellen mit Abstaenden der Ordnung h^2 (bis
+  8,7e-11).
+- Laufend: LEITER-BETA (Agent), radiale 3D-Sprossen bei beta = 1 gegen den vorhergesagten Abstand 2,6186.
+  - Das ist die offene Frage aus RUNDE-10.
+  - Schreibtisch [H]: Das R10-Rechteck mit Umlauf 0 koennte zwei Sprossen mit entgegengesetztem Umlauf enthalten haben.
+
+Falls ihr eine Bemerkung zur beta-Abhaengigkeit ins Papier nehmen wollt, gern erst nach einer blinden Nachrechnung, z. B. beta = 1 mit eurer Numerov-Streuung. Entscheidung bei euch und Finn.

@@ -1,0 +1,1469 @@
+{
+ "start": "2026-09-30T11:25:47+02:00",
+ "geraet": "CPU, 1 Thread",
+ "torch": "2.10.0+cu128",
+ "teil": "haupt",
+ "faktor": 0.01,
+ "schwellen": {
+  "A|0.55": {
+   "v_cl": 0.07924393631548066,
+   "M1": 3.371075620600026,
+   "M2": 3.3817102384290902,
+   "Q": 3.814405472732549,
+   "R_erste_Ordnung": 0.3154666054976163,
+   "licht_hinten": 1.019803902718557
+  },
+  "A|0.7": {
+   "v_cl": 0.06553020800153171,
+   "M1": 2.2986069702664595,
+   "M2": 2.3035582708266493,
+   "Q": 2.4414916653982712,
+   "R_erste_Ordnung": 0.2154044003275457,
+   "licht_hinten": 1.019803902718557
+  },
+  "A|0.9": {
+   "v_cl": 0.03651551197141468,
+   "M1": 1.268978571139879,
+   "M2": 1.269825435111805,
+   "Q": 1.2912268228920127,
+   "R_erste_Ordnung": 0.06673587649042023,
+   "licht_hinten": 1.019803902718557
+  },
+  "C|0.55": {
+   "v_cl": 0.14119819903914108,
+   "M1": 3.371075620600026,
+   "M2": 3.4051910460595183,
+   "Q": 3.814405472732549,
+   "R_erste_Ordnung": 1.012004158287616,
+   "licht_hinten": 1.020204061220407
+  },
+  "C|0.7": {
+   "v_cl": 0.14126691659637086,
+   "M1": 2.2986069702664595,
+   "M2": 2.3218919612311204,
+   "Q": 2.4414916653982712,
+   "R_erste_Ordnung": 1.013004452951849,
+   "licht_hinten": 1.020204061220407
+  },
+  "C|0.9": {
+   "v_cl": 0.14137325902512635,
+   "M1": 1.268978571139879,
+   "M2": 1.2818530370918408,
+   "Q": 1.2912268228920127,
+   "R_erste_Ordnung": 1.0145534562019387,
+   "licht_hinten": 1.020204061220407
+  }
+ },
+ "v_P1": 0.0510228599864732,
+ "v_P2": 0.07238707215850618,
+ "parameter": {
+  "phi2": 0.01,
+  "x_s": 0.0,
+  "w": 1.0,
+  "x0": -20.0,
+  "zone": 6.0,
+  "L_box": 120.0,
+  "x_sponge": 80.0,
+  "dx_dt_grob": [
+   0.1,
+   0.05
+  ],
+  "T_run": "min(2000.0, 80.0/v) x Faktor"
+ },
+ "stufen": {
+  "grob": {
+   "zeilen": [
+    {
+     "name": "A w2=0.55 0,95 v_cl",
+     "variante": "A",
+     "omega2": 0.55,
+     "v": 0.07528173949970662,
+     "phi2": 0.01,
+     "rolle": "schwelle",
+     "soll": "reflektiert",
+     "T_run": 10.626747008192043,
+     "anteile": {
+      "zurueck": 0.9999999645448586,
+      "stufe": 3.545513633953452e-08,
+      "durch": 5.0697274878632244e-15,
+      "frei": 0.0
+     },
+     "ausgang": "vor der Stufe",
+     "richtig": false,
+     "spaltet": false,
+     "v2": 0.0752673596832274,
+     "S_max_schwankung": 0.0002886341081138219,
+     "t_kontakt": 12.0,
+     "plaus": {
+      "ladung_bis_Schwamm_1e-6": {
+       "max_rel": 2.328484546410468e-16,
+       "bestanden": true
+      },
+      "energie_bis_Schwamm_1e-5": {
+       "max_rel": 6.601223046996241e-08,
+       "bestanden": true
+      },
+      "anteile_0_bis_1": {
+       "min": 0.0,
+       "max": 0.9999999645448586,
+       "bestanden": true
+      },
+      "summe_1": {
+       "summe": 1.0,
+       "hinweis": "frei = Rest, Summe gilt per Bau",
+       "bestanden": true
+      },
+      "v2_unter_Licht": {
+       "v2": 0.0752673596832274,
+       "licht": 1.0,
+       "bestanden": true
+      }
+     }
+    },
+    {
+     "name": "A w2=0.55 1,05 v_cl",
+     "variante": "A",
+     "omega2": 0.55,
+     "v": 0.08320613313125469,
+     "phi2": 0.01,
+     "rolle": "schwelle",
+     "soll": "durch",
+     "T_run": 9.614675864554703,
+     "anteile": {
+      "zurueck": 0.9999999647422126,
+      "stufe": 3.525778251317776e-08,
+      "durch": 4.785946921254641e-15,
+      "frei": 1.1102230246251565e-16
+     },
+     "ausgang": "vor der Stufe",
+     "richtig": false,
+     "spaltet": false,
+     "v2": 0.08318707199904729,
+     "S_max_schwankung": 0.0002491962368056001,
+     "t_kontakt": 11.0,
+     "plaus": {
+      "ladung_bis_Schwamm_1e-6": {
+       "max_rel": 1.164242273205234e-16,
+       "bestanden": true
+      },
+      "energie_bis_Schwamm_1e-5": {
+       "max_rel": 6.649811830576747e-08,
+       "bestanden": true
+      },
+      "anteile_0_bis_1": {
+       "min": 1.1102230246251565e-16,
+       "max": 0.9999999647422126,
+       "bestanden": true
+      },
+      "summe_1": {
+       "summe": 1.0,
+       "hinweis": "frei = Rest, Summe gilt per Bau",
+       "bestanden": true
+      },
+      "v2_unter_Licht": {
+       "v2": 0.08318707199904729,
+       "licht": 1.0,
+       "bestanden": true
+      }
+     }
+    },
+    {
+     "name": "A w2=0.7 0,95 v_cl",
+     "variante": "A",
+     "omega2": 0.7,
+     "v": 0.062253697601455125,
+     "phi2": 0.01,
+     "rolle": "schwelle",
+     "soll": "reflektiert",
+     "T_run": 12.850642304358491,
+     "anteile": {
+      "zurueck": 0.9999993552879718,
+      "stufe": 6.447105119082642e-07,
+      "durch": 1.5167870805757302e-12,
+      "frei": -4.440892098500626e-16
+     },
+     "ausgang": "vor der Stufe",
+     "richtig": false,
+     "spaltet": false,
+     "v2": 0.062241526650245405,
+     "S_max_schwankung": 0.00043695938080874023,
+     "t_kontakt": 14.0,
+     "plaus": {
+      "ladung_bis_Schwamm_1e-6": {
+       "max_rel": 3.637851532682747e-16,
+       "bestanden": true
+      },
+      "energie_bis_Schwamm_1e-5": {
+       "max_rel": 1.1762203696051575e-07,
+       "bestanden": true
+      },
+      "anteile_0_bis_1": {
+       "min": -4.440892098500626e-16,
+       "max": 0.9999993552879718,
+       "bestanden": true
+      },
+      "summe_1": {
+       "summe": 1.0,
+       "hinweis": "frei = Rest, Summe gilt per Bau",
+       "bestanden": true
+      },
+      "v2_unter_Licht": {
+       "v2": 0.062241526650245405,
+       "licht": 1.0,
+       "bestanden": true
+      }
+     }
+    },
+    {
+     "name": "A w2=0.7 1,05 v_cl",
+     "variante": "A",
+     "omega2": 0.7,
+     "v": 0.0688067184016083,
+     "phi2": 0.01,
+     "rolle": "schwelle",
+     "soll": "durch",
+     "T_run": 11.626771608705301,
+     "anteile": {
+      "zurueck": 0.9999993462221316,
+      "stufe": 6.537763802008218e-07,
+      "durch": 1.4883203222501678e-12,
+      "frei": -2.220446049250313e-16
+     },
+     "ausgang": "vor der Stufe",
+     "richtig": false,
+     "spaltet": false,
+     "v2": 0.06878970558537638,
+     "S_max_schwankung": 0.00025505778091555335,
+     "t_kontakt": 13.0,
+     "plaus": {
+      "ladung_bis_Schwamm_1e-6": {
+       "max_rel": 0.0,
+       "bestanden": true
+      },
+      "energie_bis_Schwamm_1e-5": {
+       "max_rel": 1.1800875205451829e-07,
+       "bestanden": true
+      },
+      "anteile_0_bis_1": {
+       "min": -2.220446049250313e-16,
+       "max": 0.9999993462221316,
+       "bestanden": true
+      },
+      "summe_1": {
+       "summe": 0.9999999999999999,
+       "hinweis": "frei = Rest, Summe gilt per Bau",
+       "bestanden": true
+      },
+      "v2_unter_Licht": {
+       "v2": 0.06878970558537638,
+       "licht": 1.0,
+       "bestanden": true
+      }
+     }
+    },
+    {
+     "name": "A w2=0.9 0,95 v_cl",
+     "variante": "A",
+     "omega2": 0.9,
+     "v": 0.03468973637284394,
+     "phi2": 0.01,
+     "rolle": "schwelle",
+     "soll": "reflektiert",
+     "T_run": 20.0,
+     "anteile": {
+      "zurueck": 0.9997641295858087,
+      "stufe": 0.00023574718292070524,
+      "durch": 1.2323127045735348e-07,
+      "frei": 1.1102230246251565e-16
+     },
+     "ausgang": "vor der Stufe",
+     "richtig": false,
+     "spaltet": false,
+     "v2": 0.03462908199789416,
+     "S_max_schwankung": 0.0002760888601146479,
+     "t_kontakt": 20.0,
+     "plaus": {
+      "ladung_bis_Schwamm_1e-6": {
+       "max_rel": 3.439281170254955e-16,
+       "bestanden": true
+      },
+      "energie_bis_Schwamm_1e-5": {
+       "max_rel": 1.6473263690393495e-07,
+       "bestanden": true
+      },
+      "anteile_0_bis_1": {
+       "min": 1.1102230246251565e-16,
+       "max": 0.9997641295858087,
+       "bestanden": true
+      },
+      "summe_1": {
+       "summe": 1.0,
+       "hinweis": "frei = Rest, Summe gilt per Bau",
+       "bestanden": true
+      },
+      "v2_unter_Licht": {
+       "v2": 0.03462908199789416,
+       "licht": 1.0,
+       "bestanden": true
+      }
+     }
+    },
+    {
+     "name": "A w2=0.9 1,05 v_cl",
+     "variante": "A",
+     "omega2": 0.9,
+     "v": 0.038341287569985415,
+     "phi2": 0.01,
+     "rolle": "schwelle",
+     "soll": "durch",
+     "T_run": 20.0,
+     "anteile": {
+      "zurueck": 0.9997532228424956,
+      "stufe": 0.00024664828219427194,
+      "durch": 1.2887530995764357e-07,
+      "frei": 2.220446049250313e-16
+     },
+     "ausgang": "vor der Stufe",
+     "richtig": false,
+     "spaltet": false,
+     "v2": 0.0382716255058345,
+     "S_max_schwankung": 0.0004192396179654172,
+     "t_kontakt": 20.0,
+     "plaus": {
+      "ladung_bis_Schwamm_1e-6": {
+       "max_rel": 1.719640585127477e-16,
+       "bestanden": true
+      },
+      "energie_bis_Schwamm_1e-5": {
+       "max_rel": 1.6456959269118053e-07,
+       "bestanden": true
+      },
+      "anteile_0_bis_1": {
+       "min": 2.220446049250313e-16,
+       "max": 0.9997532228424956,
+       "bestanden": true
+      },
+      "summe_1": {
+       "summe": 1.0,
+       "hinweis": "frei = Rest, Summe gilt per Bau",
+       "bestanden": true
+      },
+      "v2_unter_Licht": {
+       "v2": 0.0382716255058345,
+       "licht": 1.0,
+       "bestanden": true
+      }
+     }
+    },
+    {
+     "name": "C w2=0.55 0,95 v_cl",
+     "variante": "C",
+     "omega2": 0.55,
+     "v": 0.134138289087184,
+     "phi2": 0.01,
+     "rolle": "schwelle",
+     "soll": "reflektiert",
+     "T_run": 5.963994363160806,
+     "anteile": {
+      "zurueck": 0.9999999692061065,
+      "stufe": 3.079389110274396e-08,
+      "durch": 2.4397535540812717e-15,
+      "frei": 0.0
+     },
+     "ausgang": "vor der Stufe",
+     "richtig": false,
+     "spaltet": false,
+     "v2": NaN,
+     "S_max_schwankung": 0.00020909315548963501,
+     "t_kontakt": 7.0,
+     "plaus": {
+      "ladung_bis_Schwamm_1e-6": {
+       "max_rel": 2.328484546410803e-16,
+       "bestanden": true
+      },
+      "energie_bis_Schwamm_1e-5": {
+       "max_rel": 7.082416708886531e-08,
+       "bestanden": true
+      },
+      "anteile_0_bis_1": {
+       "min": 0.0,
+       "max": 0.9999999692061065,
+       "bestanden": true
+      },
+      "summe_1": {
+       "summe": 1.0,
+       "hinweis": "frei = Rest, Summe gilt per Bau",
+       "bestanden": true
+      },
+      "v2_unter_Licht": {
+       "v2": NaN,
+       "licht": 1.0,
+       "bestanden": true
+      }
+     }
+    },
+    {
+     "name": "C w2=0.55 1,05 v_cl",
+     "variante": "C",
+     "omega2": 0.55,
+     "v": 0.14825810899109815,
+     "phi2": 0.01,
+     "rolle": "schwelle",
+     "soll": "durch",
+     "T_run": 5.395994900002632,
+     "anteile": {
+      "zurueck": 0.999999972757808,
+      "stufe": 2.724218976391593e-08,
+      "durch": 2.0651900425737068e-15,
+      "frei": 1.1102230246251565e-16
+     },
+     "ausgang": "vor der Stufe",
+     "richtig": false,
+     "spaltet": false,
+     "v2": NaN,
+     "S_max_schwankung": 0.00014981498855235763,
+     "t_kontakt": 6.0,
+     "plaus": {
+      "ladung_bis_Schwamm_1e-6": {
+       "max_rel": 2.328484546410786e-16,
+       "bestanden": true
+      },
+      "energie_bis_Schwamm_1e-5": {
+       "max_rel": 7.240066424212124e-08,
+       "bestanden": true
+      },
+      "anteile_0_bis_1": {
+       "min": 1.1102230246251565e-16,
+       "max": 0.999999972757808,
+       "bestanden": true
+      },
+      "summe_1": {
+       "summe": 1.0,
+       "hinweis": "frei = Rest, Summe gilt per Bau",
+       "bestanden": true
+      },
+      "v2_unter_Licht": {
+       "v2": NaN,
+       "licht": 1.0,
+       "bestanden": true
+      }
+     }
+    },
+    {
+     "name": "C w2=0.7 0,95 v_cl",
+     "variante": "C",
+     "omega2": 0.7,
+     "v": 0.13420357076655232,
+     "phi2": 0.01,
+     "rolle": "schwelle",
+     "soll": "reflektiert",
+     "T_run": 5.96109325132342,
+     "anteile": {
+      "zurueck": 0.9999994193778712,
+      "stufe": 5.806212157718393e-07,
+      "durch": 9.130570326309405e-13,
+      "frei": 0.0
+     },
+     "ausgang": "vor der Stufe",
+     "richtig": false,
+     "spaltet": false,
+     "v2": NaN,
+     "S_max_schwankung": 0.00031995615685432725,
+     "t_kontakt": 7.0,
+     "plaus": {
+      "ladung_bis_Schwamm_1e-6": {
+       "max_rel": 1.818925766360392e-16,
+       "bestanden": true
+      },
+      "energie_bis_Schwamm_1e-5": {
+       "max_rel": 1.2401983351789286e-07,
+       "bestanden": true
+      },
+      "anteile_0_bis_1": {
+       "min": 0.0,
+       "max": 0.9999994193778712,
+       "bestanden": true
+      },
+      "summe_1": {
+       "summe": 1.0,
+       "hinweis": "frei = Rest, Summe gilt per Bau",
+       "bestanden": true
+      },
+      "v2_unter_Licht": {
+       "v2": NaN,
+       "licht": 1.0,
+       "bestanden": true
+      }
+     }
+    },
+    {
+     "name": "C w2=0.7 1,05 v_cl",
+     "variante": "C",
+     "omega2": 0.7,
+     "v": 0.1483302624261894,
+     "phi2": 0.01,
+     "rolle": "schwelle",
+     "soll": "durch",
+     "T_run": 5.393370084530714,
+     "anteile": {
+      "zurueck": 0.9999994746969776,
+      "stufe": 5.253022219044012e-07,
+      "durch": 8.002914356375492e-13,
+      "frei": 2.220446049250313e-16
+     },
+     "ausgang": "vor der Stufe",
+     "richtig": false,
+     "spaltet": false,
+     "v2": NaN,
+     "S_max_schwankung": 6.627814285885825e-05,
+     "t_kontakt": 6.0,
+     "plaus": {
+      "ladung_bis_Schwamm_1e-6": {
+       "max_rel": 3.637851532719205e-16,
+       "bestanden": true
+      },
+      "energie_bis_Schwamm_1e-5": {
+       "max_rel": 1.2583782019547173e-07,
+       "bestanden": true
+      },
+      "anteile_0_bis_1": {
+       "min": 2.220446049250313e-16,
+       "max": 0.9999994746969776,
+       "bestanden": true
+      },
+      "summe_1": {
+       "summe": 1.0,
+       "hinweis": "frei = Rest, Summe gilt per Bau",
+       "bestanden": true
+      },
+      "v2_unter_Licht": {
+       "v2": NaN,
+       "licht": 1.0,
+       "bestanden": true
+      }
+     }
+    },
+    {
+     "name": "C w2=0.9 0,95 v_cl",
+     "variante": "C",
+     "omega2": 0.9,
+     "v": 0.13430459607387002,
+     "phi2": 0.01,
+     "rolle": "schwelle",
+     "soll": "reflektiert",
+     "T_run": 5.956609255278094,
+     "anteile": {
+      "zurueck": 0.9997639012286392,
+      "stufe": 0.00023599456691810817,
+      "durch": 1.0420444276743565e-07,
+      "frei": 0.0
+     },
+     "ausgang": "vor der Stufe",
+     "richtig": false,
+     "spaltet": false,
+     "v2": NaN,
+     "S_max_schwankung": 8.919362559342884e-05,
+     "t_kontakt": 7.0,
+     "plaus": {
+      "ladung_bis_Schwamm_1e-6": {
+       "max_rel": 1.7196407066876622e-16,
+       "bestanden": true
+      },
+      "energie_bis_Schwamm_1e-5": {
+       "max_rel": 1.6960933752160784e-07,
+       "bestanden": true
+      },
+      "anteile_0_bis_1": {
+       "min": 0.0,
+       "max": 0.9997639012286392,
+       "bestanden": true
+      },
+      "summe_1": {
+       "summe": 1.0,
+       "hinweis": "frei = Rest, Summe gilt per Bau",
+       "bestanden": true
+      },
+      "v2_unter_Licht": {
+       "v2": NaN,
+       "licht": 1.0,
+       "bestanden": true
+      }
+     }
+    },
+    {
+     "name": "C w2=0.9 1,05 v_cl",
+     "variante": "C",
+     "omega2": 0.9,
+     "v": 0.14844192197638267,
+     "phi2": 0.01,
+     "rolle": "schwelle",
+     "soll": "durch",
+     "T_run": 5.389313135727798,
+     "anteile": {
+      "zurueck": 0.9997771746945068,
+      "stufe": 0.0002227286815215931,
+      "durch": 9.662397184332419e-08,
+      "frei": -2.220446049250313e-16
+     },
+     "ausgang": "vor der Stufe",
+     "richtig": false,
+     "spaltet": false,
+     "v2": NaN,
+     "S_max_schwankung": 0.00015037416329711665,
+     "t_kontakt": 6.0,
+     "plaus": {
+      "ladung_bis_Schwamm_1e-6": {
+       "max_rel": 0.0,
+       "bestanden": true
+      },
+      "energie_bis_Schwamm_1e-5": {
+       "max_rel": 1.7109875398698708e-07,
+       "bestanden": true
+      },
+      "anteile_0_bis_1": {
+       "min": -2.220446049250313e-16,
+       "max": 0.9997771746945068,
+       "bestanden": true
+      },
+      "summe_1": {
+       "summe": 1.0,
+       "hinweis": "frei = Rest, Summe gilt per Bau",
+       "bestanden": true
+      },
+      "v2_unter_Licht": {
+       "v2": NaN,
+       "licht": 1.0,
+       "bestanden": true
+      }
+     }
+    },
+    {
+     "name": "A w2=0.55 P1 v=0.05102",
+     "variante": "A",
+     "omega2": 0.55,
+     "v": 0.0510228599864732,
+     "phi2": 0.01,
+     "rolle": "prisma",
+     "soll": "reflektiert",
+     "T_run": 15.679246522286089,
+     "anteile": {
+      "zurueck": 0.9999999552178246,
+      "stufe": 4.478217132367469e-08,
+      "durch": 3.644927992018325e-15,
+      "frei": 4.440892098500626e-16
+     },
+     "ausgang": "vor der Stufe",
+     "richtig": false,
+     "spaltet": false,
+     "v2": 0.05101055319218162,
+     "S_max_schwankung": 0.00028736687854430686,
+     "t_kontakt": 17.0,
+     "plaus": {
+      "ladung_bis_Schwamm_1e-6": {
+       "max_rel": 5.82121136602617e-16,
+       "bestanden": true
+      },
+      "energie_bis_Schwamm_1e-5": {
+       "max_rel": 6.483120941424652e-08,
+       "bestanden": true
+      },
+      "anteile_0_bis_1": {
+       "min": 4.440892098500626e-16,
+       "max": 0.9999999552178246,
+       "bestanden": true
+      },
+      "summe_1": {
+       "summe": 1.0,
+       "hinweis": "frei = Rest, Summe gilt per Bau",
+       "bestanden": true
+      },
+      "v2_unter_Licht": {
+       "v2": 0.05101055319218162,
+       "licht": 1.0,
+       "bestanden": true
+      }
+     }
+    },
+    {
+     "name": "A w2=0.7 P1 v=0.05102",
+     "variante": "A",
+     "omega2": 0.7,
+     "v": 0.0510228599864732,
+     "phi2": 0.01,
+     "rolle": "prisma",
+     "soll": "reflektiert",
+     "T_run": 15.679246522286089,
+     "anteile": {
+      "zurueck": 0.9999993517075335,
+      "stufe": 6.482909216856195e-07,
+      "durch": 1.5446843193653777e-12,
+      "frei": 1.1102230246251565e-16
+     },
+     "ausgang": "vor der Stufe",
+     "richtig": false,
+     "spaltet": false,
+     "v2": 0.0510125222744481,
+     "S_max_schwankung": 0.0003403945453329099,
+     "t_kontakt": 17.0,
+     "plaus": {
+      "ladung_bis_Schwamm_1e-6": {
+       "max_rel": 3.6378515326827467e-16,
+       "bestanden": true
+      },
+      "energie_bis_Schwamm_1e-5": {
+       "max_rel": 1.2458323252390588e-07,
+       "bestanden": true
+      },
+      "anteile_0_bis_1": {
+       "min": 1.1102230246251565e-16,
+       "max": 0.9999993517075335,
+       "bestanden": true
+      },
+      "summe_1": {
+       "summe": 1.0,
+       "hinweis": "frei = Rest, Summe gilt per Bau",
+       "bestanden": true
+      },
+      "v2_unter_Licht": {
+       "v2": 0.0510125222744481,
+       "licht": 1.0,
+       "bestanden": true
+      }
+     }
+    },
+    {
+     "name": "A w2=0.9 P1 v=0.05102",
+     "variante": "A",
+     "omega2": 0.9,
+     "v": 0.0510228599864732,
+     "phi2": 0.01,
+     "rolle": "prisma",
+     "soll": "durch",
+     "T_run": 15.679246522286089,
+     "anteile": {
+      "zurueck": 0.9997465499444779,
+      "stufe": 0.00025332086445157913,
+      "durch": 1.2919107034216618e-07,
+      "frei": 2.220446049250313e-16
+     },
+     "ausgang": "vor der Stufe",
+     "richtig": false,
+     "spaltet": false,
+     "v2": 0.05092928200566469,
+     "S_max_schwankung": 0.0002966844581456478,
+     "t_kontakt": 17.0,
+     "plaus": {
+      "ladung_bis_Schwamm_1e-6": {
+       "max_rel": 3.4392811702549548e-16,
+       "bestanden": true
+      },
+      "energie_bis_Schwamm_1e-5": {
+       "max_rel": 1.6387176747183526e-07,
+       "bestanden": true
+      },
+      "anteile_0_bis_1": {
+       "min": 2.220446049250313e-16,
+       "max": 0.9997465499444779,
+       "bestanden": true
+      },
+      "summe_1": {
+       "summe": 1.0,
+       "hinweis": "frei = Rest, Summe gilt per Bau",
+       "bestanden": true
+      },
+      "v2_unter_Licht": {
+       "v2": 0.05092928200566469,
+       "licht": 1.0,
+       "bestanden": true
+      }
+     }
+    },
+    {
+     "name": "A w2=0.55 P2 v=0.07239",
+     "variante": "A",
+     "omega2": 0.55,
+     "v": 0.07238707215850618,
+     "phi2": 0.01,
+     "rolle": "prisma",
+     "soll": "reflektiert",
+     "T_run": 11.051697162833687,
+     "anteile": {
+      "zurueck": 0.9999999658998249,
+      "stufe": 3.410017038045093e-08,
+      "durch": 4.921448717274065e-15,
+      "frei": -2.220446049250313e-16
+     },
+     "ausgang": "vor der Stufe",
+     "richtig": false,
+     "spaltet": false,
+     "v2": 0.07237332471746427,
+     "S_max_schwankung": 0.00043211380195840065,
+     "t_kontakt": 12.0,
+     "plaus": {
+      "ladung_bis_Schwamm_1e-6": {
+       "max_rel": 3.492726819615702e-16,
+       "bestanden": true
+      },
+      "energie_bis_Schwamm_1e-5": {
+       "max_rel": 6.584709487480756e-08,
+       "bestanden": true
+      },
+      "anteile_0_bis_1": {
+       "min": -2.220446049250313e-16,
+       "max": 0.9999999658998249,
+       "bestanden": true
+      },
+      "summe_1": {
+       "summe": 1.0,
+       "hinweis": "frei = Rest, Summe gilt per Bau",
+       "bestanden": true
+      },
+      "v2_unter_Licht": {
+       "v2": 0.07237332471746427,
+       "licht": 1.0,
+       "bestanden": true
+      }
+     }
+    },
+    {
+     "name": "A w2=0.7 P2 v=0.07239",
+     "variante": "A",
+     "omega2": 0.7,
+     "v": 0.07238707215850618,
+     "phi2": 0.01,
+     "rolle": "prisma",
+     "soll": "durch",
+     "T_run": 11.051697162833687,
+     "anteile": {
+      "zurueck": 0.9999993688522296,
+      "stufe": 6.311463789901071e-07,
+      "durch": 1.3916828820690853e-12,
+      "frei": -2.220446049250313e-16
+     },
+     "ausgang": "vor der Stufe",
+     "richtig": false,
+     "spaltet": false,
+     "v2": 0.07236865979758456,
+     "S_max_schwankung": 0.0005324591470399859,
+     "t_kontakt": 12.0,
+     "plaus": {
+      "ladung_bis_Schwamm_1e-6": {
+       "max_rel": 3.637851532682747e-16,
+       "bestanden": true
+      },
+      "energie_bis_Schwamm_1e-5": {
+       "max_rel": 1.1823650789014606e-07,
+       "bestanden": true
+      },
+      "anteile_0_bis_1": {
+       "min": -2.220446049250313e-16,
+       "max": 0.9999993688522296,
+       "bestanden": true
+      },
+      "summe_1": {
+       "summe": 1.0,
+       "hinweis": "frei = Rest, Summe gilt per Bau",
+       "bestanden": true
+      },
+      "v2_unter_Licht": {
+       "v2": 0.07236865979758456,
+       "licht": 1.0,
+       "bestanden": true
+      }
+     }
+    },
+    {
+     "name": "A w2=0.9 P2 v=0.07239",
+     "variante": "A",
+     "omega2": 0.9,
+     "v": 0.07238707215850618,
+     "phi2": 0.01,
+     "rolle": "prisma",
+     "soll": "durch",
+     "T_run": 11.051697162833687,
+     "anteile": {
+      "zurueck": 0.9997522603705763,
+      "stufe": 0.0002476191643655022,
+      "durch": 1.2046505820258136e-07,
+      "frei": 0.0
+     },
+     "ausgang": "vor der Stufe",
+     "richtig": false,
+     "spaltet": false,
+     "v2": 0.07224436308655768,
+     "S_max_schwankung": 0.0001525367689003835,
+     "t_kontakt": 12.0,
+     "plaus": {
+      "ladung_bis_Schwamm_1e-6": {
+       "max_rel": 1.7196405851274774e-16,
+       "bestanden": true
+      },
+      "energie_bis_Schwamm_1e-5": {
+       "max_rel": 1.6455712760147444e-07,
+       "bestanden": true
+      },
+      "anteile_0_bis_1": {
+       "min": 0.0,
+       "max": 0.9997522603705763,
+       "bestanden": true
+      },
+      "summe_1": {
+       "summe": 1.0,
+       "hinweis": "frei = Rest, Summe gilt per Bau",
+       "bestanden": true
+      },
+      "v2_unter_Licht": {
+       "v2": 0.07224436308655768,
+       "licht": 1.0,
+       "bestanden": true
+      }
+     }
+    },
+    {
+     "name": "C w2=0.55 P1 v=0.05102",
+     "variante": "C",
+     "omega2": 0.55,
+     "v": 0.0510228599864732,
+     "phi2": 0.01,
+     "rolle": "prisma",
+     "soll": "reflektiert",
+     "T_run": 15.679246522286089,
+     "anteile": {
+      "zurueck": 0.9999999552232195,
+      "stufe": 4.4776778090548695e-08,
+      "durch": 2.072619910523376e-15,
+      "frei": 3.3306690738754696e-16
+     },
+     "ausgang": "vor der Stufe",
+     "richtig": false,
+     "spaltet": false,
+     "v2": 0.051010553204810447,
+     "S_max_schwankung": 0.00028736687856319637,
+     "t_kontakt": 17.0,
+     "plaus": {
+      "ladung_bis_Schwamm_1e-6": {
+       "max_rel": 3.49272681961631e-16,
+       "bestanden": true
+      },
+      "energie_bis_Schwamm_1e-5": {
+       "max_rel": 6.483120915112133e-08,
+       "bestanden": true
+      },
+      "anteile_0_bis_1": {
+       "min": 3.3306690738754696e-16,
+       "max": 0.9999999552232195,
+       "bestanden": true
+      },
+      "summe_1": {
+       "summe": 1.0,
+       "hinweis": "frei = Rest, Summe gilt per Bau",
+       "bestanden": true
+      },
+      "v2_unter_Licht": {
+       "v2": 0.051010553204810447,
+       "licht": 1.0,
+       "bestanden": true
+      }
+     }
+    },
+    {
+     "name": "C w2=0.7 P1 v=0.05102",
+     "variante": "C",
+     "omega2": 0.7,
+     "v": 0.0510228599864732,
+     "phi2": 0.01,
+     "rolle": "prisma",
+     "soll": "reflektiert",
+     "T_run": 15.679246522286089,
+     "anteile": {
+      "zurueck": 0.9999993519689128,
+      "stufe": 6.48030232949971e-07,
+      "durch": 8.540778592733326e-13,
+      "frei": 2.220446049250313e-16
+     },
+     "ausgang": "vor der Stufe",
+     "richtig": false,
+     "spaltet": false,
+     "v2": 0.05101252318097593,
+     "S_max_schwankung": 0.00034039454536559534,
+     "t_kontakt": 17.0,
+     "plaus": {
+      "ladung_bis_Schwamm_1e-6": {
+       "max_rel": 1.8189257663637257e-16,
+       "bestanden": true
+      },
+      "energie_bis_Schwamm_1e-5": {
+       "max_rel": 1.2458323580504357e-07,
+       "bestanden": true
+      },
+      "anteile_0_bis_1": {
+       "min": 2.220446049250313e-16,
+       "max": 0.9999993519689128,
+       "bestanden": true
+      },
+      "summe_1": {
+       "summe": 1.0,
+       "hinweis": "frei = Rest, Summe gilt per Bau",
+       "bestanden": true
+      },
+      "v2_unter_Licht": {
+       "v2": 0.05101252318097593,
+       "licht": 1.0,
+       "bestanden": true
+      }
+     }
+    },
+    {
+     "name": "C w2=0.9 P1 v=0.05102",
+     "variante": "C",
+     "omega2": 0.9,
+     "v": 0.0510228599864732,
+     "phi2": 0.01,
+     "rolle": "prisma",
+     "soll": "reflektiert",
+     "T_run": 15.679246522286089,
+     "anteile": {
+      "zurueck": 0.9997465714756053,
+      "stufe": 0.0002533131004844432,
+      "durch": 1.1542391053060302e-07,
+      "frei": -2.220446049250313e-16
+     },
+     "ausgang": "vor der Stufe",
+     "richtig": false,
+     "spaltet": false,
+     "v2": 0.05092971761402261,
+     "S_max_schwankung": 0.00029668446314586006,
+     "t_kontakt": 17.0,
+     "plaus": {
+      "ladung_bis_Schwamm_1e-6": {
+       "max_rel": 3.439281437970145e-16,
+       "bestanden": true
+      },
+      "energie_bis_Schwamm_1e-5": {
+       "max_rel": 1.6385385496535358e-07,
+       "bestanden": true
+      },
+      "anteile_0_bis_1": {
+       "min": -2.220446049250313e-16,
+       "max": 0.9997465714756053,
+       "bestanden": true
+      },
+      "summe_1": {
+       "summe": 1.0,
+       "hinweis": "frei = Rest, Summe gilt per Bau",
+       "bestanden": true
+      },
+      "v2_unter_Licht": {
+       "v2": 0.05092971761402261,
+       "licht": 1.0,
+       "bestanden": true
+      }
+     }
+    },
+    {
+     "name": "C w2=0.55 P2 v=0.07239",
+     "variante": "C",
+     "omega2": 0.55,
+     "v": 0.07238707215850618,
+     "phi2": 0.01,
+     "rolle": "prisma",
+     "soll": "reflektiert",
+     "T_run": 11.051697162833687,
+     "anteile": {
+      "zurueck": 0.9999999659001655,
+      "stufe": 3.409983179019253e-08,
+      "durch": 3.0407273916051845e-15,
+      "frei": -2.220446049250313e-16
+     },
+     "ausgang": "vor der Stufe",
+     "richtig": false,
+     "spaltet": false,
+     "v2": 0.07237332472872815,
+     "S_max_schwankung": 0.0004321138019572638,
+     "t_kontakt": 12.0,
+     "plaus": {
+      "ladung_bis_Schwamm_1e-6": {
+       "max_rel": 3.4927268196162907e-16,
+       "bestanden": true
+      },
+      "energie_bis_Schwamm_1e-5": {
+       "max_rel": 6.584709487481607e-08,
+       "bestanden": true
+      },
+      "anteile_0_bis_1": {
+       "min": -2.220446049250313e-16,
+       "max": 0.9999999659001655,
+       "bestanden": true
+      },
+      "summe_1": {
+       "summe": 1.0,
+       "hinweis": "frei = Rest, Summe gilt per Bau",
+       "bestanden": true
+      },
+      "v2_unter_Licht": {
+       "v2": 0.07237332472872815,
+       "licht": 1.0,
+       "bestanden": true
+      }
+     }
+    },
+    {
+     "name": "C w2=0.7 P2 v=0.07239",
+     "variante": "C",
+     "omega2": 0.7,
+     "v": 0.07238707215850618,
+     "phi2": 0.01,
+     "rolle": "prisma",
+     "soll": "reflektiert",
+     "T_run": 11.051697162833687,
+     "anteile": {
+      "zurueck": 0.9999993688133808,
+      "stufe": 6.311854967504761e-07,
+      "durch": 1.1226155310753102e-12,
+      "frei": -2.220446049250313e-16
+     },
+     "ausgang": "vor der Stufe",
+     "richtig": false,
+     "spaltet": false,
+     "v2": 0.07236865989480457,
+     "S_max_schwankung": 0.0005324591470356864,
+     "t_kontakt": 12.0,
+     "plaus": {
+      "ladung_bis_Schwamm_1e-6": {
+       "max_rel": 0.0,
+       "bestanden": true
+      },
+      "energie_bis_Schwamm_1e-5": {
+       "max_rel": 1.1823650654217841e-07,
+       "bestanden": true
+      },
+      "anteile_0_bis_1": {
+       "min": -2.220446049250313e-16,
+       "max": 0.9999993688133808,
+       "bestanden": true
+      },
+      "summe_1": {
+       "summe": 1.0,
+       "hinweis": "frei = Rest, Summe gilt per Bau",
+       "bestanden": true
+      },
+      "v2_unter_Licht": {
+       "v2": 0.07236865989480457,
+       "licht": 1.0,
+       "bestanden": true
+      }
+     }
+    },
+    {
+     "name": "C w2=0.9 P2 v=0.07239",
+     "variante": "C",
+     "omega2": 0.9,
+     "v": 0.07238707215850618,
+     "phi2": 0.01,
+     "rolle": "prisma",
+     "soll": "reflektiert",
+     "T_run": 11.051697162833687,
+     "anteile": {
+      "zurueck": 0.9997521896715781,
+      "stufe": 0.0002476936399576464,
+      "durch": 1.1668846431478637e-07,
+      "frei": 0.0
+     },
+     "ausgang": "vor der Stufe",
+     "richtig": false,
+     "spaltet": false,
+     "v2": 0.07224391655935847,
+     "S_max_schwankung": 0.00015253676886595278,
+     "t_kontakt": 12.0,
+     "plaus": {
+      "ladung_bis_Schwamm_1e-6": {
+       "max_rel": 1.7196407168202842e-16,
+       "bestanden": true
+      },
+      "energie_bis_Schwamm_1e-5": {
+       "max_rel": 1.6453638043140292e-07,
+       "bestanden": true
+      },
+      "anteile_0_bis_1": {
+       "min": 0.0,
+       "max": 0.9997521896715781,
+       "bestanden": true
+      },
+      "summe_1": {
+       "summe": 1.0,
+       "hinweis": "frei = Rest, Summe gilt per Bau",
+       "bestanden": true
+      },
+      "v2_unter_Licht": {
+       "v2": 0.07224391655935847,
+       "licht": 1.0,
+       "bestanden": true
+      }
+     }
+    }
+   ],
+   "pruefung": {
+    "V1_C_schwellen_richtig": false,
+    "V1_C_schwellen_spanne": 0.0012398174139369722,
+    "V2_A_schwellen_richtig": false,
+    "V3_prisma_A_falsch": [
+     "A w2=0.55 P1 v=0.05102",
+     "A w2=0.7 P1 v=0.05102",
+     "A w2=0.9 P1 v=0.05102",
+     "A w2=0.55 P2 v=0.07239",
+     "A w2=0.7 P2 v=0.07239",
+     "A w2=0.9 P2 v=0.07239"
+    ],
+    "V3_prisma_C_sortiert": [
+     "C w2=0.55 P1 v=0.05102",
+     "C w2=0.7 P1 v=0.05102",
+     "C w2=0.9 P1 v=0.05102",
+     "C w2=0.55 P2 v=0.07239",
+     "C w2=0.7 P2 v=0.07239",
+     "C w2=0.9 P2 v=0.07239"
+    ],
+    "V4_durch_97pz_und_Smax_2pz": true,
+    "falsche_schwellenlaeufe": [
+     "A w2=0.55 0,95 v_cl",
+     "A w2=0.55 1,05 v_cl",
+     "A w2=0.7 0,95 v_cl",
+     "A w2=0.7 1,05 v_cl",
+     "A w2=0.9 0,95 v_cl",
+     "A w2=0.9 1,05 v_cl",
+     "C w2=0.55 0,95 v_cl",
+     "C w2=0.55 1,05 v_cl",
+     "C w2=0.7 0,95 v_cl",
+     "C w2=0.7 1,05 v_cl",
+     "C w2=0.9 0,95 v_cl",
+     "C w2=0.9 1,05 v_cl"
+    ],
+    "spaltende_laeufe": [],
+    "scheitert": true,
+    "nicht_entscheidbar": false,
+    "plausibilitaet_bestanden": true
+   },
+   "sek": 1.7741919649997726
+  },
+  "fein": {
+   "zeilen": [
+    {
+     "name": "A w2=0.7 0,95 v_cl",
+     "variante": "A",
+     "omega2": 0.7,
+     "v": 0.062253697601455125,
+     "phi2": 0.01,
+     "rolle": "schwelle",
+     "soll": "reflektiert",
+     "T_run": 12.850642304358491,
+     "anteile": {
+      "zurueck": 0.9999994126502264,
+      "stufe": 5.873483522336215e-07,
+      "durch": 1.4212709122149286e-12,
+      "frei": 1.1102230246251565e-16
+     },
+     "ausgang": "vor der Stufe",
+     "richtig": false,
+     "spaltet": false,
+     "v2": 0.06224952573305913,
+     "S_max_schwankung": 4.882524418599696e-05,
+     "t_kontakt": 12.0,
+     "plaus": {
+      "ladung_bis_Schwamm_1e-6": {
+       "max_rel": 1.8189257663413736e-16,
+       "bestanden": true
+      },
+      "energie_bis_Schwamm_1e-5": {
+       "max_rel": 7.351054224297172e-09,
+       "bestanden": true
+      },
+      "anteile_0_bis_1": {
+       "min": 1.1102230246251565e-16,
+       "max": 0.9999994126502264,
+       "bestanden": true
+      },
+      "summe_1": {
+       "summe": 1.0,
+       "hinweis": "frei = Rest, Summe gilt per Bau",
+       "bestanden": true
+      },
+      "v2_unter_Licht": {
+       "v2": 0.06224952573305913,
+       "licht": 1.0,
+       "bestanden": true
+      }
+     }
+    },
+    {
+     "name": "A w2=0.7 1,05 v_cl",
+     "variante": "A",
+     "omega2": 0.7,
+     "v": 0.0688067184016083,
+     "phi2": 0.01,
+     "rolle": "schwelle",
+     "soll": "durch",
+     "T_run": 11.626771608705301,
+     "anteile": {
+      "zurueck": 0.9999993636699464,
+      "stufe": 6.363285268142808e-07,
+      "durch": 1.526984987979923e-12,
+      "frei": -2.220446049250313e-16
+     },
+     "ausgang": "vor der Stufe",
+     "richtig": false,
+     "spaltet": false,
+     "v2": 0.06880205609728521,
+     "S_max_schwankung": 0.00011480045980036292,
+     "t_kontakt": 12.0,
+     "plaus": {
+      "ladung_bis_Schwamm_1e-6": {
+       "max_rel": 3.637851532682747e-16,
+       "bestanden": true
+      },
+      "energie_bis_Schwamm_1e-5": {
+       "max_rel": 7.375220373022028e-09,
+       "bestanden": true
+      },
+      "anteile_0_bis_1": {
+       "min": -2.220446049250313e-16,
+       "max": 0.9999993636699464,
+       "bestanden": true
+      },
+      "summe_1": {
+       "summe": 0.9999999999999999,
+       "hinweis": "frei = Rest, Summe gilt per Bau",
+       "bestanden": true
+      },
+      "v2_unter_Licht": {
+       "v2": 0.06880205609728521,
+       "licht": 1.0,
+       "bestanden": true
+      }
+     }
+    },
+    {
+     "name": "C w2=0.7 0,95 v_cl",
+     "variante": "C",
+     "omega2": 0.7,
+     "v": 0.13420357076655232,
+     "phi2": 0.01,
+     "rolle": "schwelle",
+     "soll": "reflektiert",
+     "T_run": 5.96109325132342,
+     "anteile": {
+      "zurueck": 0.9999994352725387,
+      "stufe": 5.647265225089015e-07,
+      "durch": 9.386369192047962e-13,
+      "frei": 2.220446049250313e-16
+     },
+     "ausgang": "vor der Stufe",
+     "richtig": false,
+     "spaltet": false,
+     "v2": NaN,
+     "S_max_schwankung": 0.00010400138975662455,
+     "t_kontakt": 7.0,
+     "plaus": {
+      "ladung_bis_Schwamm_1e-6": {
+       "max_rel": 1.8189257663603925e-16,
+       "bestanden": true
+      },
+      "energie_bis_Schwamm_1e-5": {
+       "max_rel": 7.750853345313884e-09,
+       "bestanden": true
+      },
+      "anteile_0_bis_1": {
+       "min": 2.220446049250313e-16,
+       "max": 0.9999994352725387,
+       "bestanden": true
+      },
+      "summe_1": {
+       "summe": 1.0,
+       "hinweis": "frei = Rest, Summe gilt per Bau",
+       "bestanden": true
+      },
+      "v2_unter_Licht": {
+       "v2": NaN,
+       "licht": 1.0,
+       "bestanden": true
+      }
+     }
+    },
+    {
+     "name": "C w2=0.7 1,05 v_cl",
+     "variante": "C",
+     "omega2": 0.7,
+     "v": 0.1483302624261894,
+     "phi2": 0.01,
+     "rolle": "schwelle",
+     "soll": "durch",
+     "T_run": 5.393370084530714,
+     "anteile": {
+      "zurueck": 0.9999994890783609,
+      "stufe": 5.109208163256276e-07,
+      "durch": 8.227127708407801e-13,
+      "frei": 1.1102230246251565e-16
+     },
+     "ausgang": "vor der Stufe",
+     "richtig": false,
+     "spaltet": false,
+     "v2": NaN,
+     "S_max_schwankung": 2.9654133552270264e-05,
+     "t_kontakt": 6.0,
+     "plaus": {
+      "ladung_bis_Schwamm_1e-6": {
+       "max_rel": 3.637851532719205e-16,
+       "bestanden": true
+      },
+      "energie_bis_Schwamm_1e-5": {
+       "max_rel": 7.864457661412665e-09,
+       "bestanden": true
+      },
+      "anteile_0_bis_1": {
+       "min": 1.1102230246251565e-16,
+       "max": 0.9999994890783609,
+       "bestanden": true
+      },
+      "summe_1": {
+       "summe": 1.0,
+       "hinweis": "frei = Rest, Summe gilt per Bau",
+       "bestanden": true
+      },
+      "v2_unter_Licht": {
+       "v2": NaN,
+       "licht": 1.0,
+       "bestanden": true
+      }
+     }
+    }
+   ],
+   "pruefung": null,
+   "sek": 0.587783117996878
+  }
+ },
+ "L3": [
+  {
+   "lauf": "A w2=0.7 0,95 v_cl",
+   "gleicher_ausgang": {
+    "bestanden": true
+   }
+  },
+  {
+   "lauf": "A w2=0.7 1,05 v_cl",
+   "gleicher_ausgang": {
+    "bestanden": true
+   }
+  },
+  {
+   "lauf": "C w2=0.7 0,95 v_cl",
+   "gleicher_ausgang": {
+    "bestanden": true
+   }
+  },
+  {
+   "lauf": "C w2=0.7 1,05 v_cl",
+   "gleicher_ausgang": {
+    "bestanden": true
+   }
+  }
+ ],
+ "ende": "2026-09-30T11:25:49+02:00"
+}

@@ -1,0 +1,89 @@
+Neue feste Feinserie — prospektiver Plan, particle_core, 2026-10-02
+Keine Ausführung durch Autor. Neue Dateien/Manifeste, Altserie unverändert.
+
+FRAGE UND VIER FÄLLE
+Dieselbe stationäre vollgekoppelte M2-Antwort auf die physische komplexe
+quadratische Quelle bei nu=2rho. Neu R60/120 × h=.05/.025 statt .1/.05.
+Keine Zeitentwicklung, kein Gamma, keine Lebensdauer, keine Gesamtfreigabe
+der ursprünglichen UNRESOLVED-Serie. h=.05 allein wäre keine Gitterprüfung
+und wird deshalb nicht als konvergente Produktionsantwort ausgegeben.
+
+NOTWENDIGE NEUE EINGABEN
+h=.05 Referenz, R120-Ritzvektor und komplexe Quelle unverändert aus den
+gehashten bisherigen Manifesten übernehmen. R60 immer nur gleichphasiger
+Ausschnitt der R120-Referenz und -Quelle, keine neue Normierung je Box.
+h=.025 benötigt eine echte neue diskrete Q1100-Referenz auf R120 (4800
+Zellen), einen gekoppelten R120-Ritzvektor sowie eine neu ausgewertete
+quadratische Quelle. Interpolation ist nur Newton-Start, keine feine Lösung.
+
+Präparation: Originalarchiv-Seed mit ursprünglichem Hash, eindeutig Q1100,
+sweep=seed, omega²=1.03666310756389. Dieselbe lineare Startinterpolation und
+newton_Q-Methode aus beutel_source.py, max30 Updates, tol1e-9. Alle alten
+Präparationsgates übernehmen: finite/positive lambda; relative f- und
+chi-Startabweichung<=.02, omega-Abweichung<=.01, Feldvorzeichen/-bereiche,
+E-Abweichung<=.02; Schlussresiduum<1e-9, Qrel<1e-10, E/Q<sqrt2,
+separate Hamiltoniansumme relativ<1e-12, E(.05)/E(.025) relativ<1e-3.
+Float64-NPZ mit exakten Zellzentren und tatsächlichem Dateihash speichern.
+
+Ritz: Ein gezielter Aufruf auf R120,h=.025 mit bestehendem modes.operators,
+sigma=.3i,k4,ncv20,tol1e-9,maxiter300 und demselben deterministischen Start.
+Keine neue Shiftsuche. Genau ein Ritzwert in .38<rho<.39 erforderlich.
+Bestehende erste/quadratische Residuen<1e-8, |Re lambda|<1e-7,
+deltaQrel<1e-7, .001<rho<sqrt2-omega-.001; Phaseanker<1e-8.
+Mit vorhandener h=.05-Mode |Delta rho|<5e-4 und Volumenüberlapp>.98,
+eindeutige Zuordnung. Alte Lokalisierungsdiagnosen (einschließlich
+R20-Anteil<1e-4) unverändert ausgeben. Deren alter FAIL bleibt FAIL;
+die erzwungene Antwort verwendet weiterhin ausdrücklich den diagnostischen
+Ritzvektor, keinen nachträglich bestätigten gebundenen Kandidaten.
+Keine neue R60-Eigenwertrechnung: wie im ursprünglichen Antwortplan wird
+die Quelle nur aus der R120-Mode gebildet und dann abgeschnitten.
+
+Quelle: q/||q||/sqrtV, exakt vorhandene harmonic-source.source-Funktion,
+J2=J(qphys)/4; DC=.5[J(Re qphys)+J(Im qphys)]. Plus/Minus=(J2x±iJ2y)/sqrt2.
+Keine weitere Quellnormierung/Phasenkorrektur. Dieselbe Quellen-FD-/Fourier-
+QA inklusive falscher Faktor-/Vorzeichenprobe muss gelten. Frequenz,
+Quellhash, Ritzhash und Referenzhash gemeinsam speichern. h-Vergleich
+benutzt Amplitudenbeträge; R-Vergleich dieselbe komplexe Gauge je h.
+
+FREIKONTROLLEN OHNE LOCKERUNG
+Gaussian- und analytische Bumpfälle h=.05/.025 aus null-diagnostic samt
+Hashes und Originalflags wiederverwenden; Nullamplitudenverhältnis für
+dieses neue Paar 2..6 oder beide unter altem Boden1e-10*A_Gauss prüfen.
+h=.05 Closed-/Incoming-Kontrollen aus remaining-free wiederverwenden.
+Genau die fehlenden Closed-/Incoming-Fälle auf h=.025 neu rechnen.
+Gaussian Betrag<.005, komplex<.02, Fluss<.005; Bump Quellenorm>1e-3,
+Amplitude/A_Gauss<.005, voller Profilfehler<.005 bleiben unverändert.
+Closed beide Nullverhältnisse<1e-12; Incoming FV-Fluss<0. Keine
+Produktions-Nichtnullgates auf Null-/Closed-Kontrollen anwenden.
+
+VIER PRODUKTIONSFÄLLE UND UNVERÄNDERTE GRENZEN
+Unverändertes outgoing.solve importieren: voller komplexer Dreikanal-FV-
+Operator, identische Robin-Ghostfaktoren und Quellenwork von E-omega Q.
+Profile auf R60/R120 inklusive Randrest<1e-8 und Q-Abschneidefehler<1e-10,
+Phaseanker<1e-8. Genau ein offener Pluskanal; keine Kanalwechselbehandlung.
+Alle endlichen Lösungen: Algebrarest<1e-10, Work/FV-Bilanz<1e-7 mit altem
+Nenner. Auslesefenster40..45 und45..50, relative innere Variation<.01,
+komplexe Mittelwertabweichung beider Fenster<.01, R-Abweichung<.01,
+h-BETRAGSabweichung<.02, Kontinuums-/FV-Rotflussabweichung<.02.
+FV-Fluss positiv, Mittelamplitude nichtnull und größer als5mal maximaler
+beobachteter R-/h-Änderung und innerer Fensterstreuung. Quellenanteile
+außerhalb Box/Kragen unverändert berichten. Kein Weglassen schwieriger
+Fälle, kein Normwechsel, keine Nachjustierung der Tore oder Zusatzscans.
+
+BUDGET UND ABFOLGE
+Vorläufe auf .69: gesamte alte acht Ritz-Aufgaben2.42 CPU-s extern,
+Quellenanalyse .56, Null-Diagnose sechs Fälle .59, remaining-free .56.
+Präparation beider alter Gitter .312 CPU-s INTERN (ohne NumPy-Import;
+keine falsche Gleichsetzung mit Gesamtprozesskosten).
+4800-Zellen-Ritzoperator jetzt28800 Dimension; Kosten nicht gemessen,
+keine lineare Skalierungsgarantie. Fester Vorschlag insgesamt20 CPU-s:
+höchstens12 für neue Referenz+Ritz+Quelle samt Imports/QA/IO, höchstens8
+für zwei fehlende Freikontrollen+vier M2-Antworten samt Prüfungen/IO.
+Interne Checkpoints10 bzw6 CPU-s, harte äußere Rootdeckel12 bzw8;
+ein Thread,nice19,.69, RAM<512MB. Erwartung wenige Sekunden aus den
+Altlogs, ausdrücklich Schätzung. Kein automatischer Retry bei Überschreitung.
+Nach jeder abgeschlossenen Teilaufgabe atomisches JSON/Artefakthashes.
+Nichtendliche Daten oder Gatefehler stoppen, unvollständig ist kein PASS.
+Vor Ausführung Codelektüre/Nichtautorreview; dann getrennte Rootprozesse.
+Der neue Endstatus gilt nur dieser vollständig geprüften Feinserie und
+der vorgegebenen Quellnorm. Alle historischen Status bleiben unverändert.

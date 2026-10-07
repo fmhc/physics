@@ -1,0 +1,90 @@
+Primary-source audit for the BIC manuscript, 30 September 2026
+Scope: five references; targeted reading, no new numerics, no manuscript
+claims of priority. Only these three section files were written.
+LaTeX integration: LITERATURE.tex is a subsection; bibliography.tex uses
+thebibliography and requires hyperref for the DOI/arXiv links. Citation
+keys: Coleman1985, Kovtun2018, Ciurla2024, FriedrichWintgen1985, YuLu2025.
+
+1. Coleman1985
+S. Coleman, Q-balls, Nuclear Physics B 262, 263–283 (1985).
+https://doi.org/10.1016/0550-3213(85)90286-X
+https://www.sciencedirect.com/science/article/pii/055032138590286X
+Erratum metadata: Nuclear Physics B 269, 744 (1986),
+https://doi.org/10.1016/0550-3213(86)90520-1
+Reading depth: publisher-indexed abstract and bibliographic metadata;
+the institutional primary-PDF link
+https://www.ift.uam-csic.es/sites/default/files/QBALLS.pdf
+was located but opening failed. No full-text or erratum-content audit
+is claimed. The manuscript uses only the broad, abstract-supported
+connection between scalar Q-balls and a conserved global charge.
+No detailed existence/stability theorem is imported from this citation.
+
+2. Kovtun2018
+A. Kovtun, E. Nugaev, A. Shkerin, Vibrational modes of Q-balls,
+Physical Review D 98, 096016 (2018).
+https://doi.org/10.1103/PhysRevD.98.096016
+https://arxiv.org/html/1805.03518v2
+Version read: v2, 29 November 2018. Publisher PDF also located/opened:
+https://inspirehep.net/files/323a0be25e3e18ae093d0d24e0dbd65b
+Reading depth: full-text section 2, equations (8)–(12), and section 3.1,
+equations (14)–(23); metadata compared with the published PDF header.
+No complete audit of later approximations or spectra.
+Use: coupled conjugate linearization, partial waves, sideband frequencies;
+the selected piecewise-parabolic bound modes obey equation (17).
+Our origin condition is derived separately: do not copy their equation
+(16) as a universal Neumann condition for every angular momentum.
+Use real spherical harmonics or correctly conjugate-paired complex
+harmonics; the citation does not resolve that convention for us.
+
+3. Ciurla2024
+D. Ciurla, P. Dorey, T. Romańczukiewicz, Y. Shnir,
+Perturbations of Q-balls: from spectral structure to radiation pressure,
+JHEP 07 (2024) 196.
+https://doi.org/10.1007/JHEP07(2024)196
+https://arxiv.org/html/2405.06591v2
+https://arxiv.org/abs/2405.06591
+Version read: v2, 24 May 2024; journal DOI checked on arXiv metadata.
+Reading depth: full-text model equations (1)–(2), sections 3.1–3.5,
+particularly (17)–(22), thresholds, (28)–(29), and nonlinear relaxation.
+Use: one-dimensional sextic model, half-propagating regime, nonzero-tail
+quasinormal comparison; not a 3D BIC certificate. No assertion that the
+paper excludes all exact BICs. Own caution: its displayed lab-frame
+equation (16) appears to omit the background phase multiplying xi*;
+our equations should be independently derived and compared to its
+coupled pencil (19)–(22), not copied from (16).
+
+4. FriedrichWintgen1985
+H. Friedrich, D. Wintgen, Interfering resonances and bound states in
+the continuum, Physical Review A 32, 3231–3242 (1985).
+https://journals.aps.org/pra/abstract/10.1103/PhysRevA.32.3231
+https://doi.org/10.1103/PhysRevA.32.3231
+Reading depth: original publisher abstract and metadata, opened directly;
+publisher full text requires authorization. No full derivation audit.
+Use is limited to the authors' interference/zero-width mechanism.
+Do not confuse this with their different PRA 31, 3964 paper. The
+current work does not identify two interfering resonances merely by
+finding a radiation-amplitude zero, and does not claim that the 1985
+article already proves our model-specific existence statement.
+
+5. YuLu2025
+Xiuchen Yu, Ya Yan Lu, Existence of Friedrich-Wintgen bound states in
+the continuum: system of Schrödinger equations, arXiv:2504.19573v1,
+28 April 2025.
+https://arxiv.org/abs/2504.19573v1
+https://arxiv.org/html/2504.19573v1
+Reading depth: sections 2 and 3, section 6.1 assumptions A1–A3,
+first-order cancellation in 6.2, convergence conclusion in 6.3 and
+the main result in 6.4. Not every proof estimate independently checked.
+The section-6 theorem gives a rigorous small-coupling construction under
+its stated assumptions. Our transfer assessment distinguishes its three
+channels, half-line Neumann condition and exactly constant exterior
+from our radial two-channel problem. Cited explicitly as the read
+preprint version; no unverified journal metadata appended.
+
+Editorial boundaries
+No Schott/Bohm historical claims, no first-BIC/first-Q-ball-excitation
+claims, and no asserted infinite ladder. A quantitative novelty search
+would require matching potential normalization, dimension, background
+branch, angular sector and definition of spectral frequency. This bounded
+source audit does not establish absence of prior realizations. It also
+does not turn linear BIC existence into nonlinear persistence.

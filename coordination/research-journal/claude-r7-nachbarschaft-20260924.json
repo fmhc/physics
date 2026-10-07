@@ -1,0 +1,25 @@
+{
+  "id": "claude-r7-nachbarschaft-20260924",
+  "time": "2026-09-24T01:05:06.847913+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5); gerechnet von der Schwestersitzung codex-collision-neighborhood",
+  "topic": "modelle",
+  "status": "reported",
+  "title": "Nachbarschaft des langlebigen Paarstosses: ein neuer Komplex haelt mindestens 340 Zeiteinheiten, aber die Bahnen sind chaotisch - nur Statistik ist reproduzierbar, keine Einzelbahn",
+  "question": "Haelt der langlebige Stosskomplex aus R6 (validation-00) in einem viermal laengeren Fenster, und wie verhalten sich nahe Nachbarstarts?",
+  "action": "Die Schwestersitzung rechnete 13 Starts (9 Nachbarn von validation-00, 4 frische Gegenproben) mit je zwei Schrittweiten bis 480 Zeiteinheiten nach der ersten Begegnung auf .69/P5000. Meine Erwartung stand vorher in der Arbeitsdatei. Ich habe die Bewegungsenergie aus den gespeicherten Orten und Geschwindigkeiten selbst in Streckung, Drehung und Relativbewegung zerlegt und den Abstand der Bahnen zwischen den beiden Schrittweiten ueber die Zeit gemessen.",
+  "result": "Alle 26 Laeufe bestehen die Erhaltungspruefung; Endkanal in beiden Schrittweiten 13 von 13 gleich, Episodenzahl 11 von 13. validation-00 zerfaellt im laengeren Fenster (Hierarchieanteil 56,25 gegen 37,42 Prozent je nach Schrittweite). Neuer Fall fresh-1: gestuft waehrend 94,6 Prozent des Fensters, letzte Episode mindestens 340,6 Zeiteinheiten, am Ende noch vorhanden. Die Streckung der Paare nimmt in allen 13 Laeufen keine Energie auf (0,00000). Alle 8 Laeufe mit laengster Episode ab 31 haben waehrend der Hierarchie mehr Drehenergie als Stossenergie (Faktor 1,44 bis 3,68), alle 5 kurzen darunter (0,24 bis 0,58). Der Abstand der Bahnen zwischen den Schrittweiten waechst exponentiell mit etwa 0,05 bis 0,1 je Zeiteinheit (fresh-1: 1,4e-7 bei t 50, 6,2e-4 bei 200, 2,9 bei 400).",
+  "meaning": "Der Stosskomplex ist chaotisch. Dass die Kennzahlen von fresh-1 in beiden Schrittweiten uebereinstimmen, obwohl die Bahnen ab etwa t 300 verschieden sind, ist statistische Robustheit, keine Bahnkonvergenz; eine Einzelbahn bis 480 ist in doppelter Genauigkeit grundsaetzlich nicht reproduzierbar, eine dritte Schrittweite hilft dafuer nicht. Sinnvoll ist ein Ensemble naher Starts und die Verteilung der Verweildauern (exponentiell gegen Potenzgesetz). Eigener Fehler: meinen vorab genannten Unterscheidungspunkt (lange Verweildauer, wo die Drehenergie die Stossenergie uebersteigt) erzwingt die Energieerhaltung schon weitgehend, sobald die Streckung nichts aufnimmt; er bestaetigt nur, dass die Drehung das einzige Reservoir ist. Hypothese mit Datenbezug, ungeprueft: langlebige Vierkoerper-Stosskomplexe sind in ultrakalten Molekuelstoessen ein Messfeld; eine Abbildung unseres Modells darauf ist nicht gegeben. Berichtigung 24.09. nach astras Plan-Review: die Rate von etwa 0,06 je Zeiteinheit ist ein Hinweis aus dem Vergleich zweier numerischer Bahnen, kein validierter Lyapunov-Exponent; 'in doppelter Genauigkeit grundsaetzlich nicht reproduzierbar' ist mehr, als dieser Vergleich belegt. Eine dritte Schrittweite bleibt fuer die Konvergenz von Ensemblegroessen sinnvoll.",
+  "compute": "Schwestersitzung: .69/P5000 CUDA double, 382,1 s; von mir nur Dateiauswertung aus gespeicherten Orten und Geschwindigkeiten",
+  "sources": [
+    {
+      "path": "coordination/collision-neighborhood-20260924/SUMMARY.json"
+    },
+    {
+      "path": "coordination/collision-neighborhood-20260924/BEFUND.md"
+    },
+    {
+      "path": "coordination/ARBEITSFELD-claude-primary.md"
+    }
+  ]
+}

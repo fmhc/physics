@@ -1,0 +1,52 @@
+Nullquellen-Fehlerlokalisation, 02.10.2026, vor Ausführung
+Alter outgoing-Lauf bleibt UNRESOLVED: Nullbump h.1 zeigte globale
+Profilabweichung .00977284 >.005, vor jedem M2-Produktionsfall.
+Keine Schwellenänderung und keine M2-Freigabe aus diesem Diagnosetest.
+Alter RESULT-SHA9f0b975784c3b5111fc95ae804db89b33cbbca750637ff2161c084c211a55e9f.
+
+Bestehendes outgoing.solve unverändert importieren, Hash
+75b1dce542aa728fe6bf58ecea4aec4a2ddf8a6a5a6e236666075c6902bbd292.
+Bestehendes grid ausOperatorhash
+467ad3e19cd8efcdac4ec2dcc670b50aaa59cc6f7e9e44d625ebbf94ba0d32c6.
+KEINE M2-Hintergründe/Quellen laden und kein outgoing.main aufrufen.
+Genau h=.1,.05,.025,R30: jeweils unveränderte analytische Nullbumpquelle
+und unveränderte Gaußquelle des ursprünglichen Plans, insgesamt6Lösungen.
+omega=.8,nu=1,k=sqrt(1.8²−2),Vakuum f0,g1; Fenster15..20/20..25.
+Legitimer Wiederabruf der groben Probe für neue regionale Fehlernormen und
+Feldspeicherung; alter Lauf hatte diese Rohfelder nicht gespeichert.
+
+Nullbump b=(1-r²/16)^4 für r<4 sonst0; analytisches s=(-Delta-k²)b,
+keine Matrix erzeugt ihre eigene Nullquelle. Gauss s=exp(-r²/4),
+A_exact=sqrt(pi)*2³/4 exp(-k²), dieselben Quellenwerte jephysischemr.
+
+Neu ausgeben: vollständigeFelder/Quellen undb imNPZ. Nullbump-Fehlerquadrate
+sum V|p-b|² getrennt r<4,4<=r<10,10<=r<30; Summe gegenGesamtwert.
+Globale/regionaleL2-Fehler durch dieselbe globale||b|| normieren.
+Außenfehleranteil=[Fehler²(4..10)+Fehler²(10..30)]/Gesamtfehler²;
+bei Nullgesamtfehler unaufgelöst, kein erfundener Anteil.
+
+Vergleich des Außenrestes mit einem auslaufenden1/r-Feld:
+A ist ausschließlich das komplexe Mittel im FESTEN Fenster15..20.
+Vorhersage fürRegion[r1,r2]:4pi|A|²(r2-r1), je4..10 und10..30.
+GemesseneQuadratnorm/Vorhersage berichten, keinParameterfit/neuesPassgate.
+Das zweiteAmplitudeFenster bleibt separate ursprünglicheKontrolle.
+
+Vorab-Frage: Sind auf ALLEN3h >80% desFehlernormQUADRATS außerhalb4 und
+reduziert sich der GESAMTE relativeL2-Fehler bei beiden h-Halbierungen
+jeweils um Faktor zwischen2und6? Dann Diagnose „numerischer Außenrest
+dominiert“; sonst diese Diagnose nicht gestützt. Kein Solver-/PhysikPASS.
+Auch absoluteFehlergrößen undVerhältnisse speichern, keine bloßeBinärmeldung.
+
+Originale QA-Toleranzen unverändert ausRohwerten berichten: Residuum1e-10,
+Work-/FV-Bilanz1e-7; GaussBetrag.005/komplex.02/Fluss.005;
+Nullquelle||s||>1e-3,|A|/Agauss<.005,||p-b||/||b||<.005.
+Die bekannten grobenFAILs werden NICHT alsAbbruch vor den neuen feineren
+Diagnosen verwendet. Numerischungültige/finiteloseLösung dagegen abbrechen.
+Nullamplitudenverhältnisse/fester1e-10Agauss-Floor wieAltplan separat
+berichten. Regionfrage benutztL2-Fehlerfaktor, nicht dessenQuadratfaktor.
+
+CLI --outgoing EXISTING_CODE --operator MODES_CODE --previous OLD_RESULT
+ --out FRISCHER_ORDNER. JSON nachjederLösung plus6FeldNPZ mitHashes.
+<=3CPU-s .69einThread,RootLimit/Receipt; internerCheckpoint2.5CPU-s.
+KeineAutomatik zumM2-Hauptlauf/weitereh/Boxen. Autor schreibt nurDateien,
+keineInterpreter/SSH/Tests. Rootreview vor Ausführung.

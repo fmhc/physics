@@ -1,0 +1,22 @@
+KOLL-1 voll Start 2026-09-30T06:14:38+00:00, Geraet cuda (Quadro P4000), torch 2.5.1+cu121
+  Argumente: {"kommando": "voll", "geraet": "cuda", "out": "/home/fmh/fmhc-physics-remote/runde9-koll1/aus-voll-still-grob", "w2": 0.7976768, "rho0": 1.728147, "h": 0.15, "cfl": 0.4, "rmax": 22.0, "zmax": 40.0, "schicht": 8.0, "sig0": 2.0, "rfluss": 13.0, "zfluss": 30.0, "abstaende": [10.0, 12.0, 14.0], "kette": 10.0, "vorzeichen": -1, "halten": false, "paritaet": 0, "d": 10.0, "eps": 0.005, "T": 200.0, "dtmess": 0.2, "budget": 480.0, "weiter": false, "faeden": 1, "profil_h": 0.002, "profil_rmax": 36.0}
+  Profil omega^2 = 0.7976768: f0 = 1.024235494599965 (Klammer 2.8e-13), S0 = 1.049058, r_c = 20.36, A = 7.518252 (Streuung 1.4e-07 auf [r_c-4, r_c]), Q = 189.1443, E = 184.6243
+  stille Stelle: Singulaerwerte 5.036e-01, 4.201e-04 (Verhaeltnis 8.34e-04); a-Zeile +1.166e-04, +4.773e-04
+  Mode rho = 1.744617500: kappa_c = 0.524371, q = 2.440840, N (r <= 12.0) = 2.690974e+02, C_v = +1.514904e+01, offene Aussenamplitude 1.575e-07 (reduziert), wachsender Rest bei r_m +2.97e-04, V(r_m) +3.738e-03, u(0) = +0.4998, v(0) = +0.5002
+  Gitter h = 0.15, dt = 0.0600, nr = 147, nz = 535, Glieder 6: ['paar0', 'paar+', 'paar-', 'einzel0', 'einzel+', 'einzel-'], Punkte je Glied 78645
+  Ueberlappmatrizen M (Zeile = Messball, Spalte = Mode): paar0: [[1.0, 0.0144], [-0.0144, -1.0]]; paar+: [[1.0, 0.0144], [-0.0144, -1.0]]; paar-: [[1.0, 0.0144], [-0.0144, -1.0]]; einzel0: [[1.0171]]; einzel+: [[1.0171]]; einzel-: [[1.0171]]
+  Start Zeitschleife 2026-09-30T06:14:59+00:00, t = 0.00 bis 200.0, Messung alle 3 Schritte, Budget 480.0 s
+  Ende Zeitschleife 2026-09-30T06:15:24+00:00, t = 200.04, Schritte 3334, 25.3 s (7.58 ms je Schritt in diesem Aufruf)
+=== Auswertung /home/fmh/fmhc-physics-remote/runde9-koll1/aus-voll-still-grob (voll, omega^2 = 0.7976768, h = 0.15, t bis 200.0) ===
+  Uebersprechen am Anfang M_BA/M_BB = +0.0123, am Ende +1.60e-10
+  Demodulation bei rho_d = 1.7448349 (+2.17e-04); Einzelball Gamma = -1.103e-06, a(Ende) 1.00018
+  Paar: b_max = 0.0859 bei t = 114; a_A(Ende) 0.9523; Summe a^2 Ende 0.9141
+  t =    25.0: d = 12.372, z_E = -5.0005, Q_A 177.284, Q_B 177.284, a_A 0.9709, a_B 0.0676, a_einzel 1.0000
+  t =    50.0: d = 16.353, z_E = -5.0005, Q_A 177.269, Q_B 177.269, a_A 0.9654, a_B 0.0793, a_einzel 0.9986
+  t =   100.1: d = 24.930, z_E = -5.0005, Q_A 177.202, Q_B 177.202, a_A 0.9557, a_B 0.0838, a_einzel 0.9964
+  Fluss (lineare Antwort, 2. Haelfte) Paar +1.316e-01, Einzel +2.301e-03; zweite Ordnung Paar +5.629e+00, Einzel +2.626e+00
+  t =    25.0: Ladungsasymmetrie durch Anregung (Q_A - Q_B)(+eps) - (Q_A - Q_B)(0) = -1.360e-02, Verschiebung z_A(+eps) - z_A(0) = +6.822e-04
+  t =    50.0: Ladungsasymmetrie durch Anregung (Q_A - Q_B)(+eps) - (Q_A - Q_B)(0) = -1.469e-02, Verschiebung z_A(+eps) - z_A(0) = +2.336e-03
+  t =   100.1: Ladungsasymmetrie durch Anregung (Q_A - Q_B)(+eps) - (Q_A - Q_B)(0) = -1.509e-02, Verschiebung z_A(+eps) - z_A(0) = +4.972e-03
+  Hintergrundatmung ohne Anregung als aequivalentes eps: Einzel max 1.54e-04, Paar-A max 1.01e-02 (Anregung eps = 0.005)
+Ende 2026-09-30T06:15:24+00:00, 46.4 s

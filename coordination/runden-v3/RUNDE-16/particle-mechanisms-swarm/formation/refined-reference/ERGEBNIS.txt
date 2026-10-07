@@ -1,0 +1,36 @@
+Strukturelle Referenzpruefung, 2026-10-02
+
+Modell: BEUTEL M2 = FADEN-KERN Formel M1. Nicht mit BEUTEL M1 verwechseln.
+Die unabhaengige Modelllesung von ag-phy-min bestaetigt Wirkung, Kinetik,
+Q, Randvakuum und gekoppelten Stoeroperator. Aststeigung alleine ist kein
+Stabilitaetsnachweis; control_fine.fails zaehlt gescheiterte Loesungen,
+nicht Verletzungen der Gittertoleranz.
+
+Neue enge Pruefung: archiviertes Q1100-Profil als Start, diskret stationaere
+Referenz auf h=0.1 und 0.05 nachkorrigiert. Zwei Newton-Schritte je Gitter,
+keine Astsuche. Relative gewichtete Profilkorrekturen kleiner als 0.001.
+Rest kleiner als 5e-11. Originalarchiv und erster fehlgeschlagener QA-Lauf
+unveraendert. Neue float64-Referenzen ersetzen keine historische Evidenz.
+
+QA bestanden. Anschliessend ausschliesslich Referenzentwicklung bis T=4
+auf (h,dt)=(0.1,0.02),(0.05,0.02),(0.1,0.01).
+Alle drei Arme vollstaendig, Status REFERENCE_SHORT_TEST_COMPLETE.
+Endwert rphi ca. 6.99e-5 bei dt=.02 und 1.747e-5 bei dt=.01;
+Viertelung ist mit Fehler zweiter Ordnung vertraeglich, kein alleiniger
+Konvergenzbeweis. Raumverfeinerung aendert diese Werte kaum.
+Endenergiefehler ca.3.48e-9 bzw.2.17e-10; Ladung auf Rundungsniveau.
+Genaue Zeitreihen und Pruefgroessen: SHORT-RESULT.json.
+
+Rechenort ubuntu-auto (.69), CPU8, nice19, BLAS/OMP ein Thread, kein CUDA.
+Externe /usr/bin/time CPU: Vorbereitung .49s, QA .18s, T4 .63s;
+zusammen 1.30 CPU-s innerhalb 60s. Keine Wolkenentwicklung ausgefuehrt.
+
+Tragfaehige Aussage: Der rekonstruierte radiale Referenzzustand ist fuer
+diesen kurzen numerischen Vergleich geeignet. Keine Langzeit-/nichtradiale
+Stabilitaet, kein Bildungs-, Mehrkernbindungs-, Spin- oder Gravitationsbeweis.
+
+Naechster enger Schritt: Hauptarm-Entscheider mit einer pulsierenden
+Negativprobe gegen Fehlklassifikation pruefen, danach die vorab festgelegte
+Verdichtung einer bereits energetisch gebundenen Wolke. Diese Frage ist
+nicht Erzeugung aus Vakuum oder Einfang freier Quanten. Das volle gekoppelte
+Spektrum bleibt eine getrennte offene Stabilitaetsaufgabe.

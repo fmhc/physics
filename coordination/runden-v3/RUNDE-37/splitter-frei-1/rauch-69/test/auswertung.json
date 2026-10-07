@@ -1,0 +1,194 @@
+{
+ "info": {
+  "numpy": "2.4.4",
+  "scipy": "1.18.0",
+  "python": "3.12.3",
+  "host": "ubuntu-auto",
+  "start_utc": "2026-10-05T09:41:50Z",
+  "argv": [
+   "code-r4/sf.py",
+   "aw",
+   "--lauf",
+   "rauch/test",
+   "--out",
+   "rauch/test/auswertung.json"
+  ],
+  "sha256": {
+   "dn.py": "0cd5d13e98f41df277ec7d8139970d1e658542f843ed8180bc756a4ea1d4d1ae",
+   "ew.py": "fa7b6417d39177102f0b19c5474453cd16a7595e23bc25ca548e081c4060b142",
+   "hm.py": "0ed5e2ce3a2a26525ef8a3320da394e6f403306384015187baf4dd46623fd5f2",
+   "inz.py": "e65a5cbf380defef0468f50de5a2dec5936d4228b72e1db8ff913ed765def8f2",
+   "lrm.py": "a6cdd898fc3fc80aa96d0b39e7c437ab7c7b22b73ff963f5600ed0d0210f684d",
+   "mn.py": "b36984d3f04276454a792f14c5655bff432332316d1b968dea46d4cb6eb96bbf",
+   "nachtrag_iso.py": "1c92cb23988886731096dd44ce33aecfcde3b65cecf16b4232111550e4debc6c",
+   "nachtrag_kinetik.py": "fd0d17b9fb7c92d4b6ad564a46260e3daae3285bcb5ad53f65d9fb3918a32b28",
+   "pn.py": "c8034e40c3238cecdcc72ecd35f1f70d38ea330c9ae18911966581c10e592567",
+   "sf.py": "d4e03bf6bab9389d690c336c53a7e9d8ba1f338f348e63b38d16f861d4ca458a",
+   "sf_aw.py": "05cdf4d1eb1fd243f263acd57e0dfb8fbb50ddf6b3586d28a47d88a24904eb65",
+   "smi.py": "9459838bb02f1894e2124927a28904679536bb2fb77ca2f338c8f6570326942d",
+   "tg.py": "ec48a258e266fc2226d0d10564b606052831ffefbf0642e4f7d04f9de85cfd9e",
+   "tp.py": "419d7da6caa211c721eb6a8c87403977415cf3050f03365377f51cb77b374dfd",
+   "tti.py": "6d6b6f7b99b334d74d91860fc69af1c6c0c46e22207dc45432d60a9824c08ee5"
+  }
+ },
+ "ergebnis": {
+  "dateien": {
+   "bau-s1.json": "118d1272a41634c44237cb2375d0376fa9a01cb1248e51ab7c65b2e078266ce8",
+   "hm-orig-s1-a.json": "3c57fdc883e617cf6a52a82b34e9d79919e32e6a66886fa16f03fd0ce659c7f3",
+   "hm-sf-s1-b.json": "d60047acf60cccc466b969716ab5d1463ab71d563a4ca9e10b3c9053cae99895",
+   "lr-orig-s1.json": "c86cc2ac7c1f7e9ddb9429c55b74615a3527ba5594a81cff8b1ee7309b795109",
+   "lr-sf-s1.json": "baf161153399697203e1ebd9c60a2eddf0026ae08d19f2228d671b628026bf2d",
+   "sp-glas-s1-a.json": "0eca67b28d05dc7de5984660cfeddfee44e6aff22c23e3bfdeacb923bcc52eed",
+   "sp-glas-s1-b.json": "28d73773a5824c57c7984e5758757c37a203b35b5f9db1eb7c71cc44d39590d6",
+   "sp-glas-s1.json(lrref)": "3eeb584d04b6949da8d8e1c08e11002a7485ceeb70e048232c77b5c320a9c6f1"
+  },
+  "vollstaendig": {
+   "orig-s1": false,
+   "orig-s2": false,
+   "orig-s3": false,
+   "orig-s4": false,
+   "sf-s1": false,
+   "sf-s2": false,
+   "sf-s3": false,
+   "sf-s4": false,
+   "lr-orig-s1": false,
+   "lr-orig-s2": false,
+   "lr-orig-s3": false,
+   "lr-orig-s4": false,
+   "lr-sf-s1": false,
+   "lr-sf-s2": false,
+   "lr-sf-s3": false,
+   "lr-sf-s4": false
+  },
+  "sf_gueltig": {
+   "1": false,
+   "2": false,
+   "3": false,
+   "4": false
+  },
+  "kontrolle_hm": {
+   "1": {
+    "A1R1": {
+     "hier": 0.07886566781290405,
+     "hm": 0.10926325573903273
+    },
+    "A1RH": {
+     "hier": 0.16201340770536432,
+     "hm": null
+    },
+    "A2R1": {
+     "hier": 0.1508272540689557,
+     "hm": 0.15230878403361725
+    },
+    "A2RH": {
+     "hier": 0.2694244051202168,
+     "hm": 0.7100653281681406
+    },
+    "A2LR2": {
+     "hier": 0.01059966782594901,
+     "hm": 0.08185232609627002
+    },
+    "A2LRH": {
+     "hier": null,
+     "hm": null
+    },
+    "A2LRHL": {
+     "hier": null,
+     "hm": null
+    },
+    "A2LR1": {
+     "hier": 0.0908056451262016,
+     "hm": 0.3466058948129469
+    },
+    "w2k2_rel_abw_max": 0.0
+   }
+  },
+  "urteile": {
+   "SF0": {
+    "plan": "nicht entscheidbar",
+    "wortlaut": "verfehlt",
+    "n_vergleiche": 6,
+    "abweichungen": [],
+    "je_saat": {
+     "1": {
+      "A1RH_max": 10,
+      "A2RH_max": 5,
+      "LR_bereich": [
+       28,
+       28
+      ],
+      "gleich": false
+     },
+     "2": {
+      "gleich": false
+     },
+     "3": {
+      "gleich": false
+     },
+     "4": {
+      "gleich": false
+     }
+    }
+   },
+   "SF1": {
+    "plan": "nicht entscheidbar",
+    "wortlaut": "nicht entscheidbar",
+    "n_moden": 30,
+    "f_min": 0.1267918540775885,
+    "f_median": 0.15955581133316676,
+    "f_max": 0.37480881731694116,
+    "n_ab_0.5": 0,
+    "n_ab_0.25": 4,
+    "inkonsistent_eigh_gegen_hm": []
+   },
+   "SF2": {
+    "plan": "nicht entscheidbar",
+    "wortlaut": "nicht entscheidbar",
+    "saaten_gewertet": [],
+    "punkte_mit_wachsend": 0,
+    "max_n_neg": {
+     "A1RH": 0,
+     "A2RH": 0
+    },
+    "liste": []
+   },
+   "SF3": {
+    "plan": "nicht entscheidbar",
+    "wortlaut": "nicht entscheidbar",
+    "saaten_gewertet": [],
+    "n_wachsend_bereich": null,
+    "unter_10_LR_satz": [],
+    "unter_10_HM_satz_A2LR1": [],
+    "legendre_singulaer": []
+   },
+   "SF4": {
+    "plan": "nicht entscheidbar",
+    "wortlaut": "nicht entscheidbar",
+    "mittel_orig": null,
+    "mittel_sf": null,
+    "je_saat": {
+     "1": {
+      "orig": null,
+      "sf": null
+     },
+     "2": {
+      "orig": null,
+      "sf": null
+     },
+     "3": {
+      "orig": null,
+      "sf": null
+     },
+     "4": {
+      "orig": null,
+      "sf": null
+     }
+    }
+   }
+  },
+  "tabellen_md": "auswertung-tabellen.md"
+ },
+ "laufzeit_s": 0.043282508850097656,
+ "maxrss_MB": 73.6796875,
+ "ende_utc": "2026-10-05T09:41:50Z"
+}

@@ -1,0 +1,141 @@
+Runde 7 bic2 leiter Start 2026-09-30T09:57:57+00:00, Geraet cpu, torch 2.5.1+cu121
+=== leiter (G2-10)
+{
+ "x_B_2D": 0.699,
+ "stellen": [
+  {
+   "x": 0.5401206164061634,
+   "x_lo": 0.539,
+   "x_hi": 0.543,
+   "rho": 1.5666992357550547,
+   "Gamma": 5.3052013330663595e-09,
+   "quelle": "verfeinert",
+   "ast": 0,
+   "n": 5,
+   "in_spanne": false
+  },
+  {
+   "x": 0.549252085610479,
+   "x_lo": 0.547,
+   "x_hi": 0.551,
+   "rho": 1.5746155911296784,
+   "Gamma": 5.602597627675856e-09,
+   "quelle": "verfeinert",
+   "ast": 0,
+   "n": 4,
+   "in_spanne": false
+  },
+  {
+   "x": 0.5637612138614687,
+   "x_lo": 0.563,
+   "x_hi": 0.567,
+   "rho": 1.5858757978403324,
+   "Gamma": -4.527159669125329e-10,
+   "quelle": "verfeinert",
+   "ast": 0,
+   "n": 3,
+   "in_spanne": false
+  },
+  {
+   "x": 0.5903511452459547,
+   "x_lo": 0.587,
+   "x_hi": 0.591,
+   "rho": 1.601859933345172,
+   "Gamma": -2.180453939716005e-07,
+   "quelle": "verfeinert",
+   "ast": 0,
+   "n": 2,
+   "in_spanne": false
+  },
+  {
+   "x": 0.6536180695829127,
+   "x_lo": 0.651,
+   "x_hi": 0.655,
+   "rho": 1.6100795084523403,
+   "Gamma": -1.014077225797716e-05,
+   "quelle": "verfeinert",
+   "ast": 0,
+   "n": 1,
+   "in_spanne": true
+  }
+ ],
+ "V1": {
+  "in_spanne_n2_bis_n5": {
+   "2": false,
+   "3": false,
+   "4": false,
+   "5": false
+  },
+  "zahl_stellen": 5,
+  "bestanden": false
+ },
+ "V2": {
+  "schritte": [
+   {
+    "von": 3,
+    "nach": 4,
+    "schritt_1_durch_eps": 4.620192997006505
+   },
+   {
+    "von": 4,
+    "nach": 5,
+    "schritt_1_durch_eps": 4.621132661993165
+   }
+  ],
+  "band": [
+   3.9,
+   5.2
+  ],
+  "bestanden": true
+ },
+ "V3": {
+  "theta_2D": {
+   "3": 0.850665129715821,
+   "4": 0.8585180545073055,
+   "5": 0.863737698850322
+  },
+  "ziel": [
+   0.63,
+   0.73
+  ],
+  "rho_quelle": "Re rho des Pols am verfeinerten Schritt, sonst rho* linear",
+  "bestanden": false,
+  "im_scheiterkatalog": false
+ },
+ "V4": {
+  "x_B_2D": 0.699,
+  "stellen_ueber_x_B": [],
+  "n1_fehlt_erwartet": false,
+  "bestanden": true
+ },
+ "umlaufzahl": "vom Code nicht ausgegeben",
+ "scheitert": true,
+ "plausibilitaet": {
+  "im_rho_nicht_positiv": false,
+  "re_rho_im_fenster": true,
+  "zahl_pole": 48,
+  "virial_max": 4.165913499927793e-07,
+  "virial_ok": true,
+  "Q_monoton": true,
+  "bestanden": false
+ },
+ "gegen_d1": {
+  "stellen": [],
+  "bestanden": true
+ },
+ "gegen_d3": {
+  "abweichung": {
+   "2": 1.019814226399518e-07,
+   "3": 5.686771032964444e-07
+  },
+  "grenze": 0.0002,
+  "bestanden": true
+ },
+ "L3": {
+  "vergleich": [],
+  "grenze": 0.0001,
+  "bestanden": null
+ },
+ "l3_vorschlag_omega2_liste": "0.539,0.543,0.547,0.551,0.563,0.567,0.587,0.591,0.651,0.655"
+}
+Ende 2026-09-30T09:57:57+00:00, 0.1 s; entfallen: nichts

@@ -1,0 +1,88 @@
+TETRA-SCHNITT: zweite Papierideation, 2026-10-02
+Status: eigene Ableitungen unter expliziten Annahmen, keine neue Numerik.
+
+1. BLINDER FLECK: REINES ATMEN IST IN P UNSICHTBAR
+Zentrierte Vertices v_i, positive gleichmaessige Skalierung x_i(t)=a(t)v_i.
+Feste zentrale Ebene n.x=0. sign(n.x_i)=sign(n.v_i) fuer a>0.
+Daher alle Kantenschnittindikatoren, T3/T4, C_face und P konstant.
+Auch uniforme Orientierungsstatistik bleibt identisch. Schnittkoordinaten
+skalieren hingegen mit a: Laengen ~a, Polygonflaechen ~a^2.
+Das ist ein exakter Geometriesatz; keine Behauptung, dass die Kette eine
+solche Atembahn dynamisch besitzt. Ein Detektor, der nur P zaehlt, kann eine
+starke gleichmaessige Schwingung vollstaendig uebersehen.
+Bei n.x=b mit festem b != 0 lautet die relative Schwelle b/a(t); dann
+koennen Anzahl-Ticks auftreten. Verschiebung des Messschnitts trennt die
+Unsichtbarkeit der Messung von einer physikalischen Nichtabstrahlung.
+Keine BIC: Keine Strahlungsamplitude oder offener Kanal wurde berechnet.
+
+2. SCHEINBARE ERZEUGUNG/VERNICHTUNG OHNE BINDUNGSBRUCH
+Am Vertexereignis wechselt ein Vorzeichen. Hat der Vertex d inzidente
+Kanten, davon vor dem Ereignis k geschnitten, werden diese k ungeschnitten
+und die restlichen d-k geschnitten: Delta P=d-2k (isoliertes Ereignis).
+Im reflektierten Viererfenster-Graph sind innere Vertices mit den drei
+Vorgaengern und drei Nachfolgern verbunden, d=6; Endgrade3,4,5.
+Damit sind gerade Delta P im Inneren, ungerade an ungeradgradigen Rand-
+vertices moeglich. Die dokumentierten Spruenge0,+/-1,+/-2,+/-4 benoetigen
+keine diskreten Energiequanten oder wechselnde Elementarteilchenzahl.
+Gegenprobe: beobachteter Sprung mit falscher Paritaet fuer den bekannten
+Vertexgrad widerlegt isoliertes Ereignis, Datenzuordnung oder Graphmodell.
+Mehrere gleichzeitige Ereignisse muessen zusammen behandelt werden.
+
+3. KETTE IST LOKAL MECHANISCH STARR, NICHT AUTOMATISCH DYNAMISCH RUHIG
+Bei N Vertices hat die gestapelte Kette3N-6 eindeutige Kanten. Die Zahl
+allein beweist nichts. Induktiv aber: erstes Tetraeder ist infinitesimal
+starr; ein neuer Vertex besitzt drei Bindungen an drei nichtkollineare
+Flaechenvertices und liegt ausserhalb deren Ebene. Nach Abzug der alten
+Starrbewegung sind seine drei Abstandsgleichungen linear unabhaengig.
+Also keine infinitesimale interne Nullmode, nur6 starre Bewegungen.
+Bei k>0 an allen Kanten und stressfreier regularer Referenz ist H=k R^T R
+positiv auf dem inneren Raum. Keine Aussage zu globaler Eindeutigkeit,
+endlicher Stoerung, Kollisionen oder uniformer spektraler Luecke bei N->infty.
+Die symmetrische Atembahn des EINZELtetraeders ist nicht ungeprueft eine
+Eigenmode der ganzen Kette: Nachbarzahlen und Kraftsummen unterscheiden sich.
+Enger Folgetest: voller Hessian,6 Nullmoden, kleinste positive Frequenzen,
+Projektion des globalen Skalierungsvektors auf alle Moden. Kein Zweimoden-
+Ansatz vor diesem Test.
+
+4. MESSKORRELATION IST NICHT WECHSELWIRKUNG
+Zwei getrennte Schnittinseln koennen aus derselben starren Kette stammen.
+Ein gemeinsamer Drehwinkel erzeugt korrelierte Signalwechsel, obwohl kein
+lokales Paarpotential zwischen den Inseln definiert wurde. Unterscheidung:
+bei gleicher Kettenbewegung Messnormale variieren; kinematische Signale
+folgen der Messung. Kraftaussage verlangt unabhaengige Impuls-/Energiebilanz
+und lokal angewandte Stoerung mit Antwortmessung. Keine Verschraenkung.
+
+5. ENDLICHE DETEKTORDICKE ALS REALISIERBARE MESSABBILDUNG
+Statt idealen Kantenpunkten kann ein Modell lineare Massendichte lambda
+auf Kanten tragen. Signal D_delta=sum_edges lambda int_edge
+w_delta(n.x-b) ds, z.B. glatter Gausskern der Breite delta.
+Damit wird die Messgroesse endlich und bewegungsabhaengig. Das ist eine
+NEUE Messdefinition, kein nachtraegliches Umbenennen von P. Einheit/Normierung
+von w explizit festlegen (dimensionslos fuer Schichtmasse,1/Laenge fuer
+Dichteprojektion). Kantendoppelzaehlung vermeiden. Steilere/schmalere Ticks
+beim Verringern delta sind dann Detektorwirkung, keine Naturdiskretisierung.
+
+PRIORITAET
+Zuerst (1) als exakter Null-/Positivtest: gleiche skalierte Geometrie,
+zentrale Punktezahlen konstant, Schnittflaeche veraenderlich; versetzter
+Schnitt kann Punktewechsel zeigen. Danach (3), falls wirkliche Mechanik
+gewuenscht: kompletter Hessian statt aus dem Schnittbild Dynamik zu lesen.
+Keine neuen Q-Ball-, Spin-, SU(3)- oder Gravitationsschluesse.
+
+6. VERTEILUNG OHNE MONTE CARLO: ENDLICHE ORIENTIERUNGSZELLEN
+Fuer feste zentrierte Vertices aendern sich Vorzeichen nur auf den
+Grosskreisen n.v_i=0 der Normalenkugel. Innerhalb jeder offenen Zelle sind
+P,T3,T4 und C_face konstant. Bei uniformer Orientierung ist die exakte
+Wahrscheinlichkeit eines Zaehlerwerts die Summe der zugehoerigen
+sphaerischen Zellflaechen dividiert durch4pi. Antipodale Zellen sind dieselbe
+unorientierte Ebene; Quotientierung aendert die Wahrscheinlichkeiten nicht.
+V verschiedene Grosskreise haben hoechstens V^2-V+2 Zellen (jeder neue
+Kreis wird durch hoechstens2(V-1) Schnittpunkte geteilt). Somit maximal134
+bei12 Vertices,382 bei20; Symmetrien koennen die Anzahl verringern.
+Ein Vertex im Zentrum, zusammenfallende Grosskreise und Mehrfachschnitte
+brauchen eigene Behandlung. Sie sind kein Anlass fuer willkuerliches Jitter.
+Das ist der staerkste geometrische Folgetest: kontrollierte sphärische
+Polygonflaechen statt noch mehr Zufallsproben. Dies liefert deterministische
+Wahrscheinlichkeiten des AUSDRUECKLICH gewaehlten Modells, nicht automatisch
+des unbekannten Originalgenerators. Endliche Genauigkeit muss weiter mit
+Fehlerhüllen behandelt werden; kein Exaktheitsanspruch durch float64 allein.

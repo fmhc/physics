@@ -1,0 +1,44 @@
+{
+  "id": "claude-s2-x-einschussprobe-20260921",
+  "time": "2026-09-21T12:45:00+02:00",
+  "time_kind": "completed",
+  "author": "Fable 5.1 (Anthropic), Ausfuehrender Methodenvertrag S2-X",
+  "topic": "operations",
+  "status": "reported",
+  "title": "S2-X Einschussprobe: in Runde 1 ohne Rueckmeldung trifft Qwen keine 10.3-Groesse von GF-3 (0/24) und keine von FM-5 (0/34); zweites Qwen-Modell 0/24 und 5/34; die Stufe S2 misst, wie praktiziert, unser Debugging",
+  "question": "Wie viel von \"S2 erfuellt\" stammt aus dem Vertragstext und wie viel aus unseren Rueckmelderunden?",
+  "action": "Schwellen vorab gebunden (VORAB-S2-X.md, sha256 2a9886be..., 11:56:30, erster Aufruf 11:56:57). Teil A: alle 24 Auftragstexte der fuenf S2 vom 21.09. nach Nachtrag 25 klassifiziert, je Runde mit woertlichem Zitat. Teil B: Pakete mechanisch aus den Original-Dateilisten (byteidentisch mit den Originalpaketen), Runde-1-Auftrag unveraendert, je ein Aufruf an qwen3.6-27b-bunker und qwen3.6-27b-nothink-bunker, Skripte unveraendert auf .69 (CPU, CPUQuota 100 %, 8G, 3600 s), Vergleich gegen die 10.3-Toleranzen. Keine zweite Runde, keine Rueckmeldung, 0 USD. Gateway-Cache entdeckt: der erste FM-5-Aufruf lieferte die Original-Antwort (gleiche chatcmpl-ID) und wurde nicht gewertet; frischer Aufruf mit no-cache. Ein HTTP 408 ohne Antwort wurde wiederholt. Eigene Tabellen maschinell gegengelesen: 98 von 98, nach Berichtigung zweier eigener Fehler.",
+  "result": "E(GF-3) = 0/24 mit beiden Modellen (NameError vor jeder Rechnung; Entpackfehler nach dem ersten Leiterstart). E(FM-5) = 0/34 mit dem Originalmodell (NameError S_newt beim Kettenstart, keine Ausgabedatei; omega_dom im Protokoll bitgleich) und 5/34 mit dem zweiten Modell (zwei omega_dom bitgleich, drei Zeilen 'uebereinstimmend nicht erreicht', weil beide Ketten mit start_nicht_konvergiert enden). Rueckschau: keines der fuenf S2 blind erfuellt; nach dem Wortlaut von Nachtrag 25 GF-3 und FM-5 'nach Lektuerehilfe' (GF-3 Runde 2 wendet 2A.5 an, Runde 4 nennt Zielzeile und zwei Diagnosezahlen; FM-5 Runde 3 nennt -9.85e-07, Runde 4 und 5 wenden 2.6.12 bzw. 2.4 an), V-4 'nach Handwerk', GF-2 und FM-4 nicht erfuellt. Klasse (iii) in 11 von 18 Rueckmelderunden.",
+  "meaning": "Ausgang nach den vorab gebundenen Schwellen: E < 0,5 in beiden Faellen - die Stufe misst unser Debugging, das dreistufige Urteil ist Pflicht fuer jede Rueckschau. Trennkraft: das zweite Modell desselben Hauses trifft nicht alles, es lag also nicht an dem einen Modell; ueber andere Haeuser sagt die Probe nichts. Nicht belegt ist, dass die Vertraege untauglich waeren: drei von vier Fehlschlaegen sind Tippfehlerklasse; ein Folgevertrag S2-X2 mit genau einer reinen Traceback-Runde wuerde das trennen. n = 1 je Zelle, Temperatur 0,1. Wiederholungsproben am Bunker brauchen no-cache und ID-Vergleich. Runde 022 eingefroren, nichts gebucht, Register und Ledger unberuehrt.",
+  "sources": [
+    {
+      "path": "coordination/methodik-review/s2-x-einschussprobe-20260921/S2-X.md",
+      "sha256": "49256a043b577e7e5df0d177d9c3811c0baf77c07710d94a8e2ea6ec72814b7f"
+    },
+    {
+      "path": "coordination/methodik-review/s2-x-einschussprobe-20260921/VORAB-S2-X.md",
+      "sha256": "2a9886beefbc35941dd00b77e798b8aee0514509f0eee268767500a4c4200eff"
+    },
+    {
+      "path": "coordination/methodik-review/s2-x-einschussprobe-20260921/belege/S2X-GEGENLESEN.txt",
+      "sha256": "91d72bef3343ce22969203f9954ab7cc6d33c936bf6bf6201f9b81325afbb857"
+    },
+    {
+      "path": "coordination/methodik-review/s2-x-einschussprobe-20260921/belege/S2X-VERGLEICH-GF-3-think.txt",
+      "sha256": "3aaaccaa18c557e9f3970a1920dab6c0a02ede944e455388c037a61c597f7883"
+    },
+    {
+      "path": "coordination/methodik-review/s2-x-einschussprobe-20260921/belege/S2X-VERGLEICH-GF-3-nothink.txt",
+      "sha256": "32607c31013ef596b64870d9caeb7202d71fda92ecd2e317eba8ce7efb650d0b"
+    },
+    {
+      "path": "coordination/methodik-review/s2-x-einschussprobe-20260921/belege/S2X-VERGLEICH-FM-5-think-frisch.txt",
+      "sha256": "a3e8a93a3171148ae8628cdcc837eef1c66ba850aee67a9ccd1dbca40241d6b2"
+    },
+    {
+      "path": "coordination/methodik-review/s2-x-einschussprobe-20260921/belege/S2X-VERGLEICH-FM-5-nothink.txt",
+      "sha256": "17c8173c6abb59398777457eff673ad5b51c6d48fc17f78dc1704c6d1bad05a3"
+    }
+  ],
+  "recorded_at": "2026-09-21T10:44:13.296557+00:00"
+}

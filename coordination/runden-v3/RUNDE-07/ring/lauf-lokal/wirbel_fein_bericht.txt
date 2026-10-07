@@ -1,0 +1,32 @@
+RING wirbel (a): mitdrehende Ringe, Stufe fein. Start 2026-09-30T04:34:55+02:00, Ende 2026-09-30T04:35:11+02:00, CPU (nur Formprobe), torch 2.10.0+cu128 RAUCHTEST: Zahlen ungueltig
+Dauer [s]: profile_s 0.0, entwicklung_grob_s 9.6, entwicklung_fein_s 5.0
+Hochrechnung Hauptlauf: 731 s (nicht entwickelnde Teile 0 s + Entwicklung x 50); Profile aus dem Cache. Ueber 480 s: Stufen einzeln (--stufe grob / --stufe fein) oder Laeufe teilen (--laeufe).
+Ringball omega2 0.7: Q 23.996, E 22.626, R_halb 1.916; d 7.832; T 20, dx 0.4, dt 0.05
+  N6_dreh+: R 7.83, v 0.1342, J/Q Box Start +1.0419; ein Klumpen ab 5.0, Teilung danach None, n Ende 1, Fensterladung unter 1/2 ab None, A_l max ab t_ref [0.0, 0.0, 0.0, 0.0, 0.0, 0.172]
+    Windung Ende (r, W, S_min): [[1.0, 1, 0.0574], [2.0, 1, 0.2857], [3.0, 1, 0.6316], [4.0, 1, 0.8283], [5.0, 1, 0.8197], [6.0, 1, 0.6197], [8.0, 1, 0.1145], [10.0, 1, 0.0077]]; Anteil W = 1 (r 2..8, spaet) 1.000; Wirbel r<4 +1/-0, r<8 +1/-0, naechster 0.28
+    spaet (t >= T/2): Q_w 174.021 (std 0.139), J/Q 1.0393 (std 0.0022), omega_eff 0.76706, omega_loc 0.76403, E/Q 0.91085, S_max 0.8435, v 9.22e-13
+    m = 1 gleicher Ladung: omega2 0.5830 (omega 0.76357), E/Q 0.86302, Profil-L2 0.5079; Form Messung {"S_max": 0.6711504217648933, "R_max": 5.875, "R_kern_halb": 3.4104420755309355, "R_halb": 8.006640152174432} gegen Profil {"S_max": 0.9220169917456675, "R_max": 4.375, "R_kern_halb": 2.2276838158896264, "R_halb": 6.5285171106953666}
+    Gegenprobe m = 0 gleicher Ladung: omega 0.74773, Profil-L2 0.7418
+    Reihe (t, Q_w, J/Q, omega_eff, E/Q, S_max): 0 174.22 1.0418 0.8466 0.9113 0.915
+    Profil-L2 gegen m = 1 ueber die Zeit: 5 0.9081; 20 0.0806
+    Bilanz: Q: +174.294->+174.294 geschluckt +0.000 Rest 3.3e-16 J: +181.601->+181.601 geschluckt +0.000 Rest 9.9e-13 E: +158.856->+158.858 geschluckt +0.000 Rest 2.4e-05
+    Schranken: {"bilanz_Q": true, "bilanz_J": true, "bilanz_E": true, "startzerlegung": true, "omega_eff_unter_1": true, "Q_w_hoechstens_Q_box0": true, "profil_eingeschachtelt": true}
+  N8_dreh+: R 10.23, v 0.1031, J/Q Box Start +1.0289; ein Klumpen ab 5.0, Teilung danach None, n Ende 1, Fensterladung unter 1/2 ab None, A_l max ab t_ref [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+    Windung Ende (r, W, S_min): [[1.0, 1, 0.0021], [2.0, 1, 0.0075], [3.0, 1, 0.026], [4.0, 1, 0.0863], [5.0, 1, 0.2484], [6.0, 1, 0.5285], [8.0, 1, 0.7208], [10.0, 1, 0.2478]]; Anteil W = 1 (r 2..8, spaet) 1.000; Wirbel r<4 +1/-0, r<8 +1/-0, naechster 0.28
+    spaet (t >= T/2): Q_w 234.293 (std 0.160), J/Q 1.0215 (std 0.0032), omega_eff 0.75717, omega_loc 0.75654, E/Q 0.90314, S_max 0.8329, v 1.24e-12
+    m = 1 gleicher Ladung: omega2 0.5671 (omega 0.75304), E/Q 0.83598, Profil-L2 0.9878; Form Messung {"S_max": 0.6688438180766744, "R_max": 8.625, "R_kern_halb": 6.4395823040437135, "R_halb": 10.689688706575375} gegen Profil {"S_max": 0.9683853004223805, "R_max": 4.875, "R_kern_halb": 2.358538626090833, "R_halb": 7.442231613685227}
+    Gegenprobe m = 0 gleicher Ladung: omega 0.74196, Profil-L2 1.0663
+    Reihe (t, Q_w, J/Q, omega_eff, E/Q, S_max): 0 233.74 1.0284 0.8423 0.9025 0.921
+    Profil-L2 gegen m = 1 ueber die Zeit: 5 1.1309; 20 0.8186
+    Bilanz: Q: +235.277->+235.277 geschluckt +0.000 Rest 3.6e-16 J: +242.078->+242.078 geschluckt +0.000 Rest 1.5e-12 E: +212.831->+212.835 geschluckt +0.000 Rest 2.5e-05
+    Schranken: {"bilanz_Q": true, "bilanz_J": true, "bilanz_E": true, "startzerlegung": true, "omega_eff_unter_1": true, "Q_w_hoechstens_Q_box0": true, "profil_eingeschachtelt": true}
+  N6_dreh+_s1e-2: R 7.83, v 0.1342, J/Q Box Start +1.0418; ein Klumpen ab 5.0, Teilung danach None, n Ende 1, Fensterladung unter 1/2 ab None, A_l max ab t_ref [0.002, 0.028, 0.034, 0.018, 0.015, 0.17]
+    Windung Ende (r, W, S_min): [[1.0, 1, 0.0433], [2.0, 1, 0.2329], [3.0, 1, 0.5504], [4.0, 1, 0.7615], [5.0, 1, 0.7429], [6.0, 1, 0.5247], [8.0, 1, 0.0845], [10.0, 1, 0.006]]; Anteil W = 1 (r 2..8, spaet) 1.000; Wirbel r<4 +1/-0, r<8 +1/-0, naechster 0.38
+    spaet (t >= T/2): Q_w 173.792 (std 0.134), J/Q 1.0393 (std 0.0021), omega_eff 0.76761, omega_loc 0.76462, E/Q 0.91094, S_max 0.8776, v 1.40e-03
+    m = 1 gleicher Ladung: omega2 0.5831 (omega 0.76363), E/Q 0.86315, Profil-L2 0.5079; Form Messung {"S_max": 0.6737975882835956, "R_max": 5.875, "R_kern_halb": 3.437588920800658, "R_halb": 8.01742539091543} gegen Profil {"S_max": 0.9217521947547209, "R_max": 4.375, "R_kern_halb": 2.2270985613754024, "R_halb": 6.524874159869804}
+    Gegenprobe m = 0 gleicher Ladung: omega 0.74776, Profil-L2 0.7413
+    Reihe (t, Q_w, J/Q, omega_eff, E/Q, S_max): 0 173.98 1.0416 0.8466 0.9114 0.964
+    Profil-L2 gegen m = 1 ueber die Zeit: 5 0.9077; 20 0.0819
+    Bilanz: Q: +174.058->+174.058 geschluckt +0.000 Rest 1.6e-16 J: +181.342->+181.342 geschluckt +0.000 Rest 5.9e-13 E: +158.655->+158.657 geschluckt +0.000 Rest 2.4e-05
+    Schranken: {"bilanz_Q": true, "bilanz_J": true, "bilanz_E": true, "startzerlegung": true, "omega_eff_unter_1": true, "Q_w_hoechstens_Q_box0": true, "profil_eingeschachtelt": true}
+Kennzahlen: {"N6_dreh+": {"windung_1_spaet_anteil": 1.0, "J_zu_Q_spaet": 1.0393446709057248, "omega_eff_zu_omega_m1": 1.0045753729943545, "omega_eff_zu_omega_m0": 1.0258530405455246, "profil_L2_m1": 0.5079072055895497, "profil_L2_m0": 0.7418266685164159, "E_zu_Q_ueber_m1": 0.05542039106353647, "ein_klumpen_ab": 5.0, "teilung_danach": null, "fenster_halb_ab": null, "A2_max_ab_tref": 6.737946192508396e-06, "schranken_ok": true}, "N8_dreh+": {"windung_1_spaet_anteil": 1.0, "J_zu_Q_spaet": 1.0215136353768637, "omega_eff_zu_omega_m1": 1.0054744191310543, "omega_eff_zu_omega_m0": 1.020493263628813, "profil_L2_m1": 0.9877520752110944, "profil_L2_m0": 1.0663349847762527, "E_zu_Q_ueber_m1": 0.08034034424538916, "ein_klumpen_ab": 5.0, "teilung_danach": null, "fenster_halb_ab": null, "A2_max_ab_tref": 1.3399294844724477e-16, "schranken_ok": true}, "N6_dreh+_s1e-2": {"windung_1_spaet_anteil": 1.0, "J_zu_Q_spaet": 1.0392813256727864, "omega_eff_zu_omega_m1": 1.0052174392456257, "omega_eff_zu_omega_m0": 1.0265470542553337, "profil_L2_m1": 0.5078790565006109, "profil_L2_m0": 0.7413092249317593, "E_zu_Q_ueber_m1": 0.05536596557532847, "ein_klumpen_ab": 5.0, "teilung_danach": null, "fenster_halb_ab": null, "A2_max_ab_tref": 0.027768525992625387, "schranken_ok": true}}

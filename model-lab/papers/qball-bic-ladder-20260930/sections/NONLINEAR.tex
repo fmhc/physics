@@ -1,0 +1,303 @@
+\section{Nonlinear sources and the limits of linear trapping}
+\label{nl:section}
+
+A localized eigenmode of the linearized equation need not remain
+radiationless at finite amplitude. We distinguish an exact source
+calculation, the kinematic opening of radiation channels, and a nonzero
+outgoing response. Existing nonlinear evidence for radial location C0
+is described below; it is not transferred to the additional modes T1
+and T2 without evaluating their own sources.
+
+\subsection{Quadratic expansion}
+\label{nl:expansion}
+We use the complex nonlinear Klein--Gordon equation
+\begin{equation}
+ \phi_{tt}-\Delta\phi+U'(|\phi|^2)\phi=0,
+ \qquad U(S)=S-S^2+\tfrac12 S^3,
+ \qquad \phi=e^{i\omega t}(f+z),
+ \label{nl:model}
+\end{equation}
+where the real background satisfies
+$-\Delta f-\omega^2f+U'(f^2)f=0$. Setting $s=f^2$, the linear operator is
+\begin{equation}
+ \mathcal Lz=z_{tt}+2i\omega z_t-\Delta z
+ +[U'(s)+sU''(s)-\omega^2]z+sU''(s)\overline z.
+ \label{nl:linear}
+\end{equation}
+The quadratic term in the equation's left-hand side is exactly
+\begin{align}
+ G_2[z]&=fU''(s)(z^2+2|z|^2)
+       +\tfrac12 f^3U'''(s)(z+\overline z)^2 \nonumber\\
+       &=\mathcal A z^2+2\mathcal A|z|^2+\mathcal C\overline z^{\,2},
+ &\mathcal A&=f\left(-2+\tfrac92f^2\right),
+ \qquad \mathcal C=\tfrac32f^3.
+ \label{nl:quadratic}
+\end{align}
+Consequently $z=\epsilon z_1+\epsilon^2z_2+\cdots$ gives
+$\mathcal Lz_1=0$ and $\mathcal Lz_2=-G_2[z_1]$. In particular, the
+forcing has the opposite sign to the Taylor term in
+Eq.~\eqref{nl:quadratic}.
+
+For a real spherical harmonic $Y$ and real radial functions $a,b$, write
+\begin{equation}
+ z_1=Y\bigl(ae^{i\rho t}+be^{-i\rho t}\bigr).
+\end{equation}
+Then
+\begin{align}
+ G_2[z_1]&=Y^2\bigl(Q_+e^{2i\rho t}+Q_0+Q_-e^{-2i\rho t}\bigr),\\
+ Q_+&=\mathcal A(a^2+2ab)+\mathcal Cb^2,\qquad
+ Q_-=\mathcal A(b^2+2ab)+\mathcal Ca^2,\\
+ Q_0&=2\mathcal A(a^2+b^2)+2(\mathcal A+\mathcal C)ab.
+ \label{nl:coefficients}
+\end{align}
+These expressions introduce rotating-frame frequencies $0,\pm2\rho$,
+or laboratory frequencies $\omega,\omega\pm2\rho$. The zero-frequency
+term is static only in the rotating frame.
+
+\subsection{Angular selection and forced channel problems}
+\label{nl:selection}
+For T1, the radial $l=0$ mode, $Y=Y_{00}$ and
+$Y_{00}^2=Y_{00}/\sqrt{4\pi}$, so only $L=0$ occurs at this order.
+For T2, choose a real normalized $l=1$ harmonic. After a spatial rotation
+it equals $Y_{10}$, and
+\begin{equation}
+ Y_{10}^2=\frac{Y_{00}}{\sqrt{4\pi}}
+          +\frac{Y_{20}}{\sqrt{5\pi}}.
+ \label{nl:angular}
+\end{equation}
+Thus each of the three temporal source coefficients can drive $L=0$
+and $L=2$; the antisymmetric $L=1$ product is absent. A different real
+orientation rotates the quadrupole within the $L=2$ multiplet. This
+standing real mode must not be confused with a rotating complex
+$Y_{11}/\overline{Y}_{11}$ block: the latter has
+$Y_{11}^2=\sqrt{3/(10\pi)}Y_{22}$ for its corresponding oscillatory product.
+
+Let $c_L$ denote the coefficient in the relevant angular product and
+$D_L=-\partial_r^2-2r^{-1}\partial_r+L(L+1)r^{-2}$. For the oscillatory
+response $h_{+,L}e^{2i\rho t}+h_{-,L}e^{-2i\rho t}$ one must solve
+the coupled system
+\begin{equation}
+ \begin{pmatrix}
+ D_L+U'+sU''-(\omega+2\rho)^2&sU''\\
+ sU''&D_L+U'+sU''-(\omega-2\rho)^2
+ \end{pmatrix}
+ \begin{pmatrix}h_{+,L}\\\overline{h}_{-,L}\end{pmatrix}
+ =-c_L\begin{pmatrix}Q_+\\Q_-\end{pmatrix}.
+ \label{nl:forced}
+\end{equation}
+Here $U',U''$ are evaluated at $s$; the conjugated second unknown matters
+when imposing outgoing conditions. The real static correction obeys
+$[D_L+U'+2sU''-\omega^2]h_{0,L}=-c_LQ_0$.
+Gauge and charge constraints must also be fixed in constructing a
+nonlinear continuation.
+
+Both T1 and T2 have $|\omega|<1$ and $|\omega\pm2\rho|>1$.
+For T2, the latter frequencies are approximately $4.52130$ and $-2.78407$.
+The second harmonics are therefore open in the mass-one vacuum, whereas
+the rotating-static correction is closed. The centrifugal term does
+not change the asymptotic mass threshold. With the convention
+$e^{iEt}$, an outgoing wave has radial phase
+$e^{-i\operatorname{sgn}(E)\sqrt{E^2-1}\,r}$; a negative $E$ does not
+mean negative outward energy transport.
+
+An open channel and a nonzero local source do not establish radiation:
+the outgoing source overlap can vanish. A localized continuation without
+incoming radiation requires both open amplitudes to vanish in every
+allowed $L$ block of Eq.~\eqref{nl:forced}. The T1 response remains open;
+an approximate-input T2 calculation is reported below. A nonzero such amplitude would obstruct
+a regular localized perturbative continuation with the specified leading
+mode, but would not exclude all other nonlinear states. Frequency shifts
+of order $\epsilon^2$ do not automatically cancel the second harmonic:
+the carrier shift contributes a static background correction at this
+order, while a shift of $\rho$ first acts on $\epsilon z_1$ at order
+$\epsilon^3$.
+
+\subsection{Complex dipole polarization and a conditional obstruction}
+\label{nl:polarization}
+The threefold dipole degeneracy allows more than rotations of a real
+standing mode. Let $Y_i(\boldsymbol n)=\sqrt{3/(4\pi)}n_i$ be real
+orthonormal Cartesian dipole harmonics and write
+$A(\boldsymbol n)=\sum_i p_iY_i(\boldsymbol n)$, with
+$\boldsymbol p\in\mathbb C^3$. For the same real radial eigenmode as above,
+the allowed tangent has the linked sidebands
+$z_1=a(r)A e^{i\rho t}+b(r)\overline A e^{-i\rho t}$.
+This does not allow independently chosen polarizations of the two
+sidebands or a mixture of distinct radial modes.
+
+Set $\nu=\boldsymbol p^\dagger\boldsymbol p$ and
+$\chi=\boldsymbol p^T\boldsymbol p$. The oscillatory quadratic forcing
+is proportional to $A^2$, rather than $|A|^2$. Its orthogonal angular
+projections satisfy the exact identities
+\begin{equation}
+ \|P_0(A^2)\|_{L^2(S^2)}^2=\frac{|\chi|^2}{4\pi},\qquad
+ \|P_2(A^2)\|_{L^2(S^2)}^2
+ =\frac{3\nu^2-|\chi|^2}{10\pi}\geq\frac{\nu^2}{5\pi}.
+ \label{nl:polarization-norms}
+\end{equation}
+These follow by decomposing $\boldsymbol p\boldsymbol p^T$ into its trace
+and symmetric traceless parts and integrating the fourth spherical
+moment. Circular polarization, for example
+$\boldsymbol p=(1,i,0)/\sqrt2$, has $\chi=0$ and hence no oscillatory
+$L=0$ source, but its $L=2$ source does not vanish.
+
+This source identity has a conditional implication for the outgoing
+response. Define $C_{\mathrm{ref}}\in\mathbb C^2$ to be the \emph{exact}
+radial $L=2,m=0$ outgoing coefficient for the normalized $Y_{10}$ tangent,
+with the same radial normalization. Assuming the exact regular outgoing
+problem exists uniquely, spherical symmetry makes its radial operator
+independent of $m$. If $b_m=\langle Y_{2m},A^2\rangle$, linearity gives
+\begin{equation}
+ C_{2m}=\sqrt{5\pi}\,b_m C_{\mathrm{ref}},\qquad
+ \sum_m\|C_{2m}\|^2
+ =\frac{3\nu^2-|\chi|^2}{2}\|C_{\mathrm{ref}}\|^2
+ \geq\nu^2\|C_{\mathrm{ref}}\|^2.
+ \label{nl:polarization-response}
+\end{equation}
+The same identity holds separately for either radial component.
+Conjugating the second computational channel to the physical sideband
+permutes conjugate spherical harmonics and preserves these norm sums.
+Thus an exact radial $L=2$ nonzero certificate would cover every nonzero
+complex polarization in this one radial dipole eigenspace. The numerical
+coefficients reported below do not provide that certificate.
+
+For clarity, the corresponding nonlinear obstruction requires a precise
+continuation class. Suppose a family is twice continuously differentiable
+in amplitude as a $2\pi$-periodic rotating-frame profile in
+$C^2(\mathbb T;H^4_\gamma(\mathbb R^3))$, where
+$H^4_\gamma=\{w:e^{\gamma\sqrt{1+|x|^2}}w\in H^4\}$.
+For the exact T2 background and tangent we may fix $\gamma=1/10$:
+the inherited exterior decay rates are at least $0.495$ and $0.287$,
+respectively. Their radial equations propagate this decay to derivatives
+through order four; the regular origin expansions are even for the
+background and of the form $r^2$ times even functions for the reduced
+dipole components. Consequently the unreduced Cartesian fields are
+smooth at the origin and belong to this same weighted space.
+This membership statement does not assume that a nonlinear continuation
+exists or certify a numerical Sobolev norm. Allow smooth
+carrier and modulation frequency shifts and an additional static first
+tangent, but no other first-order temporal harmonics. A nonzero exact
+second-harmonic outgoing amplitude would contradict localization of the
+second amplitude derivative. At this order the frequency-shift terms
+are static or fundamental, so they cannot remove the second-harmonic
+source. This excludes only that uniformly localized smooth continuation
+class; it is not a dynamical instability or lifetime theorem.
+
+\subsection{Numerical second-harmonic response of the dipole mode}
+\label{nl:dipole-response}
+We evaluated the T2 forcing in both $L=0$ and $L=2$ using separately
+reconstructed numerical profiles near the certified point. The reduced
+real mode components obey $\int_0^\infty(u^2+v^2)\,\dd r=1$, including
+an approximate tail contribution, with $\int Y_{10}^2\,\dd\Omega=1$.
+The solver uses the complex conjugate of our positive-carrier convention:
+both computational unknowns have positive-$q$ outgoing Hankel conditions,
+and the second unknown is conjugated to reconstruct the physical negative
+sideband. The power is invariant under this convention change.
+
+Three prescribed settings use exterior radii $48,64,64$, source spacings
+$0.02,0.02,0.01$, and relative ODE tolerances
+$2\times10^{-10},2\times10^{-10},2\times10^{-11}$. Two further solves at
+the finest settings use the coarser reconstruction level from the same
+input algorithm, with different exterior radius and tolerance. This is
+an input-sensitivity comparison, not an independent implementation.
+All four outgoing coefficients remain nonzero under these changes;
+the largest observed relative complex-amplitude change is below
+$7.8\times10^{-8}$. This sensitivity is not a rigorous error bound.
+
+At the finest setting the harmonically averaged power coefficients are
+\begin{center}
+\begin{tabular}{ccc}
+\toprule Angular sector&Positive sideband&Negative sideband\\\midrule
+$L=0$&$2.4239\times10^{-7}$&$6.0359\times10^{-5}$\\
+$L=2$&$4.4956\times10^{-7}$&$9.1587\times10^{-5}$\\\bottomrule
+\end{tabular}
+\end{center}
+The leading power is $\epsilon^4$ times the sum of these coefficients in
+the stated normalization. Both physical sidebands carry positive outward
+energy with the stated outgoing conditions. These values neither determine a lifetime nor measure a
+nonlinear time-evolution loss. They must not be compared directly with
+coefficients using the earlier radial maximum-amplitude normalization.
+
+This calculation supports second-harmonic leakage for the approximate T2
+input, beyond merely finding open channels and nonzero local sources.
+It does not certify leakage at the exact enclosed BIC. Float rounding
+places some input parameters outside the tiny certified box; sampled
+scaled Hermite-interpolant ODE defects have a sampled maximum of about
+$5.2012\times10^{-6}$ (rounded upward to $5.3\times10^{-6}$).
+These are midpoint samples on $0.01$-spaced grids extending to $r=80,96$,
+excluding $|r-8|\le0.011$ around the splice, not uniform residual bounds.
+Differences between reconstruction levels are much smaller. Omitted exterior
+source and potential contributions were diagnosed, not converted into
+propagated amplitude-error bounds in that calculation. The separate
+validated monopole transfer in Section~\ref{nl:conditional-monopole}
+addresses these errors using a fixed comparison function and the exact
+mode's Jost normalization; it does not certify the numerical power table.
+
+A subsequent fixed-coefficient reconstruction checked the source--current
+identity for each angular sector. For the real symmetric forced operator,
+$J=\operatorname{Im}(U^\dagger U')$ satisfies
+$J'=\operatorname{Im}(F^\dagger U)$, where $U$ denotes the two reduced
+response components and $F$ their forcing. Both computational channels
+use positive-wavenumber outgoing waves. Keeping the saved matching
+coefficients fixed, an independent volume quadrature agrees with
+$\sum_j q_j|C_j|^2$ to relative residuals $9.6\times10^{-11}$ for $L=0$
+and $1.3\times10^{-11}$ for $L=2$. This is a numerical consistency check
+of the finite forced problem, not an energy-power measurement or a
+validated error bound. It does not independently validate a shared source
+formula. The change between the two volume quadratures is
+$1.9\times10^{-9}$ or smaller relative to the respective outgoing current;
+this observation is not a certified quadrature-error estimate.
+
+\input{sections/MONOPOLE-BOUND.tex}
+
+\subsection{Existing evidence for radial location C0}
+\label{nl:evidence}
+Separate computations already address the earlier $n=1$, $l=0$ mode
+near $\omega^2=0.7976767871$ and $\rho=1.7446175448$. They concern the
+same sextic field equation, not T1 or T2. A finite-amplitude radial
+evolution compared the nonlinear field with its background and linear
+response on two spatial grids. For amplitudes $0.01,0.02,0.04$, the
+integrated quadratic flux of the nonlinear remainder increased by
+factors approximately $15.97$ and $15.89$ upon doubling amplitude.
+This supports fourth-order scaling over the tested range; that remainder
+flux is not an exact measurement of the total lost core energy.
+
+A subsequent harmonic diagnostic identified the dominant laboratory
+sideband $E=\omega-2\rho\simeq-2.59611$ as outgoing at two detector
+radii, on both grids and in both prescribed time windows. The weaker
+$E=\omega+2\rho$ component was resolved but did not satisfy every
+outgoing-wave criterion. Large residuals in the full field's harmonic
+fit remained, so these observations do not establish a periodic
+multifrequency solution.
+
+A separately solved frequency-domain problem, using the same background
+and mode data but no fitted amplitude from the time evolution, predicted
+the dominant outgoing coefficient. At $\epsilon=0.02$, its predicted
+amplitude was $5.1563\times10^{-5}$, compared with measured values
+approximately $(5.03$--$5.10)\times10^{-5}$. The prescribed comparison
+criteria passed. Shared input profiles make this a separate mechanism
+test, not a wholly independent reconstruction of the background.
+
+An interval calculation further separated one necessary overlap from
+zero for an explicitly frozen finite operator on $[0,44]$:
+\begin{equation}
+ I_2\in[-0.16383470526432667,-0.10547329373338812].
+ \label{nl:frozen}
+\end{equation}
+The corresponding $I_1$ interval contained zero, and the original test
+requiring both exclusions remained failed. Nevertheless, one certified
+nonzero overlap suffices to violate the necessary simultaneous condition
+$I_1=I_2=0$ for that frozen problem. Its binary64 spline inputs are treated
+as exact data, with a free exterior and zero source beyond radius $44$.
+This is not a certificate that the exact continuum Q-ball and its BIC
+have that overlap: a validated link to the continuum inputs and exterior
+tail remains required. The linear existence certificates do not, by
+themselves, supply that quantitative link.
+
+If a leading second-order outgoing amplitude is nonzero, its power is
+of order $\epsilon^4$. A lifetime law additionally requires a controlled
+relation to mode energy and slow amplitude evolution, and separation of
+initial adjustment from persistent radiation. Neither the finite-time
+observations nor the frozen-operator certificate provides a general
+nonlinear stability or lifetime theorem. Earlier real-field shell-model
+normal forms describe a different model and supply no substitute for
+these Q-ball source and overlap conditions.

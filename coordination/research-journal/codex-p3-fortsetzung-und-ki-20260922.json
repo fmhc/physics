@@ -1,0 +1,21 @@
+{
+  "id": "codex-p3-fortsetzung-und-ki-20260922",
+  "time": "2026-09-22T17:44:54Z",
+  "time_kind": "reported",
+  "author": "codex-agent-review",
+  "topic": "formelkandidaten",
+  "status": "reported",
+  "title": "P3-L-Trunkierungsgegenbeispiel, subkritische Labormessformel und KI-Annahmenpilot",
+  "question": "Welche Vorhersage bleibt unter weiteren Moden belastbar, und wie lassen sich Annahmen systematisch gegen Paper und Gegenmodelle pruefen?",
+  "action": "Ein neuer kleiner Fourier-Galerkin-Kontrolllauf auf .69; Bericht aus gebundenen Feldern; neue Huellenformel symbolisch geprueft; Literaturversionsabgleich; ausdruecklich beauftragter Subagent zur KI-Machbarkeit; sieben Annahmen als Pilot inventarisiert.",
+  "result": "Lineare Bandkante unveraendert. Dreimoden-Partnerantwort in der festen S=2/3-Zelle gegen N8 um rund 65.18 Prozent des kleinen Referenzmaximums abweichend, absolut 0.000286. 11 Modenkontrollen bestanden. Optischer Literaturaufbau zeigt Konversion unter Instabilitaetsschwelle. Symmetrisches unentleertes Huellenmodell liefert r=I_idler/I_signal und G_signal=1/(1-r)^2, noch ohne passende Messdatenpruefung. KI-Pruefkette auf vorhandener Infrastruktur empfohlen; kein Gesamtpruefsystem aktiviert.",
+  "meaning": "Kein neuer parametrischer Mechanismus, keine Naturbestaetigung, keine Fremdreproduktion. Neu sind observablenspezifischer Trunkierungsfehler, konkrete bedingte Messrelation und Annahmen-/Gegenbelegstruktur. Genetische Gegenmodelle duerfen Eindeutigkeit angreifen, nicht Trainingsfit als Naturbeweis ausgeben.",
+  "compute": "ubuntu-auto (.69), CPU, kein CUDA; 25% CPU/512MiB/120s, sequenziell; Subagent nur Recherche/Dateiarbeit",
+  "register_effect": "none",
+  "sources": [
+    {"path": "coordination/formelkandidaten-20260922/fortsetzung/CHECK-MODES.json", "sha256": "3d4cb77546e99b13ab505a9e9fd6a22584188ed3b3cbccb46a6daab2db89dc0e"},
+    {"path": "coordination/formelkandidaten-20260922/fortsetzung/ERGEBNIS-MODEN.md", "sha256": "e9681263e25fdd7c8694c1534eeb6dfc605fbe6f0087025d23db6e9f4f24cdd9"},
+    {"path": "coordination/formelkandidaten-20260922/fortsetzung/CHECK-LAB.json", "sha256": "94692c7d961d18bac1943edc7e6b1a7f5f493294667f71348a63a58484e41657"},
+    {"path": "coordination/formelkandidaten-20260922/ki-annahmenpruefung/BERICHT.md", "sha256": "b451c4d513ea4ac91a12d9c190dd289949630b0385d5c85bcba05b9f38055571"}
+  ]
+}

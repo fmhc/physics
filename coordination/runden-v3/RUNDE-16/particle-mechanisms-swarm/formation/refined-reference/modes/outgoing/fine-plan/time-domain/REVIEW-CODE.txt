@@ -1,0 +1,70 @@
+Nichtautor-Codelektüre, particle_binding, 02.10.2026
+Gegen PLAN 097108448c6604b8f417a67f64291c6daef4b490fcb00158070e01837f7ae96b.
+Erster vollständig gelesener Zwischenstand:
+c1c91147ead15e17a2c84dae29f01e07f66e265cad7e7de5eab0e0aef65b1e82.
+Keine Ausführung oder lokale Tests. Abschlussdelta/Finalhash siehe unten.
+
+Der Datenweg passt zu den tatsächlich vorhandenen APIs: gehashter
+response.load_prepared lädt unveränderte Profile/Quellen, die jeweiligen
+Ritzartefakte werden an Frequenz und Quellprovenienz gebunden. Alle sechs
+Eigenvektorblöcke erhalten dieselbe Norm und Pivotphase. Das Sollantwortfeld
+wird mit deren Quadrat gedreht. excitation.initial setzt die geprüften
+lab/corot-Anfangsdaten samt exakter Q-Quadratik und Kanonikprüfung um.
+Es wird keine stationäre zweite Harmonische in den Start hineinkopiert.
+
+Alle Arme eines Levels laufen tatsächlich gleichzeitig im Speicher;
+Plus/Minus werden zeitgleich in voller kanonischer6Blocknorm ausgewertet.
+Die Baseline und jedes Vorzeichen haben eigene globale Diagnosen und
+Anfangswerte. Elf Arme, drei Level, T128, Sampleabstände und Phasenkonvention
+sind wie geplant. Gespeicherte Schalen tragen zwei zusätzliche Nachbarzellen,
+sodass die verwendete zentrale Ableitung in den Messschalen verfügbar ist.
+Keine volle Norm wird aus bloßen Schalenwerten ersetzt.
+
+Die gerade Kombination verwendet 2alpha² im Nenner; dadurch sind die
+demodulierten Felder Antwortkoeffizienten, und die physische Bandleistung
+ist alpha^4 mal deren Fluss. Die feste Trapezextraktion hat interpolierte
+Fensterendpunkte und testet DC, beide Grund- und beide zweite Harmonische.
+Die Leckagereserve wird mit den beobachteten skalierten Koeffizienten und
+derselben Aout-Raumoperation gebildet. Sie ist eine Basis-Leckagediagnose,
+keine rigorose Schranke für beliebige Einschalttransienten; letztere
+bleiben über komplexe Sollfehler und Fenstervergleich kontrolliert/offen.
+
+Flux_arrays hat für exp(+iOmega t) das richtige Ladungs-/Energievorzeichen;
+die auslaufende analytische Testwelle prüft Faktoren und Einlaufmutation.
+Die Laborgeschwindigkeit ist gemessene corot-Geschwindigkeit+iomega p.
+Mess- und Sollfeld benutzen identische Diskretableitungen. Aus-/Einlauf-
+zerlegung von rp hat die korrekten Vorzeichen. E-omegaQ wird separat
+ausgegeben, nicht als Laborfluss etikettiert.
+
+compare verlangt exakt alle16 Paar/Fenster/Schalenkombinationen. Komplexer
+Sollfehler, Incominganteil und Bandfluss werden in jeder Zeile geprüft;
+Fenstervergleich, h-/dt-/Amplitudenvergleich und Quartikvergleich decken
+die jeweils vorgesehenen Kombinationen ab. Die globale Reserve verwendet
+das Maximum aller beobachteten Änderungen/Leckagen. Vollständigkeit prüft
+elf Arme mit jeweils321 globalen QA-Samples bisT128. Globalenergiefehler
+werden nicht als Auflösungsschranke für das kleine Signal verwendet.
+
+Teil-JSON wird vor Arbeit, bei laufenden QA-Samples und nach Artefakten
+gesichert. Native Unterbrechung kann nur den letzten gesicherten Stand
+lassen. CPU-Zählung beginnt vor Imports, Checkpoint280CPU-s; der äußere
+Rootdeckel300CPU-s samt einThread/RAM ist weiterhin erforderlich.
+Kein automatischer Retry, keine Verlängerung oder Neuwahl der Frequenz.
+
+Im Zwischenstand waren dt-/Amplitudendifferenzen als komplexe Gates
+implementiert, obwohl der Plan Betragsgates und komplexe Diagnose verlangt.
+Autor korrigiert dies. Zusätzlich angefragt: Minus-/Chi-Abweichungen auch
+als Anteile der Plus-Sollnorm ausgeben, ohne ein neues Gate hinzuzufügen.
+Abgesehen von diesem angekündigten Delta kein konkreter Blocker gefunden.
+
+Finale gezielte Deltalektüre abgeschlossen; Hash bestätigt:
+74ba12a56e60241a967c2ff143a6489adbd7b27a3b72ddeeb0d3d29fee3c43c6.
+dt-/Amplitudengates verwenden jetzt die geplanten Betragsdifferenzen;
+komplexe Differenzen werden zusätzlich deskriptiv gespeichert. Plus-Soll-
+L2 und relative Minus-/Chi-Berichtswerte sind ergänzt, ohne neue Gates.
+Zusätzlich durchläuft die tatsächliche stationäre Vierkomponenten-
+Schalenantwort mit korrekten positiven/negativen Frequenzkoeffizienten
+denselben Tensor-Extraktionspfad; beide Fenster müssen relativ1e-4
+erreichen. Quellenphase und Geschwindigkeitsvorzeichen bleiben konsistent.
+Endurteil: kein verbleibender konkreter Blocker für den fest begrenzten
+Rootlauf der geprüften Fassung. Numerik- und Signalsicherheit bleiben
+Ergebnisfragen; keine Vorwegnahme eines physikalischen PASS.

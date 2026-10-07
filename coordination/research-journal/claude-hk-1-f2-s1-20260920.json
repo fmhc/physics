@@ -1,0 +1,46 @@
+{
+  "id": "claude-hk-1-f2-s1-20260920",
+  "time": "2026-09-20T19:34:20+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5), Vertrag; Claude-Subagent (Opus 5), S1-Laeufe",
+  "topic": "theory",
+  "status": "reported",
+  "title": "HK-1 Fassung 2: die dyadisch gestaffelte Kette haelt im Ensemblemittel nicht mehr Schalter unten als die uniforme -- Unterschied unter der Nachweisgrenze",
+  "question": "Haelt die hierarchisch-dyadisch gestaffelte Kopplungsanordnung einer 16er-Kette bistabiler Koordinaten nach einem einzelnen Startimpuls im Fenster t in [80,100] im Mittel ueber 64 Startwerte mindestens zwei Sites mehr unterhalb der Schwelle als die uniforme Anordnung gleicher Steifigkeitssumme und als eine Anordnung gleicher Injektionssteifigkeit?",
+  "action": "Nachfolgefassung des am 17.09.2026 mit Ausgang T gescheiterten Vertrags HK-1 (dort verlangte die Spiegelkontrolle im Vertragstext ein falsches Vorzeichen des Startimpulses, und die Kennzahl wurde auf einer einzelnen chaotischen Bahn gemessen). Fassung 2 leitet die Spiegelung als Indexumkehr auf Ort und Impuls her, misst ein Ensemblemittel ueber 64 gepaarte Startwerte, streicht die groebere Schrittweite, und nach dem S0-Fremdreview kam ein Kontrollarm gleicher Injektionssteifigkeit als Pflichtzelle, eine harte Rauschkontrolle und eine Linearprobe der gekoppelten Kette gegen die Eigenzerlegung hinzu. Startsignal 'full go' von Finn. Zwei S1-Laeufe auf .69 als begrenzte CPU-User-Unit (Regel-10-Ausnahme): der erste endete mit Ausgang T, weil das Laufskript die Referenzwurzeln einer Kontrolle mit falschen Polynomkoeffizienten berechnete; nach Fremdfreigabe durch Qwen und DeepSeek nach Vertrag 11.4 lief der zweite mit berichtigter Polynomzeile durch, 475,7 CPU-Sekunden.",
+  "result": "Ausgang U2: kein Vorsprung oberhalb der Nachweisgrenze von 2,0 Sites. Die gepaarte Mitteldifferenz betraegt gegen die uniforme Anordnung Dbar = -0,5466 (h = 0,005) und -0,5211 (h = 0,0025) bei 4 SE_D = 0,44 bzw. 0,39, gegen den Kontrollarm gleicher Injektionssteifigkeit Dbar' = -0,7987 und -0,6191 bei 4 SE' = 0,39. Das Vorzeichen zeigt also eher einen kleinen Rueckstand der gestaffelten Anordnung, aber der Betrag bleibt weit unter der vorab gesetzten Schwelle von zwei Sites. Alle zehn Kontrollen bestanden, darunter die geheilte Spiegelkontrolle mit 4,77e-15 gegen die Schranke 1e-8 (Fassung 1: 1,29 mit falschem Vorzeichen), die Linearprobe gegen die Eigenzerlegung (groesstes Verhaeltnis Abweichung zu Schranke 0,043) und die Rauschkontrolle (N_low = 0 exakt). Das vorab gesetzte Streuungsgatter ist eingehalten, die Halbierungs-Nullprobe derselben Anordnung liefert D_null = 0,040 bzw. -0,086, die Startwertstreuung taeuscht also keine zwei Sites vor.",
+  "meaning": "Die Frage ist im Rahmen dieses Fensters beantwortet, aber negativ und ohne Buchung: die Staffelung traegt im Mittel keinen Vorsprung von zwei Sites, und der Kontrollarm zeigt, dass auch die erste Kante allein den Unterschied nicht erklaert. Die Kennzahl ist ein Besetzungsmass, keine Frontposition, und T = 100 ist kuerzer als jede Transitzeit der Kette -- es bleibt eine Fensteraussage. Zwei Nebenbefunde: die Spiegelkontrolle der Fassung 1 ist mit richtigem Vorzeichen exakt erfuellt, und die im Vertrag fuer den Trennkraftnachweis zitierte ausmultiplizierte Kraftform (4q^3 - 6,6q^2 + 2,3q) ist algebraisch falsch; richtig waere 6,3, und diese richtige Form reisst die Stationaritaetskontrolle nicht, weil 4 - 6,3 + 2,3 in float64 exakt null ergibt. Die Kontrolle ist damit scharf gegen einen groben Koeffizientenfehler, nicht gegen einen Rundungsrest -- das gehoert in den naechsten Vertrag. NICHT GEBUCHT: Runde 022 eingefroren, keine Registerzeile, keine Jury, Zitiersperre bis S2.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260920/hk-1-f2-lauf/BERICHT-HK-1-F2-LAUF2.md",
+      "label": "Bericht des zweiten Laufs, alle Zahlen",
+      "sha256": "13d61163861261d44020fa77750028e2477e8b24f3ec988766005fc89f6aa960"
+    },
+    {
+      "path": "coordination/vertraege-20260920/hk-1-f2-lauf/ERGEBNIS-HK-1-F2-LAUF2.json",
+      "label": "Ergebnisdatei des zweiten Laufs",
+      "sha256": "5f3bbec4fd2fa206e510b9d6aaccaf65c1fd0432e4bde345cb490253be318caa"
+    },
+    {
+      "path": "coordination/vertraege-20260920/hk-1-f2-lauf/BERICHT-HK-1-F2.md",
+      "label": "Bericht des ersten Laufs, Ausgang T",
+      "sha256": "572a8d9c9785741dc0497b7ed3980060b7b0eac62d7ef0d5f6624d9e1795cc0a"
+    },
+    {
+      "path": "coordination/vertraege-20260920/FREIGABE-hk-1-f2-neustart.md",
+      "label": "Fremdfreigabe vor dem Neustart nach Vertrag 11.4",
+      "sha256": "80c27203493c977c964900e169eaf1e4892fc82cbf46bd37b5732a19db0e1d94"
+    },
+    {
+      "path": "coordination/vertraege-20260920/hk-1-VERTRAG-fassung2.md",
+      "label": "Vertrag Fassung 2",
+      "sha256": "da9c2d248eaa85925ec489999cb9688c6cb66cd3bfad6fcc88265c750a4f3d3f"
+    },
+    {
+      "path": "coordination/vertraege-20260920/REVIEW-hk-1-f2.md",
+      "label": "S0-Fremdreview vor dem Start",
+      "sha256": "143a6fbda8fd310f53ba089a5a4b869e72021a1f92cef18eff50e47bbe4c3bc7"
+    }
+  ],
+  "recorded_at": "2026-09-20T19:41:53.991625+00:00"
+}

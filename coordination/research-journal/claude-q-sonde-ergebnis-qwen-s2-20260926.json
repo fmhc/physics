@@ -1,0 +1,29 @@
+{
+  "id": "claude-q-sonde-ergebnis-qwen-s2-20260926",
+  "time": "2026-09-26T18:11:52+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 4.8), Leitung; Qwen-Lauf auf der .69 17:38 bis 17:47 UTC; zwei Bewerter (Leitung und frischer Fable-Fork) 20:11:52 MESZ (gemessen)",
+  "topic": "methodik",
+  "status": "checked",
+  "evidenzart": "verfahren",
+  "title": "Q-SONDE: Qwen findet 0 von 3 astra-Gegenfaellen in DF-1 F4 und gibt bedingungslos frei; vorab gebundene Folge greift: Qwen faellt als S0-Haus weg, bleibt nur S2-Haus",
+  "question": "Findet Qwen mit vollem Paket und erzwungenem Denken mindestens zwei der drei astra-Gegenfaelle (leere Liste, Nullnenner, Ersatzinventarregel)?",
+  "action": "Blinder Rerun der S0-Runde 3 zu DF-1 Fassung 4, Paket als Auszug (Teil A plus B11, B19, Entscheider, Proben, Arbeitsdatei 31 bis 34), Denken per Rohmodus mit Vorbelegung des Antwortanfangs erzwungen. Lauf gueltig (V1 bis V4): done stop, Denken 22517 Zeichen, Antwort 3815 Zeichen, 68553 Token unter 98304, kein echter Kontext-Kuerzhinweis (die Treffer im Hinweisfilter waren Startzeilen zu n_ctx). Zwei unabhaengige Bewerter nach der vorab gebundenen Definition (VORAB-Q-SONDE Abschnitt 2): Leitung und ein frischer Fable-Fork, der nur die Antwort und Abschnitt 2 sah.",
+  "result": "0 von 3 Treffern, uebereinstimmend. Qwen gab das Urteil FREIGEBEN mit dem Zusatz Auflagen keine aus, wo astra mit 6 Auflagen (3 blockierend) zurueckwies. H1 (leere Liste): nicht genannt; R2-1 behauptet das Gegenteil, der Entscheider implementiere das Schema korrekt. H2 (Nullnenner): nicht genannt; A9.3 nur positiv erwaehnt. H3 (Ersatzinventar): nur die Tabellen-Einstufung F4-4 nur-strenger-nein und ausgangsbestimmend-ja mit A8.1a(e), die laut Definition allein nicht zaehlt; A8.1a(e) nicht als spaetere Lockerung benannt, keiner der drei Unterpunkte getroffen, Ziffer 3 verneint den Mechanismus sogar. Keiner der drei Faelle taucht auch nur im Denken auf (0 Stichwort-Treffer in 22517 Zeichen). Erwartung vorab war p 0,26 fuer mindestens 2 Treffer; nicht eingetreten.",
+  "meaning": "Qwen ist als unabhaengiges S0-Torhaus nicht tragfaehig, auch mit erzwungenem Denken: es fand keinen der drei bekannten Vertragsdefekte und gab bedingungslos frei. Kuenftig prueft Qwen nur noch S2 (blindes Nachrechnen aus dem Vertragstext), nicht mehr S0. Das bestaetigt und verschaerft fruehere Beobachtungen. Offen und Finn vorzulegen: Damit hat S0 fuer einen Claude-Vertrag nur noch astra (OpenAI) als hausfremdes Haus plus Fable (Anthropic, gleiches Haus wie der Autor); die Hausunabhaengigkeit von S0 ist neu zu klaeren. Codex mahnt zu Recht, dass erzwungenes Denken und eine Mindestlaenge weder den Modus noch die Richtigkeit zertifizieren.",
+  "sources": [
+    {
+      "path": "coordination/methodik-review/q-sonde-20260926/VORAB-Q-SONDE.md",
+      "sha256": "0d27aabc45daec2264b5660ef116d9c0dcbc0ab22451c06cf83c2424db11b11c"
+    },
+    {
+      "path": "coordination/methodik-review/q-sonde-20260926/ergebnis/antwort.md",
+      "sha256": "c60efc0779e58522d887fc1e9a9122ac927c774fe4ba9cbd946605c40b97d4b5"
+    },
+    {
+      "path": "coordination/methodik-review/q-sonde-20260926/ergebnis/BEWERTUNG-fable-roh.jsonl",
+      "sha256": "77ebfbf069ab9ca9f1debf1144a6a67b80bd8e13977375d838805dfa985e4efe"
+    }
+  ],
+  "recorded_at": "2026-09-26T18:12:28.729399+00:00"
+}

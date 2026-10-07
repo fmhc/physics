@@ -1,0 +1,49 @@
+{
+  "id": "claude-df-1-fassung-5-s0-entwurf-20260926",
+  "time": "2026-09-26T21:39:50+00:00",
+  "time_kind": "completed",
+  "author": "DF-1-Vertragsautor (Anthropic, Claude Opus 5.5) im Auftrag von claude-primary; Fassung 5 von 22:33:59 bis 23:39:50 MESZ (gemessen); Proben auf der .69 von 21:25:02Z bis 21:27:03Z als einmalige systemd-run-Units, CPU, ohne GPU, ohne GPU-Lock",
+  "topic": "vertraege",
+  "status": "reported",
+  "evidenzart": "verfahren",
+  "title": "DF-1 Fassung 5 als S0-Entwurf fuer die Zusatzrunde 4: Schema total, Nullnenner-Regel, Abrechnung und Inventare, Ersatzinventarregel zurueck auf die strenge Fassung; 118 von 118 Proben wie vorab erwartet, astras statische Gegenfaelle als echte Proben gerechnet",
+  "question": "Lassen sich die Auflagen der S0-Runde 3 (astra: Schema total, Nullnenner, Abrechnung und Inventare, spaetere Ersatzinventarregel, Codeabgleich, zweites Haus) und die Folgen der Q-SONDE fuer S0 und S2 eng begrenzt einarbeiten, ohne eine Regel zu lockern oder den Umfang zu erweitern?",
+  "action": "Regeln F5-1 bis F5-8 und Erwartungen vor jeder Probe in der Arbeitsdatei gebunden (Abschnitt 35, 23:04:11 MESZ; Kopie als Beleg, auf der .69 um 21:04:18Z angekommen). Teil A 23:05:47 bis 23:09:38 MESZ geaendert und danach nicht mehr. Entscheider, Proben, Positivkontrolle und Namensraumwerkzeug als neue Dateien neben denen der Fassung 4. Proben auf der .69, Gegenprobe mit dem Entscheider der Fassung 4 auf denselben Eingaben. Codeabgleich c1adabce aus dem Transkript der Autorsitzung rekonstruiert. Danach Teil B, Revisionstabelle, Probenbericht, Teil-A-Diff, Register- und Paketprobe, SHA256SUMS und Spiegel.",
+  "result": "Vertrag Fassung 5 8e20c000..., Teil-A-Ausschnitt bb9be7a9... (gleich dem Stand vor den Laeufen), neuer Entscheider b6f0b4f5..., Werkzeug c1d0710c...; 326 von 326 Hashes OK auf Laptop und .69. Proben: 118 von 118 wie vorab erwartet, darunter die 58 der Fassung 4, S33 bis S59, fuenf Kommandozeilenproben, eine Stoerprobe mit 3000 Mutationen ohne Ausnahme, der S2-Vergleich Z1 bis Z9, die Belegpruefung B1 bis B14 mit 1000 verfaelschten Belegen ohne Ausnahme und die Werkzeugproben W1 bis W6 mit echten Belegen. Die Positivkontrolle an Q600 erreicht weiter alle fuenf Ausgaenge. Der Entscheider der Fassung 4 brach an astras Gegenfaellen tatsaechlich ab (TypeError, OverflowError, ValueError, ZeroDivisionError; in der Stoerprobe 154 von 3000). Neu: feste Pruefreihenfolge und Umgebungsobjekt; Nenner null oder nicht endliche Vergleichsgroesse macht das Kontrollatom verletzt und den S2-Vergleich nicht bestaetigt; FALL-Dateien gelten nur mit gueltigem Endinventar, die Ersatzregel ist gestrichen (W5: Datei aus einem Versuch ohne Nachtrag gibt K5); c1adabce ist zeilengenau nachweisbar (eine Zeile). S0-Runde 4 mit astra und Fable, S2 mit Qwen direkt an Ollama und erzwungenem Denken.",
+  "meaning": "Nicht gebunden, keine Zielrechnung, kein S1, kein S2. Die Freigabe haengt an S0-Runde 4 (astra, Zweitmeinung Fable; nur ein fremdes Haus, die Abweichung von Vorlage 10.5 steht im Vertrag); scheitert sie, endet DF-1 nach Finns Vorgabe. Nach Nachtrag 27 sind die Aenderungen an Schema, Nullnenner (gegen den Wortlaut der Fassung 4) und Zuordnung nur strenger; Abrechnungsintervall und Befund bei fehlerhaftem Startinventar sind es nicht, weil mehr Laeufe unentschieden enden koennen. Bis zum S0-Urteil gelten alle als ausgangsbestimmend. Keine Regel wurde nach einem Lauf geaendert. Offen fuer die Leitung: Paket fuer Runde 4 bauen; gesetzte Leserechte vor dem Schlussinventar im Pruefergebnis vermerken.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260926/DF-1-VERTRAG.md",
+      "sha256": "8e20c0005f70024974931bb9c1c9d35a7016fc321e32e052cb0541dd5fc5d0b5"
+    },
+    {
+      "path": "coordination/vertraege-20260926/df-1-s0/REVISION-F4-F5.md",
+      "sha256": "4212c727e12fe9bd35bc7ec2ff23801c543bb6008069f68857d14c3b6305b7fe"
+    },
+    {
+      "path": "coordination/vertraege-20260926/df-1-s0/PROBENBERICHT-F5.md",
+      "sha256": "e4eb7090d49ba6b9128ff11036dda51d3513a3033f966030f64f32234ff252d6"
+    },
+    {
+      "path": "coordination/vertraege-20260926/df-1-s0/entscheider/proben-f5/PROBEN-ENTSCHEIDER-f5.json",
+      "sha256": "c70bddda43c1f6ef0338719cbe33ad527f0ee3c9f7fbfe775d271b8dc9265207"
+    },
+    {
+      "path": "coordination/vertraege-20260926/df-1-s0/entscheider/df1_entscheider_f5.py",
+      "sha256": "b6f0b4f5dc12e130f584149b9676a6e99c2075fc22494f83b2107de96ef4557e"
+    },
+    {
+      "path": "coordination/vertraege-20260926/df-1-s0/sandbox/df1_sandbox_f5.sh",
+      "sha256": "c1d0710cc624fa11ac723463ef62456cee8dd052669a807bba641c9cb15e0e38"
+    },
+    {
+      "path": "coordination/vertraege-20260926/df-1-s0/ARBEITSDATEI.md.stand-35-f5",
+      "sha256": "75a93a947ef955e2ef07f9355598c572ea6b118a7177660c0a6d64aa4afd6650"
+    },
+    {
+      "path": "coordination/vertraege-20260926/df-1-s0/SHA256SUMS",
+      "sha256": "d873ff770fd9726d55f7d7c28a35038c29acdcf1c06dbf095c83bbe251f70167"
+    }
+  ],
+  "recorded_at": "2026-09-26T21:40:20.240591+00:00"
+}

@@ -1,0 +1,31 @@
+CLOCK-PAIR, 2026-10-02. Explorative finite test, own new path only.
+Question: do two reciprocal autonomous flip clocks retain bounded phase offset
+and equal measured tick rates, including after an explicitly budgeted kick?
+Not a test of emergent spacetime. Existing psi/chi model is unchanged.
+
+Two unit-norm spinors (a_j,b_j). z_j=|a_j|²-|b_j|², x_j=2Re(a_j* b_j).
+H=g1*x1+g2*x2+K/2*(z1-z2)^2.
+i a1'=g1*b1+K*(z1-z2)*a1; i b1'=g1*a1-K*(z1-z2)*b1.
+Second clock has opposite diagonal shift K*(z2-z1). Individual norms and
+H conserved between interventions. K positive. This is an assumed new
+Hamiltonian coupling, not derived from the field model or extra dimensions.
+Clock phase atan2(-2Im(a* b),z), unwrap increment. If projected radius<.05
+in the measurement window, phase verdict UNDEFINED. Tick: z negative->positive,
+linear interpolation. Period statistics require >=10 ticks in a window.
+
+g1=1, g2=1.03, theta1=0, theta2=.7 with (a,b)=(cos(theta/2),-i sin(theta/2)).
+K=0,.2,1, each with clock2 phase kick 0 or .2 at t=40pi. Kick exp(-i*.2*sigma_x/2).
+Record exact energy jump, then conserve new H; do not hide external work.
+Control: g1=g2=1,K=1,theta2=0,no kick (constructed equality, not finding).
+Negative clock control: a=b=1/sqrt2 each, g1=g2=1,K=1,no kick (stationary z).
+RK4 dt=.01,.005; T=100pi. Compare windows [20pi,40pi] and [60pi,100pi].
+Diagnostics: phase-difference range/drift, circular concentration, tick periods,
+minimum projected radius. No asymptotic attraction claim: autonomous finite
+Hamiltonian flow has no attracting phase-space volume basin.
+Finite locking label: radius>=.05, >=10 ticks each, period ratio within1%,
+phase-difference range<pi in FINAL window. Must pass on both dt, else unresolved.
+Energy/norm errors <1e-5, fine-v-coarse circular concentration difference<.01
+and final window phase range difference<.05rad for valid phases. Otherwise U.
+Hypothesis before run: uncoupled detuned drifts; same-start control passes;
+interaction may lock or destroy clock contrast; recovery after kick is unknown.
+No threshold tuning after outcome. Max60 CPU-s/90 wall, .69 CPU11 nice19, no GPU.

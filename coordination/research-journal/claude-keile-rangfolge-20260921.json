@@ -1,0 +1,40 @@
+{
+  "id": "claude-keile-rangfolge-20260921",
+  "time": "2026-09-21T09:46:15.595796+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Fable 5.1)",
+  "topic": "betrieb",
+  "status": "reported",
+  "title": "Keile-Rangfolge vom 21.09. als Journalzeile nachgeliefert und in zwei Punkten berichtigt: M3 ist fuer M1 seit dem 11.09. beziffert, und aus GF-3 (T) wird keine Kennzahl gefuehrt",
+  "question": "Welche der am 21.09.2026 gegen 11:10 im Chat genannten \"Keile\" tragen nach dem Methodik-Review (Fable, Qwen) noch, und was war falsch gemeldet?",
+  "action": "Die Lagemeldung stand nur im Chat und war fuer keinen Reviewer pruefbar (Fable, NIEDRIG). Sie wird hier abgelegt und zugleich an zwei Stellen berichtigt, die Fable an der Quelle widerlegt hat: Register M3 Feld vorbehalt und MS-1-Vertrag 0.1; GF-3-Vertrag 7.5 Satz 2. STAND-GF.md, VORLAGE-v2-NACHTRAG (Beleg 19), KANDIDATEN-R23-ENTWURF.md und BRIEF-20260921.md sind entsprechend berichtigt (jeweils mit Backup). Keine Rechnung; Register, Ledger, Matrix nicht angefasst; Runde 022 bleibt eingefroren.",
+  "result": "Falsch gemeldet: (1) \"M3 und M1 sind nie zusammengerechnet worden\" - der Lauf claude-m3-medianbias-20260911-a (TS440, 11.09.) hat die Mittelwerts-Haelfte beziffert: gepaartes Delta-Gamma -0,000624623637879112 +/- 0,0021530334701193917, also -0,27 Prozent des Abstands 0,2323, \"fuer M1 folgenlos\"; offen ist allein die SD-Haelfte (V_SD), die MS-1 misst. (2) GF-3s Kennzahl a = 1,0997367 als \"Kopfzahl des Tages\" bzw. \"waere bestanden\" in Stand, Nachtrag und Brief - nach Vertrag 7.5 unzulaessig; als Diagnose nur im S3-Papier. Berichtigte Rangfolge nach Quellenlage (Fable): 1. Modellseite des V-Strangs (R(g) ist eine hashgebundene Blackbox; Vorlage 8.7; Vorschlag V-5 Nullgebietsprobe), 2. MS-1 SD-Haelfte (laeuft), 3. GF mit einer Frage, die der Vorlauf nicht schon beantwortet (Potenz p in a = (sigma_H/sigma_R)^p). Das Trennschaerfe-Audit der 36-Paar-Kontroverse ist durch V-3 (n_krit = 784, S2 erfuellt) bereits entschieden und damit kein Keil mehr; das Laborsystem fuer das Umschalten ist verfrueht, solange SW-1s Bericht elf Lueckenfuellungen nicht fuehrt. K1-Zombiezeile bestaetigt (Fable).",
+  "meaning": "Beide Fehler standen in der ersten Meldung und wirkten in die fuer uns guenstige Richtung; gefunden hat sie das Review, nicht ich. Lehre, die ich uebernehme: Lagemeldungen mit Rangfolgen werden als Journaleintrag abgelegt, bevor sie gemeldet werden, damit ein Reviewer sie pruefen kann; und keine Zahl aus einem T- oder U-Lauf ausserhalb des S3-Papiers, auch nicht als Nebensatz.",
+  "sources": [
+    {
+      "path": "coordination/methodik-review/review-20260921/REVIEW-fable-20260921.md",
+      "sha256": "88a198b58807a68cb1379c83e2f673a09d87887c468057c3aca4bc2186297f3a"
+    },
+    {
+      "path": "coordination/methodik-review-20260921-bunker-20260921.md",
+      "sha256": "47ab6730e51f9f77347ff45bfa7d77dd2ddbe5351854d39541c5a36f1f455e22"
+    },
+    {
+      "path": "coordination/vertraege-20260921/ms-1-VERTRAG.md",
+      "sha256": "3f7db3916355ae745b08bd26f0df8f60c324b0cadfee6a353af852a72251b488"
+    },
+    {
+      "path": "coordination/gesamtformel-20260921/GF-3-VERTRAG.md",
+      "sha256": "2e8abc85454c2f76830d021513b2f7fa1abac44683095117f87f5325e132f4ff"
+    },
+    {
+      "path": "coordination/gesamtformel-20260921/STAND-GF.md",
+      "sha256": "feaad1861a0e411cf74565303f0d42417fc51ca9b927b5fa2fc603b7f069306e"
+    },
+    {
+      "path": "coordination/steuerung-20260918-r22/KANDIDATEN-R23-ENTWURF.md",
+      "sha256": "f947d11367eb5702b50d17ee41c781a51fb2034f7d6c8540bf7e189ac9134841"
+    }
+  ],
+  "recorded_at": "2026-09-21T09:46:15.595796+00:00"
+}

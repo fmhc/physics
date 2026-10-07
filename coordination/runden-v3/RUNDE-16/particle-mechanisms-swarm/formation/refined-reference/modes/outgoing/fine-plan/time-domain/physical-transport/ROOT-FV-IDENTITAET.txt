@@ -1,0 +1,44 @@
+Root, 2026-10-03: Herleitung gegen timestep-half.py Zeilen23-79.
+Nur Papier; keine Auswertung gespeicherter Werte.
+
+Zelle j: Volumen Vj=4pi h(rj²+h²/12), Fläche A_{j+1/2}=4pi((j+1)h)².
+Schreibe p=phi,v=phi_t,c=chi,w=chi_t und delta p=pR-pL.
+Kantenenergie g_f=A_f/h*(|delta p|²+.5(delta c)²).
+Lokale Zellenergie e_j=Vj*(|v|²+.5w²+U)+.5(g_links+g_rechts).
+Eine Schale ganzer Zellen umfasst alle inneren Kanten vollständig,
+beide Grenzkanten je zur Hälfte. Die gespeicherten Halos genügen dafür.
+
+Mit den tatsächlich benutzten semidiskreten Bewegungsgleichungen
+Vj*v_t=A_rechts delta p_rechts/h-A_links delta p_links/h-Vj*U_S*p
+und entsprechender reeller Gleichung heben lokale Potentialableitungen
+sich in dE/dt auf. Eine innere Kante ergibt links
+ A_f/h*[Re((vL+vR)*conj(delta p))+.5(wL+wR)delta c]
+und rechts das Negative. Somit ist der auswärtsgerichtete Energiefluss
+ F_E(f)=-A_f/h*[Re(conj(vL+vR)*delta p)+.5(wL+wR)delta c].
+Für Qj=2Vj Im(conj(pj)vj) folgt
+ F_Q(f)=-2A_f/h*Im(conj(pL)pR).
+Exakt semidiskret: dE_S/dt=F_E(inner)-F_E(outer),
+ dQ_S/dt=F_Q(inner)-F_Q(outer).
+Die Verlet-Zeitdiskretisierung und Abtastintegration erzeugen zusätzlich
+endliche Bilanzreste. Ob diese kleiner als das gesuchte Signal sind,
+muss gemessen werden, nicht aus dem globalen Energiedrift folgen.
+
+Rotierende Speicherung: z=p exp(-iomega t), d=v exp(-iomega t)-iomega z.
+Setze v_rot=d+iomega z in obige E-/Q-Ausdrücke ein. Die gemeinsame Phase
+kürzt sich, kein expliziter Laborphasenaufbau nötig. c,w sind reell;
+Imaginärreste der gespeicherten komplexen Hülle gesondert kontrollieren.
+J=E-omega Q hat F_J=F_E-omega F_Q, ist aber nicht automatisch positiv.
+Nicht mit Energieverlust eines beliebigen normierten Modus gleichsetzen.
+
+Vorzeichenprüfung ohne Rechnung: p=a exp(i(omega t-kr)),k>0,
+v=iomega p liefert F_Q>0 und F_E>0 für kh in(0,pi),omega>0.
+Damit stimmt auswärts mit positiv. Für eine reine Gegenrichtung
+wechselt das Vorzeichen. Konstante Felder haben keinen Kantenfluss.
+
+Physische Armströme zuerst berechnen. Anschließend z.B.
+ delta F=[F(+alpha)+F(-alpha)]/2-F(0), analog Schalenenergie/Ladung.
+Diese Differenz ist eine Beobachtungsdifferenz zwischen Lösungen,
+keine einzelne Lösung und keine zwingend positive Energiedichte.
+Der Fluss des parity-even Felds allein würde Kreuzterme weglassen.
+Ein positiver signierter Nettofluss in einem endlichen Fenster ist noch
+kein Beweis stationärer Strahlung, irreversibler Abkühlung oder Lebensdauer.

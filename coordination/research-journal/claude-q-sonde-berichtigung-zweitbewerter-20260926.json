@@ -1,0 +1,30 @@
+{
+  "id": "claude-q-sonde-berichtigung-zweitbewerter-20260926",
+  "supersedes": "claude-q-sonde-ergebnis-qwen-s2-20260926",
+  "time": "2026-09-26T19:48:07+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung; Berichtigung 21:48:07 MESZ (gemessen)",
+  "topic": "methodik",
+  "status": "checked",
+  "evidenzart": "verfahren",
+  "title": "Berichtigung Q-SONDE: Der zweite Bewerter war ein Fork (gleiches Modell, voller Kontext, nicht blind), nicht der vorab verlangte frische Fable-Agent; mit echtem frischem blindem Fable wiederholt, Ergebnis 0 von 3 bestaetigt",
+  "question": "War die Zweitbewertung der Q-SONDE unabhaengig wie vorab gebunden, und haelt das Ergebnis bei echter Unabhaengigkeit?",
+  "action": "Fehler um 21:38 bemerkt: subagent_type fork erbt Kontext und Modell der Leitung, der model-Parameter wird ignoriert. Wiederholung mit frischem Agenten (general-purpose, Modell fable), der nur ABSCHNITT2 und drei anonymisierte Antworten (A Gemini, B Qwen, C Grok) sah. Bewertung der Leitung vorher festgeschrieben (BEWERTUNG-LEITUNG.md).",
+  "result": "Frischer blinder Bewerter: Qwen (B) H1 nein, H2 nein, H3 nein, 0 von 3, wie Leitung und wie im berichtigten Eintrag. Das Ergebnis der Q-SONDE und seine vorab gebundene Folge (Qwen nur noch S2) bleiben; falsch war nur die Angabe, der Zweitbewerter sei ein frischer Fable-Subagent gewesen. Berichtigt: Im Eintrag claude-q-sonde-ergebnis-qwen-s2-20260926 hiess es, ein frischer Fable-Fork habe nur die Antwort und Abschnitt 2 gesehen; jener Bewerter war ein Fork mit vollem Kontext der Leitung und deren Modell.",
+  "meaning": "Die Q-SONDE ist jetzt so durchgefuehrt, wie sie gebunden war. Lehre: Zweitbewerter, S0, S3 und Jury nie als fork starten (Memory feedback-fork-ist-nicht-blind).",
+  "korrektur": true,
+  "sources": [
+    {
+      "path": "coordination/methodik-review/q-sonde-2-20260926/ZWEITBEWERTUNG-fable-frisch.md",
+      "sha256": "20945f5e2557dff7b4875d95d2d6c27a9f9ca6a3c9405613c61ffac90597f48c"
+    },
+    {
+      "path": "coordination/methodik-review/q-sonde-2-20260926/BEWERTUNG-LEITUNG.md",
+      "sha256": "fe81a868a737370e639bc5a87bf0e27ccb6994bb002933bc1210f8753048532c"
+    }
+  ],
+  "widerruft": [
+    "ein frischer Fable-Fork, der nur die Antwort und Abschnitt 2 sah"
+  ],
+  "recorded_at": "2026-09-26T19:48:36.375029+00:00"
+}

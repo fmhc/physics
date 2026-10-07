@@ -1,0 +1,33 @@
+DETUNING-1 proposed paper insertion — DRAFT ONLY
+2026-10-01T23:28:01+02:00 (date before writing)
+Author exterior_paper_text, OpenAI. No canonical edits, staging, remote,
+interpreter, tests, numerical calculation or physics execution.
+
+Intended exact location: append after line427 (the end-of-figure following
+label fig:phase-work) of canonical sections/SOURCE-SHAPING.tex, currently
+EOF. That section is included by main.tex; no existing phase-work text
+should be replaced. Title: One prescribed temporal phase drift.
+Result review pending when assigned; this draft is not a release decision.
+
+Read: detuning PLAN.txt, CODE-REVIEW.txt, ERGEBNIS-ROOT.txt fully;
+RESULT keys/comparison and both levels' h/dt/means/difference via jq;
+canonical SOURCE-SHAPING.tex lines375-427, including complete prior constant-
+phase subsection and figure. No raw-state numerics or new literature claim.
+
+Bindings SHA256:
+PLAN.txt 36e861fb750351eac09d93ec8d27a191490141d187616dff60b41198524ab152
+CODE-REVIEW.txt 8fa6e86040dc810474ed70c005f4b377f055efa05618a6dcc303690bbf066547
+ERGEBNIS-ROOT.txt a3762689f2c4f33f87d432a97c16e365229ddfeba96c906de781873dea6fdc0a
+out/RESULT.json 02c9c0c6eb3c266a62a4e841ec5416231a432e27e2a2c4b9dec54973159e0cfe
+canonical sections/SOURCE-SHAPING.tex a409449aeccc83f7cae2274d1c6bf12a6c50e94596a5b7468ff01dff3f79e1a9
+
+Fine means from RESULT.levels h=.02 means in delta0,.1 order; difference
+from comparison.delta_difference; diagnostic guard from comparison.
+About10.2% follows the root report, not a newly executed calculation.
+Quadrature averaging follows real-linearity and uniform constant initial
+phase, as reviewed in CODE-REVIEW item5. This does not replace independent
+quadrature evolution by multiplication by i and does not infer chosen-phase
+pair work from isolated mean work. No first-pulse rerun is claimed.
+All displayed works are nominal quadratic laboratory source-work coefficients,
+not full nonlinear energy or actuator losses. No noise/thermal/efficiency
+interpretation and no enlarged claim about BIC or formation.

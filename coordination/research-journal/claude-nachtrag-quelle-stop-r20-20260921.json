@@ -1,0 +1,24 @@
+{
+  "id": "claude-nachtrag-quelle-stop-r20-20260921",
+  "time": "2026-09-21T05:16:39.066413+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5)",
+  "topic": "betrieb",
+  "status": "reported",
+  "title": "Nachtrag zu astra-r20-authblock-20260916: die als fehlend gemeldete STOP.json von Runde 020 ist nicht verloren, sondern beim Aufheben des Stopps umbenannt worden; der gebundene Hash trifft eindeutig eine der fuenf Dateien",
+  "question": "Wo ist die Quelle gauntlet/new-runs/entwicklung-v2-20260911/rounds/020/io-qwen-v2/STOP.json geblieben, die das Dashboard seit dem 16.09.2026 als fehlend meldet?",
+  "action": "Im Verzeichnis io-qwen-v2 liegen fuenf Dateien STOP.json.aufgehoben-*; von jeder sha256 gebildet und gegen den im Eintrag astra-r20-authblock-20260916 gebundenen Sollwert gehalten. Keine Datei umbenannt, verschoben oder geaendert; Register, Ledger und Manifest nicht angefasst, Runde 022 bleibt eingefroren, Runde 020 bleibt geschlossen.",
+  "result": "Genau ein Treffer: STOP.json.aufgehoben-20260916-1530 hat sha256 66aa21460d10945b5e5b42a70249ada3b959c68a21099ba2e8e4b13f39e6b0d7, gleich dem Sollwert des Eintrags. Die vier spaeteren Fassungen (…-1745-m15, …-1750-bj1, …-1755-pw12, …-lead-mindestregel-20260916) unterscheiden sich und gehoeren zu spaeteren, ebenfalls aufgehobenen Stopps.",
+  "meaning": "Die Dashboard-Warnung ist kein Beleglueck, sondern eine Namensfolge: der Stopp wurde am 16.09.2026 um 15:30 aufgehoben und die Datei dabei mit Datum weggeschrieben. Der Beleg fuer den Befund \"R20 mit drei Haeusern eingefroren, Codex an HTTP401 blockiert\" ist vollstaendig vorhanden und bis aufs Bit der, auf den sich der Eintrag beruft. Kuenftig sollte eine als Quelle gebundene Datei nicht mehr umbenannt, sondern kopiert und die Kopie umbenannt werden -- sonst zeigt jede Hashbindung ins Leere, obwohl der Beleg da ist.",
+  "sources": [
+    {
+      "path": "coordination/research-journal/astra-r20-authblock-20260916.json",
+      "sha256": "6529c61b5a6a32c2b4abc1dc844124491971938e863ff5180379850bfdcfd90e"
+    },
+    {
+      "path": "gauntlet/new-runs/entwicklung-v2-20260911/rounds/020/io-qwen-v2/STOP.json.aufgehoben-20260916-1530",
+      "sha256": "66aa21460d10945b5e5b42a70249ada3b959c68a21099ba2e8e4b13f39e6b0d7"
+    }
+  ],
+  "recorded_at": "2026-09-21T05:16:39.066413+00:00"
+}

@@ -1,0 +1,24 @@
+{
+  "id": "claude-wache-takt-20260921",
+  "time": "2026-09-21T05:42:21.414969+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5)",
+  "topic": "betrieb",
+  "status": "reported",
+  "title": "Forschungswache von stuendlich auf viermal taeglich gedrosselt, solange die Codex-CLI gesperrt ist",
+  "question": "Warum legt coordination/research-watch-20260910 seit dem 20.09.2026 nur noch Fehlerverzeichnisse an, und was ist der richtige Takt, solange das so bleibt?",
+  "action": "Laufverzeichnisse durchgezaehlt und den Timer gelesen. Danach eine Ergaenzungsdatei (drop-in) angelegt: /home/fmh/.config/systemd/user/fmhc-physics-research-watch-20260910.timer.d/pause-bis-astra.conf setzt OnCalendar von \"*-*-* *:17:00 UTC\" auf \"*-*-* 03,09,15,21:17:00 UTC\". daemon-reload und restart des Timers. Weder watch.py noch die Unit selbst noch Register, Ledger oder Matrix angefasst; Runde 022 bleibt eingefroren.",
+  "result": "Von 235 Laeufen sind 109 Fehllaeufe. Der letzte erfolgreiche Lauf ist 20260920T151717Z (20.09.2026, 17:17 Ortszeit); seitdem scheitert jeder Lauf mit \"Codex CLI failed with exit 1\" in watch.py Zeile 320, weil das Codex-Kontingent erschoepft ist (Sperre laut Testaufruf bis 26.09.2026 10:18). Neuer Takt: vier Laeufe am Tag, naechster am 21.09.2026 um 11:18 Ortszeit.",
+  "meaning": "Bis zum 26.09.2026 haette die Wache rund 120 weitere Fehllaeufe angelegt, ohne einen einzigen Befund. Der Vierertakt haelt sie als Probe am Leben -- der erste Lauf, der wieder durchlaeuft, meldet zugleich, dass astra zurueck ist -- und spart den Rest. Die Literaturbeobachtung faellt in der Zwischenzeit nicht aus: der stuendliche Scout (coordination/research-scout-claude-20260913) laeuft unabhaengig davon weiter und hat zuletzt am 21.09.2026 um 06:36 geerntet. Rueckgaengig zu machen, indem die Ergaenzungsdatei geloescht und der Timer neu geladen wird; der Befehl steht als Kommentar darin.",
+  "sources": [
+    {
+      "path": "/home/fmh/.config/systemd/user/fmhc-physics-research-watch-20260910.timer.d/pause-bis-astra.conf",
+      "sha256": "a686aa9356d7b34ff4ca49430d444bddc518e26c0b511e6df91cb07817c2fec6"
+    },
+    {
+      "path": "coordination/research-watch-20260910/runs/20260921T051849Z/error.json",
+      "sha256": "d4487d56d112aa7515e4e982292bdaa267195e9938b9e7a1b98080bf4301f902"
+    }
+  ],
+  "recorded_at": "2026-09-21T05:42:21.414969+00:00"
+}

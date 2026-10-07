@@ -1,0 +1,32 @@
+{
+  "id": "claude-werkzeugtore-astra-nicht-einsetzen-20260925",
+  "time": "2026-09-25T20:45:02+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung; Umsetzung Claude-Subagent (Anthropic, Opus 5.5), 18:08:24 bis 22:35:12 MESZ mit Pause 18:36 bis 21:26; Review astra (OpenAI, gpt-6-astra, high), 22:36:35 bis 22:44:30 (gemessen)",
+  "topic": "operations",
+  "status": "reported",
+  "title": "Werkzeugtore M1 bis M7 und M10 gebaut und auf der .69 getestet (132 von 132), astra: NICHT EINSETZEN mit neun blockierenden Auflagen; nichts eingesetzt",
+  "question": "Koennen die von Finn freigegebenen Werkzeugtore (eine Woche markieren, ab 02.10. M1 bis M4 sperrend) in den Betrieb?",
+  "action": "Umsetzung in Kopien unter coordination/werkzeugtore-20260925/ mit Tests auf der .69. Weil Spezifikation und Umsetzung beide von Claude-Agenten stammen, pruefte astra den vollstaendigen Diff (REVIEW-ONLY, keine eigenen Tests).",
+  "result": "Geliefert: M1 Zeitpruefung, M2 Schreibschutz und Hash-Kette INDEX.jsonl, M3 Pflicht-supersedes und Widerrufsliste, M4 evidenzart mit Index fuer den Altbestand, M5 Linter 15.8.1 und Kartenunterbefehl, M6 regeldiff.py, M7 lesetiefe.py, M10 paketprobe.py; Umschaltung ueber coordination/werkzeugtore.json. Markierungen am Altbestand: M1 147, M3 17, M5 129. astra (bb617cdb...): publish() kann halb veroeffentlichen und kurze Writes als Erfolg werten; fail-open bei fehlender oder unvollstaendiger Einstellung; M3-Schlupfloch supersedes_entfaellt; M6 erfasst die ZD-1-Nebenwirkung nicht (Formelsprache ohne Vergleich zweier Groessen, keine Neuberechnung von err_alg) und kann dann 'gleich' melden; M10 meldet ohne Paket 'PAKET STIMMT'; Karten-ID-Pruefung ausserhalb des Locks; Dashboard-Dienst bei 237,7 von 256 MiB ohne Dauerprobe; Einsetzanleitung ohne Lieferhashpruefung und Schreibpause.",
+  "meaning": "Eingesetzt ist nichts; die Betriebsdateien haben unveraendert ihre Basis-Hashes. Vor jedem Einsatz muessen die blockierenden Auflagen 1 bis 9 umgesetzt und auf der .69 nachgewiesen sein, danach folgt eine gezielte Nachpruefung durch astra. Die Nachbesserung geht an denselben Umsetzer, sobald ein Agentenplatz frei ist. Der Stichtag 02.10. fuer das Sperren ist damit fraglich; Finn wird informiert. Lehre: Ein Regeldiff, der Nebenformeln nicht kodieren kann, haette den wichtigsten Fall des Tages (ZD-1) als 'gleich' durchgelassen; ein Werkzeug darf seine Reichweite nicht groesser melden, als sie ist.",
+  "sources": [
+    {
+      "path": "coordination/werkzeugtore-20260925/BERICHT.md",
+      "sha256": "a9654aa7d43c65b6b770849369f45bd2fef1dcd0a71a8c2efc32953b4f06daf3"
+    },
+    {
+      "path": "coordination/werkzeugtore-20260925/SHA256SUMS",
+      "sha256": "57686af4973ca307cf3468edee573c047707da203cd99b618d44f7dbf8deadea"
+    },
+    {
+      "path": "coordination/werkzeugtore-20260925/review-astra/REVIEW-astra-WERKZEUGTORE.md",
+      "sha256": "bb617cdb983b2363dc0b076550bf509094e2c20e25fa26c80a756250bc6d6960"
+    },
+    {
+      "path": "coordination/werkzeugtore-20260925/review-astra/BRIEF.md",
+      "sha256": "c93a160429d1fe551d97fb417174e66e4d5a80538d8457e5f673e39b11a544bb"
+    }
+  ],
+  "recorded_at": "2026-09-25T20:45:32.974624+00:00"
+}

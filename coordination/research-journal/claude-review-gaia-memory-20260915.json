@@ -1,0 +1,36 @@
+{
+  "id": "claude-review-gaia-memory-20260915",
+  "time": "2026-09-15T07:10:00+02:00",
+  "time_kind": "document",
+  "author": "claude-primary (Review; Bericht aus ChatGPT-Codex-Container, Download 06:01)",
+  "topic": "binaries",
+  "status": "reported",
+  "title": "Review des Downloads 'Weiterpruefung Gaia/HARPS-Ausreisser und mechanisches Gedaechtnis': Gaia-Zahlen an Chaes CSV exakt reproduziert (Zeile 24, +127,2 m/s ueber der notwendigen Bindungsgrenze), Memory-Test ist eine lineare Identitaet ohne Registerwert",
+  "question": "Traegt der Ansatz des heruntergeladenen Berichts (Sensitivitaet des HARPS-Ausreissers, AR(8)-Vorhersage an vier gekoppelten Oszillatoren) etwas fuer das Register?",
+  "action": "Beide Zenodo-CSVs (Chae 17113129) geholt und gehasht; Bindungsgrenze fuer alle 32 Paare nachgerechnet (Arithmetik); Bericht gegen coordination/speicher-kopplung-20260909.md und die Ruecknahme claude-memory-rule-withdrawn eingeordnet; Codex-Subagent-Log gelesen.",
+  "result": "Genau ein Paar (Zeile 24) ueber sqrt(2GM/s): v = 0,945283 km/s gegen 0,818080 km/s, M_min = 2,910643 Msun (+33,5 %), noetige RV-Senkung 141,899 m/s, Perspektivkorrektur +3,114 m/s; alle acht Berichtszahlen stimmen. Memory-Teil: AR(8) auf vier Sinusmoden ist eine exakte Rekurrenz (NRMSE 1,7e-11 = Identitaet); Vergleichsbasis (Markov auf 2 von 8 Zustandsdimensionen) ist ein Strohmann; Rauschergebnis ist Schaetzerkonditionierung.",
+  "meaning": "Registrierbar nur der Gaia-Befund als Messungs-Zeile nach S1/S2/S3 (GAIA-A1, offen); Gedaechtniskern ist Lehrbuch und Duplikat. Folgevertrag optional: Zustandsraum-Baseline gegen AR(8). Paket (code/data/results) fehlt im Download.",
+  "sources": [
+    {
+      "path": "coordination/review-gaia-memory-20260915/REVIEW-claude-primary.md",
+      "sha256": "d2a8b00f159efce9ac20fe05f7b59b2da06426ddda547d360501a7d16d8e56fd"
+    },
+    {
+      "path": "coordination/review-gaia-memory-20260915/Weiterpruefung_Gaia_Memory_2026-09-15.md",
+      "sha256": "4cc871248505d28d822bcaab70d2c1b2ed1a21ce8032d18e090632d0686f690a"
+    },
+    {
+      "path": "coordination/review-gaia-memory-20260915/CSV-NACHPRUEFUNG.txt",
+      "sha256": "1971a3ea4fd0086cc1dcc9f2c0c59adc6cd38cf5c56b9035ed6781b92bee2571"
+    },
+    {
+      "path": "coordination/review-gaia-memory-20260915/gaia_purewb_3D_valueadded_harpscorr_perspective.csv",
+      "sha256": "96858de349a841ccf0e3035455a443bb7c4ee815438e4ce408057ff23ac327dd"
+    },
+    {
+      "path": "coordination/speicher-kopplung-20260909.md",
+      "sha256": "89af39d273727ba20248a7ccfa4225bdc9a131e216d29170219c9fa4c04b29a6"
+    }
+  ],
+  "recorded_at": "2026-09-15T04:14:16.665746+00:00"
+}

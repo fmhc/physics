@@ -1,0 +1,56 @@
+{
+  "id": "claude-fm-4-lauf-20260921",
+  "time": "2026-09-21T07:55:00+02:00",
+  "time_kind": "completed",
+  "author": "Claude",
+  "topic": "theory",
+  "status": "reported",
+  "title": "Feldmodell zum vierten Mal gerechnet: Ausgang U2, alle 17 Kontrollen bestanden, und der Nachweis, dass die Kante der Vorgaengerlaeufe von der Rechengrenze gesetzt war",
+  "question": "Kann das Kriterium A jetzt scheitern, und ist die Kantenreihe des Frequenzfensters eine Aussage ueber das Modell oder eine Aussage ueber die Aufloesung, mit der gerechnet wurde?",
+  "action": "Nachfolgevertrag FM-4 zu dem mit U1 geendeten FM-3 geschrieben, gegen dessen drei Ausfallursachen. Erstens ist der Startpunkt jedes Fortsetzungsastes in 2.3 ausdruecklich festgelegt: Auf- und Abwaertsast starten beide aus der konvergierten Loesung bei omega_start und teilen kein Startbild; die beiden in FM-3 beobachteten Startbilder (max f = 1,0685 gegen 0,9592) stehen als Beleg im Text. Zweitens zwingt die neue Pflichtkontrolle K17 Prueflauf und Vertragslauf auf denselben Codepfad: acht Pfadproben muessen bitgleich uebereinstimmen, K17 laeuft im Vorlauf und loest Sofortabbruch aus. Drittens wurde die Newton-Schrittgrenze von 50 auf 200 gehoben, jeder Punkt traegt ein Abbruchkennzeichen, und die neue Kontrolle K18 rechnet Kantenreihe und Staffel je zweimal (Grenze 200 und 50). Das Kantenkriterium ist ohne unterstelltes Gesetz neu gefasst - keine Extrapolation mehr, sondern eine Schwelle auf dem vierten gemessenen Gewinn -, weil die Potenzgesetz-Annahme von FM-3 widerlegt war; der dort gemessene Wert r = 0,6364 ging als hashgebundene Erwartung ein, nicht als Befund. S0-Fremdreview durch Qwen (Bunker, 0 USD) und DeepSeek (OpenRouter), 0,04234 USD, beide 'freigeben mit Auflagen', alle sieben Auflagen eingearbeitet; der schwerste Befund traf die wichtigste Neuerung des Vertrags und fuehrte zu zwei zusaetzlichen Pfadproben. Laufskript von einem Claude-Subagenten allein aus dem Vertragstext geschrieben (2744 Zeilen), ohne die Skripte oder Vertraege der Vorgaenger. Lauf am 21.09.2026 auf .69 (CPU, Unit fmhc-physics-fm-4-20260921, kein CUDA, GPU-Lock unberuehrt), 2367 s Wanduhr, 39 min 26 s CPU, Speicherhoch 2,4 GiB.",
+  "result": "Ausgang U2. Alle siebzehn Kontrollen sind erfuellt, darunter K14 (Werkzeugprobe: X = 1 bei 0,7400 und 0,7285) und die neue K17 (83 Probengroessen bitgleich zwischen Prueflauf und Vertragslauf; die Proben P7 und P8 unterscheiden sich, womit nachweisbar ist, welche Startbildlesart der Lauf benutzt hat). A1, A2(i), A2(ii), A2(iv), A3 und A4 sind erfuellt; verfehlt ist allein A2(iii): das Startverfahren legte eine Loesung bei omega_S = 0,715900 vor gegen die vorab gebundene Schwelle 0,715000, Fehlbetrag 0,000900. Damit ist A unerreichbar, und da B-A2 den dreizehnfach zu grossen Gewinn g_4 = 0,00325 gegen 0,00025 findet, bleibt die Restklasse U2. Der Lauf ist nicht in der absichtlich offengelassenen Luecke gelandet. Die Kernzahl liefert K18: die Kantenreihe bei Schrittgrenze 200 lautet 0,7400 / 0,7340 / 0,7285 / 0,72475 / 0,7215 und kein Punkt traegt das Abbruchkennzeichen (38 bis 54 Schritte); dieselbe Reihe bei Grenze 50 lautet 0,7400 / 0,7340 / 0,7285 / 0,7250 / 0,72225, und dort stehen die beiden feinsten Punkte mit genau 50 Schritten am Anschlag. Die ersten drei Stufen sind in beiden Regimen identisch. omega_S(200) = 0,715900 gegen omega_S(50) = 0,716460. Die Gewinne bei Grenze 200 sind 0,0060 / 0,0055 / 0,00375 / 0,00325, die Verhaeltnisse 0,9167 / 0,6818 / 0,8667, alle im offenen Band. Bei Grenze 50 ergeben sich 0,0060 / 0,0055 / 0,0035 / 0,00275 und 0,9167 / 0,63636 / 0,7857 - sie treffen die hashgebundene Erwartung X5 exakt, einschliesslich r = 0,6364. Diagnose D16 findet bei halbierter Ortsgitterweite fuer die beiden groebsten Stufen dieselben Kanten 0,740 und 0,734, Differenz exakt null.",
+  "meaning": "Zur zweiten Haelfte der Leitfrage gibt es jetzt eine belegte Antwort: die Kante der Vorgaengerlaeufe war in ihren beiden feinsten Stufen von der Rechengrenze gesetzt, nicht vom Modell. Unter den Regeln dieses Vertrags haette derselbe Lauf mit der alten Schrittgrenze keinen Kantenwert liefern duerfen. Zugleich zeigt der Lauf, dass FM-4 die falsche Rechengrenze gehoben hat: mit 200 Schritten endet das Verfahren nicht mehr am Iterationsdeckel, sondern an erschoepfter Daempfung, also am Konvergenzradius des Newton-Verfahrens; die LU-Diagonale bleibt konstant bei 1,395, ein Faltungskennzeichen fehlt. Der Nachfolger muss das Fortsetzungsverfahren wechseln, nicht den Deckel weiter anheben. Zur ersten Haelfte: A konnte scheitern und ist gescheitert, aber an einer Schwelle, die der Vertrag selbst schlecht begruendet hat - sie entstand als Vorgaengerwert minus einem runden Betrag. Sie wurde nicht verschoben; eine nachtraeglich zurechtgerueckte Schwelle waere keine. Zwei weitere Stellen sind offenzulegen: K9 haelt an seiner Schwelle, doch der eingebaute Fehler konvergiert gar nicht, sodass die Trennkraft des Virialtores nicht so belegt ist wie gedacht; und die Zeile X5 der Ergebnisdatei wurde aus der falschen Reihe gefuellt, richtig gelesen ist die Erwartung exakt getroffen. Mit den zehn vom Rechner und den drei vom Autor vor dem Lauf gefundenen Luecken zaehlt die Reihe nun sechzehn Defekte desselben Typs, dreizehn davon aus dem Fortschreiben des Vorgaengertextes. Ein klassisches Feldmodell mit eingesetzter Selbstwechselwirkung ist kein Nachweis, dass Teilchen so gebaut sind. Keine Registerzeile, Runde 022 eingefroren, Zitiersperre bis S2 - das zum dritten Mal nicht eingeholt wurde, obwohl beide Fremdhaeuser es verlangt haben.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260921/fm-4-lauf/BERICHT-FM-4.md",
+      "label": "Bericht mit allen Zahlen, den Berichtsauflagen (i) bis (x), dem Abschnitt 'Was dieser Lauf NICHT zeigt' und dem Nachfolgevorschlag FM-5",
+      "sha256": "37a05190b7db48c8d9c234befdf87e77f26320d0e8da4c1d32a5c66c22e01fb7"
+    },
+    {
+      "path": "coordination/vertraege-20260921/fm-4-VERTRAG.md",
+      "label": "Vertrag FM-4, ausgefuehrte Fassung",
+      "sha256": "b8b1764a03123ea8a7757884b2c93651293c918f586686a5b65b0f9d157f09eb"
+    },
+    {
+      "path": "coordination/vertraege-20260921/VORAB-FM-4.json",
+      "label": "Erwartungstabelle X1 bis X16, vor dem Lauf hashgebunden",
+      "sha256": "8d8e91e902090c0c92ecdc85c1bdd4b140c34e43ed7fa7791d67236bb8b709e6"
+    },
+    {
+      "path": "coordination/vertraege-20260921/REVIEW-fm-4.md",
+      "label": "S0-Fremdreview durch Qwen und DeepSeek, mit der Richtigstellung zu K17 und dem offengelegten Ledgerfehler",
+      "sha256": "5945e02783dc37c3e3417424be804417d040277dae374a310f7f2fb4e20d2b6d"
+    },
+    {
+      "path": "coordination/vertraege-20260921/startsignal-fm-4.txt",
+      "label": "Startsignal mit Wortlaut, Zeit, Grund, gebundenen Hashes und den drei vor dem Lauf gefundenen Vertragsluecken",
+      "sha256": "8842bab7d292b37552e5b32da7ece0a0fabf768f097b1bbea5e323a1bad0d8a4"
+    },
+    {
+      "path": "coordination/vertraege-20260921/fm-4-lauf/ERGEBNIS-FM-4.json",
+      "label": "Rohergebnis mit allen Kontrollen, Diagnosen und den zehn vom Ausfuehrenden gemeldeten Vertragsluecken",
+      "sha256": "516f5b8fe66ba48e8e58f42f28a72bc0fff35c3b86e7c14a499aac93342e508f"
+    },
+    {
+      "path": "coordination/vertraege-20260921/fm-4-lauf/fm_4.py",
+      "label": "Laufskript, allein aus dem Vertragstext geschrieben, 2744 Zeilen",
+      "sha256": "1a825b04778463f406560a86c060e8a524685ca625b71121c39bc9994b243900"
+    },
+    {
+      "path": "coordination/vertraege-20260921/fm-4-lauf/PRUEFLAUF-FM-4.json",
+      "label": "Prueflaufdatei, von K17 bitgleich gegen den Vertragslauf geprueft",
+      "sha256": "7a03dcdeaf85fe0a1c2e9e9b8fb03c394271ce218daca37d2f945cff10bb9398"
+    }
+  ],
+  "recorded_at": "2026-09-21T05:38:11.382127+00:00"
+}

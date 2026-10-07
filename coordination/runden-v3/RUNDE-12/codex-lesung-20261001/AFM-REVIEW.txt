@@ -1,0 +1,80 @@
+AFM-KANAL-2: unabhängige methodische Fremdstimme, nur Auftragsteil 1
+Zeitabnahme per date: 2026-10-01T18:48:43+02:00
+Anfrage: 4589878950974a50bc4419467ac052bb (vollständig gelesen).
+Nur Lektüre, jq-Auswahl vorhandener Felder, Dateizeit-/Hashprüfung. Keine
+Rechnung, keine fremde Änderung, keine Lesung gesperrter Daten.
+
+URTEIL: BEDINGT JA als neuer, ausdrücklich nach Kenntnis des Hauptausgangs
+festgelegter Folgebefund. NEIN zur rückwirkenden Änderung des ursprünglichen
+Ausgangs: Dieser bleibt unverändert „Unentschieden“.
+
+Begründung
+Die KARTE nennt ein nicht aufgelöstes Rechteck ausdrücklich unentschieden.
+Der eingefrorene Hauptplan §5 übernimmt das. Die Hauptauswertung meldet auf
+beiden Gitterstufen je einen ungelösten Streifen bei kappa=-0,10; bestanden
+sind die KG-Positivkontrollen, kein s-Wechsel und keine nichtnulligen Umläufe
+wurden gefunden. Ein rechnerisch nahezu nuller Umlauf bei einem ungelösten
+Rand darf nicht bereits als Negativbefund gezählt werden.
+
+Der Nachtrag benennt dagegen vor seinem eigenen Lauf exakt den ungelösten
+Streifen, beide unveränderten Gitterstufen und erhöhte feste Grenzen 30/240.
+Der gelesene v2-Diff ergänzt nur die parametrierbare Verfeinerungstiefe und
+Profilobergrenze (Defaults 8/60). Die Auflösungsschwelle 0,4 rad, Familie,
+Streifenecken und Positivkontrolle werden nicht gelockert. Dies ist eine
+gezielte methodische Fortsetzung; sie ist nicht unabhängig vom Hauptbefund
+ausgewählt, aber deshalb nicht wertlos. Keine unbegrenzte Suche bis zu einem
+gewünschten Ergebnis ist hier dokumentiert.
+
+Zeitfolge
+Hauptplan-Datei mtime 18:22:27 CEST, eingefrorener Name 18:22:54; der berichtete
+erste Hauptstart liegt 18:22:57. Hauptauswertung laut eigenem TXT 16:30:51 UTC
+(18:30:51 CEST). Nachtragsdatei mtime 18:31:22.840835684 CEST; die neuen
+JSON/TXT-Startzeiten sind 16:31:31 und 16:31:33 UTC, also danach. Endzeiten
+16:34:13 und 16:34:57 UTC stimmen mit den Ausgabe-mtimes überein.
+ERGEBNIS nennt 16:31:30/32 als äußere Starts, während die Programmprotokolle
+je eine Sekunde später beginnen: keine relevante chronologische Abweichung.
+Dateizeit und Eigenprotokoll stützen diese Reihenfolge; sie sind keine
+unabhängige unveränderliche Zeitstempelattestation.
+
+Folgebefund aus den zwei tatsächlichen JSON-Dateien
+Beide betreffen x=[0,9875;0,995], rho=[0,008269654282410442;
+1,9917303457175894], kappa=-0,1, h=0,02 beziehungsweise 0,01.
+Je 43 x-Punkte/39 neue Profile, 12199 Randpunkte, keine ungültigen Lücken,
+keine budgetbedingt entfallenen Teile und kein s-Vorzeichenwechsel.
+Aufgelöst=true; größter Sprung 0,39853630224355174 bzw.
+0,39853498331405096 rad, obere Seite etwa 0,248 statt 0,755 rad.
+Umlauf 0 und Kreuzungszählung 0 auf beiden Stufen. Der ursprüngliche
+Auflösungstest wird damit für diesen Streifen tatsächlich erfüllt.
+
+Zulässige Wertung und notwendige Textkorrekturen
+1. Hauptausgang/ursprüngliche Vorhersagebewertung unverändert archivieren.
+2. Separat berichten: „Der vorab begrenzte, nach Kenntnis des Hauptausgangs
+   festgelegte Folgelauf löst den offenen Streifen auf beiden Stufen auf.
+   Im ergänzten Rasterbefund wurde keine stille Stelle gesehen.“
+   Dies darf die Leitung nach dieser Fremdstimme als ergänzten Befund werten;
+   es darf nicht als ursprünglicher vorregistrierter Ausgang ausgegeben werden.
+3. Zählfehler in ERGEBNIS §4 und Nachtrag: Bei 36 Streifen-Stufen-Fällen und
+   demselben ungelösten Streifen auf ZWEI Stufen sind ursprünglich 34/36
+   aufgelöst, nicht 35/36. Tabelle §2 und originale Auswertung zeigen das.
+   Nach Ergänzung sind es 36/36. Keine wissenschaftliche Ergebnisänderung,
+   aber die Ausgangsdokumentation sollte den Zählfehler transparent berichtigen.
+4. Kein Nichtexistenzbeweis: Umlauf null lässt Paare mit entgegengesetztem
+   Index zu; endliche s-Abtastung, Schwellenabstände und ausgelassene Keile
+   bleiben Grenzen. Auch Phasensprünge <0,4 zwischen adaptiven Stichproben
+   beweisen ohne validierte Zwischenpunkt-/Ableitungsschranke nicht die
+   vollständige kontinuierliche Randauflösung. Der numerische Netindex ist
+   kein zertifizierter Ausschluss sämtlicher Nullstellen.
+   Insbesondere ERGEBNIS §11 „Die Abstrahlung wird ...
+   nirgends genau null“/„gibt es ... keine echte stille Stelle“ ist stärker
+   als belegt und sollte durch „wurde auf dem ergänzten Raster nicht gesehen“
+   ersetzt werden. Kleine positive Polbreiten unter Auflösung helfen hier nicht.
+
+Bindungen SHA256 (afm-kanal2 relativ):
+KARTE.md 39cde13afb87422103465db0af2aa4fa97f5a6353fea41fb8bac2542d21d9216
+PLAN.md.eingefroren-20261001-182254 5c88a06fd5454d4299fd0762c13592d58eb2c3ad7dc5310d70ff8182674d1d61
+PLAN.md.nachtrag-eingefroren-20261001-183122 0f49c4558b860154129baab9f2f6e1bae1088f27ab18d7ddb478e3c1274de938
+ERGEBNIS.md d8f37f177d7bacf89261bbb150bc0fc570751a96c575523ffb51a4e5e6e6356e
+afm_bic_v2.diff 1e489c5b2b9a93550ef3692480149a57bd9c69a9ce4f1361340d584b40961559
+lauf-69/aus/auswertung.json 8ab3a166b1d3ff129c1e0871f6fa4379d02e1d6517cbad14962f5a798132e885
+lauf-69/aus-nachtrag/nachtrag-k0.10-h0.01.json 02537993cfb31d554f04f938ac93fe4ca26308c03b748bd719dcb09b05904a6a
+lauf-69/aus-nachtrag/nachtrag-k0.10-h0.02.json 0257a807710fc019918747baf453a3b66f3edf9855e13d4df73787a167251da8

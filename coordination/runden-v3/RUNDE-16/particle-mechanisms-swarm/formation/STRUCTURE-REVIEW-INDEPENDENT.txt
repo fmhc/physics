@@ -1,0 +1,74 @@
+UNABHAENGIGER STRUKTURREVIEW — 2026-10-02
+Basis ausschliesslich PLAN.txt, ROOT-QUESTION.txt, code.py und
+qa-20261002/RESULT.json. Keine Tests, Interpreter oder Evolution gestartet;
+keine fremden BIC-Beweise gelesen, keine Paperdateien geaendert.
+Code SHA256 ea841390a6dff7f6d552d00e7e79c4c3fdc1f67ec36cb4924bb20701fb979af3.
+
+URTEIL
+Die physikalische Frage ist hinreichend begrenzt; der aktuelle Stillstand
+liegt an der unzureichenden stationaeren Referenzrepraesentation. Die QA
+belegt diskrete Operatoridentitaeten, aber noch keine Integratorguete oder
+Verdichtung. Kein Hauptlauf hat stattgefunden: arms=[], time_steps=0.
+
+P1 — REFERENZREKONSTRUKTION UND STATIONAERE KONTROLLE VERMISCHT
+load_reference/prepare importieren einen ausgeduennten float32-Seed mit
+dr=.16 und interpolieren linear. main verlangt von diesem Import sofort
+die Qualitaet einer stationaeren Kontrolle auf jedem Evolutionsgitter.
+Dabei werden weder diskrete Gleichungen geloest noch Interpolationsfehler
+kontrolliert. Der Fehlerstatus stoppt zu Recht, seine Ursache liegt aber
+vor der Evolution: rphi/rchi=.0491/.0468 bei h=.1, .1665/.1592 bei h=.05,
+gegen ein Gate .004. Die Zeitverfeinerung reproduziert nur denselben Start.
+Die Zunahme unter Raumverfeinerung passt zu Knicken linearer Interpolation
+unter zweiter Ableitung; diese Diagnose ist plausibel, nicht bewiesen.
+Aus dem Befund folgen weder fehlende M2-Bindung noch ein gescheiterter
+Verlet-Integrator. Die winzigen zeitlichen Anfangsreste entstehen bereits
+durch die vorgeschriebene Phasengeschwindigkeit, nicht durch Stabilitaet.
+
+Minimale Reparatur: einen eigenstaendigen Referenz-Vorbereitungsschritt
+mit neuem Artefakt und eigener Herkunft einfuehren. Zuerst pruefen, ob das
+voll aufgeloeste Originalprofil verfuegbar ist; auch dessen Import muss
+das bestehende Residualgate passieren. Falls nicht, einen explizit neuen,
+begrenzten diskreten stationaeren Solve vom dokumentierten Seed aus
+vorsehen, getrennt fuer die benoetigten Raumgitter bei festem Q. Profil-
+aenderung, omega, E/Q und Residuen ausweisen und denselben Ast plausibel
+zuordnen. Das waere eine neue vorbereitende Rechnung, hier nicht autorisiert
+oder gestartet. Weder Seed ueberschreiben noch Toleranzen lockern oder
+versteckt glaetten. Evolution konsumiert erst erfolgreich eingefrorene
+Referenzen; time kann die base-Referenz wiederverwenden.
+
+P2 — QA, EVOLUTION UND AUSWERTUNG SIND ERKENNBAR, STATUS ZU GROB
+Die Funktionen trennen Vorbereitung, Operator-QA, advance, Diagnose und
+classify sinnvoll. --qa-only beendet vor run_arm; der vorhandene Bericht
+bestaetigt das. Die drei QA-Kontrollen pruefen Energievariation, instantane
+Ladungsbilanz und Vakuum, bewusst keinen Zeitschritt. Daher ist "QA
+bestanden" allein kein zeitdiskreter Guetenachweis. Nach der Referenzreparatur
+muessen Referenzevolution und Raum-/Zeitvergleich diese Aufgabe erst leisten.
+Ein allgemeiner Exceptionpfad wirft Herkunfts-/Referenz-, Erhaltungs- und
+sonstige Fehler in NUMERICALLY_UNRESOLVED zusammen; das error-Feld bewahrt
+zwar den Text, die maschinenlesbare Phase fehlt. Minimal: getrennte Status-
+felder reference_preparation, operator_qa, evolution und classification;
+klassifizieren nur vollstaendige, numerisch akzeptierte Arme. Keine grosse
+Software-Neuarchitektur erforderlich. Ein numerisches Scheitern darf nicht
+als NO_CANDIDATE gelesen werden. PLAN hat zudem veraltete Aussagen "nicht
+ausgefuehrt/ungeprueft": QA erfolgt, Hauptlauf weiterhin nicht erfolgt.
+
+P3 — PHYSISCHE FRAGE PASST ZU GATES, ABER NUR ALS RADIALER PILOT
+Gesucht ist Verdichtung einer schon energetisch unterschwelligen Wolke,
+nicht Einfang freier Strahlung. Der anfangs schon ca .788 grosse Kernanteil
+wird sinnvoll um R50-Kontraktion, chi-Absenkung, Plateau und vier kleine
+Stationaritaetsreste ergaenzt. Diese Kombination ist staerker als ein
+Dichtebild. Energie-/Q-/Flussgates sind Voraussetzungen, keine positiven
+Bildungsbelege. Strahlungskuehlung wird ohne Energieflussrekonstruktion
+korrekt nicht zugeschrieben. Der Kollargate ist kein rigoroser Freiraumbeweis.
+Die Residualsensitivitaet ist im aktuellen Code KORREKT auf t>=48 begrenzt;
+die riesige Anfangs-rchi der Wolke blockiert sie nicht. Dieses fruehere
+Problem besteht hier nicht. Qcore-Sensitivitaet gilt weiterhin im ganzen Lauf.
+Restgrenze: R50 und chi0 haben keine eigenen Raum-/Zeit-Differenzgates,
+muessen aber auf allen Gittern die physischen Schwellen passieren. Das
+stuetzt eine robuste Ja/Nein-Pilotklassifikation, keinen praezisen
+Konvergenznachweis dieser Observablen. Stichproben alle .8 belegen ebenso
+keine lueckenlose Stationaritaet zwischen Messzeiten oder nach T64.
+
+PRIORITAET
+Erst Referenzkonstruktion als eigene, belegte Phase reparieren; dann neue
+Vorstartpruefung. Bis dahin bleibt das physikalische Ergebnis OFFEN.

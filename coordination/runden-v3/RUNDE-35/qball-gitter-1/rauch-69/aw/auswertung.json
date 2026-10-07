@@ -1,0 +1,936 @@
+{
+ "urteile": {
+  "G0": {
+   "urteil": "nicht eingetroffen",
+   "werte": {
+    "h0.5": {
+     "drift": 0.0,
+     "ladung_rel": 1.279551431220643e-15,
+     "energie_rel": 1.1647589599586812e-15,
+     "t_bis": 20.0,
+     "amax_schwankung_rel": 1.8055009137916205e-08,
+     "M0": 2.2876280421100152,
+     "Q0": 2.4294642584119734,
+     "newton_rest": 4.718447854656915e-16,
+     "phi0": 0.6077781557863027,
+     "erfuellt": false
+    },
+    "h0.25": {
+     "drift": 0.0,
+     "ladung_rel": 1.0926867647335956e-15,
+     "energie_rel": 1.1605668142783447e-15,
+     "t_bis": 20.0,
+     "amax_schwankung_rel": 1.804567062340511e-08,
+     "M0": 2.295891306143557,
+     "Q0": 2.4385170069759265,
+     "newton_rest": 3.1780134079895106e-15,
+     "phi0": 0.6066248191558926,
+     "erfuellt": false
+    },
+    "h0.125": {
+     "drift": 0.0,
+     "ladung_rel": 1.8194785113508166e-15,
+     "energie_rel": 1.739305897139322e-15,
+     "t_bis": 20.0,
+     "amax_schwankung_rel": 1.804253995634061e-08,
+     "M0": 2.2979298208694634,
+     "Q0": 2.440749957087221,
+     "newton_rest": 1.2989609388114332e-14,
+     "phi0": 0.6063464159915458,
+     "erfuellt": false
+    }
+   }
+  },
+  "G1": {
+   "urteil": "nicht eingetroffen",
+   "vermerk": "gamma erreicht 1,5 nicht",
+   "werte": {
+    "M0": 2.2979298208694634,
+    "Q0": 2.440749957087221,
+    "E": 0.004707425711914795,
+    "gamma_max": 1.0111531743140958
+   }
+  },
+  "G2": {
+   "urteil": "nicht eingetroffen",
+   "werte": {
+    "h0.5": {
+     "gamma_max": 1.010887877271467,
+     "t_max": 30.0,
+     "max_erreicht": false,
+     "gefallen": false,
+     "gesaettigt": false,
+     "steigung_letztes_viertel": 0.0006605554465170681,
+     "gamma_ende": 1.010887877271467,
+     "v_ueber_1": false
+    },
+    "h0.25": {
+     "gamma_max": 1.01110058078779,
+     "t_max": 30.0,
+     "max_erreicht": false,
+     "gefallen": false,
+     "gesaettigt": false,
+     "steigung_letztes_viertel": 0.0006744737721996748,
+     "gamma_ende": 1.01110058078779,
+     "v_ueber_1": false
+    },
+    "h0.125": {
+     "gamma_max": 1.0111531743140958,
+     "t_max": 30.0,
+     "max_erreicht": false,
+     "gefallen": false,
+     "gesaettigt": false,
+     "steigung_letztes_viertel": 0.0006779137516870852,
+     "gamma_ende": 1.0111531743140958,
+     "v_ueber_1": false
+    },
+    "alle_maximum": false,
+    "steigend_mit_1_durch_h": true,
+    "faktor_0125_zu_05": 1.0002624396321231
+   }
+  },
+  "G3": {
+   "urteil": "nicht auswertbar",
+   "vermerk": "mindestens ein Lauf offen",
+   "werte": {
+    "h0.5": {
+     "ergebnis": "offen",
+     "text": "Lauf endet vor T_B ohne Umkehr",
+     "t_umkehr": null,
+     "Qwin_bei_umkehr": null,
+     "TB": 2669.100719484528,
+     "t_max": 30.0,
+     "v_min_nach_tmax": null
+    },
+    "h0.25": {
+     "ergebnis": "offen",
+     "text": "Lauf endet vor T_B ohne Umkehr",
+     "t_umkehr": null,
+     "Qwin_bei_umkehr": null,
+     "TB": 5338.808222685314,
+     "t_max": 30.0,
+     "v_min_nach_tmax": null
+    },
+    "h0.125": {
+     "ergebnis": "offen",
+     "text": "Lauf endet vor T_B ohne Umkehr",
+     "t_umkehr": null,
+     "Qwin_bei_umkehr": null,
+     "TB": 10677.91305345755,
+     "t_max": 30.0,
+     "v_min_nach_tmax": null
+    }
+   }
+  },
+  "G4": {
+   "urteil": "nicht eingetroffen",
+   "werte": {
+    "h0.5": {
+     "gamma_max_qball": 1.010887877271467,
+     "gamma_max_kink": 1.78,
+     "erfuellt": false
+    },
+    "h0.25": {
+     "gamma_max_qball": 1.01110058078779,
+     "gamma_max_kink": 2.61,
+     "erfuellt": false
+    },
+    "h0.125": {
+     "gamma_max_qball": 1.0111531743140958,
+     "gamma_max_kink": 3.86,
+     "erfuellt": false
+    }
+   }
+  }
+ },
+ "konvergenzproben": {
+  "dt2": {
+   "G1": {
+    "urteil": "nicht eingetroffen",
+    "vermerk": "gamma erreicht 1,5 nicht",
+    "werte": {
+     "M0": 2.2979298208694634,
+     "Q0": 2.440749957087221,
+     "E": 0.004707425711914795,
+     "gamma_max": 1.004978680147124
+    }
+   },
+   "G2": {
+    "urteil": "nicht eingetroffen",
+    "werte": {
+     "h0.5": {
+      "gamma_max": 1.010887877271467,
+      "t_max": 30.0,
+      "max_erreicht": false,
+      "gefallen": false,
+      "gesaettigt": false,
+      "steigung_letztes_viertel": 0.0006605554465170681,
+      "gamma_ende": 1.010887877271467,
+      "v_ueber_1": false
+     },
+     "h0.25": {
+      "gamma_max": 1.01110058078779,
+      "t_max": 30.0,
+      "max_erreicht": false,
+      "gefallen": false,
+      "gesaettigt": false,
+      "steigung_letztes_viertel": 0.0006744737721996748,
+      "gamma_ende": 1.01110058078779,
+      "v_ueber_1": false
+     },
+     "h0.125": {
+      "gamma_max": 1.004978680147124,
+      "t_max": 20.0,
+      "max_erreicht": false,
+      "gefallen": false,
+      "gesaettigt": false,
+      "steigung_letztes_viertel": 0.00046606678100333634,
+      "gamma_ende": 1.004978680147124,
+      "v_ueber_1": false
+     },
+     "alle_maximum": false,
+     "steigend_mit_1_durch_h": false,
+     "faktor_0125_zu_05": 0.9941544485227258
+    }
+   },
+   "G3": {
+    "urteil": "nicht auswertbar",
+    "vermerk": "mindestens ein Lauf offen",
+    "werte": {
+     "h0.5": {
+      "ergebnis": "offen",
+      "text": "Lauf endet vor T_B ohne Umkehr",
+      "t_umkehr": null,
+      "Qwin_bei_umkehr": null,
+      "TB": 2669.100719484528,
+      "t_max": 30.0,
+      "v_min_nach_tmax": null
+     },
+     "h0.25": {
+      "ergebnis": "offen",
+      "text": "Lauf endet vor T_B ohne Umkehr",
+      "t_umkehr": null,
+      "Qwin_bei_umkehr": null,
+      "TB": 5338.808222685314,
+      "t_max": 30.0,
+      "v_min_nach_tmax": null
+     },
+     "h0.125": {
+      "ergebnis": "offen",
+      "text": "Lauf endet vor T_B ohne Umkehr",
+      "t_umkehr": null,
+      "Qwin_bei_umkehr": null,
+      "TB": 10677.91305345755,
+      "t_max": 20.0,
+      "v_min_nach_tmax": null
+     }
+    }
+   },
+   "G4": {
+    "urteil": "nicht eingetroffen",
+    "werte": {
+     "h0.5": {
+      "gamma_max_qball": 1.010887877271467,
+      "gamma_max_kink": 1.78,
+      "erfuellt": false
+     },
+     "h0.25": {
+      "gamma_max_qball": 1.01110058078779,
+      "gamma_max_kink": 2.61,
+      "erfuellt": false
+     },
+     "h0.125": {
+      "gamma_max_qball": 1.004978680147124,
+      "gamma_max_kink": 3.86,
+      "erfuellt": false
+     }
+    }
+   },
+   "ersetzt": {
+    "0.125": "f1_h0.125_dt2"
+   }
+  },
+  "lang": {
+   "G1": {
+    "urteil": "nicht eingetroffen",
+    "vermerk": "gamma erreicht 1,5 nicht",
+    "werte": {
+     "M0": 2.2979298208694643,
+     "Q0": 2.440749957087221,
+     "E": 0.004707425711914797,
+     "gamma_max": 1.0049786798215072
+    }
+   },
+   "G2": {
+    "urteil": "nicht eingetroffen",
+    "werte": {
+     "h0.5": {
+      "gamma_max": 1.010887877271467,
+      "t_max": 30.0,
+      "max_erreicht": false,
+      "gefallen": false,
+      "gesaettigt": false,
+      "steigung_letztes_viertel": 0.0006605554465170681,
+      "gamma_ende": 1.010887877271467,
+      "v_ueber_1": false
+     },
+     "h0.25": {
+      "gamma_max": 1.01110058078779,
+      "t_max": 30.0,
+      "max_erreicht": false,
+      "gefallen": false,
+      "gesaettigt": false,
+      "steigung_letztes_viertel": 0.0006744737721996748,
+      "gamma_ende": 1.01110058078779,
+      "v_ueber_1": false
+     },
+     "h0.125": {
+      "gamma_max": 1.0049786798215072,
+      "t_max": 20.0,
+      "max_erreicht": false,
+      "gefallen": false,
+      "gesaettigt": false,
+      "steigung_letztes_viertel": 0.0004660667491238362,
+      "gamma_ende": 1.0049786798215072,
+      "v_ueber_1": false
+     },
+     "alle_maximum": false,
+     "steigend_mit_1_durch_h": false,
+     "faktor_0125_zu_05": 0.994154448200616
+    }
+   },
+   "G3": {
+    "urteil": "nicht auswertbar",
+    "vermerk": "mindestens ein Lauf offen",
+    "werte": {
+     "h0.5": {
+      "ergebnis": "offen",
+      "text": "Lauf endet vor T_B ohne Umkehr",
+      "t_umkehr": null,
+      "Qwin_bei_umkehr": null,
+      "TB": 2669.100719484528,
+      "t_max": 30.0,
+      "v_min_nach_tmax": null
+     },
+     "h0.25": {
+      "ergebnis": "offen",
+      "text": "Lauf endet vor T_B ohne Umkehr",
+      "t_umkehr": null,
+      "Qwin_bei_umkehr": null,
+      "TB": 5338.808222685314,
+      "t_max": 30.0,
+      "v_min_nach_tmax": null
+     },
+     "h0.125": {
+      "ergebnis": "offen",
+      "text": "Lauf endet vor T_B ohne Umkehr",
+      "t_umkehr": null,
+      "Qwin_bei_umkehr": null,
+      "TB": 10677.913053457545,
+      "t_max": 20.0,
+      "v_min_nach_tmax": null
+     }
+    }
+   },
+   "G4": {
+    "urteil": "nicht eingetroffen",
+    "werte": {
+     "h0.5": {
+      "gamma_max_qball": 1.010887877271467,
+      "gamma_max_kink": 1.78,
+      "erfuellt": false
+     },
+     "h0.25": {
+      "gamma_max_qball": 1.01110058078779,
+      "gamma_max_kink": 2.61,
+      "erfuellt": false
+     },
+     "h0.125": {
+      "gamma_max_qball": 1.0049786798215072,
+      "gamma_max_kink": 3.86,
+      "erfuellt": false
+     }
+    }
+   },
+   "ersetzt": {
+    "0.125": "f1_h0.125_lang"
+   }
+  }
+ },
+ "feld2_vergleich": {
+  "G2": {
+   "urteil": "nicht eingetroffen",
+   "werte": {
+    "h0.5": {
+     "gamma_max": 1.0423543828762631,
+     "t_max": 30.0,
+     "max_erreicht": false,
+     "gefallen": false,
+     "gesaettigt": false,
+     "steigung_letztes_viertel": 0.0025281595450702093,
+     "gamma_ende": 1.0423543828762631,
+     "v_ueber_1": false
+    },
+    "h0.25": {
+     "gamma_max": 1.0434381411635338,
+     "t_max": 30.0,
+     "max_erreicht": false,
+     "gefallen": false,
+     "gesaettigt": false,
+     "steigung_letztes_viertel": 0.00260771332973654,
+     "gamma_ende": 1.0434381411635338,
+     "v_ueber_1": false
+    },
+    "h0.125": {
+     "gamma_max": 1.043705529397046,
+     "t_max": 30.0,
+     "max_erreicht": false,
+     "gefallen": false,
+     "gesaettigt": false,
+     "steigung_letztes_viertel": 0.002627319070734357,
+     "gamma_ende": 1.043705529397046,
+     "v_ueber_1": false
+    },
+    "alle_maximum": false,
+    "steigend_mit_1_durch_h": true,
+    "faktor_0125_zu_05": 1.0012962448692877
+   }
+  },
+  "G3": {
+   "urteil": "nicht auswertbar",
+   "vermerk": "mindestens ein Lauf offen",
+   "werte": {
+    "h0.5": {
+     "ergebnis": "offen",
+     "text": "Lauf endet vor T_B ohne Umkehr",
+     "t_umkehr": null,
+     "Qwin_bei_umkehr": null,
+     "TB": 1334.550359742264,
+     "t_max": 30.0,
+     "v_min_nach_tmax": null
+    },
+    "h0.25": {
+     "ergebnis": "offen",
+     "text": "Lauf endet vor T_B ohne Umkehr",
+     "t_umkehr": null,
+     "Qwin_bei_umkehr": null,
+     "TB": 2669.404111342657,
+     "t_max": 30.0,
+     "v_min_nach_tmax": null
+    },
+    "h0.125": {
+     "ergebnis": "offen",
+     "text": "Lauf endet vor T_B ohne Umkehr",
+     "t_umkehr": null,
+     "Qwin_bei_umkehr": null,
+     "TB": 5338.956526728775,
+     "t_max": 30.0,
+     "v_min_nach_tmax": null
+    }
+   }
+  },
+  "G4": {
+   "urteil": "nicht eingetroffen",
+   "werte": {
+    "h0.5": {
+     "gamma_max_qball": 1.0423543828762631,
+     "gamma_max_kink": 1.78,
+     "erfuellt": false
+    },
+    "h0.25": {
+     "gamma_max_qball": 1.0434381411635338,
+     "gamma_max_kink": 2.61,
+     "erfuellt": false
+    },
+    "h0.125": {
+     "gamma_max_qball": 1.043705529397046,
+     "gamma_max_kink": 3.86,
+     "erfuellt": false
+    }
+   }
+  },
+  "G1": {
+   "urteil": "nicht eingetroffen",
+   "vermerk": "gamma erreicht 1,5 nicht",
+   "werte": {
+    "M0": 2.2979298208694634,
+    "Q0": 2.440749957087221,
+    "E": 0.00941485142382959,
+    "gamma_max": 1.043705529397046
+   }
+  }
+ },
+ "laeufe": {
+  "f1_h0.5_dt1": {
+   "name": "f1_h0.5_dt1",
+   "h": 0.5,
+   "a0": 0.005,
+   "E": 0.004708091576546449,
+   "M0": 2.2876280421100152,
+   "Q0": 2.4294642584119734,
+   "TB": 2669.100719484528,
+   "status": "fertig",
+   "t_letzt": 40.0,
+   "dt": 0.02,
+   "L_w": 400.0,
+   "abschnitte": 1,
+   "gueltig": true,
+   "v_ueber_1": false,
+   "gamma_max": 1.010887877271467,
+   "t_max": 30.0,
+   "v_max": 0.1463735304657665,
+   "Qwin_bei_tmax": 0.999961201444833,
+   "gamma_max_Q50": 1.010887877271467,
+   "t_letzt_v": 30.0,
+   "gamma_ende": 1.010887877271467,
+   "v_ende": 0.1463735304657665,
+   "steigung_letztes_viertel": 0.0006605554465170681,
+   "gefallen": false,
+   "gesaettigt": false,
+   "max_erreicht": false,
+   "t_umkehr": null,
+   "Qwin_bei_umkehr": null,
+   "v_min_nach_tmax": null,
+   "Qwin_ende": 0.9999686197467169,
+   "Qwin_min": 0.9999542579166876,
+   "Qwin_bei_TB_halb": null,
+   "Qwin_bei_TB": null,
+   "t_Q_unter_halb": null,
+   "bilanz_E_max_rel": 6.957234331619001e-10,
+   "bilanz_Q_max_rel": 2.193516739235388e-15,
+   "E_aussen_ende": 9.621775119095233e-05,
+   "Q_aussen_ende": 7.623720377125665e-05,
+   "W_ende": 0.04475208142944332,
+   "Ewin_ende": 2.332283907379824,
+   "Eabs_ende": 6.048056268905114e-44,
+   "Edrop_ende": 0.0,
+   "Qabs_ende": 1.032561653170817e-44,
+   "Qdrop_ende": 0.0,
+   "weg": 3.9112290407091734,
+   "kontrolle_tau20": {
+    "gamma_max": 1.0048370398738036,
+    "t_max": 20.0,
+    "t_umkehr": null
+   },
+   "kontrolle_energieschwerpunkt": {
+    "gamma_max": 1.0108845542032063,
+    "t_max": 30.0,
+    "t_umkehr": null
+   },
+   "verlauf": {}
+  },
+  "f1_h0.25_dt1": {
+   "name": "f1_h0.25_dt1",
+   "h": 0.25,
+   "a0": 0.005,
+   "E": 0.004707556477104,
+   "M0": 2.295891306143557,
+   "Q0": 2.4385170069759265,
+   "TB": 5338.808222685314,
+   "status": "fertig",
+   "t_letzt": 40.0,
+   "dt": 0.02,
+   "L_w": 400.0,
+   "abschnitte": 1,
+   "gueltig": true,
+   "v_ueber_1": false,
+   "gamma_max": 1.01110058078779,
+   "t_max": 30.0,
+   "v_max": 0.14777310092100993,
+   "Qwin_bei_tmax": 0.9999609663189809,
+   "gamma_max_Q50": 1.01110058078779,
+   "t_letzt_v": 30.0,
+   "gamma_ende": 1.01110058078779,
+   "v_ende": 0.14777310092100993,
+   "steigung_letztes_viertel": 0.0006744737721996748,
+   "gefallen": false,
+   "gesaettigt": false,
+   "max_erreicht": false,
+   "t_umkehr": null,
+   "Qwin_bei_umkehr": null,
+   "v_min_nach_tmax": null,
+   "Qwin_ende": 0.9999682417373068,
+   "Qwin_min": 0.9999563046154064,
+   "Qwin_bei_TB_halb": null,
+   "Qwin_bei_TB": null,
+   "t_Q_unter_halb": null,
+   "bilanz_E_max_rel": 7.06290060056061e-10,
+   "bilanz_Q_max_rel": 1.0926867647335956e-15,
+   "E_aussen_ende": 9.709511340982857e-05,
+   "Q_aussen_ende": 7.744306368939746e-05,
+   "W_ende": 0.04533577094889275,
+   "Ewin_ende": 2.341129983600605,
+   "Eabs_ende": 1.4735203017789298e-42,
+   "Edrop_ende": 0.0,
+   "Qabs_ende": 1.1333756655549726e-43,
+   "Qdrop_ende": 0.0,
+   "weg": 3.9481954010609,
+   "kontrolle_tau20": {
+    "gamma_max": 1.004928006389006,
+    "t_max": 20.0,
+    "t_umkehr": null
+   },
+   "kontrolle_energieschwerpunkt": {
+    "gamma_max": 1.0110975821461305,
+    "t_max": 30.0,
+    "t_umkehr": null
+   },
+   "verlauf": {}
+  },
+  "f1_h0.125_dt1": {
+   "name": "f1_h0.125_dt1",
+   "h": 0.125,
+   "a0": 0.005,
+   "E": 0.004707425711914795,
+   "M0": 2.2979298208694634,
+   "Q0": 2.440749957087221,
+   "TB": 10677.91305345755,
+   "status": "fertig",
+   "t_letzt": 40.0,
+   "dt": 0.02,
+   "L_w": 400.0,
+   "abschnitte": 1,
+   "gueltig": true,
+   "v_ueber_1": false,
+   "gamma_max": 1.0111531743140958,
+   "t_max": 30.0,
+   "v_max": 0.1481169872451522,
+   "Qwin_bei_tmax": 0.9999610952490052,
+   "gamma_max_Q50": 1.0111531743140958,
+   "t_letzt_v": 30.0,
+   "gamma_ende": 1.0111531743140958,
+   "v_ende": 0.1481169872451522,
+   "steigung_letztes_viertel": 0.0006779137516870852,
+   "gefallen": false,
+   "gesaettigt": false,
+   "max_erreicht": false,
+   "t_umkehr": null,
+   "Qwin_bei_umkehr": null,
+   "v_min_nach_tmax": null,
+   "Qwin_ende": 0.999968210035477,
+   "Qwin_min": 0.9999568703301601,
+   "Qwin_bei_TB_halb": null,
+   "Qwin_bei_TB": null,
+   "t_Q_unter_halb": null,
+   "bilanz_E_max_rel": 7.089040539722227e-10,
+   "bilanz_Q_max_rel": 1.4555828090806534e-15,
+   "E_aussen_ende": 9.715738965709875e-05,
+   "Q_aussen_ende": 7.759135454543653e-05,
+   "W_ende": 0.045479867982170234,
+   "Ewin_ende": 2.3433125330909883,
+   "Eabs_ende": 1.8205882701645917e-41,
+   "Edrop_ende": 0.0,
+   "Qabs_ende": 6.422865945490876e-43,
+   "Qdrop_ende": 0.0,
+   "weg": 3.9572822530276994,
+   "kontrolle_tau20": {
+    "gamma_max": 1.0049505050701233,
+    "t_max": 20.0,
+    "t_umkehr": null
+   },
+   "kontrolle_energieschwerpunkt": {
+    "gamma_max": 1.0111502566784292,
+    "t_max": 30.0,
+    "t_umkehr": null
+   },
+   "verlauf": {}
+  },
+  "f1_h0.125_dt2": {
+   "name": "f1_h0.125_dt2",
+   "h": 0.125,
+   "a0": 0.005,
+   "E": 0.004707425711914795,
+   "M0": 2.2979298208694634,
+   "Q0": 2.440749957087221,
+   "TB": 10677.91305345755,
+   "status": "fertig",
+   "t_letzt": 30.0,
+   "dt": 0.01,
+   "L_w": 400.0,
+   "abschnitte": 1,
+   "gueltig": true,
+   "v_ueber_1": false,
+   "gamma_max": 1.004978680147124,
+   "t_max": 20.0,
+   "v_max": 0.09941573871229248,
+   "Qwin_bei_tmax": 0.9999569765883496,
+   "gamma_max_Q50": 1.004978680147124,
+   "t_letzt_v": 20.0,
+   "gamma_ende": 1.004978680147124,
+   "v_ende": 0.09941573871229248,
+   "steigung_letztes_viertel": 0.00046606678100333634,
+   "gefallen": false,
+   "gesaettigt": false,
+   "max_erreicht": false,
+   "t_umkehr": null,
+   "Qwin_bei_umkehr": null,
+   "v_min_nach_tmax": null,
+   "Qwin_ende": 0.9999610952705094,
+   "Qwin_min": 0.9999568703750455,
+   "Qwin_bei_TB_halb": null,
+   "Qwin_bei_TB": null,
+   "t_Q_unter_halb": null,
+   "bilanz_E_max_rel": 2.4357168822274165e-11,
+   "bilanz_Q_max_rel": 3.4570091715665514e-15,
+   "E_aussen_ende": 0.00011364031191751778,
+   "Q_aussen_ende": 9.495671683490414e-05,
+   "W_ende": 0.02569598344832807,
+   "Ewin_ende": 2.323512164061845,
+   "Eabs_ende": 6.0653940832164515e-117,
+   "Edrop_ende": 0.0,
+   "Qabs_ende": -2.6788420154025872e-120,
+   "Qdrop_ende": 0.0,
+   "weg": 2.235785684500513,
+   "kontrolle_tau20": {
+    "gamma_max": null,
+    "t_max": null,
+    "t_umkehr": null
+   },
+   "kontrolle_energieschwerpunkt": {
+    "gamma_max": 1.0049774236035292,
+    "t_max": 20.0,
+    "t_umkehr": null
+   },
+   "verlauf": {}
+  },
+  "f2_h0.5_dt1": {
+   "name": "f2_h0.5_dt1",
+   "h": 0.5,
+   "a0": 0.01,
+   "E": 0.009416183153092898,
+   "M0": 2.2876280421100152,
+   "Q0": 2.4294642584119734,
+   "TB": 1334.550359742264,
+   "status": "fertig",
+   "t_letzt": 40.0,
+   "dt": 0.02,
+   "L_w": 400.0,
+   "abschnitte": 1,
+   "gueltig": true,
+   "v_ueber_1": false,
+   "gamma_max": 1.0423543828762631,
+   "t_max": 30.0,
+   "v_max": 0.2821625250317208,
+   "Qwin_bei_tmax": 0.9999627030820577,
+   "gamma_max_Q50": 1.0423543828762631,
+   "t_letzt_v": 30.0,
+   "gamma_ende": 1.0423543828762631,
+   "v_ende": 0.2821625250317208,
+   "steigung_letztes_viertel": 0.0025281595450702093,
+   "gefallen": false,
+   "gesaettigt": false,
+   "max_erreicht": false,
+   "t_umkehr": null,
+   "Qwin_bei_umkehr": null,
+   "v_min_nach_tmax": null,
+   "Qwin_ende": 0.9999866727565387,
+   "Qwin_min": 0.9999476796824674,
+   "Qwin_bei_TB_halb": null,
+   "Qwin_bei_TB": null,
+   "t_Q_unter_halb": null,
+   "bilanz_E_max_rel": 3.2791785860199894e-09,
+   "bilanz_Q_max_rel": 9.13965308014745e-16,
+   "E_aussen_ende": 4.908310248330494e-05,
+   "Q_aussen_ende": 3.2378061652238443e-05,
+   "W_ende": 0.17367270013321773,
+   "Ewin_ende": 2.4612516666422906,
+   "Eabs_ende": 5.591827517414057e-44,
+   "Edrop_ende": 0.0,
+   "Qabs_ende": 5.943107261906355e-45,
+   "Qdrop_ende": 0.0,
+   "weg": 7.588620110335484,
+   "kontrolle_tau20": {
+    "gamma_max": 1.0187977944645135,
+    "t_max": 20.0,
+    "t_umkehr": null
+   },
+   "kontrolle_energieschwerpunkt": {
+    "gamma_max": 1.0423093287564795,
+    "t_max": 30.0,
+    "t_umkehr": null
+   },
+   "verlauf": {}
+  },
+  "f2_h0.25_dt1": {
+   "name": "f2_h0.25_dt1",
+   "h": 0.25,
+   "a0": 0.01,
+   "E": 0.009415112954208,
+   "M0": 2.295891306143557,
+   "Q0": 2.4385170069759265,
+   "TB": 2669.404111342657,
+   "status": "fertig",
+   "t_letzt": 40.0,
+   "dt": 0.02,
+   "L_w": 400.0,
+   "abschnitte": 1,
+   "gueltig": true,
+   "v_ueber_1": false,
+   "gamma_max": 1.0434381411635338,
+   "t_max": 30.0,
+   "v_max": 0.2855286265058472,
+   "Qwin_bei_tmax": 0.9999643174693551,
+   "gamma_max_Q50": 1.0434381411635338,
+   "t_letzt_v": 30.0,
+   "gamma_ende": 1.0434381411635338,
+   "v_ende": 0.2855286265058472,
+   "steigung_letztes_viertel": 0.00260771332973654,
+   "gefallen": false,
+   "gesaettigt": false,
+   "max_erreicht": false,
+   "t_umkehr": null,
+   "Qwin_bei_umkehr": null,
+   "v_min_nach_tmax": null,
+   "Qwin_ende": 0.9999853076897333,
+   "Qwin_min": 0.9999515877418157,
+   "Qwin_bei_TB_halb": null,
+   "Qwin_bei_TB": null,
+   "t_Q_unter_halb": null,
+   "bilanz_E_max_rel": 3.3275985557602706e-09,
+   "bilanz_Q_max_rel": 1.4569156863114607e-15,
+   "E_aussen_ende": 5.310364668220657e-05,
+   "Q_aussen_ende": 3.5827448457315114e-05,
+   "W_ende": 0.1762687262810345,
+   "Ewin_ende": 2.4721069364177137,
+   "Eabs_ende": 1.4394900106108978e-42,
+   "Edrop_ende": 0.0,
+   "Qabs_ende": 6.199699997111586e-44,
+   "Qdrop_ende": 0.0,
+   "weg": 7.675028356065809,
+   "kontrolle_tau20": {
+    "gamma_max": 1.019219937104343,
+    "t_max": 20.0,
+    "t_umkehr": null
+   },
+   "kontrolle_energieschwerpunkt": {
+    "gamma_max": 1.0433980855249123,
+    "t_max": 30.0,
+    "t_umkehr": null
+   },
+   "verlauf": {}
+  },
+  "f2_h0.125_dt1": {
+   "name": "f2_h0.125_dt1",
+   "h": 0.125,
+   "a0": 0.01,
+   "E": 0.00941485142382959,
+   "M0": 2.2979298208694634,
+   "Q0": 2.440749957087221,
+   "TB": 5338.956526728775,
+   "status": "fertig",
+   "t_letzt": 40.0,
+   "dt": 0.02,
+   "L_w": 400.0,
+   "abschnitte": 1,
+   "gueltig": true,
+   "v_ueber_1": false,
+   "gamma_max": 1.043705529397046,
+   "t_max": 30.0,
+   "v_max": 0.2863514378980556,
+   "Qwin_bei_tmax": 0.9999646235149506,
+   "gamma_max_Q50": 1.043705529397046,
+   "t_letzt_v": 30.0,
+   "gamma_ende": 1.043705529397046,
+   "v_ende": 0.2863514378980556,
+   "steigung_letztes_viertel": 0.002627319070734357,
+   "gefallen": false,
+   "gesaettigt": false,
+   "max_erreicht": false,
+   "t_umkehr": null,
+   "Qwin_bei_umkehr": null,
+   "v_min_nach_tmax": null,
+   "Qwin_ende": 0.9999851783187205,
+   "Qwin_min": 0.9999527982335243,
+   "Qwin_bei_TB_halb": null,
+   "Qwin_bei_TB": null,
+   "t_Q_unter_halb": null,
+   "bilanz_E_max_rel": 3.3397826683294603e-09,
+   "bilanz_Q_max_rel": 3.093113469296388e-15,
+   "E_aussen_ende": 5.356782197241117e-05,
+   "Q_aussen_ende": 3.6176017947031625e-05,
+   "W_ende": 0.17690756354891068,
+   "Ewin_ende": 2.474783824270988,
+   "Eabs_ende": 1.7799592208450408e-41,
+   "Edrop_ende": 0.0,
+   "Qabs_ende": 4.706358740513988e-43,
+   "Qdrop_ende": 0.0,
+   "weg": 7.696174511646859,
+   "kontrolle_tau20": {
+    "gamma_max": 1.0193241357634655,
+    "t_max": 20.0,
+    "t_umkehr": null
+   },
+   "kontrolle_energieschwerpunkt": {
+    "gamma_max": 1.0436667257367291,
+    "t_max": 30.0,
+    "t_umkehr": null
+   },
+   "verlauf": {}
+  },
+  "f1_h0.125_lang": {
+   "name": "f1_h0.125_lang",
+   "h": 0.125,
+   "a0": 0.005,
+   "E": 0.004707425711914797,
+   "M0": 2.2979298208694643,
+   "Q0": 2.440749957087221,
+   "TB": 10677.913053457545,
+   "status": "fertig",
+   "t_letzt": 30.0,
+   "dt": 0.02,
+   "L_w": 800.0,
+   "abschnitte": 1,
+   "gueltig": true,
+   "v_ueber_1": false,
+   "gamma_max": 1.0049786798215072,
+   "t_max": 20.0,
+   "v_max": 0.09941573548542593,
+   "Qwin_bei_tmax": 0.9999569765512992,
+   "gamma_max_Q50": 1.0049786798215072,
+   "t_letzt_v": 20.0,
+   "gamma_ende": 1.0049786798215072,
+   "v_ende": 0.09941573548542593,
+   "steigung_letztes_viertel": 0.0004660667491238362,
+   "gefallen": false,
+   "gesaettigt": false,
+   "max_erreicht": false,
+   "t_umkehr": null,
+   "Qwin_bei_umkehr": null,
+   "v_min_nach_tmax": null,
+   "Qwin_ende": 0.9999610952490046,
+   "Qwin_min": 0.9999568703301596,
+   "Qwin_bei_TB_halb": null,
+   "Qwin_bei_TB": null,
+   "t_Q_unter_halb": null,
+   "bilanz_E_max_rel": 3.896671163439211e-10,
+   "bilanz_Q_max_rel": 2.0014263624858984e-15,
+   "E_aussen_ende": 0.00011364035959404717,
+   "Q_aussen_ende": 9.495676932269603e-05,
+   "W_ende": 0.025695982622415726,
+   "Ewin_ende": 2.3235121640277137,
+   "Eabs_ende": 0.0,
+   "Edrop_ende": 0.0,
+   "Qabs_ende": 0.0,
+   "Qdrop_ende": 0.0,
+   "weg": 2.23578561192852,
+   "kontrolle_tau20": {
+    "gamma_max": null,
+    "t_max": null,
+    "t_umkehr": null
+   },
+   "kontrolle_energieschwerpunkt": {
+    "gamma_max": 1.004977423272107,
+    "t_max": 20.0,
+    "t_umkehr": null
+   },
+   "verlauf": {}
+  }
+ },
+ "g0_laeufe": [
+  "g0_h0.125",
+  "g0_h0.25",
+  "g0_h0.5"
+ ],
+ "bilder": "ok",
+ "skript_sha256": "f7126fb99a9cd872b651da070d854d8595bce37ca40badb9b313a4f82668c6fa"
+}

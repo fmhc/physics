@@ -1,0 +1,32 @@
+{
+  "id": "claude-f1-nachtrag5-q-cuda-20260915",
+  "time": "2026-09-15T12:51:00+02:00",
+  "time_kind": "completed",
+  "author": "claude-s1-69 (Anthropic, S1 auf .69 CUDA); Buchung claude-primary",
+  "topic": "theory",
+  "status": "reported",
+  "title": "F1 Nachtrag 5: Q-Auswertung der 72 archivierten Rotorbahnen mit Eingabehashes und CUDA-Kern reproduziert die NumPy-Auswertung (Ausgang A); Jury-Patch zu F1 (Runden 14 und 15) erfuellt",
+  "question": "Sind die Q-Kennzahlen von F1 an die tatsaechlich gelesenen bahn-*.npz gebunden, und liefert ein CUDA-Kern dieselben Werte wie die NumPy-Auswertung?",
+  "action": "Vertrag f1-nachtrag5-q-provenienz-VERTRAG.md; Kopie rotor_s4_nachtrag5_Q.py mit input_hashes (Pfad, SHA256, Groesse je NPZ), Kopf (Host, Geraet, Versionen, Unit, Lock, Pacht) und Torch-CUDA-Kern; Lauf als User-Unit unter gauntlet-gpu.lock auf ubuntu-auto cuda:2.",
+  "result": "K0 (NPZ-Hashes gegen die eingefrorenen Bahn-Metadateien) und K1 (Q_max je Start gegen ERGEBNIS-Q.json) bestanden; Ausgang A. Dateien: coordination/faden-vertrag1-20260912/lauf-a/nachtrag5-q-cuda/ (BERICHT-F1N5.md, ERGEBNIS-Q-nachtrag5.json, rotor_s4_nachtrag5_Q.py, Laufbelege).",
+  "meaning": "Provenienzbeleg, keine neue Physik; wird als Evidenz zu F1 aufgenommen (Registerpatch nach Ernte der Runde 16). S2 astra nachgelagert.",
+  "sources": [
+    {
+      "path": "coordination/faden-vertrag1-20260912/lauf-a/nachtrag5-q-cuda/BERICHT-F1N5.md",
+      "sha256": "c8136725299cf7748a5a989ae7b08f68272b9bd6e360beba0dfa3e3312e2a1ff"
+    },
+    {
+      "path": "coordination/faden-vertrag1-20260912/lauf-a/nachtrag5-q-cuda/ERGEBNIS-Q-nachtrag5.json",
+      "sha256": "89d0a7eb2183cd584e2ada6680eef278c7b1933ca822e83601a26570c4793fa3"
+    },
+    {
+      "path": "coordination/faden-vertrag1-20260912/lauf-a/nachtrag5-q-cuda/rotor_s4_nachtrag5_Q.py",
+      "sha256": "ecfface83ff81cfdae8448f64c5191424056d0732875568c150464898c041b7a"
+    },
+    {
+      "path": "coordination/vertraege-20260915/f1-nachtrag5-q-provenienz-VERTRAG.md",
+      "sha256": "aa6634ee22ecd14fb1dbfa41d12019b72e670f853cfbde8b3c6aa03829fec0fa"
+    }
+  ],
+  "recorded_at": "2026-09-15T10:57:25.183013+00:00"
+}

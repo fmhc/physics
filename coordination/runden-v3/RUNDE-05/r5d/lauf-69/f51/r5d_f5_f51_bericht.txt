@@ -1,0 +1,79 @@
+F-5 r5d_f5.py f51 Start 2026-09-30T00:59:24+00:00 auf CPU, 1 Thread, torch 2.5.1+cu121, Laufzeitfaktor 1.0
+
+F5-1 Q-Atom (3D radial): Kern omega^2 = 0.7, S(0) = 1.1351, Wandradius 3.55, Q = 473.41, E = 428.63 (Schiessen, Grund 1, r_cut 13.8).
+  Linear (Rechenzeit 32.9 s): e = omega^2 - m^2 der gebundenen Niveaus (e < 0); stabil, wenn m^2 + e0 > 0. Spalten: lam, l, Zahl gebunden, e (Radius) der ersten Niveaus, je m: omega0^2 und stabil
+  [grob]
+  lam=-0.1 l=0 | 0 | - | m=0.3: +0.0923 stabil; m=0.6: +0.3623 stabil
+  lam=-0.1 l=1 | 0 | - | m=0.3: +0.0956 stabil; m=0.6: +0.3656 stabil
+  lam=-0.1 l=2 | 0 | - | m=0.3: +0.0992 stabil; m=0.6: +0.3692 stabil
+  lam=-0.2 l=0 | 1 | -0.0033 (13.21) | m=0.3: +0.0867 stabil; m=0.6: +0.3567 stabil
+  lam=-0.2 l=1 | 0 | - | m=0.3: +0.0956 stabil; m=0.6: +0.3656 stabil
+  lam=-0.2 l=2 | 0 | - | m=0.3: +0.0992 stabil; m=0.6: +0.3692 stabil
+  lam=-0.3 l=0 | 1 | -0.0363 (5.47) | m=0.3: +0.0537 stabil; m=0.6: +0.3237 stabil
+  lam=-0.3 l=1 | 0 | - | m=0.3: +0.0956 stabil; m=0.6: +0.3656 stabil
+  lam=-0.3 l=2 | 0 | - | m=0.3: +0.0992 stabil; m=0.6: +0.3692 stabil
+  lam=-0.4 l=0 | 1 | -0.0892 (4.15) | m=0.3: +0.0008 stabil; m=0.6: +0.2708 stabil
+  lam=-0.4 l=1 | 0 | - | m=0.3: +0.0956 stabil; m=0.6: +0.3656 stabil
+  lam=-0.4 l=2 | 0 | - | m=0.3: +0.0992 stabil; m=0.6: +0.3692 stabil
+  lam=-0.5 l=0 | 1 | -0.1532 (3.59) | m=0.3: -0.0632 TACHYON; m=0.6: +0.2068 stabil
+  lam=-0.5 l=1 | 0 | - | m=0.3: +0.0956 stabil; m=0.6: +0.3656 stabil
+  lam=-0.5 l=2 | 0 | - | m=0.3: +0.0992 stabil; m=0.6: +0.3692 stabil
+  lam=-0.6 l=0 | 1 | -0.2245 (3.26) | m=0.3: -0.1345 TACHYON; m=0.6: +0.1355 stabil
+  lam=-0.6 l=1 | 0 | - | m=0.3: +0.0955 stabil; m=0.6: +0.3655 stabil
+  lam=-0.6 l=2 | 0 | - | m=0.3: +0.0992 stabil; m=0.6: +0.3692 stabil
+  lam=-0.8 l=0 | 1 | -0.3811 (2.89) | m=0.3: -0.2911 TACHYON; m=0.6: -0.0211 TACHYON
+  lam=-0.8 l=1 | 1 | -0.0330 (5.14) | m=0.3: +0.0570 stabil; m=0.6: +0.3270 stabil
+  lam=-0.8 l=2 | 0 | - | m=0.3: +0.0992 stabil; m=0.6: +0.3692 stabil
+  lam=-1.0 l=0 | 1 | -0.5498 (2.68) | m=0.3: -0.4598 TACHYON; m=0.6: -0.1898 TACHYON
+  lam=-1.0 l=1 | 1 | -0.1362 (3.91) | m=0.3: -0.0462 TACHYON; m=0.6: +0.2238 stabil
+  lam=-1.0 l=2 | 0 | - | m=0.3: +0.0992 stabil; m=0.6: +0.3692 stabil
+  [fein]
+  lam=-0.1 l=0 | 0 | - | m=0.3: +0.0923 stabil; m=0.6: +0.3623 stabil
+  lam=-0.1 l=1 | 0 | - | m=0.3: +0.0956 stabil; m=0.6: +0.3656 stabil
+  lam=-0.1 l=2 | 0 | - | m=0.3: +0.0992 stabil; m=0.6: +0.3692 stabil
+  lam=-0.2 l=0 | 1 | -0.0033 (13.22) | m=0.3: +0.0867 stabil; m=0.6: +0.3567 stabil
+  lam=-0.2 l=1 | 0 | - | m=0.3: +0.0956 stabil; m=0.6: +0.3656 stabil
+  lam=-0.2 l=2 | 0 | - | m=0.3: +0.0992 stabil; m=0.6: +0.3692 stabil
+  lam=-0.3 l=0 | 1 | -0.0363 (5.47) | m=0.3: +0.0537 stabil; m=0.6: +0.3237 stabil
+  lam=-0.3 l=1 | 0 | - | m=0.3: +0.0956 stabil; m=0.6: +0.3656 stabil
+  lam=-0.3 l=2 | 0 | - | m=0.3: +0.0992 stabil; m=0.6: +0.3692 stabil
+  lam=-0.4 l=0 | 1 | -0.0891 (4.15) | m=0.3: +0.0009 stabil; m=0.6: +0.2709 stabil
+  lam=-0.4 l=1 | 0 | - | m=0.3: +0.0956 stabil; m=0.6: +0.3656 stabil
+  lam=-0.4 l=2 | 0 | - | m=0.3: +0.0992 stabil; m=0.6: +0.3692 stabil
+  lam=-0.5 l=0 | 1 | -0.1531 (3.59) | m=0.3: -0.0631 TACHYON; m=0.6: +0.2069 stabil
+  lam=-0.5 l=1 | 0 | - | m=0.3: +0.0956 stabil; m=0.6: +0.3656 stabil
+  lam=-0.5 l=2 | 0 | - | m=0.3: +0.0992 stabil; m=0.6: +0.3692 stabil
+  lam=-0.6 l=0 | 1 | -0.2244 (3.26) | m=0.3: -0.1344 TACHYON; m=0.6: +0.1356 stabil
+  lam=-0.6 l=1 | 0 | - | m=0.3: +0.0955 stabil; m=0.6: +0.3655 stabil
+  lam=-0.6 l=2 | 0 | - | m=0.3: +0.0992 stabil; m=0.6: +0.3692 stabil
+  lam=-0.8 l=0 | 1 | -0.3810 (2.90) | m=0.3: -0.2910 TACHYON; m=0.6: -0.0210 TACHYON
+  lam=-0.8 l=1 | 1 | -0.0330 (5.14) | m=0.3: +0.0570 stabil; m=0.6: +0.3270 stabil
+  lam=-0.8 l=2 | 0 | - | m=0.3: +0.0992 stabil; m=0.6: +0.3692 stabil
+  lam=-1.0 l=0 | 1 | -0.5497 (2.68) | m=0.3: -0.4597 TACHYON; m=0.6: -0.1897 TACHYON
+  lam=-1.0 l=1 | 1 | -0.1361 (3.91) | m=0.3: -0.0461 TACHYON; m=0.6: +0.2239 stabil
+  lam=-1.0 l=2 | 0 | - | m=0.3: +0.0992 stabil; m=0.6: +0.3692 stabil
+  Dynamik (l = 0, Fenster r < 40): Lauf | omega^2 linear | omega_chi | Bindung m - omega | Q_chi, Q_psi gehalten | C_max Wachstum | R_chi / R_psi | Klasse
+  [grob]
+  m=0,3 lam=-0,25 Q=1    | +0.0736 | 0.2716 | +0.0284 | 1.0000, 1.0000 | 1.00 | 7.28 / 3.72 = 1.95 | Atom stabil
+  m=0,3 lam=-0,35 Q=1    | +0.0291 | 0.1722 | +0.1278 | 1.0000, 1.0000 | 1.00 | 4.65 / 3.72 = 1.25 | Atom stabil
+  m=0,3 lam=-0,35 Q=20   | +0.0291 | 0.1998 | +0.1002 | 0.9965, 0.9997 | 1.00 | 4.92 / 3.69 = 1.33 | Atom stabil
+  m=0,6 lam=-0,3 Q=1     | +0.3237 | 0.5691 | +0.0309 | 1.0000, 1.0000 | 1.00 | 5.48 / 3.72 = 1.47 | Atom stabil
+  m=0,6 lam=-0,6 Q=1     | +0.1356 | 0.3679 | +0.2321 | 1.0000, 1.0000 | 1.01 | 3.26 / 3.72 = 0.88 | Atom stabil
+  m=0,6 lam=-0,6 Q=20    | +0.1356 | 0.3675 | +0.2325 | 0.9999, 0.9995 | 1.07 | 3.25 / 3.66 = 0.89 | Atom stabil
+  Gegenprobe lam=0       | +0.1356 | 0.6002 | -0.0002 | 0.0097, 1.0000 | 1.00 | 30.74 / 3.72 = 8.25 | zerlaeuft
+  tief m=0,3 lam=-0,8 g4=1 | -0.2910 | 0.0001 | +0.2999 | 0.8006, 0.9967 | 203.09 | 4.20 / 3.60 = 1.16 | Kondensation
+  [fein]
+  m=0,3 lam=-0,25 Q=1    | +0.0736 | 0.2717 | +0.0283 | 1.0000, 1.0000 | 1.00 | 7.28 / 3.72 = 1.96 | Atom stabil
+  m=0,3 lam=-0,35 Q=1    | +0.0291 | 0.1724 | +0.1276 | 1.0000, 1.0000 | 1.00 | 4.65 / 3.72 = 1.25 | Atom stabil
+  m=0,3 lam=-0,35 Q=20   | +0.0291 | 0.1999 | +0.1001 | 0.9965, 0.9997 | 1.00 | 4.92 / 3.69 = 1.33 | Atom stabil
+  m=0,6 lam=-0,3 Q=1     | +0.3237 | 0.5691 | +0.0309 | 1.0000, 1.0000 | 1.00 | 5.48 / 3.72 = 1.47 | Atom stabil
+  m=0,6 lam=-0,6 Q=1     | +0.1356 | 0.3681 | +0.2319 | 1.0000, 1.0000 | 1.00 | 3.26 / 3.72 = 0.88 | Atom stabil
+  m=0,6 lam=-0,6 Q=20    | +0.1356 | 0.3677 | +0.2323 | 0.9999, 0.9995 | 1.07 | 3.26 / 3.66 = 0.89 | Atom stabil
+  Gegenprobe lam=0       | +0.1356 | 0.6002 | -0.0002 | 0.0097, 1.0000 | 1.00 | 30.76 / 3.72 = 8.26 | zerlaeuft
+  tief m=0,3 lam=-0,8 g4=1 | -0.2910 | 0.0001 | +0.2999 | 0.8019, 0.9968 | 202.87 | 4.20 / 3.60 = 1.16 | Kondensation
+  L3 (Effekt >= 5 x Aenderung grob -> fein): 16 von 16 Kenngroessen bestanden
+  L3 linear (e0): L3 (Effekt >= 5 x Aenderung grob -> fein): 9 von 9 Kenngroessen bestanden
+  Rechenzeit grob 21.7 s, fein 68.1 s
+  Dauer f51: 146.8 s
+
+Ende 2026-09-30T01:01:51+00:00, Dauer 146.8 s, Torch-Speicher max nan MB, Fehler in: keine

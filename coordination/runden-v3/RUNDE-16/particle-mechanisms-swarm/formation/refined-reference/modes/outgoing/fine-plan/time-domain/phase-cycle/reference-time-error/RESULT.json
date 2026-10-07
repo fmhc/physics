@@ -1,0 +1,2795 @@
+{
+  "status": "NOT_GLOBALLY_ASSIGNED",
+  "complete": true,
+  "code_sha256": "875cbf73be336ce0c6fba60f77dee2b2dc08ae6b108dde22a2838f2bf9e29cdb",
+  "bound_hashes": {
+    "time_code": "74ba12a56e60241a967c2ff143a6489adbd7b27a3b72ddeeb0d3d29fee3c43c6",
+    "split_code": "ac87c195092b607cdf106a9ad7a88606bcf0579623cd581297485f76bf7cceaa",
+    "phase_code": "3509332b4732c8497e9246855fc7be6254ff1681e3e2e99b823457180aaa1446",
+    "split": "15593347f6b1caff683315fab65ce74734ae85fb5eff97b8a25d9276c0a568b9",
+    "phase": "b7d938e4bda00bb05598f540f05320b2e3cad7a8a8f3f4be940a9d5884b8eafd",
+    "amplitude": "2fa8c40331f18ed677788629733806109dbc9a622c4d8ff22e065c82979adefd",
+    "amplitude_code": "5e8f8c201f9d0f0090f442f6d6173c9e4f1362cfecbd55fc9ac9f823614dc4c9",
+    "observed": "a3f302b50f184ef2b7fdf9d92afb903068e22436d2b3547fa4248f80e9a56cc3"
+  },
+  "gates": {
+    "alignment": 0.8,
+    "remaining_fraction": 0.5,
+    "reserve_factor": 2.0,
+    "qa": 1e-10,
+    "arithmetic_factor": 64.0
+  },
+  "budget": {
+    "target_cpu_seconds": 5,
+    "checkpoint_cpu_seconds": 4.5
+  },
+  "qa": {
+    "exact_dt2": [
+      {
+        "component": "DC",
+        "time_window": 0,
+        "shell": 0,
+        "measure": "time",
+        "window": [
+          88.0,
+          104.43734551685922
+        ],
+        "radius_window": [
+          40.0,
+          45.0
+        ],
+        "norms": {
+          "N": 692.9886712840058,
+          "Rf": 693.0452763920431,
+          "c": 0.08251255260871129,
+          "Z": 0.08251255260871089,
+          "right": 7.388906690576122e-14,
+          "wrong": 0.1650251052173955,
+          "dt": 0.0,
+          "synthetic_A": 825.1255260871118
+        },
+        "real_inner_Z_c": 0.006808321338005316,
+        "alignment": 1.0,
+        "quadratic_identity_defect": 5.4595942082040585e-27,
+        "eta_by_expression": {
+          "Z": 1.9696727052036968e-11,
+          "right": 2.626337536829369e-11,
+          "wrong": 1.9697531545717455e-11
+        },
+        "eta": 2.626337536829369e-11,
+        "u": 2.626337536829369e-11,
+        "flags": {
+          "nonzero": true,
+          "alignment": true,
+          "reduction": true,
+          "improvement": true,
+          "wrong_direction": true
+        },
+        "relative_to_original_Rf": {
+          "N": 0.999918324083627,
+          "Rf": 1.0,
+          "c": 0.00011905795395975752,
+          "Z": 0.00011905795395975694,
+          "right": 1.0661506458917631e-16,
+          "wrong": 0.00023811590791947596,
+          "dt": 0.0,
+          "synthetic_A": 1.1905795395975736
+        },
+        "status": "KONSISTENT_MIT_DOMINANTER_DT2_KOMPONENTE",
+        "improvement_under_reserve": false,
+        "qa": {
+          "known_correction_norm": 0.08251255260871118,
+          "errors": {
+            "extrapolated": 8.954888022451078e-13,
+            "correction": 1.873400376285234e-13,
+            "wrong": 6.052469752320919e-13
+          },
+          "passed": true,
+          "wrong_sign_passed": false
+        }
+      },
+      {
+        "component": "DC",
+        "time_window": 0,
+        "shell": 0,
+        "measure": "band",
+        "window": [
+          88.0,
+          104.43734551685922
+        ],
+        "radius_window": [
+          40.0,
+          45.0
+        ],
+        "norms": {
+          "N": 0.00016277672071415418,
+          "Rf": 0.014309702036383293,
+          "c": 0.014390931724514432,
+          "Z": 0.014390931724514382,
+          "right": 1.1812309827161144e-15,
+          "wrong": 0.02878186344902882,
+          "dt": 0.0,
+          "synthetic_A": 143.90931724514425
+        },
+        "real_inner_Z_c": 0.00020709891589963518,
+        "alignment": 0.9999999999999999,
+        "quadratic_identity_defect": -5.4210108622879916e-20,
+        "eta_by_expression": {
+          "Z": 4.858231710691253e-12,
+          "right": 6.4779068389072366e-12,
+          "wrong": 4.858430133989443e-12
+        },
+        "eta": 6.4779068389072366e-12,
+        "u": 6.4779068389072366e-12,
+        "flags": {
+          "nonzero": true,
+          "alignment": true,
+          "reduction": true,
+          "improvement": true,
+          "wrong_direction": true
+        },
+        "relative_to_original_Rf": {
+          "N": 0.011375269750570936,
+          "Rf": 1.0,
+          "c": 1.0056765464385358,
+          "Z": 1.0056765464385322,
+          "right": 8.254755967054817e-14,
+          "wrong": 2.0113530928770684,
+          "dt": 0.0,
+          "synthetic_A": 10056.765464385353
+        },
+        "status": "KONSISTENT_MIT_DOMINANTER_DT2_KOMPONENTE",
+        "improvement_under_reserve": false,
+        "qa": {
+          "known_correction_norm": 0.014390931724514425,
+          "errors": {
+            "extrapolated": 8.208161954544825e-14,
+            "correction": 1.86502226126851e-14,
+            "wrong": 4.096304814628064e-14
+          },
+          "passed": true,
+          "wrong_sign_passed": false
+        }
+      },
+      {
+        "component": "H2",
+        "time_window": 0,
+        "shell": 0,
+        "measure": "time",
+        "window": [
+          88.0,
+          104.43734551685922
+        ],
+        "radius_window": [
+          40.0,
+          45.0
+        ],
+        "norms": {
+          "N": 692.9886712840058,
+          "Rf": 693.0452763920431,
+          "c": 0.08251255260871129,
+          "Z": 0.08251255260871089,
+          "right": 7.388906690576122e-14,
+          "wrong": 0.1650251052173955,
+          "dt": 0.0,
+          "synthetic_A": 825.1255260871118
+        },
+        "real_inner_Z_c": 0.006808321338005316,
+        "alignment": 1.0,
+        "quadratic_identity_defect": 5.4595942082040585e-27,
+        "eta_by_expression": {
+          "Z": 1.9696727052036968e-11,
+          "right": 2.626337536829369e-11,
+          "wrong": 1.9697531545717455e-11
+        },
+        "eta": 2.626337536829369e-11,
+        "u": 2.626337536829369e-11,
+        "flags": {
+          "nonzero": true,
+          "alignment": true,
+          "reduction": true,
+          "improvement": true,
+          "wrong_direction": true
+        },
+        "relative_to_original_Rf": {
+          "N": 0.999918324083627,
+          "Rf": 1.0,
+          "c": 0.00011905795395975752,
+          "Z": 0.00011905795395975694,
+          "right": 1.0661506458917631e-16,
+          "wrong": 0.00023811590791947596,
+          "dt": 0.0,
+          "synthetic_A": 1.1905795395975736
+        },
+        "status": "KONSISTENT_MIT_DOMINANTER_DT2_KOMPONENTE",
+        "improvement_under_reserve": false,
+        "qa": {
+          "known_correction_norm": 0.08251255260871118,
+          "errors": {
+            "extrapolated": 8.954888022451078e-13,
+            "correction": 1.873400376285234e-13,
+            "wrong": 6.052469752320919e-13
+          },
+          "passed": true,
+          "wrong_sign_passed": false
+        }
+      },
+      {
+        "component": "H2",
+        "time_window": 0,
+        "shell": 0,
+        "measure": "band",
+        "window": [
+          88.0,
+          104.43734551685922
+        ],
+        "radius_window": [
+          40.0,
+          45.0
+        ],
+        "norms": {
+          "N": 0.00016277672071415418,
+          "Rf": 0.014309702036383293,
+          "c": 0.014390931724514432,
+          "Z": 0.014390931724514382,
+          "right": 1.1812309827161144e-15,
+          "wrong": 0.02878186344902882,
+          "dt": 0.0,
+          "synthetic_A": 143.90931724514425
+        },
+        "real_inner_Z_c": 0.00020709891589963518,
+        "alignment": 0.9999999999999999,
+        "quadratic_identity_defect": -5.4210108622879916e-20,
+        "eta_by_expression": {
+          "Z": 4.858231710691253e-12,
+          "right": 6.4779068389072366e-12,
+          "wrong": 4.858430133989443e-12
+        },
+        "eta": 6.4779068389072366e-12,
+        "u": 6.4779068389072366e-12,
+        "flags": {
+          "nonzero": true,
+          "alignment": true,
+          "reduction": true,
+          "improvement": true,
+          "wrong_direction": true
+        },
+        "relative_to_original_Rf": {
+          "N": 0.011375269750570936,
+          "Rf": 1.0,
+          "c": 1.0056765464385358,
+          "Z": 1.0056765464385322,
+          "right": 8.254755967054817e-14,
+          "wrong": 2.0113530928770684,
+          "dt": 0.0,
+          "synthetic_A": 10056.765464385353
+        },
+        "status": "KONSISTENT_MIT_DOMINANTER_DT2_KOMPONENTE",
+        "improvement_under_reserve": false,
+        "qa": {
+          "known_correction_norm": 0.014390931724514425,
+          "errors": {
+            "extrapolated": 8.208161954544825e-14,
+            "correction": 1.86502226126851e-14,
+            "wrong": 4.096304814628064e-14
+          },
+          "passed": true,
+          "wrong_sign_passed": false
+        }
+      },
+      {
+        "component": "DC",
+        "time_window": 0,
+        "shell": 1,
+        "measure": "time",
+        "window": [
+          88.0,
+          104.43734551685922
+        ],
+        "radius_window": [
+          45.0,
+          50.0
+        ],
+        "norms": {
+          "N": 712.6303516578954,
+          "Rf": 712.6876009578023,
+          "c": 0.08345164648352538,
+          "Z": 0.08345164648352532,
+          "right": 7.532586641420162e-14,
+          "wrong": 0.16690329296702083,
+          "dt": 0.0,
+          "synthetic_A": 834.5164648352542
+        },
+        "real_inner_Z_c": 0.006964177300811289,
+        "alignment": 1.0000000000000002,
+        "quadratic_identity_defect": 5.673986151050148e-27,
+        "eta_by_expression": {
+          "Z": 2.0254986338911827e-11,
+          "right": 2.7007733289675037e-11,
+          "wrong": 2.0255799986650237e-11
+        },
+        "eta": 2.7007733289675037e-11,
+        "u": 2.7007733289675037e-11,
+        "flags": {
+          "nonzero": true,
+          "alignment": true,
+          "reduction": true,
+          "improvement": true,
+          "wrong_direction": true
+        },
+        "relative_to_original_Rf": {
+          "N": 0.9999196712559193,
+          "Rf": 1.0,
+          "c": 0.0001170942869938697,
+          "Z": 0.00011709428699386962,
+          "right": 1.0569268542481858e-16,
+          "wrong": 0.0002341885739876974,
+          "dt": 0.0,
+          "synthetic_A": 1.1709428699386975
+        },
+        "status": "KONSISTENT_MIT_DOMINANTER_DT2_KOMPONENTE",
+        "improvement_under_reserve": false,
+        "qa": {
+          "known_correction_norm": 0.08345164648352542,
+          "errors": {
+            "extrapolated": 9.026288825718023e-13,
+            "correction": 1.5180777449290505e-13,
+            "wrong": 6.430082995119337e-13
+          },
+          "passed": true,
+          "wrong_sign_passed": false
+        }
+      },
+      {
+        "component": "DC",
+        "time_window": 0,
+        "shell": 1,
+        "measure": "band",
+        "window": [
+          88.0,
+          104.43734551685922
+        ],
+        "radius_window": [
+          45.0,
+          50.0
+        ],
+        "norms": {
+          "N": 0.00016739037235625334,
+          "Rf": 0.014471198123160119,
+          "c": 0.014554718147405117,
+          "Z": 0.014554718147405133,
+          "right": 1.2785149512605165e-15,
+          "wrong": 0.029109436294810272,
+          "dt": 0.0,
+          "synthetic_A": 145.54718147405123
+        },
+        "real_inner_Z_c": 0.00021183982035040405,
+        "alignment": 0.9999999999999999,
+        "quadratic_identity_defect": 1.634600480596681e-30,
+        "eta_by_expression": {
+          "Z": 4.9959273270514864e-12,
+          "right": 6.661504004619357e-12,
+          "wrong": 4.996128008248072e-12
+        },
+        "eta": 6.661504004619357e-12,
+        "u": 6.661504004619357e-12,
+        "flags": {
+          "nonzero": true,
+          "alignment": true,
+          "reduction": true,
+          "improvement": true,
+          "wrong_direction": true
+        },
+        "relative_to_original_Rf": {
+          "N": 0.011567139840920084,
+          "Rf": 1.0,
+          "c": 1.0057714657441756,
+          "Z": 1.0057714657441768,
+          "right": 8.834893561538245e-14,
+          "wrong": 2.011542931488354,
+          "dt": 0.0,
+          "synthetic_A": 10057.71465744176
+        },
+        "status": "KONSISTENT_MIT_DOMINANTER_DT2_KOMPONENTE",
+        "improvement_under_reserve": false,
+        "qa": {
+          "known_correction_norm": 0.014554718147405124,
+          "errors": {
+            "extrapolated": 8.784195875950065e-14,
+            "correction": 1.6637268430859313e-14,
+            "wrong": 4.132882344562188e-14
+          },
+          "passed": true,
+          "wrong_sign_passed": false
+        }
+      },
+      {
+        "component": "H2",
+        "time_window": 0,
+        "shell": 1,
+        "measure": "time",
+        "window": [
+          88.0,
+          104.43734551685922
+        ],
+        "radius_window": [
+          45.0,
+          50.0
+        ],
+        "norms": {
+          "N": 712.6303516578954,
+          "Rf": 712.6876009578023,
+          "c": 0.08345164648352538,
+          "Z": 0.08345164648352532,
+          "right": 7.532586641420162e-14,
+          "wrong": 0.16690329296702083,
+          "dt": 0.0,
+          "synthetic_A": 834.5164648352542
+        },
+        "real_inner_Z_c": 0.006964177300811289,
+        "alignment": 1.0000000000000002,
+        "quadratic_identity_defect": 5.673986151050148e-27,
+        "eta_by_expression": {
+          "Z": 2.0254986338911827e-11,
+          "right": 2.7007733289675037e-11,
+          "wrong": 2.0255799986650237e-11
+        },
+        "eta": 2.7007733289675037e-11,
+        "u": 2.7007733289675037e-11,
+        "flags": {
+          "nonzero": true,
+          "alignment": true,
+          "reduction": true,
+          "improvement": true,
+          "wrong_direction": true
+        },
+        "relative_to_original_Rf": {
+          "N": 0.9999196712559193,
+          "Rf": 1.0,
+          "c": 0.0001170942869938697,
+          "Z": 0.00011709428699386962,
+          "right": 1.0569268542481858e-16,
+          "wrong": 0.0002341885739876974,
+          "dt": 0.0,
+          "synthetic_A": 1.1709428699386975
+        },
+        "status": "KONSISTENT_MIT_DOMINANTER_DT2_KOMPONENTE",
+        "improvement_under_reserve": false,
+        "qa": {
+          "known_correction_norm": 0.08345164648352542,
+          "errors": {
+            "extrapolated": 9.026288825718023e-13,
+            "correction": 1.5180777449290505e-13,
+            "wrong": 6.430082995119337e-13
+          },
+          "passed": true,
+          "wrong_sign_passed": false
+        }
+      },
+      {
+        "component": "H2",
+        "time_window": 0,
+        "shell": 1,
+        "measure": "band",
+        "window": [
+          88.0,
+          104.43734551685922
+        ],
+        "radius_window": [
+          45.0,
+          50.0
+        ],
+        "norms": {
+          "N": 0.00016739037235625334,
+          "Rf": 0.014471198123160119,
+          "c": 0.014554718147405117,
+          "Z": 0.014554718147405133,
+          "right": 1.2785149512605165e-15,
+          "wrong": 0.029109436294810272,
+          "dt": 0.0,
+          "synthetic_A": 145.54718147405123
+        },
+        "real_inner_Z_c": 0.00021183982035040405,
+        "alignment": 0.9999999999999999,
+        "quadratic_identity_defect": 1.634600480596681e-30,
+        "eta_by_expression": {
+          "Z": 4.9959273270514864e-12,
+          "right": 6.661504004619357e-12,
+          "wrong": 4.996128008248072e-12
+        },
+        "eta": 6.661504004619357e-12,
+        "u": 6.661504004619357e-12,
+        "flags": {
+          "nonzero": true,
+          "alignment": true,
+          "reduction": true,
+          "improvement": true,
+          "wrong_direction": true
+        },
+        "relative_to_original_Rf": {
+          "N": 0.011567139840920084,
+          "Rf": 1.0,
+          "c": 1.0057714657441756,
+          "Z": 1.0057714657441768,
+          "right": 8.834893561538245e-14,
+          "wrong": 2.011542931488354,
+          "dt": 0.0,
+          "synthetic_A": 10057.71465744176
+        },
+        "status": "KONSISTENT_MIT_DOMINANTER_DT2_KOMPONENTE",
+        "improvement_under_reserve": false,
+        "qa": {
+          "known_correction_norm": 0.014554718147405124,
+          "errors": {
+            "extrapolated": 8.784195875950065e-14,
+            "correction": 1.6637268430859313e-14,
+            "wrong": 4.132882344562188e-14
+          },
+          "passed": true,
+          "wrong_sign_passed": false
+        }
+      },
+      {
+        "component": "DC",
+        "time_window": 1,
+        "shell": 0,
+        "measure": "time",
+        "window": [
+          104.5,
+          120.93734551685922
+        ],
+        "radius_window": [
+          40.0,
+          45.0
+        ],
+        "norms": {
+          "N": 692.9886712840058,
+          "Rf": 693.0452763924517,
+          "c": 0.08251255293643592,
+          "Z": 0.08251255293643613,
+          "right": 7.376016494286019e-14,
+          "wrong": 0.16502510587284522,
+          "dt": 0.0,
+          "synthetic_A": 825.12552936436
+        },
+        "real_inner_Z_c": 0.006808321392088157,
+        "alignment": 1.0,
+        "quadratic_identity_defect": 1.734723481417369e-18,
+        "eta_by_expression": {
+          "Z": 1.9696727052042774e-11,
+          "right": 2.6263375368309178e-11,
+          "wrong": 1.969753154572907e-11
+        },
+        "eta": 2.6263375368309178e-11,
+        "u": 2.6263375368309178e-11,
+        "flags": {
+          "nonzero": true,
+          "alignment": true,
+          "reduction": true,
+          "improvement": true,
+          "wrong_direction": true
+        },
+        "relative_to_original_Rf": {
+          "N": 0.9999183240830375,
+          "Rf": 1.0,
+          "c": 0.00011905795443256354,
+          "Z": 0.00011905795443256385,
+          "right": 1.0642907102232656e-16,
+          "wrong": 0.00023811590886508866,
+          "dt": 0.0,
+          "synthetic_A": 1.1905795443256366
+        },
+        "status": "KONSISTENT_MIT_DOMINANTER_DT2_KOMPONENTE",
+        "improvement_under_reserve": false,
+        "qa": {
+          "known_correction_norm": 0.082512552936436,
+          "errors": {
+            "extrapolated": 8.939265883541591e-13,
+            "correction": 1.8681484674903142e-13,
+            "wrong": 6.080973795380829e-13
+          },
+          "passed": true,
+          "wrong_sign_passed": false
+        }
+      },
+      {
+        "component": "DC",
+        "time_window": 1,
+        "shell": 0,
+        "measure": "band",
+        "window": [
+          104.5,
+          120.93734551685922
+        ],
+        "radius_window": [
+          40.0,
+          45.0
+        ],
+        "norms": {
+          "N": 0.0001627767206907283,
+          "Rf": 0.014316568597780896,
+          "c": 0.014390932359099688,
+          "Z": 0.014390932359099691,
+          "right": 1.1757895682898714e-15,
+          "wrong": 0.028781864718199376,
+          "dt": 0.0,
+          "synthetic_A": 143.90932359099685
+        },
+        "real_inner_Z_c": 0.00020709893416418255,
+        "alignment": 1.0,
+        "quadratic_identity_defect": 1.3824811088992823e-30,
+        "eta_by_expression": {
+          "Z": 4.8582317106926844e-12,
+          "right": 6.477906838911058e-12,
+          "wrong": 4.858430133992309e-12
+        },
+        "eta": 6.477906838911058e-12,
+        "u": 6.477906838911058e-12,
+        "flags": {
+          "nonzero": true,
+          "alignment": true,
+          "reduction": true,
+          "improvement": true,
+          "wrong_direction": true
+        },
+        "relative_to_original_Rf": {
+          "N": 0.01136981390330914,
+          "Rf": 1.0,
+          "c": 1.0051942447529165,
+          "Z": 1.0051942447529167,
+          "right": 8.212788981237597e-14,
+          "wrong": 2.010388489505833,
+          "dt": 0.0,
+          "synthetic_A": 10051.942447529162
+        },
+        "status": "KONSISTENT_MIT_DOMINANTER_DT2_KOMPONENTE",
+        "improvement_under_reserve": false,
+        "qa": {
+          "known_correction_norm": 0.014390932359099686,
+          "errors": {
+            "extrapolated": 8.170350182671766e-14,
+            "correction": 2.081089698486924e-14,
+            "wrong": 4.160019158829918e-14
+          },
+          "passed": true,
+          "wrong_sign_passed": false
+        }
+      },
+      {
+        "component": "H2",
+        "time_window": 1,
+        "shell": 0,
+        "measure": "time",
+        "window": [
+          104.5,
+          120.93734551685922
+        ],
+        "radius_window": [
+          40.0,
+          45.0
+        ],
+        "norms": {
+          "N": 692.9886712840058,
+          "Rf": 693.0452763924517,
+          "c": 0.08251255293643592,
+          "Z": 0.08251255293643613,
+          "right": 7.376016494286019e-14,
+          "wrong": 0.16502510587284522,
+          "dt": 0.0,
+          "synthetic_A": 825.12552936436
+        },
+        "real_inner_Z_c": 0.006808321392088157,
+        "alignment": 1.0,
+        "quadratic_identity_defect": 1.734723481417369e-18,
+        "eta_by_expression": {
+          "Z": 1.9696727052042774e-11,
+          "right": 2.6263375368309178e-11,
+          "wrong": 1.969753154572907e-11
+        },
+        "eta": 2.6263375368309178e-11,
+        "u": 2.6263375368309178e-11,
+        "flags": {
+          "nonzero": true,
+          "alignment": true,
+          "reduction": true,
+          "improvement": true,
+          "wrong_direction": true
+        },
+        "relative_to_original_Rf": {
+          "N": 0.9999183240830375,
+          "Rf": 1.0,
+          "c": 0.00011905795443256354,
+          "Z": 0.00011905795443256385,
+          "right": 1.0642907102232656e-16,
+          "wrong": 0.00023811590886508866,
+          "dt": 0.0,
+          "synthetic_A": 1.1905795443256366
+        },
+        "status": "KONSISTENT_MIT_DOMINANTER_DT2_KOMPONENTE",
+        "improvement_under_reserve": false,
+        "qa": {
+          "known_correction_norm": 0.082512552936436,
+          "errors": {
+            "extrapolated": 8.939265883541591e-13,
+            "correction": 1.8681484674903142e-13,
+            "wrong": 6.080973795380829e-13
+          },
+          "passed": true,
+          "wrong_sign_passed": false
+        }
+      },
+      {
+        "component": "H2",
+        "time_window": 1,
+        "shell": 0,
+        "measure": "band",
+        "window": [
+          104.5,
+          120.93734551685922
+        ],
+        "radius_window": [
+          40.0,
+          45.0
+        ],
+        "norms": {
+          "N": 0.0001627767206907283,
+          "Rf": 0.014316568597780896,
+          "c": 0.014390932359099688,
+          "Z": 0.014390932359099691,
+          "right": 1.1757895682898714e-15,
+          "wrong": 0.028781864718199376,
+          "dt": 0.0,
+          "synthetic_A": 143.90932359099685
+        },
+        "real_inner_Z_c": 0.00020709893416418255,
+        "alignment": 1.0,
+        "quadratic_identity_defect": 1.3824811088992823e-30,
+        "eta_by_expression": {
+          "Z": 4.8582317106926844e-12,
+          "right": 6.477906838911058e-12,
+          "wrong": 4.858430133992309e-12
+        },
+        "eta": 6.477906838911058e-12,
+        "u": 6.477906838911058e-12,
+        "flags": {
+          "nonzero": true,
+          "alignment": true,
+          "reduction": true,
+          "improvement": true,
+          "wrong_direction": true
+        },
+        "relative_to_original_Rf": {
+          "N": 0.01136981390330914,
+          "Rf": 1.0,
+          "c": 1.0051942447529165,
+          "Z": 1.0051942447529167,
+          "right": 8.212788981237597e-14,
+          "wrong": 2.010388489505833,
+          "dt": 0.0,
+          "synthetic_A": 10051.942447529162
+        },
+        "status": "KONSISTENT_MIT_DOMINANTER_DT2_KOMPONENTE",
+        "improvement_under_reserve": false,
+        "qa": {
+          "known_correction_norm": 0.014390932359099686,
+          "errors": {
+            "extrapolated": 8.170350182671766e-14,
+            "correction": 2.081089698486924e-14,
+            "wrong": 4.160019158829918e-14
+          },
+          "passed": true,
+          "wrong_sign_passed": false
+        }
+      },
+      {
+        "component": "DC",
+        "time_window": 1,
+        "shell": 1,
+        "measure": "time",
+        "window": [
+          104.5,
+          120.93734551685922
+        ],
+        "radius_window": [
+          45.0,
+          50.0
+        ],
+        "norms": {
+          "N": 712.6303516578954,
+          "Rf": 712.6876009582155,
+          "c": 0.0834516468149799,
+          "Z": 0.08345164681498043,
+          "right": 7.551818887771877e-14,
+          "wrong": 0.16690329362993014,
+          "dt": 0.0,
+          "synthetic_A": 834.5164681498015
+        },
+        "real_inner_Z_c": 0.006964177356132188,
+        "alignment": 0.9999999999999999,
+        "quadratic_identity_defect": -1.7347234702738102e-18,
+        "eta_by_expression": {
+          "Z": 2.02549863389177e-11,
+          "right": 2.70077332896907e-11,
+          "wrong": 2.0255799986661986e-11
+        },
+        "eta": 2.70077332896907e-11,
+        "u": 2.70077332896907e-11,
+        "flags": {
+          "nonzero": true,
+          "alignment": true,
+          "reduction": true,
+          "improvement": true,
+          "wrong_direction": true
+        },
+        "relative_to_original_Rf": {
+          "N": 0.9999196712553394,
+          "Rf": 1.0,
+          "c": 0.00011709428745887865,
+          "Z": 0.00011709428745887941,
+          "right": 1.0596254063657599e-16,
+          "wrong": 0.00023418857491771573,
+          "dt": 0.0,
+          "synthetic_A": 1.1709428745887902
+        },
+        "status": "KONSISTENT_MIT_DOMINANTER_DT2_KOMPONENTE",
+        "improvement_under_reserve": false,
+        "qa": {
+          "known_correction_norm": 0.08345164681498016,
+          "errors": {
+            "extrapolated": 9.049334765693649e-13,
+            "correction": 1.5063949843035483e-13,
+            "wrong": 6.44045785051244e-13
+          },
+          "passed": true,
+          "wrong_sign_passed": false
+        }
+      },
+      {
+        "component": "DC",
+        "time_window": 1,
+        "shell": 1,
+        "measure": "band",
+        "window": [
+          104.5,
+          120.93734551685922
+        ],
+        "radius_window": [
+          45.0,
+          50.0
+        ],
+        "norms": {
+          "N": 0.00016739037233138546,
+          "Rf": 0.014478259933392744,
+          "c": 0.014554718789212703,
+          "Z": 0.014554718789212806,
+          "right": 1.1790589692557538e-15,
+          "wrong": 0.029109437578425514,
+          "dt": 0.0,
+          "synthetic_A": 145.5471878921274
+        },
+        "real_inner_Z_c": 0.0002118398390330628,
+        "alignment": 1.0,
+        "quadratic_identity_defect": 1.3901800529824405e-30,
+        "eta_by_expression": {
+          "Z": 4.995927327052935e-12,
+          "right": 6.6615040046232224e-12,
+          "wrong": 4.99612800825097e-12
+        },
+        "eta": 6.6615040046232224e-12,
+        "u": 6.6615040046232224e-12,
+        "flags": {
+          "nonzero": true,
+          "alignment": true,
+          "reduction": true,
+          "improvement": true,
+          "wrong_direction": true
+        },
+        "relative_to_original_Rf": {
+          "N": 0.011561497935626596,
+          "Rf": 1.0,
+          "c": 1.0052809423350395,
+          "Z": 1.0052809423350466,
+          "right": 8.143651064976153e-14,
+          "wrong": 2.0105618846700866,
+          "dt": 0.0,
+          "synthetic_A": 10052.80942335042
+        },
+        "status": "KONSISTENT_MIT_DOMINANTER_DT2_KOMPONENTE",
+        "improvement_under_reserve": false,
+        "qa": {
+          "known_correction_norm": 0.01455471878921274,
+          "errors": {
+            "extrapolated": 8.100870833242178e-14,
+            "correction": 1.6620894747929676e-14,
+            "wrong": 4.3567514822836264e-14
+          },
+          "passed": true,
+          "wrong_sign_passed": false
+        }
+      },
+      {
+        "component": "H2",
+        "time_window": 1,
+        "shell": 1,
+        "measure": "time",
+        "window": [
+          104.5,
+          120.93734551685922
+        ],
+        "radius_window": [
+          45.0,
+          50.0
+        ],
+        "norms": {
+          "N": 712.6303516578954,
+          "Rf": 712.6876009582155,
+          "c": 0.0834516468149799,
+          "Z": 0.08345164681498043,
+          "right": 7.551818887771877e-14,
+          "wrong": 0.16690329362993014,
+          "dt": 0.0,
+          "synthetic_A": 834.5164681498015
+        },
+        "real_inner_Z_c": 0.006964177356132188,
+        "alignment": 0.9999999999999999,
+        "quadratic_identity_defect": -1.7347234702738102e-18,
+        "eta_by_expression": {
+          "Z": 2.02549863389177e-11,
+          "right": 2.70077332896907e-11,
+          "wrong": 2.0255799986661986e-11
+        },
+        "eta": 2.70077332896907e-11,
+        "u": 2.70077332896907e-11,
+        "flags": {
+          "nonzero": true,
+          "alignment": true,
+          "reduction": true,
+          "improvement": true,
+          "wrong_direction": true
+        },
+        "relative_to_original_Rf": {
+          "N": 0.9999196712553394,
+          "Rf": 1.0,
+          "c": 0.00011709428745887865,
+          "Z": 0.00011709428745887941,
+          "right": 1.0596254063657599e-16,
+          "wrong": 0.00023418857491771573,
+          "dt": 0.0,
+          "synthetic_A": 1.1709428745887902
+        },
+        "status": "KONSISTENT_MIT_DOMINANTER_DT2_KOMPONENTE",
+        "improvement_under_reserve": false,
+        "qa": {
+          "known_correction_norm": 0.08345164681498016,
+          "errors": {
+            "extrapolated": 9.049334765693649e-13,
+            "correction": 1.5063949843035483e-13,
+            "wrong": 6.44045785051244e-13
+          },
+          "passed": true,
+          "wrong_sign_passed": false
+        }
+      },
+      {
+        "component": "H2",
+        "time_window": 1,
+        "shell": 1,
+        "measure": "band",
+        "window": [
+          104.5,
+          120.93734551685922
+        ],
+        "radius_window": [
+          45.0,
+          50.0
+        ],
+        "norms": {
+          "N": 0.00016739037233138546,
+          "Rf": 0.014478259933392744,
+          "c": 0.014554718789212703,
+          "Z": 0.014554718789212806,
+          "right": 1.1790589692557538e-15,
+          "wrong": 0.029109437578425514,
+          "dt": 0.0,
+          "synthetic_A": 145.5471878921274
+        },
+        "real_inner_Z_c": 0.0002118398390330628,
+        "alignment": 1.0,
+        "quadratic_identity_defect": 1.3901800529824405e-30,
+        "eta_by_expression": {
+          "Z": 4.995927327052935e-12,
+          "right": 6.6615040046232224e-12,
+          "wrong": 4.99612800825097e-12
+        },
+        "eta": 6.6615040046232224e-12,
+        "u": 6.6615040046232224e-12,
+        "flags": {
+          "nonzero": true,
+          "alignment": true,
+          "reduction": true,
+          "improvement": true,
+          "wrong_direction": true
+        },
+        "relative_to_original_Rf": {
+          "N": 0.011561497935626596,
+          "Rf": 1.0,
+          "c": 1.0052809423350395,
+          "Z": 1.0052809423350466,
+          "right": 8.143651064976153e-14,
+          "wrong": 2.0105618846700866,
+          "dt": 0.0,
+          "synthetic_A": 10052.80942335042
+        },
+        "status": "KONSISTENT_MIT_DOMINANTER_DT2_KOMPONENTE",
+        "improvement_under_reserve": false,
+        "qa": {
+          "known_correction_norm": 0.01455471878921274,
+          "errors": {
+            "extrapolated": 8.100870833242178e-14,
+            "correction": 1.6620894747929676e-14,
+            "wrong": 4.3567514822836264e-14
+          },
+          "passed": true,
+          "wrong_sign_passed": false
+        }
+      }
+    ],
+    "zero_correction": [
+      {
+        "component": "DC",
+        "time_window": 0,
+        "shell": 0,
+        "measure": "time",
+        "window": [
+          88.0,
+          104.43734551685922
+        ],
+        "radius_window": [
+          40.0,
+          45.0
+        ],
+        "norms": {
+          "N": 692.9886712840058,
+          "Rf": 692.9886712840058,
+          "c": 0.0,
+          "Z": 0.0,
+          "right": 5.159869851714586e-14,
+          "wrong": 5.159869851714586e-14,
+          "dt": 0.0
+        },
+        "real_inner_Z_c": 0.0,
+        "alignment": null,
+        "quadratic_identity_defect": 2.6624256886633103e-27,
+        "eta_by_expression": {
+          "Z": 1.9695922653795774e-11,
+          "right": 2.626123020506103e-11,
+          "wrong": 1.9695922653795774e-11
+        },
+        "eta": 2.626123020506103e-11,
+        "u": 2.626123020506103e-11,
+        "flags": {
+          "nonzero": false,
+          "alignment": false,
+          "reduction": false,
+          "improvement": false,
+          "wrong_direction": false
+        },
+        "relative_to_original_Rf": {
+          "N": 1.0,
+          "Rf": 1.0,
+          "c": 0.0,
+          "Z": 0.0,
+          "right": 7.44582136119788e-17,
+          "wrong": 7.44582136119788e-17,
+          "dt": 0.0
+        },
+        "status": "NICHT_ZUGEORDNET",
+        "improvement_under_reserve": true
+      },
+      {
+        "component": "DC",
+        "time_window": 0,
+        "shell": 0,
+        "measure": "band",
+        "window": [
+          88.0,
+          104.43734551685922
+        ],
+        "radius_window": [
+          40.0,
+          45.0
+        ],
+        "norms": {
+          "N": 0.00016277672071415418,
+          "Rf": 0.00016277672071415418,
+          "c": 0.0,
+          "Z": 0.0,
+          "right": 1.2120063840028581e-20,
+          "wrong": 1.2120063840028581e-20,
+          "dt": 0.0
+        },
+        "real_inner_Z_c": 0.0,
+        "alignment": null,
+        "quadratic_identity_defect": 1.4689594748636836e-40,
+        "eta_by_expression": {
+          "Z": 4.858033306629309e-12,
+          "right": 6.4773777421724124e-12,
+          "wrong": 4.858033306629309e-12
+        },
+        "eta": 6.4773777421724124e-12,
+        "u": 6.4773777421724124e-12,
+        "flags": {
+          "nonzero": false,
+          "alignment": false,
+          "reduction": false,
+          "improvement": false,
+          "wrong_direction": false
+        },
+        "relative_to_original_Rf": {
+          "N": 1.0,
+          "Rf": 1.0,
+          "c": 0.0,
+          "Z": 0.0,
+          "right": 7.445821359991733e-17,
+          "wrong": 7.445821359991733e-17,
+          "dt": 0.0
+        },
+        "status": "NICHT_ZUGEORDNET",
+        "improvement_under_reserve": true
+      },
+      {
+        "component": "H2",
+        "time_window": 0,
+        "shell": 0,
+        "measure": "time",
+        "window": [
+          88.0,
+          104.43734551685922
+        ],
+        "radius_window": [
+          40.0,
+          45.0
+        ],
+        "norms": {
+          "N": 692.9886712840058,
+          "Rf": 692.9886712840058,
+          "c": 0.0,
+          "Z": 0.0,
+          "right": 5.159869851714586e-14,
+          "wrong": 5.159869851714586e-14,
+          "dt": 0.0
+        },
+        "real_inner_Z_c": 0.0,
+        "alignment": null,
+        "quadratic_identity_defect": 2.6624256886633103e-27,
+        "eta_by_expression": {
+          "Z": 1.9695922653795774e-11,
+          "right": 2.626123020506103e-11,
+          "wrong": 1.9695922653795774e-11
+        },
+        "eta": 2.626123020506103e-11,
+        "u": 2.626123020506103e-11,
+        "flags": {
+          "nonzero": false,
+          "alignment": false,
+          "reduction": false,
+          "improvement": false,
+          "wrong_direction": false
+        },
+        "relative_to_original_Rf": {
+          "N": 1.0,
+          "Rf": 1.0,
+          "c": 0.0,
+          "Z": 0.0,
+          "right": 7.44582136119788e-17,
+          "wrong": 7.44582136119788e-17,
+          "dt": 0.0
+        },
+        "status": "NICHT_ZUGEORDNET",
+        "improvement_under_reserve": true
+      },
+      {
+        "component": "H2",
+        "time_window": 0,
+        "shell": 0,
+        "measure": "band",
+        "window": [
+          88.0,
+          104.43734551685922
+        ],
+        "radius_window": [
+          40.0,
+          45.0
+        ],
+        "norms": {
+          "N": 0.00016277672071415418,
+          "Rf": 0.00016277672071415418,
+          "c": 0.0,
+          "Z": 0.0,
+          "right": 1.2120063840028581e-20,
+          "wrong": 1.2120063840028581e-20,
+          "dt": 0.0
+        },
+        "real_inner_Z_c": 0.0,
+        "alignment": null,
+        "quadratic_identity_defect": 1.4689594748636836e-40,
+        "eta_by_expression": {
+          "Z": 4.858033306629309e-12,
+          "right": 6.4773777421724124e-12,
+          "wrong": 4.858033306629309e-12
+        },
+        "eta": 6.4773777421724124e-12,
+        "u": 6.4773777421724124e-12,
+        "flags": {
+          "nonzero": false,
+          "alignment": false,
+          "reduction": false,
+          "improvement": false,
+          "wrong_direction": false
+        },
+        "relative_to_original_Rf": {
+          "N": 1.0,
+          "Rf": 1.0,
+          "c": 0.0,
+          "Z": 0.0,
+          "right": 7.445821359991733e-17,
+          "wrong": 7.445821359991733e-17,
+          "dt": 0.0
+        },
+        "status": "NICHT_ZUGEORDNET",
+        "improvement_under_reserve": true
+      },
+      {
+        "component": "DC",
+        "time_window": 0,
+        "shell": 1,
+        "measure": "time",
+        "window": [
+          88.0,
+          104.43734551685922
+        ],
+        "radius_window": [
+          45.0,
+          50.0
+        ],
+        "norms": {
+          "N": 712.6303516578954,
+          "Rf": 712.6303516578954,
+          "c": 0.0,
+          "Z": 0.0,
+          "right": 5.83458749829506e-14,
+          "wrong": 5.83458749829506e-14,
+          "dt": 0.0
+        },
+        "real_inner_Z_c": 0.0,
+        "alignment": null,
+        "quadratic_identity_defect": 3.4042411275261005e-27,
+        "eta_by_expression": {
+          "Z": 2.025417278610733e-11,
+          "right": 2.7005563714809768e-11,
+          "wrong": 2.0254172786107327e-11
+        },
+        "eta": 2.7005563714809768e-11,
+        "u": 2.7005563714809768e-11,
+        "flags": {
+          "nonzero": false,
+          "alignment": false,
+          "reduction": false,
+          "improvement": false,
+          "wrong_direction": false
+        },
+        "relative_to_original_Rf": {
+          "N": 1.0,
+          "Rf": 1.0,
+          "c": 0.0,
+          "Z": 0.0,
+          "right": 8.187396852689774e-17,
+          "wrong": 8.187396852689774e-17,
+          "dt": 0.0
+        },
+        "status": "NICHT_ZUGEORDNET",
+        "improvement_under_reserve": true
+      },
+      {
+        "component": "DC",
+        "time_window": 0,
+        "shell": 1,
+        "measure": "band",
+        "window": [
+          88.0,
+          104.43734551685922
+        ],
+        "radius_window": [
+          45.0,
+          50.0
+        ],
+        "norms": {
+          "N": 0.00016739037235625334,
+          "Rf": 0.00016739037235625334,
+          "c": 0.0,
+          "Z": 0.0,
+          "right": 1.370491407570493e-20,
+          "wrong": 1.370491407570493e-20,
+          "dt": 0.0
+        },
+        "real_inner_Z_c": 0.0,
+        "alignment": null,
+        "quadratic_identity_defect": 1.8782466982245513e-40,
+        "eta_by_expression": {
+          "Z": 4.9957266649892985e-12,
+          "right": 6.660968886652402e-12,
+          "wrong": 4.995726664989298e-12
+        },
+        "eta": 6.660968886652402e-12,
+        "u": 6.660968886652402e-12,
+        "flags": {
+          "nonzero": false,
+          "alignment": false,
+          "reduction": false,
+          "improvement": false,
+          "wrong_direction": false
+        },
+        "relative_to_original_Rf": {
+          "N": 1.0,
+          "Rf": 1.0,
+          "c": 0.0,
+          "Z": 0.0,
+          "right": 8.187396851317742e-17,
+          "wrong": 8.187396851317742e-17,
+          "dt": 0.0
+        },
+        "status": "NICHT_ZUGEORDNET",
+        "improvement_under_reserve": true
+      },
+      {
+        "component": "H2",
+        "time_window": 0,
+        "shell": 1,
+        "measure": "time",
+        "window": [
+          88.0,
+          104.43734551685922
+        ],
+        "radius_window": [
+          45.0,
+          50.0
+        ],
+        "norms": {
+          "N": 712.6303516578954,
+          "Rf": 712.6303516578954,
+          "c": 0.0,
+          "Z": 0.0,
+          "right": 5.83458749829506e-14,
+          "wrong": 5.83458749829506e-14,
+          "dt": 0.0
+        },
+        "real_inner_Z_c": 0.0,
+        "alignment": null,
+        "quadratic_identity_defect": 3.4042411275261005e-27,
+        "eta_by_expression": {
+          "Z": 2.025417278610733e-11,
+          "right": 2.7005563714809768e-11,
+          "wrong": 2.0254172786107327e-11
+        },
+        "eta": 2.7005563714809768e-11,
+        "u": 2.7005563714809768e-11,
+        "flags": {
+          "nonzero": false,
+          "alignment": false,
+          "reduction": false,
+          "improvement": false,
+          "wrong_direction": false
+        },
+        "relative_to_original_Rf": {
+          "N": 1.0,
+          "Rf": 1.0,
+          "c": 0.0,
+          "Z": 0.0,
+          "right": 8.187396852689774e-17,
+          "wrong": 8.187396852689774e-17,
+          "dt": 0.0
+        },
+        "status": "NICHT_ZUGEORDNET",
+        "improvement_under_reserve": true
+      },
+      {
+        "component": "H2",
+        "time_window": 0,
+        "shell": 1,
+        "measure": "band",
+        "window": [
+          88.0,
+          104.43734551685922
+        ],
+        "radius_window": [
+          45.0,
+          50.0
+        ],
+        "norms": {
+          "N": 0.00016739037235625334,
+          "Rf": 0.00016739037235625334,
+          "c": 0.0,
+          "Z": 0.0,
+          "right": 1.370491407570493e-20,
+          "wrong": 1.370491407570493e-20,
+          "dt": 0.0
+        },
+        "real_inner_Z_c": 0.0,
+        "alignment": null,
+        "quadratic_identity_defect": 1.8782466982245513e-40,
+        "eta_by_expression": {
+          "Z": 4.9957266649892985e-12,
+          "right": 6.660968886652402e-12,
+          "wrong": 4.995726664989298e-12
+        },
+        "eta": 6.660968886652402e-12,
+        "u": 6.660968886652402e-12,
+        "flags": {
+          "nonzero": false,
+          "alignment": false,
+          "reduction": false,
+          "improvement": false,
+          "wrong_direction": false
+        },
+        "relative_to_original_Rf": {
+          "N": 1.0,
+          "Rf": 1.0,
+          "c": 0.0,
+          "Z": 0.0,
+          "right": 8.187396851317742e-17,
+          "wrong": 8.187396851317742e-17,
+          "dt": 0.0
+        },
+        "status": "NICHT_ZUGEORDNET",
+        "improvement_under_reserve": true
+      },
+      {
+        "component": "DC",
+        "time_window": 1,
+        "shell": 0,
+        "measure": "time",
+        "window": [
+          104.5,
+          120.93734551685922
+        ],
+        "radius_window": [
+          40.0,
+          45.0
+        ],
+        "norms": {
+          "N": 692.9886712840058,
+          "Rf": 692.9886712840058,
+          "c": 0.0,
+          "Z": 0.0,
+          "right": 5.159869851714586e-14,
+          "wrong": 5.159869851714586e-14,
+          "dt": 0.0
+        },
+        "real_inner_Z_c": 0.0,
+        "alignment": null,
+        "quadratic_identity_defect": 2.6624256886633103e-27,
+        "eta_by_expression": {
+          "Z": 1.9695922653795774e-11,
+          "right": 2.626123020506103e-11,
+          "wrong": 1.9695922653795774e-11
+        },
+        "eta": 2.626123020506103e-11,
+        "u": 2.626123020506103e-11,
+        "flags": {
+          "nonzero": false,
+          "alignment": false,
+          "reduction": false,
+          "improvement": false,
+          "wrong_direction": false
+        },
+        "relative_to_original_Rf": {
+          "N": 1.0,
+          "Rf": 1.0,
+          "c": 0.0,
+          "Z": 0.0,
+          "right": 7.44582136119788e-17,
+          "wrong": 7.44582136119788e-17,
+          "dt": 0.0
+        },
+        "status": "NICHT_ZUGEORDNET",
+        "improvement_under_reserve": true
+      },
+      {
+        "component": "DC",
+        "time_window": 1,
+        "shell": 0,
+        "measure": "band",
+        "window": [
+          104.5,
+          120.93734551685922
+        ],
+        "radius_window": [
+          40.0,
+          45.0
+        ],
+        "norms": {
+          "N": 0.0001627767206907283,
+          "Rf": 0.0001627767206907283,
+          "c": 0.0,
+          "Z": 0.0,
+          "right": 1.2120063840114423e-20,
+          "wrong": 1.2120063840114423e-20,
+          "dt": 0.0
+        },
+        "real_inner_Z_c": 0.0,
+        "alignment": null,
+        "quadratic_identity_defect": 1.4689594748844917e-40,
+        "eta_by_expression": {
+          "Z": 4.858033306629309e-12,
+          "right": 6.4773777421724124e-12,
+          "wrong": 4.858033306629309e-12
+        },
+        "eta": 6.4773777421724124e-12,
+        "u": 6.4773777421724124e-12,
+        "flags": {
+          "nonzero": false,
+          "alignment": false,
+          "reduction": false,
+          "improvement": false,
+          "wrong_direction": false
+        },
+        "relative_to_original_Rf": {
+          "N": 1.0,
+          "Rf": 1.0,
+          "c": 0.0,
+          "Z": 0.0,
+          "right": 7.44582136111603e-17,
+          "wrong": 7.44582136111603e-17,
+          "dt": 0.0
+        },
+        "status": "NICHT_ZUGEORDNET",
+        "improvement_under_reserve": true
+      },
+      {
+        "component": "H2",
+        "time_window": 1,
+        "shell": 0,
+        "measure": "time",
+        "window": [
+          104.5,
+          120.93734551685922
+        ],
+        "radius_window": [
+          40.0,
+          45.0
+        ],
+        "norms": {
+          "N": 692.9886712840058,
+          "Rf": 692.9886712840058,
+          "c": 0.0,
+          "Z": 0.0,
+          "right": 5.159869851714586e-14,
+          "wrong": 5.159869851714586e-14,
+          "dt": 0.0
+        },
+        "real_inner_Z_c": 0.0,
+        "alignment": null,
+        "quadratic_identity_defect": 2.6624256886633103e-27,
+        "eta_by_expression": {
+          "Z": 1.9695922653795774e-11,
+          "right": 2.626123020506103e-11,
+          "wrong": 1.9695922653795774e-11
+        },
+        "eta": 2.626123020506103e-11,
+        "u": 2.626123020506103e-11,
+        "flags": {
+          "nonzero": false,
+          "alignment": false,
+          "reduction": false,
+          "improvement": false,
+          "wrong_direction": false
+        },
+        "relative_to_original_Rf": {
+          "N": 1.0,
+          "Rf": 1.0,
+          "c": 0.0,
+          "Z": 0.0,
+          "right": 7.44582136119788e-17,
+          "wrong": 7.44582136119788e-17,
+          "dt": 0.0
+        },
+        "status": "NICHT_ZUGEORDNET",
+        "improvement_under_reserve": true
+      },
+      {
+        "component": "H2",
+        "time_window": 1,
+        "shell": 0,
+        "measure": "band",
+        "window": [
+          104.5,
+          120.93734551685922
+        ],
+        "radius_window": [
+          40.0,
+          45.0
+        ],
+        "norms": {
+          "N": 0.0001627767206907283,
+          "Rf": 0.0001627767206907283,
+          "c": 0.0,
+          "Z": 0.0,
+          "right": 1.2120063840114423e-20,
+          "wrong": 1.2120063840114423e-20,
+          "dt": 0.0
+        },
+        "real_inner_Z_c": 0.0,
+        "alignment": null,
+        "quadratic_identity_defect": 1.4689594748844917e-40,
+        "eta_by_expression": {
+          "Z": 4.858033306629309e-12,
+          "right": 6.4773777421724124e-12,
+          "wrong": 4.858033306629309e-12
+        },
+        "eta": 6.4773777421724124e-12,
+        "u": 6.4773777421724124e-12,
+        "flags": {
+          "nonzero": false,
+          "alignment": false,
+          "reduction": false,
+          "improvement": false,
+          "wrong_direction": false
+        },
+        "relative_to_original_Rf": {
+          "N": 1.0,
+          "Rf": 1.0,
+          "c": 0.0,
+          "Z": 0.0,
+          "right": 7.44582136111603e-17,
+          "wrong": 7.44582136111603e-17,
+          "dt": 0.0
+        },
+        "status": "NICHT_ZUGEORDNET",
+        "improvement_under_reserve": true
+      },
+      {
+        "component": "DC",
+        "time_window": 1,
+        "shell": 1,
+        "measure": "time",
+        "window": [
+          104.5,
+          120.93734551685922
+        ],
+        "radius_window": [
+          45.0,
+          50.0
+        ],
+        "norms": {
+          "N": 712.6303516578954,
+          "Rf": 712.6303516578954,
+          "c": 0.0,
+          "Z": 0.0,
+          "right": 5.83458749829506e-14,
+          "wrong": 5.83458749829506e-14,
+          "dt": 0.0
+        },
+        "real_inner_Z_c": 0.0,
+        "alignment": null,
+        "quadratic_identity_defect": 3.4042411275261005e-27,
+        "eta_by_expression": {
+          "Z": 2.025417278610733e-11,
+          "right": 2.7005563714809768e-11,
+          "wrong": 2.0254172786107327e-11
+        },
+        "eta": 2.7005563714809768e-11,
+        "u": 2.7005563714809768e-11,
+        "flags": {
+          "nonzero": false,
+          "alignment": false,
+          "reduction": false,
+          "improvement": false,
+          "wrong_direction": false
+        },
+        "relative_to_original_Rf": {
+          "N": 1.0,
+          "Rf": 1.0,
+          "c": 0.0,
+          "Z": 0.0,
+          "right": 8.187396852689774e-17,
+          "wrong": 8.187396852689774e-17,
+          "dt": 0.0
+        },
+        "status": "NICHT_ZUGEORDNET",
+        "improvement_under_reserve": true
+      },
+      {
+        "component": "DC",
+        "time_window": 1,
+        "shell": 1,
+        "measure": "band",
+        "window": [
+          104.5,
+          120.93734551685922
+        ],
+        "radius_window": [
+          45.0,
+          50.0
+        ],
+        "norms": {
+          "N": 0.00016739037233138546,
+          "Rf": 0.00016739037233138546,
+          "c": 0.0,
+          "Z": 0.0,
+          "right": 1.3704914075801998e-20,
+          "wrong": 1.3704914075801998e-20,
+          "dt": 0.0
+        },
+        "real_inner_Z_c": 0.0,
+        "alignment": null,
+        "quadratic_identity_defect": 1.878246698251157e-40,
+        "eta_by_expression": {
+          "Z": 4.9957266649892985e-12,
+          "right": 6.660968886652402e-12,
+          "wrong": 4.995726664989298e-12
+        },
+        "eta": 6.660968886652402e-12,
+        "u": 6.660968886652402e-12,
+        "flags": {
+          "nonzero": false,
+          "alignment": false,
+          "reduction": false,
+          "improvement": false,
+          "wrong_direction": false
+        },
+        "relative_to_original_Rf": {
+          "N": 1.0,
+          "Rf": 1.0,
+          "c": 0.0,
+          "Z": 0.0,
+          "right": 8.187396852592068e-17,
+          "wrong": 8.187396852592068e-17,
+          "dt": 0.0
+        },
+        "status": "NICHT_ZUGEORDNET",
+        "improvement_under_reserve": true
+      },
+      {
+        "component": "H2",
+        "time_window": 1,
+        "shell": 1,
+        "measure": "time",
+        "window": [
+          104.5,
+          120.93734551685922
+        ],
+        "radius_window": [
+          45.0,
+          50.0
+        ],
+        "norms": {
+          "N": 712.6303516578954,
+          "Rf": 712.6303516578954,
+          "c": 0.0,
+          "Z": 0.0,
+          "right": 5.83458749829506e-14,
+          "wrong": 5.83458749829506e-14,
+          "dt": 0.0
+        },
+        "real_inner_Z_c": 0.0,
+        "alignment": null,
+        "quadratic_identity_defect": 3.4042411275261005e-27,
+        "eta_by_expression": {
+          "Z": 2.025417278610733e-11,
+          "right": 2.7005563714809768e-11,
+          "wrong": 2.0254172786107327e-11
+        },
+        "eta": 2.7005563714809768e-11,
+        "u": 2.7005563714809768e-11,
+        "flags": {
+          "nonzero": false,
+          "alignment": false,
+          "reduction": false,
+          "improvement": false,
+          "wrong_direction": false
+        },
+        "relative_to_original_Rf": {
+          "N": 1.0,
+          "Rf": 1.0,
+          "c": 0.0,
+          "Z": 0.0,
+          "right": 8.187396852689774e-17,
+          "wrong": 8.187396852689774e-17,
+          "dt": 0.0
+        },
+        "status": "NICHT_ZUGEORDNET",
+        "improvement_under_reserve": true
+      },
+      {
+        "component": "H2",
+        "time_window": 1,
+        "shell": 1,
+        "measure": "band",
+        "window": [
+          104.5,
+          120.93734551685922
+        ],
+        "radius_window": [
+          45.0,
+          50.0
+        ],
+        "norms": {
+          "N": 0.00016739037233138546,
+          "Rf": 0.00016739037233138546,
+          "c": 0.0,
+          "Z": 0.0,
+          "right": 1.3704914075801998e-20,
+          "wrong": 1.3704914075801998e-20,
+          "dt": 0.0
+        },
+        "real_inner_Z_c": 0.0,
+        "alignment": null,
+        "quadratic_identity_defect": 1.878246698251157e-40,
+        "eta_by_expression": {
+          "Z": 4.9957266649892985e-12,
+          "right": 6.660968886652402e-12,
+          "wrong": 4.995726664989298e-12
+        },
+        "eta": 6.660968886652402e-12,
+        "u": 6.660968886652402e-12,
+        "flags": {
+          "nonzero": false,
+          "alignment": false,
+          "reduction": false,
+          "improvement": false,
+          "wrong_direction": false
+        },
+        "relative_to_original_Rf": {
+          "N": 1.0,
+          "Rf": 1.0,
+          "c": 0.0,
+          "Z": 0.0,
+          "right": 8.187396852592068e-17,
+          "wrong": 8.187396852592068e-17,
+          "dt": 0.0
+        },
+        "status": "NICHT_ZUGEORDNET",
+        "improvement_under_reserve": true
+      }
+    ]
+  },
+  "measurements": [
+    {
+      "component": "DC",
+      "time_window": 0,
+      "shell": 0,
+      "measure": "time",
+      "window": [
+        88.0,
+        104.43734551685922
+      ],
+      "radius_window": [
+        40.0,
+        45.0
+      ],
+      "norms": {
+        "N": 0.00497957303720616,
+        "Rf": 0.004979609425777541,
+        "c": 1.0159942358059964e-05,
+        "Z": 1.0722120494031623e-05,
+        "right": 1.8558259577307875e-06,
+        "wrong": 2.0807030139591773e-05,
+        "dt": 5.547709152027069e-06
+      },
+      "real_inner_Z_c": 1.0737210331112326e-10,
+      "alignment": 0.9856427530579595,
+      "quadratic_identity_defect": -5.77572400366616e-26,
+      "eta_by_expression": {
+        "Z": 1.415285153353559e-16,
+        "right": 1.8870539625787518e-16,
+        "wrong": 1.4152903813331475e-16
+      },
+      "eta": 1.8870539625787518e-16,
+      "u": 5.5477091522157744e-06,
+      "flags": {
+        "nonzero": true,
+        "alignment": true,
+        "reduction": true,
+        "improvement": false,
+        "wrong_direction": false
+      },
+      "relative_to_original_Rf": {
+        "N": 0.9999926924848378,
+        "Rf": 1.0,
+        "c": 0.002040309086384529,
+        "Z": 0.0021532051165553848,
+        "right": 0.0003726850439562355,
+        "wrong": 0.004178446211440139,
+        "dt": 0.001114085197788544
+      },
+      "status": "NICHT_ZUGEORDNET",
+      "improvement_under_reserve": true
+    },
+    {
+      "component": "DC",
+      "time_window": 0,
+      "shell": 0,
+      "measure": "band",
+      "window": [
+        88.0,
+        104.43734551685922
+      ],
+      "radius_window": [
+        40.0,
+        45.0
+      ],
+      "norms": {
+        "N": 0.0005637149773652983,
+        "Rf": 0.0005637055654801465,
+        "c": 1.0236482466091742e-07,
+        "Z": 2.814090425482054e-07,
+        "right": 2.0485977975449464e-07,
+        "wrong": 3.7063686237401813e-07,
+        "dt": 6.196561407640405e-07
+      },
+      "real_inner_Z_c": 2.3851038597349238e-14,
+      "alignment": 0.8279774325827323,
+      "quadratic_identity_defect": 4.985600920996795e-28,
+      "eta_by_expression": {
+        "Z": 3.465687812779539e-17,
+        "right": 4.620920508533582e-17,
+        "wrong": 3.4656924656791455e-17
+      },
+      "eta": 4.620920508533582e-17,
+      "u": 6.196561408102497e-07,
+      "flags": {
+        "nonzero": true,
+        "alignment": true,
+        "reduction": false,
+        "improvement": false,
+        "wrong_direction": false
+      },
+      "relative_to_original_Rf": {
+        "N": 1.0000166964559658,
+        "Rf": 1.0,
+        "c": 0.00018159271600188355,
+        "Z": 0.0004992128156629252,
+        "right": 0.0003634162802348804,
+        "wrong": 0.0006575008037366483,
+        "dt": 0.0010992549634244555
+      },
+      "status": "NICHT_ZUGEORDNET",
+      "improvement_under_reserve": true
+    },
+    {
+      "component": "H2",
+      "time_window": 0,
+      "shell": 0,
+      "measure": "time",
+      "window": [
+        88.0,
+        104.43734551685922
+      ],
+      "radius_window": [
+        40.0,
+        45.0
+      ],
+      "norms": {
+        "N": 0.00534674227103179,
+        "Rf": 0.005346877130561532,
+        "c": 8.045568612679094e-06,
+        "Z": 8.852553602794933e-06,
+        "right": 2.0710391146590153e-06,
+        "wrong": 1.679013270254054e-05,
+        "dt": 6.2352818758311695e-06
+      },
+      "real_inner_Z_c": 6.940483828861847e-11,
+      "alignment": 0.9744609467608402,
+      "quadratic_identity_defect": -2.0194839173657902e-26,
+      "eta_by_expression": {
+        "Z": 1.5196550123198518e-16,
+        "right": 2.0262263518051494e-16,
+        "wrong": 1.5196682097544062e-16
+      },
+      "eta": 2.0262263518051494e-16,
+      "u": 6.2352818760337925e-06,
+      "flags": {
+        "nonzero": true,
+        "alignment": true,
+        "reduction": true,
+        "improvement": false,
+        "wrong_direction": false
+      },
+      "relative_to_original_Rf": {
+        "N": 0.9999747778887659,
+        "Rf": 1.0,
+        "c": 0.0015047229282102736,
+        "Z": 0.001655649341967436,
+        "right": 0.0003873362084236848,
+        "wrong": 0.00314017552536825,
+        "dt": 0.0011661539481039724
+      },
+      "status": "NICHT_ZUGEORDNET",
+      "improvement_under_reserve": true
+    },
+    {
+      "component": "H2",
+      "time_window": 0,
+      "shell": 0,
+      "measure": "band",
+      "window": [
+        88.0,
+        104.43734551685922
+      ],
+      "radius_window": [
+        40.0,
+        45.0
+      ],
+      "norms": {
+        "N": 0.0005583460239636325,
+        "Rf": 0.0005583988977424042,
+        "c": 1.2508688741261728e-07,
+        "Z": 3.2113722085767163e-07,
+        "right": 2.1114375951865675e-07,
+        "wrong": 4.392835085247912e-07,
+        "dt": 6.378879198610227e-07
+      },
+      "real_inner_Z_c": 3.7097078419545963e-14,
+      "alignment": 0.9235008032703026,
+      "quadratic_identity_defect": -1.4767476145737341e-27,
+      "eta_by_expression": {
+        "Z": 3.717537157038282e-17,
+        "right": 4.9567675869574525e-17,
+        "wrong": 3.7175728843179036e-17
+      },
+      "eta": 4.9567675869574525e-17,
+      "u": 6.378879199105904e-07,
+      "flags": {
+        "nonzero": true,
+        "alignment": true,
+        "reduction": false,
+        "improvement": false,
+        "wrong_direction": false
+      },
+      "relative_to_original_Rf": {
+        "N": 0.9999053118138568,
+        "Rf": 1.0,
+        "c": 0.00022400991104807176,
+        "Z": 0.0005751036081124499,
+        "right": 0.00037812352490720674,
+        "wrong": 0.0007866840538203171,
+        "dt": 0.0011423516816383254
+      },
+      "status": "NICHT_ZUGEORDNET",
+      "improvement_under_reserve": true
+    },
+    {
+      "component": "DC",
+      "time_window": 0,
+      "shell": 1,
+      "measure": "time",
+      "window": [
+        88.0,
+        104.43734551685922
+      ],
+      "radius_window": [
+        45.0,
+        50.0
+      ],
+      "norms": {
+        "N": 0.004338176785673724,
+        "Rf": 0.0043381405092405055,
+        "c": 1.3488489947129205e-05,
+        "Z": 1.4118120264745885e-05,
+        "right": 1.8344098780122494e-06,
+        "wrong": 2.7552791185771344e-05,
+        "dt": 5.391675515603742e-06
+      },
+      "real_inner_Z_c": 1.8894781063154254e-10,
+      "alignment": 0.9922055554157189,
+      "quadratic_identity_defect": -6.26040014383395e-26,
+      "eta_by_expression": {
+        "Z": 1.232978610944052e-16,
+        "right": 1.6439645885859828e-16,
+        "wrong": 1.232973153438806e-16
+      },
+      "eta": 1.6439645885859828e-16,
+      "u": 5.391675515768138e-06,
+      "flags": {
+        "nonzero": true,
+        "alignment": true,
+        "reduction": true,
+        "improvement": true,
+        "wrong_direction": true
+      },
+      "relative_to_original_Rf": {
+        "N": 1.0000083622079878,
+        "Rf": 1.0,
+        "c": 0.003109279175812285,
+        "Z": 0.0032544174709586795,
+        "right": 0.00042285626159522583,
+        "wrong": 0.006351290634105144,
+        "dt": 0.0012428540532790817
+      },
+      "status": "KONSISTENT_MIT_DOMINANTER_DT2_KOMPONENTE",
+      "improvement_under_reserve": false
+    },
+    {
+      "component": "DC",
+      "time_window": 0,
+      "shell": 1,
+      "measure": "band",
+      "window": [
+        88.0,
+        104.43734551685922
+      ],
+      "radius_window": [
+        45.0,
+        50.0
+      ],
+      "norms": {
+        "N": 0.0006434389259904005,
+        "Rf": 0.0006434285925773921,
+        "c": 1.3144667789802594e-07,
+        "Z": 3.7167021642555373e-07,
+        "right": 2.5664436765373094e-07,
+        "wrong": 4.949420434435813e-07,
+        "dt": 7.789843206276741e-07
+      },
+      "real_inner_Z_c": 4.477532372993103e-14,
+      "alignment": 0.9164976579228532,
+      "quadratic_identity_defect": 1.3883951931889808e-28,
+      "eta_by_expression": {
+        "Z": 2.994392422830465e-17,
+        "right": 3.992504610863393e-17,
+        "wrong": 2.994382138420882e-17
+      },
+      "eta": 3.992504610863393e-17,
+      "u": 7.789843206675991e-07,
+      "flags": {
+        "nonzero": true,
+        "alignment": true,
+        "reduction": false,
+        "improvement": false,
+        "wrong_direction": false
+      },
+      "relative_to_original_Rf": {
+        "N": 1.0000160599219985,
+        "Rf": 1.0,
+        "c": 0.00020429101133272287,
+        "Z": 0.0005776401930426318,
+        "right": 0.000398870007665787,
+        "wrong": 0.0007692260635496226,
+        "dt": 0.0012106771903114908
+      },
+      "status": "NICHT_ZUGEORDNET",
+      "improvement_under_reserve": true
+    },
+    {
+      "component": "H2",
+      "time_window": 0,
+      "shell": 1,
+      "measure": "time",
+      "window": [
+        88.0,
+        104.43734551685922
+      ],
+      "radius_window": [
+        45.0,
+        50.0
+      ],
+      "norms": {
+        "N": 0.005628988853226005,
+        "Rf": 0.0056288592615738224,
+        "c": 1.0149986505101982e-05,
+        "Z": 1.1099616150413224e-05,
+        "right": 2.4391393860178805e-06,
+        "wrong": 2.1130499486195524e-05,
+        "dt": 7.31850691920456e-06
+      },
+      "real_inner_Z_c": 1.1013715189792138e-10,
+      "alignment": 0.977598252563332,
+      "quadratic_identity_defect": 9.693522803355793e-27,
+      "eta_by_expression": {
+        "Z": 1.5998365231254838e-16,
+        "right": 2.1330926638155206e-16,
+        "wrong": 1.5998198388253058e-16
+      },
+      "eta": 2.1330926638155206e-16,
+      "u": 7.318506919417869e-06,
+      "flags": {
+        "nonzero": true,
+        "alignment": true,
+        "reduction": true,
+        "improvement": false,
+        "wrong_direction": false
+      },
+      "relative_to_original_Rf": {
+        "N": 1.0000230227202636,
+        "Rf": 1.0,
+        "c": 0.001803204882806762,
+        "Z": 0.001971912182311303,
+        "right": 0.00043332747767722656,
+        "wrong": 0.0037539576856088354,
+        "dt": 0.0013001758578625954
+      },
+      "status": "NICHT_ZUGEORDNET",
+      "improvement_under_reserve": true
+    },
+    {
+      "component": "H2",
+      "time_window": 0,
+      "shell": 1,
+      "measure": "band",
+      "window": [
+        88.0,
+        104.43734551685922
+      ],
+      "radius_window": [
+        45.0,
+        50.0
+      ],
+      "norms": {
+        "N": 0.0009326903264742459,
+        "Rf": 0.0009326299272966767,
+        "c": 1.9201578009550494e-07,
+        "Z": 5.767703437611902e-07,
+        "right": 3.947174137566748e-07,
+        "wrong": 7.637187582961604e-07,
+        "dt": 1.198421291662561e-06
+      },
+      "real_inner_Z_c": 1.068661262626655e-13,
+      "alignment": 0.964939810130322,
+      "quadratic_identity_defect": 2.196188760135297e-27,
+      "eta_by_expression": {
+        "Z": 3.918791743607365e-17,
+        "right": 5.22500029451752e-17,
+        "wrong": 3.918752637118241e-17
+      },
+      "eta": 5.22500029451752e-17,
+      "u": 1.198421291714811e-06,
+      "flags": {
+        "nonzero": true,
+        "alignment": true,
+        "reduction": false,
+        "improvement": false,
+        "wrong_direction": false
+      },
+      "relative_to_original_Rf": {
+        "N": 1.0000647622125363,
+        "Rf": 1.0,
+        "c": 0.00020588635907501095,
+        "Z": 0.0006184343080572356,
+        "right": 0.00042323048210644886,
+        "wrong": 0.0008188872519991691,
+        "dt": 0.0012849912452802235
+      },
+      "status": "NICHT_ZUGEORDNET",
+      "improvement_under_reserve": true
+    },
+    {
+      "component": "DC",
+      "time_window": 1,
+      "shell": 0,
+      "measure": "time",
+      "window": [
+        104.5,
+        120.93734551685922
+      ],
+      "radius_window": [
+        40.0,
+        45.0
+      ],
+      "norms": {
+        "N": 0.005237437024788553,
+        "Rf": 0.005237437689472099,
+        "c": 8.135501002300687e-06,
+        "Z": 8.783795475981518e-06,
+        "right": 2.082975549035855e-06,
+        "wrong": 1.6803097687829365e-05,
+        "dt": 6.28471519133588e-06
+      },
+      "real_inner_Z_c": 6.950132619221382e-11,
+      "alignment": 0.9725827751235304,
+      "quadratic_identity_defect": -2.8272774843121063e-26,
+      "eta_by_expression": {
+        "Z": 1.4885693608982078e-16,
+        "right": 1.984757197171943e-16,
+        "wrong": 1.4885672949699065e-16
+      },
+      "eta": 1.984757197171943e-16,
+      "u": 6.284715191534356e-06,
+      "flags": {
+        "nonzero": true,
+        "alignment": true,
+        "reduction": true,
+        "improvement": false,
+        "wrong_direction": false
+      },
+      "relative_to_original_Rf": {
+        "N": 0.9999998730899372,
+        "Rf": 1.0,
+        "c": 0.0015533360938410885,
+        "Z": 0.0016771169409114,
+        "right": 0.00039770889364906326,
+        "wrong": 0.0032082668442253125,
+        "dt": 0.0011999598971781447
+      },
+      "status": "NICHT_ZUGEORDNET",
+      "improvement_under_reserve": true
+    },
+    {
+      "component": "DC",
+      "time_window": 1,
+      "shell": 0,
+      "measure": "band",
+      "window": [
+        104.5,
+        120.93734551685922
+      ],
+      "radius_window": [
+        40.0,
+        45.0
+      ],
+      "norms": {
+        "N": 0.00041620117621058507,
+        "Rf": 0.0004162096110482404,
+        "c": 8.034201582076237e-08,
+        "Z": 2.1372350573551994e-07,
+        "right": 1.6247447678310598e-07,
+        "wrong": 2.7904694446294123e-07,
+        "dt": 4.94914129195539e-07
+      },
+      "real_inner_Z_c": 1.2867310402040275e-14,
+      "alignment": 0.7493638942567937,
+      "quadratic_identity_defect": 1.3568407569801403e-28,
+      "eta_by_expression": {
+        "Z": 3.6595508507602384e-17,
+        "right": 4.879397837302862e-17,
+        "wrong": 3.659548145696818e-17
+      },
+      "eta": 4.879397837302862e-17,
+      "u": 4.949141292443329e-07,
+      "flags": {
+        "nonzero": true,
+        "alignment": false,
+        "reduction": false,
+        "improvement": false,
+        "wrong_direction": false
+      },
+      "relative_to_original_Rf": {
+        "N": 0.999979734159348,
+        "Rf": 1.0,
+        "c": 0.0001930325818724316,
+        "Z": 0.0005134996887679956,
+        "right": 0.00039036695085898563,
+        "wrong": 0.0006704481036854254,
+        "dt": 0.0011890982717796404
+      },
+      "status": "NICHT_ZUGEORDNET",
+      "improvement_under_reserve": true
+    },
+    {
+      "component": "H2",
+      "time_window": 1,
+      "shell": 0,
+      "measure": "time",
+      "window": [
+        104.5,
+        120.93734551685922
+      ],
+      "radius_window": [
+        40.0,
+        45.0
+      ],
+      "norms": {
+        "N": 0.00532922505988046,
+        "Rf": 0.005329131887358202,
+        "c": 7.102375489396235e-06,
+        "Z": 8.008168133578949e-06,
+        "right": 2.2360544698069246e-06,
+        "wrong": 1.4971608106818325e-05,
+        "dt": 6.775680704283032e-06
+      },
+      "real_inner_Z_c": 5.4787277428051114e-11,
+      "alignment": 0.963258628060853,
+      "quadratic_identity_defect": 8.077935669463161e-27,
+      "eta_by_expression": {
+        "Z": 1.5146437246353712e-16,
+        "right": 2.019507159411385e-16,
+        "wrong": 1.5146302678670287e-16
+      },
+      "eta": 2.019507159411385e-16,
+      "u": 6.775680704484983e-06,
+      "flags": {
+        "nonzero": true,
+        "alignment": true,
+        "reduction": true,
+        "improvement": false,
+        "wrong_direction": false
+      },
+      "relative_to_original_Rf": {
+        "N": 1.0000174836210152,
+        "Rf": 1.0,
+        "c": 0.0013327453025218858,
+        "Z": 0.00150271532077785,
+        "right": 0.0004195907545676072,
+        "wrong": 0.002809389676081026,
+        "dt": 0.0012714417371347748
+      },
+      "status": "NICHT_ZUGEORDNET",
+      "improvement_under_reserve": true
+    },
+    {
+      "component": "H2",
+      "time_window": 1,
+      "shell": 0,
+      "measure": "band",
+      "window": [
+        104.5,
+        120.93734551685922
+      ],
+      "radius_window": [
+        40.0,
+        45.0
+      ],
+      "norms": {
+        "N": 0.0005280376626164407,
+        "Rf": 0.000527986633390891,
+        "c": 1.1792783820179475e-07,
+        "Z": 3.312407576655284e-07,
+        "right": 2.3546278141429384e-07,
+        "wrong": 4.37963591742753e-07,
+        "dt": 7.217087186865462e-07
+      },
+      "real_inner_Z_c": 3.4092346565213415e-14,
+      "alignment": 0.8727639273817863,
+      "quadratic_identity_defect": 3.7234234726431757e-28,
+      "eta_by_expression": {
+        "Z": 3.7116232087522814e-17,
+        "right": 4.948794068991176e-17,
+        "wrong": 3.711595799653255e-17
+      },
+      "eta": 4.948794068991176e-17,
+      "u": 7.217087187360341e-07,
+      "flags": {
+        "nonzero": true,
+        "alignment": true,
+        "reduction": false,
+        "improvement": false,
+        "wrong_direction": false
+      },
+      "relative_to_original_Rf": {
+        "N": 1.0000966487072258,
+        "Rf": 1.0,
+        "c": 0.00022335383273706428,
+        "Z": 0.0006273658019298696,
+        "right": 0.00044596352733795576,
+        "wrong": 0.0008294974986961648,
+        "dt": 0.0013669071772736234
+      },
+      "status": "NICHT_ZUGEORDNET",
+      "improvement_under_reserve": true
+    },
+    {
+      "component": "DC",
+      "time_window": 1,
+      "shell": 1,
+      "measure": "time",
+      "window": [
+        104.5,
+        120.93734551685922
+      ],
+      "radius_window": [
+        45.0,
+        50.0
+      ],
+      "norms": {
+        "N": 0.004750603678302188,
+        "Rf": 0.004750666386356657,
+        "c": 1.0107394914477325e-05,
+        "Z": 1.0726697360115395e-05,
+        "right": 2.0407793399741524e-06,
+        "wrong": 2.074314720843855e-05,
+        "dt": 6.085941194526234e-06
+      },
+      "real_inner_Z_c": 1.0652834394912165e-10,
+      "alignment": 0.9825618850524818,
+      "quadratic_identity_defect": -4.6852026882886333e-26,
+      "eta_by_expression": {
+        "Z": 1.3502118312245687e-16,
+        "right": 1.8002928770973336e-16,
+        "wrong": 1.3502191532400218e-16
+      },
+      "eta": 1.8002928770973336e-16,
+      "u": 6.0859411947062635e-06,
+      "flags": {
+        "nonzero": true,
+        "alignment": true,
+        "reduction": true,
+        "improvement": false,
+        "wrong_direction": false
+      },
+      "relative_to_original_Rf": {
+        "N": 0.9999868001561529,
+        "Rf": 1.0,
+        "c": 0.0021275741322321746,
+        "Z": 0.002257935305859654,
+        "right": 0.00042957748955704936,
+        "wrong": 0.0043663657940726745,
+        "dt": 0.0012810710539482052
+      },
+      "status": "NICHT_ZUGEORDNET",
+      "improvement_under_reserve": true
+    },
+    {
+      "component": "DC",
+      "time_window": 1,
+      "shell": 1,
+      "measure": "band",
+      "window": [
+        104.5,
+        120.93734551685922
+      ],
+      "radius_window": [
+        45.0,
+        50.0
+      ],
+      "norms": {
+        "N": 0.0004950442157339775,
+        "Rf": 0.0004950407269054241,
+        "c": 1.0257224833694286e-07,
+        "Z": 2.855415540007418e-07,
+        "right": 2.092640634544302e-07,
+        "wrong": 3.7459130012140955e-07,
+        "dt": 6.271503477387757e-07
+      },
+      "real_inner_Z_c": 2.4131798468297282e-14,
+      "alignment": 0.8239303408337366,
+      "quadratic_identity_defect": 3.0923347484663663e-28,
+      "eta_by_expression": {
+        "Z": 3.3117158201186815e-17,
+        "right": 4.415642892456471e-17,
+        "wrong": 3.311733055662427e-17
+      },
+      "eta": 4.415642892456471e-17,
+      "u": 6.271503477829321e-07,
+      "flags": {
+        "nonzero": true,
+        "alignment": true,
+        "reduction": false,
+        "improvement": false,
+        "wrong_direction": false
+      },
+      "relative_to_original_Rf": {
+        "N": 1.0000070475586427,
+        "Rf": 1.0,
+        "c": 0.0002071996156319053,
+        "Z": 0.0005768041667717041,
+        "right": 0.00042272090371750243,
+        "wrong": 0.0007566878435700383,
+        "dt": 0.001266866166061102
+      },
+      "status": "NICHT_ZUGEORDNET",
+      "improvement_under_reserve": true
+    },
+    {
+      "component": "H2",
+      "time_window": 1,
+      "shell": 1,
+      "measure": "time",
+      "window": [
+        104.5,
+        120.93734551685922
+      ],
+      "radius_window": [
+        45.0,
+        50.0
+      ],
+      "norms": {
+        "N": 0.004955618909170082,
+        "Rf": 0.004955630453816342,
+        "c": 8.182085793333147e-06,
+        "Z": 9.030997177396469e-06,
+        "right": 2.1853279113927177e-06,
+        "wrong": 1.7094888645876058e-05,
+        "dt": 6.5716853965564524e-06
+      },
+      "real_inner_Z_c": 7.186488993364753e-11,
+      "alignment": 0.9725614008491923,
+      "quadratic_identity_defect": 1.0501316370302109e-26,
+      "eta_by_expression": {
+        "Z": 1.4084736393350674e-16,
+        "right": 1.877968755475931e-16,
+        "wrong": 1.4084769043570068e-16
+      },
+      "eta": 1.877968755475931e-16,
+      "u": 6.571685396744249e-06,
+      "flags": {
+        "nonzero": true,
+        "alignment": true,
+        "reduction": true,
+        "improvement": false,
+        "wrong_direction": false
+      },
+      "relative_to_original_Rf": {
+        "N": 0.999997670398072,
+        "Rf": 1.0,
+        "c": 0.00165106859149114,
+        "Z": 0.001822370990242357,
+        "right": 0.0004409787880187458,
+        "wrong": 0.0034495890694818147,
+        "dt": 0.0013261048130607848
+      },
+      "status": "NICHT_ZUGEORDNET",
+      "improvement_under_reserve": true
+    },
+    {
+      "component": "H2",
+      "time_window": 1,
+      "shell": 1,
+      "measure": "band",
+      "window": [
+        104.5,
+        120.93734551685922
+      ],
+      "radius_window": [
+        45.0,
+        50.0
+      ],
+      "norms": {
+        "N": 0.0004719276786020723,
+        "Rf": 0.00047191711827295526,
+        "c": 8.241961855317217e-08,
+        "Z": 2.2657428572184897e-07,
+        "right": 1.8421853387487454e-07,
+        "wrong": 2.869169439448035e-07,
+        "dt": 5.54712699403242e-07
+      },
+      "real_inner_Z_c": 1.2096216124904566e-14,
+      "alignment": 0.647751336970681,
+      "quadratic_identity_defect": 9.655657479905184e-28,
+      "eta_by_expression": {
+        "Z": 3.451457730008794e-17,
+        "right": 4.601956733196358e-17,
+        "wrong": 3.45146942958906e-17
+      },
+      "eta": 4.601956733196358e-17,
+      "u": 5.547126994492616e-07,
+      "flags": {
+        "nonzero": true,
+        "alignment": false,
+        "reduction": false,
+        "improvement": false,
+        "wrong_direction": false
+      },
+      "relative_to_original_Rf": {
+        "N": 1.0000223775080583,
+        "Rf": 1.0,
+        "c": 0.0001746485036499586,
+        "Z": 0.00048011457298058677,
+        "right": 0.00039036205033003945,
+        "wrong": 0.0006079816409178268,
+        "dt": 0.001175445174426578
+      },
+      "status": "NICHT_ZUGEORDNET",
+      "improvement_under_reserve": true
+    }
+  ],
+  "interpretation": "Directed consistency with leading reference dt\u00b2 error; not a unique cause or convergence proof",
+  "reserve_limit": "u is empirical; eta covers only new stored-field arithmetic, not previous parity cancellation or evolution",
+  "original_statuses_unchanged": true,
+  "cpu_seconds": 2.467684415,
+  "inputs": {
+    "manifests": {
+      "split": "15593347f6b1caff683315fab65ce74734ae85fb5eff97b8a25d9276c0a568b9",
+      "phase": "b7d938e4bda00bb05598f540f05320b2e3cad7a8a8f3f4be940a9d5884b8eafd",
+      "amplitude": "2fa8c40331f18ed677788629733806109dbc9a622c4d8ff22e065c82979adefd"
+    },
+    "input_identity": {
+      "h": 0.05,
+      "ritz_sha256": "67658ad2e278e7708e82039ae1b487f86d86ef666e42198ea3752bf765e4fbed",
+      "response_sha256": "bac83d335c4a64f1ef232e3c5827ac17d58af90d9873fc357be702847f1f1f44",
+      "phase": [
+        0.8285347202153405,
+        -0.5599376906385991
+      ],
+      "pivot": 2457,
+      "profile_check": {
+        "stationary_max": 1.5177914480801746e-11,
+        "truncated_charge_fraction": 1.0014211682118912e-12,
+        "phase_anchor": 7.216678841204203e-12,
+        "passed": true
+      },
+      "extraction_qa": [
+        {
+          "window": [
+            88.0,
+            104.43734551685922
+          ],
+          "basis_frequencies": [
+            0.0,
+            0.38225060735841676,
+            -0.38225060735841676,
+            0.7645012147168335,
+            -0.7645012147168335
+          ],
+          "errors": [
+            9.523180196948207e-07,
+            4.3886751533852386e-08,
+            1.948799701290206e-06,
+            7.766758006952837e-07,
+            3.0340746140881307e-06
+          ],
+          "passed": true
+        },
+        {
+          "window": [
+            104.5,
+            120.93734551685922
+          ],
+          "basis_frequencies": [
+            0.0,
+            0.38225060735841676,
+            -0.38225060735841676,
+            0.7645012147168335,
+            -0.7645012147168335
+          ],
+          "errors": [
+            9.523180195393615e-07,
+            4.388675145454718e-08,
+            1.9487997013012146e-06,
+            7.766758006953498e-07,
+            3.034074613975159e-06
+          ],
+          "passed": true
+        }
+      ],
+      "stationary_response_extraction_qa": {
+        "relative_errors": [
+          7.766758006979656e-07,
+          7.766758006966592e-07
+        ],
+        "passed": true
+      }
+    },
+    "phase": {
+      "multiplier": [
+        0.0,
+        1.0
+      ],
+      "renormalized": false,
+      "rho": 0.38225060735841676,
+      "omega": 1.018163515240714,
+      "alpha": 0.07394590543783222,
+      "full_vector_size": 14400
+    },
+    "artifacts": [
+      {
+        "role": "Rc",
+        "dt": 0.02,
+        "directory": "causal-split-run",
+        "file": "split-dt0.02-ring.npz",
+        "sha256": "fe4064263e8a580548844c86748a3482be719322b9db33c3fd5b8c049dbd6ce3"
+      },
+      {
+        "role": "Rf",
+        "dt": 0.01,
+        "directory": "causal-split-run",
+        "file": "split-dt0.01-ring.npz",
+        "sha256": "caa56bae57837ea90565f3d2dcbbfcdc9d29dd3f3de12648f8bbaeaec5ecd9a0"
+      },
+      {
+        "role": "Ncoarse",
+        "dt": 0.01,
+        "directory": "phase-cycle-run",
+        "file": "base-separated-ring.npz",
+        "sha256": "41d0558b08ca74f485d163d6a4c18639c7f82ab55f1880a48e65ce18389d15e7"
+      },
+      {
+        "role": "N",
+        "dt": 0.005,
+        "directory": "phase-cycle-run",
+        "file": "time-separated-ring.npz",
+        "sha256": "15dbb9362a83ad8727321112f91353e1d0ca97482de44805c7ac6194a7147ef3"
+      }
+    ],
+    "amplitude_used_as_context_only": true
+  },
+  "consistent_count": 1
+}

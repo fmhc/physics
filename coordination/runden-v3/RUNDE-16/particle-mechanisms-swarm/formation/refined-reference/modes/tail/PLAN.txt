@@ -1,0 +1,67 @@
+Gespeicherter .3822-Ritzschwanz: freie Kanäle statt Gate-Retuning
+02.10.2026, reine neue Nachanalyse; keine Eigenwert-/PDE-Rechnung.
+RESULT-SHA77ecf9bbe03b96db901d76728e074a897725eb52213f90dae76c7200ba5364ea.
+Operatorcode-SHA467ad3e19cd8efcdac4ec2dcc670b50aaa59cc6f7e9e44d625ebbf94ba0d32c6.
+Referenzmanifest-SHA8c33ace3a5465a8fd481d26b35457425ee3c5d5f0111b3f11c09f4a9dd72fdf4.
+Letzteres liefert ausschließlich die bereits gespeicherten omega je h.
+
+Inputs RESULT.json+seine NPZ aus Remote modes-search/, ReferenzMANIFEST,
+gehashter modes/code.py nur Import seiner grid/restrict/overlap-Funktionen.
+Aus jeder der4Diskretisierungen genau die vollständige shift=.3-Aufgabe,
+genau ein Ritzwert mit .38<Im(lambda)<.39. Artefakthash aus RESULT vor
+Öffnen prüfen, Reihenfolge/gespeicherten Ritzwert gegen NPZ auf1e-12 prüfen.
+Keine Auswahl zwischen weiteren Shifts/Moden nach Ergebnis.
+
+Eigenvektor=(q,p), q auf kanonische euklidische Norm1 bringen; ursprüngliche
+q-Norm protokollieren. Physische harmonische Feldprofile:
+u=qx/sqrtV,v=i*qy/sqrtV,w=qz/sqrtV; Kanäle a+=(u+v)/sqrt2,
+a-=(u-v)/sqrt2,a_chi=w. Komplexe Phase nicht separat pro Kanal drehen.
+Für l0 im freien Schwanz ist r*a proportional exp(-kappa*r),
+kappa+=sqrt(2-(omega+rho)²), kappa-=sqrt(2-(omega-rho)²),
+kappa_chi=sqrt(2-rho²). Kein Anpassen von rho,omega,kappa an den Schwanz.
+Diese drei Exponenten sind HOMOGENE freie Lösungen. Der Hintergrund besitzt
+selbst einen nichtkompakten Schwanz; C~f koppelt weiter. Insbesondere kann
+chi einen partikulären, vom langsamen Pluskanal getriebenen Anteil besitzen,
+mit Skala kappa_background+kappa_plus und kappa_background=sqrt(2-omega²).
+Diese kann langsamer sein als kappa_chi. Primäre Frage ist der langsame
+Pluskanal; Abweichung eines schnellen Kanals von seinem homogenen Exponenten
+ist weder automatisch Solverfehler noch fehlende Bindung. Kein zusätzlicher
+Fit oder neu gewähltes Gate wird daraus eingeführt.
+Unabhängige ../TAIL-CAUTION.txt gelesen: getriebener chi-Anteil kann
+e^[-(kappa_background+kappa_plus)r]/r² tragen. Nur Deutungsgrenze;
+kein nachträglicher Fit dieser zusätzlichen Form.
+
+Feste Fenster20..30 und30..40. Für aufeinanderfolgende Zellzentren innerhalb
+desselben Fensters kappa_local=-log(|r2*a2|/|r1*a1|)/(r2-r1).
+Beide Beträge müssen >1e-10 des gemeinsamen Peaks aller drei |r*a|-Kanäle
+sein; kanalweiser Peak und gemeinsamer Peak werden separat berichtet.
+Das zusätzliche gemeinsame Floor verhindert Selbstnormierung eines überall
+winzigen Rauschkanals. Derselbe Floor gilt für den Plot-Theorieanker.
+Sonst Paar unaufgelöst. Alle Paare, gültige Anzahl sowie verworfene Anzahl
+ausweisen. Kein gültiges Paar -> UNRESOLVED, niemals PASS/Nullfehler.
+Je Fenster rohe lokale Werte, min/median/max(kappa_local/kappa_theory),
+Median |kappa_local-kappa| und Gegenwert |kappa_local-2kappa| berichten.
+Verdoppeltes kappa ist bewusster falscher Vergleich, kein neuer Modellarm.
+Rausch-/diskrete Steigungsfehler und endliche Box bleiben offen.
+Keine neue Toleranz oder positive Modenklassifikation aus diesen Zahlen.
+
+Posthoc Feldüberlapp: alle6Paare der4gespeicherten q-Vektoren mit genau
+restrict/overlap des gebundenen Codes berechnen; gemeinsamesVolumenraster,
+gemeinsame Phase, abgeschnittene Normen separat. Diese neue Diagnose heißt
+posthoc_overlaps. Alte RESULT.matches bleiben unverändert leer; alter
+Status NO_CONFIRMED_CANDIDATE_IN_FIXED_SEARCH bleibt unverändert.
+Kanonische gesamte Schwanzfraktion sum_{r>a}|q|² für a=5,10,15,20,25,30,40,50.
+
+Optional --plot: 3PanelPNG mit (1) |r*channel| der R120h.05-Datei und
+theoretischen Kurven nur am ersten Zellzentrum>=20 amplitudenverankert,
+(2) gesamte Schwanzfraktionen aller4Grids, (3) median kappa_local/kappa
+pro Fenster/Kanal/Gitter; unaufgelöste Fenster nicht als Null zeichnen.
+Exponentamplitude ist ein direkter einzelnerAnker, kein Parameterfit.
+Bild nennt Rohritzdiagnose und unveränderten formalen Status.
+
+analysis.py --input-dir MODES_SEARCH --manifest PREPARED_MANIFEST
+ --operator MODES_CODE --out FRISCHER_ORDNER [--plot]
+Erzeugt ANALYSIS.json, PROFILES.csv, optional TAIL.png. <5CPU-s geschätzt,
+.69einThread, RootReceipt/Limit. Autor startet nichts; Nichtautorreview.
+Frage: passt der bekannte langsame Subthreshold-Schwanz? Weder enges
+R20-Kompaktheitsgate umwerten noch BIC/Stabilität/Bildungsbeweis behaupten.

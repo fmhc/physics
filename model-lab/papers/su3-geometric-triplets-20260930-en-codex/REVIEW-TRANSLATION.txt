@@ -1,0 +1,61 @@
+Übersetzungs- und Darstellungsreview, 30.09.2026
+
+Umfang: deutsche Manuskriptfassung 0.5 in eine englische HTML- und LaTeX-
+Fassung übertragen. Kein neuer Physiklauf und kein unabhängiges wissenschaftliches
+Zertifikat. Bestätigte Zuständigkeit: coordination/status-audit-20260930/AN-PD1-PAPER.txt.
+Die ursprüngliche deutsche Fassung und der ältere -en-Ordner bleiben unverändert.
+
+Festgelegte redaktionelle Entscheidungen:
+- Der ausführliche H1-Titel gilt, nicht der kürzere HTML-title-Text.
+  Publikationsautorschaft wird erfunden; Arbeitsentwurf und fehlende Begutachtung
+  sind sichtbar bezeichnet.
+- Dezimalkommas werden zu Dezimalpunkten. Nummerierte Formeln, Tabellenwerte,
+  Fundstellen, Quellenlinks und die Reichweite der Aussagen bleiben erhalten.
+- "Kontrolltor" wird als acceptance criterion/check übersetzt, nicht als
+  mathematischer Beweis. "Gleitkommarechnung" bleibt floating-point computation.
+- "Keine zusätzliche Mode identifiziert" wird nicht zu einem Ausschlusssatz.
+  Endliche Box, gekoppelte Box-/Gitteränderung, ungetestete letzte Frequenzschicht
+  und fehlende Intervallzertifizierung müssen ausdrücklich stehen bleiben.
+- Prozentwerte des kanonischen Transfers und räumliche Feldenergie bleiben
+  getrennt; die Energie am kanonischen Maximum ist kein zertifiziertes Maximum
+  der räumlichen Energie. Die drei Energie-Stichpunkte sind keine Zeitkurve.
+
+Auffälligkeiten der Ausgangsfassung, nicht stillschweigend geändert:
+1. Die Zusammenfassung beschreibt primär die früheren Graphuntersuchungen;
+   die später hinzugefügten Feld- und Q-Ball-Abschnitte 5.2–5.4 sind dort nicht
+   vollständig zusammengefasst. Redaktioneller Nachtrag wäre Sache des Autors.
+2. In Abschnitt 8 nennt die kurze Verzeichnisliste nur die beiden ursprünglichen
+   Suiten. Die späteren Datenpfade stehen in den jeweiligen Abschnitten und im
+   Quellenmanifest. Die Übersetzung ergänzt keine neue Datenherkunft.
+3. "nicht begutachtet" und interne unabhängige Reviews widersprechen sich nicht:
+   projektinterne Prüfungen sind keine externe wissenschaftliche Peer-Review.
+4. Die im Umfeld vorhandenen neuen Außenraum-/Normalformberichte werden nicht
+   als bereits in v0.5 enthaltene Beweise übernommen.
+
+Grafik: englische Beschriftungen; gleiche gespeicherte FIGURE-DATA.json,
+identische Kurven-/Stichpunktfelder, Schnittstellen und Farbzuordnung wie im
+ursprünglichen plot.py. plot-english.py erzeugt nur Darstellung auf .69.
+Keine erneute Eigenwertsuche, Simulation oder Neuberechnung der Physikergebnisse.
+
+Abschlussprüfung
+- Zusätzlicher unabhängiger Codex-Kontext hat beide vollständigen Übersetzungen
+  gegen die deutsche Quelle gelesen: keine inhaltlichen Blocker. Bericht:
+  REVIEW-INDEPENDENT.txt; keine externe wissenschaftliche Peer-Review.
+- Seine zwei Sprachhinweise umgesetzt: orthonormale Spalten im HTML,
+  countercheck/complementary modes im LaTeX. Die mathematische Aussage bleibt
+  dieselbe. Der Bericht hält bewusst seinen früheren Prüfsnapshot fest.
+- Technische Satzkorrekturen: ein Steuerzeichen vor frac in Gleichung (3)
+  durch den korrekten TeX-Befehl ersetzt; eindeutige Hyperref-Ziele für die
+  ausdrücklich nummerierten Gleichungen. Danach zwei erfolgreiche TeX-Pässe.
+- Dokument-QA .69: 66 Absätze, 7 Tabellen, 15 Gleichungsblöcke, 14 H2-Überschriften,
+  9 Listeneinträge und 1 Abbildung in HTML wie in der Quelle. Tabellenzahlen,
+  Präzisionszahlen und Literaturlinks stimmen; kein horizontaler Browserüberlauf.
+- LaTeX-Rücklesung über Pandoc/MathML: alle sieben Tabellenzahlen und präzisen
+  Dezimalwerte stimmen mit der Quelle; Tags 1–15 vollständig. Finales TeX-Log
+  ohne Fehler, fehlende Zeichen, doppelte Ziele oder überbreite Boxen.
+- LaTeX-PDF: zehn A4-Seiten; gerenderte Stichproben Seiten 1, 2, 6, 7 und 10
+  visuell geprüft (Titel, Mathematik, Tabellen, Grafik und Literatur).
+  HTML-Startseite und englische Grafik ebenfalls visuell geprüft.
+- HTML/PDF und LaTeX/PDF wurden separat aus den jeweiligen englischen Quellen
+  erzeugt. Die Texte sind sinngleich, aber nicht wortgleich; kein Gleichlauf
+  durch automatisches gegenseitiges Überschreiben wird behauptet.

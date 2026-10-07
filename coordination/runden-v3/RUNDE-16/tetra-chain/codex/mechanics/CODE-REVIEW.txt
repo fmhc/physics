@@ -1,0 +1,70 @@
+NICHTAUTOR-VORSTARTLEKTUERE — 2026-10-02
+Reviewer: tetra_next_review. Keine Ausfuehrung, Interpreter oder Tests.
+Gelesen: PLAN.txt, run.py und uebergeordneter FOLLOWUP-PLAN.txt.
+run.py SHA256: 41d0f7f5d1a82a1f8bea83f7f1018f049571988fca7d060e2112ce080165b797
+
+STARTURTEIL
+Kein konkreter Codeblocker fuer den begrenzten linearen CPU-Lauf auf .69.
+Vorstarturteil, kein Ergebnisnachweis. Aeusserer 90s-Walltimeout gemaess
+FOLLOWUP-PLAN bleibt erforderlich; RLIMIT_CPU60 und Hostpruefung sind im
+Code vorhanden. Threads werden vor NumPy-Import auf1 gesetzt.
+
+FACHLICHE PRUEFPUNKTE
+1. R bildet Kantenlaengenaenderungen ab, H=R.T R ist der spannungsfreie
+   Hessian bei k=m=1. Die natuerlichen Laengen entsprechen der Eingabe;
+   es wird keine nichtlineare Dynamik oder Vorspannung behauptet.
+2. Einzeltetraederkontrolle omega²=(0 sechsfach,1 zweifach,2 dreifach,4)
+   ist richtig. Sechs Nullwerte allein waeren schwach; Translations- und
+   Rotationsresiduen plus Vergleich des Nullraumprojektors liefern hier
+   eine staerkere Kontrolle des korrekten Starrraums.
+3. Kantenbestand wird gegen alle Viererfenster-Tetraeder und auf Duplikate
+   geprueft. Die Steifigkeitsskalierung k4=4H passt zum definierten Modell.
+4. Skalierungsvektor, Rayleighwert, relatives Eigenresiduum und nach
+   Eigenraeumen gruppierte Gewichte beantworten die Atemmodenfrage ohne
+   eine spezielle Eigenmode vorauszusetzen. Bei sehr nahe benachbarten
+   Eigenwerten bestimmt die numerische Gruppentoleranz die Aufloesung.
+5. u=A cos(omega t) mode und die dazu passende Geschwindigkeit loesen die
+   lineare Gleichung. Normierung fixiert maximale Vertexauslenkung0.001;
+   Energiekontrolle verwendet denselben linearen Hessian. Das ist eine
+   Konsistenzkontrolle, keine Validierung endlicher Federverformungen.
+6. plane_margin ist eine untere Schranke der absoluten Vertexdistanz ueber
+   die GESAMTE analytische Zeitspur. Bei bestandenem Gate kann keine Ecke
+   die Ebene treffen: konstantes P folgt kontinuierlich, nicht bloss aus
+   201 Stichproben. Die erhaltene Flaechenvariation ist dennoch ein
+   endliches Messsignal derselben Mode.
+7. Schnittpolygone werden in orthonormale Ebenenkoordinaten projiziert,
+   nach Polarwinkel geordnet und mit der Polygonformel ausgewertet.
+   A ist ausdruecklich eine Zellensumme mit moeglicher Vielfachheit.
+   Eine Vereinigung oder Einbettung wird hier nicht vorgetaeuscht.
+8. Positive Homothetie um den Ebenenursprung ist als vorgeschriebene
+   Messkontrolle korrekt getrennt: konstantes P und A proportional a².
+9. Ergebnis enthaelt Eingabe- und Codehash, Host, CPU-Status, Moden und
+   Grenzen. RESULT.json wird erst am Ende atomisch ersetzt. CSV/PNG
+   koennen bei Abbruch schon teilweise vorhanden sein und sind dann kein
+   Gesamterfolg. Bestehende historische Artefakte bleiben ausserhalb des
+   neuen Unterordners.
+
+GRENZEN OHNE STARTBLOCKER
+Kein Beleg globaler Stabilitaet, keine Materialparameterkalibrierung, kein
+Test von Rotationsseitenbaendern oder Daempfung. Bei entarteter erster
+positiver Mode ist der gezeichnete Eigenvektor eine moegliche Basiswahl;
+das Eigenraumergebnis ist robuster als dessen einzelne Richtung.
+Die Assertions muessen aktiv bleiben, also kein Python-Start mit -O.
+
+NACHTRAG NACH ROOT-LAUF — GETRENNT VOM VORSTARTURTEIL
+Read-only RESULT.json gelesen und lokale Code-/Eingabehashes verglichen;
+keine eigene Ausfuehrung. Ergebnis nennt ubuntu-auto, CPU4.762362554s,
+script_sha256 identisch zum Vorstartreview und source_sha256
+f06cb323803e6d0f5036eb5d782a1c879ffbd9eec75b3bb363f012c335dcddb6,
+identisch zum vorhandenen ../RESULT.json.
+Erste positive omega=.30056364558787535/.13492108761326724.
+P bleibt8/10; positive kontinuierliche Ebenenmargen .0870773/.0475835.
+Flaechenintervalle [.5917636832240728,.5918123361565122] und
+[.6464474537826159,.6464491609652259] sind nicht konstant.
+Relative Skalierungs-Eigenresiduen .7156796275967333/.8809793098090428
+belegen: globale Homothetie ist hier keine Eigenmode dieses Hessians.
+Homothetie-P konstant, A/a²-Abweichung <=4.45e-16; lineare Energiedrift
+<=2.82e-21. Die begrenzten Modellkontrollen sind laut Ergebnis bestanden.
+Keine daraus abgeleitete nichtlineare Stabilitaetsaussage. Eine separate
+lesbarere Darstellung aus vorhandenen CSV waere reine Nachdarstellung;
+deren Plotcode/Bilder sind nicht Gegenstand dieses Ergebnisnachtrags.

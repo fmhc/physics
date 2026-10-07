@@ -1,0 +1,19 @@
+{
+  "id": "codex-db-ts440-lab-20260907",
+  "time": "2026-09-07T03:40:00Z",
+  "time_kind": "message",
+  "author": "codex-db",
+  "topic": "operations",
+  "status": "reported",
+  "title": "TS440-CPU-Labor eingerichtet: gemeinsame Limits, Quellkopien und geprüfter Abbruch",
+  "question": "Welche Rechner können die nächsten CPU-Modelle übernehmen, während GPU-Aufgaben auf .69 bleiben?",
+  "action": "Kapazität von TS440, .69 und T480 read-only geprüft. Auf TS440 eigenes Labor mit NumPy/SciPy/Matplotlib/SymPy, vorab begrenzten systemd-Jobs, gemeinsamem Lock und unverwechselbaren Run-IDs eingerichtet. Reale Installation-, Lock- und Timeout-Proben; Auswertung auf .69.",
+  "result": "TS440-Labor einsatzbereit: regulär zwei CPU-Zeitäquivalente und 4 GiB pro Job, gemeinsames Limit drei CPU-Zeitäquivalente. Bibliotheksjob erfolgreich, belegter Slot korrekt gesperrt, Laufzeitüberschreitung tatsächlich beendet. Elf isolierte Launcherprüfungen und getrennte 16 Inbetriebnahme-Auswertungsprüfungen bestanden. Rund 484 MiB belegt; ungefähr 958 GiB Speicher frei. Kein Laborjob läuft mehr.",
+  "meaning": "Recheninfrastruktur, kein zusätzlicher physikalischer Nachweis. .69 bleibt GPU-Standort und darf nach Nutzerfreigabe auch zwei bis drei CPU-Kerne nutzen. T480 bei der Prüfung heiß und stark ausgelastet, daher dort kein neuer Job. Fremde Dienste, bestehende GPU-Controller, lokaler Guard und produktive Datenbank bleiben unverändert.",
+  "sources": [
+    {"path":"coordination/compute-lab/README.md", "label":"Laborbedienung und Kapazitätsübersicht"},
+    {"path":"coordination/compute-lab/completion.md", "label":"Abschluss und tatsächliche Grenzen"},
+    {"path":"coordination/compute-lab/commissioning.json", "label":"Auswertung der tatsächlichen Laborproben"},
+    {"path":"coordination/compute-lab/inventory.json", "label":"Datierte Kapazität mit Quellhashes"}
+  ]
+}

@@ -1,0 +1,24 @@
+Test 3 Brechung (Wellen 14). Start 2026-09-30T00:29:29+00:00, Ende 2026-09-30T00:31:25+00:00, Quadro P4000
+Dauer [s]: schiessen_s 62.1, entwicklung_grob_s 17.2, entwicklung_fein_s 36.3
+Ball omega2 0.7: p 0.921968444982739, Q 23.9958, M 22.6258, R_halb 1.916, Virialrest 4.2e-07; Familie 61 Profile, Virialrest max 4.5e-07
+Vorhersage (vor der Entwicklung): Lauf | V2 | theta1 | M2 | Ausgang | theta2 | v2 | n_eff
+  anz20 | -0.02 | 20 | 22.3366 | durchgelaufen | 15.64 | 0.2537 | 1.2686
+  anz40 | -0.02 | 40 | 22.3366 | durchgelaufen | 30.44 | 0.2537 | 1.2686
+  anz60 | -0.02 | 60 | 22.3366 | durchgelaufen | 43.05 | 0.2537 | 1.2686
+  anz0 | -0.02 | 0 | 22.3366 | durchgelaufen | 0.00 | 0.2537 | 1.2686
+  abst20 | +0.02 | 20 | 22.9103 | durchgelaufen | 33.09 | 0.1253 | 0.6265
+  abst45 | +0.02 | 45 | 22.9103 | reflektiert | 45.00 | 0.2000 | -
+  ohne40 | +0.00 | 40 | 22.6258 | durchgelaufen | 40.00 | 0.2000 | 1.0000
+Messung: Stufe Lauf | Ausgang | theta1 mess | theta2 mess | d_theta2 zur Vorhersage | v2 mess/vorh | vy2/vy1 | Q-Verlust Fenster
+  grob anz20 | durchgelaufen | 20.00 | 18.37 | 2.73 | 0.8513 | 0.9950 | 9.2e-01
+  grob anz40 | durchgelaufen | 40.00 | 30.45 | 0.00 | 0.9999 | 1.0000 | 1.1e-04
+  grob anz60 | durchgelaufen | 60.00 | 43.05 | -0.00 | 1.0001 | 1.0000 | 5.1e-06
+  grob anz0 | durchgelaufen | -0.00 | 0.00 | 0.00 | 0.4240 | nan | 9.4e-01
+  grob abst20 | durchgelaufen | 20.00 | 33.10 | 0.03 | 0.9993 | 1.0000 | 3.4e-05
+  grob abst45 | reflektiert | 45.00 | 44.99 | -0.01 | 1.0003 | 1.0001 | 1.6e-05
+  grob ohne40 | durchgelaufen | 40.00 | 40.00 | 0.00 | 1.0000 | 1.0000 | 2.9e-05
+  fein anz20 | durchgelaufen | 20.00 | 18.37 | 2.72 | 0.8514 | 0.9950 | 9.2e-01
+  fein anz40 | durchgelaufen | 40.00 | 30.45 | 0.01 | 0.9998 | 1.0000 | 1.1e-04
+  fein anz60 | durchgelaufen | 60.00 | 43.05 | -0.00 | 1.0000 | 1.0000 | 5.6e-06
+Kontrollen: {"K_interpolation_M_bei_V0": -3.7154096355074273e-07, "K_ohne_stufe_knick_grad": 1.6497226063449943e-05, "K_ohne_stufe_v2_zu_v1": 0.9999976531187726, "L3": {"max_aenderung_theta2_grad": 0.00424719367659776, "min_knick_grad": 1.6350487409790944, "bestanden": true}}
+Urteil nach PLAN.md: Brechungsgesetz verfehlt: Winkel, Geschwindigkeit (Befund-Kandidat; zuerst Energieverlust ins Innere pruefen)

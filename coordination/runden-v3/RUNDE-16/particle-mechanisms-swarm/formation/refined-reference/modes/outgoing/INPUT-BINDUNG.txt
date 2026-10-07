@@ -1,0 +1,19 @@
+2026-10-02T21:47:20+02:00
+f726adb5c310aed3c24e9e4bef1b490abc81f5e7
+main
+2d7d7732a3139a29645902cbd381a8e08ddd80138b47f810f2a1738b784fbc22  coordination/runden-v3/RUNDE-16/particle-mechanisms-swarm/formation/refined-reference/modes/outgoing/PLAN.txt
+a2270a05c7270eeeb16e5fd04d12bd1367bff38af0205062b2643aea05b2a574  coordination/runden-v3/RUNDE-16/particle-mechanisms-swarm/formation/refined-reference/modes/harmonic-source/out/RESULT.json
+889d194b8503e3bc3d47be37ba1a3e142ba8b2bf6e6083b519d5806452deb649  coordination/runden-v3/RUNDE-16/particle-mechanisms-swarm/formation/refined-reference/modes/harmonic-source/out/SOURCE-h0.05.npz
+52fa102b997936a7f4346515f6044320b651fc79da4d0ba5ff41276a9d2de268  coordination/runden-v3/RUNDE-16/particle-mechanisms-swarm/formation/refined-reference/modes/harmonic-source/out/SOURCE-h0.1.npz
+75b1dce542aa728fe6bf58ecea4aec4a2ddf8a6a5a6e236666075c6902bbd292  outgoing.py
+467ad3e19cd8efcdac4ec2dcc670b50aaa59cc6f7e9e44d625ebbf94ba0d32c6  modecode.py
+a2270a05c7270eeeb16e5fd04d12bd1367bff38af0205062b2643aea05b2a574  harmonic-source-run/RESULT.json
+8c33ace3a5465a8fd481d26b35457425ee3c5d5f0111b3f11c09f4a9dd72fdf4  prepared/MANIFEST.json
+ 19:49:17 up 90 days, 13:29,  6 users,  load average: 0.06, 1.62, 2.00
+Nach CODE-REVIEW gestartet im Remoteordner:
+OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
+/usr/bin/time -f 'user=%U system=%S wall=%e maxrss=%M exit=%x'
+-o outgoing.time timeout --kill-after=1 9s taskset -c 8 nice -n 19
+/home/fmh/fmhc-physics-gpu-venv/bin/python outgoing.py --operator modecode.py
+--source-dir harmonic-source-run --reference prepared --out outgoing-run
+Fachlicher QA-Abbruch exit2, keine automatische Wiederholung.

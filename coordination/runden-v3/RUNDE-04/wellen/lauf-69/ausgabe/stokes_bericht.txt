@@ -1,0 +1,19 @@
+R4-W stokes. Start 2026-09-30T00:21:47+00:00, Ende 2026-09-30T00:22:08+00:00, Geraet Quadro P4000, torch 2.5.1+cu121, T = 400.0
+Dauer [s]: profil_s 0.0, grob_s 7.1, fein_s 13.8
+
+Welle k = 1.00629, w = 1.41867, Periode 4.4289; Fit auf [T/8, T]
+Lauf | a | Richtung | dX (grob, fein) | Drift je Periode | Beschl. | v_anfang | Zittern | dQ_Fenster
+  laufend        | 0.01 | +1 | 1.4376e+00, 1.4368e+00 | 1.818e-02 | 2.470e-08 | 4.101e-03 | 1.1e-03 | -1.9e-05
+  laufend        | 0.02 | +1 | 2.9188e+00, 2.9168e+00 | 3.691e-02 | 8.170e-08 | 8.319e-03 | 2.6e-03 | -9.0e-05
+  laufend        | 0.04 | +1 | 6.0101e+00, 6.0083e+00 | 7.603e-02 | 5.469e-07 | 1.707e-02 | 8.5e-03 | -2.4e-04
+  laufend        | 0.04 | -1 | -6.0101e+00, -6.0083e+00 | -7.603e-02 | -5.469e-07 | -1.707e-02 | 8.5e-03 | -2.4e-04
+  stehend_bauch  | 0.04 | +0 | 3.6152e-05, -1.0953e-06 | -1.386e-08 | 4.329e-10 | -7.888e-08 | 1.7e-04 | 1.2e-03
+  stehend_knoten | 0.04 | +0 | 1.4668e-01, 1.4708e-01 | 1.861e-03 | 2.904e-07 | 3.694e-04 | 7.2e-03 | 1.4e-03
+  ohne           | 0.00 | +0 | 2.1199e-09, 6.6122e-11 | 8.367e-13 | 1.382e-16 | 1.647e-13 | 2.6e-11 | -3.7e-09
+
+Kontrollen und Latten:
+  L1_skalierung_a2: {"dX_0.02_zu_0.01": 2.0300215555048498, "dX_0.04_zu_0.02": 2.0599131062857174, "soll": 4.0, "bestanden": false}
+  L2_gegenprobe: {"dX_stehend_bauch": -1.095261801728634e-06, "dX_ohne_welle": 6.612178615097395e-11, "dX_stehend_knoten_diagnose": 0.14707958711040559, "bestanden": true}
+  spiegelprobe_links_rechts: {"dX_rechts_plus_links": -4.973799150320701e-14, "bestanden": true}
+  L3_aufloesung: {"dX_fein": 6.0083239240713855, "dX_grob": 6.010078061396821, "bestanden": true}
+  K0_profil_gegen_anker: {"max_abw_f": 1.201214199181115e-10, "bestanden": true, "herkunft": "profil_cache.pt", "f0_quadrat_schuss": [0.6837722339948578, 0.3675444679705876, 0.10557280900028279], "f0_quadrat_anker": [0.683772233983162, 0.36754446796632423, 0.10557280900008414]}

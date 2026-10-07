@@ -1,0 +1,46 @@
+{
+  "id": "claude-gaia-a2-20260917",
+  "time": "2026-09-17T03:11:15+02:00",
+  "time_kind": "completed",
+  "author": "claude-subagent (Anthropic, Fable 5.1), Leihgabe claude-primary, Auftrag Finn 17.09.2026",
+  "topic": "galaxies",
+  "status": "reported",
+  "title": "GAIA-A2 (Folgevertrag zu Gold GAIA-A1): Die Verteilung v/v_esc der 31 gebundenen HARPS-Weitpaare ist mit einer gebundenen Kepler-Nullpopulation vertraeglich (Schiefe p = 0,69, Anteil > 0,8 p = 0,26, Median p = 0,60). Ausgang A, kein Wind.",
+  "question": "Zeigt die Population der 32 HARPS-Weitpaare (Chae 2025) ausser dem einen Verletzer (Zeile 24) eine Polarisierung nahe der Bindungsgrenze x = v/v_esc = 1 (Schiefe, Ueberschuss x > 0,8), die auf eine systematische Verschiebung (Spieltisch-Bild: Wind) hinweist, oder ist sie mit einer gebundenen Nullpopulation vertraeglich?",
+  "action": "Vertrag GAIA-A2-VERTRAG.md (S0) mit fester Vorschrift: x_i aus denselben CSV und Konstanten wie GAIA-A1; skalenfreie Kepler-Null x^2 = sin(theta)(1 + e cos E)/2 mit thermischer e-Verteilung (Kontrolle gleichverteilt), 200000 Stichproben je Menge (31 ohne Zeile 24, 32 alle), Seed 2026091701, zweiseitige p-Werte fuer Schiefe, Anteil > 0,8, Median; Variante mit Messfehlern; Resampling-Bootstrap der 31. Skript gaia_a2.py (pruefe|lauf|bericht, nur numpy) auf .69 CPU als User-Unit fmhc-physics-gaia-a2-20260917-v2 (CPUQuota 200 %, MemoryMax 4G), 125 s. Erster Lauf brach im Ausgangszweig mit TypeError ab (dict statt dict.values(); Log lauf-v1-typeerror.log), Fassung 2 ohne Aenderung der Rechenvorschrift, im Startsignal vermerkt. K0 (drei Hashes), K1 (32 Zeilen, IDs identisch), K2 (Zeile 24: s, M, v, v_esc, M_min relativ <= 7e-7; genau ein Verletzer, 127,203 m/s, Abweichung zur A1-Referenz < 1e-9 m/s) bestanden.",
+  "result": "Beobachtet (31): Mittel 0,551, Median 0,535, SD 0,203, Schiefe -0,138, Anteil > 0,8: 0,129 (4 von 31), Anteil > 0,9: 0, Maximum 0,895. Thermische Null (31): Schiefe-Median -0,027 (95 %: -0,60 bis 0,54), p = 0,69; Anteil > 0,8 Null-Median 0,065 (0 bis 0,16), p = 0,26; Median-Null 0,510 (0,42 bis 0,60), p = 0,60. Mit Messfehlern p = 0,70 / 0,28 / 0,60; Kontrollnull gleichverteilt p = 0,51 / 0,11 / 0,46. Menge 32 (mit Zeile 24): Schiefe +0,253 (p = 0,31), Anteil > 0,8: 0,156 (p = 0,10), Maximum 1,156 ausserhalb der Null (p = 0). Ausgang A: alle drei Hauptkennzahlen der 31 innerhalb der Null.",
+  "meaning": "HYPOTHESE-Ebene: Die 31 unter der Grenze liegenden Paare sehen aus wie eine gewuerfelte gebundene Population; es gibt keinen Hinweis auf eine gemeinsame Verschiebung in Richtung der Bindungsgrenze (keinen Wind). Zeile 24 bleibt ein einzelner Ausreisser. Grenzen: Null ohne Auswahl auf projizierten Abstand und ohne Massenfehler, 31 Werte tragen nur grobe Aussagen; keine Bindungswahrscheinlichkeit, keine Gravitations- oder Teilchendeutung. S2 (anderes Haus) und S3 (Qwen) offen; keine Registerzeile.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260917/GAIA-A2-VERTRAG.md",
+      "role": "Vertrag S0",
+      "sha256": "882a00d618de75b6f8680c79d49945cf990af19828d2324c50fb900fe67d5168"
+    },
+    {
+      "path": "coordination/vertraege-20260917/startsignal-gaia-a2.txt",
+      "role": "Startsignal",
+      "sha256": "0f3f00d3ddeee010c6ee362b896bebc9d4418fc64038471bec4ae27559727651"
+    },
+    {
+      "path": "coordination/vertraege-20260917/gaia-a2-lauf/BERICHT-GAIA-A2.md",
+      "role": "Bericht S1",
+      "sha256": "5d54d4523d5eda7b4e26dd25c83a018efa60528e21a8a9c3476e58f564c263cf"
+    },
+    {
+      "path": "coordination/vertraege-20260917/gaia-a2-lauf/ERGEBNIS-GAIA-A2.json",
+      "role": "Ergebnis S1",
+      "sha256": "9f0470a4896daac2c10f5f7172a99364071b016d3f0a57a010ec2f50ae11e1de"
+    },
+    {
+      "path": "coordination/vertraege-20260917/gaia-a2-lauf/gaia_a2.py",
+      "role": "Skript",
+      "sha256": "4bfefb112d4e9e9e0c7df19df5371a156a7059e9dc94f0951fe2b96b3e6e02cc"
+    },
+    {
+      "path": "coordination/ideen-20260916/UEBERTRAGUNG-GOLD-SILBER.md",
+      "role": "Vorlage",
+      "sha256": "8f673d07e0805730ef2b7aad15ee6d7f749bb87b1a71d9c4139211f28a00202f"
+    }
+  ],
+  "recorded_at": "2026-09-17T01:11:15.652207+00:00"
+}

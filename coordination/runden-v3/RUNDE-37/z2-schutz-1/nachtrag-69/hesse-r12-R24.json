@@ -1,0 +1,125 @@
+{
+ "kopf": {
+  "karte": "Z2-SCHUTZ-1 (Runde 49)",
+  "modus": "hesse",
+  "args": {
+   "modus": "hesse",
+   "aus": "/home/fmh/fmhc-physics-remote/z2-schutz-1/nachtrag",
+   "r0": 12.0,
+   "R": 24.0,
+   "nmax": 20000,
+   "ftol": 1e-07,
+   "dtmax": 0.1,
+   "dtstart": 0.02,
+   "capw": 0.05,
+   "start": "/home/fmh/fmhc-physics-remote/z2-schutz-1/lauf/start-r12-R24.npz",
+   "eingaben": "../eingaben-gfn1",
+   "aufgabe": "haupt",
+   "verfahren": "neb",
+   "M": 12,
+   "d_grad": 30.0,
+   "sigma": 0.001,
+   "ks": 1.0,
+   "nvor": 150,
+   "ftol_ci": 0.001,
+   "ftol_band": 0.005,
+   "budget": 480.0,
+   "zs0_nmax": 3000,
+   "nmax_rel": 20000,
+   "zusatz": [
+    "SB=/home/fmh/fmhc-physics-remote/z2-schutz-1/lauf/weg-haupt-r12-R24-neb.npz:X"
+   ],
+   "fortsetzung": "",
+   "fstufe": 1,
+   "keim": "",
+   "kappen": "30,60,90",
+   "delta_k": 1.0,
+   "nkeim": 2000,
+   "e_T": 0.001,
+   "keim_min": 100,
+   "zugpfad": "",
+   "nzug": 17,
+   "kappa": 100.0,
+   "nzugmax": 1500,
+   "ftol_zug": 0.0001,
+   "dtmax_zug": 0.05,
+   "kappe_b": 30.0,
+   "nbis": 800,
+   "nskip": 30,
+   "nbisekt": 14,
+   "nbisekt_min": 10,
+   "zug_von": 0,
+   "k": 4,
+   "tol": 1e-09,
+   "maxiter": 200000
+  },
+  "code_sha256": "b4f878874aed5712cc277c230c3e8eeb093c1b477f38abf38bbaaf1d9349e645",
+  "finn_sha256": "e9f357b63788918f7edd6e4e4abc84dcafb7924fbbbb5e147150c16f12d6c155",
+  "g2_sha256": "c9374a9898c9ab0ff8458b5077ed0e31f4cec53362d432ab21ef670e3be67933",
+  "start_utc": "2026-10-05T12:02:35Z",
+  "schreibzeit_utc": "2026-10-05T12:02:35Z",
+  "numpy": "2.4.4"
+ },
+ "netz_info": {
+  "art": "diamant",
+  "feld": "so3",
+  "N": 65441,
+  "frei": 50632,
+  "kern": 7193,
+  "rand": 7616,
+  "bindungen": 127508,
+  "grad_frei_min": 4,
+  "grad_frei_max": 4,
+  "bindungslaenge_min": 0.8660254037844386,
+  "bindungslaenge_max": 0.8660254037844386,
+  "innen_frei": 10024,
+  "z3_gleich_g2": null
+ },
+ "ergebnisse": {
+  "S": {
+   "eigenwerte": [
+    -3.0841671312215596e-09,
+    -3.0841669969869102e-09,
+    0.028301543711630198,
+    0.02830154371163693
+   ],
+   "fehler": null,
+   "dim": 151896,
+   "nnz": 2208744,
+   "zahl_negativ": 0,
+   "laufzeit_s": 25.475999355316162,
+   "symmetrie_ueberlapp": [
+    0.9999999999999981,
+    1.0000000000000009
+   ]
+  },
+  "T": {
+   "eigenwerte": [
+    0.24928731423634257,
+    0.27509043562843805,
+    0.3258501550890657,
+    0.326982253251028
+   ],
+   "fehler": null,
+   "dim": 151896,
+   "nnz": 2208744,
+   "zahl_negativ": 0,
+   "laufzeit_s": 9.043893337249756
+  },
+  "SB": {
+   "eigenwerte": [
+    -0.3668279569268948,
+    -7.488043503117903e-07,
+    -7.488043422952926e-07,
+    0.02816872834327161
+   ],
+   "fehler": null,
+   "dim": 151896,
+   "nnz": 2208744,
+   "zahl_negativ": 1,
+   "laufzeit_s": 33.14026427268982
+  }
+ },
+ "laufzeit_s": 67.86088919639587,
+ "maxrss_mb": 479.0234375
+}

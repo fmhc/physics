@@ -1,0 +1,19 @@
+Karte 4 Vielzeller (Bio 24). Start 2026-09-30T02:55:50+02:00, Ende 2026-09-30T02:55:54+02:00, CPU (nur Form- und Syntaxprobe), torch 2.10.0+cu128 RAUCHTEST: Zahlen ungueltig
+Dauer [s]: schiessen_s 0.0, entwicklung_grob_s 0.8, entwicklung_fein_s 3.3
+Hochrechnung Hauptlauf: 207 s (nicht entwickelnde Teile 0 s + Entwicklung x 50); ueber 540 s: nicht starten, Leitung entscheidet (Stufen einzeln mit --stufe).
+Ball omega2 0.7: Q 23.996, R_halb 1.916; Seitenlaenge 7.832
+Stufe Lauf | Klasse | t erste Verschmelzung | n Ende | Abstand Start/max | Windungen Ende | Q-Verlust
+  grob n3_gleich | verschmolzen | 5.0 | 1 | 7.32/7.32 | [0] | 4.4e-14
+  grob n3_wechsel | teilweise | 5.0 | 2 | 7.92/7.92 | [0, 0] | 5.2e-14
+  grob n3_windung | zusammen | None | 3 | 8.06/8.88 | [0, 0, 0] | 3.5e-14
+  grob n4_gleich | verschmolzen | 5.0 | 1 | 8.57/8.57 | [0] | 6.6e-14
+  grob n4_wechsel | zusammen | None | 4 | 9.25/10.28 | [0, 0, 0, 0] | 1.4e-14
+  grob n4_windung | zusammen | None | 4 | 8.90/9.06 | [0, 0, 0, 0] | 4.5e-14
+  grob n1_kontrolle | kontrolle ruhig | None | 1 | 7.83/- | [0] | 1.0e-15
+  fein n3_gleich | verschmolzen | 5.0 | 1 | 7.28/7.28 | [0] | 3.1e-14
+  fein n3_wechsel | teilweise | 10.0 | 2 | 7.90/7.92 | [0, 0] | 3.2e-14
+  fein n3_windung | zusammen | None | 3 | 8.00/8.89 | [0, 0, 0] | 3.3e-14
+  fein n4_gleich | verschmolzen | 5.0 | 1 | 8.60/8.60 | [0] | 6.4e-14
+  fein n4_wechsel | zusammen | None | 4 | 9.14/10.35 | [0, 0, 0, 0] | 1.4e-14
+  fein n4_windung | zusammen | None | 4 | 8.97/9.03 | [0, 0, 0, 0] | 4.5e-14
+Kennzahlen: {"klassen": {"n3_gleich": "verschmolzen", "n3_wechsel": "teilweise", "n3_windung": "zusammen", "n4_gleich": "verschmolzen", "n4_wechsel": "zusammen", "n4_windung": "zusammen", "n1_kontrolle": "kontrolle ruhig"}, "stabiler_verbund_gefunden": true, "L3": {"laeufe": [{"lauf": "n3_gleich", "bestanden": true}, {"lauf": "n3_wechsel", "bestanden": true}, {"lauf": "n3_windung", "bestanden": true}, {"lauf": "n4_gleich", "bestanden": true}, {"lauf": "n4_wechsel", "bestanden": true}, {"lauf": "n4_windung", "bestanden": true}], "bestanden": true}}

@@ -1,0 +1,614 @@
+{
+ "befehl": "auswertung",
+ "start": "2026-10-03T17:34:16+0000",
+ "regeln": {
+  "R_einfang": 12.255099999999999,
+  "R_frei": 12.0,
+  "D_nah": 3.0,
+  "delta_ext": 2.0,
+  "sehne": 5,
+  "min_punkte": 10
+ },
+ "laeufe": {
+  "ik-v0.1-dt0.05": {
+   "name": "ik-v0.1-dt0.05",
+   "geo": "ikosaeder",
+   "v0": 0.1,
+   "b": 0.0,
+   "nu": 134,
+   "h": 0.29850746268656714,
+   "dt": 0.05,
+   "T_ende": 4000.0,
+   "vollstaendig": true,
+   "K_nominal": 0.79238963828813,
+   "K_eff": 0.7910584506609837,
+   "E_rest": 157.288347729539,
+   "punkte": 2001,
+   "E_tot_abw_max": 0.0007452384719499605,
+   "Q_tot_abw_max": 3.922195901395753e-12,
+   "ohne_karte": 0,
+   "strecken": [
+    {
+     "seg_von": 0.0,
+     "seg_bis": 80.0,
+     "v": 0.09982509397447087,
+     "t_von": 20.0,
+     "t_bis": 80.0,
+     "punkte": 31,
+     "sehnen": 6,
+     "Q_ball": 199.99947898035865,
+     "E_ball": 158.07894434746564,
+     "atmung_rel": 0.0002658179230747505,
+     "S_max_mittel": 1.0503868945096366,
+     "K": 0.7895973502509328,
+     "E_innen": 0.001387398898867076
+    },
+    {
+     "seg_von": 296.0,
+     "seg_bis": 1084.0,
+     "v": 0.057315087173917534,
+     "t_von": 296.0,
+     "t_bis": 1084.0,
+     "punkte": 395,
+     "sehnen": 79,
+     "Q_ball": 199.83576033183954,
+     "E_ball": 157.90485199848214,
+     "atmung_rel": 0.027473499432536345,
+     "S_max_mittel": 1.050763201239986,
+     "K": 0.25878442079449027,
+     "E_innen": 0.48006944542850594
+    },
+    {
+     "seg_von": 1316.0,
+     "seg_bis": 1516.0,
+     "v": 0.0791659088139748,
+     "t_von": 1316.0,
+     "t_bis": 1516.0,
+     "punkte": 101,
+     "sehnen": 20,
+     "Q_ball": 199.6922795981003,
+     "E_ball": 157.75121613414225,
+     "atmung_rel": 0.019799377441232356,
+     "S_max_mittel": 1.0501773294323775,
+     "K": 0.4944891949029563,
+     "E_innen": 0.19761413003901163
+    },
+    {
+     "seg_von": 1788.0,
+     "seg_bis": 2880.0,
+     "v": 0.04131971855262803,
+     "t_von": 1788.0,
+     "t_bis": 2880.0,
+     "punkte": 547,
+     "sehnen": 110,
+     "Q_ball": 199.3062075751602,
+     "E_ball": 157.3411421559145,
+     "atmung_rel": 0.03941203368321073,
+     "S_max_mittel": 1.0507059323248722,
+     "K": 0.1340011115186424,
+     "E_innen": 0.4356308409289515
+    },
+    {
+     "seg_von": 3176.0,
+     "seg_bis": 3434.0,
+     "v": 0.06156921194973935,
+     "t_von": 3176.0,
+     "t_bis": 3434.0,
+     "punkte": 130,
+     "sehnen": 26,
+     "Q_ball": 198.97229975174253,
+     "E_ball": 156.98293701298567,
+     "atmung_rel": 0.02802179727576658,
+     "S_max_mittel": 1.050425901302001,
+     "K": 0.2975168681649521,
+     "E_innen": 0.16265306280133557
+    },
+    {
+     "seg_von": 3736.0,
+     "seg_bis": 4000.0,
+     "v": 0.03917470569733599,
+     "t_von": 3736.0,
+     "t_bis": 4000.0,
+     "punkte": 133,
+     "sehnen": 27,
+     "Q_ball": 198.7861875726607,
+     "E_ball": 156.77741549947064,
+     "atmung_rel": 0.015618005064000103,
+     "S_max_mittel": 1.050555501161812,
+     "K": 0.1201363331199598,
+     "E_innen": 0.27315550960467655
+    }
+   ],
+   "begegnungen": [
+    {
+     "spitze": 0,
+     "t_ein": 82.0,
+     "t_aus": 294.0,
+     "offen_am_ende": false,
+     "spitzenwechsel": false,
+     "d_min": 0.24543539131319791,
+     "t_min": 172.0,
+     "durchgaenge": 1,
+     "t_minima_nah": [
+      172.0
+     ],
+     "wenden": 0,
+     "d_wenden": [],
+     "v_vor": 0.09982509397447087,
+     "K_vor": 0.7895973502509328,
+     "v_nach": 0.057315087173917534,
+     "K_nach": 0.25878442079449027,
+     "nah": true,
+     "K_verhaeltnis": 0.32774226092862263,
+     "K_abfall_rel": 0.6722577390713773
+    },
+    {
+     "spitze": 10,
+     "t_ein": 1086.0,
+     "t_aus": 1314.0,
+     "offen_am_ende": false,
+     "spitzenwechsel": false,
+     "d_min": 0.1296636123011239,
+     "t_min": 1210.0,
+     "durchgaenge": 1,
+     "t_minima_nah": [
+      1210.0
+     ],
+     "wenden": 0,
+     "d_wenden": [],
+     "v_vor": 0.057315087173917534,
+     "K_vor": 0.25878442079449027,
+     "v_nach": 0.0791659088139748,
+     "K_nach": 0.4944891949029563,
+     "nah": true,
+     "K_verhaeltnis": 1.9108151618433298,
+     "K_abfall_rel": -0.9108151618433298
+    },
+    {
+     "spitze": 9,
+     "t_ein": 1518.0,
+     "t_aus": 1786.0,
+     "offen_am_ende": false,
+     "spitzenwechsel": false,
+     "d_min": 0.12635149487126532,
+     "t_min": 1628.0,
+     "durchgaenge": 1,
+     "t_minima_nah": [
+      1628.0
+     ],
+     "wenden": 0,
+     "d_wenden": [],
+     "v_vor": 0.0791659088139748,
+     "K_vor": 0.4944891949029563,
+     "v_nach": 0.04131971855262803,
+     "K_nach": 0.1340011115186424,
+     "nah": true,
+     "K_verhaeltnis": 0.2709889576959112,
+     "K_abfall_rel": 0.7290110423040888
+    },
+    {
+     "spitze": 1,
+     "t_ein": 2882.0,
+     "t_aus": 3174.0,
+     "offen_am_ende": false,
+     "spitzenwechsel": false,
+     "d_min": 0.19244854633874237,
+     "t_min": 3044.0,
+     "durchgaenge": 1,
+     "t_minima_nah": [
+      3044.0
+     ],
+     "wenden": 0,
+     "d_wenden": [],
+     "v_vor": 0.04131971855262803,
+     "K_vor": 0.1340011115186424,
+     "v_nach": 0.06156921194973935,
+     "K_nach": 0.2975168681649521,
+     "nah": true,
+     "K_verhaeltnis": 2.220256718718047,
+     "K_abfall_rel": -1.2202567187180469
+    },
+    {
+     "spitze": 0,
+     "t_ein": 3436.0,
+     "t_aus": 3734.0,
+     "offen_am_ende": false,
+     "spitzenwechsel": false,
+     "d_min": 0.2625217334824377,
+     "t_min": 3564.0,
+     "durchgaenge": 1,
+     "t_minima_nah": [
+      3564.0
+     ],
+     "wenden": 0,
+     "d_wenden": [],
+     "v_vor": 0.06156921194973935,
+     "K_vor": 0.2975168681649521,
+     "v_nach": 0.03917470569733599,
+     "K_nach": 0.1201363331199598,
+     "nah": true,
+     "K_verhaeltnis": 0.4037967119677822,
+     "K_abfall_rel": 0.5962032880322178
+    }
+   ],
+   "nahe_durchgaenge": [
+    {
+     "spitze": 0,
+     "t_ein": 82.0,
+     "t_aus": 294.0,
+     "offen_am_ende": false,
+     "spitzenwechsel": false,
+     "d_min": 0.24543539131319791,
+     "t_min": 172.0,
+     "durchgaenge": 1,
+     "t_minima_nah": [
+      172.0
+     ],
+     "wenden": 0,
+     "d_wenden": [],
+     "v_vor": 0.09982509397447087,
+     "K_vor": 0.7895973502509328,
+     "v_nach": 0.057315087173917534,
+     "K_nach": 0.25878442079449027,
+     "nah": true,
+     "K_verhaeltnis": 0.32774226092862263,
+     "K_abfall_rel": 0.6722577390713773
+    },
+    {
+     "spitze": 10,
+     "t_ein": 1086.0,
+     "t_aus": 1314.0,
+     "offen_am_ende": false,
+     "spitzenwechsel": false,
+     "d_min": 0.1296636123011239,
+     "t_min": 1210.0,
+     "durchgaenge": 1,
+     "t_minima_nah": [
+      1210.0
+     ],
+     "wenden": 0,
+     "d_wenden": [],
+     "v_vor": 0.057315087173917534,
+     "K_vor": 0.25878442079449027,
+     "v_nach": 0.0791659088139748,
+     "K_nach": 0.4944891949029563,
+     "nah": true,
+     "K_verhaeltnis": 1.9108151618433298,
+     "K_abfall_rel": -0.9108151618433298
+    },
+    {
+     "spitze": 9,
+     "t_ein": 1518.0,
+     "t_aus": 1786.0,
+     "offen_am_ende": false,
+     "spitzenwechsel": false,
+     "d_min": 0.12635149487126532,
+     "t_min": 1628.0,
+     "durchgaenge": 1,
+     "t_minima_nah": [
+      1628.0
+     ],
+     "wenden": 0,
+     "d_wenden": [],
+     "v_vor": 0.0791659088139748,
+     "K_vor": 0.4944891949029563,
+     "v_nach": 0.04131971855262803,
+     "K_nach": 0.1340011115186424,
+     "nah": true,
+     "K_verhaeltnis": 0.2709889576959112,
+     "K_abfall_rel": 0.7290110423040888
+    },
+    {
+     "spitze": 1,
+     "t_ein": 2882.0,
+     "t_aus": 3174.0,
+     "offen_am_ende": false,
+     "spitzenwechsel": false,
+     "d_min": 0.19244854633874237,
+     "t_min": 3044.0,
+     "durchgaenge": 1,
+     "t_minima_nah": [
+      3044.0
+     ],
+     "wenden": 0,
+     "d_wenden": [],
+     "v_vor": 0.04131971855262803,
+     "K_vor": 0.1340011115186424,
+     "v_nach": 0.06156921194973935,
+     "K_nach": 0.2975168681649521,
+     "nah": true,
+     "K_verhaeltnis": 2.220256718718047,
+     "K_abfall_rel": -1.2202567187180469
+    },
+    {
+     "spitze": 0,
+     "t_ein": 3436.0,
+     "t_aus": 3734.0,
+     "offen_am_ende": false,
+     "spitzenwechsel": false,
+     "d_min": 0.2625217334824377,
+     "t_min": 3564.0,
+     "durchgaenge": 1,
+     "t_minima_nah": [
+      3564.0
+     ],
+     "wenden": 0,
+     "d_wenden": [],
+     "v_vor": 0.06156921194973935,
+     "K_vor": 0.2975168681649521,
+     "v_nach": 0.03917470569733599,
+     "K_nach": 0.1201363331199598,
+     "nah": true,
+     "K_verhaeltnis": 0.4037967119677822,
+     "K_abfall_rel": 0.5962032880322178
+    }
+   ],
+   "einfang": {
+    "eingefangen": false,
+    "spitze_ende": 0,
+    "d_ende": 22.39714475614027
+   },
+   "spitzen_auf_spiegelebene": [
+    0,
+    1,
+    9,
+    10
+   ],
+   "spiegel_abstand_max": 6.004692565397818e-08,
+   "spiegel_abstand_max_alle_karten": 0.041500274337582965
+  },
+  "ik-v0.1-h0.2": {
+   "name": "ik-v0.1-h0.2",
+   "geo": "ikosaeder",
+   "v0": 0.1,
+   "b": 0.0,
+   "nu": 200,
+   "h": 0.2,
+   "dt": 0.05,
+   "T_ende": 2000.0,
+   "vollstaendig": true,
+   "K_nominal": 0.7924251395383283,
+   "K_eff": 0.791661437771495,
+   "E_rest": 157.29539468310352,
+   "punkte": 1001,
+   "E_tot_abw_max": 0.000717786190506331,
+   "Q_tot_abw_max": 2.1032064978498966e-12,
+   "ohne_karte": 0,
+   "strecken": [
+    {
+     "seg_von": 0.0,
+     "seg_bis": 80.0,
+     "v": 0.09990709221508377,
+     "t_von": 20.0,
+     "t_bis": 80.0,
+     "punkte": 31,
+     "sehnen": 6,
+     "Q_ball": 199.99948602712874,
+     "E_ball": 158.08660075359015,
+     "atmung_rel": 0.00024107712935670893,
+     "S_max_mittel": 1.0504240509786715,
+     "K": 0.7909403294112808,
+     "E_innen": 0.0006486301004754447
+    },
+    {
+     "seg_von": 296.0,
+     "seg_bis": 1084.0,
+     "v": 0.057382271029833176,
+     "t_von": 296.0,
+     "t_bis": 1084.0,
+     "punkte": 395,
+     "sehnen": 79,
+     "Q_ball": 199.8358392102586,
+     "E_ball": 157.91260375582652,
+     "atmung_rel": 0.02739527251480218,
+     "S_max_mittel": 1.0508623755950663,
+     "K": 0.2594046899111219,
+     "E_innen": 0.4800975392445253
+    },
+    {
+     "seg_von": 1314.0,
+     "seg_bis": 1516.0,
+     "v": 0.07907833088938687,
+     "t_von": 1314.0,
+     "t_bis": 1516.0,
+     "punkte": 102,
+     "sehnen": 21,
+     "Q_ball": 199.68692068788783,
+     "E_ball": 157.7534607005301,
+     "atmung_rel": 0.02086005775126635,
+     "S_max_mittel": 1.0500873827066537,
+     "K": 0.4934001595341654,
+     "E_innen": 0.19789729733826833
+    },
+    {
+     "seg_von": 1786.0,
+     "seg_bis": 2000.0,
+     "v": 0.04193912854690079,
+     "t_von": 1786.0,
+     "t_bis": 2000.0,
+     "punkte": 108,
+     "sehnen": 22,
+     "Q_ball": 199.43706048923906,
+     "E_ball": 157.48925724513003,
+     "atmung_rel": 0.040542784389695066,
+     "S_max_mittel": 1.0511309531238389,
+     "K": 0.13814614215953727,
+     "E_innen": 0.47508361321474013
+    }
+   ],
+   "begegnungen": [
+    {
+     "spitze": 0,
+     "t_ein": 82.0,
+     "t_aus": 294.0,
+     "offen_am_ende": false,
+     "spitzenwechsel": false,
+     "d_min": 0.20662276998543075,
+     "t_min": 172.0,
+     "durchgaenge": 1,
+     "t_minima_nah": [
+      172.0
+     ],
+     "wenden": 0,
+     "d_wenden": [],
+     "v_vor": 0.09990709221508377,
+     "K_vor": 0.7909403294112808,
+     "v_nach": 0.057382271029833176,
+     "K_nach": 0.2594046899111219,
+     "nah": true,
+     "K_verhaeltnis": 0.3279699874505124,
+     "K_abfall_rel": 0.6720300125494876
+    },
+    {
+     "spitze": 10,
+     "t_ein": 1086.0,
+     "t_aus": 1312.0,
+     "offen_am_ende": false,
+     "spitzenwechsel": false,
+     "d_min": 0.14748726731955253,
+     "t_min": 1208.0,
+     "durchgaenge": 1,
+     "t_minima_nah": [
+      1208.0
+     ],
+     "wenden": 0,
+     "d_wenden": [],
+     "v_vor": 0.057382271029833176,
+     "K_vor": 0.2594046899111219,
+     "v_nach": 0.07907833088938687,
+     "K_nach": 0.4934001595341654,
+     "nah": true,
+     "K_verhaeltnis": 1.9020479533473962,
+     "K_abfall_rel": -0.9020479533473962
+    },
+    {
+     "spitze": 9,
+     "t_ein": 1518.0,
+     "t_aus": 1784.0,
+     "offen_am_ende": false,
+     "spitzenwechsel": false,
+     "d_min": 0.2555599024546183,
+     "t_min": 1628.0,
+     "durchgaenge": 1,
+     "t_minima_nah": [
+      1628.0
+     ],
+     "wenden": 0,
+     "d_wenden": [],
+     "v_vor": 0.07907833088938687,
+     "K_vor": 0.4934001595341654,
+     "v_nach": 0.04193912854690079,
+     "K_nach": 0.13814614215953727,
+     "nah": true,
+     "K_verhaeltnis": 0.27998803707312414,
+     "K_abfall_rel": 0.7200119629268759
+    }
+   ],
+   "nahe_durchgaenge": [
+    {
+     "spitze": 0,
+     "t_ein": 82.0,
+     "t_aus": 294.0,
+     "offen_am_ende": false,
+     "spitzenwechsel": false,
+     "d_min": 0.20662276998543075,
+     "t_min": 172.0,
+     "durchgaenge": 1,
+     "t_minima_nah": [
+      172.0
+     ],
+     "wenden": 0,
+     "d_wenden": [],
+     "v_vor": 0.09990709221508377,
+     "K_vor": 0.7909403294112808,
+     "v_nach": 0.057382271029833176,
+     "K_nach": 0.2594046899111219,
+     "nah": true,
+     "K_verhaeltnis": 0.3279699874505124,
+     "K_abfall_rel": 0.6720300125494876
+    },
+    {
+     "spitze": 10,
+     "t_ein": 1086.0,
+     "t_aus": 1312.0,
+     "offen_am_ende": false,
+     "spitzenwechsel": false,
+     "d_min": 0.14748726731955253,
+     "t_min": 1208.0,
+     "durchgaenge": 1,
+     "t_minima_nah": [
+      1208.0
+     ],
+     "wenden": 0,
+     "d_wenden": [],
+     "v_vor": 0.057382271029833176,
+     "K_vor": 0.2594046899111219,
+     "v_nach": 0.07907833088938687,
+     "K_nach": 0.4934001595341654,
+     "nah": true,
+     "K_verhaeltnis": 1.9020479533473962,
+     "K_abfall_rel": -0.9020479533473962
+    },
+    {
+     "spitze": 9,
+     "t_ein": 1518.0,
+     "t_aus": 1784.0,
+     "offen_am_ende": false,
+     "spitzenwechsel": false,
+     "d_min": 0.2555599024546183,
+     "t_min": 1628.0,
+     "durchgaenge": 1,
+     "t_minima_nah": [
+      1628.0
+     ],
+     "wenden": 0,
+     "d_wenden": [],
+     "v_vor": 0.07907833088938687,
+     "K_vor": 0.4934001595341654,
+     "v_nach": 0.04193912854690079,
+     "K_nach": 0.13814614215953727,
+     "nah": true,
+     "K_verhaeltnis": 0.27998803707312414,
+     "K_abfall_rel": 0.7200119629268759
+    }
+   ],
+   "einfang": {
+    "eingefangen": false,
+    "spitze_ende": 9,
+    "d_ende": 21.026315898704866
+   },
+   "spitzen_auf_spiegelebene": [
+    0,
+    1,
+    9,
+    10
+   ],
+   "spiegel_abstand_max": 3.2652736377869473e-05,
+   "spiegel_abstand_max_alle_karten": 0.04146193439835777
+  }
+ },
+ "urteile": {
+  "E2-0": {
+   "eingetroffen": null,
+   "urteil": "nicht entscheidbar (Lauf fehlt oder zu kurz)"
+  },
+  "E2-1": {
+   "eingetroffen": null,
+   "urteil": "nicht entscheidbar (Lauf fehlt)",
+   "regel": "erste Begegnung des Hauptlaufs ist ein naher Durchgang (d_min < 3) und 0,60 <= v_nach/0,05 <= 0,80 (v_nach = Sehnen-Geschwindigkeit der folgenden freien Strecke)"
+  },
+  "E2-2": {
+   "eingetroffen": null,
+   "urteil": "nicht entscheidbar (Lauf fehlt)",
+   "regel": "Hauptlauf bis T = 8000: Ball am Ende innerhalb R_halb + 6 = 12,26 einer Spitze, durchgehend seit t_c, und in [t_c, 8000] mindestens zwei Wenden (Maxima von d mit Hysterese 2)"
+  },
+  "E2-3": {
+   "eingetroffen": null,
+   "urteil": "nicht entscheidbar (weniger als 2 auswertbare Durchgaenge)",
+   "auswertbar": [],
+   "nicht_auswertbar": [],
+   "regel": "alle nahen Durchgaenge (d_min < 3, t_min <= 8000) der Laeufe keiner und keiner mit K davor und danach: Mittel von 1 - K_nach/K_vor >= 0,30 und jedes K_nach/K_vor <= 1,10; mindestens 2"
+  }
+ },
+ "ende": "2026-10-03T17:34:16+0000"
+}

@@ -1,0 +1,30 @@
+Root-Planabnahme, 2026-10-02, vor Implementierungsabschluss und Rechnung.
+
+PLAN 097108448c6604b8f417a67f64291c6daef4b490fcb00158070e01837f7ae96b
+gegen bestehende excitation/code.py, timestep-half.py, source- und
+responses-Konvention gelesen. REVIEW-PLAN und REVIEW-NORMALIZATION gelesen.
+Beide Nichtautoren finden keinen konkreten Planblocker.
+
+Freigabe hier ausschliesslich zur Implementierung. Elf feste Arme,
+R120/T128, zwei feste Fenster und 300 CPU-s Gesamtdeckel bleiben.
+Der Test ersetzt den zu kurzen T32-Vorlauf nicht rueckwirkend; er beantwortet
+eine neue Frage an die freie nichtlineare Dynamik. Keine neue Modensuche.
+Der stationaere erzwungene Befund allein sagt weder, dass die freie Antwort
+bis T128 eingeschwungen ist, noch dass die Grundmode lange stabil bleibt.
+
+Bindende Umsetzungspunkte aus den Lesungen:
+- Paarweises Lockstep erlaubt volle kanonische Uodd-Norm ohne Trajektorien-
+  speicherung aller Ganzfelder. Messschalen brauchen Ableitungshalos.
+- Ritzdrehung theta ist -arg(Pivot); die gespeicherte quadratische Antwort
+  dreht mit exp(2i theta), ohne Anpassung an Zeitdaten.
+- Aus U_even berechneter Fluss ist bereits der alpha^4-Koeffizient;
+  kein erneutes Dividieren. Labor- und Rotationsfluss getrennt.
+- Extraktionslecks werden in der tatsaechlichen skalierten Signalamplitude
+  ermittelt. Eine globale Energie-Drift ist keine Strahlungsfehlergrenze.
+- Jeder Paar-/Fensterfall bleibt im Ergebnis, kein Mehrheitspass.
+- Bei numerisch/transient unaufgeloestem Signal UNRESOLVED; keine automatische
+  Fensterverlaengerung, Amplitudenerhoehung oder Wiederholung.
+
+Code wird vor Start separat nichtautorisch gelesen; tatsaechliche Hashes,
+CPU-Ort, Limits, Eingaben und Gitbezug in RUN-SCOPE zu binden. M2 nicht in
+M1-Leiterpapier einfuegen. Keine Aenderung an historischen Labels.

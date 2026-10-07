@@ -1,0 +1,76 @@
+{
+  "id": "claude-runde-v3-40-20261004",
+  "time": "2026-10-04T13:12:39+02:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung, Karten, Schreibtisch; Code-Agenten, feldforscher und pruefer-opus (Gegenleser) Anthropic (Opus 5.5)",
+  "topic": "theory",
+  "status": "reported",
+  "evidenzart": "modell",
+  "title": "Runde 40 nach v3 (explorativ, Gittermodelle und Literatur, keine Messdaten): auf dem symmetrischen S^4-Zufallsnetz gibt ein freier Skalar ein negatives sqrt(N)-Glied (Einsteins Vorzeichen unter Kugelsymmetrie), robust fuer Regeln gleicher Simplexform und ohne Volumenumrechnung, im Widerspruch zum frueheren Torus-Test; Fermionen auf dem 2D-Zufallsnetz geben die Schwerkraft-Antwort noch nicht universell; Finns Tetraeder-Netz traegt Gravitonen nur in einer Bauweise und dann doppelt, Fermionen als Fadenenden algebraisch; ein gemeinsames Tempo braucht im Pfeil-Eis Abstimmung",
+  "question": "Gilt Einsteins Vorzeichen der induzierten Schwerkraft auf einem kovariant gebauten 4D-Netz, geben Fermionen auf dem Zufallsnetz die Schwerkraft-Antwort, und was traegt Finns Tetraeder-Netz an Gravitonen, Fermionen und gemeinsamer Lichtgeschwindigkeit?",
+  "action": "Code-Agenten auf der .69 (kleintest.sh) mit Vorhersagen vor jeder Rechnung und eingefrorenem Plan: INDUZIERT-DIRAC-2D, INDUZIERT-WILSON-2D, INDUZIERT-KUGEL-1, INDUZIERT-KUGEL-2, TWIST-PYRO-1, TENSOR-EIS-PYRO-1. Literaturkarten (feldforscher, gezielte Abrufe ohne Websuche): DYON-STATISTIK-L, LICHT-GLEICH-L. Frische Gegenleser (pruefer-opus): KUGEL-GEGENLESEN, PAPIER-I-GEGENLESEN-3, WEICHE-V3- und WEICHE-V4-GEGENLESEN. Schreibtisch: Papier-I-Fussnote Fassung 3 und 4 (an Codex angeboten), Weichenstand Fassung 3 bis 5. INDUZIERT-XI-KUGEL-1 geht in Runde 41.",
+  "result": "INDUZIERT-DIRAC-2D: ID-F0, ID-F2 nein; ID-F1, ID-F3 nach Plan nicht auswertbar; Skalar 0,92 +- 0,12, naives Fermion 1,69 +- 1,15, Kaehler-Dirac +48,4. INDUZIERT-WILSON-2D: W0, W4 ja; W1, W2 nein; W3 nach Plan nein (r-Unterschied gepaart 0,72 +- 0,04); Band bei null weg, c_eff -1,00 bzw. -0,26; Kaehler-Dirac c = -4. INDUZIERT-KUGEL-1: KU0, KU4 ja; KU1 bis KU3 nein; beta(Regel S) = -1,651 +- 0,052, alle 40 Saaten negativ; Gegenleser: traegt mit Einschraenkung (gilt fuer zwei verwandte Laengenregeln, Torus-Ursache offen). INDUZIERT-KUGEL-2: K2-0, K2-2 ja; K2-1, K2-3 nicht auswertbar; beta_Q,roh = -1,613 +- 0,052; geodaetische Laengen nicht einbettbar. TWIST-PYRO-1: TP0 bis TP3 ja (lokale Lesart), vorab ableitbar. TENSOR-EIS-PYRO-1: TE0, TE3 ja; TE1 nach Plan ja; TE2 nein (4 statt 2 Helizitaet-2-Moden, zwei entkoppelte Welten). DYON-STATISTIK-L: E1, E2, E4 eingetroffen, E3 nicht belegt, E5 teilweise. LICHT-GLEICH-L: E1, E2 ja, E3 teilweise, E4 nein, E5 teilweise. PAPIER-I-GEGENLESEN-3: keine A-Befunde. WEICHE-V3-GEGENLESEN: 5 A; WEICHE-V4-GEGENLESEN: 1 A.",
+  "meaning": "Explorativ, Modellrechnungen und Literatur, keine Messdaten. Auf einem symmetrisch gebauten 4D-Kugelnetz induziert ein freier Skalar mit Punkten nach Volumen Einsteins Vorzeichen; das haengt nicht an der Volumenumrechnung, gilt aber nur fuer Laengenregeln gleicher Simplexform, und warum der fruehere Torus-Test anders ausfiel, ist offen [H]. Fuer Fermionen ist die Schwerkraft-Antwort auf dem Zufallsnetz noch nicht hergestellt. Finns Tetraeder-Netz traegt Gravitonen und Newtons 1/r nur mit der Freiheit in den Tetraedermitten und Kanten als Laengen, dann in zwei getrennten Welten; Fermionen als Fadenenden sind algebraisch moeglich, Spin 1/2 und Licht dort nicht gezeigt; ein gemeinsames Tempo braucht im Pfeil-Eis Abstimmung. Der Weichenstand brauchte drei Fassungen, bis frische Leser ihn tragen liessen.",
+  "sources": [
+    {
+      "path": "coordination/runden-v3/RUNDE-40.md",
+      "sha256": "db908a8c68cc9999b7371b257e1b215151f2e57db45ada7cf20b6fdd4caac8c5"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-40/WEICHE-STAND-v5.md",
+      "sha256": "cdf1eb129c8939f78c8250efbcc2a056b54d05ff7fab58a6004afdb3f7072341"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-37/induziert-dirac-2d/ERGEBNIS.md",
+      "sha256": "7f8b5789c4e1ea0abbca9b43c1ef2d81121b223384256777b62c5038fd731ad2"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-37/induziert-wilson-2d/ERGEBNIS.md",
+      "sha256": "b75e32f5754e3f8643ba9b8f35be1e9e591c22c9ff8481daa9ec7b6ccc173f9f"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-37/dyon-statistik-l/DOSSIER.md",
+      "sha256": "0550f0b7c19e176be234a742e5c47b347627eb2e819dd1b9add91846372bedcf"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-37/twist-pyro-1/ERGEBNIS.md",
+      "sha256": "74569df478222e5fb139aaef5da6c597e624904ac3d54dd6be4e48c4382598fe"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-37/papier-i-gegenlesen-3/GEGENLESEN.md",
+      "sha256": "36808734a8c555889e8d48e0e6efc9aa1d9d8403a12e249d474f092926b44de4"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-37/PAPIER-I-ROBUSTHEIT-ENTWURF.md",
+      "sha256": "5d6782bf08081489a061260b02be0f5ed8c63fb0090026ec5480d1df560324ef"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-37/induziert-kugel-1/ERGEBNIS.md",
+      "sha256": "1fbbfd6890208ae9df43a781a041da52b9c581a4a33a80ec95390e5457b5afbf"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-37/kugel-gegenlesen/GEGENLESEN.md",
+      "sha256": "70e90ee53d92ddf7589cd8e1529ac72c24b5d933a4914976e5993ccaf2d15991"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-37/induziert-kugel-2/ERGEBNIS.md",
+      "sha256": "893d3a85b5220e73112a540fcd33fe05032247c22695d1219543142d1321b765"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-37/licht-gleich-l/DOSSIER.md",
+      "sha256": "68bf283d7919da9119fc9a4de47eff511770ba64f9bb917d2340c289ff7f230a"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-37/tensor-eis-pyro-1/ERGEBNIS.md",
+      "sha256": "b5998a4c7c3130d2238f8a730f0f0e1c028713b07f773b7b68733f1d08ef29c0"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-37/weiche-v3-gegenlesen/GEGENLESEN.md",
+      "sha256": "a5b770ec052c336bfa4f933951813d2a18e55f70ed5e429fa6b0c89f6555742e"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-37/weiche-v4-gegenlesen/GEGENLESEN.md",
+      "sha256": "8daedc0898f6cda4d2c9a18615fa6611c68bdb3b69059959d213a4d6d738ab3d"
+    }
+  ]
+}

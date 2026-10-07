@@ -1,0 +1,104 @@
+{
+ "kopf": {
+  "code_sha256": "5cc0215c80d95778a019001d62bee00b21aed2f759310c99d1a34732ea1f2d16",
+  "lauf": "/home/fmh/fmhc-physics-remote/guertel-feld-stab-1/rauch",
+  "n1": "/home/fmh/fmhc-physics-remote/guertel-feld-stab-1/eingaben-n1/feld-3d-r12-R24-prot-saat.json",
+  "zeit_utc": "2026-10-04T17:11:04Z"
+ },
+ "regeln": {
+  "TOL_GS0": 1e-06,
+  "RHO_UM": 0.1,
+  "RHO_AST": 0.9,
+  "WORT_BAND": 0.1
+ },
+ "GS0": {
+  "plan": "nicht auswertbar",
+  "wort": "nicht auswertbar",
+  "grund": "Winkel fehlt",
+  "werte": []
+ },
+ "referenz": {
+  "10": {
+   "theta": 10,
+   "E_vor": 8.641372391351211,
+   "E_end": 8.55062331233295,
+   "sonde_lauf": 0.9998329429032855,
+   "fmax_end": 0.0006626520868292236,
+   "schritte": 60,
+   "qz_mittel_aussen_end": 0.016075493315333284
+  }
+ },
+ "stoesse": [
+  {
+   "theta": 20.0,
+   "eps": 0.3,
+   "klasse_plan": "ast",
+   "klasse_wort": "ast",
+   "rho": 0.9947515023638995,
+   "E_vor": 34.33522692764362,
+   "E_nach_stoss": 36.20832202192104,
+   "E_end": 34.19989649652087,
+   "E_ref": 8.55062331233295,
+   "E_end_durch_E_ref": 3.99969630836068,
+   "E_min_lauf": 34.19989649652087,
+   "sonde_nach_stoss": 0.9992957057862919,
+   "sonde_end": 0.9993551528020649,
+   "sonde_lauf": 0.9992957057862919,
+   "erster_sprung_schritt": null,
+   "fmax_end": 0.0002534447442581883,
+   "schritte": 100,
+   "kipp_P0": 0.7980435282674072,
+   "kipp_Pend": 0.007847732181363178,
+   "kipp_Pmax": 0.7980435282674072,
+   "kipp_Pmax_schritt": 0,
+   "qz_mittel_aussen_vor": 0.03297101045751209,
+   "qz_mittel_aussen_end": 0.03206282424602718,
+   "q0_min_frei_end": 0.9868659611657854,
+   "E_bei": {
+    "0": 36.20832202192104
+   }
+  }
+ ],
+ "GS1": {
+  "plan": "nicht eingetroffen",
+  "wort": "nicht eingetroffen",
+  "klassen_plan": [
+   "ast"
+  ],
+  "klassen_wort": [
+   "ast"
+  ]
+ },
+ "kontrolle_ohne_stoss_beschreibend": [
+  {
+   "theta": 20.0,
+   "eps": 0.0,
+   "klasse_plan": "ast",
+   "klasse_wort": "ast",
+   "rho": 0.9947592572793712,
+   "E_vor": 34.33522692764362,
+   "E_nach_stoss": 34.335226927699665,
+   "E_end": 34.20009645394238,
+   "E_ref": 8.55062331233295,
+   "E_end_durch_E_ref": 3.9997196934887818,
+   "E_min_lauf": 34.20009645394238,
+   "sonde_nach_stoss": 0.9994376966943535,
+   "sonde_end": 0.9993574328856356,
+   "sonde_lauf": 0.9993574328856356,
+   "erster_sprung_schritt": null,
+   "fmax_end": 0.0012258182679832906,
+   "schritte": 60,
+   "kipp_P0": 0.016551852573210457,
+   "kipp_Pend": 0.0006639624395232563,
+   "kipp_Pmax": 0.016551852573210457,
+   "kipp_Pmax_schritt": 0,
+   "qz_mittel_aussen_vor": 0.03297101045751209,
+   "qz_mittel_aussen_end": 0.03216751319417657,
+   "q0_min_frei_end": 0.9868613058158032,
+   "E_bei": {
+    "0": 34.335226927699665
+   }
+  }
+ ],
+ "bild": "/home/fmh/fmhc-physics-remote/guertel-feld-stab-1/rauch/energie-verlauf.png"
+}

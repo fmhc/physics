@@ -1,0 +1,9 @@
+RING teilung (a): m = 1-Ball mit 1-%-Stoerung, Stufe fein. Start 2026-09-30T02:40:02+00:00, Ende 2026-09-30T02:40:21+00:00, Quadro P4000, torch 2.5.1+cu121 RAUCHTEST: Zahlen ungueltig
+Dauer [s]: profile_s 0.0, entwicklung_grob_s 11.7, entwicklung_fein_s 6.2
+Hochrechnung Hauptlauf: 359 s (nicht entwickelnde Teile 0 s + Entwicklung x 20); Profile aus dem Cache. Ueber 480 s: Stufen einzeln (--stufe grob / --stufe fein) oder Laeufe teilen (--laeufe).
+Lauf | omega2 | Q | Teilung t | n_max | Toechter (Q, W, Jspin/Q, vx, vy) | l_dom | gamma | A_max l=1..6 | spaet J/Q, omega_eff, Anteil W1
+  m1_0590 | 0.590 | 157.07 | None (Fenster None) | 1 | - | 2 | - | 2.3e-03 8.2e-03 7.6e-03 7.1e-03 6.6e-03 5.9e-03 | 0.9999, 0.76808, 1.000
+    Bilanz: Q: +157.098->+157.081 geschluckt +0.017 Rest 4.7e-07 J: +157.098->+157.070 geschluckt +0.028 Rest 8.1e-06 E: +137.249->+137.209 geschluckt +0.040 Rest 2.7e-06; Schranken {"bilanz_Q": true, "bilanz_J": true, "bilanz_E": true, "startzerlegung": true, "profil_selbst_L2_unter_0p05": true}
+  m1_0625 | 0.625 | 110.17 | None (Fenster None) | 2 | - | 2 | 0.0641 | 7.3e-03 4.1e-01 2.4e-02 5.1e-02 6.5e-03 2.0e-02 | 0.9998, 0.79553, 1.000
+    Bilanz: Q: +110.194->+110.183 geschluckt +0.011 Rest 4.3e-07 J: +110.194->+110.175 geschluckt +0.018 Rest 8.3e-06 E: +100.760->+100.736 geschluckt +0.024 Rest 4.0e-06; Schranken {"bilanz_Q": true, "bilanz_J": true, "bilanz_E": true, "startzerlegung": true, "profil_selbst_L2_unter_0p05": false}
+Kennzahlen: {"stabil_bis_T": [0.59, 0.625], "geteilt": [], "schwelle_eingeschachtelt": false, "schwelle_zwischen": null, "Q_zwischen": null}

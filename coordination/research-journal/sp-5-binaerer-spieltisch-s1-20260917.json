@@ -1,0 +1,46 @@
+{
+  "id": "sp-5-binaerer-spieltisch-s1-20260917",
+  "time": "2026-09-17T00:44:15+00:00",
+  "time_kind": "completed",
+  "author": "Claude-Subagent (Anthropic, claude-fable-5-1) im Auftrag Finn",
+  "topic": "theory",
+  "status": "checked",
+  "title": "SP-5 Binaerer Spieltisch (S1): Scheduling mit Zugbudget veraendert die Stein-Versteck-Korrelation, bei Ueberlast durch Verwurf, bei Normallast durch die Reihenfolge",
+  "question": "Erzeugt Round-Robin mit einem Zug je Takt je Spieler in drei gekoppelten Bit-Spielen auf einem 16er-Ring eine Bit-Korrelation (Stein x versteckt), die sich vom zusammengelegten Regelsatz ohne Budget um mehr als 4 sigma unterscheidet und bei rho = 0,9 mindestens halb so gross ist wie bei rho = 1,2?",
+  "action": "Vertrag SP-5 nach Abschnitt 6 der Spieltisch-Analogie geschrieben (Abweichung: Kaskadenregel statt Beide-Nachbarn-Regel, weil letztere verriegelt). Exakte Ganzzahl-Ereignissimulation sp_5.py: Ring N=16, 3 Spiele als FIFO-Queues (Kapazitaet 8), Bernoulli-Ankuenfte aus PCG64-Tafeln, 200 Seeds ab 2026091701, 20000 Takte, Scheduler Round-Robin, FIFO, ein Regelsatz; Lasten rho 0,9 und 1,2; gepaartes Design. Lauf als User-Unit fmhc-physics-sp-5-20260917 auf .69 CPU (CPUQuota 200 %, 2 GB), 530 s, GPU nicht angefasst. Kontrollen K0 Erhaltung, K1 Little, K2 Last, K3 Referenz, K4 Unabhaengigkeitsnull, K5 skalare Doppelimplementierung, K6 Seed-Isolation.",
+  "result": "Ausgang A (A-i), alle 19 Kontrollen bestanden. D_sh = C_sh(rr) - C_sh(ref): rho 1,2: -0,1037 +/- 0,0003 (z = -353); rho 0,9: +0,0226 +/- 0,0003 (z = +90); Verhaeltnis 4,6 erfuellt das Kriterium Faktor >= 2. C_sh: ref 0,4216 / rr 0,4442 / fifo 0,4487 (0,9) und ref 0,3645 / rr 0,2609 / fifo 0,3562 (1,2). Ungekoppeltes Paar Stein x Karte: ref 0,0004 und 0,0002 (Null, K4), rr -0,013 / -0,022, fifo -0,026 / -0,047 (z bis -150): der geteilte Server allein korreliert. Queues rho 1,2 rr: L = 2,1 / 5,6 / 6,9, W = 7,1 / 16,0 / 19,6 Takte, Verwurf 0,9 / 12,6 / 29,2 %, gesamt 16,6 % (fifo 16,6 %, Verwurf je Spiel 5,6 / 14,4 / 24,9 %). rho 0,9 rr: L = 0,25 / 0,63 / 1,44, Verwurf gesamt 0,27 % (fifo 0,07 %). Little-Abweichung max 0,057 %. Entdeckungszeit der anfangs Versteckten 11,6 bis 12,3 Takte, alle 16 nach 23 bis 26 Takten, nie unentdeckt. Beide-Nachbarn-Variante: in allen 120 Diagnosefaellen Ring komplett versteckt und verriegelt (16 Paare).",
+  "meaning": "HYPOTHESE-Status. Formal A nach Vertrag, aber mit Vorbehalt: der Effekt bei rho 0,9 verschwindet nicht, er ist ein eigenstaendiger Reihenfolge-Effekt mit umgekehrtem Vorzeichen (rr und fifo erhoehen die Korrelation um +0,02, weil Stein-Weg und Verstecken nicht mehr im selben Takt geschehen). Bei rho 1,2 ueberwiegt der Durchsatzverlust: Round-Robin bedient Spiel 3 nur mit 0,354 statt 0,5 Zuegen je Takt, fifo mit 0,375; welches Spiel fallen gelassen wird, haengt vom Scheduler ab (zaehlbare Form von nur ein Kopf). Die Trennung Reihenfolge gegen Durchsatz braucht eine ratenangepasste Referenz (Folgevertrag SP-5b). Keine Teilchendeutung; geprueft wurden Scheduling und Budget in einem Bit-System. S2 (anderes Haus, eigenes Skript) und S3 (Qwen) stehen aus, keine Registerzeile.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260916/sp-5-lauf/BERICHT-SP-5.md",
+      "label": "Bericht S1 mit Ausgang, Kontrollen, Tabellen",
+      "sha256": "52e65bb988fcc42b086631448dcfbd29b6cfee2b4477c3fc38ed747c7f3f8bd9"
+    },
+    {
+      "path": "coordination/vertraege-20260916/sp-5-lauf/ERGEBNIS-SP-5.json",
+      "label": "Alle Zahlen und Kopf",
+      "sha256": "20f106a4748ec517dd1a4b7592bfce62ef271c42f8eadb80fb34880e77f01092"
+    },
+    {
+      "path": "coordination/vertraege-20260916/sp-5-binaerer-spieltisch-VERTRAG.md",
+      "label": "Vertrag SP-5",
+      "sha256": "7c28761faefa4e550915301b8dec3b200386b1411a014cf6461f09e4bcbf6fd3"
+    },
+    {
+      "path": "coordination/vertraege-20260916/sp-5-lauf/sp_5.py",
+      "label": "Skript (pruefe, lauf, bericht)",
+      "sha256": "01454f17043fb848f9088b2afefc57ec529b460bc8481cf8ca4918c83c1a05c1"
+    },
+    {
+      "path": "coordination/vertraege-20260916/startsignal-sp-5.txt",
+      "label": "Startsignal mit Hashes",
+      "sha256": "e74658061e7a41fd0b6145888762ec367e6b6b3c922bbd5bb240b6b985aab6e0"
+    },
+    {
+      "path": "coordination/ideen-20260916/ANALOGIE-SPIELTISCH.md",
+      "label": "Grundlage, Abschnitt 6",
+      "sha256": "3dfa624b4fd48f2a59b117f0c8e37898e7a7a3b24823e05bdf89d4defe2e7b4a"
+    }
+  ],
+  "recorded_at": "2026-09-17T00:45:22.250238+00:00"
+}

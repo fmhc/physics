@@ -1,0 +1,47 @@
+{
+ "info": {
+  "numpy": "2.4.4",
+  "python": "3.12.3",
+  "host": "ubuntu-auto",
+  "start_utc": "2026-10-03T22:48:55Z",
+  "argv": [
+   "code/lam.py",
+   "statik",
+   "--L",
+   "256",
+   "--chunk",
+   "2",
+   "--out",
+   "lauf/statik-256.json",
+   "--npz",
+   "lauf/statik-256.npz"
+  ],
+  "skript_sha256": "65dac72d462f89a403ef83957c1666514faa9ff5531fb575ccc670dceb68f95d"
+ },
+ "laeufe": [
+  {
+   "L": 256,
+   "t_kern_s": 167.5635027885437,
+   "stat": {
+    "N": {
+     "res_max": 2.220446049250313e-15
+    }
+   },
+   "kap_q0": {
+    "N": 0.0
+   },
+   "sym": {
+    "N": {
+     "spiegel_max": 3.469446951953614e-18,
+     "tausch_max": 6.938893903907228e-18,
+     "mittel": -1.6940658945086007e-21,
+     "G0": -0.12592451995911985
+    }
+   },
+   "t_gesamt_s": 167.97471714019775,
+   "maxrss_MB": 371.11328125
+  }
+ ],
+ "laufzeit_s": 167.98686981201172,
+ "ende_utc": "2026-10-03T22:51:43Z"
+}

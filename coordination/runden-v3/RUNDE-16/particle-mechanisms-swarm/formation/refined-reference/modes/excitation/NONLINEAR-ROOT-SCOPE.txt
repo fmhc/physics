@@ -1,0 +1,25 @@
+Root-Aktualisierung2026-10-02 VOR Ausfuehrung
+Der anfänglich vorgeschlagene reineCN-Lineartest wird nichtausgeführt.
+Stattdessen gezielteNICHTLINEAREKleinamplitudenprobe mitbestehendemM2-Verlet.
+Der alte linearePlan ist damit überholt, keineRechenfreigabe daraus.
+
+R120,T32; (h,dt)=(.1,.01),(.05,.01),(.1,.005).
+JeGitter ε=0,.001,.002, also9Arme, keinneuerIntegrator/Modensuche.
+KanonischePerturbation ausvorhandenemRitzvektor, gemeinsamePhase für(q,p),
+Amplitude relativzur ausdrücklich festgelegtenReferenznorm. Laboranfang:
+ phi=f+εs(x+i y)/sqrt2,
+ pi=iomega phi+εs(px+i py)/sqrt2,
+ chi=g+εs z, chi_t=εs pz.
+Hierx,y,z undp sind realeTeiledergemeinsamphasengedrehtenRitzvektoren,
+zurückausVolumenbasis. KeineLadungsnachnormierung; O(ε²)QÄnderungmessen.
+
+Zeitdiagnostik: aufjedemGitter/dt denzugehörigenε0Verlaufabziehen,
+komplexesFeldvorhermite^-iomegat zurückdrehen. GegenexakteRe(v e^irhot)
+vergleichen, rhoausvorhandenemEigenwert fest; keinFrequenzfit.
+ZweiAmplitudenprüfen AnnäherungzurLinearform, Gitter/Zeitfehlergetrennt.
+NochkeineStrahlungsrate/Gamma/Lebensdauer ausT32. KeineR20Umwertung.
+
+AutorbindetMessnormen/QA/ToleranzenvorRun,Nichtautorprüft.
+Budgetmax45CPU-s/neuebegrenzteEinheit,.69einThreadnice19,keineDienste.
+DiesistMechanikprobe: der echte nichtlineareIntegrator wirdgegenkonkret
+vorhergesagtenkleinenModenverlauf geprüft,keine neueExistenzzertifizierung.

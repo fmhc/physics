@@ -1,0 +1,100 @@
+NICHTLINEARE Kleinamplitudenprobe gespeicherter M2-Mode, 02.10.2026
+Prospektiver Plan, kein Code/Run. Ersetzt den kurz zuvor geschriebenen
+reinen Linear-CN-Entwurf auf Roots ausdrückliche Korrektur. Dieser wurde
+nicht implementiert/ausgeführt. Kein neuer Integrator und kein K0-Umweg.
+
+FRAGE
+Folgt eine echte kleine Störung des vorhandenen stationären Q1100-Kerns
+unter dem vollständigen M2-Verlet zunächst der gespeicherten .3822-Mode?
+Amplitudenverkleinerung und Gitter-/Zeitkontrollen trennen begrenzte
+Nichtlinearität von Numerik. Keine neue Modensuche, keine freieFrequenzfits,
+FFT/Gamma/Lebensdauer- oder Strahlungsbehauptung. FrüheresR20Gate und
+NO_CONFIRMED_CANDIDATE_IN_FIXED_SEARCH bleiben unverändert.
+
+GEBUNDENER BESTAND
+Unveränderte float64-R120-Referenzen aus prepared/MANIFEST.json;
+Operatorcode467ad3e19cd8efcdac4ec2dcc670b50aaa59cc6f7e9e44d625ebbf94ba0d32c6.
+Suchresultat77ecf9bbe03b96db901d76728e074a897725eb52213f90dae76c7200ba5364ea.
+Shift.3 Ritzartefakte:
+h.1 868230c0e14a68ebe754cabeac833cf2aaf63cfec86d5026e949f506990f6cae
+h.05 67658ad2e278e7708e82039ae1b487f86d86ef666e42198ea3752bf765e4fbed.
+Proh genau .38<Im(lambda)<.39; NPZ-/RESULT-Zuordnung prüfen.
+Physikevolution ausschließlich vorhandenes vollständiges nonlinear advance
+von timestep-half.py, Quellhash
+466b25fb813770a1ab13eea962c93b39308dfe1ad22171fe638c60fdafef998d.
+Adapter darf nur Anfangsdaten/Diagnostik und feste9Arm-Schleife ergänzen,
+keine neue Kraft-/Schrittformel, keine Referenzänderung.
+
+ANFANGSDATEN UND LADUNG
+Gespeicherten komplexen ganzen Eigenvektor v=(vq,vp) mit EINER gemeinsamen
+Phase drehen: größte|vq|-Komponente realpositiv. Dann ||vq||=1 normieren
+und vp um denselben Faktor teilen. Keine einzelnen Feldphasen anpassen.
+Physische reelle x,y,z=Re(vq)/sqrtV; px,py,pz=Re(vp)/sqrtV.
+Setze s=sqrt(sum V[2 f²+(g-1)²]), kanonische Hintergrundfeldnorm.
+alpha=epsilon*s, epsilon=0,.001,.002. Die tatsächliche anfängliche
+reelle Störungsnorm wird zusätzlich ausgewiesen; epsilon benennt die
+komplexe Modennorm relativ zu s, nicht automatisch die reelle Positionsnorm.
+
+ phi0=f+alpha(x+i y)/sqrt2,
+ pi0=i omega phi0+alpha(px+i py)/sqrt2,
+ chi0=g+alpha z, chi_t0=alpha pz.
+Baseline epsilon0 besitzt dieselben Gitter-/Zeitdaten und Hintergrundomega.
+KEINE Q-Nachnormalisierung: Qepsilon-Qbase=alpha deltaQ1+alpha²deltaQ2.
+ deltaQ1=sqrt2 sum V f(2omega x+py),
+ deltaQ2=2 sum V Im(conj(dpsi)*(iomega dpsi+dpsidot)),
+ dpsi=(x+i y)/sqrt2,dpsidot=(px+i py)/sqrt2.
+Die sehr kleine lineare Ladungsform und der endliche quadratische Betrag
+werden getrennt vorab gemessen. Direkter Q-Unterschied muss diese exakte
+quadratische Bilanz auf1e-10 relativ zuQ1100 treffen. Keine behauptete
+identische Ladung/Energie der drei Arme. Eepsilon und dessen Änderung
+vollständig berichten; keine Energie aus negativem Teilsektor ablesen.
+
+FESTER UMFANG
+R120,T32; Level(h,dt)=(.1,.01),(.05,.01),(.1,.005), jeweils3Amplituden,
+zusammen9Arme. SaveSamples alle.4; kein spätererAmplituden-/Zeitscan.
+Vollständige Felder nur anfangs/Ende, Projektionen/Normen alleSamples.
+Bekannter eigenständiger M2-Kern, keine diffuse Wolkenbildung.
+
+VERGLEICH OHNE FREQUENZANPASSUNG
+Für jeden gespeicherten Zeitpunkt labFelder mit exp(-i omega t) in das
+fest vorgegebene rotierende System zurückführen. Rotierende Geschwindigkeit
+ist exp(-i omega t)*pi-i omega*exp(-i omega t)*phi. Dann gleiches Level-
+Baselinefeld abziehen; chi und chi_t ebenso. Keine zusätzliche Phasenausrichtung.
+Kanonische Differenz dY=(sqrt2 Re/Im(delta phi),delta chi und entsprechende
+Geschwindigkeiten) mit sqrtV multiplizieren. Für epsilon>0 Zepsilon=dY/alpha.
+Soll Zlin(t)=Re[v exp(i rho t)] mit gespeicherter rho jeh, keine freieFitfrequenz.
+Nenner aller normierten Gesamtfehler =||v|| (volle6Blöcke), feste Norm.
+Separat jede Feld-/Geschwindigkeitskomponente und deren Normen berichten.
+
+Vorab Diagnosen:
+- Max und Schlusswert ||Zepsilon-Zlin||/||v|| überT0..32.
+- Feste2D-Projektion auf Re(v),-Im(v), Gram-Kondition<1e8 verlangen;
+  Koeffizienten gegen cos(rho t),sin(rho t), keine neueFrequenzschätzung.
+- Amplitudenverkleinerung: ||Z.002-Z.001||/||v|| als direkte nichtlineare
+  Antwortdifferenz; zusätzlich beide individuellen Sollabweichungen.
+  Keine zwingende Faktor2-Regel, wenn gemeinsame Integrationsfehler dominieren.
+- h-/dt-Einfluss für alle Größen getrennt; Feldvergleich über vorhandene
+  Volumenrestriction auf gemeinsames Raster, keine Punktinterpolationsfits.
+- Baseline driftphi/driftchi und stationäreReste wie bestehendeDiagnostik;
+  GesamtQ/E jedesArms und jeweiligeInitialänderung separat.
+
+PROSPEKTIVE ENTSCHEIDUNG
+Numerik: separateE-/Qdrift<=1e-5, Kern-Q-Flussbilanz<=1e-5 relativQinitial,
+Kragenenergie/Einitial<=1e-8; finite; Baseline4Reste und2Formdriften<.004.
+Anfangsreferenz-/Schema-/Hashchecks bleiben wieBestand. FehlendeArmeoder
+verletzteNumerik ->unentschieden, keineAbsenkung/automatischeHalbierung.
+GrobePrüffrage „linearnaheAntwort“: beideAmplituden aufallen3Levels haben
+maxGesamt-Sollfehler<.05 und maxskalierteAmplitudendifferenz<.05;
+h-/dt-Differenz dieser2Fehlerdiagnosen jeweils<.01. Sonst kein positiver
+Befund für diesevorab definierte Kurzzeit-/Amplitudenfrage. Rohwerte bleiben
+sichtbar; diese neuenSchwellen ersetzen KEIN altesModen-/Kompaktheitsgate.
+KleineAbweichung prüft Nichtlineardynamiknähe, beweist weder exakteMode noch
+nichtlineareStabilität. GrößereAbweichung isoliert nochkeinenZerfallsmechanismus.
+
+BUDGET/STATUS
+Gesamtdeckel45CPU-s einschließlichImports/QA/9Arme/IO, .69einThread,
+RootäußereBegrenzung/Receipt. Geschätzt machbar aus vorhandenemVerletlauf,
+noch ungemessen; keine neuenDienste. ZwischenArmen/regelmäßig imArm sichern;
+bei DeckelTeilstatusINCOMPLETE. Keine unautorisierteBudgeterhöhung.
+Zuerst Nichtautorreview diesesPlans; noch keinAnregungsadapter geschrieben.
+Autor hat keineInterpreter,Tests,SSHoderSimulationen gestartet.

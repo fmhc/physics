@@ -1,0 +1,103 @@
+{
+ "info": {
+  "numpy": "2.4.4",
+  "scipy": "1.18.0",
+  "python": "3.12.3",
+  "host": "ubuntu-auto",
+  "argv": [
+   "code/uf.py",
+   "rauch",
+   "--netz",
+   "glas-N128-s1",
+   "--out",
+   "rauch/r1.json"
+  ],
+  "skript_sha256": "a90d14b8c8ea6cc269b8ac848cae733fff3102223bbf9e869ab442eac29374f0",
+  "module_sha256": {
+   "tg": "ec48a258e266fc2226d0d10564b606052831ffefbf0642e4f7d04f9de85cfd9e",
+   "uk": "f52df7438c3d33b4fe86d4352bed3373b38e27a083f3d60eb12d4143fa6b71e0",
+   "tu": "6c5c3a9509ad0be5a8e72ab9a3cabb85a2300d11a2581c7d9ecf2b9e7fa9720a",
+   "td": "fbc02c4899a82ca17fa82ba7574c5ffa0c0776aeb4e6a75c3e3110a419e7015d",
+   "uv": "7abc883cffaa41860ef6b77bd5f4a92c5adb54c8eb38128245d54b132079c8c1",
+   "rk": "afd778897795839f84695db580e401507b5d9ba00266913bd23b8ad6fecac17f",
+   "rk2": "eb361e43564a2aa76a3109f88df44485cacd068cc293c891d1c3d1a2059cff81",
+   "umklapp4d": "cfda516ab9549ad3286ea436e73f46dadf26b7ebfdb507ea179a72d817e7a517"
+  },
+  "h_zelt": 0.0009765625,
+  "start_utc": "2026-10-05T16:36:40Z"
+ },
+ "ergebnis": {
+  "t_schnell_s": 4.49692964553833,
+  "t_reell_s": 21.72733235359192,
+  "diag_schnell": {
+   "NE": 2108,
+   "nq": 990,
+   "n_L": 606,
+   "rang_B_s": 384,
+   "n_tot": 0,
+   "D0_n_neg": 0,
+   "D0_min_rel": 0.003181292458526696,
+   "D_asym": [
+    6.921474373567949e-15,
+    NaN,
+    NaN
+   ],
+   "S2_asym": 3.712130312786708e-14,
+   "M_n_neg": 128,
+   "M_n_null": 0,
+   "M_absmin_rel": 9.733066365875452e-05,
+   "t_vier_s": 1.761765480041504,
+   "t_gesamt_s": 4.496691465377808
+  },
+  "diag_reell": {
+   "NE": 2108,
+   "NV": 128,
+   "nq": 990,
+   "n_L": 606,
+   "rang_B_s": 384,
+   "n_tot": 0,
+   "P_sym": [
+    2.5305752908149652e-14,
+    9.492170901204206e-14,
+    2.686292030157584e-14
+   ],
+   "D0_min_rel": 0.0031812924585265354,
+   "D0_n_neg": 0,
+   "D0_eig_min_rel": 0.0031812924585265354,
+   "D0_absmax": 58630416.75138432,
+   "t_vier_s": 1.744931936264038,
+   "t_bloecke_s": 19.277935028076172,
+   "S2_asym": 3.7127388088628944e-14,
+   "S1_qq_rel": 0.00023763657834167102,
+   "M_n_neg": 128,
+   "M_n_null": 0,
+   "M_absmin_rel": 9.733066365874105e-05,
+   "M_eig_min": -47.72928506032846,
+   "M_eig_max": 6.885892165065541,
+   "M_eig_neg_max": -0.21997340500246793,
+   "M_eig_pos_min": 0.004645522990879003,
+   "t_gesamt_s": 21.725563764572144
+  },
+  "M_rel": 2.2879452464679977e-15,
+  "V_rel": 1.11684709374713e-10,
+  "t_netzM_s": 5.000241279602051,
+  "eig": {
+   "w2_max": 4110.677224011624,
+   "n_wachsend": 0,
+   "n_null": 5,
+   "w2_min": -3.835792176255526e-14,
+   "w2im_max": 0.0,
+   "w2_wachsend": [],
+   "A_pd": true
+  },
+  "A_pd": true,
+  "omega": 1.1799418953438245,
+  "anteil_TT": 0.26977673512839007,
+  "omega_max": 64.11456327552753,
+  "NT_h05": 683,
+  "NT_h025": 1366
+ },
+ "laufzeit_s": 32.041688203811646,
+ "maxrss_MB": 816.8828125,
+ "ende_utc": "2026-10-05T16:37:13Z"
+}

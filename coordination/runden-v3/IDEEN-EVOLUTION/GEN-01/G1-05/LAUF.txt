@@ -1,0 +1,17 @@
+# G1-05 Laufzettel fuer die Leitung (Test-Agent T-1). Rechnen tut die Leitung.
+# Nur Teil (a): umstroemung.py (neuer Code, Formeln aus RUNDE-06/medium1d/medium1d.py; torch float64, reine CPU,
+# 1 Faden, kein CUDA noetig). Teil (b) ist nicht gebaut (NACHTRAG.md) und laeuft laut Karte erst nach (a).
+# Ordner: Kartenordner G1-05 nach /home/fmh/fmhc-physics-remote/evo-gen01-g1-05 kopieren (Name frei waehlbar).
+# Spur: cpu, cpu2 oder cpu5 (ausdruecklich CPU-faehig). Laptop-CPU waere laut Karte auch moeglich (Leitung, <= 10 min).
+#
+# Formprobe lokal (CPU, 1 Faden, nice 19, --rauch: jedes 4./5. u, 1/8 des a_c-Rasters): rc = 0, 22,4 s fuer alle drei
+# C0 mit Kontrollen und beiden Schrittweiten. Hochrechnung auf das volle Raster (etwa 30-mal mehr Punkte, bei kleinen
+# Tensoren nicht linear): 4 bis 11 min fuer alles; darum je C0 ein Aufruf, geschaetzt 1,5 bis 4 min je Aufruf.
+# Vor dem Stempel festgelegt ist nur die Karte; das Rechenverfahren (Schiessen von der Mitte) steht im Kopf des Skripts.
+#
+cd /home/fmh/fmhc-physics-remote/evo-gen01-g1-05 && bash /home/fmh/fmhc-physics-remote/kleintests/kleintest.sh cpu g105a-c01 umstroemung.py --c0 0.1 --out ausgabe | tee lauf-69-c01.log
+cd /home/fmh/fmhc-physics-remote/evo-gen01-g1-05 && bash /home/fmh/fmhc-physics-remote/kleintests/kleintest.sh cpu2 g105a-c02 umstroemung.py --c0 0.2 --out ausgabe | tee lauf-69-c02.log
+cd /home/fmh/fmhc-physics-remote/evo-gen01-g1-05 && bash /home/fmh/fmhc-physics-remote/kleintests/kleintest.sh cpu5 g105a-c03 umstroemung.py --c0 0.3 --out ausgabe | tee lauf-69-c03.log
+# Ergebnis je C0: ausgabe/umstroemung_<C0>_bericht.txt. V1 braucht C0 = 0,1 und 0,3 (Klammern [0,33; 0,53] und
+# [0,54; 0,77]); die Vorgabe fuer Teil (b) steht in der Datei zu C0 = 0,2 ("vorgabe_b").
+# formprobe/ und formprobe.log sind Rauchtests mit groben Rastern: keine Aussage daraus.

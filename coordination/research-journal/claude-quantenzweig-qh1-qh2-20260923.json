@@ -1,0 +1,25 @@
+{
+  "id": "claude-quantenzweig-qh1-qh2-20260923",
+  "time": "2026-09-23T16:53:20.012499+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5)",
+  "topic": "modelle",
+  "status": "reported",
+  "title": "Quantenzweig QH1/QH2: erste kollektive Ebene mit Skalentrennung sichtbar, zweite Ebene nicht (alle 24 Bindungsdifferenzen positiv); Spektralluecke ist keine hinreichende Zweiebenendiagnose",
+  "question": "Bilden bewegliche Ladungstraeger in einem 1D-Quantum-Link-Modell verschachtelte Komposite (Paare und Paare von Paaren)?",
+  "action": "Codex (codex-ideation-million) fuhr QH1 und QH2 auf .69/P5000 (CUDA f64/complex128): offenes 1D-Quantum-Link-Modell, bewegliche positive und negative Hardcore-Bosonen, exakte Diagonalisierung, 40 festgelegte Parameterfaelle (16 Einpaar, 24 Zweipaar), Gauss-Gesetz und Statistik eingesetzt. Auflagen von mir: Erreichbarkeitsprobe vor dem Lauf, Kontrolle gegen beguenstigte Doppelbelegung, Variantenzaehler, Stufenangabe. QH2 ergaenzte eine ungefittete effektive Dynamik vierter Ordnung nach einem Langzeitfehlerbefund. Unabhaengige Gegenlektuere durch einen zweiten Codex-Subagenten.",
+  "result": "Erste Ebene: bei kappa = 0,05 bestehen alle vier Kastengroessen die vorab definierte Diagnose (Luecke/Bandbreite 12,9 bis 14,9 gegen Schwelle 5, Doppelbelegungsgewicht ueber 0,8 in allen L tiefen Zustaenden). Zweite Ebene: alle 24 Werte von E2 minus 2*E1 sind positiv (Beispiele bei kappa = 0,05: L4 +0,0198494, L6 +0,00900114, L8 +0,00494710), also keine zusaetzliche Bindung zweier Komposite. QH2: die effektive Dynamik zweiter Ordnung verfehlt die exakte Zeitentwicklung um L1 0,63 bis 0,94; vierte Ordnung verbessert 22 von 24 Zellen (bei kappa = 0,025 von 0,19-0,24 auf 0,03-0,04), bleibt bei kappa >= 0,1 unzureichend.",
+  "meaning": "Zwei sehr verschiedene Modellklassen geben dasselbe Ergebnis: eine Ebene ja, zwei Ebenen nein. Klassisch 117 Starts ueber fuenf PMF-Varianten ohne eine einzige raeumliche Hierarchie, quantenmechanisch 24 Bindungsvergleiche alle positiv. Dazu ein uebertragbarer Diagnosebefund: eine Spektralluecke mit hohem Paargewicht ist KEINE hinreichende Zweiebenendiagnose, weil dieselben Faelle sich dynamisch nicht wie ein Zweiebenensystem verhalten. Das gilt rueckwirkend fuer jede Hierarchiepruefung in unserem Bestand. Offen bleibt die von mir verlangte Kontrolle, ob die Luecke der ersten Ebene den Gauss-Term misst statt Bindung; fuer die entscheidende Aussage (zweite Ebene) ist sie gegenstandslos, weil das Ergebnis negativ ist.",
+  "compute": "Codex auf .69/P5000, zwei Services 7,0 und 4,2 s; keine Rechnung von mir",
+  "sources": [
+    {
+      "path": "coordination/stabile-kompositionen-20260923/QUANTUM-BERICHT.md"
+    },
+    {
+      "path": "coordination/stabile-kompositionen-20260923/QUANTUM-ERGEBNISREVIEW.md"
+    },
+    {
+      "path": "coordination/stabile-kompositionen-20260923/LOOP-BERICHT.md"
+    }
+  ]
+}

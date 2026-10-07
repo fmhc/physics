@@ -1,0 +1,34 @@
+<!doctype html>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- SPDX-FileCopyrightText: 2026 Finn Malte Hinrichsen -->
+<!-- LAN-Fassung der Netz-Ansicht (Startseite listet ../datensaetze/). Oeffentliche Fassung: oeffentlich/. -->
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Netz-Ansicht · fmhc-physics</title>
+  <link rel="stylesheet" href="schriften.css">
+  <link rel="stylesheet" href="stil.css">
+  <script type="module" src="js/haupt.js"></script>
+</head>
+<body>
+  <div id="buehne" aria-label="3D-Ansicht des Netzes"></div>
+
+  <div id="spalte-links">
+    <header id="kopf" class="tafel">
+      <div class="marke"><span>Netz-Ansicht</span><span class="marke-trenner"></span><span>fmhc-physics</span></div>
+      <h1 id="titel">…</h1>
+      <div class="pflichtvermerk" id="pflichtvermerk">synthetische Modellrechnung · keine Messdaten</div>
+      <div class="kopf-zeile" id="erzeugt"></div>
+    </header>
+    <section id="ebenen" class="tafel" aria-label="Darstellung"></section>
+  </div>
+
+  <aside id="rechts" class="tafel" aria-label="Infofeld"></aside>
+
+  <footer id="zeitleiste" class="tafel" aria-label="Zeitleiste"></footer>
+
+  <div id="meldungen" aria-live="polite"></div>
+  <div id="laden"><div class="laden-strich"></div><span id="laden-text">Datensatz wird geladen …</span></div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+Local propagating detector field — exploratory extension 2026-10-02
+New model, no claim of original Q-ball theory predicting this detector.
+Positive added energy density: (chi_t^2+|grad chi|^2)/2 + mu^2 (chi-a w(r)(|phi|^2-f_ref(r)^2))^2/2.
+w=(1-r^2/16)^4 for r<4, else0, fixed spherical coupling apparatus. Fixed interpolated f_ref, no evolving subtraction. Kinetic of phi is |phi_t|^2; chi real has half-normalized kinetic. Hence:
+chi_tt=Delta chi-mu^2(chi-a w DeltaS)-2sigma chi_t.
+Added phi acceleration +mu^2 a w(chi-a w DeltaS)phi.
+The principal parts have propagation speed1. Coupling instantaneous only at the same point. Prescribed w and reference break translation invariance; this is a centered apparatus, not homogeneous new fundamental physics.
+Initial chi=chi_t=0 everywhere. Thus initial coupling potential is generally nonzero and INCLUDED in total energy. Baseline eps0 gives zero continuum source. No external driving after initial preparation. Charge stays in phi. Total field E+D+both absorber losses is a diagnostic conserved quantity.
+Use v=r chi, vtt=vrr-mu^2(v-a w(|q|^2/r-r f_ref^2))-2sigma vt. v(0)=v(R)=0 with inherited odd ghosts. Extra sink state integrates 8pi int sigma vt^2 dr, with RK4 stages and Simpson.
+
+Fixed runs: h=.2,.1, R80,T80, dt=.2h, inherited sponge r65..80.
+For each grid epsilon=.005 with (a,mu/rho)=(0,.5),(.1,.5),(.5,.5),(.1,1.5), plus epsilon0,a=.1,mu/rho=.5. Ten runs. r8 and r12 detector readouts chi=v/r. rho from prepared input, not discovered here. For mu<rho, k=sqrt(rho^2-mu^2) and monochromatic group speed sqrt(1-mu^2/rho^2); for mu>rho the driven fundamental is evanescent. Turn-on transients/other frequencies may still propagate in closed case.
+Sample every5steps, store time, central density minus fixed initial background, chi8,chi12, D, chi kinetic energy, detector outgoing radial flux at12=-4pi r^2 chi_t chi_r. Also max total E/Q balance error and absorber bookkeeping.
+Checks before interpreting: finite, relative total E/Q error<.005. Coupling0 chi exactlyzero; epsilon0 is numerical source floor (only one parameter-specific null). Finite-difference interaction derivatives vs actual field RHS and detector RHS with Laplacian removed must match <1e-6 relative; reversed force must fail >1e-2. Sample deterministic interior cell at r1.
+Finite clock definition, window40..80: upward crossings +eta armed below -eta. eta_phi=1e-5 max(1,initial central baseline); eta_chi=1e-7 fixed. >=8 intervals, CV<1%, mean within2% of2pi/rho; paired-grid mean difference<1%. Readout additionally requires peak-to-peak>1e-6 and>10 times common epsilon0 readout at same radius, and coarse/fine amplitude difference<5%.
+Causality diagnostic: max|chi| at r8 for t<3.5, r12 for t<7.5 vs late amplitude; initial chi zero and coupling supportr<=4. Report as finite-grid precursor measure only, not exact numerical causality proof. No after-result threshold selection.
+Transfer resolution: max absolute total-energy-balance error <.1 max chi kinetic, both grids. Initial interaction energy is part of prepared energy; no claim all received energy came from a previously uncoupled Q-ball mode. Flux integrated diagnostic does not alone establish bound composite.
+Budget .69 CPU8 nice19 one thread, activeJS<=55s, walltimeout90s; no local tests/GPU/service. Source/code hashed before run, independent reader, no original solver edits. Stop if numerical checks fail, no retrospective retuning. New run not a replication of collective detector model. Independent spatial/time convergence and larger box absent.

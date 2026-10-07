@@ -1,0 +1,12 @@
+nls2.py kanal (kqs2), Modell qsnls, Start 2026-09-30 09:58:45 UTC
+Argumente: {"kommando": "kanal", "qb": false, "dim": 2, "modell": "qs", "h": 0.02, "l": 0, "omega": "0.02,0.03,0.04,0.05,0.06,0.07,0.08", "omega_von": 0.05, "omega_bis": 0.175, "n_omega": 6, "nu_min": 0.002, "n_scan": 240, "re_unter": 0.0, "re_breite": 0.8, "im_tiefe": 0.4, "n_re": 41, "n_im": 11, "iters": 25, "nu_von": 0.02, "nu_bis": 1.0, "n_nu": 121, "nu0": 0.3, "dnu": 0.01, "omega0": 0.15, "domega": 0.002, "n_kante": 41, "n_kante_om": 15, "aus": "/home/fmh/fmhc-physics-remote/runde10-nls/aus", "name": "kqs2"}
+Modell qsnls, d = 2, l = 0: nackter geschlossener Kanal, tiefste Eigenwerte E von -1/2 Lap + D (NLS-intern), eingebettet wenn E < -Omega/2; nu_c = -2 E
+Omega | R_kink | min D | E_0, E_1, ... | eingebettet? (nu_c)
+0.02000 | 4.304 | -0.11500 | -0.029598, +0.010226, +0.011002, +0.012319 | ja, nu_c = 0.05920
+0.03000 | 4.597 | -0.11000 | -0.022424, +0.015346, +0.016519, +0.018503 | ja, nu_c = 0.04485
+0.04000 | 5.131 | -0.10500 | -0.009608, +0.020476, +0.022062, +0.024730 | nein
+0.05000 | 6.088 | -0.10000 | +0.002283, +0.025613, +0.027623, +0.030981 | nein
+0.06000 | 7.851 | -0.09500 | +0.010775, +0.030751, +0.033170, +0.037184 | nein
+0.07000 | 11.670 | -0.09000 | +0.016556, +0.035884, +0.038678, +0.043287 | nein
+0.08000 | 25.335 | -0.08500 | +0.020423, +0.040990, +0.044032, +0.049033 | nein
+Ende 2026-09-30 09:58:55 UTC, Laufzeit 10.3 s

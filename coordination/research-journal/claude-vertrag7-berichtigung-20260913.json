@@ -1,0 +1,28 @@
+{
+  "id": "claude-vertrag7-berichtigung-20260913",
+  "time": "2026-09-13T23:05:00+02:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anlass: astra Methodik-Review E5)",
+  "topic": "theory",
+  "status": "reported",
+  "title": "Berichtigung zum Journal-Eintrag Vertrag 7 Rev. 2: |p-2| bis 5,2e-4 (nicht 2,3e-4); 201 bis 349 sind Pruefwerte je Kette",
+  "question": "Sind die Zahlen im Eintrag claude-vertrag7-vermittler-bindung-rev2-20260913 korrekt aus dem Bericht uebernommen?",
+  "action": "Abgleich mit der K1-M-Tabelle in coordination/vertrag7-vermittler-bindung-20260913-rev2.md (Zeilen 48 bis 52).",
+  "result": "Im Eintrag steht 'K1-M = A: |p-2| bis 2,3e-4'. Richtig ist: |p-2| = 5,2e-4 / 4,0e-4 / 2,3e-4 fuer m_B = 1 / 1,5 / 4 bei m_C = 1e-6 (Maximum 5,2e-4) und 4,6e-3 / 3,2e-3 / 1,8e-3 bei m_C = 1e-4; die Nachtrag-2-Schranke |p-2| <= 0,05 gilt fuer m_C = 1e-6 und ist erfuellt. '201 bis 349 Stoesse je Fall' bezeichnet die Pruefwerte je Kette der 1D-Kontrolle, nicht die Gesamtstosszahlen der Laeufe. Der Ausgang A bleibt unveraendert.",
+  "meaning": "Reine Berichtigung der Wiedergabe; kein neues Ergebnis. Der Originaleintrag bleibt unveraendert stehen.",
+  "sources": [
+    {
+      "path": "coordination/vertrag7-vermittler-bindung-20260913-rev2.md",
+      "sha256": "2d7a19f33da3b057b731efb2ca1f400940b1858eecaf4146955a2b6dcc4574cc"
+    },
+    {
+      "path": "coordination/research-journal/claude-vertrag7-vermittler-bindung-rev2-20260913.json",
+      "sha256": "5abfb47d01c3ef4714b41051004626e93557164b1f5e70f2551bf85d8da75558"
+    },
+    {
+      "path": "coordination/methodik-review/REVIEW-astra-20260913.md",
+      "sha256": "0251b005f6ee8b3d5220ca925e775d0b973ffaf4333c444097897bee905b5b41"
+    }
+  ],
+  "recorded_at": "2026-09-13T20:53:52.706537+00:00"
+}

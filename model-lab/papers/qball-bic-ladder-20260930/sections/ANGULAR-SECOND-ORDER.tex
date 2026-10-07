@@ -1,0 +1,143 @@
+\paragraph{Leading angular feedback on core-charge transport.}
+A separate second-variation calculation follows
+$\phi_\varepsilon=B+\varepsilon\eta Y_{20}+\varepsilon^2\Xi+O(\varepsilon^3)$
+and evolves the forced spherical mean $\zeta=\langle\Xi\rangle_\Omega$.
+Here $\Xi$ is half the second derivative, and $\zeta$ is an angular mean,
+not the coefficient of normalized $Y_{00}$. Only this mean is needed
+alongside the first tangent for the angle-integrated charge through
+second order. The initial family is the volume-preserving ellipsoidal
+deformation $r_\varepsilon^2=e^{-2c\varepsilon}(x^2+y^2)+e^{4c\varepsilon}z^2$,
+$c=\sqrt{5/(16\pi)}$, with an explicitly differentiated finite-grid
+normalization fixing total charge. For $Q_2$, the coefficient of
+$\varepsilon^2$, define
+\[
+ b=\frac{Q_{2,\mathrm{core}}(32)-Q_{2,\mathrm{core}}(0)}{Q_0}
+\]
+in the same fixed core $r<6$, box $R=80$ and time window.
+The three $(h,\Delta t)=(0.1,0.02),(0.05,0.02),(0.1,0.01)$ calculations
+give $b=0.08737135,\ 0.08736583,\ 0.08737135$, respectively;
+the spatially refined value exceeds the predeclared heuristic guard
+$2.864\times10^{-5}$. This guard combines measured spatial, temporal and
+charge-balance sensitivities with a fixed floor; it is not a certified
+error bound or confidence interval. Stage-integrated physical charge flux
+checks the core-charge difference, rather than defining it from the endpoint.
+
+The interpretation requires the initial redistribution
+(Fig.~\ref{fig:angular-second-order}). On the finer spatial grid,
+$Q_{2,\mathrm{core}}(0)/Q_0=-0.10587389$, whereas
+$Q_{2,\mathrm{core}}(32)/Q_0=-0.01850805$.
+The radial reference itself has positive net core inflow over this window:
+its core fraction increases from $0.58949606$ to $0.65267983$.
+The positive second-order net-transport coefficient recovers much of an
+initial core-charge deficit but leaves the final correction negative;
+it does not show more final charge retained than in the radial reference.
+The sampled response is nonmonotonic, with a transient positive core
+correction before the negative final value; the decision uses the fixed
+endpoint $T=32$, not a selected intermediate maximum.
+The preparation fixes charge, not energy:
+$E(\varepsilon,0)=E_0+\varepsilon^2 E_2+O(\varepsilon^3)$ with
+$E_2/E_0=0.0224455$ on that grid. These are second-order Taylor coefficients at zero deformation,
+not a finite-amplitude nonlinear three-dimensional evolution, a binding
+comparison at equal energy, or evidence of stationary Q-ball formation.
+As a subsequent analytical interpretation, the untruncated continuum
+family has $E_{\mathrm{grad}}(\varepsilon)=
+E_{\mathrm{grad},0}[2e^{-2c\varepsilon}+e^{4c\varepsilon}]/3$,
+while its kinetic and potential integrals remain unchanged. Thus its
+positive $E_2=4c^2E_{\mathrm{grad},0}$ is a geometric preparation cost;
+this continuum identity neither replaces the stored discrete $E_2$ nor
+constitutes a new acceptance criterion or determines the transport sign.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=.98\linewidth]{angular-second-order-transport.pdf}
+\caption{Second-order angular response from stored samples. Left:
+$Q_{2,\mathrm{core}}(t)/Q_0$ for all three discretizations, with the initial
+fine-space correction marked separately. Right: the initial-subtracted
+coefficient $b(t)$ and the negative, independently stage-integrated
+outward charge flux divided by $Q_0$, on the fine-space grid.
+These routes check the same charge balance, not separate
+physical replications. Straight lines join 41 stored samples; no finite
+$\varepsilon$ is reconstructed. The final core correction remains negative
+despite positive net transport. The endpoint guard is heuristic, not a
+confidence interval, certified error or time-uniform uncertainty band.}
+\label{fig:angular-second-order}
+\end{figure}
+
+% Numerical result independently reviewed: RESULT-REVIEW.txt cee669eda28b331f143750ed01913dc63e985b13ace98badac8e0c3458a652d3.
+\paragraph{Compensating the initial energy through second order.}
+A further, separately specified family keeps the same first angular
+variation but replaces the initial chirp by
+$\beta(\varepsilon)=\beta_0+\beta_2\varepsilon^2$.
+On each grid, $\beta_2=-E_2/(\partial_\beta E_0)$ is determined from the
+preparation energy, without using the later transport. The normalized
+family fixes total charge exactly and cancels the initial energy change
+through order $\varepsilon^2$; it does not assert exactly equal energies
+at finite deformation. Only the homogeneous radial chirp tangent is newly
+evolved, and its contribution is combined with the stored angular
+second variation. The earlier fixed-charge result remains unchanged.
+
+On the spatially refined grid, $\beta_2=-0.0082897517$ and the normalized
+net-transport derivative with respect to $\beta$ is $-11.0018872$.
+Their product adds $0.0912029133$ to the previous transport coefficient:
+$b_{QE}=0.1785687477$, compared with $b_Q=0.0873658344$.
+The base and time-refined values are $0.1785384553$ and $0.1785384478$;
+the predeclared heuristic guard for the spatially refined transport
+coefficient is $1.525216\times10^{-4}$, not a certified error interval.
+The initial core correction is unchanged, while the final core coefficient
+$c_{QE}=Q_{2,\mathrm{core},QE}(32)/Q_0$ is now $+0.0726948606$,
+compared with $-0.0185080526$ for the previous family.
+This final coefficient is reported separately from the
+net-transport decision; no additional endpoint-success gate was introduced.
+The compensation also reduces the initial inward radial current through
+its negative chirp correction. Relative to the radial reference, this
+energy-compensated family changes geometry and radial phase together;
+its transport response cannot isolate geometry alone.
+These coefficients concern the fixed endpoint $T=32$ in the same finite
+box, not a finite-amplitude deformed solution, stationary formation or binding.
+Figure~\ref{fig:fixed-energy-transport} separates the core coefficients
+from their initial-subtracted transport for the two preparations.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=.98\linewidth]{fixed-energy-transport.pdf}
+\caption{Stored spatially refined second-variation coefficients with and
+without initial-energy compensation. Left: the core-charge correction;
+right: its change from the common initial correction. Straight segments
+join 41 stored samples, without fitting or a new evolution. The original
+family fixes charge; the compensated family also fixes initial energy
+through order $\varepsilon^2$ while changing the radial chirp. Neither
+curve represents a finite deformation or a percentage increase. Endpoint
+caps on the transport panel are heuristic guards, not confidence intervals,
+core-coefficient error bars or time-uniform bounds. The sign change of the
+final core coefficient is not a binding or stability result.}
+\label{fig:fixed-energy-transport}
+\end{figure}
+
+% Stored-state local-clock diagnostic, independently reviewed; finite scope only.
+\paragraph{A local two-observable time-shift test.}
+The energy-compensated response need not describe a new stationary state:
+even an increased endpoint core coefficient could reflect a shifted phase
+of the transient concentration. A fixed stored-state check at $T=32$
+therefore compares two radial observables,
+$C=Q_{\mathrm{core}}/Q_0$ and $H=R_{\mathrm{RMS}}^2/6^2$, where $R_{\mathrm{RMS}}^2$
+is the second radial moment weighted by $|\phi|^2$ and divided by its
+spatial integral. Write their second-order coefficients as $C_2,H_2$.
+Here $C_2(32)=c_{QE}$, not the initial-subtracted $b_{QE}$.
+A common local shift $t\mapsto t+\varepsilon^2\tau$ would require
+$(C_2,H_2)=\tau(\dot C_0,\dot H_0)$, hence
+\[
+ \mathcal D=\dot C_0 H_2-\dot H_0 C_2=0.
+\]
+The moment and its derivative were evaluated directly from the stored
+Cauchy data, including the norm-denominator variation; no time-series fit
+or additional field evolution was used. On the fine spatial grid,
+$H_2=-1.0936132$ and $\mathcal D=0.0021220476$, exceeding the predeclared
+heuristic sensitivity guard $6.820019\times10^{-5}$ in inverse model-time
+units. Thus this pair is inconsistent with one common local clock shift
+under that diagnostic rule. The charge-only shift coefficient is
+$\tau_C=C_2/\dot C_0=-9.1439597$, after its separate denominator check:
+it multiplies $\varepsilon^2$ and is not a measured finite time shift.
+This is only a two-observable endpoint comparison, conditional on the
+existing variational outputs; it establishes neither persistence of the
+core enhancement nor binding, stationary formation or a full-field distance.
+The sensitivity guard is not a certified error bound.

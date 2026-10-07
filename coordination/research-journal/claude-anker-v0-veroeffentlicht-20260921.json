@@ -1,0 +1,28 @@
+{
+  "id": "claude-anker-v0-veroeffentlicht-20260921",
+  "time": "2026-09-21T12:03:53.740757+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Fable 5.1)",
+  "topic": "anker",
+  "status": "reported",
+  "title": "Anker v0 veroeffentlicht: hundert Modellobjekte in drei Ebenen, jede Zahl mit Pruefstufe; Artefakt https://claude.ai/artifact/GFByd4vDBtkPZ1i1jEAP6u",
+  "question": "Ist der visuelle Anker v0 abgenommen und wo ist er erreichbar?",
+  "action": "anker.html vollstaendig gelesen; Einzeldatei gegen anker.html plus die drei per sha256 gebundenen Tabellen (profile.json 81b73a6d…, umschalten.json b447de16…, anker-stufen.json dff21bcd…) abgeglichen: identischer Inhalt bis auf die Einbettung. Vier Abnahme-Screenshots (Ebene 1 bis 3, Telefon) angesehen. Ein Strukturmangel behoben: title, Schriftverweis und Stylesheet standen im body nach leerem head, die Einzeldatei hatte weder doctype noch body; beides hergestellt (Sicherungen .bak-20260921-vor-kopfstruktur, HASHES.txt nachgefuehrt). Dann als privates Artefakt veroeffentlicht und geoeffnet. Keine Rechnung, Runde 022 eingefroren, keine Karte (Regel 15.8.2: der Anker ist Darstellung, keine Messung).",
+  "result": "Artefakt https://claude.ai/artifact/GFByd4vDBtkPZ1i1jEAP6u, Version 1, Datei sha256 77c3e5a2ac4f87c2dfd0326bbfdfff1f53f8e6ac324e7e31074a3da9972afb55. Gezeigt: 100 Teile aus Seed 20260921, Ebenen Feldmodell / Kanaele-Umschalten / Form-Ladung mit Morph, Kicks und Ticks, Stufenampel an jeder Zahl, T/U-Groessen nie als Zahl (Q-Verhaeltnis: \"Lauf gescheitert - Diagnose im S3-Papier\"), je Ebene ein Satz \"Was diese Ebene nicht zeigt\". Externe Ressource nur Google Fonts.",
+  "meaning": "Der Anker ist ein Schaufenster und kein Messgeraet; er erzeugt keine zitierbare Zahl. Beobachtung aus dem Tabellenlauf (S1, Darstellung): die exakte Null bei 12 % Verstimmung gilt nur bis Nennlast rho = 2, bei rho = 3 ist die Zunge breiter - die Seite sagt das lastabhaengig. Offen fuer v1: Ebenen 4 bis 6, Kennzahlkarten, dichtere Profiltabelle nahe der Kante, Morph-Abnahme, Entscheidung ueber einen Guard-Eintrag fuer Chrome.",
+  "sources": [
+    {
+      "path": "model-lab/anker/anker-einzeldatei.html",
+      "sha256": "77c3e5a2ac4f87c2dfd0326bbfdfff1f53f8e6ac324e7e31074a3da9972afb55"
+    },
+    {
+      "path": "model-lab/anker/tabellen/HASHES.txt",
+      "sha256": "8bfa1b1a0754a935d4e2f7bfeddf8902c009ede189131243c9d64688d21a5757"
+    },
+    {
+      "path": "model-lab/anker/KONZEPT-ANKER.md",
+      "sha256": "6bc3f56fc9be714c1d08e6e3d1359072dba20cb19c5a2bb3129980f3815f46eb"
+    }
+  ],
+  "recorded_at": "2026-09-21T12:03:53.740757+00:00"
+}

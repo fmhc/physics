@@ -1,0 +1,9 @@
+Historical manifest location correction,2026-10-01,root.
+The inherited v0.9 source bindings still named the mutable canonical folder.
+After v0.10 promotion,4of5such entries no longer matched current files.
+Their expected hashes were NOT changed. All5paths now refer to the preserved
+canonical-v09-before snapshot with the SAME expected bytes, independently
+checked by sha256sum. SOURCE-BEFORE-LOCATION-REPAIR.txt preserves original
+path map; SOURCE-RECHECK.txt keeps observed mismatch, final verified map in
+SOURCE-RECHECK-FINAL.txt. This repairs provenance locations, not sourcecontent,
+physicsresults or documentinput. No PDF rebuild needed for a manifest path.

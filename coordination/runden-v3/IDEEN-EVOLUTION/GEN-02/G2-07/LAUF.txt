@@ -1,0 +1,41 @@
+G2-07 Vierer-Ring, Tauschrate gegen Abstand: Aufrufe fuer die Leitung
+Geschrieben vom Test-Agenten T-2, 2026-09-30 11:25:43 CEST (date). Vorhersage in KARTE.md seit 11:06:31.
+
+Code:  ring_skalierung.py = Kopie von RUNDE-07/ring/ring.py (sha256 36697d3abcb339a1...; Original unveraendert), neuer
+       Unterbefehl "skalierung" mit --w2. Messlaeufe nur mit CUDA; CPU nur fuer die Formprobe --rauch --mini.
+Spur:  GPU p4000a (oder p4000b, nur wenn WM-1-MB nicht laeuft).
+
+Formprobe (Laptop, CPU, 1 Thread, nice 19, CUDA_VISIBLE_DEVICES leer, je timeout 120, --rauch --mini --geraet cpu,
+Profilcache formprobe/profil_cache_mini.pt):
+  11:18:41 bis 11:19:09: 0,80 grob, 0,60 grob, 0,80 fein (liest die grob-Datei fuer L3); alle rc 0.
+  11:24:56 bis 11:25:31: 0,80 grob und fein nach der Umstellung auf das Kartenfenster, rc 0.
+  Zahlen ungueltig (dx 0,6/0,4, T = 40), nicht ernten.
+
+Geschaetzte Laufzeit aus dem vorhandenen RING-vierer-Lauf auf der .69 (grob 9 Laeufe x T 100 in 8,8 s = 0,0098 s je Lauf
+und Zeiteinheit bei n = 256; fein 2 x T 50 in 3,8 s = 0,038 s bei n = 384); dazu Schiessen eines Profils (Cache neben dem
+Skript, beim ersten Aufruf angelegt), unter 1 min:
+  1) 0,80 grob (4 Luecken + 2 Gegenproben): 6 x 2000 x 0,0098 s = 118 s -> etwa 3 min
+  2) 0,60 grob (3 Luecken):                  3 x 2000 x 0,0098 s = 59 s  -> etwa 2 min
+  3) 0,80 fein (Luecke 4 und 6), T = 2000:   2 x 2000 x 0,038 s  = 152 s -> etwa 3 min
+  Zusammen etwa 8 min; jeder Aufruf unter 10 min.
+
+Vorbereitung auf der .69:
+  mkdir -p /home/fmh/fmhc-physics-remote/ie-gen02-g2-07
+  dorthin kopieren: ring_skalierung.py, KARTE.md, NACHTRAG.md, LAUF.txt (formprobe/ nicht noetig)
+
+Reihenfolge: 1 vor 3 (L3 im fein-Aufruf liest lauf-69/skalierung_w080_grob_ergebnis.json). 2 ist unabhaengig.
+
+1) omega^2 = 0,80 grob: Luecke 4 / 5 / 6 / 7 (Saat 1e-6 auf Ball 0) und Gegenprobe Luecke 4 und 6 mit C4-Projektion
+cd /home/fmh/fmhc-physics-remote/ie-gen02-g2-07 && bash /home/fmh/fmhc-physics-remote/kleintests/kleintest.sh p4000a g207-080g ring_skalierung.py skalierung --w2 0.80 --stufe grob --out lauf-69 | tee /home/fmh/fmhc-physics-remote/ie-gen02-g2-07/lauf-69-080-grob.log
+
+2) omega^2 = 0,60 grob: Luecke 4 / 5 / 6 (Saat 1e-6)
+cd /home/fmh/fmhc-physics-remote/ie-gen02-g2-07 && bash /home/fmh/fmhc-physics-remote/kleintests/kleintest.sh p4000a g207-060g ring_skalierung.py skalierung --w2 0.60 --stufe grob --out lauf-69 | tee /home/fmh/fmhc-physics-remote/ie-gen02-g2-07/lauf-69-060-grob.log
+
+3) omega^2 = 0,80 fein (dx 0,2, dt 0,025): Luecke 4 und 6
+cd /home/fmh/fmhc-physics-remote/ie-gen02-g2-07 && bash /home/fmh/fmhc-physics-remote/kleintests/kleintest.sh p4000a g207-080f ring_skalierung.py skalierung --w2 0.80 --stufe fein --out lauf-69 | tee /home/fmh/fmhc-physics-remote/ie-gen02-g2-07/lauf-69-080-fein.log
+
+Ausgaben: lauf-69/skalierung_w080_grob_*, skalierung_w060_grob_*, skalierung_w080_fein_* (ergebnis.json, bericht.txt,
+roh.pt). "kennzahlen": punkte (Lauf, d = sqrt(2) r_mittel, gamma im Kartenfenster), steigung, V1 (0,80) bzw. V2 (0,60),
+V3_linear, ladungstausch_alle, nicht_entscheidbar, ausgang, gegenprobe_bestanden (nur 0,80), L3 (nur fein),
+plausibilitaet_bestanden. Die Steigungen beider omega^2 stehen in getrennten Dateien.
+Vor dem Start bitte NACHTRAG.md lesen (Fitfenster, Gegenprobe mit Saat, fein-T).

@@ -1,0 +1,36 @@
+{
+  "id": "claude-gegenlesung-zweite-modellfamilie-20260908",
+  "time": "2026-09-08T20:20:00+00:00",
+  "time_kind": "completed",
+  "author": "Claude",
+  "topic": "operations",
+  "status": "checked",
+  "title": "Eine zweite Modellfamilie liest gegen und findet in BERICHT.md eine Zahl ohne Registerdeckung.",
+  "question": "Der Gauntlet hat als eigene Schwaeche notiert, dass alle drei stimmberechtigten Richter dasselbe Basismodell waren. Findet eine fremde Modellfamilie etwas, das die gleichartige Jury uebersehen hat?",
+  "action": "qwen3.6-27b im Qognio-Bunker, souveraen gerechnet, hat drei Gutachten erstellt: M1 samt Vorwaertsmodell newton_vorwaerts.py, BERICHT.md gegen behauptungen.jsonl, und das Rangargument gitter-rang.md gegen gitter-checkliste.json. Der agentische Weg ueber opencode brach nach den Dateilesungen ohne Urteil ab; die Dateien passen unter 110 kB in den Prompt, deshalb der direkte Weg ueber coordination/qwen_gegenlesen.py mit Zeilennummern.",
+  "result": "Ein Fund, zwei Bestaetigungen. BERICHT.md schrieb 'Elf Ruecknahmen insgesamt ueber den Lauf' im selben Absatz wie das richtige 'Z1 bis Z8'; das Register traegt genau acht Eintraege mit art=ruecknahme. Nachgezaehlt und korrigiert. Zweitens: der standardisierte Abstand von 2,2485 Streuungen in M1 sei irrefuehrend, weil die Priorspanne 1,0751 bis 1,331 den Messwert 1,3016 einschliesst und damit die Streuung ueberdeckt, gegen die der Abstand gemessen wird. Trifft zu, als Vorbehalt in M1 eingetragen. Am Code fand die Gegenlesung keinen Fehler: p(e)=2e, p(a)~1/a, Rauschen vor Schnitt und die Median-Konvention sind korrekt umgesetzt. Beim Gitter bestaetigt sie den Rang etwa 2 als Schaetzung aus Korrelationen, nicht als Zerlegung, und findet keinen Widerspruch zwischen gitter-rang.md und den neun Z-Zellen.",
+  "meaning": "Die Schwaeche war real und die Gegenmassnahme billig: drei Gutachten in 42 Sekunden Rechenzeit, ein belegter Fund. Der Fund ist kein Rechenfehler, sondern ein Buchhaltungsfehler in genau dem Bericht, der vor Buchhaltungsfehlern warnt -- und er lag in einem Absatz, den die gleichartige Jury zweimal gelesen hatte. Was offen bleibt: eine einzelne fremde Stimme ist keine Kalibrierung. Qwen hat den Ruecknahme-Fund selbst wieder relativiert ('nicht direkt widerlegbar') und lag damit falsch; erst das Nachzaehlen hat ihn belegt. Fremde Familie heisst andere blinde Flecken, nicht keine.",
+  "sources": [
+    {
+      "path": "coordination/qwen-m1-20260908.md",
+      "label": "Gutachten M1 und Vorwaertsmodell",
+      "sha256": "6be86d1e276729255951e6fff1f89156091f581f12bec16449587e1847c1bbbe"
+    },
+    {
+      "path": "coordination/qwen-bericht-20260908.md",
+      "label": "Gutachten Bericht gegen Register",
+      "sha256": "5c906624ca56d4994fc955cd44ea906f8a2c1486c5ba9b2c63142172ad247ed3"
+    },
+    {
+      "path": "coordination/qwen-gitter-20260908.md",
+      "label": "Gutachten Rangargument",
+      "sha256": "08f2626e204ffa7fdf82fa4820b1a153b695acac312b49be02165e3feb4f44a5"
+    },
+    {
+      "path": "coordination/qwen_gegenlesen.py",
+      "label": "Der Aufruf, nachvollziehbar",
+      "sha256": "01cc7adba2d4fd4cbaf08ff1d760d08db07fcc3063d087d61d7cccecf852c2d7"
+    }
+  ],
+  "recorded_at": "2026-09-08T20:20:11.370106+00:00"
+}

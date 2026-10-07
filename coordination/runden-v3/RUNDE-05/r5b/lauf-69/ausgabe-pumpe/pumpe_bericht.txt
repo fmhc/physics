@@ -1,0 +1,49 @@
+Runde 5 R5-B pumpe Start 2026-09-30T00:43:37+00:00 auf Quadro P4000, torch 2.5.1+cu121, Faktor 1.0
+
+pumpe (Bio 45): Treiber h exp(-i Omega_d t), Omega_d^2 = 0.7, gamma = 0.01; h_min = gamma Q* / (2 F) = 3.2971e-03 (F = Int f dx = 3.7025, Q* = 2.4415)
+  stabil_dissipativ: Q_Ende >= 0,5 Q*, |omega_Ende - Omega_d| <= 0,005, |dQ/dt| <= 0,01 gamma Q im letzten Viertel
+  Lauf | Q Start -> Ende (/Q*) | omega Ende (Omega_d) | dQ/dt Ende | stabil | Rate d ln Q/dt [0,1T, 0,4T] | x Ende
+  [grob]
+  w2=0.7 h/hmin=0.0 gamma=0.01       | 2.4415 -> 0.0040 (0.0017) | 1.00042 (0.83666) | -8.88e-05 | False | -0.01027 | +0.00
+  w2=0.7 h/hmin=0.5 gamma=0.01       | 2.5095 -> 0.0050 (0.0020) | 0.99989 (0.83666) | -6.06e-05 | False | -0.01045 | -7.41
+  w2=0.7 h/hmin=0.8 gamma=0.01       | 2.5503 -> 0.0055 (0.0023) | 0.91637 (0.83666) | -4.53e-05 | False | -0.01062 | -8.30
+  w2=0.7 h/hmin=1.25 gamma=0.01      | 2.6116 -> 0.0060 (0.0025) | 0.83396 (0.83666) | -1.79e-05 | False | -0.01109 | -7.89
+  w2=0.7 h/hmin=2.0 gamma=0.01       | 2.7136 -> 0.0092 (0.0038) | 0.83435 (0.83666) | -4.18e-05 | False | -0.01149 | -9.84
+  w2=0.7 h/hmin=4.0 gamma=0.01       | 2.9858 -> 3.1055 (1.2720) | 0.83590 (0.83666) | +6.13e-03 | False | +0.00149 | +0.00
+  w2=0.55 h/hmin=2.0 gamma=0.01      | 4.1342 -> 0.0101 (0.0041) | 0.83374 (0.83666) | -3.10e-05 | False | -0.01075 | -9.77
+  w2=0.6 h/hmin=2.0 gamma=0.01       | 3.4566 -> 2.5275 (1.0352) | 0.83524 (0.83666) | -5.32e-04 | False | +0.00120 | +0.00
+  w2=0.8 h/hmin=2.0 gamma=0.01       | 2.1482 -> -0.0011 (-0.0004) | 0.83627 (0.83666) | -9.73e-05 | False | -0.20162 | -9.70
+  w2=0.9 h/hmin=2.0 gamma=0.01       | 1.5474 -> 0.0035 (0.0014) | 0.83519 (0.83666) | +2.91e-05 | False | -0.62023 | -8.14
+  w2=0.6 h/hmin=0.5 gamma=0.01       | 3.2363 -> 0.0086 (0.0035) | 1.00012 (0.83666) | -1.88e-04 | False | -0.01017 | -8.31
+  w2=0.8 h/hmin=0.5 gamma=0.01       | 1.9515 -> 0.0020 (0.0008) | 0.96128 (0.83666) | -8.14e-05 | False | -0.01043 | -8.71
+  w2=0.7 h/hmin=2.0 gamma=0.0        | 2.7138 -> 3.1622 (1.2952) | 0.77198 (0.83666) | +2.57e-03 | False | +0.00091 | +0.00
+  w2=0.7 h/hmin=0.0 gamma=0.0        | 2.4415 -> 2.4415 (1.0000) | 0.83662 (0.83666) | -1.11e-11 | False | -0.00000 | +0.00
+  Treiber allein h/hmin = 0.5, gamma = 0.01: S_max Ende 3.018e-05 (Soll Hintergrund 3.017e-05), Struktur False
+  Treiber allein h/hmin = 0.8, gamma = 0.01: S_max Ende 7.731e-05 (Soll Hintergrund 7.724e-05), Struktur False
+  Treiber allein h/hmin = 1.25, gamma = 0.01: S_max Ende 1.890e-04 (Soll Hintergrund 1.886e-04), Struktur False
+  Treiber allein h/hmin = 2.0, gamma = 0.01: S_max Ende 4.858e-04 (Soll Hintergrund 4.828e-04), Struktur False
+  Treiber allein h/hmin = 4.0, gamma = 0.01: S_max Ende 1.982e-03 (Soll Hintergrund 1.931e-03), Struktur False
+  Treiber allein h/hmin = 2.0, gamma = 0.0: S_max Ende 4.949e-04 (Soll Hintergrund 4.831e-04), Struktur False
+  [fein]
+  w2=0.7 h/hmin=0.0 gamma=0.01       | 2.4415 -> 0.0041 (0.0017) | 1.00032 (0.83666) | -8.89e-05 | False | -0.01026 | +0.00
+  w2=0.7 h/hmin=0.5 gamma=0.01       | 2.5095 -> 0.0049 (0.0020) | 0.99996 (0.83666) | -6.03e-05 | False | -0.01045 | -7.38
+  w2=0.7 h/hmin=0.8 gamma=0.01       | 2.5503 -> 0.0055 (0.0023) | 0.91646 (0.83666) | -4.47e-05 | False | -0.01062 | -8.07
+  w2=0.7 h/hmin=1.25 gamma=0.01      | 2.6116 -> 0.0060 (0.0024) | 0.83400 (0.83666) | -1.80e-05 | False | -0.01110 | -7.87
+  w2=0.7 h/hmin=2.0 gamma=0.01       | 2.7136 -> 0.0093 (0.0038) | 0.83428 (0.83666) | -3.67e-05 | False | -0.01152 | -9.80
+  w2=0.7 h/hmin=4.0 gamma=0.01       | 2.9858 -> 3.1042 (1.2715) | 0.83589 (0.83666) | +6.26e-03 | False | +0.00149 | +0.00
+  w2=0.55 h/hmin=2.0 gamma=0.01      | 4.1342 -> 0.0101 (0.0041) | 0.83375 (0.83666) | -2.79e-05 | False | -0.01076 | -9.79
+  w2=0.6 h/hmin=2.0 gamma=0.01       | 3.4566 -> 2.5276 (1.0352) | 0.83523 (0.83666) | -5.33e-04 | False | +0.00120 | +0.00
+  w2=0.8 h/hmin=2.0 gamma=0.01       | 2.1482 -> -0.0011 (-0.0005) | 0.83632 (0.83666) | -1.00e-04 | False | -0.13946 | -9.74
+  w2=0.9 h/hmin=2.0 gamma=0.01       | 1.5474 -> 0.0033 (0.0014) | 0.83520 (0.83666) | +2.83e-05 | False | -0.62011 | -7.89
+  w2=0.6 h/hmin=0.5 gamma=0.01       | 3.2363 -> 0.0087 (0.0036) | 0.99139 (0.83666) | -1.87e-04 | False | -0.01017 | -8.44
+  w2=0.8 h/hmin=0.5 gamma=0.01       | 1.9515 -> 0.0020 (0.0008) | 0.96130 (0.83666) | -8.22e-05 | False | -0.01042 | -8.95
+  w2=0.7 h/hmin=2.0 gamma=0.0        | 2.7138 -> 3.1603 (1.2944) | 0.77202 (0.83666) | +2.55e-03 | False | +0.00091 | +0.00
+  w2=0.7 h/hmin=0.0 gamma=0.0        | 2.4415 -> 2.4415 (1.0000) | 0.83665 (0.83666) | +1.07e-12 | False | -0.00000 | +0.00
+  Treiber allein h/hmin = 0.5, gamma = 0.01: S_max Ende 3.020e-05 (Soll Hintergrund 3.017e-05), Struktur False
+  Treiber allein h/hmin = 0.8, gamma = 0.01: S_max Ende 7.737e-05 (Soll Hintergrund 7.724e-05), Struktur False
+  Treiber allein h/hmin = 1.25, gamma = 0.01: S_max Ende 1.892e-04 (Soll Hintergrund 1.886e-04), Struktur False
+  Treiber allein h/hmin = 2.0, gamma = 0.01: S_max Ende 4.862e-04 (Soll Hintergrund 4.828e-04), Struktur False
+  Treiber allein h/hmin = 4.0, gamma = 0.01: S_max Ende 1.983e-03 (Soll Hintergrund 1.931e-03), Struktur False
+  Treiber allein h/hmin = 2.0, gamma = 0.0: S_max Ende 4.951e-04 (Soll Hintergrund 4.831e-04), Struktur False
+  L3 fuer Q_Ende/Q*: 14 von 14 Laeufe bestanden
+pumpe: Dauer 44.7 s (davon Zeitentwicklung 44.5 s); Hochrechnung fuer Faktor 1: 45 s

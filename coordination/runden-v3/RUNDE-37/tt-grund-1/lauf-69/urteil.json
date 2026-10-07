@@ -1,0 +1,347 @@
+{
+ "info": {
+  "numpy": "2.4.4",
+  "python": "3.12.3",
+  "host": "ubuntu-auto",
+  "start_utc": "2026-10-04T21:09:53Z",
+  "argv": [
+   "/home/fmh/fmhc-physics-remote/tt-grund-1/code/tg.py",
+   "urteil",
+   "--kontrolle",
+   "/home/fmh/fmhc-physics-remote/tt-grund-1/lauf/kontrolle.json",
+   "--karte",
+   "/home/fmh/fmhc-physics-remote/tt-grund-1/lauf/karte-V.json",
+   "--profile",
+   "/home/fmh/fmhc-physics-remote/tt-grund-1/lauf/profil-S-V.json",
+   "/home/fmh/fmhc-physics-remote/tt-grund-1/lauf/profil-K-V.json",
+   "--regeln",
+   "/home/fmh/fmhc-physics-remote/tt-grund-1/lauf/regeln.json",
+   "--best",
+   "/home/fmh/fmhc-physics-remote/tt-grund-1/lauf/best-V.json",
+   "--out",
+   "/home/fmh/fmhc-physics-remote/tt-grund-1/lauf/urteil.json"
+  ],
+  "skript_sha256": "4442162536117cef392a297f40cf116ef1686d69b18ac3b24b3bf8e58039209d",
+  "tti_sha256": "6d6b6f7b99b334d74d91860fc69af1c6c0c46e22207dc45432d60a9824c08ee5",
+  "ew_sha256": "fa7b6417d39177102f0b19c5474453cd16a7595e23bc25ca548e081c4060b142",
+  "nk_sha256": "fd0d17b9fb7c92d4b6ad564a46260e3daae3285bcb5ad53f65d9fb3918a32b28",
+  "tp_sha256": "419d7da6caa211c721eb6a8c87403977415cf3050f03365377f51cb77b374dfd",
+  "eingaben_sha256": {
+   "/home/fmh/fmhc-physics-remote/tt-grund-1/lauf/kontrolle.json": "47f6daff6f15e9d27086d1e68def6541924f731ce323b2478274fbe7d6653b4a",
+   "/home/fmh/fmhc-physics-remote/tt-grund-1/lauf/karte-V.json": "950157792c53161c791b1a3fc0de8be5409736e82e728a1f72b4136c237a042e",
+   "/home/fmh/fmhc-physics-remote/tt-grund-1/lauf/regeln.json": "6cc01c390b795dae9e6bceef731e8c3d05af99465aa0cdb187c64be260e65b6d",
+   "/home/fmh/fmhc-physics-remote/tt-grund-1/lauf/best-V.json": "cd19257f816e6deffd975f5ad0e20f013b083090eaed3a3bde3f88c6d5ba7247",
+   "/home/fmh/fmhc-physics-remote/tt-grund-1/lauf/profil-S-V.json": "02d40a0293973edb4f981c826cfdcbf9b1f3d9bf81fc9a4ed74b97d52047a143",
+   "/home/fmh/fmhc-physics-remote/tt-grund-1/lauf/profil-K-V.json": "4eeaf558571efcc455e606c510ea962169d367787818aca91ccfaf6588cf9b48"
+  }
+ },
+ "ergebnis": {
+  "TG0": {
+   "plan": "eingetroffen",
+   "wortlaut": "verfehlt",
+   "N1_spanne": 0.06338809562866454,
+   "N1_abw_rel": 0.00018776610939204294,
+   "ttiso_exakt": 1.1221128455751739e-05,
+   "ttiso_exakt_gueltig": true,
+   "ttiso_gerundet": 0.0001148317461128201
+  },
+  "TG1": {
+   "plan": "eingetroffen",
+   "wortlaut": "verfehlt",
+   "details": {
+    "plan": {
+     "form": "Kurve",
+     "urteil": "eingetroffen",
+     "R_max_dex": 1.4500000000000002,
+     "gebiet_block3": 0,
+     "nichtleer": true,
+     "profil_unvollstaendig": false,
+     "profile": [
+      {
+       "achse": "S",
+       "laeufe": [
+        {
+         "von": -0.19999999999999996,
+         "bis": 0.050000000000000266,
+         "n": 6,
+         "ausdehnung_dex": 0.25,
+         "boden_min": 1.2790717411892416e-06,
+         "boden_max": 8.241873252168297e-05
+        }
+       ],
+       "abbruch": false,
+       "n_zeilen": 81,
+       "nprof": 81
+      },
+      {
+       "achse": "K",
+       "laeufe": [
+        {
+         "von": -2.0,
+         "bis": -0.5499999999999998,
+         "n": 30,
+         "ausdehnung_dex": 1.4500000000000002,
+         "boden_min": 1.715898261256399e-07,
+         "boden_max": 7.984094841129163e-05
+        }
+       ],
+       "abbruch": false,
+       "n_zeilen": 81,
+       "nprof": 81
+      }
+     ],
+     "n_laeufe_boden_unter_1e-6_ab_0_25dex": 0
+    },
+    "wort": {
+     "form": "Gebiet",
+     "urteil": "verfehlt",
+     "R_max_dex": 2.8000000000000003,
+     "gebiet_block3": 300,
+     "nichtleer": true,
+     "profil_unvollstaendig": false,
+     "profile": [
+      {
+       "achse": "S",
+       "laeufe": [
+        {
+         "von": -2.0,
+         "bis": 0.8000000000000003,
+         "n": 57,
+         "ausdehnung_dex": 2.8000000000000003,
+         "boden_min": -1232634305.4231129,
+         "boden_max": -657.3478220459583
+        }
+       ],
+       "abbruch": false,
+       "n_zeilen": 81,
+       "nprof": 81
+      },
+      {
+       "achse": "K",
+       "laeufe": [
+        {
+         "von": -2.0,
+         "bis": -0.5499999999999998,
+         "n": 30,
+         "ausdehnung_dex": 1.4500000000000002,
+         "boden_min": -157814886.41121295,
+         "boden_max": 2.7360067786919018e-05
+        },
+        {
+         "von": -0.04999999999999982,
+         "bis": 2.0,
+         "n": 42,
+         "ausdehnung_dex": 2.0500000000000003,
+         "boden_min": -58456044.627244405,
+         "boden_max": -533.4758760095491
+        }
+       ],
+       "abbruch": false,
+       "n_zeilen": 81,
+       "nprof": 81
+      }
+     ],
+     "n_laeufe_boden_unter_1e-6_ab_0_25dex": 2
+    }
+   }
+  },
+  "TG2": {
+   "plan": "eingetroffen",
+   "wortlaut": "eingetroffen",
+   "unter_0_1_prozent_plan": [],
+   "unter_0_1_prozent_wort": [],
+   "kleinste": [
+    0.05275042842290545,
+    "N6"
+   ]
+  },
+  "regeln_tabelle": {
+   "V": {
+    "N1": {
+     "J": [
+      1.0,
+      1.0
+     ],
+     "spanne": 0.06338809562866454,
+     "plan_gueltig": true,
+     "stabil": true,
+     "k_neg": 0,
+     "k_kompl": 0,
+     "w_min": 0.11888966882854334,
+     "w_max": 0.1264258585255073,
+     "spanne_23ew": 0.06338809562866454
+    },
+    "N2": {
+     "J": [
+      0.8,
+      1.3333333333333333
+     ],
+     "spanne": 0.059242926108499905,
+     "plan_gueltig": true,
+     "stabil": true,
+     "k_neg": 0,
+     "k_kompl": 0,
+     "w_min": 0.14806815656327688,
+     "w_max": 0.15684014742157687,
+     "spanne_23ew": 0.059242926108499905
+    },
+    "N3": {
+     "J": [
+      1.25,
+      0.75
+     ],
+     "spanne": 0.06360522363681675,
+     "plan_gueltig": true,
+     "stabil": true,
+     "k_neg": 0,
+     "k_kompl": 0,
+     "w_min": 0.09818517791731352,
+     "w_max": 0.10443026811656489,
+     "spanne_23ew": 0.06360522363681675
+    },
+    "N4": {
+     "J": [
+      0.64,
+      1.7777777777777777
+     ],
+     "spanne": 0.05558252605075875,
+     "plan_gueltig": true,
+     "stabil": true,
+     "k_neg": 0,
+     "k_kompl": 0,
+     "w_min": 0.1883261110656315,
+     "w_max": 0.19879375203997504,
+     "spanne_23ew": 0.05558252605075875
+    },
+    "N5": {
+     "J": [
+      1.3333333333333333,
+      2.0
+     ],
+     "spanne": 0.08063515081114203,
+     "plan_gueltig": true,
+     "stabil": true,
+     "k_neg": 0,
+     "k_kompl": 0,
+     "w_min": 0.22041358155405832,
+     "w_max": 0.23818666394349378,
+     "spanne_23ew": 0.08063515081114203
+    },
+    "N6": {
+     "J": [
+      0.6736842105263158,
+      1.3061224489795917
+     ],
+     "spanne": 0.05275042842290545,
+     "plan_gueltig": true,
+     "stabil": true,
+     "k_neg": 0,
+     "k_kompl": 0,
+     "w_min": 0.1435050890373426,
+     "w_max": 0.15107504396492963,
+     "spanne_23ew": 0.05275042842290545
+    }
+   },
+   "S": {
+    "N1": {
+     "J": [
+      1.0,
+      1.0
+     ],
+     "spanne": 0.026847167230505953,
+     "plan_gueltig": true,
+     "stabil": true,
+     "k_neg": 0,
+     "k_kompl": 0,
+     "w_min": 0.21130330235434527,
+     "w_max": 0.21697619744901056,
+     "spanne_23ew": 0.02684716065192383
+    },
+    "N2": {
+     "J": [
+      0.8,
+      0.6666666666666666
+     ],
+     "spanne": 0.06408427746884193,
+     "plan_gueltig": true,
+     "stabil": true,
+     "k_neg": 0,
+     "k_kompl": 0,
+     "w_min": 0.14808798038075713,
+     "w_max": 0.157578091605278,
+     "spanne_23ew": 0.06408427081940848
+    },
+    "N3": {
+     "J": [
+      1.25,
+      1.5
+     ],
+     "spanne": 0.0029421321267655287,
+     "plan_gueltig": true,
+     "stabil": true,
+     "k_neg": 0,
+     "k_kompl": 0,
+     "w_min": 0.3016344809783222,
+     "w_max": 0.3025219294753488,
+     "spanne_23ew": 0.0029421320450744304
+    },
+    "N4": {
+     "J": [
+      0.64,
+      0.4444444444444444
+     ],
+     "spanne": 0.10743028297507995,
+     "plan_gueltig": true,
+     "stabil": true,
+     "k_neg": 0,
+     "k_kompl": 0,
+     "w_min": 0.10413220779849752,
+     "w_max": 0.11531916034910994,
+     "spanne_23ew": 0.10743027623090717
+    },
+    "N5": {
+     "J": [
+      1.3333333333333333,
+      2.0
+     ],
+     "spanne": 0.021996966559956643,
+     "plan_gueltig": true,
+     "stabil": true,
+     "k_neg": 0,
+     "k_kompl": 0,
+     "w_min": 0.3758942144574254,
+     "w_max": 0.38416274692292657,
+     "spanne_23ew": 0.021996966559956643
+    },
+    "N6": {
+     "J": [
+      0.6736842105263158,
+      0.5
+     ],
+     "spanne": 0.09413219494071523,
+     "plan_gueltig": true,
+     "stabil": true,
+     "k_neg": 0,
+     "k_kompl": 0,
+     "w_min": 0.11492816217632873,
+     "w_max": 0.12574660234248905,
+     "spanne_23ew": 0.09413218820765801
+    }
+   }
+  },
+  "best": {
+   "y": [
+    -1.6679900494901467,
+    0.05722536983034508
+   ],
+   "J_kegel": 0.02147879685562005,
+   "J_sechs": 1.1408416546020903,
+   "spanne": 7.061419404763569e-08,
+   "stabil": true,
+   "spanne_23ew": 7.061419404763569e-08
+  }
+ },
+ "laufzeit_s": 0.027911901473999023,
+ "maxrss_MB": 42.53515625,
+ "ende_utc": "2026-10-04T21:09:53Z"
+}

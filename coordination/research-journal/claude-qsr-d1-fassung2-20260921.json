@@ -1,0 +1,40 @@
+{
+  "id": "claude-qsr-d1-fassung2-20260921",
+  "time": "2026-09-21T02:10:00+02:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5)",
+  "topic": "theory",
+  "status": "reported",
+  "title": "QSR-D1 Fassung 2 endet mit Ausgang A - dieselben neun Zahlen wie Fassung 1, nur ohne die Schwelle auf dem Gitterpunkt",
+  "question": "Erzeugt eine freie kompakte Zusatzrichtung mit derselben Leiterkonstante bei demselben Impulsuebertrag eine andere relative Linienstreuung Q als die gebundene harmonische Richtung von QSR-0?",
+  "action": "Nachfolgevertrag nach Ausgang U1 der Fassung 1, genau zwei inhaltliche Aenderungen: Staerkeschwelle s* von 1,0 auf 0,9 (Fassung 1 hatte sie exakt auf den erwarteten Wert gelegt, zwei Pflichtzellen verfehlten sie in float64 um 2,2e-16 und 2,1e-15), und die Massenzuordnung des kompakten Arms wird im Vertragstext festgelegt und begruendet (Abschnitt 2.3a), weil die Kontrolle K10 der Fassung 1 gemessen hat, dass sie die Zellauswahl bestimmt. Lauf auf .69 als begrenzte User-Unit, 1,438 s CPU, Exit 0.",
+  "result": "Ausgang A (unterscheidet frei von gebunden, auf dem Vertragsgitter z <= 4, oberhalb der gesetzten Schwelle tau = 0,01 in Q), Delta_min = 0,111111 in der Zelle m0.25-0.75_g1-0_z4. Alle zwoelf T-faehigen Kontrollen und beide Nullproben bestanden, mit denselben Messwerten wie in Fassung 1: N1 (Isomorphie kompakte Richtung gegen inneren Rotor) exakt 0,0; K3 gegen die geschlossenen Werte groesster Fehler 1,82e-12; K4 groesster Rest des zweiten Moments 1,11e-94. Jede der neun Zellen liefert exakt denselben Wert wie in Fassung 1 - die Schwellenaenderung hat keine einzige Zahl der Rechnung beruehrt, nur die Frage, ob die Zellen zaehlen duerfen. Nachweisgrenze unveraendert: z* = 20,0 bei Massen 1:1 und 14,67 bei 1:3. K10 bestaetigt erneut 15 zulaessige Zellen unter der reduzierten Masse gegen 9 unter der Gesamtmasse.",
+  "meaning": "A heisst hier ausdruecklich nur, dass eine freie kompakte und eine gebundene harmonische Relativrichtung sich in der Linienstreuung unterscheiden - nicht, dass eine Raumrichtung von einem inneren Freiheitsgrad unterschieden waere; die Nullprobe N1 schliesst das mit exakt null Abstand aus. Kein Naturbefund, keine Registerzeile, Zitiersperre bis S2. Methodisch traegt Fassung 2 eine Regel bei, die in der Vertragsvorlage fehlt: auch Besetzungs- und Staerkeschwellen duerfen nicht auf einem erwarteten Wert liegen, und ihr Abstand gehoert in Vielfachen des Gleitkommabodens angegeben. VORLAGE-v2 Abschnitt 6.6 verlangt das bisher nur fuer Kriteriumsschwellen; genau in dieser Luecke ist Fassung 1 gelandet. Runde 022 bleibt eingefroren, nichts gebucht.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260921/QSR-D1-VERTRAG-fassung2.md",
+      "sha256": "d6bd462ed4532878bbf873621f50b8f3bbe2a40e49fe2af54a735240e2fad774"
+    },
+    {
+      "path": "coordination/vertraege-20260921/startsignal-qsr-d1-f2.txt",
+      "sha256": "4f75434420856698abf78269db4887727f25779eee7fd0a72e5037d47b372e0d"
+    },
+    {
+      "path": "coordination/vertraege-20260921/qsr-d1-f2-lauf/BERICHT-QSR-D1-F2.md",
+      "sha256": "ab6ffa458fd2536df8679746b43b3d92e3e07ef1a6585e3388b125b9c32a2e09"
+    },
+    {
+      "path": "coordination/vertraege-20260921/qsr-d1-f2-lauf/ERGEBNIS-QSR-D1-F2.json",
+      "sha256": "080ef2dca5cac2cec6e1892b76b5db2b3cb16648bfdd30bb8fad07ada8a5c79d"
+    },
+    {
+      "path": "coordination/vertraege-20260921/qsr_d1_f2.py",
+      "sha256": "0390eb4d2844898fd086a14ab0ef1fa65fad21d5ec76295469d89c25af6a932c"
+    },
+    {
+      "path": "coordination/vertraege-20260921/VORSCHLAG-QSR-D1-FASSUNG2.md",
+      "sha256": "f9341eb603fea64ac2da0d69bc1a6662b35ff080c0416e745ca254512e550a7c"
+    }
+  ],
+  "recorded_at": "2026-09-20T19:37:37.230215+00:00"
+}

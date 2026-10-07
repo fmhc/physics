@@ -1,0 +1,18 @@
+R5-C r5c.py Start 2026-09-30T00:33:58+00:00 auf CPU, 1 Thread, torch 2.5.1+cu121, Unterbefehl osmose, Laufzeitfaktor 1.0
+
+Osmose (Bio 2): Ball omega^2 = 0.7 auf Kondensat S = (0.8, 1.0, 1.1, 1.2), Ring L = 200.0, Fenster +-15.0, T = 200.
+  S | omega_bg | omega - omega_bg | Ueberschuss 0 | rel. bei T/4 | rel. Ende | Buckel rel. Ende | Rate 0-30 | omega Mitte Ende | geloest / gewachsen
+  [grob]
+  0.8 | 0.6000 | +0.2367 | 2.4415 | -0.01247 | -0.02761 | -0.006861 | -0.0403 | 0.5999 | True / False
+  1.0 | 0.7071 | +0.1296 | 2.4415 | -0.05395 | -0.01892 | -0.002008 | -0.08024 | 0.7071 | True / False
+  1.1 | 0.7842 | +0.0524 | 2.4415 | -0.07386 | -0.02799 | -0.002877 | -0.08783 | 0.7843 | True / False
+  1.2 | 0.8718 | -0.0351 | 2.4415 | -0.09753 | -0.0445 | -0.003262 | -0.0924 | 0.8719 | True / False
+  [fein]
+  0.8 | 0.6000 | +0.2367 | 2.4415 | -0.01234 | -0.02754 | -0.006844 | -0.0399 | 0.5999 | True / False
+  1.0 | 0.7071 | +0.1296 | 2.4415 | -0.0541 | -0.01899 | -0.001999 | -0.07985 | 0.7071 | True / False
+  1.1 | 0.7842 | +0.0524 | 2.4415 | -0.07408 | -0.02809 | -0.003015 | -0.08744 | 0.7842 | True / False
+  1.2 | 0.8718 | -0.0351 | 2.4415 | -0.0978 | -0.04468 | -0.003297 | -0.09201 | 0.8718 | True / False
+  L3 (rel. Ueberschuss am Ende gegen 1): 4 von 4
+  osmose: 39.3 s
+
+Ende 2026-09-30T00:34:37+00:00, Dauer 39.3 s, Torch-Speicher max nan MB, Fehler in: keine

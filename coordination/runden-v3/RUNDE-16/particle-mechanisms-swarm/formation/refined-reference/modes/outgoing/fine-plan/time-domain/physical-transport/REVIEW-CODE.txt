@@ -1,0 +1,86 @@
+Nichtautor-Codelektüre particle_binding, 03.10.2026. ENTWURFSSTAND,
+noch kein finaler Hash/keine vollständige Abnahme. Keine Ausführung.
+
+Grundpfade bis einschließlich read_arm gelesen. Vorläufig kein konkreter
+Bug in diesen Pfaden: FV-Zellvolumen, komplexe/reelle kinetische Faktoren,
+stabile Potentialform, innere volle/äußere halbe Kanten der beiden
+Schalen, identisches mittleresGesicht45 und Flussvorzeichen entsprechen
+REVIEW-FV. rotating_ring wird durch v=d+iomega*p korrekt rekonstruiert,
+chi/w werden auf exakt reelle Speicherung geprüft. G=E−omegaQ und
+FG=FE−omegaFQ ohne unzulässige Positivitätsannahme.
+
+Hüllen: add_error/product_error/square_error bilden die festgelegte
+Vorwärtspropagation mit lokalem gamma64. Quadratische Differenzen haben
+bei Null nur e_delta², keine roheOeps-Vakuumkante. Fehler der v-Rückbildung
+geht in kinetische Energie und Ströme ein. FQ benutzt vollen komplexen
+Produktmaßstab. Kantenhälften/Geometriegewichtungen erfasst; Raumreduktion
+mit gamma(n−1) statt globalemgamma64. Keine erneuteeps-Skalierung bereits
+absoluter Fehler. Dies bleibt Auswertesensitivität ohne gerichtete Rundung.
+
+Analytische QA: unabhängige RHS-/Kettenregelableitung von Zellenergie
+und Ladung, plus differenzierteKantenenergie, gegen lokaleFlussdifferenz.
+Regulärer komplexer Fall, exaktesVakuum und separaterchi-Strom vorhanden;
+Vakuumwerte0 und quadratischeSensitivität gesondert geprüft. KeinPDE-Schritt.
+
+Loader: gebundene3Resultate/Codeidentitäten, gemeinsamesInputmetadatum,
+richtige18Armauswahl über Baselines/theta0/theta90 und2Amplituden/2dt.
+QuellspezifischeOdd-Paarpfade,321Samples undStart-/Erhaltungsgates werden
+geprüft; alteUNRESOLVED-Identität blockiert nicht gültigeEinzelarme.
+Ringhashes,echteAchsen,Komponenten,dtype/Endlichkeit geprüft. Keine alten
+main-Aufrufe durch Imports. Endpunkt-/Quadratur-/Paarreserve-/Vollständig-
+keitslogik und Autorfinalhash bleiben in diesem Zwischenstand ausstehend.
+
+FINAL-NACHTRAG: vollständigen restlichen Code einschließlich window,
+integral,reduce_measurements,pair_series,classify und main gelesen.
+Autorfreeze lokal per SHA256 bestätigt:
+50a9cc0a308135a06c84bdc5f51a45f3f408de3dc00f6a4b142f88ddbddfa8bd.
+Kein verbleibender konkreter Codeblocker für den vereinbarten begrenzten
+gespeicherten Datentest. Dies ist keine Zusage eines aufgelösten Signals
+oder der tatsächlichen Laufzeit; keine Ausführung durch diesen Reviewer.
+
+Zeitabbildung: window interpoliert ausschließlich bereits gebildete
+physische Skalarobservablen und ihre lokalen Fehler. Interpolations-
+koeffizient einschließlich Subtraktions-/Divisionsreserve fortgepflanzt;
+bei exaktem Sample unveränderte Eingabe. integral benutzt positive
+Zeitgewichte mit eigener Gewichtungsrundung, Trapezmittel und gamma(n−1)
+Reduktion. Keine Zeitmittel-Normierung statt Integral. Gesichtsfluss
+erst signiert auf Endpunkten ergänzen, danach max(+F,0)/max(−F,0);
+J−(Jpositive−Jnegative) wird als Identitätsdiagnose berichtet. Die
+Fehlerskala der Max-Abbildung darf dieselbe absolute Lipschitz-Reserve
+wie der signierte Eingang nutzen. Jabsolute=0 liefert None statt NaN.
+
+Paare: je dt eigeneBaseline, vorher physischeArme, danach .5(P+M)−B.
+Sowohl lokaleObservablen als auch ihre Fehler mit korrekten Gewichten
+kombiniert. Jpos/Jneg werden erst aus der neuen Paarzeitreihe gebildet,
+nicht aus Roharmpositivteilen. BeideAbtastungen/.1/.2 und beideFenster
+werden unabhängig nach derselben Regel ausgewertet. Kein alpha²-/alpha4-
+Teilen, keine D/H-Feldsuperposition und keine Frequenzanpassung.
+
+Bilanz/Reserve: Speicheränderung plusOuter−Inner, Fehler aus beiden
+Endpunkten und beidenIntegralen samt finalerAddition. Gesicht45 verwendet
+beide angrenzendenSchalen;40/50 nur vorhandeneSchale, jeweils vier dt/
+Abtastkombinationen. eta=max(J_error,B_error) aller zugehörigenWerte;
+u=max(dt-Differenz,beideSamplingdifferenzen)+max|B|+eta, genau wie PlanV2.
+PrimärJ=.005/.1; outward/inward strikt J>10u/J<−10u mit u>0.
+Schalenlabel nur bei gleicher bestandenerRichtung beiderGesichter.
+Keine Kopplung vonQ/G-Gates anE; keine Mehrheit oder globalePhysikpasszahl.
+
+Vollständigkeit: main erzwingt18 eindeutigephysischeArmschlüssel,
+432Rohschalen/648Rohgesichter und192Paarschalen/288Paargesichter.
+Deterministische vollständig durchlaufene Schleifen erzeugen72Reserven
+und48Entscheidungen; classify prüft vierDiscretisierungen jeGesicht und
+vier/acht angrenzendeBilanzzeilen. ROOT-ABNAHME erfüllt. complete bedeutet
+vollständigeDiagnose, auch bei sämtlichUNRESOLVED. Bindung/QA/Budgetfehler
+führen zuINCOMPLETE, keine ausgelassenenArme als Erfolg.
+
+JSON: Messwerte explizitfloat, Richtungflagsbool, QApassedbool und
+verwendeteManifestwerte JSON-Typen. Kein bekannter numpy.bool_-Pfad in
+den gespeicherten Strukturen. allow_nan=False bleibt. Zwischenstände
+atomisch;8CPU-Checkpoint und externer10CPU-Gesamtrahmen sind unverändert.
+ArmweiseNPZ-Verarbeitung, nur reduzierteSkalarzeitreihen werden über18Arme
+gehalten; keinePDE/Eigenwert-/Fitaufrufe. Ein Ressourcenende kann deshalb
+weiter INCOMPLETE ergeben und autorisiert keine automatischeWiederholung.
+
+Die Fehlerhüllen sind operationaleSensitivitäten ohne gerichteteRundung;
+frühereEvolution und gemeinsameBilanz-/Samplingblindstellen bleiben
+nichtzertifiziert. Der Ergebnistext nennt diese Grenzen ausdrücklich.

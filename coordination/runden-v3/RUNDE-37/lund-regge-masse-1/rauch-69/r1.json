@@ -1,0 +1,124 @@
+{
+ "info": {
+  "numpy": "2.4.4",
+  "python": "3.12.3",
+  "host": "ubuntu-auto",
+  "start_utc": "2026-10-05T08:29:48Z",
+  "argv": [
+   "code-r1/lrm.py",
+   "rauch",
+   "--out",
+   "rauch/r1.json"
+  ],
+  "sha256": {
+   "dn.py": "0cd5d13e98f41df277ec7d8139970d1e658542f843ed8180bc756a4ea1d4d1ae",
+   "ew.py": "fa7b6417d39177102f0b19c5474453cd16a7595e23bc25ca548e081c4060b142",
+   "hm.py": "0ed5e2ce3a2a26525ef8a3320da394e6f403306384015187baf4dd46623fd5f2",
+   "inz.py": "e65a5cbf380defef0468f50de5a2dec5936d4228b72e1db8ff913ed765def8f2",
+   "lrm.py": "b9c06bafdf8fc82a153b3d719a03e5b72274ce45b1f46c0f5538e9d8ed2ae03e",
+   "mn.py": "b36984d3f04276454a792f14c5655bff432332316d1b968dea46d4cb6eb96bbf",
+   "nachtrag_iso.py": "1c92cb23988886731096dd44ce33aecfcde3b65cecf16b4232111550e4debc6c",
+   "nachtrag_kinetik.py": "fd0d17b9fb7c92d4b6ad564a46260e3daae3285bcb5ad53f65d9fb3918a32b28",
+   "pn.py": "c8034e40c3238cecdcc72ecd35f1f70d38ea330c9ae18911966581c10e592567",
+   "smi.py": "9459838bb02f1894e2124927a28904679536bb2fb77ca2f338c8f6570326942d",
+   "tg.py": "ec48a258e266fc2226d0d10564b606052831ffefbf0642e4f7d04f9de85cfd9e",
+   "tp.py": "419d7da6caa211c721eb6a8c87403977415cf3050f03365377f51cb77b374dfd",
+   "tti.py": "6d6b6f7b99b334d74d91860fc69af1c6c0c46e22207dc45432d60a9824c08ee5"
+  }
+ },
+ "schluessel": {
+  "spanne_V": {
+   "netz": "str",
+   "E": "int",
+   "T": "int",
+   "nV": "int",
+   "l_mittel": "float",
+   "vref": "float64",
+   "info": [
+    "quelle"
+   ],
+   "zeilen": "list[2]",
+   "kl": "list[2]",
+   "t_s": "float"
+  },
+  "t_spanne_V": "float",
+  "stabil_V": {
+   "netz": "str",
+   "E": "int",
+   "T": "int",
+   "nV": "int",
+   "zusammen": [
+    "A1R1_k_A_red_nicht_pd",
+    "A1R1_k_wachsend",
+    "K_absmin_rel_min",
+    "K_n_neg_bereich",
+    "QKQ_absmin_rel_min",
+    "QKQ_n_neg_bereich",
+    "XKX_absmin_rel_min",
+    "XKX_n_neg_bereich",
+    "diag",
+    "gitter_n",
+    "k_A_red_nicht_pd",
+    "k_B_red_neg",
+    "k_K_fast_singulaer_1e-8",
+    "k_K_singulaer",
+    "k_wachsend",
+    "max_A_red_neg",
+    "nk",
+    "nk_ohne_gamma",
+    "summe_A_red_neg",
+    "summe_wachsend",
+    "w2_min_rel"
+   ],
+   "gamma": "NoneType",
+   "zeilen": "list[6]",
+   "t_s": "float"
+  },
+  "t_stabil_V": "float",
+  "t_bau_glas": "float",
+  "t_punkt_glas_voll": "float",
+  "t_punkt_glas_stabil": "float",
+  "gang": {
+   "kl": "float",
+   "LP": "float",
+   "s": "float",
+   "nd": "int",
+   "bahnen": "list[12]",
+   "summe_m4": "list[12]",
+   "kontr_J_iso": [
+    "G",
+    "abw_gegen_G_P_max",
+    "gang",
+    "w2_spanne"
+   ],
+   "kontr_J1": [
+    "G",
+    "gang",
+    "w2_spanne"
+   ],
+   "K_n_neg_bereich": "list[2]",
+   "K_n_null_max": "int",
+   "A_red_nicht_pd": "int",
+   "LR": [
+    "G",
+    "G_nur_TT",
+    "gang",
+    "kappa",
+    "luecke_max",
+    "w2_spanne"
+   ],
+   "t_s": "float"
+  },
+  "t_gang_rauch20": "float"
+ },
+ "zeiten": {
+  "t_spanne_V": 0.15848326683044434,
+  "t_stabil_V": 0.16128206253051758,
+  "t_bau_glas": 0.1531829833984375,
+  "t_punkt_glas_voll": 9.779444217681885,
+  "t_punkt_glas_stabil": 8.826658725738525,
+  "t_gang_rauch20": 0.724534273147583
+ },
+ "laufzeit_s": 19.806055784225464,
+ "maxrss_MB": 321.22265625
+}

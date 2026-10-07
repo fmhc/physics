@@ -1,0 +1,66 @@
+{
+  "id": "vertrag-hu-m6-lauf-20260922",
+  "time": "2026-09-22T19:40:00+02:00",
+  "time_kind": "completed",
+  "author": "Anthropic (Fable 5.1)",
+  "topic": "galaxies",
+  "status": "open",
+  "title": "Vertrag HU-M6 (Hu 2609.07503, a0 waechst mit der Masse?) gerechnet: Ausgang U2, lesartabhaengig, bei der Massen-Leuchtkraft-Konvention nicht stabil",
+  "question": "Welche Steigung s = d ln a0 / d ln L der Familie a0(L) = A (L/L_ref)^s schliesst unser M6-Residuenkontrast ueber die Leuchtkraft (144 SPARC-Galaxien, Upsilon 0,5/0,7) aus, und liegt Hus Behauptung 'a0 waechst mit der Masse' in der Lesart s >= 0,05 bzw. s >= 0,1 innerhalb oder ausserhalb dieser Schranke?",
+  "action": "Vertrag nach VORLAGE-v2 und Nachtrag 15 bis 27 geschrieben (Vorwaertsrechnung, festes Gitter, Cluster-Bootstrap ueber Galaxien mit festen numpy-Seeds, Nullprobe durch Permutation der Galaxien-Offsets, Positivarme, Trennschaerfe-Arm mit 256 Permutationen, Massen-Leuchtkraft-Deckungsprobe aus den SPARC-Komponenten). Machbarkeitsvorlauf auf .69 (CPU, Regel 10 Ausnahme c), drei S0-Fremdreviews durch Qwen im Bunker (0 USD, no-cache, drei Antwort-IDs), Registerprobe gruen. Fassung 1: Lauf auf Wunsch von Finn gestoppt, verworfen. Fassung 2: Ausgang T (eine zu grobe Randkontrolle im Trennschaerfe-Arm), nur Diagnose. Fassung 3: sauberer Lauf auf .69 CUDA, alle zwoelf Kontrollen halten, maschinelles Gegenlesen (Zahlenregister mit Feldpfaden, Zahlenprobe, Registerprobe) vor dieser Meldung.",
+  "result": "Ausgang U2 (lesartabhaengig): unter der Lesart s >= 0,1 ist Hus Behauptung mit unserer Auswertung bei fester Konvention nicht vertraeglich, unter der Lesart s >= 0,05 nicht ausgeschlossen; welche Lesart Hu meint, gibt der Abstract nicht her. Das Stabilitaetskennzeichen ist negativ: im Upsilon-Band 0,8 bis 1,25 wechselt die Klasse A/U2/B. Nach Vertrag 7.5 und Regel 15.8.1 ist U2 kein Teilerfolg; alle Zahlen stehen ausschliesslich als Diagnose im Bericht BERICHT-HU-M6-F3.md. Reproduktion von M4/M6 bei s = 0 gegen das CUDA-Archiv exakt. Kein S2, keine Registerwirkung, M4 und M6 bleiben offen.",
+  "meaning": "Der M6-Kontrast kann ein a0, das sich ueber die SPARC-Helligkeitsspanne verdoppelt, ausschliessen, ein halb so starkes Wachstum nicht - und dieselbe Verschiebung entsteht schon durch ein Viertel Aenderung des Massen-Leuchtkraft-Verhaeltnisses oder durch ein Upsilon, das mit der Leuchtkraft waechst. Eine Aussage ueber Hus Modell ist damit nicht getroffen: es fehlen der Volltext (Form und Staerke von a0(M), Massenbegriff) und eine Reproduktion durch ein fremdes Haus. Naechster Schritt: Nachfolgevertrag mit einer Lesart aus dem Volltext, davor S2 durch Qwen aus dem Vertragstext. Ein Nebenbefund fuer die Methodik: zwei Vertragsfassungen scheiterten an eigenen Regeln (eine Klassenbedingung, die Kontrollarme traf; eine Randkontrolle, die auf einen Arm mit 1,5 Millionen Fits nicht passte) - beides wurde vom Fremdhaus vor der Erneuerung bestaetigt.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260922/hu-m6-VERTRAG-fassung3.md",
+      "label": "Vertrag Fassung 3",
+      "sha256": "d2d85a2526b5ee2137d100302bc8b3690eaca6986c02001d38ae1e7937ee8b37"
+    },
+    {
+      "path": "coordination/vertraege-20260922/hu-m6-f3-lauf/BERICHT-HU-M6-F3.md",
+      "label": "Bericht mit Diagnose",
+      "sha256": "b3ef07cb85d1de2db6a6b519a33730982803871c8179055a491f7e3e4efa9798"
+    },
+    {
+      "path": "coordination/vertraege-20260922/hu-m6-f3-lauf/ERGEBNIS-HU-M6-F3.json",
+      "label": "Ergebnisdatei",
+      "sha256": "f4f2fc7f82efb7a6acdc92a270c3b68ab1e2f547c56d8388ffffd0e040a435dd"
+    },
+    {
+      "path": "coordination/vertraege-20260922/startsignal-hu-m6-fassung3.txt",
+      "label": "Startsignal Fassung 3",
+      "sha256": "bf9837832b37568a79fdeb1246bf8e23e86ce1dc489fc3bf7bedc1c4a255389f"
+    },
+    {
+      "path": "coordination/vertraege-20260922/REVIEW-hu-m6.md",
+      "label": "S0-Fremdreview Fassung 1",
+      "sha256": "b38949bd1712945a9ab9177b4f66b35297c4b36a84407d580abaad08d3f2f03f"
+    },
+    {
+      "path": "coordination/vertraege-20260922/REVIEW-hu-m6-f2.md",
+      "label": "S0-Fremdreview Fassung 2",
+      "sha256": "2fb0783ffe67dc57c06192d3ede33ea070fe1e1f4f44bd4d98341d8d2fa65ab0"
+    },
+    {
+      "path": "coordination/vertraege-20260922/REVIEW-hu-m6-f3.md",
+      "label": "S0-Fremdreview Fassung 3",
+      "sha256": "6990f2a3b7d8e7c15823a6811a74ade99d7290571a471b335e3b632ef954fe53"
+    },
+    {
+      "path": "coordination/vertraege-20260922/hu-m6-f2-lauf/BERICHT-HU-M6-F2.md",
+      "label": "T-Bericht Fassung 2",
+      "sha256": "085ba6764a1f0f70c0147d2a6230a421d98acf0e9f388f164056901d24ac0521"
+    },
+    {
+      "path": "coordination/vertraege-20260922/hu-m6-machbarkeit/MACHBARKEIT-HU-M6.md",
+      "label": "Machbarkeitsvorlauf",
+      "sha256": "293372a70e047d1aeca81bf843df3aff0583fae6b93834cbf706d65972f9175a"
+    },
+    {
+      "path": "coordination/vertraege-20260922/hu-m6-VERTRAG.md",
+      "label": "Vertrag Fassung 1",
+      "sha256": "2e881dfde4bd23e09bdd92b142d45212f322913c7565a760bcf85f8c63e5fd78"
+    }
+  ],
+  "recorded_at": "2026-09-22T17:51:32.909812+00:00"
+}

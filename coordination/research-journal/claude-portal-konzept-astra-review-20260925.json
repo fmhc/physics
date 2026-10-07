@@ -1,0 +1,44 @@
+{
+  "id": "claude-portal-konzept-astra-review-20260925",
+  "time": "2026-09-25T16:20:53+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung; Konzept durch einen Claude-Subagenten (Anthropic, Opus 5.5), 17:27:55 bis 18:12:30 MESZ; Review astra (OpenAI, gpt-6-astra, high), 18:13:43 bis 18:20:15 MESZ (gemessen)",
+  "topic": "operations",
+  "status": "proposal",
+  "title": "Forschungsportal fuer Menschen und Agenten: Konzept liegt vor, astra gibt den Bau mit elf Auflagen frei; P1 (zwei Gutachter:innen online) bleibt bis zu Nachweisen und Finns Freigabe gesperrt",
+  "question": "Wie sieht ein Portal aus, ueber das Finn zwei Personen persoenlich Zugang gibt, das Einreichungen annimmt und spaeter Agenten Aufgaben nachrechnen laesst, und traegt das Konzept vor dem Bau (Finn: konzipieren, von astra reviewen lassen, dann bauen)?",
+  "action": "Konzeptautor mit Vollbrief (drei Nachrichten Finns woertlich, vorhandene Plaene, Entscheidungen des Tages). Danach astra REVIEW-ONLY mit sieben Fragen: Sicherheit, Prompt-Injection, Datenschutz, Lizenz, blinde Nachrechnung und Regel 15.8.1, Bauplan, Gegenargumente.",
+  "result": "Konzept (portal-20260925/, KONZEPT 3d1313ad..., BAUPLAN mit 24 Abnahmekriterien): Menschen per persoenlichem Link, Agenten per begrenztem Schluessel eines eingeladenen Menschen; statische Seiten plus kleine API; zwei Tueren fuer P1 (Methode am Fall KS-1 DR3, das Portal selbst); Einreichungen nie ausgefuehrt. Empfohlen: etablierte Lizenzen (CC BY 4.0, Apache-2.0, Gaia CC BY-NC 3.0 IGO) plus Teilnahmebedingungen statt eigener Lizenz; 'ASL' und 'AgentShare' sind vergeben. astra (e07a0c12...): BAUFREIGABE MIT AUFLAGEN. Zwei nginx-Fehler ($uri im Auth-Unteraufruf, 404 statt 401/403), Token-Lebenszyklus, Nebenwege am Gaia-Tor vorbei, Weiterleitung von Prompt-Injektionen an Folgesitzungen, Datenschutz schon fuer P1 (Anbieteruebermittlung bis zur Klaerung gesperrt), Lizenzwidersprueche, U-Kennzahlen in eingeklappten Titeln (15.8.1), acht S2-Bedingungen noch nicht hinreichend.",
+  "meaning": "P0 (Vorschau im Heimnetz auf der TS440) darf nach Einarbeitung der Bauauflagen gebaut werden; P1 erst nach Nachweisen, unabhaengigem Code-Review und Finns Online-Freigabe. astra raet, P0 und P1 auf den Weg fuer menschliche Gutachter zu verkleinern und Agentenfunktionen erst in P3 freizuschalten; ausserdem waere fuer zwei vertraute Personen ein gepruefte Archiv mit persoenlicher Uebergabe deutlich billiger. Offen bei Finn: Lizenz (Empfehlung Variante B statt eigener Agent-Share-Lizenz), Vertraulichkeit bis P4, Online-Zeitpunkt, Datenschutzangaben als Verantwortlicher. Erwartung (c) (astra weist nicht zurueck, mindestens drei Sicherheitsauflagen) eingetreten; (a) (eigene Lizenz fuer Texte empfohlen) nicht eingetreten. Der Konzeptautor startete einmal lokal python3 -c 1 in einer jq-Zeile (zehnter Vorfall seit dem 24.09.; ohne Wirkung).",
+  "sources": [
+    {
+      "path": "coordination/portal-20260925/KONZEPT-FORSCHUNGSPORTAL.md",
+      "sha256": "3d1313ad4d2981e712b8786bc3da5a7c23a4f848bde1b4db1b27d6c6171d20c5"
+    },
+    {
+      "path": "coordination/portal-20260925/BAUPLAN.md",
+      "sha256": "7c3f4e10313ea448aac2cd3d7613a040bd20f777e40536597f8de424da7e06b8"
+    },
+    {
+      "path": "coordination/portal-20260925/LIZENZ-AGENT-SHARE-ENTWURF.md",
+      "sha256": "b8ef7f0949a31334f41f8175b3a01cee60ddb1564e6085faf87d3a5b63d2f34e"
+    },
+    {
+      "path": "coordination/portal-20260925/TEILNAHMEBEDINGUNGEN-ENTWURF.md",
+      "sha256": "7aedeaf8f7464fb8c9042f65a06aa6e0befa07874c9786120c8dfe6e1cc165fb"
+    },
+    {
+      "path": "coordination/portal-20260925/HERKUNFTSERKLAERUNG-ENTWURF.md",
+      "sha256": "d8fdc087171b544a2b9accc421f7e808544416b23c0448c5d86596fcfd917a80"
+    },
+    {
+      "path": "coordination/portal-20260925/review-astra/REVIEW-astra-PORTAL-KONZEPT.md",
+      "sha256": "e07a0c12b4e6cbcade8ca38616baf9a4d06ce70219c04f7036a0ffc131c2b914"
+    },
+    {
+      "path": "coordination/portal-20260925/review-astra/BRIEF.md",
+      "sha256": "aea62ee6c84431786d08c1f77ba42e639c0b149c1ffa5dd70187b195f2d6cbb9"
+    }
+  ],
+  "recorded_at": "2026-09-25T16:21:34.553266+00:00"
+}

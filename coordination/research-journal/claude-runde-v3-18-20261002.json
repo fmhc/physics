@@ -1,0 +1,45 @@
+{
+  "id": "claude-runde-v3-18-20261002",
+  "time": "2026-10-02T15:13:20+02:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung, Karten und Abschaetzung; Code-Agenten Anthropic (Opus 5.5)",
+  "topic": "theory",
+  "status": "reported",
+  "evidenzart": "modell",
+  "title": "Runde 18 nach v3 (explorativ): Huellen-Stellen im Zeitbereich bestaetigt (dritter Code, vorab gewertet, Abstrahlung nur eps^4); 88 stille Stellen auf 10 Leitern bis R = 39; stabile Wirbel auf Rad-Graphen nur auf dem leichten Ast, Primzahlen ohne Rolle",
+  "question": "Strahlt eine stille Stelle des Q-Balls mit Huelle im Zeitlauf wirklich nicht ab? Wie viele stille Stellen gibt es und wie sind sie geordnet? Gibt es stabile drehende Feldklumpen auf Rad-Graphen, und spielen Primzahlen wie 11 und 19 eine Rolle?",
+  "action": "Karten mit Vorhersagen vor jedem Lauf: HUELLEN-UHR (eigener Zeitloeser, vier Arme), HUELLEN-LEITER (vollstaendige Suche omega^2 0,74 bis 1,40), VORTEX-RAD (N = 4..24, alle m); Laeufe .69 kleintest.sh.",
+  "result": "HUELLEN-UHR: H1-H5 eingetroffen; abgestrahlter Anteil 3,7e-5/5,3e-5 (eps^4,000) gegen 1,32/0,76 (eps^2) bei omega^2+0,01; 50 Ticks in 50 Perioden, Periode auf 5e-6 bis 4e-5. HUELLEN-LEITER: L1-L5 eingetroffen bis R = 39: 88 Stellen, 10 chi-Kurven, Sprossenabstand in R 2,17-2,46 (Streuung 1,5-6 %), Zahl ~ R^2; 16. Stelle im alten Fenster. VORTEX-RAD: W4, W5 eingetroffen, W1-W3 nicht (formal); stabil auf dem leichten Ast mit m/N > 1/4; m = 1 auf dem schweren Ast nur N = 5-12.",
+  "meaning": "Explorativ, keine Messdaten. Die Huelle traegt eigene Leitern stiller Stellen, die mit dem Radius periodisch entstehen; die stillen Stellen sind damit eine robuste Eigenschaft solcher Baelle und im Zeitbereich vorab gewertet bestaetigt. Drehende Gitter-Feldklumpen haengen am Ast und an der Nabe, nicht an Primzahlen.",
+  "sources": [
+    {
+      "path": "coordination/runden-v3/RUNDE-18.md",
+      "sha256": "8be5e12f969c346f06e4d50014d3fedb7309dcc7ad7ed1e0fce53b19dade16f3"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-18/huellen-uhr/ERGEBNIS.md",
+      "sha256": "9e454c87bd171ee3faad90a78a2f35093d395393c2f58be4fbbbd3845ae73b52"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-18/huellen-uhr/KARTE.md",
+      "sha256": "ee2e93f8047d0ad38619502746b724f1ad7382741b12e5f253ecb25ad5266cca"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-18/huellen-leiter/ERGEBNIS.md",
+      "sha256": "20b844cdc6e9a6114512acc9ab73708ff5b99b65903a3d4e8a6ba1f72bc12367"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-18/huellen-leiter/KARTE.md",
+      "sha256": "fba6766911fe90b57c963059fb0d9aa7e975b519cfa0a2c78fb4a3511646ae35"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-18/vortex-rad/ERGEBNIS.md",
+      "sha256": "b021a09236ecbeeaceb08461966ed6f410729adbe143c2305e066b92cbf119c2"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-18/vortex-rad/KARTE.md",
+      "sha256": "ea0c30c2d1e65fc84fc9436faa73af6869a9945e969007292c4a4f30377b6a0a"
+    }
+  ],
+  "recorded_at": "2026-10-02T13:13:21.132961+00:00"
+}

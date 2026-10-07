@@ -1,0 +1,19 @@
+brechung: Start 2026-09-30T02:02:21+00:00, Ende 2026-09-30T02:05:15+00:00, Quadro P4000, torch 2.5.1+cu121
+Medium C0 = 0.1, g4 = 0.5, lam = 0.1: c_s = 0.2085, Heilungslaenge etwa 3.23
+Dauer [s]: massen_fein_s 3.8, relax_fein_s 9.9, entw_fein_s 139.1
+Karte brechung (Wellen 14). Ball m = 0, omega^2 = 0.7 (Q 23.996, Vakuum-E 22.6258), Soll v1 = 0.12; Stufe C0 -> C0 + dC bei x = 0 (Breite 2.0), Fits fuer |X| >= 9.0.
+[fein]
+  M_eff (F mit Ball - F ohne Ball): {"dC-0.04": 22.701220837411235, "dC0.0": 22.75531308448133, "dC0.04": 22.8101533966288, "dC0.06": 22.837719783079223, "lam0": 22.625745484262808}; Kontrolle lam0 gegen Vakuum-E: -8.40e-06
+  Lauf | dC | th1 soll/mess | v1 | M* (Stoss/v1) | m mitgef. | Ausgang | th2 mess | P1 th2 | d P1 | v2/P1 | P2 th2 | d P2 | vy2/vy1 | Q-Verlust
+  abst20 | +0.04 | 20/20.03 | 0.1185 | 23.213 | 0.296 | durchgelaufen (durchgelaufen) | 24.83 | 24.92 | -0.08 | 1.0050 | 24.80 | +0.03 | 1.0019 | 6.3e-06
+  abst40 | +0.04 | 40/40.06 | 0.1184 | 23.223 | 0.306 | durchgelaufen (durchgelaufen) | 52.01 | 52.35 | -0.34 | 1.0057 | 52.01 | -0.00 | 1.0011 | 1.3e-07
+  anz40 | -0.04 | 40/39.93 | 0.1188 | 23.161 | 0.244 | durchgelaufen (durchgelaufen) | 33.86 | 33.79 | +0.07 | 0.9863 | 33.88 | -0.02 | 0.9882 | 7.9e-05
+  Urteil nach PLAN.md: P1 getragen (1 Grad, 2 Prozent, Ausgang): Brechung wie ein Teilchen mit M_eff(C)
+L3 (grob gegen fein; bestanden, wenn |fein - grob| <= max(0,2 |fein|, Toleranz)):
+  abst20 theta2: grob 24.833, fein 24.833 -> ok
+  abst20 v2: grob 0.096845, fein 0.096823 -> ok
+  abst40 theta2: grob 52.011, fein 52.011 -> ok
+  abst40 v2: grob 0.096849, fein 0.096827 -> ok
+  anz40 theta2: grob 33.861, fein 33.861 -> ok
+  anz40 v2: grob 0.13521, fein 0.13518 -> ok
+  L3 gesamt: bestanden (6 von 6)

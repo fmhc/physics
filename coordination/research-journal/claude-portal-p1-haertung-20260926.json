@@ -1,0 +1,32 @@
+{
+  "id": "claude-portal-p1-haertung-20260926",
+  "time": "2026-09-25T23:21:23+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung; Umsetzung Claude-Subagent (Anthropic, Opus 5.5), 25.09. 23:41:15 bis 26.09. 01:21:23 MESZ (gemessen); Tests auf der .69 unter systemd-run, zerstoerende Proben gegen eine eigene Probe-Instanz auf der TS440",
+  "topic": "operations",
+  "status": "reported",
+  "title": "Portal P1-Haertung: astras Befunde B1 bis B8 und Auflage 7 im Code umgesetzt, 157 von 157 Unit-Tests und 24 von 24 Live- und Browserproben gruen; nicht online, offen sind Finns Rechtspunkte und ein unabhaengiges Nachreview",
+  "question": "Sind die acht Befunde aus astras Code-Review (NICHT P1-REIF) und Auflage 7 so geschlossen, dass ein unabhaengiges Nachreview sinnvoll ist?",
+  "action": "Haertung nach astras Befunden mit je mindestens einem Test pro Befund, darunter simulierte Abstuerze zwischen jedem Persistenzschritt; Live-Proben gegen eine eigene Probe-Instanz (TS440 Port 8444), drei nicht zerstoerende Proben gegen die Vorschau; Nachweise an Codebaum 133344d3..., Freigabebindung 48b90674... und API-Abbild c9fe364a... gebunden; Vorschau auf Release p1h-20260926-c umgestellt.",
+  "result": "B1/B2: verkettetes Sperrjournal mit fsync und Vorrang vor der Datenbank, Abgleich bei jedem Start; fehlendes Journal haelt den Dienst geschlossen; Ruecksicherung widerruft alle offenen Einladungen und Sitzungen. B3: Annahme unter durchgehender Sperre mit Nachpruefung. B4/B5: nginx nimmt grosse Uploads erst nach API-Vorpruefung, hoechstens zwei gleichzeitig; Datenbudget 4 GiB mit Reserve; Logs ohne Inhalte. B6: Regel 15.8.1 fuer alle Anzeigefelder und als JSON-Ausgabeschutz. B7: Fristen wie in Art. 13; Texte tb-3 und HE-3. B8: Sichtung gehaertet. Auflage 7: Dienstidentitaeten 64010/64011 statt Hostkonto, Abbild und Export per Digest gebunden, Entwurf einer P1-Betriebsanleitung. Die Live-Proben fanden drei eigene Fehler, alle behoben (der schwerste: jeder Upload ueber 16 KiB bekam 503). Offengelegt: Die Zahlenliste der unabhaengigen 15.8.1-Probe und die Verengung ihres U-Wert-Arms auf Token ab drei Ziffern wurden nach einem Token-Scan des gebauten Exports und vor dem ersten Lauf festgelegt; damit prueft der Arm sieben kurze Versions- und Abschnittsnummern nicht mehr. In Live-Lauf a scheiterte diese Probe einmal ohne bestaetigte Ursache, danach dreimal unveraendert bestanden. Bericht da116eab..., SHA256SUMS 14 von 14 OK.",
+  "meaning": "Nichts ist online, P1 nicht gestartet; FT1 und ihre Einladung unveraendert. Vor P1 stehen Finns Punkte (Verantwortlicher und Kontakt, Rechtsgrundlagen und Fristen, Hostervertrag, Vorfallsweg, Lizenz D1 samt rechtlicher Pruefung der Texte, Gaia-Lizenzbeleg, interne Pfade in Originaldokumenten, Traefik-Zugriffsprotokoll, Root-Arbeiten auf dem netcup-Host, Wartungsverantwortung D12), danach ein unabhaengiges Nachreview und Finns ausdrueckliches Go. Das Nachreview muss die nach Sicht auf den Export gesetzte Pruefliste (nicht nur strenger) und den einmaligen ungeklaerten Fehlschlag ausdruecklich pruefen; es wartet auf astra (Laptop-Anmeldung 401 seit 00:53, .69-Kontingent bis 08:18). Regelverstoesse des Umsetzers ohne Wirkung: lokal `python3 -` (kurz vor 23:58:26), `curl -k` (00:46:52), `python3 -c 1` (kurz vor 01:14:23). Derselbe unbeabsichtigte String `python3 -c 1` trat in dieser Nacht auch bei der Leitung auf.",
+  "sources": [
+    {
+      "path": "coordination/portal-20260925/BERICHT-P1-HAERTUNG.md",
+      "sha256": "da116eab3900971444d0d53d7e7800cff1f7dc0c41205b3e7069a1dbe26cdeed"
+    },
+    {
+      "path": "coordination/portal-20260925/SHA256SUMS",
+      "sha256": "0033ba57fb7bd0715ff6429cdd292b683b945158f359568f0d4114491b7d81b2"
+    },
+    {
+      "path": "coordination/portal-20260925/review-astra-p0/REVIEW-astra-P0-CODE.md",
+      "sha256": "bbb8b9bcfd75efedff8041aacd46e3cb3507fcef7303172da7a706c20e6457a2"
+    },
+    {
+      "path": "coordination/portal-20260925/P1-BETRIEBSANLEITUNG-ENTWURF.md",
+      "sha256": "72dfb4c8e385de17d1ac79c1cbe34fdf5c151489e7ca53974ffdf74c02c18428"
+    }
+  ],
+  "recorded_at": "2026-09-25T23:23:03.003015+00:00"
+}

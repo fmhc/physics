@@ -1,0 +1,612 @@
+{
+ "test": "umstroemung",
+ "start": "2026-09-30T06:22:48+00:00",
+ "ende": "2026-09-30T06:24:49+00:00",
+ "rauch": false,
+ "argumente": {
+  "c0": "0.1",
+  "kontrollen": "ja",
+  "h": 0.01,
+  "streck": 4.0,
+  "lam_klein": 0.01,
+  "out": "ausgabe",
+  "rauch": false
+ },
+ "konstanten": {
+  "G4": 0.5,
+  "MC2": 1.0,
+  "LAM": 0.1,
+  "W2_BALL": 0.7,
+  "X_MAX": 60.0,
+  "N_AC": 2000,
+  "DU_REL": 0.005
+ },
+ "haupt": [
+  {
+   "C0": 0.1,
+   "lam": 0.1,
+   "h": 0.01,
+   "streck": 1.0,
+   "c_s": 0.20851441405707477,
+   "u_SN_zu_cs": 0.64,
+   "erstes_ohne_zu_cs": 0.645,
+   "loesung_bei_hoeherem_u_nach_luecke": false,
+   "grob": [
+    [
+     0.05,
+     true,
+     2,
+     0
+    ],
+    [
+     0.1,
+     true,
+     2,
+     0
+    ],
+    [
+     0.15,
+     true,
+     2,
+     0
+    ],
+    [
+     0.2,
+     true,
+     2,
+     0
+    ],
+    [
+     0.25,
+     true,
+     2,
+     0
+    ],
+    [
+     0.3,
+     true,
+     2,
+     0
+    ],
+    [
+     0.35,
+     true,
+     2,
+     0
+    ],
+    [
+     0.4,
+     true,
+     2,
+     0
+    ],
+    [
+     0.45,
+     true,
+     2,
+     0
+    ],
+    [
+     0.5,
+     true,
+     2,
+     0
+    ],
+    [
+     0.55,
+     true,
+     2,
+     0
+    ],
+    [
+     0.6,
+     true,
+     2,
+     0
+    ],
+    [
+     0.65,
+     false,
+     0,
+     0
+    ],
+    [
+     0.7,
+     false,
+     0,
+     0
+    ],
+    [
+     0.75,
+     false,
+     0,
+     0
+    ],
+    [
+     0.8,
+     false,
+     0,
+     0
+    ],
+    [
+     0.85,
+     false,
+     0,
+     0
+    ],
+    [
+     0.9,
+     false,
+     0,
+     0
+    ],
+    [
+     0.95,
+     false,
+     0,
+     0
+    ]
+   ],
+   "fein": [
+    [
+     0.605,
+     true,
+     2,
+     0
+    ],
+    [
+     0.61,
+     true,
+     2,
+     0
+    ],
+    [
+     0.615,
+     true,
+     2,
+     0
+    ],
+    [
+     0.62,
+     true,
+     2,
+     0
+    ],
+    [
+     0.625,
+     true,
+     2,
+     0
+    ],
+    [
+     0.63,
+     true,
+     2,
+     0
+    ],
+    [
+     0.635,
+     true,
+     2,
+     0
+    ],
+    [
+     0.64,
+     true,
+     2,
+     0
+    ],
+    [
+     0.645,
+     false,
+     0,
+     0
+    ]
+   ],
+   "n_ac": 2000,
+   "M_hydr": 0.30441500310388925
+  }
+ ],
+ "kontrollen": [
+  {
+   "C0": 0.1,
+   "lam_klein": {
+    "C0": 0.1,
+    "lam": 0.01,
+    "h": 0.01,
+    "streck": 1.0,
+    "c_s": 0.20851441405707477,
+    "u_SN_zu_cs": 0.91,
+    "erstes_ohne_zu_cs": 0.915,
+    "loesung_bei_hoeherem_u_nach_luecke": false,
+    "grob": [
+     [
+      0.05,
+      true,
+      2,
+      0
+     ],
+     [
+      0.1,
+      true,
+      2,
+      0
+     ],
+     [
+      0.15,
+      true,
+      2,
+      0
+     ],
+     [
+      0.2,
+      true,
+      2,
+      0
+     ],
+     [
+      0.25,
+      true,
+      2,
+      0
+     ],
+     [
+      0.3,
+      true,
+      2,
+      0
+     ],
+     [
+      0.35,
+      true,
+      2,
+      0
+     ],
+     [
+      0.4,
+      true,
+      2,
+      0
+     ],
+     [
+      0.45,
+      true,
+      2,
+      0
+     ],
+     [
+      0.5,
+      true,
+      2,
+      0
+     ],
+     [
+      0.55,
+      true,
+      2,
+      0
+     ],
+     [
+      0.6,
+      true,
+      2,
+      0
+     ],
+     [
+      0.65,
+      true,
+      2,
+      0
+     ],
+     [
+      0.7,
+      true,
+      2,
+      0
+     ],
+     [
+      0.75,
+      true,
+      2,
+      0
+     ],
+     [
+      0.8,
+      true,
+      2,
+      0
+     ],
+     [
+      0.85,
+      true,
+      2,
+      0
+     ],
+     [
+      0.9,
+      true,
+      2,
+      0
+     ],
+     [
+      0.95,
+      false,
+      0,
+      0
+     ]
+    ],
+    "fein": [
+     [
+      0.905,
+      true,
+      2,
+      0
+     ],
+     [
+      0.91,
+      true,
+      2,
+      0
+     ],
+     [
+      0.915,
+      false,
+      0,
+      0
+     ],
+     [
+      0.92,
+      false,
+      0,
+      0
+     ],
+     [
+      0.925,
+      false,
+      0,
+      0
+     ],
+     [
+      0.93,
+      false,
+      0,
+      0
+     ],
+     [
+      0.935,
+      false,
+      0,
+      0
+     ],
+     [
+      0.94,
+      false,
+      0,
+      0
+     ],
+     [
+      0.945,
+      false,
+      0,
+      0
+     ]
+    ],
+    "n_ac": 2000
+   },
+   "gestreckt": {
+    "C0": 0.1,
+    "lam": 0.1,
+    "h": 0.01,
+    "streck": 4.0,
+    "c_s": 0.20851441405707477,
+    "u_SN_zu_cs": 0.42,
+    "erstes_ohne_zu_cs": 0.425,
+    "loesung_bei_hoeherem_u_nach_luecke": false,
+    "grob": [
+     [
+      0.05,
+      true,
+      2,
+      0
+     ],
+     [
+      0.1,
+      true,
+      2,
+      0
+     ],
+     [
+      0.15,
+      true,
+      2,
+      0
+     ],
+     [
+      0.2,
+      true,
+      2,
+      0
+     ],
+     [
+      0.25,
+      true,
+      2,
+      0
+     ],
+     [
+      0.3,
+      true,
+      2,
+      0
+     ],
+     [
+      0.35,
+      true,
+      2,
+      0
+     ],
+     [
+      0.4,
+      true,
+      2,
+      0
+     ],
+     [
+      0.45,
+      false,
+      0,
+      0
+     ],
+     [
+      0.5,
+      false,
+      0,
+      0
+     ],
+     [
+      0.55,
+      false,
+      0,
+      0
+     ],
+     [
+      0.6,
+      false,
+      0,
+      0
+     ],
+     [
+      0.65,
+      false,
+      0,
+      0
+     ],
+     [
+      0.7,
+      false,
+      0,
+      0
+     ],
+     [
+      0.75,
+      false,
+      0,
+      0
+     ],
+     [
+      0.8,
+      false,
+      0,
+      0
+     ],
+     [
+      0.85,
+      false,
+      0,
+      0
+     ],
+     [
+      0.9,
+      false,
+      0,
+      0
+     ],
+     [
+      0.95,
+      false,
+      0,
+      0
+     ]
+    ],
+    "fein": [
+     [
+      0.405,
+      true,
+      2,
+      0
+     ],
+     [
+      0.41,
+      true,
+      2,
+      0
+     ],
+     [
+      0.415,
+      true,
+      2,
+      0
+     ],
+     [
+      0.42,
+      true,
+      2,
+      0
+     ],
+     [
+      0.425,
+      false,
+      0,
+      0
+     ],
+     [
+      0.43,
+      false,
+      0,
+      0
+     ],
+     [
+      0.435,
+      false,
+      0,
+      0
+     ],
+     [
+      0.44,
+      false,
+      0,
+      0
+     ],
+     [
+      0.445,
+      false,
+      0,
+      0
+     ]
+    ],
+    "n_ac": 2000,
+    "M_hydr": 0.30441500310388925
+   },
+   "lam_klein_ok": true,
+   "gestreckt_ok": false
+  }
+ ],
+ "l3": [
+  {
+   "C0": 0.1,
+   "u_SN_h": 0.64,
+   "u_SN_h2": 0.64,
+   "aenderung": 0.0,
+   "effekt_1_minus_uSN": 0.36,
+   "bestanden": true
+  }
+ ],
+ "v1": [
+  {
+   "C0": 0.1,
+   "u_SN_zu_cs": 0.64,
+   "klammer": [
+    0.33,
+    0.53
+   ],
+   "erfuellt": false
+  }
+ ],
+ "plausibilitaet": {
+  "bestanden": true,
+  "verstoesse": [],
+  "hinweis": "Ladungserhaltung, Solitonen und Kraft gehoeren zu Teil b (nicht in diesem Code)"
+ },
+ "ausgang": "scheitert (V1): C0 0.1 u_SN/c_s 0.64",
+ "vorgabe_b": null
+}

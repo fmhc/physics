@@ -1,0 +1,189 @@
+{
+ "auswertung": {
+  "y_je_lauf": {
+   "grob": [
+    {
+     "lauf": "w60_nachbarn1",
+     "stufe": "grob",
+     "t_T": null,
+     "Y2": false,
+     "n_ende": 2,
+     "Y1": null,
+     "Y3": null,
+     "grund": "keine Teilung im Nachrechnen oder keine Zusatzreihe: offen"
+    },
+    {
+     "lauf": "w60_nachbarn2",
+     "stufe": "grob",
+     "t_T": null,
+     "Y2": false,
+     "n_ende": 3,
+     "Y1": null,
+     "Y3": null,
+     "grund": "keine Teilung im Nachrechnen oder keine Zusatzreihe: offen"
+    },
+    {
+     "lauf": "w75_nachbarn1",
+     "stufe": "grob",
+     "t_T": null,
+     "Y2": false,
+     "n_ende": 2,
+     "Y1": null,
+     "Y3": null,
+     "grund": "keine Teilung im Nachrechnen oder keine Zusatzreihe: offen"
+    },
+    {
+     "lauf": "w75_nachbarn2",
+     "stufe": "grob",
+     "t_T": null,
+     "Y2": false,
+     "n_ende": 3,
+     "Y1": null,
+     "Y3": null,
+     "grund": "keine Teilung im Nachrechnen oder keine Zusatzreihe: offen"
+    }
+   ]
+  },
+  "y_je_stufe": {
+   "grob": {
+    "Y1": null,
+    "Y2": false,
+    "Y3": null
+   }
+  },
+  "Y": {
+   "Y0": "offen (keine Referenz)",
+   "Y1": "offen",
+   "Y2": "nicht eingetroffen (nur grob, fein fehlt)",
+   "Y3": "offen"
+  },
+  "K0": null,
+  "bedeutung": "offen: Bedeutung nach Karte nicht zuordenbar",
+  "selbsttest": {
+   "ergebnis": {
+    "lauf": "synthetisch",
+    "stufe": "grob",
+    "t_T": 4.0,
+    "Y2": true,
+    "n_ende": 0,
+    "Y1": true,
+    "ein_gebiet_t": [
+     1.5,
+     2.0,
+     2.5,
+     3.5
+    ],
+    "d12_start": 1.0,
+    "t_1_erst": 1.5,
+    "t_1_letzt": 3.5,
+    "Y3": true,
+    "windung_letzt": 0,
+    "S_min_kreis_letzt": 0.1,
+    "ein_gebiet_proben": 4,
+    "ein_gebiet_laengste_folge_proben": 3,
+    "ein_gebiet_laengste_folge_spanne": 1.0,
+    "ein_gebiet_windungen": [
+     [
+      1.5,
+      1,
+      0.1
+     ],
+     [
+      2.0,
+      1,
+      0.1
+     ],
+     [
+      2.5,
+      0,
+      0.1
+     ],
+     [
+      3.5,
+      0,
+      0.1
+     ]
+    ],
+    "ein_gebiet_Q_anteil": [
+     0.5,
+     0.5,
+     0.5,
+     0.5
+    ],
+    "ein_gebiet_erste_windung0": 2.5,
+    "d12_min_vor_ein": 1.0,
+    "nach_letztem": {
+     "t": 4.0,
+     "n": 2,
+     "Q_box": 20.0,
+     "d12": 1.0,
+     "gebiete": [
+      [
+       10.0,
+       0,
+       0.0,
+       0.0
+      ],
+      [
+       9.0,
+       0,
+       1.0,
+       0.0
+      ]
+     ]
+    },
+    "bruchstuecke": {
+     "t": 4.0,
+     "n": 2,
+     "d12": 1.0,
+     "gebiete": [
+      [
+       10.0,
+       0,
+       0.0,
+       0.0,
+       0.1
+      ],
+      [
+       9.0,
+       0,
+       1.0,
+       0.0,
+       0.1
+      ]
+     ],
+     "Q_durch_Q_m1": [
+      1.0,
+      0.9
+     ],
+     "Q_durch_Q_nachbar": [
+      2.0,
+      1.8
+     ]
+    }
+   },
+   "soll": {
+    "Y1": true,
+    "Y3": true,
+    "ein_gebiet_t": [
+     1.5,
+     2.0,
+     2.5,
+     3.5
+    ],
+    "ein_gebiet_erste_windung0": 2.5,
+    "ein_gebiet_laengste_folge_proben": 3
+   },
+   "ok": true
+  }
+ },
+ "fehler_auswertung": null,
+ "start": "2026-10-02T16:22:29+00:00",
+ "ende": "2026-10-02T16:23:34+00:00",
+ "rauch": true,
+ "sha256": {
+  "bio28_weiter.py": "13b61b3f5ec3f3503ecdf5fb05f3ab9bcfe7dfd4736a8d540becf67898df3f4a",
+  "r5_2d_a.py": "4b7a00b22e427ab9889056057437fc2199ca0fe6fff0ccf4847c11f62892bc7b",
+  "ref": "a708b364f41c61ed7aafd195161be11abbba30c0157abf49ea377c6062a8ecb0"
+ }
+}

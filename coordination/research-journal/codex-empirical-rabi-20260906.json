@@ -1,0 +1,41 @@
+{
+  "id": "codex-empirical-rabi-20260906",
+  "time": "2026-09-06T16:55:44.461173+00:00",
+  "time_kind": "completed",
+  "author": "Codex · unabhängige Ableitung und CUDA-Gegencheck",
+  "topic": "theory",
+  "status": "discrepancy",
+  "title": "Echte Rabi-Messdaten: Ideale Vorhersagen zeigen Abweichungen",
+  "question": "Treffen drei analytische Grenzfälle die veröffentlichten Labor-Messwerte innerhalb der angegebenen Unsicherheiten?",
+  "action": "59 Originalpunkte von Koch et al. 2023; drei Messkanäle, 15 feste Vergleichsvarianten ohne Fit; numerische Auswertung auf .69/CUDA.",
+  "result": "Kein durchgehend präziser Abgleich: Im frühen Fenster nach Anfangswertsubtraktion bleiben im negativen Impulszweig 4/12 und im konstanten Bandkanal 1/12 Punkte über dem Fünffachen der diagnostisch kombinierten Unsicherheit sqrt(u_t²+u_0²), unter angenommener fehlender Paar-Kovarianz. Der direkte Nullkontrast der Anregung hat 1/11 Punkte über dem Fünffachen der ursprünglich angegebenen Unsicherheit. Deskriptive Abstände, keine p-Werte oder vollständige Fehlermodellierung.",
+  "meaning": "Gegenbefunde gegen vereinfachte ideale Messannahmen; Präparation, Messsystematik und Modellgrenzen nicht isoliert. Kein Nachweis einer neuen Kraft, eines universellen Speichers oder Äthers.",
+  "sources": [
+    {
+      "path": "model-lab/empirical-rabi/result-review.md",
+      "label": "Bewertung der tatsächlichen Messdaten",
+      "sha256": "378b029ecee389b647fe493cd47048d9c8b357f0189806c78eedf3740dcddd0d"
+    },
+    {
+      "path": "model-lab/empirical-rabi/runs/koch2023-null-channels-v1-20260906/output/result.json",
+      "label": "CUDA-Auswertung und Originalpunkte",
+      "sha256": "6b88da13e65c50285cfac514a33bac5dedc189978c5eaad2e55215747099a57c"
+    },
+    {
+      "path": "model-lab/empirical-rabi/comparison-contract.json",
+      "label": "Festgelegter Vergleich",
+      "sha256": "0f3ce89fc1c5f1261d04f2d704577349f6cf5de4a2b9e67b827ffa03711ebd72"
+    },
+    {
+      "path": "model-lab/empirical-rabi/source-data.xlsx",
+      "label": "Unveränderte veröffentlichte Messwerte",
+      "sha256": "19cbd1f60b43d8852b94fd6fac7b2b9b9ab495a9284b6bfdad03dc1486b51102"
+    },
+    {
+      "path": "coordination/empirical-rabi-mapping-review-20260906.md",
+      "label": "Mathematische Herleitung und Messabbildung",
+      "sha256": "845dbd0d030479c758b960d4144484778e15bd7782ce4203bd27c32fce0956cc"
+    }
+  ],
+  "recorded_at": "2026-09-06T16:59:17.574049+00:00"
+}

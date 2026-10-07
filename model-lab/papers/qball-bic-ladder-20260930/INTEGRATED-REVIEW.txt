@@ -1,0 +1,86 @@
+INTEGRIERTER TEXTREVIEW v0.8-STAGE — 2026-10-01
+second_field_delay; nur Lektüre/Hashprüfung, keine Numerik, kein Build,
+keine Änderung an Manuskript oder kanonischer Fassung.
+URTEIL: GO für die hier gebundene integrierte bedingte Darstellung.
+KEIN Build-/Publikations-GO; ausstehende Gamma/H4-Ergänzung nicht vorweggenommen.
+
+Geprüfte SHA256:
+stage/main.tex
+4a7d835fd7a6ddfd7480b4f3e2786217af8ab3f8f8b0b81c59f3a5af6ec5c077
+stage/sections/NONLINEAR.tex
+9946f5560898d877eb44dc56e0f20c87382c30eec287fdc810733825788d98e6
+stage/sections/MONOPOLE-BOUND.tex
+f30d04490a002160d08f4b9d7090197c379e0737c45bafe2f69456d350ecea5c
+MAIN.diff e622872ce172a3a72eda12fe5e5da3153067663315c1490a812cb08196860ad2
+NONLINEAR.diff ffa16d4b870df8e32695b2ca12a5afdc32cbd5f1b8ec4cebdd95daeb3774d0cf
+before/main7dcfcd01092d276199a1dfba3fa9fc3312dcaa64c4a3857c2b3ee64314a589b7
+before/NONLINEAR7c872bc5a3927a039528382ce98537a9b821302a854ff829d5d8cf3dfb33ff3e
+Letzte beide Hashes stimmen mit kanonischem main.tex/NONLINEAR.tex überein:
+kanonischer v0.7-Text zum Lesezeitpunkt unverändert.
+
+1. Diffumfang und Integration
+MAIN.diff betrifft Version, Abstract, mathematischen Ausblick, Conclusion
+und neuen Provenienzabsatz. NONLINEAR.diff ersetzt nur den überholten
+Ausblick nach der alten approximativen Tabelle und fügt den neuen separaten
+Abschnitt vor der älteren Evidenz zum ersten Radialmodus ein. Keine Änderung
+von Modellgleichung, Quellenkonvention, bisherigen Messzahlen oder einer
+anderen physikalischen These in diesen Diffs.
+Abstract bezeichnet die Fehlerbilanz als vollständig, die daraus gezogene
+Nichtnullaussage aber ausdrücklich als abhängig von den exakten Moden- und
+analytischen Einschließungshypothesen. Das trifft die neue Evidenz besser als
+'der Transfer bleibt unbewiesen' und behauptet keinen unabhängigen Neubau
+der Elternbeweise. Conclusion und Ausblick halten dieselbe Bedingtheit.
+
+2. Ergebnisabschnitt und Normkonvention
+Jost-Eingangsnorm lim exp(kappac*r)v=1 ist explizit von der alten numerischen
+unit-L2-Leistungstabelle getrennt. L=0 bezeichnet radiierten Sektor, l=1 die
+lineare Tangente. 'Second computational channel' ist der Codeindex1 und
+hat Eminus=omega-2rho<0; im Paper wird zulässig Eins-basierter Index2 benutzt.
+Die zweistufige Konjugation ist jetzt richtig beschrieben: Solver-physical
+zweiter Koeffizient conj(C2), positive-Carrier-Paperkoeffizient C2. Beträge
+bleiben gleich; kein erneuter s0²-Faktor.
+
+Der Vektornormbound im neuen Abschnitt ist zulässig, nicht aus zwei bloßen
+Einzelkomponentenbounds ohne Normumrechnung erschlichen. Ergänzend gelesen:
+FEHLERBILANZ-KONKRET-L0(F) gibt ausdrücklich ||C*-Cnum||2; die geprüften
+L0-GLOBALE-GEWICHTE kontrollieren Operatornormen von Z/Z', und die Assembly
+verwendet sqrt(O0²+O1²). Alle Quell-, Potential-, Residual-, Sprung-, Ursprung-
+und Rand-/Extraktionsterme sind berücksichtigt. 'Through infinity' bezieht
+sich korrekt auf die exakte Außeneinschließung einschließlich b*/c*; nicht
+auf eine bis unendlich ausgeführte numerische IVP.
+
+Die getrennten Druckzahlen für E, |Cnum,2| und |C*,2| geben Ober-/Untergrenze
+in sicherer Richtung wieder; maßgeblich bleibt die gerichtete exakte Marge
+in RESULT-REVIEW. Cnum-Untergrenze wird nicht als exakte Amplitude ausgegeben.
+Erster Kanal bleibt unentschieden, kein Nullschluss. Es wird weder die Phase
+noch eine scharfe tatsächliche Amplitude beansprucht.
+
+3. Alte Tabelle und weiterführende Aussagen
+Die alte numerical-only-Caveat ist sinnvoll erhalten: 'that calculation'
+bezieht sich auf die approximativen Eingaben, und der neue Verweis kennzeichnet
+den getrennten validierten Transfer. Die ursprüngliche Leistungstabelle wird
+nicht rückwirkend zertifiziert. Die neue Aussage behauptet keine unit-L2-
+Normschranke, epsilon^4-Gesamtleistung, Lebensdauer oder Dynamikinstabilität.
+Die bisherige Quellen-Stromprüfung bleibt ein numerischer Konsistenztest.
+
+Abstract, neuer Abschnitt, Ausblick und Conclusion stimmen in der
+Polarisationsgrenze überein: L0 deckt gerichtete reelle Dipole und via p^T p
+weitere nichtisotrope komplexe Polarisationen, aber keine zirkulare p^T p=0.
+Die offene L2-Bescheinigung wird nicht durch die neue L0-Aussage ersetzt.
+Die im älteren Polarisationsabschnitt erwähnten L2-Zahlen bleiben unzertifiziert.
+Keine allgemeine Nichtlinearitäts-/Nichtexistenz-/Bildungsbehauptung hinzugefügt.
+
+4. Ausstehendes Gamma/H4-Lemma
+Der Text nennt eine gleichmäßig gewichtete C²-Fortsetzungsklasse und verlangt
+gamma klein genug, um Hintergrund und Tangente einzuschließen. Dieser Review
+bestätigt die KONSISTENZ der bedingten Aussage, nicht die noch in Bearbeitung
+befindliche quantitative oder qualitative Gamma/H4-Verifikation. Der neue
+Abschnitt sagt zutreffend, dass er die Nichtnullprämisse liefert. Es wäre
+unzulässig, dieses Text-GO als Erledigung der zusätzlichen Funktionsraum-
+Voraussetzung zu verwenden. Nach tatsächlicher Lemma-/Texteinfügung sind
+geänderte Sätze und Hashes erneut zu lesen; Build erst nach Rootfreigabe der
+finalen Fassung. Keine hypothetische spätere Einfügung ist hier freigegeben.
+
+Kein aktueller inhaltlicher Änderungsblocker in den gebundenen drei Texten.
+Der Provenienzabsatz benennt projektinterne Nichtautorprüfung und trennt sie
+von unabhängiger Intervall-Neuimplementierung: angemessene Reichweite.

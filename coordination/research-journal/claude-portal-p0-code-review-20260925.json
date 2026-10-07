@@ -1,0 +1,28 @@
+{
+  "id": "claude-portal-p0-code-review-20260925",
+  "time": "2026-09-25T21:41:16+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung; Review astra (OpenAI, gpt-6-astra, high), 23:32:43 bis 23:40:13 MESZ (gemessen)",
+  "topic": "operations",
+  "status": "reported",
+  "title": "Portal P0: astras unabhaengiges Code-Review sagt NICHT P1-REIF (acht Befunde mit Angriffsablaeufen); fuer die Heimnetz-Vorschau mit Testpersonen kein Verwerfungsurteil; Haertung beauftragt",
+  "question": "Ist der P0-Code reif fuer P1, also online fuer die zwei von Finn benannten Gutachter:innen (astras Konzeptauflage 10)?",
+  "action": "astra REVIEW-ONLY ueber 74 Dateien (Code, Tests, Texte, Bauplan), statisch, ohne Anfragen an die Vorschau. Danach Haertungsauftrag an den Portal-Agenten (23:41).",
+  "result": "NICHT P1-REIF (bbb8b9bc...). Kein HTTP-Weg zu fremden geschuetzten Dateien gefunden; Einloesung transaktional, Widerrufskaskade und Eigentumspruefung gut, kein gespeichertes XSS gefunden. Befunde: B1 Ruecksicherung macht verbrauchte Einladungen, entzogene Bereiche, widerrufene Zustimmungen und Loeschantraege wieder wirksam; B2 Widerruf nicht absturzfest (Journal nach DB-Aenderung, synchronous=NORMAL, Normalstart ohne Journalabgleich); B3 Wettlauf zwischen Loeschung und Annahme; B4 zwei anonyme 26-MiB-Uploads fuellen den nginx-Puffer vor der Anmeldung; B5 kein Gesamtlimit fuer dauerhafte Daten; B6 Regel 15.8.1 ueber Titel und Verfasserfeld umgehbar, fehlende Sperrdatei schaltet still ab; B7 die in Art. 13 zugesagten Loeschfristen setzt der Code nicht um; B8 das Sichtungswerkzeug vertraut Server-Metadaten.",
+  "meaning": "Die Vorschau bleibt fuer Finns Sichtpruefung nutzbar. Vor P1 muessen die blockierenden Auflagen 1 bis 7 und 9 im Code und Betrieb umgesetzt und auf der .69 nachgewiesen sein, danach folgt ein Nachreview. Auflage 8 bleibt bei Finn: Verantwortlicher, Kontakt, Hostervertrag, Vorfallsweg, Lizenz D1, Gaia-Beleg, interne Pfade. Das dritte Review des Tages mit derselben Lehre: Selbst gemeldete Abnahmen ('Auflagen erledigt') tragen erst nach fremder Pruefung.",
+  "sources": [
+    {
+      "path": "coordination/portal-20260925/review-astra-p0/REVIEW-astra-P0-CODE.md",
+      "sha256": "bbb8b9bcfd75efedff8041aacd46e3cb3507fcef7303172da7a706c20e6457a2"
+    },
+    {
+      "path": "coordination/portal-20260925/review-astra-p0/BRIEF.md",
+      "sha256": "40164dbab4a75db11befa72a6045b578fbbdcc895ee4df4c9c630d7eb4ba5b47"
+    },
+    {
+      "path": "coordination/portal-20260925/BAUPLAN.md",
+      "sha256": "905d2c85cbc2964a01b9aa4a9ae4a88028a4a48b8bb49cefb4e772f52aa02056"
+    }
+  ],
+  "recorded_at": "2026-09-25T21:41:39.683855+00:00"
+}

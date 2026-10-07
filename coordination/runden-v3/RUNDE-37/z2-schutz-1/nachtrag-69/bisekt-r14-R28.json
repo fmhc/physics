@@ -1,0 +1,291 @@
+{
+ "kopf": {
+  "karte": "Z2-SCHUTZ-1 (Runde 49)",
+  "modus": "bisekt",
+  "args": {
+   "modus": "bisekt",
+   "aus": "/home/fmh/fmhc-physics-remote/z2-schutz-1/lauf",
+   "r0": 14.0,
+   "R": 28.0,
+   "nmax": 6000,
+   "ftol": 1e-07,
+   "dtmax": 0.1,
+   "dtstart": 0.02,
+   "capw": 0.05,
+   "start": "/home/fmh/fmhc-physics-remote/z2-schutz-1/lauf/start-r14-R28.npz",
+   "eingaben": "../eingaben-gfn1",
+   "aufgabe": "haupt",
+   "verfahren": "neb",
+   "M": 12,
+   "d_grad": 30.0,
+   "sigma": 0.001,
+   "ks": 1.0,
+   "nvor": 150,
+   "ftol_ci": 0.001,
+   "ftol_band": 0.005,
+   "budget": 480.0,
+   "zs0_nmax": 3000,
+   "nmax_rel": 20000,
+   "zusatz": [],
+   "fortsetzung": "",
+   "fstufe": 1,
+   "keim": "",
+   "kappen": "30,60,90",
+   "delta_k": 1.0,
+   "nkeim": 2000,
+   "e_T": 0.001,
+   "keim_min": 100,
+   "zugpfad": "",
+   "nzug": 17,
+   "kappa": 100.0,
+   "nzugmax": 1500,
+   "ftol_zug": 0.0001,
+   "dtmax_zug": 0.05,
+   "kappe_b": 30.0,
+   "nbis": 800,
+   "nskip": 30,
+   "nbisekt": 14,
+   "nbisekt_min": 10,
+   "zug_von": 0,
+   "k": 4,
+   "tol": 1e-09,
+   "maxiter": 200000
+  },
+  "code_sha256": "b4f878874aed5712cc277c230c3e8eeb093c1b477f38abf38bbaaf1d9349e645",
+  "finn_sha256": "e9f357b63788918f7edd6e4e4abc84dcafb7924fbbbb5e147150c16f12d6c155",
+  "g2_sha256": "c9374a9898c9ab0ff8458b5077ed0e31f4cec53362d432ab21ef670e3be67933",
+  "start_utc": "2026-10-05T11:41:03Z",
+  "schreibzeit_utc": "2026-10-05T11:43:41Z",
+  "numpy": "2.4.4"
+ },
+ "netz_info": {
+  "art": "diamant",
+  "feld": "so3",
+  "N": 101965,
+  "frei": 80554,
+  "kern": 11543,
+  "rand": 9868,
+  "bindungen": 199292,
+  "grad_frei_min": 4,
+  "grad_frei_max": 4,
+  "bindungslaenge_min": 0.8660254037844386,
+  "bindungslaenge_max": 0.8660254037844386,
+  "innen_frei": 15584,
+  "z3_gleich_g2": null
+ },
+ "E_S": 6558.695145461932,
+ "schritte": [
+  {
+   "lambda": 1.0,
+   "klasse": "T",
+   "schritte": 14,
+   "fmin": 11.347870747596543,
+   "E_fmin": 6549.262146954188
+  },
+  {
+   "lambda": 0.5,
+   "klasse": "T",
+   "schritte": 79,
+   "fmin": 2.4121774862614966,
+   "E_fmin": 6634.855034433054,
+   "it_fmin": 63
+  },
+  {
+   "lambda": 0.25,
+   "klasse": "S",
+   "schritte": 30,
+   "fmin": 1.2190822668560857,
+   "E_fmin": 6687.8156014765555,
+   "it_fmin": 30
+  },
+  {
+   "lambda": 0.375,
+   "klasse": "S",
+   "schritte": 30,
+   "fmin": 5.271667532558262,
+   "E_fmin": 7013.427690333609,
+   "it_fmin": 30
+  },
+  {
+   "lambda": 0.4375,
+   "klasse": "T",
+   "schritte": 124,
+   "fmin": 1.3838618669272893,
+   "E_fmin": 6581.79396850077,
+   "it_fmin": 114
+  },
+  {
+   "lambda": 0.40625,
+   "klasse": "S",
+   "schritte": 127,
+   "fmin": 0.9364871948548337,
+   "E_fmin": 6691.223759244858,
+   "it_fmin": 96
+  },
+  {
+   "lambda": 0.421875,
+   "klasse": "T",
+   "schritte": 286,
+   "fmin": 0.7728044968906491,
+   "E_fmin": 6560.763092203662,
+   "it_fmin": 281
+  },
+  {
+   "lambda": 0.4140625,
+   "klasse": "T",
+   "schritte": 435,
+   "fmin": 0.3607110919796845,
+   "E_fmin": 6594.234201699042,
+   "it_fmin": 338
+  },
+  {
+   "lambda": 0.41015625,
+   "klasse": "offen",
+   "schritte": 799,
+   "fmin": 1.0957112707615826e-12,
+   "E_fmin": 6558.695145461912,
+   "it_fmin": 786
+  }
+ ],
+ "lambda_lo": 0.40625,
+ "lambda_hi": 0.4140625,
+ "klammer": true,
+ "E_fmin_T": 6594.234201699042,
+ "E_fmin_S": 6691.223759244858,
+ "fmin_T": 0.3607110919796845,
+ "fmin_S": 0.9364871948548337,
+ "barriere": 132.5286137829262,
+ "lokalisierung": {
+  "B_bindungssumme": 132.5286137829259,
+  "L6": 0.15645797851918034,
+  "n50": 28,
+  "Delta_max": 3.5356071839114773,
+  "r_max": 14.042346669983617,
+  "gamma_max_grad": 13.764236393471483,
+  "c_sattel_max": -0.07753345413874203,
+  "bindungen_c_le_0": 10,
+  "anteil_kernbindungen": 1.225493259091074,
+  "bindungen_Delta_gt_0.5": 106,
+  "top12": [
+   {
+    "bindung": 38951,
+    "Delta": 3.5356071839114773,
+    "c_sattel": -0.07753345413874203,
+    "c_start": 0.9433521253956837,
+    "r": 14.042346669983617,
+    "gamma_grad": 13.764236393471483,
+    "kernbindung": true
+   },
+   {
+    "bindung": 37887,
+    "Delta": 3.5016263234236114,
+    "c_sattel": -0.2251361544712909,
+    "c_start": 0.9623371908567308,
+    "r": 13.863170633011771,
+    "gamma_grad": 23.129658342856626,
+    "kernbindung": true
+   },
+   {
+    "bindung": 37888,
+    "Delta": 3.450664292106576,
+    "c_sattel": -0.020209628541087526,
+    "c_start": 0.9290180311018795,
+    "r": 14.184057952504283,
+    "gamma_grad": 21.80810751472874,
+    "kernbindung": true
+   },
+   {
+    "bindung": 37863,
+    "Delta": 3.439292630794101,
+    "c_sattel": 0.25397767335830945,
+    "c_start": 0.9614196878902707,
+    "r": 13.827056809024834,
+    "gamma_grad": 19.31346190171202,
+    "kernbindung": true
+   },
+   {
+    "bindung": 186841,
+    "Delta": 3.4064208239485954,
+    "c_sattel": 0.2677986117766784,
+    "c_start": 0.9608960934755979,
+    "r": 13.970952007647869,
+    "gamma_grad": 24.982361009525782,
+    "kernbindung": true
+   },
+   {
+    "bindung": 190057,
+    "Delta": 3.4015477542414065,
+    "c_sattel": 0.3231215454257485,
+    "c_start": 0.97713585118891,
+    "r": 14.600941750448838,
+    "gamma_grad": 8.66388374115263,
+    "kernbindung": false
+   },
+   {
+    "bindung": 40008,
+    "Delta": 3.324897664649613,
+    "c_sattel": -0.022434060236390167,
+    "c_start": 0.9119910653186758,
+    "r": 14.394009170484782,
+    "gamma_grad": 8.676828706380578,
+    "kernbindung": true
+   },
+   {
+    "bindung": 39983,
+    "Delta": 2.6842511295975564,
+    "c_sattel": 0.41932682211358757,
+    "c_start": 0.920270485315741,
+    "r": 14.324367350776788,
+    "gamma_grad": 9.942587589559754,
+    "kernbindung": true
+   },
+   {
+    "bindung": 186817,
+    "Delta": 2.67441973018604,
+    "c_sattel": 0.5031343248877339,
+    "c_start": 0.9600776434365846,
+    "r": 14.113380176272443,
+    "gamma_grad": 23.28453013068932,
+    "kernbindung": true
+   },
+   {
+    "bindung": 40032,
+    "Delta": 2.6613110424887334,
+    "c_sattel": -0.4558480385314713,
+    "c_start": 0.934411683817777,
+    "r": 14.289419162443238,
+    "gamma_grad": 12.89266841915001,
+    "kernbindung": true
+   },
+   {
+    "bindung": 40033,
+    "Delta": 2.655709435689482,
+    "c_sattel": -0.482566479124719,
+    "c_start": 0.9469940684593533,
+    "r": 14.600941750448838,
+    "gamma_grad": 10.652696675933399,
+    "kernbindung": false
+   },
+   {
+    "bindung": 38976,
+    "Delta": 2.5732185182826033,
+    "c_sattel": -0.4439122995303021,
+    "c_start": 0.9167130190222736,
+    "r": 14.324367350776788,
+    "gamma_grad": 16.14933007146009,
+    "kernbindung": true
+   }
+  ]
+ },
+ "freigabe": {
+  "schritte": 863,
+  "E_end": 6339.140567031666,
+  "fmax_end": 9.084118930337673e-08,
+  "E_max": 6557.653938186031,
+  "T_erreicht": false,
+  "E_max_unter_ES": true
+ },
+ "gueltig": false,
+ "laufzeit_s": 217.8755075931549,
+ "maxrss_mb": 168.23828125
+}

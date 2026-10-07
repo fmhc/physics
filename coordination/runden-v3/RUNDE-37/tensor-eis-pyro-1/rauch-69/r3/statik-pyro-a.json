@@ -1,0 +1,88 @@
+{
+ "info": {
+  "numpy": "2.4.4",
+  "python": "3.12.3",
+  "host": "ubuntu-auto",
+  "start_utc": "2026-10-04T10:07:40Z",
+  "argv": [
+   "code/tp.py",
+   "statik",
+   "--modell",
+   "pyro1",
+   "--L",
+   "32",
+   "--L",
+   "48",
+   "--L",
+   "64",
+   "--mitmin",
+   "--out",
+   "rauch/r3/statik-pyro-a.json",
+   "--npz",
+   "rauch/r3/statik-pyro-a.npz"
+  ],
+  "skript_sha256": "419d7da6caa211c721eb6a8c87403977415cf3050f03365377f51cb77b374dfd"
+ },
+ "laeufe": [
+  {
+   "modell": "pyro1",
+   "L": 32,
+   "t_kern_s": 2.630887031555176,
+   "stat": {
+    "res_max": 1.784308773820293e-15,
+    "res_gross_anzahl": 0,
+    "kap_im_max": 1.879412646609537e-14,
+    "tan_min_rel": -2.603353094121025e-14,
+    "tan_neg_anzahl": 0,
+    "kap_alt_maxabw": 7.986934466053847e-15
+   },
+   "G0": -0.05460201493680922,
+   "mittel": 6.776263578034403e-21,
+   "n_vektoren": 29101,
+   "spiegel_max": 1.734723475976807e-18,
+   "t_gesamt_s": 2.8794074058532715,
+   "maxrss_MB": 58.44921875
+  },
+  {
+   "modell": "pyro1",
+   "L": 48,
+   "t_kern_s": 8.639381647109985,
+   "stat": {
+    "res_max": 1.9991573047549853e-15,
+    "res_gross_anzahl": 0,
+    "kap_im_max": 3.1602023382587884e-14,
+    "tan_min_rel": -6.24511166071702e-14,
+    "tan_neg_anzahl": 0,
+    "kap_alt_maxabw": 1.9239375427481952e-14
+   },
+   "G0": -0.05507731602493694,
+   "mittel": 0.0,
+   "n_vektoren": 29101,
+   "spiegel_max": 3.469446951953614e-18,
+   "t_gesamt_s": 8.876739263534546,
+   "maxrss_MB": 84.83984375
+  },
+  {
+   "modell": "pyro1",
+   "L": 64,
+   "t_kern_s": 20.027945518493652,
+   "stat": {
+    "res_max": 2.22299177598734e-15,
+    "res_gross_anzahl": 0,
+    "kap_im_max": 9.975326162338673e-14,
+    "tan_min_rel": -9.12794260047687e-14,
+    "tan_neg_anzahl": 0,
+    "kap_alt_maxabw": 3.5412084957015696e-14
+   },
+   "G0": -0.05531490666732533,
+   "mittel": 0.0,
+   "n_vektoren": 29101,
+   "spiegel_max": 3.469446951953614e-18,
+   "t_gesamt_s": 20.27592134475708,
+   "maxrss_MB": 112.984375
+  }
+ ],
+ "laufzeit_s": 32.094383001327515,
+ "maxrss_MB": 112.984375,
+ "ende_utc": "2026-10-04T10:08:12Z"
+}

@@ -1,0 +1,266 @@
+\section{Computer-assisted existence results}
+\label{sec:certified-existence}
+
+We distinguish the three computer-assisted existence results below from
+the numerically observed ladder. The proof establishes a localized mode
+at a parameter pair inside each specified box. It does not certify every
+observed radiation minimum, an infinite ladder, or a nonlinear
+nonradiating solution.
+
+\subsection{Model and precise statement}
+\label{sec:proof-model}
+Consider the complex Klein--Gordon equation in three spatial dimensions,
+\begin{equation}
+ \partial_t^2\phi-\Delta\phi+U'(|\phi|^2)\phi=0,
+ \qquad U(S)=S-S^2+\tfrac12 S^3.
+ \label{eq:proof-kg}
+\end{equation}
+A stationary Q-ball has the form $\phi_0=e^{i\omega t}f(r)$, where
+\begin{equation}
+ f''+\frac{2}{r}f'=(1-\omega^2)f-2f^3+\tfrac32 f^5,
+ \qquad f(0)=a,\quad f'(0)=0.
+ \label{eq:proof-profile}
+\end{equation}
+We use a real orthonormal basis $Y_{\ell m}$ of spherical harmonics and
+write a linear perturbation as
+\begin{equation}
+ \delta\phi=e^{i\omega t}
+ \left[\frac{A(r)}{r}e^{i\rho t}
+       +\frac{B(r)}{r}e^{-i\rho t}\right]Y_{\ell m}.
+ \label{eq:proof-mode}
+\end{equation}
+In a complex harmonic basis the second sideband instead contains
+$Y_{\ell m}^*$. With $S=f^2$, substitution in the linearization of
+\eqref{eq:proof-kg} gives
+\begin{equation}
+ \begin{aligned}
+ A''&=\left[1-4S+\tfrac92 S^2-(\omega+\rho)^2
+                  +\frac{\ell(\ell+1)}{r^2}\right]A+CB,\\
+ B''&=\left[1-4S+\tfrac92 S^2-(\omega-\rho)^2
+                  +\frac{\ell(\ell+1)}{r^2}\right]B+CA,
+ \qquad C=-2S+3S^2.
+ \end{aligned}
+ \label{eq:proof-radial-system}
+\end{equation}
+Regularity requires $A,B=O(r^{\ell+1})$. Define
+\begin{equation}
+ \kappa_0=\sqrt{1-\omega^2},\qquad
+ k=\sqrt{(\omega+\rho)^2-1},\qquad
+ \kappa_c=\sqrt{1-(\omega-\rho)^2}.
+ \label{eq:proof-channel-numbers}
+\end{equation}
+
+\noindent\textbf{Computer-assisted existence statement.}
+For each row of Table~\ref{tab:proof-cases}, the corresponding certificate
+encloses a quadruple $(a_*,c_*,\rho_*,\omega_*)$ with $c_*>0$ such that
+\eqref{eq:proof-profile} has a positive global solution satisfying
+$r e^{\kappa_0r}f(r)\to c_*$, and
+\eqref{eq:proof-radial-system} has a nonzero real solution regular at the
+origin with
+\begin{equation}
+ |A(r)|+|B(r)|\leq K_J e^{-\kappa_c r}\quad(r\geq L),
+ \qquad e^{\kappa_c r}B(r)\longrightarrow1.
+ \label{eq:proof-decay}
+\end{equation}
+The resulting spatial fields in \eqref{eq:proof-mode} are smooth and
+exponentially localized. The certification is
+conditional on the correctness of the stated interval-arithmetic
+implementation and its underlying arithmetic libraries.
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabular}{ccll}
+\hline
+Case & $\ell$ & Enclosure of $\omega_*^2$ & Enclosure of $\rho_*$ \\
+\hline
+C0 & 0 & $0.797676787111865191750\pm4.8\,10^{-22}$
+       & $1.744617544837398735781\pm6.8\,10^{-22}$ \\
+C1 & 0 & $0.6851289044582160933\pm2.5\,10^{-20}$
+       & $1.6903565973281434568\pm4.7\,10^{-20}$ \\
+C2 & 1 & $0.7544960137826372331\pm7.8\,10^{-20}$
+       & $1.826342030181069956\pm3.0\,10^{-19}$ \\
+\hline
+\end{tabular}
+\caption{The three certified parameter boxes, displayed as outward-rounded
+decimal enclosures. The proof uses the full exact dyadic boxes in
+$(a,c,\rho,\omega)$, not these two-coordinate summaries. C0 is BEWEIS-1;
+C1 and C2 are respectively T1 and T2 of BEWEIS-2. Their numerical ladder
+assignments are $(\ell,n)=(0,1),(0,2),(1,1)$; the labels $n$ are not
+separately certified nodal counts.}
+\label{tab:proof-cases}
+\end{table}
+
+For the enclosed parameter pair and its fixed radial angular channel, every
+solution of \eqref{eq:proof-radial-system} that is square integrable on
+$[L,\infty)$ is a scalar multiple of the constructed solution. This is
+\emph{geometric radial simplicity}. It neither establishes algebraic
+simplicity of a dynamical generator nor excludes Jordan chains. For C2,
+the three-dimensional $\ell=1$ angular multiplet remains degenerate.
+The translation mode at $\rho=0$ does not belong to the fixed nonzero
+frequency considered here.
+
+The term \emph{embedded} is used operationally: $k^2>0$ and
+$\kappa_c^2>0$, so a free asymptotic channel is open, while the constructed
+mode is exponentially localized and has no oscillatory radiation tail.
+We do not identify the essential spectrum of a fully specified operator
+pencil in this proof. The perturbation is periodic after removing
+$e^{i\omega t}$; the two laboratory frequencies are $\omega\pm\rho$,
+with no claim about their rational commensurability.
+
+\subsection{Matching to an infinite exterior}
+\label{sec:proof-tails}
+The matching radius $L$ is not a truncation at which the potential is
+discarded. Both the profile and the mode are continued to infinity by
+Volterra constructions. For the profile set
+$\widetilde u(r)=r e^{\kappa_0r}f(r)$ and
+$q_f=-2f^2+\tfrac32 f^4$. Its tail satisfies
+\begin{equation}
+ \widetilde u(r)=c+
+ \int_r^\infty\frac{1-e^{-2\kappa_0(s-r)}}{2\kappa_0}
+                q_f(s)\widetilde u(s)\,ds.
+ \label{eq:proof-profile-volterra}
+\end{equation}
+For a chosen bound $\overline f>0$, put
+\begin{equation}
+ \begin{aligned}
+ K_P&=\frac{(2+\tfrac32\overline f^2)e^{-2\kappa_0L}}
+                  {4\kappa_0^2L^2},\quad
+ \eta=2K_Pc^3,\quad m=c+\eta,\\
+ \Lambda&=\frac{(6+\tfrac{15}{2}\overline f^2)m^2e^{-2\kappa_0L}}
+                     {4\kappa_0^2L^2}.
+ \end{aligned}
+ \label{eq:proof-profile-constants}
+\end{equation}
+The conditions $m e^{-\kappa_0L}/L\leq\overline f$,
+$K_Pm^3\leq\eta$, $\Lambda<1$, and $c>\eta$ give a positive unique
+fixed point in $\|\widetilde u-c\|_\infty\leq\eta$. Common interval
+majorants verify these inequalities over the entire parameter box.
+They also bound the corrections to both profile matching data.
+
+For the mode, write $dV=-4f^2+\tfrac92 f^4$ and use
+$\widetilde A=e^{\kappa_cr}A$, $\widetilde B=e^{\kappa_cr}B$.
+In the $\ell=0$ case the normalized Volterra kernels are
+\begin{equation}
+ K_A(r,s)=e^{-\kappa_c(s-r)}\frac{\sin(k(s-r))}{k},\qquad
+ K_B(r,s)=\frac{1-e^{-2\kappa_c(s-r)}}{2\kappa_c}.
+ \label{eq:proof-l0-kernels}
+\end{equation}
+The inhomogeneous free term is $(0,1)$. For $\ell=1$ use
+\begin{equation}
+ \begin{aligned}
+ j(x)&=\sin(x)/x-\cos(x),\quad y(x)=-\cos(x)/x-\sin(x),\\
+ d(u)&=e^{-u}(1+1/u),\quad g(u)=e^u(1-1/u),\\
+ G_A(r,s)&=\frac{j(kr)y(ks)-y(kr)j(ks)}{k},\\
+ G_B(r,s)&=\frac{d(\kappa_cr)g(\kappa_cs)-g(\kappa_cr)d(\kappa_cs)}{2\kappa_c}.
+ \end{aligned}
+ \label{eq:proof-l1-kernels}
+\end{equation}
+Here $K_{A,B}=e^{-\kappa_c(s-r)}G_{A,B}$ and the free normalized
+term is $(0,1+1/(\kappa_cr))$. For $kL,\kappa_cL\geq1$, valid bounds are
+\begin{equation}
+ \begin{aligned}
+ |K_A|&\leq a_1=\frac{1+(kL)^{-2}}{k},&
+ |K_B|&\leq b_1=\frac{b_0}{2\kappa_c},\quad b_0=1+(\kappa_cL)^{-1},\\
+ |e^{-\kappa_c(s-r)}\partial_rG_A|&\leq a_2=\sqrt{1+(kL)^{-2}},&
+ |(\partial_r-\kappa_c)K_B|&\leq b_2=1+(\kappa_cL)^{-1}
+                                      +\tfrac12(\kappa_cL)^{-2}.
+ \end{aligned}
+ \label{eq:proof-l1-majorants}
+\end{equation}
+In particular, the last bound concerns the normalized \emph{physical}
+derivative, not $\partial_rK_B$ alone. Since
+$|dV|+|C|\leq6f^2+\tfrac{15}{2}f^4$ is integrable, ordered Volterra
+iteration converges with factorial majorants. With
+$Q\geq\int_L^\infty(|dV|+|C|)\,ds$ and $\mu=\max(a_1,b_1)$, the
+$\ell=1$ correction bounds are $(a_1,b_1,a_2,b_2)\varepsilon$, where
+$\varepsilon=b_0(e^{\mu Q}-1)/\mu$.
+Uniform convergence also supplies the parameter continuity needed below.
+
+\subsection{Finite-dimensional existence certificate}
+\label{sec:proof-krawczyk}
+The four unknowns are $z=(a,c,\rho,\omega)$. Rigorous forward integration
+computes the profile and two regular radial solutions $R_1,R_2$ from
+the origin. For $\ell=1$ the initial variables are
+$A=r^2\alpha$, $B=r^2\beta$; their regular equations have derivative
+term $4\alpha'/r$ or $4\beta'/r$. For a source $F$, the origin
+integral equation has weight
+$r^2\int_0^1\tau(1-\tau^3)F(\tau r)\,d\tau/3$, of mass $r^2/10$.
+This avoids starting a singular $2/r^2$ equation with approximate data.
+Subsequent interval Taylor steps use checked complex a priori enclosures
+and Cauchy remainder bounds; parameter variations enclose the required
+Jacobian over the whole box.
+
+The matching map is $H=H_0+E$. Its first two rows match profile value
+and derivative. The last two match the Wronski forms
+$W(\Psi,R_i)=\Psi\mathbin{\cdot}R_i'-\Psi'\mathbin{\cdot}R_i$,
+using free Jost data in $H_0$ and bounded tail corrections in $E$.
+For $\ell=0$, these two Wronskis equal the origin values of $\Psi$.
+For $\ell=1$, regular solutions behave as $r^2e_i$ and normalized
+singular solutions as $r^{-1}e_i/3$; their Wronski pairing is
+$\delta_{ij}$. Vanishing of both Wronskis therefore removes both
+singular coefficients.
+
+Let $Z=z_0+[-\delta,\delta]$, let $D$ enclose $DH_0(Z)$, and suppose
+$|E_i|\leq\epsilon_i$ on $Z$. A fixed dyadic preconditioner $Y$ is used
+to verify
+\begin{equation}
+ z_0-YH_0(z_0)+(I-YD)[-\delta,\delta]
+             +|Y|[-\epsilon,\epsilon]\subset\operatorname{int}Z,
+ \qquad
+ \max_i\sum_j |I-YD|_{ij}\frac{\delta_j}{\delta_i}<1.
+ \label{eq:proof-krawczyk-inclusion}
+\end{equation}
+The continuous map $z\mapsto z-YH(z)$ maps $Z$ into itself, so Brouwer's
+theorem gives a fixed point. The weighted matrix bound makes $Y$
+invertible, hence the fixed point satisfies $H(z_*)=0$. Differentiability
+of $E$ is not required, and uniqueness of this parameter quadruple is
+not asserted. Profile positivity follows from positive interior
+enclosures, a minimum-principle argument on the remaining finite
+interval, and the positive exterior fixed point.
+
+Finally, $2\kappa_0>\kappa_c$, verified for all three boxes, permits
+construction of two bounded oscillatory comparison solutions at infinity.
+Their mutual Wronskian is nonzero. Together with the decaying Jost
+solution they span a three-dimensional subspace of the four-dimensional
+radial Cauchy-data space. Every square-integrable solution is
+Wronski-orthogonal to this subspace, whose symplectic complement is
+exactly the decaying line. This proves the geometric simplicity stated
+above.
+
+\subsection{Scope of verification}
+\label{sec:proof-verification-limits}
+The defining certificates use $L=40$ for C0, $L=32$ for C1, and $L=36$
+for C2, with 256-bit ball arithmetic. Additional runs use larger matching
+radii and 320-bit arithmetic. C2's originally specified repeat at $L=40$
+failed the inclusion test. A subsequent run with an enlarged $c$-radius
+passed after reevaluating the bounds on the new box; this is an adaptive
+additional certificate, not an originally successful repeat. The C2
+existence conclusion rests on its first successful certificate alone.
+
+Project-internal cross-house mathematical and code reviews found no blocking error in
+the reviewed chains; the stated scope and harmonic conventions include
+their corrections. Review and higher-precision reruns do not constitute
+a second independent implementation. Correctness of Python--FLINT,
+Arb/Acb, and the recorded execution remains part of the computational
+trust base. For C0 the simplicity inequality was recorded and separately
+checked, but was not included in the historical aggregate success flag;
+the newer C1/C2 drivers include it explicitly. Source and input versions
+are tied to the archived certificates by hashes.
+
+The validated arithmetic uses Arb/Acb midpoint--radius enclosures
+\cite{Johansson2017Arb}, accessed through Python--FLINT
+\cite{PythonFlintDocs,FlintSoftware}.
+The finite-dimensional test is a Krawczyk-type preconditioned inclusion
+\cite{Krawczyk1969}; for the separately bounded continuous tail correction,
+existence follows from the explicit Brouwer argument in
+Section~\ref{sec:proof-krawczyk}, without asserting uniqueness of the
+parameter quadruple. These references identify the methodological
+background; the integration, tail bounds and inclusion hypotheses remain
+the specific checks of the archived certificates.
+
+These results establish three linear localized modes in specified
+parameter boxes. They do not establish nonlinear radiation cancellation,
+linear or nonlinear stability, algebraic spectral simplicity, the absence of other
+modes or parameter zeros, or the existence of every member of the
+empirical ladder.

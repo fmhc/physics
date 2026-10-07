@@ -1,0 +1,113 @@
+% Conditional enclosure incorporated in v0.8; scope remains conditional.
+% Numerical error budget does not remove the inherited analytical hypotheses.
+\subsection{A conditional enclosure for the monopole response}
+\label{nl:conditional-monopole}
+For the real dipole tangent at T2, we assembled a complete error budget
+for the $L=0$ second-harmonic forced problem. Here $L$ labels the
+radiated angular sector, whereas the underlying localized linear mode
+has $l=1$. The calculation uses the exact-mode Jost normalization,
+with the evanescent reduced component satisfying
+$\lim_{r\to\infty}e^{\kappa_c r}v(r)=1$.
+It therefore has a different amplitude normalization from the numerical
+power table in Section~\ref{nl:dipole-response}.
+
+The error identity includes the inner and outer source differences,
+operator differences, the residual of the fixed approximate response,
+its actual matching jumps and origin contribution, and the exterior
+boundary and coefficient-extraction errors. The exterior potential and
+source are included through infinity. No measured small linewidth or
+comparison between two numerical resolutions substitutes for these terms.
+
+The following inherited hypotheses specify the exact problem to which
+the numerical error budget applies; they are not new conclusions of
+the scalar summation:
+\begin{enumerate}
+\item The T2 existence enclosure of Section~\ref{sec:certified-existence}
+supplies one common exact parameter tuple
+$z_*=(a_*,c_*,\rho_*,\omega_*)$ in its certified dyadic box, a positive
+regular spherical profile $f_*$, and a nonzero real regular dipole mode.
+All profile, mode and parameter-error bounds refer to this same tuple.
+Neither uniqueness of the tuple nor the claim that every point of the
+box is an exact root is assumed.
+
+\item At that exact tuple, the decaying fundamental Jost solution belongs
+to the span of the two regular origin solutions. This is the inherited
+regular/Jost identification from the T2 Wronskian conditions, not an
+inference from overlap of numerical residual intervals. Its reduced
+components are $O(r^2)$ at the origin and obey the same normalization
+$e^{\kappa_c r}v(r)\to1$, with
+$\kappa_c=\sqrt{1-(\omega_*-\rho_*)^2}$.
+The background and mode satisfy the analytic infinite-tail bounds:
+for $r\ge36$ one may use
+$|f_*(r)|\le(97/8)e^{-0.495r}/r$ and
+$|u(r)|+|v(r)|\le1.097e^{-0.287r}$.
+
+\item The exact quadratic $L=0$ source is the complete product source
+of the real standing dipole in Eqs.~\eqref{nl:quadratic}--\eqref{nl:forced}.
+The fixed nominal mode, source, response and comparison coefficient
+use the same amplitude convention: the nominal unit-$L^2$ mode is divided
+by the exact rational
+$s_0=2558188928468177/2251799813685248$, and quadratic quantities by $s_0^2$.
+This does not identify $s_0$ with the norm of the exact mode.
+The computational carrier conjugation is retained throughout.
+
+\item For the second harmonic, the exact reduced operator is
+$-\partial_r^2-Q_*^2+V_*(r)$ with real symmetric, locally bounded
+$V_*$ and
+$Q_*=\operatorname{diag}(q_+,q_-)$,
+$q_\pm=\sqrt{(\omega_*\pm2\rho_*)^2-1}$.
+Both channels satisfy $5/2<q_\pm<23/5$.
+The exterior Volterra bounds hold at these exact frequencies,
+with the analytic potential and source tails retained through infinity.
+At $R=64$, the exterior potential satisfies
+$\int_R^\infty\|V_*(r)\|_2\,dr/(5/2)<1/2$ and the source is integrable.
+Thus the exact outgoing reduction includes both its homogeneous maps
+and its inhomogeneous source corrections. Together with regular
+Dirichlet data at the origin, the positive outgoing matrix current
+gives the unique forced solution and adjoint extraction problem.
+This argument concerns two open second-harmonic channels, not the
+fundamental embedded mode.
+
+\item The analytic and validated input bounds used in the error identity
+enclose the entire core and exterior, including exact-to-nominal
+frequency and map changes. In Euclidean vector and induced matrix norms,
+the inherited bounds
+$\int_0^\infty\|V_*(r)\|_2\,dr<25/4$ and the Volterra estimates give
+the adjoint amplitude weights $\|Z\|_2<26/5$ and $\|Z'\|_2<14$.
+Source and operator differences, response residuals, origin and matching
+jumps, exterior source terms, and coefficient-extraction rounding are
+all bounded in this same convention, without dropping a tail or counting
+one twice. The directed-arithmetic implementation and its interval
+libraries remain part of the computational trust assumptions.
+\end{enumerate}
+Under these inherited hypotheses, the computed common coefficient-error
+bound is
+
+\begin{equation}
+ \|C_* - C_{\mathrm{num}}\|_2
+ \leq \mathcal E < 0.001023269269845280.
+\end{equation}
+The frozen comparison coefficient in the second computational channel
+has the lower bound
+\begin{equation}
+ |C_{\mathrm{num},2}| > 0.001582591541472706.
+\end{equation}
+The directed arithmetic establishes, before rounding for display,
+\begin{equation}
+ |C_{*,2}| > 0.000559322271627427.
+\end{equation}
+This channel has laboratory frequency $\omega_*-2\rho_*<0$.
+The solver uses a negative carrier and conjugates its second computational
+component to recover that physical sideband. Conjugating the entire field
+to the positive-carrier convention used here gives
+$C_{-,\mathrm{paper}}=C_{*,2}$; all these operations preserve the modulus.
+The first channel remains undecided by this common error bound; that
+failure does not imply its coefficient vanishes.
+
+This result supplies the nonzero-coefficient premise of the conditional
+smooth-continuation argument for a real standing dipole. Its extension
+to a complex dipole polarization is proportional to
+$\boldsymbol p^T\boldsymbol p$ and therefore does not cover circular
+polarization. It gives neither a nonlinear lifetime nor a dynamical
+instability theorem. In particular, the bound is not a certified value
+for any power coefficient in the preceding approximate-input table.

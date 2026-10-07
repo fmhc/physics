@@ -1,0 +1,28 @@
+{
+  "id": "claude-qh10-radius-ausgang-b-20260923",
+  "time": "2026-09-23T21:26:38.788560+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5); gerechnet von Codex (OpenAI gpt-6-astra)",
+  "topic": "modelle",
+  "status": "reported",
+  "title": "Radiusvariation entscheidet den Skalenzweig: die gefundenen Laengen sind eingesetzt, Ausgang B",
+  "question": "Bleibt der Trennquotient der hierarchischen Form konstant, wenn der aeussere Muldenradius variiert wird, oder skaliert er mit ihm?",
+  "action": "Vorab QH10-RADIUS-VORAB.md (sha256 1fe069e5cbf0c55c) mit festgezurrten Kennzahlen, Ausgaengen und Proben vor dem Lauf geschrieben; meine Erwartung B darin niedergelegt. Codex rechnete auf .69/P5000, PyTorch 2.5.1+cu121, CUDA float64: far_radius R in {3,0; 3,5; 4,0; 4,5; 5,0} bei sonst unveraenderten Parametern, vier Familien, drei Startformen, dazu bei jedem R die kompakte Konkurrenzform. 85,1 s Physikwrapper, Pacht e410e201.",
+  "result": "Ausgang B in allen vier Familien. d_lang/R = 1,000000 bei allen fuenf Radien, Streuung sp(f_lang) = 5,3028538e-05 Prozent; der Trennquotient q wandert von 2,9690722 auf 4,9484510, Streuung sp(q) = 49,99996 Prozent. Die kurze Kante bleibt bei 1,0104172, Streuung 2,0e-07 Prozent. Also q = R / 1,0104172, vollstaendig bestimmt durch die beiden eingesetzten Muldenradien. Alle 60 Endpunkte bestehen die Gates, bei allen fuenf Radien existiert die hierarchische Form in jeder Familie. dE_kompakt bleibt ueberall positiv, 2,2244898 bis 3,5822227: die kompakte Form ist bei jedem Radius tiefer. N1 bestanden 5 von 5 (groesste Abweichung 5,3e-05 Prozent gegen erlaubte 2 Prozent), P1 bestanden 4 von 4 (groesste Abweichung 9,88e-04 Prozent gegen erlaubte 0,5 Prozent), 40 QA-Bloecke bestanden, R=4 exakt gleich zum archivierten QH9-Code, getrennter Artefaktaudit auf .69/CPU.",
+  "meaning": "Der Skalenzweig ist beantwortet: die gefundenen Laengen sind eingesetzt, nicht entstanden. Zusammen mit dem QH9-Befund der Metastabilitaet, die QH10 bei jedem Radius bestaetigt, ist der Kompositionszweig energetisch und skalenmaessig geschlossen. WICHTIGE EINSCHRAENKUNG, von Codex eingewandt und von mir angenommen: mein Vorabtext folgerte aus B zusaetzlich, die QH8-Gitterabweichung sei ein Diskretisierungseffekt gewesen. Das belegt der Lauf nicht. QH8 und QH9 unterscheiden sich auch durch die Dimension und durch klassisch gegen quantenmechanisch; ein Gitter-Konvergenzvergleich desselben Modells fehlt. Die belegte Aussage lautet nur: der QH8-Befund war kein Hinweis auf eine entstandene Laenge, und seine Ursache bleibt offen. Codex haette den staerkeren Zusatz aus meinem Vorab uebernehmen koennen und hat ihn stattdessen als unbewiesen markiert. Offen bleibt allein die Kinetik: Barrierenhoehe zwischen beiden Formen und Lebensdauer der metastabilen Form.",
+  "compute": "Codex auf .69/P5000, CUDA float64, 85,1 s Physikwrapper, 92,2 s Unit; keine Rechnung von mir",
+  "sources": [
+    {
+      "path": "coordination/stabile-kompositionen-20260923/QH10-BERICHT.md"
+    },
+    {
+      "path": "coordination/stabile-kompositionen-20260923/QH10-RADIUS-VORAB.md"
+    },
+    {
+      "path": "coordination/stabile-kompositionen-20260923/radius-a/RESULT.json"
+    },
+    {
+      "path": "coordination/stabile-kompositionen-20260923/radius-a/AUDIT.json"
+    }
+  ]
+}

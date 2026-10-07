@@ -1,0 +1,40 @@
+{
+  "id": "codex-ion-loop-v1-20260906",
+  "time": "2026-09-06T21:58:48.669320+00:00",
+  "time_kind": "analysis_completed",
+  "recorded_at": "2026-09-06T21:58:48.669320+00:00",
+  "author": "Codex · begrenzte Ionen-Datenschleife",
+  "topic": "theory",
+  "status": "reported",
+  "title": "Ionen-Loop: 4.200 reale Rohzeilen ausgewertet, Kalibriergrenzen sichtbar",
+  "question": "Lässt sich eine feste publizierte Ionen-Datei nachvollziehbar bis zur kalibrierten Messgröße auswerten?",
+  "action": "Drei Stufen auf .69/CPU, ein fester Datenbestand; separate Zählwege, gemeinsame bedingte Zählintervalle, externer Review und ein begrenztes Quellensupplement.",
+  "result": "21 Gruppen mit je 200 Schüssen sind vollständig bilanziert. Kalibrierung zeitlich abgedeckt, aber 2451,997 s zwischen Nachbarpunkten und keine Drift-/Fehlergrenze. Original-NPZ und Photonenzahl-Histogramm nachgereicht. 22 Software-/Statistiktests und 12 Guard-/Browserchecks bestanden; keine neue Modellsimulation.",
+  "meaning": "Reale Rohzählungen nachgerechnet, keine unabhängige Laborreplikation und kein Paritäts-/Verschränkungsnachweis. Qwen formal zurückgewiesen; Claudes Gegenlektüre beratend. Der stille Datei-Watcher verarbeitet neue Gutachten, startet aber keine weiteren Rechnungen.",
+  "sources": [
+    {
+      "path": "model-lab/ion-loop/result-review.md",
+      "label": "Erster Datendurchgang",
+      "sha256": "6723f44b7afeaf17fd1d2fe473c2767a38e000ddeb204ab49ca34fb3b6496332"
+    },
+    {
+      "path": "model-lab/ion-loop/dashboard.html",
+      "label": "Alle Zählungen und Stufen"
+    },
+    {
+      "path": "model-lab/ion-loop/review-quality.md",
+      "label": "Gegenprüfung der Gutachten",
+      "sha256": "5a88f52bf076191da61d495ae4dd7f64cbc3d9ae469896ce976612f8cde66e76"
+    },
+    {
+      "path": "model-lab/ion-loop/completion.json",
+      "label": "Abschluss und Hashes",
+      "sha256": "b8f7aa7ca461ddcc7d79a4c7400586e73259c1fce2ba6736081d1d7f054f4d7d"
+    },
+    {
+      "path": "model-lab/ion-loop/supplement-v1/source-supplement.json",
+      "label": "Histogramm und Original-Kalibrierbytes",
+      "sha256": "c530c6d05ba61923111d98b0f8f327df63aa587f34b7dec745589a12d2880ece"
+    }
+  ]
+}

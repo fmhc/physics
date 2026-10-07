@@ -1,0 +1,46 @@
+KOLL-1 cmt Start 2026-09-30T05:41:23+00:00, Geraet cuda (Quadro P4000), torch 2.5.1+cu121
+  Argumente: {"kommando": "cmt", "geraet": "cuda", "out": "/home/fmh/fmhc-physics-remote/runde9-koll1/aus-cmt", "w2": 0.7976768, "rho0": 1.728147, "h": 0.1, "cfl": 0.4, "rmax": 22.0, "zmax": 32.0, "schicht": 8.0, "sig0": 2.0, "rfluss": 13.0, "zfluss": 23.0, "abstaende": [10.0, 12.0, 14.0], "kette": 10.0, "d": 10.0, "eps": 0.005, "T": 3000.0, "dtmess": 0.2, "budget": 500.0, "weiter": false, "faeden": 1, "profil_h": 0.002, "profil_rmax": 36.0}
+=== Frage (a): Kopplungsmodentheorie ===
+--- stille Stelle ---
+  Profil omega^2 = 0.7976768: f0 = 1.024235494599965 (Klammer 2.8e-13), S0 = 1.049058, r_c = 20.36, A = 7.518252 (Streuung 1.4e-07 auf [r_c-4, r_c]), Q = 189.1443, E = 184.6243
+  stille Stelle: Singulaerwerte 5.036e-01, 4.201e-04 (Verhaeltnis 8.34e-04); a-Zeile +1.166e-04, +4.773e-04
+  Mode rho = 1.744617500: kappa_c = 0.524371, q = 2.440840, N (r <= 12.0) = 2.690974e+02, C_v = +1.514904e+01, offene Aussenamplitude 1.575e-07 (reduziert), wachsender Rest bei r_m +2.97e-04, V(r_m) +3.738e-03, u(0) = +0.4998, v(0) = +0.5002
+  K = 4 pi C_v^2 / N = 10.7169
+  d =   8.0: J asympt -2.0190e-02 | J 2D v-Kanal -1.9425e-02, u-Kanal +3.542e-05 | t_tr = pi/(2|J|) = 81 | Delta/N gegenphasig +4.444e-03, gleichphasig -3.952e-03 | |J_rad| = Gamma/(qd) = 0.00e+00
+  d =  10.0: J asympt -5.6592e-03 | J 2D v-Kanal -5.6289e-03, u-Kanal +1.689e-06 | t_tr = pi/(2|J|) = 279 | Delta/N gegenphasig +1.848e-03, gleichphasig -2.502e-03 | |J_rad| = Gamma/(qd) = 0.00e+00
+  d =  12.0: J asympt -1.6524e-03 | J 2D v-Kanal -1.6532e-03, u-Kanal +6.983e-08 | t_tr = pi/(2|J|) = 950 | Delta/N gegenphasig +7.119e-04, gleichphasig -8.325e-04 | |J_rad| = Gamma/(qd) = 0.00e+00
+  d =  14.0: J asympt -4.9625e-04 | J 2D v-Kanal -4.9896e-04, u-Kanal +2.785e-09 | t_tr = pi/(2|J|) = 3148 | Delta/N gegenphasig +2.623e-04, gleichphasig -2.790e-04 | |J_rad| = Gamma/(qd) = 0.00e+00
+  d =  16.0: J asympt -1.5214e-04 | J 2D v-Kanal -1.5415e-04, u-Kanal +9.609e-11 | t_tr = pi/(2|J|) = 10190 | Delta/N gegenphasig +9.539e-05, gleichphasig -9.735e-05 | |J_rad| = Gamma/(qd) = 0.00e+00
+  d =   8.0: Kraft gegenphasig +2.2794e+00 (Abstossung > 0), gleichphasig -1.4515e+00; E_int gegen +4.4218e+00, gleich -3.6542e+00; Formel 8 pi A^2 e^(-k0 d)/d = 4.8597e+00
+  d =  10.0: Kraft gegenphasig +8.1890e-01 (Abstossung > 0), gleichphasig -7.2616e-01; E_int gegen +1.5394e+00, gleich -1.4562e+00; Formel 8 pi A^2 e^(-k0 d)/d = 1.5813e+00
+  d =  12.0: Kraft gegenphasig +2.8060e-01 (Abstossung > 0), gleichphasig -2.7078e-01; E_int gegen +5.3214e-01, gleich -5.2322e-01; Formel 8 pi A^2 e^(-k0 d)/d = 5.3595e-01
+  d =  14.0: Kraft gegenphasig +9.6838e-02 (Abstossung > 0), gleichphasig -9.5766e-02; E_int gegen +1.8661e-01, gleich -1.8561e-01; Formel 8 pi A^2 e^(-k0 d)/d = 1.8685e-01
+  frei ab d0 = 10.0: d(50) = 16.56, d(100) = 25.65, d(200) = 43.92, d(400) = 80.44; v(400) = 0.1826; Integral |J| dt bis 1000 = 0.1066 -> b_max frei ~ 0.1064 (gehalten: pi/2 nach t_tr)
+  frei ab d0 = 12.0: d(50) = 14.96, d(100) = 20.11, d(200) = 30.83, d(400) = 52.31; v(400) = 0.1074; Integral |J| dt bis 1000 = 0.0539 -> b_max frei ~ 0.0539 (gehalten: pi/2 nach t_tr)
+  frei ab d0 = 14.0: d(50) = 15.19, d(100) = 17.82, d(200) = 24.04, d(400) = 36.75; v(400) = 0.0636; Integral |J| dt bis 1000 = 0.0278 -> b_max frei ~ 0.0278 (gehalten: pi/2 nach t_tr)
+  Kontrolle N: 1D 2.690974e+02, 2D-Quadratur 2.691080e+02
+--- Vergleich omega^2 = 0,76 ---
+  Profil omega^2 = 0.76: f0 = 1.050899025882218 (Klammer 2.2e-14), S0 = 1.104389, r_c = 21.48, A = 11.331052 (Streuung 5.2e-08 auf [r_c-4, r_c]), Q = 254.1160, E = 241.9027
+  Resonanzabtastung um 1.728147: Maximum bei rho_r = 1.7281501, Breite aus Parabel Gamma = 2.0655e-03 (29 Punkte)
+  Mode rho = 1.728150089: kappa_c = 0.516362, q = 2.399924, N (r <= 12.0) = 5.240974e+02, C_v = +2.435254e+01, offene Aussenamplitude 1.835e-01 (reduziert), wachsender Rest bei r_m +0.00e+00, V(r_m) +6.288e-03, u(0) = +0.5206, v(0) = +0.3516
+  K = 4 pi C_v^2 / N = 14.2196
+  d =   8.0: J asympt -2.8561e-02 | J 2D v-Kanal -2.6701e-02, u-Kanal -9.337e-07 | t_tr = pi/(2|J|) = 59 | Delta/N gegenphasig +2.524e-03, gleichphasig +1.212e-03 | |J_rad| = Gamma/(qd) = 1.08e-04
+  d =  10.0: J asympt -8.1349e-03 | J 2D v-Kanal -8.0618e-03, u-Kanal -4.318e-05 | t_tr = pi/(2|J|) = 195 | Delta/N gegenphasig +1.422e-03, gleichphasig -2.930e-03 | |J_rad| = Gamma/(qd) = 8.61e-05
+  d =  12.0: J asympt -2.4136e-03 | J 2D v-Kanal -2.4110e-03, u-Kanal +4.924e-05 | t_tr = pi/(2|J|) = 652 | Delta/N gegenphasig +5.964e-04, gleichphasig -9.370e-04 | |J_rad| = Gamma/(qd) = 7.17e-05
+  d =  14.0: J asympt -7.3657e-04 | J 2D v-Kanal -7.3647e-04, u-Kanal +4.120e-05 | t_tr = pi/(2|J|) = 2133 | Delta/N gegenphasig +2.164e-04, gleichphasig -2.842e-04 | |J_rad| = Gamma/(qd) = 6.15e-05
+  d =  16.0: J asympt -2.2946e-04 | J 2D v-Kanal -2.2946e-04, u-Kanal -3.051e-05 | t_tr = pi/(2|J|) = 6846 | Delta/N gegenphasig +7.806e-05, gleichphasig -8.673e-05 | |J_rad| = Gamma/(qd) = 5.38e-05
+  d =   8.0: Kraft gegenphasig +3.7071e+00 (Abstossung > 0), gleichphasig -1.9174e+00; E_int gegen +7.0121e+00, gleich -5.3640e+00; Formel 8 pi A^2 e^(-k0 d)/d = 8.0096e+00
+  d =  10.0: Kraft gegenphasig +1.3119e+00 (Abstossung > 0), gleichphasig -1.1184e+00; E_int gegen +2.3213e+00, gleich -2.1570e+00; Formel 8 pi A^2 e^(-k0 d)/d = 2.4054e+00
+  d =  12.0: Kraft gegenphasig +4.2195e-01 (Abstossung > 0), gleichphasig -4.0403e-01; E_int gegen +7.4587e-01, gleich -7.3065e-01; Formel 8 pi A^2 e^(-k0 d)/d = 7.5245e-01
+  d =  14.0: Kraft gegenphasig +1.3504e-01 (Abstossung > 0), gleichphasig -1.3337e-01; E_int gegen +2.4177e-01, gleich -2.4033e-01; Formel 8 pi A^2 e^(-k0 d)/d = 2.4211e-01
+  frei ab d0 = 10.0: d(50) = 17.37, d(100) = 27.15, d(200) = 46.74, d(400) = 85.92; v(400) = 0.1959; Integral |J| dt bis 1000 = 0.1404 -> b_max frei ~ 0.1400 (gehalten: pi/2 nach t_tr)
+  frei ab d0 = 12.0: d(50) = 15.25, d(100) = 20.66, d(200) = 31.75, d(400) = 53.96; v(400) = 0.1111; Integral |J| dt bis 1000 = 0.0747 -> b_max frei ~ 0.0746 (gehalten: pi/2 nach t_tr)
+  frei ab d0 = 14.0: d(50) = 15.25, d(100) = 17.94, d(200) = 24.16, d(400) = 36.80; v(400) = 0.0632; Integral |J| dt bis 1000 = 0.0407 -> b_max frei ~ 0.0407 (gehalten: pi/2 nach t_tr)
+  Kontrolle N: 1D 5.240974e+02, 2D-Quadratur 5.256742e+02
+--- Zusammenfassung ---
+  d =   8.0: J still -1.939e-02 (t_tr 81) | J 0,76 v-Kanal -2.670e-02 (t_tr 59), |J_rad| 1.08e-04, Gamma 0,76 2.066e-03 -> Gamma/|J| = 0.08
+  d =  10.0: J still -5.627e-03 (t_tr 279) | J 0,76 v-Kanal -8.062e-03 (t_tr 195), |J_rad| 8.61e-05, Gamma 0,76 2.066e-03 -> Gamma/|J| = 0.26
+  d =  12.0: J still -1.653e-03 (t_tr 950) | J 0,76 v-Kanal -2.411e-03 (t_tr 652), |J_rad| 7.17e-05, Gamma 0,76 2.066e-03 -> Gamma/|J| = 0.86
+  d =  14.0: J still -4.990e-04 (t_tr 3148) | J 0,76 v-Kanal -7.365e-04 (t_tr 2133), |J_rad| 6.15e-05, Gamma 0,76 2.066e-03 -> Gamma/|J| = 2.80
+  d =  16.0: J still -1.541e-04 (t_tr 10190) | J 0,76 v-Kanal -2.295e-04 (t_tr 6846), |J_rad| 5.38e-05, Gamma 0,76 2.066e-03 -> Gamma/|J| = 9.00
+Ende 2026-09-30T05:42:08+00:00, 44.3 s

@@ -1,0 +1,34 @@
+Nichtlinearer Anregungsadapter geschrieben, 02.10.2026, nicht ausgeführt
+code.py SHA256
+1af408e1269a53036c080ec820e750940d5f8b70ac41c32e457e5ad531dc5bc1.
+PLAN bleibt1ff6f17d814171f7618b4c18eaa76672235873e4ac44a0c86815c610c50fe1b0.
+
+CLI --dynamics timestep-half.py --operator modes/code.py
+ --search-dir MODES_SEARCH --reference PREPARED_DIR --out FRISCHER_ORDNER.
+Quellmodule werden vor Import gehasht. Keine eigenen Kräfte, keine eigene
+Zeitintegrationsformel: ausschließlich dynamics.advance. Neuer Code führt
+Präparation, feste9Arme, Umrechnung/Diagnostik und Ergebnissicherung aus.
+
+GespeicherteMode-q wird komplex auf1 normiert, gesamte6Blöcke gemeinsam
+phasengedreht. AufJEDEMh wird wieimPlan die größte|vq|-Komponente realpositiv
+gesetzt. Pivotindex/Phasenfaktor werden gespeichert. Der komplexe Überlapp
+der volumenrestriktierten feinenq-Blöcke mitdemgrobenq wird lediglich als
+Diagnose(Re,Im,Winkel) ausgegeben. Keine zusätzlichePhasenkorrektur des
+feinenVektors; keine individuelleFeldphase oder Nachphasierung derZeitdaten.
+
+Adapter-QA jeStart: direkteQ-Bilanz gegen exaktquadratischeForm; t0-
+Rücktransformation/Baselineabzug gegen alphaRe(v). Keine erneute alteQA-Suite.
+InitialeE/Q/Referenznorm/realPositionsnorm undQ-Unterschied werden ausgegeben.
+Alle9Arme haben Initial- undFinal-NPZ mitHashes; vollständigeSamplesalle.4.
+Baselineframes imRAM, persistiert werden Diagnosezeitreihen undEndfelder.
+Teil-RESULT nachjedemArm undalle8Samples; Ausnahme erhält zusätzlich
+LAST-PARTIAL.npz mitStepzeit/Level/Amplitude. ÄußererKill kann ungesicherte
+letzteSchritte verlieren. Interner40CPU-sCheckpoint zähltImportzeit mit.
+Rootäußere45s-Begrenzung bleibt maßgeblich, kein eigenerDienst/Worker.
+
+Vergleich enthält skalareGate-Diagnostik UND separate volleFeldabweichungen
+zwischenGittern. Restriction wird jeweils auf q3Blöcke UNDp3Blöcke angewendet.
+Gates nutzen exakt dieprospektiven.05Antwort/.01Diagnostiksensitivität;
+volleFeldabweichungen werden nicht nachträglich in ein zusätzlichesGate
+verwandelt. KeineFrequenzfits/FFT/Gamma. KeineUmwertungalterR20Modenfrage.
+KeineAutor-Interpreter/Test/SSH/Simulation. Nichtautorreview steht an.

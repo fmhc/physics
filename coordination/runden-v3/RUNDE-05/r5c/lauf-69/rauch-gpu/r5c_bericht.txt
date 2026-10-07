@@ -1,0 +1,45 @@
+R5-C r5c.py Start 2026-09-30T00:34:09+00:00 auf Quadro P4000, torch 2.5.1+cu121, Unterbefehl rauch, Laufzeitfaktor 0.05
+
+bragg FEHLER:
+Traceback (most recent call last):
+  File "/home/fmh/fmhc-physics-remote/runde5-r5c/r5c.py", line 1222, in main
+    res, zeilen, st = TESTS[name](faktor)
+                      ^^^^^^^^^^^^^^^^^^^
+  File "/home/fmh/fmhc-physics-remote/runde5-r5c/r5c.py", line 1027, in t_bragg
+    erg = {s: auswerten(st[s]["t"], st[s]["daten"]) for s in st}
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fmh/fmhc-physics-remote/runde5-r5c/r5c.py", line 1017, in auswerten
+    zz = transmission_auswerten(t, d, laeufe, ref_von, basis_von, kz)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fmh/fmhc-physics-remote/runde5-r5c/r5c.py", line 935, in transmission_auswerten
+    flu = integral(t, d[:, :, c["j"]].reshape(len(t), len(laeufe), 2))      # (B, 2)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fmh/fmhc-physics-remote/runde5-r5c/r5c.py", line 310, in integral
+    return 0.5 * ((y[1:] + y[:-1]) * dt_).sum(0)
+                  ~~~~~~~~~~~~~~~~~^~~~~
+RuntimeError: The size of tensor a (2) must match the size of tensor b (70) at non-singleton dimension 2
+
+  bragg: 7.5 s bei Faktor 0.05; Hochrechnung volle Laenge etwa 150 s
+
+anderson FEHLER:
+Traceback (most recent call last):
+  File "/home/fmh/fmhc-physics-remote/runde5-r5c/r5c.py", line 1222, in main
+    res, zeilen, st = TESTS[name](faktor)
+                      ^^^^^^^^^^^^^^^^^^^
+  File "/home/fmh/fmhc-physics-remote/runde5-r5c/r5c.py", line 1107, in t_anderson
+    erg = {s: auswerten(st[s]["t"], st[s]["daten"]) for s in st}
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fmh/fmhc-physics-remote/runde5-r5c/r5c.py", line 1081, in auswerten
+    zz = transmission_auswerten(t, d, laeufe, lambda b: i_leer, lambda b: None, kz)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fmh/fmhc-physics-remote/runde5-r5c/r5c.py", line 935, in transmission_auswerten
+    flu = integral(t, d[:, :, c["j"]].reshape(len(t), len(laeufe), 2))      # (B, 2)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fmh/fmhc-physics-remote/runde5-r5c/r5c.py", line 310, in integral
+    return 0.5 * ((y[1:] + y[:-1]) * dt_).sum(0)
+                  ~~~~~~~~~~~~~~~~~^~~~~
+RuntimeError: The size of tensor a (2) must match the size of tensor b (220) at non-singleton dimension 2
+
+  anderson: 19.6 s bei Faktor 0.05; Hochrechnung volle Laenge etwa 392 s
+
+Ende 2026-09-30T00:34:36+00:00, Dauer 27.1 s, Torch-Speicher max 145 MB, Fehler in: ['anderson', 'bragg']

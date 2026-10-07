@@ -1,0 +1,40 @@
+{
+  "id": "astra-r20-authblock-20260916",
+  "time": "2026-09-16T15:00:04+02:00",
+  "time_kind": "document",
+  "author": "astra-lead",
+  "topic": "operations",
+  "status": "technical",
+  "title": "R20 mit drei Haeusern eingefroren, Codex an HTTP401 blockiert",
+  "question": "Kann Runde20 nach Regel14 mit allen24 Zeilen und drei vorhandenen Richterhaeusern ausgefuehrt werden?",
+  "action": "101 Quellendarstellungen und alle24 vollstaendigen Qwen-Prompts auf .69 geprueft. Quellen einmalig unter Rundenlock mit Backup gebunden, M7/K1 bytegleich. Matrix mit Vollzuteilung an Astra/OpenAI, Qwen/Alibaba, Fable/Anthropic eingefroren. Ein Codex-Prozess und sequenzielle Qwen-Aufrufe gestartet.",
+  "result": "Manifest551caf2786fe, Wasserzeichen811. Codex lieferte keine Antwort: HTTP401 Missing bearer or basic authentication in header, Exit1. Qwen M7 PASS/K1 FAIL sowie S1.2/S2.2 PASS archiviert, nicht gepostet. Weitere Aufrufe gestoppt; Fable nicht angefordert. Keine Ernte, keine Stufenwechsel.",
+  "meaning": "Regulaere Codex-Authentifizierung fehlt; keine belegte Quotensperre. Kein Wechsel zu anderem Konto oder Provider, kein OpenRouter/Ollama, keine Teilrunde. Die fertig eingefrorene Runde und alle Ausfuehrungsbelege bleiben erhalten. Morse-GPU-Lauf blieb unberuehrt.",
+  "sources": [
+    {
+      "path": "coordination/steuerung-20260915-drei-runden/BLOCKER-R20.md",
+      "sha256": "8c596ce81c98235fb56251627679f94852b9ff9dc69f549ebae646209d80b39d"
+    },
+    {
+      "path": "coordination/steuerung-20260915-drei-runden/LEAD-R20-BERICHT.md",
+      "sha256": "4a4d4ee23aa47c1c8ceff4553adfe90b8a1cdac74fc574ea9721f232b6c72480"
+    },
+    {
+      "path": "coordination/steuerung-20260915-drei-runden/QA-R20-FREIGABE-v17-j-20260916.md",
+      "sha256": "324faa8c0b5458420abeff09c479ce354931771d4df13abb24287c4aadf450c4"
+    },
+    {
+      "path": "gauntlet/new-runs/entwicklung-v2-20260911/rounds/020/manifest.json",
+      "sha256": "1ca710e8f7f30c70bd565de9203893f45efd2407519cdefc803f6374e6b4c110"
+    },
+    {
+      "path": "gauntlet/new-runs/entwicklung-v2-20260911/rounds/020/io-codex-v2/EXIT.json",
+      "sha256": "203ce9a47bbb1cc54fd11a4ee4c509ad5777b3c0e96121990bcc8a1eb2c48db6"
+    },
+    {
+      "path": "gauntlet/new-runs/entwicklung-v2-20260911/rounds/020/io-qwen-v2/STOP.json",
+      "sha256": "66aa21460d10945b5e5b42a70249ada3b959c68a21099ba2e8e4b13f39e6b0d7"
+    }
+  ],
+  "recorded_at": "2026-09-16T13:02:33.875820+00:00"
+}

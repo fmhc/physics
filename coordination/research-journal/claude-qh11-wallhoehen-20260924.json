@@ -1,0 +1,25 @@
+{
+  "id": "claude-qh11-wallhoehen-20260924",
+  "time": "2026-09-24T03:49:13.438624+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5); gerechnet von Schwarm-Paket A2 (Claude-Subagent) auf .69/P5000",
+  "topic": "modelle",
+  "status": "reported",
+  "title": "QH11: Wallhoehen der gestuften Viererform bestimmt - ohne Dreikoerperabstossung liegt der Pass zur kompakten Form unter der Trennschwelle, mit ihr darueber; formal U1, S2 nicht erreicht",
+  "question": "Wie hoch sind die Energiebarrieren zwischen der gestuften Viererform und (a) der kompakten Form, (b) Dreikoerper plus frei, (c) zwei getrennten Paaren, fuer b = 0,04 / 0,08 und shield = 0 / 0,1?",
+  "action": "Vorab-Datei mit Methode, Erwartung, Nullprobe und Ausgangsregel (sha256 05b6903d...), zwei offengelegte Nachtraege vor dem Hauptlauf, String-Methode mit Kletterbild und Newton-Verfeinerung auf .69/P5000 (CUDA float64, 751 s, Kontrollen K1 bis K5 bestanden). S2 durch Qwen in fuenf Runden versucht.",
+  "result": "(a) In allen vier Familien laufen alle Startpfade durch denselben geraden Sattel erster Ordnung (Paare Ende an Ende, Kontaktabstand 1,33 bis 1,42; genau ein negativer Hesse-Eigenwert nach Abzug der fuenf starren Moden): Barriere 0,1476 = 3,69 b (b 0,04, s 0), 0,2159 = 5,40 b (b 0,04, s 0,1), 0,2969 = 3,71 b (b 0,08, s 0), 0,3687 = 4,61 b (b 0,08, s 0,1). (c) Trennung in zwei Paare: kein Sattel, Schwelle D = 4 b. (b) Dreikoerperkanal: bei s 0 derselbe Sattel wie (a), bei s 0,1 kein verifizierter Sattel gefunden (Suchfehlschlag, keine Barrierefreiheit). Nach dem vorab gebundenen Wortlaut ist der Ausgang U1 in allen Familien (Verbindungstor G4 scheitert an einer Symmetriefalle); nach dem vor dem Hauptlauf offengelegten Nachtrag 2 A, B, A, B. S2 nicht erreicht: Qwen scheiterte in fuenf Runden an Handwerksfehlern, keine Vergleichszahl; unabhaengig geprueft ist nur das Verfahren am Zweikoerpersattel.",
+  "meaning": "Modellintern, S1, nicht zitierfaehig im Vertragssinn. Ohne Dreikoerperabstossung ist die kompakte Form ueber einen niedrigeren Pass erreichbar als die Trennung; mit Dreikoerperabstossung ist die Trennung der tiefere Weg. Nur 11 Startpfade je Familie, ein niedrigerer Sattel ist nicht ausgeschlossen; eine Barriere ist eine obere Schranke des minimalen Passes und keine Lebensdauer. Keine Uebertragung auf R6/R7: dort wirkt ein anderer Hamiltonian (Schaltfunktion ab r 5, Drehimpuls ungleich null).",
+  "compute": ".69/P5000, CUDA float64, 751 s, GPU-Lock; S2-Versuche auf .69 CPU",
+  "sources": [
+    {
+      "path": "coordination/stabile-kompositionen-20260923/QH11-BERICHT.md"
+    },
+    {
+      "path": "coordination/stabile-kompositionen-20260923/QH11-VORAB.md"
+    },
+    {
+      "path": "coordination/stabile-kompositionen-20260923/qh11-a/QH11-ARTEFAKTE.sha256"
+    }
+  ]
+}

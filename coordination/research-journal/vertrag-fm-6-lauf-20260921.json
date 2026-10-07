@@ -1,0 +1,52 @@
+{
+  "id": "vertrag-fm-6-lauf-20260921",
+  "time": "2026-09-21T13:40:00+02:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5); Ausfuehrender: eigener Claude-Subagent mit eigenem Kontext",
+  "topic": "theory",
+  "status": "reported",
+  "title": "FM-6 gerechnet, Ausgang A: die Kante trifft an drei nie gerechneten Gebietsgroessen die hergeleitete Zahl, und erstmals bestaetigt das auch eine Vorhersage ohne die Duennwandnaeherung",
+  "question": "Endet der m=0 Loesungsast dieses Feldmodells oberhalb der analytischen Fensterkante, oder endet nur die Fortsetzung am endlichen Gebiet - gemessen an drei Gebietsgroessen, die nie gerechnet wurden, bei einer um Faktor 15 engeren Schwelle als im Vorgaenger, und zusaetzlich an einer Vorhersage, die ohne die Duennwandnaeherung auskommt?",
+  "action": "Lauf nach Vertrag FM-6 (sha256 41c3748a..., 2812 Zeilen) auf fmh@192.168.178.69, CPU, Units fmhc-physics-fm-6-pruef/voll-20260921 mit CPUQuota 200 %, MemoryMax 8G, RuntimeMaxSec 3600, float64, kein CUDA, gauntlet-gpu.lock unberuehrt. Laufskript fm_6.py (sha256 3f8884ea..., 2041 Zeilen) von einem eigenen Claude-Subagenten geschrieben, der ausschliesslich den Vertragstext und die Erwartungstabelle erhielt - kein Vorgaengerskript, kein Vorlauf, kein Review, kein Startsignal. Zwei Modi: Prueflauf mit sechs Pfadproben, dann Vertragslauf. Danach maschinelles Gegenlesen jeder Berichtszahl und eine zweite Registerprobe ueber Vertrag, Startsignal, Laufskript und Bericht zusammen. Runde 022 nicht angefasst: kein Register, kein Ledger, keine Evidenz, keine Jury.",
+  "result": "Ausgang A, alle vier A-Arme erfuellt, alle achtzehn Kontrollen bestanden, keine U1-Bedingung. omega_B(120) = 0,7120775230721654, omega_B(200) = 0,7098762840489671, omega_B(480) = 0,7081925744285064; die Abstaende zur hergeleiteten Gebietsgrenze betragen 1,6662e-05, 5,2883e-06 und 8,2713e-07 gegen die Schwelle 0,0001. Alle drei Ketten enden am Tor G4 mit ein bis zwei Korrektorschritten. Das Formmass am Stopp liegt bei 1,0034868 / 1,0019726 / 1,0007721 gegen die Schwelle 0,015. Der neue Arm A(iv), dessen Vorhersage allein aus dem gemessenen Profil der Kette bei L = 480 stammt und in die weder Wandradius noch Wandspannung eingeht, trifft die gemessene Kante auf 4,0669e-07 bei L = 120 und 8,5972e-09 bei L = 200 gegen die Schwelle 0,0002. Die Hashreihen vor und nach dem Lauf sind bitgleich. Laufzeit 878,3 s gegen die Erwartung 350 plus minus 150 s - die Erwartung ist verfehlt, groesster Posten ist die Kantenreihe mit 469 s. Drei Vertragsluecken sind vor dem Lauf gemeldet, alle in Kontrollen, alle mit ausgangsbestimmend offen und Fremdurteil noetig. Gegenlesen: von 521 Berichtszahlen sind 449 unmittelbar aus einer Datendatei belegt, 57 sind Vertragskonstanten, 7 aus Datenwerten bildbar und 8 sind Margen, die der Bericht selbst aus Messwert und Schwelle bildet - keine erfundene Zahl.",
+  "meaning": "Der Befund selbst ist eine Bestaetigung und keine Ueberraschung: die Fortsetzung endet dort, wo die endliche Rechenkiste sie enden laesst, und nicht frueher. Neu ist, wie fest er steht. Die Schwelle ist um Faktor 15 enger als im Vorgaenger, die drei Gebietsgroessen waren nie gerechnet, L = 480 liegt anderthalbfach jenseits der groessten je gerechneten, und die Robustheit der Aussage ist erstmals beziffert: Faktor 5,82 am engsten Gebiet, hergeleitet aus der Deckung der Schwelle im Wandradius gegen den gemessenen Naeherungsfehler. Der wichtigste Zugewinn ist A(iv): eine zweite Vorhersage derselben Kante, in die die Duennwandnaeherung nicht eingeht, trifft auf sieben bis neun Stellen - damit haengt die Aussage nicht mehr an einer einzigen Naeherung. Was der Lauf nicht zeigt, steht im Bericht: er prueft in erster Linie die Implementierung, nicht die Physik; die Kennzahl ist bei nur einer Gitterweite gemessen; und ohne S2 ist keine Zahl zitierfaehig. Zwei der vier Bedingungen sind ausserdem nach dem Fremdreview hinzugekommen und damit ungeprueft in den Lauf gegangen.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260921/fm-6-lauf/BERICHT-FM-6.md",
+      "sha256": "39071c30660807c01544b06656b77d42b1f23031c9b10b28948aed8ad477b62e"
+    },
+    {
+      "path": "coordination/vertraege-20260921/fm-6-lauf/ERGEBNIS-FM-6.json",
+      "sha256": "b97ef1fb8e84b28576e3938bea9bc07dcbc84abe67cfaeae41cbd46d9c8acd55"
+    },
+    {
+      "path": "coordination/vertraege-20260921/fm-6-lauf/PRUEFLAUF-FM-6.json",
+      "sha256": "760350d4e6fd910dcd5213288e5a520c4eaccb9fe253131d0fa3ea8c2007310c"
+    },
+    {
+      "path": "coordination/vertraege-20260921/fm-6-lauf/fm_6.py",
+      "sha256": "3f8884ea1b1142728d3a30660afaab365f62abf9aebbae623bee3210964284fa"
+    },
+    {
+      "path": "coordination/vertraege-20260921/fm-6-lauf/VERTRAGSLUECKEN-FM-6.md",
+      "sha256": "c8048557e28bfaf55df8b46913ca4700e86222c985dcf1bca4e1132f28a1b8e3"
+    },
+    {
+      "path": "coordination/vertraege-20260921/fm-6-lauf/GEGENLESEN-FM-6.txt",
+      "sha256": "2537504db95a1c7f1cf7403d60f9fb0b90ce0ecb3f47101086c4146d8c31a379"
+    },
+    {
+      "path": "coordination/vertraege-20260921/fm-6-lauf/REGISTERPROBE-FM-6-NACH-DEM-LAUF.txt",
+      "sha256": "412200be1d1879b7ff7001be44fd5e85d88c2b4f6142c08a7e4658f7abecbabe"
+    },
+    {
+      "path": "coordination/vertraege-20260921/fm-6-VERTRAG.md",
+      "sha256": "41c3748a4a74d0b78a36a45c327f70de08b523e645e25fccaa16f02f563154b8"
+    },
+    {
+      "path": "coordination/vertraege-20260921/startsignal-fm-6.txt",
+      "sha256": "283c2530e6a1022dc1bd3e1b16e9830716232f1986fbf996d3bd272a06e13d90"
+    }
+  ],
+  "recorded_at": "2026-09-21T11:34:14.694896+00:00"
+}

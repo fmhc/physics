@@ -1,0 +1,27 @@
+start 2026-10-03T17:29:45+00:00 spur=p4000b unit=fmhc-physics-klein-r34ef2-ik-v0.1-h0.2-172945
+Running as unit: fmhc-physics-klein-r34ef2-ik-v0.1-h0.2-172945.service
+torch 2.5.1+cu121, Geraet cuda (Quadro P4000)
+Netz ikosaeder: {"nu": 200, "a": 40.0, "h": 0.2, "ecken": 400002, "ecken_soll": 400002, "euler": 2, "grade": {"5": 12, "6": 399990}, "anzahl_defekte": 12, "defekt_rest_max": 4.440892098500626e-14, "w_min": 0.5773502691895671, "w_max": 0.5773502691896994, "flaeche": 13856.406460551018, "flaeche_soll": 13856.406460551016} (Bauzeit bis jetzt 3.5 s)
+statischer Ball und Start: {"Q_lat": 198.997487421324, "E_lat": 156.54856331245253, "omega_lat": 0.7449596010429279, "res_max": 4.0385600699732357e-07, "dauer_s": 2.304591540247202, "gitterfehler_flicken": 2.6645352591003757e-13, "gitterfehler_ziel": 1.9895196601282805e-13, "R_trans": 19.0, "knoten_mit_feld": 32729, "E_rest": 157.29539468310352, "K_nominal": 0.7924251395383283}
+/home/fmh/fmhc-physics-remote/runde34-einfang2/einfang2.py:495: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at ../aten/src/ATen/SparseCsrTensorImpl.cpp:53.)
+  Lt = torch.sparse_csr_tensor(torch.tensor(Lc.indptr, dtype=torch.int64), torch.tensor(Lc.indices, dtype=torch.int64),
+Karten: [201001, 201001, 201001, 201001, 201001, 201001, 201001, 201001, 201001, 201001, 201001, 201001] Knoten je Spitze (10.0 s)
+Start: E 158.08705612 Q 199.99999800 E_rest 157.29539468 K_eff 0.791661 K_nominal 0.792425 Lage 20.0000 Q_ball 199.999587
+t 200.0 Spitze 0 d 4.9599 th 2.6180 E 158.08724359 Q 199.99999800 E_ball 158.070291 Q_ball 199.983992 S_max 1.0318 (5.70 ms/Schritt)
+t 400.0 Spitze 0 d 18.1283 th -2.6180 E 158.08711250 Q 199.99999800 E_ball 157.982907 Q_ball 199.902268 S_max 1.0517 (5.69 ms/Schritt)
+t 600.0 Spitze 5 d 20.6691 th 0.7979 E 158.08732579 Q 199.99999800 E_ball 157.919152 Q_ball 199.841204 S_max 1.0348 (5.76 ms/Schritt)
+t 800.0 Spitze 5 d 20.9628 th 1.3540 E 158.08692136 Q 199.99999800 E_ball 157.881683 Q_ball 199.806989 S_max 1.0622 (5.91 ms/Schritt)
+t 1000.0 Spitze 10 d 16.8425 th -1.5708 E 158.08688078 Q 199.99999800 E_ball 157.857780 Q_ball 199.785377 S_max 1.0625 (6.01 ms/Schritt)
+t 1200.0 Spitze 10 d 1.8674 th -1.5708 E 158.08704827 Q 199.99999800 E_ball 157.821671 Q_ball 199.750507 S_max 1.0398 (6.09 ms/Schritt)
+t 1400.0 Spitze 10 d 18.8032 th 1.0472 E 158.08726223 Q 199.99999800 E_ball 157.757274 Q_ball 199.690261 S_max 1.0363 (6.16 ms/Schritt)
+t 1600.0 Spitze 9 d 4.5995 th 2.0944 E 158.08693046 Q 199.99999800 E_ball 157.728225 Q_ball 199.663357 S_max 1.0556 (6.22 ms/Schritt)
+t 1800.0 Spitze 9 d 12.5979 th -0.5236 E 158.08707765 Q 199.99999800 E_ball 157.567834 Q_ball 199.510716 S_max 1.0531 (6.27 ms/Schritt)
+t 2000.0 Spitze 9 d 21.0263 th -0.5236 E 158.08753762 Q 199.99999800 E_ball 157.413125 Q_ball 199.363460 S_max 1.0190 (6.30 ms/Schritt)
+Ende: T erreicht, t 2000.0, 6.30 ms/Schritt, Dauer 262.4 s, Zustand /home/fmh/fmhc-physics-remote/runde34-einfang2/nachtrag/ef2-ik-v0.1-h0.2-zustand.npz, geschrieben /home/fmh/fmhc-physics-remote/runde34-einfang2/nachtrag/ef2-ik-v0.1-h0.2.json
+Finished with result: success
+Main processes terminated with: code=exited/status=0
+Service runtime: 4min 23.263s
+CPU time consumed: 4min 23.209s
+Memory peak: 2.6M
+Memory swap peak: 0B
+ende 2026-10-03T17:34:08+00:00 rc=0 unit=fmhc-physics-klein-r34ef2-ik-v0.1-h0.2-172945

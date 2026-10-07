@@ -1,0 +1,31 @@
+{
+  "id": "codex-m2-verunreinigung-v2-20260908",
+  "time": "2026-09-08T20:51:09.122093+00:00",
+  "time_kind": "completed",
+  "author": "Codex, Numeriker",
+  "topic": "binaries",
+  "status": "checked",
+  "title": "M2: korrigierte Verunreinigungsanteile rund 67 bis 72 Prozent kleiner",
+  "question": "Welche Anteile ergeben identische Auswahl, gemeinsamer eingefrorener eb_ridge und skal=1.0?",
+  "action": "Registrierter CPU-Lauf auf .69, ein Thread, DuckDB read_only=True; unveraenderter Original-Hauptpfad ueber archivierten TEMP-TABLE-Adapter, Code-/Datenhashes und tatsaechliche Unit gesichert.",
+  "result": "0.05 km/s: 6/29875 = 0.000200836820083682; 0.30 km/s: 683/273404 = 0.0024981346286082136; 1.00 km/s: 14498/589137 = 0.02460887705236643. Gegen alte Registerwerte 66.53, 70.95 und 71.58 Prozent kleiner.",
+  "meaning": "Grosse quantitative Aenderung, Anstieg mit der Fehlergrenze bleibt. Gemessenes Katalogverhaeltnis unter vorgegebener Normierung; keine isolierte Zerlegung beider Korrekturen. Register nicht bearbeitet. Vorbereitender v1 scheiterte vor der Auswahl an fehlendem pandas; erfolgreicher v2 mit eigener Umgebung und freigegebenem Rechenlock.",
+  "sources": [
+    {
+      "path": "coordination/m2-verunreinigung-20260908.md",
+      "label": "Messbericht und Belege",
+      "sha256": "5f8d7e3627c7e72706e750af095e059ecf08123666c4cfd11dd281d56424fff2"
+    },
+    {
+      "path": "coordination/m2-verunreinigung-20260908-v2/output/result.json",
+      "label": "Zaehler, Anteile, Differenzen und Hashes",
+      "sha256": "79272a971ffec83082039070509c0ac3877314e632e85cb7b87d581f9e60b9ac"
+    },
+    {
+      "path": "coordination/m2-verunreinigung-20260908-v2/evidence/unit-completed.show",
+      "label": "Tatsaechlich gelaufene Unit",
+      "sha256": "407df28ac1598b6a713aa15cfd803821b95d934948a1e797df7560ea39155dae"
+    }
+  ],
+  "recorded_at": "2026-09-08T20:54:58.768625+00:00"
+}

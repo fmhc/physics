@@ -1,0 +1,27 @@
+--- bic2_2d_praez.py	2026-10-01 17:21:27.284276472 +0200
++++ bic2_2d_praez_v2.py	2026-10-01 17:39:08.292433352 +0200
+@@ -1,5 +1,6 @@
+ #!/usr/bin/env python3
+-"""RUNDE-12 LEITER-2D-PRAEZ: Kopie von GEN-02/G2-10/bic2_2d.py (sha256 e5f035c994922d35...). Aenderungen (alle mit
++"""RUNDE-12 LEITER-2D-PRAEZ v2 (nachtraeglich, 01.10. nach Lauf REC): wie v1, dazu --u-runden (Vorgabe 8 = v1).
++v1: Kopie von GEN-02/G2-10/bic2_2d.py (sha256 e5f035c994922d35...). Aenderungen (alle mit
+ "PRAEZ" markiert; ohne die neuen Optionen ist das Verhalten fuer kurve unveraendert, exakt bei --dim 3 ebenfalls):
+   - --rm: fester Anschlussradius r_m fuer lin_multi (kurve, exakt); Km = round(r_m/h), gerade gemacht, in [2, K-2].
+   - exakt mit --dim: nu = g210_nu() statt fest 1,0 in exakt, umlauf_neu_gelegt, umlauf_rechteck.
+@@ -1910,7 +1911,7 @@
+     Dw = direkt_m(L, [complex(p[0], 0.0) for p in pfad], [p[1] for p in pfad], [g210_nu()] * len(pfad), gram=False)
+     W = [complex(float(Dw["la"][k].real), float(Dw["lb"][k].real)) for k in range(len(pfad))]
+     # rho-Seiten (gleiches Profil) adaptiv verfeinern, bis jeder Phasensprung dort < 0,3 rad ist (billig)
+-    for _ in range(8):
++    for _ in range(a.u_runden):                     # PRAEZ v2: Zahl der Halbierungsrunden (vorher fest 8)
+         neu = []
+         for k in range(len(pfad)):
+             k2 = (k + 1) % len(pfad)
+@@ -2376,6 +2377,7 @@
+                                          "barriere", "leiter"])   # G2-10: barriere, leiter
+     ap.add_argument("--dim", type=float, default=3.0, help="G2-10: Raumdimension fuer kurve und barriere (l = 0)")
+     ap.add_argument("--rm", type=float, default=None, help="PRAEZ: fester Anschlussradius r_m (kurve, exakt)")
++    ap.add_argument("--u-runden", dest="u_runden", type=int, default=8, help="PRAEZ v2: Halbierungsrunden der rho-Seiten im Umlauf-Rechteck")
+     ap.add_argument("--d2", default="", help="G2-10 leiter: kurve.json der Hauptlaeufe (dim 2), Komma")
+     ap.add_argument("--d3", default="", help="G2-10 leiter: kurve.json der Gegenprobe dim 3, Komma")
+     ap.add_argument("--d1", default="", help="G2-10 leiter: kurve.json der Gegenprobe dim 1, Komma")

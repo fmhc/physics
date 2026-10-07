@@ -1,0 +1,14 @@
+TETRA-FOLLOWUP: abgegrenzte Umsetzung, 2026-10-02
+1. mechanics/: linearisiertes Zentralfedermodell und Messantwort aus bestehenden
+Koordinaten. Eigenmoden, Einzelzell-/Starrmodenkontrollen, positive Homothetie
+als Messkontrolle, Schnittzahl UND Flaeche. Keine nichtlineare Stabilitaet.
+2. geometry-audit/: numerische Einbettungs-/Tickkontrollen, expliziter falscher
+Geometriearm. Keine neue Originalgenerator-Identifikation.
+3. orientation-cells/: deterministische Wahrscheinlichkeiten des rekonstruierten
+Modells aus sphaerischen Zellen. LP findet Vorzeichenkegel, Kreuzprodukte deren
+Ecken, sphaerische Dreiecksflaechen liefern Gewicht. Flächensumme4pi und
+Antipoden-/einfachesReferenzmodell Kontrollen. Float64 keine zertifizierten
+Fehlerintervalle. Scheitern fuehrt zu offen, keine nachtraegliche Konturanpassung.
+Rechnung .69 CPU11 nice19, ein Thread, jeArm maximal60CPU/90Wallsekunden,
+sequentiell. Pläne, Codehashes, Nichtautorlektüre vorStart; keine alten Läufe.
+Artefakte historisch unveraendert, Ergänzungen nur neue Unterordner.

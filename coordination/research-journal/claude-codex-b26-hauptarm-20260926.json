@@ -1,0 +1,29 @@
+{
+  "id": "claude-codex-b26-hauptarm-20260926",
+  "time": "2026-09-26T04:17:19+00:00",
+  "time_kind": "completed",
+  "author": "codex (OpenAI, Hauptsitzung 01a0c938, Peerbus-Absender codex-b26-main), Rechnungen auf der .69 (CUDA float64); Eintrag claude-primary (Anthropic, Opus 5.5), Leitung, 26.09.2026 06:2x MESZ",
+  "topic": "theory",
+  "status": "reported",
+  "evidenzart": "modell",
+  "title": "Doppelfeld B26: kontrollierter Hauptarm verfehlt das vorab gebundene Plateau-Kriterium robust (Kernladung driftet bis T72 weiter); Positivkontrollen bestehen, freie Kontrollen scheitern, keine Kriterienaenderung",
+  "question": "Kommt der dynamisch verdichtete Kern der breiten Q250-Wolke im Fenster T48 bis 72 auf einem Ladungsplateau oberhalb der Mindestladung zur Ruhe (Kriterien aus B24, per Manifest vorab eingefroren)?",
+  "action": "Sieben neue Physiklaeufe bis T72 (Hauptarm in vier Varianten: L80 mit zwei Zeitschritten und zwei Gittern, L96 als Randvergleich; drei passende Positivkontrollen), gebundene B25-Freikontrollen wiederverwendet; 30 von 30 QA. Erster Abschlussaudit am Zeitlimit (180 s) abgebrochen und offen ausgewiesen, Wiederholung mit 6 GiB und 600 s angekuendigt.",
+  "result": "Hauptarm: Plateau in allen vier Varianten verfehlt; robuster Grund ist die zeitliche Drift (Endpunktrate rund 0,0014 gegen Grenze 0,001, Teilfenster 56..64 rund 0,0031); die Unterschreitung der Mindestladung 180 ist gitterabhaengig und kein Ausschlussgrund. Spannweite unter 5 %, fruehes Teilfenster besteht, keine nachtraegliche Fensterwahl. Zeit-, Raum- und Randvergleiche bestanden. Positivkontrollen (optimiertes Q250 gestoert) halten rund 248 und bestehen alle Fenster; freie Kontrollen verfehlen. Befund 2b5d6ce43340034b.",
+  "meaning": "Stufe 5 der Stabilitaetsleiter (bildungsfaehig) ist fuer diese Startfamilie in drei vorab gebundenen Versuchen nicht gezeigt (B22 bis T12, B23 bis T24, B26 bis T72): Der Kern verdichtet sich und haelt den groessten Teil der Ladung, verliert aber noch langsam. Das ist kein Gegenbeweis fuer spaetere Bildung, doch ein weiteres Verlaengern des Fensters waere eine wandernde Torlinie; die Leitung empfiehlt Konsolidierung statt neuer Fenster. Erwartung vorab: Hauptarm-Plateau p = 0,3 (nicht eingetreten), Positivkontrolle besteht p = 0,8 (eingetreten). Modellintern, kein S2 (DF-1 wartet auf Finns Ja).",
+  "sources": [
+    {
+      "path": "coordination/field-main-20260926/BEFUND.md",
+      "sha256": "2b5d6ce43340034bc902ed091d0dad4b57e3998c1f25a5acdc1475fdccd74432"
+    },
+    {
+      "path": "coordination/field-main-20260926/PLAN.md",
+      "sha256": "92b26a82d72df07e43438a38a4a72f9fda1243c2f7fca7b4d84837eae77d2bf7"
+    },
+    {
+      "path": "coordination/field-main-20260926/SUMMARY.json",
+      "sha256": "ad586d2fddebad5b28d45566e8c6e727caaed39e81cbaceb49db75c1bac84705"
+    }
+  ],
+  "recorded_at": "2026-09-26T04:18:43.200303+00:00"
+}

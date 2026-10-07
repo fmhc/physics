@@ -1,0 +1,3713 @@
+{
+  "urteile": {
+    "SK0": {
+      "urteil": "nicht eingetroffen",
+      "werte": {
+        "E_max_je_eps": {
+          "0.02": 0.061954714200693484,
+          "0.01": 0.029506265359922457,
+          "0.005": 0.014399192312219089,
+          "0.0025": 0.007114870586426458
+        },
+        "E_max_eps_0.01": 0.029506265359922457,
+        "steigung_log_E_gegen_log_eps": 1.0401947365615138,
+        "schwelle": 0.01,
+        "band_steigung": [
+          0.8,
+          1.2
+        ],
+        "binom_probe_max": 1.2903468146982735E-15
+      },
+      "vermerk": "Pruefpunkte bis tau = 16 (t bis 24,7). E(0,01) = 0,0295 bei S_RR, zeta = 1, tau = 12; Schwelle 1e-2 nur bis tau = 1 gehalten. Ursache: Feynmans ungenormter Schritt waechst um sqrt(1 + m^2 eps^2) (normiert: E(0,01) = 0,0034, beschreibend). Urteil nach Kartenwortlaut gleich. Ergebnis vor dem Einfrieren im Rauch gesehen (PLAN 8)."
+    },
+    "SK1": {
+      "urteil": "eingetroffen",
+      "werte": {
+        "rho": 800.0,
+        "zahl_tests": 92,
+        "zahl_innerhalb_3SE": 90,
+        "anteil": 0.9782608695652174,
+        "max_abw_in_SE": 3.978794736266741,
+        "anteil_propagator": 0.975,
+        "anteil_paket": 1.0,
+        "anteil_je_rho": {
+          "200": 0.967391304347826,
+          "800": 0.9782608695652174
+        }
+      },
+      "vermerk": "Hauptbauweise Eckpaar-Kette ist im Mittel vorab ableitbar (PLAN 1.4): SK1 prueft Umgruppierung und Code. 90 von 92 Tests innerhalb 3 SE; ueber 3 SE: S_LR(zeta 0, tau 1) 3,98 und S_LR(zeta 0,5, tau 16) 3,21. Tests teilen sich Streuungen (korreliert); signierte Abweichungen bei 200 und 800 ohne gemeinsames Vorzeichen (Korrelation -0,23)."
+    },
+    "SK2": {
+      "urteil": "eingetroffen",
+      "werte": {
+        "steigung": -0.4963313508401509,
+        "band": [
+          -0.65,
+          -0.35
+        ],
+        "steigung_je_art": {
+          "propagator": -0.4977352752537155,
+          "paket": -0.48697185474971955
+        },
+        "rel_streuung_geom_mittel_je_rho": {
+          "200": 0.0885105925630775,
+          "800": 0.04448094440808877
+        }
+      },
+      "vermerk": "Steigung -0,496 (Propagator -0,498, Pakete -0,487); geometrisches Mittel der relativen Streuung 0,089 / 0,044 bei rho = 200 / 800."
+    },
+    "SK3": {
+      "urteil": "eingetroffen",
+      "werte": {
+        "G_max": 1.0144033960346948,
+        "einzeln": [
+          {
+            "rho": 200.0,
+            "paket": "zitter",
+            "R_anfang": 1.0089025317385132,
+            "R_ende": 1.0234341544635492,
+            "G": 1.0144033960346948,
+            "R_max": 1.0495016076241386,
+            "ok": true
+          },
+          {
+            "rho": 200.0,
+            "paket": "bewegt",
+            "R_anfang": 1.0174761077297658,
+            "R_ende": 1.0269964134896201,
+            "G": 1.0093567855672763,
+            "R_max": 1.0374062415101284,
+            "ok": true
+          },
+          {
+            "rho": 800.0,
+            "paket": "zitter",
+            "R_anfang": 0.9982412434200643,
+            "R_ende": 1.0016296138635143,
+            "G": 1.00339434026172,
+            "R_max": 1.0088117858935595,
+            "ok": true
+          },
+          {
+            "rho": 800.0,
+            "paket": "bewegt",
+            "R_anfang": 1.003446492199447,
+            "R_ende": 1.0091533015996794,
+            "G": 1.0056872084805675,
+            "R_max": 1.0163089718294802,
+            "ok": true
+          }
+        ]
+      },
+      "vermerk": "G <= 1,014 in allen 4 Faellen; max R = 1,050 (rho = 200). R - 1 ist Rauschleistung, kein Anwachsen."
+    }
+  },
+  "beschreibend": {
+    "SK0_max_abw_je_tau": {
+      "taus": [
+        0.5,
+        1.0,
+        2.0,
+        3.0,
+        5.0,
+        8.0,
+        12.0,
+        16.0
+      ],
+      "je_eps": {
+        "0.02": [
+          0.0065252162162989236,
+          0.011278038804282964,
+          0.024684990733304213,
+          0.02235514171624403,
+          0.035515905021963834,
+          0.04134231398173882,
+          0.061954714200693484,
+          0.03551921877796882
+        ],
+        "0.01": [
+          0.003247857194963455,
+          0.00559007706844844,
+          0.012213844000621976,
+          0.01090383088781327,
+          0.01746214153357456,
+          0.020191835566374494,
+          0.029506265359922457,
+          0.016387601324498513
+        ],
+        "0.005": [
+          0.0016205303688085482,
+          0.002781556578295763,
+          0.006078442203762524,
+          0.0053954078790267035,
+          0.008658029969308922,
+          0.00996515280772764,
+          0.014399192312219089,
+          0.007879878133833507
+        ],
+        "0.0025": [
+          0.0008093273200525664,
+          0.001387699115059704,
+          0.0030310731755744946,
+          0.0026818303724086,
+          0.0043108370546575125,
+          0.004951446212529909,
+          0.007114870586426458,
+          0.0038648984431370326
+        ]
+      }
+    },
+    "SK0_normiertes_schachbrett": {
+      "E_max_je_eps": {
+        "0.02": 0.007015100124139598,
+        "0.01": 0.0034435513100958964,
+        "0.005": 0.0017093670301742553,
+        "0.0025": 0.0008504733344296689
+      },
+      "steigung": 1.0142812334448652
+    },
+    "kontinuum": {
+      "fenster_halbbreite_W": [
+        34,
+        16
+      ],
+      "norm_c_anfang_ende": [
+        [
+          2.898148662670046,
+          2.896978852750275
+        ],
+        [
+          567.5604596211157,
+          567.7708384606797
+        ]
+      ],
+      "quad_gegen_k_rel": [
+        [
+          4.222145454401651E-15,
+          2.480933533254389E-15,
+          4.4499166246538646E-15
+        ],
+        [
+          2.1961194523439618E-13,
+          2.871484846836166E-13,
+          2.1353373456047075E-13
+        ]
+      ]
+    },
+    "tests": {
+      "200": [
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": -1.0,
+          "tau": 0.5,
+          "mittel": [
+            -0.044562582698798814,
+            0.0
+          ],
+          "kontinuum": [
+            -0.04456279241144991,
+            0.0
+          ],
+          "abw_in_SE": 0.002096049325786711,
+          "rel_streuung": 0.008980711108996602
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": -1.0,
+          "tau": 1.0,
+          "mittel": [
+            -0.08089938603556208,
+            0.0
+          ],
+          "kontinuum": [
+            -0.08094278178550601,
+            0.0
+          ],
+          "abw_in_SE": 0.15744900537003303,
+          "rel_streuung": 0.01362037742054463
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": -1.0,
+          "tau": 2.0,
+          "mittel": [
+            -0.10570181971096042,
+            0.0
+          ],
+          "kontinuum": [
+            -0.10608259999365305,
+            0.0
+          ],
+          "abw_in_SE": 0.40619252303382686,
+          "rel_streuung": 0.03534747231580157
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": -1.0,
+          "tau": 3.0,
+          "mittel": [
+            -0.06252927879519841,
+            0.0
+          ],
+          "kontinuum": [
+            -0.06236641009334639,
+            0.0
+          ],
+          "abw_in_SE": 0.12165814782435395,
+          "rel_streuung": 0.0858629251428678
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": -1.0,
+          "tau": 5.0,
+          "mittel": [
+            0.059072125154297696,
+            0.0
+          ],
+          "kontinuum": [
+            0.060254815038285635,
+            0.0
+          ],
+          "abw_in_SE": 1.1166956756617612,
+          "rel_streuung": 0.07030792510851347
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": -1.0,
+          "tau": 8.0,
+          "mittel": [
+            -0.049266233080502334,
+            0.0
+          ],
+          "kontinuum": [
+            -0.04315894407956341,
+            0.0
+          ],
+          "abw_in_SE": 3.333771360807312,
+          "rel_streuung": 0.16978598587630955
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": -1.0,
+          "tau": 12.0,
+          "mittel": [
+            0.03939514443738691,
+            0.0
+          ],
+          "kontinuum": [
+            0.0411007979656945,
+            0.0
+          ],
+          "abw_in_SE": 0.6958789354550241,
+          "rel_streuung": 0.23854310291462796
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": -1.0,
+          "tau": 16.0,
+          "mittel": [
+            -0.013958307526284588,
+            0.0
+          ],
+          "kontinuum": [
+            -0.016627631232878654,
+            0.0
+          ],
+          "abw_in_SE": 1.4993289357709019,
+          "rel_streuung": 0.4282860491598757
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": -0.5,
+          "tau": 0.5,
+          "mittel": [
+            -0.07344093541278393,
+            0.0
+          ],
+          "kontinuum": [
+            -0.07347162373055173,
+            0.0
+          ],
+          "abw_in_SE": 0.2661361874565475,
+          "rel_streuung": 0.0062778293314779835
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": -0.5,
+          "tau": 1.0,
+          "mittel": [
+            -0.13331139934260006,
+            0.0
+          ],
+          "kontinuum": [
+            -0.13345208603940265,
+            0.0
+          ],
+          "abw_in_SE": 0.28011319105367366,
+          "rel_streuung": 0.015054075728759891
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": -0.5,
+          "tau": 2.0,
+          "mittel": [
+            -0.17515525916517338,
+            0.0
+          ],
+          "kontinuum": [
+            -0.17490063906070905,
+            0.0
+          ],
+          "abw_in_SE": 0.14172166409464088,
+          "rel_streuung": 0.041088950047881705
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": -0.5,
+          "tau": 3.0,
+          "mittel": [
+            -0.1018870228697113,
+            0.0
+          ],
+          "kontinuum": [
+            -0.10282482689810735,
+            0.0
+          ],
+          "abw_in_SE": 0.3697006268878233,
+          "rel_streuung": 0.09867881174275536
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": -0.5,
+          "tau": 5.0,
+          "mittel": [
+            0.10049661130018114,
+            0.0
+          ],
+          "kontinuum": [
+            0.09934339521572348,
+            0.0
+          ],
+          "abw_in_SE": 0.4679881701770676,
+          "rel_streuung": 0.09921944849172241
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": -0.5,
+          "tau": 8.0,
+          "mittel": [
+            -0.07569451040024139,
+            0.0
+          ],
+          "kontinuum": [
+            -0.07115706912493355,
+            0.0
+          ],
+          "abw_in_SE": 1.3683011045328224,
+          "rel_streuung": 0.18641088977040654
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": -0.5,
+          "tau": 12.0,
+          "mittel": [
+            0.0604502904847493,
+            0.0
+          ],
+          "kontinuum": [
+            0.06776375984878907,
+            0.0
+          ],
+          "abw_in_SE": 2.1066797634054217,
+          "rel_streuung": 0.20492144973051168
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": -0.5,
+          "tau": 16.0,
+          "mittel": [
+            -0.03376192667655595,
+            0.0
+          ],
+          "kontinuum": [
+            -0.02741432929500483,
+            0.0
+          ],
+          "abw_in_SE": 1.4538324999635774,
+          "rel_streuung": 0.6370556405963234
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": 0.0,
+          "tau": 0.5,
+          "mittel": [
+            -0.12109900194523467,
+            0.0
+          ],
+          "kontinuum": [
+            -0.12113422883743694,
+            0.0
+          ],
+          "abw_in_SE": 0.22248112696857025,
+          "rel_streuung": 0.005228465746148072
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": 0.0,
+          "tau": 1.0,
+          "mittel": [
+            -0.21947700515103102,
+            0.0
+          ],
+          "kontinuum": [
+            -0.22002529287246678,
+            0.0
+          ],
+          "abw_in_SE": 0.6253713237465244,
+          "rel_streuung": 0.015938885137378293
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": 0.0,
+          "tau": 2.0,
+          "mittel": [
+            -0.28610697048759637,
+            0.0
+          ],
+          "kontinuum": [
+            -0.2883624038784367,
+            0.0
+          ],
+          "abw_in_SE": 0.9082279999294708,
+          "rel_streuung": 0.03444740198118084
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": 0.0,
+          "tau": 3.0,
+          "mittel": [
+            -0.17012278379334966,
+            0.0
+          ],
+          "kontinuum": [
+            -0.16952947926296827,
+            0.0
+          ],
+          "abw_in_SE": 0.16408223586291285,
+          "rel_streuung": 0.08531607406058606
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": 0.0,
+          "tau": 5.0,
+          "mittel": [
+            0.16569843123790307,
+            0.0
+          ],
+          "kontinuum": [
+            0.16378956879573264,
+            0.0
+          ],
+          "abw_in_SE": 0.451116773770228,
+          "rel_streuung": 0.10333784705145238
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": 0.0,
+          "tau": 8.0,
+          "mittel": [
+            -0.11832556902832732,
+            0.0
+          ],
+          "kontinuum": [
+            -0.1173181734269573,
+            0.0
+          ],
+          "abw_in_SE": 0.1941029348928601,
+          "rel_streuung": 0.1769549219111362
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": 0.0,
+          "tau": 12.0,
+          "mittel": [
+            0.10871640866877522,
+            0.0
+          ],
+          "kontinuum": [
+            0.11172355224531384,
+            0.0
+          ],
+          "abw_in_SE": 0.48262505731669303,
+          "rel_streuung": 0.22307944408148025
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": 0.0,
+          "tau": 16.0,
+          "mittel": [
+            -0.03169322046682327,
+            0.0
+          ],
+          "kontinuum": [
+            -0.045198587830652115,
+            0.0
+          ],
+          "abw_in_SE": 2.124445643025676,
+          "rel_streuung": 0.5625950462407489
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": 0.5,
+          "tau": 0.5,
+          "mittel": [
+            -0.19954241546453205,
+            0.0
+          ],
+          "kontinuum": [
+            -0.19971657969413914,
+            0.0
+          ],
+          "abw_in_SE": 0.5388016163707603,
+          "rel_streuung": 0.0064740484420555975
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": 0.5,
+          "tau": 1.0,
+          "mittel": [
+            -0.36233853577388475,
+            0.0
+          ],
+          "kontinuum": [
+            -0.3627603804508613,
+            0.0
+          ],
+          "abw_in_SE": 0.42682898773173733,
+          "rel_streuung": 0.010897799401806726
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": 0.5,
+          "tau": 2.0,
+          "mittel": [
+            -0.46769629360474496,
+            0.0
+          ],
+          "kontinuum": [
+            -0.4754292289445997,
+            0.0
+          ],
+          "abw_in_SE": 1.3218428149194428,
+          "rel_streuung": 0.04921966768535581
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": 0.5,
+          "tau": 3.0,
+          "mittel": [
+            -0.2701780988531556,
+            0.0
+          ],
+          "kontinuum": [
+            -0.2795068584715721,
+            0.0
+          ],
+          "abw_in_SE": 1.3535159468001325,
+          "rel_streuung": 0.09863431842113551
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": 0.5,
+          "tau": 5.0,
+          "mittel": [
+            0.2599920440920568,
+            0.0
+          ],
+          "kontinuum": [
+            0.2700433459923264,
+            0.0
+          ],
+          "abw_in_SE": 1.2512347465908669,
+          "rel_streuung": 0.11898988156977833
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": 0.5,
+          "tau": 8.0,
+          "mittel": [
+            -0.1847071233160842,
+            0.0
+          ],
+          "kontinuum": [
+            -0.19342496796871106,
+            0.0
+          ],
+          "abw_in_SE": 0.8805774917457013,
+          "rel_streuung": 0.2047335435034094
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": 0.5,
+          "tau": 12.0,
+          "mittel": [
+            0.1806731128211294,
+            0.0
+          ],
+          "kontinuum": [
+            0.184200997025026,
+            0.0
+          ],
+          "abw_in_SE": 0.31296177836512173,
+          "rel_streuung": 0.24478851382641897
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": 0.5,
+          "tau": 16.0,
+          "mittel": [
+            -0.07406194539530947,
+            0.0
+          ],
+          "kontinuum": [
+            -0.0745198731620041,
+            0.0
+          ],
+          "abw_in_SE": 0.03454508720729491,
+          "rel_streuung": 0.7115387703708146
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": 1.0,
+          "tau": 0.5,
+          "mittel": [
+            -0.3282242479120585,
+            0.0
+          ],
+          "kontinuum": [
+            -0.32927697305320447,
+            0.0
+          ],
+          "abw_in_SE": 1.3956315563856942,
+          "rel_streuung": 0.009163108831887125
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": 1.0,
+          "tau": 1.0,
+          "mittel": [
+            -0.5970880225673274,
+            0.0
+          ],
+          "kontinuum": [
+            -0.598090755416606,
+            0.0
+          ],
+          "abw_in_SE": 0.4008388367055918,
+          "rel_streuung": 0.016730478075451832
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": 1.0,
+          "tau": 2.0,
+          "mittel": [
+            -0.7749857761035281,
+            0.0
+          ],
+          "kontinuum": [
+            -0.7838502824735225,
+            0.0
+          ],
+          "abw_in_SE": 1.2327900773842766,
+          "rel_streuung": 0.036693766959699
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": 1.0,
+          "tau": 3.0,
+          "mittel": [
+            -0.4333681419971442,
+            0.0
+          ],
+          "kontinuum": [
+            -0.46082890286865114,
+            0.0
+          ],
+          "abw_in_SE": 2.1264786710101315,
+          "rel_streuung": 0.11209127695441072
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": 1.0,
+          "tau": 5.0,
+          "mittel": [
+            0.4456517427042873,
+            0.0
+          ],
+          "kontinuum": [
+            0.4452262085485827,
+            0.0
+          ],
+          "abw_in_SE": 0.045982315712810785,
+          "rel_streuung": 0.08314245720769527
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": 1.0,
+          "tau": 8.0,
+          "mittel": [
+            -0.35649102939514365,
+            0.0
+          ],
+          "kontinuum": [
+            -0.31890385897450485,
+            0.0
+          ],
+          "abw_in_SE": 3.6068995736695104,
+          "rel_streuung": 0.13070909247761406
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": 1.0,
+          "tau": 12.0,
+          "mittel": [
+            0.3241832845793192,
+            0.0
+          ],
+          "kontinuum": [
+            0.3036961018793314,
+            0.0
+          ],
+          "abw_in_SE": 0.9473959229510016,
+          "rel_streuung": 0.2848206693677717
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": 1.0,
+          "tau": 16.0,
+          "mittel": [
+            -0.08656051847682111,
+            0.0
+          ],
+          "kontinuum": [
+            -0.12286249997207177,
+            0.0
+          ],
+          "abw_in_SE": 1.672031412572558,
+          "rel_streuung": 0.7068488277897546
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": -1.0,
+          "tau": 0.5,
+          "mittel": [
+            0.0,
+            -0.4694552128573944
+          ],
+          "kontinuum": [
+            0.0,
+            -0.4692349036204065
+          ],
+          "abw_in_SE": 0.14012266500695547,
+          "rel_streuung": 0.013402752561488445
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": -1.0,
+          "tau": 1.0,
+          "mittel": [
+            0.0,
+            -0.38248464311397545
+          ],
+          "kontinuum": [
+            0.0,
+            -0.38259884327898325
+          ],
+          "abw_in_SE": 0.0398743690044326,
+          "rel_streuung": 0.02994258192461646
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": -1.0,
+          "tau": 2.0,
+          "mittel": [
+            0.0,
+            -0.11087075579914464
+          ],
+          "kontinuum": [
+            0.0,
+            -0.11194538957061781
+          ],
+          "abw_in_SE": 0.2503196808735524,
+          "rel_streuung": 0.15339784815642254
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": -1.0,
+          "tau": 3.0,
+          "mittel": [
+            0.0,
+            0.1303018161380529
+          ],
+          "kontinuum": [
+            0.0,
+            0.13002597745096675
+          ],
+          "abw_in_SE": 0.09835280026831772,
+          "rel_streuung": 0.08627765083499116
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": -1.0,
+          "tau": 5.0,
+          "mittel": [
+            0.0,
+            0.08552404059903163
+          ],
+          "kontinuum": [
+            0.0,
+            0.08879838565716915
+          ],
+          "abw_in_SE": 0.9238457914522588,
+          "rel_streuung": 0.15965402819928198
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": -1.0,
+          "tau": 8.0,
+          "mittel": [
+            0.0,
+            -0.08867033896480124
+          ],
+          "kontinuum": [
+            0.0,
+            -0.08582540356877695
+          ],
+          "abw_in_SE": 0.8263389238124504,
+          "rel_streuung": 0.1604568771368692
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": -1.0,
+          "tau": 12.0,
+          "mittel": [
+            0.0,
+            -0.027530348747074405
+          ],
+          "kontinuum": [
+            0.0,
+            -0.023844655398416775
+          ],
+          "abw_in_SE": 1.5220117962422879,
+          "rel_streuung": 0.4062282495136221
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": -1.0,
+          "tau": 16.0,
+          "mittel": [
+            0.0,
+            0.08922872834875205
+          ],
+          "kontinuum": [
+            0.0,
+            0.0874495369918146
+          ],
+          "abw_in_SE": 0.6992918622884554,
+          "rel_streuung": 0.11637686738066788
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": -0.5,
+          "tau": 0.5,
+          "mittel": [
+            0.0,
+            -0.4690252705898863
+          ],
+          "kontinuum": [
+            0.0,
+            -0.4692349036204065
+          ],
+          "abw_in_SE": 0.1396266496882968,
+          "rel_streuung": 0.012798559075757351
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": -0.5,
+          "tau": 1.0,
+          "mittel": [
+            0.0,
+            -0.38174126658529717
+          ],
+          "kontinuum": [
+            0.0,
+            -0.38259884327898325
+          ],
+          "abw_in_SE": 0.3515551218654418,
+          "rel_streuung": 0.025503270586654588
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": -0.5,
+          "tau": 2.0,
+          "mittel": [
+            0.0,
+            -0.1120957498389747
+          ],
+          "kontinuum": [
+            0.0,
+            -0.11194538957061781
+          ],
+          "abw_in_SE": 0.04432943765730518,
+          "rel_streuung": 0.12119777568035511
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": -0.5,
+          "tau": 3.0,
+          "mittel": [
+            0.0,
+            0.13405735238089164
+          ],
+          "kontinuum": [
+            0.0,
+            0.13002597745096675
+          ],
+          "abw_in_SE": 1.2522696379338782,
+          "rel_streuung": 0.09903420141001489
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": -0.5,
+          "tau": 5.0,
+          "mittel": [
+            0.0,
+            0.08869939351695708
+          ],
+          "kontinuum": [
+            0.0,
+            0.08879838565716915
+          ],
+          "abw_in_SE": 0.028961687241127854,
+          "rel_streuung": 0.1539684633624728
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": -0.5,
+          "tau": 8.0,
+          "mittel": [
+            0.0,
+            -0.08688767646913172
+          ],
+          "kontinuum": [
+            0.0,
+            -0.08582540356877695
+          ],
+          "abw_in_SE": 0.3385935039532317,
+          "rel_streuung": 0.14621826208147232
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": -0.5,
+          "tau": 12.0,
+          "mittel": [
+            0.0,
+            -0.02516283609458357
+          ],
+          "kontinuum": [
+            0.0,
+            -0.023844655398416775
+          ],
+          "abw_in_SE": 0.42064792624051095,
+          "rel_streuung": 0.5256844566995087
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": -0.5,
+          "tau": 16.0,
+          "mittel": [
+            0.0,
+            0.08558271663819345
+          ],
+          "kontinuum": [
+            0.0,
+            0.0874495369918146
+          ],
+          "abw_in_SE": 0.5439807327612308,
+          "rel_streuung": 0.1569717451024148
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": 0.0,
+          "tau": 0.5,
+          "mittel": [
+            0.0,
+            -0.46876218715961127
+          ],
+          "kontinuum": [
+            0.0,
+            -0.4692349036204065
+          ],
+          "abw_in_SE": 0.5030300073708166,
+          "rel_streuung": 0.008010811537092233
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": 0.0,
+          "tau": 1.0,
+          "mittel": [
+            0.0,
+            -0.38070094136177907
+          ],
+          "kontinuum": [
+            0.0,
+            -0.38259884327898325
+          ],
+          "abw_in_SE": 0.694211594257074,
+          "rel_streuung": 0.028582370235733522
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": 0.0,
+          "tau": 2.0,
+          "mittel": [
+            0.0,
+            -0.10641833020524255
+          ],
+          "kontinuum": [
+            0.0,
+            -0.11194538957061781
+          ],
+          "abw_in_SE": 1.380212952435136,
+          "rel_streuung": 0.1430875375949267
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": 0.0,
+          "tau": 3.0,
+          "mittel": [
+            0.0,
+            0.12992141201406676
+          ],
+          "kontinuum": [
+            0.0,
+            0.13002597745096675
+          ],
+          "abw_in_SE": 0.04485420189241653,
+          "rel_streuung": 0.07171580653877127
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": 0.0,
+          "tau": 5.0,
+          "mittel": [
+            0.0,
+            0.08741518920770919
+          ],
+          "kontinuum": [
+            0.0,
+            0.08879838565716915
+          ],
+          "abw_in_SE": 0.4109123691571544,
+          "rel_streuung": 0.1516315491240124
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": 0.0,
+          "tau": 8.0,
+          "mittel": [
+            0.0,
+            -0.0850827704632838
+          ],
+          "kontinuum": [
+            0.0,
+            -0.08582540356877695
+          ],
+          "abw_in_SE": 0.1766654534119617,
+          "rel_streuung": 0.19591460380854503
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": 0.0,
+          "tau": 12.0,
+          "mittel": [
+            0.0,
+            -0.023393931667717152
+          ],
+          "kontinuum": [
+            0.0,
+            -0.023844655398416775
+          ],
+          "abw_in_SE": 0.1460693231683437,
+          "rel_streuung": 0.517631084395425
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": 0.0,
+          "tau": 16.0,
+          "mittel": [
+            0.0,
+            0.08438713461779493
+          ],
+          "kontinuum": [
+            0.0,
+            0.0874495369918146
+          ],
+          "abw_in_SE": 1.171006246265279,
+          "rel_streuung": 0.11962047373724682
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": 0.5,
+          "tau": 0.5,
+          "mittel": [
+            0.0,
+            -0.46908176287029535
+          ],
+          "kontinuum": [
+            0.0,
+            -0.4692349036204065
+          ],
+          "abw_in_SE": 0.10881202650944469,
+          "rel_streuung": 0.011997300957018283
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": 0.5,
+          "tau": 1.0,
+          "mittel": [
+            0.0,
+            -0.38121064077219047
+          ],
+          "kontinuum": [
+            0.0,
+            -0.38259884327898325
+          ],
+          "abw_in_SE": 0.5352111792498676,
+          "rel_streuung": 0.027117146460445725
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": 0.5,
+          "tau": 2.0,
+          "mittel": [
+            0.0,
+            -0.10552054782564986
+          ],
+          "kontinuum": [
+            0.0,
+            -0.11194538957061781
+          ],
+          "abw_in_SE": 1.3262441637416054,
+          "rel_streuung": 0.1730982703305084
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": 0.5,
+          "tau": 3.0,
+          "mittel": [
+            0.0,
+            0.1349249287728233
+          ],
+          "kontinuum": [
+            0.0,
+            0.13002597745096675
+          ],
+          "abw_in_SE": 2.337574265672366,
+          "rel_streuung": 0.06447146973407537
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": 0.5,
+          "tau": 5.0,
+          "mittel": [
+            0.0,
+            0.0802121152185223
+          ],
+          "kontinuum": [
+            0.0,
+            0.08879838565716915
+          ],
+          "abw_in_SE": 2.3865473911988686,
+          "rel_streuung": 0.1620650700304391
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": 0.5,
+          "tau": 8.0,
+          "mittel": [
+            0.0,
+            -0.07816361088995923
+          ],
+          "kontinuum": [
+            0.0,
+            -0.08582540356877695
+          ],
+          "abw_in_SE": 2.4340437885735016,
+          "rel_streuung": 0.14670541570087114
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": 0.5,
+          "tau": 12.0,
+          "mittel": [
+            0.0,
+            -0.02354376471976199
+          ],
+          "kontinuum": [
+            0.0,
+            -0.023844655398416775
+          ],
+          "abw_in_SE": 0.08841448792449033,
+          "rel_streuung": 0.5708923701985696
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": 0.5,
+          "tau": 16.0,
+          "mittel": [
+            0.0,
+            0.09148934331375444
+          ],
+          "kontinuum": [
+            0.0,
+            0.0874495369918146
+          ],
+          "abw_in_SE": 1.011744079355224,
+          "rel_streuung": 0.18263850762102812
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": 1.0,
+          "tau": 0.5,
+          "mittel": [
+            0.0,
+            -0.4666105663309093
+          ],
+          "kontinuum": [
+            0.0,
+            -0.4692349036204065
+          ],
+          "abw_in_SE": 1.2009515245944598,
+          "rel_streuung": 0.01862789819090192
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": 1.0,
+          "tau": 1.0,
+          "mittel": [
+            0.0,
+            -0.381835122730782
+          ],
+          "kontinuum": [
+            0.0,
+            -0.38259884327898325
+          ],
+          "abw_in_SE": 0.2619922789419103,
+          "rel_streuung": 0.030476305731156915
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": 1.0,
+          "tau": 2.0,
+          "mittel": [
+            0.0,
+            -0.1053070132566467
+          ],
+          "kontinuum": [
+            0.0,
+            -0.11194538957061781
+          ],
+          "abw_in_SE": 2.1061140191643264,
+          "rel_streuung": 0.1126247313972575
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": 1.0,
+          "tau": 3.0,
+          "mittel": [
+            0.0,
+            0.1373817331997418
+          ],
+          "kontinuum": [
+            0.0,
+            0.13002597745096675
+          ],
+          "abw_in_SE": 2.1825151502907696,
+          "rel_streuung": 0.10368117178501696
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": 1.0,
+          "tau": 5.0,
+          "mittel": [
+            0.0,
+            0.08015263234568883
+          ],
+          "kontinuum": [
+            0.0,
+            0.08879838565716915
+          ],
+          "abw_in_SE": 4.186608058277429,
+          "rel_streuung": 0.09302409541611895
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": 1.0,
+          "tau": 8.0,
+          "mittel": [
+            0.0,
+            -0.07986399753268394
+          ],
+          "kontinuum": [
+            0.0,
+            -0.08582540356877695
+          ],
+          "abw_in_SE": 1.8822642369325355,
+          "rel_streuung": 0.1476087999117705
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": 1.0,
+          "tau": 12.0,
+          "mittel": [
+            0.0,
+            -0.026117908770955447
+          ],
+          "kontinuum": [
+            0.0,
+            -0.023844655398416775
+          ],
+          "abw_in_SE": 0.6723765814278467,
+          "rel_streuung": 0.5671581878743182
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": 1.0,
+          "tau": 16.0,
+          "mittel": [
+            0.0,
+            0.09128811696124897
+          ],
+          "kontinuum": [
+            0.0,
+            0.0874495369918146
+          ],
+          "abw_in_SE": 1.38431524781531,
+          "rel_streuung": 0.12683469447474005
+        },
+        {
+          "art": "paket",
+          "paket": "zitter",
+          "punkt": 0,
+          "komponente": "R",
+          "t": 3.0,
+          "x": 0.0,
+          "mittel": [
+            -0.8165466134605813,
+            0.0
+          ],
+          "kontinuum": [
+            -0.8151524179172042,
+            0.0
+          ],
+          "abw_in_SE": 0.16398082666445618,
+          "rel_streuung": 0.041720719445067826
+        },
+        {
+          "art": "paket",
+          "paket": "zitter",
+          "punkt": 0,
+          "komponente": "L",
+          "t": 3.0,
+          "x": 0.0,
+          "mittel": [
+            0.0,
+            0.19005331565710834
+          ],
+          "kontinuum": [
+            2.194475520855557E-18,
+            0.21089767386592984
+          ],
+          "abw_in_SE": 2.679804803839613,
+          "rel_streuung": 0.14752769883761666
+        },
+        {
+          "art": "paket",
+          "paket": "zitter",
+          "punkt": 1,
+          "komponente": "R",
+          "t": 13.0,
+          "x": 0.0,
+          "mittel": [
+            0.1654450193780985,
+            0.0
+          ],
+          "kontinuum": [
+            0.1653411476836059,
+            -8.881784197001253E-18
+          ],
+          "abw_in_SE": 0.009206427490756416,
+          "rel_streuung": 0.2729512722220187
+        },
+        {
+          "art": "paket",
+          "paket": "zitter",
+          "punkt": 1,
+          "komponente": "L",
+          "t": 13.0,
+          "x": 0.0,
+          "mittel": [
+            0.0,
+            -0.3843764255717181
+          ],
+          "kontinuum": [
+            2.498088320096842E-18,
+            -0.3803781377792762
+          ],
+          "abw_in_SE": 0.5048506572694421,
+          "rel_streuung": 0.08328284802909368
+        },
+        {
+          "art": "paket",
+          "paket": "zitter",
+          "punkt": 2,
+          "komponente": "R",
+          "t": 23.0,
+          "x": 0.0,
+          "mittel": [
+            0.07003998511012759,
+            0.0
+          ],
+          "kontinuum": [
+            0.06182802034606334,
+            2.220446049250313E-18
+          ],
+          "abw_in_SE": 1.0653529489081128,
+          "rel_streuung": 0.49868719298118475
+        },
+        {
+          "art": "paket",
+          "paket": "zitter",
+          "punkt": 2,
+          "komponente": "L",
+          "t": 23.0,
+          "x": 0.0,
+          "mittel": [
+            0.0,
+            0.3164174175151182
+          ],
+          "kontinuum": [
+            -8.742642735059632E-19,
+            0.3118663051964844
+          ],
+          "abw_in_SE": 0.44788797720965934,
+          "rel_streuung": 0.13032858657854637
+        },
+        {
+          "art": "paket",
+          "paket": "bewegt",
+          "punkt": 0,
+          "komponente": "R",
+          "t": 12.0,
+          "x": 9.139129871469178,
+          "mittel": [
+            -0.024602557447819612,
+            -7.435513871014059
+          ],
+          "kontinuum": [
+            0.07586938475883784,
+            -7.447144641163013
+          ],
+          "abw_in_SE": 0.4655896873246929,
+          "rel_streuung": 0.11667551066649799
+        },
+        {
+          "art": "paket",
+          "paket": "bewegt",
+          "punkt": 0,
+          "komponente": "L",
+          "t": 12.0,
+          "x": 9.139129871469178,
+          "mittel": [
+            -0.028715053424629343,
+            -2.7791570562850665
+          ],
+          "kontinuum": [
+            0.012130753242791515,
+            -2.7861515066461844
+          ],
+          "abw_in_SE": 0.5163888937718358,
+          "rel_streuung": 0.11521197548493986
+        },
+        {
+          "art": "paket",
+          "paket": "bewegt",
+          "punkt": 1,
+          "komponente": "R",
+          "t": 22.0,
+          "x": 16.755071431026828,
+          "mittel": [
+            -2.0446734134821734,
+            -7.072080040529173
+          ],
+          "kontinuum": [
+            -1.750016986309073,
+            -7.148389542113037
+          ],
+          "abw_in_SE": 1.515450110483063,
+          "rel_streuung": 0.10916493313682887
+        },
+        {
+          "art": "paket",
+          "paket": "bewegt",
+          "punkt": 1,
+          "komponente": "L",
+          "t": 22.0,
+          "x": 16.755071431026828,
+          "mittel": [
+            -0.7881488549177902,
+            -2.6314803020318727
+          ],
+          "kontinuum": [
+            -0.6778525069050761,
+            -2.6602608133959245
+          ],
+          "abw_in_SE": 1.5045277071716476,
+          "rel_streuung": 0.11039274969251281
+        },
+        {
+          "art": "paket",
+          "paket": "bewegt",
+          "punkt": 2,
+          "komponente": "R",
+          "t": 32.0,
+          "x": 24.371012990584475,
+          "mittel": [
+            -3.55803543343776,
+            -6.108963584744097
+          ],
+          "kontinuum": [
+            -3.3826696214672065,
+            -6.397607519566974
+          ],
+          "abw_in_SE": 1.4692080930000144,
+          "rel_streuung": 0.12706051913684605
+        },
+        {
+          "art": "paket",
+          "paket": "bewegt",
+          "punkt": 2,
+          "komponente": "L",
+          "t": 32.0,
+          "x": 24.371012990584475,
+          "mittel": [
+            -1.344411080146788,
+            -2.252093880473217
+          ],
+          "kontinuum": [
+            -1.284735500814873,
+            -2.3637257008551016
+          ],
+          "abw_in_SE": 1.49204688010657,
+          "rel_streuung": 0.12613790705248473
+        }
+      ],
+      "800": [
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": -1.0,
+          "tau": 0.5,
+          "mittel": [
+            -0.04458130247778052,
+            0.0
+          ],
+          "kontinuum": [
+            -0.04456279241144991,
+            0.0
+          ],
+          "abw_in_SE": 0.4414779403181594,
+          "rel_streuung": 0.0037634535632788293
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": -1.0,
+          "tau": 1.0,
+          "mittel": [
+            -0.08084921336157927,
+            0.0
+          ],
+          "kontinuum": [
+            -0.08094278178550601,
+            0.0
+          ],
+          "abw_in_SE": 0.5848439296748815,
+          "rel_streuung": 0.007906261839052742
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": -1.0,
+          "tau": 2.0,
+          "mittel": [
+            -0.1060851017191981,
+            0.0
+          ],
+          "kontinuum": [
+            -0.10608259999365305,
+            0.0
+          ],
+          "abw_in_SE": 0.0041111675174885206,
+          "rel_streuung": 0.02294511960102689
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": -1.0,
+          "tau": 3.0,
+          "mittel": [
+            -0.061786508424071254,
+            0.0
+          ],
+          "kontinuum": [
+            -0.06236641009334639,
+            0.0
+          ],
+          "abw_in_SE": 0.9410914718010408,
+          "rel_streuung": 0.039521349557043776
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": -1.0,
+          "tau": 5.0,
+          "mittel": [
+            0.0599869287477229,
+            0.0
+          ],
+          "kontinuum": [
+            0.060254815038285635,
+            0.0
+          ],
+          "abw_in_SE": 0.34388731532256356,
+          "rel_streuung": 0.05171333728622267
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": -1.0,
+          "tau": 8.0,
+          "mittel": [
+            -0.043973576717331174,
+            0.0
+          ],
+          "kontinuum": [
+            -0.04315894407956341,
+            0.0
+          ],
+          "abw_in_SE": 0.5677241720590985,
+          "rel_streuung": 0.13298835094189077
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": -1.0,
+          "tau": 12.0,
+          "mittel": [
+            0.03938476011882398,
+            0.0
+          ],
+          "kontinuum": [
+            0.0411007979656945,
+            0.0
+          ],
+          "abw_in_SE": 1.7665500404311347,
+          "rel_streuung": 0.09453892408867244
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": -1.0,
+          "tau": 16.0,
+          "mittel": [
+            -0.017061489827491352,
+            0.0
+          ],
+          "kontinuum": [
+            -0.016627631232878654,
+            0.0
+          ],
+          "abw_in_SE": 0.2453448764066954,
+          "rel_streuung": 0.4254032655066904
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": -0.5,
+          "tau": 0.5,
+          "mittel": [
+            -0.07346745747990702,
+            0.0
+          ],
+          "kontinuum": [
+            -0.07347162373055173,
+            0.0
+          ],
+          "abw_in_SE": 0.04487717539727113,
+          "rel_streuung": 0.005054290886735698
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": -0.5,
+          "tau": 1.0,
+          "mittel": [
+            -0.13378584353475537,
+            0.0
+          ],
+          "kontinuum": [
+            -0.13345208603940265,
+            0.0
+          ],
+          "abw_in_SE": 1.2000039841468544,
+          "rel_streuung": 0.00833648483002174
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": -0.5,
+          "tau": 2.0,
+          "mittel": [
+            -0.17515996911380413,
+            0.0
+          ],
+          "kontinuum": [
+            -0.17490063906070905,
+            0.0
+          ],
+          "abw_in_SE": 0.3816451464903529,
+          "rel_streuung": 0.015540382366230142
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": -0.5,
+          "tau": 3.0,
+          "mittel": [
+            -0.10299875623659545,
+            0.0
+          ],
+          "kontinuum": [
+            -0.10282482689810735,
+            0.0
+          ],
+          "abw_in_SE": 0.13802146231513926,
+          "rel_streuung": 0.04902168388312844
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": -0.5,
+          "tau": 5.0,
+          "mittel": [
+            0.10097448681518773,
+            0.0
+          ],
+          "kontinuum": [
+            0.09934339521572348,
+            0.0
+          ],
+          "abw_in_SE": 1.5350640267388427,
+          "rel_streuung": 0.042783159069687354
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": -0.5,
+          "tau": 8.0,
+          "mittel": [
+            -0.07474720809698114,
+            0.0
+          ],
+          "kontinuum": [
+            -0.07115706912493355,
+            0.0
+          ],
+          "abw_in_SE": 1.834720384117267,
+          "rel_streuung": 0.10999762638339199
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": -0.5,
+          "tau": 12.0,
+          "mittel": [
+            0.06945167017600165,
+            0.0
+          ],
+          "kontinuum": [
+            0.06776375984878907,
+            0.0
+          ],
+          "abw_in_SE": 1.0006912004166162,
+          "rel_streuung": 0.09956616648844464
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": -0.5,
+          "tau": 16.0,
+          "mittel": [
+            -0.02697556257571948,
+            0.0
+          ],
+          "kontinuum": [
+            -0.02741432929500483,
+            0.0
+          ],
+          "abw_in_SE": 0.17856130268328027,
+          "rel_streuung": 0.3585326401950234
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": 0.0,
+          "tau": 0.5,
+          "mittel": [
+            -0.12108686240468203,
+            0.0
+          ],
+          "kontinuum": [
+            -0.12113422883743694,
+            0.0
+          ],
+          "abw_in_SE": 0.41525182863589355,
+          "rel_streuung": 0.0037666237231123757
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": 0.0,
+          "tau": 1.0,
+          "mittel": [
+            -0.22084333089095576,
+            0.0
+          ],
+          "kontinuum": [
+            -0.22002529287246678,
+            0.0
+          ],
+          "abw_in_SE": 2.025952529967498,
+          "rel_streuung": 0.007340600795579966
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": 0.0,
+          "tau": 2.0,
+          "mittel": [
+            -0.2904136361621235,
+            0.0
+          ],
+          "kontinuum": [
+            -0.2883624038784367,
+            0.0
+          ],
+          "abw_in_SE": 1.743969256315742,
+          "rel_streuung": 0.016315386729643132
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": 0.0,
+          "tau": 3.0,
+          "mittel": [
+            -0.1691687366266526,
+            0.0
+          ],
+          "kontinuum": [
+            -0.16952947926296827,
+            0.0
+          ],
+          "abw_in_SE": 0.1827699515632757,
+          "rel_streuung": 0.04657012904538775
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": 0.0,
+          "tau": 5.0,
+          "mittel": [
+            0.16500220621916745,
+            0.0
+          ],
+          "kontinuum": [
+            0.16378956879573264,
+            0.0
+          ],
+          "abw_in_SE": 0.550162423377387,
+          "rel_streuung": 0.053828687971490714
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": 0.0,
+          "tau": 8.0,
+          "mittel": [
+            -0.11556296259854183,
+            0.0
+          ],
+          "kontinuum": [
+            -0.1173181734269573,
+            0.0
+          ],
+          "abw_in_SE": 0.5996500121165845,
+          "rel_streuung": 0.0997989889215438
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": 0.0,
+          "tau": 12.0,
+          "mittel": [
+            0.11079549332045024,
+            0.0
+          ],
+          "kontinuum": [
+            0.11172355224531384,
+            0.0
+          ],
+          "abw_in_SE": 0.19321477123234684,
+          "rel_streuung": 0.17196912526810473
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": 0.0,
+          "tau": 16.0,
+          "mittel": [
+            -0.04668686093539215,
+            0.0
+          ],
+          "kontinuum": [
+            -0.045198587830652115,
+            0.0
+          ],
+          "abw_in_SE": 0.44424630292857165,
+          "rel_streuung": 0.29647899956987583
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": 0.5,
+          "tau": 0.5,
+          "mittel": [
+            -0.1997737587354707,
+            0.0
+          ],
+          "kontinuum": [
+            -0.19971657969413914,
+            0.0
+          ],
+          "abw_in_SE": 0.32375801948430183,
+          "rel_streuung": 0.0035372210960680564
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": 0.5,
+          "tau": 1.0,
+          "mittel": [
+            -0.3638710437113894,
+            0.0
+          ],
+          "kontinuum": [
+            -0.3627603804508613,
+            0.0
+          ],
+          "abw_in_SE": 1.7615278710313276,
+          "rel_streuung": 0.006952372447183849
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": 0.5,
+          "tau": 2.0,
+          "mittel": [
+            -0.47983632986024033,
+            0.0
+          ],
+          "kontinuum": [
+            -0.4754292289445997,
+            0.0
+          ],
+          "abw_in_SE": 2.1717152308372043,
+          "rel_streuung": 0.017073565743492156
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": 0.5,
+          "tau": 3.0,
+          "mittel": [
+            -0.28442633325871525,
+            0.0
+          ],
+          "kontinuum": [
+            -0.2795068584715721,
+            0.0
+          ],
+          "abw_in_SE": 1.9087052619999347,
+          "rel_streuung": 0.03688479641148293
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": 0.5,
+          "tau": 5.0,
+          "mittel": [
+            0.27659202203157557,
+            0.0
+          ],
+          "kontinuum": [
+            0.2700433459923264,
+            0.0
+          ],
+          "abw_in_SE": 1.684729351219532,
+          "rel_streuung": 0.05757711171077418
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": 0.5,
+          "tau": 8.0,
+          "mittel": [
+            -0.19123781497251652,
+            0.0
+          ],
+          "kontinuum": [
+            -0.19342496796871106,
+            0.0
+          ],
+          "abw_in_SE": 0.5324445520350554,
+          "rel_streuung": 0.08494781918806821
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": 0.5,
+          "tau": 12.0,
+          "mittel": [
+            0.17185426909283963,
+            0.0
+          ],
+          "kontinuum": [
+            0.184200997025026,
+            0.0
+          ],
+          "abw_in_SE": 2.475003418611335,
+          "rel_streuung": 0.10832883930855013
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": 0.5,
+          "tau": 16.0,
+          "mittel": [
+            -0.08374804323601165,
+            0.0
+          ],
+          "kontinuum": [
+            -0.0745198731620041,
+            0.0
+          ],
+          "abw_in_SE": 1.3918102121291118,
+          "rel_streuung": 0.3558962856760692
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": 1.0,
+          "tau": 0.5,
+          "mittel": [
+            -0.3294820807991844,
+            0.0
+          ],
+          "kontinuum": [
+            -0.32927697305320447,
+            0.0
+          ],
+          "abw_in_SE": 0.7819257865887603,
+          "rel_streuung": 0.0031865090547008885
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": 1.0,
+          "tau": 1.0,
+          "mittel": [
+            -0.5993510417006743,
+            0.0
+          ],
+          "kontinuum": [
+            -0.598090755416606,
+            0.0
+          ],
+          "abw_in_SE": 1.110874624383975,
+          "rel_streuung": 0.007587471365992221
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": 1.0,
+          "tau": 2.0,
+          "mittel": [
+            -0.7919658805368976,
+            0.0
+          ],
+          "kontinuum": [
+            -0.7838502824735225,
+            0.0
+          ],
+          "abw_in_SE": 2.5135124414915446,
+          "rel_streuung": 0.016476553115164133
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": 1.0,
+          "tau": 3.0,
+          "mittel": [
+            -0.4705161798037503,
+            0.0
+          ],
+          "kontinuum": [
+            -0.46082890286865114,
+            0.0
+          ],
+          "abw_in_SE": 1.948328896587097,
+          "rel_streuung": 0.043157842414996074
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": 1.0,
+          "tau": 5.0,
+          "mittel": [
+            0.4521682988341446,
+            0.0
+          ],
+          "kontinuum": [
+            0.4452262085485827,
+            0.0
+          ],
+          "abw_in_SE": 1.5341744894403713,
+          "rel_streuung": 0.040653203177703885
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": 1.0,
+          "tau": 8.0,
+          "mittel": [
+            -0.3168835729409705,
+            0.0
+          ],
+          "kontinuum": [
+            -0.31890385897450485,
+            0.0
+          ],
+          "abw_in_SE": 0.2733668771166485,
+          "rel_streuung": 0.09269732180652213
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": 1.0,
+          "tau": 12.0,
+          "mittel": [
+            0.29672785493787235,
+            0.0
+          ],
+          "kontinuum": [
+            0.3036961018793314,
+            0.0
+          ],
+          "abw_in_SE": 0.6585754124850465,
+          "rel_streuung": 0.13936021064014606
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_RR",
+          "zeta": 1.0,
+          "tau": 16.0,
+          "mittel": [
+            -0.09772738125956681,
+            0.0
+          ],
+          "kontinuum": [
+            -0.12286249997207177,
+            0.0
+          ],
+          "abw_in_SE": 1.8091828256808185,
+          "rel_streuung": 0.4523130600233746
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": -1.0,
+          "tau": 0.5,
+          "mittel": [
+            0.0,
+            -0.4694348588645846
+          ],
+          "kontinuum": [
+            0.0,
+            -0.4692349036204065
+          ],
+          "abw_in_SE": 0.26397536972604985,
+          "rel_streuung": 0.006457123219440863
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": -1.0,
+          "tau": 1.0,
+          "mittel": [
+            0.0,
+            -0.38206084836509335
+          ],
+          "kontinuum": [
+            0.0,
+            -0.38259884327898325
+          ],
+          "abw_in_SE": 0.32071795872785525,
+          "rel_streuung": 0.017537643171657527
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": -1.0,
+          "tau": 2.0,
+          "mittel": [
+            0.0,
+            -0.11223418155563536
+          ],
+          "kontinuum": [
+            0.0,
+            -0.11194538957061781
+          ],
+          "abw_in_SE": 0.15135125975057703,
+          "rel_streuung": 0.06817935291989394
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": -1.0,
+          "tau": 3.0,
+          "mittel": [
+            0.0,
+            0.131361467719937
+          ],
+          "kontinuum": [
+            0.0,
+            0.13002597745096675
+          ],
+          "abw_in_SE": 1.0735984220553856,
+          "rel_streuung": 0.038267379867957155
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": -1.0,
+          "tau": 5.0,
+          "mittel": [
+            0.0,
+            0.08815992275884706
+          ],
+          "kontinuum": [
+            0.0,
+            0.08879838565716915
+          ],
+          "abw_in_SE": 0.3373805716397633,
+          "rel_streuung": 0.08524531427593633
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": -1.0,
+          "tau": 8.0,
+          "mittel": [
+            0.0,
+            -0.0850516194897213
+          ],
+          "kontinuum": [
+            0.0,
+            -0.08582540356877695
+          ],
+          "abw_in_SE": 0.417720913207718,
+          "rel_streuung": 0.08633317402871311
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": -1.0,
+          "tau": 12.0,
+          "mittel": [
+            0.0,
+            -0.026027663942657563
+          ],
+          "kontinuum": [
+            0.0,
+            -0.023844655398416775
+          ],
+          "abw_in_SE": 1.523114316277479,
+          "rel_streuung": 0.24043178251201583
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": -1.0,
+          "tau": 16.0,
+          "mittel": [
+            0.0,
+            0.08704831242337857
+          ],
+          "kontinuum": [
+            0.0,
+            0.0874495369918146
+          ],
+          "abw_in_SE": 0.18890338676437016,
+          "rel_streuung": 0.09715166572342773
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": -0.5,
+          "tau": 0.5,
+          "mittel": [
+            0.0,
+            -0.46973560274838755
+          ],
+          "kontinuum": [
+            0.0,
+            -0.4692349036204065
+          ],
+          "abw_in_SE": 0.5178756363375776,
+          "rel_streuung": 0.008241780371103888
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": -0.5,
+          "tau": 1.0,
+          "mittel": [
+            0.0,
+            -0.3849312157038771
+          ],
+          "kontinuum": [
+            0.0,
+            -0.38259884327898325
+          ],
+          "abw_in_SE": 1.760282539303027,
+          "rel_streuung": 0.013852617919373296
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": -0.5,
+          "tau": 2.0,
+          "mittel": [
+            0.0,
+            -0.11249224562160483
+          ],
+          "kontinuum": [
+            0.0,
+            -0.11194538957061781
+          ],
+          "abw_in_SE": 0.29497226393760356,
+          "rel_streuung": 0.06624385834597367
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": -0.5,
+          "tau": 3.0,
+          "mittel": [
+            0.0,
+            0.13055072549251437
+          ],
+          "kontinuum": [
+            0.0,
+            0.13002597745096675
+          ],
+          "abw_in_SE": 0.4886378418311376,
+          "rel_streuung": 0.03303646674614959
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": -0.5,
+          "tau": 5.0,
+          "mittel": [
+            0.0,
+            0.08792129057316048
+          ],
+          "kontinuum": [
+            0.0,
+            0.08879838565716915
+          ],
+          "abw_in_SE": 0.5298659575047042,
+          "rel_streuung": 0.07456509570556075
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": -0.5,
+          "tau": 8.0,
+          "mittel": [
+            0.0,
+            -0.08727795713174141
+          ],
+          "kontinuum": [
+            0.0,
+            -0.08582540356877695
+          ],
+          "abw_in_SE": 1.0119753752982608,
+          "rel_streuung": 0.06689695471481207
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": -0.5,
+          "tau": 12.0,
+          "mittel": [
+            0.0,
+            -0.024387265873329293
+          ],
+          "kontinuum": [
+            0.0,
+            -0.023844655398416775
+          ],
+          "abw_in_SE": 0.30630853660017476,
+          "rel_streuung": 0.29716524416773593
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": -0.5,
+          "tau": 16.0,
+          "mittel": [
+            0.0,
+            0.08670642819887397
+          ],
+          "kontinuum": [
+            0.0,
+            0.0874495369918146
+          ],
+          "abw_in_SE": 0.6030872364071757,
+          "rel_streuung": 0.05636048735392058
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": 0.0,
+          "tau": 0.5,
+          "mittel": [
+            0.0,
+            -0.4691004433071464
+          ],
+          "kontinuum": [
+            0.0,
+            -0.4692349036204065
+          ],
+          "abw_in_SE": 0.18273295285640487,
+          "rel_streuung": 0.006272590393241949
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": 0.0,
+          "tau": 1.0,
+          "mittel": [
+            0.0,
+            -0.3862727972356401
+          ],
+          "kontinuum": [
+            0.0,
+            -0.38259884327898325
+          ],
+          "abw_in_SE": 3.978794736266741,
+          "rel_streuung": 0.009653804801299263
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": 0.0,
+          "tau": 2.0,
+          "mittel": [
+            0.0,
+            -0.11347330100013965
+          ],
+          "kontinuum": [
+            0.0,
+            -0.11194538957061781
+          ],
+          "abw_in_SE": 0.8430382058927619,
+          "rel_streuung": 0.06475968117334106
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": 0.0,
+          "tau": 3.0,
+          "mittel": [
+            0.0,
+            0.1300949211575177
+          ],
+          "kontinuum": [
+            0.0,
+            0.13002597745096675
+          ],
+          "abw_in_SE": 0.05679139305842716,
+          "rel_streuung": 0.03734581749830388
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": 0.0,
+          "tau": 5.0,
+          "mittel": [
+            0.0,
+            0.08928058779429066
+          ],
+          "kontinuum": [
+            0.0,
+            0.08879838565716915
+          ],
+          "abw_in_SE": 0.3688520791178397,
+          "rel_streuung": 0.058888679497120115
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": 0.0,
+          "tau": 8.0,
+          "mittel": [
+            0.0,
+            -0.08576348594930126
+          ],
+          "kontinuum": [
+            0.0,
+            -0.08582540356877695
+          ],
+          "abw_in_SE": 0.04105247279146474,
+          "rel_streuung": 0.07029413093293667
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": 0.0,
+          "tau": 12.0,
+          "mittel": [
+            0.0,
+            -0.024289804372770635
+          ],
+          "kontinuum": [
+            0.0,
+            -0.023844655398416775
+          ],
+          "abw_in_SE": 0.24052928463262688,
+          "rel_streuung": 0.31046050412692716
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": 0.0,
+          "tau": 16.0,
+          "mittel": [
+            0.0,
+            0.08968957053952026
+          ],
+          "kontinuum": [
+            0.0,
+            0.0874495369918146
+          ],
+          "abw_in_SE": 1.4449956848893015,
+          "rel_streuung": 0.07090721846572083
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": 0.5,
+          "tau": 0.5,
+          "mittel": [
+            0.0,
+            -0.4698987705430295
+          ],
+          "kontinuum": [
+            0.0,
+            -0.4692349036204065
+          ],
+          "abw_in_SE": 0.9801359625174038,
+          "rel_streuung": 0.005773835256015348
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": 0.5,
+          "tau": 1.0,
+          "mittel": [
+            0.0,
+            -0.38526798430917547
+          ],
+          "kontinuum": [
+            0.0,
+            -0.38259884327898325
+          ],
+          "abw_in_SE": 1.9836626654848788,
+          "rel_streuung": 0.014067600952630313
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": 0.5,
+          "tau": 2.0,
+          "mittel": [
+            0.0,
+            -0.11619470372690639
+          ],
+          "kontinuum": [
+            0.0,
+            -0.11194538957061781
+          ],
+          "abw_in_SE": 2.204238778687312,
+          "rel_streuung": 0.06888330572918566
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": 0.5,
+          "tau": 3.0,
+          "mittel": [
+            0.0,
+            0.1303345953730421
+          ],
+          "kontinuum": [
+            0.0,
+            0.13002597745096675
+          ],
+          "abw_in_SE": 0.2577742263353157,
+          "rel_streuung": 0.036830830753832595
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": 0.5,
+          "tau": 5.0,
+          "mittel": [
+            0.0,
+            0.09090427061411255
+          ],
+          "kontinuum": [
+            0.0,
+            0.08879838565716915
+          ],
+          "abw_in_SE": 1.5222783441725756,
+          "rel_streuung": 0.062315415340920874
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": 0.5,
+          "tau": 8.0,
+          "mittel": [
+            0.0,
+            -0.08404559936115137
+          ],
+          "kontinuum": [
+            0.0,
+            -0.08582540356877695
+          ],
+          "abw_in_SE": 0.9835018161842585,
+          "rel_streuung": 0.08434147657531477
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": 0.5,
+          "tau": 12.0,
+          "mittel": [
+            0.0,
+            -0.026848023787342593
+          ],
+          "kontinuum": [
+            0.0,
+            -0.023844655398416775
+          ],
+          "abw_in_SE": 2.201892910057881,
+          "rel_streuung": 0.22881334668522343
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": 0.5,
+          "tau": 16.0,
+          "mittel": [
+            0.0,
+            0.09043103880198997
+          ],
+          "kontinuum": [
+            0.0,
+            0.0874495369918146
+          ],
+          "abw_in_SE": 3.2082368694210697,
+          "rel_streuung": 0.04250804471951995
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": 1.0,
+          "tau": 0.5,
+          "mittel": [
+            0.0,
+            -0.4700179789432548
+          ],
+          "kontinuum": [
+            0.0,
+            -0.4692349036204065
+          ],
+          "abw_in_SE": 1.4706314621279717,
+          "rel_streuung": 0.004539095994011914
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": 1.0,
+          "tau": 1.0,
+          "mittel": [
+            0.0,
+            -0.3853707752692672
+          ],
+          "kontinuum": [
+            0.0,
+            -0.38259884327898325
+          ],
+          "abw_in_SE": 2.0005992272781667,
+          "rel_streuung": 0.014485677513612459
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": 1.0,
+          "tau": 2.0,
+          "mittel": [
+            0.0,
+            -0.1147270756839519
+          ],
+          "kontinuum": [
+            0.0,
+            -0.11194538957061781
+          ],
+          "abw_in_SE": 1.8485552207046017,
+          "rel_streuung": 0.053768692181728694
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": 1.0,
+          "tau": 3.0,
+          "mittel": [
+            0.0,
+            0.1306689730645923
+          ],
+          "kontinuum": [
+            0.0,
+            0.13002597745096675
+          ],
+          "abw_in_SE": 0.4061188660534121,
+          "rel_streuung": 0.04870625178518749
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": 1.0,
+          "tau": 5.0,
+          "mittel": [
+            0.0,
+            0.09202852617482042
+          ],
+          "kontinuum": [
+            0.0,
+            0.08879838565716915
+          ],
+          "abw_in_SE": 2.434114152334358,
+          "rel_streuung": 0.0597771760965679
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": 1.0,
+          "tau": 8.0,
+          "mittel": [
+            0.0,
+            -0.08657272497900889
+          ],
+          "kontinuum": [
+            0.0,
+            -0.08582540356877695
+          ],
+          "abw_in_SE": 0.5005236811064019,
+          "rel_streuung": 0.06958681060974774
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": 1.0,
+          "tau": 12.0,
+          "mittel": [
+            0.0,
+            -0.02598179028175616
+          ],
+          "kontinuum": [
+            0.0,
+            -0.023844655398416775
+          ],
+          "abw_in_SE": 1.4467839032711465,
+          "rel_streuung": 0.24779766279430274
+        },
+        {
+          "art": "propagator",
+          "komponente": "S_LR",
+          "zeta": 1.0,
+          "tau": 16.0,
+          "mittel": [
+            0.0,
+            0.08844402405170587
+          ],
+          "kontinuum": [
+            0.0,
+            0.0874495369918146
+          ],
+          "abw_in_SE": 0.5551936135242952,
+          "rel_streuung": 0.08193267829233941
+        },
+        {
+          "art": "paket",
+          "paket": "zitter",
+          "punkt": 0,
+          "komponente": "R",
+          "t": 3.0,
+          "x": 0.0,
+          "mittel": [
+            -0.8196882170097095,
+            0.0
+          ],
+          "kontinuum": [
+            -0.8151524179172042,
+            0.0
+          ],
+          "abw_in_SE": 0.9154431174093954,
+          "rel_streuung": 0.024313283614191633
+        },
+        {
+          "art": "paket",
+          "paket": "zitter",
+          "punkt": 0,
+          "komponente": "L",
+          "t": 3.0,
+          "x": 0.0,
+          "mittel": [
+            0.0,
+            0.21127960490744319
+          ],
+          "kontinuum": [
+            2.194475520855557E-18,
+            0.21089767386592984
+          ],
+          "abw_in_SE": 0.09018437354068885,
+          "rel_streuung": 0.08032335979874242
+        },
+        {
+          "art": "paket",
+          "paket": "zitter",
+          "punkt": 1,
+          "komponente": "R",
+          "t": 13.0,
+          "x": 0.0,
+          "mittel": [
+            0.16759690139404876,
+            0.0
+          ],
+          "kontinuum": [
+            0.1653411476836059,
+            -8.881784197001253E-18
+          ],
+          "abw_in_SE": 0.5209580011425177,
+          "rel_streuung": 0.10475337189458878
+        },
+        {
+          "art": "paket",
+          "paket": "zitter",
+          "punkt": 1,
+          "komponente": "L",
+          "t": 13.0,
+          "x": 0.0,
+          "mittel": [
+            0.0,
+            -0.3847529915805502
+          ],
+          "kontinuum": [
+            2.498088320096842E-18,
+            -0.3803781377792762
+          ],
+          "abw_in_SE": 0.8032712131418663,
+          "rel_streuung": 0.05727245298012995
+        },
+        {
+          "art": "paket",
+          "paket": "zitter",
+          "punkt": 2,
+          "komponente": "R",
+          "t": 23.0,
+          "x": 0.0,
+          "mittel": [
+            0.06800168951666775,
+            0.0
+          ],
+          "kontinuum": [
+            0.06182802034606334,
+            2.220446049250313E-18
+          ],
+          "abw_in_SE": 1.239151461412848,
+          "rel_streuung": 0.3223247169133389
+        },
+        {
+          "art": "paket",
+          "paket": "zitter",
+          "punkt": 2,
+          "komponente": "L",
+          "t": 23.0,
+          "x": 0.0,
+          "mittel": [
+            0.0,
+            0.3068044163209872
+          ],
+          "kontinuum": [
+            -8.742642735059632E-19,
+            0.3118663051964844
+          ],
+          "abw_in_SE": 0.8971814483962102,
+          "rel_streuung": 0.07236421549468246
+        },
+        {
+          "art": "paket",
+          "paket": "bewegt",
+          "punkt": 0,
+          "komponente": "R",
+          "t": 12.0,
+          "x": 9.139129871469178,
+          "mittel": [
+            0.19350564753068464,
+            -7.457381408600353
+          ],
+          "kontinuum": [
+            0.07586938475883784,
+            -7.447144641163013
+          ],
+          "abw_in_SE": 1.1556253333938198,
+          "rel_streuung": 0.054879481387351166
+        },
+        {
+          "art": "paket",
+          "paket": "bewegt",
+          "punkt": 0,
+          "komponente": "L",
+          "t": 12.0,
+          "x": 9.139129871469178,
+          "mittel": [
+            0.05623617073587255,
+            -2.7920267795124083
+          ],
+          "kontinuum": [
+            0.012130753242791515,
+            -2.7861515066461844
+          ],
+          "abw_in_SE": 1.1745514062372513,
+          "rel_streuung": 0.05438642470585905
+        },
+        {
+          "art": "paket",
+          "paket": "bewegt",
+          "punkt": 1,
+          "komponente": "R",
+          "t": 22.0,
+          "x": 16.755071431026828,
+          "mittel": [
+            -1.6396166069975902,
+            -7.2291953507434314
+          ],
+          "kontinuum": [
+            -1.750016986309073,
+            -7.148389542113037
+          ],
+          "abw_in_SE": 1.4760123350967407,
+          "rel_streuung": 0.05037907503250114
+        },
+        {
+          "art": "paket",
+          "paket": "bewegt",
+          "punkt": 1,
+          "komponente": "L",
+          "t": 22.0,
+          "x": 16.755071431026828,
+          "mittel": [
+            -0.6361520032308969,
+            -2.6940806410765443
+          ],
+          "kontinuum": [
+            -0.6778525069050761,
+            -2.6602608133959245
+          ],
+          "abw_in_SE": 1.5284785020951974,
+          "rel_streuung": 0.05118200644412779
+        },
+        {
+          "art": "paket",
+          "paket": "bewegt",
+          "punkt": 2,
+          "komponente": "R",
+          "t": 32.0,
+          "x": 24.371012990584475,
+          "mittel": [
+            -3.289882669780914,
+            -6.431232149245693
+          ],
+          "kontinuum": [
+            -3.3826696214672065,
+            -6.397607519566974
+          ],
+          "abw_in_SE": 0.938979654448607,
+          "rel_streuung": 0.05809451759987574
+        },
+        {
+          "art": "paket",
+          "paket": "bewegt",
+          "punkt": 2,
+          "komponente": "L",
+          "t": 32.0,
+          "x": 24.371012990584475,
+          "mittel": [
+            -1.2486045961736814,
+            -2.375094750454706
+          ],
+          "kontinuum": [
+            -1.284735500814873,
+            -2.3637257008551016
+          ],
+          "abw_in_SE": 0.9611749928263498,
+          "rel_streuung": 0.058591697986931306
+        }
+      ]
+    },
+    "komponenten": {
+      "zitter": {
+        "kontinuum_anteil_R": [
+          0.8445626996662041,
+          0.5442035267288293,
+          0.30208512307331414,
+          0.33694210165511157,
+          0.5920975431599484,
+          0.8157116076130786,
+          0.8063597369869319,
+          0.589654340837611,
+          0.3767214777967277,
+          0.36051449911160166,
+          0.5436714265052968,
+          0.7486178523342477,
+          0.7884222386101203,
+          0.6356388392713463,
+          0.43830851363788914,
+          0.37739896881529,
+          0.5019348405001872,
+          0.6909407818700987,
+          0.7703215285293811,
+          0.6724629445783422,
+          0.49298649693032914,
+          0.3978058894609286,
+          0.47030164320682327,
+          0.6388441682292155,
+          0.7471466044685884,
+          0.6987762242331641,
+          0.5426038035820823,
+          0.4238496560007498,
+          0.4493614558030218,
+          0.591798692369259,
+          0.7183567053165252,
+          0.7143454743225927,
+          0.5868698274487878,
+          0.4551157029961271,
+          0.4391089521932242,
+          0.5505816903401588,
+          0.6849856334472691,
+          0.7193890334169502,
+          0.624743033443934,
+          0.49015012593983515
+        ],
+        "rho200_mittel": [
+          0.8527254389565412,
+          0.5576297629845302,
+          0.3014699411580525,
+          0.33810724473582093,
+          0.5892475587019721,
+          0.8162887495115863,
+          0.8060246587996817,
+          0.5881976629502068,
+          0.38227418697632265,
+          0.3682056345184609,
+          0.534756002904581,
+          0.7421800504252942,
+          0.7829427629107647,
+          0.6348973811162306,
+          0.4355932617953307,
+          0.3794272115758091,
+          0.49382227373599985,
+          0.6776555805605455,
+          0.7585789878335327,
+          0.6604977648595353,
+          0.48887540459869233,
+          0.3986315472253853,
+          0.4691456760736137,
+          0.6258801835850942,
+          0.7336137863383392,
+          0.6827776238596379,
+          0.5340771093090149,
+          0.42253853169806316,
+          0.4500703154982696,
+          0.5825277202752225,
+          0.7005120435532511,
+          0.6945097612994209,
+          0.5739906507524615,
+          0.44943842578244697,
+          0.4401617741471678,
+          0.5460780510434445,
+          0.6702914830420048,
+          0.6945210331939665,
+          0.6038458226617937,
+          0.48610252763392275
+        ],
+        "rho200_std": [
+          0.020604695182763085,
+          0.024554109699213233,
+          0.01935839232668898,
+          0.03165778868721022,
+          0.03649341502527879,
+          0.022844120211847042,
+          0.013424312352275031,
+          0.027298159494846194,
+          0.026594069011563224,
+          0.035607882384791276,
+          0.03596984301641131,
+          0.024288645175423396,
+          0.02407738581762134,
+          0.032424376011887156,
+          0.036698763147635954,
+          0.026783255164570925,
+          0.03481440043233101,
+          0.03201971824823808,
+          0.026654347676197607,
+          0.03548786486299838,
+          0.03667477054244742,
+          0.027061512291182498,
+          0.03865844208167967,
+          0.038466979909985,
+          0.030392347701715585,
+          0.03002962690691539,
+          0.04056651968363176,
+          0.030985477731711213,
+          0.033453534087520005,
+          0.03882138839191366,
+          0.03425619763664588,
+          0.029528638585756512,
+          0.030814208279769724,
+          0.02807194499275046,
+          0.03066176367673674,
+          0.03426929219487846,
+          0.03821002049421901,
+          0.030242848673416218,
+          0.02943915522811825,
+          0.030212227500162316
+        ],
+        "rho200_max_abw_mittel_gegen_kontinuum": 0.024868000222983633,
+        "rho800_mittel": [
+          0.845497443078414,
+          0.5448493380235664,
+          0.29842925859516284,
+          0.33751923659823674,
+          0.5972076604933164,
+          0.8157876381194078,
+          0.8045284258389219,
+          0.5885481753357659,
+          0.37484213802966954,
+          0.35661869956302744,
+          0.5441295921121541,
+          0.748015600772946,
+          0.784443403061259,
+          0.6340320738568129,
+          0.4381529777565189,
+          0.3755453437289925,
+          0.5037971432082993,
+          0.6885144969572004,
+          0.7671202337665279,
+          0.6694849493564825,
+          0.48914233730358475,
+          0.3992428267645283,
+          0.4727719625236552,
+          0.6368590304952303,
+          0.744816048477452,
+          0.6968315299775106,
+          0.5418031530597339,
+          0.4231370493582756,
+          0.45009345213916885,
+          0.5910896868941475,
+          0.716933495138416,
+          0.7127882898466106,
+          0.5875414997648439,
+          0.45721564251715163,
+          0.4431026687567512,
+          0.5526922704642254,
+          0.6846923719323627,
+          0.716277146893712,
+          0.6227551413944049,
+          0.49157504773794153
+        ],
+        "rho800_std": [
+          0.010966864498975422,
+          0.01746494142529515,
+          0.011851838998362091,
+          0.012166841709574622,
+          0.015801833045421907,
+          0.008222771563679915,
+          0.010192937237922731,
+          0.01563434899844637,
+          0.01479402602553483,
+          0.015648059148864947,
+          0.015982505918119023,
+          0.011994933433199628,
+          0.010086027444171808,
+          0.013092256347837502,
+          0.015528010658478943,
+          0.01652633285980373,
+          0.018391578699342572,
+          0.016243812929391647,
+          0.01021647329979356,
+          0.015202147684018745,
+          0.01749731297091157,
+          0.015129513544151797,
+          0.021346012432412444,
+          0.019104212831930773,
+          0.014059802615602834,
+          0.01468874519048079,
+          0.01781941611197316,
+          0.018650071466730887,
+          0.02034426559063759,
+          0.022334771749473726,
+          0.016217989428035772,
+          0.014467035543177085,
+          0.017632830956842444,
+          0.018256812766714592,
+          0.022505671511247483,
+          0.021932347383627177,
+          0.016486755650109437,
+          0.014386385168003156,
+          0.01804366630486974,
+          0.022153764120279567
+        ],
+        "rho800_max_abw_mittel_gegen_kontinuum": 0.0051101173333679695,
+        "kontinuum_kreisfrequenz_aus_nulldurchgaengen": 1.9841637812146062
+      },
+      "bewegt": {
+        "kontinuum_anteil_R": [
+          0.8782057570334008,
+          0.8782059262688457,
+          0.8782060727626233,
+          0.8782061904801179,
+          0.8782062795507621,
+          0.8782063433869256,
+          0.8782063867039152,
+          0.8782064143000471,
+          0.8782064304109203,
+          0.8782064384544211,
+          0.8782064410122586,
+          0.8782064399332795,
+          0.8782064364822887,
+          0.878206431489697,
+          0.8782064254801438,
+          0.8782064187728547,
+          0.878206411554633,
+          0.878206403930065,
+          0.8782063959544588,
+          0.8782063876545994,
+          0.8782063790413687,
+          0.8782063701172057,
+          0.8782063608804312,
+          0.8782063513277536,
+          0.8782063414557663,
+          0.8782063312619159,
+          0.8782063207452174,
+          0.8782063099068655,
+          0.8782062987508209,
+          0.8782062872844155,
+          0.8782062755189938,
+          0.8782062634705987,
+          0.8782062511607072,
+          0.8782062386170117,
+          0.8782062258742476,
+          0.8782062129750612,
+          0.8782061999709163,
+          0.878206186923032,
+          0.8782061739033481,
+          0.8782061609955112
+        ],
+        "rho200_mittel": [
+          0.8782090425921104,
+          0.8782617355462726,
+          0.8782749360799312,
+          0.8783034398411385,
+          0.8782149876771358,
+          0.8782302250508609,
+          0.8783144965819731,
+          0.8783427603321122,
+          0.8782137178790425,
+          0.8781919264525768,
+          0.87833262321349,
+          0.8783644554334649,
+          0.8781926811518064,
+          0.8781800453406171,
+          0.8783289113302246,
+          0.8783486103003807,
+          0.8782695388674195,
+          0.8781178944996052,
+          0.878245124763974,
+          0.8783046121830191,
+          0.8782344057445821,
+          0.8781930431952922,
+          0.8782690239069192,
+          0.8782519927871809,
+          0.878190759894209,
+          0.8782146928986785,
+          0.8783116524297327,
+          0.8782548994062335,
+          0.878237066341603,
+          0.8782045135932125,
+          0.8782897361336156,
+          0.8782757562088659,
+          0.8781572872125099,
+          0.8782716081148921,
+          0.8782702437026242,
+          0.8782513966248966,
+          0.8781136323253449,
+          0.8782395411916557,
+          0.878271970491343,
+          0.8781714742799093
+        ],
+        "rho200_std": [
+          0.00032941211054238596,
+          0.00028139039351770254,
+          0.0003144339029809327,
+          0.00024445763306615143,
+          0.00033495572700496606,
+          0.00033812567676970765,
+          0.000300761817944443,
+          0.00028386633331225645,
+          0.00029254084964741567,
+          0.000315070642658356,
+          0.00029243159888491725,
+          0.00024882759322241387,
+          0.0002794427280863764,
+          0.0003325730901815776,
+          0.0003135849773645537,
+          0.00033553183109995033,
+          0.00030297422418246357,
+          0.0003103297194580679,
+          0.00036412258214405175,
+          0.0002868292723607111,
+          0.0003192604792882423,
+          0.0002382192625221147,
+          0.00026981858181145466,
+          0.00029947697140685043,
+          0.00024053001669016884,
+          0.0002763983767380108,
+          0.0002916947887362432,
+          0.00030859696213334816,
+          0.00022822784819281078,
+          0.00033950748115752383,
+          0.0003235800232393448,
+          0.00032170407146859186,
+          0.00032113386396492703,
+          0.0002770502134143238,
+          0.00030054471162495463,
+          0.00025380324799387775,
+          0.00036408284999379524,
+          0.0002771243945793216,
+          0.00033498507398578895,
+          0.00024247946207722778
+        ],
+        "rho200_max_abw_mittel_gegen_kontinuum": 0.00015801550018534893,
+        "rho800_mittel": [
+          0.87820532469386,
+          0.8782368733026841,
+          0.8782109943194265,
+          0.8781609739524594,
+          0.8781731557996,
+          0.8782346488473425,
+          0.8782461785929145,
+          0.8781619483400496,
+          0.8781683126011953,
+          0.8782445834245056,
+          0.8782314215837913,
+          0.8781812543489562,
+          0.8781870920209273,
+          0.8782258245471398,
+          0.8782073755044018,
+          0.8781842100241755,
+          0.8782157387535615,
+          0.8782345950287831,
+          0.8781884061959835,
+          0.8781583828219335,
+          0.8782064666412215,
+          0.8782494948203351,
+          0.8781999351217945,
+          0.8781545103237285,
+          0.8782176134135016,
+          0.8782251194326695,
+          0.8782097462454935,
+          0.8781759111542085,
+          0.878184396975634,
+          0.8782425645457076,
+          0.8782500491960143,
+          0.8781947450617801,
+          0.8782063740720578,
+          0.8782064352933195,
+          0.8781981536611612,
+          0.8782050815782377,
+          0.8782531348514226,
+          0.8782084069888753,
+          0.8781928460822641,
+          0.8781885021255457
+        ],
+        "rho800_std": [
+          0.00011652541137446254,
+          0.00013965493509934799,
+          0.00011582931975014973,
+          0.00014869941235135,
+          0.00012004265651536795,
+          0.00014268710823061488,
+          0.00014272539009273,
+          0.00016306428214821908,
+          0.00014300696291717362,
+          0.00014260597680611556,
+          0.00013026180249284806,
+          0.000162739965085191,
+          0.00010662925308522807,
+          0.0001243472160349314,
+          0.00014146809987725117,
+          0.00014967167784990602,
+          0.000155343390625208,
+          0.00010835007879195819,
+          0.00014136450139815273,
+          0.00013348294354900776,
+          0.0001524602509209421,
+          0.00010123569349788568,
+          0.00007697192402364145,
+          0.00011980762300124892,
+          0.00015348375513544925,
+          0.00013149182729921762,
+          0.00010836991945710624,
+          0.00011427810151592833,
+          0.00017208247660311813,
+          0.00013370783627595942,
+          0.00011192825814184185,
+          0.00010679000309823399,
+          0.00017015245376476434,
+          0.0001536996247657156,
+          0.0001446276440437883,
+          0.00012086196619241832,
+          0.00015229033962282047,
+          0.00013946392752533924,
+          0.00012701166045212532,
+          0.00017504342359598405
+        ],
+        "rho800_max_abw_mittel_gegen_kontinuum": 0.00005184100402511049
+      }
+    },
+    "saaten": {
+      "200": {
+        "paket": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16
+        ],
+        "punkt": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16
+        ]
+      },
+      "800": {
+        "paket": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16
+        ],
+        "punkt": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16
+        ]
+      }
+    }
+  },
+  "rhos": [
+    200.0,
+    800.0
+  ],
+  "n_saaten_soll": 16,
+  "skript_sha256": "5ef8ec75370819ebbc1a3a473a6852268dcfaeb0058176c632bac0a88b897562",
+  "kausal_dirac_sha256": "7b6f3fb5f8ec7350ec1ab46fc60852ef82822b94eaa82801a52c534c832057ab",
+  "zeit_utc": "2026-10-04T04:56:57Z"
+}

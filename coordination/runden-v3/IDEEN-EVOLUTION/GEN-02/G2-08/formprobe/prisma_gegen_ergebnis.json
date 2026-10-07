@@ -1,0 +1,191 @@
+{
+ "start": "2026-09-30T11:25:51+02:00",
+ "geraet": "CPU, 1 Thread",
+ "torch": "2.10.0+cu128",
+ "teil": "gegen",
+ "faktor": 0.01,
+ "schwellen": {
+  "A|0.55": {
+   "v_cl": 0.07924393631548066,
+   "M1": 3.371075620600026,
+   "M2": 3.3817102384290902,
+   "Q": 3.814405472732549,
+   "R_erste_Ordnung": 0.3154666054976163,
+   "licht_hinten": 1.019803902718557
+  },
+  "A|0.7": {
+   "v_cl": 0.06553020800153171,
+   "M1": 2.2986069702664595,
+   "M2": 2.3035582708266493,
+   "Q": 2.4414916653982712,
+   "R_erste_Ordnung": 0.2154044003275457,
+   "licht_hinten": 1.019803902718557
+  },
+  "A|0.9": {
+   "v_cl": 0.03651551197141468,
+   "M1": 1.268978571139879,
+   "M2": 1.269825435111805,
+   "Q": 1.2912268228920127,
+   "R_erste_Ordnung": 0.06673587649042023,
+   "licht_hinten": 1.019803902718557
+  },
+  "C|0.55": {
+   "v_cl": 0.14119819903914108,
+   "M1": 3.371075620600026,
+   "M2": 3.4051910460595183,
+   "Q": 3.814405472732549,
+   "R_erste_Ordnung": 1.012004158287616,
+   "licht_hinten": 1.020204061220407
+  },
+  "C|0.7": {
+   "v_cl": 0.14126691659637086,
+   "M1": 2.2986069702664595,
+   "M2": 2.3218919612311204,
+   "Q": 2.4414916653982712,
+   "R_erste_Ordnung": 1.013004452951849,
+   "licht_hinten": 1.020204061220407
+  },
+  "C|0.9": {
+   "v_cl": 0.14137325902512635,
+   "M1": 1.268978571139879,
+   "M2": 1.2818530370918408,
+   "Q": 1.2912268228920127,
+   "R_erste_Ordnung": 1.0145534562019387,
+   "licht_hinten": 1.020204061220407
+  }
+ },
+ "v_P1": 0.0510228599864732,
+ "v_P2": 0.07238707215850618,
+ "parameter": {
+  "phi2": 0.01,
+  "x_s": 0.0,
+  "w": 1.0,
+  "x0": -20.0,
+  "zone": 6.0,
+  "L_box": 120.0,
+  "x_sponge": 80.0,
+  "dx_dt_grob": [
+   0.1,
+   0.05
+  ],
+  "T_run": "min(2000.0, 80.0/v) x Faktor"
+ },
+ "stufen": {
+  "grob": {
+   "zeilen": [
+    {
+     "name": "ohne Stufe A w2=0.7 v_P1",
+     "variante": "A",
+     "omega2": 0.7,
+     "v": 0.0510228599864732,
+     "phi2": 0.0,
+     "rolle": "gegen",
+     "soll": "durch",
+     "T_run": 15.679246522286089,
+     "anteile": {
+      "zurueck": 0.9999993918662262,
+      "stufe": 6.081327025169126e-07,
+      "durch": 1.071000887500595e-12,
+      "frei": 2.220446049250313e-16
+     },
+     "ausgang": "vor der Stufe",
+     "richtig": false,
+     "spaltet": false,
+     "v2": 0.05101093229176534,
+     "S_max_schwankung": 0.0003403938989547076,
+     "t_kontakt": 15.0,
+     "plaus": {
+      "ladung_bis_Schwamm_1e-6": {
+       "max_rel": 3.6378515326827467e-16,
+       "bestanden": true
+      },
+      "energie_bis_Schwamm_1e-5": {
+       "max_rel": 1.2458323020908334e-07,
+       "bestanden": true
+      },
+      "anteile_0_bis_1": {
+       "min": 2.220446049250313e-16,
+       "max": 0.9999993918662262,
+       "bestanden": true
+      },
+      "summe_1": {
+       "summe": 1.0,
+       "hinweis": "frei = Rest, Summe gilt per Bau",
+       "bestanden": true
+      },
+      "v2_unter_Licht": {
+       "v2": 0.05101093229176534,
+       "licht": 1.0,
+       "bestanden": true
+      }
+     }
+    },
+    {
+     "name": "umgekehrt A w2=0.55 v_P1",
+     "variante": "A",
+     "omega2": 0.55,
+     "v": 0.0510228599864732,
+     "phi2": -0.01,
+     "rolle": "gegen",
+     "soll": "durch",
+     "T_run": 15.679246522286089,
+     "anteile": {
+      "zurueck": 0.9999999617315943,
+      "stufe": 3.826840293239464e-08,
+      "durch": 2.5211938419853116e-15,
+      "frei": 2.220446049250313e-16
+     },
+     "ausgang": "vor der Stufe",
+     "richtig": false,
+     "spaltet": false,
+     "v2": 0.05101355847653366,
+     "S_max_schwankung": 0.00028738446328593106,
+     "t_kontakt": 15.0,
+     "plaus": {
+      "ladung_bis_Schwamm_1e-6": {
+       "max_rel": 3.492726819615702e-16,
+       "bestanden": true
+      },
+      "energie_bis_Schwamm_1e-5": {
+       "max_rel": 6.483120928269517e-08,
+       "bestanden": true
+      },
+      "anteile_0_bis_1": {
+       "min": 2.220446049250313e-16,
+       "max": 0.9999999617315943,
+       "bestanden": true
+      },
+      "summe_1": {
+       "summe": 1.0,
+       "hinweis": "frei = Rest, Summe gilt per Bau",
+       "bestanden": true
+      },
+      "v2_unter_Licht": {
+       "v2": 0.05101355847653366,
+       "licht": 1.0,
+       "bestanden": true
+      }
+     }
+    }
+   ],
+   "pruefung": {
+    "ohne_Stufe_durch_v2_gleich_v_1e-3": {
+     "ausgang": "vor der Stufe",
+     "v2": 0.05101093229176534,
+     "v": 0.0510228599864732,
+     "rel": 0.0002337715822087938,
+     "bestanden": false
+    },
+    "umgekehrt_durch_v2_groesser_v": {
+     "ausgang": "vor der Stufe",
+     "v2": 0.05101355847653366,
+     "v": 0.0510228599864732,
+     "bestanden": false
+    },
+    "plausibilitaet_bestanden": true
+   },
+   "sek": 0.1609773079981096
+  }
+ },
+ "ende": "2026-09-30T11:25:51+02:00"
+}

@@ -1,0 +1,23 @@
+Runde 8 GF-BIC (Kopie gfbic_delta.py, ZUS-10 Idee 9, delta_m2 = 0.05) spektrum Start 2026-09-30T06:44:38+00:00, Geraet cpu, torch 2.5.1+cu121, numpy 2.4.4; gfbic.py sha256 13e3feeff0ef8cbd, resonanz3d.py /home/fmh/fmhc-physics-remote/runde9-zus10/resonanz3d.py sha256 99c54b9ccdb517c1
+=== P1: omega^2 = 0.797677, omega = 0.89312765, Kanal a offen ab nu = 0.106872, Kanal b ab 1.893128; 2 omega = 1.78625530
+  Profil: S0 = 1.049058, R_halb = 2.3051, Q = 189.1441, kappa = <f^4>/<f^2> = 0.40464600 (Stufe A 0.40464600); Profilzeit 28.2 + 28.3 s
+  Zwei-Moden-Formel lambda_2(g): g = 0.2: 0.04529207
+  FD (Delta 0.1, R 40.0, M 399) g = 0.2: n(L_u) = 1, n(L_v) = 0, L_u min -3.677375e-02, L_v min 1.244332e-01; instabil ['0.00000000 + 3.8115e-02 i']; gebunden 0 <= nu < 1 - omega: []; lokalisiert im Fenster: [(1.814691, 1.0)] (7.3 s)
+  L_0 = -Lap + U'(f^2), Eigenwerte unter 1 (FD): [0.84759447] (E_0 soll omega^2 = 0.797677 sein)
+  FD Instabilitaet g = 0.2: -0.0000000000 + 3.8115e-02 i | -0.0000000000 + 3.8076e-02 i | Richardson -0.0000000000 + 3.8063e-02 i
+  Schiessen Stufe A (h 0.02, R 28.18, r_m 2.30): g = 0: |D(0)| 1.98e-02 (|D(1e-3)| 1.98e-02, Verh. 2e-3/1e-3 0.996), |D(2 omega)| 5.31e-02 (|D(2 omega + 1e-3)| 5.13e-02); 15 Keime, 43.3 s
+  Schiessen Stufe B (h 0.01, R 38.41, r_m 2.31): g = 0: |D(0)| 1.98e-02 (|D(1e-3)| 1.98e-02, Verh. 2e-3/1e-3 0.996), |D(2 omega)| 5.27e-02 (|D(2 omega + 1e-3)| 5.09e-02); 20 Keime, 117.4 s
+  Pole (Stufe B; in Klammern Abstand zu Stufe A). Im > 0 = anwachsend, Im < 0 = abklingend:
+    g = +0.20 [instabil]: nu = -0.0000000000 + 3.8063e-02 i (A: 3.9e-10), |D| 5.9e-17, lambda/lambda_2 = 0.840380, |Re|/Im = 4.0e-19
+    g = +0.20 [2omega]: nu = 1.8147280952 - 3.1132e-06 i (A: 8.3e-08), |D| 1.2e-16
+    g = +0.20 [scan]: nu = 0.2230051871 - 1.5868e-02 i (A: 1.5e-01), |D| 1.4e-14
+    g = +0.20 [scan]: nu = 0.1912588041 - 1.1490e-02 i (A: 1.8e-01), |D| 2.8e-14
+    g = +0.20 [scan]: nu = 0.5066269004 - 3.9187e-02 i (A: 1.7e-02), |D| 1.4e-14
+    g = +0.20 [scan]: nu = 0.5648772637 - 4.2335e-02 i (A: 3.5e-02), |D| 2.6e-14
+    g = +0.20 [scan]: nu = 0.6253264201 - 4.5286e-02 i (A: 3.4e-02), |D| 2.0e-14
+    g = +0.20 [scan]: nu = 0.6877230257 - 4.8049e-02 i (A: 1.9e-02), |D| 2.7e-14
+    g = +0.20 [scan]: nu = 0.7518464299 - 5.0637e-02 i (A: 2.5e-02), |D| 2.0e-14
+    g = +0.20 [scan]: nu = 0.8175023130 - 5.3061e-02 i (A: 4.7e-02), |D| 3.9e-14
+    g = +0.20 [scan]: nu = 0.8845194488 - 5.5334e-02 i (A: 3.2e-02), |D| 5.6e-14
+    Negativkontrolle ohne Ball: min |D_frei| an diesen Stellen = 3.098e-01
+Ende 2026-09-30T06:48:22+00:00, 224.6 s; entfallen: nichts

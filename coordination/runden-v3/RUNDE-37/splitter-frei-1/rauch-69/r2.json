@@ -1,0 +1,125 @@
+{
+ "info": {
+  "numpy": "2.4.4",
+  "scipy": "1.18.0",
+  "python": "3.12.3",
+  "host": "ubuntu-auto",
+  "start_utc": "2026-10-05T09:31:43Z",
+  "argv": [
+   "code-r1/sf.py",
+   "rauch-bau",
+   "--saaten",
+   "1",
+   "--qs",
+   "0.2",
+   "--zeit",
+   "90",
+   "--out",
+   "rauch/r2.json"
+  ],
+  "sha256": {
+   "dn.py": "0cd5d13e98f41df277ec7d8139970d1e658542f843ed8180bc756a4ea1d4d1ae",
+   "ew.py": "fa7b6417d39177102f0b19c5474453cd16a7595e23bc25ca548e081c4060b142",
+   "hm.py": "0ed5e2ce3a2a26525ef8a3320da394e6f403306384015187baf4dd46623fd5f2",
+   "inz.py": "e65a5cbf380defef0468f50de5a2dec5936d4228b72e1db8ff913ed765def8f2",
+   "lrm.py": "a6cdd898fc3fc80aa96d0b39e7c437ab7c7b22b73ff963f5600ed0d0210f684d",
+   "mn.py": "b36984d3f04276454a792f14c5655bff432332316d1b968dea46d4cb6eb96bbf",
+   "nachtrag_iso.py": "1c92cb23988886731096dd44ce33aecfcde3b65cecf16b4232111550e4debc6c",
+   "nachtrag_kinetik.py": "fd0d17b9fb7c92d4b6ad564a46260e3daae3285bcb5ad53f65d9fb3918a32b28",
+   "pn.py": "c8034e40c3238cecdcc72ecd35f1f70d38ea330c9ae18911966581c10e592567",
+   "sf.py": "c83d1e7c97532a6d6e5fcf0a6952d04fc4836f3c99894e4aefbb3760112b03e2",
+   "smi.py": "9459838bb02f1894e2124927a28904679536bb2fb77ca2f338c8f6570326942d",
+   "tg.py": "ec48a258e266fc2226d0d10564b606052831ffefbf0642e4f7d04f9de85cfd9e",
+   "tp.py": "419d7da6caa211c721eb6a8c87403977415cf3050f03365377f51cb77b374dfd",
+   "tti.py": "6d6b6f7b99b334d74d91860fc69af1c6c0c46e22207dc45432d60a9824c08ee5"
+  }
+ },
+ "ergebnis": {
+  "saaten": {
+   "1": {
+    "saat": 1,
+    "N": 128,
+    "L": 5.039684199579492,
+    "qs": 0.2,
+    "r0": 0.05,
+    "rmax": 0.4,
+    "erreicht": false,
+    "versuche": 1135,
+    "angenommen": 315,
+    "t_s": 90.03406643867493,
+    "F_start": 12.675322686533857,
+    "n_unter_start": 164,
+    "F_ende": 1.4863311669560821,
+    "n_unter_ende": 42,
+    "q_min_ende": 0.08320020081415244,
+    "verschiebung": {
+     "n_bewegt": 103,
+     "mittel_alle": 0.057565337459265495,
+     "max": 0.2077904832267215,
+     "mittel_bewegte": 0.071537506745495,
+     "mittlerer_nn_abstand_original": 0.5525440353344708
+    },
+    "verlauf": [
+     {
+      "vers": 0,
+      "t_s": 0.0,
+      "F": 12.675322686533857,
+      "n_unter": 164,
+      "q_min": 0.009164409046323499,
+      "r": 0.05
+     },
+     {
+      "vers": 200,
+      "t_s": 16.596805810928345,
+      "F": 7.736318941032563,
+      "n_unter": 123,
+      "q_min": 0.025217745102549444,
+      "r": 0.05
+     },
+     {
+      "vers": 400,
+      "t_s": 31.951488971710205,
+      "F": 4.912949199846034,
+      "n_unter": 92,
+      "q_min": 0.048826717598407746,
+      "r": 0.05
+     },
+     {
+      "vers": 600,
+      "t_s": 47.26836323738098,
+      "F": 3.4934581311781523,
+      "n_unter": 74,
+      "q_min": 0.06249951266437605,
+      "r": 0.05
+     },
+     {
+      "vers": 800,
+      "t_s": 63.44225525856018,
+      "F": 2.2718035754129438,
+      "n_unter": 63,
+      "q_min": 0.08041939900047117,
+      "r": 0.05
+     },
+     {
+      "vers": 1000,
+      "t_s": 79.94908404350281,
+      "F": 1.792674251246036,
+      "n_unter": 56,
+      "q_min": 0.08320020081415244,
+      "r": 0.05
+     }
+    ],
+    "pos_sha256": "e34d59b253aeba6d7b255c37d64febb69e291e78e41fe4a3041a9737d3bc31b4",
+    "zerlegung": {
+     "saum": 4.0,
+     "umkugel_ausserhalb_saum": 0,
+     "R_umkugel_max": 1.3031025807003376,
+     "punkte_mit_kopien": 2162
+    }
+   }
+  }
+ },
+ "laufzeit_s": 90.038813829422,
+ "maxrss_MB": 77.05859375,
+ "ende_utc": "2026-10-05T09:33:13Z"
+}

@@ -1,0 +1,17 @@
+26a27,28
+> v2 (nachtraeglich, 01.10. ab 18:30): nur --runden-x und --max-prof (Tiefe der Omega^2-Verfeinerung der Rechtecke) neu;
+>    Vorgabe 8 / 60 wie v1, sonst unveraendert.
+51a54
+> TIEFE = {"runden_x": 8, "max_prof": 60}   # v2 (nachtraeglich): per --runden-x / --max-prof setzbar; Vorgabe wie v1
+403c406
+<              n_rho=41, runden_x=8, runden_r=40, max_prof=60):
+---
+>              n_rho=41, runden_x=None, runden_r=40, max_prof=None):
+408a412,413
+>     runden_x = TIEFE["runden_x"] if runden_x is None else runden_x      # v2: Tiefe der Omega^2-Verfeinerung per CLI
+>     max_prof = TIEFE["max_prof"] if max_prof is None else max_prof
+894a900,901
+>     ap.add_argument("--runden-x", type=int, default=8)
+>     ap.add_argument("--max-prof", type=int, default=60)
+901a909
+>     TIEFE.update({"runden_x": a.runden_x, "max_prof": a.max_prof})

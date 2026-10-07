@@ -1,0 +1,164 @@
+Unabhängige Vorab-Papierprüfung, particle_binding, 02.10.2026
+Gelesen: vorhandener time-domain/code.py, modes/excitation/code.py,
+CAUSAL-SECOND-ORDER.txt und causal-split/code.py. Keine neue THEORIE/core-
+Darstellung gelesen; keine Implementation, Rechnung oder Ausführung.
+
+Urteil: Phasenzyklus algebraisch tragfähig und geeignet, die bisherige
+kausale Quellenzerlegung unabhängig an weiteren nichtlinearen Starts
+zu prüfen. Kein grundsätzlicher Blocker. Die Bezeichnung 'DC' muss
+zwischen Phasen-DC und einer zeitkonstanten Quelle unterschieden werden;
+bei numerisch bewegter Baseline gilt deren Gleichsetzung nicht exakt.
+
+1. Was der Zyklus isoliert
+
+Zunächst den bereits tatsächlich gestarteten, gemeinsam normierten und
+pivotfixierten v verwenden. Dann v90=i*v für ALLE sechs Blöcke setzen,
+ohne erneute Normierung oder Pivotfixierung; letztere würde die gewünschte
+Viertelperiode zurückdrehen. Re(i v)=-Im(v), nicht +Im(v). Auch p rotiert.
+Mit unverändertem s und alpha=epsilon*s gilt für die ideal lineare Mode
+J0(90)=J0(0), J2(90)=-J2(0). Nullanfangsdaten der zweiten Ordnung sind
+bei beiden Phasen gleich. Daher gelten für den GLEICHEN kausalen Propagator
+
+ E0=D+H+O(alpha²), E90=D-H+O(alpha²),
+ D_cycle=(E0+E90)/2=D+O(alpha²),
+ H_cycle=(E0-E90)/2=H+O(alpha²),
+
+wobei Etheta=(Uplus_theta+Uminus_theta-2Ubaseline)/(2alpha²).
+Die Fehlerordnung bezieht sich auf skalierte Zweitordnungskoeffizienten;
+in unskalierten physischen Feldern beginnt die entsprechende gerade
+Kontamination bei alpha^4. D und H enthalten JEWEILS ihre vollständige
+kausale Einschaltantwort, nicht nur einen statischen bzw. monochromatischen
+Partikulärterm. Keine Zeitverschiebung bereits laufender Daten ersetzt
+den neuen Nullstart! Ein solcher Ersatz würde dessen Einschaltgeschichte
+verschieben und die zu prüfende Identität verfälschen.
+
+Vier Phasen separieren bei endlicher Amplitude nicht alle Ordnungen:
+beispielsweise können quartische Phasenharmoniken im Halbsummenkanal
+verbleiben. Eine Amplitude mit zwei dt-Werten liefert keine unabhängige
+alpha->0-Extrapolation. Das vorhandene kleinere theta0-Paar prüft nicht
+gesondert den neuen theta90-Kanal. Keine zusätzlichen Amplitudenläufe
+werden hier verlangt; die Reichweite muss entsprechend benannt bleiben.
+
+2. Bewegte numerische Baseline
+
+Beim glatten diskreten Zeitabbild um GENAU dieselbe Baselinetradjektorie
+ist die zweite Variation eine quadratische Form der Anfangsstörung.
+Halbsumme und Halbdifferenz der beiden Quadraturen separieren auch dann
+deren phaseninvarianten bzw. phase2-Anteil. Dafür muss die Baseline nicht
+exakt stationär sein. Dies ist jedoch zunächst eine Aussage über Phase
+der Anfangsdaten, nicht über zeitlich reine DC-/2rho-Anregung.
+
+Die Identifikation mit den gespeicherten D/H des konstanten Generators
+setzt zusätzlich die Güte der stationären Referenz und der harmonischen
+ersten Variation voraus. Bei bewegter Baseline ändern sich linearisierter
+Operator und quadratische Kraft zeitabhängig. Deshalb sind direkte
+Sollvergleiche sowie dt-Kontrolle nötig; ein bestehender globaler
+Energie-/Baseline-Gate allein ist dafür keine relative Fehlerschranke.
+
+Für jede dt ausschließlich die passende alte Baseline und theta0-Paarung
+mit identischen r,t,omega,Referenz,Normen und Rechenkonventionen verwenden.
+Im D_cycle bleibt Baselinesubtraktion nötig; in H_cycle hebt dieselbe
+Baseline sich algebraisch auf. Eine andere Baseline oder ein anderer
+rotierender Frame in einem Summanden erzeugt künstlichen geraden Anteil.
+
+3. Ladung und Energie
+
+Die vorhandenen Starts phi=f+alpha*a, pi=iomega*phi+alpha*b sind korrekt
+auch für iv. Exakte Q(alpha)=Qbase+alpha*Q1(theta)+alpha²Q2(theta)
+je Vorzeichen und Phase erneut aus denselben Formeln kontrollieren.
+Q2 darf phasenabhängig sein. Die zugehörigen Nullstart-/Ladungsbedingungen
+der kausalen Antwort sind Teil des Problems, keine Kontamination, die
+durch Q-Nachnormalisierung beseitigt werden dürfte. Keine Anforderung
+identischer Q oder E zwischen theta0 und theta90 oder zwischen Vorzeichen.
+Jeder Arm prüft Erhaltung gegenüber seinem EIGENEN Anfangswert.
+
+Für die ideal exakte lineare Mode ist die quadratische rotierende Energie
+Hrot2=(p.p+q.Kq)/2 entlang der Bahn konstant und damit für beide Quadraturen
+gleich. Das impliziert nicht gleiche quadratische Laborenergie und Ladung
+getrennt: E2=Hrot2+omega*Q2. Endliche Amplitude, Referenz-/Ritz- und
+Zeitdiskretfehler bleiben gesondert. Keine Änderung der Initialenergie
+oder Ladung, um eine bevorzugte Übereinstimmung herzustellen.
+
+4. Geeignete vorab festzulegende Prüfungen
+
+Keine neuen Fenster: gleiche zwei Schalen, zwei feste Zeitfenster und
+gehashter coefficient-Pfad. Alle vier physikalischen Feld-/Geschwindig-
+keitskomponenten speichern, Halo und Samplezeitfolge unverändert.
+Neue +/-theta90-Arme paarweise im Speicher fortschreiten; volle Uodd-
+Norm gegen Re(i v exp(i rho t)) mit bisheriger .05-Grenze, nicht gegen
+die theta0-Prognose. Kanonik/Q-Anfangsidentität1e-10, bisherige E/Q/
+Kragen-/Finite-Gates je neuem Arm beibehalten. Die alte Baseline braucht
+keinen neuen Lauf, wohl aber geprüfte passende Hashbindung.
+
+Als direkte, nicht tautologische Validierung zuerst E90 gegen D-H
+vergleichen, in komplexer Plus-Zeitnorm UND im positiven nu-Band.
+Danach D_cycle gegen D und H_cycle gegen H separat ausweisen. E0 gegen
+D+H ist bereits geprüft; E0=D_cycle+H_cycle wäre allein nur Rechenalgebra,
+kein unabhängiger neuer Modelltest.
+
+Ein geeigneter gemeinsamer Nenner ist die bereits gebundene beobachtete
+theta0-Even-Plusnorm im jeweiligen Zeitfenster bzw. Band (mit zugehörigem
+Schalenvolumen und Trapezgewichten). Dies vermeidet künstlich scharfe
+Gates an kleinen Einzelkomponenten; keine Feld-/Bandnenner vermischen.
+Prospektiv naheliegend sind die vorhandenen .05-Vergleichsgrenzen und
+.01-dt-Grenzen, je Schale/Fenster, sofern Root sie ausdrücklich im neuen
+Plan bindet. Zusätzlich eigene D-/H-Normen und deren relative Fehler
+berichten: der gemeinsame Nenner beweist bei sehr kleinem Anteil keine
+relative Auflösung dieses Anteils. Nullnenner/unvollständige Kombinationen
+bleiben offen. Weitere Komponenten und negative Bänder absolut sowie
+gegen denselben Plusnenner berichten, keine neuen winzigen Eigennenner.
+
+Vergleich zu beiden gespeicherten causal-split-delta-Werten kann deren
+bereits gemessene Integratorunsicherheit sichtbar halten; nonlinear dt
+und linear midpoint-delta sind unterschiedliche Diskretisierungen.
+Kein dt-Abgleich kann ein festes-alpha-Modellversagen allein ausschließen.
+Scheitern bedeutet hier fehlende validierte Phasenzerlegung in diesen
+Fenstern, keine Widerlegung des Modells oder der stationären Antwort.
+
+5. Konkrete Blocker einer falschen Umsetzung
+
+Nur q statt(q,p) drehen; iv anschließend neu pivotfixieren; einen
+Vorzeichenarm mit ungeänderter alter Phase erzeugen; gleiche Q/E über
+die Phasen erzwingen; falsche dt-Baseline wiederverwenden; gemessene
+Phasensumme ungeprüft als exakt zeitkonstanten DC-Antrieb deuten; oder
+das algebraische Rücksummieren als unabhängige Validierung ausgeben.
+Bei Vermeidung dieser Punkte ist der vorgeschlagene Umfang vier neuer
+Arme fachlich sinnvoll. Keine Stationaritäts-, Lebensdauer- oder
+Kontinuumsbehauptung folgt automatisch aus einem positiven Test.
+
+Nach eigenständigem Abschluss Root-PLAN.txt gelesen (kein core/THEORIE):
+Root bevorzugt strengere, getrennte D-/H-Referenznenner anstelle meines
+oben vorgeschlagenen gemeinsamen Berichtnenners. Das ist zulässig, wenn
+kleine Komponenten ausdrücklich nicht als aufgelöst behandelt werden.
+Konkreter Vorschlag zur vorab gebundenen empirischen Nennerreserve:
+
+ Für jeden Anteil D/H, Zeitfeld/Band, Schale/Fenster separat sei
+ N=Norm des gespeicherten feinen kausalen Referenzanteils.
+ Delta_ref=Norm desselben Anteils(delta=.02)-Anteil(delta=.01),
+ Delta_dt=Norm desselben Phasenzyklusanteils(dt=.01)-Anteil(dt=.005).
+ Verlange N>0 und N>100*max(Delta_ref,Delta_dt,eta_arith).
+
+Damit stehen die verbleibenden bekannten numerischen Änderungen unter
+dem bereits gewählten1%-Ziel und unter der5%-Vergleichstoleranz.
+Die Delta_dt-Bedingung wiederholt absichtlich denselben dt-Gate, statt
+eine zweite widersprüchliche Auflösungsdefinition einzuführen. Delta_ref
+benutzt vorhandene Daten, keine neue Rechnung der kausalen Evolution.
+
+eta_arith kann als fest dokumentierte Rundungs-SENSITIVITÄT aus den
+absoluten Summanden gebildet werden: vor der D-Kombination ist die
+punktweise positive Hülle
+(|U+0|+|U-0|+|U+90|+|U-90|+4|Ubaseline|)/(4alpha²),
+für H entfällt der Baselineteil algebraisch. Deren jeweilige Norm bzw.
+zeitlich gewichtetes positives Integral liefert nach Multiplikation
+mit festem Summations-Rundungsfaktor (abhängig von Anzahl Operationen
+und Maschinenpräzision) eine arithmetische Vergleichsskala. Gleiche
+Definition auf beide dt und die Referenzdaten anwenden, Maximum nehmen.
+Diese Skala erfasst Subtraktions-/Auswerteempfindlichkeit, NICHT den
+Fehler der nichtlinearen Evolution. Delta_dt/Delta_ref ersetzen ebenfalls
+keine zertifizierte Restabschätzung. Die Reserve bleibt ausdrücklich
+empirisch; null/zu kleiner Anteil ergibt UNRESOLVED, kein Weglassen.
+
+Wenn diese strengere Reserve zu einem offenen Ergebnis führt, dürfen
+weder Nenner auf die Summe gewechselt noch Toleranzen nachträglich
+vergrößert werden. Eine finale Implementierung muss ihre genaue
+arithmetische Skala vor Lauf festschreiben; hier nur Papierempfehlung.

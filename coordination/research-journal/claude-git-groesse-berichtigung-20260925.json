@@ -1,0 +1,29 @@
+{
+  "id": "claude-git-groesse-berichtigung-20260925",
+  "time": "2026-09-25T20:07:29+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung",
+  "topic": "operations",
+  "status": "technical",
+  "supersedes": "claude-finn-entscheidungen-und-portalauftrag-20260925",
+  "title": "Berichtigung: Die unversionierten Dateien sind rund 2,25 GB, nicht 227 MB; erster Git-Schnappschuss vor dem Commit abgebrochen und mit enger Auswahl neu gestartet",
+  "question": "Stimmt die Groessenangabe '26 688 unversionierte Dateien, 227 MB' im Eintrag claude-finn-entscheidungen-und-portalauftrag-20260925, und was folgt fuer den Tagesschnappschuss?",
+  "action": "Nachgezaehlt mit einem einzigen stat-Aufruf je Datei statt 'xargs du -ck | tail -1'. Der erste Schnappschuss (Start 21:41:43) stand mit 26 824 vorgemerkten Dateien in der gitleaks-Pruefung. Er wurde um 21:57:45 durch Beenden von gitleaks abgebrochen: kein Commit, Index vom Skript zurueckgesetzt. Danach die Auswahl in coordination/git-tagesschnappschuss.sh und GIT-WORKFLOW.md verengt und Neustart um 22:07 (Peerbus 93f81446...).",
+  "result": "Falsch war: 227 MB. 'xargs du -ck' summiert je Portion, und 'tail -1' las nur die letzte Portion. Richtig (21:5x): Dateien bis 5 MB 1 963,4 MB (26 824 Dateien), ueber 5 MB 288,1 MB (29 Dateien). Neue Auswahl: Text und Code bis 5 MB, alle anderen Dateien bis 256 KB, ausser in coordination/research-scout-claude-20260913/ und gauntlet/new-runs/. Geschaetzt 19 100 Dateien und 367 MB; 7 791 Dateien (1,59 GB) nur mit sha256 in NICHT-VERSIONIERT-<stempel>.sha256.",
+  "meaning": "Der alte Eintrag bleibt unveraendert; nur seine Groessenangabe ist falsch, alle anderen Angaben gelten weiter. Ohne die Nachzaehlung waeren rund 2 GB Laufausgaben in die Git-Historie und ins LAN-GitLab gegangen, gegen GIT-WORKFLOW.md ('ausgewaehlte kanonische Ergebnis-JSONs'). Lehre: Summen ueber viele Dateien nie aus der letzten Zeile von xargs lesen, sondern mit einem Summierer ueber alle Groessen bilden.",
+  "sources": [
+    {
+      "path": "coordination/git-tagesschnappschuss.sh",
+      "sha256": "4937e5b1d3c8ffb4566a062db23804353fa256a76d082eb06758036132103043"
+    },
+    {
+      "path": "GIT-WORKFLOW.md",
+      "sha256": "e8945d59d9618d9c650846a2c303982b2eab990a79d6ed34aab5bce701fec35a"
+    },
+    {
+      "path": "coordination/research-journal/claude-finn-entscheidungen-und-portalauftrag-20260925.json",
+      "sha256": "70ca2e26acc98edb507fe1a9a8eef3e4ebe06d897db14ba986cdb6a8318471d8"
+    }
+  ],
+  "recorded_at": "2026-09-25T20:08:01.582239+00:00"
+}

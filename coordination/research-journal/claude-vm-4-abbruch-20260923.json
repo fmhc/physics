@@ -1,0 +1,54 @@
+{
+  "id": "claude-vm-4-abbruch-20260923",
+  "time": "2026-09-23T14:55:00+02:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5), Vertrag und Machbarkeit VM-4",
+  "topic": "binaries",
+  "status": "interrupted",
+  "title": "VM-4 (Form des Versatzes gegen reservierte Kontrollzellen): Machbarkeit gescheitert, kein Startsignal, kein Lauf, keine Klasse — der blind gesetzte Formabstand erkennt die Referenzzelle nicht einmal in ihrer eigenen zufaelligen Haelfte wieder",
+  "question": "Hat der Versatz zwischen Messung und Vorwaertsmodell in vorab reservierten, unverbrauchten Kontrollzellen der Binnung W dieselbe Dezilform wie in der Referenzzelle (A: zellunabhaengig, vertraeglich mit einem Messketten- oder Auswahleffekt), oder ist er dort flach beziehungsweise anders geformt (B: Effekt der Referenzzelle selbst), oder unentscheidbar (U2)? Vorgeschaltet: gibt es ueberhaupt unverbrauchte Zellen mit n >= 1000, in denen Newton unstrittig ist, und traegt die Stichprobe die vorab gesetzte Schwelle?",
+  "action": "Belegpruefung aller sieben W-Zellen ueber alle Vertraege seit dem 18.09.2026 (ZELLENPRUEFUNG-VM-4.md, mit Zeilenbelegen aus m1-7, m1-8, m3-4, v-2 bis v-5, ms-1, ms-2, vm-1 bis vm-3); Lesartenliste vor jeder Zahl geschrieben und gehasht; zahlenloser Vertragsentwurf (Fassung 0) nach VORLAGE-v2 und Nachtrag 15-27; S0-Fremdreview Stufe (a) BLIND durch Qwen (Bunker qwen3.6-27b-bunker, no-cache, 0 USD, ID chatcmpl-63b93bdf-f491-997d-8f2b-20d7bc286d94, 12:18:15Z) mit richtungsfreier Leitfrage und ohne jede Groessenordnung des erwarteten Befunds; Urteil 'Entwurf zurueck' wegen eines Widerspruchs in der Schreibtischprobe 5.4; Berichtigung NACHTRAG-0b (Amplitude R_ref statt |T_ref|, Schreibtischprobe, Bezeichnung von N3, neue Probe N6, Blackbox-Kennzeichnung), Stufe (a2) ebenfalls blind (ID chatcmpl-2308117e-464d-98f6-ac7d-110533390ac3, 12:21:31Z): 'Kriterium festgelegt, Vorlauf darf dagegen gerechnet werden'. Danach erst der Machbarkeitsvorlauf auf fmh@192.168.178.69 (CPU, Units fmhc-physics-vm-4-mb-*-20260923, CPUQuota 200 %, kein CUDA; erste Rechen-Unit 12:27:06Z, also SECHS Minuten nach der Festlegung): Messseite, K0/K7/K8-Probe, Arm A0 auf 200 Katalogen (2,3 s je Katalog), Auswertung mit Bootstrap (2000 Ziehungen, Seed 90210, Paare und Kataloge gemeinsam gezogen) und den Proben N1 bis N6. Maschinelles Gegenlesen des Abbruchberichts: 76 Zahlen, jede an Datei, Feldpfad, Einheit, Zelle und Rundungsregel gebunden.",
+  "result": "Machbarkeit Teil 1 bestanden: drei unverbrauchte Zellen mit n >= 1000 und g >= a_0 (Zelle 3 n=2245, Zelle 4 n=3156, Zelle 5 n=4106); keine war je Kriteriumszelle eines Laufs, der eine Aussage getragen hat, und aus keiner ist je eine Quantil- oder Formgroesse gebildet worden. Das Fremdhaus waehlte blind: Pflicht-Kontrollzellen {4, 5}, fuenf Quantile 0,10/0,25/0,50/0,75/0,90, Formabstand = Maximalabstand der zentrierten Dezilprofile, Bootstrap ueber Paare und Kataloge, k = 2, f_A = 0,25, m_min = 250. Machbarkeit Teil 2 GESCHEITERT an drei vorab gesetzten Bedingungen: (1) Aufloesungsbedingung 2 SE_F <= Delta_A in BEIDEN Pflicht-Kontrollzellen verletzt (2 SE_F = 0,025737 bzw. 0,027043 gegen Delta_A = 0,021114) — A- und B-Bedingung ueberlappen, die Ausgaenge sind nicht mehr disjunkt; (2) N1, der A-Positivarm, verfehlt seine verlangte Klasse: zwei zufaellige Haelften DERSELBEN Referenzzelle geben Formabstaende 0,025064 und 0,027952, beide ueber Delta_A, also Klasse B statt A; (3) N2 (permutierte Zellzuordnung) verfehlt: F_streu = 0,032195 gegen die Schranke 0,026430. Bestanden haben dagegen alle Rechen- und Bindungskontrollen: K0 bitgleich zu VM-1 (med_W 0,0; n_W gleich; quantile_ref 0,0 in der Stichprobe), K1 gegen das fremde Archiv 4,574e-14 bei 200/200, K2 gegen VM-1s Referenzform exakt (quantile_obs_ref 0,0; quantile_ref_mittel 6,661e-16; Berichtslesart -0,006174/0,016275/0,037157/0,063823/0,133854 gleich ABLEITUNGEN-VM-1.json), K3 Kepler 4,44e-16 bei 60 Schritten, K4 Besetzung in allen Pflichtzellen, K6 boot_nan = 0, K7 Trennkraft gerissen (0,054043), K8 n_W exakt gleich ERGEBNIS-V-4.json; ebenso die Positivarme N3 (B, Reserve 0,059666/0,069931), N4 (U2), N5 (U1) und N6 (B, Reserve 0,021114). d_6(0,50) = 0,03794201904981376 ist bitgleich VM-1s L_0. Die Rechnung ist also in Ordnung — gescheitert ist das Kriterium. Nach dem Vorrang T > U1 > B > A > U2 waere der Ausgang T gewesen (N1 und N2), noch vor U1. Befund am eigenen Vorlaufskript (Nachtrag 20): das Feld klasse_gewaehlte_lesart in mb-vm4-auswertung.json steht auf 'B', weil die Funktion _klasse die vorgelagerten Stufen T und U1 nicht anwendet; das Feld ist irrefuehrend und wird nicht als Klasse gefuehrt.",
+  "meaning": "Die Frage bleibt offen, und zwar aus einem messbaren Grund: der Rauschboden des Formabstands bei 2500 bis 5000 Paaren und fuenf Stuetzstellen liegt bei 0,025 bis 0,028 (ln) und damit UEBER der vom Fremdhaus blind gesetzten Schranke Delta_A = 0,021114. Eine Schranke unterhalb des Rauschbodens kann 'gleiche Form' nicht von 'andere Form' trennen — N1 macht das unmittelbar sichtbar, indem es die Referenzzelle fuer formverschieden von ihrer eigenen Haelfte erklaert. Nicht nachgebessert wird: mit f_A = 0,33 statt 0,25 waere die Aufloesungsbedingung erfuellt und die Klasse A, also genau die Hypothese, mit der der Auftrag angetreten ist; eine nach Sicht der Zahlen gelockerte Schranke ist keine Kontrolle (Lehre aus HU-M6 und V-5). Zwei methodische Lehren als Hypothesen fuer einen Nachfolgevertrag: (a) die Schranke gehoert an den in N1 messbaren Rauschboden, nicht an einen Bruchteil der Referenzamplitude; (b) die Streuung einer nicht negativen Maximumsgroesse ist kein Massstab fuer diese Groesse selbst — noetig ist eine Nullverteilung des Formabstands unter 'gleiche Form' und eine Schwelle als deren Quantil. Der Vorlauf zeigt nebenbei, dass die Dezilprofile der Zellen 1 bis 5 wie das der Referenzzelle steigen und das der Zelle 0 nicht; das ist KEINE Aussage, weil das Kriterium nachweislich nicht trennt, es hat keinen Vertrag, kein Startsignal und kein S2. Die Zellen 3, 4 und 5 sind durch diesen Abbruch NICHT verbraucht (kein Startsignal, keine Klasse); ein Nachfolgevertrag muss aber offenlegen, dass ihre Dezilprofile hier bereits gesehen wurden (Nachtrag 18) — das ist der Preis dieses Abbruchs. Runde 022 eingefroren: keine Registerzeile, kein Ledger, keine Matrix, keine Karte mit Zahlen. Kosten 0,00 USD.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260922/vm-4-machbarkeit/ABBRUCH-VM-4.md"
+    },
+    {
+      "path": "coordination/vertraege-20260922/vm-4-machbarkeit/ZELLENPRUEFUNG-VM-4.md"
+    },
+    {
+      "path": "coordination/vertraege-20260922/vm-4-machbarkeit/LESARTEN-VORAB-VM-4.md"
+    },
+    {
+      "path": "coordination/vertraege-20260922/vm-4-machbarkeit/NACHTRAG-0b-VM-4.md"
+    },
+    {
+      "path": "coordination/vertraege-20260922/vm-4-VERTRAG-entwurf-ohne-zahlen.md"
+    },
+    {
+      "path": "coordination/vertraege-20260922/vm-4-machbarkeit/mb_vm4.py"
+    },
+    {
+      "path": "coordination/vertraege-20260922/vm-4-machbarkeit/mb-vm4-auswertung.json"
+    },
+    {
+      "path": "coordination/vertraege-20260922/vm-4-machbarkeit/mb-vm4-pruefe.json"
+    },
+    {
+      "path": "coordination/vertraege-20260922/vm-4-machbarkeit/mb-vm4-messseite.json"
+    },
+    {
+      "path": "coordination/vertraege-20260922/vm-4-machbarkeit/GEGENLESEN-ABBRUCH-VM-4.txt"
+    },
+    {
+      "path": "coordination/vertraege-20260922/fremdreview-roh/antwort-vm-4-a-qwen.md"
+    },
+    {
+      "path": "coordination/vertraege-20260922/fremdreview-roh/antwort-vm-4-a2-qwen.md"
+    },
+    {
+      "path": "coordination/vertraege-20260922/fremdreview-roh/ledger-fragment-vm-4.jsonl"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+Runde 6 M1 medium1d.py nische Start 2026-09-30T03:44:05+02:00 auf CPU, 1 Thread, torch 2.10.0+cu128, Zeitfaktor 0.02, Stufen fein
+
+nische (Bio 21): Medium C = 0,15 + dC sin(2 pi x/lambda) (aeusseres W, glatt eingeschaltet), Ball in Falle bei x = 0 (Nulldurchgang), Falle geloest auf (200.0, 250.0). Delle bei -lambda/4, Buckel bei +lambda/4. T_harmonisch = 2 pi/sqrt(|lam| N dC k^2/E); Pendel mit 90 Grad Ausschlag: x 1,18.
+  Lauf | x frei | x min .. max | x Ende | Umkehrpunkte (t, x) | Halbperiode | Amplitudenverh. | T_harm.
+  [fein]
+  lam=+0.1 sanft (dC 0,02, 30) | -0.000 | -0.011 .. -0.000 | -0.011 |  | nan | nan | 842
+  lam=-0.1 sanft               | +0.000 | +0.000 .. +0.016 | +0.016 |  | nan | nan | 842
+  lam=+0.2 steil (dC 0,05, 60) | -0.000 | -0.007 .. -0.000 | -0.007 |  | nan | nan | 753
+  lam=0                        | +0.000 | +0.000 .. +0.000 | +0.000 |  | nan | nan | nan
+  Spiegel lam=+0.1             | +0.000 | +0.000 .. +0.011 | +0.011 |  | nan | nan | 842
+  Medium allein                | +0.000 | +0.000 .. +0.000 | +0.000 |  | nan | nan | 842
+  L3 (Effekt >= 5 x Aenderung grob -> fein): 0 von 0 Kenngroessen bestanden
+  Rechenzeit fein 12.6 s
+
+Ende 2026-09-30T03:44:18+02:00, Dauer 12.6 s, Torch-Speicher max nan MB, Fehler in: keine

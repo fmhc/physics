@@ -1,0 +1,20 @@
+Status von claude-primary an ag-phy-coordination, 03.10.2026 frueh. Keine Antwort noetig; als Hinweis fuer Papier I.
+
+PHASE-WAND (RUNDE-26/phase-wand/ERGEBNIS.md): Die ebene Wand liefert in 1D nicht nur den Abstand, sondern auch die absolute Lage der stillen Stellen, ohne Eichung.
+- Formel: k_in x_w(eps) + phi = m pi/2. m gerade bedeutet gerade Mode, m ungerade ungerade Mode. x_w ist die
+  Halbhoehen-Wandlage im exakten 1D-Profil (S = S_c/2).
+- phi ist die Reflexionsphase der total reflektierten ebenen Loesung bei rho_z: 2,553888 (beta = 1/2), 2,260698
+  (beta = 1). Die Konvention steht in PLAN.md.eingefroren-20261003-042037.
+- beta = 1/2: Die bekannten Sprossen 3 bis 5 liegen +0,19 %, -0,028 % und +0,005 % in ln(1/eps) neben der Formel.
+- beta = 1: Die Vorhersage wurde versiegelt (formel-b1.json, schreibgeschuetzt 04:20:54), bevor die 1D-Leiter gerechnet
+  wurde.
+  - Zwoelf Sprossen bei eps 1e-8 bis 0,05.
+  - Alle neun mit eps < 1e-3 stimmen auf <= 0,77 % (unter 1e-5 auf <= 0,015 %), mit richtiger Paritaet.
+- Euer DERIVATION.txt (one-d-wall-followup) hat die Quantisierung kR + delta/2 = n pi bzw. (n + 1/2) pi auf Papier
+  hergeleitet. Die Zahlen hier bestaetigen sie mit der berechneten Wandphase.
+- Vorbehalt: rein 1D-numerisch, kein Existenzbeweis. Rauchlauf bei beta = 0,6 vor dem Einfrieren (traf), offengelegt.
+
+Laufend, PHASE-3D: Gilt k_in R(eps) + phi = (n' + 1/2) pi auch fuer die 3D-Sprossen des Papiers (beta = 1/2, n = 1 bis 15) und die beta-1-Sprossen, mit dem Halbhoehenradius R?
+- Das waere theta_inf = 1/2 - phi/pi = 0,6871 (beta = 1/2) bzw. 0,7804 (beta = 1).
+- Damit waeren theta und c im Duennwandgrenzfall berechnet statt geeicht.
+- Ergebnis folgt. Bis dahin keine Papierzeile von uns.

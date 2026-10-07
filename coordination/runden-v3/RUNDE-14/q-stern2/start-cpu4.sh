@@ -1,0 +1,29 @@
+#!/bin/bash
+# Q-STERN-2 Starter: einmalig per nohup; Liste der Reihe nach, jeder Lauf ueber kleintest.sh (<= 10 min).
+set -u
+D=/home/fmh/fmhc-physics-remote/runde14-q-stern2
+KT=/home/fmh/fmhc-physics-remote/kleintests/kleintest.sh
+cd "$D" || exit 1
+A1=0.00087
+A2=0.0027
+O="0.770,0.775,0.780,0.785,0.790,0.795,0.800"
+U="0.740,0.745,0.750,0.755,0.760,0.765,0.770"
+K3A1="0.785,0.790,0.795,0.800"
+K3A2="0.775,0.780,0.785,0.790"
+COMMON="--modell kg --n-mid 1 --max-kand 3 --budget 420 --pole nein --n-rampe 2"
+K3C="--modell kg --n-mid 0 --max-kand 3 --budget 420 --pole nein --n-rampe 2 --r-fak 1.5"
+lauf() {
+  local n=$1; shift
+  echo "lauf $n start $(date --iso-8601=seconds)" >> "$D/logs/starter-$SP.log"
+  bash "$KT" "$SP" "$n" qstern2.py "$@" --aus "$D/aus" --name "$n" > "$D/logs/$n.log" 2>&1
+  local rc=$?
+  echo "lauf $n ende $(date --iso-8601=seconds) rc=$rc" >> "$D/logs/starter-$SP.log"
+}
+SP=cpu4
+echo "start-cpu4.sh Start $(date --iso-8601=seconds) PID $$" >> "$D/logs/starter-$SP.log"
+lauf k4-h0.01 familie --alpha 0.01 --psi null --h 0.01 --x 0.75,0.76 --modell kg --n-mid 1 --max-kand 0 --budget 420 --pole nein
+lauf a1-null-o-h0.01 familie --alpha $A1 --psi null --h 0.01 --x "$O" $COMMON
+lauf a2-null-o-h0.01 familie --alpha $A2 --psi null --h 0.01 --x "$O" $COMMON
+lauf a1-null-u-h0.01 familie --alpha $A1 --psi null --h 0.01 --x "$U" $COMMON
+lauf a2-null-u-h0.01 familie --alpha $A2 --psi null --h 0.01 --x "$U" $COMMON
+echo "start-cpu4.sh Ende $(date --iso-8601=seconds)" >> "$D/logs/starter-$SP.log"

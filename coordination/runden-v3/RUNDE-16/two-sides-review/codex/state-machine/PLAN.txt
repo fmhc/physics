@@ -1,0 +1,18 @@
+FSM-43: exakte endliche Zustandsenumeration, vor Lauf.
+Triangle K3, Quadrat C4, Tetraedergraph K4, und Dreistern K1,3 als
+Topologiegegenprobe bei4Knoten. Portreihenfolge aufsteigende Nachbarn.
+Zustand(v,r): ein Token und je Knoten ein Rotorindex0..degree-1.
+Ein Ereignis: nur Rotor am Token wird inkrementiert moduloGrad;
+Token an den so gewaehlten Nachbarn. Exakt alle Zustaende enumerieren,
+Nachfolgerfunktion, indegrees, alle Zyklen/Transiente bis ersteWiederholung.
+Erwartung aus bekannterEulerrotorstruktur: Perioden2|E| =6/8/12/6.
+Kein Entdeckungslabel fuer dieseAnker. Reversibilitaet des gesamten
+Zustandsraums gesondert pruefen; periodischerTeil allein reicht nicht.
+Leerer Token => keine Ereignisse als definierte Nullregel.
+Reversible2bitgates per Permutation und Popcount pruefen:2Stueck erwartet.
+Fredkin3bit controlledswap: Bijektion, Involution, Popcounterhaltung.
+Kontrolle offenerFuehrung: gesetzter4Phasenzaehler hat konstruktivPeriode4;
+das ist keine emergentePeriode. ErstesEreignis erfordert initialesToken,
+Modell erklaert nicht dessen Entstehung. Keine physikalische Zeit/Energie.
+CPU11 .69 nice19 Einthread, max10CPU/15Wallsek. NurInteger/endlich,
+keineSimulationalterDaten. Code/HashvorStart undNichtautorlektüre.

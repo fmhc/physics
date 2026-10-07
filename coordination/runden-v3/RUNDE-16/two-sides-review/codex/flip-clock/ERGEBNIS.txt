@@ -1,0 +1,91 @@
+FLIP ALS UHR: begrenzte Pruefung, 2026-10-02
+Autor ag-phy-coordination. Theorie, Primaerlekture und 14 kleine Kontrolllaeufe.
+Keine Aenderung des bestehenden Simulators, kein neuer Naturbefund.
+
+1. Bestehendes Modell
+ARBEITSMODELL-V2: psi komplex, chi reell; nur psi traegt globale U(1)-Ladung.
+I=sum|psi|^2, Kpsi=sum|psiDot|^2. Aus Cauchy-Schwarz:
+|Q| <=2 sqrt(I Kpsi), und E>=Kpsi, weil alle anderen Terme nichtnegativ.
+Also I>=Q^2/(4E) fuer E>0. Bei Q!=0 ist vollstaendiger globaler Transfer
+in chi unmoeglich. Lokale psi-Nullen und Energieaustausch sind erlaubt.
+Kein entsprechender Ausschluss fuer Q=0. Argument gilt fuer geschlossenen
+endlichen Graphen, ebenso geeignete endliche-Energie-Kontinuumsdaten mit
+positiven Energietermen; nicht fuer offene Teilsysteme mit Ladungsabfluss.
+Gleiche Vakuummassen sqrt(2) erzeugen keinen Transfer: die lineare
+Vakuumtheorie ist entkoppelt, chi wird erst durch |psi|^2 angeregt.
+
+2. Alternative: zwei komplexe ladungstragende Amplituden
+Eigener Modellkontrollarm, nicht aus psi/chi hergeleitet. Hamiltonian und
+Numerik vollstaendig in PLAN.txt/run.py. Norm N und H erhalten; klassischer
+Zweimoden-Gross-Pitaevskii-Typ. Bei lambda=0 zugleich Zweiniveaugleichung.
+Lineare exakte Belegung bei a(0)=1,b(0)=0:
+P_b(t)=g^2/(g^2+delta^2/4)*sin^2(sqrt(g^2+delta^2/4)*t).
+Voller Transfer nur delta=0,g!=0. Belegungsperiode pi/|g|; nach dieser
+Periode ist der lineare Amplitudenvektor negiert. Ein isolierter Quantenray
+ist derselbe; ein klassisches Feld relativ zu einer Phasenreferenz nicht.
+Voller Amplitudenvektor kehrt bei delta=lambda=0 nach 2pi/|g| zurueck.
+Stationaere Eigenzustaende zeigen ueberhaupt keinen Belegungstick.
+Die Uhr verlangt daher passende Praeparation und einen definierten Detektor.
+
+14 Laeufe = 7 Parameterarme x 2 Schrittweiten, T=20pi.
+Ort ubuntu-auto/.69, CPU11 nice19, Python float64/complex128, keine GPU.
+CPU-Verbrauch 1.5446s. SHA und Commit vor Lauf in INPUT.sha256/COMMIT.txt.
+Die Eingabedatei run.py ist ein neuer, gehashter uncommitteter Quellstand.
+Feine dt=.005, maximale B-Belegung (abgetastet, kein Intervallzertifikat):
+Nullkopplung                            0
+linear g=1 delta=0                      0.999999992
+linear g=1 delta=1                      0.799999999
+linear g=1 delta=2                      0.499999998
+linear g=1 delta=4                      0.199999276
+nichtlinear g=1 delta=0 lambda=2         0.999999943
+nichtlinear g=1 delta=0 lambda=6         0.127322026
+Feines maximales Normdefizit/-ueberschuss 3.38e-8; skalierter H-Fehler <5.69e-8.
+Lineare analytische Kurven: maximaler feiner Belegungsfehler <3.66e-9.
+Alle vorab gebundenen Kontrolltore bestanden. Kleineres dt senkt Bilanzfehler.
+Abgetastete Maxima muessen nicht streng monoton mit dt konvergieren.
+
+Nichtlineare Schranke vor numerischer Interpretation:
+Bei delta=0,N=1,H0=lambda/2 kann z=0 nur erreicht werden, wenn lambda<=4g
+(fuer g,lambda>0), denn dort H=lambda/4+g cos(phi).
+Fuer lambda=6,g=1 liefert Energieerhaltung z>=sqrt(1-16/36)=sqrt(5)/3
+im zusammenhaengenden Startast; P_b<=(1-sqrt(5)/3)/2=0.127322004.
+Der numerische Wert stimmt innerhalb des Bilanz-/Abtastfehlers damit ueberein.
+Dies ist bekannte Self-Trapping-Physik, kein neues Dimensionsphaenomen.
+Hamiltonsche periodische Bewegung ist kein anziehender Grenzzyklus und
+garantiert keine automatische Wiederherstellung derselben Phase nach Stoerung.
+
+3. Echte zusaetzliche Raumrichtung
+Ein Punkt besitzt dann y zusaetzlich zu x1,x2,x3; er wechselt nicht die
+Anzahl seiner Koordinaten. Auf freier Geraden y=y0+v_y*t kein Rueckkehrtakt.
+Auf Kreis y mod 2pi R gibt es bei v_y!=0 eine Wiederkehr 2pi R/|v_y|;
+v_y=0 gibt keinen Tick. Eine Falle kann Hin-und-her-Bewegung liefern, aber
+Falle/Energie legen die Frequenz fest. Kein universeller kleinster Tick.
+Fuer freies skalares Feld auf festem flachen Kreis, Einheiten c=hbar=1:
+Phi=sum phi_n exp(i n y/R), m_n^2=m_0^2+n^2/R^2.
+Das ist ein Spektrumsmerkmal eines konkreten Zusatzdimensionsmodells,
+keine Folgerung aus einem einzelnen beobachteten A-B-A-Wechsel.
+Zwei interne Zustaende reichen fuer diesen Turm/Geometrienachweis nicht.
+
+4. Was als Anschluss traegt
+Ein innerer Flip kann eine Uhr und synthetische Raumkoordinate modellieren.
+Naechste eigene offene Frage waere Stabilitaet von Periodenverhaeltnissen
+mehrerer autonom gekoppelter Uhren unter kontrollierter Stoerung. Zuerst
+fehlende universelle Tickrate und Abhaengigkeit von Praeparation/Detuning messen.
+Kein Schluss auf Entstehung von Zeit, Eigenzeit, Gravitation oder Spin 1/2.
+Kein 4pi-Spinargument aus dem Minuszeichen nach einem Belegungszyklus: hier
+ist es zeitliche Dynamik, keine Darstellung raeumlicher Drehungen.
+
+5. Primaerquellen, tatsaechliche Lesetiefe
+Smerzi et al. 1997, https://arxiv.org/pdf/cond-mat/9706221 , PDF S.3-6,
+Gl.(2)-(13), gelesen: Zweimodenmodell, Rabi-Grenze, Energie und Self-Trapping.
+Unser Kopplungsvorzeichen +g statt -K durch b->-b; Norm auf1, lambda=U*N,
+g=K, delta=E1-E2. Eigene z(0)=1-Kontrolle ist idealisierter mathematischer
+Grenzfall, keine Behauptung experimenteller GP-Gueltigkeit im leeren Well.
+
+Leizerovitch/Reznik, https://arxiv.org/pdf/1711.00078 , PDF S.1 sowie gezielte
+Passagen S.2-4 zur synthetischen Dimension, Mono-Metrik, Turm und Diskussion
+geoeffnet, keine komplette Beweis-/Experimentpruefung. Interne BEC-Komponenten
+koennen unter zusaetzlichen Bedingungen eine kompakte Dimension analog
+realisieren. Ein Vorschlag, kein Nachweis echter verborgener Raumdimensionen.
+HTML-v2-Aufruf scheiterte; PDF-v1 war lesbar. Spektrumsformel oben eigene
+freie Kreisableitung, nicht unkritische Uebernahme eines OCR-Massenterms.

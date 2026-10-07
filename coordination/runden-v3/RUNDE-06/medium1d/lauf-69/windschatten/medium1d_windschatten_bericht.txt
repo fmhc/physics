@@ -1,0 +1,40 @@
+Runde 6 M1 medium1d.py windschatten Start 2026-09-30T02:00:19+00:00 auf Quadro P4000, torch 2.5.1+cu121, Zeitfaktor 1.0, Stufen grob/fein
+
+windschatten (Wellen 7): zwei Baelle in Fallen bei -d/2 (vorn, stromauf) und +d/2 (hinten), Stroemung +x. dF = F(u) - F(u = 0, gleiches d) (statische Anziehung abgezogen); Verhaeltnis zu dF des einzelnen Balls. cos(k_w d) mit der Bugwelle k_w des Ballsystems.
+  Lauf | F vorn, hinten | dF vorn, hinten | vorn/allein | hinten/allein | cos(k_w d)
+  [grob]
+  d=6 u=0.00       | 9.47e-04, -9.47e-04 | 0.00e+00, 0.00e+00 | nan | nan | nan
+  d=10 u=0.00      | 7.58e-05, -1.03e-04 | 0.00e+00, 0.00e+00 | nan | nan | nan
+  d=16 u=0.00      | 2.86e-06, -2.86e-06 | 0.00e+00, 0.00e+00 | nan | nan | nan
+  d=24 u=0.00      | -1.04e-07, 1.04e-07 | 0.00e+00, 0.00e+00 | nan | nan | nan
+  allein u=0.00    | -3.66e-19, nan | 0.00e+00, nan | nan | nan | nan
+  d=6 u=0.05       | 1.03e-03, -8.96e-04 | 8.46e-05, 5.12e-05 | 523.461 | 316.741 | nan
+  d=10 u=0.05      | 1.09e-04, 4.19e-05 | 3.36e-05, 1.45e-04 | 208.146 | 894.813 | nan
+  d=16 u=0.05      | 7.04e-06, -3.24e-06 | 4.19e-06, -3.88e-07 | 25.923 | -2.400 | nan
+  d=24 u=0.05      | 5.61e-06, 4.05e-07 | 5.71e-06, 3.01e-07 | 35.357 | 1.862 | nan
+  allein u=0.05    | 1.62e-07, nan | 1.62e-07, nan | 1.000 | nan | nan
+  d=6 u=0.35       | 1.10e-03, 4.96e-03 | 1.51e-04, 5.91e-03 | 0.143 | 5.579 | -0.75
+  d=10 u=0.35      | 3.06e-04, 2.51e-03 | 2.30e-04, 2.61e-03 | 0.217 | 2.464 | +0.99
+  d=16 u=0.35      | -1.48e-04, 1.34e-03 | -1.50e-04, 1.34e-03 | -0.142 | 1.266 | -0.64
+  d=24 u=0.35      | -1.32e-04, 1.01e-03 | -1.32e-04, 1.01e-03 | -0.125 | 0.954 | -0.97
+  allein u=0.35    | 1.06e-03, nan | 1.06e-03, nan | 1.000 | nan | +1.00
+  [fein]
+  d=6 u=0.00       | 9.47e-04, -9.47e-04 | 0.00e+00, 0.00e+00 | nan | nan | nan
+  d=10 u=0.00      | 1.89e-04, -1.30e-04 | 0.00e+00, 0.00e+00 | nan | nan | nan
+  d=16 u=0.00      | 2.85e-06, -2.85e-06 | 0.00e+00, 0.00e+00 | nan | nan | nan
+  d=24 u=0.00      | -1.04e-07, 1.04e-07 | 0.00e+00, 0.00e+00 | nan | nan | nan
+  allein u=0.00    | -2.25e-19, nan | 0.00e+00, nan | nan | nan | nan
+  d=6 u=0.05       | 1.02e-03, -8.88e-04 | 7.64e-05, 5.88e-05 | 471.466 | 363.029 | nan
+  d=10 u=0.05      | 1.07e-04, 4.41e-05 | -8.26e-05, 1.74e-04 | -510.046 | 1075.179 | nan
+  d=16 u=0.05      | 7.05e-06, -3.24e-06 | 4.19e-06, -3.87e-07 | 25.884 | -2.391 | nan
+  d=24 u=0.05      | 5.61e-06, 4.06e-07 | 5.72e-06, 3.02e-07 | 35.287 | 1.861 | nan
+  allein u=0.05    | 1.62e-07, nan | 1.62e-07, nan | 1.000 | nan | nan
+  d=6 u=0.35       | 1.10e-03, 4.96e-03 | 1.49e-04, 5.91e-03 | 0.141 | 5.583 | -0.75
+  d=10 u=0.35      | 3.11e-04, 2.50e-03 | 1.21e-04, 2.63e-03 | 0.115 | 2.489 | +0.99
+  d=16 u=0.35      | -1.49e-04, 1.34e-03 | -1.52e-04, 1.34e-03 | -0.144 | 1.266 | -0.64
+  d=24 u=0.35      | -1.34e-04, 1.01e-03 | -1.34e-04, 1.01e-03 | -0.126 | 0.954 | -0.97
+  allein u=0.35    | 1.06e-03, nan | 1.06e-03, nan | 1.000 | nan | +1.00
+  L3 (Effekt >= 5 x Aenderung grob -> fein): 7 von 8 Kenngroessen bestanden
+  Rechenzeit grob 32.6 s, fein 61.1 s
+
+Ende 2026-09-30T02:01:54+00:00, Dauer 95.3 s, Torch-Speicher max 92 MB, Fehler in: keine

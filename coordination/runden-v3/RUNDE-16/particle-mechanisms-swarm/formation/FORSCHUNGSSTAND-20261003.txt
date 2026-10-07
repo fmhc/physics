@@ -1,0 +1,76 @@
+M2: Physikalischer Arbeitsstand, Root, 2026-10-03
+Lesender Abgleich der bestehenden Resultate; keine Neuberechnung.
+Zweck: die laufende Numerikdiagnose auf die physikalische Frage zurückführen.
+
+MODELL UND FRAGE
+Komplexes phi, reelles chi, positive kanonische Kinetik,
+V=(chi²-1)²/4+(1+chi²)|phi|²-|phi|⁴+|phi|⁶/2.
+Referenz Q=1100. Gesucht war konservative Verdichtung und Beruhigung einer
+präparierten geladenen Wolke; nicht Entstehung aus Vakuum. Ihre Energie
+liegt schon unter der freien Ladungsgrenze. Vollständiges Zerfließen ist
+unter den üblichen asymptotisch freien Voraussetzungen ausgeschlossen,
+Stationarität oder ein einzelnes kompaktes Endobjekt aber nicht erzwungen.
+Quelle: ROOT-QUESTION.txt.
+
+1. WOLKE: VERDICHTUNG SICHTBAR, BILDUNGSKRITERIUM OFFEN
+HALF-ERGEBNIS und time-analysis/ERGEBNIS: Radiusmedian von8.70 auf3.29
+bisT64, Minimum2.89; Kernladung ungefähr79..88Prozent. Das chi-Feld
+überschreitet lokal0, ohne Dimensionswechsel. Große Feld-/Zeitreste,
+und das vorangestellte räumliche Sensitivitätstor verfehlt. Formales
+Ergebnis NUMERICALLY_UNRESOLVED_SENSITIVITY. Kein Entstehungsnachweis
+und kein Negativsatz gegen spätere Bildung. Nicht aus Radius allein
+Q-Ball-Stationarität folgern.
+
+2. REFERENZ: GEWÖHNLICHE INNERE MODE NUMERISCH GESTÜTZT
+modes/ERGEBNIS, tail/ERGEBNIS und EVIDENZ-EINORDNUNG: rho≈.38225
+unter erster offener Schwelle≈.396. Frequenz und Vektoren stimmen
+unter Box-/Gitterwechsel überein; langsamer exponentieller Schwanz passt.
+Das zusätzliche R20-Kompaktheitstor verfehlt, kein Ganzraumzertifikat.
+Ein unter allen Schwellen liegender Modus ist kein BIC. Die Prüfung
+aller nichtlinearen oder nichtradialen Störungen fehlt weiterhin.
+
+3. KLEINE ANREGUNG: KAUSALE QUADRATISCHE AUSSENANTWORT ERKLÄRT
+modes/outgoing/fine-plan/time-domain/ und Unterordner:
+Die freie kleine Anregung besitzt reproduzierbare gerade Antwort O(alpha²).
+Ein stationäres auslaufendes Soll beschreibt die gemessenen endlichen
+Fenster nicht; ursprünglicher Ausgang UNRESOLVED bleibt.
+Die kausale lineare Zweitordnungsrechnung mit DC- und2rho-Quellen
+reproduziert dagegen die endliche Antwort. Beide Beiträge und ihre
+Interferenz zählen. Der Phasenzyklus trennt die Beiträge kontrolliert.
+Eine eingeschaltete konstante Quelle kann im endlichen Fenster einen
+2rho-Koeffizienten besitzen; das ist nicht allein stationäre Abstrahlung.
+
+4. NEUE AMPLITUDEN-/ZEITDIAGNOSE: KEINE LEBENSDAUER
+phase-cycle/amplitude: endlicher Amplitudenvergleich auf festem Gitter
+aufgelöst, nach quadratischer Skalierung nur wenige ppm Änderung relativ
+zur Referenz. Das begrenzt nicht den Fehler zum Nullamplitudenlimit.
+reference-time-error: gerichtete dt²-Korrektur verbessert Zeitreste,
+aber nur1/16 vorab gebundene Zuordnungen vollständig bestanden.
+NOT_GLOBALLY_ASSIGNED, kein globaler Ursachennachweis. Gute Erhaltung
+von E/Q ist nicht automatisch eine Fehlerschranke winziger Außenleistung.
+
+WAS DAS FÜR DIE GLOCKENANALOGIE BEDEUTET
+Ein lokaler Träger kann gewöhnliche innere Schwingungen besitzen und
+bei endlicher Anregung zusätzliche Feldantworten erzeugen. Ein vorübergehend
+kleines Signal außen beweist keine unendliche Lebensdauer. Einschalten,
+Phasenpräparation, offene Kanäle und Messfenster sind getrennte Größen.
+Hierzu gibt es konkrete M2-Kontrollen; sie ersetzen keinen M1-BIC-Beweis.
+Keine elektromagnetische/CMB-Kopplung oder Laborfrequenz wurde hergeleitet.
+
+NÄCHSTE ENTSCHEIDUNG
+Keine weitere Gitter-/Zeitschrittverfeinerung allein zum Erzeugen eines
+PASS. Ein nächster Test muss eine neue mechanische Alternative trennen:
+stationäre Verlustleistung gegen endliche kohärente Quellenantwort,
+oder echte Beruhigung einer Wolke gegen langlebige große Atmung.
+Dafür Kosten, unabhängige Kontrollen und Aussagegrenze vorab festlegen.
+Keine alten Ausgangsregeln ändern, keine historische Rechnung duplizieren.
+M1-Bildungsstrang bleibt bei Claude; dieses M2-Modell separat halten.
+
+NACHTRAG physischerTransport,01:18CEST,keinneuerPDE-Lauf:
+18gespeicherteVerläufe mitdiskretenphysikalischenE/Q/G-Bilanzen geprüft.
+Alle6analytischenKontrollenbestanden;48Schalen-/72Randentscheidungen
+UNRESOLVED,überalldominiertderEvolutionszeitschrittvergleichdieReserve.
+Somit keinaufgelösterNettoabtransport,aberauchnichtdessenAbwesenheit.
+Details: physical-transport/ERGEBNIS.txt und REVIEW-RESULT.txt unter
+refined-reference/modes/outgoing/fine-plan/time-domain/.
+WeitereVerfeinerungnurbeiengemneuemEntscheidungsnutzen,keinePASS-Suche.

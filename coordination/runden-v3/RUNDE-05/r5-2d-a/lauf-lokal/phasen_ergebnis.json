@@ -1,0 +1,825 @@
+{
+ "test": "phasen",
+ "start": "2026-09-30T02:55:59+02:00",
+ "ende": "2026-09-30T02:56:10+02:00",
+ "rauch": true,
+ "dauer_s": {
+  "entwicklung_grob_s": 5.346949111000868,
+  "entwicklung_fein_s": 5.599261586001376
+ },
+ "geraet": "CPU (nur Form- und Syntaxprobe)",
+ "parameter": {
+  "T": 800.0,
+  "L": 48.0,
+  "kc": 1.5,
+  "S0": [
+   0.1,
+   0.4,
+   0.9
+  ],
+  "eps": [
+   0.1,
+   1.0,
+   3.0
+  ],
+  "seed": 20260930,
+  "S_dicht": 0.3,
+  "omega_fenster": [
+   0.5,
+   0.97
+  ],
+  "stufen": [
+   [
+    "grob",
+    0.6,
+    0.1
+   ],
+   [
+    "fein",
+    0.4,
+    0.05
+   ]
+  ]
+ },
+ "ergebnis": {
+  "grob": [
+   {
+    "S0": 0.1,
+    "eps": 0.1,
+    "mu": 0.9027735042633894,
+    "amplitude": 0.0008865890269601691,
+    "E_zu_Q": 0.978661430581021,
+    "f_geb_min": 0.07285443311191803,
+    "stufe": "grob",
+    "klasse_ende": "G",
+    "klasse_haelfte": "G",
+    "stationaer": true,
+    "f_geb_ende": 0.0,
+    "phi_ende": 0.0,
+    "n_gebiete_ende": 0,
+    "kontrast_ende": 0.16140929994112535,
+    "koharenz_ende": 0.9786035886275289,
+    "schranke_erfuellt": false,
+    "Q_drift": 0.0,
+    "E_drift": -1.562513569020041e-05,
+    "verlauf": [
+     {
+      "t": 0.0,
+      "f_geb": 0.0,
+      "phi": 0.0,
+      "kontrast": 0.11422447328612292,
+      "koharenz": 0.9862107338034029,
+      "n_geb": 0,
+      "gebiete": [],
+      "klasse": "G"
+     },
+     {
+      "t": 10.0,
+      "f_geb": 0.0,
+      "phi": 0.0,
+      "kontrast": 0.16140929994112535,
+      "koharenz": 0.9786035886275289,
+      "n_geb": 0,
+      "gebiete": [],
+      "klasse": "G"
+     }
+    ]
+   },
+   {
+    "S0": 0.1,
+    "eps": 1.0,
+    "mu": 0.9027735042633894,
+    "amplitude": 0.0028340643577138298,
+    "E_zu_Q": 1.211642534410436,
+    "f_geb_min": 0.0,
+    "stufe": "grob",
+    "klasse_ende": "G",
+    "klasse_haelfte": "G",
+    "stationaer": true,
+    "f_geb_ende": 0.02306016318970871,
+    "phi_ende": 0.0080078125,
+    "n_gebiete_ende": 0,
+    "kontrast_ende": 0.5085973832238287,
+    "koharenz_ende": 0.8032607533029346,
+    "schranke_erfuellt": true,
+    "Q_drift": 0.0,
+    "E_drift": -7.065231393044158e-05,
+    "verlauf": [
+     {
+      "t": 0.0,
+      "f_geb": 0.0,
+      "phi": 0.0,
+      "kontrast": 0.32035478188003125,
+      "koharenz": 0.878866962219594,
+      "n_geb": 0,
+      "gebiete": [],
+      "klasse": "G"
+     },
+     {
+      "t": 10.0,
+      "f_geb": 0.04612032637941742,
+      "phi": 0.016015625,
+      "kontrast": 0.5085973832238287,
+      "koharenz": 0.8032607533029346,
+      "n_geb": 0,
+      "gebiete": [],
+      "klasse": "G"
+     }
+    ]
+   },
+   {
+    "S0": 0.1,
+    "eps": 3.0,
+    "mu": 0.9027735042633894,
+    "amplitude": 0.0048777086463679155,
+    "E_zu_Q": 1.7533446379708444,
+    "f_geb_min": 0.0,
+    "stufe": "grob",
+    "klasse_ende": "M",
+    "klasse_haelfte": "G",
+    "stationaer": false,
+    "f_geb_ende": 0.12837786170958357,
+    "phi_ende": 0.035136718750000004,
+    "n_gebiete_ende": 3,
+    "kontrast_ende": 0.7024691420493552,
+    "koharenz_ende": 0.5920212215463744,
+    "schranke_erfuellt": true,
+    "Q_drift": -2.220446049250313e-16,
+    "E_drift": -8.143157720774674e-05,
+    "verlauf": [
+     {
+      "t": 0.0,
+      "f_geb": 0.03612892406451625,
+      "phi": 0.0111328125,
+      "kontrast": 0.48792324224662087,
+      "koharenz": 0.7058340156510957,
+      "n_geb": 0,
+      "gebiete": [],
+      "klasse": "G"
+     },
+     {
+      "t": 10.0,
+      "f_geb": 0.22062679935465088,
+      "phi": 0.059140625,
+      "kontrast": 0.7024691420493552,
+      "koharenz": 0.5920212215463744,
+      "n_geb": 3,
+      "gebiete": [
+       {
+        "Q": 40.19407978290519,
+        "flaeche": 57.239999999999995,
+        "spannt_x": false,
+        "spannt_y": false
+       },
+       {
+        "Q": 22.500636857562338,
+        "flaeche": 29.88,
+        "spannt_x": false,
+        "spannt_y": false
+       },
+       {
+        "Q": 17.954003886686035,
+        "flaeche": 29.16,
+        "spannt_x": false,
+        "spannt_y": false
+       }
+      ],
+      "klasse": "M"
+     }
+    ]
+   },
+   {
+    "S0": 0.4,
+    "eps": 0.1,
+    "mu": 0.6633249580710799,
+    "amplitude": 0.0015572469137301649,
+    "E_zu_Q": 0.8664108590816116,
+    "f_geb_min": 0.456101856709332,
+    "stufe": "grob",
+    "klasse_ende": "K",
+    "klasse_haelfte": "K",
+    "stationaer": true,
+    "f_geb_ende": 0.9208845040233375,
+    "phi_ende": 0.8565625,
+    "n_gebiete_ende": 1,
+    "kontrast_ende": 0.3633349240627583,
+    "koharenz_ende": 0.8924670164999694,
+    "schranke_erfuellt": true,
+    "Q_drift": 0.0,
+    "E_drift": 5.0465370831975775e-05,
+    "verlauf": [
+     {
+      "t": 0.0,
+      "f_geb": 0.9928722375926247,
+      "phi": 0.9900390625,
+      "kontrast": 0.09602847498719994,
+      "koharenz": 0.99028222679571,
+      "n_geb": 1,
+      "gebiete": [
+       {
+        "Q": 4859.118122580805,
+        "flaeche": 9124.199999999999,
+        "spannt_x": true,
+        "spannt_y": true
+       }
+      ],
+      "klasse": "K"
+     },
+     {
+      "t": 10.0,
+      "f_geb": 0.8488967704540503,
+      "phi": 0.7230859375,
+      "kontrast": 0.3633349240627583,
+      "koharenz": 0.8924670164999694,
+      "n_geb": 1,
+      "gebiete": [
+       {
+        "Q": 4154.393216507951,
+        "flaeche": 6663.599999999999,
+        "spannt_x": true,
+        "spannt_y": true
+       }
+      ],
+      "klasse": "K"
+     }
+    ]
+   },
+   {
+    "S0": 0.4,
+    "eps": 1.0,
+    "mu": 0.6633249580710799,
+    "amplitude": 0.004872975720902073,
+    "E_zu_Q": 1.07259901912847,
+    "f_geb_min": 0.0,
+    "stufe": "grob",
+    "klasse_ende": "N",
+    "klasse_haelfte": "N",
+    "stationaer": true,
+    "f_geb_ende": 0.7142206830544948,
+    "phi_ende": 0.54150390625,
+    "n_gebiete_ende": 2,
+    "kontrast_ende": 0.4598484948808978,
+    "koharenz_ende": 0.8211572912734477,
+    "schranke_erfuellt": true,
+    "Q_drift": 2.220446049250313e-16,
+    "E_drift": 1.6381941868925942e-05,
+    "verlauf": [
+     {
+      "t": 0.0,
+      "f_geb": 0.7262195729714291,
+      "phi": 0.58734375,
+      "kontrast": 0.29600624682576265,
+      "koharenz": 0.9059407378482385,
+      "n_geb": 1,
+      "gebiete": [
+       {
+        "Q": 3490.3206681293495,
+        "flaeche": 5304.24,
+        "spannt_x": true,
+        "spannt_y": true
+       }
+      ],
+      "klasse": "N"
+     },
+     {
+      "t": 10.0,
+      "f_geb": 0.7022217931375606,
+      "phi": 0.4956640625,
+      "kontrast": 0.4598484948808978,
+      "koharenz": 0.8211572912734477,
+      "n_geb": 2,
+      "gebiete": [
+       {
+        "Q": 3207.8276384956703,
+        "flaeche": 4255.92,
+        "spannt_x": true,
+        "spannt_y": true
+       },
+       {
+        "Q": 100.79452927267329,
+        "flaeche": 140.76,
+        "spannt_x": false,
+        "spannt_y": false
+       }
+      ],
+      "klasse": "N"
+     }
+    ]
+   },
+   {
+    "S0": 0.4,
+    "eps": 3.0,
+    "mu": 0.6633249580710799,
+    "amplitude": 0.008516977921249964,
+    "E_zu_Q": 1.568270472529729,
+    "f_geb_min": 0.0,
+    "stufe": "grob",
+    "klasse_ende": "N",
+    "klasse_haelfte": "T",
+    "stationaer": false,
+    "f_geb_ende": 0.6418293083191644,
+    "phi_ende": 0.391328125,
+    "n_gebiete_ende": 11,
+    "kontrast_ende": 0.4557675565269071,
+    "koharenz_ende": 0.6855606887805057,
+    "schranke_erfuellt": true,
+    "Q_drift": 0.0,
+    "E_drift": 0.00016296466576848356,
+    "verlauf": [
+     {
+      "t": 0.0,
+      "f_geb": 0.6131460718492618,
+      "phi": 0.3746875,
+      "kontrast": 0.4378997268468294,
+      "koharenz": 0.7680465898090902,
+      "n_geb": 12,
+      "gebiete": [
+       {
+        "Q": 514.4782942576765,
+        "flaeche": 639.0,
+        "spannt_x": false,
+        "spannt_y": false
+       },
+       {
+        "Q": 468.9311127734127,
+        "flaeche": 567.0,
+        "spannt_x": false,
+        "spannt_y": false
+       },
+       {
+        "Q": 412.1761685544363,
+        "flaeche": 430.91999999999996,
+        "spannt_x": false,
+        "spannt_y": false
+       },
+       {
+        "Q": 283.14228217563874,
+        "flaeche": 316.08,
+        "spannt_x": false,
+        "spannt_y": false
+       },
+       {
+        "Q": 195.8973006180517,
+        "flaeche": 216.72,
+        "spannt_x": false,
+        "spannt_y": false
+       },
+       {
+        "Q": 141.92406479352152,
+        "flaeche": 164.88,
+        "spannt_x": false,
+        "spannt_y": false
+       },
+       {
+        "Q": 132.2280113887211,
+        "flaeche": 172.07999999999998,
+        "spannt_x": false,
+        "spannt_y": false
+       },
+       {
+        "Q": 84.01658625055448,
+        "flaeche": 86.39999999999999,
+        "spannt_x": false,
+        "spannt_y": false
+       }
+      ],
+      "klasse": "T"
+     },
+     {
+      "t": 10.0,
+      "f_geb": 0.6705125447890669,
+      "phi": 0.40796875,
+      "kontrast": 0.4557675565269071,
+      "koharenz": 0.6855606887805057,
+      "n_geb": 11,
+      "gebiete": [
+       {
+        "Q": 1616.4376919849615,
+        "flaeche": 1836.0,
+        "spannt_x": true,
+        "spannt_y": false
+       },
+       {
+        "Q": 514.4903505263453,
+        "flaeche": 583.1999999999999,
+        "spannt_x": false,
+        "spannt_y": false
+       },
+       {
+        "Q": 183.09642974178766,
+        "flaeche": 200.51999999999998,
+        "spannt_x": false,
+        "spannt_y": false
+       },
+       {
+        "Q": 164.31453783638239,
+        "flaeche": 176.4,
+        "spannt_x": false,
+        "spannt_y": false
+       },
+       {
+        "Q": 104.25448500586545,
+        "flaeche": 118.8,
+        "spannt_x": false,
+        "spannt_y": false
+       },
+       {
+        "Q": 73.9408319403712,
+        "flaeche": 79.2,
+        "spannt_x": false,
+        "spannt_y": false
+       },
+       {
+        "Q": 63.37716423469996,
+        "flaeche": 65.88,
+        "spannt_x": false,
+        "spannt_y": false
+       },
+       {
+        "Q": 63.28603743690687,
+        "flaeche": 74.52,
+        "spannt_x": false,
+        "spannt_y": false
+       }
+      ],
+      "klasse": "N"
+     }
+    ]
+   },
+   {
+    "S0": 0.9,
+    "eps": 0.1,
+    "mu": 0.6442049363362563,
+    "amplitude": 0.002238244087871389,
+    "E_zu_Q": 0.74404958824826,
+    "f_geb_min": 0.8738693670977687,
+    "stufe": "grob",
+    "klasse_ende": "K",
+    "klasse_haelfte": "K",
+    "stationaer": true,
+    "f_geb_ende": 0.9917208971022509,
+    "phi_ende": 0.98828125,
+    "n_gebiete_ende": 1,
+    "kontrast_ende": 0.08618711102611791,
+    "koharenz_ende": 0.9821392622234961,
+    "schranke_erfuellt": true,
+    "Q_drift": 0.0,
+    "E_drift": 2.849484108846667e-05,
+    "verlauf": [
+     {
+      "t": 0.0,
+      "f_geb": 0.9884729851610407,
+      "phi": 0.983828125,
+      "kontrast": 0.09466924895517731,
+      "koharenz": 0.989971949067823,
+      "n_geb": 1,
+      "gebiete": [
+       {
+        "Q": 10560.24272299401,
+        "flaeche": 9066.96,
+        "spannt_x": true,
+        "spannt_y": true
+       }
+      ],
+      "klasse": "K"
+     },
+     {
+      "t": 10.0,
+      "f_geb": 0.9949688090434611,
+      "phi": 0.992734375,
+      "kontrast": 0.08618711102611791,
+      "koharenz": 0.9821392622234961,
+      "n_geb": 1,
+      "gebiete": [
+       {
+        "Q": 10629.640144991361,
+        "flaeche": 9149.039999999999,
+        "spannt_x": true,
+        "spannt_y": true
+       }
+      ],
+      "klasse": "K"
+     }
+    ]
+   },
+   {
+    "S0": 0.9,
+    "eps": 1.0,
+    "mu": 0.6442049363362563,
+    "amplitude": 0.007203998276094066,
+    "E_zu_Q": 1.0505182211085122,
+    "f_geb_min": 0.0,
+    "stufe": "grob",
+    "klasse_ende": "K",
+    "klasse_haelfte": "N",
+    "stationaer": false,
+    "f_geb_ende": 0.7803871097912778,
+    "phi_ende": 0.67134765625,
+    "n_gebiete_ende": 1,
+    "kontrast_ende": 0.24454427100389098,
+    "koharenz_ende": 0.8563977632684299,
+    "schranke_erfuellt": true,
+    "Q_drift": 0.0,
+    "E_drift": 0.001054315779686843,
+    "verlauf": [
+     {
+      "t": 0.0,
+      "f_geb": 0.749049732350131,
+      "phi": 0.63953125,
+      "kontrast": 0.2862548897287455,
+      "koharenz": 0.911127075337065,
+      "n_geb": 1,
+      "gebiete": [
+       {
+        "Q": 8036.565227348413,
+        "flaeche": 5891.04,
+        "spannt_x": true,
+        "spannt_y": true
+       }
+      ],
+      "klasse": "N"
+     },
+     {
+      "t": 10.0,
+      "f_geb": 0.8117244872324245,
+      "phi": 0.7031640625,
+      "kontrast": 0.24454427100389098,
+      "koharenz": 0.8563977632684299,
+      "n_geb": 1,
+      "gebiete": [
+       {
+        "Q": 8695.861551184418,
+        "flaeche": 6472.44,
+        "spannt_x": true,
+        "spannt_y": true
+       }
+      ],
+      "klasse": "K"
+     }
+    ]
+   },
+   {
+    "S0": 0.9,
+    "eps": 3.0,
+    "mu": 0.6442049363362563,
+    "amplitude": 0.012441881723800867,
+    "E_zu_Q": 2.090959537805091,
+    "f_geb_min": 0.0,
+    "stufe": "grob",
+    "klasse_ende": "N",
+    "klasse_haelfte": "N",
+    "stationaer": true,
+    "f_geb_ende": 0.6008349428404511,
+    "phi_ende": 0.43179687499999997,
+    "n_gebiete_ende": 1,
+    "kontrast_ende": 0.4022162081919663,
+    "koharenz_ende": 0.34263191737150017,
+    "schranke_erfuellt": true,
+    "Q_drift": -2.220446049250313e-16,
+    "E_drift": 0.010272014339212876,
+    "verlauf": [
+     {
+      "t": 0.0,
+      "f_geb": 0.6216476930081495,
+      "phi": 0.41828125,
+      "kontrast": 0.43514953338358003,
+      "koharenz": 0.7725934534043206,
+      "n_geb": 2,
+      "gebiete": [
+       {
+        "Q": 5716.394289372882,
+        "flaeche": 3412.44,
+        "spannt_x": true,
+        "spannt_y": true
+       },
+       {
+        "Q": 374.4829857045796,
+        "flaeche": 227.51999999999998,
+        "spannt_x": false,
+        "spannt_y": false
+       }
+      ],
+      "klasse": "N"
+     },
+     {
+      "t": 10.0,
+      "f_geb": 0.5800221926727528,
+      "phi": 0.4453125,
+      "kontrast": 0.4022162081919663,
+      "koharenz": 0.34263191737150017,
+      "n_geb": 1,
+      "gebiete": [
+       {
+        "Q": 5812.971955805163,
+        "flaeche": 3912.8399999999997,
+        "spannt_x": true,
+        "spannt_y": true
+       }
+      ],
+      "klasse": "N"
+     }
+    ]
+   }
+  ],
+  "fein": [
+   {
+    "S0": 0.1,
+    "eps": 0.1,
+    "mu": 0.9027735042633894,
+    "amplitude": 0.0008865890269601693,
+    "E_zu_Q": 0.978661430581021,
+    "f_geb_min": 0.07285443311191803,
+    "stufe": "fein",
+    "klasse_ende": "G",
+    "klasse_haelfte": "G",
+    "stationaer": true,
+    "f_geb_ende": 0.0,
+    "phi_ende": 0.0,
+    "n_gebiete_ende": 0,
+    "kontrast_ende": 0.16120842119108253,
+    "koharenz_ende": 0.9786464566089451,
+    "schranke_erfuellt": false,
+    "Q_drift": 0.0,
+    "E_drift": -3.5684114529921374e-06,
+    "verlauf": [
+     {
+      "t": 0.0,
+      "f_geb": 0.0,
+      "phi": 0.0,
+      "kontrast": 0.11422323384302278,
+      "koharenz": 0.9862107338034027,
+      "n_geb": 0,
+      "gebiete": [],
+      "klasse": "G"
+     },
+     {
+      "t": 10.0,
+      "f_geb": 0.0,
+      "phi": 0.0,
+      "kontrast": 0.16120842119108253,
+      "koharenz": 0.9786464566089451,
+      "n_geb": 0,
+      "gebiete": [],
+      "klasse": "G"
+     }
+    ]
+   },
+   {
+    "S0": 0.4,
+    "eps": 1.0,
+    "mu": 0.6633249580710799,
+    "amplitude": 0.004872975720902073,
+    "E_zu_Q": 1.0725990191284702,
+    "f_geb_min": 0.0,
+    "stufe": "fein",
+    "klasse_ende": "N",
+    "klasse_haelfte": "N",
+    "stationaer": true,
+    "f_geb_ende": 0.7141495345975626,
+    "phi_ende": 0.5406857638888889,
+    "n_gebiete_ende": 1,
+    "kontrast_ende": 0.4601036870855625,
+    "koharenz_ende": 0.8210963752995367,
+    "schranke_erfuellt": true,
+    "Q_drift": -2.220446049250313e-16,
+    "E_drift": 4.212482475729473e-06,
+    "verlauf": [
+     {
+      "t": 0.0,
+      "f_geb": 0.7267844403480197,
+      "phi": 0.5867708333333334,
+      "kontrast": 0.2960030348792375,
+      "koharenz": 0.9059407378482384,
+      "n_geb": 1,
+      "gebiete": [
+       {
+        "Q": 3498.95924200282,
+        "flaeche": 5311.840000000001,
+        "spannt_x": true,
+        "spannt_y": true
+       }
+      ],
+      "klasse": "N"
+     },
+     {
+      "t": 10.0,
+      "f_geb": 0.7015146288471055,
+      "phi": 0.49460069444444443,
+      "kontrast": 0.4601036870855625,
+      "koharenz": 0.8210963752995367,
+      "n_geb": 1,
+      "gebiete": [
+       {
+        "Q": 3346.4393393481932,
+        "flaeche": 4425.4400000000005,
+        "spannt_x": true,
+        "spannt_y": true
+       }
+      ],
+      "klasse": "N"
+     }
+    ]
+   },
+   {
+    "S0": 0.9,
+    "eps": 3.0,
+    "mu": 0.6442049363362563,
+    "amplitude": 0.012441881723800867,
+    "E_zu_Q": 2.0909595378050914,
+    "f_geb_min": 0.0,
+    "stufe": "fein",
+    "klasse_ende": "N",
+    "klasse_haelfte": "N",
+    "stationaer": true,
+    "f_geb_ende": 0.6004574217006735,
+    "phi_ende": 0.43125,
+    "n_gebiete_ende": 1,
+    "kontrast_ende": 0.40286827799238456,
+    "koharenz_ende": 0.33625525049963606,
+    "schranke_erfuellt": true,
+    "Q_drift": 0.0,
+    "E_drift": 0.0023979241625746717,
+    "verlauf": [
+     {
+      "t": 0.0,
+      "f_geb": 0.6245070288653919,
+      "phi": 0.41987847222222224,
+      "kontrast": 0.4351448116013651,
+      "koharenz": 0.7725934534043206,
+      "n_geb": 1,
+      "gebiete": [
+       {
+        "Q": 6165.4372166449375,
+        "flaeche": 3690.2400000000007,
+        "spannt_x": true,
+        "spannt_y": true
+       }
+      ],
+      "klasse": "N"
+     },
+     {
+      "t": 10.0,
+      "f_geb": 0.5764078145359552,
+      "phi": 0.4426215277777778,
+      "kontrast": 0.40286827799238456,
+      "koharenz": 0.33625525049963606,
+      "n_geb": 1,
+      "gebiete": [
+       {
+        "Q": 5945.605085796964,
+        "flaeche": 4021.2800000000007,
+        "spannt_x": true,
+        "spannt_y": true
+       }
+      ],
+      "klasse": "N"
+     }
+    ]
+   }
+  ]
+ },
+ "kennzahlen": {
+  "diagramm": {
+   "S0=0.1 eps=0.1": "G",
+   "S0=0.1 eps=1.0": "G",
+   "S0=0.1 eps=3.0": "M",
+   "S0=0.4 eps=0.1": "K",
+   "S0=0.4 eps=1.0": "N",
+   "S0=0.4 eps=3.0": "N",
+   "S0=0.9 eps=0.1": "K",
+   "S0=0.9 eps=1.0": "K",
+   "S0=0.9 eps=3.0": "N"
+  },
+  "schranke_alle_erfuellt": false,
+  "stationaer_alle": false,
+  "L3": {
+   "zellen": [
+    {
+     "zelle": [
+      0.1,
+      0.1
+     ],
+     "bestanden": true,
+     "f_geb_aenderung": 0.0
+    },
+    {
+     "zelle": [
+      0.4,
+      1.0
+     ],
+     "bestanden": true,
+     "f_geb_aenderung": 7.114845693223515e-05
+    },
+    {
+     "zelle": [
+      0.9,
+      3.0
+     ],
+     "bestanden": true,
+     "f_geb_aenderung": 0.0003775211397776257
+    }
+   ],
+   "bestanden": true
+  }
+ }
+}

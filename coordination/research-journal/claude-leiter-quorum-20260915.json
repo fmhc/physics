@@ -1,0 +1,52 @@
+{
+  "id": "claude-leiter-quorum-20260915",
+  "time": "2026-09-15T14:01:09+02:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Registereigner); Werkzeug Claude-Subagent; Review astra (Codex, OpenAI, read-only)",
+  "topic": "operations",
+  "status": "reported",
+  "title": "Leiter neu berechnet und Gold-Quorum eingefuehrt: kein Gold mehr, zehn Silber",
+  "question": "Welche Stufen halten, wenn die 13 ungueltigen Ersatzrichter-Urteile (Stub-Vorfall R11-13) wegfallen und Gold zwei belegte Modellhaeuser verlangt?",
+  "action": "Regel 13 (HANDLUNGSANWEISUNG, Backup .bak-20260915-regel13): Gold-Quorum aus zwei belegten Haeusern, Haus nur aus der Konfliktmatrix (nicht aus Richtertext), Silber-Bestaetigung nach Abstieg, Verwaltungsnotizen im Feld verfahren. gauntlet/runde.py geaendert (Backup runde.py.bak-20260915-quorum, Diff coordination/methodik-review/leiter-neu-20260915/runde-quorum.diff). gauntlet/leiter_neu.py: Replay R1-R17 aus manifest/harvest-done; Selbsttest reproduziert das alte Register (Gate zwingend, Negativtests bestanden). astra-Review CODEX-REVIEW.md: 'einspielen nein in vorliegender Fassung, danach Ausschluss + Quorum rueckwirkend'; Nachbesserungen A1/A2/B/D umgesetzt (Matrixbindung, aufstieg_haeuser nach Abstieg None, Selbsttest-Gate, Provenienzbindung post_or_verdicts.py mit Fehlerstatus). Eingespielt: Variante Ausschluss + Quorum, Matrix streng (Register-Backup behauptungen.jsonl.bak-20260915-vor-leiter-neu, run.json migrationen, Belege MIGRATION-streng.md, REPLAY-BELEG-streng.json).",
+  "result": "Alt 9 Gold; neu 0 Gold, 10 Silber, 14 Bronze, 12 offen. Gold -> Silber: T4.3, V1, BJ1, VB1.2, GV1, GV2, GV3, GAIA-A1; H1 Gold -> Bronze (einziger gueltiger PASS R14, Haus nicht belegbar). Gruende: T4.3/VB1.2 nur OpenAI-Stimmen in Silber- und Gold-Runde; GAIA-A1 R16/R17 beide Z.ai (nicht Google, wie R17-Journal und GOLD-VORBEHALT sagten: berichtigt); V1 R14-Stimme ohne belegbares Haus (R14-Matrix Slot c widerspruechlich: Bunker eingetragen, Google im Text). Tragende Altstimmen aus OpenAI-Slots bei OpenAI-gesperrter Herkunft (V1 #424, T4.3 #418, VB1.2 #457/#661, F2 #473, M1.5 #790, F1 #779, M3.3 #373) und unbelegte R14-Stimmen (#671-#673) sind in MIGRATION-streng.md als 'vorbehaltlich Befangenheitspruefung' gelistet, nicht ausgeschlossen. MEM-B2: Codex-S3 (s3-codex-mem-b2-20260915.md) im Vorbehalt nachgetragen. Sonderfall S1.2/S2.2 (R2 Veto-Erbe manuell bereinigt vor R3) dokumentiert.",
+  "meaning": "Die Leiter zeigt jetzt nur noch, was gueltige Richter aus zwei Haeusern bestaetigt haben; die alten Gold-Etiketten hingen an Ersatzrichtern ohne Behauptungstext oder an zwei Stimmen desselben Hauses. Keine Physik hat sich geaendert, nur die Belegstaerke. Offen fuer den Codex-Lead vor R18: Befangenheitspruefung der Altstimmen, R14-Slot-c-Provenienz, Kandidatenmatrix als Pflicht vor dem Einfrieren, Raw-Archiv in or_jury.py, pipefail/Attempt-Belege in runde_laptop.sh.",
+  "sources": [
+    {
+      "path": "coordination/methodik-review/leiter-neu-20260915/BERICHT.md",
+      "sha256": "4b5fb7e6cb127278bb1e9ddc9e2c89246e84e631589d0867e59388ac7d306039"
+    },
+    {
+      "path": "coordination/methodik-review/leiter-neu-20260915/CODEX-REVIEW.md",
+      "sha256": "b8e929e8b1227aa4915cc85a520b0bcd05fce3142a02259728879848c1735186"
+    },
+    {
+      "path": "coordination/methodik-review/leiter-neu-20260915/MIGRATION-streng.md",
+      "sha256": "38f8255c7bfd8dfcd236742f240744bd64e4e049550b028bf922f62265c56bb6"
+    },
+    {
+      "path": "coordination/methodik-review/leiter-neu-20260915/REPLAY-BELEG-streng.json",
+      "sha256": "ce1cb0bb310c21ddc3b1137a49a79c317eaa5c2d1c4370b1f05acce6dc1fdc72"
+    },
+    {
+      "path": "coordination/methodik-review/leiter-neu-20260915/runde-quorum.diff",
+      "sha256": "d10f874cbeac28570805e6d7b025c0507505e011a2975f0c1c4afa110c92eab2"
+    },
+    {
+      "path": "coordination/methodik-review/leiter-neu-20260915/post_or_verdicts-provenienz.diff",
+      "sha256": "a98d6f227191bdea0b1a0571b7cf792ca12acc591c8a0905eb41ff2f79ff924d"
+    },
+    {
+      "path": "gauntlet/leiter_neu.py",
+      "sha256": "3592d3b6c67478d3835a98c4349d96bf4537e9608e7b6440324bce1157928bf6"
+    },
+    {
+      "path": "gauntlet/new-runs/entwicklung-v2-20260911/behauptungen.jsonl",
+      "sha256": "11bf3ba35dba7664a52ca312e92006c10b386a5a184d1a5949006febb67fbe96"
+    },
+    {
+      "path": "gauntlet/new-runs/entwicklung-v2-20260911/rounds/013/VORFALL-ersatzrichter-stub.md",
+      "sha256": "b240005af5391e2370226e2e138e62abe16ab7d1b131c7094f87782a4698b2fd"
+    }
+  ],
+  "recorded_at": "2026-09-15T12:01:36.952857+00:00"
+}

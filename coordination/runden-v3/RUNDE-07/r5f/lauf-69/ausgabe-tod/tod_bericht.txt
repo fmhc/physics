@@ -1,0 +1,73 @@
+Runde 7 R5F tod Start 2026-09-30T02:51:36+00:00 auf CPU, 1 Faden, torch 2.5.1+cu121, Stufe beide, Teil None, T None, nur-auswertung True
+
+(a) Tod unter Q_min, Folge: 3D radial, Start omega^2 = 0.8, gleichmaessiger Abfluss -gamma psi_t bis t_stop; Q_min (Runde 2) = 111.8441; Fenster r < 25.0 (Kern r < 10.0); Messung alle 0.5.
+  E_ref = E_in bei t90 - 10 (lebende Laeufe: t = 0); Fenster frueh [t10+100, t10+500], spaet [max(t10+100, T-1000), T].
+  Spektrum: psi im Zentrum, Omega > 0 = exp(-i Omega t) (Teilchen); 'unter' = Leistungsanteil |Omega| < 1 - 2 dOmega; Asym = (P+ - P-)/P (Q-Ball +1, reelles Oszillon 0).
+  Klasse (vorab): Oszillon, wenn E_spaet >= 0,1 E_ref und >= 0,5 E_frueh und Hauptlinie unter 1 und S_max spaet >= 0,01; zerlaeuft, wenn E_spaet < 0,02 E_ref oder S_max spaet < 1e-3; sonst unklar.
+  [grob]
+  Lauf | t_stop | t90 / t50 / t10 | Dauer | Q_in(t90)/Q_min | omega vor Tod (Phase) | Spektrum vor Tod | E_ref | E_in/E_ref: +100 / +500 / +1000 / T | Spektrum spaet | S_max spaet (max) | lambda_E spaet | Klasse
+  stopp 1,05 Q_min       | 460.4 | nan / nan / nan | nan | nan | 0.9453 | - | 181.903 | nan / nan / nan / 0.655 | +0.9454 (0.50); unter 1.00, Asym +1.00 | 7.38e-01 (7.40e-01) | 1.26e-08 | lebt
+  stopp 0,95 Q_min       | 560.5 | 652.5 / 710.0 / 857.0 | 204.5 | 0.8538 | 1.0068 | +0.9698 (0.50); unter 0.03, Asym +1.00 | 102.591 | 0.046 / 0.006 / 0.009 / 0.016 | +1.0035 (0.54); unter 0.00, Asym +1.00 | 3.98e-05 (6.88e-05) | 6.11e-04 | zerlaeuft
+  stopp 0,9 Q_min        | 614.6 | 651.5 / 707.5 / 852.5 | 201.0 | 0.8074 | 1.0069 | +0.9694 (0.50); unter 0.03, Asym +1.00 | 97.241 | 0.046 / 0.006 / 0.008 / 0.016 | +1.0035 (0.54); unter 0.00, Asym +1.00 | 3.64e-05 (6.33e-05) | 6.12e-04 | zerlaeuft
+  stopp 0,8 Q_min        | 732.4 | 651.5 / 707.5 / 851.5 | 200.0 | 0.7781 | 1.0070 | +0.9694 (0.50); unter 0.03, Asym +1.00 | 94.663 | 0.042 / 0.005 / 0.008 / 0.014 | +1.0035 (0.54); unter 0.00, Asym +1.00 | 3.22e-05 (5.59e-05) | 6.13e-04 | zerlaeuft
+  Dauerabfluss 1e-3      | inf | 651.5 / 707.5 / 851.5 | 200.0 | 0.7781 | 1.0070 | +0.9694 (0.50); unter 0.03, Asym +1.00 | 94.663 | 0.033 / 0.003 / 0.002 / 0.001 | +1.0037 (0.54); unter 0.00, Asym +1.00 | 2.21e-06 (4.42e-06) | 1.61e-03 | zerlaeuft (Abfluss laeuft weiter)
+  ohne Abfluss 0,80      | inf | nan / nan / nan | nan | nan | 0.8944 | - | 181.903 | nan / nan / nan / 1.000 | +0.8942 (0.53); unter 1.00, Asym +1.00 | 1.04e+00 (1.04e+00) | 6.53e-13 | lebt
+  ohne Abfluss 0,90      | inf | nan / nan / nan | nan | nan | 0.9485 | - | 117.394 | nan / nan / nan / 1.000 | +0.9485 (0.67); unter 1.00, Asym +1.00 | 7.08e-01 (7.09e-01) | -1.18e-10 | lebt
+  Klumpen 0,927 x 0,95   | inf | 105.5 / 160.0 / 298.0 | 192.5 | 0.8097 | 1.0074 | +1.0068 (0.50); unter 0.00, Asym +1.00 | 97.665 | 0.044 / 0.005 / 0.008 / 0.003 | +1.0051 (0.56); unter 0.00, Asym +1.00 | 1.75e-05 (3.61e-05) | 1.60e-03 | zerlaeuft
+  Laufzeitbild: Lauf | Kern r < 10: t90 / t10 / Dauer | Fenster r < 25: Dauer | v_g(omega vor Tod) | R_E vor Tod | Dauer-Vorhersage (25 - R_E)/v_g | frueh: E/E_ref, S_max, Spektrum, Plateau
+  stopp 1,05 Q_min       | nan / nan / nan | nan | nan | nan | nan | nan, nan, -, nein
+  stopp 0,95 Q_min       | 583.0 / 680.5 / 97.5 | 204.5 | 0.1162 | 14.64 | 89.1 | 0.018, 1.53e-05, +1.0011 (0.61); unter 0.00, Asym +1.00, nein
+  stopp 0,9 Q_min        | 583.0 / 678.0 / 95.0 | 201.0 | 0.1171 | 14.70 | 88.0 | 0.017, 1.42e-05, +1.0011 (0.62); unter 0.00, Asym +1.00, nein
+  stopp 0,8 Q_min        | 583.0 / 678.0 / 95.0 | 200.0 | 0.1177 | 14.70 | 87.5 | 0.016, 1.25e-05, +1.0011 (0.62); unter 0.00, Asym +1.00, nein
+  Dauerabfluss 1e-3      | 583.0 / 678.0 / 95.0 | 200.0 | 0.1177 | 14.70 | 87.5 | 0.011, 8.81e-06, +1.0011 (0.61); unter 0.00, Asym +1.00, nein
+  ohne Abfluss 0,80      | nan / nan / nan | nan | nan | nan | nan | nan, nan, -, nein
+  ohne Abfluss 0,90      | nan / nan / nan | nan | nan | nan | nan | nan, nan, -, nein
+  Klumpen 0,927 x 0,95   | 44.5 / 134.0 / 89.5 | 192.5 | 0.1212 | 14.40 | 87.5 | 0.016, 1.32e-05, +1.0011 (0.62); unter 0.00, Asym +1.00, nein
+  Plausibilitaet: Lauf | E_in > E_tot (Anzahl) | E_in < 0 | E_tot-Anstieg nach Stopp (rel) | q_rel max | Gegenprobe dQ_in, dE_in
+  stopp 1,05 Q_min       | 0 | 0 | 1.4e-07 | 1.0000 | -
+  stopp 0,95 Q_min       | 0 | 0 | 0.0e+00 | 1.0000 | -
+  stopp 0,9 Q_min        | 0 | 0 | 1.9e-07 | 1.0000 | -
+  stopp 0,8 Q_min        | 0 | 0 | 1.8e-07 | 1.0000 | -
+  Dauerabfluss 1e-3      | 0 | 0 | nan | 1.0000 | -
+  ohne Abfluss 0,80      | 0 | 0 | 1.4e-07 | 1.0000 | -7.8e-08, -4.2e-09
+  ohne Abfluss 0,90      | 0 | 0 | 2.5e-07 | 1.0000 | -9.5e-07, -8.8e-07
+  Klumpen 0,927 x 0,95   | 0 | 0 | 0.0e+00 | 1.0000 | -1.0e+00, -1.0e+00
+  [fein]
+  Lauf | t_stop | t90 / t50 / t10 | Dauer | Q_in(t90)/Q_min | omega vor Tod (Phase) | Spektrum vor Tod | E_ref | E_in/E_ref: +100 / +500 / +1000 / T | Spektrum spaet | S_max spaet (max) | lambda_E spaet | Klasse
+  stopp 1,05 Q_min       | 460.4 | nan / nan / nan | nan | nan | 0.9455 | - | 181.910 | nan / nan / nan / 0.655 | +0.9455 (0.50); unter 1.00, Asym +1.00 | 7.37e-01 (7.40e-01) | 1.25e-08 | lebt
+  stopp 0,95 Q_min       | 560.5 | 652.0 / 709.5 / 856.5 | 204.5 | 0.8524 | 1.0067 | +0.9698 (0.50); unter 0.03, Asym +1.00 | 102.466 | 0.046 / 0.006 / 0.009 / 0.011 | +1.0261 (0.30); unter 0.00, Asym +1.00 | 3.86e-05 (9.82e-05) | 8.02e-04 | zerlaeuft
+  stopp 0,9 Q_min        | 614.6 | 650.5 / 707.0 / 852.0 | 201.5 | 0.8091 | 1.0069 | +0.9692 (0.50); unter 0.03, Asym +1.00 | 97.373 | 0.046 / 0.006 / 0.008 / 0.011 | +1.0261 (0.30); unter 0.00, Asym +1.00 | 3.63e-05 (9.23e-05) | 7.56e-04 | zerlaeuft
+  stopp 0,8 Q_min        | 732.4 | 650.5 / 707.0 / 851.5 | 201.0 | 0.7805 | 1.0069 | +0.9692 (0.50); unter 0.03, Asym +1.00 | 94.886 | 0.041 / 0.005 / 0.008 / 0.010 | +1.0261 (0.30); unter 0.00, Asym +1.00 | 3.23e-05 (8.21e-05) | 7.44e-04 | zerlaeuft
+  Dauerabfluss 1e-3      | inf | 650.5 / 707.0 / 851.5 | 201.0 | 0.7805 | 1.0069 | +0.9692 (0.50); unter 0.03, Asym +1.00 | 94.886 | 0.033 / 0.003 / 0.002 / 0.003 | +1.0267 (0.28); unter 0.00, Asym +1.00 | 1.25e-05 (2.82e-05) | 1.74e-03 | zerlaeuft (Abfluss laeuft weiter)
+  ohne Abfluss 0,80      | inf | nan / nan / nan | nan | nan | 0.8944 | - | 181.910 | nan / nan / nan / 1.000 | +0.8942 (0.53); unter 1.00, Asym +1.00 | 1.04e+00 (1.04e+00) | 3.12e-15 | lebt
+  ohne Abfluss 0,90      | inf | nan / nan / nan | nan | nan | 0.9487 | - | 117.397 | nan / nan / nan / 1.000 | +0.9486 (0.66); unter 1.00, Asym +1.00 | 7.07e-01 (7.07e-01) | 2.10e-11 | lebt
+  Klumpen 0,927 x 0,95   | inf | 105.0 / 160.0 / 298.5 | 193.5 | 0.8119 | 1.0081 | +1.0058 (0.54); unter 0.01, Asym +1.00 | 97.841 | 0.044 / 0.005 / 0.008 / 0.013 | +1.0134 (0.47); unter 0.00, Asym +1.00 | 7.77e-05 (1.06e-04) | -1.25e-03 | zerlaeuft
+  Laufzeitbild: Lauf | Kern r < 10: t90 / t10 / Dauer | Fenster r < 25: Dauer | v_g(omega vor Tod) | R_E vor Tod | Dauer-Vorhersage (25 - R_E)/v_g | frueh: E/E_ref, S_max, Spektrum, Plateau
+  stopp 1,05 Q_min       | nan / nan / nan | nan | nan | nan | nan | nan, nan, -, nein
+  stopp 0,95 Q_min       | 582.5 / 680.0 / 97.5 | 204.5 | 0.1150 | 14.68 | 89.7 | 0.018, 1.52e-05, +1.0010 (0.61); unter 0.00, Asym +1.00, nein
+  stopp 0,9 Q_min        | 582.5 / 677.5 / 95.0 | 201.5 | 0.1166 | 14.68 | 88.5 | 0.017, 1.42e-05, +1.0010 (0.61); unter 0.00, Asym +1.00, nein
+  stopp 0,8 Q_min        | 582.5 / 677.5 / 95.0 | 201.0 | 0.1171 | 14.68 | 88.2 | 0.016, 1.25e-05, +1.0010 (0.61); unter 0.00, Asym +1.00, nein
+  Dauerabfluss 1e-3      | 582.5 / 677.5 / 95.0 | 201.0 | 0.1171 | 14.68 | 88.2 | 0.011, 8.78e-06, +1.0010 (0.61); unter 0.00, Asym +1.00, nein
+  ohne Abfluss 0,80      | nan / nan / nan | nan | nan | nan | nan | nan, nan, -, nein
+  ohne Abfluss 0,90      | nan / nan / nan | nan | nan | nan | nan | nan, nan, -, nein
+  Klumpen 0,927 x 0,95   | 44.5 / 134.0 / 89.5 | 193.5 | 0.1263 | 14.37 | 84.2 | 0.016, 1.31e-05, +1.0010 (0.62); unter 0.00, Asym +1.00, nein
+  Plausibilitaet: Lauf | E_in > E_tot (Anzahl) | E_in < 0 | E_tot-Anstieg nach Stopp (rel) | q_rel max | Gegenprobe dQ_in, dE_in
+  stopp 1,05 Q_min       | 0 | 0 | 0.0e+00 | 1.0000 | -
+  stopp 0,95 Q_min       | 0 | 0 | 0.0e+00 | 1.0000 | -
+  stopp 0,9 Q_min        | 0 | 0 | 3.5e-08 | 1.0000 | -
+  stopp 0,8 Q_min        | 0 | 0 | 4.9e-08 | 1.0000 | -
+  Dauerabfluss 1e-3      | 0 | 0 | nan | 1.0000 | -
+  ohne Abfluss 0,80      | 0 | 0 | 8.8e-09 | 1.0000 | -4.9e-09, +8.3e-11
+  ohne Abfluss 0,90      | 0 | 0 | 1.6e-08 | 1.0000 | -8.5e-08, -8.3e-08
+  Klumpen 0,927 x 0,95   | 0 | 0 | 0.0e+00 | 1.0000 | -9.9e-01, -9.9e-01
+  L3 (grob gegen fein bis T = 2000): 22 von 26 Kenngroessen bestanden; Klasse gleich in 8 von 8 Laeufen
+    stopp 1,05 Q_min      : Klasse lebt / lebt; t50 NEIN (nan/nan); dauer_90_10 NEIN (nan/nan); E_spaet_rel ok (0.345/3.9e-06); Omega_spaet ok (0.0546/0.00013)
+    stopp 0,95 Q_min      : Klasse zerlaeuft / zerlaeuft; t50 ok (201/0.5); dauer_90_10 ok (204/0); E_spaet_rel ok (0.99/1.4e-05); Omega_spaet ok (0.0262/0.00013)
+    stopp 0,9 Q_min       : Klasse zerlaeuft / zerlaeuft; t50 ok (198/0.5); dauer_90_10 ok (201/0.5); E_spaet_rel ok (0.991/2.9e-05); Omega_spaet ok (0.0263/0.00013)
+    stopp 0,8 Q_min       : Klasse zerlaeuft / zerlaeuft; t50 ok (198/0.5); dauer_90_10 ok (200/1); E_spaet_rel ok (0.991/3.4e-05); Omega_spaet ok (0.0263/0.00013)
+    Dauerabfluss 1e-3     : Klasse zerlaeuft (Abfluss laeuft weiter) / zerlaeuft (Abfluss laeuft weiter); t50 ok (198/0.5); dauer_90_10 ok (200/1); E_spaet_rel ok (0.995/1.6e-05); Omega_spaet ok (0.0268/0.00014)
+    ohne Abfluss 0,80     : Klasse lebt / lebt; E_spaet_rel NEIN (4.03e-08/3.8e-08); Omega_spaet ok (0.106/1.9e-05)
+    ohne Abfluss 0,90     : Klasse lebt / lebt; E_spaet_rel NEIN (1.24e-06/1.2e-06); Omega_spaet ok (0.0515/8.5e-05)
+    Klumpen 0,927 x 0,95  : Klasse zerlaeuft / zerlaeuft; E_spaet_rel ok (0.989/0.00011); Omega_spaet ok (0.0135/0.00011)
+
+Ende 2026-09-30T02:51:36+00:00, Dauer 0.3 s, Torch-Speicher max nan MB, Fehler: keine

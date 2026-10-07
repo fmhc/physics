@@ -1,0 +1,240 @@
+{
+ "karte": "RING vierer (b)",
+ "start": "2026-09-30T04:28:58+02:00",
+ "ende": "2026-09-30T04:29:05+02:00",
+ "rauch": true,
+ "dauer_s": {
+  "profile_s": 0.005896004993701354,
+  "entwicklung_grob_s": 5.449593257988454,
+  "entwicklung_fein_s": 1.9930016300058924
+ },
+ "geraet": "CPU (nur Formprobe)",
+ "stufe": "fein",
+ "parameter": {
+  "omega2": 0.7,
+  "L": 38.4,
+  "T": 20.0,
+  "dx": 0.4,
+  "dt": 0.05,
+  "r_verfolger": 3.13293833525448,
+  "spread_bruch": 0.1,
+  "spread_tausch": 0.3,
+  "t_meas": 0.5
+ },
+ "profil": {
+  "omega2": 0.7,
+  "m": 0,
+  "p": 0.9219684449827583,
+  "klammer": 9.984235660454033e-13,
+  "x_schwanz": 12.93,
+  "N": 14.340231575395622,
+  "G": 2.54942127327128,
+  "VU": 10.038170509170794,
+  "Q": 23.99579706075058,
+  "E": 22.62575388521901,
+  "virialrest": 4.1872158729570007e-07,
+  "S_zentrum": 0.8500258135439255,
+  "S_max": 0.8500258135439255,
+  "R_halb": 1.9161729190680998,
+  "R_kern_halb": 0.0,
+  "R_max": 0.0,
+  "f_top": 1.077534175392925,
+  "gueltig": true
+ },
+ "ergebnis": [
+  {
+   "lauf": "n4_windung_sym",
+   "stufe": "fein",
+   "T": 20.0,
+   "luecke": 4.0,
+   "seite": 7.8323458381362,
+   "windung": 1,
+   "sym": true,
+   "saat": 0.0,
+   "phasen": [
+    0.0,
+    1.5707963267948966,
+    3.141592653589793,
+    4.71238898038469
+   ],
+   "sektor_abweichung_start": 2.5117796961558515e-09,
+   "r_start": 5.546824370052872,
+   "d_paar_start": 8.927479081522163,
+   "t_verschmolzen": null,
+   "t_bruch_spread_0p1": null,
+   "t_tausch_spread_0p3": null,
+   "t_rand": null,
+   "t_weit_1p3": null,
+   "t_gueltig_bis": 20.0,
+   "n_start": 4,
+   "n_ende": 4,
+   "spread_start": 1.8051018772118798e-16,
+   "spread_max": 3.6421815229904337e-16,
+   "r_mittel": 5.606856272428808,
+   "r_min": 5.546824370052872,
+   "r_max": 5.665648900901067,
+   "d_paar_max_gueltig": 9.118724277466384,
+   "r_mittel_zweite_haelfte": 5.637467202362542,
+   "drift_pro_zeit": 0.006142297543706765,
+   "drift_fehler": 0.00015296794511173304,
+   "drift_mal_fenster_rel": 0.02214707780137707,
+   "umkehrpunkte": 0,
+   "periode": null,
+   "amplitude_zweite_haelfte": 0.009983009138299526,
+   "amplitude_erste_haelfte": 0.010600039382636872,
+   "drehrate": -0.005977991055724408,
+   "gamma_spreizung": null,
+   "klasse": "gebunden",
+   "reihe": [
+    [
+     0.0,
+     5.5468,
+     8.9275,
+     1.805e-16,
+     0.7854,
+     38.1019
+    ]
+   ],
+   "Q_box_verlust": 9.470202400052585e-14,
+   "bilanz": {
+    "Q": {
+     "start": 93.62119633792254,
+     "ende": 93.62119633791367,
+     "geschluckt": 8.840163488161786e-12,
+     "rest_max_rel": 3.0358199363119447e-16,
+     "rest_ende_rel": -3.0358199363119447e-16,
+     "ok": true
+    },
+    "J": {
+     "start": 38.10194838484493,
+     "ende": 38.1019483847927,
+     "geschluckt": 1.6542851227181155e-11,
+     "rest_max_rel": 6.027620483547366e-13,
+     "rest_ende_rel": -3.8122308850237244e-13,
+     "ok": true
+    },
+    "E": {
+     "start": 88.52971743784359,
+     "ende": 88.529648864243,
+     "geschluckt": 7.389168370665718e-12,
+     "rest_max_rel": 8.972237370755295e-07,
+     "rest_ende_rel": -7.745827636332393e-07,
+     "ok": true
+    }
+   },
+   "windungen_klumpen_ende": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "schranken": {
+    "bilanz_Q": true,
+    "bilanz_J": true,
+    "bilanz_E": true,
+    "startzerlegung": true,
+    "sektor_start": true
+   }
+  },
+  {
+   "lauf": "n4_windung_s1e-6",
+   "stufe": "fein",
+   "T": 20.0,
+   "luecke": 4.0,
+   "seite": 7.8323458381362,
+   "windung": 1,
+   "sym": false,
+   "saat": 1e-06,
+   "phasen": [
+    0.0,
+    1.5707963267948966,
+    3.141592653589793,
+    4.71238898038469
+   ],
+   "sektor_abweichung_start": 4.4024347623501976e-07,
+   "r_start": 5.546824370052869,
+   "d_paar_start": 8.927479081522158,
+   "t_verschmolzen": null,
+   "t_bruch_spread_0p1": null,
+   "t_tausch_spread_0p3": null,
+   "t_rand": null,
+   "t_weit_1p3": null,
+   "t_gueltig_bis": 20.0,
+   "n_start": 4,
+   "n_ende": 4,
+   "spread_start": 2.0148152251493665e-06,
+   "spread_max": 2.0939700788917998e-06,
+   "r_mittel": 5.606856218654942,
+   "r_min": 5.546824370052869,
+   "r_max": 5.665648693616347,
+   "d_paar_max_gueltig": 9.118723943846314,
+   "r_mittel_zweite_haelfte": 5.637467099376487,
+   "drift_pro_zeit": 0.006142287761521143,
+   "drift_fehler": 0.00015296815714794436,
+   "drift_mal_fenster_rel": 0.022147042530075992,
+   "umkehrpunkte": 0,
+   "periode": null,
+   "amplitude_zweite_haelfte": 0.009983016461795113,
+   "amplitude_erste_haelfte": 0.010600061207817646,
+   "drehrate": -0.005977952831799136,
+   "gamma_spreizung": null,
+   "klasse": "gebunden",
+   "reihe": [
+    [
+     0.0,
+     5.5468,
+     8.9275,
+     2.015e-06,
+     0.7854,
+     38.102
+    ]
+   ],
+   "Q_box_verlust": 9.43689570931383e-14,
+   "bilanz": {
+    "Q": {
+     "start": 93.62124314854469,
+     "ende": 93.62124314853585,
+     "geschluckt": 8.84059376959509e-12,
+     "rest_max_rel": 3.0358184184019576e-16,
+     "rest_ende_rel": 0.0,
+     "ok": true
+    },
+    "J": {
+     "start": 38.10196743581912,
+     "ende": 38.10196743576689,
+     "geschluckt": 1.6542782313061497e-11,
+     "rest_max_rel": 6.026858515132486e-13,
+     "rest_ende_rel": -3.8122289789082583e-13,
+     "ok": true
+    },
+    "E": {
+     "start": 88.52975661407397,
+     "ende": 88.52968804078971,
+     "geschluckt": 7.39387880639213e-12,
+     "rest_max_rel": 8.972194931581004e-07,
+     "rest_ende_rel": -7.74578847835194e-07,
+     "ok": true
+    }
+   },
+   "windungen_klumpen_ende": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "schranken": {
+    "bilanz_Q": true,
+    "bilanz_J": true,
+    "bilanz_E": true,
+    "startzerlegung": true,
+    "sektor_start": true
+   }
+  }
+ ],
+ "kennzahlen": {
+  "klassen": {
+   "n4_windung_sym": "gebunden",
+   "n4_windung_s1e-6": "gebunden"
+  }
+ }
+}

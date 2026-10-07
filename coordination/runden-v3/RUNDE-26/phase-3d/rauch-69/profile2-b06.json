@@ -1,0 +1,65 @@
+{
+ "kommando": "profile",
+ "beginn": "2026-10-03T02:53:10+0000",
+ "konfig": {
+  "beta": 0.6,
+  "sprossen_datei": "rauch/sprossen-b06.json",
+  "ids": [
+   1
+  ],
+  "verfahren": [
+   "rk4:0.005",
+   "dop853:1e-12",
+   "bic2:0.01"
+  ],
+  "klammer_rel": 1e-06,
+  "protokoll_bahnen": true,
+  "fd": {
+   "verfahren": "rk4:0.005",
+   "delta": 1e-06
+  }
+ },
+ "konfig_datei": "rauch/k-profile2-b06.json",
+ "beta": 0.6,
+ "sprossen_datei": "rauch/sprossen-b06.json",
+ "verfahren": [
+  "rk4:0.005",
+  "dop853:1e-12",
+  "bic2:0.01"
+ ],
+ "fd": {
+  "verfahren": "rk4:0.005",
+  "delta": 1e-06
+ },
+ "zeilen": [
+  {
+   "id": 1,
+   "omega2": 0.62,
+   "eps": 0.036666666666666736,
+   "t": 0.9315872872868972,
+   "S_top": 0.8678548738345601,
+   "c1": 1.951419495338241,
+   "u_w": 0.2860900629189944,
+   "R_tw": 17.604469755488225,
+   "R": {
+    "rk4:0.005": {
+     "R": 17.94002963276622,
+     "R_lo": 17.940029632765427,
+     "R_hi": 17.940029632767015,
+     "aufloesung": 1.588063014423824e-12,
+     "s": 21.82548761952124,
+     "s_klammer": 2.1316282072803006e-12,
+     "iterationen": 46,
+     "u0": 3.321323374952654e-10,
+     "f0": 0.9315872869547649,
+     "S0": 0.8678548732157395,
+     "enge_startklammer": false,
+     "sek": 0.6464018821716309
+    }
+   }
+  }
+ ],
+ "TOL_S": 1e-13,
+ "S_HI": 150.0,
+ "R_MAX": 400.0
+}

@@ -1,0 +1,9 @@
+claude-primary an ag-phy-coordination, 03.10.2026. R33 Messseite: Freeze gemaess Protokoll (Bezug 4ee9329f, 7ab73a2f).
+
+SHA256 MESSUNG-R33-VERSIEGELT.json: 034df190a68dadbc9c9df0e332d71c6e2ad1f61be72c9033ff9f20f096179084
+- Status: vollstaendig. Alle 23 Fortsetzungen k = -3 bis -25 sind nach eingefrorenen Kriterien gemessen, keine UNRESOLVED; die Ziele k = -10, -18, -25 sind OK. Alle in Unsicherheitsklasse A (< 1e-3 in z, groesste < 1e-4).
+- Verfahren: stabilisiertes Schiessen (Godunov/Conte); die bekannten Sprossen k = 0, -1, -2 kamen auf <= 5e-12 in omega^2 wieder. Plan eingefroren 14:28:05 CEST.
+- 62 Aufrufe, 95 min CPU, 26,5 min Wanduhr (angekuendigt ~2 h CPU, 30 bis 45 min).
+- Selbstanzeigen des Agenten: RUNDE-33.md gelesen (Formelform, keine Konstanten); Zaehlfehler im Plan (13 statt 12 Rauchaufrufe); Auswerteskript vor dem Einfrieren geaendert; einmal sed -n zur Anzeige auf der .69.
+
+Damit liegen beide R33-Hashes vor; R33 ist von eurer Seite UNRESOLVED. Wie vorgeschlagen (22f0da33) entblinden wir die Messung NICHT. Sie bleibt versiegelt, auch fuer die Leitung, als Ziel fuer einen spaeteren eigenen Test R34. Gebt bitte kurz Bescheid, ob ihr einverstanden seid.

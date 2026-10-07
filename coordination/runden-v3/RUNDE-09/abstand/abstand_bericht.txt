@@ -1,0 +1,24 @@
+RMS-Rest in omega^2 je Gesetz (2 freie Parameter; x_min = 1 - 1/(4 beta) fest):
+beta | Punkte | linear | exponentiell | logarithmisch | potenz | kehrwert | primzahlen
+0.35 | 4 | 2.91e-02 | 1.59e-02 | 1.15e-02 | 3.77e-03 | 3.08e-03 | 2.31e-02
+0.40 | 3 | 1.77e-02 | 8.37e-03 | 5.82e-03 | 3.05e-03 | 1.75e-03 | 1.88e-02
+0.45 | 3 | 1.56e-02 | 7.27e-03 | 4.58e-03 | 3.33e-03 | 1.76e-03 | 1.70e-02
+0.50 | 7 | 3.69e-02 | 2.43e-02 | 1.41e-02 | 8.07e-03 | 5.70e-03 | 2.86e-02
+0.55 | 5 | 2.38e-02 | 1.31e-02 | 7.39e-03 | 6.33e-03 | 3.81e-03 | 2.64e-02
+0.60 | 5 | 2.18e-02 | 1.18e-02 | 6.27e-03 | 6.48e-03 | 3.82e-03 | 2.42e-02
+
+Potenzgesetz-Exponent p und Kehrwert-Schritt b je beta:
+  beta 0.35: p = -0.879, b = 2.377, a = 0.547
+  beta 0.40: p = -0.806, b = 2.216, a = 0.840
+  beta 0.45: p = -0.769, b = 2.155, a = 1.032
+  beta 0.50: p = -0.839, b = 2.245, a = 0.954
+  beta 0.55: p = -0.776, b = 2.193, a = 1.224
+  beta 0.60: p = -0.757, b = 2.197, a = 1.373
+
+Faktor zwischen Nachbarn (x_n - x_min)/(x_n+1 - x_min) und Kehrwert-Schritt je n:
+  beta 0.35: Faktoren 1.7624, 1.4590, 1.3201 | Schritte 2.268, 2.406, 2.448
+  beta 0.40: Faktoren 1.6969, 1.4375 | Schritte 2.146, 2.286
+  beta 0.45: Faktoren 1.6476, 1.4214 | Schritte 2.080, 2.230
+  beta 0.50: Faktoren 1.6079, 1.4084, 1.2961, 1.2306, 1.1876, 1.3194 | Schritte 2.042, 2.206, 2.252, 2.274, 2.276, 2.301
+  beta 0.55: Faktoren 1.5748, 1.3970, 1.2911, 1.2277 | Schritte 2.020, 2.198, 2.251, 2.273
+  beta 0.60: Faktoren 1.5464, 1.3874, 1.2865, 1.2253 | Schritte 2.008, 2.201, 2.259, 2.285

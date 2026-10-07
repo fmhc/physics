@@ -1,0 +1,76 @@
+Unabhängige Ergebnislesung, 02.10.2026, particle_binding
+Gespeicherte Ergebnisse/Plan/Codepfad geprüft, keine neue Simulation,
+kein Interpreter oder numerische Neuauswertung der Feldartefakte.
+
+Urteil: LINEAR_NEAR_RESPONSE_IN_FIXED_WINDOW entspricht den vorab
+festgelegten Gates. Alle9nichtlinearen Arme bisT32 sind vollständig;
+die kleine Störung bleibt im definierten kanonischen Fehlermaß nahe
+der vorgegebenen linearen Bewegung. Das ist ein begrenzter positiver
+Antwortbefund, keine volle Stabilitäts- oder Modenexistenzzertifizierung.
+
+Bindung und vollständiger Umfang
+RESULT.json SHA256:
+e97a2682133dc45f9fc8584b870c31bdb8921b78866641f17eb964bb3532fe52.
+Aktueller Codehash und RESULT.code_sha256 stimmen überein:
+1af408e1269a53036c080ec820e750940d5f8b70ac41c32e457e5ad531dc5bc1.
+Dynamik466b25…, Operator467ad3…, Suchresultat77ecf9…, Referenzmanifest
+8c33ace3… und beide Ritzquellen entsprechen dem geprüften Vertrag.
+Alle9level/epsilon-Kombinationen complete=true. Die gespeicherten
+Samplezeitzeilen wurden über die ganze Datei geprüft: jeder der81Zeitpunkte
+0,.4,...,32 kommt neunmal als Arm-Sample vor, keine fehlende Endserie.
+Initial-/Endartefakte liegen für alle9Arme vor; deren Rohfelder wurden
+in diesem Review nicht erneut numerisch rekonstruiert.
+
+Exakte Bedeutung der Fehlerzahlen
+alpha=epsilon*s, s²=SumV[2f²+(g-1)²]. Der Eigenvektor v besitzt
+||vq||=1 und eine einzige gemeinsame Phase für q,p. Die tatsächliche
+reelle Anfangsstörung ist alpha Re(v), nicht automatisch Normepsilon.
+Labordaten werden mit festem Hintergrundomega zurückgedreht; der
+gleichgitterige epsilon0-Verlauf wird abgezogen. Für epsilon>0:
+ Zepsilon(t)=[Yepsilon(t)-Ybaseline(t)]/alpha,
+ Fepsilon(t)=||Zepsilon(t)-Re(v exp(i rho t))||_2/||v||_2.
+Y enthält alle6kanonischen sqrtV-gewichteten Positions-/Geschwindigkeits-
+blöcke. Nenner ist die feste volle komplexe6Blocknorm des Ritzvektors,
+keine Gesamtfeldenergie und nicht die momentane reelle Störungsnorm.
+Frequenzrho ist vorgegeben, kein Fit und keine zeitliche Nachphasierung.
+
+MaxF über gespeicherte Zeiten:
+                 epsilon.001        epsilon.002
+ base            .002552145729      .005230637917
+ space           .002548646654      .005223586345
+ time            .002645603685      .005327330076
+Alle weit unter.05. In genau dieser Norm sind das etwa0.255–0.265%
+bzw.0.522–0.533%, nicht Prozent der gesamten Kernenergie.
+Max||Z.002-Z.001||/||v|| beträgt jeLevel etwa.0026782–.0026819,
+ebenfalls<.05. KleinereAmplitude zeigt kleinere Sollabweichung; daraus
+keine exakte Skalierungsordnung oder verschwindender Fehler gefolgert.
+
+Räumlicher Einfluss auf die beiden entscheidenden Fehlerdiagnosen:
+Amplitude4.1041e-6, Sollfehler3.9108e-6/8.0148e-6 (<.01).
+Zeitlicher Einfluss: Amplitude9.9095e-8, Sollfehler9.6537e-5/9.8703e-5
+(<.01). Zusätzlich ausgewiesene volle Feldunterschiede maximal≈.00152
+räumlich und≈.000154 zeitlich sind deskriptiv, kein neu erfundenes Tor.
+Gramkonditionen≈1.9626/1.9610<1e8. Fine/Coarse-Überlappphase≈3.5e-15;
+keine unzulässige nachträgliche Feinphasenrotation wurde angewandt.
+
+Erhaltung und Baseline über sämtliche gespeicherten Samples
+Textwerte aller Samples separat durchgesehen/geordnet, ohne Rohfeldrechnung:
+maxEdrift6.7022e-9, maxQdrift2.2205e-15, maxKernbilanz2.1980e-15;
+alle<1e-5. Baseline-maxima rphi2.5377e-5,rchi7.5961e-6,
+tphi7.9760e-6,tchi7.6917e-6,driftphi1.8498e-5,driftchi2.2076e-5;
+alle<.004. Kragenprüfung wurde für jedenArm/Sample im geprüften
+run_arm-Pfad bestanden; andernfalls wäre complete/Endstatus nicht erreicht.
+MaxAnfangs-Q-Identitätsfehler3.19e-16 und Kanonikfehler5.52e-16,<1e-10.
+Kein Arm wurde nachnormiert: baseΔQ≈.00109406/.00437623 bei den beiden
+Amplituden, passend zur quadratischen Änderung; Initialenergien verschieden.
+
+Budget und Reichweite
+TIME.txt: user25.35+system.36=25.71CPU-s,wall25.80s,maxrss129772,exit0,
+damit unter45CPU-s. Intern25.56656CPU-s. Ausführung laut Root/Receipt
+auf.69, vorhandener nichtlinearer CPU-Verlet; keine CUDA-Behauptung.
+
+Positiver Schluss gilt nur für diese zwei kleinen Amplituden, den
+vorhandenen radialen Kern, die gespeicherten Samples bisT32 und die
+festgelegte Norm. Keine BIC-Aussage, keine nichtlineare/3D-Stabilität,
+keine Lebensdauer oder Abstrahlungsrate. Der frühere starke Wolkenlauf
+und das verfehlteR20-Kompaktheitstor behalten ihre ursprünglichen Status.

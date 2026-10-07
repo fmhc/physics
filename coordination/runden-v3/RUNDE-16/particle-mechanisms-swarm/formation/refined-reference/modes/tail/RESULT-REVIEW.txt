@@ -1,0 +1,62 @@
+Unabhängige kurze Ergebnislesung, 02.10.2026, particle_binding
+Gespeichertes ANALYSIS.json gezielt auf alle Kanal-/Fensterzusammenfassungen
+und alle6Überlappungen gelesen; TAIL.png vollständig visuell betrachtet.
+Keine neue Rechnung, kein Fit, keine neue Modensuche.
+
+Urteil: Die gespeicherte langsame Pluskomponente folgt in den festen
+Fenstern sehr eng dem aus omega/rho vorhergesagten Abklingen. Neue
+posthoc-Profilüberlappungen stützen die Übereinstimmung der4Ritzprofile.
+Das ursprüngliche R20-Kompaktheitstor bleibt verfehlt und der Status
+NO_CONFIRMED_CANDIDATE_IN_FIXED_SEARCH ausdrücklich unverändert.
+
+Bindungen
+ANALYSIS.input/operator/manifest/analysis-Hashes entsprechen den zuvor
+geprüften Dateien; analysierter Scriptstandc6548c3… mit gemeinsamemFloor.
+Neue ANALYSIS.json SHA256:
+3b5975db49731c202701b04b769ed0846601cd8b75d9a55fca3c394ddc9eb380
+TAIL.png SHA256:
+eaf7c03484cdd8e820b01d637c0e45fb4815b179847e5438f7877bda93524c04.
+Root meldet erfolgreiche .69-Nachanalyse innerhalb5s; hier keine eigene
+neue CPU-Messung/Simulation. Roh-NPZ wurden nicht erneut ausgewertet.
+
+Langsamer Kanal
+R120,h=.05: kappa_plus=.1970793881279987; sämtliche199Nachbarpaare
+pro Fenster20..30 und30..40 oberhalbFloor. Median kappa_local/kappa:
+.9999954855448504 bzw..9999957348063562.
+Median absolute Theorieabweichung≈8.90e-7/8.41e-7, gegenüber bewusst
+falschem2kappa≈.19708. Die anderen Gitter zeigen ebenfalls nahe1 liegende
+Quotienten. R60 im äußeren Fenster hat kleine positive Abweichung≈1e-4;
+diese endliche-Box-/Diskretisierungsdiagnose nicht als exaktes Gesetz verkaufen.
+
+Schnelle Kanäle und Auflösungsgrenze
+R120,h=.05, Fenster20..30: minus66/199 gültige Paare, Medianratio≈.999833;
+chi87/199 gültige Paare, Medianratio≈.900320. Somit KEINE volle Auflösung
+dieser gesamten Fenster. Im Fenster30..40 sind minus undchi auf allen
+Gittern UNRESOLVED (kein gültiges Paar), nicht als Nullfehler oder PASS
+interpretiert. RESOLVED für das innere Fenster bedeutet nur, dass einige
+Nachbarpaare den gemeinsamen Amplitudenfloor passieren.
+Die langsamere chi-Steigung ist mit einem von der Restkopplung des
+Hintergrunds getriebenen partikulären Schwanz vereinbar. Diese Analyse
+zerlegt aber weder Quellterm noch homogenen/partikulären Anteil separat;
+der Mechanismus ist damit plausibel, nicht nachgewiesen.
+
+Profile
+Alle6posthoc-Überlappungen sind mindestens.9999990650627286;
+gleichh-Boxüberlappungen etwa.99999999993. Retained norms nahe1,
+geringfügige Werte>1 sind Rundung. Das sind jetzt tatsächlich gemessene
+Profilvergleiche, nicht nur die zuvor bekannten ähnlichen Frequenzen.
+Sie bleiben neue Nachanalyse: ursprüngliche matches=[] wird nicht verändert.
+Gesamter Schwanz fällt mit Radius; diese Beobachtung ersetzt nicht
+das weiterhin unveränderte Normanteils-Gate außerhalb20.
+
+Bild/Deutung
+Titel nennt Rohritzdiagnose und den alten Status sichtbar. DreiPanels und
+Legenden lesbar; viele Kurven überlagern sich. Das oberePanel zeigt bei
+großenRadien schnelleKanäle am numerischen Rauschniveau. Diese sichtbaren
+Punkte unter dem Analysefloor sind kein asymptotischer Physikbefund;
+unteresPanel enthält dafür zurecht keine unaufgelösten Fensterwerte.
+
+Konservativer Schluss: subthreshold-Rohwert mit konsistent langsamem
+Tail und sehr ähnlichen gespeicherten Profilen auf den4Diskretisierungen.
+Keine nachträgliche Kandidatenfreigabe, keine Spektralvollständigkeit,
+kein BIC-, Lebensdauer-, nichtlinearer Stabilitäts- oder Bildungsnachweis.

@@ -1,0 +1,47 @@
+M2: gerichtete Referenz-Zeitschrittdiagnose, Root 2026-10-03
+Ergebnis: NOT_GLOBALLY_ASSIGNED, vollständig, 1 von16 zugeordnet.
+Kein neuer PDE-Lauf; gespeicherte Felder, .69 CPU8 nice19 ein Thread.
+
+Die synthetische dt²-/Vorzeichenkontrolle besteht in allen16 Positionen;
+die16 Nullkorrekturen erhalten keine falsche Zuordnung. V2 exit0.
+Code875cbf73be336ce0c6fba60f77dee2b2dc08ae6b108dde22a2838f2bf9e29cdb;
+Resulta3c6ca67015748a99d652551938eeceb00c7e5c0aeec90ae4f134644b20d622a.
+
+Vorabfrage: Erklärt c=(Rf-Rc)/3 den Rest Z=N-Rf nach Richtung und Größe,
+mit Verbesserung und Verschlechterung der falschen Richtung jeweils
+über2*(direkter nichtlinearer dt-Unterschied + arithmetische Hülle)?
+Referenzdt .02/.01; Ndt .005 und Vergleich .01. Zwei alte Zeitfenster,
+zwei Schalen, DC/H2, Zeit- und Bandnorm ergeben16 feste Prüfungen.
+
+Befund:
+- Alle8 Zeitnormen: Ausrichtung >.96, Korrektur halbiert die Restnorm.
+  Aber nur DC, Fenster0 (Beginn88), Schale1 [45,50) besteht auch beide
+  Reservebedingungen. Dort Z=1.411812e-5, korrigiert1.834410e-6,
+  falsche Richtung2.755279e-5, dt-Unterschied5.391676e-6.
+- Alle8 Bandnormen: keine Halbierung des Rests. Zwei verfehlen außerdem
+  die Richtungsschwelle .8. Verbesserung bleibt überall unter Reserve.
+- Damit kein globaler Nachweis einer dominanten Referenz-dt²-Komponente.
+  Die Zeitdaten passen qualitativ zur Hypothese, reichen nach der
+  unveränderten Regel quantitativ meist nicht zur Zuordnung.
+  Nichtzuordnung bedeutet nicht, dass dieser Zeitfehler fehlt.
+
+Nicht behauptet: unabhängige Fehlerursachenanteile, Ordnung aus zwei
+Zeitschritten, abgesicherter Richardson-Grenzwert, vernachlässigbare
+höhere Fehler, stationäre Abstrahlung, Stabilität oder Lebensdauer.
+Die Reserven sind empirisch; frühere Paar-Auslöschung und Evolution
+sind nicht durch die neue Auswertehülle zertifiziert. M1-Paper unverändert.
+
+Betrieb: erster Versuch scheiterte an numpy.bool_-JSON-Serialisierung
+(2.17 CPU-s plus0.05 Syntax), bleibt INCOMPLETE. Typrevision unabhängig
+geprüft, keine Formeln/Tore geändert. V2 2.54CPU-s,2.55wall,211156KiB;
+separate Syntax bestanden. Gesamt unter revidiertem8CPU-s-Deckel.
+Originale erhalten. Dauerarchiv:
+/home/fmh/fmhc-physics-remote/m2-second-harmonic-20261002/reference-time-error-20261003/
+Alle8 kopierten Code-/Ergebnis-/Zeitdateien gegen Originalhashes geprüft.
+
+Enger nächster Anschluss, noch nicht beauftragt: Für eine echte
+Fehlerursachentrennung wäre eine dritte Zeitschrittstufe der relevanten
+Dynamik nötig oder eine analytische Restkontrolle. Nicht einfach die
+Reserve verkleinern oder nur den einen bestandenen Fall herausstellen.
+Zuerst Kosten und erwarteten Erkenntnisgewinn gegen offene Physikfragen
+abwägen. Diese Diagnose rechtfertigt allein keinen längeren Großlauf.

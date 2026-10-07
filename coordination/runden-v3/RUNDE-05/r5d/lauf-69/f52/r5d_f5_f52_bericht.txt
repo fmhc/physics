@@ -1,0 +1,33 @@
+F-5 r5d_f5.py f52 Start 2026-09-30T00:59:24+00:00 auf CPU, 1 Thread, torch 2.5.1+cu121, Laufzeitfaktor 1.0
+
+F5-2 Huelle (3D radial): chi Masse 0,6 (g4 = 0,1), Kopplung -a 4 S (S0 - S)/S0^2 C, Kern x 1,01 angestossen.
+  Kern omega^2 = 0.7: S(0) = 1.1351, Wandradius 3.55, Q = 473.41, E = 428.63
+  Kern omega^2 = 0.95: S(0) = 0.4084, Wandradius 2.10, Q = 115.81, E = 117.62
+  lineares Huellen-Niveau 0,7 a=0,2 A=0,2: omega^2 = +0.3472, gebunden True, stabil True
+  lineares Huellen-Niveau 0,7 a=0,4 A=0,2: omega^2 = +0.2615, gebunden True, stabil True
+  lineares Huellen-Niveau 0,7 a=0,4 A=0,05: omega^2 = +0.2615, gebunden True, stabil True
+  lineares Huellen-Niveau 0,95 a=0,4 A=0,2: omega^2 = +0.2740, gebunden True, stabil True
+  Lauf | Q_psi gehalten | S(r=1) max rel. Aenderung | omega_psi | Wandanteil chi | Q_chi gehalten | C_max Wachstum | Kern | Huelle
+  [grob]
+  0,7 nackt          | 0.9999 | 0.029 | 0.83573 | 0.000 | nan | nan | stabil | -
+  0,7 a=0 A=0,2      | 0.9999 | 0.029 | 0.83573 | 0.002 | 0.002 | 9.05 | stabil | traegt nicht
+  0,7 a=0,2 A=0,2    | 0.9998 | 0.083 | 0.83556 | 0.345 | 0.408 | 7.79 | stabil | traegt nicht
+  0,7 a=0,4 A=0,2    | 0.9993 | 0.126 | 0.83509 | 0.626 | 0.720 | 6.17 | stabil | traegt
+  0,7 a=0,4 A=0,05   | 0.9999 | 0.033 | 0.83569 | 0.624 | 0.709 | 5.97 | stabil | traegt
+  0,95 nackt         | 0.9936 | 0.941 | 0.94960 | 0.000 | nan | nan | zerfaellt | -
+  0,95 a=0 A=0,2     | 0.9936 | 0.941 | 0.94960 | 0.001 | 0.001 | 3.71 | zerfaellt | traegt nicht
+  0,95 a=0,4 A=0,2   | 0.4783 | 0.999 | 1.00205 | 0.004 | 0.212 | 2.63 | zerfaellt | traegt nicht
+  [fein]
+  0,7 nackt          | 0.9999 | 0.029 | 0.83571 | 0.000 | nan | nan | stabil | -
+  0,7 a=0 A=0,2      | 0.9999 | 0.029 | 0.83571 | 0.002 | 0.002 | 9.05 | stabil | traegt nicht
+  0,7 a=0,2 A=0,2    | 0.9998 | 0.083 | 0.83554 | 0.340 | 0.408 | 7.79 | stabil | traegt nicht
+  0,7 a=0,4 A=0,2    | 0.9993 | 0.126 | 0.83506 | 0.619 | 0.720 | 6.18 | stabil | traegt
+  0,7 a=0,4 A=0,05   | 0.9999 | 0.032 | 0.83567 | 0.617 | 0.709 | 5.98 | stabil | traegt
+  0,95 nackt         | 0.9938 | 0.938 | 0.94964 | 0.000 | nan | nan | zerfaellt | -
+  0,95 a=0 A=0,2     | 0.9938 | 0.938 | 0.94964 | 0.001 | 0.001 | 3.73 | zerfaellt | traegt nicht
+  0,95 a=0,4 A=0,2   | 0.4715 | 0.999 | 1.00193 | 0.004 | 0.213 | 2.63 | zerfaellt | traegt nicht
+  L3 (Effekt >= 5 x Aenderung grob -> fein): 12 von 12 Kenngroessen bestanden
+  Rechenzeit grob 28.9 s, fein 92.1 s
+  Dauer f52: 139.7 s
+
+Ende 2026-09-30T01:01:44+00:00, Dauer 139.7 s, Torch-Speicher max nan MB, Fehler in: keine

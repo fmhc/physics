@@ -1,0 +1,192 @@
+{
+ "profil": {
+  "omega2": 0.55,
+  "m": 0,
+  "p": 1.0229943032649387,
+  "klammer": 2.220446049250313e-16,
+  "N": 160.75095563511712,
+  "G": 9.036804914064549,
+  "VU": 88.41302828266826,
+  "Q": 238.43219879606752,
+  "E": 185.86285879604725,
+  "virialrest": 1.517510447379751e-08,
+  "S_max": 1.0465173445125173,
+  "R_max": 0.0,
+  "R_halb": 6.880377998175491,
+  "gueltig": true,
+  "f_dev": "tensor([1.0230e+00, 1.0230e+00, 1.0230e+00,  ..., 1.7950e-25, 1.7829e-25,\n        1.7709e-25], device='cuda:0', dtype=torch.float64)",
+  "fp_dev": "tensor([ 0.0000e+00, -1.2115e-06, -2.4233e-06,  ..., -1.2140e-25,\n        -1.2059e-25, -1.1977e-25], device='cuda:0', dtype=torch.float64)"
+ },
+ "ergebnis": {
+  "fein": {
+   "zeilen": [
+    {
+     "name": "u0.7",
+     "u_cs": 0.7,
+     "u": 0.14531321676300418,
+     "lam": 0.1,
+     "N_ereignisse": 2,
+     "erste_zeit": 352.0,
+     "N_frei_max": 2.0,
+     "N_alle_max": 2.0,
+     "ereignisse_20": [
+      [
+       352.0,
+       "N_minus_oben",
+       1
+      ],
+      [
+       352.0,
+       "N_plus_unten",
+       1
+      ]
+     ],
+     "mittlerer_abstand": null,
+     "F_x_mittel": 0.04034526630409962,
+     "F_y_rms": 3.5238416364520775e-06,
+     "X_spanne": 0.9525888102544062,
+     "wind_psi": [
+      -0.0
+     ],
+     "zirk_chi_werte": [
+      0.0
+     ],
+     "auftrieb_periodogramm": {
+      "omega": 0.04127967908674495,
+      "periode": 152.21012968574988,
+      "amplitude": 5.2483449018157295e-06,
+      "R2": 0.941303345240348
+     },
+     "strouhal_aus_auftrieb": 0.6221478739254281,
+     "oben_unten": [
+      1,
+      1
+     ]
+    },
+    {
+     "name": "u0.85",
+     "u_cs": 0.85,
+     "u": 0.17607885321245548,
+     "lam": 0.1,
+     "N_ereignisse": 4,
+     "erste_zeit": 252.0,
+     "N_frei_max": 4.0,
+     "N_alle_max": 4.0,
+     "ereignisse_20": [
+      [
+       252.0,
+       "N_minus_oben",
+       1
+      ],
+      [
+       252.0,
+       "N_plus_unten",
+       1
+      ],
+      [
+       536.0,
+       "N_minus_oben",
+       1
+      ],
+      [
+       537.0,
+       "N_plus_unten",
+       1
+      ]
+     ],
+     "mittlerer_abstand": 284.0,
+     "F_x_mittel": 0.06197318380713562,
+     "F_y_rms": 5.301803273421634e-06,
+     "X_spanne": 1.3423826145415365,
+     "wind_psi": [
+      -0.0
+     ],
+     "zirk_chi_werte": [
+      0.0
+     ],
+     "auftrieb_periodogramm": {
+      "omega": 0.049474853659411074,
+      "periode": 126.99755213898248,
+      "amplitude": 5.723185866119356e-06,
+      "R2": 0.58304200744439
+     },
+     "strouhal_aus_auftrieb": 0.6153748500832454,
+     "strouhal_aus_ereignissen": 0.27517992819882214,
+     "oben_unten": [
+      2,
+      2
+     ]
+    }
+   ],
+   "urteile": [
+    "Schwelle zwischen u/c_s = 0.0 und 0.7"
+   ],
+   "D": 13.760755996350982
+  }
+ },
+ "karte": "wirbel",
+ "start": "2026-09-30T02:05:18+00:00",
+ "ende": "2026-09-30T02:07:42+00:00",
+ "rauch": false,
+ "mini": false,
+ "geraet": "Quadro P4000",
+ "torch": "2.5.1+cu121",
+ "dauer_s": {
+  "relax_fein_s": 0.9649465968832374,
+  "entw_fein_s": 118.04780252464116
+ },
+ "medium": {
+  "C0": 0.1,
+  "g4": 0.5,
+  "lam": 0.1,
+  "c_s": 0.20851441405707477,
+  "xi": 3.233348953414316
+ },
+ "L3": {
+  "bestanden": true,
+  "zeilen": [
+   {
+    "lauf": "u0.7",
+    "groesse": "N_ereignisse",
+    "grob": 2,
+    "fein": 2,
+    "ok": true
+   },
+   {
+    "lauf": "u0.7",
+    "groesse": "erste_zeit",
+    "grob": 351.0,
+    "fein": 352.0,
+    "ok": true
+   },
+   {
+    "lauf": "u0.7",
+    "groesse": "F_x_mittel",
+    "grob": 0.040336898157647745,
+    "fein": 0.04034526630409962,
+    "ok": true
+   },
+   {
+    "lauf": "u0.85",
+    "groesse": "N_ereignisse",
+    "grob": 4,
+    "fein": 4,
+    "ok": true
+   },
+   {
+    "lauf": "u0.85",
+    "groesse": "erste_zeit",
+    "grob": 253.0,
+    "fein": 252.0,
+    "ok": true
+   },
+   {
+    "lauf": "u0.85",
+    "groesse": "F_x_mittel",
+    "grob": 0.06195939258638088,
+    "fein": 0.06197318380713562,
+    "ok": true
+   }
+  ]
+ }
+}

@@ -1,0 +1,36 @@
+start 2026-10-04T04:43:56+00:00 spur=cpu7 unit=fmhc-physics-klein-r38sb-sb-044356
+Running as unit: fmhc-physics-klein-r38sb-sb-044356.service; invocation ID: 72f58706237f4675bb3b86c8d07c10d4
+{"eps": 0.02, "E_max": 0.061954714200693484, "zeit_s": 0.04}
+{"eps": 0.01, "E_max": 0.029506265359922457, "zeit_s": 0.1}
+{"eps": 0.005, "E_max": 0.014399192312219089, "zeit_s": 0.31}
+{"eps": 0.0025, "E_max": 0.007114870586426458, "zeit_s": 1.05}
+{"binom_probe_max": 1.2903468146982735e-15, "zeit_gesamt_s": 1.5}
+Finished with result: success
+Main processes terminated with: code=exited/status=0
+Service runtime: 2.057s
+CPU time consumed: 2.056s
+Memory peak: 320.0K
+Memory swap peak: 0B
+ende 2026-10-04T04:43:58+00:00 rc=0 unit=fmhc-physics-klein-r38sb-sb-044356
+start 2026-10-04T04:43:58+00:00 spur=cpu7 unit=fmhc-physics-klein-r38sb-probe-044358
+Running as unit: fmhc-physics-klein-r38sb-probe-044358.service; invocation ID: 8330ec15310348748454ec5b30c0e19b
+{"modus": "probe", "rho": 5.0, "saat": 1, "N": 1982, "rel_abw_psi": 2.5307775635817623e-15, "rel_abw_zuschauer_max": 2.992766057582097e-15, "quellen_analytisch_gegen_quadratur_max": 3.5847643587007207e-13, "quellen_einzeln": [3.5847643587007207e-13, 3.526049459224034e-13, 1.9660184972688848e-13, 3.144368492330334e-13, 3.09627155184242e-13], "skript_sha256": "7b6f3fb5f8ec7350ec1ab46fc60852ef82822b94eaa82801a52c534c832057ab", "zeit_utc": "2026-10-04T04:43:59Z"}
+Finished with result: success
+Main processes terminated with: code=exited/status=0
+Service runtime: 897ms
+CPU time consumed: 897ms
+Memory peak: 516.0K
+Memory swap peak: 0B
+ende 2026-10-04T04:43:59+00:00 rc=0 unit=fmhc-physics-klein-r38sb-probe-044358
+start 2026-10-04T04:43:59+00:00 spur=cpu7 unit=fmhc-physics-klein-r38sb-kont-044359
+Running as unit: fmhc-physics-klein-r38sb-kont-044359.service; invocation ID: a24c2539b33e46b0818e0f4ab1f438b7
+{"paket": "zitter", "nk": 2293, "dk": 0.007853981633974483, "zeit_s": 6.65, "norm_rand_anteil": 2.0477773099619064e-31, "quad_gegen_k_rel": [4.222145454401651e-15, 2.480933533254389e-15, 4.4499166246538646e-15]}
+{"paket": "bewegt", "nk": 575, "dk": 0.007853981633974483, "zeit_s": 2.29, "norm_rand_anteil": 4.3146491182848315e-31, "quad_gegen_k_rel": [2.1961194523439618e-13, 2.871484846836166e-13, 2.1353373456047075e-13]}
+{"zeit_gesamt_s": 8.98}
+Finished with result: success
+Main processes terminated with: code=exited/status=0
+Service runtime: 9.556s
+CPU time consumed: 9.551s
+Memory peak: 516.0K
+Memory swap peak: 0B
+ende 2026-10-04T04:44:09+00:00 rc=0 unit=fmhc-physics-klein-r38sb-kont-044359

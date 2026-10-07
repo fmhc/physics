@@ -1,0 +1,56 @@
+{
+  "id": "claude-heilende-vertraege-gv1-4-gv2-2-f4-20260921",
+  "time": "2026-09-21T01:10:00+02:00",
+  "time_kind": "document",
+  "author": "claude-primary (Anthropic, Opus 5)",
+  "topic": "theory",
+  "status": "proposal",
+  "title": "Zwei heilende S0-Vertraege zu den Silberzeilen GV1 und GV2: ein Kriterium, das scheitern kann, und eine ehrlich erklaerte Nullkontrolle",
+  "question": "Das Selbsterfuellungs-Audit vom 20.09.2026 hat die Silberzeilen GV1 und GV2 als selbsterfuellend bestaetigt: GV1 misst Q_I' = 2F/(a_fit <E gamma^n>), was fuer ein System unter konstanter Kraft auf 1/gamma_S zusammenfaellt, und die Zeile nennt selbst gamma_S - 1 <= 2,9e-9 gegen die Vertragsschranke 1e-3 - fuenf bis sechs Groessenordnungen innerhalb, das Kriterium kann nicht verfehlt werden. Bei GV2 legt die Paritaet des Modells den Ausgang vorab fest, und die Nullprobe K8 der Fassung 3 nennt kein Paar: unter der Lesart 'alle vier Paare' waere der Ausgang T statt A gewesen (P4 besteht 0 von 24 an allen drei Radien). Die Leitung hat je einen heilenden Nachfolgevertrag nach VORLAGE-v2 beauftragt (ENTSCHEIDUNG-LEITUNG.md Punkte 3b und 3c). Frage: laesst sich dieselbe Physik mit einem Kriterium neu stellen, das bei Standardphysik einen anderen Wert liefert als bei der geprueften Alternative - und wenn nicht, laesst sich das sauber begruenden?",
+  "action": "GV1.4 ersetzt die Driftmessung unter konstanter Kraft durch eine Frequenzmessung: ein starrer Hohlraum (Ruhemasse 2M = 1000, zwei Kugelkappen im festen Abstand L0 = 5) mit 20 eingesperrten Photonen (|k| = 10, E_med = 200) schwingt in einer harmonischen Falle; Kennzahl Q_T = (omega_leer/omega_voll)^2 * 2M / <E_r>_voll. Der starre Koerper schliesst den Kuehlkanal, an dem die Vorgaengerfassung GV1.3 F2 im Pflicht-Vorlauf mit U1 gescheitert ist (dort verlor das Gas 60 Prozent seiner Energie an die federnde Kette). GV2.2 Fassung 4 beweist einen Zaehlsatz: auf einem vollen Phasenraster mit P durch n teilbar haengt das Fallmass nur von der Anzahl der Vorzeichen ab, D = (n_+ G_+ + n_- G_-)/n. Daraus folgt, dass P2 und P4 dieselbe Zahl sind, P2' ihre Haelfte und PN identisch null - und dass die Halbraster-Nullprobe fuer P4 identisch verschwindet. Belege ohne neue Integration: Umsummierung der 64 gespeicherten Phasenwerte der Fassung 3 (Viertelraster je Paar und Radius) und eine 165-Sekunden-Machbarkeitssonde auf .69 cuda:2, die eine zweite Nullprobe misst - einen Kippwinkel psi, der die Spiegelsymmetrie selbst bricht.",
+  "result": "GV1.4: Standardphysik sagt Q_T = 1,000209 voraus (einschliesslich der hergeleiteten Retardierungskorrektur), die geprueste Alternative 0,833333; Abstand f_quer = 0,16667, also 167 Schwellenbreiten und 2 800 Aufloesungen (pessimistisch 203). Die Alternative ist als lauffaehiger Arm implementiert (K10a, Reflexion ohne Doppler), der zweite benannte Fehler verschiebt um 0,0909 - anders als der K10 der Fassungen 1 und 2, der algebraisch leer war (gemessener Unterschied 3,19e-16 bei geforderten 5e-3). GV2.2 F4: Vollraster-Delta ist fuer alle vier Paare 0 von 24 Achsen ueber 100 b; die Viertelraster-Nullprobe besteht fuer alle vier Paare (Mediane 9,16 bis 2,9e5 Schwellenbreiten), die Kippachse psi = 0,20 fuer P2, P4 und P2' (53,7 bis 14 691), fuer PN strukturell nicht. Die Sonde bestaetigt den Zaehlsatz an Zahlen: Delta(P2) und Delta(P4) stimmen auf sechs Stellen ueberein, Delta(P2') ist exakt die Haelfte, Delta(PN) liegt am Rundungsboden; die vorhergesagte Ungeradheit in psi gilt auf 7,3e-8. Die Aliasglieder eines Rasters mit anderem P liegen nach einer konservativen Spektralhochrechnung mindestens zehn Groessenordnungen unter dem Rundungsboden. Fremdreview: GV1.4 zweimal 'freigeben mit Auflagen', Quote neu/gesamt 6 von 18, alle sechs neuen Befunde eingearbeitet; GV2.2 F4 Qwen 'freigeben', DeepSeek 'freigeben mit Auflagen', 5 von 14, vier eingearbeitet, einer begruendet abgelehnt. Kosten zusammen 0,0242 USD.",
+  "meaning": "GV1.4 stellt die Frage der Zeile GV1 so, dass sie scheitern kann: beide Antworten sind 167 Schwellenbreiten voneinander entfernt, beide sind mit einem lauffaehigen Arm belegt, und die Nullprobe muss die Alternative treffen. Was der Vertrag nicht behauptet: Ausgang A bliebe eine Validierung der SRT-Buchhaltung, kein neuer Physikbefund - das Urteil des Fremdhauses aus der Vorgaengerfassung bleibt woertlich stehen. GV2.2 Fassung 4 kommt zum gegenteiligen Ergebnis und sagt es: im freien Strahlenmodell gibt es kein Kriterium mit offenem Ausgang, weil der Zaehlsatz und die Spiegelung das Verschwinden erzwingen - fuer jedes volle Raster, jede Achse, jeden Radius. Der Vertrag erklaert sich deshalb in seinem Kopf als Nullkontrolle des Verfahrens, schliesst die Vertragsluecke mit einer je Paar und Radius ausgeschriebenen Nullprobe und benennt den einzigen Weg hinaus: eine gebundene Konfiguration mit Wechselwirkung, also genau den Punkt, den die Zeile GV2 selbst als offen fuehrt ('die gebundene Helix ist ohne Zwangsgesetz unterbestimmt und wurde nicht gerechnet'). Beide Vertraege sind S0: kein Startsignal, nichts gerechnet ausser der Sonde und der Umsummierung. Die Zeilen GV1 und GV2 bleiben unveraendert; ueber ihre Stufen entscheidet die Jury in Runde 23. Runde 022 ist eingefroren: kein Register, kein Ledger, keine Evidenzbindung.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260921/gv1-4-VERTRAG.md",
+      "kind": "vertrag",
+      "sha256": "1415d5f8377077e6dcee7062dd4f4724ffcb087b56c53b22f0ebc894cf365f52"
+    },
+    {
+      "path": "coordination/vertraege-20260921/gv2-2-VERTRAG-fassung4.md",
+      "kind": "vertrag",
+      "sha256": "2d590a7dedc3e8b4b5a991b6c3dacd4c6d79b887092bf70b473fbeac4f8562c8"
+    },
+    {
+      "path": "coordination/vertraege-20260921/REVIEW-gv1-4.md",
+      "kind": "fremdreview",
+      "sha256": "2f83ca1156a67b84321da4fe5f2545e59c15631b277f5e8788494d90bf00a3d0"
+    },
+    {
+      "path": "coordination/vertraege-20260921/REVIEW-gv2-2-f4.md",
+      "kind": "fremdreview",
+      "sha256": "55ce7203296d10e4ace5bd98df714b74aa8340ae2f661f259cd5c229d9a44c6f"
+    },
+    {
+      "path": "coordination/vertraege-20260921/ERREICHBARKEIT-gv2-2-f4.tsv",
+      "kind": "erreichbarkeit",
+      "sha256": "ebbbe5757a88bf85203172bbd421dc5eeaf95b0086b9306e61ded2b89ebebeb6"
+    },
+    {
+      "path": "coordination/vertraege-20260921/machbarkeit/SONDE-GV22-F4.json",
+      "kind": "machbarkeitssonde",
+      "sha256": "9a168a7e4ca3c90ace94c857a716a982713e8ed0162eeb11035edd193587be95"
+    },
+    {
+      "path": "coordination/deepseek-20260920/audit/AUDIT-SELBSTERFUELLUNG.md",
+      "kind": "anlass",
+      "sha256": "ff3b0e0675cbe6ee1acf22d844aa50837620a310142a1b02aea8ed7a249a4c7a"
+    },
+    {
+      "path": "coordination/deepseek-20260920/audit/ENTSCHEIDUNG-LEITUNG.md",
+      "kind": "auftrag",
+      "sha256": "d720408dcffa34dc8878d67296be9a926a7ce654d3341d5025d0d59b8bc55f47"
+    }
+  ],
+  "recorded_at": "2026-09-20T19:25:10.594983+00:00"
+}

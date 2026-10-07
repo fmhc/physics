@@ -1,0 +1,52 @@
+QBALL-CLOCK-KICK, 2026-10-02. Acht neue endliche radiale3D-l0-PDE-Laeufe.
+Keine kartesische3D-,Floquet-,Lebensdauer- oder BIC-Neuzertifizierung.
+
+Ausfuehrung .69 ubuntu-auto, CPU11 nice19, Chromium-JS float64, keine GPU.
+Aktive JS-Wandzeit10.5629s, Gesamt12.7515s. CPU-Zeit nicht separatgemessen.
+ErsterVersuch scheiterte beim JS-Parsen vor jederRechnung (Unary-Minus vor
+Exponentiation). Klammerkorrektur ohne Modell-/Parameteraenderung, neu gehasht
+vor echtemLauf. PRESTART-SYNTAX-ERROR.log bleibt erhalten. KeineLaeufe verborgen.
+
+Start: bekannteBIC-Mode, epsilon.005. T20 radialerGeschwindigkeitskick
+p->p+k exp(-r²/4)q. k0,.01,-.01,.05; h.2/.1,R80,T100. q stetig.
+Ladungsneutral analytisch, aber externes Eingreifen mit nichtnull Arbeit.
+EnergieplusAbsorberfluss wird vor/nachKick gegen E0+W bilanziert.
+
+Vorab-Tickgates alle16 gepaarten Beobachter bestanden (4Arme x4Radien).
+GleicheTrajektorien anverschiedenenRadien sind KEINE unabhaengigenReplikationen.
+Im Fenster40..100 zeigt negativerKick16Ticks, andereArme17Ticks.
+DasAlleinbeweist keinen verlorenenZyklus, weilFenstergrenzen unterschiedlich
+getroffenePhasenabschneiden. Perioden aus15bzw16Intervallen bewertet.
+
+FeinesGitter, r0:
+k        Mittelperiode      CV                 mittlererOffset/Periode
+0        3.60147941          2.275e-6           0
++.01     3.60142136          1.969e-4          -0.0262078
+-.01     3.60143206          1.788e-4          +0.0296053
++.05     3.60074130          8.759e-4          -0.0943536
+NegativeOffsets=fruehereTicks alsunangestosseneReferenz. NaechsterTickvergleich
+moduloeinePeriode: keineRekonstruktioneventuellverlorenerganzerZyklen.
+Bei+.05 ueberalleRadien mittlerePerioden3.60035..3.60114 undOffsets
+-.0944..-.0968. DiePeriodenaenderung/Reststreuung bleibt unterVorabgrenzen;
+keineperfekteIsochronie behauptet. Abtast-/Interpolationsfehler sindnicht
+von echterModenmischung oder nichtlinearerFrequenzverschiebung getrennt.
+DieUhrphasenverschiebung bleibtimFenster erhalten, keineSelbstkorrekturbelegt.
+
+FeineKickarbeit inModelleinheiten:
+k+.01 W=.00263071082; k-.01 W=-.000242417301;
+k+.05 W=.0370364893. NegativeArbeit ist Energieentzug, keineEnergieerzeugung.
+relativeDeltaQ~1.50e-16; Nullkick0. FeineEnergiebilanz max1.52e-8,
+Ladungsbilanz max4.45e-11. Grob/feinPeriodenabweichung maximal5.58e-6relativ.
+Alle numerischenGates bestanden. Grenzwerte nichtnachBefundveraendert.
+
+BegrenzterBefund: VorbereiteteQ-Ball-Dichteschwingung bleibt nach diesen
+einmaligen radialenImpulsen im endlichenFenster alsUhrablesbar. KeineGarantie
+gegenandereRichtungen,Störspektren,Dauerantrieb,Detektorrueckwirkung oderRauschen.
+StoerungstoleranterGang ist nichtPhasensynchronisation oder Zeitentstehung.
+Raumgitter, Integratordt und Beobachtungsabtastung gemeinsamhalbiert; Zahlen
+sindDiagnostik,keine Intervallzertifikate. FestesProfil/R/Absorber unveraendert.
+
+Naechsteenge Frage: Ein endlicher passiverDetektor mit eigenerDynamik/Arbeit
+muss genugSignal liefern, ohne denTakt starkzuverschieben. DiebisherigeAuslesung
+ist rueckwirkungsfrei; sie ist kein gebautesMessgeraet.
+Nichtautor-Code-/Ergebnislektüre REVIEW.txt; wederPapernochSimulatorgeaendert.

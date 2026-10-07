@@ -1,0 +1,66 @@
+Unabhängige Papierprüfung particle_binding, 03.10.2026.
+IDEA.txt vollständig gelesen, keine Rechnung/Implementierung.
+Gelesener SHA256: 89434ec692e3c3d7dcd7b7f39798688f502841784e47eae20a642ac06a140ec3.
+
+Urteil: als eng bezeichnete prospektive Diagnose gespeicherter Felder
+implementierbar. Kein grundsätzlicher Vorzeichen-, Norm- oder Gatefehler.
+Das Label muss eine Konsistenz mit einer DT²-Hypothese bleiben, kein
+Nachweis einer isolierten Fehlerursache oder des Kontinuumsgrenzwerts.
+
+Vorzeichen: Bei Rc=R*+4h²A und Rf=R*+h²A ist c=(Rf−Rc)/3=−h²A.
+Für N=R* folgt Z=N−Rf=−h²A=c. Daher Zex=Z−c=0 und Zwrong=Z+c=2Z.
+Die vorgeschlagene synthetische Probe testet das richtige Vorzeichen.
+Auch nichtinvertierbare/Jordan-Anteile können linear auf den gespeicherten
+Feldern kombiniert werden; dafür ist keine L-Inversion nötig.
+
+Normen/Skalarprodukt: In jedem Maß dieselben positiven FV- und gegebenenfalls
+Trapezgewichte verwenden. Re<Z,c> bedeutet Re(sum w conj(Z)c), im Zeitmaß
+mit Zeitintegration, im Bandmaß nach der identischen linearen komplexen
+Fourierabbildung. Dann gilt die angegebene quadratische Identität exakt
+bis Rundung. Unterschiedliche Normalisierung von Skalarprodukt und Norm
+wäre ein Fehler. Nullnenner bleiben unaufgelöst; bei endlichen winzigen
+Werten dürfen die zusätzlichen Reservebedingungen nicht übersprungen werden.
+
+Die vier lokalen Kriterien sind als vorab festgelegter strenger Test
+konsistent: >.8 Ausrichtung, Halbierung der Restnorm und Verbesserung
+sowie Verschlechterung der Gegenrichtung um jeweils>2u. Hieraus folgt
+keine additive Ursachenquote. Die beiden Vorzeichenänderungen sind
+abhängig, kein zweiter unabhängiger Datensatz. Wenn (a) gilt, ist die
+falsche Richtung algebraisch schlechter; (d) prüft ihren Abstand zur
+Störskala. Der Text über ein mögliches Nichtscheitern der Gegenrichtung
+bezieht sich folgerichtig auf allgemeine Daten VOR bestandener Zuordnung.
+16/16 nur für einen gemeinsamen Konsistenzsatz; sonst alle Einzelbefunde
+und kein Mehrheitslabel. NICHT_ZUGEORDNET widerlegt keine Referenzzeitfehler.
+
+Implementierungspräzisierungen ohne neue Tore:
+1. Die direkten Kombinationen sind Z=N−Rf,
+   Z−c=N−(4/3)Rf+(1/3)Rc,
+   Z+c=N−(2/3)Rf−(1/3)Rc.
+   Positive Auswertehüllen daher |N|+|Rf|,
+   |N|+(4/3)|Rf|+(1/3)|Rc| bzw.
+   |N|+(2/3)|Rf|+(1/3)|Rc|, sofern genau diese direkten Operationen
+   ausgewertet werden. Bei gestufter Subtraktion passend deren tatsächliche
+   Summanden berücksichtigen, nicht eine günstigere unbenutzte Formel.
+   Bandhülle positiv zeitMITTELN, gleiche Fensterlänge wie coefficient.
+   Diese Hüllen beschreiben nur die NEUE Auswertung gespeicherter Felder.
+   Bereits in N enthaltene Paar-/Baseline-Auslöschung und Evolution sind
+   nicht durch64eps|N| zertifiziert; diese Grenze ausdrücklich erhalten.
+2. u verwendet exakt ||N_fine−N_coarse|| der jeweiligen Komponente/Schale/
+   Fensterabbildung. Kein kausaler Fehler gegen sich selbst und keine
+   Differenz bloßer Normbeträge. u bleibt empirisch, weder obere Schranke
+   des nichtlinearen Zeitfehlers noch des höheren Referenzfehlers.
+3. Die synthetische A-Wahl muss in BEIDEN festen Fenstern und Schalen
+   nichtverschwindende Zeit-/Bandnorm besitzen; das vorgeschlagene feste
+   positive Radialprofil mal(1+exp(i2rho t)) ist dafür geeignet. A=0
+   darf keine Zuordnung erhalten. QA-Identitäten durch bekannten
+   Nichtnull-Korrekturmaßstab teilen, nie durch den erwarteten Nullrest.
+
+Aussagegrenzen korrekt: zwei kausale dt-Stufen begründen allein weder
+die empirische Ordnung noch einen kontrollierten Extrapolationsrest.
+Ein Pass wäre gerichtete, größenmäßig konsistente Evidenz für die
+vorgegebene führende Zeitfehlerhypothese innerhalb der vorhandenen
+Auflösung. Andere systematische Beiträge können mit ihr ausgerichtet
+sein; deshalb keine eindeutige Ursachenzuordnung. Keine neue Referenz
+.005, keine alpha0-/h0-Extrapolation, keine Stabilitäts-/Strahlungs- oder
+Lebensdaueraussage. Alte Status bleiben bestehen. <=5CPU-s nur für spätere
+gesondert beauftragte Auswertung; dieser Review startet nichts.

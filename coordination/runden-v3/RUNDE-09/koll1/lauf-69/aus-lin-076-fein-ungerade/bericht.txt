@@ -1,0 +1,27 @@
+KOLL-1 lin Start 2026-09-30T06:08:04+00:00, Geraet cuda (Quadro P4000), torch 2.5.1+cu121
+  Argumente: {"kommando": "lin", "geraet": "cuda", "out": "/home/fmh/fmhc-physics-remote/runde9-koll1/aus-lin-076-fein-ungerade", "w2": 0.76, "rho0": 1.728147, "h": 0.1, "cfl": 0.4, "rmax": 22.0, "zmax": 32.0, "schicht": 8.0, "sig0": 2.0, "rfluss": 13.0, "zfluss": 23.0, "abstaende": [10.0, 12.0, 14.0], "kette": 10.0, "vorzeichen": -1, "halten": false, "paritaet": -1, "d": 10.0, "eps": 0.005, "T": 1500.0, "dtmess": 0.2, "budget": 480.0, "weiter": false, "faeden": 1, "profil_h": 0.002, "profil_rmax": 36.0}
+  Profil omega^2 = 0.76: f0 = 1.050899025882218 (Klammer 2.2e-14), S0 = 1.104389, r_c = 21.48, A = 11.331052 (Streuung 5.2e-08 auf [r_c-4, r_c]), Q = 254.1160, E = 241.9027
+  Resonanzabtastung um 1.728147: Maximum bei rho_r = 1.7281501, Breite aus Parabel Gamma = 2.0655e-03 (29 Punkte)
+  Mode rho = 1.728150089: kappa_c = 0.516362, q = 2.399924, N (r <= 12.0) = 5.240974e+02, C_v = +2.435254e+01, offene Aussenamplitude 1.835e-01 (reduziert), wachsender Rest bei r_m +0.00e+00, V(r_m) +6.288e-03, u(0) = +0.5206, v(0) = +0.3516
+  Gitter h = 0.1, dt = 0.0400, nr = 220, nz = 641, Glieder 5: ['einzel', 'paar10', 'paar12', 'paar14', 'kette10'], Punkte je Glied 141020
+  Ueberlappmatrizen M (Zeile = Messball, Spalte = Mode): einzel: [[1.0]]; paar10: [[0.9814, 0.0215], [-0.0215, -0.9814]]; paar12: [[0.9942, 0.0069], [-0.0069, -0.9942]]; paar14: [[0.9981, 0.0022], [-0.0022, -0.9981]]; kette10: [[0.9815, 0.0215, 0.0001], [-0.0213, -0.9629, -0.0213], [0.0001, 0.0215, 0.9815]]
+  Start Zeitschleife 2026-09-30T06:08:26+00:00, t = 0.00 bis 1500.0, Messung alle 5 Schritte, Budget 480.0 s
+  Ende Zeitschleife 2026-09-30T06:11:42+00:00, t = 1500.00, Schritte 37500, 196.5 s (5.24 ms je Schritt in diesem Aufruf)
+=== Auswertung /home/fmh/fmhc-physics-remote/runde9-koll1/aus-lin-076-fein-ungerade (lin, omega^2 = 0.76, h = 0.1, t bis 1500.0) ===
+  paar10: Uebersprechen M_BA/M_BB = +0.0219, M_AB/M_AA = +0.0219
+  paar12: Uebersprechen M_BA/M_BB = +0.0069, M_AB/M_AA = +0.0069
+  paar14: Uebersprechen M_BA/M_BB = +0.0022, M_AB/M_AA = +0.0022
+  kette10: Uebersprechen M_BA/M_BB = +0.0222, M_AB/M_AA = +0.0219
+  Demodulation bei rho_d = 1.7282029 (Nachfuehrung +5.28e-05); Bezug |a_A| Einzelball bei t = 36.6; Amplituden nach Inversion der Ueberlappmatrix (chi-Bild, CMT: arg(b/a) = -pi/2 fuer t_AB < 0)
+  Einzelball: Gamma (Abklingen a_A) = +1.995e-03; a_A(Ende) = 0.05831; Fluss/a^2 Mittel = 4.9333e+00
+  einzel  : Summe a^2 Ende/Anfang 0.00340, Gamma_Summe +1.995e-03, Gamma_A +1.995e-03, Frequenzversatz A gegen Einzelball +1.878e-10
+            a(t): t=500: 0.398; t=1000: 0.146
+  paar10  : Summe a^2 Ende/Anfang 69421749291629936153460736.00000, Gamma_Summe -2.359e-02, Gamma_A -2.359e-02, Frequenzversatz A gegen Einzelball -1.538e+00; b_max 4257311202379.0513 bei t = 1464; J aus atan2(b, a) -4.914e-19 -> pi/(2J) = 3196382797469465600; arg(b/a) frueh +3.142
+            a(t): t=500: 28.287/28.287; t=1000: 17919788.086/17919788.086
+  paar12  : Summe a^2 Ende/Anfang 59212990714.45540, Gamma_Summe -9.398e-03, Gamma_A -9.398e-03, Frequenzversatz A gegen Einzelball -1.062e+00; b_max 123622.2019 bei t = 1464; J aus atan2(b, a) -5.897e-19 -> pi/(2J) = 2663652331224555008; arg(b/a) frueh -3.142
+            a(t): t=500: 0.184/0.184; t=1000: 59.087/59.087
+  paar14  : Summe a^2 Ende/Anfang 104.05857, Gamma_Summe -6.322e-04, Gamma_A -6.322e-04, Frequenzversatz A gegen Einzelball -3.744e-01; b_max 5.1501 bei t = 1464; J aus atan2(b, a) -1.966e-19 -> pi/(2J) = 7990956993673663488; arg(b/a) frueh +3.142
+            a(t): t=500: 0.205/0.205; t=1000: 0.046/0.046
+  kette10 : Summe a^2 Ende/Anfang 57720507335.01026, Gamma_Summe -9.388e-03, Gamma_A -9.388e-03, Frequenzversatz A gegen Einzelball -1.068e+00; b_max 0.0000 bei t = 1457; J aus atan2(b, a) -5.897e-19 -> pi/(2J) = 2663652331224555008; c_max 122352.7239 bei t = 1464
+            a(t): t=500: 0.212/0.000/0.212; t=1000: 66.753/0.000/66.753
+Ende 2026-09-30T06:11:42+00:00, 218.4 s

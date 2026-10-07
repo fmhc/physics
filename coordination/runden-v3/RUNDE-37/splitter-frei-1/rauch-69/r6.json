@@ -1,0 +1,262 @@
+{
+ "info": {
+  "numpy": "2.4.4",
+  "scipy": "1.18.0",
+  "python": "3.12.3",
+  "host": "ubuntu-auto",
+  "start_utc": "2026-10-05T09:36:45Z",
+  "argv": [
+   "code-r3/sf.py",
+   "rauch-punkt",
+   "--art",
+   "orig",
+   "--saat",
+   "1",
+   "--out",
+   "rauch/r6.json"
+  ],
+  "sha256": {
+   "dn.py": "0cd5d13e98f41df277ec7d8139970d1e658542f843ed8180bc756a4ea1d4d1ae",
+   "ew.py": "fa7b6417d39177102f0b19c5474453cd16a7595e23bc25ca548e081c4060b142",
+   "hm.py": "0ed5e2ce3a2a26525ef8a3320da394e6f403306384015187baf4dd46623fd5f2",
+   "inz.py": "e65a5cbf380defef0468f50de5a2dec5936d4228b72e1db8ff913ed765def8f2",
+   "lrm.py": "a6cdd898fc3fc80aa96d0b39e7c437ab7c7b22b73ff963f5600ed0d0210f684d",
+   "mn.py": "b36984d3f04276454a792f14c5655bff432332316d1b968dea46d4cb6eb96bbf",
+   "nachtrag_iso.py": "1c92cb23988886731096dd44ce33aecfcde3b65cecf16b4232111550e4debc6c",
+   "nachtrag_kinetik.py": "fd0d17b9fb7c92d4b6ad564a46260e3daae3285bcb5ad53f65d9fb3918a32b28",
+   "pn.py": "c8034e40c3238cecdcc72ecd35f1f70d38ea330c9ae18911966581c10e592567",
+   "sf.py": "af6ab6d8ca485efca70f08b453cdabdc8d717cbe120e0c65de9bd6b2ae429c51",
+   "sf_aw.py": "6e03c2e87caf52e9801c62b88462ee9bf74d33f2a7c38cb1910d78e2cbcb309c",
+   "smi.py": "9459838bb02f1894e2124927a28904679536bb2fb77ca2f338c8f6570326942d",
+   "tg.py": "ec48a258e266fc2226d0d10564b606052831ffefbf0642e4f7d04f9de85cfd9e",
+   "tp.py": "419d7da6caa211c721eb6a8c87403977415cf3050f03365377f51cb77b374dfd",
+   "tti.py": "6d6b6f7b99b334d74d91860fc69af1c6c0c46e22207dc45432d60a9824c08ee5"
+  }
+ },
+ "ergebnis": {
+  "t_hm_1richtung_2punkte_s": 51.40583252906799,
+  "t_hm_punkt_s": [
+   24.94816255569458,
+   10.534777879714966
+  ],
+  "t_lokal_s": [
+   7.186107158660889,
+   8.425253868103027
+  ],
+  "t_lr_1richtung_s": 11.887142419815063,
+  "t_lr_punkt_s": [
+   5.814069986343384,
+   5.886691331863403
+  ],
+  "schluessel_hm": {
+   "art": "str",
+   "saat": "int",
+   "info": {
+    "quelle": "str",
+    "pruefung": {
+     "saum": "float",
+     "umkugel_ausserhalb_saum": "int",
+     "R_umkugel_max": "float",
+     "punkte_mit_kopien": "int"
+    }
+   },
+   "E": "int",
+   "T": "int",
+   "nV": "int",
+   "pruefung": {
+    "T": "int",
+    "E": "int",
+    "nV": "int",
+    "kanten_je_ecke": "float",
+    "tetra_je_ecke": "float",
+    "selbstkanten": "int",
+    "laengen_abw_max": "float",
+    "volumen_summe_rel_abw": "float",
+    "vol_min": "float",
+    "vol_min_rel_mittel": "float",
+    "dieder_summe_minus_2pi_max": "float",
+    "dieder_min_grad": "float",
+    "dieder_max_grad": "float",
+    "D_sym_max": "float",
+    "schlaefli_lD_max": "float",
+    "D_absmax": "float",
+    "l_min": "float",
+    "l_max": "float",
+    "Vbox": "float",
+    "t_modell_s": "float"
+   },
+   "geo_kontr": {
+    "A0_gleich_Phi_GH_Phi": "float",
+    "A2t_mal_Kt_minus_1": "float",
+    "vol_summe_rel_abw": "float",
+    "vol_min_rel": "float",
+    "Phi_cond_max": "float"
+   },
+   "vref": "float64",
+   "eps": "list[2]",
+   "masken": {
+    "q5": {
+     "n_tetra": "int",
+     "n_kanten": "int",
+     "kantenanteil": "float",
+     "q_grenze": "float"
+    },
+    "q1": {
+     "n_tetra": "int",
+     "n_kanten": "int",
+     "kantenanteil": "float",
+     "q_grenze": "float"
+    },
+    "q10": {
+     "n_tetra": "int",
+     "n_kanten": "int",
+     "kantenanteil": "float",
+     "q_grenze": "float"
+    },
+    "v5": {
+     "n_tetra": "int",
+     "n_kanten": "int",
+     "kantenanteil": "float",
+     "q_grenze": "NoneType"
+    }
+   },
+   "form": {
+    "T": "int",
+    "q_min": "float",
+    "q_1proz": "float",
+    "q_5proz": "float",
+    "q_10proz": "float",
+    "q_median": "float",
+    "q_mittel": "float",
+    "q_schwelle_5proz_satz": "float",
+    "n_5proz_satz": "int",
+    "n_q_unter": {
+     "0.01": "int",
+     "0.02": "int",
+     "0.05": "int",
+     "0.1": "int",
+     "0.15": "int",
+     "0.2": "int",
+     "0.25": "int",
+     "0.3": "int"
+    },
+    "vol_min_rel_mittel": "float",
+    "q_hist_0_1_20": "list[20]"
+   },
+   "zeilen": "list[1]",
+   "spannen": {
+    "A1R1": {
+     "spanne_alle": "float",
+     "spanne_eps1": "float",
+     "ritz_spanne_alle": "float",
+     "ritz_spanne_eps1": "float",
+     "w_min": "float",
+     "w_max": "float",
+     "n_werte": "int",
+     "alle_ok": "bool",
+     "n_neg_max": "int"
+    },
+    "A1RH": {
+     "spanne_alle": "float",
+     "spanne_eps1": "float",
+     "ritz_spanne_alle": "float",
+     "ritz_spanne_eps1": "float",
+     "w_min": "float",
+     "w_max": "float",
+     "n_werte": "int",
+     "alle_ok": "bool",
+     "n_neg_max": "int"
+    },
+    "A2R1": {
+     "spanne_alle": "float",
+     "spanne_eps1": "float",
+     "ritz_spanne_alle": "float",
+     "ritz_spanne_eps1": "float",
+     "w_min": "float",
+     "w_max": "float",
+     "n_werte": "int",
+     "alle_ok": "bool",
+     "n_neg_max": "int"
+    },
+    "A2RH": {
+     "spanne_alle": "float",
+     "spanne_eps1": "float",
+     "ritz_spanne_alle": "float",
+     "ritz_spanne_eps1": "float",
+     "w_min": "float",
+     "w_max": "float",
+     "n_werte": "int",
+     "alle_ok": "bool",
+     "n_neg_max": "int"
+    },
+    "A2LR2": {
+     "spanne_alle": "float",
+     "spanne_eps1": "float",
+     "ritz_spanne_alle": "float",
+     "ritz_spanne_eps1": "float",
+     "w_min": "float",
+     "w_max": "float",
+     "n_werte": "int",
+     "alle_ok": "bool",
+     "n_neg_max": "int"
+    },
+    "A2LRH": {
+     "spanne_alle": "NoneType",
+     "spanne_eps1": "NoneType",
+     "ritz_spanne_alle": "float",
+     "ritz_spanne_eps1": "float",
+     "w_min": "float",
+     "w_max": "float",
+     "n_werte": "int",
+     "alle_ok": "bool",
+     "n_neg_max": "int"
+    },
+    "A2LRHL": {
+     "spanne_alle": "NoneType",
+     "spanne_eps1": "NoneType",
+     "ritz_spanne_alle": "float",
+     "ritz_spanne_eps1": "float",
+     "w_min": "float",
+     "w_max": "float",
+     "n_werte": "int",
+     "alle_ok": "bool",
+     "n_neg_max": "int"
+    },
+    "A2LR1": {
+     "spanne_alle": "float",
+     "spanne_eps1": "float",
+     "ritz_spanne_alle": "float",
+     "ritz_spanne_eps1": "float",
+     "w_min": "float",
+     "w_max": "float",
+     "n_werte": "int",
+     "alle_ok": "bool",
+     "n_neg_max": "int"
+    }
+   },
+   "t_s": "float"
+  },
+  "schluessel_lr": {
+   "art": "str",
+   "saat": "int",
+   "info": {
+    "quelle": "str",
+    "pruefung": {
+     "saum": "float",
+     "umkugel_ausserhalb_saum": "int",
+     "R_umkugel_max": "float",
+     "punkte_mit_kopien": "int"
+    }
+   },
+   "E": "int",
+   "T": "int",
+   "l_mittel": "float",
+   "kl": "list[2]",
+   "zeilen": "list[1]",
+   "t_s": "float"
+  }
+ },
+ "laufzeit_s": 63.29777550697327,
+ "maxrss_MB": 228.83203125,
+ "ende_utc": "2026-10-05T09:37:48Z"
+}

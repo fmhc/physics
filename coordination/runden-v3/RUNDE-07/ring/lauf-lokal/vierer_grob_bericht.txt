@@ -1,0 +1,33 @@
+RING vierer (b): Vierer-Ring mit Windung 2 pi/4, Stufe grob. Start 2026-09-30T04:28:58+02:00, Ende 2026-09-30T04:29:03+02:00, CPU (nur Formprobe), torch 2.10.0+cu128 RAUCHTEST: Zahlen ungueltig
+Dauer [s]: profile_s 0.0, entwicklung_grob_s 5.4
+Hochrechnung Hauptlauf: 272 s (nicht entwickelnde Teile 0 s + Entwicklung x 50); Profile aus dem Cache. Ueber 480 s: Stufen einzeln (--stufe grob / --stufe fein) oder Laeufe teilen (--laeufe).
+Ball omega2 0.7: Q 23.996, R_halb 1.916; T 40, dx 0.6, dt 0.1
+Lauf | Klasse | gueltig bis | r Start/Mittel/min/max | d_Paar Start/max | Drift (x Fenster/r0) | Periode | Amplitude 1./2. Haelfte | Drehrate | Spreizung Start/max | gamma | t_Bruch 0,1 | t_verschm | Q-Verlust | Sektor Start
+  n4_windung | gebunden | 40 | 5.547/5.702/5.547/5.926 | 8.928/9.538 | 9.35e-03 (+0.067) | - | 0.032/0.037 | -5.19e-03 | 0.0e+00/0.00 | - | None | None | 1.3e-06 | 3.1e-09
+    Reihe (t, r, d_Paar, Spreizung, Winkel, J_Box): [[0.0, 5.5474, 8.9284, 0.0, 0.7854, 38.1019]]
+    Bilanz: Q: +93.621->+93.621 geschluckt +0.000 Rest 3.6e-08 J: +38.102->+38.102 geschluckt +0.000 Rest 1.5e-07 E: +88.530->+88.529 geschluckt +0.000 Rest 4.2e-06; Schranken {"bilanz_Q": true, "bilanz_J": true, "bilanz_E": true, "startzerlegung": true, "sektor_start": true}; Windungen Klumpen Ende [0, 0, 0, 0]
+  n4_windung_sym | gebunden | 40 | 5.547/5.702/5.547/5.926 | 8.928/9.538 | 9.35e-03 (+0.067) | - | 0.032/0.037 | -5.19e-03 | 0.0e+00/0.00 | - | None | None | 1.3e-06 | 3.1e-09
+    Reihe (t, r, d_Paar, Spreizung, Winkel, J_Box): [[0.0, 5.5474, 8.9284, 0.0, 0.7854, 38.1019]]
+    Bilanz: Q: +93.621->+93.621 geschluckt +0.000 Rest 3.6e-08 J: +38.102->+38.102 geschluckt +0.000 Rest 1.5e-07 E: +88.530->+88.529 geschluckt +0.000 Rest 4.2e-06; Schranken {"bilanz_Q": true, "bilanz_J": true, "bilanz_E": true, "startzerlegung": true, "sektor_start": true}; Windungen Klumpen Ende [0, 0, 0, 0]
+  n4_windung_s1e-3 | gebunden | 40 | 5.547/5.702/5.547/5.926 | 8.928/9.537 | 9.34e-03 (+0.067) | - | 0.032/0.037 | -5.12e-03 | 2.0e-03/0.01 | - | None | None | 1.3e-06 | 4.4e-04
+    Reihe (t, r, d_Paar, Spreizung, Winkel, J_Box): [[0.0, 5.5474, 8.9284, 0.002015, 0.7854, 38.121]]
+    Bilanz: Q: +93.668->+93.668 geschluckt +0.000 Rest 3.5e-08 J: +38.121->+38.121 geschluckt +0.000 Rest 1.5e-07 E: +88.569->+88.568 geschluckt +0.000 Rest 4.3e-06; Schranken {"bilanz_Q": true, "bilanz_J": true, "bilanz_E": true, "startzerlegung": true, "sektor_start": true}; Windungen Klumpen Ende [0, 0, 0, 0]
+  n4_windung_s1e-6 | gebunden | 40 | 5.547/5.702/5.547/5.926 | 8.928/9.538 | 9.35e-03 (+0.067) | - | 0.032/0.037 | -5.19e-03 | 2.0e-06/0.00 | - | None | None | 1.3e-06 | 4.4e-07
+    Reihe (t, r, d_Paar, Spreizung, Winkel, J_Box): [[0.0, 5.5474, 8.9284, 2.015e-06, 0.7854, 38.102]]
+    Bilanz: Q: +93.621->+93.621 geschluckt +0.000 Rest 3.6e-08 J: +38.102->+38.102 geschluckt +0.000 Rest 1.5e-07 E: +88.530->+88.529 geschluckt +0.000 Rest 4.2e-06; Schranken {"bilanz_Q": true, "bilanz_J": true, "bilanz_E": true, "startzerlegung": true, "sektor_start": true}; Windungen Klumpen Ende [0, 0, 0, 0]
+  n4_gegen | gebunden | 40 | 5.547/5.702/5.547/5.926 | 8.928/9.538 | 9.35e-03 (+0.067) | - | 0.032/0.037 | +5.19e-03 | 0.0e+00/0.00 | - | None | None | 1.3e-06 | 3.1e-09
+    Reihe (t, r, d_Paar, Spreizung, Winkel, J_Box): [[0.0, 5.5474, 8.9284, 0.0, 0.7854, -38.1019]]
+    Bilanz: Q: +93.621->+93.621 geschluckt +0.000 Rest 3.6e-08 J: -38.102->-38.102 geschluckt -0.000 Rest 1.5e-07 E: +88.530->+88.529 geschluckt +0.000 Rest 4.2e-06; Schranken {"bilanz_Q": true, "bilanz_J": true, "bilanz_E": true, "startzerlegung": true, "sektor_start": true}; Windungen Klumpen Ende [0, 0, 0, 0]
+  n4_gleich | verschmolzen | 5 | 5.360/5.030/4.616/5.360 | 8.627/8.627 | -1.45e-01 (-0.135) | - | 0.027/0.039 | +2.06e-17 | 0.0e+00/0.00 | - | None | 5.0 | 8.6e-05 | 3.1e-16
+    Reihe (t, r, d_Paar, Spreizung, Winkel, J_Box): [[0.0, 5.3604, 8.6275, 0.0, 0.7854, -0.0]]
+    Bilanz: Q: +120.042->+120.031 geschluckt +0.010 Rest 2.4e-06 J: -0.000->+0.000 geschluckt -0.000 Rest 3.4e-17 E: +107.138->+107.111 geschluckt +0.018 Rest 1.8e-04; Schranken {"bilanz_Q": true, "bilanz_J": true, "bilanz_E": true, "startzerlegung": true, "sektor_start": true}; Windungen Klumpen Ende [0]
+  n4_windung_l6 | gebunden | 40 | 6.962/7.009/6.962/7.101 | 11.205/11.428 | 3.11e-03 (+0.018) | - | 0.017/0.024 | -1.50e-03 | 3.6e-16/0.00 | - | None | None | 1.0e-07 | 5.2e-09
+    Reihe (t, r, d_Paar, Spreizung, Winkel, J_Box): [[0.0, 6.9619, 11.2051, 3.602e-16, 0.7854, 20.073]]
+    Bilanz: Q: +95.400->+95.400 geschluckt +0.000 Rest 2.7e-09 J: +20.073->+20.073 geschluckt +0.000 Rest 9.1e-08 E: +90.023->+90.023 geschluckt +0.000 Rest 1.4e-06; Schranken {"bilanz_Q": true, "bilanz_J": true, "bilanz_E": true, "startzerlegung": true, "sektor_start": true}; Windungen Klumpen Ende [0, 0, 0, 0]
+  n4_windung_l6_sym | gebunden | 40 | 6.962/7.009/6.962/7.101 | 11.205/11.428 | 3.11e-03 (+0.018) | - | 0.017/0.024 | -1.50e-03 | 3.6e-16/0.00 | - | None | None | 1.0e-07 | 5.2e-09
+    Reihe (t, r, d_Paar, Spreizung, Winkel, J_Box): [[0.0, 6.9619, 11.2051, 3.602e-16, 0.7854, 20.073]]
+    Bilanz: Q: +95.400->+95.400 geschluckt +0.000 Rest 2.7e-09 J: +20.073->+20.073 geschluckt +0.000 Rest 9.1e-08 E: +90.023->+90.023 geschluckt +0.000 Rest 1.4e-06; Schranken {"bilanz_Q": true, "bilanz_J": true, "bilanz_E": true, "startzerlegung": true, "sektor_start": true}; Windungen Klumpen Ende [0, 0, 0, 0]
+  n4_windung_l8_sym | gebunden | 40 | 8.366/8.380/8.364/8.405 | 13.464/13.528 | 9.64e-04 (+0.005) | - | 0.003/0.005 | -4.20e-04 | 1.8e-16/0.00 | - | None | None | 1.5e-08 | 8.7e-09
+    Reihe (t, r, d_Paar, Spreizung, Winkel, J_Box): [[0.0, 8.3657, 13.4644, 1.772e-16, 0.7854, 9.4863]]
+    Bilanz: Q: +95.844->+95.844 geschluckt +0.000 Rest 3.7e-10 J: +9.486->+9.486 geschluckt -0.000 Rest 6.6e-07 E: +90.390->+90.390 geschluckt +0.000 Rest 1.3e-06; Schranken {"bilanz_Q": true, "bilanz_J": true, "bilanz_E": true, "startzerlegung": true, "sektor_start": true}; Windungen Klumpen Ende [0, 0, 0, 0]
+Kennzahlen: {"klassen": {"n4_windung": "gebunden", "n4_windung_sym": "gebunden", "n4_windung_s1e-3": "gebunden", "n4_windung_s1e-6": "gebunden", "n4_gegen": "gebunden", "n4_gleich": "verschmolzen", "n4_windung_l6": "gebunden", "n4_windung_l6_sym": "gebunden", "n4_windung_l8_sym": "gebunden"}, "spiegel": {"max_dr_rel_bis_300": 3.2021605508491617e-16, "max_J_summe_rel_bis_300": 1.864846194536203e-16, "drehrate_windung": -0.005186315655259314, "drehrate_gegen": 0.005186315655259303}}

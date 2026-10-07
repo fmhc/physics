@@ -1,0 +1,199 @@
+{
+ "test": "dauer",
+ "stufe": "grob",
+ "start": "2026-09-30T08:02:52+02:00",
+ "ende": "2026-09-30T08:02:57+02:00",
+ "rauch": 0.01,
+ "sek": 5.494027659995481,
+ "geraet": "cpu",
+ "torch": "2.10.0+cu128",
+ "argumente": {
+  "test": "dauer",
+  "geraet": "cpu",
+  "out": "formprobe",
+  "fein": false,
+  "rauch": 0.01,
+  "gammas": "2e-3,1e-3,5e-4",
+  "mit_gegen": true,
+  "L": 600.0,
+  "x_schwamm": 550.0,
+  "dauer_json": null,
+  "qd": null,
+  "a": null,
+  "b": null
+ },
+ "box": {
+  "L": 600.0,
+  "x_schwamm": 550.0
+ },
+ "dx": 0.1,
+ "dt": 0.05,
+ "laeufe": [
+  {
+   "name": "dauer 0.002",
+   "gamma": 0.002,
+   "t_stop": null,
+   "T": 2315.0893242165644,
+   "T_eff": 23.0,
+   "t_stop_eff": null,
+   "Q0": 1.8859777277311167,
+   "Q_erw_ende": 1.8011878697403112,
+   "t_bruch": null,
+   "Q_d": null,
+   "S_c_0": 0.2254033307585166,
+   "t90": null,
+   "t50": null,
+   "t10": null,
+   "om_abw_max_folge": 0.0004214459558115058,
+   "om_max_vor_bruch": 0.9010685290056684,
+   "om_ende": 0.8985367829023322,
+   "plausibel": {
+    "bestanden": true,
+    "verstoesse": []
+   },
+   "reihe_duenn": {
+    "t": [
+     0.0
+    ],
+    "q_rel": [
+     1.0
+    ],
+    "S_c": [
+     0.2254033307585166
+    ],
+    "S_fam": [
+     0.22540333091064313
+    ],
+    "omega": [
+     null
+    ]
+   }
+  },
+  {
+   "name": "dauer 0.001",
+   "gamma": 0.001,
+   "t_stop": null,
+   "T": 4130.178648433129,
+   "T_eff": 41.0,
+   "t_stop_eff": null,
+   "Q0": 1.8859777277311167,
+   "Q_erw_ende": 1.8102163615090845,
+   "t_bruch": null,
+   "Q_d": null,
+   "S_c_0": 0.2254033307585166,
+   "t90": null,
+   "t50": null,
+   "t10": null,
+   "om_abw_max_folge": 0.00021905995564985847,
+   "om_max_vor_bruch": 0.9012582367970914,
+   "om_ende": 0.8982428103806767,
+   "plausibel": {
+    "bestanden": true,
+    "verstoesse": []
+   },
+   "reihe_duenn": {
+    "t": [
+     0.0
+    ],
+    "q_rel": [
+     1.0
+    ],
+    "S_c": [
+     0.2254033307585166
+    ],
+    "S_fam": [
+     0.22540333091064313
+    ],
+    "omega": [
+     null
+    ]
+   }
+  },
+  {
+   "name": "dauer 0.0005",
+   "gamma": 0.0005,
+   "t_stop": null,
+   "T": 7760.3572968662575,
+   "T_eff": 77.5,
+   "t_stop_eff": null,
+   "Q0": 1.8859777277311167,
+   "Q_erw_ende": 1.8142939338711617,
+   "t_bruch": null,
+   "Q_d": null,
+   "S_c_0": 0.2254033307585166,
+   "t90": null,
+   "t50": null,
+   "t10": null,
+   "om_abw_max_folge": 0.0001222906093680809,
+   "om_max_vor_bruch": 0.901139362196929,
+   "om_ende": 0.8980786042850922,
+   "plausibel": {
+    "bestanden": true,
+    "verstoesse": []
+   },
+   "reihe_duenn": {
+    "t": [
+     0.0
+    ],
+    "q_rel": [
+     1.0
+    ],
+    "S_c": [
+     0.2254033307585166
+    ],
+    "S_fam": [
+     0.22540333091064313
+    ],
+    "omega": [
+     null
+    ]
+   }
+  },
+  {
+   "name": "gegen gamma 0",
+   "gamma": 0.0,
+   "t_stop": null,
+   "T": 2000.0,
+   "T_eff": 20.0,
+   "t_stop_eff": null,
+   "Q0": 1.8859777277311167,
+   "Q_erw_ende": 1.8859777277311167,
+   "t_bruch": null,
+   "Q_d": null,
+   "S_c_0": 0.2254033307585166,
+   "t90": null,
+   "t50": null,
+   "t10": null,
+   "om_abw_max_folge": 4.027278395868361e-05,
+   "om_max_vor_bruch": 0.8944674637311538,
+   "om_ende": 0.8944271824477245,
+   "dQ_in_rel_max": 3.532034365943819e-16,
+   "om_abw_0894_max": 4.027273123796693e-05,
+   "S_c_rel_max": 0.0015055596195838739,
+   "plausibel": {
+    "bestanden": true,
+    "verstoesse": []
+   },
+   "reihe_duenn": {
+    "t": [
+     0.0
+    ],
+    "q_rel": [
+     1.0
+    ],
+    "S_c": [
+     0.2254033307585166
+    ],
+    "S_fam": [
+     0.22540333091064313
+    ],
+    "omega": [
+     null
+    ]
+   }
+  }
+ ],
+ "plausibilitaet": {
+  "bestanden": true
+ }
+}

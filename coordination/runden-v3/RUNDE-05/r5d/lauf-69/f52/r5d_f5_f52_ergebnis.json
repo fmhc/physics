@@ -1,0 +1,482 @@
+{
+ "start": "2026-09-30T00:59:24+00:00",
+ "geraet": "CPU, 1 Thread",
+ "torch": "2.5.1+cu121",
+ "unterbefehl": "f52",
+ "faktor": 1.0,
+ "ergebnisse": {
+  "f52": {
+   "laeufe": [
+    {
+     "name": "0,7 nackt",
+     "iw": 0,
+     "A": 0.0,
+     "a": 0.0,
+     "lam": -0.0,
+     "lam2": 0.0,
+     "mc2": 0.36,
+     "kc": 0.0,
+     "g4": 0.1
+    },
+    {
+     "name": "0,7 a=0 A=0,2",
+     "iw": 0,
+     "A": 0.2,
+     "a": 0.0,
+     "lam": -0.0,
+     "lam2": 0.0,
+     "mc2": 0.36,
+     "kc": 0.0,
+     "g4": 0.1
+    },
+    {
+     "name": "0,7 a=0,2 A=0,2",
+     "iw": 0,
+     "A": 0.2,
+     "a": 0.2,
+     "lam": -0.7048082492225008,
+     "lam2": 0.6209433352151085,
+     "mc2": 0.36,
+     "kc": 0.0,
+     "g4": 0.1
+    },
+    {
+     "name": "0,7 a=0,4 A=0,2",
+     "iw": 0,
+     "A": 0.2,
+     "a": 0.4,
+     "lam": -1.4096164984450017,
+     "lam2": 1.241886670430217,
+     "mc2": 0.36,
+     "kc": 0.0,
+     "g4": 0.1
+    },
+    {
+     "name": "0,7 a=0,4 A=0,05",
+     "iw": 0,
+     "A": 0.05,
+     "a": 0.4,
+     "lam": -1.4096164984450017,
+     "lam2": 1.241886670430217,
+     "mc2": 0.36,
+     "kc": 0.0,
+     "g4": 0.1
+    },
+    {
+     "name": "0,95 nackt",
+     "iw": 1,
+     "A": 0.0,
+     "a": 0.0,
+     "lam": -0.0,
+     "lam2": 0.0,
+     "mc2": 0.36,
+     "kc": 0.0,
+     "g4": 0.1
+    },
+    {
+     "name": "0,95 a=0 A=0,2",
+     "iw": 1,
+     "A": 0.2,
+     "a": 0.0,
+     "lam": -0.0,
+     "lam2": 0.0,
+     "mc2": 0.36,
+     "kc": 0.0,
+     "g4": 0.1
+    },
+    {
+     "name": "0,95 a=0,4 A=0,2",
+     "iw": 1,
+     "A": 0.2,
+     "a": 0.4,
+     "lam": -3.9181221592820545,
+     "lam2": 9.594800784410667,
+     "mc2": 0.36,
+     "kc": 0.0,
+     "g4": 0.1
+    }
+   ],
+   "kerne": [
+    {
+     "omega2": 0.7,
+     "S0": 1.1350604946558283,
+     "R_wand": 3.5500000000000003,
+     "Q": 473.41303662163705,
+     "E": 428.63339259721937,
+     "grund": 1,
+     "r_cut": 13.8
+    },
+    {
+     "omega2": 0.95,
+     "S0": 0.4083588859549952,
+     "R_wand": 2.1,
+     "Q": 115.80660071736634,
+     "E": 117.62390780969378,
+     "grund": 1,
+     "r_cut": 22.950000000000003
+    }
+   ],
+   "niveaus": [
+    {
+     "lauf": "0,7 a=0,2 A=0,2",
+     "omega2_grund": 0.34720343050078284,
+     "gebunden": true,
+     "stabil": true
+    },
+    {
+     "lauf": "0,7 a=0,4 A=0,2",
+     "omega2_grund": 0.2615359530706446,
+     "gebunden": true,
+     "stabil": true
+    },
+    {
+     "lauf": "0,7 a=0,4 A=0,05",
+     "omega2_grund": 0.2615359530706446,
+     "gebunden": true,
+     "stabil": true
+    },
+    {
+     "lauf": "0,95 a=0,4 A=0,2",
+     "omega2_grund": 0.27397799040903875,
+     "gebunden": true,
+     "stabil": true
+    }
+   ],
+   "ergebnis": {
+    "grob": [
+     {
+      "name": "0,7 nackt",
+      "omega2": 0.7,
+      "a": 0.0,
+      "A": 0.0,
+      "Q_psi_halt": 0.999948289965908,
+      "S_mitte_max_rel": 0.029036520841573488,
+      "omega_psi": 0.8357334653464127,
+      "wandanteil": 0.0,
+      "Q_chi_halt": NaN,
+      "C_max_wachstum": NaN,
+      "R_psi_ende": 3.740101893528724,
+      "kern": "stabil",
+      "huelle": "-"
+     },
+     {
+      "name": "0,7 a=0 A=0,2",
+      "omega2": 0.7,
+      "a": 0.0,
+      "A": 0.2,
+      "Q_psi_halt": 0.999948289965908,
+      "S_mitte_max_rel": 0.029036520841573488,
+      "omega_psi": 0.8357334653464127,
+      "wandanteil": 0.0018723243998882426,
+      "Q_chi_halt": 0.0022212935943936177,
+      "C_max_wachstum": 9.05012750201175,
+      "R_psi_ende": 3.740101893528724,
+      "kern": "stabil",
+      "huelle": "traegt nicht"
+     },
+     {
+      "name": "0,7 a=0,2 A=0,2",
+      "omega2": 0.7,
+      "a": 0.2,
+      "A": 0.2,
+      "Q_psi_halt": 0.9997550358652627,
+      "S_mitte_max_rel": 0.08308381401153742,
+      "omega_psi": 0.8355617443531301,
+      "wandanteil": 0.34479510825017945,
+      "Q_chi_halt": 0.40839207572073466,
+      "C_max_wachstum": 7.786479683720539,
+      "R_psi_ende": 3.7436053193991,
+      "kern": "stabil",
+      "huelle": "traegt nicht"
+     },
+     {
+      "name": "0,7 a=0,4 A=0,2",
+      "omega2": 0.7,
+      "a": 0.4,
+      "A": 0.2,
+      "Q_psi_halt": 0.9992808978502669,
+      "S_mitte_max_rel": 0.12569523125576576,
+      "omega_psi": 0.8350889885547517,
+      "wandanteil": 0.626396288037778,
+      "Q_chi_halt": 0.720127709194574,
+      "C_max_wachstum": 6.16584345303285,
+      "R_psi_ende": 3.760151448358067,
+      "kern": "stabil",
+      "huelle": "traegt"
+     },
+     {
+      "name": "0,7 a=0,4 A=0,05",
+      "omega2": 0.7,
+      "a": 0.4,
+      "A": 0.05,
+      "Q_psi_halt": 0.9999300372003522,
+      "S_mitte_max_rel": 0.032535356285312456,
+      "omega_psi": 0.8356929123606416,
+      "wandanteil": 0.6239257800988949,
+      "Q_chi_halt": 0.7093544774131448,
+      "C_max_wachstum": 5.971083565434015,
+      "R_psi_ende": 3.7413945010977865,
+      "kern": "stabil",
+      "huelle": "traegt"
+     },
+     {
+      "name": "0,95 nackt",
+      "omega2": 0.95,
+      "a": 0.0,
+      "A": 0.0,
+      "Q_psi_halt": 0.9935589228340947,
+      "S_mitte_max_rel": 0.9413680973044993,
+      "omega_psi": 0.9495974384644446,
+      "wandanteil": 0.0,
+      "Q_chi_halt": NaN,
+      "C_max_wachstum": NaN,
+      "R_psi_ende": 4.81497268051444,
+      "kern": "zerfaellt",
+      "huelle": "-"
+     },
+     {
+      "name": "0,95 a=0 A=0,2",
+      "omega2": 0.95,
+      "a": 0.0,
+      "A": 0.2,
+      "Q_psi_halt": 0.9935589228340947,
+      "S_mitte_max_rel": 0.9413680973044993,
+      "omega_psi": 0.9495974384644446,
+      "wandanteil": 0.0006892540181088674,
+      "Q_chi_halt": 0.0009485214532627085,
+      "C_max_wachstum": 3.7098817202541428,
+      "R_psi_ende": 4.81497268051444,
+      "kern": "zerfaellt",
+      "huelle": "traegt nicht"
+     },
+     {
+      "name": "0,95 a=0,4 A=0,2",
+      "omega2": 0.95,
+      "a": 0.4,
+      "A": 0.2,
+      "Q_psi_halt": 0.478295146658754,
+      "S_mitte_max_rel": 0.9994419958231346,
+      "omega_psi": 1.0020485176427385,
+      "wandanteil": 0.0038367966083205523,
+      "Q_chi_halt": 0.21203142300959021,
+      "C_max_wachstum": 2.6309698746188293,
+      "R_psi_ende": 28.861128915738988,
+      "kern": "zerfaellt",
+      "huelle": "traegt nicht"
+     }
+    ],
+    "fein": [
+     {
+      "name": "0,7 nackt",
+      "omega2": 0.7,
+      "a": 0.0,
+      "A": 0.0,
+      "Q_psi_halt": 0.9999484090608044,
+      "S_mitte_max_rel": 0.028662797776730753,
+      "omega_psi": 0.8357081071247949,
+      "wandanteil": 0.0,
+      "Q_chi_halt": NaN,
+      "C_max_wachstum": NaN,
+      "R_psi_ende": 3.7402443045939866,
+      "kern": "stabil",
+      "huelle": "-"
+     },
+     {
+      "name": "0,7 a=0 A=0,2",
+      "omega2": 0.7,
+      "a": 0.0,
+      "A": 0.2,
+      "Q_psi_halt": 0.9999484090608044,
+      "S_mitte_max_rel": 0.028662797776730753,
+      "omega_psi": 0.8357081071247949,
+      "wandanteil": 0.0018343807395228195,
+      "Q_chi_halt": 0.0022262656309941288,
+      "C_max_wachstum": 9.04645673454003,
+      "R_psi_ende": 3.7402443045939866,
+      "kern": "stabil",
+      "huelle": "traegt nicht"
+     },
+     {
+      "name": "0,7 a=0,2 A=0,2",
+      "omega2": 0.7,
+      "a": 0.2,
+      "A": 0.2,
+      "Q_psi_halt": 0.9997538401845422,
+      "S_mitte_max_rel": 0.08288663418035214,
+      "omega_psi": 0.8355364622874378,
+      "wandanteil": 0.34006516932652764,
+      "Q_chi_halt": 0.4083720198654433,
+      "C_max_wachstum": 7.790960653233508,
+      "R_psi_ende": 3.7437688926311354,
+      "kern": "stabil",
+      "huelle": "traegt nicht"
+     },
+     {
+      "name": "0,7 a=0,4 A=0,2",
+      "omega2": 0.7,
+      "a": 0.4,
+      "A": 0.2,
+      "Q_psi_halt": 0.9992795799488925,
+      "S_mitte_max_rel": 0.12550154353034493,
+      "omega_psi": 0.8350637480258544,
+      "wandanteil": 0.6191100456104208,
+      "Q_chi_halt": 0.7200530986676823,
+      "C_max_wachstum": 6.1762298803660265,
+      "R_psi_ende": 3.760269119728454,
+      "kern": "stabil",
+      "huelle": "traegt"
+     },
+     {
+      "name": "0,7 a=0,4 A=0,05",
+      "omega2": 0.7,
+      "a": 0.4,
+      "A": 0.05,
+      "Q_psi_halt": 0.9999300360930304,
+      "S_mitte_max_rel": 0.032386129345431613,
+      "omega_psi": 0.8356675626029894,
+      "wandanteil": 0.6166863279629305,
+      "Q_chi_halt": 0.7093027122704866,
+      "C_max_wachstum": 5.980400963707857,
+      "R_psi_ende": 3.7415335235932687,
+      "kern": "stabil",
+      "huelle": "traegt"
+     },
+     {
+      "name": "0,95 nackt",
+      "omega2": 0.95,
+      "a": 0.0,
+      "A": 0.0,
+      "Q_psi_halt": 0.9937952946636195,
+      "S_mitte_max_rel": 0.93791478567897,
+      "omega_psi": 0.9496414338040934,
+      "wandanteil": 0.0,
+      "Q_chi_halt": NaN,
+      "C_max_wachstum": NaN,
+      "R_psi_ende": 4.8135285910713765,
+      "kern": "zerfaellt",
+      "huelle": "-"
+     },
+     {
+      "name": "0,95 a=0 A=0,2",
+      "omega2": 0.95,
+      "a": 0.0,
+      "A": 0.2,
+      "Q_psi_halt": 0.9937952946636195,
+      "S_mitte_max_rel": 0.93791478567897,
+      "omega_psi": 0.9496414338040934,
+      "wandanteil": 0.0007031827074827808,
+      "Q_chi_halt": 0.0009506531209789765,
+      "C_max_wachstum": 3.7297784927928,
+      "R_psi_ende": 4.8135285910713765,
+      "kern": "zerfaellt",
+      "huelle": "traegt nicht"
+     },
+     {
+      "name": "0,95 a=0,4 A=0,2",
+      "omega2": 0.95,
+      "a": 0.4,
+      "A": 0.2,
+      "Q_psi_halt": 0.47153778152180814,
+      "S_mitte_max_rel": 0.9994553724244936,
+      "omega_psi": 1.0019310546661264,
+      "wandanteil": 0.0037576390503231737,
+      "Q_chi_halt": 0.21285755095148415,
+      "C_max_wachstum": 2.6306332181042356,
+      "R_psi_ende": 28.911613481202686,
+      "kern": "zerfaellt",
+      "huelle": "traegt nicht"
+     }
+    ]
+   },
+   "L3": [
+    {
+     "lauf": "0,7 a=0 A=0,2",
+     "Wandanteil": {
+      "effekt": 0.0018723243998882426,
+      "aenderung": 3.794366036542307e-05,
+      "bestanden": true
+     },
+     "Q_psi_halt": {
+      "effekt": 5.17100340919896e-05,
+      "aenderung": 1.1909489638917137e-07,
+      "bestanden": true
+     }
+    },
+    {
+     "lauf": "0,7 a=0,2 A=0,2",
+     "Wandanteil": {
+      "effekt": 0.34479510825017945,
+      "aenderung": 0.004729938923651811,
+      "bestanden": true
+     },
+     "Q_psi_halt": {
+      "effekt": 0.00024496413473729106,
+      "aenderung": 1.1956807205448783e-06,
+      "bestanden": true
+     }
+    },
+    {
+     "lauf": "0,7 a=0,4 A=0,2",
+     "Wandanteil": {
+      "effekt": 0.626396288037778,
+      "aenderung": 0.0072862424273572035,
+      "bestanden": true
+     },
+     "Q_psi_halt": {
+      "effekt": 0.0007191021497331418,
+      "aenderung": 1.317901374364716e-06,
+      "bestanden": true
+     }
+    },
+    {
+     "lauf": "0,7 a=0,4 A=0,05",
+     "Wandanteil": {
+      "effekt": 0.6239257800988949,
+      "aenderung": 0.0072394521359643305,
+      "bestanden": true
+     },
+     "Q_psi_halt": {
+      "effekt": 6.996279964777141e-05,
+      "aenderung": 1.107321789817206e-09,
+      "bestanden": true
+     }
+    },
+    {
+     "lauf": "0,95 a=0 A=0,2",
+     "Wandanteil": {
+      "effekt": 0.0006892540181088674,
+      "aenderung": 1.3928689373913388e-05,
+      "bestanden": true
+     },
+     "Q_psi_halt": {
+      "effekt": 0.006441077165905251,
+      "aenderung": 0.00023637182952473967,
+      "bestanden": true
+     }
+    },
+    {
+     "lauf": "0,95 a=0,4 A=0,2",
+     "Wandanteil": {
+      "effekt": 0.0038367966083205523,
+      "aenderung": 7.915755799737861e-05,
+      "bestanden": true
+     },
+     "Q_psi_halt": {
+      "effekt": 0.521704853341246,
+      "aenderung": 0.006757365136945859,
+      "bestanden": true
+     }
+    }
+   ],
+   "sek": {
+    "grob": 28.915086868219078,
+    "fein": 92.14870821032673
+   },
+   "dauer_s": 139.65642604324967
+  }
+ },
+ "fehler": {},
+ "ende": "2026-09-30T01:01:44+00:00",
+ "dauer_s": 139.66008053999394,
+ "torch_speicher_max_mb": NaN
+}

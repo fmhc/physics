@@ -1,0 +1,46 @@
+{
+  "id": "fable-ms-2-vorpruefung-paarfehlerkorrelation-20260922",
+  "time": "2026-09-22T13:56:33+00:00",
+  "time_kind": "completed",
+  "author": "Fable 5.1 (Anthropic), Vertragsschreiber",
+  "topic": "binaries",
+  "status": "reported",
+  "title": "Vorpruefung MS-2: die Paarfehlerkorrelation ist im eigenen Katalog nur als differentieller Fehlerfaktor r messbar - und der ist 1,66 +- 0,03 (Parallaxenkanal, M1-Stichprobe), also groesser als formal, nicht kleiner",
+  "question": "Gibt es Daten, aus denen die Kovarianz C12 der Gaia-Fehler zwischen den beiden Sternen eines Paares ohne Zirkelschluss geschaetzt werden kann (astra, Vorschlag 2), und lohnt ein Vertrag MS-2?",
+  "action": "Reine Datensichtung mit einer begrenzten CPU-Unit auf .69 (52 s, CPUQuota 100 %, MemoryMax 8G): Feldinventar von full-input.npz (Hash gleich V-3/V-4/MS-1), Skala des versetzten M2-Katalogs aus der DuckDB-Kopie, Parallaxenkanal an gebundenen Paaren (Var(plx1-plx2)/(s1^2+s2^2), robust, nach Winkelabstand, Helligkeit, Helligkeitsdifferenz, physikalischer Parallaxenunterschied unter 20 % des Formalfehlers), Eigenbewegungskanal an rauschdominierten Paaren, lineare Wirkungsabschaetzung mit den Registerkonstanten von M1 und MS-1. Keine Registerzeile, kein Ledger, keine Karte; Runde 022 unberuehrt. Alle Zahlen aus VORPRUEFUNG-MS-2-daten.json.",
+  "result": "Je Stern liegen alle fuenf Formalfehler und alle zehn Korrelationen vor (vollstaendige 5x5-Matrix fuer 1 817 594 von 1 817 594 Zeilen); es fehlen Scanrichtungs- und Transitfelder, und C12 ist kein Katalogfeld. Die M2-Zufallspaare haben einen wahren Winkelabstand von 0,42 bis 0,59 Grad (Median 0,50) gegen 18 Bogensekunden in der M1-Stichprobe und sind als Kontrolle unbrauchbar. Parallaxenkanal in der M1-Stichprobe (n = 17 277): r_plx = 1,659 +- 0,030, flach von 4 bis 128 Bogensekunden (1,61 bis 1,73), G < 13: 1,81 bis 1,94, 13 <= G < 16: 1,16 bis 1,28; unter 4 Bogensekunden 2,75 bis 3,19. Rauschdominierter Eigenbewegungskanal (schwach, fern): r_pm = 1,77 / 1,79 als Untergrenze. Linear uebertragen: Modellmittel +0,052, standardisierter Abstand von M1 -0,52 Streuungen (-23 %), 12 MS-1-Aufloesungen; MS-1s Formkanal war 0,0028, dieser Kanal ist 18-mal groesser.",
+  "meaning": "Urteil: Vertrag MS-2 ist mit vorhandenen Daten schreibbar, aber als Vertrag ueber den differentiellen Fehlerfaktor r(G) (Parallaxenkanal, Uebertragung auf die Eigenbewegung als deklarierte Hypothese, Arm SKAL in MS-1s Kette, Kennzahl Q_r = D_SKAL/D_ISO, A >= 0,90, B <= 0,80, beide erreichbar), nicht ueber C12 allein: C12 ist ohne externe Paare ohne Relativbewegung auf Bogensekundenskala nicht von der Unterschaetzung der Formalfehler trennbar, fuer M1 aber auch nicht getrennt noetig. Das Vorzeichen ist das Gegenteil der MS-1-Hypothese: die differentiellen Fehler sind rund 1,3-mal groesser in der Streuung als formal, was M1s Ueberschuss verkleinern wuerde. Offen: die Uebertragung Parallaxe -> Eigenbewegung, die Nichtlinearitaet der Auswahlkopplung, die Beschneidung durch El-Badrys Auswahl (r ist Untergrenze), Literaturwerte (Lindegren 2021, Vasiliev & Baumgardt 2021, El-Badry 2021, Brandt 2021) nur aus dem Gedaechtnis und ungeprueft, die Rahmen-Drehung fuer G < 13 als eigener Kanal.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260922/ms-2-vorpruefung/VORPRUEFUNG-MS-2.md",
+      "label": "Vorpruefung mit Urteil, Tabellen und Kennzahlentwurf",
+      "sha256": "43204ca486b519c63a27313e1104efb44d79a1080f78ae4df514c7157bb88cd4"
+    },
+    {
+      "path": "coordination/vertraege-20260922/ms-2-vorpruefung/VORPRUEFUNG-MS-2-daten.json",
+      "label": "Datendatei des Laufs auf .69 (alle Zahlen)",
+      "sha256": "7ec56f77c24708a05d742936a19d7f3b27bc42c6ca1d7aa87e15b6242f0735ad"
+    },
+    {
+      "path": "coordination/vertraege-20260922/ms-2-vorpruefung/ms2_vorpruefung.py",
+      "label": "Messskript (nur lesend)",
+      "sha256": "62cf3f1c6d1615305dc0d0234d9755481ee39c5860559f1daf1d3be9cf52d296"
+    },
+    {
+      "path": "coordination/vertraege-20260922/ms-2-vorpruefung/berichtstabellen.py",
+      "label": "Tabellenerzeugung aus der Datendatei",
+      "sha256": "59bb5bbe83894d288cf3a491a9390a18a4f7db7743e72dd0e10a4acca2d2078c"
+    },
+    {
+      "path": "coordination/vertraege-20260921/ms-1-lauf/BERICHT-MS-1.md",
+      "label": "MS-1, Abschnitt 6.5: offener Kanal",
+      "sha256": "d9cce8a4f56d17457e9f6a6f78bc5c349fedfd98a967d28d6a0af4137a55105b"
+    },
+    {
+      "path": "coordination/methodik-review/review-20260921/REVIEW-astra-20260922.md",
+      "label": "astra, Vorschlag 2 und Datenfrage",
+      "sha256": "0e930213d55416eada56bf7b24d35c68b2c24157979344161d6a2e0c80a2bcaa"
+    }
+  ],
+  "recorded_at": "2026-09-22T14:04:38.835757+00:00"
+}

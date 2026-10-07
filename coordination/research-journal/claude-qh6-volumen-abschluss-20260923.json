@@ -1,0 +1,25 @@
+{
+  "id": "claude-qh6-volumen-abschluss-20260923",
+  "time": "2026-09-23T18:27:08.547514+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5)",
+  "topic": "modelle",
+  "status": "reported",
+  "title": "QH6 schliesst den Kompositionszweig ab: der einzige Bindungskandidat ist ueber drei Volumina stabil, liegt aber ein- bis fuenffach unter dem bekannten Modellfehler und ist damit nicht interpretierbar",
+  "question": "Bleibt die schwache Bindung des Frustrationskandidaten bei groesseren Volumina bestehen?",
+  "action": "Codex fuhr QH6 auf .69/P5000: 36 Sektorrechnungen, drei unveraenderte Kandidaten (Frustration, Valenzsaettigung, Paarbasis), L12/16/18, n1 bis n4, groesste Matrix 3060 Zustaende, keine Parameteranpassung. Auflage von mir (56f26a55): vor dem Lauf binden, was 'bestaendig' heisst. Unabhaengige Gegenlektuere durch einen zweiten Codex-Subagenten.",
+  "result": "Frustration E4-2E2 = -0,000586 / -0,000982 / -0,001022 ueber L12/16/18, Vorzeichen stabil, Betrag leicht wachsend. Aber: die mikroskopischen Energieabweichungen aus QH4 liegen bei 0,0013 bis 0,0049, also ein- bis fuenfmal groesser als das Signal. Geometrie stuetzt keine Trennung: mittlerer Gruppenspalt 2,334 gegen innere Gruppenlaenge 1,870, Trennereignis 29,6 Prozent, Spannweite waechst noch (5,268 / 5,899 / 6,075). Valenzsaettigung als Dissoziationsgegenprobe funktioniert: bedingter Schwerpunktabstand 4,915 / 6,069 / 6,624 bei positivem Kontrast. Paarbasis bleibt kompakt. 49 QA-Eintraege, maximaler Orakelfehler 6,66e-17, L12-Werte exakt gleich QH5.",
+  "meaning": "Der Kompositionszweig ist abgeschlossen, mit einer Antwort statt einem Abbruch: klassische und einfache quantenmechanische Modelle mit innerem Zustand tragen keine zweite raeumliche Ebene; der Grund ist der Strukturkonflikt (Bindung gegen erhaltene Unterstruktur); der einzige Kandidat, der ihn zu umgehen schien, liegt unter dem Modellfehler. Mein Bestaendigkeitskriterium war unvollstaendig - es fehlte die Vorbedingung, dass das Signal ueber dem Modellfehler liegen muss; das ist fuer kuenftige Kriterien festgehalten. Ein naechster Schritt braeuchte keine neue Modellfamilie, sondern eine mikroskopische Rechnung mit Fehler unter 0,001, also ohne H2-Reduktion und ohne PMF-Uebertragung. Teuer, Finns Entscheidung.",
+  "compute": "Codex auf .69/P5000 CUDA-f64, Programm 7,1 s, Service 10,1 s; keine Rechnung von mir",
+  "sources": [
+    {
+      "path": "coordination/stabile-kompositionen-20260923/volume-a/RESULT.json"
+    },
+    {
+      "path": "coordination/stabile-kompositionen-20260923/QH6-VORAB.md"
+    },
+    {
+      "path": "model-lab/kevloop/ideation/quantum_volume.py"
+    }
+  ]
+}

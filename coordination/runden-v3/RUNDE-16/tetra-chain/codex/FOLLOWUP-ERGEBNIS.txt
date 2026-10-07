@@ -1,0 +1,71 @@
+TETRA-FOLLOWUP abgeschlossen — 2026-10-02
+Root-Abnahme der drei neuen, sequentiellen CPU-Arme auf ubuntu-auto/.69,
+CPU11 nice19, Einthread. Keine GPU, keine lokale Numerik. Keine alten
+Resultate überschrieben. Nichtautor-Codelektüre jeweils vor Start:
+geometry-audit durch Root, mechanics/orientation-cells durch anderen Codex.
+
+1 ORIENTIERUNGSZELLEN — 17.2822 CPU-s
+Für dieselben rekonstruierten Vertexmittel-Ketten: 128/376 Vorzeichenzellen.
+Flächensumme jeweils12.566370614359172, Antipodenfehler<=2.3e-16,
+Octantenkontrolle bestanden. MittelP=10.2186957615 /12.6444371308.
+P(C_face>1)=0.0010072099271 /0.0124396805342.
+Das sind deterministische float64-Zellflächen, keine zertifizierten exakten
+Wahrscheinlichkeiten. Positive LP-Margen<=1e-11 können verloren gehen;
+Flächensumme ist eine Konsistenzkontrolle, kein Intervallvollständigkeitsbeweis.
+Originalcode und Originalnormalenmaß weiter unbekannt.
+
+2 GEOMETRIE-AUDIT — 0.70895 CPU-s
+Alle36+136 Tetraederpaare: Schnittmenge innerhalb LP-Toleranzen gleich dem
+vorgegebenen gemeinsamen Simplex oder leer. Keine unerwarteten Kontakte,
+keine positiven Volumenüberlappungen erkannt. Fünf Kontrollen bestanden,
+einschließlich absichtlich überlappender und falsch gelabelter Paargeometrie.
+Solver1e-9, Akzeptanz1e-7 dimensionslose baryzentrische Masse. Kein
+rigoroser Ausschluss beliebig kleiner Überlappungen. Damit ist die
+C_face-Interpretation als geometrische Inselzahl numerisch gestützt.
+Tick-Gruppen adaptiv durch Nachbarintervalle geprüft, inklusive möglicher
+zyklischer Koinzidenzen. DeltaP=d-2k für Gruppenrandkanten bestanden.
+Dies ersetzt nicht die unbekannte Drehachse der Bundle-Ticks.
+
+3 MECHANIK — 4.76236 CPU-s
+Neues bedingtes Modell: m=k=1, spannungsfreie Zentralfedern an allen
+Kanten. Voller Hessian, 36 bzw60 Freiheitsgrade. Genau6 starre Nullmoden,
+keine negative Eigenrichtung oberhalb Toleranz. Einzel-Tetraederspektrum,
+Nullraumprojektor, Translationen/Rotationen und k->4k bestanden.
+Kleinste positive Kreisfrequenzen:
+11+1: omega0.300563645588, Periode20.9046749313.
+19+1: omega0.134921087613, Periode46.5693348485.
+Frequenzeinheit sqrt(k/m), Zeiteinheit sqrt(m/k); keine SI-Kalibrierung.
+
+Gleichmäßige Skalierung ist KEINE Eigenmode der ganzen Kette:
+relative Residuen ||Hs-(s^THs)s||/||Hs||=0.7156796/0.8809793.
+Alle Modalgewichte und Eigenvektoren in mechanics/RESULT.json.
+
+Analytische lineare Zeitentwicklung der ersten positiven Mode,201Samples,
+2Perioden, maximale Vertexamplitude0.001 (Kantenlänge1).
+P bleibt8 bzw10, aber Schnittflächensumme variiert:
+11+1:0.591763683224 bis0.591812336157.
+19+1:0.646447453783 bis0.646449160965.
+Kontinuierlicher Abstand zu Vertexdurchgängen>0.0870 bzw0.0475, also
+nicht nur durch zu grobe Zeitabtastung übersehen. Quadratische Energie
+konstant bis3e-21. Dies prüft die lineare Lösung, nicht die nichtlineare
+Langzeitstabilität. Keine nichtlineare ODE integriert.
+
+Separate positive Homothetie a=1+0.1cos(t): P konstant, A/a² konstant
+bis4.5e-16. Vorgeschriebene Messkontrolle, kein behaupteter Atem-Eigenmodus.
+Fläche zunächst zelladditive Polygonflächensumme; ruhende Einbettung
+numerisch geprüft, deformierte Geometrie nicht separat LP-zertifiziert.
+
+DARSTELLUNG
+mechanics/mode-geometry.png zeigt Eigenmodenphasen (100-fach vergrößerte
+Verschiebung ausdrücklich beschriftet), spectrum-scaling.png Spektren und
+Skalierungsgewichte, section-traces-readable.png Messantwort ohne verwirrenden
+Achsenoffset. Letzteres reine neue Darstellung bestehender CSVs auf .69.
+Root hat ursprüngliche Moden-/Messgrafik visuell gelesen, keine Animationsdaten
+als neue Simulation ausgegeben. Code, Quellen, Ergebnisse mit SHA256SUMS.txt.
+
+OFFEN, NICHT ALS ERLEDIGT AUSGEGEBEN
+Originalgenerator, Bedeutung+1, Originaldrehachse; zertifizierte Zellflächen;
+endliche Detektordicke noch Papiermodell; nichtlineare Schwingungsstabilität,
+Bindungsbildung/-bruch und Feldkopplung. Kein Q-Ball-,Spin-,SU3-/Gravitationsnachweis.
+M_E-G3-Theoriekarte und frühere Krümmungsprüfung bleiben getrennte offene
+Projektaufträge; dieser Folgeversuch ersetzt sie nicht.

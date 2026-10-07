@@ -1,0 +1,69 @@
+Nichtautor-Planlektüre, particle_binding, 02.10.2026
+Gelesener Plan SHA256
+097108448c6604b8f417a67f64291c6daef4b490fcb00158070e01837f7ae96b.
+Nur Papierlektüre; keine Ausführung oder neue Rechnung.
+
+Urteil: fachlich implementierbarer begrenzter Test, kein konkreter
+Planblocker. Die elf Arme und 300 CPU-s sind eine neue, ausdrücklich
+größere Zeitbereichsprüfung; ein Bestehen ist nicht aus der stationären
+Antwort vorweggenommen. Vor Lauf bleibt die Nichtautor-Codelektüre nötig.
+
+Ankunft/Fenster: k/(omega+2rho), nicht die Lichtfrontgeschwindigkeit,
+bestimmt die schmalbandige Ankunft. Die angegebenen groben66/82 passen
+zur gewählten Außenregion. Beide festen Fenster liegen danach und vor
+T128. Ein solches Fenster ist aber kein Einschwingnachweis: der späte
+Schalenrand hat nur begrenzte Vorlaufzeit; dispersive Transienten bleiben
+möglich. Die zwei Fenster, die komplexe Sollfeldprüfung und Incoming-
+Kontrolle erlauben ausdrücklich UNRESOLVED. Kein weiteres Fenster darf
+nach Ergebnissichtung als besserer Ersatz gewählt werden. Die Aussage
+zum Randweg ist richtig auf kernnahe Störungen eingeschränkt; anfängliche
+nichtkompakte Tails werden nicht als streng kausal abwesend behauptet.
+
+Norm/Phase/Parität: gemeinsames Drehen und Normieren aller sechs
+Ritzblöcke, lab pi=iomega phi+delta p und unveränderte Q-Quadratik sind
+konsistent. Die stationäre zweite Ordnung muss genau exp(2i theta)
+mitnehmen, nicht aus Zeitdaten nachgedreht werden. Die gerade Kombination
+(Uplus+Uminus-2Ubaseline)/(2alpha²) entfernt ungerade Beiträge, lässt
+quadratische Einschalttransienten und höhere gerade Ordnungen stehen.
+Alpha=epsilon*s ist für Amplituden und alpha^4 für Flüsse erforderlich.
+
+Eine ganze Grundperiode je Fenster umfasst zwei Perioden bei2rho;
+damit sind DC und beide reinen Grundharmonischen im kontinuierlichen
+Fourierintegral orthogonal. Das beweist keine Unterdrückung veränderlicher
+DC-/Grundmodentransienten. Diese werden durch tatsächliche Sollfehler,
+Fenstervergleich und die beobachtete Grundmodenabweichung begrenzt.
+Endpunktinterpolation/Trapezweg und dessen feste algebraische QA sind
+sinnvoll. Die positive komplexe Phi-Koeffiziente ist direkt p2, ohne
+weiteren Halbierungsfaktor; die negative ist conj(m2). Die geplante
+Chi-Konvention und gesonderte DC-Ausgabe sind konsistent.
+
+Signalsicherheit: globale Energie-/Ladungsgates sind hier ausdrücklich
+keine Schranke für die winzige Bandleistung. Die zusätzlichen komplexen
+Sollfehler, dt-/h-/Amplitudenvergleiche und fünffache Reserve beziehen
+sich auf das tatsächliche skalierte Außensignal. Damit wird der große
+gemeinsame Hintergrundfehler nicht zum Strahlungsnachweis umgedeutet.
+Die stärkere Amplitude hat h- und dt-Kontrolle; die kleinere nur die
+Basispaarprüfung. Diese Einschränkung wird korrekt benannt.
+
+Aus-/Einlaufzerlegung: für exp(+iOmega t) und u=rp liefert
+(u+(i/k)u')/2 den auslaufenden Anteil; beide angegebenen Phasenfaktoren
+und Vorzeichen stimmen. Diskrete Ableitungen müssen bei Zeitdaten und
+Sollfeld identisch sein. Laborbandfluss und E-omegaQ sind getrennt;
+ein bloßes Zeitintegral des Gesamtenergiefehlers wäre kein Ersatz.
+
+Zwei konkrete Umsetzungspunkte innerhalb des vorhandenen Plans:
+1. Die geforderte volle kanonische Uodd-Norm über Samples braucht Zugriff
+auf gleichzeitig vorliegende Plus-/Minusfelder, etwa paarweises
+Fortschreiten. Aus bloß gespeicherten Schalen kann sie nicht nachträglich
+rekonstruiert werden. Keine Behauptung voller Norm aus Schalenwerten.
+2. Für radiale Ableitungen Schalen mit nötigen Nachbarzellen erfassen;
+Extraktions-QA-Leckage für die Reserve tatsächlich in dieselbe
+alpha²-skalierte Amplitudeneinheit übertragen. Eine dimensionslose
+1e-4-Testzahl allein wäre keine absolute Leckageschranke dieses Signals.
+Das sind Implementierungsanforderungen der vorhandenen Diagnosen,
+keine neuen Gates oder zusätzlichen Arme.
+
+Ein positiver Ausgang wäre eine endliche freie Bandantwort im festgelegten
+Fenster, keine volle Strahlungsbilanz, Lebensdauer oder BIC-Aussage.
+Scheitert die Einschwing-/Signalprüfung, bleibt die bereits kontrollierte
+stationäre erzwungene Antwort davon unberührt. Kein automatischer Nachlauf.

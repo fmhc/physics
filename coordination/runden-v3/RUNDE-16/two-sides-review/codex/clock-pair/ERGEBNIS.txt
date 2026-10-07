@@ -1,0 +1,61 @@
+CLOCK-PAIR: Ergebnis, 2026-10-02, ag-phy-coordination
+
+16 neue Kontrolllaeufe = 8 Praeparationen x 2 Schrittweiten. CPU auf
+ubuntu-auto/.69, CPU11 nice19, 23.8524 CPU-s, keine GPU. Eigenes neues
+Zweispinor-Hamiltonmodell aus PLAN.txt, nicht vorhandenes psi/chi-Modell.
+Hashes und Commit vor Lauf in INPUT.sha256/COMMIT.txt; Quelle ist neu,
+uncommittiert und vollstaendig gehasht. Keine Aenderungen am Live-Simulator.
+
+Frage: Gleiche gemessene Tickrate UND begrenzter Phasenunterschied bei
+3% verschiedenen freien Frequenzen und anfangs .7rad Phasenunterschied?
+Reziproke Kopplung K/2*(z1-z2)^2. Ein optionaler .2rad-Kick auf Uhr2 bei
+40pi ist extern, seine Arbeit wird aus dem Hamiltonian gemessen. Vergleich
+bis100pi, Abschlussfenster60pi..100pi. Phase ist aus zwei Blochkomponenten
+gewonnen; verschwindende Projektion macht diese Uhrablesung ungueltig.
+
+Ausgang auf BEIDEN Gittern:
+K=0, ohne/mit Kick: kein endlicher Gleichlauf. Periodenverhaeltnis .970874,
+Phasendrift7.53963rad im Abschlussfenster (Analytik .06*40pi stimmt).
+K=.2, ohne/mit Kick: kein Gleichlauf. Verhaeltnisse .936178/.935014;
+Phasenbereiche17.7332/17.5381rad. Kopplung beseitigt die Drift hier nicht.
+K=1, ohne Kick: UNDEFINED gemaess Vorabregel, Projektionsradius .0264<.05;
+keine verlaessliche durchgaengige Uhrphase. Kein Synchronisationslabel.
+K=1, mit Kick: Phasenablesung gueltig (Radius .1085), aber kein Gleichlauf:
+Verhaeltnis .985104 und Phasenbereich4.83655rad verfehlen die vorherigen Tore.
+Identische Kontrolluhren: gleicher Takt, aber durch gleiche Daten/Symmetrie
+konstruktiv vorgegeben. Zaehlt nicht als neu entstandene Synchronisation.
+Stationaere Eigenzustandskontrolle: keine Ticks, Radius0, somit UNDEFINED.
+
+Wichtige Auswertewarnung: stationaere Kontrolle besitzt rein rechnerisch
+Kreis-Konzentration1, weil atan2(0,0) beide Male0 liefert. Ohne Radius- und
+Tickkontrolle waere das ein falscher perfekter Synchronisationserfolg.
+Auch K=.2 liefert Konzentration~.64 trotz mehrfachen Phasenumlaufs. Eine
+hohe kreisstatistische Konzentration allein prueft kein Festhalten der Phase.
+Das gespeicherte finite_lock=false fasst verworfene und undefinierte Faelle
+zusammen; fuer wissenschaftliches Urteil ist die Radiusregel zusaetzlich
+anzuwenden, wie hier getan. UNDEFINED ist kein negatives Physikresultat.
+
+Numerik: alle Vorab-Bilanz- und Vergleichstore bestanden. Feines Gitter:
+Normfehler maximal6.12e-11, skalierter Energiefehler maximal4.33e-11.
+Kickarbeit K=.2: .00462334; K=1: .0543767. Energie wird stueckweise mit
+separaten Referenzen vor/nach dem Eingriff bilanziert. Keine kostenlose
+Phasenkorrektur. Bei K=0 Rotation um denselben Hamiltonoperator: Arbeit0.
+Die Ergebnisse sind abgetastete endliche Beobachtungen, keine rigorosen
+Intervallschranken oder Langzeit-/Floquet-Stabilitaetsbeweise.
+
+Theoretische Reichweite:
+Normierte Spinoren entsprechen hier klassischen Zweimoden-Amplituden mit
+Hamiltonstruktur. Die autonome glatte Hamiltonstroemung erhaelt symplektisches
+Volumen; ein Attraktor mit offenem Einzugsgebiet im VOLLEN Phasenraum ist
+somit nicht zu erwarten. Begrenzte Phasenlibration oder gleiche mittlere
+Frequenz werden dadurch NICHT ausgeschlossen. Kein allgemeiner Beweis,
+dass konservative Systeme nicht synchron erscheinen koennen.
+
+Weitertragende enge Frage: Welcher konkrete Kopplungsterm erzeugt einen
+stabilen resonanten Bereich (librationsartige relative Phase), statt bloss
+voruebergehend aehnliche Frequenzen? Dafuer erst periodische Vergleichsbahn,
+Erhaltungsgroessen und deren Stabilitaet ableiten; kein blindes Hochdrehen
+von K. Alternativ dissipative Synchronisation mit expliziter Energiebilanz
+von Antrieb und Umgebung; das waere ein anderes offenes Modell.
+Kein Ergebnis zu zusaetzlichen Raumdimensionen, universeller Eigenzeit oder
+Gravitation. Ein Flip bleibt ein moeglicher Uhrenmechanismus, kein Zeitbeweis.

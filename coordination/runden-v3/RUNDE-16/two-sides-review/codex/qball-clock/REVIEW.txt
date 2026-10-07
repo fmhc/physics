@@ -1,0 +1,54 @@
+Nichtautor-Lektuere, 2026-10-02 — causal_live_review
+Nur Quell-/Ergebnislekture; keine eigene Rechnung oder Testausfuehrung.
+Gelesen: PLAN.txt, run.py, RESULT.json und relevante live-solver.js-Stellen.
+Die vier Ergebnis-Hashes stimmen mit lokalem Laufskript, Plan, Solver und
+exportiertem Anfangsprofil ueberein. Lauf laut Ergebnis: ubuntu-auto (.69),
+4.94 s aktive Browser-JS-Zeit, 6.65 s protokollierte Wandzeit.
+
+BEFUND
+Kein Blocker fuer die enge Aussage eines endlichen Auslesetests gefunden.
+Sechs neue nichtlineare radiale PDE-Laeufe, h=.2/.1 und epsilon=0/.005/.02,
+T=60, unveraenderter Solver, festes R=80 und derselbe Absorber.
+Alle angeregten Beobachter haben 13 Ticks, also 12 vollstaendige Intervalle,
+im Analysefenster t>=10. Alle 16 gridpaarigen finite_clock-Gates sind true.
+Beide Null-Laeufe haben raw UND corrected an allen vier Radien null Ticks
+in diesem Fenster; corrected hat exakt null Signal. Das ist keine Aussage
+ueber Roh-Fehltrigger vor t=10. Energie-/Ladungsbilanzgates bestehen.
+
+DETEKTOR UND GATES
+Hysterese ist konsistent: unter -eta scharfstellen, beim naechsten steigenden
+Durchgang durch +eta einmal zaehlen, Zeitpunkt zwischen Abtastwerten linear
+interpolieren, dann entschaerfen. Keine Periode wird im Detektor erzwungen.
+Auswertung startet unarmed im t>=10-Fenster; ein bereits zuvor begonnenes
+Teilintervall wird nicht mitgezaehlt. Mindestanzahl >=8 Intervalle, CV<.01,
+Abweichung von 2pi/rho<.02, Gittervergleich<.01 und numerische Gates entsprechen
+dem Plan. Periodendrift und peak-to-peak werden berichtet, aber nicht separat
+gegated; insbesondere liegt kein Gate auf Amplitudenpersistenz/Lebensdauer vor.
+
+ROH-/BASELINE-UNTERSCHEIDUNG
+raw ist Dichte minus feste diskrete Anfangs-Baselinedichte; corrected ist
+Dichte minus separat mitintegrierte Baseline. Letzteres bleibt numerische
+Kontrolldiagnostik, kein voraussetzungsloser experimenteller Detektorkanal.
+Praezisierung zum Plantext f_input^2: code verwendet first.baselineDensity.
+Am Ursprung rekonstruiert sample() q/r ueber eine diskrete Ableitung; der
+Referenzwert ist dort nicht exakt der tabellierte Wert f_input(0)^2.
+Auch eta benutzt diese Anfangs-Baselinedichte und ist deshalb geringfuegig
+gitterabhaengig, bleibt aber pro Lauf vor Zeitentwicklung festgelegt.
+Der corrected-Nulltest ist wegen identischer Startdaten desselben Solvers
+weitgehend eine Konsistenzkontrolle; der zusaetzliche raw-Nullarm ist wertvoll.
+
+GRENZEN DER AUSSAGE
+Die bekannte Eigenmode u/v und rho werden schon zur Praeparation der
+Anfangsdaten verwendet; die Referenzperiode folgt aus demselben rho. Dies
+prueft die endliche Auslesbarkeit dieses praepierten Modus, keine blinde
+Entdeckung einer Uhr oder unabhaengige Vorhersage ihrer Frequenz.
+Abtastabstand ist .2/.1, rund 18/36 Werte pro Referenzperiode. Linear
+interpolierte Tickzeiten sind keine exakt lokalisierten PDE-Ereigniszeiten.
+Raumgitter h, Integrationsschritt dt und Abtastabstand werden zusammen
+halbiert; ihre Fehler sind damit nicht getrennt bestimmt. Sehr kleine CVs
+und Gitterdifferenzen sind keine zertifizierten Genauigkeitsgrenzen.
+Bilanzmaxima werden an den gespeicherten Fuenfschritt-Abtastpunkten gemessen.
+Vier Radien desselben praepierten radialen Modus sind keine unabhaengigen
+physikalischen Uhren. Kein Lebensdauer-, asymptotischer Stabilitaets-,
+Strahlungsfreiheits-, Dimensions- oder Eigenzeitbeweis; die Modellzeit wird
+vorausgesetzt. Die enge finite_clock-Klassifikation ist damit nachvollziehbar.

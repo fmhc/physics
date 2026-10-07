@@ -1,0 +1,141 @@
+Unabhaengige Papierlesung: Promotion, Rest und Klasse A
+2026-10-02; Codex tetra_next_review. Keine Rechnung, kein Interpreter,
+keine Rohdaten-/LP-Vollpruefung, keine Aenderung an Autorendateien.
+
+Urteil
+======
+Die Promotion y = g x = xi G_E fest ist eine sachlich sinnvolle Verbesserung
+gegenueber x fest: Der gesuchte Baumterm liegt dann wirklich in der fuehrenden
+Grenzamplitude. Das ist kein blosses Umbenennen eines O(g)-Terms. BBIRRS
+erlauben ausdruecklich endliche weitere kurzreichweitige Kopplungen. Nicht
+gedeckt ist jedoch der naechste Schluss: Diese Promotion allein liefert weder
+den verlangten gleichmaessigen O(g)-Rest noch die kontaktunabhaengige
+Baumschranke mit relativ O(G_E). Nach den eingefrorenen Kriterien bleibt fuer
+diese Herleitung Klasse C: konkrete Uebertragungs-/Kontrollschritte offen,
+kein Gegenbeweis gegen die Strategie. Eine bedingte perturbative Aussage
+entsprechend B waere formulierbar; A ist durch die vorliegende Lesung nicht
+bestaetigt. Die getrennte Gitterpositivitaetsfrage entscheide ich hier nicht.
+
+1. Fuehrende Ordnung ist nicht gleich Baumordnung [Prioritaet hoch]
+================================================================
+ARBEITSFELD W2, Zeilen 90--117, erkennt korrekt y^2-Schleifen als fuehrend
+an. Superkonvergenz entfernt lokale Kontaktpolynome aus den Baum-Arcs; daraus
+folgt nicht, dass Kontakt-Schleifen mit ihren nichtlokalen Schnitten ebenfalls
+verschwinden. Die dortige Zeile 9 setzt aber bereits 'g4 ~ y'. Weder die
+Skalierung S des eingefrorenen Plans noch BBIRRS legen saemtliche unabhaengigen
+renormierten Kontaktkopplungen so fest. 'Berechenbar bei gegebenen Kontakten'
+ist gerade keine Eliminierung der unbekannten Kontakte.
+
+BBIRRS §4, S. 9, (4.1)--(4.2), und §5, S. 15--17, (5.6)--(5.15), schuetzen
+die Positivitaet des VOLLEN fuehrenden Arcs bei endlichen kurzreichweitigen
+Kopplungen. Diese koennen im fuehrenden Arc weiterhin vorkommen. Fuer
+unabhaengige Kontakte c_i ist dessen passende Bezeichnung
+A^(0)(G_E,y,{c_i}); seine Reduktion auf den Baumterm plus
+O(G_E^2,y G_E,y^2) bedarf einer begruendeten Kopplungshierarchie oder einer
+Eliminierung/Abschaetzung aller weiteren Beitraege. Insbesondere sind
+Kontakt-Schleifen nicht wegen fehlender IR-Logs O(g).
+
+Staerkste positive Lesart: Bei einem wohldefinierten schwach gekoppelten
+EFT-Zweig, in dem alle relevanten kurzreichweitigen Kontakte entsprechend mit
+G_E bzw. y verschwinden, ist der angegebene zweite Grenzschritt geeignet,
+den Baumkoeffizienten zu isolieren. Das ist deutlich mehr als die zuvor
+fest-x-lesbare Aussage; die Hierarchie muss aber ausdruecklich stehen und
+darf nicht als Folge von BBIRRS ausgegeben werden.
+
+2. Kleines G_E: gueltige bedingte Schlussweise, kein globaler Bootstrap
+===================================================================
+W2 endet mit einem Arc der Form
+  a G_E - b y + O(G_E^2, y G_E, y^2) >= 0,  b > 0.
+Ein additiver O(y^2)-Term laesst sich ohne weitere Information nicht als
+G_E O(y) schreiben. Die darauffolgende faktorisierte Ungleichung im
+ARBEITSFELD/ERGEBNIS ist deshalb nicht unmittelbar dieselbe Aussage.
+
+Fairerweise legt S bereits y = xi G_E fest. Fuer xi in einer vorgegebenen
+beschraenkten Menge und anschliessend G_E -> 0 sind alle drei angefuehrten
+Korrekturen O(G_E^2), SOFERN ihre Koeffizienten gleichmaessig beschraenkt sind
+und die Kontaktfrage geloest ist. Dann traegt der Schluss auf den fuehrenden
+Baumkoeffizienten. Man muss y = O(G_E) in dieser eng definierten Familie
+nicht erst aus der gesuchten Schranke herleiten; ein pauschaler Vorwurf des
+Zirkelschlusses waere hier unfair.
+
+Dies ist aber keine Kontrolle fuer beliebiges xi, grosse y oder G_E = O(1).
+Alternativ laesst sich ein kleiner perturbativer y-Zweig bei bekannter
+Restabschaetzung durch Absorption kontrollieren. Eine lediglich symbolische
+O(y^2)-Angabe schliesst andere Zweige nicht aus. Auch kann c_0 = 895 einen
+erheblichen Koeffizienten vor y bedeuten: 'G_E klein' braucht eine
+kopplungsabhaengige Gueltigkeitsregion, keinen behaupteten Zahlenbereich.
+
+Die Form x <= c_0 L [1+O(G_E)] + O(1) darf nicht anschliessend bei festem
+nichtverschwindendem G_E in x <= c_0 L + O(1) verkuerzt werden. Genau diese
+Verkuerzung erscheint in ERGEBNIS §5, zweiter Spiegelstrich, und in der
+Massenschranke §3. Der Autor nennt in §4 selbst eine zusaetzliche Hierarchie,
+unter der die Verkuerzung moeglich waere; sie ist nicht die allgemeine S.
+
+3. Festes y ist notwendig, aber kein Nachweis eines uniformen Restes
+=================================================================
+BBIRRS (5.16)--(5.17), S. 18, geben die Entwicklung mit O(G M^2) im eigenen
+Rahmen an; §4 betont beliebige weitere kurzreichweitige Kopplungen. Das ist
+echte positive Unterstuetzung, nicht bloss eine Analogie ohne Textbasis.
+Ein Satz ueber gleichmaessige Beschraenktheit aller Restkoeffizienten auf
+kompakten (G_E,xi)-Mengen fuer die hier promovierte gravitonische Familie
+steht dort jedoch nicht. Vor allem wird damit weder die Abhaengigkeit von
+unabhaengigen {c_i} noch eine moegliche Aenderung der EFT-Gueltigkeitsskala
+oder die Vertauschung mit Helizitaets-, Partialwellen- und Spektralintegralen
+in dieser Familie nachgewiesen. Ein endlicher Grenzwert allein bestimmt
+keine O(g)-Konvergenzrate.
+
+W2 Zeile 10/ERGEBNIS §4 entfernen sqrt(g)-Terme aufgrund ihres Fehlens im
+MHV-BAUMfunktional. Fuer einen O(g)-Rest der vollstaendigen promovierten
+Theorie braucht man auch die entsprechende Auswahlregel fuer Schleifen und
+gemischte Schnitte. Ich behaupte hier keinen konkret nachgewiesenen
+sqrt(g)-Schleifenbeitrag; die Baumbeobachtung reicht bloss als Ausschluss
+aller solchen Beitraege nicht aus. Ein etwaiger o(1)-Rest wuerde nach
+Division durch g auch nicht automatisch zum beanspruchten O(1)-Rest in x.
+
+4. Helizitaet, Regge und q_max: begrenzte, aber reale Uebertragungsluecke
+=====================================================================
+BBIRRS S. 10 konstruiert den h = +/-2-Hamiltonoperator ausdruecklich;
+(4.6), S. 11, gilt operatoriell. Die gravitative Unitaritaet als solche
+deshalb zu bestreiten waere falsch. §5 beginnt jedoch S. 14 ausdruecklich
+mit aeusseren Spin-0-Teilchen, und (5.8)--(5.13) benutzen Legendre-Kerne.
+Die konkrete Matrix-/Helizitaetsversion fuer die beiden B^(1)-Arcs und ihre
+verschmierten Gewichte muss dieser Herleitung noch zugeordnet werden.
+
+(4.10), S. 12, nennt s >> q_max^2. q_max = 0.95 M bei s >= M^2 erfuellt
+diese Hierarchie nicht an der unteren Integrationsgrenze. Plausibel ist der
+vom Autor vorgeschlagene Weg: kleine q-Region eikonal behandeln, regulaeren
+Rest mittels harter Unitaritaet. Die noetige gleichmaessige Restkontrolle
+dieser Zerlegung steht aber nicht in W2. Der kleinere Versuch 0.8 M waere
+ebenfalls nicht von sich aus ein parametrischer Nachweis dieser Hierarchie.
+
+BBIRRS §3.2(d), S. 7--8, (3.9)--(3.12), leitet die verschmierte
+Regge-Eigenschaft ueber die fuehrende Eikonalform her. Universelle weiche
+GR-Faktoren ((3.6)--(3.7), S. 6) unterstuetzen ihre Anwendbarkeit. Dass
+R^3 im weichen Grenzfall impulsunterdrueckt ist, beweist allein aber noch
+keine uniforme grosse-komplexe-s-Schranke der benoetigten
+Helizitaetsfunktionale bei endlich promovierter R^3-Kopplung. Das ist eine
+benannte Luecke, kein von mir gezeigtes Versagen des Regge-Verhaltens.
+
+Engste belastbare Ergebnisformulierung
+=====================================
+'Die Skalierung x = xi log(M/E) promoviert den R^3-Baumbeitrag in die von
+BBIRRS adressierte fuehrende Ordnung. Das numerisch untersuchte reine
+B2/B3-Funktional liefert einen Baumkandidaten c_0 etwa 895. Eine
+kontaktunabhaengige Schranke mit uniformem O(1)-Rest ist damit noch nicht
+hergeleitet. Bedingt auf eine kontrollierte schwache Kurzstreckenhierarchie
+und die angegebene Helizitaets-/Funktional-/Regge-Uebertragung ergibt der
+anschliessende kleine-G_E-Schritt die vorgeschlagene fuehrende Log-Form.'
+
+Gelesene Quellen und Abgrenzung
+==============================
+- coordination/runden-v3/RUNDE-23/m_e-g3/ERGEBNIS.md, vollstaendig,
+  insbesondere §§1,3--6; ARBEITSFELD.md, W2--W4;
+  PLAN.md.eingefroren-20261002-223215, §§2--5.
+- coordination/runden-v3/RUNDE-13/spin2-d4/quellen/2512.13780v2.txt:
+  BBIRRS §3 ab (3.4), insbesondere §3.2(d), vollstaendige §§4.1--4.2,
+  §5 bis (5.18); gedruckte S. 6--18. Primaertext, nicht nur Autorenzitat.
+  Praezise Anker oben: (3.7), (3.9)--(3.12), (4.1)--(4.2), (4.6),
+  (4.8)--(4.10), (5.1), (5.6)--(5.17).
+Die in ERGEBNIS zitierten CHLPSD-/FRS-Schleifenformeln sind hier nicht erneut
+gegen deren Primaertexte oder Rechnungen geprueft. Keine Aussage ueber einen
+bewiesenen Gegenfall, keinen numerisch zertifizierten Positivitaetsbereich.

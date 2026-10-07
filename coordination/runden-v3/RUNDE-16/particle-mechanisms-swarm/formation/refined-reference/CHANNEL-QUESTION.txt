@@ -1,0 +1,54 @@
+M2: welche Schwingung koennte im Kern verbleiben? 2026-10-02
+Eigene Papierableitung aus der bereits geprueften Wirkung; keine neue
+Literaturaussage, kein Eigenwert-/Abklingbefund. Nichtautorlesung offen.
+
+V=(chi²-1)²/4+(1+chi²)|phi|²-|phi|⁴+|phi|⁶/2,
+L=|dphi|²+(dchi)²/2-V. Um Vakuum phi=0,chi=1 gilt
+phi_tt-Delta phi+2phi=0 und deltaChi_tt-Delta deltaChi+2deltaChi=0.
+Beide Vakuummassen sind sqrt(2).
+
+Nur um einen stationaeren Hintergrund phi=exp(i omega t)f,chi=g duerfen
+lineare Moden im mitrotierenden Bild mit reeller Frequenz rho so gedeutet
+werden: die komplexe Feldstoerung besitzt Laborkomponenten omega+rho und
+omega-rho. Die reelle Feldstoerung besitzt rho. Damit lauten die freien
+asymptotischen Wellenzahlen
+ k_plus²=(omega+rho)²-2,
+ k_minus²=(omega-rho)²-2,
+ k_chi²=rho²-2.
+Positiv: propagierender Kanal; negativ: exponentieller Schwanz; exakt0:
+Schwellenfall separat. Fuer 0<omega<sqrt2 und rho>=0 oeffnet der erste
+Seitenkanal bei rho=sqrt2-omega, der neutrale bei sqrt2, der zweite
+Seitenkanal bei sqrt2+omega. Mit omega≈1.018 des Q1100-Referenzzustands:
+ungefaehr .396,1.414,2.432. Diese Zahlen sind gerundete Papierwerte,
+keine gemessenen Spektrallinien.
+
+Pruefbare Anschlussfrage: Existiert im VOLL gekoppelten radialen
+(u,v,c)-Operator eine nichttriviale interne Mode unterhalb der ersten
+Schwelle? Die U1-Phasennullmode zaehlt nicht. Ein solcher reeller lokalisierter Modus strahlt im idealen linearen Problem
+nicht in diese Kanaele ab und ist ein gewoehnlicher gebundener Modus, kein BIC.
+Er garantiert weder nichtlineare
+Dauerhaftigkeit noch die Anregung dieser Mode durch unsere grosse Wolke.
+Oberhalb einer Schwelle muss eine behauptete stille Mode ALLE offenen
+Abstrahlamplituden ausschalten. Nur kleine Dichtevariation genuegt nicht.
+
+Die aktuelle Wolke ist stark nichtstationaer. Ihr Diagnosewert
+omega=Qcore/(2Icore) ist keine nachgewiesene globale Traegerfrequenz;
+insbesondere darf der Endwert≈1.495 NICHT in diese stationaere Kanalformel
+eingesetzt werden, um aus dem transienten Kern neue Spektren abzuleiten.
+R50, Qcore und chiFirstCell sind zusammengesetzte Observablen. Deren
+Frequenzen koennen Harmonische/Schwebungen tragen; eine Linie ist nicht
+automatisch rho. Ohne Feldzeitreihen, stationaere Linearisierung und
+Modenprojektion identifiziert ein FFT-Peak keinen BIC.
+
+Aus den vorhandenen81 Samples mitdtSample=.8 folgt nur eine Zeitreihe
+bisT64. Nyquist-Kreisfrequenz pi/.8≈3.927; charakteristische Aufloesung
+2pi/64≈.098, abhaengig von Fenster/Trend. NichtbandbegrenzteSignale koennen
+aliasen. Das ist keine Aufloesung beliebig schmaler Resonanzbreiten.
+Kein weiterer Physiklauf hier beauftragt. Zuerst gespeicherteDatenplot und
+unabhaengigeLesung; dann gesondert begrenztes gekoppeltesSpektralproblem.
+
+Nach unabhaengiger CHANNEL-REVIEW-Lesung praezisiert: Unterhalb aller
+Schwellen keine lineare Abstrahlung des reellen lokalisierten Modus.
+Null-Nettofluss allein reicht oberhalb der Schwellen nicht: stehende
+Kontinuumswellen sind dadurch nicht ausgeschlossen. Die81-Punkt-DFT
+haette Binabstand2pi/64.8; 2pi/64 bezeichnet nur die grobe Fensteraufloesung.

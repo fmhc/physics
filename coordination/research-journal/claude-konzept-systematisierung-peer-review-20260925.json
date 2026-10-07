@@ -1,0 +1,32 @@
+{
+  "id": "claude-konzept-systematisierung-peer-review-20260925",
+  "time": "2026-09-25T11:42:27+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung; Konzept durch einen Claude-Subagenten (Anthropic, Opus 5.5), 12:57:46 bis 13:41:10 MESZ (gemessen)",
+  "topic": "operations",
+  "status": "proposal",
+  "title": "Konzept: Forschung systematisieren und mit allen Daten fuer externes Peer Review oeffnen; die Bausteine gibt es, es fehlt die Durchsetzung; Pilot KS-1 auf DR3, nicht oeffentlich",
+  "question": "Finn, 25.09.2026: Wie wird unsere Forschungsarbeit systematisiert, und wie koennen wir sie anderen zum Peer Review mit allen Daten zur Verfuegung stellen?",
+  "action": "Konzept auf Grundlage des Veroeffentlichungsplans vom 24.09. und des Methodik-Reviews vom 25.09. Ist-Analyse mit gemessenen Zahlen (Journal, Dashboard, Karten, Git, Waechter). Formate und Lizenzen an den Quellen per WebFetch geprueft. Geheimnis-Scan nur zaehlend. Nichts veroeffentlicht.",
+  "result": "Die Bausteine tragen: Vertragsvorlage, Hashbindung, unveraenderliche Journal-IDs, inhaltsadressierter Evidenzspeicher, mechanisches Materialpaket. Die Durchsetzung fehlt: 86 von 374 Journaleintraegen ohne recorded_at, 0 schreibgeschuetzt, 9 mit supersedes; letzter Commit am 20.09. Der Bash-Waechter ist seit dem 08.09. nicht angeschlossen (settings.local.json ohne PreToolUse-Hook), obwohl CLAUDE.md, AGENTS.md und LOCAL_COMPUTE.md das Gegenteil sagen. Das Modell hinter agent-default ist fuer die Qwen-S0-Runden zu KS-1 nur mittelbar belegt. Lizenzen an der Quelle: Gaia und Hipparcos CC BY-NC 3.0 IGO, DESI CC BY 4.0 mit Danksagung, SPARC ohne Lizenz (nur Zitierbitte), Pantheon+ ohne Lizenzangabe (offen).",
+  "meaning": "Vorschlag in drei Stufen. Stufe 0 (etwa 20 Agentenstunden): ein abgeleiteter Index und zehn mechanische Tore in research_journal.py, build_dashboard.py und einem Regeldiff-Werkzeug, erst eine Woche nur markierend. Stufe 1: ein Review-Paket je Aussage (BagIt, RO-Crate, REUSE, Lesehilfe, Gutachtenvorlage), Pilot KS-1 auf DR3 (schlank etwa 40 MB), erst ein Trockenlauf, dann zwei bis drei von Finn eingeladene Menschen, Uebergabe als Archiv mit sha256. Stufe 2: oeffentlich, nur nach Finns Entscheidungen. 14 neue Entscheidungen fuer Finn, vorn E1 Werkzeugtore, E2 Waechter (mindestens die Doku berichtigen), E6/E7 Pilot und Gutachter, E11 Hash-Zeitstempel fuer KS-1 vor dem 02.12. Einzeln zu sichten: ein unklarer Treffer des Geheimnis-Scans in qa_r21.py und eine Videoseite mit schluesselartigen Zeichenketten.",
+  "sources": [
+    {
+      "path": "coordination/systematisierung-20260925/KONZEPT-SYSTEMATISIERUNG-UND-PEER-REVIEW.md",
+      "sha256": "917965f6e9697651e2e903ef7c88d33fe4e76e9467ca0a0433b1224bc1684a32"
+    },
+    {
+      "path": "coordination/systematisierung-20260925/ANHANG-A-MANIFEST-KS-1-ENTWURF.json",
+      "sha256": "e315cac9c9b8abe01c88c16375d6f5211a0a7b05d5ef65b91d8bbb0669ea5edb"
+    },
+    {
+      "path": "coordination/systematisierung-20260925/ANHANG-B-GUTACHTENVORLAGE.md",
+      "sha256": "90ce6d531ac1386e39521ad3b2e17f7d7c41b084bf7bd5da219aa768b466a901"
+    },
+    {
+      "path": "coordination/veroeffentlichung-20260924/PLAN-VEROEFFENTLICHUNG.md",
+      "sha256": "a0eb0d1c78bd3caf30239f37e587d8369a298c945426067a8f2f7a0aa680d35a"
+    }
+  ],
+  "recorded_at": "2026-09-25T11:42:58.156357+00:00"
+}

@@ -1,0 +1,21 @@
+Root-Ausführungsscope, 2026-10-02, vor Lauf.
+Code3509332b4732c8497e9246855fc7be6254ff1681e3e2e99b823457180aaa1446.
+PLAN c7132a62f9bba186c3fb0c105f9c1c2813adbe890dec39ae0b024cb93f3df6fa.
+HEAD f726adb5c310aed3c24e9e4bef1b490abc81f5e7. Tatsächliche Quellenkopien
+plus SHA256 maßgeblich; kein Commit als QA-Nachweis.
+Lauf ausschließlich nach finaler REVIEW-CODE zum obigen Codehash.
+Syntax auf .69 bestanden; zwei kurze Syntaxaufrufe zusammen unter1CPU-s.
+Gesamtbudget120CPU-s: Lauf prlimit cpu119:119, interne115s; externe
+Wallgrenze180s. 1GiB Adressraum, CPU8,nice19,OMP/OPENBLAS/MKL je1.
+Bestehender lock-klein-cpu2.lock,flock-w45; kein Dienst/Wrapper.
+Alle importierten Quellen und verwendeten NPZ/JSON werden vor Nutzung
+gegen gehashte Vorläufer geprüft. Originalarbeitsdir bleibt unverändert
+außer neuer eigener phase-cycle.py, neuen Zeitquittungen und Ausgabe
+phase-cycle-run. Letztere vor Start nicht vorhanden. Keine Wiederholung
+von Baselines oder alten kontrollierten Dynamikläufen. ResultINCOMPLETE
+bei Abbruch; terminal_complete zusätzlich erforderlich. Kein Retry
+bei Torversagen. Rechenweg CPU, nichtCUDA; Kapazität vorher lesend geprüft.
+Start tatsächlich2026-10-03T00:00:22+02:00 nach Nichtautorfreigabe.
+REVIEW-CODE SHA25632bd7f7199d8df18624c8e021d6facb9e9415d658124431bc5d015687a822942.
+Externes SSH-Prozesshandle65680; neuer Ergebnisordner phase-cycle-run.
+Dies ist der erste und einzige Kontrolllauf dieser neuen Karte.

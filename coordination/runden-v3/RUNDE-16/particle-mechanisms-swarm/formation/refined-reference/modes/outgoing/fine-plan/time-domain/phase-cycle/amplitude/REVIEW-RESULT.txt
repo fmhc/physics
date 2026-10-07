@@ -1,0 +1,86 @@
+Unabhängige Ergebnislesung particle_binding, 03.10.2026. Keine Rechnung.
+RESULT-SHA256: 2fa8c40331f18ed677788629733806109dbc9a622c4d8ff22e065c82979adefd.
+Gebundener finaler Code:
+5e8f8c201f9d0f0090f442f6d6173c9e4f1362cfecbd55fc9ac9f823614dc4c9.
+
+Urteil: RESOLVED_AMPLITUDE_DIFFERENCE_ON_FIXED_GRID ist nach den vorher
+festgelegten empirischen Toren gerechtfertigt. Alle16 Einzelzeilen mit
+je Zeit- und Bandprüfung gelesen:32/32 true; nicht nur Status übernommen.
+Die Einordnung bleibt ein endlicher Amplitudenvergleich auf h=.05.
+
+Vollständigkeit/Anfangsdaten: exakt sechs vereinbarte Arme, je321
+verschiedene QA-Zeiten ab0 bis128; drei vollständige Odd-Paare ebenfalls
+mit321 Samples und Endzeit128. Neue Initial-/Final-/Ringhashes gespeichert,
+alte Resultatbindungen stimmen mit dem geprüften Verlauf überein. Lokale
+Lesung betrifft JSON/Code/Receipt, keine erneute Byteprüfung remote-NPZ.
+s=36.97295271891611, alpha_L=.03697295271891611, alpha_H=.07394590543783222;
+keine Nachnormierung. theta90-Initialhashes sind pro Vorzeichen identisch
+zwischen beiden dt-Stufen. Neue theta90-Qinitial≈1100.000441064605/628,
+theta0≈1100.001093933811; positive quadratische Verschiebungen sind
+ausgewiesen. Start-Q-Identitätsfehler maximal1.416e−16, kanonischer
+Startfehler maximal2.518e−14, deutlich unter1e−10. Kein fixed-Q/E-Vergleich.
+
+Neue numerische Kontrollen: max Edrift6.70694e−9, Qdrift2.22045e−15,
+Bilanz1.97223e−15 gegen1e−5. Max roher Kragenwert2.28763e−9; tatsächlich
+geprüft wird Kragen/Einital gegen1e−8. Alle vollständigen Odd-Paare passen:
+.0008945980 (base90), .0002172485 (time0), .0002214585 (time90), Tor .05.
+Die jeweiligen eigenen Anfangsladungen bleiben erhalten, kein gemeinsamer
+Sollwert1100 wird nachträglich erzwungen.
+
+Auflösung: N ist Norm des feinen DELTA-Felds, d Norm der komplexen
+Felddifferenz Delta_fine−Delta_coarse. Die relative Größe d/N ist somit
+keine Differenz bloßer Normen. Größter d/N-Zeitwert .00906225699 liegt
+bei theta90,Fenster0,Schale40..45: N=1.31092116e−8,
+d=1.18799045e−10, 10d=1.18799045e−9,100eta=2.84026246e−13.
+Größter Bandwert .00354571606 liegt bei theta90,Fenster1,Schale45..50:
+N=1.86554499e−9,d=6.61469282e−12,10d=6.61469282e−11,
+100eta=6.22137391e−14. Beide liegen klar unter der prospektiven
+d/N-Grenze .1; nicht als neue .01-Grenze umetikettieren.
+
+Alle übrigen Zeilen erfüllen ebenfalls N>10d und N>100eta mit positiven,
+endlichen Größen. Zeit-N insgesamt1.3109e−8..4.9946e−8, Band-N
+1.3935e−9..6.6233e−9. Selbst der kleinste Band-N ist weit größer als
+die größte gespeicherte Band-Auswertereserve7.503e−14; entsprechend
+Zeit-N gegenüber maximal3.104e−13. Keine winzige Nullgröße besteht nur
+durch ein falsch benanntes Flag. eta ist jeweils Maximum beiderdt-Hüllen;
+64eps bleibt Sensitivität der Auswertung und kein akkumuliertes Fehler-
+zertifikat. Der kausale Referenzfehler gehört nicht zu diesem Delta-Test.
+
+Ressourcen: interne CPU108.39143s, äußere Quittung107.92User+.68System
+=108.60CPU-s;108.74s Wandzeit,694600KiB maximalRSS,Exit0. CPU8/nice19,
+ein Thread,160CPU-Gesamtrahmen und1GiB eingehalten. Kein Folgeversuch.
+
+Reichweite und vorgeschlagener deskriptiver Referenzvergleich:
+||Delta_D||/||C_ref|| bzw. ||Delta_H||/||H_ref|| sind als Größenordnung
+zulässig, sofern exakt passende Schale, Fenster, phi-Komponente sowie
+Zeit- bzw. Bandnorm gepaart werden. Die vorherigen Referenznormen sind
+über beide dt-Zeilen identisch; nur einmal je Kombination verwenden.
+Die ursprünglichen Hashes und beide absoluten Größen ausweisen. Das
+ist kein neues Gate und kein Ersatz für den bestandenen direkten Delta-
+Zeitschrittvergleich. Keine Normdifferenz als Fehlerzerlegung deuten.
+
+Insbesondere zeigt ein kleiner Delta/Referenz-Wert nur, wie wenig sich
+die skalierte Antwort zwischen diesen zwei endlichen Amplituden ändert.
+Er beweist NICHT, dass die frühere bis≈.4% Targetabweichung ausschließlich
+numerisch war: amplitudenunabhängige Modell-/Ritz-/Baseline-/Referenz-
+Abweichungen bleiben möglich, und eine finite Differenz begrenzt ohne
+weitere Annahmen nicht den Abstand zu alpha=0. Ein quartischer Koeffizient,
+Exponent oder asymptotischer Bereich wird aus zwei Amplituden nicht
+isoliert. Phasen-/Hintergrundanpassung und unterschiedliche Start-Q/E
+gehören weiterhin zur Antwort. Keine h-Konvergenz, Lebensdauer, neue
+stationäre Strahlung oder BIC-Stabilität; alte Status bleiben unverändert.
+
+Abschließender Dokumentnachtrag: ERGEBNIS.txt und alle acht Zeilen von
+RELATIVE-SCALE.json gelesen, keine neue Berechnung. Zuordnungen D/DC bzw.
+H2, jeweils zwei Fenster und Schalen, stimmen mit den zuvor gelesenen
+Normtabellen überein. Angegebene Bereiche3.28..5.31ppm (Zeit) und
+2.81..7.91ppm (Band) passen zum deskriptiven JSON; keine neuen Tore.
+Die umgekehrte Dreiecksungleichung
+ | ||EH−C|| − ||EL−C|| | <= ||EH−EL||
+ist für dieselbe Referenz und dieselbe Norm korrekt, auch nach der
+linearen Bandabbildung. Sie begrenzt hier die Änderung des Targetrests
+zwischen den beiden gemessenen Amplituden, relativ zur Referenznorm.
+Sie identifiziert keine Restfehlerursache und extrapoliert nicht nach
+alpha=0. Root grenzt genau dies ausdrücklich ein; kein Einwand gegen
+die neuen Berichtssätze. 'Wenige ppm' ist keine Genauigkeitszusage für
+das vollständige Target oder eine Kontinuumslösung.

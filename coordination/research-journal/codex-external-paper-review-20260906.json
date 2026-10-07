@@ -1,0 +1,46 @@
+{
+  "id": "codex-external-paper-review-20260906",
+  "time": "2026-09-06T17:41:29Z",
+  "time_kind": "completed",
+  "author": "codex-db · separater Papier-Review; Übernahme durch Codex",
+  "topic": "theory",
+  "status": "reported",
+  "title": "Papier-Review: Bias-Ableitung geprüft, Fehler im Qwen-Gutachten erkannt",
+  "question": "Welche Aussagen des Ergebnispapiers halten einer getrennten Why-Gegenprüfung stand?",
+  "action": "Astra und Qwen erhielten dasselbe Ergebnispapier und maximal drei Why-Stränge mit fünf Stufen. Astra lieferte einen eigenen exakten Symboliklauf auf .69/CPU; Qwen arbeitete ohne Werkzeuge. Kein neuer CUDA-Lauf.",
+  "result": "Astra bestätigt den kubischen Beginn des Bias-Kraftkontrasts im angegebenen Modell. Der koordinierende Review dokumentiert dagegen mehrere Fachfehler in Qwens positivem Urteil, unter anderem eine zu allgemeine Phasenbehauptung und die Verwechslung zweiter und dritter Ableitung. Diese Zustimmung zählt nicht als zusätzlicher unabhängiger Beweis.",
+  "meaning": "Drei Kandidaten sind innerhalb des Modells gestützt, drei bleiben offen. Unabhängige numerische Reproduktion, mechanische Umsetzung und eine stärkere Naturhypothese sind nicht nachgewiesen. Dies ist ein separater Papier-Review mit anderem Prüfzugang als der vorherige Astra/Qwen-Pilot.",
+  "sources": [
+    {
+      "path": "model-lab/paper-review/synthesis.md",
+      "label": "Gesamtauswertung des Papier-Reviews",
+      "sha256": "abc0ba4de0a187bb4bfd789e576dd638323cd0829d7c1fd07a803d053084b456"
+    },
+    {
+      "path": "model-lab/paper-review/review-quality.json",
+      "label": "Konkrete Fehler und Grenzen der Gutachten",
+      "sha256": "17009299a528492764f05acdc8c8ac64ecbc61174df74a1d6e91e210221128d7"
+    },
+    {
+      "path": "model-lab/paper-review/candidates.json",
+      "label": "Sechs Kandidaten und Gegenversuche",
+      "sha256": "736317cb950a157e45b073ef2bdb1a9eed273431fee48154037da23d898e0118"
+    },
+    {
+      "path": "model-lab/paper-review/astra/exact-check-output.json",
+      "label": "Bereits ausgeführter exakter Symboliknachweis",
+      "sha256": "e5bc15d145af8842a9781e2a07740b70238c2ff4002a94e0a3ed10db7d0f1273"
+    },
+    {
+      "path": "model-lab/paper-review/completion.json",
+      "label": "Original-Abschluss und Provenienz",
+      "sha256": "e36c5d0604a5bb2c7fe706fe186992e92f3a9b4df7386c97f863cd39c73d3805"
+    },
+    {
+      "path": "coordination/research-engine/external-reviews/paper-review-v1-e36c5d0604a5/receipt.json",
+      "label": "Unveränderliche Übernahme als externer Review",
+      "sha256": "464b3e6618346c5a95ce622124d6852644ee2cd86931c2d577fc6fb8c8484346"
+    }
+  ],
+  "recorded_at": "2026-09-06T17:48:31.852291+00:00"
+}

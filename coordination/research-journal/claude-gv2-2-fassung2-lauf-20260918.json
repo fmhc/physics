@@ -1,0 +1,41 @@
+{
+  "id": "claude-gv2-2-fassung2-lauf-20260918",
+  "time": "2026-09-18T16:28:42+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5); Ausfuehrung Claude-Subagent (Anthropic, Opus 5)",
+  "topic": "theory",
+  "status": "open",
+  "title": "GV2.2 Fassung 2 endet mit B5: die Windung wirkt bis auf die letzte Gleitkommastelle gar nicht, ist aber nach den eigenen Aufloesungsregeln nicht als Nullbefund buchbar",
+  "question": "Haengt das Fallmass D_w ueber ein Viertelumlauf-Zeitfenster von der Windung w, der Punktzahl n und dem Kreisradius R/a ab, und zwar staerker als eine kinematische Ordnung in R/a erklaert?",
+  "action": "Vertrag GV2.2 Fassung 2 (S0, Startsignal Finn 18.09.2026 'Weiter') auf fmh@192.168.178.69 gerechnet, User-Unit fmhc-physics-gv22f2-20260918, Torch 2.5.1 float64 auf der Torch-Geraetenummer cuda:2, jedes der 22 Pakete unter flock auf gauntlet-gpu.lock; die 80-bit-Referenz K4 auf der CPU derselben Unit in numpy longdouble ohne Lock. Reine Rechenzeit 625,9 s, Lockwartezeit 0,1 s. 20 Arme (5 Konfigurationen x 4 Radien) je radiale Achse und 24 Fibonacci-Achsen, drei Schrittweiten tau/200, tau/400, tau/800. Zentrale Aenderung gegen Fassung 1: M2 integriert die Verschiebung xi = x - x0 statt des Ortes; M1 ist nur noch Kontrolle. Beurteilt zuerst die Kontrollen, dann die Aufloesungsbuchhaltung, dann der Ausgang.",
+  "result": "Ausgang B5 (unentscheidbar): 0 von 4 Radien und 0 von 20 Armen sind nach K5 aufgeloest, q ist mit R^2 < 0,9 nicht bestimmbar. Gemessen wurde bei allen vier Radien eine Windungsdifferenz von exakt null im Rahmen der Maschinengenauigkeit: groesstes |Delta_2| und |Delta_4| = 4,44e-16 bei Werten D von rund 3, Delta_2' und Nu ebenso. Die Kontrollen K0 (Ablenkung 2,000295e-4, relativer Fehler 1,47e-4), K1 (Paritaet, Abweichung exakt 0), K2 (Reproduktion der Zeile GV2: 2,999992500021729, Abweichung 0, Fibonacci-Spannweite 0,503250 bis 2,847471) und K4 (80-bit-Referenz, groesster radialer Boden 4,54e-11 gegen Gate 3e-7, 20 von 20) sind bestanden; K6 bindet M2 an die unabhaengig gerechnete Groesse M1 (Richardson-Extrapolation 2,99999250005 gegen M1 2,99999250002, relative Abweichung 1,08e-11). Verfehlt sind K3 (Gate bei 366 von 500 Achsen, Ordnungsfenster 4 bis 64 nur bei 51 von 500) und die Bodenregel (103 von 500 Achsen) — nach Vertrag ausdruecklich kein T, sondern eine Frage der Aufloesung.",
+  "meaning": "Die inhaltliche Zahl ist deutlich: der Umlaufsinn der Lichtpunkte wirkt auf das Fallmass nicht, auch nicht im Zeitfenster, und damit ist die Vorhersage der UEBERTRAGUNG auch fuer M2 ohne Stuetze, nachdem Abschnitt 0a sie fuer die t=0-Kennzahl bereits analytisch ausschliesst. Buchen laesst sich das trotzdem nicht als Ausgang A, weil der Vertrag fuer A zusaetzlich verlangt, dass an jedem Arm die Rechengenauigkeit nachgewiesen ist: bei kleinen Radien ist der Fallweg auf den schraegen Achsen zu klein gegen den Rundungsboden, bei grossen Radien liegt der Verfahrensfehler von DP5 bereits unter dem Boden, sodass sich die Schrittweitenkonvergenz nicht mehr ordnungsgemaess zeigen laesst. Genau davor warnt der Vertrag in Abschnitt 0d selbst; die Aufloesungsregel ist also nicht nachtraeglich gerissen, sondern hat vorab gegriffen. Es wurde nichts an Schwellen, Radien oder Kontrollen geaendert. Keine Registerzeile; die Zitiersperre aus Abschnitt 4 bleibt bestehen, bis eine unabhaengige Implementierung von M2 aus einem anderen Haus vorliegt. Was eine Fassung 3 aendern muesste, steht als Vorschlag im Laufordner.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260918/gv2-2-f2-lauf/BERICHT-GV2-2-F2.md",
+      "label": "Bericht mit vollem Kopf, Kontrollen, Aufloesung, Ausgang",
+      "sha256": "699607e6555fb8c37a3b4a2023a92ab6e47ba2d2f87cad9ea7975f904c786706"
+    },
+    {
+      "path": "coordination/vertraege-20260918/gv2-2-f2-lauf/ERGEBNIS-GV2-2-F2.json",
+      "label": "Ergebnisdatei mit allen Armen, Achsen und Boeden",
+      "sha256": "ae46ca1a68b470012aa8ce9a9e5a6309c2e4ea79cc2d1b27ba0f3e8e3c737894"
+    },
+    {
+      "path": "coordination/vertraege-20260918/gv2-2-VERTRAG-fassung2.md",
+      "label": "Vertrag Fassung 2, Kriterien vorab",
+      "sha256": "94fcf33358ea584420c908eb38fb4b91210bdf8202208d902ee82bc191dcbd72"
+    },
+    {
+      "path": "coordination/vertraege-20260918/startsignal-gv2-2-f2.txt",
+      "label": "Startsignal Finn 18.09.2026",
+      "sha256": "59d7f2863dc50ad4aebd7054215bbcec4747970dbf158560d30f9d485c015d7e"
+    },
+    {
+      "path": "coordination/vertraege-20260918/gv2-2-f2-lauf/VORSCHLAG-GV2-2-FASSUNG3.md",
+      "label": "Vorschlag fuer eine Fassung 3",
+      "sha256": "1256000c4524c163e4136248133a395d83f7e969a04fda05220c8a02933443ed"
+    }
+  ],
+  "recorded_at": "2026-09-18T16:38:12.954728+00:00"
+}

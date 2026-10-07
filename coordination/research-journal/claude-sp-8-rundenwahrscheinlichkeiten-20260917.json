@@ -1,0 +1,56 @@
+{
+  "id": "claude-sp-8-rundenwahrscheinlichkeiten-20260917",
+  "time": "2026-09-17T03:22:48+02:00",
+  "time_kind": "completed",
+  "author": "Claude-Subagent (Anthropic, claude-fable-5-1): Vertrag, Skripte, S1-Laeufe; claude-primary (Anthropic, Opus 5): Gesamtbericht nachgeholt, Auswertung nach Vorab-Kriterien; Idee Finn (Ideation Abschnitt 9)",
+  "topic": "theory",
+  "status": "reported",
+  "title": "SP-8 Rundenwahrscheinlichkeiten gerechnet: Teil A (Bit-Modell) Ausgang B, Kreisstrom kommt aus der Reihum-Uhr, nicht aus der Windung; Teil B (Doppelmuldenkette) Ausgang T (KB0), thermische Wechsel schon ohne Drehung, gedrehte Kraefte entgleisen",
+  "question": "Teil A: Erfuellen die 3x3-Uebergangsmatrizen P der Bedienfolge im SP-6-Bit-Modell bei Windung w = 0 das Kolmogorov-Kriterium (Potential) und bei w != 0 nicht (Kreisstrom), und ist P bei w = 0 orthostochastisch, bei w != 0 nur unistochastisch mit zu w monotoner Phase? Teil B: Folgt die Wechselwahrscheinlichkeit p(theta, eps) zweier ueber theta gemischter Kanaele einer Doppelmuldenkette a sin^2 theta, a theta/(pi/2) oder a exp(-b (1 - sin theta)/eps)?",
+  "action": "Vertrag SP-8 mit Vorab-Feststellungen FA1-FA7 und FB1-FB3. S1 auf .69 CPU (Regel-10-Ausnahme, kein GPU-Lock) als User-Units fmhc-physics-sp-8a-20260917 (8 Konfigurationen x 200 Seeds x 20000 Takte, 3x3-Fits; 01:16-01:22Z) und fmhc-physics-sp-8b-20260917 (14 Konfigurationen x 100 Seeds, BAOAB h = 0,005, T = 500, plus eps-0-Kontrolle; 01:16-01:21Z), beide Exit 0. Weil Teil B vor Teil A fertig war, fehlte der Gesamtbericht; claude-primary hat ihn mit unveraendertem Skript nachgeholt (Unit fmhc-physics-sp-8-bericht-20260917) und gegen die Vorab-Kriterien geprueft. Nichts wurde neu gerechnet.",
+  "result": "Teil A Ausgang B (Flags B-a, B-c, B-d, B-e bei rho 0,9 und 1,2). K(w=0) = 4,015 (1714 SE) bzw. 13,67 (566 SE), K(w=1) ebenso gross; P fuer w = 0, 1, 2 bis auf 1e-4 gleich. r_O(w=0) = 0,366/0,230, r_U = 0,319/0,226; |phi| = 0,612 bzw. 1,054, konstant innerhalb der Blockstreuung. Kontrollen K0-K3 bestanden (Permutation exakt, Zufallsscheduler K = 0,2 SE, r_U = 1e-4). Teil B Ausgang T wegen KB0: p(theta=0) = 0,155 (eps 0,02) und 0,978 (eps 0,05) statt 0, wie FB3 vorhergesagt. KB1 (eps = 0 exakt stationaer) und KB3 bestanden. Ohne T-Vorrang B: kein Gesetz unter 5 % bei beiden eps (V 0,92, S 0,77, K 0,083/0,048). Fuer theta > 0 entgleisen 1200/1200 Laeufe nach 3,6-41 Zeiteinheiten; p = 0,90-1,00 stammt ueberwiegend aus eingefrorenen Endzustaenden. Der Barrierenfit endet bei b = 0, also bei einer Konstanten.",
+  "meaning": "HYPOTHESE-Ebene, keine Teilchendeutung. Im Bit-Modell ist die Bedienfolge ein Kreisverkehr, den der Round-Robin-Takt selbst erzeugt; die Windung w verschiebt nur Phasen zwischen Spielern und taugt hier nicht als Quelle eines Bahnwechsel-Wirbels. Die Matrizen sind nicht doppelt-stochastisch und daher weder als reelle Drehung noch als unitaere Transformation gut darstellbar. In der Kette misst die beauftragte Wechselwahrscheinlichkeit bei theta = 0 thermische Aktivierung und bei theta > 0 das Aufschaukeln der nicht-konservativen gedrehten Kraft, nicht die Vektordrehung. Die Frage nach Potential oder Vektortransformation bleibt in beiden Modellen unbeantwortet. Folgeideen (Scheduler ohne Uhr; SP-8c mit konservativer gedrehter Doppelmulde) sind nicht beauftragt. S2, S3 und Registerzeile offen.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260916/sp-8-lauf/BERICHT-SP-8.md",
+      "role": "Gesamtbericht S1 mit Auswertung",
+      "sha256": "53d65d64b6a298b90b253f34212dedd9f69ecf44b0ff1c89bc2c1969cf1b596a"
+    },
+    {
+      "path": "coordination/vertraege-20260916/sp-8-lauf/ERGEBNIS-SP-8A.json",
+      "role": "Ergebnis Teil A",
+      "sha256": "38f22408f572a243c19fb66ca5154ac39e32dee2f8732672aa0b6adfd47ee39b"
+    },
+    {
+      "path": "coordination/vertraege-20260916/sp-8-lauf/ERGEBNIS-SP-8B.json",
+      "role": "Ergebnis Teil B",
+      "sha256": "55c84a5d04b6a6b95a1d8fbc205a27569a8a49fe1330cee35d9f69fcc7cf7c27"
+    },
+    {
+      "path": "coordination/vertraege-20260916/sp-8-rundenwahrscheinlichkeiten-VERTRAG.md",
+      "role": "Vertrag",
+      "sha256": "c51a566394426102a41ddf157d6857dab682cace0884e1d7acd3981daaf7e1b8"
+    },
+    {
+      "path": "coordination/vertraege-20260916/startsignal-sp-8.txt",
+      "role": "Startsignal",
+      "sha256": "9a51bc4d661308e187af54eb94313a6628f739309c8ca6795bb813329c0302e1"
+    },
+    {
+      "path": "coordination/vertraege-20260916/sp-8-lauf/sp_8a.py",
+      "role": "Skript Teil A",
+      "sha256": "084424c5ea9058caa9a06085e85eda04ac4eb25f3e7a3561052a5b098efef258"
+    },
+    {
+      "path": "coordination/vertraege-20260916/sp-8-lauf/sp_8b.py",
+      "role": "Skript Teil B",
+      "sha256": "af6ef35c8d07b0cb97aefb1040d557bb710e261747db4f1b8c0fcbc604dbabb2"
+    },
+    {
+      "path": "coordination/ideen-20260916/ANALOGIE-SPIELTISCH.md",
+      "role": "Ideation Abschnitt 9",
+      "sha256": "9a29a92727a41f575cc178ab8922a029b10d06396693de45b86465c7457674b2"
+    }
+  ],
+  "recorded_at": "2026-09-17T01:40:36.469936+00:00"
+}

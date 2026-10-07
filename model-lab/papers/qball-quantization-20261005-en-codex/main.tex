@@ -1,0 +1,339 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=25mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,amsmath,amssymb,booktabs,microtype}
+\usepackage[hidelinks]{hyperref}
+\newcommand{\dd}{\mathrm d}
+\newcommand{\ii}{\mathrm i}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\R}{\mathbb R}
+\title{Quantizing the sextic Q-ball sector:\\charge sectors, collective phase and a lattice matching prescription}
+\date{5 October 2026 --- English working draft v0.1}
+\begin{document}
+\maketitle
+\begin{abstract}
+We formulate a canonical quantum version of the classical complex scalar
+model with dimensionless potential $U(s)=s-s^2+s^3/2$.
+On a fixed finite spatial lattice, a positive mass matrix and a nonnegative
+stiffness matrix define a Hamiltonian with exact integer global charge sectors.
+An explicit action normalization $\zeta$ relates the classical charge to
+integer quantum charge through $q=\zeta n$; the leading semiclassical energy
+is $E_{\mathrm{cl}}(\zeta n)/\zeta$ rather than an unqualified evaluation at $n$.
+Quantization of the collective phase reproduces this relation. We give the
+quadratic rotating-frame Hamiltonian, identify its charge and symmetry
+constraints, and specify a correlator comparison for the separate numerical
+quantization effort. Spatial dimension changes the field theory's power
+counting, profiles and renormalization requirements. This draft establishes
+a regulated quantum formulation and a matching prescription; it reports no
+new quantum spectrum, binding energy, loop mass or experimental particle identification.
+\end{abstract}
+
+\noindent\textbf{Provenance and status.}
+This is a new English derivation, not a translation of the existing Q-ball
+ladder paper or the coordinator's broader particle-model manuscript.
+The potential and charge sign follow the current project convention.
+The separate Claude task QUANT-1 proposes Euclidean correlator measurements;
+its results are not assumed or reproduced here. Attribution remains
+
+\section{What is being quantized}
+We first quantize the scalar field on a fixed background. The dimensionless
+coordinates are $\tau=m t$, $y=m x$, with $\hbar=c=1$ unless stated otherwise.
+Let $d$ denote spatial dimension, and define
+\begin{equation}\label{eq:action}
+ S=\frac1\zeta\int\dd\tau\,\dd^dy\,
+ \left[|\partial_\tau\phi|^2-|\nabla\phi|^2-U(|\phi|^2)\right],
+ \qquad U(s)=s-s^2+\tfrac12s^3,\quad \zeta>0.
+\end{equation}
+Here $\zeta$ is part of the quantum model. Multiplying a classical action
+by a constant leaves its classical equations unchanged, but changes the
+weight $\exp(\ii S)$ and the size of quantum fluctuations. Taking
+$\zeta=1$ defines a possible bare pilot; it is not a weak-coupling argument.
+No value of $m$ in physical units or phenomenological value of $\zeta$ has
+been determined by the present classical project.
+
+For a canonically normalized dimensionful field,
+\begin{equation}\label{eq:rescale}
+ \Phi=\frac{m^{(d-1)/2}}{\sqrt\zeta}\phi,
+ \quad V(\Phi)=m^2|\Phi|^2-\lambda_4|\Phi|^4+\lambda_6|\Phi|^6,
+ \quad \lambda_4=\zeta m^{3-d},\quad
+ \lambda_6=\tfrac12\zeta^2m^{4-2d}.
+\end{equation}
+These are bare, tree-level relations at the specified regulator. Holding
+renormalized parameters fixed while changing the regulator requires matching.
+The equivalent loss of action normalization under classical field rescaling
+is explicitly discussed for a sextic model in Ref.~\cite{xie}, Sec.~2.5,
+Eqs.~(30)--(31). Its charge sign and radial amplitude conventions differ
+from ours; numerical charges are not imported.
+
+This step introduces standard quantum mechanics through the Hilbert space
+and commutation relations below. It does not derive quantum mechanics from
+classical geometry. The dynamical Regge and Maxwell sectors of the separate
+network proposal are not included in this scalar Hamiltonian.
+
+\section{An explicit regulated quantum Hamiltonian}
+Write $\phi_i=(q_{1i}+\ii q_{2i})/\sqrt2$ on $N_s$ spatial sites. Choose
+positive site volumes $w_i$, $W=\operatorname{diag}(w_i)$, and a real symmetric
+nonnegative stiffness matrix $K$ representing the gradient quadratic form.
+Boundary conditions and the geometry are fixed. Then
+\begin{align}
+ L&=\frac1\zeta\left[\frac12\sum_{a=1}^2\dot q_a^T W\dot q_a
+ -\frac12\sum_{a=1}^2q_a^TKq_a-\sum_iw_iU(s_i)\right],
+ &s_i&=\frac{q_{1i}^2+q_{2i}^2}{2},\\
+ p_a&=\zeta^{-1}W\dot q_a,\qquad
+ [\hat q_{ai},\hat p_{bj}]=\ii\delta_{ab}\delta_{ij},\qquad
+ \mathcal H=L^2(\R^{2N_s}),\\
+ \hat H/m&=\frac\zeta2\sum_{a=1}^2\hat p_a^TW^{-1}\hat p_a
+ +\frac1{2\zeta}\sum_{a=1}^2\hat q_a^TK\hat q_a
+ +\frac1\zeta\sum_iw_iU(\hat s_i).\label{eq:ham}
+\end{align}
+The coordinates commute, so $U(\hat s_i)$ has no ordering ambiguity in this
+Cartesian representation. The identity
+$U(s)=s[(s-1)^2+1]/2\geq0$ and the positive kinetic terms give a lower-bounded
+finite-lattice Hamiltonian. This is a specified quantum system even before
+its eigenvalues are computed. Continuum renormalization is a further problem.
+A consistent non-diagonal positive mass matrix could replace $W$ with the
+corresponding inverse in the kinetic term; a proposed irregular lattice must
+supply its actual matrices, not reuse cubic-grid weights without checking.
+
+Global phase rotations have the generator
+\begin{equation}\label{eq:charge}
+ \hat N=\sum_i(\hat q_{1i}\hat p_{2i}-\hat q_{2i}\hat p_{1i}),
+ \qquad [\hat H,\hat N]=0,\qquad [\hat N,\hat\phi_i]=\hat\phi_i.
+\end{equation}
+Single-valued wavefunctions under a $2\pi$ global rotation give
+$n\in\mathbb Z$. These are charges, not a fixed number of constituents:
+particle--antiparticle pairs can occur within one charge sector.
+The exact projector and sector partition function are
+\begin{equation}\label{eq:projector}
+ P_n=\frac1{2\pi}\int_0^{2\pi}\dd\theta\,
+ e^{\ii\theta(\hat N-n)},\qquad
+ Z_n(T)=\Tr(P_n e^{-T\hat H/m}).
+\end{equation}
+The observable sector energy is measured relative to the vacuum:
+\begin{equation}
+ M_n/m=-\lim_{T\to\infty}T^{-1}\log[Z_n(T)/Z_0(T)].
+\end{equation}
+This formula is a definition, not a proposed efficient Monte Carlo estimator.
+
+\section{Integer charge and the collective phase}
+For $\phi=e^{\ii\omega\tau}f(y)$ with real localized $f$,
+\begin{equation}
+ q=2\omega I,\quad I=\int f^2\dd^dy,\quad
+ E_{\mathrm{cl}}=\omega^2I+\int[|\nabla f|^2+U(f^2)]\dd^dy.
+\end{equation}
+The classical solution's physical charge and energy are
+\begin{equation}\label{eq:matching}
+ n=\frac q\zeta,\qquad \frac{E_{\mathrm{physical}}}m=
+ \frac{E_{\mathrm{cl}}}\zeta.
+\end{equation}
+To derive the same result collectively, freeze a profile temporarily and
+allow $\phi=e^{\ii\alpha(\tau)}f$. If
+$\mathcal V[f]=\int[|\nabla f|^2+U(f^2)]\dd^dy$, then
+\begin{equation}
+ L_\alpha=\zeta^{-1}(I\dot\alpha^2-\mathcal V),\quad
+ p_\alpha=2I\dot\alpha/\zeta,\quad
+ \hat p_\alpha=-\ii\partial_\alpha,\quad
+ \psi_n(\alpha)=\frac{e^{\ii n\alpha}}{\sqrt{2\pi}}.
+\end{equation}
+Consequently the frozen-profile rotor energy is
+\begin{equation}
+ \frac{H_\alpha}m=\frac{\zeta n^2}{4I}+\frac{\mathcal V}\zeta.
+\end{equation}
+Minimizing over profiles at fixed $n$ is precisely the classical fixed-charge
+variational problem at $q=\zeta n$. If the chosen classical solution is the
+relevant lowest-energy configuration in that charge sector and the
+semiclassical expansion is controlled, this gives
+\begin{equation}\label{eq:mass}
+ \frac{M_n}m=\frac1\zeta E_{\mathrm{cl}}(\zeta n)
+ +\Delta_1(\zeta n;\Lambda,\text{matching})+O(\zeta),
+\end{equation}
+For a merely local or metastable branch, the right-hand side instead
+describes that branch's semiclassical energy; it is not automatically the
+lowest sector energy $M_n$ defined by Eq.~\eqref{eq:projector}. Competing
+single-object and multi-object configurations must be compared. In that
+case the spacing formula below also applies only to the selected branch.
+Here $\Delta_1$ denotes a renormalized vacuum-subtracted fluctuation
+correction, not yet evaluated. This expansion is at fixed classical
+$q=\zeta n$ as $\zeta\to0$, hence $n\to\infty$.
+It is not a controlled expansion at $n=2$ or $3$ simply because a classical
+profile exists at another charge.
+
+In a smooth semiclassical branch with $\dd E_{\mathrm{cl}}/\dd q=\omega$,
+\begin{equation}\label{eq:spacing}
+ \frac{M_{n+1}^{(0)}-M_n^{(0)}}m
+ =\omega+\frac\zeta2\frac{\dd\omega}{\dd q}+O(\zeta^2)
+ =\omega+\frac\zeta{2q'(\omega)}+O(\zeta^2).
+\end{equation}
+This expansion fails near a turning point where $q'(\omega)=0$ and cannot
+replace a finite difference across a branch change. Negative curvature
+between charge sectors is not by itself a negative oscillation mode within
+one fixed-charge sector. The expression concerns leading classical masses;
+loop corrections change the spacing at the next relevant order.
+
+An exact charge eigenstate has $\langle\hat\phi\rangle=0$ by the charge
+selection rule. The familiar rotating classical mean field is therefore a
+semiclassical description with a phase reference, not literally the one-point
+function of an exact fixed-charge eigenstate. Its density and correlation
+functions can still encode the localized object. In a translation-invariant
+system a momentum eigenstate also has a delocalized center of mass; a localized
+Q-ball is described by a collective-coordinate wavepacket or conditional
+internal observables. On a finite lattice translations have only the lattice
+symmetry and continuum center-of-mass formulas need a convergence check.
+
+\section{Quantizing internal fluctuations without double counting}
+In the continuum classical background convention, put
+\begin{equation}
+ \phi=e^{\ii\omega\tau}\left[f+\sqrt\zeta\,(u+\ii v)/\sqrt2\right],
+ \quad L_-=-\Delta+1-2f^2+\tfrac32f^4-\omega^2,
+ \quad L_+=-\Delta+1-6f^2+\tfrac{15}{2}f^4-\omega^2.
+\end{equation}
+The quadratic rotating-frame Lagrangian and momenta are
+\begin{align}
+ L^{(2)}&=\int\dd^dy\left[\tfrac12(\dot u^2+\dot v^2)
+ +\omega(u\dot v-v\dot u)-\tfrac12uL_+u-\tfrac12vL_-v\right],\\
+ p_u&=\dot u-\omega v,\qquad p_v=\dot v+\omega u.
+\end{align}
+Its Hamiltonian is the quadratic part of $H/m-\omega N$:
+\begin{equation}\label{eq:k2}
+ K^{(2)}=\frac12\int\dd^dy\left[(p_u+\omega v)^2+(p_v-\omega u)^2
+ +uL_+u+vL_-v\right].
+\end{equation}
+It generates $\ddot u-2\omega\dot v+L_+u=0$ and
+$\ddot v+2\omega\dot u+L_-v=0$. Diagonalizing only $L_+$ or adding
+independent sideband frequencies misses the canonical mixing.
+A mode basis must preserve the symplectic form
+$\int(\delta u\wedge\delta p_u+\delta v\wedge\delta p_v)$.
+
+The phase zero mode and the $d$ translation modes are collective coordinates,
+not ordinary positive-frequency oscillators. The linear charge constraint is
+\begin{equation}
+ \delta N=\sqrt{2/\zeta}\int f(2\omega u+\dot v)\dd^dy=0.
+\end{equation}
+Charge must also be treated at the order needed for the energy calculation;
+a linear constraint alone is not a complete one-loop fixed-charge prescription.
+A negative or growing physical mode invalidates a stable harmonic-vacuum
+interpretation for that background. A classical embedded bound mode must be
+normalizable and correctly normalized, but its linear trapping does not by
+itself suppress nonlinear or quantum decay channels.
+
+For a background that passes the constrained stability checks, the positive
+canonical modes can be promoted to creation and annihilation operators.
+The resulting zero-point sums require continuum scattering contributions,
+vacuum subtraction and counterterms in the same regulator and matching
+scheme. No number for $\Delta_1$ follows merely from the existing BIC frequency.
+Ref.~\cite{graham} develops quantum corrections for a different potential;
+its reported correction is not imported into this sextic model.
+
+\section{A matching prescription for QUANT-1}
+Euclidean zero-density sampling and charged correlators can determine sector
+energies without inserting a real chemical potential into the sampling
+weight. This is spectroscopy, not a simulation of real-time collisions.
+Choose an operator $O_n$ with $[N,O_n]=nO_n$, and a basis of local and
+spatially extended operators if possible. At zero temperature,
+\begin{equation}
+ C_n(t)=\langle0|O_n^\dagger(t)O_n(0)|0\rangle
+ =\sum_a|\langle n,a|O_n|0\rangle|^2
+ e^{-[E_{n,a}-E_0]t/m}.
+\end{equation}
+A missing plateau can mean poor overlap or excited-state contamination;
+it does not demonstrate the absence of a bound state.
+
+The following information is part of the comparison, not optional metadata:
+$\zeta$, bare versus renormalized mass and couplings, spatial geometry,
+spacings and volumes, time extent, operator definitions, autocorrelation,
+uncertainty estimates and the fitting window. For the classical comparison
+in Eq.~\eqref{eq:mass}, use the same matched theory and $q=\zeta n$.
+The physical one-particle mass $M_1$ must be measured rather than silently
+identified with the bare coefficient $m$.
+
+An exact free-field check is particularly useful. If $\Phi_s$ is a fixed
+linear spatial smearing of a free complex Gaussian field and
+$O_n=\Phi_s^n/\sqrt{n!}$, Wick contraction gives
+\begin{equation}\label{eq:wick}
+ C_n(t)=G_s(t)^n,\qquad
+ G_s(t)=\langle\Phi_s^\dagger(t)\Phi_s(0)\rangle.
+\end{equation}
+At finite periodic Euclidean time, even a single-mode $G_s$ contains forward
+and backward propagation. Its $n$th power is generally not a single cosh
+with mass $nM_1$. Mixed thermal terms can mimic anomalously low energies;
+the free check must use the actual time extent and operator.
+
+Define $B_2=2M_1-M_2$ and $B_3=3M_1-M_3$.
+Positive values with controlled uncertainty and spatial-volume behavior are
+necessary comparisons against free constituents. A three-charge bound state
+must also lie below $M_2+M_1$ if a two-charge bound state exists; larger charges
+require all relevant partitions. Finite-volume interaction shifts of scattering
+states can lie below the free threshold without an infinite-volume bound pole.
+A binding claim therefore needs volume dependence as well as a plateau.
+We do not set a numerical binding tolerance before the estimator and budget
+are specified. QUANT-1 remains a separate numerical task, not duplicated here.
+
+\section{What changes with spatial dimension}
+Canonical charge quantization and Eqs.~\eqref{eq:ham}--\eqref{eq:matching}
+apply for any integer $d$ at a fixed finite regulator. Profiles and integration
+measures do not: the continuum radial measure is
+$S_{d-1}r^{d-1}\dd r$, and the angular spectrum is that of $S^{d-1}$.
+The one-dimensional problem on the whole line requires its own parity
+sectors rather than importing three-dimensional angular labels.
+
+\begin{center}
+\begin{tabular}{@{}llll@{}}
+\toprule
+Spatial $d$ & $[\Phi]$ & $[\lambda_4]$ & $[\lambda_6]$\\
+\midrule
+1 & 0 & 2 & 2\\
+2 & $1/2$ & 1 & 0\\
+3 & 1 & 0 & $-2$\\
+$d$ & $(d-1)/2$ & $3-d$ & $4-2d$\\
+\bottomrule
+\end{tabular}
+\end{center}
+Brackets denote mass dimensions. In $2+1$ dimensions the sextic coupling is
+marginal by power counting; in $3+1$ it is irrelevant and the polynomial is
+naturally a cutoff effective field theory. A cutoff-independent ultraviolet
+completion is not specified by the classical sextic coefficients. Additional
+operators and renormalization conditions must be included to the desired EFT
+accuracy. Lower-dimensional counterterms and stability observations cannot be
+transferred unchanged to $3+1$ dimensions.
+
+A radial three-dimensional numerical profile is not a one-dimensional quantum
+field theory: discarding angular quantum fluctuations defines a truncation.
+For an additional compact spatial coordinate the transverse modes, radius,
+normalization and thresholds must be retained. An internal component index is
+not automatically that coordinate. None of these variants derives spatial
+dimension from energy or generates the time variable used for quantization.
+
+\section{First result and next calculation}
+The completed first step is a concrete, lower-bounded finite-lattice quantum
+Hamiltonian, integer charge projection, and a charge-normalized classical
+matching formula. The rotating-frame fluctuation Hamiltonian identifies the
+next semiclassical calculation without confusing zero modes and oscillators.
+This is a quantum formulation of the scalar sector, not yet a solved quantum
+Q-ball spectrum or a quantization of the full evolving network.
+
+The next numerical result should come from the already assigned QUANT-1
+spectroscopy with its action normalization and free correlator controls fixed.
+A complementary later semiclassical calculation can use one identified stable
+large-charge profile, its complete constrained fluctuation problem and a
+specified renormalization prescription. It should not extrapolate a few
+classical mode frequencies to a small-charge mass spectrum.
+Elementary excitations of this scalar quantization are bosonic; spin one-half,
+color confinement and Standard Model identities require additional structure
+and are not outcomes of integer Q-ball charge.
+
+\begin{thebibliography}{9}
+\bibitem{xie} Q.-X. Xie, P. M. Saffin, A. Tranberg and S.-Y. Zhou,
+\emph{Quantum corrected Q-ball dynamics}, arXiv:2312.01139v1 (2023),
+\href{https://arxiv.org/html/2312.01139v1}{primary text}.
+Targeted reading: Secs.~2.1, 2.4 and 2.5, especially Eqs.~(1)--(8),
+(26)--(31), (35)--(36). The reported real-time scheme is an inhomogeneous
+Hartree approximation; its numerical results are not reproduced here.
+\bibitem{graham} N. Graham, \emph{Quantum Corrections to Q-Balls},
+arXiv:hep-th/0105009v2 (2001),
+\href{https://arxiv.org/html/hep-th/0105009v2}{primary text}.
+Targeted reading: abstract and Sec.~I through the model definition,
+Eqs.~(1)--(2). The cubic--quartic potential differs from ours; no full
+reassessment of its one-loop calculation is claimed.
+\end{thebibliography}
+\end{document}

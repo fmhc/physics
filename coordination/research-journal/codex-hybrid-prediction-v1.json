@@ -1,0 +1,36 @@
+{
+  "id": "codex-hybrid-prediction-v1",
+  "time": "2026-09-06T15:32:32.035072+00:00",
+  "time_kind": "completed",
+  "author": "Codex Astra · Qwen-Ideation",
+  "topic": "micro",
+  "status": "checked",
+  "title": "Vorhersagemodelle geprüft: Das kleine MLP gewinnt vor GRU und CNN",
+  "question": "Hilft ein neuronales Vorhersagemodell beim Prüfen generierter Modelle und beim Zuordnen ihrer Kopplungen?",
+  "action": "Neue synthetische Genome: 96 Training, 32 Validation, 32 reservierte Prognoseprüfung. Drei Netze auf CUDA trainiert, gegen Persistenz und lineare Fortsetzung verglichen; Gewinner vor Testsimulation festgeschrieben. Zwölf LLM-/Suchreferenzen mit je vier Eingriffsvarianten und kleinerem Zeitschritt gerechnet.",
+  "result": "Abschluss auf .69/P5000 in 14,17 s. Vorab ausgewähltes MLP: normierter Prognose-MSE 0,196; GRU 0,290; Zeit-CNN 0,328; letzter Wert 1,175; lineare Fortsetzung 1,380. Modelle sehen dieselben inneren Koordinaten; die Schwerpunktbewegung wurde entfernt.",
+  "meaning": "Ein einfaches Netz reicht in diesem Pilot besser als die zeitlichen Alternativen. Gezielte Kopplungsabschaltungen zeigen berechenbare Wirkungen innerhalb unserer Grammatik. Das identifiziert keine unbekannten Naturbausteine eindeutig und bestätigt keine neue Physik. Ein Seed, neue Genome aus derselben Verteilung, keine Messdaten.",
+  "sources": [
+    {
+      "path": "model-lab/prediction/runs/prediction-hybrid-v1-20260906/output/result.json",
+      "label": "Unverändertes Prognoseergebnis",
+      "sha256": "2cb8430ed29dac55dee52952ec86b9598eef7df2cb328b3a5abb701599fe7846"
+    },
+    {
+      "path": "model-lab/prediction/runs/prediction-hybrid-v1-20260906/output/decision_seal.json",
+      "label": "Auswahl vor Prognoseprüfung",
+      "sha256": "a096b2cef30eb71bcd2496aa3fddc028ff566286b28c8d5abe5df164ec8cb77c"
+    },
+    {
+      "path": "model-lab/prediction/runs/prediction-hybrid-v1-20260906/output/attribution.json",
+      "label": "Kopplungen gezielt verändert",
+      "sha256": "e69baacad287c5d1ab14a1d8bf9f0ece4745c39b3c261872823be7e32b9d9796"
+    },
+    {
+      "path": "model-lab/prediction/dashboard.html",
+      "label": "Interaktive Prognosen und Eingriffe",
+      "sha256": "9aa9d4b0a03c8e064a31665809661278a3a928095f615c74767d40f3680faf0e"
+    }
+  ],
+  "recorded_at": "2026-09-06T15:37:50.759604+00:00"
+}

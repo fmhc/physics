@@ -1,0 +1,66 @@
+--- ../../../RUNDE-08/gf-bic/gfbic.py	2026-09-30 06:23:20.645860632 +0200
++++ gfbic_delta.py	2026-09-30 08:29:37.149330292 +0200
+@@ -47,6 +47,7 @@
+ F64, C128 = torch.float64, torch.complex128
+ BETA = 0.5
+ JK = 1.0                      # J_12
++DELTA_M2 = 0.0                # ZUS-10 Idee 9 (Kopie gfbic_delta.py): Massenverstimmung von psi_2, Masse^2 = 1 + delta; aus --delta-m2
+ T0 = time.perf_counter()
+ STELLEN = {"P1": (0.797677, 1.744618), "P2": (0.685129, None), "P3": (0.631449, 1.652588),
+            "P4": (0.601422, 1.628113), "P5": (0.582417, 1.611309)}
+@@ -114,7 +115,7 @@
+ def koeff(art, S, g):
+     """(dp, sp) als Funktion von S (numpy oder float)."""
+     if art == "psi2":
+-        return U1(S), -g * JK * S
++        return U1(S) + DELTA_M2, -g * JK * S
+     if art == "psi1":
+         return 1.0 - 4.0 * S + 9.0 * BETA * S * S, -2.0 * S + 6.0 * BETA * S * S
+     if art == "frei":
+@@ -166,10 +167,10 @@
+     n = g.numel()
+     S = B["S"].unsqueeze(1)
+     if art == "psi2":
+-        dv = (1.0 - 2.0 * S + 3.0 * BETA * S * S).expand(-1, n)
++        dv = (1.0 - 2.0 * S + 3.0 * BETA * S * S + DELTA_M2).expand(-1, n)
+         sv = -JK * S * g.unsqueeze(0)
+         s0, S2 = B["s0"], B["S2"]
+-        d0 = torch.full((n,), 1.0 - 2.0 * s0 + 3.0 * BETA * s0 * s0, dtype=F64, device=dev)
++        d0 = torch.full((n,), 1.0 - 2.0 * s0 + 3.0 * BETA * s0 * s0 + DELTA_M2, dtype=F64, device=dev)
+         d2 = torch.full((n,), (-2.0 + 6.0 * BETA * s0) * S2, dtype=F64, device=dev)
+         reihe = (d0, d2, -JK * g * s0, -JK * g * S2)
+     elif art == "psi1":
+@@ -321,7 +322,7 @@
+ def lu_zaehlung(r, f, w, delta, g):
+     """Eigenwerte von L_u = -D2 + U' - w^2 - g J S und L_v (+), jeweils die kleinsten; L_0-Spektrum unter 1."""
+     S = f ** 2
+-    base = 2.0 / delta ** 2 + U1(S)
++    base = 2.0 / delta ** 2 + U1(S) + DELTA_M2      # psi_2-Operator mit Verstimmung (Idee 9)
+     neben = -np.ones(len(r) - 1) / delta ** 2
+     lu = sla.eigh_tridiagonal(base - w * w - g * JK * S, neben, select="i", select_range=(0, 5), eigvals_only=True)
+     lv = sla.eigh_tridiagonal(base - w * w + g * JK * S, neben, select="i", select_range=(0, 5), eigvals_only=True)
+@@ -790,11 +791,15 @@
+     ap.add_argument("--geraet", default="cpu", choices=["cpu", "cuda"])
+     ap.add_argument("--out", default=None)
+     ap.add_argument("--budget", type=float, default=540.0)
++    ap.add_argument("--delta-m2", dest="delta_m2", type=float, default=0.0,
++                    help="Idee 9: Massenverstimmung der zweiten Komponente (Masse^2 = 1 + delta), Vorgabe 0 = Original")
+     return ap.parse_args()
+ 
+ 
+ def main():
++    global DELTA_M2
+     a = argumente()
++    DELTA_M2 = a.delta_m2
+     if a.geraet == "cuda":
+         if not torch.cuda.is_available():
+             raise SystemExit("--geraet cuda, aber kein CUDA-Geraet")
+@@ -806,7 +811,7 @@
+     out = a.out or os.path.join(HIER, f"ausgabe-{a.kommando}")
+     os.makedirs(out, exist_ok=True)
+     start = jetzt()
+-    kopf = (f"Runde 8 GF-BIC {a.kommando} Start {start}, Geraet {a.geraet}, torch {torch.__version__}, "
++    kopf = (f"Runde 8 GF-BIC (Kopie gfbic_delta.py, ZUS-10 Idee 9, delta_m2 = {DELTA_M2}) {a.kommando} Start {start}, Geraet {a.geraet}, torch {torch.__version__}, "
+             f"numpy {np.__version__}; gfbic.py sha256 {sha256(os.path.abspath(__file__))[:16]}, resonanz3d.py "
+             f"{R3_PFAD} sha256 {sha256(R3_PFAD)[:16]}")
+     zeilen = [kopf]

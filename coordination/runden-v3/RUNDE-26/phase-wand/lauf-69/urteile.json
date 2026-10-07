@@ -1,0 +1,104 @@
+{
+  "erzeugt": "jq aus lauf-69 (vergleich-pw1.json, auswertung-b1.json, vergleich-pw3.json, formel-b05.json, formel-b1.json); Regeln PLAN.md Abschnitt 6",
+  "PW1": {
+    "eingetroffen": true,
+    "anzahl_gewertet": 3,
+    "zuordnung_eindeutig": true,
+    "K0": true,
+    "K_phase": true,
+    "toleranz_rel": 0.02,
+    "gewertet": [
+      {
+        "par": "gerade",
+        "ell": 14.0318725418259,
+        "eps": 8.054436914797719E-7,
+        "vorhersage_m": 8,
+        "vorhersage_ell": 14.031131785813004,
+        "d_ell": -0.0007407560128953605,
+        "d_ell_rel": -0.00005279095934539964,
+        "getroffen": true
+      },
+      {
+        "par": "ungerade",
+        "ell": 11.717812035754894,
+        "eps": 0.000008147397264581894,
+        "vorhersage_m": 7,
+        "vorhersage_ell": 11.721107046457396,
+        "d_ell": 0.0032950107025015996,
+        "d_ell_rel": 0.00028119675349352245,
+        "getroffen": true
+      },
+      {
+        "par": "gerade",
+        "ell": 9.428632513068358,
+        "eps": 0.00008038905578930569,
+        "vorhersage_m": 6,
+        "vorhersage_ell": 9.411042927246745,
+        "d_ell": -0.01758958582161263,
+        "d_ell_rel": -0.0018655500463331193,
+        "getroffen": true
+      }
+    ]
+  },
+  "PW2": {
+    "eingetroffen": true,
+    "K0": true,
+    "n_sprossen": 12,
+    "zwei_schritte": [
+      1.3090847555197982,
+      1.3098247261929394
+    ],
+    "relativ": [
+      -0.000164396609029005,
+      0.0004007684968605485
+    ],
+    "bezug": 1.3093,
+    "band": 0.05
+  },
+  "PW3": {
+    "eingetroffen": true,
+    "anzahl_gewertet": 9,
+    "zuordnung_eindeutig": true,
+    "K0": true,
+    "K_phase": true,
+    "toleranz_rel": 0.03,
+    "max_abs_d_ell_rel": 0.007696100261517122,
+    "ohne_partner": []
+  },
+  "phase": {
+    "b05": {
+      "phi": 2.5538882521462405,
+      "k_in": 1.9233245912954144,
+      "rho_z": 1.5241497621336322,
+      "K_phase": {
+        "e2_wachsend_rel": 1.940842798165255E-9,
+        "e2_ok": true,
+        "tiefen_streuung_ab_16": 8.920812888391083E-8,
+        "gegenproben_max_dphi": 3.280741012190447E-8,
+        "rho_z_abw_R24": 3.363220812957479E-11,
+        "tiefen_ok": true,
+        "gegenproben_ok": true,
+        "rho_z_ok": true,
+        "gueltig": true
+      }
+    },
+    "b1": {
+      "phi": 2.2606975598648553,
+      "k_in": 2.3994321234149436,
+      "rho_z": 1.7734530718064698,
+      "K_phase": {
+        "e2_wachsend_rel": 2.736002426547704E-7,
+        "e2_ok": true,
+        "tiefen_streuung_ab_16": 5.574269579255997E-8,
+        "gegenproben_max_dphi": 1.351417537875932E-7,
+        "rho_z_abw_R24": 6.469935698305562E-12,
+        "tiefen_ok": true,
+        "gegenproben_ok": true,
+        "rho_z_ok": true,
+        "gueltig": true
+      }
+    }
+  },
+  "formel_b1_sha256": "e1c9c3a957db2ff16de555adc06ee690f867080a5ffeca049ce73db00e625a1d",
+  "formel_b1_eingefroren": "2026-10-03 04:21:07 CEST"
+}

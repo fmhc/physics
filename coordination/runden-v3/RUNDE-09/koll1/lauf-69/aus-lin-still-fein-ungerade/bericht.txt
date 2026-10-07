@@ -1,0 +1,27 @@
+KOLL-1 lin Start 2026-09-30T06:06:47+00:00, Geraet cuda (Quadro P4000), torch 2.5.1+cu121
+  Argumente: {"kommando": "lin", "geraet": "cuda", "out": "/home/fmh/fmhc-physics-remote/runde9-koll1/aus-lin-still-fein-ungerade", "w2": 0.7976768, "rho0": 1.728147, "h": 0.1, "cfl": 0.4, "rmax": 22.0, "zmax": 32.0, "schicht": 8.0, "sig0": 2.0, "rfluss": 13.0, "zfluss": 23.0, "abstaende": [10.0, 12.0, 14.0], "kette": 10.0, "vorzeichen": -1, "halten": false, "paritaet": -1, "d": 10.0, "eps": 0.005, "T": 1500.0, "dtmess": 0.2, "budget": 480.0, "weiter": false, "faeden": 1, "profil_h": 0.002, "profil_rmax": 36.0}
+  Profil omega^2 = 0.7976768: f0 = 1.024235494599965 (Klammer 2.8e-13), S0 = 1.049058, r_c = 20.36, A = 7.518252 (Streuung 1.4e-07 auf [r_c-4, r_c]), Q = 189.1443, E = 184.6243
+  stille Stelle: Singulaerwerte 5.036e-01, 4.201e-04 (Verhaeltnis 8.34e-04); a-Zeile +1.166e-04, +4.773e-04
+  Mode rho = 1.744617500: kappa_c = 0.524371, q = 2.440840, N (r <= 12.0) = 2.690974e+02, C_v = +1.514904e+01, offene Aussenamplitude 1.575e-07 (reduziert), wachsender Rest bei r_m +2.97e-04, V(r_m) +3.738e-03, u(0) = +0.4998, v(0) = +0.5002
+  Gitter h = 0.1, dt = 0.0400, nr = 220, nz = 641, Glieder 5: ['einzel', 'paar10', 'paar12', 'paar14', 'kette10'], Punkte je Glied 141020
+  Ueberlappmatrizen M (Zeile = Messball, Spalte = Mode): einzel: [[1.0]]; paar10: [[0.9832, 0.0141], [-0.0141, -0.9832]]; paar12: [[0.9943, 0.0043], [-0.0043, -0.9943]]; paar14: [[0.998, 0.0013], [-0.0013, -0.998]]; kette10: [[0.9833, 0.0141, 0.0], [-0.014, -0.9664, -0.014], [0.0, 0.0141, 0.9833]]
+  Start Zeitschleife 2026-09-30T06:07:09+00:00, t = 0.00 bis 1500.0, Messung alle 5 Schritte, Budget 480.0 s
+  Ende Zeitschleife 2026-09-30T06:10:36+00:00, t = 1500.00, Schritte 37500, 206.6 s (5.51 ms je Schritt in diesem Aufruf)
+=== Auswertung /home/fmh/fmhc-physics-remote/runde9-koll1/aus-lin-still-fein-ungerade (lin, omega^2 = 0.7976768, h = 0.1, t bis 1500.0) ===
+  paar10: Uebersprechen M_BA/M_BB = +0.0144, M_AB/M_AA = +0.0144
+  paar12: Uebersprechen M_BA/M_BB = +0.0044, M_AB/M_AA = +0.0044
+  paar14: Uebersprechen M_BA/M_BB = +0.0013, M_AB/M_AA = +0.0013
+  kette10: Uebersprechen M_BA/M_BB = +0.0145, M_AB/M_AA = +0.0144
+  Demodulation bei rho_d = 1.7446804 (Nachfuehrung +6.29e-05); Bezug |a_A| Einzelball bei t = 36.2; Amplituden nach Inversion der Ueberlappmatrix (chi-Bild, CMT: arg(b/a) = -pi/2 fuer t_AB < 0)
+  Einzelball: Gamma (Abklingen a_A) = +7.317e-08; a_A(Ende) = 1.00043; Fluss/a^2 Mittel = 8.9946e-04
+  einzel  : Summe a^2 Ende/Anfang 1.00085, Gamma_Summe +7.317e-08, Gamma_A +7.317e-08, Frequenzversatz A gegen Einzelball +9.055e-11
+            a(t): t=500: 0.997; t=1000: 0.996
+  paar10  : Summe a^2 Ende/Anfang 94643568898408518227708189081600.00000, Gamma_Summe -2.876e-02, Gamma_A -2.876e-02, Frequenzversatz A gegen Einzelball -1.593e+00; b_max 4948937160911074.0000 bei t = 1464; J aus atan2(b, a) +1.965e-19 -> pi/(2J) = 7994234935775020032; arg(b/a) frueh +3.142
+            a(t): t=500: 337.359/337.359; t=1000: 2288612075.684/2288612075.684
+  paar12  : Summe a^2 Ende/Anfang 2269360758372681.50000, Gamma_Summe -1.359e-02, Gamma_A -1.359e-02, Frequenzversatz A gegen Einzelball -1.209e+00; b_max 24138044.4373 bei t = 1464; J aus atan2(b, a) +1.965e-19 -> pi/(2J) = 7994234935775020032; arg(b/a) frueh +3.142
+            a(t): t=500: 0.566/0.566; t=1000: 2771.589/2771.589
+  paar14  : Summe a^2 Ende/Anfang 9201.47449, Gamma_Summe -2.105e-03, Gamma_A -2.105e-03, Frequenzversatz A gegen Einzelball -3.041e-01; b_max 48.3722 bei t = 1463; J aus atan2(b, a) +1.965e-19 -> pi/(2J) = 7994234935775020032; arg(b/a) frueh +3.142
+            a(t): t=500: 0.502/0.502; t=1000: 0.423/0.423
+  kette10 : Summe a^2 Ende/Anfang 2729102570504502784.00000, Gamma_Summe -1.661e-02, Gamma_A -1.661e-02, Frequenzversatz A gegen Einzelball -1.339e+00; b_max 0.0000 bei t = 1464; J aus atan2(b, a) +3.930e-19 -> pi/(2J) = 3997117467887510016; c_max 835945706.6627 bei t = 1464
+            a(t): t=500: 0.818/0.000/0.818; t=1000: 37223.912/0.000/37223.912
+Ende 2026-09-30T06:10:36+00:00, 228.9 s

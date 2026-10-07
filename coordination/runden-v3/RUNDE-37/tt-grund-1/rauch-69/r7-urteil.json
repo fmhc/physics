@@ -1,0 +1,96 @@
+{
+ "info": {
+  "numpy": "2.4.4",
+  "python": "3.12.3",
+  "host": "ubuntu-auto",
+  "start_utc": "2026-10-04T21:00:15Z",
+  "argv": [
+   "/home/fmh/fmhc-physics-remote/tt-grund-1/code/tg.py",
+   "urteil",
+   "--kontrolle",
+   "/home/fmh/fmhc-physics-remote/tt-grund-1/rauch/r1-kontrolle.json.roh",
+   "--karte",
+   "/home/fmh/fmhc-physics-remote/tt-grund-1/rauch/r2-karte-V.json.roh",
+   "--profile",
+   "/home/fmh/fmhc-physics-remote/tt-grund-1/rauch/r3-profil-S.json.roh",
+   "/home/fmh/fmhc-physics-remote/tt-grund-1/rauch/r4-profil-K.json.roh",
+   "--regeln",
+   "/home/fmh/fmhc-physics-remote/tt-grund-1/rauch/r5-regeln.json.roh",
+   "--best",
+   "/home/fmh/fmhc-physics-remote/tt-grund-1/rauch/r6-best.json.roh",
+   "--rauch",
+   "--out",
+   "/home/fmh/fmhc-physics-remote/tt-grund-1/rauch/r7-urteil.json"
+  ],
+  "skript_sha256": "4442162536117cef392a297f40cf116ef1686d69b18ac3b24b3bf8e58039209d",
+  "tti_sha256": "6d6b6f7b99b334d74d91860fc69af1c6c0c46e22207dc45432d60a9824c08ee5",
+  "ew_sha256": "fa7b6417d39177102f0b19c5474453cd16a7595e23bc25ca548e081c4060b142",
+  "nk_sha256": "fd0d17b9fb7c92d4b6ad564a46260e3daae3285bcb5ad53f65d9fb3918a32b28",
+  "tp_sha256": "419d7da6caa211c721eb6a8c87403977415cf3050f03365377f51cb77b374dfd",
+  "eingaben_sha256": {
+   "/home/fmh/fmhc-physics-remote/tt-grund-1/rauch/r1-kontrolle.json.roh": "f525126883b8a11a70762f85566cceaff0138e085528c7620c4dbc22a4954bde",
+   "/home/fmh/fmhc-physics-remote/tt-grund-1/rauch/r2-karte-V.json.roh": "85b42d22f9b0000982b7d008210b74a71a38673805ecf90d3a3cfdadfc2bf21f",
+   "/home/fmh/fmhc-physics-remote/tt-grund-1/rauch/r5-regeln.json.roh": "2bb911b4292d273cbf0929b401c16c743f2ec5ab4c184a779f512f2dc91f7e27",
+   "/home/fmh/fmhc-physics-remote/tt-grund-1/rauch/r6-best.json.roh": "c97ede6835433397dff0601605c61e24393fbafd8798d32b5a43c0c908060dde",
+   "/home/fmh/fmhc-physics-remote/tt-grund-1/rauch/r3-profil-S.json.roh": "4d16a4755a0dc21118b24ac0f304fff97577b1e0f0547f5bd7d592bebea6f605",
+   "/home/fmh/fmhc-physics-remote/tt-grund-1/rauch/r4-profil-K.json.roh": "580e908b0d21921e1e8184d27db0d8a4192af47a99609e16fddb1df434d73d4d"
+  }
+ },
+ "schluessel": {
+  "TG0": {
+   "plan": "str",
+   "wortlaut": "str",
+   "N1_spanne": "float",
+   "N1_abw_rel": "float",
+   "ttiso_exakt": "float",
+   "ttiso_exakt_gueltig": "bool",
+   "ttiso_gerundet": "float"
+  },
+  "TG1": {
+   "plan": "str",
+   "wortlaut": "str",
+   "details": [
+    "plan",
+    "wort"
+   ]
+  },
+  "TG2": {
+   "plan": "str",
+   "wortlaut": "str",
+   "unter_0_1_prozent_plan": "list",
+   "unter_0_1_prozent_wort": "list",
+   "kleinste": "tuple"
+  },
+  "regeln_tabelle": {
+   "V": [
+    "N1",
+    "N2",
+    "N3",
+    "N4",
+    "N5",
+    "N6"
+   ],
+   "S": [
+    "N1",
+    "N2",
+    "N3",
+    "N4",
+    "N5",
+    "N6"
+   ]
+  },
+  "best": {
+   "y": "list",
+   "J_kegel": "float",
+   "J_sechs": "float",
+   "spanne": "float",
+   "stabil": "bool",
+   "spanne_23ew": "float"
+  }
+ },
+ "laufzeit_s": 0.026364564895629883,
+ "maxrss_MB": 38.94921875,
+ "t_zeilen_s": [],
+ "t": {},
+ "n_punkte": null
+}

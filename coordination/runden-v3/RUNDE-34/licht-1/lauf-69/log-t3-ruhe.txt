@@ -1,0 +1,21 @@
+start 2026-10-03T17:23:21+00:00 spur=p4000a unit=fmhc-physics-klein-r34li-t3-ruhe-172321
+Running as unit: fmhc-physics-klein-r34li-t3-ruhe-172321.service; invocation ID: bb43b615d475463bb56b70cdda871000
+torch 2.5.1+cu121, Geraet cuda (Quadro P4000)
+Netz n=3 h=0.3 R=60: 72526 Ecken, 71836 frei, Grad Spitze 3, Defekt 3.141593, innen {3: 1, 6: 71835}, Bauzeit bis jetzt 4.2 s
+Achse: 314 Ecken, xi von -59.700 bis 59.236, Abstaende nah 0.3000 fern 0.5196
+statischer Ball: Q_lat 200.000000 E 152.46888137 omega 0.733613 c -7.2e-12 5.2e-10 res 1.6e-07 aussen 3 (1.6 s)
+/home/fmh/fmhc-physics-remote/runde34-licht/code/licht.py:381: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at ../aten/src/ATen/SparseCsrTensorImpl.cpp:53.)
+  Lt = torch.sparse_csr_tensor(torch.tensor(Lff.indptr, dtype=torch.int64), torch.tensor(Lff.indices, dtype=torch.int64),
+Start: E 152.46888137 Q 200.00000000 E_rest 152.46888137 K_eff 0.000000 K_nominal 0.000000 x 0.0000 xi_c -0.0003 xi_m -0.0030 v_rms 0.00000 Q_ball 199.989570
+t 50.0 x -0.0000 xi_c -0.0003 xi_m 0.0040 E 152.468974 E_damp 1.241e-07 Q 200.000000 E_ball 152.461248 S_max 1.0357 v_rms 0.0003 (3.31 ms/Schritt)
+t 100.0 x -0.0000 xi_c -0.0003 xi_m 0.0031 E 152.468927 E_damp 1.141e-05 Q 200.000000 E_ball 152.461234 S_max 1.0361 v_rms 0.0003 (3.31 ms/Schritt)
+t 150.0 x 0.0000 xi_c -0.0003 xi_m -1.5041 E 152.468916 E_damp 1.800e-05 Q 199.999999 E_ball 152.461322 S_max 1.0365 v_rms 0.0002 (3.31 ms/Schritt)
+t 200.0 x -0.0000 xi_c -0.0003 xi_m 0.0040 E 152.468952 E_damp 2.081e-05 Q 199.999998 E_ball 152.461179 S_max 1.0358 v_rms 0.0001 (3.31 ms/Schritt)
+Ende: T erreicht, t 200.0, 3.31 ms/Schritt, Dauer 13.7 s, geschrieben /home/fmh/fmhc-physics-remote/runde34-licht/lauf/li-t3-ruhe.json
+Finished with result: success
+Main processes terminated with: code=exited/status=0
+Service runtime: 14.961s
+CPU time consumed: 14.918s
+Memory peak: 256.0K
+Memory swap peak: 0B
+ende 2026-10-03T17:23:36+00:00 rc=0 unit=fmhc-physics-klein-r34li-t3-ruhe-172321

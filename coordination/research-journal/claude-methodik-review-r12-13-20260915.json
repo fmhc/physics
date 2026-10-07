@@ -1,0 +1,36 @@
+{
+  "id": "claude-methodik-review-r12-13-20260915",
+  "time": "2026-09-15T09:40:00+02:00",
+  "time_kind": "document",
+  "author": "claude-primary (Synthese); Reviewer: Fable-Subagent, Bunker-Qwen; drittes Haus ausstehend",
+  "topic": "operations",
+  "status": "reported",
+  "title": "Methodik-Review Runden 12 bis 13: Ersatzrichter (grok, Qwen, DeepSeek) urteilten in Runden 11 bis 13 ohne Behauptungstext (Split-Stub im Prompt); neun Registerzeilen unter Verfahrensfehler-Vorbehalt, or_jury.py korrigiert, Rueckstufung oder Reparaturrunde offen",
+  "question": "Halten Jury-Verfahren, Ersatzrichter-Praxis, Vorfallbehandlung und die neuen Zeilen GV1 bis GV3, GAIA-A1, MEM-B1 einem unabhaengigen Blick stand?",
+  "action": "Gleicher Brief an Fable-Subagent und Bunker-Qwen; Nachpruefung an den Promptdateien (Stub vorhanden, Behauptungstext 0-mal); or_jury.py-Fix mit Abbruch bei Stubs (Backup); Vorbehalte in neun Zeilen; Regel 12.4; VORFALL-Datei; GAIA-A1 S2 und MEM-B1 U/A-Lesart im Vorbehalt berichtigt.",
+  "result": "Betroffen: H1 (R11 bronze, R12 silber), BJ1 (R12 bronze, R13), GV1/GV2/GV3 (R13 bronze), M1.5 (R13 Abstieg), V1/VB1.2/F2.2 (Stimmen ungueltig, Stufe unveraendert). Kalibrierpaare standen vollstaendig im Prompt, die Kalibrierung deckt den Fehler daher nicht auf. Zusatzfehler: BJ1 an Alibaba trotz Sperre. Qwens Einwand fehlender DeepSeek-Kalibrierung traegt nicht. DB-Zeilenumbruch von beiden Reviewern als zulaessig bewertet.",
+  "meaning": "Verfahrensbefund mit Registerwirkung: Stufen von sechs Zeilen sind nicht gedeckt. Entscheidung Registereigner/Finn: Rueckstufung jetzt oder Reparaturrunde 14 mit korrekten Prompts, sobald Richter verfuegbar sind (Codex ab 19.09.). Drittes Haus des Reviews nachholen.",
+  "sources": [
+    {
+      "path": "coordination/methodik-review/REVIEW-20260915-r12-13.md",
+      "sha256": "b2c012839def875a7fa220f50bfaca49d2ccf1b633bdebfa6bb08d0622bb895b"
+    },
+    {
+      "path": "coordination/methodik-review/REVIEW-fable-20260915.md",
+      "sha256": "663147b70910249bb6a909253ec32e6b0176361b9ab1f0c9cbad921a2ff342f6"
+    },
+    {
+      "path": "coordination/methodik-review-20260915-bunker-20260915.md",
+      "sha256": "51eee04a01fdfe3b21008f41f6d5a5f743a2b109118ae258eaf7091eac6ecd5d"
+    },
+    {
+      "path": "gauntlet/new-runs/entwicklung-v2-20260911/rounds/013/VORFALL-ersatzrichter-stub.md",
+      "sha256": "b240005af5391e2370226e2e138e62abe16ab7d1b131c7094f87782a4698b2fd"
+    },
+    {
+      "path": "coordination/or_jury.py",
+      "sha256": "3848452f9e131bf3d45107440365b406a92af3dee7236876d06b96d9af830fb6"
+    }
+  ],
+  "recorded_at": "2026-09-15T05:12:40.577208+00:00"
+}

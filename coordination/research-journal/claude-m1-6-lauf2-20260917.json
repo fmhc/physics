@@ -1,0 +1,51 @@
+{
+  "id": "claude-m1-6-lauf2-20260917",
+  "time": "2026-09-17T16:55:09+02:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5; Regel 15.6), Auftrag Finn 17.09.2026 (\"mach weiter\")",
+  "topic": "binaries",
+  "status": "open",
+  "title": "M1.6 Lauf 2 (Vollrechnung): Ausgang offen. Gamma_obs faellt mit strengerem ev_kms-Schnitt, der Newton-Vorwaertswert faellt mit; die entscheidenden Schnitte 0,02/0,01 sind im schwaechsten Feld zu duenn besetzt.",
+  "question": "Faellt der Ueberschuss U = Gamma_obs - Gamma_Newton im schwaechsten logg-Feld (M1.5: 0,2323 bei ev_kms <= 0,05) bei strengerem Schnitt 0,03/0,02/0,01 (Stau-Artefakt, B) oder bleibt er (A)?",
+  "action": "Datenauszug full-input.npz auf TS440 gehasht (c66edd7d..., = Vertrag), per scp -3 ueber den Laptop nach .69 kopiert und dort erneut gehasht; DuckDB blieb auf dem Laptop. Skript m1_6.py Fassung 2 (sha256 7d6063e5...; Fassung 1 als .bak-20260917-W): Messseite = Schnittkette run_m1sel.py mit ev_kms <= c, Bootstrap Seed 90210 x 300; Newton-Seite = Arm joint_no_mass von reference/model.py (Kern bytegleich neue-theorie/newton_vorwaerts.py), Masterseed 20260909, 200 Kataloge, Auswahl je c. Festlegungen vor dem Lauf in startsignal-m1-6-lauf2.txt. .69 CPU NumPy float64 ein Thread, User-Unit fmhc-physics-m1-6-20260917-lauf2 (CPUQuota 100 %, MemoryMax 8G), pruefe -> lauf -> bericht, 14:46:16-14:55:09 UTC, Lauf 506 s.",
+  "result": "K0, K1, K2 bestanden (Gamma_obs(0,05) aus der Kette 1,301586510679706, |Abw.| 3e-14, n 18051, n_bin0 269). Z1: 200/200 Newton-Kataloge bei 0,05 archivgleich (max 1,7e-13), Mittel 1,0693010762019890. Z2: M1.5-Varianten reproduziert. Serie (c: Gamma_obs / Gamma_Newton / U +- SD_U): 0,10: 1,3692 / 1,2203 / 0,1489 +- 0,0566; 0,05: 1,3016 / 1,0693 / 0,2323 +- 0,1258; 0,03: 1,2058 / 1,0229 / 0,1829 +- 0,1900; 0,02: 1,0503 (n_bin0 = 25, 138/300 Bootstrap undefiniert) / nicht definiert (40/200 Kataloge mit 24 Paaren) / -; 0,01: nicht definiert (n_bin0 = 2) / nicht definiert / -. Ausgang offen: U(0,02) und U(0,01) nicht definiert, also weder A noch B.",
+  "meaning": "Beschreibend: Die Messkennzahl sinkt mit strengerem Fehlerschnitt, aber der Newton-Vorwaertswert sinkt mit, weil das Fehlerrauschen schon im Newton-Katalog die Kennzahl bei lockerem Schnitt anhebt; U zeigt ueber 0,10/0,05/0,03 keinen gleichlaufenden Abfall, bei 0,03 ist die Unsicherheit so gross wie der Wert. Die Vertragsfrage ist mit diesem Katalog und der Regel n >= 25 je Feld nicht entscheidbar (Vertragsluecke, kein Rechenfehler). Stau-/Little-Deutung bleibt HYPOTHESE; keine Aussage ueber neue Schwerkraft. Moegliche Fassung 2 (nicht gerechnet, S0-Review noetig): belegbare Schnitte oder breiteres schwaechstes Feld, Ausgang fuer 'nicht definiert'.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260917/M1-6-VERTRAG.md",
+      "role": "Vertrag S0 (unveraendert)",
+      "sha256": "0908b319de7daf9183e9652274f1124533fc8d35a418e51f4d51106bf72ef464"
+    },
+    {
+      "path": "coordination/vertraege-20260917/startsignal-m1-6-lauf2.txt",
+      "role": "Startsignal Lauf 2 mit Festlegungen vor dem Lauf",
+      "sha256": "3e83b71124693bcc42985f9b4073cfd599768ea12ba3c62d79af77015eeb45a5"
+    },
+    {
+      "path": "coordination/vertraege-20260917/m1-6-lauf/m1_6.py",
+      "role": "Skript Fassung 2",
+      "sha256": "7d6063e5b46cc2487166ab548614d032eaf2b98187f742c46d62505969daf307"
+    },
+    {
+      "path": "coordination/vertraege-20260917/m1-6-lauf/PRUEFE-M1-6.json",
+      "role": "Pruefe-Lauf",
+      "sha256": "b384a0cd3cb36e7aaf5cd05756ab94658957ad8b58c6efb0ef0de72d9fb1464d"
+    },
+    {
+      "path": "coordination/vertraege-20260917/m1-6-lauf/ERGEBNIS-M1-6.json",
+      "role": "Ergebnis Lauf 2",
+      "sha256": "aa7162ec28d8b5695c7e09a656938f6ef4666d2ee06c0c87a4f5adb48a276c47"
+    },
+    {
+      "path": "coordination/vertraege-20260917/m1-6-lauf/BERICHT-M1-6.md",
+      "role": "Bericht Lauf 2 mit Nachtrag",
+      "sha256": "78e26f0e8bb347075b84e71fead680e029c19448bbb20037fa09a72e609ed392"
+    },
+    {
+      "path": "coordination/vertraege-20260917/m1-6-lauf/lauf-20260917T144616Z.log",
+      "role": "Unit-Log",
+      "sha256": "ab195173cc70f2a093bf334557b8cf257822903b39800ebc9e36fbb863eefc07"
+    }
+  ],
+  "recorded_at": "2026-09-17T14:57:23.492644+00:00"
+}

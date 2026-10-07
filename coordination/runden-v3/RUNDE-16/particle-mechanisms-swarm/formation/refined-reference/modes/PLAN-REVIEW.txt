@@ -1,0 +1,62 @@
+Enger unabhängiger Planreview, 02.10.2026, particle_binding
+PLAN.txt gegen OPERATOR-INDEPENDENT.txt vollständig gelesen.
+Keine Rechnung, keine neue Prozessauflage, keine Ausführungsfreigabe.
+
+Urteil: Implementierbar; kein kritischer physikalischer Fehler gefunden.
+Die vorgesehene begrenzte Kandidatensuche ist konsistent mit der
+unabhängigen Operatorableitung. Die ausdrücklich offene Vollständigkeit
+und mögliche Budget-Unvollständigkeit sind korrekt ausgewiesen.
+
+Gelesener PLAN-SHA256:
+99acc3a864f3d6264ddf8d0b105a19e796a4ddbf758667704b61fa9a0a1b8136.
+
+Operator/Faktoren
+Kanonische (x,y,z)-Normierung, Lplus/Lminus/Hchi und C=2sqrt2cf
+stimmen mit OPERATOR-INDEPENDENT überein. Der Gyroblock G_xy=-2omega,
+G_yx=+2omega führt in A=[0,I;-K0,-G] auf die angegebenen beiden
+negativen Offdiagonalterme des reellen cos/sin-Pencils. Für lambda=i rho
+ist q_y=-i sqrtV v die passende Konvention. Die gekoppelte Ladungsform
+sqrt2 Sum sqrtV f(2omega q_x+p_y) ist korrekt; keine separate Projektion
+der Feldkomponenten und keine zusätzliche Fest-Q-Rang1-Korrektur nötig.
+
+Der sqrtV-Basiswechsel macht die FV-Raumblöcke symmetrisch, nicht den
+gesamten ersten-Ordnung-Operator. Das berücksichtigt die Wahl eigs.
+Phase rho=0 wird separat getestet, nicht als innere Schwingung gezählt.
+Der freie Anker sqrt(d+2)±omega sowie sqrt(d+2) prüft die richtigen
+Seitenbandwurzeln. Für den vorhandenen positiven omega ist
+0<rho<sqrt2-omega der Bereich unter sämtlichen Vakuumkanälen.
+Ein Kandidat dort ist eine gewöhnliche gebundene lineare Mode, kein BIC.
+
+Referenz/Rand
+Keine Hintergrundneusuche vorgesehen. Dieselben BEUTEL-FV-Volumina,
+Ursprungsfluss und volle Ghostdistanz sind korrekt; alter l=1-Randstencil
+darf nicht übernommen werden. Die R60-Abschneidung ist konditional an
+neu gemessenen vollen Eulerrest einschließlich letzter Zelle gebunden.
+Damit wird nicht behauptet, jedes abgeschnittene Profil sei automatisch
+stationär. Bei Versagen bleibt die Boxprobe unentschieden; kein verstecktes
+Nachpolieren oder Ändern der Frequenz. Volumenrestriction und eine gemeinsame
+komplexe Phasenausrichtung sind die richtigen Vergleichsoperationen.
+
+Suche und Aussage
+Zwei feste Shifts/k4 und vier Diskretisierungen sind eine begrenzte
+Kandidatensuche, kein Durchmustern aller positiven/komplexen Eigenwerte.
+Direkte erste-/quadratische Reste, Gesamt-deltaQ, Lokalisierung und
+Zweigvergleich prüfen tatsächlich unterschiedliche Fehlerquellen.
+Tangentialnullstellen/Nullraum/nahe Entartung werden nicht fälschlich durch
+reines Vorzeichenbracketing gelöst. Einzelvektor-Matching darf bei Entartung
+wie geplant unentschieden bleiben. Kein Kandidat ist kein Nichtexistenzsatz;
+ein Kandidat schließt Instabilität in anderen Frequenzen/Sektoren nicht aus.
+
+Das lineare Spektrum dieses stationären Kerns darf den starken transienten
+Wolkenlauf mit höherer Anfangsenergie nicht direkt erklären. Es kann dessen
+Mechanismusfrage begrenzen, nicht im Nachhinein eine gemessene Eigenmode
+oder Lebensdauer der Wolke behaupten. Nichtlineare Harmonische bleiben offen.
+
+Umsetzung/Budget
+Root-Timeout30s und nice/einCPU sind als vereinbarte äußere Begrenzung
+hinreichend; kein zusätzlicher Dienst/Watchdog erforderlich. Eine native
+Operation kann dabei abgeschnitten werden. Nur vorher abgeschlossene,
+gesicherte Teilaufgaben zählen; Ergebnis dann INCOMPLETE, keine negative
+Spektralaussage. Die tatsächliche Implementierung von quadratischem Rest
+und Volumenmatching ist vor Rechnung separat gegen diesen Plan zu lesen.
+Keine weiteren physikalischen Gates oder Prozessvorschriften ergänzt.

@@ -1,0 +1,30 @@
+Runde 6 M1 medium1d.py fahrtwind Start 2026-09-30T01:51:51+00:00 auf Quadro P4000, torch 2.5.1+cu121, Zeitfaktor 1.0, Stufen grob/fein
+
+fahrtwind (Wellen 11): A Ball ruht in Falle, Medium adiabatisch auf u (Lorentz: K = gamma w0 u, C = C0); B Medium ruht, Falle zieht den Ball glatt auf -u (Falle kontrahiert); C wie A, aber Galilei-Impuls K = w0 u (Stroemung dann u/sqrt(1 + u^2)). Erwartung F_A = F_B (Lorentz-Invarianz der Laengskraft).
+  Lauf | Stroemung im Ballsystem | F_med (1./2. Haelfte) | F_Falle | v Ball | F_B - F_A | F_C - F_A
+  [grob]
+  A ruhend, Stroemung u=0.05     | +0.0500 | 3.46e-08 (1.04e-07, 8.37e-09) | -2.93e-08 | -1.15e-07 | 6.57e-08 | -1.90e-10
+  B bewegt v=-0.05, Medium ruht  | +0.0000 | 1.00e-07 (2.87e-07, 1.99e-08) | -3.94e-08 | -5.00e-02 | nan | nan
+  C Galilei K=w0 u, u=0.05       | +0.0499 | 3.44e-08 (1.03e-07, 8.33e-09) | -2.92e-08 | -1.15e-07 | nan | nan
+  A ruhend, Stroemung u=0.35     | +0.3499 | 1.12e-03 (1.04e-03, 1.16e-03) | -1.13e-03 | 3.73e-05 | -8.41e-05 | 7.73e-05
+  B bewegt v=-0.35, Medium ruht  | +0.0000 | 1.04e-03 (1.03e-03, 1.12e-03) | -1.03e-03 | -3.50e-01 | nan | nan
+  C Galilei K=w0 u, u=0.35       | +0.3303 | 1.20e-03 (1.22e-03, 1.20e-03) | -1.20e-03 | -7.09e-06 | nan | nan
+  A ruhend, Stroemung u=0.60     | +0.5994 | 3.91e-05 (4.24e-05, 3.66e-05) | -3.10e-05 | -2.36e-04 | 9.24e-07 | 1.36e-04
+  B bewegt v=-0.60, Medium ruht  | +0.0000 | 4.00e-05 (4.34e-05, 3.89e-05) | -2.32e-05 | -6.00e-01 | nan | nan
+  C Galilei K=w0 u, u=0.60       | +0.5142 | 1.75e-04 (1.50e-04, 1.91e-04) | -2.05e-04 | 1.39e-05 | nan | nan
+  Spiegel A u=-0.35              | -0.3499 | -1.12e-03 (-1.04e-03, -1.16e-03) | 1.13e-03 | -3.73e-05 | nan | nan
+  [fein]
+  A ruhend, Stroemung u=0.05     | +0.0500 | 3.47e-08 (1.04e-07, 8.41e-09) | -2.95e-08 | -1.15e-07 | 6.59e-08 | -1.91e-10
+  B bewegt v=-0.05, Medium ruht  | +0.0000 | 1.01e-07 (2.88e-07, 2.00e-08) | -3.98e-08 | -5.00e-02 | nan | nan
+  C Galilei K=w0 u, u=0.05       | +0.0499 | 3.45e-08 (1.03e-07, 8.38e-09) | -2.93e-08 | -1.15e-07 | nan | nan
+  A ruhend, Stroemung u=0.35     | +0.3500 | 1.12e-03 (1.04e-03, 1.16e-03) | -1.13e-03 | 3.73e-05 | -8.57e-05 | 7.72e-05
+  B bewegt v=-0.35, Medium ruht  | +0.0000 | 1.04e-03 (1.03e-03, 1.12e-03) | -1.03e-03 | -3.50e-01 | nan | nan
+  C Galilei K=w0 u, u=0.35       | +0.3303 | 1.20e-03 (1.22e-03, 1.20e-03) | -1.20e-03 | -7.05e-06 | nan | nan
+  A ruhend, Stroemung u=0.60     | +0.5999 | 3.90e-05 (4.23e-05, 3.65e-05) | -3.08e-05 | -2.36e-04 | 8.33e-07 | 1.36e-04
+  B bewegt v=-0.60, Medium ruht  | +0.0000 | 3.98e-05 (4.32e-05, 3.87e-05) | -2.24e-05 | -6.00e-01 | nan | nan
+  C Galilei K=w0 u, u=0.60       | +0.5144 | 1.75e-04 (1.50e-04, 1.91e-04) | -2.04e-04 | 1.45e-05 | nan | nan
+  Spiegel A u=-0.35              | -0.3500 | -1.12e-03 (-1.04e-03, -1.16e-03) | 1.13e-03 | -3.73e-05 | nan | nan
+  L3 (Effekt >= 5 x Aenderung grob -> fein): 3 von 3 Kenngroessen bestanden
+  Rechenzeit grob 36.1 s, fein 65.0 s
+
+Ende 2026-09-30T01:53:32+00:00, Dauer 101.5 s, Torch-Speicher max 53 MB, Fehler in: keine

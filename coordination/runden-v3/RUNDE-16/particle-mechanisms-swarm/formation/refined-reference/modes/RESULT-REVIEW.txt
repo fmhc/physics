@@ -1,0 +1,86 @@
+Unabhängige Ergebnislesung, 02.10.2026, particle_binding
+RESULT.json vollständig gelesen, Code-/Ergebnishashes geprüft.
+Keine neue Eigenwertrechnung, kein Interpreter, keine Gateänderung.
+
+Urteil: NO_CONFIRMED_CANDIDATE_IN_FIXED_SEARCH ist korrekt.
+Alle8 Aufgaben sind abgeschlossen; es fehlt keine numerische Teilserie.
+Ein robuster roher subthreshold-Spektralwert verfehlt das vorher gewählte
+Kompaktheitskriterium. Daraus folgt weder Nichtexistenz einer gebundenen
+Mode noch ein nachträglich bestandenes ursprüngliches Kandidatentor.
+
+Herkunft
+RESULT.json SHA256:
+77ecf9bbe03b96db901d76728e074a897725eb52213f90dae76c7200ba5364ea.
+code_sha256=467ad3e19cd8efcdac4ec2dcc670b50aaa59cc6f7e9e44d625ebbf94ba0d32c6
+stimmt mit unabhängig gelesener finaler Quelle überein; Referenzmanifest
+8c33ace3… sowie beide vorbereiteten Profilhashes stimmen mit Vorarbeiten.
+CPU float64/complex128, keine CUDA; intern2.344805306CPU-s für diesen
+Suchprozess. Die separate vorgängige QA hat ihre eigene Zeitquittung.
+NPZ-Ritzvektoren sind mit Artefakthashes aufgeführt; in diesem Review
+nur JSON-Diagnosen gelesen, keine erneute Rohvektor-/Überlappberechnung.
+
+Vorprüfungen
+Alle4 Hintergrund-/R60-Abschneide-/Phasenprüfungen bestanden:
+max Eulerrest ungefähr2.49e-11 bzw.1.52e-11; Phase1.18e-11/7.22e-12.
+Abgeschnittene Ladung wird innerhalb Rundung als0 gemeldet, nicht als
+mathematisch exakt verschwindender Ganzraumschwanz interpretiert.
+Gemischte Variation3.21e-12, volle Hesse7.09e-12, Faktor2-MutanteFehler≈1,
+freier Frequenzvergleich1.78e-13: alle innerhalb vorheriger Grenzen.
+
+Der interessante rohe Wert
+Beide Shifts finden auf allen4Gittern denselben numerisch naheliegenden
+Ast in folgendem Frequenzbereich:
+ R120,h=.1   rho=.382201524606267
+ R60, h=.1   rho=.382201524620367
+ R120,h=.05  rho=.382250607358417
+ R60, h=.05  rho=.382250607373447
+Boxdifferenz etwa1.4–1.5e-11, Gitterdifferenz≈4.91e-5.
+Das liegt unter der ersten Vakuumschwelle sqrt2-omega≈.39605 und
+innerhalb des vorgeschriebenen Frequenzfensters mit.001-Abstand.
+Realteile naheRundung, erste/quadratische Reste ungefähr1e-13,
+deltaQ_scaled≈7e-12–1.14e-11; R50 der kanonischen Modennorm≈3.57<12.
+
+Entscheidend: outer20_fraction≈.0010145(h=.1)/.0010335(h=.05),
+also etwa0.10% Norm außerhalb20, größer als das vorab verlangte
+1e-4=0.01%. Genau dieses Einzelkandidatentor scheitert für den rohen
+Wert. Es wird daher nicht in candidates aufgenommen; matches=[] folgt
+logisch. Eine tatsächlich bestandene Profilüberlappprüfung zwischen den
+vier Diskretisierungen ist NICHT gespeichert und darf aus ähnlichen
+Frequenzen allein nicht behauptet werden. Die Boxstabilität der rohen
+Frequenzen ist dagegen direkt sichtbar und klar von den oberhalb der
+Schwelle liegenden ausgedehnten Boxwerten zu unterscheiden.
+
+Null-/Jordan-Nähe
+Weitere Werte bei rho≈0 und Realteilen±(5–6.4)e-7 bestehen weder das
+Frequenzfenster noch die verlangten Residual-/Ladungsgates. Nahe dem
+Phasennullraum ist die relative Normierung besonders empfindlich;
+der harmonische sin-Ansatz degeneriert bei rho0. Diese Zahlen sind
+kein belastbarer Instabilitätsnachweis. Numerische Null/Jordan-Aufspaltung
+ist eine mögliche Erklärung, keine hier gesondert bewiesene Diagnose.
+
+Nächste gezielte Papierfrage: passt der Schwanz zur bekannten Asymptotik?
+Für den l0-Vakuumbereich entkoppeln die Kombinationen u+v, u-v undw:
+ kappa_plus =sqrt(2-(omega+rho)²),
+ kappa_minus=sqrt(2-(omega-rho)²),
+ kappa_chi  =sqrt(2-rho²).
+Physische Radialfelder gehen dort wie exp(-kappa r)/r; die mit sqrtV
+transformierten Komponenten entsprechend ungefähr exp(-kappa r).
+Für den beobachteten Wert ist der langsamste plus-Kanal nur ungefähr
+kappa_plus≈.20, also Länge≈5 Modelleinheiten. Ein endlicher Schwanz
+überr20 ist damit nicht überraschend. Sein normierter Anteil hängt
+zusätzlich von der tatsächlichen Kanalamplitude ab; die Frequenz allein
+erklärt NICHT quantitativ den gemessenen outer20-Anteil.
+
+Sinnvoll ist zuerst die asymptotische Vorhersage mit den bereits
+gespeicherten Vektoren zu verbinden: drei Kanalanteile trennen,
+bekannte Abklingformen fern vom Kern und fern vom Ghostrand vergleichen,
+Profilüberlapp R60/R120 auf gemeinsamem Gebiet ausweisen. Das wäre eine
+neue deklarierte Taildiagnose, keine Änderung des alten1e-4-Tores und
+keine zusätzliche Eigenwertsuche zur Ergebnisrettung. Erst eine eigene
+Fragestellung kann einen längeren normalisierbaren Schwanz beurteilen.
+
+Auch ein später besser belegter subthreshold-Modus wäre gewöhnliche
+lineare innere Bindung, kein BIC, keine Vollständigkeit des Spektrums,
+kein nichtlinearer Lebensdauer- oder3D-Stabilitätsnachweis. Nichtlineare
+Harmonische können andere Kanäle öffnen. Der starke frühere Wolkentransient
+wird durch diesen Kleinamplitudenwert nicht nachträglich zur Eigenmode.

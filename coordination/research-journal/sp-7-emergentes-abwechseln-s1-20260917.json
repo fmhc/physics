@@ -1,0 +1,46 @@
+{
+  "id": "sp-7-emergentes-abwechseln-s1-20260917",
+  "time": "2026-09-17T00:53:34+00:00",
+  "time_kind": "completed",
+  "author": "Claude-Subagent (Anthropic, claude-fable-5-1) im Auftrag Finn",
+  "topic": "theory",
+  "status": "reported",
+  "title": "SP-7 S1: Abwechseln entsteht aus Erholzeit + Hemmung (N=3 Splay 100 %), zu starke Hemmung erzeugt Ausschluss; formal T (K2b-NaN)",
+  "question": "Entsteht aus 2, 3, 4 Integrate-and-fire-Einheiten mit Refraktaerzeit und abstossender Kopplung ohne Uhr eine feste zyklische Feuerreihenfolge, und waehlt ein 1 %-Bias der Erholzeit die Umlaufrichtung? (Finn, ANALOGIE-SPIELTISCH Abschnitt 8)",
+  "action": "Vertrag SP-7 geschrieben, Skript sp_7.py (Euler h=1e-3 und 5e-4, T=400, 24 Faelle x 100 Seeds PCG64, Kontrollen K0-K2c) als User-Unit fmhc-physics-sp-7-20260917 auf .69 CPU gerechnet (565 s, GPU nicht angefasst), Ergebnisse zurueckgeholt, Nachtrag verfasst.",
+  "result": "N=3 alle-mit-allen: kappa 0,2 und 0,5 in 100/100 Seeds stabiler Splay (S>0,99, Reihenfolge 100 % der letzten 50 Zyklen), Richtungen 43/57 %; kappa 1,0: in 100/100 Seeds eine Einheit dauerhaft stumm, die zwei anderen in Gegenphase (Periode 2,941). Bias tau_r,1=0,495 aendert die Richtungsanteile nicht (43/57, kein Seed wechselt). N=2: Gegenphase 100 % (kappa 0,2/0,5). N=4: alle-mit-allen Splay 100 %, Ring 2+2-Paare 91 % (0,2) bzw. 69 % (0,5). K0 (p 0,16/0,10), K1 (100 % Synchronie bei kappa=-0,3), K2a (Rest 2e-10), K2c (40/40) bestanden; K2b formal verfehlt, weil S bei kappa=1,0 undefiniert (NaN, Vertragsluecke); definierte Faelle: |Delta S| <= 0,013. Formaler Ausgang T; inhaltlich B mit Flags B-i, B-iii, B-iv.",
+  "meaning": "HYPOTHESE-Status: Round-Robin braucht in diesem Minimalmodell keine externe Uhr, sondern Erholzeit, Reset und mittlere Hemmung; die Umlaufrichtung ist ein Ordnungsparameter, den die Anfangsbedingung setzt und ein 1 %-Bias nicht umschaltet. Zu starke Hemmung kippt von Rotation zu Ausschluss (eine Einheit stumm). Nur S1 (Anthropic); S2 anderes Haus und S3 Qwen stehen aus; keine Registerzeile; keine Teilchendeutung.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260916/sp-7-lauf/BERICHT-SP-7.md",
+      "label": "Bericht S1",
+      "sha256": "e057f5058f3f03b502b28b6499bc0ab5ade60c3b19c947c9ae753ffb31dc8e38"
+    },
+    {
+      "path": "coordination/vertraege-20260916/sp-7-lauf/ERGEBNIS-SP-7.json",
+      "label": "Alle Zahlen",
+      "sha256": "0cedbe15b9d1790d24da51be4f69570346d9585c3a5f1659f55ceb50a20b6874"
+    },
+    {
+      "path": "coordination/vertraege-20260916/sp-7-lauf/NACHTRAG-SP-7.md",
+      "label": "Einordnung des formalen T",
+      "sha256": "bb082fe2b4f37ba7cf0e99ffb2a2ed0cff88abafb81e2bbd10aae33480de04e9"
+    },
+    {
+      "path": "coordination/vertraege-20260916/sp-7-emergentes-abwechseln-VERTRAG.md",
+      "label": "Vertrag",
+      "sha256": "a223a52a4f64169d26991a38b3f8bd74f71f69073e3595772ceee257ccb4058d"
+    },
+    {
+      "path": "coordination/vertraege-20260916/sp-7-lauf/sp_7.py",
+      "label": "Skript",
+      "sha256": "a43f40631ca62d8ad27f25028ceca3a6abbf9ba3a91ca1cbdd9b19fbcb1711de"
+    },
+    {
+      "path": "coordination/vertraege-20260916/startsignal-sp-7.txt",
+      "label": "Startsignal mit Hashes",
+      "sha256": "17ef761f411e173c02383abbc9edccd109ad2f0cd4a003b79a6472fd40e4e222"
+    }
+  ],
+  "recorded_at": "2026-09-17T00:56:11.412609+00:00"
+}

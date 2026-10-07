@@ -1,0 +1,16 @@
+#!/bin/bash
+# QBALL-DOPPELSPALT-1, Zusatzarm W (PLAN Abschn. 7a; eingefrorener Code, --wf 3), Spur p4000b, omega = 0.9. Laeuft auf der .69.
+set -u
+K=/home/fmh/fmhc-physics-remote/kleintests/kleintest.sh
+D=/home/fmh/fmhc-physics-remote/qball-doppelspalt-1
+O=$D/lauf
+P=$O/profil.json
+cd $D || exit 1
+lauf() { local n=$1; shift; bash $K p4000b qds-$n $D/code/qds.py lauf --out $O/$n.json --profil $P --omega 0.9 --h 0.25 --ny 41 --vs 0.2,0.3,0.45 --wf 3 "$@" > $O/$n.log 2>&1; echo "$n rc=$? $(date --iso-8601=seconds)" >> $O/stufewb.log; }
+lauf w3q2-0.9-1R --modell qball --nspalt 2 --d_art R --d 1 --konfig A,AB
+lauf w3q2-0.9-1.5R --modell qball --nspalt 2 --d_art R --d 1.5 --konfig A,AB
+lauf w3q2-0.9-fern --modell qball --nspalt 2 --d_art fern --konfig A,AB
+lauf w3q3-0.9-1R --modell qball --nspalt 3 --d_art R --d 1 --konfig A,B,AB,AC,ABC
+lauf w3q3-0.9-1.5R --modell qball --nspalt 3 --d_art R --d 1.5 --konfig A,B,AB,AC,ABC
+lauf w3l3-0.9-1R --modell lin --nspalt 3 --d_art R --d 1 --konfig A,B,AB,AC,ABC
+lauf w3l3-0.9-1.5R --modell lin --nspalt 3 --d_art R --d 1.5 --konfig A,B,AB,AC,ABC

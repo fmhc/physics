@@ -1,0 +1,36 @@
+{
+  "id": "claude-sp-6-wind-20260917",
+  "time": "2026-09-17T02:51:47+02:00",
+  "time_kind": "completed",
+  "author": "Claude-Subagent (Anthropic, claude-fable-5-1), Vertrag und S1; Idee Finn (Ideation Abschnitt 7)",
+  "topic": "theory",
+  "status": "reported",
+  "title": "SP-6 Wind gerechnet: Ausgang B (B-i); Steinstrom skaliert mit der Ankunftsrate, die Scheduler-Windung aendert nur den Betrag, keine Quantisierung, kein Vorzeichen aus w",
+  "question": "Erzeugt im binaeren Spieltisch (Ring 16, drei Queues, ein Zug je Takt, Round-Robin mit Phasenwindung w) (i) bei rho=0,9 ein ganzzahliger, zu w proportionaler Steinstrom je Zyklus (Pumpe) und (ii) bei w=0 ein Sprung des Nettostroms J von rho=0,9 auf 1,2 (Wind durch Ueberlast)? Sichtbar in Polarisierung, Blip-Spektrum und Blip-Lag?",
+  "action": "Vertrag SP-6 nach Abschnitt 6/7 geschrieben (drei Vorabfeststellungen: w=2 ist bei drei Spielen identisch mit w=-1; J>=0 nach Konstruktion, daher K1/K3 als exakte Symmetrien gefasst, wortwoertliche Fassungen als H1/H3 berichtet; Phasendefekt am Ringschluss). Ganzzahl-Ereignissimulation sp_6.py, 26 Konfigurationen x 200 Seeds (PCG64 2026091702+i) x 20000 Takte auf .69 CPU als User-Unit (CPUQuota 200 %, 2 GB, 361 s). Erster Lauf scheiterte am JSON-Schreiben (numpy-bool), Fassung 2 nur mit Serialisierungsfix, beide Laeufe dokumentiert.",
+  "result": "Ausgang B, Flag B-i. (i) verfehlt: Z(w=1)=0,231, Q=|Z-round Z|=0,23; Z(w=2)=Z(w=-1)=0,243 statt 2 Z(w=1)=0,462. (ii) erfuellt, aber trivial: J(w=0) 0,0734 -> 0,1045 (29 sigma), Verhaeltnis 1,42 gegen lineare Ratenskalierung 1,33; J(1,5)=0,149. w moduliert den Betrag: bei rho=1,5 J=0,149/0,196/0,245 fuer w=0/1/-1 (Welle mit den Steinen erhoeht J um 65 %), nie das Vorzeichen (H3 verfehlt). P steigt mit rho und w von -0,27 auf +0,53. Blip-Peakanteil bei 1/3 Takt^-1 (Spiel 1): 0,27 (rho 0,9), 0,72 (1,2), 0,94 (1,5): Einrasten auf den Scheduler-Takt; Gesamtblips ~weiss (1e-4) bzw. konstant. Lag-Histogramme: w=1 Lags -1/+2, w=-1 Lags +1/-2, w=0 Lags 0/+-3 (Richtung nur modulo 3 lesbar). Kontrollen K0-K5 bestanden: Erhaltung exakt, ungerichtete Variante J=0,00002+-0,00004 SE, Spiegelung 0,04-0,08 %, Windungsumkehr mit Spiegelung 0,11-0,17 %, w=2/-1 bitgleich.",
+  "meaning": "HYPOTHESE-Ebene, keine Teilchendeutung. Im Queue-Modell kommt der Wind allein aus der Spielregel (gerichtete Steine); die Scheduler-Welle wirkt wie ein Foerderband, das den vorhandenen Strom um bis zu 65 % verstaerkt oder daempft, aber weder Richtung noch ganzzahlige Quanten erzeugt. Eine Thouless-Pumpe braucht eine Kopplung der Bewegung an die Phase, die hier fehlt: die Windung steuert nur, wann bedient wird, nicht wohin. Die diskrete Windung ist nur modulo 3 definiert (w=2 = w=-1), weshalb der Test Z(2)=2Z(1) im Dreispielmodell nicht sinnvoll ist. Offen fuer eine Fassung 2 der Idee: ungerichtetes Spiel mit phasenabhaengiger Zielwahl (Stein geht zu dem Nachbarn, der als naechster dran ist); S2/S3 fuer SP-6 offen, keine Registerzeile.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260916/sp-6-lauf/BERICHT-SP-6.md",
+      "sha256": "27ceeba5b8dcfe633a3296944d4b66cfbe9b45d442ceca4f74590933d25cd856"
+    },
+    {
+      "path": "coordination/vertraege-20260916/sp-6-lauf/ERGEBNIS-SP-6.json",
+      "sha256": "aff9b41faa39ed8f6ea966ab7e61758b5df1567d23cb3dd93ef31e0fee3017c4"
+    },
+    {
+      "path": "coordination/vertraege-20260916/sp-6-wind-VERTRAG.md",
+      "sha256": "196d50ec9ae7179b7f7770f3357eabcdd3c7f27eb6854e5ae248668b0bffef61"
+    },
+    {
+      "path": "coordination/vertraege-20260916/startsignal-sp-6.txt",
+      "sha256": "29e61c59f621a83a5f68c3e2012547afd50a9f5ad7f0e4ee4641c9e9cc5879a0"
+    },
+    {
+      "path": "coordination/ideen-20260916/ANALOGIE-SPIELTISCH.md",
+      "sha256": "9a29a92727a41f575cc178ab8922a029b10d06396693de45b86465c7457674b2"
+    }
+  ],
+  "recorded_at": "2026-09-17T00:53:49.162834+00:00"
+}

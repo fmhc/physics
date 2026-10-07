@@ -1,0 +1,41 @@
+Unabhängige enge Textnachlesung, 2026-10-01. GO für diese Stage-Texte.
+Keine Ausführung, kein Build, keine erneute Gesamtpaperprüfung.
+
+SHA256:
+stage/sections/COUNTERPULSE.tex
+19eb09f2b141c895d186f8a26e242f4b5d024e01c7bdf135d2775c14e6e34191
+stage/sections/COUNTERPULSE-TEST.tex
+bb8c269da651327f77656fc9583cbd76971182803c8d543b773e3219b7777c52
+stage/main.tex
+e4aebd03d60a1c507772f9550f83cfd679a1585f198c959be29af96d5dc87fe1
+Verglichen mit bereits geprüftem RESULT.json
+bd2bb84abf250eafdc106c203a3c13b1946f3fe1920f71d50ec60f1081b7e3e9
+und RESULT-REVIEW.txt
+335cded2284274af36d396634b09f1588655745d918950593f0d46c5480aac29.
+
+Die Einbindungsfolge in main ist richtig: Projektion, Einpulsüberlapp,
+analytischer Zweipulsfall, nominaler dynamischer Test. Analytische Aussagen
+über gemeinsamen Detuning-/Timingfehler werden ausdrücklich nicht als
+vollständig simulierte Parameterfamilie ausgegeben. Laborphasenfaktor,
+beide Seitenbänder und gleiche versus umgekehrte Pulsstärke sind konsistent.
+
+Die tatsächlichen Restverhältnisse 3.61e-5=0.0036% fein und1.44e-4 grob
+stimmen mit den gespeicherten komplexen d-Werten. Die daneben genannten2%
+sind klar als vorab gesetzte Akzeptanzgrenzen bezeichnet, nicht als gemessene
+Werte oder rigorose Fehlergrenzen. R20,T6,h=.04/.02,dt=h/8 und vier Arme
+entsprechen der Produktion. Feldnormen .0119332/.00818567 sind korrekt
+gerundet und gehören zum gleichen finalen Zeitpunkt/Gitter.
+
+Die Defektbeschreibung ist jetzt angemessen vorsichtig: der globale
+Komponentenfehler enthält den erzwungenen Außenabschluss; dessen Anteil
+wird nicht ohne gesonderte Diagnose als alleinige Ursache behauptet.
+Kein globaler Eigenfehler-Konvergenzsatz wird daraus gezogen. Die nominale
+Rekonstruktion q-cA-conj(c)B entspricht dem geprüften Code; der Text macht
+keine orthogonale Energiezerlegung daraus. Keine E-/Q-, Langzeit-,
+Nichtlinearitäts- oder vollständige Stilllegungsbehauptung.
+
+Caption-Scope passt zu den gespeicherten Zeitrecords und Endpunkten:
+Verbindung vorhandener Zeiten, getrennte Gitter, Nullarm auf Logpanel
+ausgelassen, zweite Quelle nur für Paararme. PNG/Plotcode wurden in dieser
+engen Textnachlesung nicht nochmals geprüft; die Aussage ist kein neuer
+Bild- oder Rendering-QA-Nachweis. Kein weiterer Textfix erforderlich.

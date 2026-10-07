@@ -1,0 +1,132 @@
+{
+ "modus": "korr",
+ "netz": "A",
+ "L": 6,
+ "seed": 99,
+ "start": "ketten_zufaellig",
+ "n_einlauf": 2000,
+ "einheiten_je_messung": 20,
+ "messungen_je_block": 100,
+ "zeitgrenze_s": 120.0,
+ "einheit": "Wurm",
+ "klassengitter_abstand_1_8": 2,
+ "gitter_pruefung": {
+  "ecken": 3456,
+  "kanten": 10368,
+  "grad_min_max": [
+   6,
+   6
+  ],
+  "kantenlaenge2_min_max_in_1_64": [
+   8,
+   8
+  ],
+  "kante_parallel_plus_n": true,
+  "kanten_je_klasse": [
+   1728,
+   1728,
+   1728,
+   1728,
+   1728,
+   1728
+  ],
+  "mitten_eindeutig": true,
+  "ecken_soll": 3456,
+  "kanten_soll": 10368,
+  "grad_soll": 6,
+  "kanten_je_klasse_soll": 1728,
+  "gitter_pyrochlor": {
+   "ecken": 3456,
+   "ecken_soll": 3456,
+   "tetraeder": 1728,
+   "tetraeder_soll": 1728,
+   "tetraeder_je_4_ecken": true,
+   "kanten": 10368,
+   "kanten_soll": 10368,
+   "kantenlaenge2_min_max_in_1_64": [
+    8,
+    8
+   ],
+   "nachbarn_je_ecke_min_max": [
+    6,
+    6
+   ],
+   "ecke_mitte_abstand2_min_max": [
+    3,
+    3
+   ],
+   "mitte_ist_schwerpunkt": true
+  },
+  "ketten": 432,
+  "ketten_soll": 432,
+  "kettenlaenge_min_max": [
+   24,
+   24
+  ],
+  "kettenlaenge_soll": 24,
+  "nachfolger_gleiche_kette": true,
+  "alles_ok": true
+ },
+ "korrelator_pruefung": {
+  "klassengitter_n": 24,
+  "paare_je_klasse_gesamt": [
+   2985984,
+   2985984,
+   2985984,
+   2985984,
+   2985984,
+   2985984
+  ]
+ },
+ "start_info": {
+  "eis_anfang_ok": true
+ },
+ "geometrie_s": 0.22103285789489746,
+ "einlauf_s": 0.13155484199523926,
+ "einlauf_zaehler": [
+  6579029,
+  4387497,
+  2000,
+  0,
+  61125,
+  0,
+  0,
+  0,
+  0
+ ],
+ "bloecke": 40,
+ "messungen": 4000,
+ "mess_s": 19.665746450424194,
+ "mc_s": 5.585474967956543,
+ "fft_s": 10.609811305999756,
+ "quadrat_s": 0.15847134590148926,
+ "zaehler": [
+  269046964,
+  179438550,
+  82000,
+  0,
+  88847,
+  0,
+  0,
+  0,
+  0
+ ],
+ "zaehler_bedeutung": "A: 0 Versuche, 1 Umklappungen, 2 Wuermer, 3 Eisregel-Fehler lokal, 4 laengster Wurm",
+ "regel_fehler_lokal": 0,
+ "voll_pruefung_fehler": 0,
+ "voll_pruefungen": 4001,
+ "tau_int_messabstaende": {
+  "phi2": 0.5054864976918222,
+  "c1": 0.5039705369993208
+ },
+ "mittel": {
+  "phi2": 1.4790469049404316,
+  "c1": 0.16247934544141743
+ },
+ "kern_sha256": "6077e26b71bcb1b33617f32fa0ac561b81a39a456bdae1c4106e83f2b11b3147",
+ "skript_sha256": "cb89c15ecbec3490cb55416feb1e26dfe2251663428a72620fa188742fb8f45b",
+ "gitter_fluss_sha256": "560753af7a37335771cffe431b6b487b41d55f3f7be8f68285b37f277954a15a",
+ "gitter_sha256": "9f6b4b1c47f7928cf8ae03505e5dd72d43e6dda02bc92dc943789c47dbdbb11d",
+ "dauer_s": 20.490613222122192,
+ "ende_utc": "2026-10-03T17:34:42Z"
+}

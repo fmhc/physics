@@ -1,0 +1,34 @@
+LIVE-MODUS: Kausale Zustandswechsel, elastische Geometrie, gekoppelte Felder
+2026-10-02, ag-phy-coordination
+
+Implementiert in model-lab/simulation-environment/qball-explorer/causal.html.
+Bestehende index.html, live.html und webgpu.html verlinken den neuen Modus;
+ihre Solver wurden nicht geaendert.
+
+Drei Modi, sechs Graphen: Dreieck, Quadrat, Dreistern K1,3, Tetraeder,
+Tetraederketten mit 12/20 Knoten. Rotor-Ereignisse folgen lokalen Portzustaenden.
+Elastische Bewegung und zwei gekoppelte Felder folgen ihren Kraeften mittels
+Velocity-Verlet. Feldkopplung kann die Geometrie beeinflussen. Keine gespeicherte
+Trajektorie, keine vorgeschriebene Schwingung. Phasen-/Dichte-/chi-Farben,
+passive Schnitte, Zeitverlauf, E/Q-Diagnose, Einzelschritt, Pause und JSON-Export.
+Die Anzeige beginnt pausiert; Hintergrund und reduzierte Bewegung pausieren sie.
+Browser rechnet auf CPU. Kein Raum-PDE-, Q-Ball-, Spin- oder Gravitationsnachweis.
+
+Unabhaengige statische Lesung: REVIEW.txt. R1-R6 behoben.
+QA auf ubuntu-auto (.69), CPU11, nice19, ein CPU-Set; Chromium SwiftShader fuer
+WebGL. Keine lokale Numerik oder Tests. Begrenzter HTTP-Server nur im QA-Prozess.
+solver-test.mjs wurde im Browser mit einem einfachen Assert-Adapter ausgefuehrt,
+da auf dem Zielhost kein Node vorhanden war. browser-qa.py dokumentiert Adapter.
+
+Bestanden: Graphgeometrie; lokale Rotorregeln/Nullarm/Zyklus; passive Schnittflaeche;
+Kraftrichtungen und numerische Energiegradienten aller Freiheitsgrade;
+Verlet-Verfeinerung bei dt=.01,.005,.0025 bis T=1; Ladungs- und Impulserhaltung;
+NaN-Abbruch; laufende echte Zustaende; Reset; Pause; Detektor ohne Dynamikeingriff;
+Exportgleichheit; Desktop/Mobil ohne Seitenfehler oder horizontales Overflow.
+Hintergrundpause wurde mit synthetischem visibilitychange geprueft, keine
+Zertifizierung jedes Betriebssystem-Tabzustands. Keine Langzeitstabilitaetsaussage.
+Root hat Desktop- und Mobilbilder visuell geprueft; mobile Kennzahlen danach
+auf zwei statt drei Spalten korrigiert. Finale QA-Ausgabe: QA.json.
+
+Kein dauerhafter Webserver gestartet. Die Seite ist ueber denselben statischen
+HTTP-Projektserver wie die vorhandenen Analyzer zugaenglich (Pfad oben).

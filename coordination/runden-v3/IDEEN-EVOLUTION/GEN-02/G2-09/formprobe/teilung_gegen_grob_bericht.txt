@@ -1,0 +1,7 @@
+G2-09 (K-4) drehender Hintergrund m = 1 und m = 2, T = 300 (gegen). Start 2026-09-30T11:25:09+02:00, Ende 2026-09-30T11:25:19+02:00, CPU (nur Form- und Syntaxprobe), torch 2.10.0+cu128 RAUCHTEST: Zahlen ungueltig
+Dauer [s]: schiessen_s 9.7, entwicklung_grob_s 0.2
+Hochrechnung Hauptlauf: 18 s (nicht entwickelnde Teile 10 s + Entwicklung x 50); ueber 540 s: nicht starten, Leitung entscheidet (Stufen einzeln mit --stufe).
+Stufe Lauf | Q | Teilung t | n_max | Toechter (Q, Windung, Jspin/Q, v) | l_dom | gamma | Q/E-Verlust
+  grob m0_05500 | 238.4 | None | 1 | keine (Windung Ende [0]) | 2 | - | 5.6e-16/8.3e-07
+  grob m0_07569 | 18.5 | None | 1 | keine (Windung Ende [0]) | 3 | - | 9.8e-10/8.7e-06
+Kennzahlen: {"grob_quelle": "dieser Aufruf", "gegenprobe": {"m0_05500": {"teilung": false, "gamma": null, "gamma_2": null, "gamma_3": null}, "m0_07569": {"teilung": false, "gamma": null, "gamma_2": null, "gamma_3": null}}, "gegenprobe_bestanden": true, "plausibel": {"grob_m0_05500": true, "grob_m0_07569": true}, "profilprobe": {"m0_05500": {"S_max": 1.0465173445128544, "x_schwanz": 16.57, "grenze": 30.4, "gueltig": true, "info_f_top2_obergrenze": 1.0467251416997128, "bestanden": false}, "m0_07569": {"S_max": 0.6740536479626449, "x_schwanz": 13.85, "grenze": 30.4, "gueltig": true, "info_f_top2_obergrenze": 1.198058967869627, "bestanden": true}}, "plausibilitaet_bestanden": false}

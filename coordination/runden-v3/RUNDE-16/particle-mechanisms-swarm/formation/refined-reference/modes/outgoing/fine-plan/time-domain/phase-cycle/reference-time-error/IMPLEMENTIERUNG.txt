@@ -1,0 +1,34 @@
+particle_core, 2026-10-03. Implementiert, NICHT lokal ausgeführt/geprüft.
+Code SHA256 686e0844977da4b15696c247eb287e12501f2b9d413b55b6cd1cd9906c1c27d9
+IDEA/REVIEW-PLAN vollständig gelesen. Alle Vorläufer unverändert.
+
+CLI:
+python3 code.py --time-code TIME_DOMAIN_CODE --split-code CAUSAL_SPLIT_CODE
+ --split-dir CAUSAL_SPLIT_OUT --phase-dir PHASE_CYCLE_OUT
+ --amplitude-dir AMPLITUDE_OUT --out NEW_EMPTY_OUT
+Dies ist Dokumentation, kein ausgeführtes Kommando.
+
+Benötigte Daten: drei gebundene RESULT.json; kausale ring_artifact bei
+.02/.01; Phasenzyklus separated_artifact bei .01/.005. Dateinamen und
+SHA256 aus ihren gebundenen Manifesten. Vier NPZ werden auf Hash, exakte
+r/t-Vektoren, Shape1281x2x4xN, SourcesDC/H2 undFinite geprüft; danach nur
+phi kopiert. Amplitudenmanifest ausschließlich Kontext/Provenienz.
+Beide gehashten Quellmodule liefern nur coefficient()/interval(); keine
+PDE-, Lade-/Modensuch- oder Main-Funktion der Vorläufer wird aufgerufen.
+FV-Volumenformel entspricht unverändertem h=.05-Radialgitter.
+
+Direkte Kombinationen Z, Z-c, Z+c und passende gewichtete Betrags-Hüllen.
+Bandhülle mit coefficient(...,0) als positiver Zeitmittelwert. eta=max
+aller3Hüllen jeNorm, u=Norm(N_.005-N_.01)+eta. 16Normpositionen,
+keine Mehrheitszuordnung. Quadratische Identitätsabweichung offen
+berichtet, keine neue nachträgliche Schwelle. Nullnenner nicht zugeordnet.
+Synthetisches F/A vorab fest: reguläre positive Radialprofile, A mitDC
+und+2rho; exakte dt²-Korrektur, falsche Richtung und Nullkorrektur jeweils
+über alle16Positionen. QA1e-10 gegen bekannte Nichtnull-Korrektur, keine
+Division durchNullrest. Nullkontrolle erhält kein Zuordnungslabel.
+
+Atomische Teilergebnisse nach Eingabelesen und jeder Kontrollserie,
+Fehlerstatus INCOMPLETE mit bisherigen Daten. Interner Check4.5CPU-s,
+Gesamtziel5CPU-s für spätere .69-Auswertung. Keine Zeitintegration,
+Fits, neuen Fenster oder Rohdatenänderungen. Syntaktischer/numerischer
+Nachweis steht aus und bleibt Root/Nichtautorprüfung auf .69 vorbehalten.

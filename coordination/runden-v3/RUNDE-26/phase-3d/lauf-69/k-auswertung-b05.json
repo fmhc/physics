@@ -1,0 +1,8 @@
+{"beta": 0.5, "sprossen_datei": "lauf/sprossen-b05.json", "phase_wand_datei": "lauf/pw-phase-b05.json", "phase_datei": "lauf/phase-b05.json",
+ "profil_dateien": ["lauf/profile-b05-a.json", "lauf/profile-b05-b.json", "lauf/profile-b05-c.json"],
+ "haupt": "rk4:0.005", "proben_regel": ["rk4:0.01", "bic2:0.01"], "proben_bericht": ["dop853:1e-12", "dop853:1e-10"], "tol_R": 1e-5, "tol_bisektion": 1e-9,
+ "regeln": [{"name": "P3D-1", "art": "betrag", "sprossen": [13, 14, 15], "grenze": 0.03},
+            {"name": "P3D-2", "art": "ausgleich", "sprossen": [8, 9, 10, 11, 12, 13, 14, 15], "grenze_b": 0.02, "monoton": true}],
+ "berichtsausgleiche": [["haupt-n6-10", "Delta", [6, 7, 8, 9, 10]], ["haupt-n11-15", "Delta", [11, 12, 13, 14, 15]],
+                        ["haupt-n6-15", "Delta", [6, 7, 8, 9, 10, 11, 12, 13, 14, 15]],
+                        ["neben-n6-10", "Delta_neben", [6, 7, 8, 9, 10]], ["zusatz-n6-10", "Delta_zusatz", [6, 7, 8, 9, 10]]]}

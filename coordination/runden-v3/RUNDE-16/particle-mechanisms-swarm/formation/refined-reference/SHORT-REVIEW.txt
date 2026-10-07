@@ -1,0 +1,66 @@
+Unabhängige kurze Ergebnislesung, 02.10.2026, particle_binding
+Keine neuen Rechnungen/Tests. Gelesen: SHORT-RESULT.json vollständig,
+PREPARED-MANIFEST.json, QA-Status und zugehöriger geprüfter repairedcode.
+
+Urteil: REFERENCE_SHORT_TEST_COMPLETE stimmt mit den vorab gesetzten
+Gates und allen gespeicherten Samples überein. Nach gezielter diskreter
+Referenzreparatur liegt eine bestandene radiale T4-Referenzkontrolle vor.
+Kein Wolkenlauf, kein Bildungsbefund, keine Langzeit-/3D-Stabilitätsaussage.
+
+Bindungen per sha256sum nachgeprüft:
+repairedcode.py / RESULT.code_sha256:
+4f2ca1da379617413e642be02fc6b2cec565fcd9183a2300ac0eda6906a9ff0c
+SHORT-RESULT.json:
+89664171585dc51a512cbe1bee3dbab4f1e3b56dbf25f2aedc4aab79f24185a0
+PREPARED-MANIFEST.json / RESULT.reference.manifest_sha256:
+8c33ace3a5465a8fd481d26b35457425ee3c5d5f0111b3f11c09f4a9dd72fdf4
+QA-RESULT.json:
+661e04246a4b88053fc205f0d9b74d880df8015d9ba1f212b0a67ad12db649ba
+NPZ-Hashes stimmen zwischen Manifest und Short-Result; Roh-NPZ liegen
+nicht im hier gelesenen lokalen Ordner. Keine unabhängige neue Rohfeld-
+Residual-/Energieberechnung oder NPZ-Hashmessung behauptet.
+
+Vorbereitung und zeitfreie QA
+Beide Zielgitter konvergieren nach genau2 Newtonupdates, nicht30:
+Finalreste: 4.99746e-11 (h=.1) und 3.03133e-11 (h=.05).
+Alle geloggten relativen Profiländerungen <.001, deutlich unter.02;
+omega-Änderungen weit unter1%, E-Änderungen weit unter2%.
+Q-Endwerte1100.000000001951/1100.000000001102 bestehen auch das
+strengere1e-11-Anfangsgate. QA_ONLY_COMPLETE/initial_gate_pass=true.
+Die Raumreste sind jetzt auf beiden Zielgittern klein; altes
+Interpolationsversagen bleibt als eigenständiger historischer Befund stehen.
+Algebra-/Radiuschecks bestanden: uniforme Kugel Fehler2.22e-16/0,
+Nullradiusdiagnose null. Keine Toleranzlockerung erforderlich.
+
+T4-Umfang
+Genau3 complete-Arme, alle kind='reference':
+(h,dt)=(.1,.02),(.05,.02),(.1,.01), jeweils6 Samples t=0,.8,...,4.
+Initiale Referenz mit exact_grid=true,Q_normalized=false. initial_checks
+enthalten zusätzlich Wolkenanfangswerte, aber KEIN Wolken-Evolutionsarm.
+qa.time_steps=0 beschreibt nur die QA-Unterfunktion; der gesamte
+Short-Lauf hat selbstverständlich Referenzzeitschritte ausgeführt.
+
+Von Hand aus allen18 gespeicherten Samples abgelesene Maxima:
+ rphi       7.89814e-5       rchi      2.62571e-5
+ tphi       2.90567e-5       tchi      2.85249e-5
+ driftphi   6.36774e-5       driftchi  6.23704e-5
+Alle sechs Größen bleiben unter dem unveränderten.004-Gate.
+Edrift maximal3.47718e-9, Qdrift4.44090e-16,
+Kernladungsbilanz4.15696e-16: alle unter1e-5.
+Kragenenergie etwa2.2e-89 absolut bei E0≈1213, weit unter1e-8 relativ.
+Punktweise Rohresiduen sind getrennte Diagnosen, nicht dieselben Normen.
+Die Anfangsradien3.714349/3.714292 sind korrekt als r50_density benannt,
+chi_first_cell bezeichnet den ersten Zellwert, nicht den exakten Ursprung.
+
+Ausführung und Reichweite
+Ergebnis meldet ubuntu-auto/.69, CPU NumPy float64, kein CUDA;
+SHORT intern.592542959CPU-s, PeakRSS35392KiB. Root berichtet extern
+1.30CPU-s für Vorbereitung+QA+T4 zusammen; externe Zeitbelege waren
+nicht Teil der hier gelesenen Dateien und werden nicht nachträglich
+aus den internen Zeiten rekonstruiert.
+
+Kleine Formdrift bisT4 und kleinere Abweichungen bei halbiertemdt sind
+mit numerischer Kurzzeitrobustheit konsistent. Drei kurze Referenzarme
+sind kein vollständiger Konvergenz-, Langzeit- oder Störungsspektrumnachweis.
+Insbesondere wurde kein geladener Körper aus der Wolke gebildet: es wurde
+ein vorhandener stationärer diskreter Körper präpariert und kurz entwickelt.

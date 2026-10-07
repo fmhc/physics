@@ -1,0 +1,32 @@
+{
+  "id": "claude-runde-v3-02-berichtigung-20260930",
+  "time": "2026-09-30T01:48:15+02:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung; Anlass Codex-Nachlesung (OpenAI) exploration-20260930-opus-review/REVIEW.txt",
+  "topic": "theory",
+  "status": "reported",
+  "evidenzart": "modell",
+  "title": "Berichtigung zu Runde 2 (v3): Absorptions-L3 besteht in 0 von 12 Frequenzen (nicht 4/12, das war die Reflexion); gemessen ist ein Speicher- bzw. Verzoegerungsrest bei T = 500, kein gezeigter resonanter Einfang; Frequenzunterschied als Ursache des Nicht-Verschmelzens nicht isoliert",
+  "question": "Welche Aussagen im Runde-2-Eintrag claude-runde-v3-02-20260930 sind zu stark oder falsch?",
+  "action": "Codex las am 30.09. die Ergebnisabschnitte der Runden 1 und 2, die Berichte und das Ergebnis-JSON (REVIEW.txt). Die Leitung zaehlte die L3-Flags im Ergebnis-JSON nach (jq): dA_Q 0 von 12 bestanden, R_Q 4 von 12.",
+  "result": "Absorption: L3 fuer dA_Q 0/12 (bisher als 4/12 berichtet; die 4/12 betrafen R_Q). Die Spitze ist ein Anteil von 0,21 bis 0,32 % des einfallenden Ladungsstroms; die Messgroesse ist der zum Zeitpunkt T = 500 in |x| < 30 verbliebene Rest, also Speicherung oder Verzoegerung, nicht dauerhafte Aufnahme; die Stossmoden-FFT identifiziert keinen diskreten gebundenen Eigenmodus. Virus: Frequenzunterschied als Ursache nicht isoliert, weil nicht variiert. Radialtabelle: VK-stabil heisst nur dQ/domega < 0; E/Q > 1 heisst erlaubter freier Endkanal, nicht gemessener Zerfall. Codex' unabhaengiges Profil bei omega = 0,8 (Q 1172,34, E 997,909) stimmt mit der Tabelle ueberein.",
+  "meaning": "Die Absorptionsspitze bleibt ein Resonanz- oder Verzoegerungskandidat; die feine Nachrechnung (Test 2F mit dritter Gitterstufe, spaeten Auslesezeiten und getrennter Kern-/Aussenladung) entscheidet. Das Nicht-Verschmelzen wird mit einer Karte ueber Frequenzunterschied und Geschwindigkeit geprueft (Test 3K). Alle uebrigen Runde-2-Aussagen bleiben.",
+  "supersedes": [
+    "claude-runde-v3-02-20260930"
+  ],
+  "sources": [
+    {
+      "path": "coordination/runden-v3/RUNDE-02.md",
+      "sha256": "e7aeda962743398f2c6063787afaa7ada1bc63cd9e6d99f26a5f8c20e80429af"
+    },
+    {
+      "path": "coordination/exploration-20260930-opus-review/REVIEW.txt",
+      "sha256": "1cfb2a4b4a82c8987b30e0a5cd4102f1078fe7fe5205ce0e56f9bfbeda229f5b"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-02/tests1d/lauf-69/ausgabe/tests1d_ergebnis.json",
+      "sha256": "6aa1d3a6077ffdf75cf11dd8c551228ad50e97d5f06725f52c98f4af20760fd3"
+    }
+  ],
+  "recorded_at": "2026-09-29T23:48:28.768483+00:00"
+}

@@ -1,0 +1,15 @@
+split("\n") | map(select(length>0) | split("  ") | {path: ("coordination/runden-v3/" + .[1]), sha256: .[0]}) as $src | {
+  id: "claude-runde-v3-36-20261004",
+  time: $t,
+  time_kind: "completed",
+  author: "claude-primary (Anthropic, Opus 5.5), Leitung, Karten, Schreibtisch, eigene Rechnungen NEWTON-NACHRECHNUNG und REGGE-SCHAUM-1; Code-Agenten und pruefer-opus (Gegenleser) Anthropic (Opus 5.5)",
+  topic: "theory",
+  status: "reported",
+  evidenzart: "modell",
+  title: "Runde 36 nach v3 (explorativ, Gittermodelle, keine Messdaten): Anziehung kommt von einem Minus auf der Feldseite, Ruhe ohne Zusatzregel nur beim Spurkoeffizienten 1/2 (freie Zeit-Umbenennung); Regges Laengennetz gibt Einsteins Struktur, auf Wuerfelgitter und Zufallsschaum mit demselben G; mit eingegebener Regel zwei Wellen, Newton und gleiches Fallen; Hauptausgaenge vorab ableitbar",
+  question: "Wie kommt Finns Tetraedernetz zu Schwerkraft (Spin 2, Newton, gleiches Fallen), und was legt die 1/2 fest?",
+  action: "Karten LAST-1, ZUFALLSNETZ-1, REGGE-RAND-1, TENSOR-EIS-N, AETHER-UHR-1, LAMBDA-1, V-1-WEITER, REGGE-4D-1, ZUFALLS-REIBUNG-1, DREIECK-LINSE-1, REGEL-1 als Code-Agenten auf der .69 mit Vorhersagen vor jeder Rechnung; Leitung rechnet NEWTON-NACHRECHNUNG und REGGE-SCHAUM-1 selbst; Schreibtisch SAGNAC, GEDANKENEXPERIMENTE, REGEL (Abschnitte 1 bis 8); Anschauungsseite mit frischem Gegenleser (KORRIGIEREN, 26 Befunde, alle Zahlen richtig).",
+  result: "LAST-1: Lasten mit Nettokraft 1/r (Kelvin 0,47 %), selbsttragende Quellen 1/r^3. ZUFALLSNETZ-1: Z0-Z2 ja, Z3 nein; Anisotropie 0,28 % bei N = 64 000. REGGE-RAND-1: RR1-RR4 ja (vorab ableitbar), RR5 nein. TENSOR-EIS-N: N-Typ -1/(8 pi r), L-Typ ohne Wechselwirkung. AETHER-UHR-1: gleiche Grenzgeschwindigkeit unsichtbar (< 0,002 %), zwei Tempi 12 bzw. 32 % bei v = 0,6; U1, U2 nein. LAMBDA-1: stabil nur bei c = 1/2 ohne Zusatzregel, Ausweg E_T = 0, G_eff unabhaengig von c. V-1-WEITER: V0-V2 ja, V3, V4 nicht auswertbar; Leck ~ exp(-2 pi/sqrt(abs(eps))). REGGE-4D-1: G2, G3 ja; G0, G1 nein (fuenfte Nullmode). ZUFALLS-REIBUNG-1: Z3 ja, Z0, Z1 nein, Z2 nicht auswertbar; Reibung ~sigma^2 ohne Schwelle. DREIECK-LINSE-1: D0-D3 ja; 60 Grad Knick ohne Kraft. REGEL-1: RG0-RG2 ja, RG3 woertlich nein (Vorzeichenfehler im Plan). REGGE-SCHAUM-1: RS1-RS4 ja, RS0 nein (Genauigkeit an Splittern).",
+  meaning: "Explorativ, Modellrechnungen, keine Messdaten; die meisten Hauptausgaenge waren vorab ableitbar, die 1/2 ist der bekannte DeWitt-Koeffizient (Horavas lambda = 1). In den Gittermodellen der Runde braucht Schwerkraft zwei Minuszeichen: eines auf der Feldseite fuer die Anziehung, eines (1/2) fuer die Ruhe. Die 1/2 entspricht der freien Umbenennung der Zeit (Lapse) [L/M], dieselbe Symmetrie verlangt Energie als Quelle [H/M]. Regges Wirkung (eingegeben) gibt Einsteins Struktur, auch auf einem Zufallsschaum mit demselben G. Ein Raum-Netz mit aeusserer Uhr gaebe c = 1/5 [M, Leitung, nicht gegengelesen]; die Rechnungen sprechen fuer ein Netz in Raum und Zeit [H].",
+  sources: $src
+}

@@ -1,0 +1,36 @@
+{
+  "id": "vertrag-gf-4-lauf-20260921-berichtigung",
+  "time": "2026-09-21T13:55:00+02:00",
+  "time_kind": "document",
+  "author": "claude-primary (Anthropic, Opus 5)",
+  "topic": "theory",
+  "status": "technical",
+  "title": "Berichtigung der Quellhashes zu vertrag-gf-4-lauf-20260921: der Bericht ist nach dem Journaleintrag noch zweimal geaendert worden, beide Male durch das maschinelle Gegenlesen",
+  "question": "Welche Fassung von BERICHT-GF-4.md, GEGENLESEN-GF-4.txt und gegenlesen_gf_4.py gehoert zum Journaleintrag vertrag-gf-4-lauf-20260921, nachdem das maschinelle Gegenlesen nach Regel 15.8.2 noch zweimal gelaufen ist?",
+  "action": "Der Journaleintrag vertrag-gf-4-lauf-20260921 ist veroeffentlicht worden, nachdem das Gegenlesen im zweiten Durchgang 0 nicht zugeordnete Zahlen gemeldet hatte. Danach ist dem Bericht der Abschnitt 7a hinzugefuegt worden, der das Gegenlesen selbst beschreibt, und ein dritter Durchgang ist ueber die Endfassung gelaufen - also einschliesslich dieses Abschnitts. Dafuer ist das Werkzeug um eine Klasse 'Selbstbezug' erweitert worden: die Zaehlungen des Gegenlesens koennen in der Ergebnisdatei nicht stehen, weil sie erst durch das Gegenlesen entstehen. Der Journaleintrag ist unveraenderlich; diese Zeile nennt deshalb die Endfassungen mit Hash.",
+  "result": "Dritter Durchgang ueber die Endfassung: 706 Zahlen, 686 aus ERGEBNIS-GF-4.json ableitbar, 20 aus Vertragstext, gebundenen Vorlaufdateien und dem Gegenlesen selbst, 0 nicht zugeordnet. Endfassungen: BERICHT-GF-4.md sha256 5e313023574b39e937aed17f1ee3c92e573c9930d7f733faa7139a07bb41a819; GEGENLESEN-GF-4.txt sha256 febdf0a221e7bca9f8081cf153450a7658a6b38a51dd68f67873182e7d6897fd; gegenlesen_gf_4.py sha256 22593eeffaaf8603087ae9930c48f56fea88c8a4d4daa1494c759deb9dbdb988. Am Ausgang A, an der Kennzahl, am Band, an den 24 Kontrollen und an der Ergebnisdatei hat sich nichts geaendert; ERGEBNIS-GF-4.json traegt unveraendert 74497d3839d478506bc646d5aa8e2e536da79dd9c7f25f96609e9fae14481067.",
+  "meaning": "Technische Berichtigung ohne Ergebniswirkung. Sie steht hier, weil der Journaleintrag die Quellhashes zum Zeitpunkt seiner Veroeffentlichung festhaelt und diese Hashes seither fuer drei Dateien nicht mehr stimmen. Wer die Kette nachpruefen will, nimmt fuer den Bericht, das Gegenleseprotokoll und das Gegenlesewerkzeug die hier genannten Hashes und fuer alles Uebrige die des Haupteintrags.",
+  "sources": [
+    {
+      "path": "coordination/gesamtformel-20260921/gf-4-lauf/BERICHT-GF-4.md",
+      "role": "Bericht, Endfassung",
+      "sha256": "5e313023574b39e937aed17f1ee3c92e573c9930d7f733faa7139a07bb41a819"
+    },
+    {
+      "path": "coordination/gesamtformel-20260921/gf-4-lauf/GEGENLESEN-GF-4.txt",
+      "role": "Gegenleseprotokoll, dritter Durchgang",
+      "sha256": "febdf0a221e7bca9f8081cf153450a7658a6b38a51dd68f67873182e7d6897fd"
+    },
+    {
+      "path": "coordination/gesamtformel-20260921/gf-4-lauf/gegenlesen_gf_4.py",
+      "role": "Werkzeug des Gegenlesens, Endfassung",
+      "sha256": "22593eeffaaf8603087ae9930c48f56fea88c8a4d4daa1494c759deb9dbdb988"
+    },
+    {
+      "path": "coordination/research-journal/vertrag-gf-4-lauf-20260921.json",
+      "role": "der berichtigte Haupteintrag",
+      "sha256": "21cd1a50b70e0b24fa9f983b5990be20e668439db4c3d21cf11081033715555f"
+    }
+  ],
+  "recorded_at": "2026-09-21T11:30:58.153434+00:00"
+}

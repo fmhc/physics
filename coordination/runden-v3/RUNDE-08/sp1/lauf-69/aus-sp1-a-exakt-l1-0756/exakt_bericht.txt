@@ -1,0 +1,25 @@
+Runde 7 bic2 exakt Start 2026-09-30T04:59:18+00:00, Geraet cpu, torch 2.5.1+cu121
+=== exakt U = S - S^2 + 0.5 S^3, h = 0.01, f_rand = 1e-08, x0 = 0.75565, rho0 = 1.8276876, l = 1
+  9 Profile (je bis 28.5 s), R = 35.96, r_m = 2.700
+  Newton (Pluecker) 14.9 s, konvergiert 9/9
+  Newton (direkt) 13.9 s, konvergiert 9/9, max |rho_direkt - rho_pluecker| = 4.40e-09
+  omega^2 | Re rho | Gamma Newton | Gamma Fluss | N_K | A_norm | arg A | sig_min/sig_2 | Wachstum
+    0.7551500 | 1.8271022393 | 3.9107e-07 | 3.9107e-07 | 1.38953e+03 | -1.172046e-04 +5.464764e-04i | +1.782069 | 1.9e-15 | 4.9e+02
+    0.7553500 | 1.8273344856 | 6.6421e-07 | 6.6421e-07 | 1.37395e+03 | -1.514219e-04 +7.124121e-04i | +1.780228 | 7.3e-15 | 4.9e+02
+    0.7555500 | 1.8275666192 | 1.0078e-06 | 1.0078e-06 | 1.35857e+03 | -1.849174e-04 +8.777758e-04i | +1.778426 | 2.4e-15 | 4.9e+02
+    0.7556300 | 1.8276594410 | 1.1647e-06 | 1.1647e-06 | 1.35248e+03 | -1.981184e-04 +9.437593e-04i | +1.777716 | 2.9e-15 | 4.9e+02
+    0.7556500 | 1.8276826436 | 1.2057e-06 | 1.2057e-06 | 1.35097e+03 | -2.014013e-04 +9.602406e-04i | +1.777540 | 6.8e-16 | 4.9e+02
+    0.7556700 | 1.8277058451 | 1.2473e-06 | 1.2473e-06 | 1.34945e+03 | -2.046773e-04 +9.767160e-04i | +1.777364 | 2.1e-15 | 4.9e+02
+    0.7557500 | 1.8277986396 | 1.4208e-06 | 1.4208e-06 | 1.34341e+03 | -2.177128e-04 +1.042559e-03i | +1.776663 | 7.3e-15 | 4.9e+02
+    0.7559500 | 1.8280305461 | 1.9026e-06 | 1.9026e-06 | 1.32846e+03 | -2.498297e-04 +1.206754e-03i | +1.774939 | 3.2e-15 | 4.9e+02
+    0.7561500 | 1.8282623384 | 2.4522e-06 | 2.4522e-06 | 1.31371e+03 | -2.812891e-04 +1.370352e-03i | +1.773252 | 5.3e-15 | 4.9e+02
+  Phasentest: Sprung zwischen Nachbarn - pi = +nan; Phase mod pi (rel. links aussen): +0.00e+00, -1.84e-03, -3.64e-03, -4.35e-03, -4.53e-03, -4.71e-03, -5.41e-03, -7.13e-03, -8.82e-03
+  Naechster Abstand zum Ursprung: d_min = 3.399e-07 bei omega^2 = 0.7544960829, |A'| = 8.4890e-01, d_min/|A'| = 4.004e-07 (Einheit omega^2), Fitrest 2.2e-09
+  s(x) = L(y_a) an L(y_b) = 0: 0.7551500: -6.6473e-04 (rho 1.827068852), 0.7553500: -8.6862e-04 (rho 1.827290833)
+  Nullstelle von W (linearer Fit, 25 Punkte): rho* = 1.8263355231, omega*^2 = 0.754491340, det J = 3.802e+01, cond J = 8.8e+01, Fitrest 7.3e-05, |Im|/|W| max 0.0e+00
+  Umlauf W auf Rechteck dx = 5.0e-04, drho = 1.679e-03 (149 Punkte): -0.0000, groesster Phasensprung 0.293 rad (aufgeloest: True), min |W| = 6.530e-04
+  Rechteck dx = 5.0e-04 NEU GELEGT um den Fit-Mittelpunkt omega^2 = 0.754491340 (3 neue Profile); zweiter Fit: omega*^2 = 0.754503912, rho* = 1.8263470357, cond J = 8.8e+01
+  Umlauf W auf Rechteck dx = 5.0e-04, drho = 1.676e-03 (146 Punkte): -1.0000, groesster Phasensprung 0.270 rad (aufgeloest: True), min |W| = 4.917e-04
+  Umlauf W auf Rechteck dx = 1.0e-04: zu wenige Profile (1) um omega^2 = 0.7551500
+  Rechteck dx = 1.0e-04 neu legen: entfaellt (Zeit)
+Ende 2026-09-30T05:06:24+00:00, 426.0 s; entfallen: ['Rechteck neu legen dx = 0.0001 (bei 426 s)']

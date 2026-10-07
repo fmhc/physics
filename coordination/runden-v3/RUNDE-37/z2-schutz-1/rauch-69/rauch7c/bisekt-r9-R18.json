@@ -1,0 +1,339 @@
+{
+ "kopf": {
+  "karte": "Z2-SCHUTZ-1 (Runde 49)",
+  "modus": "bisekt",
+  "args": {
+   "modus": "bisekt",
+   "aus": "/home/fmh/fmhc-physics-remote/z2-schutz-1/rauch7c",
+   "r0": 9.0,
+   "R": 18.0,
+   "nmax": 6000,
+   "ftol": 1e-07,
+   "dtmax": 0.1,
+   "dtstart": 0.02,
+   "capw": 0.05,
+   "start": "/home/fmh/fmhc-physics-remote/z2-schutz-1/rauch7c/start-r9-R18.npz",
+   "eingaben": "../eingaben-gfn1",
+   "aufgabe": "haupt",
+   "verfahren": "neb",
+   "M": 12,
+   "d_grad": 30.0,
+   "sigma": 0.001,
+   "ks": 1.0,
+   "nvor": 150,
+   "ftol_ci": 0.001,
+   "ftol_band": 0.005,
+   "budget": 115.0,
+   "zs0_nmax": 3000,
+   "nmax_rel": 20000,
+   "zusatz": [],
+   "fortsetzung": "",
+   "fstufe": 1,
+   "keim": "",
+   "kappen": "30,60,90",
+   "delta_k": 1.0,
+   "nkeim": 2000,
+   "e_T": 0.001,
+   "keim_min": 100,
+   "zugpfad": "",
+   "nzug": 17,
+   "kappa": 100.0,
+   "nzugmax": 1500,
+   "ftol_zug": 0.0001,
+   "dtmax_zug": 0.05,
+   "kappe_b": 30.0,
+   "nbis": 800,
+   "nskip": 30,
+   "nbisekt": 14,
+   "nbisekt_min": 10,
+   "zug_von": 0,
+   "k": 4,
+   "tol": 1e-09,
+   "maxiter": 200000
+  },
+  "code_sha256": "b4f878874aed5712cc277c230c3e8eeb093c1b477f38abf38bbaaf1d9349e645",
+  "finn_sha256": "e9f357b63788918f7edd6e4e4abc84dcafb7924fbbbb5e147150c16f12d6c155",
+  "g2_sha256": "c9374a9898c9ab0ff8458b5077ed0e31f4cec53362d432ab21ef670e3be67933",
+  "start_utc": "2026-10-05T11:38:49Z",
+  "schreibzeit_utc": "2026-10-05T11:39:20Z",
+  "numpy": "2.4.4"
+ },
+ "netz_info": {
+  "art": "diamant",
+  "feld": "so3",
+  "N": 28747,
+  "frei": 21386,
+  "kern": 3061,
+  "rand": 4300,
+  "bindungen": 55544,
+  "grad_frei_min": 4,
+  "grad_frei_max": 4,
+  "bindungslaenge_min": 0.8660254037844386,
+  "bindungslaenge_max": 0.8660254037844386,
+  "innen_frei": 4132,
+  "z3_gleich_g2": null
+ },
+ "E_S": 4018.0161017490973,
+ "schritte": [
+  {
+   "lambda": 1.0,
+   "klasse": "T",
+   "schritte": 0,
+   "fmin": 11.139681565742306,
+   "E_fmin": 3851.5753734150435
+  },
+  {
+   "lambda": 0.5,
+   "klasse": "T",
+   "schritte": 29,
+   "fmin": 4.221498954378664,
+   "E_fmin": 4016.53357899782,
+   "it_fmin": 29
+  },
+  {
+   "lambda": 0.25,
+   "klasse": "S",
+   "schritte": 30,
+   "fmin": 1.127379018944012,
+   "E_fmin": 4057.6010117556234,
+   "it_fmin": 30
+  },
+  {
+   "lambda": 0.375,
+   "klasse": "T",
+   "schritte": 71,
+   "fmin": 2.232594329595481,
+   "E_fmin": 4117.518902929641,
+   "it_fmin": 32
+  },
+  {
+   "lambda": 0.3125,
+   "klasse": "S",
+   "schritte": 51,
+   "fmin": 0.7894109440509911,
+   "E_fmin": 4053.838924851802,
+   "it_fmin": 47
+  },
+  {
+   "lambda": 0.34375,
+   "klasse": "T",
+   "schritte": 102,
+   "fmin": 1.0791241190332812,
+   "E_fmin": 4046.2116834742205,
+   "it_fmin": 67
+  },
+  {
+   "lambda": 0.328125,
+   "klasse": "T",
+   "schritte": 172,
+   "fmin": 0.38398481377532806,
+   "E_fmin": 4022.943421277231,
+   "it_fmin": 155
+  },
+  {
+   "lambda": 0.3203125,
+   "klasse": "S",
+   "schritte": 62,
+   "fmin": 0.6038967746675696,
+   "E_fmin": 4049.367018191532,
+   "it_fmin": 55
+  },
+  {
+   "lambda": 0.32421875,
+   "klasse": "S",
+   "schritte": 81,
+   "fmin": 0.48150299652592005,
+   "E_fmin": 4046.8857641577724,
+   "it_fmin": 61
+  },
+  {
+   "lambda": 0.326171875,
+   "klasse": "S",
+   "schritte": 111,
+   "fmin": 0.38609978897375186,
+   "E_fmin": 4046.797295279075,
+   "it_fmin": 63
+  },
+  {
+   "lambda": 0.3271484375,
+   "klasse": "S",
+   "schritte": 126,
+   "fmin": 0.37612340424891993,
+   "E_fmin": 4040.231783659361,
+   "it_fmin": 83
+  },
+  {
+   "lambda": 0.32763671875,
+   "klasse": "S",
+   "schritte": 142,
+   "fmin": 0.28969148816980733,
+   "E_fmin": 4040.2511262489334,
+   "it_fmin": 86
+  },
+  {
+   "lambda": 0.327880859375,
+   "klasse": "T",
+   "schritte": 191,
+   "fmin": 0.2818199452991733,
+   "E_fmin": 4023.154076014609,
+   "it_fmin": 175
+  },
+  {
+   "lambda": 0.3277587890625,
+   "klasse": "S",
+   "schritte": 157,
+   "fmin": 0.20468782853846557,
+   "E_fmin": 4039.129490251765,
+   "it_fmin": 109
+  },
+  {
+   "lambda": 0.32781982421875,
+   "klasse": "S",
+   "schritte": 175,
+   "fmin": 0.14385643214124225,
+   "E_fmin": 4039.0133012002443,
+   "it_fmin": 119
+  }
+ ],
+ "lambda_lo": 0.32781982421875,
+ "lambda_hi": 0.327880859375,
+ "klammer": true,
+ "E_fmin_T": 4023.154076014609,
+ "E_fmin_S": 4039.0133012002443,
+ "fmin_T": 0.2818199452991733,
+ "fmin_S": 0.14385643214124225,
+ "barriere": 20.997199451147026,
+ "lokalisierung": {
+  "B_bindungssumme": 20.997199451147452,
+  "L6": 0.8205826283985944,
+  "n50": 4,
+  "Delta_max": 3.2133762083472455,
+  "r_max": 8.954747344286158,
+  "gamma_max_grad": 35.64315604982842,
+  "c_sattel_max": -0.08527798808797453,
+  "bindungen_c_le_0": 8,
+  "anteil_kernbindungen": 1.85329616460224,
+  "bindungen_Delta_gt_0.5": 40,
+  "top12": [
+   {
+    "bindung": 9897,
+    "Delta": 3.2133762083472455,
+    "c_sattel": -0.08527798808797453,
+    "c_start": 0.9003423722890888,
+    "r": 8.954747344286158,
+    "gamma_grad": 35.64315604982842,
+    "kernbindung": true
+   },
+   {
+    "bindung": 10859,
+    "Delta": 3.1254899950603314,
+    "c_sattel": 0.2858508632231065,
+    "c_start": 0.9290227202660213,
+    "r": 9.60143218483576,
+    "gamma_grad": 26.700944832979605,
+    "kernbindung": false
+   },
+   {
+    "bindung": 11287,
+    "Delta": 3.0248129803410744,
+    "c_sattel": 0.062007635784175834,
+    "c_start": 0.8718074282665935,
+    "r": 9.54921462739214,
+    "gamma_grad": 7.485229480057441,
+    "kernbindung": false
+   },
+   {
+    "bindung": 51308,
+    "Delta": 2.7582222403370937,
+    "c_sattel": 0.28603828697973427,
+    "c_start": 0.8782786925017447,
+    "r": 9.175374651751284,
+    "gamma_grad": 38.38515013581709,
+    "kernbindung": true
+   },
+   {
+    "bindung": 53158,
+    "Delta": 2.5594551092717115,
+    "c_sattel": -0.5143525263655163,
+    "c_start": 0.9510111979869201,
+    "r": 9.60143218483576,
+    "gamma_grad": 5.765255396080684,
+    "kernbindung": false
+   },
+   {
+    "bindung": 11301,
+    "Delta": 2.5485805812746434,
+    "c_sattel": 0.4822784551777557,
+    "c_start": 0.9325972622988464,
+    "r": 9.807522622966516,
+    "gamma_grad": 20.809428452407793,
+    "kernbindung": false
+   },
+   {
+    "bindung": 10844,
+    "Delta": 2.4969935926192424,
+    "c_sattel": 0.09916904556671921,
+    "c_start": 0.796293223475765,
+    "r": 9.229707470987366,
+    "gamma_grad": 15.87567400541852,
+    "kernbindung": true
+   },
+   {
+    "bindung": 51802,
+    "Delta": 2.3513473696748144,
+    "c_sattel": -0.4814864492557721,
+    "c_start": 0.9053540982597001,
+    "r": 8.954747344286158,
+    "gamma_grad": 29.648829356602825,
+    "kernbindung": true
+   },
+   {
+    "bindung": 10382,
+    "Delta": 2.2759878329682435,
+    "c_sattel": 0.32299364465369573,
+    "c_start": 0.82056191279436,
+    "r": 9.12071817347735,
+    "gamma_grad": 24.681358477843368,
+    "kernbindung": true
+   },
+   {
+    "bindung": 11701,
+    "Delta": 2.0431492576256094,
+    "c_sattel": 0.5811775960535288,
+    "c_start": 0.9211702950925855,
+    "r": 9.807522622966516,
+    "gamma_grad": 10.67181556348101,
+    "kernbindung": false
+   },
+   {
+    "bindung": 10397,
+    "Delta": 1.9616754369087226,
+    "c_sattel": 0.6104624112451948,
+    "c_start": 0.9290227202660213,
+    "r": 9.60143218483576,
+    "gamma_grad": 33.705963315146946,
+    "kernbindung": false
+   },
+   {
+    "bindung": 9396,
+    "Delta": 1.7817284204193786,
+    "c_sattel": 0.5123088313842363,
+    "c_start": 0.8413634433579382,
+    "r": 9.283722313813572,
+    "gamma_grad": 43.92126842187408,
+    "kernbindung": true
+   }
+  ]
+ },
+ "freigabe": {
+  "schritte": 1469,
+  "E_end": 0.0007818592337294206,
+  "fmax_end": 0.002188132279343998,
+  "E_max": 4017.015927946237,
+  "T_erreicht": true,
+  "E_max_unter_ES": true
+ },
+ "gueltig": true,
+ "laufzeit_s": 52.610305070877075,
+ "maxrss_mb": 93.6875
+}

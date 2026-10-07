@@ -1,0 +1,60 @@
+{
+ "info": {
+  "numpy": "2.4.4",
+  "python": "3.12.3",
+  "host": "ubuntu-auto",
+  "start_utc": "2026-10-04T10:04:09Z",
+  "argv": [
+   "code/tp.py",
+   "statik",
+   "--modell",
+   "kubisch",
+   "--L",
+   "16",
+   "--L",
+   "32",
+   "--out",
+   "rauch/r2-statik-kub.json",
+   "--npz",
+   "rauch/r2-statik-kub.npz"
+  ],
+  "skript_sha256": "05f6da300ade06e69bd103b00ec1eae9ad52b667187f089f04fd611d49cd231e"
+ },
+ "laeufe": [
+  {
+   "modell": "kubisch",
+   "L": 16,
+   "t_kern_s": 0.05492568016052246,
+   "stat": {
+    "res_max": 1.5543122344752192e-15,
+    "res_gross_anzahl": 0,
+    "kap_im_max": 0.0
+   },
+   "G0": -0.11931515930250922,
+   "mittel": 2.710505431213761e-20,
+   "n_vektoren": 20479,
+   "spiegel_max": 6.938893903907228e-18,
+   "t_gesamt_s": 0.24195170402526855,
+   "maxrss_MB": 49.33203125
+  },
+  {
+   "modell": "kubisch",
+   "L": 32,
+   "t_kern_s": 0.3821854591369629,
+   "stat": {
+    "res_max": 1.7763568394002505e-15,
+    "res_gross_anzahl": 0,
+    "kap_im_max": 0.0
+   },
+   "G0": -0.12283827559325422,
+   "mittel": 2.710505431213761e-20,
+   "n_vektoren": 20479,
+   "spiegel_max": 3.469446951953614e-18,
+   "t_gesamt_s": 0.5602993965148926,
+   "maxrss_MB": 57.84375
+  }
+ ],
+ "laufzeit_s": 0.8419415950775146,
+ "maxrss_MB": 57.84375,
+ "ende_utc": "2026-10-04T10:04:10Z"
+}

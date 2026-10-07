@@ -1,0 +1,139 @@
+TETRAEDERKETTE — DREI FALSIFIZIERBARE ANSCHLUESSE
+Papierreview, 2026-10-02
+
+Basis: ANSCHLUSS.txt, ERGEBNIS.txt, PROOF-REVIEW.txt dieses Verzeichnisses.
+Keine Interpreter, Tests oder neuen Rechnungen; keine Fremddatei geaendert.
+Die folgenden Aussagen beziehen sich auf ein neu definiertes Modell,
+nicht auf einen nachgewiesenen Originalgenerator oder neue Naturgesetze.
+
+1. ELASTISCHE MODEN VON GEOMETRISCHEN TICKS TRENNEN
+
+Kontrollmodell: eindeutige Kanten mit identischen Zentralfedern,
+H=sum_i |p_i|^2/(2m)+(k/2)sum_e (|x_i-x_j|-1)^2, k,m>0.
+Am spannungsfreien Referenzzustand ist der Hessian K=k R^T R, wobei
+R die infinitesimalen Laengenaenderungen der eindeutigen Kanten abbildet.
+Bei gleichen Massen gilt omega_a^2=(k/m) lambda_a(R^T R).
+Nullmoden muessen vor Interpretation explizit entfernt werden.
+
+Hier ist eine eng begrenzte positive Stabilitaetsaussage moeglich:
+Ein nichtdegenerierter Tetraeder ist infinitesimal starr. Beim Stapeln
+fixieren die drei unabhaengigen Kantenrichtungen vom neuen Vertex zu
+seiner Anheftungsflaeche dessen infinitesimale Bewegung, sobald der alte
+Komplex bis auf starre Bewegung fixiert ist. Induktiv hat diese spezielle
+vollstaendig kantenverfederte Kette genau sechs Starrkoerper-Nullmoden.
+Das gilt auch ohne einen numerischen Eigenwertlauf, aber nur fuer dieses
+spannungsfreie, nichtdegenerierte Federgeruest mit freien Randbedingungen.
+
+Das beweist weder globale Stabilitaet noch eine ausgewaehlte Atemmode,
+einen attraktiven Grenzzyklus oder dauerhafte Amplitude trotz Daempfung.
+Spiegelkonfigurationen koennen dieselben Kantenlaengen haben; endliche
+Umschlaege, Selbstkontakt und Materialbruch sind nicht ausgeschlossen.
+Vorspannung, fehlende Federn, andere Potentiale und Randbedingungen
+koennen das Stabilitaetsurteil aendern. Fuer reine konservative Federn
+ist eine Schwingung eine Folge der Anfangsanregung, kein autonomer Takt.
+
+Falsifizierbare Hypothese:
+Eine kleine interne Modenanregung erzeugt in einer rotationsabhaengigen
+Schnittmessung spektrale Anteile bei Kombinationen n Omega +/- omega_a
+(und moeglicherweise hoeheren Mischordnungen). Bei k -> 4k und gleichem
+m verdoppeln sich omega_a; Frequenzen reiner starrer Durchgangsereignisse
+bleiben bei festem Omega unveraendert. Sichtbarkeit ist nicht garantiert:
+Symmetrie und Messabbildung koennen einzelne Moden unsichtbar machen.
+
+Saubere erste Versuchsanordnung:
+Innere Schwingung ohne Gesamtrotation betrachten und die Messebene mit
+bekanntem Omega drehen. So bleibt eine Zentrifugalverformung des freien
+Federkoerpers aus der Identifikationsfrage heraus. Bei wirklicher
+Koerperrotation waeren Gleichgewicht, Drehimpuls und Kreiselkopplungen
+separat zu behandeln; dort gilt die einfache Skalierung nicht blind.
+Gleiche geometrische Anregungsamplitude, Phase, Ebene und Randbedingungen
+fuer beide Steifigkeiten; zusaetzlich starre Nullkontrolle und ein direktes
+Laengen-/Modenobservable. Verschobene Peaks allein beweisen nichts, wenn
+auch Omega oder Anfangsamplitude unkontrolliert veraendert wurden.
+
+2. SCHNITT-KORRELATION OHNE WECHSELWIRKUNG ZWISCHEN DETEKTOREN
+
+Zwei passive Ebenen A,B lesen dieselbe vorgegebene starre Kette. Bei
+zufaelliger Anfangsphase phi lauten ihre Signale
+P_A(t)=f_A(Omega t+phi), P_B(t)=f_B(Omega t+phi).
+Die gemeinsame Phase und Geometrie reichen fuer eine nichtverschwindende
+Kovarianz. Der Spezialfall B als zeitverschobene Kopie A liefert eine
+entsprechend verschobene Autokorrelation, ganz ohne Energieaustausch
+zwischen Detektoren. Das ist gemeinsame Ursache, keine Fernwirkung.
+
+Falsifizierbare Hypothese:
+Nach Konditionierung auf die vollstaendige gemeinsame Orientierung und
+alle Geometrieparameter verschwindet die bedingte Kovarianz idealer
+deterministischer Signale; unabhaengiges Detektorrauschen aendert das nicht.
+Alternativ: getrennte unabhaengig uniforme Startphasen je Detektor und
+je Wiederholung zerstoeren die Ensemblekorrelation der zentrierten Werte.
+Ein einziger konstanter Phasenversatz zerstoert sie NICHT, sondern kann
+nur das Korrelationsmaximum verschieben. Endliche Stichproben benoetigen
+eine Unsicherheitsbewertung. Ein zufaelliger Zeitversatz je Auswertung
+muss deshalb den gesamten Phasenbereich abdecken.
+
+Interventionskontrolle:
+Ebene A verschieben oder ihre Auslese abschalten, bei identisch vorgegebener
+Kettenbewegung und unveraendertem B. B bleibt gleich. Eine reproduzierbare
+A-abhaengige Aenderung an B widerlegt dieses passive gemeinsame-Ursache-
+Modell, belegt aber fuer sich noch keine nichtlokale Physik: Rueckwirkung,
+gemeinsame Elektronik und ausgelassene Variablen waeren Alternativen.
+Die Schnittformel ist eine simultane geometrische Zaehlidentitaet, kein
+Transportgesetz; sie bestimmt weder Signalausbreitung noch Bell-Korrelationen.
+
+3. ENDLICHE DETEKTORDICKE ALS EIGENE MESSABBILDUNG
+
+"Dicke" muss definiert werden: Kantenkontakt mit einer ganzen Schicht,
+projizierte Helligkeit und Mittelung duenner Ebenenschnitte sind verschiedene
+Observablen. Als engstes Modell waehle eine bekannte Offsetantwort w_h(s),
+Integral w_h ds=1, und A_h(t)=Integral w_h(s) P(t;s) ds.
+P(t;s) zaehlt Kantenkreuzungen mit der um s verschobenen Ebene.
+Ein Rechteckprofil w_h=1/h fuer |s|<h/2 modelliert gleichmaessige Mittelung.
+A_h ist im Allgemeinen nicht ganzzahlig. Dies ist kein Beweis dafuer,
+dass ein realer Detektor genau diese Antwort besitzt.
+
+Falsifizierbare Hypothese fuer ein isoliertes transversales Vertexereignis:
+Ist die vorzeichenbehaftete Vertexdistanz lokal d(t)=v_n(t-t0), v_n!=0,
+wird ein idealer Sprung der Hoehe Delta P beim Rechteckprofil zur Rampe
+mit Dauer h/|v_n|. Verdoppelung von h verdoppelt diese Uebergangszeit;
+bei anderer w_h folgt die Form deren integrierter Antwort. Tangentiale
+Ereignisse mit v_n=0, dicht benachbarte Ereignisse und bewegte Kanten
+nahe Parallelitaet brauchen eine gesonderte Behandlung. Ein isoliertes
+Vertexereignis mit Delta P=0 hat keinen sichtbaren Zaehlsprung.
+
+Die punktweise Formel P=T3+2T4+2C impliziert unter ihren jeweiligen
+Einbettungsbedingungen eine gemittelte Identitaet
+A_h=<T3>_h+2<T4>_h+2<C>_h. <C>_h ist NICHT die Komponentenzahl einer
+projizierten Schicht. Bereits dadurch koennen scheinbar fraktionelle
+Inselzahlen entstehen, ohne die geometrische Formel zu verletzen.
+Die gemittelte Identitaet setzt die Formel fuer fast alle Offsets voraus;
+eine einzige passende Mittelebene reicht nicht.
+
+PAARPOTENTIALE: WAS EINGEFUEHRT, NICHT ABGELEITET WIRD
+
+Die Federenergie ist eine Modellannahme mit ausgewaehlter Graph-Adjazenz.
+Gleiche Schnittstatistik leitet weder diese Adjazenz als Wechselwirkung
+noch ein Potential V(r) ab. Unverknuepfte Vertexpaare koennen hier beliebig
+nahe kommen; das Modell besitzt weder automatische Selbstvermeidung noch
+eine unabhaengig begruendete Fernanziehung. Ein all-pairs-Potential ist ein
+anderes Modell und kann Referenzform, Gleichgewicht und Modenspektrum
+vollstaendig aendern. Auch eine Ruheform legt Potentialkruemmungen und
+damit Frequenzen nicht eindeutig fest. Fuer Bindungsbehauptungen waeren
+wenigstens Gleichgewicht, Energie gegen getrennte Fragmente und definierte
+Stoerungen zu pruefen; fuer Stabilitaet zusaetzlich die relevante Dynamik.
+
+ENGSTER SINNVOLLER FOLGETEST
+
+Zuerst rein geometrische Detektorbreite an EINEM bereits definierten,
+isolierten transversalen Tick der rekonstruierten 12-Vertex-Kette pruefen:
+gleiche n(t) wie RESULT.json, bekannte Offsets, Rechteckprofile h und 2h,
+vorher v_n und Abstand zu Nachbarereignissen bestimmen. h so klein waehlen,
+dass die lineare Distanznaeherung und Ereignisisolation gelten. Vorhersage:
+Rampendauern h/|v_n| und 2h/|v_n|, gleicher Grenzwert fuer h -> 0 ausser
+am Ereignis selbst. Das benoetigt weder neue Bindungsannahme noch langen
+Dynamiklauf und klaert unmittelbar, welche "Ticks" messbar bleiben.
+
+Dieser vorgeschlagene Test wurde hier NICHT ausgefuehrt. Ein anschliessender
+mechanischer Test waere ein eigener koordinierter Lauf mit dokumentiertem
+Rechenort und Eingabehashes; keine Wiederholung der 400000 Normalenproben
+ist fuer die drei Fragen erforderlich.

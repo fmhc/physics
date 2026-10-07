@@ -1,0 +1,31 @@
+{
+  "id": "claude-punktwellen-warp-v2-20260912",
+  "time": "2026-09-12T02:03:00+02:00",
+  "time_kind": "completed",
+  "author": "Claude (Rechnung: Agent codex-punktwellen-warp auf TS440, zweiter Anlauf)",
+  "topic": "micro",
+  "status": "technical",
+  "title": "Punkt-Wellen mit verzerrter vierter Richtung, zweiter Anlauf: der Warp-Faktor interpoliert in dieser Modellfamilie nicht zwischen 3D und 4D; Kontrollen teilweise verfehlt",
+  "question": "Ist innerhalb einer Brane-Modellfamilie (Punkte auf y=0, Feld auf R^3 x [0,L] mit Warp e^(-2ky)) der Warp-Parameter k ein Interpolationsparameter zwischen der 3D-Referenz (y entfernt) und der flachen 4D-Referenz (k=0)?",
+  "action": "52 Bahnen auf TS440 (46 neu, CPU float64, 1 Thread, Labor completed; Quellen-QA .69 24/24): REF-3, REF-4, k=0,0625/0,25/1 (kL=1,4,16 bei L=16), je mit und ohne Abschalten der Kopplung bei T_s=6, Konvergenz h, Ny, L. Gedaechtnismass: Zeit bis |Phi(6,0,0)|/e nach Abschalten, Restfeld bei T=9, Bulk-Energie E_y(12).",
+  "result": "K-A (Konvergenz) besteht fuer alle 26 h/h2-Vergleiche, verfehlt aber mehrere L/2L-Vergleiche (Paarabstaende bis 0,032 > 0,02; Energie nach Abschalten bis 0,05 > 0,001, davon fast alles externe Schaltarbeit des abrupten g->0; nach deren Abzug < 1e-6). K-B (grosses k -> 3D) verfehlt: der Paarabstand zu REF-3 waechst mit k (an: 0,113/0,265/0,545; aus: 0,189/0,363/0,597). Gedaechtniszeit tau: REF-3 1,5, REF-4 1,5, Warp 2,0/2,6/3,8, also laenger als beide Referenzen; E_y(12) nach Abschalten faellt monoton mit k (1,05/0,79/0,58/0,38), ohne Abschalten waechst die Bulk-Energie mit k ueber REF-4 hinaus. K-D (Bitgleichheit bis T_s) besteht.",
+  "meaning": "Ausgang 1 (Warp als Interpolationsparameter) wird in der Tendenz widerlegt, aber ohne abgenommene Kontrollen: die Familie ist eine endliche Galerkin-Projektion mit Neumann-Rand, dessen L-Abhaengigkeit die Raumkontrolle reisst, und das abrupte Abschalten verrichtet Schaltarbeit. Ein dritter Anlauf braeuchte einen glatten Kopplungsabfall, absorbierenden Rand oder groesseres L, und eine Modenanalyse in y. Kein Befund ueber Warp-Geometrien in der Natur; kein Bindungsnachweis.",
+  "sources": [
+    {
+      "path": "coordination/punktwellen-warp-20260912-v2.md",
+      "label": "Bericht v2",
+      "sha256": "6b2310763e39fdc693987725716b01f861510c9759e63c61e15aee79f62bd688"
+    },
+    {
+      "path": "coordination/claude-punktwellen-warp-20260912/runs/v2/output/summary.json",
+      "label": "Ergebnis v2",
+      "sha256": "52d69f37115d30fb480d78d5315a9774adf51b993b2cbf0ce46a77c733a7dbdc"
+    },
+    {
+      "path": "coordination/claude-punktwellen-warp-20260912/METHOD-v2.md",
+      "label": "Vertrag v2",
+      "sha256": "b77adef44f6437eb4c91b0e0714fef8edf9977825e5874a5b9cb4cd4c0a9d243"
+    }
+  ],
+  "recorded_at": "2026-09-12T00:13:09.646133+00:00"
+}

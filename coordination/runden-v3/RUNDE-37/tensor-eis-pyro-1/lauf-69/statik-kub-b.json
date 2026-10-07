@@ -1,0 +1,42 @@
+{
+ "info": {
+  "numpy": "2.4.4",
+  "python": "3.12.3",
+  "host": "ubuntu-auto",
+  "start_utc": "2026-10-04T10:18:33Z",
+  "argv": [
+   "code/tp.py",
+   "statik",
+   "--modell",
+   "kubisch",
+   "--L",
+   "256",
+   "--out",
+   "lauf/statik-kub-b.json",
+   "--npz",
+   "lauf/statik-kub-b.npz"
+  ],
+  "skript_sha256": "419d7da6caa211c721eb6a8c87403977415cf3050f03365377f51cb77b374dfd"
+ },
+ "laeufe": [
+  {
+   "modell": "kubisch",
+   "L": 256,
+   "t_kern_s": 161.65311861038208,
+   "stat": {
+    "res_max": 2.4424906541753444e-15,
+    "res_gross_anzahl": 0,
+    "kap_im_max": 0.0
+   },
+   "G0": -0.12592451995911985,
+   "mittel": 0.0,
+   "n_vektoren": 20479,
+   "spiegel_max": 6.938893903907228e-18,
+   "t_gesamt_s": 162.24047231674194,
+   "maxrss_MB": 1021.33203125
+  }
+ ],
+ "laufzeit_s": 162.27639174461365,
+ "maxrss_MB": 1021.33203125,
+ "ende_utc": "2026-10-04T10:21:16Z"
+}

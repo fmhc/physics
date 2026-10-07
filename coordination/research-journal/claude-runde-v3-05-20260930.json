@@ -1,0 +1,77 @@
+{
+  "id": "claude-runde-v3-05-20260930",
+  "time": "2026-09-30T03:31:28+02:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung und Abschaetzung; Code R5-A/B/C/D und 2D-A sowie vier Ernten: Anthropic Opus 5.5 (frische Agenten)",
+  "topic": "theory",
+  "status": "reported",
+  "evidenzart": "modell",
+  "title": "Runde 5 nach v3 (explorativ): Von 35 Biologie-, Chemie- und Wellenkarten tragen 5 weiter, vor allem dort, wo der Rechner dem Papier widerspricht (Leben unter Q_min, Aufnahme unter der Schwelle, Kavitation des dichten Kondensats, Vierer-Ring mit Windung, Stroemung unter Schall)",
+  "question": "Was ergeben alle bis dahin nicht vergebenen Ideen (Biologie, Chemie, Wellen/Segeln) in kleinen 1D-, 3D-radialen und 2D-Tests mit vorab notierten Vorhersagen?",
+  "action": "Finn 30.09.: \"und rechne die anderen ideen aus\" sowie \"mach die kleinen tests auf anderen karten oder auf cpu\". Fuenf Code-Agenten (Anthropic) schrieben r5a.py (3D radial), r5b.py (1D Einzelball), r5c.py (1D mehrere Baelle; v2 nach Tensorform-Fehler in bragg/anderson), r5d.py (1D zwei Felder, stabiles chi-Medium) und r5_2d_a.py (2D Zelle, mit berichtigtem Schiessen fuer m != 0). Die Leitung rechnete ueber kleintest.sh auf der .69 (P4000 und CPU-Spuren) und pruefte r5c v2 und r5_2d_a lokal vor. Vier frische Ernte-Agenten werteten Vorhersage gegen Ergebnis aus; Abschaetzung der Leitung in RUNDE-05.md.",
+  "result": "35 Tests: 5 weiter, 25 parken, 5 verwerfen. Weiter: Bio 4 Tod (Ball lebt unter Q_min mit omega 1,007 noch 190-210 Zeiteinheiten), Bio 3/36 Fuettern (2,4 % Aufnahme unter der Schwelle gegen Papier 0, Energie ~2,1 je Ladung, Rueckstoss; ueber der Schwelle 4-6 % wie Born mit omega je Ladung), Bio 22/Chemie 10 Kavitation (dichtes Kondensat 0,72 zerfaellt nach schmaler Delle in 20 Klumpen), Wellen 10 kreuzen (Rutschen unter c_s vermutlich Anfangsstoss; Klaerung in M1), Bio 24 Vierer-Ring mit Windung 2 pi/4 bleibt zusammen. Getroffen u. a.: Young-Laplace auf 1-4 %, Keim R_c = R_halb auf 0,1 %, Mutanten zerfallen, ir 0,99-1,09, mitochondrium (Gast gefangen bei v 0,2, frei bei 0,4), Teilung (kleine drehende Baelle teilen sich in Toechter mit Windung 0). Kontrollen rissen haeufig bei Vielteilchen-Tests (quorum, lawinen); bragg unphysikalisch trotz L3 19/22.",
+  "meaning": "Explorativ, keine formale Bestaetigung, keine Messdaten. Die tragenden Karten sind Widersprueche zur Papierrechnung, nicht die erwarteten Treffer. Lehre: L3 prueft nur grob gegen fein; jede Messgroesse braucht eine eigene Plausibilitaetsschranke (z. B. 0 <= T <= 1, Bilanzen). Kein direkter Bezug zur Spin-2-Kette oder zur Gesamtformel.",
+  "sources": [
+    {
+      "path": "coordination/runden-v3/RUNDE-05.md",
+      "sha256": "fed2e505febc7348f897f4dbd80621afa5493b52d14edbbd6f4b9ae6f9461e22"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-05/AUFTRAG-R5.md",
+      "sha256": "61aba34d3b7ba543b51ec8f048364de06b78775d581e50472acd4a5962165de7"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-05/ERGEBNISSE-R5-AB.md",
+      "sha256": "5f5cdf5a6f212d0b7097a22608c1ce774d27e09f599b5768784eea19a68148e2"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-05/ERGEBNISSE-R5-CD.md",
+      "sha256": "6622329689fdec6cdbb0b7d741995d34426937a257343f270f5936c582edcc4d"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-05/ERGEBNISSE-R5-2DA.md",
+      "sha256": "5ab392f19d6c051768d44534aeaae6b45a92c7cbefb7b0d2e2e1746a1480d316"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-05/r5a/r5a.py",
+      "sha256": "e51b4172d90615e55ba16ac5cc478e41a37bdfa5df65f44b8f76458c08cd843b"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-05/r5a/PLAN.md",
+      "sha256": "fc255148cc75baecf6d0bc434902aa82d1cc66b9f60a57ad997c28f3d36f614a"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-05/r5b/r5b.py",
+      "sha256": "11ae4d46b93a0bacac0cf8a68c61b877e02cd7943692df524f084e5f2fae1fac"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-05/r5b/PLAN.md",
+      "sha256": "00ca5c7fcaeb9f98917b14ce593c36cf1f65cf6b6510e4998f5024ccd4fd3642"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-05/r5c/r5c.py",
+      "sha256": "6663e558ab26b4d365ecc3302a7add3e21966d259699f3e1d43711d49a8aaf73"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-05/r5c/PLAN.md",
+      "sha256": "c9ef00c791f619bf56111c3b84805b9f91404d5732c3c22177a51f32fa05e0bd"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-05/r5d/r5d.py",
+      "sha256": "14908d23f8c87d6d3ec89b469d7c862bf8523a8f65bbabffb81ef8834cfe8059"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-05/r5d/PLAN.md",
+      "sha256": "2e3f7435e19b8a6ef36068b3537d0b93c6aa9f36e80a5981e2f9eecd368501c8"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-05/r5-2d-a/r5_2d_a.py",
+      "sha256": "4b7a00b22e427ab9889056057437fc2199ca0fe6fff0ccf4847c11f62892bc7b"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-05/r5-2d-a/PLAN.md",
+      "sha256": "66bbcecc56ad395d34feb9a7b82d8f27a64db004b8beaaadc52b9c7f6ea34541"
+    }
+  ],
+  "recorded_at": "2026-09-30T01:31:28.925741+00:00"
+}

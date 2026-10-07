@@ -1,0 +1,72 @@
+Freie M2-Zweitordnungsantwort, Root-Ergebnis vom 2026-10-02
+
+AUSGANG: UNRESOLVED nach unveraendertem Vorabplan.
+Kein stationaerer Abstrahlbefund aus der freien Zeitentwicklung erreicht.
+Alle elf Arme liefen bis T128, alle16 Paar/Fenster/Schalenzeilen sind
+vorhanden. Keine Exception; exit2 bedeutet den vorgesehenen negativen
+Ausgang des Auswerters, keinen Prozessabsturz. Kein Nachlauf.
+
+Bindungen:
+PLAN 097108448c6604b8f417a67f64291c6daef4b490fcb00158070e01837f7ae96b
+Code 74ba12a56e60241a967c2ff143a6489adbd7b27a3b72ddeeb0d3d29fee3c43c6
+RESULT a3f302b50f184ef2b7fdf9d92afb903068e22436d2b3547fa4248f80e9a56cc3
+Nichtautor-Plan-, Normierungs-, Code- und Ergebnislesung liegen daneben.
+Raw Anfang/Ende/Ring-NPZ bleiben unter dem im RUN-SCOPE genannten Remote-
+Ordner time-domain-run; Dateinamen und Hashes stehen im RESULT. Lokal ist
+RESULT gesichert; keine behauptete lokale Kopie aller Rohtrajektorien.
+
+WAS BESTEHT
+- Eingangsbindungen, synthetische Fourier-/Flusskontrollen und globale
+  Evolutionskontrollen bestanden. MaxE-Drift6.6993e-9, MaxQ-Drift2.8866e-15,
+  MaxKern-Q-Bilanzrest3.2934e-15 (jeweils relativ wie im Plan).
+- Ungerade volle kanonische Antwort bleibt nahe der linearen Prognose:
+  maximaler normierter Fehler0.00089186 bei erlaubten0.05.
+- Die Betragsvergleiche der alpha²-skalierten Aussenantwort bestehen:
+  h-Differenz maximal0.01047 des stationaeren Sollbetrags,
+  dt-Differenz maximal0.0005088, Amplitudendifferenz maximal1.9902e-5.
+  Diese Nenner sind der STATIONAERE SOLLBETRAG, nicht der Messbetrag.
+- Die physisch zurueckskalierten paritaetsgeraden Bandflussverhaeltnisse
+  bei verdoppelter Stoeramplitude sind16.0000816,15.9999473,
+  15.9999053,15.9998661, Soll16. Das ist eine Kontrolle des perturbativen
+  Regimes, keine Entdeckung eines neuen Skalengesetzes.
+
+WAS SCHEITERT
+- Komplexer Plusfeldfehler gegen stationaere Antwort5.2809 bis9.2700
+  (erlaubt0.10); jede Messzeile verfehlt.
+- Eingehender/ausgehender Anteil in der festen Bandzerlegung0.1791 bis
+  0.3202 (erlaubt0.10). Kein reines auslaufendes stationaeres Band identifiziert.
+- Bandflussfehler15.526 bis63.366 (erlaubt0.20); jede Messzeile verfehlt.
+- Komplexe Aenderung zwischen beiden spaeten Fenstern6.341 bis10.334
+  Sollbetraege (erlaubt0.10); alle8 Fenstervergleiche verfehlt.
+- Aufloesungsreserve0.00101436 ist groesser als der Sollbetrag~1.97e-5;
+  alle16 Reservegates verfehlt. Gutes h/dt-Verhalten ersetzt dies nicht.
+
+EINORDNUNG
+Die freie kleine Stoerung erzeugt eine gut reproduzierbare quadratische
+Antwort, deren endliche2rho-Fensterprojektion jedoch nicht die gespeicherte
+stationaere auslaufende Antwort ist. Quadratische Skalierung allein trennt
+Einschalttransienten, langsame Hintergrundaenderungen und etablierte
+harmonische Abstrahlung nicht. Einschaltkontamination ist eine plausible
+Erklaerung, hier nicht eindeutig als Mechanismus nachgewiesen. Insbesondere
+ist das kein Gegenbeweis zur bereits kontrollierten erzwungenen Antwort.
+
+Die berichteten Fluesse gehoeren zum PARITAETSGERADEN, bandprojizierten
+Feld. Keine Gleichsetzung mit Gesamtleistung eines einzelnen +/-Laufs,
+keine Lebensdauer oder Abklingrate, keine Langzeit-/nichtradiale Stabilitaet,
+kein BIC und keine Aufwertung des historischen Modenkandidatenlabels.
+Globaler E-Fehler ist nicht die Fehlergrenze der winzigen Aussenleistung.
+
+ORT/BUDGET
+.69 CPU8, nice19, ein Thread, kein CUDA; externer Hauptlauf168.72CPU-s,
+169.04wall, maxRSS240212KiB. Syntax0.07CPU-s zusaetzlich. Innerhalb300CPU-s.
+Plot aus gespeicherten Diagnosen separat begrenzt; PLOT-TIME enthaelt Beleg.
+Root hat PNG visuell gelesen: vollstaendige Achsen, beide bei0, kein
+versteckter Fehler; oben stationaerer Vergleich verfehlt, unten Quartik-
+Kontrolle bestanden. Plot ist keine neue Simulation oder Nachauswertung
+mit geaenderten Zeitfenstern.
+
+NAECHSTE FRAGE, KEIN WEITERLAUF
+Zuerst Papierdiagnose der kausalen Zweitordnungsantwort mit Nullanfangsdaten
+und ihrer DC-/2rho-/Phasenmodenanteile. Eine solche Diagnose darf nicht
+rueckwirkend die gebundenen stationaeren Gates ersetzen. Keine automatische
+Verlaengerung von T oder Aenderung der Stoeramplituden.

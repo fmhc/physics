@@ -1,0 +1,584 @@
+#!/usr/bin/env python3
+"""Runde 9, Karte SD-1: Gegen-Schwappen (Spin-Dipol) im gemischten Ball, psi_2-Kanal mit Drehimpuls l. Explorativ.
+Code begonnen 2026-09-30 08:23:12 CEST (date). Plan: RUNDE-09/sd1/PLAN.md.
+
+Kopie von RUNDE-08/gf-bic/gfbic_umlauf.py (Fassung 2, sha256 322772c0809b714f...), erweitert um:
+  - --l fuer punkt (Umlauf nach dem R9-Verfahren von gfbic_umlauf): nu = l + 1 (dim = 3) an allen Stellen, die bisher
+    fest 1.0 uebergaben (newton_m, newton_direkt, direkt_m, w_werte, umlauf_rechteck). Fliehkraftterm l(l+1)/r^2 in
+    beiden Kanaelen und Start U, V ~ r^(l+1) kommen aus bic2.py Version 3 (unveraendert importiert).
+  - kurve und exakt: die Kommandos aus bic2.py Version 3 (mit --l), aber mit den Koeffizienten des gewaehlten Kanals.
+    bic2.lin_multi und bic2.profil_pot werden dafuer nur in diesem Prozess ersetzt (lin_multi_k bzw. natives Profil).
+  - Kanaele (--kanal): psi2 (Standard; dp = U'(S), sp = -g J S, einkomponentiger Ball), psi1 (N = 1, Kontrolle gegen
+    bic2), sym (gemischter Ball, Gleichtakt, natives Profil), anti (gemischter Ball, Gegentakt, Koeffizienten wie
+    gfbic_anti.k_anti, natives Profil; in SD-1 ungeprueft).
+  - punkt: freier Punkt "X" (--kanal, --g, --x0, --nu0, --dnu, --cgam) neben Z1, Z2, Z3, BG, K1.
+  - l = 0: nu = 0 + 1.0 = 1.0 bitgleich, Rechenweg von punkt wie gfbic_umlauf; Kopfzeilen nur fuer l > 0 mit l.
+
+--- urspruenglicher Kopf (gfbic_umlauf.py) ---
+Runde 9, Karte GF-BIC-2 (Nachtrag D in PLAN.md): Umlaufzahl der W-Abbildung fuer psi_2-Stellen (Gegenlaeufer) und fuer
+die Atmung des gemischten Balls (natives Profil, symmetrischer Sektor). Code begonnen 2026-09-30 07:08:35 CEST (date).
+
+Verfahren wie bic2.py exakt (Version 3, l = 0), dessen Funktionen unveraendert importiert werden (newton_m, newton_direkt,
+direkt_m, eigen, lin_fit_nullstelle, umlauf_rechteck, phasentest, profil, f_werte, radius_wo, r_halb). Neu:
+  - lin_multi_k: wie bic2.lin_multi, aber mit eigener Koeffizientenfunktion (dp, sp, dp', sp') je Profil
+  - k_psi2: dp = U'(S), sp = -g J S (zweite Komponente um den einkomponentigen Ball)
+  - k_sym: dp = U' + S U'' - g J S, sp = S U'' - g J S/2 (gemischter Ball, symmetrischer Sektor, S = 2 h^2)
+  - k_psi1: dp = U' + S U'', sp = S U'' (N = 1, Kontrolle gegen bic2)
+  - prof_nativ: eigenes Schiessen fuer den gemischten Ball, h'' + (2/r) h' = [U'(2 h^2) - g J h^2 - omega^2] h,
+    ohne Umweg ueber beta_eff (f = sqrt(2) h, damit S = f^2 die Gesamtdichte ist)
+  - stelle: Stufe 1 grob (Pole, W-Gitter, Fit), Stufe 2 je Rechteckbreite neue Profile um den Fit-Mittelpunkt, zweiter
+    Fit, Rechteck um den Fit-Mittelpunkt; liegt der zweite Fit ausserhalb 0,8 dx, dritte Lage um ihn.
+Kommandos: rauch | punkt --name Z1|Z2|Z3|BG|K1|X | kurve | exakt (SD-1)
+"""
+import argparse
+import cmath
+import json
+import math
+import os
+import sys
+import traceback
+
+for _v in ("OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS"):
+    os.environ.setdefault(_v, "1")
+
+import numpy as np  # noqa: E402
+import torch  # noqa: E402
+
+HIER = os.path.dirname(os.path.abspath(__file__))
+B2_PFAD = None
+for _p in (HIER, os.path.normpath(os.path.join(HIER, "..", "..", "RUNDE-07", "bic2"))):
+    if os.path.isfile(os.path.join(_p, "bic2.py")):
+        sys.path.insert(0, _p)
+        B2_PFAD = os.path.join(_p, "bic2.py")
+        break
+G_PFAD = None                         # SD-1: gfbic.py im selben Ordner (.69) oder im GF-BIC-Ordner (lokal, nur lesend)
+for _p in (HIER, os.path.normpath(os.path.join(HIER, "..", "..", "RUNDE-08", "gf-bic"))):
+    if os.path.isfile(os.path.join(_p, "gfbic.py")):
+        sys.path.insert(0, _p)
+        G_PFAD = os.path.join(_p, "gfbic.py")
+        break
+sys.path.insert(0, HIER)
+import bic2 as B2  # noqa: E402
+import gfbic as G  # noqa: E402  (nur fuer Budget, jetzt, sha256, jsonfest, uhr, fz)
+
+F64, C128 = torch.float64, torch.complex128
+JK = 1.0
+
+# Name: (Koeffizienten, g, x0, nu0, d nu/d x, cgam, Profilart)
+PUNKTE = {
+    "Z1": ("psi2", 0.2, 0.7113, 1.68874, 1.17, 0.01, "einfeld"),
+    "Z2": ("psi2", 0.2, 0.6462, 1.6109, 1.25, 0.01, "einfeld"),
+    "Z3": ("psi2", 0.4985, 0.551158, 1.51526, 1.35, 0.01, "einfeld"),
+    "BG": ("sym", 0.2, 0.75869, 1.71173, 0.40, 1.07, "nativ"),
+    "K1": ("psi1", 0.0, 0.797677, 1.744618, 0.4049, 1.07, "einfeld"),
+    "X": ("psi2", 0.2, None, None, 1.2, 0.01, "einfeld"),       # SD-1: freier Punkt, --x0 und --nu0 Pflicht
+}
+
+
+# ================================================================ Koeffizienten (dp, sp, dp'(S), sp'(S))
+
+def U1(S):
+    return 1.0 - 2.0 * S + 1.5 * S * S
+
+
+def U2(S):
+    return -2.0 + 3.0 * S
+
+
+def k_psi2(S, g):
+    return U1(S), -g * JK * S, U2(S), -g * JK + 0.0 * S
+
+
+def k_sym(S, g):
+    return (U1(S) + S * U2(S) - g * JK * S, S * U2(S) - 0.5 * g * JK * S,
+            2.0 * U2(S) + 3.0 * S - g * JK, U2(S) + 3.0 * S - 0.5 * g * JK)
+
+
+def k_psi1(S, g):
+    return U1(S) + S * U2(S), S * U2(S), 2.0 * U2(S) + 3.0 * S, U2(S) + 3.0 * S
+
+
+def k_anti(S, g):
+    """SD-1: Gegentakt des gemischten Balls, wie gfbic_anti.k_anti (R8 Nachtrag A): dp = U' + g J S, sp = -g J S/2."""
+    return U1(S) + g * JK * S, -0.5 * g * JK * S, U2(S) + g * JK, -0.5 * g * JK + 0.0 * S
+
+
+KOEFF = {"psi2": k_psi2, "sym": k_sym, "psi1": k_psi1, "anti": k_anti}
+PROFILART = {"psi2": "einfeld", "psi1": "einfeld", "sym": "nativ", "anti": "nativ"}      # SD-1
+
+
+def lin_multi_k(profs, h, f_rand, dev, kfun, g, r_min=20.0):
+    """wie bic2.lin_multi (gleiche Geometrie, gleiche Schluessel), Koeffizienten aus kfun(S, g)."""
+    for p in profs:
+        if abs(p["h"] - 0.5 * h) > 1e-12:
+            raise ValueError("Profil braucht Schritt h/2")
+    R = max([r_min] + [B2.radius_wo(p, f_rand * p["f0"]) for p in profs])
+    K = int(math.ceil(R / h))
+    K += K % 2
+    rh = sorted(B2.r_halb(p) for p in profs)[len(profs) // 2]
+    Km = max(2, min(K - 2, int(round(rh / h))))
+    Km -= Km % 2
+    dv, sv, reihe, om = [], [], [], []
+    for p in profs:
+        f, _ = B2.f_werte(p, 2 * K + 1)
+        S = torch.tensor(f, dtype=F64) ** 2
+        d_, s_, _, _ = kfun(S, g)
+        dv.append(d_)
+        sv.append(s_)
+        s0 = p["f0"] ** 2
+        S2 = 2.0 * p["f0"] * p["f2"]
+        a0, b0, a1, b1 = kfun(s0, g)
+        reihe.append([float(a0), float(a1) * S2, float(b0), float(b1) * S2])
+        om.append(math.sqrt(p["w2"]))
+    cf = [0.0] + [1.0 / (j * 0.5 * h) ** 2 for j in range(1, 2 * K + 1)]
+    return {"h": h, "K": K, "Km": Km, "R_aus": K * h, "r_m": Km * h, "dvX": torch.stack(dv).to(dev),
+            "svX": torch.stack(sv).to(dev), "reiheX": torch.tensor(reihe, dtype=F64, device=dev),
+            "omX": torch.tensor(om, dtype=F64, device=dev), "cf": cf, "dev": dev, "n": len(profs)}
+
+
+# ================================================================ natives Profil des gemischten Balls
+
+def prof_nativ(w2, g, hp, n_kand=64, runden=9, r_max=90.0, f_schwanz=1e-5):
+    """h'' + (2/r) h' = G(h), G(h) = [U'(2 h^2) - g J h^2 - omega^2] h = (a0 - c3 h^2 + 6 h^4) h, a0 = 1 - omega^2,
+    c3 = 4 + g J. Schiessen in s = -ln(h_top - h(0)) (h_top: groessere Nullstelle von G/h), Klammer: Ueberschuss
+    (h < 0) gegen Unterschuss (h' > 0). Rueckgabe im Profilformat von resonanz3d/bic2 mit f = sqrt(2) h."""
+    a0 = 1.0 - w2
+    c3 = 4.0 + g * JK
+    disk = c3 * c3 - 24.0 * a0
+    if disk <= 0:
+        raise ValueError("kein Buckel")
+    htop = math.sqrt((c3 + math.sqrt(disk)) / 12.0)
+
+    def Gf(hh):
+        return (a0 - c3 * hh * hh + 6.0 * hh ** 4) * hh
+
+    def Gp(hh):
+        return a0 - 3.0 * c3 * hh * hh + 30.0 * hh ** 4
+
+    def start(s):
+        h0 = htop - np.exp(-s)
+        h2 = Gf(h0) / 6.0
+        h4 = Gp(h0) * h2 / 20.0
+        r = hp
+        return h0, h2, h0 + h2 * r * r + h4 * r ** 4, 2.0 * h2 * r + 4.0 * h4 * r ** 3
+
+    def rk4(r, hh, pp):
+        def ab(rr, x, y):
+            return y, Gf(x) - (2.0 / rr) * y
+        k1h, k1p = ab(r, hh, pp)
+        k2h, k2p = ab(r + 0.5 * hp, hh + 0.5 * hp * k1h, pp + 0.5 * hp * k1p)
+        k3h, k3p = ab(r + 0.5 * hp, hh + 0.5 * hp * k2h, pp + 0.5 * hp * k2p)
+        k4h, k4p = ab(r + hp, hh + hp * k3h, pp + hp * k3p)
+        return hh + (hp / 6.0) * (k1h + 2 * k2h + 2 * k3h + k4h), pp + (hp / 6.0) * (k1p + 2 * k2p + 2 * k3p + k4p)
+
+    lo, hi = -math.log(0.9 * htop), 30.0
+    n_max = int(round(r_max / hp))
+    for rnd in range(runden):
+        s = np.linspace(lo, hi, n_kand)
+        _, _, hh, pp = start(s)
+        zust = np.zeros(n_kand)
+        for k in range(1, n_max):
+            hh, pp = rk4(k * hp, hh, pp)
+            ueber = (zust == 0) & (hh < 0)
+            unter = (zust == 0) & (hh >= 0) & (pp > 0)
+            zust[ueber] = 1
+            zust[unter] = -1
+            hh = np.where(zust == 0, hh, 0.0)
+            pp = np.where(zust == 0, pp, 0.0)
+            if k % 100 == 0 and not np.any(zust == 0):
+                break
+        if rnd == 0 and not (zust[0] < 0 and zust[-1] > 0):
+            raise ValueError(f"Klammer ungueltig: {zust[0]}, {zust[-1]}")
+        if np.any(zust < 0):
+            lo = max(lo, float(s[zust < 0].max()))
+        if np.any(zust > 0):
+            hi = min(hi, float(s[zust > 0].min()))
+    s3 = np.array([lo, 0.5 * (lo + hi), hi])
+    h0v, h2v, hh, pp = start(s3)
+    fl, pl = [float(h0v[1])], [0.0]
+    j_cut = None
+    grund = 0
+    for k in range(1, n_max):
+        fl.append(float(hh[1]))
+        pl.append(float(pp[1]))
+        streu = abs(hh[2] - hh[0])
+        if hh[1] < f_schwanz * h0v[1]:
+            grund = 1
+        elif pp[1] > 0:
+            grund = 2
+        elif hh[1] < 0:
+            grund = 3
+        elif streu > 1e-2 * abs(hh[1]):
+            grund = 4
+        if grund:
+            j_cut = max(1, k - 1)
+            break
+        hh, pp = rk4(k * hp, hh, pp)
+    if j_cut is None:
+        j_cut = len(fl) - 1
+    w = math.sqrt(2.0)
+    return {"w2": w2, "dim": 3.0, "h": hp, "f": [w * v for v in fl[:j_cut + 1]], "fp": [w * v for v in pl[:j_cut + 1]],
+            "j_cut": j_cut, "f0": w * float(h0v[1]), "f2": w * float(h2v[1]), "kappa": math.sqrt(a0), "dm1": 2.0,
+            "r_cut": j_cut * hp, "grund": grund, "klammer": hi - lo, "htop": htop, "g": g}
+
+
+def profil_fuer(art, w2, g, hp, dev):
+    if art == "nativ":
+        return prof_nativ(w2, g, hp)
+    return B2.profil(w2, 3.0, 0.5, hp, dev)
+
+
+# ================================================================ eine Stelle
+
+def w_werte(L, rhos, ixs, nu=1.0):
+    Dw = B2.direkt_m(L, [complex(r, 0.0) for r in rhos], ixs, [nu] * len(rhos), gram=False)
+    W = [complex(float(Dw["la"][k].real), float(Dw["lb"][k].real)) for k in range(len(rhos))]
+    im_rest = max(float(Dw["la"][k].imag.abs() + Dw["lb"][k].imag.abs()) / max(abs(W[k]), 1e-300)
+                  for k in range(len(rhos)))
+    return W, im_rest
+
+
+def profile(xs, art, g, h, dev, budget, zeilen):
+    out, t_max = [], 0.0
+    for x in xs:
+        t0 = G.uhr()
+        out.append(profil_fuer(art, x, g, 0.5 * h, dev))
+        t_max = max(t_max, G.uhr() - t0)
+    return out, t_max
+
+
+def stelle(name, a, dev, budget, zeilen):
+    kname, g, x0, nu0, dnu, cgam, art = PUNKTE[name]
+    # Fassung 2 (07:24, Nachtrag E): Keime und g von der Kommandozeile ueberschreibbar
+    if getattr(a, "g", None) is not None:
+        g = a.g
+    if getattr(a, "x0", None) is not None:
+        x0 = a.x0
+    if getattr(a, "nu0", None) is not None:
+        nu0 = a.nu0
+    if getattr(a, "cgam", None) is not None:
+        cgam = a.cgam
+    # SD-1: Kanal, Steigung und Drehimpuls
+    if getattr(a, "kanal", None) is not None:
+        kname = a.kanal
+        art = PROFILART[kname]
+    if getattr(a, "dnu", None) is not None:
+        dnu = a.dnu
+    l = int(getattr(a, "l", 0) or 0)
+    nu_l = l + 1.0                    # dim = 3: U, V ~ r^(l+1); l = 0 gibt 1.0 wie gfbic_umlauf
+    if x0 is None or nu0 is None:
+        raise SystemExit(f"punkt {name}: --x0 und --nu0 angeben")
+    kfun = KOEFF[kname]
+    h, f_rand = a.h, a.frand
+    e = {"name": name, "koeff": kname, "g": g, "x0": x0, "nu0": nu0, "h": h, "f_rand": f_rand, "profil": art}
+    if l:
+        e["l"] = l
+    zeilen.append(f"=== {name}: Koeffizienten {kname}, g = {g}, Profil {art}, h = {h}, Keim x0 = {x0}, nu0 = {nu0}"
+                  + (f", l = {l}" if l else ""))
+    # ---- Stufe 1
+    offs = [float(v) for v in a.offs.split(",")]
+    xs = sorted(x0 + o for o in offs)
+    profs, t_prof = profile(xs, art, g, h, dev, budget, zeilen)
+    e["t_profil_max"] = t_prof
+    if art == "nativ":
+        e["nativ"] = [{"x": p["w2"], "f0": p["f0"], "S0": p["f0"] ** 2, "r_cut": p["r_cut"], "grund": p["grund"],
+                       "klammer": p["klammer"]} for p in profs]
+        zeilen.append("  natives Profil: " + ", ".join(f"{p['w2']:.6f}: S0 {p['f0'] ** 2:.9f}, r_cut {p['r_cut']:.2f}, "
+                                                        f"Grund {p['grund']}" for p in profs[:3]))
+    L = lin_multi_k(profs, h, f_rand, dev, kfun, g)
+    e.update({"x": xs, "R_aus": L["R_aus"], "r_m": L["r_m"], "K": L["K"]})
+    zeilen.append(f"  Stufe 1: {len(xs)} Profile (je bis {t_prof:.1f} s), R = {L['R_aus']:.2f}, r_m = {L['r_m']:.3f}")
+    keime = [complex(nu0 + dnu * (x - x0), -max(1e-10, cgam * (x - x0) ** 2)) for x in xs]
+    pol = B2.newton_m(L, keime, list(range(len(xs))), [nu_l] * len(xs), iters=a.iter_newton)
+    pold = B2.newton_direkt(L, [p["rho"] for p in pol], list(range(len(xs))), [nu_l] * len(xs))
+    Dd = B2.direkt_m(L, [p["rho"] for p in pold], list(range(len(xs))), [nu_l] * len(xs), gram=True)
+    tab = []
+    for i, x in enumerate(xs):
+        ev = B2.eigen(Dd, i)
+        tab.append({"x": x, "nu": pold[i]["rho"], "konv": pold[i]["konvergiert"], "Gamma": -pold[i]["rho"].imag,
+                    "A_norm": ev["A_norm"], "Gamma_fluss": ev["Gamma_fluss"]})
+        zeilen.append(f"    {x:.7f}: nu = {G.fz(pold[i]['rho'], 10)}, konv {pold[i]['konvergiert']}, "
+                      f"A_norm {ev['A_norm'].real:+.4e} {ev['A_norm'].imag:+.4e}i, Gamma_Fluss {ev['Gamma_fluss']:.3e}")
+    e["pole"] = tab
+    e["phasentest"] = B2.phasentest(xs, [t["A_norm"] for t in tab], zeilen)
+    ic = min(range(len(xs)), key=lambda i: abs(tab[i]["A_norm"]))
+    rc = tab[ic]["nu"].real
+    drs = [-3e-4, -1e-4, -3e-5, 0.0, 3e-5, 1e-4, 3e-4]
+    innen = sorted(range(len(xs)), key=lambda i: abs(xs[i] - xs[ic]))[:3]
+    pr, pi_ = [], []
+    for i in innen:
+        for d in drs:
+            pr.append(rc + d)
+            pi_.append(i)
+    W, imr = w_werte(L, pr, pi_, nu=nu_l)
+    nahe = [(pr[k] - rc, xs[pi_[k]] - xs[ic], W[k]) for k in range(len(pr)) if abs(pr[k] - rc) <= 1.01e-4]
+    fit, grund = B2.lin_fit_nullstelle(nahe)
+    if fit is None:
+        zeilen.append(f"  Fit Stufe 1 nicht moeglich: {grund}")
+        e["fehler"] = f"Fit 1: {grund}"
+        return e
+    dr0, dx0, J, res, cond = fit
+    wn = {"rho": rc + dr0, "x": xs[ic] + dx0, "J": J, "fit_rest": res, "condJ": cond,
+          "detJ": J[0][0] * J[1][1] - J[0][1] * J[1][0]}
+    e["fit1"] = wn
+    e["W_im_rest"] = imr
+    zeilen.append(f"  Fit 1 (Mitte {xs[ic]:.7f}, nu {rc:.10f}): x* = {wn['x']:.9f}, nu* = {wn['rho']:.10f}, "
+                  f"det J = {wn['detJ']:.3e}, cond J = {cond:.1e}, Rest {res:.1e}, |Im W|/|W| {imr:.1e}")
+    # ---- Stufe 2: Rechtecke um den Fit-Mittelpunkt
+    e["rechtecke"] = []
+    for dx in [float(v) for v in a.dxs.split(",")]:
+        zentrum = dict(wn)
+        for lage in range(2):
+            if not budget.ok(f"{name} dx {dx} Lage {lage}", 5 * t_prof + 40.0):
+                e["rechtecke"].append({"dx": dx, "lage": lage, "fehler": "Zeit"})
+                break
+            xs_n = [zentrum["x"] + dx * t for t in (-1.0, -0.5, 0.0, 0.5, 1.0)]
+            pn, _ = profile(xs_n, art, g, h, dev, budget, zeilen)
+            L1 = lin_multi_k(pn, h, f_rand, dev, kfun, g)
+            d2 = [-1e-4, -3e-5, 0.0, 3e-5, 1e-4]
+            pr2 = [zentrum["rho"] + d for _ in xs_n for d in d2]
+            pi2 = [i for i in range(len(xs_n)) for _ in d2]
+            W2, imr2 = w_werte(L1, pr2, pi2, nu=nu_l)
+            fit2, grund2 = B2.lin_fit_nullstelle([(pr2[k] - zentrum["rho"], xs_n[pi2[k]] - xs_n[2], W2[k])
+                                                  for k in range(len(pr2))])
+            if fit2 is None:
+                zeilen.append(f"  dx {dx:.1e}, Lage {lage}: zweiter Fit nicht moeglich ({grund2})")
+                e["rechtecke"].append({"dx": dx, "lage": lage, "fehler": f"Fit 2: {grund2}"})
+                break
+            dr2, dx2, J2, res2, cond2 = fit2
+            wn2 = {"rho": zentrum["rho"] + dr2, "x": xs_n[2] + dx2, "J": J2, "fit_rest": res2, "condJ": cond2,
+                   "detJ": J2[0][0] * J2[1][1] - J2[0][1] * J2[1][0]}
+            zeilen.append(f"  dx {dx:.1e}, Lage {lage} um x = {xs_n[2]:.9f}: zweiter Fit x** = {wn2['x']:.9f}, "
+                          f"nu** = {wn2['rho']:.10f}, det J = {wn2['detJ']:.3e}, cond {cond2:.1e}, Rest {res2:.1e}")
+            ur = B2.umlauf_rechteck(L1, xs_n, 2, wn2["rho"], dx, wn2, a, zeilen, nu=nu_l)
+            innen_x = abs(wn2["x"] - xs_n[2]) <= 0.8 * dx
+            innen_r = abs(wn2["rho"] - ur.get("rho_c", wn2["rho"])) <= 0.8 * ur.get("drho", 1.0)
+            eintrag = {"dx": dx, "lage": lage, "x_mitte": xs_n[2], "fit2": wn2, "umlauf": ur.get("umlauf"),
+                       "max_sprung": ur.get("max_sprung"), "aufgeloest": ur.get("aufgeloest"),
+                       "min_absW": ur.get("min_absW"), "drho": ur.get("drho"), "fit2_im_rechteck": innen_x and innen_r,
+                       "punkte": len(ur.get("pfad", []))}
+            e["rechtecke"].append(eintrag)
+            zeilen.append(f"    -> Umlauf {eintrag['umlauf']:+.4f}, aufgeloest {eintrag['aufgeloest']}, min |W| "
+                          f"{eintrag['min_absW']:.3e}, Fit-Mitte im Rechteck {eintrag['fit2_im_rechteck']}")
+            if innen_x:
+                break
+            zentrum = wn2
+    return e
+
+
+# ================================================================ SD-1: kurve und exakt aus bic2 mit Kanal-Koeffizienten
+
+def bic2_kanal(kanal, g):
+    """Ersetzt in diesem Prozess bic2.lin_multi (Koeffizienten des Kanals) und, fuer den gemischten Ball, bic2.profil_pot
+    (natives Profil). bic2.kurve, bic2.exakt und bic2.umlauf_neu_gelegt rufen beide ueber ihren Modulnamen auf."""
+    kfun = KOEFF[kanal]
+
+    def lin_multi_kanal(profs, h, f_rand, dev, r_min=20.0):
+        return lin_multi_k(profs, h, f_rand, dev, kfun, g, r_min=r_min)
+    B2.lin_multi = lin_multi_kanal
+    if PROFILART[kanal] == "nativ":
+        def profil_kanal(w2, dim, pot, h, dev):
+            return prof_nativ(w2, g, h)
+        B2.profil_pot = profil_kanal
+
+
+def gebunden(a, dev, zeilen, erg):
+    """SD-1 (nach der Freigabe 08:28): echt gebundene Zustaende 0 < nu < 1 - omega (beide Kanaele zu), je omega^2.
+    Re D (Pluecker-Determinante, bic2.det_liste_m) auf einem nu-Raster, Bisektion an jedem Vorzeichenwechsel. Auf der
+    reellen Achse unter beiden Kanten ist D reell (gemeldet: max |Im D|/|D|); eine Nullstelle dort ist ein reeller
+    Eigenwert, also ohne Breite (Gegenprobe Spin-Dipol). Kein Newton von komplexen Keimen: Fuer Im nu != 0 waehlt
+    jost_start unter der Kante den anderen Zweig von q, D ist dort keine Fortsetzung (Rauchtest 08:31)."""
+    kfun = KOEFF[a.kanal]
+    art = PROFILART[a.kanal]
+    nu_l = a.l + 1.0
+    xs = [float(v) for v in a.omega2_liste.split(",")]
+    profs = [profil_fuer(art, x, a.g, 0.5 * a.h, dev) for x in xs]
+    L = lin_multi_k(profs, a.h, a.frand, dev, kfun, a.g)
+    erg.update({"kanal": a.kanal, "g": a.g, "l": a.l, "h": a.h, "x": xs, "R_aus": L["R_aus"], "r_m": L["r_m"],
+                "zustaende": []})
+    zeilen.append(f"=== gebunden: Kanal {a.kanal}, g = {a.g}, l = {a.l}, h = {a.h}, {len(xs)} Profile ({art}), "
+                  f"R = {L['R_aus']:.2f}, r_m = {L['r_m']:.3f}")
+    # Raster fuer alle omega^2 in einem Stapel, dann Bisektion aller Klammern gemeinsam (Fassung 09:58: der Lauf mit
+    # Einzel-Bisektion brauchte bei 12 Profilen mehr als 10 min)
+    n = a.n_geb
+    gitter, pk, pi_ = {}, [], []
+    for i, x in enumerate(xs):
+        kante = 1.0 - math.sqrt(x)
+        gitter[i] = [a.nu_min + (kante - 5e-4 - a.nu_min) * k / (n - 1) for k in range(n)]
+        pk += gitter[i]
+        pi_ += [i] * n
+    D = B2.det_liste_m(L, [complex(v, 0.0) for v in pk], pi_, [nu_l] * len(pk))
+    klammern = []                                    # (i, lo, hi, f_lo)
+    info = {}
+    for i in range(len(xs)):
+        re = [d.real for d in D[i * n:(i + 1) * n]]
+        info[i] = {"im_rel": max(abs(d.imag) / max(abs(d), 1e-300) for d in D[i * n:(i + 1) * n]),
+                   "dmax": max(abs(v) for v in re)}
+        for k in range(n - 1):
+            if re[k] * re[k + 1] < 0:
+                klammern.append([i, gitter[i][k], gitter[i][k + 1], re[k]])
+    for _ in range(46):
+        if not klammern:
+            break
+        mids = [0.5 * (k_[1] + k_[2]) for k_ in klammern]
+        Dm = B2.det_liste_m(L, [complex(m, 0.0) for m in mids], [k_[0] for k_ in klammern], [nu_l] * len(klammern))
+        for k_, m, dm in zip(klammern, mids, Dm):
+            if dm.real * k_[3] < 0:
+                k_[2] = m
+            else:
+                k_[1], k_[3] = m, dm.real
+    wz = [0.5 * (k_[1] + k_[2]) for k_ in klammern]
+    Dw = B2.det_liste_m(L, [complex(w, 0.0) for w in wz], [k_[0] for k_ in klammern], [nu_l] * len(wz)) if wz else []
+    for i, x in enumerate(xs):
+        om = math.sqrt(x)
+        kante = 1.0 - om
+        wurzeln = [w for w, k_ in zip(wz, klammern) if k_[0] == i]
+        dwerte = [abs(d) / max(info[i]["dmax"], 1e-300) for d, k_ in zip(Dw, klammern) if k_[0] == i]
+        im_rel = info[i]["im_rel"]
+        e = {"x": x, "kante": kante, "max_rel_imD_reell": im_rel, "wurzeln": wurzeln, "absD_rel_an_wurzel": dwerte,
+             "E_aus_nu": [(om + w) ** 2 for w in wurzeln], "gegenlaeufer_erwartet": [2.0 * om + w for w in wurzeln]}
+        erg["zustaende"].append(e)
+        zeilen.append(f"  omega^2 = {x:.6f}: Kante 1 - omega = {kante:.6f}, max |Im D|/|D| reell {im_rel:.1e}, "
+                      f"reelle Nullstellen {[round(w, 10) for w in wurzeln]}")
+        for w, dr in zip(wurzeln, dwerte):
+            zeilen.append(f"    nu = {w:.10f} (|D|/max|D| dort {dr:.1e}): E = (omega + nu)^2 = {(om + w) ** 2:.8f}; "
+                          f"Gegenlaeufer ohne Kopplung bei 2 omega + nu = {2.0 * om + w:.8f}")
+    return erg
+
+
+def lauf_bic2(kommando, kanal, g, rest):
+    """kurve oder exakt aus bic2.py Version 3 mit den Argumenten von bic2 (rest), Ausgabe wie bic2.main."""
+    sys.argv = [B2_PFAD, kommando] + list(rest)
+    b = B2.argumente()
+    l_gegeben = b.l is not None
+    if not l_gegeben:
+        b.l = "0,1,2"
+    l = B2.l_eins(b, l_gegeben)
+    if abs(b.beta - 0.5) > 1e-15 or b.pot != "poly":
+        raise SystemExit("SD-1: die Kanal-Koeffizienten gelten fuer U = S - S^2 + 0,5 S^3 (--beta 0.5, --pot poly)")
+    bic2_kanal(kanal, g)
+    if b.geraet == "cuda":
+        dev = torch.device("cuda")
+    else:
+        torch.set_num_threads(1)
+        dev = torch.device("cpu")
+    budget = B2.Budget(b.budget)
+    out = b.out or os.path.join(HIER, f"ausgabe-{kommando}-{kanal}")
+    os.makedirs(out, exist_ok=True)
+    start = B2.jetzt()
+    grenze = (f", Grenze des gemischten Balls omega_c^2 = {1.0 - (1.0 + g * JK / 4.0) ** 2 / 2.0:.5f} (bic2-Kopfzeile "
+              f"nennt 0,5 fuer N = 1)" if PROFILART[kanal] == "nativ" else "")
+    zeilen = [f"Runde 9 SD-1 {kommando} Kanal {kanal}, g = {g}, l = {l}, Start {start}, Geraet {b.geraet}, torch "
+              f"{torch.__version__}; sd1.py sha256 {G.sha256(os.path.abspath(__file__))[:16]}, bic2.py {B2_PFAD} "
+              f"sha256 {G.sha256(B2_PFAD)[:16]}{grenze}"]
+    print(zeilen[0], flush=True)
+    ergebnis = {"start": start, "kommando": kommando, "kanal": kanal, "g": g, "l": l, "argumente": vars(b),
+                "ergebnisse": {}, "sha256_sd1": G.sha256(os.path.abspath(__file__)), "sha256_bic2": G.sha256(B2_PFAD)}
+
+    def sichern():
+        ergebnis["ende"] = B2.jetzt()
+        ergebnis["sek"] = B2.uhr()
+        ergebnis["entfallen"] = budget.abgebrochen
+        with open(os.path.join(out, f"{kommando}.json"), "w") as fh:
+            json.dump(B2.jsonfest(ergebnis), fh, indent=1)
+        with open(os.path.join(out, f"{kommando}_bericht.txt"), "w") as fh:
+            fh.write("\n".join(zeilen) + "\n")
+
+    rc = 0
+    try:
+        if kommando == "kurve":
+            B2.kurve(b, dev, budget, zeilen, ergebnis["ergebnisse"], sichern, l=l)
+        else:
+            B2.exakt(b, dev, budget, zeilen, ergebnis["ergebnisse"], sichern, l=l)
+    except Exception:                                   # noqa: BLE001
+        tb = traceback.format_exc()
+        zeilen.append("FEHLER:\n" + tb)
+        ergebnis["fehler"] = tb
+        rc = 1
+    zeilen.append(f"Ende {B2.jetzt()}, {B2.uhr():.1f} s; entfallen: {budget.abgebrochen or 'nichts'}")
+    sichern()
+    print("\n".join(zeilen[1:]), flush=True)
+    sys.exit(rc)
+
+
+def main():
+    # SD-1: kurve und exakt laufen ueber bic2 (eigene Argumente --kanal und --g, der Rest geht an bic2.argumente)
+    if len(sys.argv) > 1 and sys.argv[1] in ("kurve", "exakt"):
+        vp = argparse.ArgumentParser(add_help=False, allow_abbrev=False)     # sonst faengt "--h" die Hilfe ab
+        vp.add_argument("kommando", choices=["kurve", "exakt"])
+        vp.add_argument("--kanal", default="psi2", choices=sorted(KOEFF))
+        vp.add_argument("--g", type=float, default=0.2)
+        va, rest = vp.parse_known_args()
+        lauf_bic2(va.kommando, va.kanal, va.g, rest)
+        return
+    ap = argparse.ArgumentParser()
+    ap.add_argument("kommando", choices=["rauch", "punkt", "gebunden"])
+    ap.add_argument("--omega2-liste", dest="omega2_liste", default="0.53,0.6", help="SD-1 gebunden: omega^2-Werte")
+    ap.add_argument("--n-geb", dest="n_geb", type=int, default=400, help="SD-1 gebunden: nu-Raster")
+    ap.add_argument("--nu-min", dest="nu_min", type=float, default=1e-3, help="SD-1 gebunden: kleinstes nu")
+    ap.add_argument("--name", default="Z1")
+    ap.add_argument("--h", type=float, default=0.02)
+    ap.add_argument("--frand", type=float, default=1e-6)
+    ap.add_argument("--offs", default="0,-5e-4,5e-4,-2e-3,2e-3")
+    ap.add_argument("--dxs", default="5e-4,1e-4")
+    ap.add_argument("--iter-newton", dest="iter_newton", type=int, default=20)
+    ap.add_argument("--u-n", dest="u_n", type=int, default=60)
+    ap.add_argument("--u-drho", dest="u_drho", type=float, default=2e-5)
+    ap.add_argument("--u-drho-ohne-fit", dest="u_drho_ohne_fit", type=float, default=5e-4)
+    ap.add_argument("--g", type=float, default=None, help="Fassung 2: g ueberschreiben")
+    ap.add_argument("--x0", type=float, default=None, help="Fassung 2: Keim omega^2 ueberschreiben")
+    ap.add_argument("--nu0", type=float, default=None, help="Fassung 2: Keim nu ueberschreiben")
+    ap.add_argument("--cgam", type=float, default=None, help="Fassung 2: Keim-Breite ueberschreiben")
+    ap.add_argument("--l", type=int, default=0, help="SD-1: Drehimpuls l (Vorgabe 0 = Rechenweg wie gfbic_umlauf)")
+    ap.add_argument("--kanal", default=None, choices=sorted(KOEFF), help="SD-1: Kanal ueberschreiben")
+    ap.add_argument("--dnu", type=float, default=None, help="SD-1: Keim d nu/d omega^2 ueberschreiben")
+    ap.add_argument("--geraet", default="cpu", choices=["cpu", "cuda"])
+    ap.add_argument("--out", default=None)
+    ap.add_argument("--budget", type=float, default=540.0)
+    a = ap.parse_args()
+    torch.set_num_threads(1)
+    dev = torch.device("cuda" if a.geraet == "cuda" else "cpu")
+    budget = G.Budget(a.budget)
+    out = a.out or os.path.join(HIER, f"ausgabe-umlauf-{a.name}")
+    os.makedirs(out, exist_ok=True)
+    kopf = (f"Runde 9 SD-1 umlauf {a.kommando} {a.name if a.kommando != 'gebunden' else ''} Start {G.jetzt()}; sd1.py sha256 "
+            f"{G.sha256(os.path.abspath(__file__))[:16]}, bic2.py {B2_PFAD} sha256 {G.sha256(B2_PFAD)[:16]}, "
+            f"gfbic.py {G.sha256(G.__file__)[:16]}")
+    zeilen = [kopf]
+    print(kopf, flush=True)
+    erg = {"argumente": vars(a), "start": G.jetzt()}
+    rc = 0
+    try:
+        if a.kommando == "rauch":
+            a.h, a.frand, a.offs, a.dxs, a.iter_newton, a.u_n = 0.08, 1e-5, "0,-1e-3,1e-3", "5e-4", 6, 12
+            p = prof_nativ(0.75869, 0.2, 0.04)
+            q = B2.profil(0.75869, 3.0, 1.0 / (2.0 * 1.05 ** 2), 0.04, dev)
+            s_nat = p["f0"] ** 2
+            s_b = q["f0"] ** 2 / 1.05
+            zeilen.append(f"  Rauch Profil: S0 nativ {s_nat:.10f}, S0 aus beta_eff skaliert {s_b:.10f}, Differenz "
+                          f"{s_nat - s_b:+.2e}")
+            erg["Z1"] = stelle("Z1", a, dev, budget, zeilen)
+        elif a.kommando == "gebunden":                 # SD-1
+            a.kanal = a.kanal or "psi2"
+            a.g = 0.2 if a.g is None else a.g
+            erg["gebunden"] = gebunden(a, dev, zeilen, {})
+        else:
+            erg[a.name] = stelle(a.name, a, dev, budget, zeilen)
+    except Exception:                                   # noqa: BLE001
+        tb = traceback.format_exc()
+        zeilen.append("FEHLER:\n" + tb)
+        erg["fehler"] = tb
+        rc = 1
+    zeilen.append(f"Ende {G.jetzt()}, {G.uhr():.1f} s; entfallen: {budget.abgebrochen or 'nichts'}")
+    erg["ende"] = G.jetzt()
+    stamm = "gebunden" if a.kommando == "gebunden" else "umlauf"       # SD-1
+    with open(os.path.join(out, f"{stamm}.json"), "w") as fh:
+        json.dump(G.jsonfest(erg), fh, indent=1)
+    with open(os.path.join(out, f"{stamm}_bericht.txt"), "w") as fh:
+        fh.write("\n".join(zeilen) + "\n")
+    print("\n".join(zeilen[1:]), flush=True)
+    sys.exit(rc)
+
+
+if __name__ == "__main__":
+    main()

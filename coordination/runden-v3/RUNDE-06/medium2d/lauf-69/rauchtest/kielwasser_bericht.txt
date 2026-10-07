@@ -1,0 +1,36 @@
+kielwasser: Start 2026-09-30T01:41:00+00:00, Ende 2026-09-30T01:41:06+00:00, Quadro P4000, torch 2.5.1+cu121 RAUCHTEST: Zahlen ungueltig
+Medium C0 = 0.1, g4 = 0.5, lam = 0.1: c_s = 0.2085, Heilungslaenge etwa 3.23
+Dauer [s]: relax_grob_s 0.4, entw_grob_s 1.4, relax_fein_s 0.5, entw_fein_s 3.3
+Hochrechnung Hauptlauf (nur --rauch ohne --mini gilt): 95 s = nicht entwickelnde Teile 1 s + Entwicklung x 20; Relaxation im Rauchtest gekuerzt. Ueber 540 s je Aufruf: Stufen einzeln (--stufe grob / --stufe fein).
+Karte kielwasser (Wellen 4). Ball m = 0, omega^2 = 0.6 (Q 66.62, R_halb 3.36) gehalten (V_h = 0.002 r^2) bei x = -12.0; Medium stroemt in +x (Ruhesystem des Balls). Dichtebild gemittelt ueber die letzten 60.0; Winkelprofil im Ring r = (10.0, 24.0).
+Lauf | u/c_s | u | gamma | Mach Medium | Mach Ballsystem | RMS-Spitze oben/unten | gemessen | Abw. | 50-%-Kante | RMS-Spitze | RMS Achse <8 Grad | Vorlauf RMS | F_x | Wirbel
+[grob]
+  u0.5 | 0.5 | 0.1040 | 1.005 | - | - | 8/-8 | 8.0 | - | 87.0 | 7.96e-04 | 8.03e-04 | 2.7e-04 | +5.63e-03 | 0
+  u1.3 | 1.3 | 0.2669 | 1.038 | 50.3 | 49.2 | 8/-8 | 8.0 | -41.2 | 52.0 | 1.88e-03 | 1.92e-03 | 1.8e-04 | +1.51e-02 | 0
+  u1.8 | 1.8 | 0.3643 | 1.074 | 33.7 | 31.9 | 8/-8 | 8.0 | -23.9 | 45.0 | 2.79e-03 | 2.85e-03 | 1.3e-04 | +2.05e-02 | 0
+  u2.5 | 2.5 | 0.4918 | 1.148 | 23.6 | 20.8 | 8/-8 | 8.0 | -12.8 | 40.0 | 4.20e-03 | 4.30e-03 | 6.1e-05 | +2.43e-02 | 0
+  u1.8_lam0 | 1.8 | 0.3643 | 1.074 | 33.7 | 31.9 | 87/-8 | 47.5 | +15.6 | 87.0 | 0.00e+00 | 0.00e+00 | 0.0e+00 | +0.00e+00 | 0
+  medium_allein_u1.8 | 1.8 | 0.3643 | Medium allein: max|dC| 0.0e+00, C-Spanne 0.0e+00
+  Urteil: u1.3: Winkel 8.0 gegen Mach (Ballsystem) 49.2 Grad -> verfehlt (6 Grad); 50-%-Kante 52.0
+  Urteil: u1.8: Winkel 8.0 gegen Mach (Ballsystem) 31.9 Grad -> verfehlt (6 Grad); 50-%-Kante 45.0
+  Urteil: u2.5: Winkel 8.0 gegen Mach (Ballsystem) 20.8 Grad -> verfehlt (6 Grad); 50-%-Kante 40.0
+  Urteil: u0.5: Amplitude/Amplitude(u1.3) = 0.423 -> Muster auch unter c_s
+  Urteil: u0.5: |F_x|/|F_x(u1.3)| = 0.372 -> Widerstand unter c_s
+[fein]
+  u1.3 | 1.3 | 0.2669 | 1.038 | 50.3 | 49.2 | 8/-8 | 8.0 | -41.2 | 52.0 | 1.88e-03 | 1.91e-03 | 1.8e-04 | +1.51e-02 | 0
+  u1.8 | 1.8 | 0.3643 | 1.074 | 33.7 | 31.9 | 8/-8 | 8.0 | -23.9 | 45.0 | 2.79e-03 | 2.84e-03 | 1.3e-04 | +2.05e-02 | 0
+  u2.5 | 2.5 | 0.4918 | 1.148 | 23.6 | 20.8 | 8/-8 | 8.0 | -12.8 | 40.0 | 4.20e-03 | 4.29e-03 | 6.0e-05 | +2.43e-02 | 0
+  Urteil: u1.3: Winkel 8.0 gegen Mach (Ballsystem) 49.2 Grad -> verfehlt (6 Grad); 50-%-Kante 52.0
+  Urteil: u1.8: Winkel 8.0 gegen Mach (Ballsystem) 31.9 Grad -> verfehlt (6 Grad); 50-%-Kante 45.0
+  Urteil: u2.5: Winkel 8.0 gegen Mach (Ballsystem) 20.8 Grad -> verfehlt (6 Grad); 50-%-Kante 40.0
+L3 (grob gegen fein; bestanden, wenn |fein - grob| <= max(0,2 |fein|, Toleranz)):
+  u1.3 winkel_mess: grob 8, fein 8 -> ok
+  u1.3 amplitude: grob 0.0018846, fein 0.001882 -> ok
+  u1.3 F_x_mittel: grob 0.015142, fein 0.01514 -> ok
+  u1.8 winkel_mess: grob 8, fein 8 -> ok
+  u1.8 amplitude: grob 0.0027929, fein 0.0027892 -> ok
+  u1.8 F_x_mittel: grob 0.0205, fein 0.020497 -> ok
+  u2.5 winkel_mess: grob 8, fein 8 -> ok
+  u2.5 amplitude: grob 0.0042046, fein 0.0041993 -> ok
+  u2.5 F_x_mittel: grob 0.024264, fein 0.02426 -> ok
+  L3 gesamt: bestanden (9 von 9)

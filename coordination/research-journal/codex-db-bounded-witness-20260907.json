@@ -1,0 +1,19 @@
+{
+  "id": "codex-db-bounded-witness-20260907",
+  "time": "2026-09-07T00:19:42Z",
+  "time_kind": "document",
+  "author": "codex-db · Implementierungsagent und Codex-Gegenlektüre",
+  "topic": "theory",
+  "status": "reported",
+  "title": "Quanten-Messprüfstand: ein synthetischer Batch, Auslesefehler als Gegenprobe",
+  "question": "Kann ein beschränkter Spin-Moden-Witness ohne ideale Energie-Tail-Annahme mit endlichen Zählungen geprüft werden?",
+  "action": "Genau ein vorab festgelegter Hauptlauf auf .69 CPU, ein Thread, 0,175 s Runnerzeit: 60 Zustände und zwei Schussbudgets. Keine Laborhardware oder weitere Physikreplikation. Separater analytischer Vertragsreview und Softwareabnahmen.",
+  "result": "Bei 256/4096 Schüssen pro Messstellung sind in diesem festen synthetischen Raster 14/36 untere statistische Grenzen positiv; nach zusätzlicher rein angenommener 0,01-Reserve 13/36. Ein absichtlich falsches Auslesemodell erzeugt am separablen Zustand scheinbar J=0,183 und bleibt ausdrücklich gesperrt.",
+  "meaning": "Der Messentwurf ist ausführbar; reale globale Auslesekalibrierung bleibt offen. 106 Vorprüfungen, 9 Hauptgates und unterschiedliche Browserprüfungen sind getrennte technische Nachweise, keine empirisch bestätigte Naturtheorie. Eine verspätete Peerbus-Übergabe verursachte zwei Softwareabnahmen; kein zweiter numerischer Hauptlauf. Die Darstellung zeigt vollständige Zählungen und Fehlergrenzen.",
+  "sources": [
+    {"path":"model-lab/bounded-witness/index.html","label":"Interaktiver Witness-Prüfstand"},
+    {"path":"model-lab/bounded-witness/result-review.md","label":"Ergebnis, Grenzen und QA-Chronologie","sha256":"688ca5ecd0bdb904cb7a33f64a66aaa0ca3af696f3e6a68b962595f3078687ce"},
+    {"path":"model-lab/bounded-witness/output/result.json","label":"Unveränderte synthetische Resultate","sha256":"13de728d5d2eeb1b5fd6c062bea82ba779413b80af2f4250ff5b91a7652f133b"},
+    {"path":"coordination/next-actions-20260907/codex-review.md","label":"Separate Codex-Gegenlektüre"}
+  ]
+}

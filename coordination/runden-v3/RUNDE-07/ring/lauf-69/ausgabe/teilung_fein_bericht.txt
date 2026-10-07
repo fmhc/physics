@@ -1,0 +1,8 @@
+RING teilung (a): m = 1-Ball mit 1-%-Stoerung, Stufe fein. Start 2026-09-30T02:53:54+00:00, Ende 2026-09-30T02:56:05+00:00, Quadro P4000, torch 2.5.1+cu121
+Dauer [s]: profile_s 0.0, entwicklung_fein_s 130.1
+Lauf | omega2 | Q | Teilung t | n_max | Toechter (Q, W, Jspin/Q, vx, vy) | l_dom | gamma | A_max l=1..6 | spaet J/Q, omega_eff, Anteil W1
+  m1_0590 | 0.590 | 157.07 | None (Fenster None) | 1 | - | 2 | - | 2.3e-03 8.2e-03 7.6e-03 7.1e-03 6.6e-03 5.9e-03 | 0.9999, 0.76808, 1.000
+    Bilanz: Q: +157.098->+157.074 geschluckt +0.024 Rest 5.9e-07 J: +157.098->+157.063 geschluckt +0.035 Rest 8.1e-06 E: +137.249->+137.200 geschluckt +0.048 Rest 3.1e-06; Schranken {"bilanz_Q": true, "bilanz_J": true, "bilanz_E": true, "startzerlegung": true, "profil_selbst_L2_unter_0p05": true}
+  m1_0625 | 0.625 | 110.17 | 75.0 (Fenster 169.5) | 2 | [42.397, 0, 0.0355, 0.1766, -0.2434]; [40.961, 0, 0.0277, -0.1798, 0.2486] | 2 | 0.0641 | 9.1e-01 9.5e-01 7.2e-01 8.2e-01 4.4e-01 6.3e-01 | -
+    Bilanz: Q: +110.194->+0.073 geschluckt +109.859 Rest 2.4e-03 (UEBER TOLERANZ) J: +110.194->-0.017 geschluckt +106.633 Rest 3.2e-02 (UEBER TOLERANZ) E: +100.760->+0.074 geschluckt +100.192 Rest 4.9e-03 (UEBER TOLERANZ); Schranken {"bilanz_Q": false, "bilanz_J": false, "bilanz_E": false, "startzerlegung": true, "profil_selbst_L2_unter_0p05": null}
+Kennzahlen: {"stabil_bis_T": [0.59], "geteilt": [0.625], "schwelle_eingeschachtelt": true, "schwelle_zwischen": [0.59, 0.625], "Q_zwischen": [157.06876824881383, 110.17356167070433]}

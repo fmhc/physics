@@ -1,0 +1,68 @@
+M2: U(1)-QUOTIENTENZUSTAND UND BEWEGUNG — particle_core, 2026-10-03
+Nur prospektive Formeln. Keine Auswertung/Implementierung.
+root/PHASENQUOTIENT.txt gegengelesen: unserZ=sqrt2*RootsX; bei gleicher
+Normierung exakt dasselbe Distanzmaß, kein abweichender neuerAnsatz.
+
+Kern C:r<12, positiveFV-GewichteV, mu=sqrt2 (Vakuummassenskala).
+Z=(sqrt2 phi, sqrt2 pi/mu, chi-1, chi_t/mu).
+ReellesSkalarprodukt <A,B>=Re sum_C V sum_a conj(A_a)B_a.
+Die letztenzweiKomponenten sind reell. Feste Normierung Nref=||Zref||,
+Zref aus bestehender h=.1-Q1100-Referenz mitpi=iomega_ref*f,chi_t=0.
+Nref einmal fest; keine Normierung durch momentane Wolkenspitze oder
+chi-1=0. Vergleich normierterZustände Z/Nref, nicht Ladungsradius.
+
+1. EINE GEMEINSAME PHASE FÜR POSITION UND GESCHWINDIGKEIT
+Für Zustände A,B sei
+ I_AB=sum_C V[2 conj(phi_A)phi_B+2/mu² conj(pi_A)pi_B].
+q=exp(-i arg I_AB) dreht gleichzeitig(phi_B,pi_B), niechi/chi_t.
+ d(A,B)=||Z_A-(q Z_B,komplex; Z_B,reell)||/Nref.
+Das minimiert die vollständige gewählte Zustandsnorm über EINE U1-Phase.
+Keine getrenntePhase proFeld/Zelle oder proGeschwindigkeitsblock.
+Bei numerisch nichtaufgelöstem |I_AB| PhaseUNRESOLVED, kein willkürlicher
+Anker. Konkret |I_AB|>100*64eps*sumV(2|phi_A phi_B|+2/mu²|pi_A pi_B|)
+für die Phase verlangen. Der minimaleABSTAND bleibt beiI=0 definiert:
+komplexeNormquadrate addieren minus2|I|, realeDifferenzen addieren.
+Diese Form ist beiI nahe0 nicht durch Auslöschung großer fastgleicher
+Normen gefährdet; bei großemOverlap dagegen direkte ausgerichteteReste.
+Die Hülle kontrolliert keine bisherigen Evolutionsfehler.
+Gesamtphase/derenUnwrap ist KEINE physische Atmungsuhr oder Frequenzmessung.
+
+2. BEWEGUNG RELATIV ZUR U1-ORBIT
+Labpi ist bei ruhendem Q-Ball iomega phi, nicht null. Ein Gate auf ||pi||
+würde deshalb stationäre Rotation fälschlich als Atmung zählen.
+Mit tatsächlicherFV-Beschleunigung a_phi,a_chi:
+ Zdot=(sqrt2 pi,sqrt2 a_phi/mu,chi_t,a_chi/mu),
+ TZ=(i sqrt2 phi,i sqrt2 pi/mu,0,0),
+ Omega_Q=Qcore/(2||phi||c²),
+ W=Zdot-Omega_Q TZ, K=||W||/(mu Nref).
+Hier absichtlich DIESELBE alte Ladungs-/Normdefinition, keine zusätzliche
+Frequenzoptimierung zurWegprojektion großer Bewegung. Omega_Q ist bei
+derWolke trotzdem kein stationärer Eigenwert und keinephysischeUhr.
+Bei unaufgelöstemNenner ist K nichtklassifizierbar. KeinDifferenzieren
+von Zeitphasen. Exakte stationäreLösung erfülltW=0.
+
+Die alten Stationaritätsreste bleiben separat UNVERÄNDERT:
+Omega_Q=Qcore/(2||phi||c²), nphi=max(||phi||c,1e-14),
+nchi=max(||chi-1||c,1e-14),
+rphi=||a_phi+Omega_Q²phi||c/(2nphi), rchi=||a_chi||c/(2nchi),
+tphi=||pi-iOmega_Q phi||c/(mu nphi), tchi=||chi_t||c/(mu nchi).
+K=klein allein ersetzt KEINE dieser altenStationaritätsbedingungen.
+
+3. RAUM-/ZEITVERGLEICH OHNE NEUE PROFILE
+Gemeinsame Vergleichszellen h=.1. Fineh=.05 jeweils zweiZellen mittels
+exakterVolumengewichte mitteln, für ALLE vierFelder. KeineRenormierung,
+keinInterpolieren alsneueLösung. Danach obigePhasenausrichtung.
+Nref undVergleichsgewichte sind aufdiesemselbenh=.1-Gitter fest.
+Nativeh=.05-Reste/K zusätzlich vorRestriction berechnen und speichern;
+Mittelung könnte hochfrequenteFehler verdecken. VergleichK aufgemeinsamem
+Gitter aus eingeschränktemZdot, nicht durchneueKräfte aufeingeschränktemZ.
+AlleKräfte nur aus tatsächlichemVollgitterzustand und ursprünglichemRand.
+
+Empirische Zustandsunsicherheit etaZ=max überT64..96 von d(base,time),
+d(base,restrict(space)) und jeArm d(Sample.1,aus.2linearrekonstruiert).
+etaZ zusätzlich mit64eps-Auswertesensitivität derselbenNorm/Phasenbildung
+absichern. Keine rigoroseFehlerschranke, gemeinsameFehler bleiben.
+Für DifferenzenzweierZustände festeReserve Uret=2etaZ. FürFensterexkursion
+gilt ebenso Uamp=2etaZ. K-Unsicherheit etaK aus direkten Raum-/Zeit-/
+Abtastvergleichen der tatsächlichen K-Zeitreihen, zusätzlich Auswertehülle.
+Kein kausales/linearesMode-Target in diesen Unsicherheiten.

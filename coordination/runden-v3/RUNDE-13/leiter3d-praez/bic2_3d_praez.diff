@@ -1,0 +1,507 @@
+--- ../../RUNDE-07/bic2/bic2.py	2026-09-30 06:49:46.301459653 +0200
++++ bic2_3d_praez.py	2026-10-01 19:19:18.647962547 +0200
+@@ -1,5 +1,16 @@
+ #!/usr/bin/env python3
+-"""Runde 7 (runden-v3), Karte BIC-2: Exaktheit und Robustheit der Nullstelle der l = 0-Breite. Explorativ.
++"""RUNDE-13 LEITER-3D-PRAEZ: Kopie von RUNDE-07/bic2/bic2.py (sha256 ee1ef6d226e8ec2c...). Aenderungen nur in Abtastung
++und Auswertung, alle mit "PRAEZ3D" markiert; Physik (Profile, Gleichungen, direkt_m, Pluecker) unveraendert:
++  - direkt_m gibt zusaetzlich "la_terme" aus (groesster Einzelterm von Omega(y_a, z2) mal |nz|; nur Auswertung).
++  - neues Kommando praez: Zeilen in omega^2 um eine Lage, je Zeile rho-Abtastung (ganzes Fenster grob plus dicht um
++    rho_ref), direkte Nullstellensuche von L(y_b) (Illinois bis zur Maschinengenauigkeit), s = L(y_a) exakt an der
++    Nullstelle (keine Interpolation), Paarung der Nullstellen ueber Zeilen, Vorzeichenwechsel von s, Umlauf-Rechteck
++    um jeden Wechsel (Zeilen als omega^2-Seiten, rho-Seiten mit --u-runden Halbierungsrunden), Kernwachstum am
++    Kandidaten und im Fenster; Zwischenspeichern nach jedem Schritt.
++  - neues Kommando regel: wendet die Regel der KARTE auf zwei praez-Ausgaben (Stufen h und h/2) an.
++  - Ohne die neuen Kommandos ist das Verhalten unveraendert.
++
++Runde 7 (runden-v3), Karte BIC-2: Exaktheit und Robustheit der Nullstelle der l = 0-Breite. Explorativ.
+ 
+ Erweiterte Kopie von RUNDE-06/resonanz3d/resonanz3d.py (dort unveraendert: rauch, pole, bruecke, zeit0, zeitlin).
+ Neu (Abschnitt "Runde 7 BIC-2" unten):
+@@ -1473,7 +1484,10 @@
+     M = torch.stack([torch.stack(ya, 1), torch.stack(yb, 1), torch.stack(z1, 1), torch.stack(z2, 1)], 2)   # (B, 4, 4)
+     # L(y) = Omega(y, z2) mit z2 auf exp(-kappa r) normiert (Faktor exp(i q- R) > 0 bei reellem rho): unabhaengig von R
+     nz = torch.exp(1j * qm[:B] * R)
+-    return {"M": M, "la": omega_bil(ya, z2) * nz, "lb": omega_bil(yb, z2) * nz, "G_in": (g_in[:B], g_in_x, g_in[B:]),
++    # PRAEZ3D: groesster Einzelterm von Omega(y_a, z2) mal |nz| (Massstab fuer Ausloeschung und Rundung; nur Auswertung)
++    la_terme = torch.stack([(ya[0] * z2[2]).abs(), (ya[2] * z2[0]).abs(), (ya[1] * z2[3]).abs(),
++                            (ya[3] * z2[1]).abs()]).amax(0) * nz.abs()
++    return {"M": M, "la_terme": la_terme, "la": omega_bil(ya, z2) * nz, "lb": omega_bil(yb, z2) * nz, "G_in": (g_in[:B], g_in_x, g_in[B:]),
+             "G_out": (g_out[:B], g_out_x, g_out[B:]), "J1": (Pp[:B].conj() * Qp[:B]).imag,
+             "J2": (Pm[B:].conj() * Qm[B:]).imag, "qp": qp[:B], "R": R, "omega": om[:B], "rho": rho1,
+             "wachstum": torch.maximum(wachstum[:B], wachstum[B:])}
+@@ -2155,11 +2169,462 @@
+             zeilen.append(f"  Potenz Rate ~ eta^p fuer omega^2 = {w2}, dr = {dr}, T = {T}: p = {p_:.3f} ({len(pts)} Punkte)")
+ 
+ 
++# ================================================================ PRAEZ3D: Zeilen, direkte Nullstellen, Rechtecke, Regel
++
++def praez_W(L, rhos, ixs, nu, stapel=3000):
++    """PRAEZ3D: W = L(y_a) + i L(y_b) (Realteile wie in kurve), Kernwachstum und la_terme bei reellem rho, in Stapeln."""
++    W, wa, te = [], [], []
++    for s0_ in range(0, len(rhos), stapel):
++        r_ = rhos[s0_:s0_ + stapel]
++        Dw = direkt_m(L, [complex(v, 0.0) for v in r_], ixs[s0_:s0_ + stapel], [nu] * len(r_), gram=False)
++        W += [complex(float(Dw["la"][k].real), float(Dw["lb"][k].real)) for k in range(len(r_))]
++        wa += [float(v) for v in Dw["wachstum"].tolist()]
++        te += [float(v) for v in Dw["la_terme"].tolist()]
++    return W, wa, te
++
++
++def praez_illinois(L, kl, nu, iters, tol):
++    """PRAEZ3D: Nullstellen von L(y_b) in rho fuer alle Klammern [a, b, fa, fb, ix] gemeinsam (Illinois, wie
++    afm_bic.lokalisieren). Ergebnis je Klammer: letzte ausgewertete Stelle (rho, s = L(y_a) dort, Rest L(y_b))."""
++    kl = [list(k) for k in kl]
++    n = len(kl)
++    fertig = [False] * n
++    letzt = [None] * n
++    n_it = [0] * n
++    for it in range(iters):
++        aktiv = [i for i in range(n) if not fertig[i]]
++        if not aktiv:
++            break
++        xn = []
++        for i in aktiv:
++            a_, b_, fa, fb, _ = kl[i]
++            x = b_ - fb * (b_ - a_) / (fb - fa) if fb != fa else 0.5 * (a_ + b_)
++            if not (min(a_, b_) < x < max(a_, b_)):
++                x = 0.5 * (a_ + b_)
++            xn.append(x)
++        W, wa, te = praez_W(L, xn, [kl[i][4] for i in aktiv], nu)
++        for q, i in enumerate(aktiv):
++            a_, b_, fa, fb, ix = kl[i]
++            x, fx = xn[q], W[q].imag
++            letzt[i] = {"rho": x, "W": W[q], "wachstum": wa[q], "terme_a": te[q]}
++            n_it[i] = it + 1
++            if not math.isfinite(fx) or not math.isfinite(W[q].real):
++                fertig[i] = True
++                letzt[i]["fehler"] = "W nicht endlich"
++                continue
++            if fx == 0.0:
++                kl[i] = [x, x, 0.0, 0.0, ix]
++                fertig[i] = True
++                continue
++            if fx * fb < 0:
++                a_, fa = b_, fb
++            else:
++                fa = 0.5 * fa
++            b_, fb = x, fx
++            kl[i] = [a_, b_, fa, fb, ix]
++            if abs(b_ - a_) <= tol * max(1.0, abs(b_)):
++                fertig[i] = True
++    aus = []
++    for i in range(n):
++        if letzt[i] is None:
++            aus.append({"fehler": "keine Iteration", "konvergiert": False})
++            continue
++        aus.append({"rho": letzt[i]["rho"], "s": letzt[i]["W"].real, "lb_rest": letzt[i]["W"].imag,
++                    "wachstum": letzt[i]["wachstum"], "terme_a": letzt[i]["terme_a"],
++                    "klammer_end": abs(kl[i][1] - kl[i][0]), "iter": n_it[i],
++                    "konvergiert": bool(fertig[i] and "fehler" not in letzt[i]), "fehler": letzt[i].get("fehler")})
++    return aus
++
++
++def praez_rechteck(L, xs, reihen, rc, drho, ns, runden, nu):
++    """PRAEZ3D: Umlauf von W auf dem Rechteck [x(reihen[0]), x(reihen[-1])] x [rc - drho, rc + drho] wie
++    umlauf_rechteck (gleicher Pfad, gegen den Uhrzeigersinn), aber mit expliziten Zeilen, freiem drho und `runden`
++    Halbierungsrunden der rho-Seiten (Schwelle 0,3 rad wie dort). Aufgeloest: groesster Phasensprung < 0,4 rad."""
++    t0 = uhr()
++    x_lo, x_hi = reihen[0], reihen[-1]
++    r_lo, r_hi = rc - drho, rc + drho
++    pfad = []
++    for i in reihen:                                # unten: rho = r_lo, x steigt
++        pfad.append((r_lo, i))
++    for k in range(1, ns):                          # rechts: x = x_hi, rho steigt
++        pfad.append((r_lo + 2.0 * drho * k / ns, x_hi))
++    for i in reversed(reihen):                      # oben: rho = r_hi, x faellt
++        pfad.append((r_hi, i))
++    for k in range(1, ns):                          # links: x = x_lo, rho faellt
++        pfad.append((r_hi - 2.0 * drho * k / ns, x_lo))
++    W, wa, _ = praez_W(L, [p[0] for p in pfad], [p[1] for p in pfad], nu)
++    benutzt = 0
++    for rnd in range(runden):
++        neu = []
++        for k in range(len(pfad)):
++            k2 = (k + 1) % len(pfad)
++            if pfad[k][1] == pfad[k2][1] and abs(cmath.phase(W[k2] * W[k].conjugate())) > 0.3:
++                neu.append(k)
++        if not neu:
++            break
++        benutzt = rnd + 1
++        mitte = [(0.5 * (pfad[k][0] + pfad[(k + 1) % len(pfad)][0]), pfad[k][1]) for k in neu]
++        Wn, wn_, _ = praez_W(L, [p[0] for p in mitte], [p[1] for p in mitte], nu)
++        p2, w2l, a2 = [], [], []
++        j = 0
++        for k in range(len(pfad)):
++            p2.append(pfad[k])
++            w2l.append(W[k])
++            a2.append(wa[k])
++            if j < len(neu) and neu[j] == k:
++                p2.append(mitte[j])
++                w2l.append(Wn[j])
++                a2.append(wn_[j])
++                j += 1
++        pfad, W, wa = p2, w2l, a2
++    u, sprung = umlauf(W)
++    # Spruenge je Seite: gleiche Zeile = rho-Seite, sonst omega^2-Seite (unten/oben nach rho)
++    seiten = {"unten": 0.0, "rechts": 0.0, "oben": 0.0, "links": 0.0}
++    for k in range(len(pfad)):
++        k2 = (k + 1) % len(pfad)
++        sp = abs(cmath.phase(W[k2] * W[k].conjugate()))
++        if pfad[k][1] == pfad[k2][1]:
++            s_ = "rechts" if pfad[k][1] == x_hi and x_hi != x_lo else "links"
++        else:
++            s_ = "unten" if abs(pfad[k][0] - r_lo) < 0.5 * drho else "oben"
++        seiten[s_] = max(seiten[s_], sp)
++    # Gegenprobe ohne Phasenaufloesung (wie afm_bic): (1/2) sum sgn L(y_a) sgn(Delta L(y_b)) an Wechseln von L(y_b)
++    kr = 0.0
++    for k in range(len(W)):
++        w1, w2_ = W[k], W[(k + 1) % len(W)]
++        if w1.imag * w2_.imag < 0:
++            t_ = w1.imag / (w1.imag - w2_.imag)
++            la = w1.real + t_ * (w2_.real - w1.real)
++            kr += 0.5 * (1.0 if la > 0 else -1.0) * (1.0 if w2_.imag > w1.imag else -1.0)
++    return {"x_lo": xs[x_lo], "x_hi": xs[x_hi], "reihen": list(reihen), "rho_lo": r_lo, "rho_hi": r_hi, "rho_c": rc,
++            "drho": drho, "umlauf": u, "umlauf_kreuzung": kr, "max_sprung": sprung, "aufgeloest": sprung < 0.4,
++            "max_sprung_seiten": seiten, "punkte": len(pfad), "runden_benutzt": benutzt, "runden_max": runden,
++            "min_absW": min(abs(w) for w in W), "median_absW": sorted(abs(w) for w in W)[len(W) // 2],
++            "wachstum_max_pfad": max(wa), "sek": uhr() - t0}
++
++
++def praez_wechsel(xs, ast, i):
++    """Vorzeichenwechsel von s zwischen den Zeilen i und i + 1 eines Astes (ast[i] = Nullstelle oder None)."""
++    k1, k2 = ast[i], ast[i + 1]
++    t_ = k1["s"] / (k1["s"] - k2["s"])
++    return {"i": i, "x_lo": xs[i], "x_hi": xs[i + 1], "x_stern": xs[i] + t_ * (xs[i + 1] - xs[i]),
++            "rho_stern": k1["rho"] + t_ * (k2["rho"] - k1["rho"]), "s_lo": k1["s"], "s_hi": k2["s"],
++            "steigung_rho_x": (k2["rho"] - k1["rho"]) / (xs[i + 1] - xs[i]),
++            "kernwachstum_kandidat": max(k1["wachstum"], k2["wachstum"]),
++            "ausloeschung_kandidat": max(k1["ausloeschung"], k2["ausloeschung"])}
++
++
++def praez(a, dev, budget, zeilen, erg, sichern, l=0):
++    """PRAEZ3D: Zeilen in omega^2 um x0, direkte Nullstellen von L(y_b), exaktes s, Aeste, Wechsel, Rechtecke."""
++    pot = pot_poly(a.beta)
++    h = float(a.h.split(",")[0])
++    f_rand = FRAND.get(h, 1e-8)
++    nu = l + 1.0
++    x0, rho0 = a.x0, a.rho0
++    m = a.n_zeilen
++    xs_plan = [x0 + a.zeilen_dx * (k - 0.5 * (m - 1)) for k in range(m)]
++    st = {"potential": pot_text(pot), "h": h, "f_rand": f_rand, "x0": x0, "rho0": rho0, "rho_steig": a.rho_steig,
++          "x_pol": a.x_pol, "art": a.art, "x_geplant": xs_plan, "n_rho_grob": a.n_rho, "n_dicht": a.n_dicht,
++          "dicht_halb": a.dicht_halb, "tol_wurzel": a.tol_wurzel, "u_runden": a.u_runden}
++    erg["praez"] = st
++    zeilen.append(f"=== praez {pot_text(pot)}, h = {h}, f_rand = {f_rand}, {m} Zeilen um x0 = {x0} (Abstand "
++                  f"{a.zeilen_dx}), rho0 = {rho0}, Steigung {a.rho_steig}, Art {a.art}, Polsuch-Lage {a.x_pol}")
++    profs, xs, t_prof = profile_stapel(xs_plan, pot, h, dev, budget, zeilen, reserve=a.reserve)
++    ordn = sorted(range(len(xs)), key=lambda i: xs[i])
++    profs = [profs[i] for i in ordn]
++    xs = [xs[i] for i in ordn]
++    if len(profs) < 2:
++        st["fehler"] = f"nur {len(profs)} Profile"
++        zeilen.append("  zu wenige Profile")
++        return
++    L = lin_multi(profs, h, f_rand, dev)
++    st.update({"x": xs, "S0": [p["f0"] ** 2 for p in profs], "R_halb": [r_halb(p) for p in profs],
++               "R_aus": L["R_aus"], "r_m": L["r_m"], "K": L["K"], "sek_profil_max": t_prof,
++               "sek_nach_profilen": uhr(), "profile_vollstaendig": len(xs) == m})
++    zeilen.append(f"  {len(xs)} von {m} Profilen (je bis {t_prof:.1f} s), R = {L['R_aus']:.2f}, r_m = {L['r_m']:.3f}, "
++                  f"nach {uhr():.0f} s")
++    sichern()
++    # 1. Abtastung je Zeile: ganzes Fenster grob (n_rho) plus dicht um rho_ref(x) (n_dicht in +-dicht_halb)
++    pkt_r, pkt_i, rref = [], [], []
++    for i, x in enumerate(xs):
++        om = math.sqrt(x)
++        r0, r1 = 1.0 - om + 0.002, 1.0 + om - 0.002
++        rr = rho0 + a.rho_steig * (x - x0)
++        rref.append(rr)
++        g = [r0 + (r1 - r0) * k / (a.n_rho - 1) for k in range(a.n_rho)]
++        d = [rr + a.dicht_halb * (2.0 * k / (a.n_dicht - 1) - 1.0) for k in range(a.n_dicht)]
++        alle = sorted(set(g + [v for v in d if r0 < v < r1]))
++        pkt_r += alle
++        pkt_i += [i] * len(alle)
++    t0 = uhr()
++    W, wa, te = praez_W(L, pkt_r, pkt_i, nu, a.stapel)
++    st["sek_abtastung"] = uhr() - t0
++    st["rho_ref"] = rref
++    kl, info = [], []
++    zinfo = []
++    for i, x in enumerate(xs):
++        idx = [k for k in range(len(pkt_r)) if pkt_i[k] == i]
++        zinfo.append({"x": x, "n_rho": len(idx), "wachstum_fenster": max(wa[k] for k in idx),
++                      "wachstum_dicht": max([wa[k] for k in idx if abs(pkt_r[k] - rref[i]) <= a.dicht_halb] or [0.0]),
++                      "drho_dicht": 2.0 * a.dicht_halb / (a.n_dicht - 1)})
++        for k1, k2 in zip(idx, idx[1:]):
++            w1, w2_ = W[k1], W[k2]
++            if w1.imag * w2_.imag < 0:
++                t_ = w1.imag / (w1.imag - w2_.imag)
++                kl.append([pkt_r[k1], pkt_r[k2], w1.imag, w2_.imag, i])
++                info.append({"x": x, "ix": i, "richtung": 1 if w2_.imag > w1.imag else -1,
++                             "klammer_start": pkt_r[k2] - pkt_r[k1], "s_lin_grob": w1.real + t_ * (w2_.real - w1.real),
++                             "steigung_lb": (w2_.imag - w1.imag) / (pkt_r[k2] - pkt_r[k1])})
++            elif w1.imag == 0.0:
++                zinfo[-1]["exakte_null_lb"] = zinfo[-1].get("exakte_null_lb", 0) + 1
++    st["wachstum_fenster_max"] = max(wa) if wa else None
++    zeilen.append(f"  Abtastung {len(pkt_r)} Punkte ({st['sek_abtastung']:.0f} s): {len(kl)} Klammern von L(y_b); "
++                  f"Kernwachstum im Fenster max {st['wachstum_fenster_max']:.2e}")
++    sichern()
++    # 2. direkte Nullstellensuche (alle Klammern gemeinsam), s exakt an der Nullstelle
++    t0 = uhr()
++    wz = praez_illinois(L, kl, nu, a.iter_wurzel, a.tol_wurzel)
++    st["sek_wurzeln"] = uhr() - t0
++    nullst = [[] for _ in xs]
++    for inf, w_ in zip(info, wz):
++        z = dict(inf)
++        z.update(w_)
++        if "s" in z:
++            z["ausloeschung"] = z["terme_a"] / max(abs(z["s"]), 1e-300)
++        nullst[inf["ix"]].append(z)
++    for i in range(len(xs)):
++        zinfo[i]["nullstellen"] = nullst[i]
++    st["zeilen"] = zinfo
++    n_nk = sum(1 for w_ in wz if not w_.get("konvergiert"))
++    zeilen.append(f"  Nullstellen L(y_b): {len(wz)} ({st['sek_wurzeln']:.0f} s, nicht konvergiert {n_nk}), "
++                  f"max Iterationen {max([w_.get('iter', 0) for w_ in wz] or [0])}")
++    sichern()
++    # 3. Zielast (Nullstelle naechst rho_ref innerhalb dicht_halb) und Paarung aller Nullstellen
++    ziel = []
++    for i in range(len(xs)):
++        kand = [z for z in nullst[i] if "s" in z and abs(z["rho"] - rref[i]) <= a.dicht_halb]
++        ziel.append(min(kand, key=lambda z: abs(z["rho"] - rref[i])) if kand else None)
++    st["ziel"] = ziel
++    paare = []
++    for i in range(len(xs) - 1):
++        pi_ = []
++        for j1, z1 in enumerate(nullst[i]):
++            if "s" not in z1:
++                continue
++            c2 = [(abs(z2["rho"] - z1["rho"]), j2) for j2, z2 in enumerate(nullst[i + 1])
++                  if "s" in z2 and z2["richtung"] == z1["richtung"]]
++            if not c2:
++                continue
++            d_, j2 = min(c2)
++            if d_ > a.ast_tol:
++                continue
++            c1 = [(abs(z3["rho"] - nullst[i + 1][j2]["rho"]), j3) for j3, z3 in enumerate(nullst[i])
++                  if "s" in z3 and z3["richtung"] == nullst[i + 1][j2]["richtung"]]
++            if min(c1)[1] == j1:
++                pi_.append((j1, j2))
++        paare.append(pi_)
++    st["paare"] = paare
++    ziel_konsistent = []
++    for i in range(len(xs) - 1):
++        if ziel[i] is None or ziel[i + 1] is None:
++            ziel_konsistent.append(False)
++            continue
++        j1 = nullst[i].index(ziel[i])
++        j2 = nullst[i + 1].index(ziel[i + 1])
++        ziel_konsistent.append((j1, j2) in paare[i])
++    st["ziel_konsistent"] = ziel_konsistent
++    zeilen.append("  Zielast: omega^2 | rho_b | s | lb_rest | Kernwachstum | Ausloeschung | Iter")
++    for i, z in enumerate(ziel):
++        if z is None:
++            zeilen.append(f"    {xs[i]:.7f} | keine Nullstelle in +-{a.dicht_halb} um {rref[i]:.6f}")
++        else:
++            zeilen.append(f"    {xs[i]:.7f} | {z['rho']:.10f} | {z['s']:+.6e} | {z['lb_rest']:+.1e} | "
++                          f"{z['wachstum']:.2e} | {z['ausloeschung']:.2e} | {z['iter']}")
++    # Vorzeichenwechsel auf dem Zielast und auf allen gepaarten Aesten
++    wechsel = []
++    for i in range(len(xs) - 1):
++        if ziel[i] is not None and ziel[i + 1] is not None and ziel[i]["s"] * ziel[i + 1]["s"] < 0:
++            w = praez_wechsel(xs, ziel, i)
++            w["ast_konsistent"] = ziel_konsistent[i]
++            wechsel.append(w)
++    st["ziel_wechsel"] = wechsel
++    neben = []
++    for i in range(len(xs) - 1):
++        for j1, j2 in paare[i]:
++            z1, z2 = nullst[i][j1], nullst[i + 1][j2]
++            if z1 is ziel[i] and z2 is ziel[i + 1]:
++                continue
++            if z1["s"] * z2["s"] < 0:
++                neben.append(praez_wechsel(xs, {i: z1, i + 1: z2}, i))
++    st["neben_wechsel"] = neben
++    for w in wechsel:
++        zeilen.append(f"  Wechsel auf dem Zielast zwischen {w['x_lo']:.7f} und {w['x_hi']:.7f}: omega*^2 = "
++                      f"{w['x_stern']:.8f}, rho* = {w['rho_stern']:.8f}, Kernwachstum am Kandidaten "
++                      f"{w['kernwachstum_kandidat']:.2e}, Ausloeschung {w['ausloeschung_kandidat']:.2e}")
++    if not wechsel:
++        zeilen.append("  kein Vorzeichenwechsel von s auf dem Zielast")
++    zeilen.append(f"  Wechsel auf anderen Aesten: {len(neben)}")
++    sichern()
++    # 4. Rechtecke: um jeden Wechsel des Zielasts; ohne Wechsel eines um die Polsuch-Lage
++    st["rechtecke"] = []
++    auftraege = []
++    for w in wechsel:
++        i = w["i"]
++        reihen = list(range(max(0, i - a.pr_u_halb), min(len(xs) - 1, i + 1 + a.pr_u_halb) + 1))
++        auftraege.append(("wechsel", w, reihen, w["x_stern"], w["rho_stern"], w["steigung_rho_x"]))
++    if not wechsel:
++        xp = a.x_pol if a.x_pol is not None else x0
++        i = max(0, min(len(xs) - 2, max([k for k in range(len(xs)) if xs[k] <= xp] or [0])))
++        if ziel[i] is not None and ziel[i + 1] is not None:
++            t_ = (xp - xs[i]) / (xs[i + 1] - xs[i])
++            rc = ziel[i]["rho"] + t_ * (ziel[i + 1]["rho"] - ziel[i]["rho"])
++            sl = (ziel[i + 1]["rho"] - ziel[i]["rho"]) / (xs[i + 1] - xs[i])
++            st["kandidat_ohne_wechsel"] = {"i": i, "x": xp, "rho": rc,
++                                           "kernwachstum_kandidat": max(ziel[i]["wachstum"], ziel[i + 1]["wachstum"]),
++                                           "ausloeschung_kandidat": max(ziel[i]["ausloeschung"],
++                                                                        ziel[i + 1]["ausloeschung"])}
++            auftraege.append(("pol", None, list(range(len(xs))), xp, rc, sl))
++        else:
++            st["kandidat_ohne_wechsel"] = {"fehler": "Zielast an der Polsuch-Lage unvollstaendig"}
++    for k, (art, w, reihen, xc, rc, sl) in enumerate(auftraege):
++        if not budget.ok(f"Rechteck {k}", 30.0):
++            st["rechtecke"].append({"art": art, "fehler": "Zeit"})
++            sichern()
++            continue
++        halb_x = max(xs[reihen[-1]] - xc, xc - xs[reihen[0]])
++        drho = min(a.pr_drho_max, max(a.pr_drho, 2.0 * abs(sl) * halb_x))
++        try:
++            e = praez_rechteck(L, xs, reihen, rc, drho, a.u_n, a.u_runden, nu)
++        except (RuntimeError, ValueError, ZeroDivisionError) as err:
++            e = {"fehler": f"{type(err).__name__}: {err}", "aufgeloest": False}
++        e["art"] = art
++        e["x_c"] = xc
++        st["rechtecke"].append(e)
++        if "umlauf" in e:
++            zeilen.append(f"  Rechteck ({art}) omega^2 {e['x_lo']:.7f} .. {e['x_hi']:.7f}, rho {e['rho_lo']:.6f} .. "
++                          f"{e['rho_hi']:.6f} ({e['punkte']} Punkte, {e['runden_benutzt']} Runden): Umlauf "
++                          f"{e['umlauf']:+.4f} (Kreuzung {e['umlauf_kreuzung']:+.1f}), groesster Sprung "
++                          f"{e['max_sprung']:.3f} rad (aufgeloest: {e['aufgeloest']}), min |W| {e['min_absW']:.2e}, "
++                          f"{e['sek']:.0f} s")
++        else:
++            zeilen.append(f"  Rechteck ({art}): Fehler {e['fehler']}")
++        sichern()
++    # 5. Zusatz (nicht Teil der Regel): Pluecker-Pole am Zielast, wenn die Zeit reicht
++    if a.pole == "ja" and budget.ok("Pole Zielast", 60.0):
++        zz = [(i, z) for i, z in enumerate(ziel) if z is not None]
++        if zz:
++            t0 = uhr()
++            pol = newton_m(L, [complex(z["rho"], -1e-5) for _, z in zz], [i for i, _ in zz], [nu] * len(zz),
++                           iters=a.iter_newton)
++            st["pole_ziel"] = [{"x": xs[i], "pol": p["rho"], "Gamma": -p["rho"].imag, "konvergiert": p["konvergiert"]}
++                               for (i, _), p in zip(zz, pol)]
++            st["sek_pole"] = uhr() - t0
++            zeilen.append("  Pole am Zielast (Zusatz): " + ", ".join(f"{xs[i]:.7f}: {fz(p['rho'], 8)}"
++                                                                     + ("" if p["konvergiert"] else " (n. k.)")
++                                                                     for (i, _), p in zip(zz, pol)))
++            sichern()
++
++
++def regel(a, zeilen, erg):
++    """PRAEZ3D: Regel der KARTE LEITER-3D-PRAEZ auf die praez-Ausgaben der Stufen h und h/2 einer Stelle."""
++    stufen = []
++    for fn in [v for v in a.dateien.split(",") if v]:
++        with open(fn) as fh:
++            d = json.load(fh)
++        p = d["ergebnisse"]["praez"]
++        p["datei"] = fn
++        stufen.append(p)
++    erg["stufen"] = [{"datei": p["datei"], "h": p["h"]} for p in stufen]
++    xp = a.x_pol
++
++    def umlauf_pm1(r):
++        return r.get("aufgeloest") is True and "umlauf" in r and abs(abs(r["umlauf"]) - 1.0) < 0.1
++
++    def kand(p):
++        """Wechsel des Zielasts mit zugehoerigem Rechteck."""
++        rw = [r for r in p.get("rechtecke", []) if r.get("art") == "wechsel"]
++        aus = []
++        for k, w in enumerate(p.get("ziel_wechsel", [])):
++            r = rw[k] if k < len(rw) else {"fehler": "kein Rechteck"}
++            aus.append((w, r))
++        return aus
++    alle_rechtecke = [r for p in stufen for r in p.get("rechtecke", [])]
++    alle_aufgeloest = bool(alle_rechtecke) and all(r.get("aufgeloest") is True for r in alle_rechtecke)
++    vollst = len(stufen) == 2 and all(p.get("profile_vollstaendig") for p in stufen)
++    erg["vollstaendig"] = vollst
++    erg["alle_rechtecke_aufgeloest"] = alle_aufgeloest
++    if a.art in ("k1", "k2"):
++        ok_st = []
++        for p in stufen:
++            ok = False
++            for w, r in kand(p):
++                lage = abs(w["x_stern"] - xp) <= (1e-4 if a.art == "k1" else 2e-4)
++                if a.art == "k1":
++                    lage = lage and abs(w["rho_stern"] - a.rho_pol) <= 1e-4
++                if lage and umlauf_pm1(r):
++                    ok = True
++            ok_st.append(ok)
++        bestanden = vollst and len(ok_st) == 2 and all(ok_st)
++        erg["kontrolle"] = {"art": a.art, "je_stufe": ok_st, "bestanden": bestanden}
++        zeilen.append(f"Kontrolle {a.art}: je Stufe {ok_st} -> {'bestanden' if bestanden else 'VERFEHLT'}")
++        return
++    # Leiterstelle
++    paare = []
++    for w1, r1 in kand(stufen[0]) if len(stufen) == 2 else []:
++        for w2, r2 in kand(stufen[1]):
++            b = {"x1": w1["x_stern"], "x2": w2["x_stern"], "abst1": w1["x_stern"] - xp, "abst2": w2["x_stern"] - xp,
++                 "stufen_diff": w1["x_stern"] - w2["x_stern"], "umlauf1": r1.get("umlauf"), "umlauf2": r2.get("umlauf"),
++                 "aufgeloest1": r1.get("aufgeloest"), "aufgeloest2": r2.get("aufgeloest"),
++                 "kw1": w1["kernwachstum_kandidat"], "kw2": w2["kernwachstum_kandidat"]}
++            b["umlauf_ok"] = umlauf_pm1(r1) and umlauf_pm1(r2)
++            b["lage_ok"] = abs(b["abst1"]) <= 3e-4 and abs(b["abst2"]) <= 3e-4 and abs(b["stufen_diff"]) <= 1e-4
++            b["kw_ok"] = b["kw1"] <= 1e8 and b["kw2"] <= 1e8
++            paare.append(b)
++    erg["paare"] = paare
++    gesehen_kern = any(b["umlauf_ok"] and b["lage_ok"] for b in paare)
++    kein_wechsel = len(stufen) == 2 and all(not p.get("ziel_wechsel") for p in stufen)
++    kw_ohne = [p.get("kandidat_ohne_wechsel", {}).get("kernwachstum_kandidat") for p in stufen]
++    pol_r = [r for p in stufen for r in p.get("rechtecke", []) if r.get("art") == "pol"]
++    nicht = (vollst and kein_wechsel and len(pol_r) == 2 and all(r.get("aufgeloest") is True and
++                                                                 abs(r.get("umlauf", 9.0)) < 0.1 for r in pol_r)
++             and all(v is not None and v < 1e8 for v in kw_ohne))
++    # Auslegung (PLAN.md, vor den Laeufen): "auch Kernwachstum > 1e8 oder ein nicht aufgeloestes Rechteck" gilt fuer
++    # alle Ausgaenge -> gesehen nur, wenn zusaetzlich Kernwachstum am Kandidaten <= 1e8 (beide Stufen) und alle
++    # gerechneten Rechtecke aufgeloest.
++    gesehen = vollst and alle_aufgeloest and any(b["umlauf_ok"] and b["lage_ok"] and b["kw_ok"] for b in paare)
++    aus = "gesehen" if gesehen else ("nicht gesehen" if nicht else "unentschieden")
++    erg["ausgang"] = aus
++    erg["gesehen_ohne_kw_auslegung"] = bool(vollst and gesehen_kern)
++    zeilen.append(f"Stelle x_pol = {xp}: Ausgang {aus}; Paare {len(paare)}; alle Rechtecke aufgeloest {alle_aufgeloest}; "
++                  f"vollstaendig {vollst}; (Lesart ohne Kernwachstums-Auslegung: gesehen = {erg['gesehen_ohne_kw_auslegung']})")
++    for b in paare:
++        zeilen.append("  " + json.dumps(jsonfest(b)))
++
++
+ # ================================================================ Hauptprogramm
+ 
+ def argumente():
+     ap = argparse.ArgumentParser(description="Runde 7 BIC-2 (Erweiterung von Runde 6 resonanz3d)")
+-    ap.add_argument("kommando", choices=["rauch", "pole", "bruecke", "zeit0", "zeitlin", "exakt", "kurve", "nlfit"])
++    ap.add_argument("kommando", choices=["rauch", "pole", "bruecke", "zeit0", "zeitlin", "exakt", "kurve", "nlfit",
++                                         "praez", "regel"])   # PRAEZ3D: praez, regel
++    # PRAEZ3D: praez und regel
++    ap.add_argument("--n-zeilen", dest="n_zeilen", type=int, default=9, help="PRAEZ3D: Zahl der omega^2-Zeilen")
++    ap.add_argument("--zeilen-dx", dest="zeilen_dx", type=float, default=2.5e-4, help="PRAEZ3D: Zeilenabstand")
++    ap.add_argument("--rho-steig", dest="rho_steig", type=float, default=0.4049,
++                    help="PRAEZ3D: d rho_ref / d omega^2 (Mitte des dichten Fensters und Wahl des Zielasts)")
++    ap.add_argument("--n-dicht", dest="n_dicht", type=int, default=401, help="PRAEZ3D: Punkte im dichten Fenster")
++    ap.add_argument("--dicht-halb", dest="dicht_halb", type=float, default=0.02, help="PRAEZ3D: halbe Breite dicht")
++    ap.add_argument("--iter-wurzel", dest="iter_wurzel", type=int, default=80, help="PRAEZ3D: Illinois-Schritte")
++    ap.add_argument("--tol-wurzel", dest="tol_wurzel", type=float, default=1e-13, help="PRAEZ3D: Endklammer relativ")
++    ap.add_argument("--u-runden", dest="u_runden", type=int, default=30, help="PRAEZ3D: Halbierungsrunden rho-Seiten")
++    ap.add_argument("--pr-drho", dest="pr_drho", type=float, default=0.01, help="PRAEZ3D: kleinste halbe rho-Hoehe")
++    ap.add_argument("--pr-drho-max", dest="pr_drho_max", type=float, default=0.03, help="PRAEZ3D: groesste halbe Hoehe")
++    ap.add_argument("--pr-u-halb", dest="pr_u_halb", type=int, default=3,
++                    help="PRAEZ3D: Rechteck ueber die Zeilen i - n .. i + 1 + n um einen Wechsel zwischen i und i + 1")
++    ap.add_argument("--x-pol", dest="x_pol", type=float, default=None, help="PRAEZ3D: Polsuch- bzw. Soll-Lage omega^2")
++    ap.add_argument("--rho-pol", dest="rho_pol", type=float, default=None, help="PRAEZ3D regel k1: Soll-rho")
++    ap.add_argument("--art", default="leiter", choices=["leiter", "k1", "k2"], help="PRAEZ3D: Stelle oder Kontrolle")
++    ap.add_argument("--pole", default="ja", choices=["ja", "nein"], help="PRAEZ3D: Zusatz Pluecker-Pole am Zielast")
+     # Runde 7: exakt
+     ap.add_argument("--beta", type=float, default=0.5, help="exakt/kurve: U = S - S^2 + beta S^3")
+     ap.add_argument("--x0", type=float, default=0.79768, help="exakt: Mitte des omega^2-Gitters")
+@@ -2326,6 +2791,10 @@
+         kurve(a, dev, budget, zeilen, ergebnis["ergebnisse"], sichern, l=l_ek)
+     elif a.kommando == "nlfit":
+         nlfit(a, zeilen, ergebnis["ergebnisse"])
++    elif a.kommando == "praez":                                                               # PRAEZ3D
++        praez(a, dev, budget, zeilen, ergebnis["ergebnisse"], sichern, l=l_ek)
++    elif a.kommando == "regel":                                                               # PRAEZ3D
++        regel(a, zeilen, ergebnis["ergebnisse"])
+     elif a.kommando == "pole":
+         for w2 in w2_liste:
+             if not budget.ok(f"pole omega^2 = {w2}", 30.0):

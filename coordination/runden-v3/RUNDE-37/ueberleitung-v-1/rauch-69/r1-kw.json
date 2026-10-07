@@ -1,0 +1,402 @@
+{
+ "info": {
+  "numpy": "2.4.4",
+  "scipy": "1.18.0",
+  "python": "3.12.3",
+  "host": "ubuntu-auto",
+  "argv": [
+   "code/uv.py",
+   "rauch1",
+   "--netz",
+   "KW",
+   "--out",
+   "/home/fmh/fmhc-physics-remote/ueberleitung-v-1/rauch/r1-kw.json"
+  ],
+  "start_utc": "2026-10-05T12:35:22Z",
+  "skript_sha256": "cd90b0b7ffb7bac64a34846c91d8c5c2feeb82a6f5980a02f5de9ce255cd5a55",
+  "module_sha256": {
+   "rk": "afd778897795839f84695db580e401507b5d9ba00266913bd23b8ad6fecac17f",
+   "pt": "bc360991aaa4eeecb3ed6e74f7491e3df1ba744a378f5bbfa7e0dc085ba53280",
+   "rk2": "eb361e43564a2aa76a3109f88df44485cacd068cc293c891d1c3d1a2059cff81",
+   "ew": "fa7b6417d39177102f0b19c5474453cd16a7595e23bc25ca548e081c4060b142",
+   "tp": "419d7da6caa211c721eb6a8c87403977415cf3050f03365377f51cb77b374dfd",
+   "tg": "ec48a258e266fc2226d0d10564b606052831ffefbf0642e4f7d04f9de85cfd9e",
+   "hm": "0ed5e2ce3a2a26525ef8a3320da394e6f403306384015187baf4dd46623fd5f2",
+   "tti": "6d6b6f7b99b334d74d91860fc69af1c6c0c46e22207dc45432d60a9824c08ee5",
+   "dn": "0cd5d13e98f41df277ec7d8139970d1e658542f843ed8180bc756a4ea1d4d1ae",
+   "nachtrag_kinetik": "fd0d17b9fb7c92d4b6ad564a46260e3daae3285bcb5ad53f65d9fb3918a32b28"
+  }
+ },
+ "ergebnis": {
+  "t_aufbau_s": 0.12830376625061035,
+  "kontrollen": {
+   "h=1": {
+    "K1": 5.551115123125786e-16,
+    "K2": 9.524773118524586e-17
+   },
+   "h=0.015625": {
+    "K1": 2.23717985916685e-16,
+    "K2": 2.320018389003179e-15
+   },
+   "K3": {
+    "1": {
+     "fehlwinkel_max_abs": 1.7763568394002505e-15,
+     "schlaefli": 5.648652947061548e-16,
+     "M_sym": 1.776356839400248e-15,
+     "vol_summe_rel_fehler": 0.0,
+     "vol_min_rel": 0.01003239013189612,
+     "tote_kanten": [
+      [
+       0,
+       0,
+       [
+        1,
+        1,
+        1,
+        1
+       ]
+      ]
+     ],
+     "NE": 15,
+     "S": 24
+    },
+    "0.5": {
+     "fehlwinkel_max_abs": 1.7763568394002505e-15,
+     "schlaefli": 3.620105756789443e-16,
+     "M_sym": 1.5447667261737464e-15,
+     "vol_summe_rel_fehler": 0.0,
+     "vol_min_rel": 0.007872658919134225,
+     "tote_kanten": [
+      [
+       0,
+       0,
+       [
+        1,
+        1,
+        1,
+        1
+       ]
+      ]
+     ],
+     "NE": 15,
+     "S": 24
+    },
+    "0.25": {
+     "fehlwinkel_max_abs": 1.7763568394002505e-15,
+     "schlaefli": 5.52202094958958e-16,
+     "M_sym": 2.2848201349902125e-15,
+     "vol_summe_rel_fehler": 0.0,
+     "vol_min_rel": 0.0046253282567605535,
+     "tote_kanten": [
+      [
+       0,
+       0,
+       [
+        1,
+        1,
+        1,
+        1
+       ]
+      ]
+     ],
+     "NE": 15,
+     "S": 24
+    },
+    "0.125": {
+     "fehlwinkel_max_abs": 1.7763568394002505e-15,
+     "schlaefli": 1.2367497520709106e-15,
+     "M_sym": 2.4343250174169956e-15,
+     "vol_summe_rel_fehler": 0.0,
+     "vol_min_rel": 0.002446518412333714,
+     "tote_kanten": [
+      [
+       0,
+       0,
+       [
+        1,
+        1,
+        1,
+        1
+       ]
+      ]
+     ],
+     "NE": 15,
+     "S": 24
+    },
+    "0.0625": {
+     "fehlwinkel_max_abs": 1.7763568394002505e-15,
+     "schlaefli": 3.00333639178577e-15,
+     "M_sym": 6.06136181036902e-15,
+     "vol_summe_rel_fehler": 0.0,
+     "vol_min_rel": 0.0012494675710390851,
+     "tote_kanten": [
+      [
+       0,
+       0,
+       [
+        1,
+        1,
+        1,
+        1
+       ]
+      ]
+     ],
+     "NE": 15,
+     "S": 24
+    },
+    "0.03125": {
+     "fehlwinkel_max_abs": 1.7763568394002505e-15,
+     "schlaefli": 2.9277426230657936e-15,
+     "M_sym": 5.865357319190968e-15,
+     "vol_summe_rel_fehler": 0.0,
+     "vol_min_rel": 0.000630253326436383,
+     "tote_kanten": [
+      [
+       0,
+       0,
+       [
+        1,
+        1,
+        1,
+        1
+       ]
+      ]
+     ],
+     "NE": 15,
+     "S": 24
+    },
+    "0.015625": {
+     "fehlwinkel_max_abs": 3.552713678800501e-15,
+     "schlaefli": 7.320729926736614e-15,
+     "M_sym": 1.4627060409024416e-14,
+     "vol_summe_rel_fehler": 0.0,
+     "vol_min_rel": 0.00031637116912716916,
+     "tote_kanten": [
+      [
+       0,
+       0,
+       [
+        1,
+        1,
+        1,
+        1
+       ]
+      ]
+     ],
+     "NE": 15,
+     "S": 24
+    }
+   },
+   "K3_3d_ops": {
+    "B_herm": 4.215888746904488e-16,
+    "A_herm": 7.629277997537056e-17,
+    "BM_null": 1.8967073834167317e-16,
+    "cM_null": 3.896839072853337e-16
+   },
+   "K3_3d_pruefung": {
+    "T": 6,
+    "E": 7,
+    "nV": 1,
+    "dieder_summe_minus_2pi_max": 1.7763568394002505e-15,
+    "Vbox": 1.0
+   },
+   "K4_Mdisp_zufall": 7.424115083436044e-17,
+   "struktur": {
+    "NE": 15,
+    "NV": 1,
+    "nq": 7,
+    "n_diag": 7,
+    "dt": [
+     1
+    ],
+    "tot": [
+     3
+    ],
+    "n_lebend_diag": 6
+   }
+  },
+  "l_mittel": 1.2820987849554517,
+  "technik": [
+   {
+    "schema": "achse",
+    "art": "kl",
+    "D0_min_rel": 0.9999999999999984,
+    "rang_B_s": [
+     3
+    ],
+    "n_L": [
+     3
+    ],
+    "J_sv_min_rel": 0.006826872437428325,
+    "J_rang_ok": true,
+    "t_s": 0.014049530029296875
+   },
+   {
+    "schema": "ls",
+    "art": "kl",
+    "D0_min_rel": 0.6249999168265163,
+    "rang_B_s": [
+     3
+    ],
+    "n_L": [
+     3
+    ],
+    "J_sv_min_rel": 0.0076340262674997154,
+    "J_rang_ok": true,
+    "t_s": 0.014489173889160156
+   },
+   {
+    "schema": "achse",
+    "art": "kl",
+    "D0_min_rel": 0.9999999999999989,
+    "rang_B_s": [
+     3
+    ],
+    "n_L": [
+     3
+    ],
+    "J_sv_min_rel": 0.006826872437428325,
+    "J_rang_ok": true,
+    "t_s": 0.013757705688476562
+   },
+   {
+    "schema": "ls",
+    "art": "kl",
+    "D0_min_rel": 0.6250013307743252,
+    "rang_B_s": [
+     3
+    ],
+    "n_L": [
+     3
+    ],
+    "J_sv_min_rel": 0.007634004013358791,
+    "J_rang_ok": true,
+    "t_s": 0.014521360397338867
+   },
+   {
+    "schema": "achse",
+    "art": "kl",
+    "D0_min_rel": 0.9999999999999987,
+    "rang_B_s": [
+     3
+    ],
+    "n_L": [
+     3
+    ],
+    "J_sv_min_rel": 0.006826872437428325,
+    "J_rang_ok": true,
+    "t_s": 0.013751983642578125
+   },
+   {
+    "schema": "ls",
+    "art": "kl",
+    "D0_min_rel": 0.625002524193921,
+    "rang_B_s": [
+     3
+    ],
+    "n_L": [
+     3
+    ],
+    "J_sv_min_rel": 0.007633898226851285,
+    "J_rang_ok": true,
+    "t_s": 0.014570951461791992
+   },
+   {
+    "schema": "achse",
+    "art": "bz",
+    "D0_min_rel": 0.9999999999999987,
+    "rang_B_s": [
+     3
+    ],
+    "n_L": [
+     3
+    ],
+    "J_sv_min_rel": 0.006826872437428325,
+    "J_rang_ok": true,
+    "t_s": 0.013615846633911133
+   },
+   {
+    "schema": "ls",
+    "art": "bz",
+    "D0_min_rel": 0.6217097396143841,
+    "rang_B_s": [
+     3
+    ],
+    "n_L": [
+     3
+    ],
+    "J_sv_min_rel": 0.007243708266557141,
+    "J_rang_ok": true,
+    "t_s": 0.01442575454711914
+   },
+   {
+    "schema": "achse",
+    "art": "bz",
+    "D0_min_rel": 0.9999999999999991,
+    "rang_B_s": [
+     3
+    ],
+    "n_L": [
+     3
+    ],
+    "J_sv_min_rel": 0.006826872437428325,
+    "J_rang_ok": true,
+    "t_s": 0.013833045959472656
+   },
+   {
+    "schema": "ls",
+    "art": "bz",
+    "D0_min_rel": 0.6595288030805222,
+    "rang_B_s": [
+     3
+    ],
+    "n_L": [
+     3
+    ],
+    "J_sv_min_rel": 0.0026130062628628875,
+    "J_rang_ok": true,
+    "t_s": 0.014530658721923828
+   },
+   {
+    "schema": "achse",
+    "art": "bz",
+    "D0_min_rel": 0.9999999999999987,
+    "rang_B_s": [
+     3
+    ],
+    "n_L": [
+     3
+    ],
+    "J_sv_min_rel": 0.006826872437428325,
+    "J_rang_ok": true,
+    "t_s": 0.013864278793334961
+   },
+   {
+    "schema": "ls",
+    "art": "bz",
+    "D0_min_rel": 0.6214696909606076,
+    "rang_B_s": [
+     3
+    ],
+    "n_L": [
+     3
+    ],
+    "J_sv_min_rel": 0.005245769223708144,
+    "J_rang_ok": true,
+    "t_s": 0.014654397964477539
+   }
+  ],
+  "t_punkt_s": 0.046360015869140625,
+  "punkt_schluessel": [
+   "K4_Mdisp",
+   "achse",
+   "eps",
+   "k",
+   "ls",
+   "t_s"
+  ]
+ },
+ "laufzeit_s": 0.4726409912109375,
+ "maxrss_MB": 77.09765625,
+ "ende_utc": "2026-10-05T12:35:23Z"
+}

@@ -1,0 +1,82 @@
+Gezielte diskrete Referenzreparatur, Entwurf 02.10.2026
+Neue Artefakte; ursprüngliche formation/code.py/PLAN und Fehlbefund unverändert.
+KEINE Ausführung durch Autor. Root entscheidet nur Vorbereitung/QA/T4-Referenz.
+Kein Bildungslauf, keine Astsuche, keine geänderten Toleranzen nach Befund.
+
+prepare.py importiert lokale beutel_source.py erst nach SHA256-Kontrolle:
+f831e818b4f2a00f56e281f5972badb1d9ed344dcd2242826ab6b31076917ecb.
+Datei ist unveränderte Kopie BEUTEL-1 code/beutel.py, Main-Guard bleibt.
+Seed-NPZ muss Originalhash haben:
+1bb153a166e15d8ca43848613e638e8e0d20978833be6c564dcf7bc33f926d8c.
+Q1100,sweep seed,omega²1.03666310756389 eindeutig auswählen.
+
+Genau zwei Zielgitter h=.1,.05,R120, ursprüngliche BEUTEL-Zellvolumina
+V=4pi h(r²+h²/12), r=(i+.5)h, Flächen4pi((i+1)h)² und Ghostwerte0/1.
+Linearer interpolierter Seed; links konstant/rechts Vakuum. Initiales omega
+aus festem Q; danach maximal30 einzelne originale newton_Q-Updates mit
+tol1e-9. Der bordered Newton löst beide stationären Gleichungen samt
+Q-Bedingung; Zwischeniterationen dürfen Q ändern, das ist KEINE Realzeit.
+Kein Gradientenfluss, keine Continuation, keine neuen Q oder Startformen.
+
+Nach jedem Update und vor Ausgabe:
+finite Felder,lambda>0; ||f-fseed||V/||fseed||V<=.02,
+||chi-chiseed||V/||chiseed-1||V<=.02, |omega/omegaArchiv-1|<=.01;
+min f>=-1e-10, chi in[-1e-8,1+1e-8], relative Energieänderung gegenüber
+interpoliertem diskretem Start<=.02. Das ist ein Astnähe-Gate, kein Satz
+über Eindeutigkeit; ohne zusätzliche Astfortsetzung kein anderer Ast behauptet.
+Abschluss max(punktweises diskretes Eulerresiduum,|Q/1100-1|)<1e-9,
+zusätzlich Q-Fehler<1e-10 und E/Q<sqrt2. Separat geschriebene diskrete
+Hamiltoniansumme gegen BEUTEL observables relative1e-12; E(h.1)/E(h.05)
+relative Abweichung<1e-3. Kein allgemeiner Kontinuumfehler daraus gefolgert.
+Ungültige Iterationen vor JSON-Veröffentlichung abweisen; letzte gültige
+Iteration behalten. Keine stillen NaN-Werte als Erfolg.
+
+Output eigener neuer Ordner: MANIFEST.json mit Status, Quell-/Seed-/Codehash,
+Iterationsdaten und sha256 jedes fertigen Profils. NPZ float64 r,f,chi,
+omega,Q,h plus Quell-/Seedhash. Teilprofile bei späterem Fehler bleiben
+diagnostisch; nur Gesamtstatus PREPARED_REFERENCES erlaubt Weiterverwendung.
+
+repairedcode.py ist Kopie der alten formation/code.py mit expliziten Änderungen:
+- --reference erwartet Verzeichnis der NEUEN MANIFEST/NPZ; Gesamtstatus und
+  jeden tatsächlichen Dateihash prüfen. r muss exakt zum Zielgitter passen,
+  float64 Felder; weder Interpolation noch nachträgliche Q-Normierung.
+- R50 heißt r50_density: Median positiver |phi|²-Dichte. In Trefferschale
+  mit Bruchteil a der Schalenmasse Radius=[r_links³+a(r_rechts³-r_links³)]^(1/3).
+  Stückweise konstante Zelldichte; kein Noetherladungsradius.
+- chi_first_cell statt chi0: Diagnose ist erster Zellwert, nicht exakter
+  Ursprungswert. Der alte Schwellenwert .2 bleibt numerisch unverändert.
+- --reference-short-test führt ausschließlich die drei Referenzarme bis
+  T4 aus; keine Wolkenevolution. --qa-only bleibt vollständig zeitfrei.
+  Kombinierte Flags werden abgewiesen. Hauptbildung bleibt NICHT freigegeben.
+
+QA unverändert drei Algebraanker plus Anfangsdiagnostik beider Starttypen.
+Zusätzliche rein algebraische Radius-QA: uniforme Dichte in den vollständigen
+Schalen r<2 auf h.1/.05 ergibt R50=2*2^(-1/3) absolut auf1e-12; bei
+Nullfeld ist der Radius None/JSON null, kein erfundener Nullradius oder0/0.
+Q-Anfangsgate weiterhin1e-11; Referenznormreste weiterhin .004. Anfangs-Q
+wird also absichtlich strenger geprüft als das Präparations-Endgate1e-10;
+bei Differenz führt das zu offenem QA-Fehler, nicht zu Nachnormalisierung.
+T4 wie bisher h/dt(.1,.02),(.05,.02),(.1,.01), Samples alle.8.
+An allen Samples Edrift,Qdrift und Kernladungsbilanz jeweils<=1e-5,
+Kragenenergie/E0<=1e-8; endlich. Vier normierte Kernreste und globale
+phasenbereinigte phi-/chi-Formdrift jeweils<.004 über gesamten Kurzlauf.
+Normen aus ursprünglichem PLAN unverändert; Formdrift gegen eigene exakte
+Gitterreferenz. Keine neuen physikalischen Bildungs-/Lebensdauergates.
+Es wird keine dt-Rettungsiteration bei verfehltem Energiegate gestartet.
+Die drei Kurzprüfungen sind keine vollständige h/dt-Konvergenzstudie.
+
+CLI Vorbereitung:
+ prepare.py --seed ORIGINAL_M2_PROFILE.npz --out NEUER_REFERENZORDNER
+CLI zeitfreie QA:
+ repairedcode.py --reference NEUER_REFERENZORDNER --out NEUER_QAORDNER --qa-only
+CLI Referenz T4:
+ repairedcode.py --reference NEUER_REFERENZORDNER --out NEUER_T4ORDNER --reference-short-test
+
+Root-RUN-SCOPE maßgeblich: .69 CPU8,nice19,einThread; gesamter Deckel60CPU-s
+für Vorbereitung+QA+T4. Externe /usr/bin/time inklusive Imports maßgeblich;
+interne prepare-Zeit startet erst nach numpy-Import und ist kein Gesamtbudget.
+Root kontrolliert Restbudget vor jedem getrennten Prozess. Eigene interne
+repairedcode-Grenze175/178 aus dem ungestarteten Hauptlauf ist KEINE
+Freigabe über60CPU; äußere Root-Begrenzung/Receipts sind erforderlich.
+Keine fremden Dienste, keine lokale Numerik, keine Remoteänderung durch Autor.
+Erfolg nur neue diskrete Referenz plus T4-Robustheitskontrolle, kein Bildungsergebnis.

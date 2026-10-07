@@ -1,0 +1,29 @@
+{
+  "id": "claude-guard-und-hook-entfernt-20260926",
+  "time": "2026-09-26T16:54:52+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung; Auftrag Finn \"ja entfernen und vorher checken\"; Entfernung 18:52:08 bis 18:52:09 MESZ, eingetragen 18:54:52 MESZ (gemessen)",
+  "topic": "operations",
+  "status": "reported",
+  "evidenzart": "keine",
+  "title": "Lokale Drossel fmhc-physics-local-guard und SessionStart-Hook nach Pruefung entfernt; Grenzen des laufenden Scopes aufgehoben; run_agent.py und research-engine ausser Betrieb",
+  "question": "Kann der Guard samt Hook entfernt werden, ohne laufende Ablaeufe zu brechen, und wie bleibt der Rueckweg offen?",
+  "action": "Geprueft:\n- Inhalt von settings.local.json, local_guard.py, Unit und Scope-Eigenschaften.\n- Verweise in Units, Cron, Claude- und Codex-Konfiguration und Projektskripten.\n- Codex-Bestand coordination/codex-systembestand-20260926/BESTAND.md.\nDanach:\n- Sicherung.\n- settings.local.json auf {} gesetzt.\n- systemctl --user disable --now, Unit-Datei geloescht, daemon-reload.\n- set-property --runtime CPUQuota= MemoryHigh/MemoryMax/TasksMax=infinity CPUWeight=100 auf fmhc-physics-local-agents.scope; den Scope nicht gestoppt.\n- Doku in CLAUDE.md, AGENTS.md und LOCAL_COMPUTE.md berichtigt.",
+  "result": "Nachher:\n- Dienst inactive und not-found, kein Guard-Prozess.\n- cpu.max max, memory.high/max max, pids.max max, cpu.weight 100.\nAbhaengig vom alten Scope, von keinem Dienst oder Timer aufgerufen:\n- run_agent.py\n- research-engine wake.py und qa_cap.py, zuletzt am 20.09.\n- ein Altlauf-LAUNCH.sh\nNicht angefasst:\n- Finns globale Git- und Claude-Hooks\n- resume_claude.sh (drosselt nur bei ausdruecklichem Aufruf)",
+  "meaning": "Die Regel gegen lokale Rechnungen gilt nur noch durch Disziplin und Review. Die MCP-Server der Sitzungen werden nicht mehr gedrosselt. Rueckweg in coordination/guard-entfernt-20260926/README.md.",
+  "sources": [
+    {
+      "path": "coordination/guard-entfernt-20260926/README.md",
+      "sha256": "c4f2783f57a2216e944370134f893963d7c46dacf57e920eb1119992ee4978be"
+    },
+    {
+      "path": "coordination/codex-systembestand-20260926/BESTAND.md",
+      "sha256": "ac5ffbf10ffd17b24f806e79325ca3b149da3b8f5e8402cedf73aacd6b368bae"
+    },
+    {
+      "path": "coordination/session-diagnose-20260925/BEFUND.md",
+      "sha256": "10cd82c57bbf0be301c73309b7e74477658d627b34c0d07c0abfc82a1dd0e35b"
+    }
+  ],
+  "recorded_at": "2026-09-26T16:54:52.744205+00:00"
+}

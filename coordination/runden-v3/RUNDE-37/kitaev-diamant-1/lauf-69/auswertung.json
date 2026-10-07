@@ -1,0 +1,963 @@
+{
+ "urteile": {
+  "KD0": {
+   "urteil": "eingetroffen",
+   "werte": {
+    "dirac_fehler": {
+     "alpha_nicht_hermitesch": 0,
+     "alpha_paar_kommutiert": 0,
+     "alpha_quadrat": 0,
+     "alpha_zeta_muster": 0,
+     "eq24_dirac": 0,
+     "zeta_gleich_i_alpha_g45": 0,
+     "zeta_nicht_hermitesch": 0,
+     "zeta_paar_kommutiert": 0,
+     "zeta_quadrat": 0
+    },
+    "gitter": {
+     "L2": {
+      "L": 2,
+      "sechsecke": 32,
+      "sechsecke_je_knoten": [
+       12
+      ],
+      "H_gegen_W_paare": 2048,
+      "H_gegen_W_antikommut": 0,
+      "W_paare": 496,
+      "W_paar_antikommut": 0,
+      "W_nicht_hermitesch": 0,
+      "W_quadrat_fehler": 0,
+      "W_alpha_ungleich_W_zeta": 0,
+      "W_normierung": {
+       "1": 32
+      },
+      "relationen": 18,
+      "relation_produkt_phasen": {
+       "1": 18
+      },
+      "relation_nicht_phase": 0
+     },
+     "L3": {
+      "L": 3,
+      "sechsecke": 108,
+      "sechsecke_je_knoten": [
+       12
+      ],
+      "H_gegen_W_paare": 23328,
+      "H_gegen_W_antikommut": 0,
+      "W_paare": 5778,
+      "W_paar_antikommut": 0,
+      "W_nicht_hermitesch": 0,
+      "W_quadrat_fehler": 0,
+      "W_alpha_ungleich_W_zeta": 0,
+      "W_normierung": {
+       "1": 108
+      },
+      "relationen": 56,
+      "relation_produkt_phasen": {
+       "1": 56
+      },
+      "relation_nicht_phase": 0
+     },
+     "L4": {
+      "L": 4,
+      "sechsecke": 256,
+      "sechsecke_je_knoten": [
+       12
+      ],
+      "H_gegen_W_paare": 131072,
+      "H_gegen_W_antikommut": 0,
+      "W_paare": 32640,
+      "W_paar_antikommut": 0,
+      "W_nicht_hermitesch": 0,
+      "W_quadrat_fehler": 0,
+      "W_alpha_ungleich_W_zeta": 0,
+      "W_normierung": {
+       "1": 256
+      },
+      "relationen": 130,
+      "relation_produkt_phasen": {
+       "1": 130
+      },
+      "relation_nicht_phase": 0
+     }
+    },
+    "struktur_ok": {
+     "L3": true,
+     "L4": true
+    },
+    "lesepruefung_ok": true,
+    "teile_ok": {
+     "a_gamma": true,
+     "b_schleifen": true
+    }
+   }
+  },
+  "KD1": {
+   "urteil": "eingetroffen",
+   "werte": {
+    "abbildung": {
+     "knoten": {
+      "fehler": {
+       "D_gegen_Gamma_antikommut": 0,
+       "D_nicht_hermitesch": 0,
+       "D_quadrat": 0,
+       "lam_nicht_hermitesch": 0,
+       "lam_paar_kommutiert": 0,
+       "lam_quadrat": 0
+      },
+      "sektoren": {
+       "-1": {
+        "Eq24_P4_gegen_G45": "+",
+        "Eq25_G5_gegen_i_G4_P4": [
+         "-",
+         "-",
+         "-",
+         "-"
+        ]
+       },
+       "1": {
+        "Eq24_P4_gegen_G45": "-",
+        "Eq25_G5_gegen_i_G4_P4": [
+         "+",
+         "+",
+         "+",
+         "+"
+        ]
+       }
+      }
+     },
+     "gitter_L3": {
+      "fehler": {
+       "Hterm_gegen_D_antikommut": 0,
+       "bindung_eq27_alpha": 0,
+       "bindung_eq27_zeta": 0,
+       "u_gegen_D_muster": 0,
+       "u_gegen_Hterm_antikommut": 0,
+       "u_nicht_hermitesch": 0,
+       "u_paar_antikommut": 0,
+       "u_quadrat": 0
+      },
+      "schleife_sigma": {
+       "1": 108
+      },
+      "schleife_nicht_pm_prod_u": 0,
+      "normierung_gleich_spin": 108,
+      "anzahl": {
+       "Hterm_gegen_D": 11664,
+       "bindungen": 108,
+       "u_gegen_Hterm": 23328,
+       "u_paare": 5778
+      }
+     },
+     "sechseck_ed": {
+      "allgemein": {
+       "E0": -8.08052615334259,
+       "E0_W": 1,
+       "J": [
+        1.0,
+        0.7,
+        1.3,
+        0.9
+       ],
+       "W_gegen_Hterme_antikommut": 0,
+       "abw_minus": 1.468869470500067e-11,
+       "abw_plus": 1.3130652121162711e-10,
+       "abw_vertauscht": 2.184909360516281,
+       "anzahl_minus": 2048,
+       "anzahl_plus": 2048,
+       "imag_max": 0.0,
+       "sigma": 1,
+       "singulaerwerte_U_minus_sigma": [
+        1.7832554500127005,
+        1.7832554500127005,
+        9.727702710118302e-17
+       ],
+       "singulaerwerte_U_sigma": [
+        2.020131538333288,
+        1.3554661540439465,
+        0.6646653842893411
+       ]
+      },
+      "typen": [
+       0,
+       1,
+       2,
+       0,
+       1,
+       2
+      ],
+      "uniform": {
+       "E0": -8.00000000001205,
+       "E0_W": 1,
+       "J": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+       ],
+       "W_gegen_Hterme_antikommut": 0,
+       "abw_minus": 1.4853895891064894e-11,
+       "abw_plus": 9.242739906767383e-11,
+       "abw_vertauscht": 2.5358983848599337,
+       "anzahl_minus": 2048,
+       "anzahl_plus": 2048,
+       "imag_max": 0.0,
+       "sigma": 1,
+       "singulaerwerte_U_minus_sigma": [
+        1.7320508075688772,
+        1.732050807568877,
+        3.065796227057452e-17
+       ],
+       "singulaerwerte_U_sigma": [
+        2.0,
+        1.0000000000000002,
+        0.9999999999999998
+       ]
+      }
+     },
+     "cluster112": {
+      "allgemein": {
+       "E0_frei_ohne_projektion_min": -12.270289320141956,
+       "E0_spin": -12.270289320142385,
+       "J": [
+        1.0,
+        0.7,
+        1.3,
+        0.9
+       ],
+       "abw_spin_gegen_ext": 2.3092638912203256e-14,
+       "abw_spin_gegen_frei_projiziert": 1.8144438424977155e-12,
+       "c_projektion": -1,
+       "ext_terme_aus_phys_raus": 0,
+       "imag": [
+        0.0,
+        0.0
+       ],
+       "phys_dim": 256,
+       "pred_anzahl": 2048,
+       "spin_dim": 256
+      },
+      "uniform": {
+       "E0_frei_ohne_projektion_min": -12.64911064067337,
+       "E0_spin": -12.649110640673527,
+       "J": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+       ],
+       "abw_spin_gegen_ext": 4.618527782440651e-14,
+       "abw_spin_gegen_frei_projiziert": 7.92392619965439e-13,
+       "c_projektion": -1,
+       "ext_terme_aus_phys_raus": 0,
+       "imag": [
+        0.0,
+        0.0
+       ],
+       "phys_dim": 256,
+       "pred_anzahl": 2048,
+       "spin_dim": 256
+      }
+     },
+     "teile_ok": {
+      "knoten": true,
+      "gitter": true,
+      "sechseck_ed": true,
+      "cluster112": true
+     }
+    },
+    "spektrum_J1": {
+     "gitter_min": {
+      "128": 0.0,
+      "129": 0.0005930603097211717,
+      "16": 1.1442377452219667e-17,
+      "17": 0.034053800632196284,
+      "256": 0.0,
+      "257": 0.0001494266605348571,
+      "32": 0.0,
+      "33": 0.0090561548538306,
+      "64": 0.0,
+      "65": 0.00233554633534671,
+      "8": 1.1442377452219667e-17,
+      "9": 0.12061475842818313
+     },
+     "kont_min": 0.0,
+     "nullen_gefunden": 400,
+     "ungerade_N_schrumpft": true,
+     "volumenanteil": [
+      0.04262417366943643,
+      0.012801249490930356,
+      0.003749603893301006,
+      0.0010784352826603855
+     ],
+     "deltas": [
+      0.4,
+      0.2,
+      0.1,
+      0.05
+     ],
+     "steigung_loglog": 1.7846365633345904,
+     "form": "Linien",
+     "nullstellen_lage": {
+      "cx_sy": 69,
+      "cx_sz": 76,
+      "cy_sx": 49,
+      "cy_sz": 63,
+      "cz_sx": 65,
+      "cz_sy": 78
+     }
+    },
+    "code_pruefung": {
+     "J1_gegen_4ccc_minus_i_sss": 1.4217791915866692e-15,
+     "reduziert_gegen_eq31": 1.3322676295501878e-15
+    },
+    "code_ok": true,
+    "u1_beschreibend": {
+     "allgemein": {
+      "kommutator_max": 0.0,
+      "pauli_strings_im_kommutator": 216
+     },
+     "gegenprobe_alpha0": {
+      "kommutator_max": 2.6,
+      "pauli_strings_im_kommutator": 216
+     },
+     "uniform": {
+      "kommutator_max": 0.0,
+      "pauli_strings_im_kommutator": 216
+     }
+    },
+    "fluss_realraum_beschreibend": {
+     "L4_J0_2": {
+      "E0_je_knoten_u1": -2.4257605533970756,
+      "E0_je_knoten_zufall_min": -2.3882271957754564,
+      "abw_realraum_gegen_kraum": 1.3322676295501878e-15,
+      "anzahl_zufall": 20,
+      "dE_ein_u_gekippt": 0.6987155752732974,
+      "dE_ein_u_gekippt_je_richtung": {
+       "0": 0.6987155752732974,
+       "1": 0.25296059341195587,
+       "2": 0.25296059341195587,
+       "3": 0.25296059341195587
+      },
+      "min_singulaerwert_u1": 0.9999999999999991,
+      "u1_tiefer_als_alle_zufall": true
+     },
+     "L4_J0_4": {
+      "E0_je_knoten_u1": -4.18864345005464,
+      "E0_je_knoten_zufall_min": -4.18908049220099,
+      "abw_realraum_gegen_kraum": 3.552713678800501e-15,
+      "anzahl_zufall": 20,
+      "dE_ein_u_gekippt": -0.019361082000727947,
+      "dE_ein_u_gekippt_je_richtung": {
+       "0": -0.019361082000727947,
+       "1": 0.0038556825103341907,
+       "2": 0.0038556825103341907,
+       "3": 0.0038556825103341907
+      },
+      "min_singulaerwert_u1": 1.0000000000000002,
+      "u1_tiefer_als_alle_zufall": false
+     },
+     "L4_J1": {
+      "E0_je_knoten_u1": -1.7532798363559134,
+      "E0_je_knoten_zufall_min": -1.7478842394344902,
+      "abw_realraum_gegen_kraum": 1.7763568394002505e-15,
+      "anzahl_zufall": 20,
+      "dE_ein_u_gekippt": -0.34292770312646326,
+      "dE_ein_u_gekippt_je_richtung": {
+       "0": -0.34292770312646326,
+       "1": -0.3429277031264917,
+       "2": -0.3429277031265201,
+       "3": -0.3429277031265201
+      },
+      "min_singulaerwert_u1": 4.264444848129593e-17,
+      "u1_tiefer_als_alle_zufall": true
+     },
+     "L5_J0_2": {
+      "E0_je_knoten_u1": -2.4249448862113674,
+      "E0_je_knoten_zufall_min": -2.383308650928565,
+      "abw_realraum_gegen_kraum": 4.440892098500626e-15,
+      "anzahl_zufall": 20,
+      "dE_ein_u_gekippt": 0.7292449886106169,
+      "dE_ein_u_gekippt_je_richtung": {
+       "0": 0.7292449886106169,
+       "1": 0.26809446644665513,
+       "2": 0.2680944664467688,
+       "3": 0.26809446644665513
+      },
+      "min_singulaerwert_u1": 0.7265425280053596,
+      "u1_tiefer_als_alle_zufall": true
+     },
+     "L5_J0_4": {
+      "E0_je_knoten_u1": -4.191991335235268,
+      "E0_je_knoten_zufall_min": -4.188457860143409,
+      "abw_realraum_gegen_kraum": 5.329070518200751e-15,
+      "anzahl_zufall": 20,
+      "dE_ein_u_gekippt": 0.039236960942844235,
+      "dE_ein_u_gekippt_je_richtung": {
+       "0": 0.039236960942844235,
+       "1": 0.02152211315888053,
+       "2": 0.02152211315888053,
+       "3": 0.02152211315888053
+      },
+      "min_singulaerwert_u1": 1.6791843592950264,
+      "u1_tiefer_als_alle_zufall": true
+     },
+     "L5_J1": {
+      "E0_je_knoten_u1": -1.8011204471391618,
+      "E0_je_knoten_zufall_min": -1.7507251757347633,
+      "abw_realraum_gegen_kraum": 3.9968028886505635e-15,
+      "anzahl_zufall": 20,
+      "dE_ein_u_gekippt": 0.4224964487453349,
+      "dE_ein_u_gekippt_je_richtung": {
+       "0": 0.4224964487453349,
+       "1": 0.42249644874544856,
+       "2": 0.4224964487453349,
+       "3": 0.4224964487452212
+      },
+      "min_singulaerwert_u1": 0.3819660112501042,
+      "u1_tiefer_als_alle_zufall": true
+     },
+     "L6_J0_2": {
+      "E0_je_knoten_u1": -2.4148271982286427,
+      "E0_je_knoten_zufall_min": -2.3838889937841734,
+      "abw_realraum_gegen_kraum": 5.329070518200751e-15,
+      "anzahl_zufall": 20,
+      "dE_ein_u_gekippt": 0.17940513814528458,
+      "dE_ein_u_gekippt_je_richtung": {
+       "0": 0.17940513814528458,
+       "1": 0.0967526645754333,
+       "2": 0.09675266457566067,
+       "3": 0.09675266457566067
+      },
+      "min_singulaerwert_u1": 1.0832093824504236e-16,
+      "u1_tiefer_als_alle_zufall": true
+     },
+     "L6_J0_4": {
+      "E0_je_knoten_u1": -4.191520384379784,
+      "E0_je_knoten_zufall_min": -4.1884962690754115,
+      "abw_realraum_gegen_kraum": 8.881784197001252e-15,
+      "anzahl_zufall": 20,
+      "dE_ein_u_gekippt": 0.029915779613702398,
+      "dE_ein_u_gekippt_je_richtung": {
+       "0": 0.029915779613702398,
+       "1": 0.018811944864637553,
+       "2": 0.0188119448650923,
+       "3": 0.018811944864864927
+      },
+      "min_singulaerwert_u1": 0.9999999999999997,
+      "u1_tiefer_als_alle_zufall": true
+     },
+     "L6_J1": {
+      "E0_je_knoten_u1": -1.7844050954255162,
+      "E0_je_knoten_zufall_min": -1.7482756045324856,
+      "abw_realraum_gegen_kraum": 2.6645352591003757e-15,
+      "anzahl_zufall": 20,
+      "dE_ein_u_gekippt": -0.020870736900405973,
+      "dE_ein_u_gekippt_je_richtung": {
+       "0": -0.020870736900405973,
+       "1": -0.020870736900405973,
+       "2": -0.020870736900405973,
+       "3": -0.020870736900405973
+      },
+      "min_singulaerwert_u1": 1.1071248125708303e-16,
+      "u1_tiefer_als_alle_zufall": true
+     },
+     "L7_J0_2": {
+      "E0_je_knoten_u1": -2.42029768963512,
+      "E0_je_knoten_zufall_min": -2.3819870315357194,
+      "abw_realraum_gegen_kraum": 2.6645352591003757e-14,
+      "anzahl_zufall": 20,
+      "dE_ein_u_gekippt": 0.5905729024943867,
+      "dE_ein_u_gekippt_je_richtung": {
+       "0": 0.5905729024943867,
+       "1": 0.24761946578882998,
+       "2": 0.24761946578814786,
+       "3": 0.24761946578928473
+      },
+      "min_singulaerwert_u1": 0.10991626417474204,
+      "u1_tiefer_als_alle_zufall": true
+     },
+     "L7_J0_4": {
+      "E0_je_knoten_u1": -4.191606041979244,
+      "E0_je_knoten_zufall_min": -4.188487645019781,
+      "abw_realraum_gegen_kraum": 1.3322676295501878e-14,
+      "anzahl_zufall": 20,
+      "dE_ein_u_gekippt": 0.03211998959341145,
+      "dE_ein_u_gekippt_je_richtung": {
+       "0": 0.03211998959341145,
+       "1": 0.01944240765305949,
+       "2": 0.01944240765305949,
+       "3": 0.019442407653968985
+      },
+      "min_singulaerwert_u1": 1.3677376860264083,
+      "u1_tiefer_als_alle_zufall": true
+     },
+     "L7_J1": {
+      "E0_je_knoten_u1": -1.7993645261695799,
+      "E0_je_knoten_zufall_min": -1.7480195981704683,
+      "abw_realraum_gegen_kraum": 6.217248937900877e-15,
+      "anzahl_zufall": 20,
+      "dE_ein_u_gekippt": 0.40005380129969126,
+      "dE_ein_u_gekippt_je_richtung": {
+       "0": 0.40005380129969126,
+       "1": 0.40005380129969126,
+       "2": 0.4000538013003734,
+       "3": 0.40005380129969126
+      },
+      "min_singulaerwert_u1": 0.1980622641951613,
+      "u1_tiefer_als_alle_zufall": true
+     },
+     "L8_J0_2": {
+      "E0_je_knoten_u1": -2.4219570599974602,
+      "E0_je_knoten_zufall_min": -2.382058192581603,
+      "abw_realraum_gegen_kraum": 1.1546319456101628e-14,
+      "anzahl_zufall": 20,
+      "dE_ein_u_gekippt": 0.640745301919651,
+      "dE_ein_u_gekippt_je_richtung": {
+       "0": 0.640745301919651,
+       "1": 0.24852639254277165,
+       "2": 0.24852639254277165,
+       "3": 0.24852639254186215
+      },
+      "min_singulaerwert_u1": 0.4142135623730942,
+      "u1_tiefer_als_alle_zufall": true
+     },
+     "L8_J0_4": {
+      "E0_je_knoten_u1": -4.191592673779858,
+      "E0_je_knoten_zufall_min": -4.188405617354446,
+      "abw_realraum_gegen_kraum": 1.5987211554602254e-14,
+      "anzahl_zufall": 20,
+      "dE_ein_u_gekippt": 0.03173299618447345,
+      "dE_ein_u_gekippt_je_richtung": {
+       "0": 0.03173299618447345,
+       "1": 0.01933417110103619,
+       "2": 0.0193341710992172,
+       "3": 0.01933417110103619
+      },
+      "min_singulaerwert_u1": 1.0000000000000004,
+      "u1_tiefer_als_alle_zufall": true
+     },
+     "L8_J1": {
+      "E0_je_knoten_u1": -1.7926407747120265,
+      "E0_je_knoten_zufall_min": -1.7466644044913688,
+      "abw_realraum_gegen_kraum": 8.43769498715119e-15,
+      "anzahl_zufall": 20,
+      "dE_ein_u_gekippt": 0.12552540619572028,
+      "dE_ein_u_gekippt_je_richtung": {
+       "0": 0.12552540619572028,
+       "1": 0.12552540619617503,
+       "2": 0.12552540619617503,
+       "3": 0.12552540619662977
+      },
+      "min_singulaerwert_u1": 5.0173258727324917e-17,
+      "u1_tiefer_als_alle_zufall": true
+     }
+    }
+   }
+  },
+  "KD2": {
+   "urteil": "eingetroffen",
+   "vermerk": "Schreibtisch [M]: Luecke genau dann, wenn J_max > Summe der anderen drei (hier J0 > 3), Luecke = J0 - 3. Lesart 'Faktor 2' (J0 = 2): Luecke nein.",
+   "werte": {
+    "J0_4_primaer": {
+     "J": [
+      4.0,
+      1.0,
+      1.0,
+      1.0
+     ],
+     "gitter_min": {
+      "128": 1.0,
+      "129": 1.0011857693155384,
+      "16": 1.0,
+      "17": 1.0670213330593628,
+      "256": 1.0,
+      "257": 1.0002988309994136,
+      "32": 1.0,
+      "33": 1.0180317516152408,
+      "64": 1.0,
+      "65": 1.004665663240641,
+      "8": 1.0,
+      "9": 1.2294530790616252
+     },
+     "kont_min": 1.0,
+     "nullen_gefunden": 0
+    },
+    "J0_2_lesart_faktor2": {
+     "J": [
+      2.0,
+      1.0,
+      1.0,
+      1.0
+     ],
+     "gitter_min": {
+      "128": 0.007498725917493068,
+      "129": 0.007615646953668489,
+      "16": 0.16647286878256626,
+      "17": 0.09465196028833159,
+      "256": 0.0027933891686603655,
+      "257": 0.003622301105626783,
+      "32": 0.06530838172994119,
+      "33": 0.08548476089900747,
+      "64": 0.038083262659088915,
+      "65": 0.030366202110811535,
+      "8": 0.41421356237309487,
+      "9": 0.34729635533385966
+     },
+     "kont_min": 0.0,
+     "nullen_gefunden": 64
+    },
+    "luecke_J0_4": true,
+    "luecke_J0_2": false,
+    "andere_richtung_gleich": true,
+    "scan": [
+     {
+      "J0": 1.0,
+      "gitter_min": {
+       "128": 0.0,
+       "129": 0.0005930603097211717,
+       "64": 0.0,
+       "65": 0.00233554633534671
+      },
+      "kont_min": 0.0,
+      "nullen_gefunden": 32,
+      "vorhersage_schreibtisch": 0.0
+     },
+     {
+      "J0": 1.5,
+      "gitter_min": {
+       "128": 0.005535064770646284,
+       "129": 0.0029988920413863396,
+       "64": 0.027972701562403206,
+       "65": 0.009072709353386102
+      },
+      "kont_min": 1.1102230246251565e-16,
+      "nullen_gefunden": 32,
+      "vorhersage_schreibtisch": 0.0
+     },
+     {
+      "J0": 2.0,
+      "gitter_min": {
+       "128": 0.007498725917493068,
+       "129": 0.007615646953668489,
+       "64": 0.038083262659088915,
+       "65": 0.030366202110811535
+      },
+      "kont_min": 7.632783294297951e-17,
+      "nullen_gefunden": 32,
+      "vorhersage_schreibtisch": 0.0
+     },
+     {
+      "J0": 2.5,
+      "gitter_min": {
+       "128": 0.014475515245130924,
+       "129": 0.005564720453262995,
+       "64": 0.01941553725124277,
+       "65": 0.019752538435979763
+      },
+      "kont_min": 0.0,
+      "nullen_gefunden": 32,
+      "vorhersage_schreibtisch": 0.0
+     },
+     {
+      "J0": 2.8,
+      "gitter_min": {
+       "128": 0.007978586246886632,
+       "129": 0.01080378083725402,
+       "64": 0.0093558868367794,
+       "65": 0.028589390976826883
+      },
+      "kont_min": 1.2412670766236366e-16,
+      "nullen_gefunden": 32,
+      "vorhersage_schreibtisch": 0.0
+     },
+     {
+      "J0": 2.9,
+      "gitter_min": {
+       "128": 0.003669206265597872,
+       "129": 0.0185301739537635,
+       "64": 0.013880671464417738,
+       "65": 0.046171989575145324
+      },
+      "kont_min": 1.2412670766236366e-16,
+      "nullen_gefunden": 32,
+      "vorhersage_schreibtisch": 0.0
+     },
+     {
+      "J0": 3.0,
+      "gitter_min": {
+       "128": 3.6739403974420594e-16,
+       "129": 0.02436726802050419,
+       "64": 3.6739403974420594e-16,
+       "65": 0.04844023006464674
+      },
+      "kont_min": 7.669517103171482e-17,
+      "nullen_gefunden": 32,
+      "vorhersage_schreibtisch": 0.0
+     },
+     {
+      "J0": 3.1,
+      "gitter_min": {
+       "128": 0.10000000000000009,
+       "129": 0.10378671323295412,
+       "64": 0.10000000000000009,
+       "65": 0.11422398955263248
+      },
+      "kont_min": 0.10000000000000009,
+      "nullen_gefunden": 0,
+      "vorhersage_schreibtisch": 0.10000000000000009
+     },
+     {
+      "J0": 3.2,
+      "gitter_min": {
+       "128": 0.20000000000000018,
+       "129": 0.2023600749570326,
+       "64": 0.20000000000000018,
+       "65": 0.20915970857200028
+      },
+      "kont_min": 0.20000000000000018,
+      "nullen_gefunden": 0,
+      "vorhersage_schreibtisch": 0.20000000000000018
+     },
+     {
+      "J0": 3.5,
+      "gitter_min": {
+       "128": 0.5,
+       "129": 0.5014811603792956,
+       "64": 0.5,
+       "65": 0.5058159501159846
+      },
+      "kont_min": 0.5,
+      "nullen_gefunden": 0,
+      "vorhersage_schreibtisch": 0.5
+     },
+     {
+      "J0": 4.0,
+      "gitter_min": {
+       "128": 1.0,
+       "129": 1.0011857693155384,
+       "64": 1.0,
+       "65": 1.004665663240641
+      },
+      "kont_min": 1.0,
+      "nullen_gefunden": 0,
+      "vorhersage_schreibtisch": 1.0
+     },
+     {
+      "J0": 5.0,
+      "gitter_min": {
+       "128": 2.0,
+       "129": 2.0010377621647,
+       "64": 2.0,
+       "65": 2.004085760116268
+      },
+      "kont_min": 2.0,
+      "nullen_gefunden": 0,
+      "vorhersage_schreibtisch": 2.0
+     },
+     {
+      "J0": 6.0,
+      "gitter_min": {
+       "128": 3.0,
+       "129": 3.000988388271151,
+       "64": 3.0,
+       "65": 3.003891871041107
+      },
+      "kont_min": 3.0,
+      "nullen_gefunden": 0,
+      "vorhersage_schreibtisch": 3.0
+     }
+    ],
+    "scan_max_abw_von_max(0,J0-3)": 1.2412670766236366e-16
+   }
+  },
+  "KD3": {
+   "urteil": "eingetroffen",
+   "vermerk": "Die Quelle (Ryu) nennt keine String-Operatoren. Huepfer = Bindungsterme in Majorana-Form (Eq. 27) [S], Strings als Produkte der Huepfer nach Levin/Wen Abschnitt IV [S ueber STRINGENDE-1]; Zuordnung [M]. Nach strengem Kartenwortlaut (Test-Abschnitt: 'sofern die Quelle die String-Operatoren angibt. Sonst nur Spektrum und Erhaltungsgroessen') waere KD3 'nicht auswertbar'.",
+   "werte": {
+    "lokal_L4": {
+     "a": {
+      "V1": {
+       "-1": 3072
+      },
+      "anzahl": 3072,
+      "inkonsistent": 0
+     },
+     "az": {
+      "V1": {
+       "1": 3072
+      },
+      "anzahl": 3072,
+      "inkonsistent": 0
+     },
+     "z": {
+      "V1": {
+       "-1": 3072
+      },
+      "anzahl": 3072,
+      "inkonsistent": 0
+     }
+    },
+    "lang_L8": {
+     "a": {
+      "V1": {
+       "-1": 301
+      },
+      "anzahl": 301,
+      "inkonsistent": 0,
+      "endpunkt_fehler": 0,
+      "aequivalenz_fehler": 0,
+      "fluss_antikommut": 0,
+      "fluss_geprueft": 33,
+      "nicht_lokal": 0,
+      "durchgang": {
+       "Huepfer am Ende von k": {
+        "V": [
+         1,
+         1,
+         1
+        ],
+        "beobachtet": "Wechsel",
+        "erwartet": "Wechsel",
+        "passt": true
+       },
+       "Huepfer am gemeinsamen Knoten (4. Richtung)": {
+        "V": [
+         -1,
+         -1,
+         -1
+        ],
+        "beobachtet": "kein Wechsel",
+        "erwartet": "kein Wechsel",
+        "passt": true
+       },
+       "Schleife W_p am Ende von k": {
+        "V": [
+         -1,
+         -1,
+         -1
+        ],
+        "beobachtet": "kein Wechsel",
+        "erwartet": "kein Wechsel",
+        "passt": true
+       },
+       "basis_V1": -1
+      }
+     },
+     "z": {
+      "V1": {
+       "-1": 301
+      },
+      "anzahl": 301,
+      "inkonsistent": 0,
+      "endpunkt_fehler": 0,
+      "aequivalenz_fehler": 0,
+      "fluss_antikommut": 0,
+      "fluss_geprueft": 33,
+      "nicht_lokal": 0,
+      "durchgang": {
+       "Huepfer am Ende von k": {
+        "V": [
+         1,
+         1,
+         1
+        ],
+        "beobachtet": "Wechsel",
+        "erwartet": "Wechsel",
+        "passt": true
+       },
+       "Huepfer am gemeinsamen Knoten (4. Richtung)": {
+        "V": [
+         -1,
+         -1,
+         -1
+        ],
+        "beobachtet": "kein Wechsel",
+        "erwartet": "kein Wechsel",
+        "passt": true
+       },
+       "Schleife W_p am Ende von k": {
+        "V": [
+         -1,
+         -1,
+         -1
+        ],
+        "beobachtet": "kein Wechsel",
+        "erwartet": "kein Wechsel",
+        "passt": true
+       },
+       "basis_V1": -1
+      }
+     },
+     "az": {
+      "V1": {
+       "1": 301
+      },
+      "anzahl": 301,
+      "inkonsistent": 0,
+      "endpunkt_fehler": 0,
+      "aequivalenz_fehler": 0,
+      "fluss_antikommut": 0,
+      "fluss_geprueft": 33,
+      "nicht_lokal": 0,
+      "durchgang": {
+       "Huepfer am Ende von k": {
+        "V": [
+         1,
+         1,
+         1
+        ],
+        "beobachtet": "kein Wechsel",
+        "erwartet": "kein Wechsel",
+        "passt": true
+       },
+       "Huepfer am gemeinsamen Knoten (4. Richtung)": {
+        "V": [
+         1,
+         1,
+         1
+        ],
+        "beobachtet": "kein Wechsel",
+        "erwartet": "kein Wechsel",
+        "passt": true
+       },
+       "Schleife W_p am Ende von k": {
+        "V": [
+         1,
+         1,
+         1
+        ],
+        "beobachtet": "kein Wechsel",
+        "erwartet": "kein Wechsel",
+        "passt": true
+       },
+       "basis_V1": 1
+      }
+     }
+    },
+    "pfadlaengen_bezug": {
+     "j": 6,
+     "k": 8,
+     "l": 6
+    },
+    "inkonsistent_V1_V2_V3": 0,
+    "kontrolle_verbund_az_bosonisch": true,
+    "durchgang_ok": true,
+    "fermion_teile_ok": {
+     "a": true,
+     "z": true
+    }
+   }
+  }
+ },
+ "quelle": "lauf/haupt.json",
+ "rc": 0,
+ "laufzeit_s": 58.15,
+ "meta": {
+  "modus": "haupt",
+  "numpy": "2.4.4",
+  "python": "3.12.3",
+  "saat": 37137
+ }
+}

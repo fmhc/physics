@@ -1,0 +1,22 @@
+Runde 9 SD-1 exakt Kanal anti, g = 0.2, l = 1, Start 2026-09-30T08:03:21+00:00, Geraet cpu, torch 2.5.1+cu121; sd1.py sha256 e4b52881e442541d, bic2.py /home/fmh/fmhc-physics-remote/runde9-sd1/bic2.py sha256 ee1ef6d226e8ec2c, Grenze des gemischten Balls omega_c^2 = 0.44875 (bic2-Kopfzeile nennt 0,5 fuer N = 1)
+=== exakt U = S - S^2 + 0.5 S^3, h = 0.02, f_rand = 1e-06, x0 = 0.588716, rho0 = 1.707484, l = 1
+  9 Profile (je bis 3.9 s), R = 24.92, r_m = 5.360
+  Newton (Pluecker) 6.5 s, konvergiert 9/9
+  Newton (direkt) 6.6 s, konvergiert 9/9, max |rho_direkt - rho_pluecker| = 2.55e-08
+  omega^2 | Re rho | Gamma Newton | Gamma Fluss | N_K | A_norm | arg A | sig_min/sig_2 | Wachstum
+    0.5872160 | 1.7052713257 | 4.8918e-08 | 4.8918e-08 | 2.17594e+03 | -7.415817e-05 +1.943874e-04i | +1.935251 | 3.7e-16 | 6.3e+02
+    0.5882160 | 1.7067471062 | 5.3394e-09 | 5.3394e-09 | 2.10393e+03 | -2.434699e-05 +6.424153e-05i | +1.933062 | 5.0e-16 | 6.2e+02
+    0.5886160 | 1.7073372174 | 2.1109e-10 | 2.1109e-10 | 2.07602e+03 | -4.828961e-06 +1.277490e-05i | +1.932198 | 3.3e-16 | 6.1e+02
+    0.5886960 | 1.7074552251 | 8.2721e-12 | 8.2721e-12 | 2.07050e+03 | -9.554593e-07 +2.528959e-06i | +1.932026 | 7.3e-16 | 6.1e+02
+    0.5887160 | 1.7074847263 | 1.1596e-15 | 1.1596e-15 | 2.06912e+03 | +1.131089e-08 -2.994212e-08i | -1.209610 | 7.9e-16 | 6.1e+02
+    0.5887360 | 1.7075142272 | 8.6613e-12 | 8.6613e-12 | 2.06774e+03 | +9.774355e-07 -2.587799e-06i | -1.209653 | 4.3e-16 | 6.1e+02
+    0.5888160 | 1.7076322275 | 2.1218e-10 | 2.1218e-10 | 2.06225e+03 | +4.835444e-06 -1.280867e-05i | -1.209824 | 1.0e-15 | 6.1e+02
+    0.5892160 | 1.7082221534 | 5.2382e-09 | 5.2382e-09 | 2.03509e+03 | +2.396630e-05 -6.364902e-05i | -1.210678 | 6.4e-16 | 6.1e+02
+    0.5902160 | 1.7096963899 | 4.5968e-08 | 4.5968e-08 | 1.96927e+03 | +7.056311e-05 -1.886019e-04i | -1.212782 | 3.8e-16 | 6.0e+02
+  Phasentest: Sprung zwischen Nachbarn - pi = -8.587e-05; Phase mod pi (rel. links aussen): +0.00e+00, -2.19e-03, -3.05e-03, -3.22e-03, -3.27e-03, -3.31e-03, -3.48e-03, -4.34e-03, -6.44e-03
+  Naechster Abstand zum Ursprung: d_min = 1.444e-14 bei omega^2 = 0.5887157659, |A'| = 1.3674e-01, d_min/|A'| = 1.056e-13 (Einheit omega^2), Fitrest 2.2e-11
+  s(x) = L(y_a) an L(y_b) = 0: 0.5886160: -5.4207e-06 (rho 1.707337141), 0.5886960: -1.0760e-06 (rho 1.707455231), 0.5887160: +1.2750e-08 (rho 1.707484726), 0.5887360: +1.1024e-06 (rho 1.707514220), 0.5888160: +5.4714e-06 (rho 1.707632086)
+  Nullstelle von W (linearer Fit, 25 Punkte): rho* = 1.7074842825, omega*^2 = 0.588715778, det J = -1.500e+00, cond J = 1.6e+03, Fitrest 1.3e-05, |Im|/|W| max 0.0e+00
+  Umlauf W auf Rechteck dx = 5.0e-04, drho = 2.212e-03 (6030 Punkte): +1.0000, groesster Phasensprung 0.289 rad (aufgeloest: True), min |W| = 2.706e-05
+  Umlauf W auf Rechteck dx = 1.0e-04, drho = 4.424e-04 (6024 Punkte): +1.0000, groesster Phasensprung 0.289 rad (aufgeloest: True), min |W| = 5.423e-06
+Ende 2026-09-30T08:04:34+00:00, 74.0 s; entfallen: nichts

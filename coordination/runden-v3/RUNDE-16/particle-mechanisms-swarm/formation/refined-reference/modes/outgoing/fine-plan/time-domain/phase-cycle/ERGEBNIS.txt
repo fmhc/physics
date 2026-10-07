@@ -1,0 +1,77 @@
+M2-Phasenzyklus: vier neue freie nichtlineare Arme
+2026-10-03, ag-phy-coordination. Explorative Kontrolle, keine neue Naturbehauptung.
+
+Ergebnis: CONTROLLED_PHASE_CYCLE_CAUSAL_COMPONENTS, terminal_complete=true.
+Alle vier Arme bisT128, beide vollständigen Odd-Vergleiche,16 getrennte
+Komponentenmessungen und8dt-Vergleiche bestehen samt Nennerreserven.
+Root hat Status UND numerische Felder gelesen; unabhängiger Ergebnisbericht
+steht separat in REVIEW-RESULT.txt (vor Übergabe abzuschließen).
+
+Intervention: Derselbe volle lineare Eigenzustand wurde um90Grad gedreht
+(v->iv), einschließlich Geschwindigkeiten, ohne neue Normierung. Zwei
+Vorzeichen je dt=.01/.005, h=.05,R120,epsilon=.002; alpha=.07394590544.
+Die früheren theta0- und Nullarme wurden passend zur jeweiligen dt mit
+Originalhashes wiederverwendet, nicht neu gerechnet. M2-Modell/Profil,
+Frequenz, Fenster und Schalen blieben unverändert.
+
+Vorab-Papierfolgerung: E0=C+H, E90=C-H auf zweiter Ordnung. C ist die
+kausale Antwort auf die konstante quadratische Quelle, H auf deren
+2rho-Anteil. Beide enthalten ihre Einschalttransienten. C ist also nicht
+notwendig zeitkonstant; H nicht ausschließlich eine stationäre Sinuslinie.
+Die Halbsumme/Halbdifferenz der freien nichtlinearen Antworten wurde mit
+bereits gespeicherten kausalen Referenzrechnungen verglichen.
+
+Größte relative Fehler, jeweils gegen den eigenen Referenzanteil:
+- Zeitfeldnorm:0.0039339751 (0.3934%)
+- komplexer2rho-Koeffizient:0.0019814392 (0.1981%)
+Vorabgrenze jeweils5%, in allen2Fenstern×2Schalen×2Anteilen×2dt bestanden.
+Nichtlineare dt-Halbierungsänderung maximal0.1327% im Zeitfeld,
+0.1367% im Band, beide unter1%.
+Vorhandene kausale dt=.02/.01-Änderung maximal0.9328% im Zeitfeld,
+0.0673% im Band. Die erste Reserve liegt vergleichsweise knapp unter1%;
+keine Behauptung einer wesentlich höheren Genauigkeit.
+Die zusätzliche direkte Diagnose E90 gegen unabhängig gespeichertes C-H
+verfehlt relativ zur altenE0-Norm höchstens0.07416% im Zeitfeld und
+0.04993% im Band. Dies ist eine Diagnose, kein Ersatz der strengeren
+getrennten Komponentenprüfung.
+
+Maximaler voller Odd-Modenfehler:8.8585e-4 bei dt=.01,2.1284e-4 bei .005.
+Maximale relativeE-Drift1.3193e-8,Q-Drift3.331e-15,Kernbilanz3.432e-15.
+Alle Vorzeichenarme erfüllen ihre eigenen Erhaltungs-/Randkontrollen.
+Q des neuen Startpaares liegt ungefähr0.0017643 über1100, wie die exakte
+quadratische Adapteridentität vorhersagt. Zwischen Phasen wird weder
+identischesQ noch identischesE behauptet oder nachnormalisiert.
+Das alte Metafeld real_position_norm ist mit alpha vorzeichenbehaftet;
+sein negativer Wert im Minusarm ist keine negative mathematische Norm.
+Die maßgebliche kanonische Alpha-/Startidentität ist separat geprüft.
+
+Was daraus folgt: Die Trennung der beiden kausalen Quellgeschichten wird
+nicht nur durch Rücksummieren, sondern durch einen geänderten Start am
+freien nichtlinearen Solver gestützt. Der vorherige Außenantwortbefund
+ist mit DC-Einschalten plus zweiter Harmonischer quantitativ verträglich.
+
+Was nicht folgt: Keine neue stationäre Strahlungslösung, kein Einschwing-
+oder Lebensdauernachweis, keine neueBIC, keine Aufwertung der alten
+nichtstationären T128-Messung (UNRESOLVED bleibt). Ein Amplitudenwert,
+radialer endlicher Raum und feste Zeitfenster; keine neue Raumkonvergenz
+oder separatealpha->0-Prüfung des neuen Quadraturarms. Mittelwerte über
+verschiedene Versuche sind keine Strahlungsauslöschung in einem realen
+Mehrteilchensystem. Nicht als neuer Befund in das M1-Leiterpapier einfügen.
+
+Rechenort:.69/ubuntu-auto,CPU8,nice19,ein Thread, bestehendercpu2-Lock.
+65.65CPU-s laut externer Quittung,66.16wall,459312KiB RSS,exit0.
+Syntax zusammen unter1CPU-s; Gesamtrahmen120CPU-s eingehalten. KeineGPU-
+oder lokaleNumerik. Kein neuer Lauf nach Sichtung der Ergebnisse.
+Codehash3509332b4732c8497e9246855fc7be6254ff1681e3e2e99b823457180aaa1446.
+Result/alleNPZ gehasht, unabhängiger Codebericht vor Lauf vorhanden.
+Dauerhafte Kopie auf.69:
+/home/fmh/fmhc-physics-remote/m2-second-harmonic-20261002/phase-cycle/
+Alle kopierten Dateien gegen ursprüngliches Manifest geprüft, anschließend
+atomisch veröffentlicht; Originale unverändert. Vorläufer in t128/ und
+causal-split/ daneben. Lokale ARCHIVE-SHA256SUMS und COPY-CHECK belegen es.
+
+Eine nächste enge Frage, noch kein Auftrag/Lauf:
+Wie stark hängt diese Trennung bei festem gleichen kanonischen Start von
+der Amplitude ab? Erst eine zweite neueQuadratur-Amplitude könnte den
+O(alpha²)-Rest des skalierten geraden Anteils separat testen. Kein längeres
+Fenster als Ersatz und keine hypothetische Antwort als Befund.

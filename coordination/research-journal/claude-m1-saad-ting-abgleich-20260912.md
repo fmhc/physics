@@ -1,0 +1,6 @@
+# M1: Abgleich mit Saad & Ting (arXiv:2603.11015), Stage-C-De-Projektion als Kandidat
+
+- Zeit: 2026-09-12 00:17–02:40
+- Quelle: Agent codex-m1-saad-ting (Teilabgleich, art=status), Prüfvermerk claude-primary in coordination/m1-saad-ting-abgleich-20260912.md; Referenzkopie coordination/claude-m1-auswahl-20260911/reference/
+- Ergebnis: Saad & Ting ist eine Re-Analyse der 36 Chae-Systeme mit hierarchischem Bayes-Fit; γ = 1,00 (+0,24/−0,19) mit freiem a-Prior, γ = 1,56 (+0,21/−0,18) mit geometrischer De-Projektion auf denselben Daten. Unser Stage-C-Modell konstruiert die Bahn per De-Projektion a = s/faktor (thermisches e, gleichverteilte Phasen), ohne a-Prior. Herleitung: das Gewicht gegenüber dem bayesschen Konditionieren ist w ∝ p(a)·a, unter Öpik p(a) ∝ 1/a exakt unverzerrt; ein steileres Prior jenseits 5 kAU oder superthermales e wirkt bin-abhängig.
+- Bedeutung: Kein Widerspruch zu M1 im engen Sinn (andere Stichprobe, andere Größe), aber der bisher stärkste rechenbare Kandidat für die Lücke 1,3016 gegen 1,0693: Bahnprior und e-Verteilung im Vorwärtsmodell. Status HYPOTHESE. Nächster Schritt: importance-Resampling der 200 Kataloge auf TS440 (Kontrolle Öpik muss 1,0693 reproduzieren; Knick a⁻¹·⁶ ab 5 kAU; α = 1,3 und 2). Gauntlet-Runde erst mit diesem Ergebnis (M1.4).

@@ -1,0 +1,133 @@
+Radiale innere M2-Moden Q1100 — prospektiver Operator-/Kandidatenplan
+02.10.2026. Reine Papierarbeit; keine Eigenwertrechnung, keine Ausführung.
+Ziel ist ein Kandidat unter ALLEN Vakuumkanalschwellen; kein neuer BIC-Scan,
+keine Vollständigkeit des Spektrums, kein Bildungs- oder Lebensdauerbeweis.
+
+GELESENE BESTÄNDE UND ABGRENZUNG
+constituents-20261001/DREIKANAL-VORPRUEFUNG.txt und
+dipole-dynamics/run.py: gekoppelte kanonische Variablen, Gyroterme,
+Seitenbänder. RUNDE-17/stille-zweifeld/code/stille3.py: M2-Potential und
+Profilableitungen. Wichtig: alter dipole-Code hat l=1 und halben äußeren
+Randabstand! Hier l=0 und exakt BEUTEL/refined-reference-FV-Randvertrag
+(Ghost-Zentrum eine volle h rechts vom letzten Zentrum), keine Übernahme
+dieses anderen Randstencils oder seines Zentrifugalterms.
+PREPARED-MANIFEST.json gelesen: vorhandene Q1100-Referenzen, omega etwa
+1.01813827(h.1)/1.01816352(h.05), Residuen etwa5e-11/3e-11.
+Keine Literatur-Neuheitsbehauptung und keine neuen Literaturzitate.
+OPERATOR-INDEPENDENT.txt vollständig gelesen: dieselben Gyro-/Mischfaktoren
+und Gesamtladungsbedingung, keine Einzelprojektionen. Der sin-Ansatz bei
+rho=0 degeneriert; Phase separat prüfen. Eigenkurven des Pencils müssen
+nicht monoton sein, reine Vorzeichenbrackets wären nicht vollständig.
+Root meldet gespeicherte Anfangsenergien Ecloud1546.6894 gegenüber
+Eref1212.95165, also27.5145% Überschuss. Dieses lineare Spektrum darf daher
+den starken Bildungstransienten nicht direkt erklären. Es fragt enger nach
+inneren Kleinamplitudenmoden des bereits vorhandenen stationären Kerns.
+
+1. EXAKT DER VORHANDENE HINTERGRUND
+R120,h=.1/.05, neue float64-Dateien, Hashes
+h.1  8265a508c85b5823e1a46f47ea3a9cadb26c790fe89f8ad711699164483d3adb
+h.05 bf03078bb52e4fe515cb3a5fbd01608efec3df18b8845a3ae37aaef6c9661011
+Loader verlangt Manifeststatus PREPARED_REFERENCES und diese Dateihashes.
+Keine Interpolation/Relaxation/Q-Nachnormalisierung, keine neuen Profile.
+Boxprobe R60 durch Abschneiden an identischen Zellgrenzen, omega unverändert.
+Vor jedem Spektrum volle neue stationäre Eulerresiduen an ALLEN Knoten,
+auch letzter Zelle, <1e-8 und abgeschnittener Ladungsanteil<1e-10 verlangen.
+Falls der neue Ghostrand dies verletzt: Boxprobe unentschieden, kein neues
+Randprofil konstruieren. Das ist eine konkrete verbleibende Machbarkeitsfrage.
+
+2. GEKOPPELTER OPERATOR UND KONVENTION
+phi=exp(i omega t)[f+(x+i y)/sqrt2], chi=c+z.
+Lplus=-Delta0+1+c²-omega²-6f²+7.5f⁴,
+Lminus=-Delta0+1+c²-omega²-2f²+1.5f⁴,
+Hchi=-Delta0+3c²-1+2f², C=2sqrt2 c f.
+ x_tt-2omega y_t+Lplus x+Cz=0,
+ y_tt+2omega x_t+Lminus y=0,
+ z_tt+Hchi z+Cx=0.
+Für x=u cos(rho t),y=v sin(rho t),z=w cos(rho t):
+ K(rho)=[[Lplus-rho²,-2omega rho,C],
+         [-2omega rho,Lminus-rho²,0],[C,0,Hchi-rho²]].
+Alle drei Feldkomponenten und die beiden zeitlichen Mischungen bleiben.
+sqrt(Eigenwert einer isolierten Fest-Q-Hesse) ist NICHT die Modenfrequenz.
+Keine zusätzliche Fest-Q-Rang1-Korrektur auf die dynamische Matrix setzen:
+die Ladungsbedingung wird dynamisch geprüft, nicht doppelt auferlegt.
+
+Diskretes Volumen V_i=4pi h(r_i²+h²/12); Gradientmatrix S aus derselben
+Kantenenergie wie prepare/maincode. -Delta=V^-1 S. Mit sqrt(V)-Transformation
+D=V^-1/2 S V^-1/2 ist jedes räumliche Feldblock symmetrisch euklidisch.
+q=(sqrtV*x,sqrtV*y,sqrtV*z), p=q_t, K0=K(0) im Volumenbasiswechsel,
+G=[[0,-2omega,0],[2omega,0,0],[0,0,0]] tensor I.
+Erste Ordnung A=[[0,I],[-K0,-G]], lambda=i rho. Dimension6N (max14400).
+Für Eigenvektor(q,p) mit lambda=i rho ist die reelle harmonische Konvention
+y=-i sqrtV*v nach gemeinsamer Phase; Ladungsprüfung funktioniert direkt
+komplex ohne erzwungene Einzelkomponenten-Reellmachung.
+
+3. SUCHFENSTER UND KLEINSTE BEGRENZTE SUCHE
+Vakuumwellenzahlen (omega+rho)²-2,(omega-rho)²-2,rho²-2.
+Alle geschlossen bei 0<rho<sqrt2-omega≈.39605. Kein Bezug der alten
+diagnostischen Breathing-Zeitreihe auf diese linearen Feldfrequenzen.
+Prospektiv rho_min=.001, obere Schwelle minus.001 als Suchabstand.
+Damit sehr weiche oder fast schwellennahe Moden ausdrücklich nicht erfasst.
+
+Vorschlag scipy.sparse.linalg.eigs auf komplexer A, feste Shifts
+sigma=i*.10 und i*.30, k=4,ncv=20,tol1e-9,maxiter300 je Shift.
+Deterministischer Startvektor mit Beiträgen in allen6Blöcken, kein zufälliger
+Start und keine nachträglichen Shifts. R120h.1 zuerst, danach R120h.05,
+R60h.1,R60h.05. Insgesamt höchstens8 Shiftinvert-Aufrufe; Duplikate nur
+nach Frequenznähe und Feldüberlapp zusammenfassen. Alle rohen Ritzwerte und
+Residuen aufbewahren, nicht nur positive Treffer.
+Ausbleibende Konvergenz/erfüllter Budgetdeckel ist INCOMPLETE, nicht keineMode.
+Alle4Fälle sind nötig für einen box-/gittersensitiven Kandidatenvergleich;
+eine Teilserie liefert höchstens rohe unbestätigte Kandidaten.
+
+4. VORAB KONTROLLEN UND KANDIDATENGRENZEN
+(a) Ableitungsanker: gemischte potentielle zweite Variation in x,z gegen
+K0, einschließlich sqrt2-Normierung; feste kleine glatte Testprofile,
+zentrierte Differenzepsilon1e-5, relativeAbweichung<1e-7. Faktor2-Mutante
+von C muss bei derselben nichtverschwindenden Mischung Fehler>1e-3 zeigen.
+(b) U1-Phase: q_phase=(0,sqrtV*f,0),p=0. ||A zphase||/||zphase||<1e-8.
+Phasen-/Jordan-Nullraum nicht als innere Schwingung zählen; rho>.001.
+Keinen blind invertierten Shift sigma=0 benutzen.
+(c) Freier Negativanker mit f=0,c=1 auf kleinem R4,h.1,omega wie h.1:
+radiale D-Eigenwerte d_j liefern positive Frequenzen sqrt(d_j+2)±omega
+und sqrt(d_j+2). Dense40x40-Diagonalisierung nur dort als Referenz;
+kleiner6N-Operator stimmt auf1e-8 überein. Kein echter Frequenztreffer
+unter sqrt2-omega; freie Boxmoden liegen darüber. Kopplung C exakt null.
+Diese Kontrolle prüft insbesondere Gyro-Vorzeichen/Seitenbandzuordnung.
+
+Für jeden Kandidaten:
+- |Re lambda|<1e-7, rho=Im lambda im obigen Fenster.
+- Erste-Ordnungs- UND direktes gekoppeltes quadratisches Residuum<1e-8,
+  normalisiert durch Summe der Normen der tatsächlich addierten Terme
+  (plus1e-14 Floor), nicht pauschal durch enorme Gitteroperatornorm.
+- Lineare Ladung δQ=sqrt2 sum sqrtV*f*(2omega*q_x+p_y).
+  |δQ|/[sqrt2||sqrtV*f||(2omega||q_x||+||p_y||)+1e-14]<1e-7.
+  Für cos/sin reduziert dies auf sqrt2 Integral f(2omega u+rho v).
+- Anteil sum_{r>20}(|q_x|²+|q_y|²+|q_z|²)/||q||²<1e-4;
+  räumlicher50%-Radius dieser positiven kanonischen Modennorm<12.
+  Das ist ein Volumenlokalisierungstest, kein absoluter Ganzraumbeweis.
+- Gleicher Zweig auf4Diskretisierungen: |Delta rho|<5e-4 und normierter
+  absoluter Feldüberlapp>.98. Beim h-Vergleich feine Zellfelder durch
+  exakte Volumenmittelung auf grobe Zellen übertragen, danach normieren;
+  gemeinsame komplexe Phase wegoptimieren, keine unabhängige Feldrotation.
+  R-Vergleich nur gemeinsamer R60-Bereich, abgeschnittene Norm ausweisen.
+Near-degeneracy: einzelne Eigenvektorzuordnung kann versagen; dann hier
+unentschieden statt nachträglich neuer Subraum-/Schwellenwahl.
+
+5. BUDGET UND NOCH NICHT GELÖSTE UMSETZUNG
+Max30CPU-s gesamte Einheit inklusive Imports, QA, Factorisierungen,
+Serialisierung; .69 ein abgestimmter CPU-Thread, keine CUDA-Behauptung.
+RAM<512MB, äußerer Root-Prozessdeckel; keine neuen Dienste. Checkpoint nach
+jeder QA/Shift-Aufgabe, interneDeadline25CPU-s, äußeresHardlimit30CPU-s.
+Eine laufende SuperLU/ARPACK-Operation lässt sich nicht zuverlässig mit
+Python-Checkpoint unterbrechen: äußerer Kill kann aktuelle Ritzdaten
+verlieren. Nur vollständig gespeicherte abgeschlossene Aufgaben werten.
+8komplexe Shiftinvert-Aufrufe beiNbis2400 könnten dieses Budget überschreiten;
+keine gemessene Kostenbehauptung. Nicht heimlich weniger Kontrollen zählen.
+
+Stand: PLAN fertig, aber noch KEIN ausführbarer Suchcode. Besonders der
+vollständige unabhängige quadratische Residualanker, branch matching mit
+Volumenrestriction und abgesicherte native Budgetunterbrechung müssen im
+Code vor Lauf konkret werden. Eine verkürzte bloße eigs-Abfrage würde diese
+noch offenen Punkte verdecken. Der Plan erlaubt ausdrücklich keine
+Vollständigkeits-/Nichtexistenz-/Stabilitätsmeldung aus einem30s-Piloten.
+Keine Profile, Resultate oder Remote-Dateien geändert; keine Rechnung.

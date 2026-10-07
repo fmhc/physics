@@ -1,0 +1,17 @@
+Runde 7 bic2 exakt Start 2026-09-30T05:34:38+00:00, Geraet cpu, torch 2.5.1+cu121
+=== exakt U = S - S^2 + 0.4535147392 S^3, h = 0.01, f_rand = 1e-08, x0 = 0.759081, rho0 = 1.712074
+  5 Profile (je bis 27.0 s), R = 35.60, r_m = 2.320
+  Newton (Pluecker) 14.5 s, konvergiert 5/5
+  Newton (direkt) 13.1 s, konvergiert 5/5, max |rho_direkt - rho_pluecker| = 5.38e-09
+  omega^2 | Re rho | Gamma Newton | Gamma Fluss | N_K | A_norm | arg A | sig_min/sig_2 | Wachstum
+    0.7585810 | 1.7118348296 | 4.3394e-07 | 4.3394e-07 | 8.65343e+01 | +5.760276e-04 +1.806408e-04i | +0.303884 | 2.5e-16 | 3.8e+00
+    0.7588810 | 1.7119784284 | 6.9365e-08 | 6.9365e-08 | 8.54338e+01 | +2.303648e-04 +7.197314e-05i | +0.302822 | 5.4e-16 | 3.8e+00
+    0.7590810 | 1.7120739693 | 2.3358e-13 | 2.3358e-13 | 8.47101e+01 | +4.228061e-07 +1.317777e-07i | +0.302132 | 9.3e-16 | 3.8e+00
+    0.7592810 | 1.7121693563 | 6.8565e-08 | 6.8565e-08 | 8.39942e+01 | -2.291087e-04 -7.123758e-05i | -2.840136 | 2.2e-15 | 3.8e+00
+    0.7595810 | 1.7123121469 | 4.2811e-07 | 4.2811e-07 | 8.29347e+01 | -5.726170e-04 -1.774268e-04i | -2.841122 | 1.1e-16 | 3.8e+00
+  Phasentest: Sprung zwischen Nachbarn - pi = -1.365e-03; Phase mod pi (rel. links aussen): +0.00e+00, -1.06e-03, -1.75e-03, -2.43e-03, -3.41e-03
+  Naechster Abstand zum Ursprung: d_min = 4.402e-11 bei omega^2 = 0.7590813681, |A'| = 1.2032e+00, d_min/|A'| = 3.659e-11 (Einheit omega^2), Fitrest 9.8e-09
+  s(x) = L(y_a) an L(y_b) = 0: 0.7585810: +1.3253e-04 (rho 1.711899516), 0.7588810: +5.3026e-05 (rho 1.712004298), 0.7590810: +9.7352e-08 (rho 1.712074017), 0.7592810: -5.2771e-05 (rho 1.712143632), 0.7595810: -1.3196e-04 (rho 1.712247854)
+  Nullstelle von W (linearer Fit, 25 Punkte): rho* = 1.7120737645, omega*^2 = 0.759082099, det J = 6.600e-01, cond J = 1.2e+01, Fitrest 3.5e-06, |Im|/|W| max 0.0e+00
+  Umlauf W auf Rechteck dx = 1.0e-04: zu wenige Profile (1) um omega^2 = 0.7590810
+Ende 2026-09-30T05:37:29+00:00, 171.0 s; entfallen: nichts

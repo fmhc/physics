@@ -1,0 +1,26 @@
+Anschluss und offene Herkunftsfragen (vor Ergebnis geschrieben)
+1. Messhypothese: starre Kette R(t)v_i mit konstanter Winkelgeschwindigkeit
+gegen feste Messebene. Messgroesse Kantenkreuzungszahl P(t). Diskrete Ticks
+bei kontinuierlicher Bewegung, Frequenzen proportional zur vorgegebenen
+Winkelgeschwindigkeit. Gegenprobe: Ebene und Kette gemeinsam drehen -> P
+konstant. Das unterscheidet Messkinematik von autonomem inneren Takt.
+2. Elastisches Modell: Masse m je Vertex, Hooke-Feder k an jeder eindeutigen
+Kante, Ruhelaenge 1. H=sum p_i^2/(2m)+k/2 sum_edges(|x_i-x_j|-1)^2.
+Nicht in diesem Lauf simuliert. Tetraeder-Strang liefert Einzelzellmoden,
+aber keine automatisch stabilen Atemmoden dieser ganzen Kette. Pruefbare
+Frage: Tauchen neben reiner Rotation Seitenbaender der Schnittmessung auf,
+die mit Eigenfrequenzen des vollstaendigen Ketten-Hessians skalieren?
+Kontrolle: k/m variieren bei gleicher Drehgeschwindigkeit. Innere Moden
+skalieren mit sqrt(k/m), reine Durchgangsticks nicht. Keine Fundamentalzeit.
+3. Q-Ball-Anschluss: erst separat hergeleitete Bindungs-/Feldenergie und
+Messabbildung erforderlich. Kanten und Schnittpunkte sind keine Ladungen,
+keine Eichfarben, kein Spinor und kein Nachweis emergenter Raumdimension.
+
+Fragen an Finn bzw. den Generator (keine Voraussetzung fuer bedingten Lauf):
+- Sind 11+1/19+1 Vertexzahlen oder hat +1 eine besondere physikalische Rolle?
+- Woher stammen Bundle und Generator? Bitte Originalcode/Koordinaten erhalten.
+- Bedeutet zentral Vertexmittel, Volumenschwerpunkt oder einen festen Vertex?
+- Wie wurden Normalen verteilt, mit welchem Seed und welcher Stichprobenzahl?
+- Welche Drehachse, Startphase und Ebenenoffset erzeugten die Tickdatei?
+- Sind mit Schnittinseln Flaechenkomponenten oder getrennte Konturlinien gemeint?
+- Ziel: Messanalogie, mechanisches Materialmodell oder neue Feldkopplung?

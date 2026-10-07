@@ -1,0 +1,41 @@
+{
+  "id": "pw1-3-s1-vorzeichen-umeichung-20260917",
+  "time": "2026-09-17T03:10:14+02:00",
+  "time_kind": "completed",
+  "author": "claude-subagent (Anthropic, claude-fable-5-1)",
+  "topic": "theory",
+  "status": "reported",
+  "title": "PW1.3 (Folgevertrag auf PW1.2): Vorzeichen der Kopplung ist Umeichung, Abwechselmass S = 0,67 (Ausgang B1)",
+  "question": "Erzeugt ein umgekehrtes Vorzeichen der Kopplung in der Punkt-Wellen-Familie (physics.py, N = 4, g = 1,0) einen Abwechselzustand (Splay-Mass S > 0,9) statt der Synchronie der Zeile PW1.2 (R_1 > 0,9)?",
+  "action": "S0-Vertrag coordination/vertraege-20260917/pw1-3-VERTRAG.md mit analytischem Vorbefund (g -> -g und Vorzeichenmuster s_i sind exakte Umeichungen); S1 auf .69 CPU (Unit fmhc-physics-pw13-20260917, 610 s): 10 Laeufe T = 60, h = 0,00015625, Seeds 11/12/13, physics.py unveraendert importiert; Kontrollen K0a/K0b (Umeichung), K1 (Codekontrolle), K2 (lambda_max = 2,064, g_c = 0,696 gegen Zeile 2,06/0,70), K3 (dH/H <= 3,1e-6).",
+  "result": "Ausgang B1: W-Seeds (s = +-+-) S = 0,669 / 0,662 / 0,696 (Schwelle 0,9), Vorzeichenmuster A_s = 1,0 in allen drei Seeds (Endwerte q = -1,48/+1,79/-2,00/+1,69); P-Seeds (anziehend) R_1 = 0,994 / 0,989 / 0,970, |q_mean| = 1,44 (Zeile 1,4); Unterschwellen-Kontrolle U11 S = 0,48. K0a, K0b, K1 bitgleich (Abweichung 0), K2 und K3 bestanden. Umgeeichter Kontrolllauf K0b S = 0,875.",
+  "meaning": "HYPOTHESE-Ebene: In der Punkt-Wellen-Familie ist das Vorzeichen der Kopplung keine physikalische Wahl, sondern eine exakte Umeichung (vermittelte Form -g^2 q^T G q, Feldenergie positiv); ein echt abstossendes Feld gibt es dort nicht. Das Wechselvorzeichen liefert den bekannten Kollaps mit alternierenden Verschiebungen (Vorzeichenmuster 100 %), aber ungleichen Betraegen, daher S unter der vorregistrierten Schwelle. S trennt Abwechseln (0,67-0,88) und Zufall (0,48) nur schwach; A_s trennt scharf und sollte in einem Folgevertrag vorregistriert werden. Keine Teilchendeutung, kein Messanschluss, S2/S3 offen, keine Registerzeile.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260917/pw1-3-lauf/BERICHT-PW1-3.md",
+      "role": "S1-Bericht",
+      "sha256": "bef421770b15e98b3583a1c17015ce73248100949d21b361925c5249df4fdfb1"
+    },
+    {
+      "path": "coordination/vertraege-20260917/pw1-3-lauf/ERGEBNIS-PW1-3.json",
+      "role": "Ergebnisdatei",
+      "sha256": "b697ba70cf102a35b639ab53c22f4add0890de79bdee1d16a310e8995e2f7986"
+    },
+    {
+      "path": "coordination/vertraege-20260917/pw1-3-VERTRAG.md",
+      "role": "S0-Vertrag",
+      "sha256": "45cc98fd7e3c6023a058b188ea0e73e808be392709a529bc53c10388ff6469ce"
+    },
+    {
+      "path": "coordination/vertraege-20260917/startsignal-pw1-3.txt",
+      "role": "Startsignal",
+      "sha256": "e5eef9943075c4789610f767c97e3f66ab29ed66bc0906cec3856a32c987a49d"
+    },
+    {
+      "path": "coordination/ideen-20260916/UEBERTRAGUNG-GOLD-SILBER.md",
+      "role": "Grundlage",
+      "sha256": "8f673d07e0805730ef2b7aad15ee6d7f749bb87b1a71d9c4139211f28a00202f"
+    }
+  ],
+  "recorded_at": "2026-09-17T01:14:42.663968+00:00"
+}

@@ -1,0 +1,66 @@
+Unabhängiger enger Planreview, 02.10.2026, particle_binding
+PLAN.txt und NONLINEAR-ROOT-SCOPE.txt vollständig gelesen. Keine Rechnung.
+PLAN-SHA256:
+1ff6f17d814171f7618b4c18eaa76672235873e4ac44a0c86815c610c50fe1b0.
+
+Urteil: Implementierbar; kein blockierender Physik-/Normierungsfehler
+gefunden. Der Plan prüft eine klar begrenzte nichtlineare Antwort nahe
+dem gespeicherten Modenprofil mit dem vorhandenen M2-Verlet. Kein neuer
+Integrator und kein unbemerkter rein linearer Ersatz. Tatsächlicher
+Adapter vor Ausführung separat lesen; keine neuen Prozessauflagen.
+
+Labor-/Rotationsdaten
+v=(vq,vp) gehört zu den kanonischen mitrotierenden Variablen. Gemeinsame
+Phase für alle6Blöcke und gemeinsamer Normfaktor sind richtig. Re(vq)/sqrtV
+und Re(vp)/sqrtV liefern die physische Anfangsposition/-geschwindigkeit
+im rotierenden System. Daher ist
+ pi0=iomega phi0+alpha(px+i py)/sqrt2
+die richtige LABORgeschwindigkeit; iomega nur auf f anzuwenden wäre falsch.
+Entsprechend ist später e^-iomegat*pi-iomega*e^-iomegat*phi die richtige
+Rücktransformation. Erst dann levelgleiche Baseline abziehen. Keine
+zusätzliche Phasenausrichtung der Störung: sonst könnte ein relevanter
+Phasenfehler unsichtbar werden. Vorhandene phasenbereinigte Baseline-
+Formdrift ist eine davon getrennte Numerikdiagnose.
+
+Ladung und Amplitude
+Direkte Entwicklung von Q ergibt exakt
+Qalpha-Qbase=alpha sqrt2 Sum V f(2omega x+py)
+ +alpha² 2 Sum V Im[dpsi* (iomega dpsi+dpsidot)].
+Planfaktoren stimmen. Keine Nachnormalisierung ist nötig oder zulässig
+für diese gewählte Antwortprobe; die Arme besitzen O(alpha²) verschiedene
+Ladungen und verschiedene Energien, die ausgewiesen werden müssen.
+Norm s²=SumV[2f²+(g-1)²] ist eine explizite kanonische Hintergrund-
+Positionsnorm. epsilon benennt komplexe q-Modennorm/s, nicht die zu
+t0 tatsächlich erreichte reelle Störungsnorm und keine relative Energie.
+Fester voller6Block-Nenner||v|| ist in Modelleinheiten zulässig;
+nicht als physikalische Energie- oder symplektische Norm bezeichnen.
+
+Vorhersage/Diagnostik
+Re[v exp(i rho t)] mit gespeichertem rho folgt aus dem komplexen
+Eigenvektor; die Basis Re(v),-Im(v) hat deshalb Sollkoeffizienten
+cos(rho t),sin(rho t). Gramkondition ist sinnvoll, keine unabhängigen
+Feldphasen oder freie Fitfrequenz. Baselineabzug reduziert gemeinsame
+Integrationsdrift, ersetzt aber die Kontrolle beider realen E/Q-Verläufe
+nicht. Die gewählte Amplitudendifferenz ist eine direkte Messung, keine
+vorausgesetzte Faktor2-Regel der Konvergenz.
+
+Umsetzungspräzisierung ohne neue Gates: Beim Gittervergleich Position
+UND Geschwindigkeit mit derselben volumenrichtigen Restriction übertragen.
+Das alte overlap-Hilfsformat enthält3Felder, v enthält6; beide3Blöcke
+konsistent behandeln. Die gemeinsame Phasenwahl über größte|vq|-Komponente
+samt Index dokumentieren, damit keine unterschiedliche Feldphase zwischen
+Gittern versehentlich als räumlicher Fehler ausgegeben wird. Keine neue
+nachträgliche Phasenkorrektur der zeitentwickelten Daten.
+
+Umfang/Entscheidungsgrenze
+9Arme, epsilon0/.001/.002 auf3festen(h,dt),R120,T32,Sampleabstand.4;
+45CPU-s inklusive Imports/QA/IO. Bei fehlendenArmen oder Numerikversagen
+unentschieden, kein Automatismus zur weiteren Halbierung. Die neuen.05/
+.01-Antwortgrenzen sind prospektive Kurztestdefinitionen und keine
+Änderung des alten R20-Tors oder ursprünglichen Modensuchstatus.
+
+Kleine Abweichung auf allen drei Leveln kann lineare Nähe dieses
+nichtlinearen Kleinamplitudenverlaufs an den gespeicherten Samples
+stützen. Sie beweist weder vollständige Stabilität noch Lebensdauer,
+Strahlungsrate oder Entstehung aus der starken früheren Wolke. Größere
+Abweichung identifiziert ohne weitere Analyse keinen Zerfallsmechanismus.

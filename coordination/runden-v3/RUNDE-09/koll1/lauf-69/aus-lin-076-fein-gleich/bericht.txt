@@ -1,0 +1,27 @@
+KOLL-1 lin Start 2026-09-30T05:54:31+00:00, Geraet cuda (Quadro P4000), torch 2.5.1+cu121
+  Argumente: {"kommando": "lin", "geraet": "cuda", "out": "/home/fmh/fmhc-physics-remote/runde9-koll1/aus-lin-076-fein-gleich", "w2": 0.76, "rho0": 1.728147, "h": 0.1, "cfl": 0.4, "rmax": 22.0, "zmax": 32.0, "schicht": 8.0, "sig0": 2.0, "rfluss": 13.0, "zfluss": 23.0, "abstaende": [10.0, 12.0, 14.0], "kette": 10.0, "vorzeichen": 1, "d": 10.0, "eps": 0.005, "T": 1200.0, "dtmess": 0.2, "budget": 480.0, "weiter": false, "faeden": 1, "profil_h": 0.002, "profil_rmax": 36.0}
+  Profil omega^2 = 0.76: f0 = 1.050899025882218 (Klammer 2.2e-14), S0 = 1.104389, r_c = 21.48, A = 11.331052 (Streuung 5.2e-08 auf [r_c-4, r_c]), Q = 254.1160, E = 241.9027
+  Resonanzabtastung um 1.728147: Maximum bei rho_r = 1.7281501, Breite aus Parabel Gamma = 2.0655e-03 (29 Punkte)
+  Mode rho = 1.728150089: kappa_c = 0.516362, q = 2.399924, N (r <= 12.0) = 5.240974e+02, C_v = +2.435254e+01, offene Aussenamplitude 1.835e-01 (reduziert), wachsender Rest bei r_m +0.00e+00, V(r_m) +6.288e-03, u(0) = +0.5206, v(0) = +0.3516
+  Gitter h = 0.1, dt = 0.0400, nr = 220, nz = 641, Glieder 5: ['einzel', 'paar10', 'paar12', 'paar14', 'kette10'], Punkte je Glied 141020
+  Ueberlappmatrizen M (Zeile = Messball, Spalte = Mode): einzel: [[1.0]]; paar10: [[1.0186, 0.0253], [0.0253, 1.0186]]; paar12: [[1.0058, 0.0072], [0.0072, 1.0058]]; paar14: [[1.0019, 0.0022], [0.0022, 1.0019]]; kette10: [[1.0186, 0.0253, 0.0001], [0.0254, 1.0371, 0.0254], [0.0001, 0.0253, 1.0186]]
+  Start Zeitschleife 2026-09-30T05:54:53+00:00, t = 0.00 bis 1200.0, Messung alle 5 Schritte, Budget 480.0 s
+  Ende Zeitschleife 2026-09-30T05:57:18+00:00, t = 1200.00, Schritte 30000, 145.8 s (4.86 ms je Schritt in diesem Aufruf)
+=== Auswertung /home/fmh/fmhc-physics-remote/runde9-koll1/aus-lin-076-fein-gleich (lin, omega^2 = 0.76, h = 0.1, t bis 1200.0) ===
+  paar10: Uebersprechen M_BA/M_BB = +0.0248, M_AB/M_AA = +0.0248
+  paar12: Uebersprechen M_BA/M_BB = +0.0072, M_AB/M_AA = +0.0072
+  paar14: Uebersprechen M_BA/M_BB = +0.0022, M_AB/M_AA = +0.0022
+  kette10: Uebersprechen M_BA/M_BB = +0.0245, M_AB/M_AA = +0.0248
+  Demodulation bei rho_d = 1.7282029 (Nachfuehrung +5.28e-05); Bezug |a_A| Einzelball bei t = 36.6; Amplituden nach Inversion der Ueberlappmatrix (chi-Bild, CMT: arg(b/a) = -pi/2 fuer t_AB < 0)
+  Einzelball: Gamma (Abklingen a_A) = +1.995e-03; a_A(Ende) = 0.10573; Fluss/a^2 Mittel = 4.9325e+00
+  einzel  : Summe a^2 Ende/Anfang 0.01118, Gamma_Summe +1.995e-03
+            a(t): t=500: 0.398; t=1000: 0.146
+  paar10  : Summe a^2 Ende/Anfang 749591887742808511207165441714535598589880111116446609237877490122672308224.00000, Gamma_Summe -8.029e-02; b_max 17077737964918424176717745621292810240.0000 bei t = 1164; J aus atan2(b, a) +1.316e-02 -> pi/(2J) = 119; arg(b/a) frueh -0.249
+            a(t): t=500: 76208896635609.703/76208896635609.453; t=1000: 30394354636243992546849520091136.000/30394354636243713323672623120384.000
+  paar12  : Summe a^2 Ende/Anfang 132535416774371493781712237831913472.00000, Gamma_Summe -4.032e-02; b_max 253504341284974720.0000 bei t = 1164; J aus atan2(b, a) +3.058e-03 -> pi/(2J) = 514; arg(b/a) frueh -0.872
+            a(t): t=500: 33418.415/33418.776; t=1000: 170808180278766.406/170808180278777.531
+  paar14  : Summe a^2 Ende/Anfang 1222122109296.66772, Gamma_Summe -1.293e-02; b_max 779009.8026 bei t = 1164; J aus atan2(b, a) +8.356e-04 -> pi/(2J) = 1880; arg(b/a) frueh -1.647
+            a(t): t=500: 0.343/0.221; t=1000: 14630.145/14630.001
+  kette10 : Summe a^2 Ende/Anfang 35387465406330181646238956686414362679773881480448812924253424024616846714308365647872.00000, Gamma_Summe -9.102e-02; b_max 13298658272921484008158658560.0000 bei t = 1157; J aus atan2(b, a) +1.244e-02 -> pi/(2J) = 126; arg(b/a) frueh -1.637; c_max 3572886814317272272454331160462035232227328.0000 bei t = 1164
+            a(t): t=500: 14426630648974108.000/343529037.595/14426630434128466.000; t=1000: 1132374349235707261145166063228420096.000/15714865823865590775808.000/1132374349235704162092161680023748608.000
+Ende 2026-09-30T05:57:18+00:00, 167.3 s

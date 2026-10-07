@@ -1,0 +1,2354 @@
+{
+ "dateien": [
+  "lauf/kontrolle.json",
+  "lauf/n11-z1.json",
+  "lauf/n11.json"
+ ],
+ "dtt_sha256": {
+  "kontrolle.json": "c57abffcb9dcc3e83a488db1081e5e592ea9973a1ad1ad1bbbfdafac163fc524",
+  "n11-z1.json": "c57abffcb9dcc3e83a488db1081e5e592ea9973a1ad1ad1bbbfdafac163fc524",
+  "n11.json": "c57abffcb9dcc3e83a488db1081e5e592ea9973a1ad1ad1bbbfdafac163fc524"
+ },
+ "netze": {
+  "1/1 s0 z0": {
+   "ordnung": "1/1",
+   "saat": 0,
+   "zitter_versatz": 0,
+   "quellen": [
+    "n11.json"
+   ],
+   "n_richtungen_voll": 13,
+   "netz": {
+    "N": 32,
+    "T": 192,
+    "L": 2.752763840942347,
+    "eps_phason": 0.2360679774997897,
+    "ecken_sha": "87ac45cf85a057d38791bb8cedc12309f83b061047e65578398c50e8b1901e91",
+    "tetraeder_sha": "1ab58f0b6a1a0e5eb7ca294d5f6a063892c80a5e4a3a5e267ca32a44ba809e67",
+    "vol_min": 0.07837136697232973,
+    "vol_max": 0.12680753550602053,
+    "vol_rel_abw": 1.7031517427390115e-16,
+    "tetraeder_flach_1e-10": 0,
+    "delaunay_verletzt": 0,
+    "kugel_entartet_zusatzpunkte": 160,
+    "tetraeder_mit_gleichstand": 80,
+    "fenster_entartet_1e-5": 12
+   },
+   "dn2": {
+    "E_dn2": 224,
+    "E_tg": 224,
+    "T_dn2": 192,
+    "T_tg": 192,
+    "kantenmengen_gleich": true,
+    "s1_klasse_sha": "629fa1d0",
+    "s0_klasse_sha": "74e4992a",
+    "kugel_entartet_dn2": 160,
+    "euler": 0,
+    "flaechen_sonst": 0,
+    "komponenten": 1,
+    "ecken_gleich": true
+   },
+   "pruefung": {
+    "E": 224,
+    "T": 192,
+    "nV": 32,
+    "selbstkanten": 0,
+    "volumen_summe_rel_abw": 4.440892098500626e-16,
+    "vol_min_rel_mittel": 0.7213595499957934,
+    "dieder_summe_minus_2pi_max": 8.881784197001252e-16,
+    "dieder_min_grad": 35.99999999999998,
+    "dieder_max_grad": 110.90515744788932,
+    "D_sym_max": 9.444121133484358e-16,
+    "schlaefli_lD_max": 8.381634665873426e-16,
+    "l_min": 0.5627774222552395,
+    "l_max": 1.4510592024449191
+   },
+   "spanne": 0.09007439460102251,
+   "n_werte": 52,
+   "w_min": 3.0037205781793994,
+   "w_max": 3.2742788908095424,
+   "w_mittel": 3.145044064235492,
+   "regel": {
+    "n_punkte": 26,
+    "genau_2_masselos_alle": true,
+    "zwei_positive_werte_alle": true,
+    "wachsend_summe": 0,
+    "unklar_summe": 0,
+    "A_red_pd_alle": true,
+    "A_red_geprueft": 0,
+    "B_red_neg_summe": 0,
+    "tt_anteil_min": 1.0,
+    "n_tt_werte": 6,
+    "linear_max": 2.177772003841838e-07,
+    "luecke_min": null,
+    "w2im_max": 0.0,
+    "sv_rel_min": null,
+    "residuum_max": 2.72677164326627e-10,
+    "nebenbedingung_max": 6.785211716536132e-16,
+    "wege": [
+     "duenn-ritz"
+    ],
+    "n_masselos_je_punkt": [
+     [
+      2,
+      26
+     ]
+    ],
+    "regulaer": true
+   },
+   "richtungsspanne_zweigmittel": 0.009139059226190183,
+   "aufspaltung_max": 0.0857594287322867,
+   "aufspaltung_max_richtung": "320",
+   "w2k2_eps1": {
+    "100": [
+     3.04558521680292,
+     3.2316409899559035
+    ],
+    "110": [
+     3.015709289157209,
+     3.2552226327981306
+    ],
+    "111": [
+     3.032668084842275,
+     3.2536451918782516
+    ],
+    "210": [
+     3.006176349431957,
+     3.2592301699561053
+    ],
+    "211": [
+     3.0480175360789348,
+     3.2742788908095424
+    ],
+    "221": [
+     3.0507300854010126,
+     3.2444711290866852
+    ],
+    "310": [
+     3.016666766372946,
+     3.2521610608757476
+    ],
+    "311": [
+     3.0513170049319873,
+     3.2684787480299144
+    ],
+    "320": [
+     3.0037212203291173,
+     3.2613186362555893
+    ],
+    "321": [
+     3.034039249022817,
+     3.2674975847042407
+    ],
+    "322": [
+     3.0427256501323625,
+     3.2703194142444776
+    ],
+    "331": [
+     3.0460679158206667,
+     3.243040456369238
+    ],
+    "332": [
+     3.0481746163231094,
+     3.2482496339596696
+    ]
+   },
+   "spanne_eps1": 0.09007416155976689,
+   "n_richtungen_eps1": 13,
+   "gegenprobe_dicht": {
+    "abw_rel_max": 1.4941672121793204e-08,
+    "n_punkte": 26,
+    "richtungen": [
+     "100",
+     "110",
+     "111",
+     "210",
+     "211",
+     "221",
+     "310",
+     "311",
+     "320",
+     "321",
+     "322",
+     "331",
+     "332"
+    ],
+    "n_punkte_dicht": 26,
+    "wachsend": 0,
+    "A_red_nicht_pd": 0,
+    "B_red_neg": 0,
+    "n_masselos_2": 26,
+    "tt_anteil": [
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "affin": {
+    "min": 0.9999967681516981,
+    "max": 0.9999977002077413,
+    "spanne_max_min": 9.320590554917629e-07
+   },
+   "wuerfel13": {
+    "n_werte": 26,
+    "n_punkte": 13,
+    "spanne_wuerfel13": 0.11684400788312788,
+    "spanne_26_richtungen_eps1": 0.11684400788312788,
+    "wachsend": 0,
+    "nicht_2_masselos": 0
+   },
+   "bz": {
+    "Lk": [
+     8
+    ],
+    "nk": 511,
+    "k_mit_wachsend": 0,
+    "k_A_red_nicht_pd": 0,
+    "k_B_red_neg": 0,
+    "k_rangverlust_Mc": 0,
+    "k_mit_unklar": 65,
+    "w2_min_rel": 0.005330189048544016
+   }
+  },
+  "1/1 s0 z1": {
+   "ordnung": "1/1",
+   "saat": 0,
+   "zitter_versatz": 1,
+   "quellen": [
+    "n11-z1.json"
+   ],
+   "n_richtungen_voll": 13,
+   "netz": {
+    "N": 32,
+    "T": 192,
+    "L": 2.752763840942347,
+    "eps_phason": 0.2360679774997897,
+    "ecken_sha": "87ac45cf85a057d38791bb8cedc12309f83b061047e65578398c50e8b1901e91",
+    "tetraeder_sha": "dde9873d245bb9917d961dd36219a7bebff64fec5c9299710cdfc4ded61973d8",
+    "vol_min": 0.07837136697232971,
+    "vol_max": 0.12680753550602056,
+    "vol_rel_abw": 1.7031517427390115e-16,
+    "tetraeder_flach_1e-10": 0,
+    "delaunay_verletzt": 0,
+    "kugel_entartet_zusatzpunkte": 160,
+    "tetraeder_mit_gleichstand": 80,
+    "fenster_entartet_1e-5": 12
+   },
+   "dn2": {
+    "E_dn2": 224,
+    "E_tg": 224,
+    "T_dn2": 192,
+    "T_tg": 192,
+    "kantenmengen_gleich": true,
+    "s1_klasse_sha": "629fa1d0",
+    "s0_klasse_sha": "74e4992a",
+    "kugel_entartet_dn2": 160,
+    "euler": 0,
+    "flaechen_sonst": 0,
+    "komponenten": 1,
+    "ecken_gleich": true
+   },
+   "pruefung": {
+    "E": 224,
+    "T": 192,
+    "nV": 32,
+    "selbstkanten": 0,
+    "volumen_summe_rel_abw": 4.440892098500626e-16,
+    "vol_min_rel_mittel": 0.7213595499957933,
+    "dieder_summe_minus_2pi_max": 8.881784197001252e-16,
+    "dieder_min_grad": 35.99999999999998,
+    "dieder_max_grad": 110.90515744788932,
+    "D_sym_max": 9.444121133484356e-16,
+    "schlaefli_lD_max": 8.444819747853188e-16,
+    "l_min": 0.5627774222552395,
+    "l_max": 1.4510592024449191
+   },
+   "spanne": 0.13127440478192898,
+   "n_werte": 52,
+   "w_min": 2.9652700863323593,
+   "w_max": 3.354534151933299,
+   "w_mittel": 3.1719329077947425,
+   "regel": {
+    "n_punkte": 26,
+    "genau_2_masselos_alle": true,
+    "zwei_positive_werte_alle": true,
+    "wachsend_summe": 0,
+    "unklar_summe": 0,
+    "A_red_pd_alle": true,
+    "A_red_geprueft": 0,
+    "B_red_neg_summe": 0,
+    "tt_anteil_min": 1.0,
+    "n_tt_werte": 6,
+    "linear_max": 2.34997126202785e-07,
+    "luecke_min": null,
+    "w2im_max": 0.0,
+    "sv_rel_min": null,
+    "residuum_max": 2.87835468888209e-10,
+    "nebenbedingung_max": 9.638007867311608e-16,
+    "wege": [
+     "duenn-ritz"
+    ],
+    "n_masselos_je_punkt": [
+     [
+      2,
+      26
+     ]
+    ],
+    "regulaer": true
+   },
+   "richtungsspanne_zweigmittel": 0.01166964273770943,
+   "aufspaltung_max": 0.12567140780372155,
+   "aufspaltung_max_richtung": "310",
+   "w2k2_eps1": {
+    "100": [
+     2.9781690463875687,
+     3.3304129120576085
+    ],
+    "110": [
+     2.9991676821090962,
+     3.334975368355485
+    ],
+    "111": [
+     3.063063816146733,
+     3.3108755781555894
+    ],
+    "210": [
+     2.97127201014246,
+     3.338050707205791
+    ],
+    "211": [
+     3.0109666859085227,
+     3.346960061309476
+    ],
+    "221": [
+     3.024341078860615,
+     3.345930763824732
+    ],
+    "310": [
+     2.965270627295094,
+     3.337920361546293
+    ],
+    "311": [
+     2.993169926756945,
+     3.3440128184928097
+    ],
+    "320": [
+     2.9808989463740283,
+     3.3371444138883133
+    ],
+    "321": [
+     2.9971740872025414,
+     3.354534151933299
+    ],
+    "322": [
+     3.0301560492375765,
+     3.339926299855552
+    ],
+    "331": [
+     3.009619539197359,
+     3.3495036380862433
+    ],
+    "332": [
+     3.0397058235082404,
+     3.3370411522804746
+    ]
+   },
+   "spanne_eps1": 0.13127419840032917,
+   "n_richtungen_eps1": 13,
+   "gegenprobe_dicht": {
+    "abw_rel_max": 1.7082380843191913e-08,
+    "n_punkte": 26,
+    "richtungen": [
+     "100",
+     "110",
+     "111",
+     "210",
+     "211",
+     "221",
+     "310",
+     "311",
+     "320",
+     "321",
+     "322",
+     "331",
+     "332"
+    ],
+    "n_punkte_dicht": 26,
+    "wachsend": 0,
+    "A_red_nicht_pd": 0,
+    "B_red_neg": 0,
+    "n_masselos_2": 26,
+    "tt_anteil": [
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "wuerfel13": {
+    "n_werte": 26,
+    "n_punkte": 13,
+    "spanne_wuerfel13": 0.1198073244708926,
+    "spanne_26_richtungen_eps1": 0.13127419840032917,
+    "wachsend": 0,
+    "nicht_2_masselos": 0
+   },
+   "bz": {
+    "Lk": [
+     8
+    ],
+    "nk": 511,
+    "k_mit_wachsend": 0,
+    "k_A_red_nicht_pd": 0,
+    "k_B_red_neg": 0,
+    "k_rangverlust_Mc": 0,
+    "k_mit_unklar": 65,
+    "w2_min_rel": 0.005436260476425096
+   }
+  },
+  "1/1 s1 z0": {
+   "ordnung": "1/1",
+   "saat": 1,
+   "zitter_versatz": 0,
+   "quellen": [
+    "n11.json"
+   ],
+   "n_richtungen_voll": 13,
+   "netz": {
+    "N": 32,
+    "T": 192,
+    "L": 2.752763840942347,
+    "eps_phason": 0.2360679774997897,
+    "ecken_sha": "0d3359ff3c0a014ac7afd31915e7d3f57fdd376230c678c2975569f926a9da9d",
+    "tetraeder_sha": "913417a397021a928cf43306d8603bf5053b4d5c21195c53b037bbeb747188b9",
+    "vol_min": 0.07837136697232973,
+    "vol_max": 0.12680753550602056,
+    "vol_rel_abw": 1.7031517427390115e-16,
+    "tetraeder_flach_1e-10": 0,
+    "delaunay_verletzt": 0,
+    "kugel_entartet_zusatzpunkte": 160,
+    "tetraeder_mit_gleichstand": 80,
+    "fenster_entartet_1e-5": 12
+   },
+   "dn2": {
+    "E_dn2": 224,
+    "E_tg": 224,
+    "T_dn2": 192,
+    "T_tg": 192,
+    "kantenmengen_gleich": true,
+    "s1_klasse_sha": "629fa1d0",
+    "s0_klasse_sha": "74e4992a",
+    "kugel_entartet_dn2": 160,
+    "euler": 0,
+    "flaechen_sonst": 0,
+    "komponenten": 1,
+    "ecken_gleich": true
+   },
+   "pruefung": {
+    "E": 224,
+    "T": 192,
+    "nV": 32,
+    "selbstkanten": 0,
+    "volumen_summe_rel_abw": 4.440892098500626e-16,
+    "vol_min_rel_mittel": 0.7213595499957935,
+    "dieder_summe_minus_2pi_max": 8.881784197001252e-16,
+    "dieder_min_grad": 35.99999999999998,
+    "dieder_max_grad": 110.90515744788932,
+    "D_sym_max": 1.10728070403151e-15,
+    "schlaefli_lD_max": 8.083703650212963e-16,
+    "l_min": 0.5627774222552395,
+    "l_max": 1.4510592024449191
+   },
+   "spanne": 0.15351724671295175,
+   "n_werte": 52,
+   "w_min": 2.9288329625291567,
+   "w_max": 3.378459335018771,
+   "w_mittel": 3.1622130394931487,
+   "regel": {
+    "n_punkte": 26,
+    "genau_2_masselos_alle": true,
+    "zwei_positive_werte_alle": true,
+    "wachsend_summe": 0,
+    "unklar_summe": 0,
+    "A_red_pd_alle": true,
+    "A_red_geprueft": 0,
+    "B_red_neg_summe": 0,
+    "tt_anteil_min": 1.0,
+    "n_tt_werte": 6,
+    "linear_max": 2.420739504405134e-07,
+    "luecke_min": null,
+    "w2im_max": 0.0,
+    "sv_rel_min": null,
+    "residuum_max": 2.4475147888375247e-10,
+    "nebenbedingung_max": 1.0822716109471518e-15,
+    "wege": [
+     "duenn-ritz"
+    ],
+    "n_masselos_je_punkt": [
+     [
+      2,
+      26
+     ]
+    ],
+    "regulaer": true
+   },
+   "richtungsspanne_zweigmittel": 0.014968063193846026,
+   "aufspaltung_max": 0.14564901111203965,
+   "aufspaltung_max_richtung": "331",
+   "w2k2_eps1": {
+    "100": [
+     2.9288334335596127,
+     3.320921920888046
+    ],
+    "110": [
+     2.9614908738153662,
+     3.3758262411075703
+    ],
+    "111": [
+     3.029508289290645,
+     3.312799553778606
+    ],
+    "210": [
+     2.977744096207856,
+     3.3554317389450885
+    ],
+    "211": [
+     3.015932744069686,
+     3.3142875409867454
+    ],
+    "221": [
+     2.9635167938755016,
+     3.366365818447655
+    ],
+    "310": [
+     2.9656797809232502,
+     3.3448327932933215
+    ],
+    "311": [
+     2.9777074813827262,
+     3.327761061748908
+    ],
+    "320": [
+     2.9792115460813116,
+     3.364090541457798
+    ],
+    "321": [
+     2.9751929366371557,
+     3.357098201202338
+    ],
+    "322": [
+     3.0375842116252865,
+     3.3036401358836684
+    ],
+    "331": [
+     2.948947978176513,
+     3.378459335018771
+    ],
+    "332": [
+     2.985467358723168,
+     3.3492145218503544
+    ]
+   },
+   "spanne_eps1": 0.15351706119821795,
+   "n_richtungen_eps1": 13,
+   "gegenprobe_dicht": {
+    "abw_rel_max": 1.4253744184955508e-08,
+    "n_punkte": 26,
+    "richtungen": [
+     "100",
+     "110",
+     "111",
+     "210",
+     "211",
+     "221",
+     "310",
+     "311",
+     "320",
+     "321",
+     "322",
+     "331",
+     "332"
+    ],
+    "n_punkte_dicht": 26,
+    "wachsend": 0,
+    "A_red_nicht_pd": 0,
+    "B_red_neg": 0,
+    "n_masselos_2": 26,
+    "tt_anteil": [
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "affin": {
+    "min": 0.9999964174193475,
+    "max": 0.9999978200159574,
+    "spanne_max_min": 1.402601634836742e-06
+   },
+   "wuerfel13": {
+    "n_werte": 26,
+    "n_punkte": 13,
+    "spanne_wuerfel13": 0.16513827794227853,
+    "spanne_26_richtungen_eps1": 0.16513827794227853,
+    "wachsend": 0,
+    "nicht_2_masselos": 0
+   },
+   "bz": {
+    "Lk": [
+     8
+    ],
+    "nk": 511,
+    "k_mit_wachsend": 0,
+    "k_A_red_nicht_pd": 0,
+    "k_B_red_neg": 0,
+    "k_rangverlust_Mc": 0,
+    "k_mit_unklar": 65,
+    "w2_min_rel": 0.005192887222471162
+   }
+  },
+  "1/1 s2 z0": {
+   "ordnung": "1/1",
+   "saat": 2,
+   "zitter_versatz": 0,
+   "quellen": [
+    "n11.json"
+   ],
+   "n_richtungen_voll": 13,
+   "netz": {
+    "N": 32,
+    "T": 192,
+    "L": 2.752763840942347,
+    "eps_phason": 0.2360679774997897,
+    "ecken_sha": "0d3359ff3c0a014ac7afd31915e7d3f57fdd376230c678c2975569f926a9da9d",
+    "tetraeder_sha": "fee5ed5209170a89b73364acb110422e3e9047e180c4ac79783d219e61bd9a76",
+    "vol_min": 0.07837136697232973,
+    "vol_max": 0.12680753550602056,
+    "vol_rel_abw": 1.7031517427390115e-16,
+    "tetraeder_flach_1e-10": 0,
+    "delaunay_verletzt": 0,
+    "kugel_entartet_zusatzpunkte": 160,
+    "tetraeder_mit_gleichstand": 80,
+    "fenster_entartet_1e-5": 12
+   },
+   "dn2": {
+    "E_dn2": 224,
+    "E_tg": 224,
+    "T_dn2": 192,
+    "T_tg": 192,
+    "kantenmengen_gleich": true,
+    "s1_klasse_sha": "629fa1d0",
+    "s0_klasse_sha": "74e4992a",
+    "kugel_entartet_dn2": 160,
+    "euler": 0,
+    "flaechen_sonst": 0,
+    "komponenten": 1,
+    "ecken_gleich": true
+   },
+   "pruefung": {
+    "E": 224,
+    "T": 192,
+    "nV": 32,
+    "selbstkanten": 0,
+    "volumen_summe_rel_abw": 4.440892098500626e-16,
+    "vol_min_rel_mittel": 0.7213595499957935,
+    "dieder_summe_minus_2pi_max": 1.7763568394002505e-15,
+    "dieder_min_grad": 35.99999999999998,
+    "dieder_max_grad": 110.90515744788932,
+    "D_sym_max": 9.640379131647661e-16,
+    "schlaefli_lD_max": 8.786522668013103e-16,
+    "l_min": 0.5627774222552395,
+    "l_max": 1.4510592024449191
+   },
+   "spanne": 0.07955694232981547,
+   "n_werte": 52,
+   "w_min": 3.0072197809253574,
+   "w_max": 3.2464649916095163,
+   "w_mittel": 3.1416892990650895,
+   "regel": {
+    "n_punkte": 26,
+    "genau_2_masselos_alle": true,
+    "zwei_positive_werte_alle": true,
+    "wachsend_summe": 0,
+    "unklar_summe": 0,
+    "A_red_pd_alle": true,
+    "A_red_geprueft": 0,
+    "B_red_neg_summe": 0,
+    "tt_anteil_min": 1.0,
+    "n_tt_werte": 6,
+    "linear_max": 1.9542286178175772e-07,
+    "luecke_min": null,
+    "w2im_max": 0.0,
+    "sv_rel_min": null,
+    "residuum_max": 2.7809123630361053e-10,
+    "nebenbedingung_max": 8.215917316478255e-16,
+    "wege": [
+     "duenn-ritz"
+    ],
+    "n_masselos_je_punkt": [
+     [
+      2,
+      26
+     ]
+    ],
+    "regulaer": true
+   },
+   "richtungsspanne_zweigmittel": 0.014066119479281936,
+   "aufspaltung_max": 0.07955674665756951,
+   "aufspaltung_max_richtung": "100",
+   "w2k2_eps1": {
+    "100": [
+     3.007220325991145,
+     3.2464649916095163
+    ],
+    "110": [
+     3.069609326507257,
+     3.229738946296009
+    ],
+    "111": [
+     3.085507683837177,
+     3.1930328608365577
+    ],
+    "210": [
+     3.0371717537547607,
+     3.2191621377137354
+    ],
+    "211": [
+     3.0793436821659146,
+     3.19434770470772
+    ],
+    "221": [
+     3.10975194349405,
+     3.2159002295064787
+    ],
+    "310": [
+     3.02580653473226,
+     3.2139797654010396
+    ],
+    "311": [
+     3.0785885106504236,
+     3.1795172452294316
+    ],
+    "320": [
+     3.049948346305731,
+     3.2248608036264295
+    ],
+    "321": [
+     3.0836987007931347,
+     3.2172874891353125
+    ],
+    "322": [
+     3.08048175107463,
+     3.2006064862039447
+    ],
+    "331": [
+     3.1041872760155624,
+     3.223368603740599
+    ],
+    "332": [
+     3.10669235209057,
+     3.2076537019052997
+    ]
+   },
+   "spanne_eps1": 0.07955674665756951,
+   "n_richtungen_eps1": 13,
+   "gegenprobe_dicht": {
+    "abw_rel_max": 1.9598697553746547e-08,
+    "n_punkte": 26,
+    "richtungen": [
+     "100",
+     "110",
+     "111",
+     "210",
+     "211",
+     "221",
+     "310",
+     "311",
+     "320",
+     "321",
+     "322",
+     "331",
+     "332"
+    ],
+    "n_punkte_dicht": 26,
+    "wachsend": 0,
+    "A_red_nicht_pd": 0,
+    "B_red_neg": 0,
+    "n_masselos_2": 26,
+    "tt_anteil": [
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "affin": {
+    "min": 0.9999964372213704,
+    "max": 0.9999978237451541,
+    "spanne_max_min": 1.3865287236125567e-06
+   },
+   "wuerfel13": {
+    "n_werte": 26,
+    "n_punkte": 13,
+    "spanne_wuerfel13": 0.19571008765323938,
+    "spanne_26_richtungen_eps1": 0.19571008765323938,
+    "wachsend": 0,
+    "nicht_2_masselos": 0
+   },
+   "bz": {
+    "Lk": [
+     8
+    ],
+    "nk": 511,
+    "k_mit_wachsend": 0,
+    "k_A_red_nicht_pd": 0,
+    "k_B_red_neg": 0,
+    "k_rangverlust_Mc": 0,
+    "k_mit_unklar": 65,
+    "w2_min_rel": 0.005320306806066879
+   }
+  },
+  "1/1 s3 z0": {
+   "ordnung": "1/1",
+   "saat": 3,
+   "zitter_versatz": 0,
+   "quellen": [
+    "n11.json"
+   ],
+   "n_richtungen_voll": 13,
+   "netz": {
+    "N": 32,
+    "T": 192,
+    "L": 2.752763840942347,
+    "eps_phason": 0.2360679774997897,
+    "ecken_sha": "bb88191dc58199ec983342a4ec2459bc23c76ad5fe23bb9492a8764109b83214",
+    "tetraeder_sha": "b8055128b1a8f158554361a2523fbe7948b1b4475f9fc2049864ba1fbece2aaa",
+    "vol_min": 0.07837136697232973,
+    "vol_max": 0.12680753550602056,
+    "vol_rel_abw": 1.7031517427390115e-16,
+    "tetraeder_flach_1e-10": 0,
+    "delaunay_verletzt": 0,
+    "kugel_entartet_zusatzpunkte": 160,
+    "tetraeder_mit_gleichstand": 80,
+    "fenster_entartet_1e-5": 12
+   },
+   "dn2": {
+    "E_dn2": 224,
+    "E_tg": 224,
+    "T_dn2": 192,
+    "T_tg": 192,
+    "kantenmengen_gleich": true,
+    "s1_klasse_sha": "629fa1d0",
+    "s0_klasse_sha": "74e4992a",
+    "kugel_entartet_dn2": 160,
+    "euler": 0,
+    "flaechen_sonst": 0,
+    "komponenten": 1,
+    "ecken_gleich": true
+   },
+   "pruefung": {
+    "E": 224,
+    "T": 192,
+    "nV": 32,
+    "selbstkanten": 0,
+    "volumen_summe_rel_abw": 4.440892098500626e-16,
+    "vol_min_rel_mittel": 0.7213595499957935,
+    "dieder_summe_minus_2pi_max": 1.7763568394002505e-15,
+    "dieder_min_grad": 35.99999999999998,
+    "dieder_max_grad": 110.90515744788932,
+    "D_sym_max": 8.149846823419599e-16,
+    "schlaefli_lD_max": 8.083703650212963e-16,
+    "l_min": 0.5627774222552395,
+    "l_max": 1.4510592024449191
+   },
+   "spanne": 0.19447516087844252,
+   "n_werte": 52,
+   "w_min": 2.8854938865759214,
+   "w_max": 3.446650774381536,
+   "w_mittel": 3.1646902658856773,
+   "regel": {
+    "n_punkte": 26,
+    "genau_2_masselos_alle": true,
+    "zwei_positive_werte_alle": true,
+    "wachsend_summe": 0,
+    "unklar_summe": 0,
+    "A_red_pd_alle": true,
+    "A_red_geprueft": 0,
+    "B_red_neg_summe": 0,
+    "tt_anteil_min": 1.0,
+    "n_tt_werte": 6,
+    "linear_max": 2.2392663445724992e-07,
+    "luecke_min": null,
+    "w2im_max": 0.0,
+    "sv_rel_min": null,
+    "residuum_max": 3.02546325522124e-10,
+    "nebenbedingung_max": 1.4998791139348672e-15,
+    "wege": [
+     "duenn-ritz"
+    ],
+    "n_masselos_je_punkt": [
+     [
+      2,
+      26
+     ]
+    ],
+    "regulaer": true
+   },
+   "richtungsspanne_zweigmittel": 0.005487314769927254,
+   "aufspaltung_max": 0.19447497017462845,
+   "aufspaltung_max_richtung": "100",
+   "w2k2_eps1": {
+    "100": [
+     2.8854943472592374,
+     3.446650774381536
+    ],
+    "110": [
+     3.118349275478793,
+     3.2167733959720133
+    ],
+    "111": [
+     2.982380932857406,
+     3.345646438497489
+    ],
+    "210": [
+     2.9934107364410845,
+     3.356817732141577
+    ],
+    "211": [
+     2.9352912421332924,
+     3.3834855024584387
+    ],
+    "221": [
+     3.019941146720035,
+     3.2956317852325707
+    ],
+    "310": [
+     2.9418343548937003,
+     3.402399293846693
+    ],
+    "311": [
+     2.912468010356812,
+     3.4099999254130386
+    ],
+    "320": [
+     3.0431272058486116,
+     3.3070708034970546
+    ],
+    "321": [
+     2.9974430819790605,
+     3.3324642013519856
+    ],
+    "322": [
+     2.953656891502706,
+     3.366131082813837
+    ],
+    "331": [
+     3.0533989423347414,
+     3.2645339754117217
+    ],
+    "332": [
+     2.997848919299694,
+     3.3197047939627367
+    ]
+   },
+   "spanne_eps1": 0.19447497017462845,
+   "n_richtungen_eps1": 13,
+   "gegenprobe_dicht": {
+    "abw_rel_max": 3.558825478755523e-08,
+    "n_punkte": 26,
+    "richtungen": [
+     "100",
+     "110",
+     "111",
+     "210",
+     "211",
+     "221",
+     "310",
+     "311",
+     "320",
+     "321",
+     "322",
+     "331",
+     "332"
+    ],
+    "n_punkte_dicht": 26,
+    "wachsend": 0,
+    "A_red_nicht_pd": 0,
+    "B_red_neg": 0,
+    "n_masselos_2": 26,
+    "tt_anteil": [
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "affin": {
+    "min": 0.999996516672369,
+    "max": 0.9999978082364854,
+    "spanne_max_min": 1.2915686153913697e-06
+   },
+   "wuerfel13": {
+    "n_werte": 26,
+    "n_punkte": 13,
+    "spanne_wuerfel13": 0.19739515545601494,
+    "spanne_26_richtungen_eps1": 0.19739515545601494,
+    "wachsend": 0,
+    "nicht_2_masselos": 0
+   },
+   "bz": {
+    "Lk": [
+     8
+    ],
+    "nk": 511,
+    "k_mit_wachsend": 0,
+    "k_A_red_nicht_pd": 0,
+    "k_B_red_neg": 0,
+    "k_rangverlust_Mc": 0,
+    "k_mit_unklar": 65,
+    "w2_min_rel": 0.005120440063615073
+   }
+  },
+  "1/1 s4 z0": {
+   "ordnung": "1/1",
+   "saat": 4,
+   "zitter_versatz": 0,
+   "quellen": [
+    "n11.json"
+   ],
+   "n_richtungen_voll": 13,
+   "netz": {
+    "N": 32,
+    "T": 192,
+    "L": 2.752763840942347,
+    "eps_phason": 0.2360679774997897,
+    "ecken_sha": "bb88191dc58199ec983342a4ec2459bc23c76ad5fe23bb9492a8764109b83214",
+    "tetraeder_sha": "3a8128f54641e664ec6ae79becfb072b1f0636324e1be379667a056f2c2d9f86",
+    "vol_min": 0.07837136697232973,
+    "vol_max": 0.12680753550602056,
+    "vol_rel_abw": 1.7031517427390115e-16,
+    "tetraeder_flach_1e-10": 0,
+    "delaunay_verletzt": 0,
+    "kugel_entartet_zusatzpunkte": 160,
+    "tetraeder_mit_gleichstand": 80,
+    "fenster_entartet_1e-5": 12
+   },
+   "dn2": {
+    "E_dn2": 224,
+    "E_tg": 224,
+    "T_dn2": 192,
+    "T_tg": 192,
+    "kantenmengen_gleich": true,
+    "s1_klasse_sha": "629fa1d0",
+    "s0_klasse_sha": "74e4992a",
+    "kugel_entartet_dn2": 160,
+    "euler": 0,
+    "flaechen_sonst": 0,
+    "komponenten": 1,
+    "ecken_gleich": true
+   },
+   "pruefung": {
+    "E": 224,
+    "T": 192,
+    "nV": 32,
+    "selbstkanten": 0,
+    "volumen_summe_rel_abw": 4.440892098500626e-16,
+    "vol_min_rel_mittel": 0.7213595499957935,
+    "dieder_summe_minus_2pi_max": 1.7763568394002505e-15,
+    "dieder_min_grad": 35.99999999999998,
+    "dieder_max_grad": 110.90515744788932,
+    "D_sym_max": 8.858245632252075e-16,
+    "schlaefli_lD_max": 8.981892944681068e-16,
+    "l_min": 0.5627774222552395,
+    "l_max": 1.4510592024449191
+   },
+   "spanne": 0.08484656197263019,
+   "n_werte": 52,
+   "w_min": 2.9871086756086855,
+   "w_max": 3.2405545769726993,
+   "w_mittel": 3.121839641739981,
+   "regel": {
+    "n_punkte": 26,
+    "genau_2_masselos_alle": true,
+    "zwei_positive_werte_alle": true,
+    "wachsend_summe": 0,
+    "unklar_summe": 0,
+    "A_red_pd_alle": true,
+    "A_red_geprueft": 0,
+    "B_red_neg_summe": 0,
+    "tt_anteil_min": 1.0,
+    "n_tt_werte": 6,
+    "linear_max": 2.006095467521618e-07,
+    "luecke_min": null,
+    "w2im_max": 0.0,
+    "sv_rel_min": null,
+    "residuum_max": 2.5064561883588565e-10,
+    "nebenbedingung_max": 9.495618363189015e-16,
+    "wege": [
+     "duenn-ritz"
+    ],
+    "n_masselos_je_punkt": [
+     [
+      2,
+      26
+     ]
+    ],
+    "regulaer": true
+   },
+   "richtungsspanne_zweigmittel": 0.015403651403260943,
+   "aufspaltung_max": 0.0715071004087775,
+   "aufspaltung_max_richtung": "111",
+   "w2k2_eps1": {
+    "100": [
+     2.987109194124073,
+     3.191222617233438
+    ],
+    "110": [
+     3.049810556035371,
+     3.2236901247979697
+    ],
+    "111": [
+     3.0242959432900025,
+     3.2405545769726993
+    ],
+    "210": [
+     3.0433009552597285,
+     3.1929004361523474
+    ],
+    "211": [
+     3.0665809130254678,
+     3.17080018804212
+    ],
+    "221": [
+     3.0756748569779027,
+     3.188399172257876
+    ],
+    "310": [
+     3.0221937738152564,
+     3.1908953784091376
+    ],
+    "311": [
+     3.049498150283457,
+     3.1715348775170993
+    ],
+    "320": [
+     3.053761211723544,
+     3.200670006468484
+    ],
+    "321": [
+     3.119518598154237,
+     3.127081956827492
+    ],
+    "322": [
+     3.0560222596058546,
+     3.1933197473297468
+    ],
+    "331": [
+     3.077649046830083,
+     3.1868562025986904
+    ],
+    "332": [
+     3.0607978778563494,
+     3.2036994357187756
+    ]
+   },
+   "spanne_eps1": 0.08484637366025227,
+   "n_richtungen_eps1": 13,
+   "gegenprobe_dicht": {
+    "abw_rel_max": 2.6925257801124758e-08,
+    "n_punkte": 26,
+    "richtungen": [
+     "100",
+     "110",
+     "111",
+     "210",
+     "211",
+     "221",
+     "310",
+     "311",
+     "320",
+     "321",
+     "322",
+     "331",
+     "332"
+    ],
+    "n_punkte_dicht": 26,
+    "wachsend": 0,
+    "A_red_nicht_pd": 0,
+    "B_red_neg": 0,
+    "n_masselos_2": 26,
+    "tt_anteil": [
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "affin": {
+    "min": 0.9999965002917953,
+    "max": 0.9999977281914072,
+    "spanne_max_min": 1.2279039092177868e-06
+   },
+   "wuerfel13": {
+    "n_werte": 26,
+    "n_punkte": 13,
+    "spanne_wuerfel13": 0.10770642133908725,
+    "spanne_26_richtungen_eps1": 0.10770642133908725,
+    "wachsend": 0,
+    "nicht_2_masselos": 0
+   },
+   "bz": {
+    "Lk": [
+     8
+    ],
+    "nk": 511,
+    "k_mit_wachsend": 0,
+    "k_A_red_nicht_pd": 0,
+    "k_B_red_neg": 0,
+    "k_rangverlust_Mc": 0,
+    "k_mit_unklar": 65,
+    "w2_min_rel": 0.005349339496899033
+   }
+  },
+  "1/1 s5 z0": {
+   "ordnung": "1/1",
+   "saat": 5,
+   "zitter_versatz": 0,
+   "quellen": [
+    "n11.json"
+   ],
+   "n_richtungen_voll": 13,
+   "netz": {
+    "N": 32,
+    "T": 192,
+    "L": 2.752763840942347,
+    "eps_phason": 0.2360679774997897,
+    "ecken_sha": "b18bf7c03c9949bab9b971c8a46b88a76955a70a07c609e1f5389f2d55b3f364",
+    "tetraeder_sha": "f4b796b45eef534f0c13e8db4c2a9dfecfcb422efb9043edab1818dad787649f",
+    "vol_min": 0.07837136697232971,
+    "vol_max": 0.12680753550602056,
+    "vol_rel_abw": 1.7031517427390115e-16,
+    "tetraeder_flach_1e-10": 0,
+    "delaunay_verletzt": 0,
+    "kugel_entartet_zusatzpunkte": 160,
+    "tetraeder_mit_gleichstand": 80,
+    "fenster_entartet_1e-5": 12
+   },
+   "dn2": {
+    "E_dn2": 224,
+    "E_tg": 224,
+    "T_dn2": 192,
+    "T_tg": 192,
+    "kantenmengen_gleich": true,
+    "s1_klasse_sha": "629fa1d0",
+    "s0_klasse_sha": "74e4992a",
+    "kugel_entartet_dn2": 160,
+    "euler": 0,
+    "flaechen_sonst": 0,
+    "komponenten": 1,
+    "ecken_gleich": true
+   },
+   "pruefung": {
+    "E": 224,
+    "T": 192,
+    "nV": 32,
+    "selbstkanten": 0,
+    "volumen_summe_rel_abw": 4.440892098500626e-16,
+    "vol_min_rel_mittel": 0.7213595499957934,
+    "dieder_summe_minus_2pi_max": 1.7763568394002505e-15,
+    "dieder_min_grad": 35.99999999999998,
+    "dieder_max_grad": 110.90515744788932,
+    "D_sym_max": 9.640379131647663e-16,
+    "schlaefli_lD_max": 8.083703650212962e-16,
+    "l_min": 0.5627774222552395,
+    "l_max": 1.4510592024449191
+   },
+   "spanne": 0.07660028209697245,
+   "n_werte": 52,
+   "w_min": 3.081283939325921,
+   "w_max": 3.3173111582991575,
+   "w_mittel": 3.1718002718232765,
+   "regel": {
+    "n_punkte": 26,
+    "genau_2_masselos_alle": true,
+    "zwei_positive_werte_alle": true,
+    "wachsend_summe": 0,
+    "unklar_summe": 0,
+    "A_red_pd_alle": true,
+    "A_red_geprueft": 0,
+    "B_red_neg_summe": 0,
+    "tt_anteil_min": 1.0,
+    "n_tt_werte": 6,
+    "linear_max": 2.2665732168913877e-07,
+    "luecke_min": null,
+    "w2im_max": 0.0,
+    "sv_rel_min": null,
+    "residuum_max": 2.9557042109112635e-10,
+    "nebenbedingung_max": 9.73942419866257e-16,
+    "wege": [
+     "duenn-ritz"
+    ],
+    "n_masselos_je_punkt": [
+     [
+      2,
+      26
+     ]
+    ],
+    "regulaer": true
+   },
+   "richtungsspanne_zweigmittel": 0.028786730752324186,
+   "aufspaltung_max": 0.07660008138513619,
+   "aufspaltung_max_richtung": "111",
+   "w2k2_eps1": {
+    "100": [
+     3.0966502108753935,
+     3.122904805540296
+    ],
+    "110": [
+     3.1574183736632038,
+     3.2069081318014145
+    ],
+    "111": [
+     3.0812845137733587,
+     3.3173111582991575
+    ],
+    "210": [
+     3.12504798080263,
+     3.1738615949446025
+    ],
+    "211": [
+     3.1265238788715752,
+     3.2332975732479663
+    ],
+    "221": [
+     3.119126610013952,
+     3.2731959767069294
+    ],
+    "310": [
+     3.109284222798538,
+     3.152103369522735
+    ],
+    "311": [
+     3.1224015353467953,
+     3.189162224516156
+    ],
+    "320": [
+     3.1417706582987566,
+     3.188457609232183
+    ],
+    "321": [
+     3.130653684040183,
+     3.2306038761987064
+    ],
+    "322": [
+     3.1172013260281837,
+     3.269966824489867
+    ],
+    "331": [
+     3.131305878741374,
+     3.2530555630594193
+    ],
+    "332": [
+     3.106869074664723,
+     3.2904483748115694
+    ]
+   },
+   "spanne_eps1": 0.07660008138513619,
+   "n_richtungen_eps1": 13,
+   "gegenprobe_dicht": {
+    "abw_rel_max": 1.634136603811953e-08,
+    "n_punkte": 26,
+    "richtungen": [
+     "100",
+     "110",
+     "111",
+     "210",
+     "211",
+     "221",
+     "310",
+     "311",
+     "320",
+     "321",
+     "322",
+     "331",
+     "332"
+    ],
+    "n_punkte_dicht": 26,
+    "wachsend": 0,
+    "A_red_nicht_pd": 0,
+    "B_red_neg": 0,
+    "n_masselos_2": 26,
+    "tt_anteil": [
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "affin": {
+    "min": 0.9999964404240529,
+    "max": 0.9999977728690923,
+    "spanne_max_min": 1.3324497822875259e-06
+   },
+   "wuerfel13": {
+    "n_werte": 26,
+    "n_punkte": 13,
+    "spanne_wuerfel13": 0.17977249168544884,
+    "spanne_26_richtungen_eps1": 0.17977249168544884,
+    "wachsend": 0,
+    "nicht_2_masselos": 0
+   },
+   "bz": {
+    "Lk": [
+     8
+    ],
+    "nk": 511,
+    "k_mit_wachsend": 0,
+    "k_A_red_nicht_pd": 0,
+    "k_B_red_neg": 0,
+    "k_rangverlust_Mc": 0,
+    "k_mit_unklar": 65,
+    "w2_min_rel": 0.0051912740447269375
+   }
+  },
+  "1/1 s6 z0": {
+   "ordnung": "1/1",
+   "saat": 6,
+   "zitter_versatz": 0,
+   "quellen": [
+    "n11.json"
+   ],
+   "n_richtungen_voll": 13,
+   "netz": {
+    "N": 32,
+    "T": 192,
+    "L": 2.752763840942347,
+    "eps_phason": 0.2360679774997897,
+    "ecken_sha": "61eafd05a1d76e8e6a838adca567ae1c1cd23ba607965fded3874a413327a2b9",
+    "tetraeder_sha": "6e1dfbad60423f5fe621f57bd770fbc771c9bb631898977a304f8bc26bdc1fcf",
+    "vol_min": 0.07837136697232973,
+    "vol_max": 0.12680753550602056,
+    "vol_rel_abw": 1.7031517427390115e-16,
+    "tetraeder_flach_1e-10": 0,
+    "delaunay_verletzt": 0,
+    "kugel_entartet_zusatzpunkte": 160,
+    "tetraeder_mit_gleichstand": 80,
+    "fenster_entartet_1e-5": 12
+   },
+   "dn2": {
+    "E_dn2": 224,
+    "E_tg": 224,
+    "T_dn2": 192,
+    "T_tg": 192,
+    "kantenmengen_gleich": true,
+    "s1_klasse_sha": "629fa1d0",
+    "s0_klasse_sha": "74e4992a",
+    "kugel_entartet_dn2": 160,
+    "euler": 0,
+    "flaechen_sonst": 0,
+    "komponenten": 1,
+    "ecken_gleich": true
+   },
+   "pruefung": {
+    "E": 224,
+    "T": 192,
+    "nV": 32,
+    "selbstkanten": 0,
+    "volumen_summe_rel_abw": 4.440892098500626e-16,
+    "vol_min_rel_mittel": 0.7213595499957935,
+    "dieder_summe_minus_2pi_max": 8.881784197001252e-16,
+    "dieder_min_grad": 35.99999999999998,
+    "dieder_max_grad": 110.90515744788932,
+    "D_sym_max": 8.033649276373055e-16,
+    "schlaefli_lD_max": 8.083703650212966e-16,
+    "l_min": 0.5627774222552395,
+    "l_max": 1.4510592024449191
+   },
+   "spanne": 0.16074225807608533,
+   "n_werte": 52,
+   "w_min": 2.920886216190769,
+   "w_max": 3.3903960621645863,
+   "w_mittel": 3.1678088593999,
+   "regel": {
+    "n_punkte": 26,
+    "genau_2_masselos_alle": true,
+    "zwei_positive_werte_alle": true,
+    "wachsend_summe": 0,
+    "unklar_summe": 0,
+    "A_red_pd_alle": true,
+    "A_red_geprueft": 0,
+    "B_red_neg_summe": 0,
+    "tt_anteil_min": 1.0,
+    "n_tt_werte": 6,
+    "linear_max": 2.3522037373435722e-07,
+    "luecke_min": null,
+    "w2im_max": 0.0,
+    "sv_rel_min": null,
+    "residuum_max": 3.3633627104643877e-10,
+    "nebenbedingung_max": 9.38625086806061e-16,
+    "wege": [
+     "duenn-ritz"
+    ],
+    "n_masselos_je_punkt": [
+     [
+      2,
+      26
+     ]
+    ],
+    "regulaer": true
+   },
+   "richtungsspanne_zweigmittel": 0.030000308477071913,
+   "aufspaltung_max": 0.15810994447180793,
+   "aufspaltung_max_richtung": "110",
+   "w2k2_eps1": {
+    "100": [
+     2.9224154332227372,
+     3.2941919356881137
+    ],
+    "110": [
+     2.927525213256745,
+     3.3903960621645863
+    ],
+    "111": [
+     3.136132171955776,
+     3.259022864277594
+    ],
+    "210": [
+     2.923713218116175,
+     3.3478177848718023
+    ],
+    "211": [
+     3.0527898104389486,
+     3.319468777394162
+    ],
+    "221": [
+     3.06106367806221,
+     3.331778040188841
+    ],
+    "310": [
+     2.920886738779839,
+     3.327480984543824
+    ],
+    "311": [
+     3.009087989792162,
+     3.317495321766048
+    ],
+    "320": [
+     2.926587677437297,
+     3.3653916626938436
+    ],
+    "321": [
+     3.016573421589632,
+     3.343884794251755
+    ],
+    "322": [
+     3.087637483618821,
+     3.306284781278829
+    ],
+    "331": [
+     3.0154502403365315,
+     3.3568544463969263
+    ],
+    "332": [
+     3.098087306360718,
+     3.3050202012982965
+    ]
+   },
+   "spanne_eps1": 0.16074205040243306,
+   "n_richtungen_eps1": 13,
+   "gegenprobe_dicht": {
+    "abw_rel_max": 2.1975620434488974e-08,
+    "n_punkte": 26,
+    "richtungen": [
+     "100",
+     "110",
+     "111",
+     "210",
+     "211",
+     "221",
+     "310",
+     "311",
+     "320",
+     "321",
+     "322",
+     "331",
+     "332"
+    ],
+    "n_punkte_dicht": 26,
+    "wachsend": 0,
+    "A_red_nicht_pd": 0,
+    "B_red_neg": 0,
+    "n_masselos_2": 26,
+    "tt_anteil": [
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "affin": {
+    "min": 0.9999963323792813,
+    "max": 0.999997951158152,
+    "spanne_max_min": 1.6187848077553468e-06
+   },
+   "wuerfel13": {
+    "n_werte": 26,
+    "n_punkte": 13,
+    "spanne_wuerfel13": 0.2168800498366259,
+    "spanne_26_richtungen_eps1": 0.2168800498366259,
+    "wachsend": 0,
+    "nicht_2_masselos": 0
+   },
+   "bz": {
+    "Lk": [
+     8
+    ],
+    "nk": 511,
+    "k_mit_wachsend": 0,
+    "k_A_red_nicht_pd": 0,
+    "k_B_red_neg": 0,
+    "k_rangverlust_Mc": 0,
+    "k_mit_unklar": 65,
+    "w2_min_rel": 0.0049372324996274355
+   }
+  },
+  "1/1 s7 z0": {
+   "ordnung": "1/1",
+   "saat": 7,
+   "zitter_versatz": 0,
+   "quellen": [
+    "n11.json"
+   ],
+   "n_richtungen_voll": 13,
+   "netz": {
+    "N": 32,
+    "T": 192,
+    "L": 2.752763840942347,
+    "eps_phason": 0.2360679774997897,
+    "ecken_sha": "214af7538a15d0ea18786cbbf0a1c1d23321534941987fffe75f3e5ffd01db34",
+    "tetraeder_sha": "69de3a175629a9ec8c6719b957b254d64adc4203df568f80828b6945a169d607",
+    "vol_min": 0.07837136697232973,
+    "vol_max": 0.12680753550602056,
+    "vol_rel_abw": 1.7031517427390115e-16,
+    "tetraeder_flach_1e-10": 0,
+    "delaunay_verletzt": 0,
+    "kugel_entartet_zusatzpunkte": 160,
+    "tetraeder_mit_gleichstand": 80,
+    "fenster_entartet_1e-5": 12
+   },
+   "dn2": {
+    "E_dn2": 224,
+    "E_tg": 224,
+    "T_dn2": 192,
+    "T_tg": 192,
+    "kantenmengen_gleich": true,
+    "s1_klasse_sha": "629fa1d0",
+    "s0_klasse_sha": "74e4992a",
+    "kugel_entartet_dn2": 160,
+    "euler": 0,
+    "flaechen_sonst": 0,
+    "komponenten": 1,
+    "ecken_gleich": true
+   },
+   "pruefung": {
+    "E": 224,
+    "T": 192,
+    "nV": 32,
+    "selbstkanten": 0,
+    "volumen_summe_rel_abw": 4.440892098500626e-16,
+    "vol_min_rel_mittel": 0.7213595499957935,
+    "dieder_summe_minus_2pi_max": 1.7763568394002505e-15,
+    "dieder_min_grad": 35.99999999999998,
+    "dieder_max_grad": 110.90515744788932,
+    "D_sym_max": 8.033649276373052e-16,
+    "schlaefli_lD_max": 8.083703650212966e-16,
+    "l_min": 0.5627774222552395,
+    "l_max": 1.4510592024449191
+   },
+   "spanne": 0.13647675122609937,
+   "n_werte": 52,
+   "w_min": 2.9130192706503566,
+   "w_max": 3.3105786769677388,
+   "w_mittel": 3.15858825226074,
+   "regel": {
+    "n_punkte": 26,
+    "genau_2_masselos_alle": true,
+    "zwei_positive_werte_alle": true,
+    "wachsend_summe": 0,
+    "unklar_summe": 0,
+    "A_red_pd_alle": true,
+    "A_red_geprueft": 0,
+    "B_red_neg_summe": 0,
+    "tt_anteil_min": 1.0,
+    "n_tt_werte": 6,
+    "linear_max": 2.398261391700629e-07,
+    "luecke_min": null,
+    "w2im_max": 0.0,
+    "sv_rel_min": null,
+    "residuum_max": 2.737863483157362e-10,
+    "nebenbedingung_max": 7.539868068544326e-16,
+    "wege": [
+     "duenn-ritz"
+    ],
+    "n_masselos_je_punkt": [
+     [
+      2,
+      26
+     ]
+    ],
+    "regulaer": true
+   },
+   "richtungsspanne_zweigmittel": 0.041818961905486285,
+   "aufspaltung_max": 0.11243312087423729,
+   "aufspaltung_max_richtung": "100",
+   "w2k2_eps1": {
+    "100": [
+     2.9130197346272966,
+     3.2405396345596857
+    ],
+    "110": [
+     3.022798967218152,
+     3.3105786769677388
+    ],
+    "111": [
+     3.1948453289308265,
+     3.216049505099335
+    ],
+    "210": [
+     3.0133212617132767,
+     3.2594186665604306
+    ],
+    "211": [
+     3.058973113089044,
+     3.273445278739201
+    ],
+    "221": [
+     3.081249103379822,
+     3.290241389162352
+    ],
+    "310": [
+     2.9816092205366234,
+     3.2457564467633038
+    ],
+    "311": [
+     2.9919842585430287,
+     3.270932557724726
+    ],
+    "320": [
+     3.0284851469171725,
+     3.2772017738864805
+    ],
+    "321": [
+     3.0464373333645565,
+     3.2864227404158117
+    ],
+    "322": [
+     3.121238712995433,
+     3.256258195944608
+    ],
+    "331": [
+     3.047009508109095,
+     3.3069480660761794
+    ],
+    "332": [
+     3.1220712081071604,
+     3.2664664604334557
+    ]
+   },
+   "spanne_eps1": 0.13647657021153248,
+   "n_richtungen_eps1": 13,
+   "gegenprobe_dicht": {
+    "abw_rel_max": 2.528290510284137e-08,
+    "n_punkte": 26,
+    "richtungen": [
+     "100",
+     "110",
+     "111",
+     "210",
+     "211",
+     "221",
+     "310",
+     "311",
+     "320",
+     "321",
+     "322",
+     "331",
+     "332"
+    ],
+    "n_punkte_dicht": 26,
+    "wachsend": 0,
+    "A_red_nicht_pd": 0,
+    "B_red_neg": 0,
+    "n_masselos_2": 26,
+    "tt_anteil": [
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "affin": {
+    "min": 0.9999962036318049,
+    "max": 0.9999979637087338,
+    "spanne_max_min": 1.7600836108577766e-06
+   },
+   "wuerfel13": {
+    "n_werte": 26,
+    "n_punkte": 13,
+    "spanne_wuerfel13": 0.19574012363921756,
+    "spanne_26_richtungen_eps1": 0.19574012363921756,
+    "wachsend": 0,
+    "nicht_2_masselos": 0
+   },
+   "bz": {
+    "Lk": [
+     8
+    ],
+    "nk": 511,
+    "k_mit_wachsend": 0,
+    "k_A_red_nicht_pd": 0,
+    "k_B_red_neg": 0,
+    "k_rangverlust_Mc": 0,
+    "k_mit_unklar": 65,
+    "w2_min_rel": 0.005064618675367723
+   }
+  }
+ },
+ "kontrolle": {
+  "V": {
+   "spanne": 0.06338809672057155,
+   "n_werte": 52,
+   "w_min": 0.11888966894947556,
+   "w_max": 0.12642585878392165,
+   "w_mittel": 0.12178969557771163,
+   "regel": {
+    "n_punkte": 26,
+    "genau_2_masselos_alle": true,
+    "zwei_positive_werte_alle": true,
+    "wachsend_summe": 0,
+    "unklar_summe": 0,
+    "A_red_pd_alle": true,
+    "A_red_geprueft": 0,
+    "B_red_neg_summe": 0,
+    "tt_anteil_min": 1.0,
+    "n_tt_werte": 6,
+    "linear_max": 3.621757382887836e-08,
+    "luecke_min": null,
+    "w2im_max": 0.0,
+    "sv_rel_min": null,
+    "residuum_max": 5.6927740603495515e-09,
+    "nebenbedingung_max": 1.011279832365635e-15,
+    "wege": [
+     "duenn-ritz"
+    ],
+    "n_masselos_je_punkt": [
+     [
+      2,
+      26
+     ]
+    ],
+    "regulaer": true
+   },
+   "richtungsspanne_zweigmittel": 0.01034606761686252,
+   "aufspaltung_max": 0.06338805820723481,
+   "aufspaltung_max_richtung": "100",
+   "w2k2_eps1": {
+    "100": [
+     0.11888967325537107,
+     0.12642585878392165
+    ],
+    "110": [
+     0.11888967403187149,
+     0.1243526898816566
+    ],
+    "111": [
+     0.12140173525540338,
+     0.12140173565622871
+    ],
+    "210": [
+     0.11888967366984297,
+     0.12514602016984358
+    ],
+    "211": [
+     0.11949667589204181,
+     0.12391379648042776
+    ],
+    "221": [
+     0.1197270281527052,
+     0.12328753825136637
+    ],
+    "310": [
+     0.11888967356882087,
+     0.1257249520334091
+    ],
+    "311": [
+     0.11906389509146106,
+     0.12505564276550027
+    ],
+    "320": [
+     0.11888967342316399,
+     0.12468576051325664
+    ],
+    "321": [
+     0.11930808285232677,
+     0.12405337769043379
+    ],
+    "322": [
+     0.1201264513107622,
+     0.12287941831036625
+    ],
+    "331": [
+     0.11928631495640381,
+     0.12384062792094216
+    ],
+    "332": [
+     0.12025988918729248,
+     0.12264626465880916
+    ]
+   },
+   "dicht": {
+    "spanne": 0.0633880750020046,
+    "w_min": 0.11888966907430171,
+    "w_max": 0.12642585633454706,
+    "regel": {
+     "n_punkte": 26,
+     "genau_2_masselos_alle": true,
+     "zwei_positive_werte_alle": true,
+     "wachsend_summe": 0,
+     "unklar_summe": 0,
+     "A_red_pd_alle": true,
+     "A_red_geprueft": 26,
+     "B_red_neg_summe": 0,
+     "tt_anteil_min": 0.9999999999999999,
+     "n_tt_werte": 6,
+     "linear_max": 1.1055631066181348e-07,
+     "luecke_min": 3.42730058164439,
+     "w2im_max": 0.0,
+     "sv_rel_min": 6.246159377207392e-09,
+     "residuum_max": null,
+     "nebenbedingung_max": null,
+     "wege": [
+      "qr"
+     ],
+     "n_masselos_je_punkt": [
+      [
+       2,
+       26
+      ]
+     ],
+     "regulaer": true
+    }
+   },
+   "vergleich_duenn_dicht": {
+    "abw_rel_max": 8.381230498510917e-08,
+    "n_punkte": 26
+   },
+   "affin": {
+    "min": 0.9999995312915408,
+    "max": 0.999999750657728,
+    "spanne_max_min": 2.193662900218385e-07
+   }
+  },
+  "A15": {
+   "spanne": 0.009338671859274283,
+   "n_werte": 52,
+   "w_min": 0.614810981442616,
+   "w_max": 0.620552499453787,
+   "w_mittel": 0.6170949897287267,
+   "regel": {
+    "n_punkte": 26,
+    "genau_2_masselos_alle": true,
+    "zwei_positive_werte_alle": true,
+    "wachsend_summe": 0,
+    "unklar_summe": 0,
+    "A_red_pd_alle": true,
+    "A_red_geprueft": 0,
+    "B_red_neg_summe": 0,
+    "tt_anteil_min": 1.0,
+    "n_tt_werte": 6,
+    "linear_max": 7.043479943735775e-08,
+    "luecke_min": null,
+    "w2im_max": 0.0,
+    "sv_rel_min": null,
+    "residuum_max": 1.1621415001360421e-08,
+    "nebenbedingung_max": 9.738199457460787e-16,
+    "wege": [
+     "duenn-ritz"
+    ],
+    "n_masselos_je_punkt": [
+     [
+      2,
+      26
+     ]
+    ],
+    "regulaer": true
+   },
+   "richtungsspanne_zweigmittel": 0.00155160255691289,
+   "aufspaltung_max": 0.009338603326518813,
+   "aufspaltung_max_richtung": "100",
+   "w2k2_eps1": {
+    "100": [
+     0.614811023187468,
+     0.620552499453787
+    ],
+    "110": [
+     0.6148110213629485,
+     0.6194539154368852
+    ],
+    "111": [
+     0.6167248491058729,
+     0.616724849828692
+    ],
+    "210": [
+     0.6148110222112675,
+     0.6197791427741878
+    ],
+    "211": [
+     0.6153268999482838,
+     0.6186386752788617
+    ],
+    "221": [
+     0.6154489646928841,
+     0.6183286205016677
+    ],
+    "310": [
+     0.6148110224509046,
+     0.6200836870508362
+    ],
+    "311": [
+     0.6149782237044805,
+     0.6195085951569883
+    ],
+    "320": [
+     0.6148110219104335,
+     0.6195791793132351
+    ],
+    "321": [
+     0.6151531663704439,
+     0.6188996852455254
+    ],
+    "322": [
+     0.615789657809455,
+     0.6178506290809125
+    ],
+    "331": [
+     0.6151132048769254,
+     0.6188872318691295
+    ],
+    "332": [
+     0.6158549279949446,
+     0.6177385184727764
+    ]
+   },
+   "dicht": {
+    "spanne": 0.009338681518611835,
+    "w_min": 0.6148109801818011,
+    "w_max": 0.6205525041198645,
+    "regel": {
+     "n_punkte": 26,
+     "genau_2_masselos_alle": true,
+     "zwei_positive_werte_alle": true,
+     "wachsend_summe": 0,
+     "unklar_summe": 0,
+     "A_red_pd_alle": true,
+     "A_red_geprueft": 26,
+     "B_red_neg_summe": 0,
+     "tt_anteil_min": 1.0,
+     "n_tt_werte": 6,
+     "linear_max": 8.500222492546783e-08,
+     "luecke_min": 5.333333965660356,
+     "w2im_max": 0.0,
+     "sv_rel_min": 3.35376245696111e-08,
+     "residuum_max": null,
+     "nebenbedingung_max": null,
+     "wege": [
+      "qr"
+     ],
+     "n_masselos_je_punkt": [
+      [
+       2,
+       26
+      ]
+     ],
+     "regulaer": true
+    }
+   },
+   "vergleich_duenn_dicht": {
+    "abw_rel_max": 2.3061353049413924e-08,
+    "n_punkte": 26
+   },
+   "affin": {
+    "min": 0.9999988952600036,
+    "max": 0.9999991355776194,
+    "spanne_max_min": 2.403178813725759e-07
+   }
+  },
+  "C15": {
+   "spanne": 0.026847162549924253,
+   "n_werte": 52,
+   "w_min": 0.2113033021747819,
+   "w_max": 0.21697619627560402,
+   "w_mittel": 0.21477598506607018,
+   "regel": {
+    "n_punkte": 26,
+    "genau_2_masselos_alle": true,
+    "zwei_positive_werte_alle": true,
+    "wachsend_summe": 0,
+    "unklar_summe": 0,
+    "A_red_pd_alle": true,
+    "A_red_geprueft": 0,
+    "B_red_neg_summe": 0,
+    "tt_anteil_min": 1.0,
+    "n_tt_werte": 6,
+    "linear_max": 3.9472253465788754e-08,
+    "luecke_min": null,
+    "w2im_max": 0.0,
+    "sv_rel_min": null,
+    "residuum_max": 2.0467148238033887e-09,
+    "nebenbedingung_max": 1.8586113559950267e-15,
+    "wege": [
+     "duenn-ritz"
+    ],
+    "n_masselos_je_punkt": [
+     [
+      2,
+      26
+     ]
+    ],
+    "regulaer": true
+   },
+   "richtungsspanne_zweigmittel": 0.004415249712307112,
+   "aufspaltung_max": 0.02684712287090596,
+   "aufspaltung_max_richtung": "100",
+   "w2k2_eps1": {
+    "100": [
+     0.21130331013020007,
+     0.2169761960602947
+    ],
+    "110": [
+     0.21275186609673613,
+     0.21697619627560402
+    ],
+    "111": [
+     0.21508523337604304,
+     0.21508523378094635
+    ],
+    "210": [
+     0.2122233267336708,
+     0.21697619612941152
+    ],
+    "211": [
+     0.21319427224642126,
+     0.21650682611130978
+    ],
+    "221": [
+     0.21362516881841276,
+     0.21634587566675564
+    ],
+    "310": [
+     0.2118177618961417,
+     0.21697619614029515
+    ],
+    "311": [
+     0.21233474382379167,
+     0.2168376551809395
+    ],
+    "320": [
+     0.21253370735442845,
+     0.21697619619575526
+    ],
+    "321": [
+     0.21305334441639673,
+     0.21665561455927834
+    ],
+    "322": [
+     0.2139729033812094,
+     0.21603631891734684
+    ],
+    "331": [
+     0.21317694083270985,
+     0.21667762313525452
+    ],
+    "332": [
+     0.21413224444522827,
+     0.21594476244045768
+    ]
+   },
+   "dicht": {
+    "spanne": 0.02684718450960677,
+    "w_min": 0.2113033014790053,
+    "w_max": 0.21697620020130123,
+    "regel": {
+     "n_punkte": 26,
+     "genau_2_masselos_alle": true,
+     "zwei_positive_werte_alle": true,
+     "wachsend_summe": 0,
+     "unklar_summe": 0,
+     "A_red_pd_alle": true,
+     "A_red_geprueft": 26,
+     "B_red_neg_summe": 0,
+     "tt_anteil_min": 1.0,
+     "n_tt_werte": 6,
+     "linear_max": 7.820682390580203e-08,
+     "luecke_min": 5.24002266408222,
+     "w2im_max": 0.0,
+     "sv_rel_min": 1.1993992914773256e-08,
+     "residuum_max": null,
+     "nebenbedingung_max": null,
+     "wege": [
+      "qr"
+     ],
+     "n_masselos_je_punkt": [
+      [
+       2,
+       26
+      ]
+     ],
+     "regulaer": true
+    }
+   },
+   "vergleich_duenn_dicht": {
+    "abw_rel_max": 5.765390342915566e-08,
+    "n_punkte": 26
+   },
+   "affin": {
+    "min": 0.9999995124415363,
+    "max": 0.9999995470752568,
+    "spanne_max_min": 3.463373743350928e-08
+   }
+  }
+ },
+ "stufen": {
+  "1/1": {
+   "saaten": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "spannen": [
+    0.09007439460102251,
+    0.15351724671295175,
+    0.07955694232981547,
+    0.19447516087844252,
+    0.08484656197263019,
+    0.07660028209697245,
+    0.16074225807608533,
+    0.13647675122609937
+   ],
+   "mittel": 0.12203619973675245,
+   "sd": 0.04506928627230356,
+   "min": 0.07660028209697245,
+   "max": 0.19447516087844252,
+   "eps_phason": 0.2360679774997897,
+   "alle_regulaer": true
+  },
+  "2/1": {
+   "saaten": [],
+   "spannen": [],
+   "mittel": null,
+   "sd": null,
+   "min": null,
+   "max": null,
+   "eps_phason": null,
+   "alle_regulaer": null
+  },
+  "3/2": {
+   "saaten": [],
+   "spannen": [],
+   "mittel": null,
+   "sd": null,
+   "min": null,
+   "max": null,
+   "eps_phason": null,
+   "alle_regulaer": null
+  }
+ },
+ "zitter_kontrolle": {
+  "1/1 s0 z1": {
+   "spanne_z0": 0.09007439460102251,
+   "spanne_zv": 0.13127440478192898,
+   "spanne_eps1_z0": 0.09007416155976689,
+   "spanne_eps1_zv": 0.13127419840032917,
+   "spanne_eps1_abw": 0.04120003684056228,
+   "w_rel_abw_max": 0.032828200310580424,
+   "tetraeder_gleich": false,
+   "ecken_gleich": true
+  }
+ },
+ "urteile": {
+  "DT0": {
+   "s_V": 0.06338809672057155,
+   "abw_rel_gegen_ttiso": 1.7225742388049525e-08,
+   "abw_rel_gegen_6_34": 0.00018774888688399827,
+   "V_regulaer": true,
+   "plan": "eingetroffen",
+   "karte": "eingetroffen"
+  },
+  "DT1": {
+   "plan": "nicht entscheidbar",
+   "karte": "nicht entscheidbar"
+  },
+  "DT2": {
+   "je_ordnung": {
+    "1/1": {
+     "netze": 9,
+     "k_punkte": 4950,
+     "wachsend": 0,
+     "A_red_nicht_pd": 0,
+     "B_red_neg": 0,
+     "k_voll_geprueft_dicht": 4833,
+     "bz_k": 4599
+    },
+    "2/1": {
+     "netze": 0,
+     "k_punkte": 0,
+     "wachsend": 0,
+     "A_red_nicht_pd": 0,
+     "B_red_neg": 0,
+     "k_voll_geprueft_dicht": 0,
+     "bz_k": 0
+    },
+    "3/2": {
+     "netze": 0,
+     "k_punkte": 0,
+     "wachsend": 0,
+     "A_red_nicht_pd": 0,
+     "B_red_neg": 0,
+     "k_voll_geprueft_dicht": 0,
+     "bz_k": 0
+    }
+   },
+   "plan": "nicht entscheidbar",
+   "karte": "nicht entscheidbar"
+  },
+  "DT3": {
+   "plan": "nicht entscheidbar",
+   "karte": "nicht entscheidbar"
+  }
+ },
+ "verhaeltnisse": {}
+}

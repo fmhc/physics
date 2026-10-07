@@ -1,0 +1,333 @@
+{
+ "kopf": {
+  "code_sha256": "5cc0215c80d95778a019001d62bee00b21aed2f759310c99d1a34732ea1f2d16",
+  "lauf": "/home/fmh/fmhc-physics-remote/guertel-feld-stab-1/lauf",
+  "n1": "/home/fmh/fmhc-physics-remote/guertel-feld-stab-1/eingaben-n1/feld-3d-r12-R24-prot-saat.json",
+  "zeit_utc": "2026-10-04T17:17:53Z"
+ },
+ "regeln": {
+  "TOL_GS0": 1e-06,
+  "RHO_UM": 0.1,
+  "RHO_AST": 0.9,
+  "WORT_BAND": 0.1
+ },
+ "GS0": {
+  "plan": "eingetroffen",
+  "wort": "eingetroffen",
+  "werte": [
+   {
+    "art": "schritt",
+    "theta": 420.0,
+    "E_N1": 14642.446583942661,
+    "E_neu": 14642.446583942661,
+    "rel": 0.0,
+    "sonde_N1": 0.6122034390630755,
+    "sonde_neu": 0.6122034390630755
+   },
+   {
+    "art": "schritt",
+    "theta": 450.0,
+    "E_N1": 16725.58389579176,
+    "E_neu": 16725.58389579176,
+    "rel": 0.0,
+    "sonde_N1": 0.5206939874334648,
+    "sonde_neu": 0.5206939874334648
+   },
+   {
+    "art": "gitter",
+    "theta": 450.0,
+    "E_N1": 16722.374712425655,
+    "E_neu": 16722.374712425655,
+    "rel": 0.0,
+    "sonde_N1": 0.48880413545523804,
+    "sonde_neu": 0.48880413545523804
+   }
+  ]
+ },
+ "referenz": {
+  "300": {
+   "theta": 300,
+   "E_vor": 7585.207714323934,
+   "E_end": 7584.648643176872,
+   "sonde_lauf": 0.8324669794074671,
+   "fmax_end": 9.435519835079805e-06,
+   "schritte": 118,
+   "qz_mittel_aussen_end": 0.4270128553184871
+  },
+  "270": {
+   "theta": 270,
+   "E_vor": 6161.057699788991,
+   "E_end": 6161.057699788991,
+   "sonde_lauf": 0.8689116228065685,
+   "fmax_end": 9.995036944747019e-06,
+   "schritte": 0,
+   "qz_mittel_aussen_end": 0.3931207806101713
+  }
+ },
+ "stoesse": [
+  {
+   "theta": 420.0,
+   "eps": 0.01,
+   "klasse_plan": "umgekehrt",
+   "klasse_wort": "umgekehrt",
+   "rho": -1.9117976470574296e-11,
+   "E_vor": 14642.446583942661,
+   "E_nach_stoss": 14642.823245563086,
+   "E_end": 7584.648643041941,
+   "E_ref": 7584.648643176872,
+   "E_end_durch_E_ref": 0.99999999998221,
+   "E_min_lauf": 7584.648643041941,
+   "sonde_nach_stoss": 0.6121778019213467,
+   "sonde_end": 0.8329755982052467,
+   "sonde_lauf": 0.5949055172428872,
+   "erster_sprung_schritt": null,
+   "fmax_end": 8.840165013324292e-06,
+   "schritte": 387,
+   "kipp_P0": 0.42492985311782067,
+   "kipp_Pend": 0.0024000792758133074,
+   "kipp_Pmax": 146.22968667761546,
+   "kipp_Pmax_schritt": 220,
+   "qz_mittel_aussen_vor": 0.5398773919460736,
+   "qz_mittel_aussen_end": -0.42701817734861425,
+   "q0_min_frei_end": -0.7569136726082388,
+   "E_bei": {
+    "0": 14642.823245563086,
+    "250": 7730.687431331438
+   }
+  },
+  {
+   "theta": 420.0,
+   "eps": 0.1,
+   "klasse_plan": "umgekehrt",
+   "klasse_wort": "umgekehrt",
+   "rho": -6.710595562779247e-11,
+   "E_vor": 14642.446583942661,
+   "E_nach_stoss": 14680.033268144949,
+   "E_end": 7584.648642703251,
+   "E_ref": 7584.648643176872,
+   "E_end_durch_E_ref": 0.9999999999375554,
+   "E_min_lauf": 7584.648642703251,
+   "sonde_nach_stoss": 0.6096051262071578,
+   "sonde_end": 0.832975068001562,
+   "sonde_lauf": 0.5934818516891143,
+   "erster_sprung_schritt": null,
+   "fmax_end": 9.446480680306611e-06,
+   "schritte": 332,
+   "kipp_P0": 4.240540920671218,
+   "kipp_Pend": 0.0005468921460832364,
+   "kipp_Pmax": 145.58156409805244,
+   "kipp_Pmax_schritt": 167,
+   "qz_mittel_aussen_vor": 0.5398773919460736,
+   "qz_mittel_aussen_end": -0.42701710656892705,
+   "q0_min_frei_end": -0.7569131764842315,
+   "E_bei": {
+    "0": 14680.033268144949,
+    "250": 7584.666161151399
+   }
+  },
+  {
+   "theta": 420.0,
+   "eps": 0.3,
+   "klasse_plan": "umgekehrt",
+   "klasse_wort": "umgekehrt",
+   "rho": 2.1212322584638667e-10,
+   "E_vor": 14642.446583942661,
+   "E_nach_stoss": 14978.377419917095,
+   "E_end": 7584.648644673995,
+   "E_ref": 7584.648643176872,
+   "E_end_durch_E_ref": 1.0000000001973885,
+   "E_min_lauf": 7584.648644673995,
+   "sonde_nach_stoss": 0.5889000838135579,
+   "sonde_end": 0.832978006577308,
+   "sonde_lauf": 0.5889000838135579,
+   "erster_sprung_schritt": null,
+   "fmax_end": 9.814631008463803e-06,
+   "schritte": 354,
+   "kipp_P0": 12.592317305220837,
+   "kipp_Pend": 0.005189059409755844,
+   "kipp_Pmax": 144.91695359357243,
+   "kipp_Pmax_schritt": 149,
+   "qz_mittel_aussen_vor": 0.5398773919460736,
+   "qz_mittel_aussen_end": -0.42701750685070367,
+   "q0_min_frei_end": -0.7569140031848509,
+   "E_bei": {
+    "0": 14978.377419917095,
+    "250": 7584.679137970501
+   }
+  },
+  {
+   "theta": 450.0,
+   "eps": 0.01,
+   "klasse_plan": "umgekehrt",
+   "klasse_wort": "umgekehrt",
+   "rho": 3.921190103561682e-12,
+   "E_vor": 16722.374712425655,
+   "E_nach_stoss": 16722.7503417673,
+   "E_end": 6161.057699830404,
+   "E_ref": 6161.057699788991,
+   "E_end_durch_E_ref": 1.0000000000067217,
+   "E_min_lauf": 6161.057699830404,
+   "sonde_nach_stoss": 0.48878055116652136,
+   "sonde_end": 0.8689118260102608,
+   "sonde_lauf": 0.4887794505407298,
+   "erster_sprung_schritt": null,
+   "fmax_end": 9.788675061250453e-06,
+   "schritte": 424,
+   "kipp_P0": 0.4043005664396461,
+   "kipp_Pend": 0.0006325643269794924,
+   "kipp_Pmax": 139.62925371005565,
+   "kipp_Pmax_schritt": 201,
+   "qz_mittel_aussen_vor": 0.5533118331714771,
+   "qz_mittel_aussen_end": -0.3931198079339032,
+   "q0_min_frei_end": -0.5781998334072037,
+   "E_bei": {
+    "0": 16722.7503417673,
+    "250": 6217.65832774021
+   }
+  },
+  {
+   "theta": 450.0,
+   "eps": 0.1,
+   "klasse_plan": "umgekehrt",
+   "klasse_wort": "umgekehrt",
+   "rho": 5.877737719692956e-12,
+   "E_vor": 16722.374712425655,
+   "E_nach_stoss": 16759.31197340077,
+   "E_end": 6161.057699851068,
+   "E_ref": 6161.057699788991,
+   "E_end_durch_E_ref": 1.0000000000100757,
+   "E_min_lauf": 6161.057699851068,
+   "sonde_nach_stoss": 0.48635704628447546,
+   "sonde_end": 0.868914107500615,
+   "sonde_lauf": 0.48627669034070814,
+   "erster_sprung_schritt": null,
+   "fmax_end": 6.660815349373402e-06,
+   "schritte": 320,
+   "kipp_P0": 4.249716988051939,
+   "kipp_Pend": 0.0004968674394860267,
+   "kipp_Pmax": 143.47073993691626,
+   "kipp_Pmax_schritt": 139,
+   "qz_mittel_aussen_vor": 0.5533118331714771,
+   "qz_mittel_aussen_end": -0.39312165760968326,
+   "q0_min_frei_end": -0.5781999464289158,
+   "E_bei": {
+    "0": 16759.31197340077,
+    "250": 6161.061440654203
+   }
+  },
+  {
+   "theta": 450.0,
+   "eps": 0.3,
+   "klasse_plan": "umgekehrt",
+   "klasse_wort": "umgekehrt",
+   "rho": -2.0667756508428947e-15,
+   "E_vor": 16722.374712425655,
+   "E_nach_stoss": 17052.097887613112,
+   "E_end": 6161.057699788969,
+   "E_ref": 6161.057699788991,
+   "E_end_durch_E_ref": 0.9999999999999964,
+   "E_min_lauf": 6161.057699788969,
+   "sonde_nach_stoss": 0.46682568543426634,
+   "sonde_end": 0.8689113939035099,
+   "sonde_lauf": 0.4659581439852914,
+   "erster_sprung_schritt": null,
+   "fmax_end": 9.644199901920058e-06,
+   "schritte": 292,
+   "kipp_P0": 12.711488497279626,
+   "kipp_Pend": 0.0002495779551865665,
+   "kipp_Pmax": 143.07933047463146,
+   "kipp_Pmax_schritt": 118,
+   "qz_mittel_aussen_vor": 0.5533118331714771,
+   "qz_mittel_aussen_end": -0.3931200021022019,
+   "q0_min_frei_end": -0.5781996042533417,
+   "E_bei": {
+    "0": 17052.097887613112,
+    "250": 6161.05799245818
+   }
+  }
+ ],
+ "GS1": {
+  "plan": "eingetroffen",
+  "wort": "eingetroffen",
+  "klassen_plan": [
+   "umgekehrt",
+   "umgekehrt",
+   "umgekehrt",
+   "umgekehrt",
+   "umgekehrt",
+   "umgekehrt"
+  ],
+  "klassen_wort": [
+   "umgekehrt",
+   "umgekehrt",
+   "umgekehrt",
+   "umgekehrt",
+   "umgekehrt",
+   "umgekehrt"
+  ]
+ },
+ "kontrolle_ohne_stoss_beschreibend": [
+  {
+   "theta": 420.0,
+   "eps": 0.0,
+   "klasse_plan": "umgekehrt",
+   "klasse_wort": "umgekehrt",
+   "rho": -5.0041166171775263e-11,
+   "E_vor": 14642.446583942661,
+   "E_nach_stoss": 14642.446583942661,
+   "E_end": 7584.648642823691,
+   "E_ref": 7584.648643176872,
+   "E_end_durch_E_ref": 0.9999999999534348,
+   "E_min_lauf": 7584.648642823691,
+   "sonde_nach_stoss": 0.6122034390630755,
+   "sonde_end": 0.8329746070265263,
+   "sonde_lauf": 0.5946430898139595,
+   "erster_sprung_schritt": null,
+   "fmax_end": 6.926858314683483e-06,
+   "schritte": 594,
+   "kipp_P0": 0.02523421401202744,
+   "kipp_Pend": 0.000912756229986668,
+   "kipp_Pmax": 146.33480402421347,
+   "kipp_Pmax_schritt": 365,
+   "qz_mittel_aussen_vor": 0.5398773919460736,
+   "qz_mittel_aussen_end": -0.42701520742717314,
+   "q0_min_frei_end": -0.7569130198350283,
+   "E_bei": {
+    "0": 14642.446583942661,
+    "250": 14640.434118921828,
+    "500": 7584.650629373917
+   }
+  },
+  {
+   "theta": 450.0,
+   "eps": 0.0,
+   "klasse_plan": "umgekehrt",
+   "klasse_wort": "umgekehrt",
+   "rho": 3.3616105960959682e-12,
+   "E_vor": 16722.374712425655,
+   "E_nach_stoss": 16722.374712425655,
+   "E_end": 6161.057699824494,
+   "E_ref": 6161.057699788991,
+   "E_end_durch_E_ref": 1.0000000000057625,
+   "E_min_lauf": 6161.057699824494,
+   "sonde_nach_stoss": 0.48880413545523804,
+   "sonde_end": 0.8689111952322188,
+   "sonde_lauf": 0.48880022264880935,
+   "erster_sprung_schritt": null,
+   "fmax_end": 8.422958221766897e-06,
+   "schritte": 384,
+   "kipp_P0": 0.14469915029529712,
+   "kipp_Pend": 0.0002135441912840926,
+   "kipp_Pmax": 141.81084798600978,
+   "kipp_Pmax_schritt": 174,
+   "qz_mittel_aussen_vor": 0.5533118331714771,
+   "qz_mittel_aussen_end": -0.39311897546537256,
+   "q0_min_frei_end": -0.5781997744956899,
+   "E_bei": {
+    "0": 16722.374712425655,
+    "250": 6161.777077334707
+   }
+  }
+ ],
+ "bild": "/home/fmh/fmhc-physics-remote/guertel-feld-stab-1/lauf/energie-verlauf.png"
+}

@@ -1,0 +1,146 @@
+M_E–G3: NICHTAUTOR-LEKTÜRE NORMIERUNG UND B4
+particle_core, 2026-10-02. Nur lokale Primärtext-/Berichtslektüre.
+Keine Rechnung, kein Interpreter/Test/Build, keine Autorenedits.
+
+GELESENE STELLEN UND BINDUNG
+C = RUNDE-13/spin2-d4/quellen/2201.06602.txt
+SHA256 f56c588bb7225c67a4d02fd2eba3b77e17653265bb69d8e3a9c14e2252b4ab42
+F = RUNDE-13/spin2-d4-2/quellen/2603.15755v2.txt
+SHA256 0cdd2fc79f6244ea787775bbe7afd72a161b5881554d0c68cf79b85d37766918
+Alle unten angegebenen Zeilen sind die lokalen TXT-Zeilennummern;
+Gleichungsnummern und gedruckte Seiten erlauben den Primärabgleich.
+ERGEBNIS.md gelesen, SHA256
+341f490bd81bfd3cf654a59c3e288f28bb3fd07ab1b69ddcc49bee9b5bc21680;
+ARBEITSFELD.md gelesen, SHA256
+e5d1bb99e6d3c9f5d0371442a25d7111f60a0ea250f1c385978fb5e4a89f962e.
+Keine eigene erneute PDF-Bildprüfung und keine Online-Literatursuche.
+
+KURZURTEIL
+HÄLT: Faktor2 im Dreipunkt-Wörterbuch, M_Pl^-2=8piG und die entsprechende
+Betragsquadrat-Normierung. CHLPSD erlaubt ausdrücklich komplexes ĝ3.
+UNKLAR ALS EXPLIZITE QUELLENAUSSAGE: FRS legt g3 an den gefundenen
+Definitions-/Verwendungsstellen nicht ausdrücklich als reell oder komplex
+fest. Die Schreibweise g3² ist gedruckt; die Umdeutung zu |g3|² ist eine
+eigene hermitesche Verallgemeinerung, kein wörtlicher FRS-Befund.
+HÄLT ENG: F.7 verhindert ein unbegründetes Einsetzen des naiven exakten
+Vorwärtslimits bzw. dessen Ableitung in die benutzte Schleifenentwicklung.
+HÄLT NICHT ALS ALLGEMEINER SATZ: Aus F.7 folgt kein globales Verbot jedes
+B4-Funktionals, jeder Subtraktion oder jeder kontrollierten Grenzprozedur.
+
+1. CHLPSD ↔ FRS: WAS DIREKT BELEGT IST
+C Z236,247–255, Gl.(2.1),(2.4),(2.5), S4: MHV-Spinorpräfaktor,
+Mandelstamdefinitionen und konjugierte Gegenhelizitätsamplituden.
+C Z287–299, Gl.(2.6),(2.7a), S5:
+ A+++ = (ĝ3/2)*sqrt(8piG)*([12][13][23])²,
+ f_MHV = 8piG/(stu) + 2piG*|ĝ3|²*su/t + g4_C + g5_C*t + ... .
+C Z312–313 und347–349, S6: hatted couplings ausdrücklich komplex;
+Real-/Imaginärteil parity-even/parity-odd; ĝ3=alpha3+i*alphatilde3.
+Damit ist ĝ3 hier kein zwingend reeller Koeffizient und die Hutsymbolik
+sollte in einer präzisen Wiedergabe erhalten bleiben. ERGEBNIS' g^3 meint
+diesen Koeffizienten, keine gewöhnliche dritte Potenz von g.
+
+F Z193–206, Gl.(2.3), S4: gedruckt g3²*st/(M_Pl^6*u), plus
+g4_F/M_Pl^4 + g5_F*u/M_Pl^4; Wilson-Koeffizienten und alle Beine einlaufend.
+F Z216–221, Gl.(2.6), S4: GR-Präfaktor1/(M_Pl²*stu).
+F Z549–556, S9: explizite Dreipunktamplitude
+ A+++ = g3*[12]²[23]²[13]²/M_Pl³.
+Abgleich derselben kinematischen Amplitude bestätigt
+ M_Pl^-2=8piG,
+ ĝ3=2*g3/M_Pl²,
+ |ĝ3|²=4*|g3|²/M_Pl^4.
+Die letzte Betragsform ist im komplexen Fall der Betrag der
+Dreipunkt-Zuordnung; sie verlangt keine Umdeutung der gedruckten Formel.
+Kontaktzuordnung g4_C=g4_F/M_Pl^4, g5_C=g5_F/M_Pl^4 ebenfalls konsistent.
+Die Variablenumbenennung ist s_F=s_C,t_F=u_C,u_F=t_C unter den jeweiligen
+Metrik-/Einlaufkonventionen; das Übertragungs-p erfüllt t_F=u_C=-p².
+
+2. IST g3_FRS AUSDRÜCKLICH REELL ODER KOMPLEX?
+Antwort aus dieser Lektüre: NICHT AUSDRÜCKLICH FESTGELEGT.
+Die konkreten g3-Stellen sind F Z198–206,551 und2075–2082 (Gl.4.39).
+Keine dieser Stellen erklärt "real g3" oder "complex g3". Der Text
+kennzeichnet andere Kopplungen ausdrücklich als komplex bzw. als reell
+für einen Dilaton/CP-even-Fall (z.B. Z329–345); daraus folgt keine
+entsprechende ausdrückliche Aussage über g3. Volltextsuche nach g3,
+real/complex, parity/CP und conjugation lieferte keine weitere g3-Festlegung.
+F Z1533–1536 setzt hermitesche Analytizität der betrachteten Amplituden
+voraus, aber das ist nicht gleichbedeutend mit der ausdrücklichen Wahl
+einer reellen Dreipunktkoeffiziente.
+
+Die Aussage im ARBEITSFELD W1 "S.9 ohne Aussage zu reell/komplex" hält.
+Die Folgerung "FRS schreiben g3²; damit ist |g3|² gemeint" ist dagegen
+zu stark, wenn sie als Textfeststellung gelesen wird. Sichere Formulierung:
+"FRS drucken g3². Für reelles g3 stimmt dies mit dem Wörterbuch überein;
+bei einer allgemeinen hermiteschen komplexen Dreipunktkopplung ergibt
+der MHV-Austausch das Betragsquadrat. Diese Erweiterung wird hier als
+eigener Schluss verwendet, nicht als explizite Konvention von FRS."
+Eine stillschweigende Beschränkung von FRS auf reelles g3 ist plausibel,
+aber aus den angegebenen Stellen ebenfalls nicht eindeutig nachgewiesen.
+
+Konsequenz für ERGEBNIS Abschnitt2: Im allgemeinen komplexen Fall lautet
+die dimensionslose Schreibweise
+ x=4*|g3_FRS*M²|²*(8piG*M²)²,
+nicht bloß4*(g3_FRS*M²)²*(8piG*M²)² ohne Realitätsannahme.
+Ebenso fixiert eine Skalierung von |ĝ3|² zunächst den Betrag der R³-
+Dreipunktkopplung; "g3/M_Pl³ fest" als komplexe Zahl setzt zusätzlich
+eine feste Phase voraus. Diese Präzisierungen ändern den überprüften
+Normierungsfaktor nicht und entscheiden nicht die übrige Ordnungszählung.
+
+3. SPIN-4-ABGLEICH: REICHWEITE DES FAKTORS1/2
+C Z677–695, Gl.(2.32a), S12:
+ -B4_C=2g4_C+(4piG|ĝ3|²+g5_C)*p²+(g6_C+g6prime_C)*p^4+... .
+F Z2075–2082, Gl.(4.39), S33:
+ M_Pl^4*B0_F=g4_F-(g3²/M_Pl²+g5_F/2)*t+... .
+Mit dem obigen Wörterbuch und t=-p² stimmen die ANGEZEIGTEN
+g4-/g5-/Dreipunktterme mit B0_F=-B4_C/2 überein (bei g3² als reellem
+Spezialfall bzw. erklärter komplexer Erweiterung).
+
+Diese Probe belegt noch keine uneingeschränkte Identität der vollständigen
+Dispersionsfunktionale einschließlich aller höheren Kontakte/Schleifen.
+C Gl.(2.30), Z644–646, verwendet den dort definierten superkonvergenten
+Kern; F Gl.(4.1),(4.4),(4.5), Z1513–1531,1564–1568, eine symmetrisierte
+Amplitude und einen endlichen Halbkreis mit Kern(s+t/2)^(-1) für n=0.
+Der Bericht sollte den Faktor1/2 hier als Abgleich der angegebenen
+Niederenergie-Terme kennzeichnen; eine exakte Allordnungs-Funktionalgleichheit
+wird durch diese zwei abgekürzten Formeln nicht bewiesen.
+
+4. F.7 UND DER VORWÄRTSLIMES
+F Z2865–2893, Gl.(F.1)–(F.3), S46: Detektor-/soft-stripped Amplitude,
+universelle Ein-Schleifen-IR-Struktur und ausdrücklich nicht angezeigte
+Terme ohne Gravitonpol. F Z2894–2898 nennt den Grenzbereich(F.4):
+M_Pl→∞,E→0 bei festem sbar*log(-t/E²)/(4piM_Pl)².
+F Z2904–2917, Gl.(F.7), S47, gibt in diesem Rahmen
+ B0^(4h)|E,1-loop,IR,GR = -log(-t/E²)/(4pi²*M_Pl^4*sbar*t).
+Diese t-Abhängigkeit ist am naiven Vorwärtspunkt nicht glatt. Ein exakter
+Wert oder eine Taylorableitung dort lässt sich nicht einfach aus der
+CHLPSD-Baumformel unter Weglassen dieser Schleifenstruktur übernehmen.
+Dabei darf der in(F.4) angegebene Grenzprozess nicht ohne Kontrolle gegen
+t→0 vertauscht werden. F.7 allein ist kein uniformer Restabschätzungssatz
+für sämtliche korrelierten t/E/G-Grenzwege.
+
+Direkter Gegenbeleg gegen ein pauschales B4-No-go im selben Primärtext:
+F Z1681–1686, S27, nennt finite-t improvements und crossing-symmetrische
+Dispersionsrelationen als Alternativen bei Schleifen-Vorwärtssingularitäten.
+F Z2918–2931, S47, verschmiert gerade die Regeln mit p∈[E,q] und erhält
+IR-endliche Schranken, einschließlich des Gravitonkoeffizienten g4.
+Das beweist keinen optimalen ĝ3-Bound mit kleinem c, zeigt aber, dass
+F.7 selbst nicht "kein B4-Einsatz in M_E möglich" besagt.
+
+Auch "verschmiert sind g4 und g5 untrennbar" folgt als genereller Satz
+nicht aus C(2.32a): ein einzelner generischer B4-Anteil enthält sie;
+geeignete Momentbedingungen oder Kombinationen mit anderen Regeln wären
+separat auf Zulässigkeit/Positivität zu prüfen. C(2.32b), Z683–685, enthält
+beispielsweise ebenfalls g5. Das ist kein konstruierter Gegenbound,
+aber genug, um eine behauptete mathematische Untrennbarkeit abzugrenzen.
+
+Für ERGEBNIS Abschnitt1.3/5 und ARBEITSFELD W5e hält daher die enge Aussage:
+"Für das vorgelegte Funktional wurde kein kontrollierter B4-Anteil mit
+exaktem Vorwärtswert/-Ableitung konstruiert; F.7 erklärt das Hindernis
+für die naive Übernahme. Ob ein anderer verschmierter/verbesserter oder
+anders geordneter Grenzweg funktioniert, ist hier nicht gezeigt."
+Nicht belegt sind ein globaler Unmöglichkeitsbeweis oder der vorgeschlagene
+Weg zu c≈24.9 mit bestimmtem Rest: Letzterer bleibt eigene offene Schätzung.
+
+NICHT GEGENSTAND DIESER TEILLESUNG
+Kein Review der LP-Positivität, Zahl895, BBIRRS-Übertragung auf Helizitäten,
+q=.95M-Zulässigkeit oder Klasse-A-Entscheidung. Keine Bestätigung des
+gesamten M_E-Bounds allein aus dem passenden Normierungswörterbuch.

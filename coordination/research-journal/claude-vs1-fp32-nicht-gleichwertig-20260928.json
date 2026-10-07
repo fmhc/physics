@@ -1,0 +1,29 @@
+{
+  "id": "claude-vs1-fp32-nicht-gleichwertig-20260928",
+  "time": "2026-09-28T04:56:51+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung; Ausfuehrung astra (OpenAI) auf der Laptop-GPU nach Finns Ausnahme (25 %)",
+  "topic": "modelle",
+  "status": "technical",
+  "evidenzart": "verfahren",
+  "title": "VS-1 Runde 3: float32 nicht gleichwertig (13 von 32 Seeds, vorab gebundenes Kriterium); Hauptlauf nur in float64, etwa 37 856 s Rechenzeit, Ort und Budget entscheidet Finn",
+  "question": "Darf der VS-1-Hauptlauf (variable finite Federn) auf der Laptop-GPU in float32 statt float64 rechnen?",
+  "action": "Vorab gebundene Gleichwertigkeitspruefung (LESARTEN-FP32.md): Kontrollzellen K0 und K+0,6 bei r=10 und r=35, je 8 Seeds, volle 2400 T0 in float64 und float32; alle 32 Seeds muessen drei Kriterien erfuellen. Laptop-GPU mit 25 % Speicher, Tastverhaeltnis 1:3.",
+  "result": "Nicht bestanden: 13 von 32. K0 r=10 0/8, K0 r=35 0/8, K+0,6 r=10 8/8, K+0,6 r=35 5/8; 16 Phasen-, 9 Kraft- und 9 Stufe-1-Abweichungen, maximale Phasenabweichung 2,345 rad. Keine Toleranz angepasst, kein float32-Hauptlauf. Durchsatz float64 35 923, float32 383 788 Seed-Schritte/s. Verbraucht 866 s von 21 600 s.",
+  "meaning": "In den K0-Zellen liegen die Kraftmittel bei 1e-10 bis 1e-7; dass float32 sie nicht aufloest, ist eine Hypothese fuer die Ausfaelle, keine gepruefte Ursache. Der Sparmodus faellt nach der gebundenen Regel durch. Ein Hauptlauf in float64 braucht nach Pilot 2 etwa 37 856 s Rechenzeit, ueber dem 6-h-Deckel der Laptop-Ausnahme; Ort und Budget entscheidet Finn. Keine Aussage zur Scherungsregel.",
+  "sources": [
+    {
+      "path": "coordination/theorie-finite-federn-20260928/vs-1/runde3-fp32/GLEICHWERTIGKEIT-FP32.json",
+      "sha256": "33ffd3e8d6aaf0eef7328944ec60fa199898aa22ca9f7c6b8cc92a4b0241e0a4"
+    },
+    {
+      "path": "coordination/theorie-finite-federn-20260928/vs-1/runde3-fp32/LESARTEN-FP32.md",
+      "sha256": "97ec196b2d96f9f004c2dc9a9083652b3367b4ddd02f21a55afdc5fe76174287"
+    },
+    {
+      "path": "coordination/theorie-finite-federn-20260928/vs-1/runde3-fp32/STAND.md",
+      "sha256": "6c9ca1394831bdc20b5e81b600d1a627f883c7c08f917291770be08986d5e9d8"
+    }
+  ],
+  "recorded_at": "2026-09-28T05:05:38.995619+00:00"
+}

@@ -1,0 +1,18 @@
+R4-W russell. Start 2026-09-30T00:19:05+00:00, Ende 2026-09-30T00:19:06+00:00, Geraet Quadro P4000, torch 2.5.1+cu121, T = 12.0
+Dauer [s]: profil_s 0.0, grob_s 0.4, fein_s 0.6
+
+Stoss: v | Art | abgestrahlt E (grob, fein) | abgestrahlt Q (fein) | X bei t_m | v danach | S_max(t_m)/S_max(0) | Ausgang
+  0.1 | gleichphasig | 1.613e-07, 2.081e-07 | 1.694e-07 | 18.80 | -0.1000 | 1.0003 | getrennt
+  0.1 | gegenphasig  | 1.443e-07, 1.913e-07 | 1.503e-07 | 18.80 | -0.1000 | 1.0003 | getrennt
+  0.1 | einzeln      | 1.527e-07, 1.997e-07 | 1.598e-07 | -18.80 | 0.1000 | 1.0003 | Kontrolle
+  0.3 | gleichphasig | 1.235e-10, 1.093e-07 | 1.006e-07 | 16.40 | -0.3000 | 1.0004 | getrennt
+  0.3 | gegenphasig  | -3.834e-08, 7.145e-08 | 5.384e-08 | 16.40 | -0.3000 | 1.0004 | getrennt
+  0.3 | einzeln      | -1.740e-08, 9.229e-08 | 7.877e-08 | -16.40 | 0.3000 | 1.0004 | Kontrolle
+  0.5 | gleichphasig | -1.626e-07, -2.425e-09 | 4.887e-09 | 14.00 | -0.4999 | 1.0008 | getrennt
+  0.5 | gegenphasig  | -1.626e-07, -2.424e-09 | 4.887e-09 | 14.00 | -0.4999 | 1.0008 | getrennt
+  0.5 | einzeln      | -1.534e-07, 6.496e-09 | 1.194e-08 | -14.00 | 0.4999 | 1.0008 | Kontrolle
+
+Kontrollen und Latten:
+  L2_gegenprobe_einzelball: {"max_abgestrahlt_E_einzeln": 1.9973036913256692e-07, "min_abgestrahlt_E_stoss": 2.4241291196602788e-09, "bestanden": false}
+  L3_aufloesung: {"min_effekt": 2.4241291196602788e-09, "max_aenderung_fein_grob": 1.601436507847609e-07, "bestanden": false}
+  K0_profil_gegen_anker: {"max_abw_f": 1.201214199181115e-10, "bestanden": true, "herkunft": "profil_cache.pt", "f0_quadrat_schuss": [0.6837722339948578, 0.3675444679705876, 0.10557280900028279], "f0_quadrat_anker": [0.683772233983162, 0.36754446796632423, 0.10557280900008414]}

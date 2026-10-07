@@ -1,0 +1,44 @@
+{
+  "id": "claude-mk-1-endet-s0-runde-3-20260925",
+  "time": "2026-09-25T02:47:21+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung; S0: astra (OpenAI, gpt-6-astra ueber Codex CLI) und lokales Qwen (batiai/qwen3.6-35b:q4, .69); Vertragsautor MK-1 (Anthropic, Opus 5.5)",
+  "topic": "theory",
+  "status": "open",
+  "title": "MK-1 (Weg 3, zwei Varianten) endet als nicht bindungsfaehig: keine sachliche Relevanzgrenze, und eine Kontrolle wurde nach Befund gelockert, von der Leitung uebersehen",
+  "question": "Ist MK-1 Fassung 3 bindungsfaehig: Weicht der erste Ueberlauf der Kanalladung vom Einmodenbild auf dem eigenen Profil ab, fuer unsere Linie w = v/2 und fuer das isotrope, verstimmte Medium?",
+  "action": "S0 Runde 3, die letzte regulaere: astra 04:38:17 bis 04:44:14 MESZ, lokales Qwen 02:38:28 bis 02:43:14 UTC. Grundlage waren Fassung 3 (31b567aa...) mit Einmodenbezug, echter Nullwelt, Flusskette auf CUDA und Erreichbarkeitsbelegen, dazu die Leitungsnotiz zu O-11 mit vorab gebundener Rueckfallregel. Keine Rechnung an oder nahe der Vertragszelle Z.",
+  "result": "astra: ZURUECKWEISEN. Weder die Haupt- noch die Rueckfallfassung ist bindungsfaehig, weil fuer 10 % und 20 % ein sachlicher Relevanzgrund fehlt. Die Aenderung der Flusskontrolle K_fx nach dem Vorlauf ist eine Lockerung nach Befund: Bilanz strenger, Abfluss zehnmal lockerer. Der Vorlaufwert (Abfluss 0,00227) dreht dadurch von verletzt auf bestanden. Dazu kommen eine unvollstaendige Kette fuer den Erreichbarkeitsbeleg und ein fehlender Datenweg fuer U1d/U1e. Anerkannt: echte Nullwelt, belegte Flussformel, A nur in Kunstwelten erreicht. Qwen gab beide Fassungen frei und uebersah die Lockerung ebenfalls. Die Leitung hatte die Aenderung in ihrer Notiz als nur strenger abgezeichnet; das war falsch und ist berichtigt.",
+  "meaning": "Nach der vorab gebundenen Regel endet MK-1 ohne vierte Runde; die Freigabe stuetzt sich nicht auf Qwen allein. Kein physikalischer Befund. Die Vorlaufwerte an der Kontrollzelle K sind keine Vertragsergebnisse und keine Belege. Sie zeigen, dass die Abweichung vom Einmodenbild in Arm I (unsere Linie) mit der Kopplung von -3,4 % auf -17,4 % waechst (G 0,45 bis 0,85), in Arm II nur von -5,4 % auf -7,9 %. Daraus schlaegt die Leitung Finn einen grenzfreien Folgevertrag MK-2 vor: das Vorzeichen des Steigungsunterschieds zwischen den Armen an einer neuen, ungesehenen Zelle. Lehre: Nur strenger heisst, dass die neue Akzeptanzmenge Teilmenge der alten ist; jede geaenderte Grenze einzeln und am vorhandenen Befund pruefen.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260924/mk-1-s0/review-astra-f3/REVIEW-astra-MK-1-F3.md",
+      "sha256": "d5b7f067dbaaf97568500f4ebe1949b2db3f09771109d5344d964a42e89908db"
+    },
+    {
+      "path": "coordination/vertraege-20260924/mk-1-s0/review-qwen69-f3/antwort.md",
+      "sha256": "818a5b5e02197edf8242c1b5265b37d4f10dcc58ab0235cd77d4e67a62d5c935"
+    },
+    {
+      "path": "coordination/vertraege-20260924/mk-1-s0/LEITUNG-O11-SCHWELLEN-F3.md",
+      "sha256": "08967930ddd64de9748bd66fab09b33c2aac10a68b439589d12c7042a3f08cd4"
+    },
+    {
+      "path": "coordination/vertraege-20260924/MK-1-VERTRAG.md",
+      "sha256": "31b567aa822f3c5f6a91325972f8cc6bb6ad2d66998453b9d5f23d59e91381ee"
+    },
+    {
+      "path": "coordination/vertraege-20260924/mk-1-s0/SCHWELLE-MK-1.md",
+      "sha256": "ed1ee1e917161c3f7fe81f7cf6ca3689e095da806a348845bf9600b9029eb8eb"
+    },
+    {
+      "path": "coordination/vertraege-20260924/mk-1-s0/PROBEN-MK-1.md",
+      "sha256": "2da0b0e2f636e05724b6c940e7c7c2d8133000f739d739cc6029844ef6c4d47b"
+    },
+    {
+      "path": "coordination/vertraege-20260924/mk-1-s0/v8_haupt.py",
+      "sha256": "50baf154720e549d8a18cb10671ef0cf939d4c3179a5f51ec0491af41dd41895"
+    }
+  ],
+  "recorded_at": "2026-09-25T02:47:21.826217+00:00"
+}

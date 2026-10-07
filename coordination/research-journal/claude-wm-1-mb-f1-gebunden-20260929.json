@@ -1,0 +1,29 @@
+{
+  "id": "claude-wm-1-mb-f1-gebunden-20260929",
+  "time": "2026-09-29T05:48:04+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung; Autor Opus 5.5 (frisch); S0 astra (OpenAI, bindend) und Opus 5.5 (blind)",
+  "topic": "vertraege",
+  "status": "reported",
+  "evidenzart": "verfahren",
+  "title": "WM-1-MB Fassung 1 gebunden: Nachfolger von WM-1 mit derselben Frage und gemessenem Budget (5000 s); Start nur nach neuer Kostenmessung im Fenster mit pausierten Fremddiensten",
+  "question": "Kann die WM-1-Frage (Paarzerfall im leeren Nachbarkanal eines drehenden Q-Balls, linearer Keim) mit dem gemessenen Budget als offen benannter Nachfolger gerechnet werden, ohne die Fassungsgrenze zu umgehen?",
+  "action": "Diff-Vertrag gegen WM-1 F3 (Opus-Autor, 16 Hunks); S0 Runde 1: astra bindend, Opus blind; Synthese der Leitung; Bindungsmanifest mit 23 Dateien, OTS 05:48:04 UTC. Arbeitsname WM-2 wegen Namenskonflikt mit dem nichtlinearen Nachfolger aus WM-1 F3 Z. 584 in WM-1-MB geaendert.",
+  "result": "astra FREIGEBEN MIT AUFLAGEN (5, davon 2 neu), Opus blind FREIGEBEN MIT AUFLAGEN (6, davon 4 neu); beide unabhaengig: Messung und Lauf im angekuendigten Pausenfenster, S2-Blindheit mit G6' und G7'. Budget 440 + 3821 + 614 = 4875 s plus 125 s = 5000 s; startfaehig bei t_T200 bis 1870 ms, nicht bei 1871 ms; Spielraum etwa 2,6 Prozent. Unit-Regel RuntimeMaxSec = R_Topf - Verbrauch - 5 s. Frage, Physik, Regel R, Schwellen und Wahrheitsproben unveraendert.",
+  "meaning": "WM-1 bleibt beendet; WM-1-MB ist ein eigener Vertrag mit einer einzigen inhaltlichen Aenderung. Ob er rechnet, entscheidet erst die neue Kostenmessung; endet sie mit 'nicht startfaehig', endet WM-1-MB ohne Rechnung, ohne Skriptwechsel und ohne Neumessung. Finn wird vorher schriftlich ueber die knappe Reserve informiert. Keine Messung, kein Ergebnis.",
+  "sources": [
+    {
+      "path": "coordination/farben-20260927/wm-1-mb-bindung/BINDUNG-WM-1-MB-F1.txt",
+      "sha256": "026fa432ac73b389d419cf7431347c850d1920c20dbb7e98b4bdcf321585bdd5"
+    },
+    {
+      "path": "coordination/farben-20260927/wm-1-mb-s0/S0-RUNDE-1-SYNTHESE-WM-1-MB.md",
+      "sha256": "6a1a914d900c7b771dbdee9891de2228a8d135fe9225252ea9f9a22adc9122a2"
+    },
+    {
+      "path": "coordination/farben-20260927/WM-1-MB-VERTRAG-F1.md",
+      "sha256": "272d50abfb7165c7f63cd82615ce6bed8fb31f7a227fb897d9f231f26f3879e4"
+    }
+  ],
+  "recorded_at": "2026-09-29T05:51:01.620986+00:00"
+}

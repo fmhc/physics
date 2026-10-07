@@ -1,0 +1,270 @@
+{
+ "modus": "pole",
+ "rhos": [
+  1.5
+ ],
+ "ks": [
+  0.0,
+  0.5210953054937474
+ ],
+ "R_A": 10.0,
+ "Y_A": 0.05,
+ "S_X": [
+  0.5,
+  2.0
+ ],
+ "S_Y": [
+  0.002,
+  1.0
+ ],
+ "S0_Y": [
+  1e-05,
+  0.002
+ ],
+ "probe_windung": {
+  "A_soll": 3,
+  "A": 3,
+  "S_soll": 1,
+  "S": 1,
+  "S0_soll": 1,
+  "S0": 1,
+  "S0_stabil": true,
+  "S_ohne_S0_soll": 0,
+  "S_ohne_S0": 0
+ },
+ "ergebnisse": {
+  "VK_rho1.5_k0.0000": {
+   "variante": "VK-Ziel",
+   "rho": 1.5,
+   "k": 0.0,
+   "zaehlung_A": {
+    "windung": 2.0000000000000004,
+    "zahl": 2,
+    "max_dphase": 0.20641369817343236,
+    "min_abs_g": 0.00019535868003986296,
+    "auswertungen": 4002,
+    "aufgeloest": true,
+    "fein": {
+     "windung": 2.0000000000000013,
+     "zahl": 2,
+     "max_dphase": 0.10404421356236765,
+     "min_abs_g": 0.00019535868003986296,
+     "auswertungen": 8002,
+     "aufgeloest": true
+    },
+    "stabil": true
+   },
+   "zaehlung_S": {
+    "windung": -2.1203697876423444e-16,
+    "zahl": 0,
+    "max_dphase": 0.22720994261733976,
+    "min_abs_g": 0.11386617115576554,
+    "auswertungen": 8008,
+    "aufgeloest": true,
+    "fein": {
+     "windung": -1.7669748230352872e-16,
+     "zahl": 0,
+     "max_dphase": 0.11706155061669307,
+     "min_abs_g": 0.11386617115576554,
+     "auswertungen": 16012,
+     "aufgeloest": true
+    },
+    "stabil": true
+   },
+   "zaehlung_S0": {
+    "windung": 1.2796762976200867e-16,
+    "zahl": 0,
+    "max_dphase": 0.22988166036566504,
+    "min_abs_g": 0.45986030177240045,
+    "auswertungen": 8027,
+    "aufgeloest": true,
+    "fein": {
+     "windung": -1.4494715345211338e-17,
+     "zahl": 0,
+     "max_dphase": 0.119042127914626,
+     "min_abs_g": 0.45986030177240045,
+     "auswertungen": 16050,
+     "aufgeloest": true
+    },
+    "stabil": true
+   },
+   "nullstellen_A": [
+    [
+     5.679474121029648,
+     0.4092088485026147
+    ],
+    [
+     -5.679474121029649,
+     0.4092088485026141
+    ]
+   ],
+   "nullstellen_S": [],
+   "nullstellen_S0": [],
+   "kandidaten_gitter": {
+    "A": 70,
+    "S": 0
+   },
+   "pole": {
+    "A": 0,
+    "S": 0,
+    "S0": 0
+   },
+   "alle_stabil": true,
+   "omega_0": 1.0,
+   "residuum_probe": {
+    "0.001": [
+     0.9990026510274058,
+     0.0039066412336530906,
+     0.004031941306816508
+    ],
+    "0.0001": [
+     0.9999000338409133,
+     0.0005372061850437604,
+     0.0005464281455157826
+    ],
+    "1e-05": [
+     0.9999900004116976,
+     6.837888001464308e-05,
+     6.910617192606056e-05
+    ]
+   },
+   "newton_auf_1_durch_G": {
+    "omega_re": 1.0,
+    "omega_im": -4.052643478080685e-27,
+    "residuum": 8.10528695616142e-27
+   },
+   "max_abs_G_bogen": {
+    "10.0": 0.00021050390668223302,
+    "20.0": 1.2559757269566376e-05
+   },
+   "quadratur_128_256_rel_max": 3.312662214005126e-12,
+   "zeiten_s": {
+    "zaehlung": 8.0,
+    "suche_A": 4.9,
+    "suche_S": 2.5,
+    "suche_S0": 7.9,
+    "rest": 0.5
+   },
+   "zeit_s": 23.7
+  },
+  "VK_rho1.5_k0.5211": {
+   "variante": "VK-Ziel",
+   "rho": 1.5,
+   "k": 0.5210953054937474,
+   "zaehlung_A": {
+    "windung": 2.0,
+    "zahl": 2,
+    "max_dphase": 0.20774685483723873,
+    "min_abs_g": 0.00019431606650480436,
+    "auswertungen": 4002,
+    "aufgeloest": true,
+    "fein": {
+     "windung": 1.9999999999999998,
+     "zahl": 2,
+     "max_dphase": 0.10454140940849123,
+     "min_abs_g": 0.00019431606650480436,
+     "auswertungen": 8002,
+     "aufgeloest": true
+    },
+    "stabil": true
+   },
+   "zaehlung_S": {
+    "windung": 3.533949646070574e-17,
+    "zahl": 0,
+    "max_dphase": 0.21374518738329845,
+    "min_abs_g": 0.1148819117769168,
+    "auswertungen": 8008,
+    "aufgeloest": true,
+    "fein": {
+     "windung": -7.067899292141149e-17,
+     "zahl": 0,
+     "max_dphase": 0.11672314153251173,
+     "min_abs_g": 0.1148819117769168,
+     "auswertungen": 16012,
+     "aufgeloest": true
+    },
+    "stabil": true
+   },
+   "zaehlung_S0": {
+    "windung": 2.7533056910499064e-16,
+    "zahl": 0,
+    "max_dphase": 0.23867940600453125,
+    "min_abs_g": 0.5082532265772562,
+    "auswertungen": 8027,
+    "aufgeloest": true,
+    "fein": {
+     "windung": 5.577014285205125e-16,
+     "zahl": 0,
+     "max_dphase": 0.11825577490695525,
+     "min_abs_g": 0.5082532265772562,
+     "auswertungen": 16050,
+     "aufgeloest": true
+    },
+    "stabil": true
+   },
+   "nullstellen_A": [
+    [
+     -5.7032075042812735,
+     0.4075059628151858
+    ],
+    [
+     5.703207504281273,
+     0.40750596281518686
+    ]
+   ],
+   "nullstellen_S": [],
+   "nullstellen_S0": [],
+   "kandidaten_gitter": {
+    "A": 70,
+    "S": 0
+   },
+   "pole": {
+    "A": 0,
+    "S": 0,
+    "S0": 0
+   },
+   "alle_stabil": true,
+   "omega_0": 1.1276259652063807,
+   "residuum_probe": {
+    "0.001": [
+     0.9988757311997173,
+     0.004439478884741271,
+     0.004579623685779513
+    ],
+    "0.0001": [
+     0.9998872802958556,
+     0.0006091860679305126,
+     0.0006195267524998728
+    ],
+    "1e-05": [
+     0.9999887242624623,
+     7.744756863950857e-05,
+     7.826409231052208e-05
+    ]
+   },
+   "newton_auf_1_durch_G": {
+    "omega_re": 1.1276259652063807,
+    "omega_im": 2.5036006394110922e-22,
+    "residuum": 2.220446049257512e-16
+   },
+   "max_abs_G_bogen": {
+    "10.0": 0.0002113444440148643,
+    "20.0": 1.2576865547143308e-05
+   },
+   "quadratur_128_256_rel_max": 3.3044597040783155e-12,
+   "zeiten_s": {
+    "zaehlung": 7.2,
+    "suche_A": 4.2,
+    "suche_S": 2.0,
+    "suche_S0": 7.6,
+    "rest": 0.6
+   },
+   "zeit_s": 21.6
+  }
+ },
+ "zeit_gesamt_s": 45.4,
+ "skript_sha256": "5b7047ebc99041ba2a09263e2c8e8f73107d2e7b379b0fed3bfb685276b97047",
+ "kernmasse_feld_sha256": "54cf8d350f900b63f498f623e3aba1fcabed9616def07c386182e5782f452f37",
+ "schicht2_kont_sha256": "7b05d9768967e8e53a9cfba17710b3dca7938fb8491828f891df92d1a7cf5639",
+ "zeit_utc": "2026-10-04T12:58:43Z"
+}

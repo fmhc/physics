@@ -1,0 +1,33 @@
+Folgeversuch: lineare Zentralfedermechanik auf eingefrorener Geometrie
+
+Eingabe ausschließlich ../RESULT.json: vorhandene Vertices und eindeutige
+Kanten, keine Rekonstruktion und keine neue Orientierungsstatistik.
+Tetraeder sind die im Ursprungsskript festgelegten Zellen (i,i+1,i+2,i+3).
+Der Code prüft deren Kantenbestand vollständig gegen die Eingabe.
+
+Masse m=1 je Vertex, k=1 je eindeutiger Kante, natürliche Federlänge gleich
+Eingabelänge, keine Vorspannung. R enthält Kanten-Einheitsrichtungen;
+H=R.T R ist die linearisierte Hessian. Vollständige Eigenpaare, sechs
+starre Nullmoden, Translations-/Rotationsresiduen; unabhängige Kontrolle
+am regulären Einzeltetraeder: omega²=(0 sechsfach,1,1,2,2,2,4).
+k=4 muss omega² vervierfachen und positive Frequenzen verdoppeln.
+Globaler Skalierungsvektor: Rayleighwert, ||Hs-rho s||/||Hs|| und
+Projektionsgewichte auf entartete Eigenräume, ohne Atemmodenbehauptung.
+
+Zeitspur: analytische Lösung der LINEAREN Gleichung u''=-Hu,
+erste positive Mode, maximale Vertexauslenkung 0.001 Längeneinheiten,
+201 Stichproben über zwei Perioden. Keine nichtlineare Integration.
+Feste Ebene durch Ursprung, n=(1,.37,.23)/||(1,.37,.23)||.
+P zählt geschnittene eindeutige Kanten. A ist die Summe der Flächen
+aller Tetraeder-Schnittpolygone, KEINE berechnete Polygonvereinigung;
+bei überlappenden Zellen wird Fläche mit Vielfachheit gezählt.
+Homothetie a=1+.1 cos(t): vorgeschriebene reine Messkontrolle,
+P konstant und A/a² konstant, keine Federdynamik.
+
+Ausgabe: RESULT.json inklusive aller Eigenvektoren, CSV (Eigenwerte,
+Modalgewichte, Zeitspuren, Homothetie), drei PNG einschließlich räumlicher
+Modengeometrie. Vergrößerung in Geometrie explizit beschriftet.
+Quelle/run.py SHA256, Host, CPU-Zeit und Threadgrenzen werden protokolliert.
+Ausführung nur auf .69/ubuntu-auto durch koordinierenden Root nach
+Nichtautorreview; lokal kein Interpreter/Teststart. Ein Thread, harter
+RLIMIT_CPU=60 s; keine GPU-Verwendung, kleine CPU-Linearanalyse.

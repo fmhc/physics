@@ -1,0 +1,34 @@
+Runde 5 R5-D r5d.py altern Start 2026-09-30T00:33:47+00:00 auf Quadro P4000, torch 2.5.1+cu121, Laufzeitfaktor 1.0
+
+altern (Bio 48): psi-Ball ruhend; Austausch eps = 0.05 mit chi (mc2 = eps^2, frei): eine Eigenmode masselos. Gamma = -dQ_Ball/dt (Fit auf [T/4, T], Q_Ball = Q_psi + Q_chi in |x| < 40); Vorhersage eps^2 ft(omega)^2/omega.
+  Lauf | Q Anker | Q Ball 0 -> T | Anfangsverlust | Gamma | Vorhersage | Verh. | Lebensdauer Q/Gamma
+  [grob]
+  masselos w2=0.500001             | 14.5087 | 14.69284 -> 13.27281 | +3.13e-01 | +3.706e-03 | 5.394e-03 | 0.687 | 3.880e+03
+  masselos w2=0.5001               | 9.9044 | 10.04206 -> 9.94993 | +2.63e-02 | +2.141e-04 | 1.916e-04 | 1.118 | 4.677e+04
+  masselos w2=0.51                 | 5.3409 | 5.43118 -> 2.75540 | +3.66e-01 | +6.418e-03 | 6.488e-03 | 0.989 | 7.892e+02
+  masselos w2=0.55                 | 3.8144 | 3.87755 -> -0.93194 | +2.80e-01 | +6.774e-03 | 4.959e-03 | 1.366 | 5.311e+02
+  masselos w2=0.6                  | 3.1628 | 3.20475 -> 2.49395 | +1.63e-01 | +1.854e-03 | 3.039e-03 | 0.610 | 1.640e+03
+  masselos w2=0.7                  | 2.4415 | 2.46046 -> 2.22066 | +5.26e-02 | +6.426e-04 | 9.645e-04 | 0.666 | 3.747e+03
+  masselos w2=0.8                  | 1.8860 | 1.89521 -> 1.83854 | +1.02e-02 | +1.553e-04 | 1.858e-04 | 0.835 | 1.214e+04
+  masselos w2=0.9                  | 1.2912 | 1.29559 -> 1.29326 | +3.89e-04 | +6.500e-06 | 6.969e-06 | 0.933 | 1.993e+05
+  Gegenprobe m_chi=1,2 w2=0.500001 | 14.5087 | 14.54832 -> 14.54813 | +1.34e-04 | +1.008e-07 | 0.000e+00 | nan | 1.443e+08
+  Gegenprobe m_chi=1,2 w2=0.7      | 2.4415 | 2.45169 -> 2.45158 | +9.40e-05 | +5.623e-08 | 0.000e+00 | nan | 4.360e+07
+  Gegenprobe eps=0 w2=0.7          | 2.4415 | 2.44149 -> 2.44149 | +7.25e-08 | +2.888e-10 | 0.000e+00 | nan | 8.455e+09
+  Gamma nach Q aufsteigend monoton wachsend: False
+  [fein]
+  masselos w2=0.500001             | 14.5087 | 14.69284 -> 13.27482 | +3.13e-01 | +3.701e-03 | 5.394e-03 | 0.686 | 3.886e+03
+  masselos w2=0.5001               | 9.9044 | 10.04206 -> 9.94933 | +2.64e-02 | +2.159e-04 | 1.916e-04 | 1.127 | 4.639e+04
+  masselos w2=0.51                 | 5.3409 | 5.43118 -> 2.75527 | +3.66e-01 | +6.418e-03 | 6.488e-03 | 0.989 | 7.893e+02
+  masselos w2=0.55                 | 3.8144 | 3.87755 -> -0.94514 | +2.79e-01 | +6.803e-03 | 4.959e-03 | 1.372 | 5.289e+02
+  masselos w2=0.6                  | 3.1628 | 3.20475 -> 2.49891 | +1.63e-01 | +1.853e-03 | 3.039e-03 | 0.610 | 1.641e+03
+  masselos w2=0.7                  | 2.4415 | 2.46046 -> 2.22122 | +5.24e-02 | +6.415e-04 | 9.645e-04 | 0.665 | 3.753e+03
+  masselos w2=0.8                  | 1.8860 | 1.89521 -> 1.83867 | +1.02e-02 | +1.549e-04 | 1.858e-04 | 0.833 | 1.217e+04
+  masselos w2=0.9                  | 1.2912 | 1.29559 -> 1.29326 | +3.88e-04 | +6.485e-06 | 6.969e-06 | 0.931 | 1.997e+05
+  Gegenprobe m_chi=1,2 w2=0.500001 | 14.5087 | 14.54832 -> 14.54813 | +1.34e-04 | +1.009e-07 | 0.000e+00 | nan | 1.442e+08
+  Gegenprobe m_chi=1,2 w2=0.7      | 2.4415 | 2.45169 -> 2.45158 | +9.39e-05 | +5.563e-08 | 0.000e+00 | nan | 4.407e+07
+  Gegenprobe eps=0 w2=0.7          | 2.4415 | 2.44149 -> 2.44149 | +4.53e-09 | +1.804e-11 | 0.000e+00 | nan | 1.353e+11
+  Gamma nach Q aufsteigend monoton wachsend: False
+  L3 (Effekt >= 5 x Aenderung grob -> fein): 8 von 8 Kenngroessen bestanden
+  Rechenzeit grob 16.3 s, fein 31.8 s
+
+Ende 2026-09-30T00:34:35+00:00, Dauer 48.4 s, Torch-Speicher max 20 MB, Fehler in: keine

@@ -1,0 +1,20 @@
+{
+  "id": "codex-db-microagent-grid-20260907",
+  "time": "2026-09-07T01:56:15.914772Z",
+  "time_kind": "completed",
+  "author": "codex-db · hex_decagon_microagents",
+  "topic": "theory",
+  "status": "reported",
+  "title": "Vier Mikroagentennetze ausgeführt: lokale Wellen stimmen mit der Modenreferenz überein",
+  "question": "Welche Waben- und Dekagonideen lassen sich als lokale Knotenmodelle sauber definieren und rechnen?",
+  "action": "Ein festgelegter kleiner CPU-Batch auf .69: Wabe32, Dreieck25, Quadrat25 und Dekagonring10. Jeder Knoten besitzt eine skalare Amplitude und einen Impuls; synchrone lokale Kopplung. Gleiche Anfangsenergie und angeglichene unendliche Langwellenreferenz, zwei vorab fixierte Schrittweiten. Vergleich mit exakten Normalmoden, C10-Spektrum und lokaler Energiebilanz.",
+  "result": "Alle vier Fälle erfüllen die festgelegten Gates. Maximaler relativer Zustandsfehler 1.64030e-4, Energieabweichung 9.55602e-5; halbierter Zeitschritt reduziert den Zustandsfehler auf ungefähr ein Viertel. Integrierte lokale Energiebilanz maximal 2.57363e-5. CPU25%, ein Thread, 7.211s Runner-Wandzeit und 1.890s Prozess-CPU; kein CUDA. SVG aus gespeicherten Zuständen strukturell geprüft, keine Browserabnahme.",
+  "meaning": "Ein funktionierender klassischer Mikroagenten-Prototyp, kein empirischer Naturtest. Wabenecken haben drei Nachbarn, Dreiecksknoten sechs. Der Zehnerring ist eine geschlossene Kette und kein Quasikristall; ein Penrose-Kandidat ist im Review definiert, aber nicht simuliert. Die vorgegebene 2D-Zeichnung, Nachbarzahl und endliche Wärmekernel-Skalenfunktion beweisen keine zusätzlichen Raumdimensionen oder Elektronenspin. Unterschiedliche Ränder und Größen verhindern ein Leistungsranking dieser vier Netze.",
+  "sources": [
+    {"path": "model-lab/microagent-grid/README.md", "label": "Modell, tatsächlicher Lauf und Grenzen"},
+    {"path": "model-lab/microagent-grid/runs/microagent-grid-v1-20260907/overview.svg", "label": "Vier Geometrien mit Amplitude und Energiefluss"},
+    {"path": "model-lab/microagent-grid/runs/microagent-grid-v1-20260907/result.json", "label": "Kanonische Zustände, Spektren und Kontrollmetriken", "sha256": "d9e52a61031a82737eb7bf97c092737c086dd8d00ace3b2ba2c9e08b6bcc943b"},
+    {"path": "coordination/grid-time-field-review-20260907/hex-decagon-review.md", "label": "Subagentenreview: Waben, Quasikristalle und Dimensionsbegriffe"},
+    {"path": "coordination/grid-time-field-review-20260907/README.md", "label": "Gemeinsamer Forschungsstand mit Optik und Astrophysik"}
+  ]
+}

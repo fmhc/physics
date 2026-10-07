@@ -1,0 +1,208 @@
+{
+ "a_gitter": {
+  "knoten": 216,
+  "soll": 216,
+  "grad_min": 4,
+  "grad_max": 4,
+  "kanten_nur_A_B": true,
+  "bfs_konflikte": 0,
+  "bfs_farbe_gleich_untergitter": true,
+  "schluessel_abweichungen": 0
+ },
+ "a_ok": true,
+ "b_fest": {
+  "regel": "B/S01234",
+  "muster": 68,
+  "fest": 68,
+  "einordnung_still": 68
+ },
+ "b_ok": true,
+ "c_kunst": {
+  "faelle": [
+   {
+    "p": 3,
+    "d": [
+     3,
+     -1,
+     2
+    ],
+    "vorlauf": 0,
+    "klasse": "gleiter",
+    "p_erk": 3,
+    "d_erk": [
+     3,
+     -1,
+     2
+    ],
+    "ok": true
+   },
+   {
+    "p": 4,
+    "d": [
+     0,
+     0,
+     0
+    ],
+    "vorlauf": 0,
+    "klasse": "osz",
+    "p_erk": 4,
+    "d_erk": [
+     0,
+     0,
+     0
+    ],
+    "ok": true
+   },
+   {
+    "p": 1,
+    "d": [
+     0,
+     0,
+     0
+    ],
+    "vorlauf": 0,
+    "klasse": "still",
+    "p_erk": 1,
+    "d_erk": [
+     0,
+     0,
+     0
+    ],
+    "ok": true
+   },
+   {
+    "p": 1,
+    "d": [
+     1,
+     0,
+     0
+    ],
+    "vorlauf": 0,
+    "klasse": "gleiter",
+    "p_erk": 1,
+    "d_erk": [
+     1,
+     0,
+     0
+    ],
+    "ok": true
+   },
+   {
+    "p": 5,
+    "d": [
+     0,
+     -2,
+     1
+    ],
+    "vorlauf": 10,
+    "klasse": "gleiter",
+    "p_erk": 5,
+    "d_erk": [
+     0,
+     -2,
+     1
+    ],
+    "ok": true
+   },
+   {
+    "p": 2,
+    "d": [
+     -1,
+     -1,
+     -1
+    ],
+    "vorlauf": 3,
+    "klasse": "gleiter",
+    "p_erk": 2,
+    "d_erk": [
+     -1,
+     -1,
+     -1
+    ],
+    "ok": true
+   },
+   {
+    "p": 7,
+    "d": [
+     2,
+     2,
+     -3
+    ],
+    "vorlauf": 5,
+    "klasse": "gleiter",
+    "p_erk": 7,
+    "d_erk": [
+     2,
+     2,
+     -3
+    ],
+    "ok": true
+   }
+  ],
+  "verschiebung_invariant": 100,
+  "untergitter_unterschieden": 100,
+  "zerlegung_getrennt": 2,
+  "zerlegung_nah": 1
+ },
+ "c_ok": true,
+ "d_symmetrie": {
+  "gruppe": 48,
+  "echte": 12,
+  "tests": 1568,
+  "fehler": 0
+ },
+ "d_ok": true,
+ "e_lichtkegel": [
+  {
+   "t": 2,
+   "summe_max": 4,
+   "komp_max": 2,
+   "zellen": 17
+  },
+  {
+   "t": 4,
+   "summe_max": 8,
+   "komp_max": 4,
+   "zellen": 83
+  },
+  {
+   "t": 6,
+   "summe_max": 12,
+   "komp_max": 6,
+   "zellen": 239
+  },
+  {
+   "t": 8,
+   "summe_max": 16,
+   "komp_max": 8,
+   "zellen": 525
+  }
+ ],
+ "e_ok": true,
+ "LD0_ok": true,
+ "zusatz_ok": true,
+ "param": {
+  "T": 256,
+  "C_max": 600,
+  "T_iso": 128,
+  "C_iso": 300,
+  "R": 6.0,
+  "pruefpunkte": [
+   64,
+   128,
+   192
+  ],
+  "dichten": [
+   0.25,
+   0.4,
+   0.6
+  ],
+  "saaten_je_dichte": 16,
+  "saat_basis": 380438,
+  "stufe2_saaten_2": 600,
+  "stufe2_saaten_3": 300,
+  "stufe2_saaten_4": 60,
+  "stufe2_zeitkappe_s": 6.0
+ },
+ "zeit_s": 1.02
+}

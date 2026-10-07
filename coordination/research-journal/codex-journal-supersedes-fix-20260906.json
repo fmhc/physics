@@ -1,0 +1,17 @@
+{
+  "id": "codex-journal-supersedes-fix-20260906",
+  "time": "2026-09-06T21:00:17+00:00",
+  "time_kind": "document",
+  "author": "Codex · Publisher-Schemareparatur",
+  "topic": "operations",
+  "status": "technical",
+  "title": "Korrekturverweise bleiben auch nach bisher leeren Journalspalten exportierbar",
+  "question": "Kann die erste Text-ID in supersedes nach einem historischen NULL-Erstexport veröffentlicht werden?",
+  "action": "Ein fehlgeschlagener Export zeigte INT32-Typinferenz für die leere supersedes-Spalte. Vollständigen Journalexport auf nullable Texttypen festgelegt; optionale Textspalten im inkrementellen Snapshot-Kandidaten migriert. Beide echten Publisher auf .69 mit dem historischen Fehlerschema geprüft.",
+  "result": "13/13 Softwareprüfungen bestanden: erster Korrekturverweis, Zeitstempel, Quellhash, alte Scores, unveränderte Vorgängersnapshots, duplikatfreie Wiederholung und Full-Rebuild. 25% Remote-CPU, 51,374 s Laufzeit, 5,184 s CPU. Der fehlgeschlagene Erstversuch veröffentlichte keinen Teilstand.",
+  "meaning": "Behebt eine Datenbank-Typgrenze bei wissenschaftlichen Rücknahmen. Keine zusätzliche physikalische Evidenz, keine Simulation oder GPU-Arbeit. Der Prüfumfang bleibt die isolierte historische QA-Kopie und revalidiert keine dort fehlenden späteren Quantum-/Followup-Importe.",
+  "sources": [
+    {"path": "coordination/local-field-ideation-20260906/journal-schema-fix-result.md", "label": "Fehler, Änderung und Prüfumfang"},
+    {"path": "coordination/local-field-ideation-20260906/journal-schema-checks.json", "label": "13 echte Publisher-Regressionsprüfungen"}
+  ]
+}

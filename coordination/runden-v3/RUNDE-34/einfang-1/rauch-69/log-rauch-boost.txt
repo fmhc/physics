@@ -1,0 +1,17 @@
+start 2026-10-03T16:03:59+00:00 spur=p4000a unit=fmhc-physics-klein-r34ef-rauch-boost-160359
+Running as unit: fmhc-physics-klein-r34ef-rauch-boost-160359.service; invocation ID: 07a455324b3940b39caf5835d89210df
+torch 2.5.1+cu121, Geraet cuda (Quadro P4000)
+Netz n=6 h=0.35 R=60: 106543 Ecken, 105361 frei, Grad Spitze 6, Defekt 0.000000, Bauzeit bis jetzt 5.7 s
+statischer Ball: Q_lat 148.302899 E 118.62723407 omega 0.751138 c 5.4e-12 -3.2e-15 res 3.9e-08 aussen 2 (2.5 s)
+/home/fmh/fmhc-physics-remote/runde34-einfang/einfang.py:144: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at ../aten/src/ATen/SparseCsrTensorImpl.cpp:53.)
+  Lt = torch.sparse_csr_tensor(torch.tensor(Lff.indptr, dtype=torch.int64), torch.tensor(Lff.indices, dtype=torch.int64),
+Start: E 121.26978559 Q 150.00000000 E_rest 119.90199120 K_eff 1.367794 K_nominal 1.372095 x -25.0002 Q_ball 149.999877
+t 100.0 x -10.0343 x_S -10.0338 E 121.269553 E_damp 3.133e-04 Q 149.999831 E_ball 121.269010 Q_ball 149.999376 S_max 1.0563 (2.47 ms/Schritt)
+Ende: T erreicht, t 160.0, 2.47 ms/Schritt, Dauer 13.3 s, geschrieben /home/fmh/fmhc-physics-remote/runde34-einfang/rauch/ef-rauch-boost.json
+Finished with result: success
+Main processes terminated with: code=exited/status=0
+Service runtime: 13.871s
+CPU time consumed: 13.812s
+Memory peak: 1.2M
+Memory swap peak: 0B
+ende 2026-10-03T16:04:12+00:00 rc=0 unit=fmhc-physics-klein-r34ef-rauch-boost-160359

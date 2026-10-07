@@ -1,0 +1,51 @@
+{
+  "id": "claude-m1-8-lauf-20260920",
+  "time": "2026-09-20T17:49:46+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5); Ausfuehrung Claude-Subagent (Anthropic, Opus 5) in eigenem Kontext",
+  "topic": "binaries",
+  "status": "open",
+  "title": "M1.8 endet mit T: die Definitionswahl erklaert 0 Prozent des globalen Versatzes, aber zwei eigene Nullproben konnten ihre Schwellen rechnerisch gar nicht erreichen",
+  "question": "Liegt der in M1.7 gefundene globale Versatz zwischen Messung und den 200 Newton-Katalogen an der Messseite (drei Schaetzerdefinitionen A, B, C) oder am Vorwaertsmodell? Entschieden werden sollte das ueber die Rangzaehlung des absoluten Feldmedians, die Zerlegung L_ges = L_def + L_rest (Weg D), die Quantilform (Weg Q) und die Masse-Leuchtkraft-Beziehung (Weg M).",
+  "action": "Lauf nach Vertrag M1.8 (sha256 67282858...) auf fmh@192.168.178.69, CPU, ein Thread, kein CUDA, begrenzte User-Unit fmhc-physics-m1-8-20260920 (CPUQuota 100 %, MemoryMax 8G, RuntimeMaxSec 3600). Startsignal Finn 'full go' vom 20.09.2026. Vor der Freigabe S0-Fremdreview durch Alibaba/Qwen (Bunker) und DeepSeek, beide 'freigeben mit Auflagen'; aus diesem Review stammt die neue Nullprobe N4 als Erreichbarkeitsprobe fuer Ausgang A, und die trivial erfuellte Entwurfsbedingung A3 ist zur Kontrolle K9 geworden. Reihenfolge: Hash- und Archivkontrollen, dann alle vier Nullproben, dann die uebrigen Kontrollen, dann die Produktion. Laufzeit 471,4 s pruefe plus 51,3 s lauf, Grenze 3600 s. Keine neuen Newton-Kataloge; das hashgebundene Archiv wurde durch dieselbe Auswahlkette wie M1.7 gerechnet. Eingabehash c66edd7d... vor und nach dem Lauf gleich.",
+  "result": "Ausgang T (Vorrang T > U1 > B > A > U2). Alle zehn Kontrollen bestanden: K1 reproduziert Gamma_obs,P(0,05) = 1,30158651067971 auf 3,4e-14 (Grenze 1e-9), K2 alle 200 Katalogmasken bitgleich und Profile auf 1,09e-13 archivgleich (Grenze 2e-12), K6 laesst K1 wie verlangt reissen (Ersatzwert 1,5755870 > 1,5), K9 reproduziert r_ref^A = 0/200 bei beiden Schnitten, K5 gibt rho_vc = 0,0 und rho_logg = 1,78e-15, der Unterfall A-M tritt also nicht ein. N1 und N2 bestanden. Gerissen sind N3 und N4. Inhaltlich: der Feldmedian der Messung liegt in allen drei Varianten und bei beiden Schnitten auf Rang 0 von 200, und in allen sieben logg-Feldern; L_ref^def/L_ref^ges = 0,000000 bei beiden Schnitten; der zeilenweise Faktor f_k ist ueber 53 570 Zeilen auf Maschinengenauigkeit gleich 1, die Varianten A und B sind also identisch. Die Definitionswahl erklaert null Prozent des Versatzes; der Unterschied steckt im Residuum, ist also ein Datenunterschied und kein Definitionsunterschied. Belegte Ursache der beiden gerissenen Proben: N3a misst nur das Stichprobenrauschen des Medians (N3a mal Wurzel(n_min) ist je Binnung auf 0,5 Prozent konstant), die feste Schwelle 0,02 ist faktisch eine Schranke an die Feldbesetzung und erst ab n_min = 2450 erfuellbar; N4a ist arithmetisch unerreichbar, weil der Rang des unskalierten Kontrollkatalogs gleichverteilt auf 0 bis 199 liegt und das A1-Band [10, 190] genau 181 von 200 Plaetzen abdeckt - gemessen wurden genau 181 je Schnitt, verlangt waren mindestens 190.",
+  "meaning": "Der Lauf entscheidet die Frage NICHT. An Schwellen, Kontrollen oder Skript ist nichts geaendert worden; der Abbruch ist dokumentiert und die Ursache nachgerechnet. Die beiden Fehler stecken in den Schwellen des Vertrags, nicht in den Daten - N3 haette Trennkraft (der ungestoerte Feldunterschied ist das 6,1- bzw. 3,0-fache der Schwelle), und N4 verlangt etwas, das die eigene Konstruktion ausschliesst. Der Vorschlag fuer die naechste Fassung rechnet beide Schwellen vor (N3a gegen die eigene Bootstrapstreuung oder verteilungsfrei als Rangprobe; N4a aufgeteilt, die zweite Haelfte mit hergeleiteter Schwelle 140 statt 190). Dass B1 und B2 zahlenmaessig erfuellt waeren, ist KEIN Ausgang B und darf nicht so gelesen werden. Offen bleibt damit weiterhin, ob der globale Versatz am Vorwaertsmodell liegt; erst ein repariertes M1.8 mit bestandenen Proben kann das entscheiden, und erst danach ein M1.9, das das Vorwaertsmodell im Vertragstext ausschreibt. Zitiersperre: keine Zahl dieses Laufs darf als Stuetze zitiert werden, bevor S2 aus einem anderen Haus vorliegt (Vertrag 10.3). Nicht gebucht - Gauntlet-Runde 022 ist eingefroren, keine Registerzeile, keine Evidenzbindung, keine Stufenaenderung; die Zeile M1.5 bleibt unveraendert.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260920/m1-8-lauf/BERICHT-M1-8.md",
+      "label": "Bericht nach den Vorabkriterien",
+      "sha256": "a2f6425f41c55c6ff1aa503756548bc7fa703e8c748f4e07296d599ddc71b98c"
+    },
+    {
+      "path": "coordination/vertraege-20260920/m1-8-lauf/ERGEBNIS-M1-8.json",
+      "label": "Ergebnisdatei, alle Zahlen",
+      "sha256": "b6aee1683001a530d011dc6c244c85c262948b6251803f0af97dff3887d95f7d"
+    },
+    {
+      "path": "coordination/vertraege-20260920/m1-8-lauf/PRUEFE-M1-8.json",
+      "label": "Pruefdatei der Kontrollen",
+      "sha256": "3e89fe6d68688b631f12ebd8bf89dc386a1fa6d44877f15c9d102aff4dba88e7"
+    },
+    {
+      "path": "coordination/vertraege-20260920/m1-8-lauf/VORSCHLAG-NACHFOLGER-M1-8.md",
+      "label": "Vorschlag fuer die naechste Fassung mit nachgerechneten Schwellen",
+      "sha256": "d3b80ae8d987c59dd46869a315ae25d5c077168fb47c9aaaf8d2ac6a2bc8c0c2"
+    },
+    {
+      "path": "coordination/vertraege-20260920/m1-8-VERTRAG.md",
+      "label": "Vertrag, Vorabkriterien",
+      "sha256": "67282858d02d67b065fb8441316bdf8ac003db678f9b1169c5a9ef2c9623dae5"
+    },
+    {
+      "path": "coordination/vertraege-20260920/startsignal-m1-8.txt",
+      "label": "Startsignal, Wortlaut Zeit Grund, gefuellte Vertragsluecken",
+      "sha256": "d73a75fef4675dfd5415e1582dcd4b9fd5bc22e51364794fc5a28e8bf0545b24"
+    },
+    {
+      "path": "coordination/vertraege-20260920/REVIEW-m1-8.md",
+      "label": "S0-Fremdreview Qwen und DeepSeek vor der Freigabe",
+      "sha256": "e56b237e70c1a20137c53661833d49b3824db9276b40112fc9c6118a5c4d50bc"
+    }
+  ],
+  "recorded_at": "2026-09-20T18:06:01.392820+00:00"
+}

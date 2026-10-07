@@ -1,0 +1,118 @@
+{
+ "versionen": {
+  "numpy": "2.4.4",
+  "scipy": "1.18.0",
+  "python": "3.12.3"
+ },
+ "V1": {
+  "pruefung": {
+   "ecken": 10,
+   "kanten": 68,
+   "flaechen": 116,
+   "tetraeder": 58,
+   "flaechen_je_anzahl_tetraeder": {
+    "2": 116
+   },
+   "volumen_summe": 127.99999999999999,
+   "tet_vol_min": 2.0,
+   "tet_vol_max": 3.3333333333333344,
+   "euler": 0,
+   "volumen_soll": 128.0
+  },
+  "klassen_ok": true,
+  "lambda_in_0_1": true,
+  "k2_vorzeichen_gleich": true,
+  "k2_g_gegen_delta_H_max": 5.551115123125783e-17,
+  "k3_id_vol": 2.220446049250313e-16,
+  "k3_id_T1": 3.3306690738754696e-16,
+  "lp_status": 0,
+  "lp_zeit_s": 0.07761931419372559
+ },
+ "V2": {
+  "pruefung": {
+   "ecken": 80,
+   "kanten": 544,
+   "flaechen": 928,
+   "tetraeder": 464,
+   "flaechen_je_anzahl_tetraeder": {
+    "2": 928
+   },
+   "volumen_summe": 1024.000000000001,
+   "tet_vol_min": 2.0,
+   "tet_vol_max": 3.3333333333333344,
+   "euler": 0,
+   "volumen_soll": 1024.0
+  },
+  "klassen_ok": true,
+  "lambda_in_0_1": true,
+  "k2_vorzeichen_gleich": true,
+  "k2_g_gegen_delta_H_max": 1.5265566588595902e-16,
+  "k3_id_vol": 0.0,
+  "k3_id_T1": 3.219646771412954e-15,
+  "lp_status": 0,
+  "lp_zeit_s": 0.020514965057373047
+ },
+ "zufall0": {
+  "ecken": 40,
+  "kanten": 304,
+  "flaechen": 528,
+  "tetraeder": 264,
+  "flaechen_je_anzahl_tetraeder": {
+   "2": 528
+  },
+  "volumen_summe": 0.9999999999999998,
+  "tet_vol_min": 6.730378272790977e-05,
+  "tet_vol_max": 0.021257665948344582,
+  "euler": 0,
+  "volumen_soll": 1.0
+ },
+ "mutter": {
+  "pruefung": {
+   "ecken": 12,
+   "kanten": 42,
+   "flaechen": 52,
+   "tetraeder": 21,
+   "flaechen_je_anzahl_tetraeder": {
+    "2": 32,
+    "1": 20
+   },
+   "volumen_summe": 5.196152422706634,
+   "tet_vol_min": 0.1443375672974064,
+   "tet_vol_max": 0.43301270189221924
+  },
+  "2d": {
+   "orientierungen": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "flaechensumme": 5.196152422706632,
+   "aussen": 5.196152422706632
+  }
+ },
+ "messung_zeit_s_L1": 0.38202548027038574,
+ "messung_ok": true,
+ "_meta": {
+  "argv": [
+   "code/rv.py",
+   "rauch",
+   "rauch/r1.json"
+  ],
+  "python": "3.12.3",
+  "numpy": "2.4.4",
+  "scipy": "1.18.0",
+  "host": "ubuntu-auto",
+  "laufzeit_s": 3.4196889400482178,
+  "sha256": {
+   "rv.py": "237a98e58b5c57652f6243e25c038c20a37f709ef2b1784ea9492a87559a7481",
+   "ew.py": "fa7b6417d39177102f0b19c5474453cd16a7595e23bc25ca548e081c4060b142",
+   "tp.py": "419d7da6caa211c721eb6a8c87403977415cf3050f03365377f51cb77b374dfd",
+   "danzer_naeherung.py": "0571953eb693f87e6989d76dd59852bfbe832da1fedf0a46e3da144c63c8fc24",
+   "licht_netz.py": "98d3960a174fe9d077d32d79acf096b2c611c19f69dd13fb0d7d1a517f436146"
+  }
+ }
+}

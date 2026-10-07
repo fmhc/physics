@@ -1,0 +1,104 @@
+M2: KLEINERE PHASENQUADRATUR ALS DISKRETER AMPLITUDENVERGLEICH
+particle_core, 2026-10-03. Prospektiver Papierentwurf, kein Lauf/Code.
+Gelesen: ERGEBNIS.txt, REVIEW-RESULT.txt, PLAN.txt, THEORIE.txt hier;
+causal-split/ERGEBNIS.txt und CAUSAL-SECOND-ORDER.txt im Vorläufer.
+
+1. ENTSCHEIDUNG UND GRENZE
+Zwei kleinere theta90-Starts sind sinnvoll, wenn die Frage ausdrücklich
+lautet: Ändert sich die skalierte gerade Antwort mit der Amplitude in
+GENAU DERSELBEN diskreten Anfangswertaufgabe? Als bloßer Versuch, die
+Übereinstimmung mit dem kausalen Soll weiter zu verbessern, sind sie
+derzeit nicht begründet. Die Erwartung eines O(alpha²)-Korrekturterms
+nennt weder dessen Koeffizienten noch eine gesicherte Signalgröße.
+
+Der aktuelle Bericht nennt bis .3934% Komponentenabweichung im Zeitmaß,
+bis .1327% nichtlinearen dt-Unterschied und bis .9328% kausalen
+Referenz-dt-Unterschied. Diese Maxima gehören verschiedenen Vergleichen;
+sie dürfen nicht als Fehlerbalken desselben Samples verrechnet werden.
+Insbesondere ist ein kleinerer Rest zum kausalen Target kein sauberer
+Amplitudennachweis. Ein gemeinsamer, amplitudenunabhängiger Referenzfehler
+fällt dagegen aus einem DIREKTEN Amplitudenunterschied heraus.
+
+2. GENAU ZWEI VORGESCHLAGENE NEUE ARME
+R=120, h=.05, dt=.01, T=128; theta=pi/2; epsilon=+.001 und -.001.
+Unveränderte Referenz, Ritzvektor, vollständige q/p-Phasendrehung,
+kanonischer Faktor s und Integrator wie im abgeschlossenen Phasenzyklus.
+Keine erneute Phasenankerung, Spitzen-, Q- oder E-Nachnormalisierung.
+alpha_L=.001*s, alpha_H=.002*s=2*alpha_L.
+
+Wiederverwenden, jeweils mit vollständiger Hash-/Samplezeitenbindung:
+theta90 +/- .002 bei dt=.01; theta0 +/- .001 und +/- .002 bei dt=.01;
+die EINE vorhandene epsilon0-Baseline bei genau diesem h und dt.
+Keine neue Baseline, keine neuen Fenster oder Außenradien. Dieselben zwei
+Zeitfenster und zwei Schalen sowie dieselbe lineare Zeit-/Bandabbildung
+wie bisher; Feldkombination vor Norm/Betrag. Alte Start-, E/Q-, Rand- und
+Voll-Uodd-Kontrollen unverändert. Neue Artefakte, alte Ergebnisse bleiben.
+
+3. PRIMÄRE MESSUNG, OHNE KAUSALES ODER STATIONÄRES TARGET
+Mit P_theta,a=U_theta,+a+U_theta,-a und B=Ubase:
+ E_theta(a)=(P_theta,a-2B)/(2a²),
+ Delta_theta=E_theta(alpha_H)-E_theta(alpha_L)
+            =[P_theta,H-4P_theta,L+6B]/(2alpha_H²).
+Diese letzte Identität dient zugleich als Auswerte-/Normierungsprüfung.
+Die gemeinsame Baseline hebt sich in Delta_theta NICHT auf; ihr Gewicht
+darf nicht vergessen werden. Gegenüber dem idealisierten Target fällt
+aber der gemeinsame führende diskrete Antwortterm algebraisch weg.
+
+Anschließend aus den FELDDIFFERENZEN:
+ Delta_D=(Delta_0+Delta_90)/2,
+ Delta_H=(Delta_0-Delta_90)/2.
+In Delta_H verschwindet die gemeinsame Baseline exakt, in Delta_D nicht.
+Ausweisen: absolute Volumen-/Zeit-L2- und komplexe Band-L2-Normen aller
+vier Delta-Felder; zusätzlich relative Größen gegen die jeweilige
+vorhandene große-Amplituden-Antwort, mit offen ausgewiesenem Nenner.
+Keine Differenz bloßer Normen als Ersatz für die Norm der Felddifferenz.
+Delta_0 ist bereits durch vorhandene Daten bestimmt und ein interner
+Vergleich, kein neuer unabhängiger Lauf oder theta90-Fehlerbalken.
+
+Bei glatter Amplitudenabhängigkeit der festen endlichen Zeitabbildung:
+ E_theta(a)=E_theta,disc^(2)+a² E_theta,disc^(4)+O(a^4),
+ Delta_theta=(alpha_H²-alpha_L²)E_theta,disc^(4)+O(alpha_H^4).
+Das ist eine endliche Differenz der DISKRETEN Lösung. Hintergrunddrift,
+Ritzrest und dt/h verändern ihre Koeffizienten; sie sind nicht beseitigt.
+Eine genau gemeinsam verwendete Baseline verhindert falsche Paarung,
+garantiert aber keine beliebig genaue Auslöschung numerischer Fehler.
+
+4. AUFLÖSUNG UND FALSIFIZIERBARE AUSSAGE
+Vorab keine Vorhersage eines sicheren Nichtnullsignals. Pro festem
+Fenster/Schale berichten, ob Delta_90 bzw. Delta_D/H über der vorhandenen
+64eps-Arithmetikhülle liegt; die Hülle auf die OBIGE positive gewichtete
+Summe der tatsächlich subtrahierten Felder übertragen. Nicht den alten
+kausalen Referenzfehler als Untergrenze für Delta einsetzen. Die 64eps-
+Hülle bleibt eine Empfindlichkeitsdiagnose, keine vollständige Schranke
+für während der Evolution entstandene und verstärkte Rundungsfehler.
+
+Liegt Delta innerhalb dieser Auflösung, ist das Ergebnis UNRESOLVED
+für einen Amplitudeneffekt. Liegt es deutlich darüber und bestehen die
+alten numerischen Kontrollen, ist eine endliche Amplitudenabhängigkeit
+auf diesem diskreten Gitter beobachtet; die Aussage, beide Amplituden
+seien dort im beobachteten Maß ununterscheidbar, wäre damit widerlegt.
+Eine Verbesserung gegenüber C/H ist ausdrücklich KEIN Erfolgstor.
+Das Vorzeichen einer Targetfehleränderung muss nicht einmal günstig sein.
+
+Mit diesen zwei neuen Armen ist kein zeitdiskretisierungsunabhängiger
+Korrekturterm bewiesen. Die vorhandenen dt=.01/.005-Differenzen bei
+alpha_H begrenzen NICHT den dt-Fehler von Delta: dafür fehlt die kleine
+Amplitude bei dt=.005. Falls genau diese stärkere Frage später gestellt
+wird, fehlen exakt vier weitere Starts bei h=.05, dt=.005, T=128:
+theta0 +/- .001 UND theta90 +/- .001; große Amplituden und Baseline sind
+vorhanden. Erst dann wäre Delta(dt=.01) gegen Delta(dt=.005) direkt
+vergleichbar. Diese vier Arme sind NICHT Teil des jetzigen Vorschlags;
+kein automatischer Anschluss, keine heimliche sechsarmige Freigabe.
+
+5. WAS SCHON ERWARTBAR IST UND WAS OFFEN BLEIBT
+Dass der rohe gerade Paarrest führend wie alpha² skaliert, folgt bereits
+aus glatter Evolution und +/-Parität. Entsprechend ist eine führende
+alpha^4-Skalierung eines quadratischen Flussausdrucks keine neue Erklärung
+von Strahlung oder Einschwingen. Der aktuelle Zyklus bestätigt bereits
+die kausale Komponentenzerlegung im gebundenen Genauigkeitsbereich.
+
+Nur zwei Amplituden bestimmen eine finite Differenz; sie prüfen keinen
+Konvergenzexponenten und beweisen weder einen asymptotischen alpha->0-
+Bereich noch den O(alpha²)-Ansatz empirisch. Keine neue Lebensdauer,
+Stationarität, Randtrennung oder räumliche Konvergenz folgt daraus.
+Kein altes Gate und kein abgeschlossenes UNRESOLVED-Ergebnis wird geändert.

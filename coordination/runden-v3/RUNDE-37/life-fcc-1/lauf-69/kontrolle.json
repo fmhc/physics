@@ -1,0 +1,430 @@
+{
+ "a_gitter": {
+  "knoten": 256,
+  "soll": 256,
+  "grad_min": 12,
+  "grad_max": 12,
+  "nachbarn_je_knoten": 12,
+  "schluessel_abweichungen": 0,
+  "schalen": {
+   "2": 12,
+   "4": 6,
+   "6": 24,
+   "8": 12
+  },
+  "bfs_knoten_bis_4": 309,
+  "soll_knorm_bis_4": 309,
+  "bfs_fehler": 0
+ },
+ "a_ok": true,
+ "b_kunstfolgen": {
+  "faelle": [
+   {
+    "p": 3,
+    "d": [
+     3,
+     -1,
+     2
+    ],
+    "vorlauf": 0,
+    "klasse": "gleiter",
+    "p_erk": 3,
+    "d_erk": [
+     3,
+     -1,
+     2
+    ],
+    "ok": true
+   },
+   {
+    "p": 4,
+    "d": [
+     0,
+     0,
+     0
+    ],
+    "vorlauf": 0,
+    "klasse": "osz",
+    "p_erk": 4,
+    "d_erk": [
+     0,
+     0,
+     0
+    ],
+    "ok": true
+   },
+   {
+    "p": 1,
+    "d": [
+     0,
+     0,
+     0
+    ],
+    "vorlauf": 0,
+    "klasse": "still",
+    "p_erk": 1,
+    "d_erk": [
+     0,
+     0,
+     0
+    ],
+    "ok": true
+   },
+   {
+    "p": 1,
+    "d": [
+     1,
+     1,
+     0
+    ],
+    "vorlauf": 0,
+    "klasse": "gleiter",
+    "p_erk": 1,
+    "d_erk": [
+     1,
+     1,
+     0
+    ],
+    "ok": true
+   },
+   {
+    "p": 5,
+    "d": [
+     0,
+     -2,
+     2
+    ],
+    "vorlauf": 10,
+    "klasse": "gleiter",
+    "p_erk": 5,
+    "d_erk": [
+     0,
+     -2,
+     2
+    ],
+    "ok": true
+   },
+   {
+    "p": 2,
+    "d": [
+     -1,
+     -1,
+     0
+    ],
+    "vorlauf": 3,
+    "klasse": "gleiter",
+    "p_erk": 2,
+    "d_erk": [
+     -1,
+     -1,
+     0
+    ],
+    "ok": true
+   },
+   {
+    "p": 7,
+    "d": [
+     2,
+     2,
+     -2
+    ],
+    "vorlauf": 5,
+    "klasse": "gleiter",
+    "p_erk": 7,
+    "d_erk": [
+     2,
+     2,
+     -2
+    ],
+    "ok": true
+   }
+  ],
+  "verschiebung_invariant": 100,
+  "zerlegung_getrennt": 2,
+  "zerlegung_nah": 1
+ },
+ "b_ok": true,
+ "c_durchgangsprobe": [
+  {
+   "typ": "p1_110",
+   "p_soll": 1,
+   "d_soll": [
+    1,
+    1,
+    0
+   ],
+   "richtung_soll": "<110>",
+   "n_gleiter": 4,
+   "mit_erwartung": 4,
+   "gleiter_je_saat": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "quellen_arten": [
+    "ganz",
+    "objekt"
+   ],
+   "saat_klassen": {
+    "tot": 0,
+    "still": 0,
+    "osz": 0,
+    "gleiter": 1,
+    "gross": 0,
+    "offen": 3
+   },
+   "v_c": [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "dreh24": [
+    {
+     "selbst": 1,
+     "selbst_d_gleich": 1,
+     "anderer": 0,
+     "nicht_gefunden": 23
+    },
+    {
+     "selbst": 1,
+     "selbst_d_gleich": 1,
+     "anderer": 0,
+     "nicht_gefunden": 23
+    },
+    {
+     "selbst": 1,
+     "selbst_d_gleich": 1,
+     "anderer": 0,
+     "nicht_gefunden": 23
+    },
+    {
+     "selbst": 1,
+     "selbst_d_gleich": 1,
+     "anderer": 0,
+     "nicht_gefunden": 23
+    }
+   ],
+   "ok": true
+  },
+  {
+   "typ": "p3_111",
+   "p_soll": 3,
+   "d_soll": [
+    2,
+    2,
+    2
+   ],
+   "richtung_soll": "<111>",
+   "n_gleiter": 4,
+   "mit_erwartung": 4,
+   "gleiter_je_saat": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "quellen_arten": [
+    "ganz",
+    "objekt"
+   ],
+   "saat_klassen": {
+    "tot": 0,
+    "still": 0,
+    "osz": 0,
+    "gleiter": 1,
+    "gross": 0,
+    "offen": 3
+   },
+   "v_c": [
+    0.8164965809277259,
+    0.8164965809277259,
+    0.8164965809277259,
+    0.8164965809277259
+   ],
+   "dreh24": [
+    {
+     "selbst": 3,
+     "selbst_d_gleich": 3,
+     "anderer": 0,
+     "nicht_gefunden": 21
+    },
+    {
+     "selbst": 3,
+     "selbst_d_gleich": 3,
+     "anderer": 0,
+     "nicht_gefunden": 21
+    },
+    {
+     "selbst": 3,
+     "selbst_d_gleich": 3,
+     "anderer": 0,
+     "nicht_gefunden": 21
+    },
+    {
+     "selbst": 3,
+     "selbst_d_gleich": 3,
+     "anderer": 0,
+     "nicht_gefunden": 21
+    }
+   ],
+   "ok": true
+  },
+  {
+   "typ": "p4_100",
+   "p_soll": 4,
+   "d_soll": [
+    0,
+    0,
+    4
+   ],
+   "richtung_soll": "<100>",
+   "n_gleiter": 4,
+   "mit_erwartung": 4,
+   "gleiter_je_saat": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "quellen_arten": [
+    "ganz",
+    "objekt"
+   ],
+   "saat_klassen": {
+    "tot": 0,
+    "still": 0,
+    "osz": 0,
+    "gleiter": 1,
+    "gross": 0,
+    "offen": 3
+   },
+   "v_c": [
+    0.7071067811865475,
+    0.7071067811865475,
+    0.7071067811865475,
+    0.7071067811865475
+   ],
+   "dreh24": [
+    {
+     "selbst": 4,
+     "selbst_d_gleich": 4,
+     "anderer": 0,
+     "nicht_gefunden": 20
+    },
+    {
+     "selbst": 4,
+     "selbst_d_gleich": 4,
+     "anderer": 0,
+     "nicht_gefunden": 20
+    },
+    {
+     "selbst": 4,
+     "selbst_d_gleich": 4,
+     "anderer": 0,
+     "nicht_gefunden": 20
+    },
+    {
+     "selbst": 4,
+     "selbst_d_gleich": 4,
+     "anderer": 0,
+     "nicht_gefunden": 20
+    }
+   ],
+   "ok": true
+  }
+ ],
+ "c_ok": true,
+ "d_symmetrie": {
+  "gruppe": 48,
+  "echte": 24,
+  "in_T": 12,
+  "tests": 1568,
+  "fehler": 0,
+  "stapel_tests": 120,
+  "stapel_fehler": 0
+ },
+ "d_ok": true,
+ "e_lichtkegel": [
+  {
+   "t": 1,
+   "zellen": 13,
+   "soll": 13,
+   "gleich": true
+  },
+  {
+   "t": 2,
+   "zellen": 55,
+   "soll": 55,
+   "gleich": true
+  },
+  {
+   "t": 3,
+   "zellen": 147,
+   "soll": 147,
+   "gleich": true
+  },
+  {
+   "t": 4,
+   "zellen": 309,
+   "soll": 309,
+   "gleich": true
+  },
+  {
+   "t": 5,
+   "zellen": 561,
+   "soll": 561,
+   "gleich": true
+  },
+  {
+   "t": 6,
+   "zellen": 923,
+   "soll": 923,
+   "gleich": true
+  }
+ ],
+ "e_ok": true,
+ "LF0_ok": true,
+ "zusatz_ok": true,
+ "param": {
+  "T": 256,
+  "C_max": 600,
+  "T_iso": 128,
+  "C_iso": 300,
+  "R": 4.5,
+  "pruefpunkte": [
+   64,
+   128,
+   192
+  ],
+  "klein": 200,
+  "t_klein": 8,
+  "m1": 5,
+  "dichten": [
+   0.15,
+   0.3,
+   0.45,
+   0.6
+  ],
+  "saaten_je_dichte": 6,
+  "saat_basis": 380441,
+  "W1": 1500000,
+  "W1_obj": 600000,
+  "max_obj": 400,
+  "m2": [
+   5,
+   7,
+   9
+  ],
+  "n2": [
+   48,
+   32,
+   16
+  ],
+  "W2": 6000000,
+  "W2_obj": 1500000,
+  "N2_max": null
+ },
+ "zeit_s": 1.62
+}

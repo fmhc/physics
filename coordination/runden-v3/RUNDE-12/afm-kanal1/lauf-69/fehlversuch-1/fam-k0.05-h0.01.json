@@ -1,0 +1,15 @@
+{
+ "argumente": {
+  "kommando": "familie",
+  "kappa": "-0.05",
+  "f": "",
+  "h": 0.01,
+  "m1": 3000,
+  "aus": "/home/fmh/fmhc-physics-remote/runde12-afm-kanal1/aus",
+  "name": "fam-k0.05-h0.01"
+ },
+ "start": "2026-10-01 15:34:29 UTC",
+ "fehler": "Traceback (most recent call last):\n  File \"/home/fmh/fmhc-physics-remote/runde12-afm-kanal1/afm_kanal.py\", line 682, in main\n    {\"familie\": cmd_familie, \"kontrollen\": cmd_kontrollen, \"auswertung\": cmd_auswertung}[a.kommando](a, erg, zeilen)\n  File \"/home/fmh/fmhc-physics-remote/runde12-afm-kanal1/afm_kanal.py\", line 457, in cmd_familie\n    prs = afm_profile([p[0] for p in paare], [p[1] for p in paare], a.h, prot)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/fmh/fmhc-physics-remote/runde12-afm-kanal1/afm_kanal.py\", line 329, in afm_profile\n    Nq = math.sqrt(Om2) * 4.0 * PI * float(np.trapz(s2 * r * r, r))\n                                           ^^^^^^^^\n  File \"/home/fmh/ComfyUI/venv/lib/python3.12/site-packages/numpy/__init__.py\", line 792, in __getattr__\n    raise AttributeError(f\"module {__name__!r} has no attribute {attr!r}\")\nAttributeError: module 'numpy' has no attribute 'trapz'. Did you mean: 'trace'?\n",
+ "ende": "2026-10-01 15:34:48 UTC",
+ "laufzeit": 19.64476395957172
+}

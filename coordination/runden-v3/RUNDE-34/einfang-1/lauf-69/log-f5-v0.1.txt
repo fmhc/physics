@@ -1,0 +1,21 @@
+start 2026-10-03T16:06:50+00:00 spur=p4000b unit=fmhc-physics-klein-r34ef-f5-v0.1-160650
+Running as unit: fmhc-physics-klein-r34ef-f5-v0.1-160650.service
+torch 2.5.1+cu121, Geraet cuda (Quadro P4000)
+Netz n=5 h=0.3 R=60: 120876 Ecken, 119726 frei, Grad Spitze 5, Defekt 1.047198, Bauzeit bis jetzt 5.8 s
+statischer Ball: Q_lat 198.997487 E 156.54140238 omega 0.744945 c -2.3e-11 -6.2e-16 res 1.5e-07 aussen 2 (2.5 s)
+/home/fmh/fmhc-physics-remote/runde34-einfang/einfang.py:144: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at ../aten/src/ATen/SparseCsrTensorImpl.cpp:53.)
+  Lt = torch.sparse_csr_tensor(torch.tensor(Lff.indptr, dtype=torch.int64), torch.tensor(Lff.indices, dtype=torch.int64),
+Start: E 158.07926080 Q 200.00000000 E_rest 157.28821933 K_eff 0.791041 K_nominal 0.792389 x -25.0003 Q_ball 199.999589
+t 100.0 x -15.0079 x_S -15.0076 E 158.079230 E_damp 1.073e-04 Q 199.999945 E_ball 158.078809 Q_ball 199.999455 S_max 1.0503 (2.69 ms/Schritt)
+t 200.0 x -4.2997 x_S -4.2879 E 158.078662 E_damp 2.264e-04 Q 199.999860 E_ball 158.077724 Q_ball 199.998815 S_max 1.0513 (2.78 ms/Schritt)
+t 300.0 x 9.5910 x_S 9.6114 E 158.078017 E_damp 2.079e-03 Q 199.998295 E_ball 158.032793 Q_ball 199.955212 S_max 1.0401 (2.67 ms/Schritt)
+t 400.0 x 15.3677 x_S 15.3580 E 158.047138 E_damp 3.177e-02 Q 199.971385 E_ball 158.000144 Q_ball 199.925939 S_max 1.0608 (2.61 ms/Schritt)
+t 500.0 x 21.2272 x_S 21.2267 E 158.010673 E_damp 6.851e-02 Q 199.936729 E_ball 157.960900 Q_ball 199.888392 S_max 1.0562 (2.58 ms/Schritt)
+Ende: Ball bei |x| > 24 nach Austritt, t 546.0, 2.57 ms/Schritt, Dauer 23.5 s, geschrieben /home/fmh/fmhc-physics-remote/runde34-einfang/lauf/ef-f5-v0.1.json
+Finished with result: success
+Main processes terminated with: code=exited/status=0
+Service runtime: 24.114s
+CPU time consumed: 24.039s
+Memory peak: 2.5M
+Memory swap peak: 0B
+ende 2026-10-03T16:07:14+00:00 rc=0 unit=fmhc-physics-klein-r34ef-f5-v0.1-160650

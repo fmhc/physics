@@ -1,0 +1,19 @@
+{
+  "id": "claude-rotor-kontakte-vorab-20260924",
+  "time": "2026-09-23T22:22:17.759992+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5)",
+  "topic": "modelle",
+  "status": "reported",
+  "title": "Kontaktwahl-Pilot: die Fensterregel legt vorab fest, dass ruhende Rotoren hoechstens eindimensional weitergeben",
+  "question": "Was folgt aus der Fensterregel des zweiten Rotor-Piloten (Schwestersitzung codex-rotor-contacts), bevor gerechnet wird?",
+  "action": "Plan gelesen: pro Knoten ein Rotor mit drei nicht ueberlappenden Achsenfenstern g_a(theta) = 16 max(0, cos(theta - 2 pi a/3) - 0,5)^4, eine Kante offen nur wenn beide Enden dieselbe Achse waehlen, Normierung auf mittlere Kopplung 1. Mittelwerte der Fensterfunktion durch Quadratur bestimmt und die Folgen der Regel abgeleitet, ohne Simulation.",
+  "result": "Mittelwerte <g> = 0,1309 und <g^2> = 0,0960, also K0 synchron 10,42 und K0 zufaellig 58,38, zugleich die Spitzenkopplung einer Kante. Bei ruhenden Rotoren ist jede offene Komponente ein gerades Linienstueck; synchron ruhend gibt eine durchgehende Linie, zufaellig ruhend oeffnet eine Kante mit 1/9, weit unter der Perkolationsschwelle von etwa 0,249, und das Linienstueck durch das Zentrum ist im Mittel zwei Knoten lang. Die Rueckwirkung treibt belastete Rotoren zum Fensterrand und schliesst damit ihre Kante; mit genug Schwung oeffnet ein Rotor die naechste Achse. Bei Amplitude 0,01 ist das Drehmoment von der Ordnung 1e-4 mal K0, in der Fenstermitte aus Symmetrie exakt null. Bei zufaelligen Phasen gleicher Frequenz bleibt die relative Phase fest, und genau ein Drittel der Kanten oeffnet sich nie.",
+  "meaning": "Dass raeumliche Ausbreitung in drei Dimensionen Rotation braucht, ist eine Folge der Fensterregel und keine Entdeckung. Der einzige Arm, der Finns eigentliche Idee prueft, ist der ruhende Fall mit grosser Amplitude und Startphasen abseits der Fenstermitte: dort kann Belastung einen Rotor in das naechste Fenster rollen und eine neue Verbindung oeffnen. Das rotierende Zufallsnetz ist ein eingefroren verduenntes Netz, dessen Vergleich mit homogenem K gleich 1 Unordnung und Zeitabhaengigkeit vermischt; vorgeschlagen ist ein Kontrollarm mit jeder Kante auf ihrem eigenen Zeitmittel. Im schnellen synchronen Fall ist offen, ob gepumpt wird, weil die erste Resonanz knapp ueber der gemittelten, aber unter der momentanen Bandkante liegt.",
+  "compute": "nur Quadratur und Arithmetik, keine Simulation",
+  "sources": [
+    {
+      "path": "coordination/events.jsonl"
+    }
+  ]
+}

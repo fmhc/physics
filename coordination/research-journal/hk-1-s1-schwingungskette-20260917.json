@@ -1,0 +1,36 @@
+{
+  "id": "hk-1-s1-schwingungskette-20260917",
+  "time": "2026-09-17T02:40:50+02:00",
+  "time_kind": "completed",
+  "author": "claude-worker-69 (Claude-Subagent, Anthropic, claude-fable-5-1), Stufe S1 auf .69 CPU, im Auftrag Finn",
+  "topic": "theory",
+  "status": "reported",
+  "title": "HK-1 S1: Schaltfront in der bistabilen 16er-Kette, formal T (Vorzeichen in K2-Text), Entscheidungsgroesse geschichtsabhaengig (B3)",
+  "question": "Traegt die hierarchisch-dyadische Kopplungsanordnung A eine getriggerte Schaltfront im Fenster t in [80,100] um mindestens zwei Sites weiter als die uniforme Anordnung C gleicher Steifigkeitssumme (D = N_low(A) - N_low(C) >= 2 bei beiden h)?",
+  "action": "Vertrag hk-1-schwingungskette-VERTRAG.md unveraendert gerechnet: 12 Faelle x 2 Schrittweiten (Stoermer-Verlet, T = 100), K0-K4, K3b, Spiegellauf K2 zweifach (Vertragstext p_16 = +sqrt(2E) und Diagnose p_16 = -sqrt(2E)), Langzeit T = 1000. User-Unit fmhc-physics-hk-1-20260917-v2 auf ubuntu-auto, CPUQuota 200 %, 141,5 s Wanduhr; erster Start scheiterte nur am JSON-Schreiben (numpy-bool), Rechnung unveraendert wiederholt.",
+  "result": "Ausgang T nach Vertragstext: K2 mit p_16 = +sqrt(2E) weicht um 1,29 ab; mit p_16 = -sqrt(2E) (Spiegelung interner Koordinaten ohne Vorzeichenwechsel) stimmt die Spiegelung auf 4,4e-15 (t <= 30) und 2e-9 (t <= 100). Alle anderen Kontrollen bestanden: K0 exakt 0, K1 max |H-H0|/H0 1,9e-5 (h = 0,01) bzw. 4,0e-6 (h = 0,005), Ordnungsverhaeltnisse 3,6-4,9, K3-Satz min q 0,816 > 0,575, K3b Wurzeln auf 1e-3, K4-Kurzzeit diff <= 2,7e-5. Entscheidungsgroesse: D = -1,57 (h = 0,01) und -0,13 (h = 0,005); C bei 0,20 ist geschichtsabhaengig (N_low 2,71 gegen 0,98), B bei 0,20 ebenso (3,44 gegen 2,04). Nur Sites 1-3 schalten im Fenster; A haelt am wenigsten Sites unten (0,85), B 2,04, C 0,98 (h = 0,005). Langzeit T = 1000: A 2,26, B 6,86, C 8,02 Sites unten.",
+  "meaning": "Formal T wegen eines Vorzeichens im Vertragstext (K2 verlangt p_16 = +sqrt(2E), die korrekte Spiegelung interner Koordinaten ist -sqrt(2E)); der Code besteht die korrigierte Spiegelung auf Maschinengenauigkeit. Inhaltlich (Diagnose, kein Ausgang): kein Hinweis auf einen Hierarchievorteil, eher das Gegenteil, und das Fenstermass ist bei E_puls = 0,20 nicht schrittweitenkonvergent (chaotisch), also nach Vertrag B3. Empfehlung fuer Fassung 2 durch claude-primary: K2-Vorzeichen korrigieren, Entscheidungsgroesse ueber Ensembles oder laengere Fenster definieren. Keine Teilchendeutung; Fensteraussage in einem gesetzten Modell.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260916/hk-1-lauf/BERICHT-HK-1.md",
+      "sha256": "abc27ad8d1a09295e2ccb185b799d108e4073065b835700830d5d9ab73d127ae"
+    },
+    {
+      "path": "coordination/vertraege-20260916/hk-1-lauf/ERGEBNIS-HK-1.json",
+      "sha256": "fbeb1039de50aa33175127094e7a9374bd393dd631679d5d139ff30d3324c10c"
+    },
+    {
+      "path": "coordination/vertraege-20260916/hk-1-lauf/hk_1.py",
+      "sha256": "a645f2eb061f997e0c1a5eccb2f2f1755897166b101b1ab0850d8237f8a65530"
+    },
+    {
+      "path": "coordination/vertraege-20260916/hk-1-schwingungskette-VERTRAG.md",
+      "sha256": "178e51bff02176dd84cfd00616de10659f4f800b867b4da8e374e5cde67f1049"
+    },
+    {
+      "path": "coordination/vertraege-20260916/startsignal-hk-1.txt",
+      "sha256": "171aa78c87934f834f0bdad0e3e1206ec68ada07447dece917e9c713377b3389"
+    }
+  ],
+  "recorded_at": "2026-09-17T00:42:06.862655+00:00"
+}

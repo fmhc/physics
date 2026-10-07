@@ -1,0 +1,41 @@
+{
+  "id": "claude-video-kompakt-1-treppe-wicklung-20261004",
+  "time": "2026-10-04T23:55:31+02:00",
+  "time_kind": "completed",
+  "author": "claude-video (Anthropic, Opus 5.5), eigene Claude-Sitzung im Direktauftrag Finns; TREPPE-1 von der Leitung selbst, WICKEL-1 von einer abgezweigten Instanz derselben Sitzung (Fork, gleicher Kontext)",
+  "topic": "modelle",
+  "status": "reported",
+  "evidenzart": "modell",
+  "title": "KOMPAKT-1 (zwei kleine v3-Tests zur aufgerollten Richtung): TREPPE-1 alle vier Vorhersagen eingetroffen, der Wechsel gleichfoermig zu lokalisiert liegt aber bei Umfang ~10,6 (d = 3) bzw. ~11,4 (d = 2) statt 12,05/12,09 und ist stetig ueber eingeschnuerte Strings; WICKEL-1 W1, W3, W4 eingetroffen, W0, W2, W5 nicht: unser CX-1-S2-Teil traegt einen stabilen geraden gewickelten Hopfion, E(L_z) hat ein Minimum knapp unterhalb der Kartenabtastung, ohne Potential zerfliesst der verdrillte String nicht",
+  "question": "Finn: 'mach das was du vorgeschlagen hast auch den punkt 1' (VERTIEFUNG-claude.md B4 und A5). (1) Wechselt der leichteste absolut stabile Papier-I-Q-Ball auf R^d x S^1 beim Leiterfaktor Q_s(d+1)/Q_s(d) von gleichfoermig zu lokalisiert? (2) Reproduziert unsere Maschinerie gewickelte Hopfionen nach Kobayashi/Nitta (arXiv:1305.7417), wie haengt ihre Energie von der Periode ab, und traegt der S2-Teil von CX-1 sie?",
+  "action": "Karte KOMPAKT-1 mit zehn Vorhersagen und Wahrscheinlichkeiten vor jeder Rechnung eingefroren (22:41:49, sha256 ce1472b5). Plan an claude-primary und ag-phy-coordination per Bus (fe110013, a3f0778f). TREPPE-1: variationelle Finite-Volumen-Diskretisierung in (r, y), gerader Sektor, Newton mit SuperLU, Schwellensuche E = Q per Brent, Fortsetzung in L abwaerts; h = 0,1, R = 45; Kontrollen gegen die Leiter, Gitter h/2; PLAN und Code eingefroren 22:51:22; Laeufe .69 cpu3/cpu4 22:51:50 bis 22:56:12; zwei nachtraegliche beschreibende Hilfslaeufe zur Lage des Wechsels mit unveraendertem Code. WICKEL-1 (Fork): Faddeev-Skyrme mit Potential auf R^2 x S^1, torch float64 auf p4000a, radiale Referenz auf cpu8; PLAN und Code eingefroren 22:59:00; Hauptlaeufe 23:00 bis 23:18, beschreibende Zusatzlaeufe bis 23:51. Synthetische Rechnung im Modell, kein Messbezug.",
+  "result": "TREPPE-1: T0 eingetroffen (Leiterwerte auf <= 7,6e-4, lokalisiert bei L = 28: 1704,20 gegen 4D 1705,24, h/2 aendert Q_s um 0,04 %); T1 eingetroffen (d = 3: L = 4, 8, 10 gleichfoermig, L = 12 eingeschnuert mit Q_s = 1606,27 < 1696,99); T2 eingetroffen (Verhaeltnis zur Huellkurve 0,946 bis 0,9994); T3 eingetroffen (d = 2: L = 12 eingeschnuert 135,42 < 140,40). Hilfslaeufe [D]: d = 3 Wechsel zwischen L = 10,5 und 10,75, d = 2 zwischen 11 und 12 (~11,4); Kontrast steigt stetig. WICKEL-1: W0 nicht eingetroffen (Gitter 1,5e-3 bzw. 2,2e-3 statt <= 1e-3; einfache Schnittladung 1,1 %/2,1 %; nach Korrektur [D] 5e-6), W1 eingetroffen ((1,1), (2,1) bei L_z = 1 gerade, |H| = 1, 2), W2 nicht eingetroffen (E = 19,06/21,22/32,36/59,23/115,63 bei L_z = 0,25..4, Minimum am Rand; [D] radial ~0,29), W2b entfaellt, W3 eingetroffen nach Regel ((2,1) bei 0,25 Schraube, Hopfzahl danach unbestimmt), W4 eingetroffen (CX-1-S2, (1,1) bei L_z = 4,5 gerade, |H| = 1), W5 nicht eingetroffen (ohne Potential Radius nur x 1,34, Verdrillung wirkt wie Massenterm).",
+  "meaning": "Fuer Finn: Die Treppe traegt als Groessenordnung, aber als Rampe statt Stufe. Aufgerollte Richtungen gehen fuer den leichtesten stabilen Klumpen etwas frueher auf als die Leiterfaktoren sagen, gesteuert von der Einschnuer-Instabilitaet des Schwellenstrings; fuer sechs oder sieben Richtungen bleibt es Hypothese. Die Stringtheorie-Sache ist im eigenen Modell ehrlich verfuegbar: Gewickelte Objekte mit Energie proportional zur Periode existieren im S2-Teil von CX-1, und mit Verdrillung bekommt die Energie ein Minimum in der Periode, die feldtheoretische Form von 'Wicklung plus Impuls waehlt den Radius' (nur bei dynamisch gedachtem Radius). Keine neue Physik, kein Messbezug; Faehigkeitsnachweise mit offengelegten Grenzen. Selbstanzeigen: Schwellensuche ohne Kontrastpruefung (Hilfslauf L = 10,5 betroffen, Hauptpunkte nicht); im WICKEL-Teil einmal versehentlich lokaler python3-Start ohne Rechnung (Regelverstoss) und einmal python -c auf der .69 ausserhalb kleintest.sh; Normierung von Kobayashi/Nitta nur qualitativ getroffen.",
+  "sources": [
+    {
+      "path": "coordination/kompakt-20261004/ERGEBNIS.md",
+      "sha256": "386a8847432b537d539380f585b11171a90cac9c0d311c3083518639ad062af6"
+    },
+    {
+      "path": "coordination/kompakt-20261004/KARTE.md",
+      "sha256": "ce1472b50e788f027d5e43998de35f31c3e02e23e297a378b9f07ffe0f2073e1"
+    },
+    {
+      "path": "coordination/kompakt-20261004/treppe/ERGEBNIS.md",
+      "sha256": "ac1b723625222b5945915f3b60cdd6b8ebeb3e49a727463f8922dbc36e7c7014"
+    },
+    {
+      "path": "coordination/kompakt-20261004/wicklung/ERGEBNIS.md",
+      "sha256": "cf195ff9be0ee5631055a72d0b323c84a41a8cfd6b560534473549b47a3375d3"
+    },
+    {
+      "path": "coordination/video-02eUGN3FYmw-20261004/VERTIEFUNG-claude.md",
+      "sha256": "2d06cf1c7718f9ae157448cebda6dc04d4d872b5921b8da033cc0414f06c9ac7"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-37/dim-leiter-qball-1/ERGEBNIS.md",
+      "sha256": "782cf4fa87bbe5884ee623f01e9373f2dfdc6ea0f34284be058b6ef19764e6cd"
+    }
+  ],
+  "recorded_at": "2026-10-04T21:56:11.105736+00:00"
+}

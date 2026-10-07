@@ -1,0 +1,347 @@
+{
+ "kopf": {
+  "code_sha256": "e0cdb5f19334ceecefa491012f13feb58eb1ee0bd6d95bcaba6c96f0ec18569f",
+  "lauf": "/home/fmh/fmhc-physics-remote/guertel-feld-stab-2/rauch",
+  "gfs1": "/home/fmh/fmhc-physics-remote/guertel-feld-stab-2/eingaben-gfs1",
+  "zeit_utc": "2026-10-04T17:42:28Z"
+ },
+ "regeln": {
+  "TOL_E": 1e-06,
+  "RHO_AST": 0.9,
+  "SO2_BAND_PLAN": 0.001,
+  "SO2_BAND_WORT": 0.1,
+  "FTOL": 1e-05,
+  "TMAX_B": 20.0,
+  "RASTER": 30.0,
+  "THETA_A": 20,
+  "THETA_REF": 10
+ },
+ "teil_b": {
+  "g8": {
+   "r0": 8,
+   "R": 16,
+   "plan": {
+    "theta_J": null,
+    "theta_U": null,
+    "art": "kein Sprung bis 20",
+    "theta_max": null,
+    "lo": 50.0,
+    "hi": "inf"
+   },
+   "wort": {
+    "theta_J": null,
+    "theta_U": null,
+    "art": "kein Sprung bis 20",
+    "theta_max": null,
+    "lo": 50.0,
+    "hi": "inf"
+   },
+   "theta_ende": 20.0,
+   "je_30_grad": [
+    {
+     "theta": 0.0,
+     "sonde_zust": 1.0,
+     "sonde_lauf": 1.0,
+     "qz": 0.0,
+     "E": 0.0,
+     "P": 0.0
+    }
+   ]
+  },
+  "g12": {
+   "r0": 12,
+   "R": 24,
+   "plan": {
+    "theta_J": null,
+    "theta_U": null,
+    "art": "kein Sprung bis 20",
+    "theta_max": null,
+    "lo": 50.0,
+    "hi": "inf"
+   },
+   "wort": {
+    "theta_J": null,
+    "theta_U": null,
+    "art": "kein Sprung bis 20",
+    "theta_max": null,
+    "lo": 50.0,
+    "hi": "inf"
+   },
+   "theta_ende": 20.0,
+   "je_30_grad": [
+    {
+     "theta": 0.0,
+     "sonde_zust": 1.0,
+     "sonde_lauf": 1.0,
+     "qz": 0.0,
+     "E": 0.0,
+     "P": 0.0
+    }
+   ]
+  },
+  "g16": {
+   "r0": 16,
+   "R": 32,
+   "plan": {
+    "theta_J": null,
+    "theta_U": null,
+    "art": "kein Sprung bis 20",
+    "theta_max": null,
+    "lo": 50.0,
+    "hi": "inf"
+   },
+   "wort": {
+    "theta_J": null,
+    "theta_U": null,
+    "art": "kein Sprung bis 20",
+    "theta_max": null,
+    "lo": 50.0,
+    "hi": "inf"
+   },
+   "theta_ende": 20.0,
+   "je_30_grad": [
+    {
+     "theta": 0.0,
+     "sonde_zust": 1.0,
+     "sonde_lauf": 1.0,
+     "qz": 0.0,
+     "E": 0.0,
+     "P": 0.0
+    }
+   ]
+  }
+ },
+ "GT2": {
+  "plan": "nicht entschieden",
+  "wort": "nicht entschieden",
+  "vergleiche_plan": [
+   null,
+   null
+  ],
+  "vergleiche_wort": [
+   null,
+   null
+  ]
+ },
+ "teil_a": {
+  "g8": {
+   "referenz": {
+    "theta": 10,
+    "fehlt": true
+   },
+   "stoesse": [
+    {
+     "theta": 20,
+     "eps": 0.01,
+     "fehlt": true
+    },
+    {
+     "theta": 20,
+     "eps": 0.1,
+     "fehlt": true
+    },
+    {
+     "theta": 20,
+     "eps": 0.3,
+     "fehlt": true
+    }
+   ]
+  },
+  "g12": {
+   "referenz": {
+    "theta": 10,
+    "fehlt": true
+   },
+   "stoesse": [
+    {
+     "theta": 20,
+     "eps": 0.01,
+     "fehlt": true
+    },
+    {
+     "theta": 20,
+     "eps": 0.1,
+     "fehlt": true
+    },
+    {
+     "theta": 20,
+     "eps": 0.3,
+     "fehlt": true
+    }
+   ]
+  },
+  "g16": {
+   "referenz": {
+    "theta": 10,
+    "E_vor": 11.737528116044189,
+    "E_end": 11.643266160646249,
+    "sonde_lauf_mit_start": 0.9998973982666657,
+    "fmax_end": 0.0012941673307410072,
+    "schritte": 60,
+    "qz_mittel_aussen_end": 0.016247552921361763,
+    "gueltig_plan": false,
+    "gueltig_wort": true
+   },
+   "stoesse": [
+    {
+     "theta": 20,
+     "eps": 0.01,
+     "fehlt": true
+    },
+    {
+     "theta": 20,
+     "eps": 0.1,
+     "fehlt": true
+    },
+    {
+     "theta": 20.0,
+     "eps": 0.3,
+     "klasse_plan": null,
+     "klasse_wort": "nicht umgekehrt",
+     "rho": null,
+     "E_vor": 46.84496705420965,
+     "E_nach_stoss": 49.96287877043734,
+     "E_end": 46.56770437550232,
+     "E_ref": 11.643266160646249,
+     "E_end_rel_zu_E_ref": 2.9995396251353603,
+     "sonde_vor": 0.999758427907227,
+     "sonde_nach_stoss": 0.9996422505723034,
+     "sonde_lauf_mit_start": 0.9996055196701986,
+     "sonde_end": 0.9996055196701986,
+     "erster_sprung_schritt": null,
+     "fmax_end": 0.00027471110429367316,
+     "schritte": 100,
+     "halb": null,
+     "kipp_P0": 1.340373218109635,
+     "kipp_Pend": 0.017981768795392917,
+     "kipp_Pmax": 1.340373218109635,
+     "kipp_Pmax_schritt": 0,
+     "qz_mittel_aussen_vor": 0.03238577954249968,
+     "qz_mittel_aussen_end": 0.03217092290291761,
+     "q0_min_frei_end": 0.986405157827123,
+     "kipp_delta_max": 0.29999451865715765,
+     "kipp_plaetze": 23574,
+     "laufzeit_s": 13.280695676803589
+    }
+   ]
+  }
+ },
+ "GT1": {
+  "plan": "nicht auswertbar",
+  "wort": "nicht eingetroffen",
+  "klassen_plan": [
+   null,
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "klassen_wort": [
+   null,
+   null,
+   null,
+   null,
+   null,
+   "nicht umgekehrt"
+  ]
+ },
+ "zusatz_g16_420_beschreibend": {
+  "referenz": {
+   "theta": 300,
+   "fehlt": true
+  },
+  "stoesse": [
+   {
+    "theta": 420,
+    "eps": 0.01,
+    "fehlt": true
+   },
+   {
+    "theta": 420,
+    "eps": 0.1,
+    "fehlt": true
+   },
+   {
+    "theta": 420,
+    "eps": 0.3,
+    "fehlt": true
+   }
+  ]
+ },
+ "GT0": {
+  "plan": "nicht auswertbar",
+  "wort": "nicht auswertbar",
+  "teil_a_so2": {
+   "plan": "nicht auswertbar",
+   "wort": "nicht auswertbar",
+   "referenz_eps0": {
+    "E_vor": 1.035354388405372,
+    "E_end": 1.027839128552323,
+    "sonde_lauf_mit_start": 0.05064521019735707,
+    "fmax_end": 8.996811381788844e-06,
+    "schritte": 137,
+    "gueltig_plan": true
+   },
+   "laeufe": [
+    {
+     "eps": 0.01,
+     "fehlt": true
+    },
+    {
+     "eps": 0.1,
+     "fehlt": true
+    },
+    {
+     "eps": 0.3,
+     "klasse_plan": "ast",
+     "klasse_wort": "ast",
+     "E_ast_ref": 1.027839128552323,
+     "E_end_rel_zu_E_ast_ref": 0.0005685391485896903,
+     "E_vor": 1.035354388405372,
+     "E_nach_stoss": 8.457745385310503,
+     "E_end": 1.0284234953353573,
+     "E_end_rel_zu_E_vor": -0.0066942229130737595,
+     "sonde_vor": 0.043828504962094395,
+     "sonde_lauf_mit_start": 0.18359444007772693,
+     "sonde_end": 0.04915373768208042,
+     "schritte": 100,
+     "fmax_end": 0.0028056744719840918,
+     "kipp_delta_max": 0.29986484606657987,
+     "kipp_plaetze": 448
+    }
+   ]
+  },
+  "teil_b_g12": {
+   "plan": "nicht auswertbar",
+   "wort": "nicht auswertbar",
+   "protokoll": {
+    "schritt": {
+     "E_GFS1": 34.33522692764362,
+     "E_neu": 34.33522692764362,
+     "rel": 0.0,
+     "sonde_neu": 0.9994376966943536
+    }
+   },
+   "stoesse": [
+    {
+     "eps": 0.01,
+     "fehlt": true
+    },
+    {
+     "eps": 0.1,
+     "fehlt": true
+    },
+    {
+     "eps": 0.3,
+     "fehlt": true
+    }
+   ],
+   "referenz": null
+  }
+ },
+ "bilder": [
+  "/home/fmh/fmhc-physics-remote/guertel-feld-stab-2/rauch/energie-verlauf.png",
+  "/home/fmh/fmhc-physics-remote/guertel-feld-stab-2/rauch/sprunggrenze.png"
+ ]
+}

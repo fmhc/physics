@@ -1,0 +1,284 @@
+{
+ "test": "teilung",
+ "start": "2026-09-30T11:25:09+02:00",
+ "ende": "2026-09-30T11:25:19+02:00",
+ "rauch": true,
+ "dauer_s": {
+  "schiessen_s": 9.70934038500127,
+  "entwicklung_grob_s": 0.17050886500510387
+ },
+ "geraet": "CPU (nur Form- und Syntaxprobe)",
+ "torch": "2.10.0+cu128",
+ "notizen": [],
+ "parameter": {
+  "T": 300.0,
+  "teil": "gegen",
+  "eps": 0.01,
+  "l_max": 6,
+  "L": 38.4,
+  "stufen": [
+   [
+    "grob",
+    0.6,
+    0.1
+   ],
+   [
+    "fein",
+    0.4,
+    0.05
+   ]
+  ],
+  "schwelle_rel": 0.5,
+  "q_min_rel": 0.03,
+  "blur": 1.0
+ },
+ "profile": [
+  {
+   "omega2": 0.55,
+   "m": 0,
+   "p": 1.0229943032651034,
+   "klammer": 9.479084184249587e-13,
+   "x_schwanz": 16.57,
+   "N": 160.75095568109225,
+   "G": 9.036804916816365,
+   "VU": 88.41302830520111,
+   "Q": 238.43219886425968,
+   "E": 185.86285884661822,
+   "virialrest": 1.515953277684884e-08,
+   "S_zentrum": 1.0465173445128544,
+   "S_max": 1.0465173445128544,
+   "R_halb": 6.880377999263338,
+   "R_kern_halb": 0.0,
+   "R_max": 0.0,
+   "f_top": 1.0230958614419827,
+   "gueltig": true
+  },
+  {
+   "omega2": 0.7569,
+   "m": 0,
+   "p": 0.8210077027425777,
+   "klammer": 1.0141887329950805e-12,
+   "x_schwanz": 13.85,
+   "N": 10.653071960648404,
+   "G": 1.8509106431662963,
+   "VU": 8.063317363665654,
+   "Q": 18.53634521152822,
+   "E": 17.977538173846725,
+   "virialrest": 4.462588884944875e-07,
+   "S_zentrum": 0.6740536479626449,
+   "S_max": 0.6740536479626449,
+   "R_halb": 1.777095060030568,
+   "R_kern_halb": 0.0,
+   "R_max": 0.0,
+   "f_top": 1.0945588005537332,
+   "gueltig": true
+  }
+ ],
+ "ergebnis": {
+  "grob": [
+   {
+    "lauf": "m0_05500",
+    "m": 0,
+    "omega2": 0.55,
+    "gestoert": true,
+    "stufe": "grob",
+    "dx": 0.6,
+    "dt": 0.1,
+    "Q_profil": 238.43219886425968,
+    "n_max": 1,
+    "n_ende": 1,
+    "teilung": false,
+    "t_teilung": null,
+    "Q_box_verlust": 5.551115123125783e-16,
+    "E_box_verlust": 8.306580476791225e-07,
+    "J_box_aenderung": 5.0498808030313773e-08,
+    "J_box_start": 2.0740008654195666e-12,
+    "Q_box_start": 238.4723471688023,
+    "windung_ende": [
+     0
+    ],
+    "l_dominant": 2,
+    "A_start_ende": [
+     0.00992084875486459,
+     0.005545744993744556
+    ],
+    "gamma": null,
+    "gamma_2": null,
+    "A2_start_ende": [
+     0.00992084875486459,
+     0.005545744993744556
+    ],
+    "gamma_3": null,
+    "A3_start_ende": [
+     0.0037016684152919896,
+     0.002431000003167854
+    ],
+    "plausibel": {
+     "Q_nie_wachsend": true,
+     "Q_max_rel": 0.0,
+     "Q_erhalten_bis_t": 6.0,
+     "Q_rel_aenderung": 5.551115123125783e-16,
+     "Q_erhalten": true,
+     "J_durch_Q_start": 8.697028775212618e-15,
+     "JQ_gleich_m": true,
+     "gamma_ok": true,
+     "bestanden": true
+    },
+    "gebiete": [
+     [
+      0.0,
+      1,
+      [
+       [
+        200.037,
+        0,
+        -0.0,
+        -0.052,
+        -0.049,
+        -0.0,
+        -0.0
+       ]
+      ]
+     ],
+     [
+      5.0,
+      1,
+      [
+       [
+        199.3313,
+        0,
+        -0.0,
+        -0.016,
+        -0.015,
+        0.00117,
+        0.00109
+       ]
+      ]
+     ]
+    ]
+   },
+   {
+    "lauf": "m0_07569",
+    "m": 0,
+    "omega2": 0.7569,
+    "gestoert": true,
+    "stufe": "grob",
+    "dx": 0.6,
+    "dt": 0.1,
+    "Q_profil": 18.53634521152822,
+    "n_max": 1,
+    "n_ende": 1,
+    "teilung": false,
+    "t_teilung": null,
+    "Q_box_verlust": 9.84967551964644e-10,
+    "E_box_verlust": 8.721961234359199e-06,
+    "J_box_aenderung": -2.2297848820093877e-05,
+    "J_box_start": 1.7575419200020237e-05,
+    "Q_box_start": 18.538115356133336,
+    "windung_ende": [
+     0
+    ],
+    "l_dominant": 3,
+    "A_start_ende": [
+     0.02075361190137526,
+     0.02369112485073929
+    ],
+    "gamma": null,
+    "gamma_2": null,
+    "A2_start_ende": [
+     0.027722888488919857,
+     0.022185850032503424
+    ],
+    "gamma_3": null,
+    "A3_start_ende": [
+     0.02075361190137526,
+     0.02369112485073929
+    ],
+    "plausibel": {
+     "Q_nie_wachsend": true,
+     "Q_max_rel": 0.0,
+     "Q_erhalten_bis_t": 6.0,
+     "Q_rel_aenderung": 9.84967551964644e-10,
+     "Q_erhalten": true,
+     "J_durch_Q_start": 9.48069362088925e-07,
+     "JQ_gleich_m": true,
+     "gamma_ok": true,
+     "bestanden": true
+    },
+    "gebiete": [
+     [
+      0.0,
+      1,
+      [
+       [
+        10.5196,
+        0,
+        0.0,
+        -0.052,
+        -0.052,
+        -3e-05,
+        -3e-05
+       ]
+      ]
+     ],
+     [
+      5.0,
+      1,
+      [
+       [
+        11.1204,
+        0,
+        0.0,
+        -0.043,
+        -0.043,
+        0.00026,
+        0.00024
+       ]
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ "kennzahlen": {
+  "grob_quelle": "dieser Aufruf",
+  "gegenprobe": {
+   "m0_05500": {
+    "teilung": false,
+    "gamma": null,
+    "gamma_2": null,
+    "gamma_3": null
+   },
+   "m0_07569": {
+    "teilung": false,
+    "gamma": null,
+    "gamma_2": null,
+    "gamma_3": null
+   }
+  },
+  "gegenprobe_bestanden": true,
+  "plausibel": {
+   "grob_m0_05500": true,
+   "grob_m0_07569": true
+  },
+  "profilprobe": {
+   "m0_05500": {
+    "S_max": 1.0465173445128544,
+    "x_schwanz": 16.57,
+    "grenze": 30.4,
+    "gueltig": true,
+    "info_f_top2_obergrenze": 1.0467251416997128,
+    "bestanden": false
+   },
+   "m0_07569": {
+    "S_max": 0.6740536479626449,
+    "x_schwanz": 13.85,
+    "grenze": 30.4,
+    "gueltig": true,
+    "info_f_top2_obergrenze": 1.198058967869627,
+    "bestanden": true
+   }
+  },
+  "plausibilitaet_bestanden": false
+ }
+}

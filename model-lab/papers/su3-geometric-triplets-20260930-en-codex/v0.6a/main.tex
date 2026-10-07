@@ -1,0 +1,403 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage[margin=22mm]{geometry}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs,tabularx,array}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=teal,urlcolor=teal,citecolor=teal,
+  pdftitle={Geometric mode triplets and symmetry-compatible interactions},
+  pdfsubject={English translation by Codex (OpenAI) of the German working draft, version 0.6a}}
+\urlstyle{tt}
+\setlength{\emergencystretch}{2em}
+\newcommand{\C}{\mathbb C}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newenvironment{drafttable}{\begin{center}\small\renewcommand{\arraystretch}{1.2}}{\end{center}}
+
+\begin{document}
+\begin{flushleft}
+Project-internal review by another AI organization (Anthropic); no journal peer review. Authorship and publication version remain to be determined.\\
+English translation and LaTeX preparation: Codex (OpenAI), from the German version 0.6a.}
+\end{flushleft}
+{\footnotesize
+Source: \path{model-lab/papers/su3-geometric-triplets-20260930/paper.html}; frozen locally as \path{source-v0.6a.html}.\\
+Source SHA-256 (recorded in \path{INPUTS.sha256}):\\
+\texttt{eb04ab2fa4c6f329db550c3dbe3b15f9ce32}\\
+\texttt{fb0347918654fba46429989c51c0}.\\
+The review and source-reading status reported below is that of the German source; this translation does not claim a new completed scientific review.
+\par}
+\vspace{1em}
+{\LARGE\bfseries Geometric mode triplets\\and symmetry-compatible interactions\par}
+\vspace{0.7em}
+{\bfseries Analytical constructions, numerical cross-checks, and limits of an SU(3) interpretation\par}
+
+\pdfbookmark[1]{Abstract}{abstract}
+\section*{Abstract}
+We investigate the emergence and preservation of complex mode triplets in geometric oscillator and field models. Tetrahedral and cube graphs possess degenerate linear triplets with U(3) symmetry and an SU(3) subgroup. A local quartic term already breaks SU(3) and couples in additional modes. We determine conditions for exchange that preserves the invariant sector and construct a conservative total-density mediator that is explicitly compatible with the symmetry. None of 54 individual distance kernels satisfies the chosen isotropy criteria. A static sum over six directions is isotropic but, as a network of independent neighbors, does not preserve the coherent sector; matched sitewise connections pass both checks. A linear control model with prescribed concentric shells provides equal exchange in three dipole channels. Frequency detuning explains incomplete transfer in that model. The required pair of positive dipole levels was not found in the finite Q-ball box problem investigated; very weak binding and the continuum remain unresolved. A self-consistent field derivation, nonlinear preservation of the symmetry, local gauge dynamics, and a QCD interpretation remain outstanding.
+
+\section{Question and scope of the claims}\label{sec:scope}
+The starting point is the question of whether four or eight coupled constituents can produce three equivalent internal states and suitable interactions. We distinguish the existence of a degenerate linear mode sector from its nonlinear preservation and from a local gauge theory. We study dimensionless complex graph amplitudes. The geometry is prescribed; the constituents do not move together on their own to form a bound body.
+
+The physical starting point of the project is localized, time-periodic solutions of a complex scalar field, known as Q-balls. One possible spatial three-channel sector would be the $l=1$ dipole sector with three angular components. Whether this triplet also possesses the required radial levels and nonlinear dynamics that preserves the sector is a further question. The graphs and shell potential serve here as controlled comparison models; their geometry is not derived from a Q-ball.
+
+The mathematical tools---graph spectra, unitary invariance, projection, and completing the square---are established. No claim to novelty or priority is made. The contribution of this working draft consists in their concrete combination, the counterchecks, and the identification of the missing steps in the derivation.
+
+\begin{drafttable}
+\begin{tabularx}{\linewidth}{@{}lXX@{}}
+\toprule Quantity & Meaning & Not to be equated with\\\midrule
+$N=4$ or $8$ & Number of graph sites & Colors or gluons\\
+$a\in\C^3$ & Three complex mode amplitudes & Already established quark states\\
+$l,m$ & Spatial angular momentum index and magnetic quantum number, respectively & Dimension of this triplet\\
+$A=1,\ldots,8$ & Generator index of SU(3) & Eight spatial vertices\\\bottomrule
+\end{tabularx}
+\end{drafttable}
+
+{\small\textbf{Notation by model sector.} $N$ counts graph sites only. In the graph sections, $\lambda$ denotes the Laplacian eigenvalue; in Section~\ref{sec:mediator}, it is the quartic coupling, while the indexed $\lambda_A$ is a Gell-Mann matrix. $A$ and $B$ are self blocks in Section~\ref{sec:exchange} and radial operators in Section~\ref{sec:qball}; the well depth in Section~\ref{sec:detuning} is denoted by $V_a$. In Section~\ref{sec:mediator}, $h$ is the mediator coupling, whereas in grid specifications it is the radial step size. There $K$ is the mediator stiffness; in Section~\ref{sec:shells}, it is the two-mode frequency matrix. $L$ denotes the graph Laplacian and $\mathcal L$ the Lagrangian in \eqref{eq:kg} or the Lagrangian density in Section~\ref{sec:qball}. $Q_A$ are the eight mode charges, and $Q_\varphi$ is the scalar Q-ball charge. The distance $d$ is defined by the graph or shell geometry under consideration.\par}
+
+\section{A geometrically generated linear triplet}\label{sec:linear}
+For $z\in\C^N$, we choose canonical complex amplitudes and the graph Laplacian $L$:
+\begin{equation}\label{eq:linear}
+H_2=z^\dagger Lz,\qquad i\dot z=Lz.
+\end{equation}
+This canonical structure is a model assumption. It is not obtained here from a relativistic field theory. For the complete tetrahedral graph $K_4$ and the edge graph of the cube $Q_3$, the following hold exactly:
+\begin{equation}\label{eq:spectra}
+\begin{aligned}
+\operatorname{spec}(L_{K_4})&=\{0,4,4,4\},\\
+\operatorname{spec}(L_{Q_3})&=\{0,2,2,2,4,4,4,6\}.
+\end{aligned}
+\end{equation}
+Let $X$ be the matrix of vertex coordinates with entries $\pm1$: for the tetrahedron, its rows are $(1,1,1)$, $(1,-1,-1)$, $(-1,1,-1)$, and $(-1,-1,1)$; for the cube, they are all eight sign combinations. Then $U=X/\sqrt N$ has orthonormal columns. For $z=Ua$, we obtain $H_2=\lambda a^\dagger a$, with $\lambda=4$ and $2$, respectively. Every transformation $a\mapsto Wa$, with $W\in\mathrm{U}(3)$, preserves this functional.
+
+\textbf{Consequence.} The degenerate complex quadratic sector has an additional continuous internal symmetry. The spatial symmetry group of the finite body remains discrete. More precisely, $\mathrm{U}(3)\cong[\mathrm{SU}(3)\times\mathrm{U}(1)]/\mathbb Z_3$. The common phase has therefore not been removed.
+
+Increasing a single edge weight from $1$ to $1.01$ splits the triplet into a doublet and a singlet: the tetrahedral triplet becomes $\{4,4,4.02\}$, and the lower cube triplet becomes $\{2,2,2.0049688749\}$. Moreover, the uniform mode with eigenvalue zero lies \emph{below} the triplet under consideration. A low-energy argument alone therefore does not justify using the triplet in isolation.
+
+\section{Nonlinearity as a countercheck}\label{sec:nonlinearity}
+With $S=a^\dagger a$, projecting a local quartic energy gives exactly
+\begin{equation}\label{eq:quartic}
+\sum_i|(Ua)_i|^4=\frac{2S^2+|a\cdot a|^2-2\sum_\alpha|a_\alpha|^4}{N}.
+\end{equation}
+The identity follows by expansion and from the second and fourth sign moments of the vertex coordinates. At $S=1$, its value is $1/N$ for both $a=(1,0,0)$ and $(1,i,0)/\sqrt2$, but $7/(3N)$ for $(1,1,1)/\sqrt3$. States of equal norm thus have different energies: already the SU(3) subgroup is broken, since SU(3) acts transitively on the unit sphere in $\C^3$. A fortiori, U(3) is not preserved.
+
+In addition, $|Ua|^2Ua$ generally has a component outside the triplet. Projected onto the normalized external mode, its amplitude is
+\begin{equation}\label{eq:external}
+b_{\mathrm{out}}=\frac{2}{N}(a_xa_y\bar a_z+a_xa_z\bar a_y+a_ya_z\bar a_x).
+\end{equation}
+For the tetrahedron, this is the uniform mode; for the cube, it is the $xyz$ parity mode. Particularly symmetric one- or two-component initial states can hide this effect.
+
+Numerically, the full equation $i\dot z=Lz+0.5|z|^2z$, without projection back into the triplet, was integrated to $T=20$. The initial vector in the triplet was proportional to $(1,0.7+0.3i,-0.2+0.6i)$. DOP853 with relative tolerances $\mathrm{rtol}=10^{-9}$ and $10^{-11}$, respectively, absolute tolerances $\mathrm{atol}=0.01\,\mathrm{rtol}$, a maximum step of $0.1$, and $401$ output points gave the following maximum relative leakage over the $401$ output points at the finer accuracy level:
+
+\begin{drafttable}
+\begin{tabular}{@{}lll@{}}\toprule
+Initial amplitude & Tetrahedron & Cube\\\midrule
+$0.1$ & $3.861\times10^{-8}$ & $9.512\times10^{-9}$\\
+$0.3$ & $3.918\times10^{-6}$ & $8.502\times10^{-7}$\\
+$1$ & $8.910\times10^{-4}$ & $2.021\times10^{-4}$\\\bottomrule
+\end{tabular}
+\end{drafttable}
+The leakage is $\norm{(I-UU^\dagger)z}^2/\norm{z(0)}^2$. The norm and energy criteria of $10^{-7}$ and the final-state comparison criterion of $10^{-6}$ were satisfied. Small leakage does not guarantee symmetry: equation~\eqref{eq:quartic} already breaks the symmetry within the sector.
+
+\section{Which exchange interaction is compatible?}\label{sec:exchange}
+Let two graphs be coupled by nonnegative weights $W_{ij}$:
+\begin{equation}\label{eq:interaction}
+\begin{aligned}
+H_{\mathrm{int}}&=\sum_{ij}W_{ij}|z_i-z'_j|^2\\
+&=a^\dagger Aa+b^\dagger Bb-a^\dagger Cb-b^\dagger C^\dagger a,\\
+A&=U^\dagger D_AU,\quad B=V^\dagger D_BV,\quad C=U^\dagger WV.
+\end{aligned}
+\end{equation}
+The second line of \eqref{eq:interaction} holds for $z=Ua$ and $z'=Vb$. $D_A$ and $D_B$ contain the row and column sums of $W$, respectively. In a common internal basis, this expression is invariant under every common SU(3) transformation if and only if $A=\alpha I$, $B=\beta I$, and $C=cI$. This follows from the commutant of the irreducible fundamental representation. A relative unitary basis choice can make $C$ scalar only if its three singular values are equal; it cannot repair anisotropic self blocks.
+
+In addition, the sector must be preserved by the full dynamics. With $P_U=UU^\dagger$ and $P_V=VV^\dagger$, one additionally requires
+\begin{equation}\label{eq:invariance}
+\begin{aligned}
+(I-P_U)D_AU&=0,&(I-P_V)D_BV&=0,\\
+(I-P_U)WV&=0,&(I-P_V)W^\mathsf TU&=0.
+\end{aligned}
+\end{equation}
+\textbf{Matched connections.} For identical bases and $W=JI$, one obtains exactly $H_{\mathrm{ex}}=J\norm{a-b}^2$ without leakage. This contact law is explicitly imposed, not derived from free field overlap. By contrast, $W=w\boldsymbol1\boldsymbol1^\mathsf T$ gives $C=0$ for the nonuniform triplets: a uniform connection between all sites shifts frequencies but produces no triplet exchange.
+
+\subsection{Distance kernels and six spatial directions}\label{sec:kernels}
+As a countermodel, we chose $W_{ij}=\exp[-|r_i-r'_j|^2/(2\ell^2)]$. Vertex radius $1$, separation $d\in\{3,4,6\}$, range $\ell\in\{1,2,4\}$, and three orientations (identity, $R_z(\pi/4)$, $R_y(\pi/2)$), together with both geometries, give $54$ cases. No case satisfied the relative isotropy criterion of $10^{-10}$ with $\norm C>10^{-8}$. The smallest cross-block anisotropy value was $0.29739$. The basis-independent relative singular-value spread is also at least $0.0144$ in all $54$ cases; a relative basis rotation therefore rescues none of these cases. This is a finite search result, not an exclusion of all distance laws.
+
+By contrast, summing identical kernels for the six displacements $\pm4e_x$, $\pm4e_y$, and $\pm4e_z$ at $\ell=2$ gave $C=-0.05845231382\,I$ (tetrahedron) and $-0.05960274201\,I$ (cube), isotropic self blocks, and leakage residuals below $1.1\times10^{-15}$. Negative cross blocks do not contradict the positivity of the original spring energy.
+
+\begin{quote}\textbf{Scope limitation.}
+What was checked is an aggregated coupling kernel. Six independently evolving neighbors form a larger dynamical system. Their coherent combination must be investigated there with its own normalization (a factor $\sqrt6$ for six equal amplitudes) and all orthogonal neighbor modes. The static sum does not prove that this combination is dynamically preserved.
+\end{quote}
+
+\subsection{Dynamics with six independent neighbors}\label{sec:network}
+A central cluster and six independent neighboring clusters at $\pm4$ along the coordinate axes each possess their own internal graph Laplacian. Only the center and neighbors are coupled. The resulting Hamiltonian matrices have dimensions $28$ and $56$ for the two geometries. We compare identical matched connections with $J=1$ to the distance kernel of Section~\ref{sec:kernels} with $\ell=2$ and six displacements $\pm4e_k$.
+
+Two subspaces must be distinguished: the $21$ independent local triplet amplitudes and the six-dimensional space comprising the central triplet and an equal neighbor amplitude. In the latter space, the canonically normalized embedding is $z_0=Ua$, $z_s=Ub/\sqrt6$. With matched connections, this space is exactly invariant; its Hamiltonian is
+\begin{equation}\label{eq:collective}
+H_{\mathrm{collective}}=
+\begin{pmatrix}\lambda+6J&-\sqrt6J\\-\sqrt6J&\lambda+J\end{pmatrix}\otimes I_3.
+\end{equation}
+For the distance kernel, too, the merely projected $6\times6$ matrix is isotropic (numerical residual below $1.3\times10^{-15}$). Its external block, however, does not vanish. The Frobenius norm of this block is $0.88009$ for the tetrahedron and $1.79607$ for the cube. The full time evolution therefore leaves the projected space.
+
+\begin{drafttable}
+\begin{tabularx}{\linewidth}{@{}lXX@{}}\toprule
+Geometry / initial state & Outside local triplets & Outside coherent combination\\\midrule
+Tetrahedron / central & $1.382\%$ & $2.802\%$\\
+Cube / central & $4.676\%$ & $6.491\%$\\
+Tetrahedron / neighbor sum & $0.605\%$ & $99.749\%$\\
+Cube / neighbor sum & $23.242\%$ & $96.333\%$\\\bottomrule
+\end{tabularx}
+\end{drafttable}
+The entries give maximum norm fractions over $801$ output points up to $T=80$. For all initial states, the matched connection showed only residuals below $6.3\times10^{-29}$. Time evolution was evaluated by eigendecomposition of the full linear Hamiltonian; norm and energy drifts remained below $3\times10^{-14}$. The network computation required $0.047$ CPU-s on one server CPU core.
+
+The mechanism is already apparent analytically: the uniform mode of an individual neighbor receives the amplitude $u_0^\mathsf TW_s^\mathsf TUa$. These contributions may cancel in an aggregated sum, but in the full network they lie in different neighbor spaces. Their squared norms do not cancel. This disproves the transfer of static sum isotropy to the chosen dynamical reduction. It does not exclude other globally distributed degenerate eigenmodes of the full network.
+
+\section{A conservative model with frequency feedback}\label{sec:mediator}
+An explicitly U(3)-compatible nonlinearity depends only on the total density $S$. For two triplets, each with one real mediator, we define
+\begin{equation}\label{eq:mediatorH}
+\begin{aligned}
+H={}&\omega(S_A+S_B)+J\norm{a-b}^2\\
+&+\sum_{X=A,B}\left[\frac{\lambda S_X^2}{2}+\frac{P_X^2}{2}
++\frac{Ky_X^2}{2}+hy_XS_X\right].
+\end{aligned}
+\end{equation}
+Completing the square gives, for each constituent,
+\begin{equation}\label{eq:square}
+\frac K2\left(y+\frac{hS}{K}\right)^2
++\frac12\left(\lambda-\frac{h^2}{K}\right)S^2+\frac{P^2}{2}.
+\end{equation}
+For $K>0$ and $\lambda>h^2/K$, the energy is bounded below for arbitrary real $\omega$ and $J$. This is a sufficient condition: the positive terms quadratic in $S$ dominate contributions that are at most linear, since $\norm{a-b}^2\leq2(S_A+S_B)$. With $\omega=K=1$, $\lambda=0.3$, and $h=0.4$, the residual quartic coefficient is $0.14$. Static minimization over the mediator is exact; using it as a dynamical elimination would additionally require a separation of timescales.
+\begin{equation}\label{eq:mediatorEOM}
+\begin{aligned}
+i\dot a&=(\omega+\lambda S_A+hy_A)a+J(a-b),\\
+i\dot b&=(\omega+\lambda S_B+hy_B)b+J(b-a),\\
+\dot y_X&=P_X,\qquad \dot P_X=-Ky_X-hS_X.
+\end{aligned}
+\end{equation}
+Direct differentiation shows conservation of $M=aa^\dagger+bb^\dagger$. Thus the total norm $\operatorname{tr}M$ and the eight quantities $Q_A=\operatorname{tr}[(\lambda_A/2)M]$ are conserved. Here $\lambda_A$ denotes the Gell-Mann matrices, not the quartic constant. These are Noether quantities of the model, not already identified electric or QCD color charges.
+
+For an isolated triplet, the mediator alone changes only its common phase velocity. Only $J\ne0$ allows population exchange between the constituents. For $J\in\{0,0.15\}$ and $h\in\{0,0.4\}$, four parameter settings were computed up to $T=80$, each with $\mathrm{rtol}=10^{-9}$ and $10^{-11}$ and $\mathrm{atol}=0.01\,\mathrm{rtol}$. Initial data before common normalization were $a=(1,0,0)$ and $b=(0,0.7,0.3i)$. Both vectors are divided by $\sqrt{1.58}$. Furthermore, $y=(0,0)$ and $P=(0.1,-0.1)$.
+
+\begin{drafttable}
+\begin{tabular}{@{}lll@{}}\toprule
+$J$ & $h$ & Range of $|a_1|^2$ up to $T=80$\\\midrule
+$0$ & $0$ or $0.4$ & Constant at $0.6329113924$\\
+$0.15$ & $0$ & $0.0000006121$ to $0.6329113924$\\
+$0.15$ & $0.4$ & $0.0000365731$ to $0.6329113924$\\\bottomrule
+\end{tabular}
+\end{drafttable}
+In the last parameter setting, the maximum energy drift at the finer accuracy level was $1.16\times10^{-12}$ and the charge-matrix drift was $6.12\times10^{-13}$. The stated population ranges refer to $801$ output points; continuous-time extrema were not certified. The tolerance comparisons passed. This closed dynamics contains neither radiation loss nor free spatial particle motion. Long-term spatial binding or a bound state in the continuum (BIC) does not follow from it.
+
+\section{Field control model and Q-ball test}\label{sec:field}
+\subsection{Linear exchange in prescribed concentric shells}\label{sec:shells}
+A linear control model with prescribed shells provides equal channel couplings from a scalar field rather than from three matched ports. We choose the linear real Klein--Gordon action with a prescribed radial potential:
+\begin{equation}\label{eq:kg}
+\begin{aligned}
+\mathcal L&=\frac12\int[\dot\varphi^2-|\nabla\varphi|^2-(10+V(r))\varphi^2]\,d^3x,\\
+V(r)&=-4\exp\left[-\left(\frac{r-6}{0.6}\right)^2\right]
+-4\exp\left[-\left(\frac{r-6-d}{0.6}\right)^2\right].
+\end{aligned}
+\end{equation}
+This is a linear control model with prescribed shells, not a self-consistent Q-ball solution. With $\varphi=\sum_i u_i(r,t)Y_i(\Omega)/r$ and the real normalized dipole harmonics $Y_i=\sqrt{3/(4\pi)}\,n_i$, angular integration gives the same radial operator $D_1=-\partial_r^2+2/r^2+10+V(r)$. The radial measure is $dr$, with $\int u_nu_k\,dr=\delta_{nk}$ for the eigenfunctions. Regularity at the origin and decay on the half-line are implemented numerically by a regular origin and a Dirichlet closure of the box. The identical treatment of the angular components follows from spherical symmetry and orthogonality.
+
+Two exact radial eigenfunctions with positive eigenvalues $e_1,e_2$ generate an invariant linear sector. Canonical oscillator amplitudes $c_n=(\sqrt{\omega_n}\,q_n+ip_n/\sqrt{\omega_n})/\sqrt2$, with $\omega_n=\sqrt{e_n}$, give $H=\sum_n\omega_n|c_n|^2$ without a rotating-wave approximation. A common radial basis rotation $O$, determined by diagonalizing the radius operator projected into this sector, gives
+\begin{equation}\label{eq:twoMode}
+\begin{aligned}
+H&=\varepsilon_Aa^\dagger a+\varepsilon_Bb^\dagger b-J(a^\dagger b+b^\dagger a),\\
+K&=O^\mathsf T\operatorname{diag}(\sqrt{e_1},\sqrt{e_2})O,\qquad J=-K_{12}.
+\end{aligned}
+\end{equation}
+The exchange strength is thus obtained from the radial field computation and is equal for all three angular components. General U(3) transformations of the canonical amplitudes are not simply spatial rotations; they can mix field coordinates and momenta.
+
+\begin{drafttable}
+\begin{tabularx}{\linewidth}{@{}llXX@{}}\toprule
+Shell separation $d$ & $|J|$ & Maximum canonical transfer & First maximum $t$\\\midrule
+$2$ & $0.0637380$ & $99.909\%$ & $24.633$\\
+$3$ & $0.0172399$ & $97.435\%$ & $89.938$\\
+$4$ & $0.00471585$ & $68.151\%$ & $274.976$\\\bottomrule
+\end{tabularx}
+\end{drafttable}
+\begin{drafttable}
+\begin{tabular}{@{}llll@{}}\toprule
+$d$ & $e_1$ & $e_2$ & $10-e_2$\\\midrule
+$2$ & $8.03325$ & $8.77246$ & $1.22754$\\
+$3$ & $8.27069$ & $8.47283$ & $1.52717$\\
+$4$ & $8.33085$ & $8.39694$ & $1.60306$\\\bottomrule
+\end{tabular}
+\end{drafttable}
+{\small Both eigenvalues under consideration lie below the free continuum threshold $10$; the third discrete box value lies above it. Table: $R=24$, $h=0.025$.\par}
+
+The values come from the grid $R=24$, $h=0.025$. Halving the grid spacing at $R=20$ changed $|J|$ by less than $3\times10^{-4}$ in relative terms; enlarging the box from $20$ to $24$ changed it by less than $7\times10^{-11}$. Checks of the norm, eigenvalue residuals, analytical two-mode time evolution, and the predefined convergence criteria passed. Nine radial cases and the angular checks required $0.0182$ CPU-s on one server CPU core.
+
+\textbf{Interpretation of the percentages.} The quantity is $|b|^2$ for an initially normalized inner canonical combination. It is neither the fraction of spatial field energy in the outer shell nor a particle number. Physical field coordinates carry frequency-dependent factors $1/\sqrt{\omega_n}$. Transfer is determined analytically from the two-mode matrix; the numerical eigenvalues are not interval-certified.
+
+Nonlinearity remains the limitation. For a complex spatial dipole amplitude $\eta=a\cdot Y$, the exact identity is $\int|\eta|^4\,d\Omega=3[2(a^\dagger a)^2+|a\cdot a|^2]/(20\pi)$. Thus a linear and a circular normalized amplitude differ by a factor $1.5$. This angular test already disproves automatic SU(3) invariance of a local complex quartic term. It is not an already derived nonlinear normal form of the real field in \eqref{eq:kg}. An additional $P_2$ angular perturbation also splits the projected operator and couples in $l=3$.
+
+Kaminaga's concentric $\delta$-shells provide a mathematical parallel concerning the $m$-independent partial-wave structure \cite[Lemma 9 and Remark 4]{Kaminaga}. His asymptotic tunneling theorem, by contrast, concerns matched limiting levels at $l=0$ and large separation \cite[Theorem 17]{Kaminaga}. It establishes neither our smooth $l=1$ numbers nor exact full transfer at finite separation; the latter follows here from our own two-mode algebra. Technical review notes on the printed proof in Sections~6--7 are documented in the source audit; its error orders are not adopted as a certificate. For the original Q-balls, the coupled $l=1$ problem remains decisive. Panin and Smolyakov identify translations in a different two-field model \cite[Eq.~(22)]{Panin}; their stability analysis proves neither the absence nor the presence of positive internal modes in our model.
+
+\begin{quote}\textbf{Result and remaining gap.}
+Within the linear control model, equal exchange follows from the prescribed spherical-shell geometry. The self-consistent emergence of this geometry and preservation of the symmetry under actual nonlinear field couplings remain open. Assuming an internal U(3) symmetry at the outset of a multicomponent theory would not replace this derivation.
+\end{quote}
+
+\subsection{Detuning and spatial energy transfer}\label{sec:detuning}
+The maximum transfer at shell separation $d=4$ is not a special universal number. For the canonical two-mode matrix in \eqref{eq:twoMode}, with $\delta=\varepsilon_A-\varepsilon_B$, one has
+\begin{equation}\label{eq:transfer}
+P_B(t)=\frac{4J^2}{\delta^2+4J^2}
+\sin^2\left[\frac{\sqrt{\delta^2+4J^2}\,t}{2}\right].
+\end{equation}
+$J$ controls the exchange, and $\delta$ the frequency detuning. At larger separation, $J$ decreases, so a small residual detuning limits the transfer more strongly. The fraction not transferred remains in the conservative mode system.
+
+A control varies only the depth $V_a$ of the outer well, keeping the radii $6$ and $10$ unchanged. A predefined grid $V_a\in[3.9,4.1]$ and a root search for $\delta(V_a)$ restricted to this interval gave $V_a\approx3.937515$ on the finest grid. Relative to $V_a=4$, this is a reduction of about $1.56\%$. The canonical transfer then analytically reaches its full value at $\delta=0$, provided $J\ne0$. On the finest grid, $|\delta|<5\times10^{-14}$. This is an expected frequency-matching control, not a new constant of nature.
+
+In addition, the real field was reconstructed and its local energy for $r>8$ was computed. The radial physical energy density is $\tfrac12[\dot u^2+(u'-u/r)^2+2u^2/r^2+(10+V)u^2]$. Relative to the reduced radial functional, the inner partial energy receives the boundary term $-u(8)^2/16$, and the outer partial energy the opposite term. In this way, the discrete total energy remains exactly consistent with the field operator used.
+
+\begin{drafttable}
+\begin{tabularx}{\linewidth}{@{}lXXl@{}}\toprule
+Case, $h=0.0125$ & Max.\ mode transfer & Outer field energy at mode maximum & Time\\\midrule
+$V_a=4$ & $68.153\%$ & $67.934\%$ & $274.965$\\
+$V_a\approx3.937515$ & $100\%$ at frequency matching & $99.635\%$ & $328.715$\\\bottomrule
+\end{tabularx}
+\end{drafttable}
+{\small The values $68.151\%$ and $68.153\%$ refer to the same quantity at $h=0.025$ and $h=0.0125$, respectively; correspondingly, the times change from $274.976$ to $274.965$. This is grid dependence, not a different mechanism. The matched depth changes by about $4.5\times10^{-6}$ between these grids. Reported digits document computational results and provide no corresponding guarantee for the continuum values.\par}
+
+Initially, about $0.54\%$ of the field energy already lies outside the cut. The second table row therefore corresponds to a net increase of about $99.09$ percentage points of the total energy in the outer region. The energy is reported at the \emph{canonical} maximum; fast carrier phases may slightly shift the spatial energy maximum. The canonical excitation subsequently returns. Incomplete transfer in this conservative model does not imply irreversible dissipation.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{transfer-detuning.pdf}
+\caption{Outer well depth and exchange. Lines on the right: canonical mode populations; crosses: three explicitly evaluated spatial energy fractions. No interpolation of rapid energy oscillations. Units are dimensionless.}\label{fig:detuning}
+\end{figure}
+
+Computation time on one server CPU core: $0.0774$ CPU-s. Three grid spacings $h=0.05,0.025,0.0125$ at $R=24$, separate convergence criteria, and numerical conservation checks passed. With grid halving, the additional direct midpoint quadrature approaches the regional energy accounting approximately quadratically. No separate new box-size test was performed for the matched depth. Source code, parameters, and data: \path{coordination/resonance-20260930/shell-detuning/}.
+
+\subsection{Test of the single-field Q-ball and conditional spectral counting}\label{sec:qball}
+The applicability of the shell control model is tested in the complex single-field model with Lagrangian density $\mathcal L=|\partial_t\varphi|^2-|\nabla\varphi|^2-U(|\varphi|^2)$, $U(S)=S-S^2+S^3/2$. The ansatz $\varphi=f(r)e^{i\omega t}$ leads to $f''+2f'/r=(1-\omega^2)f-2f^3+3f^5/2$, with a regular origin and decay in the outer region. We use the stored profile at $\omega^2=0.7$; its scalar Noether charge $Q_\varphi=2\operatorname{Im}\int\bar\varphi\,\partial_t\varphi\,d^3x=2\omega\int f^2\,d^3x$ is approximately $473.413$. $\rho$ denotes the perturbation frequency relative to the carrier $\omega$, so that the free sideband frequencies are $\omega\pm\rho$. For the reduced radial $l=1$ perturbation, the operators are
+\begin{equation}\label{eq:qballOperators}
+\begin{aligned}
+A&=-\partial_r^2+\frac2{r^2}+0.3-6f^2+7.5f^4,\\
+B&=-\partial_r^2+\frac2{r^2}+0.3-2f^2+1.5f^4,\\
+M(\rho)&=\begin{pmatrix}A-\rho^2&-2\omega\rho\\-2\omega\rho&B-\rho^2\end{pmatrix}.
+\end{aligned}
+\end{equation}
+On the exact half-line, the translation mode satisfies $A(rf')=0$. It displaces the entire object and is not an additional positive internal oscillator. Both free sidebands remain simultaneously closed only for $0<\rho<1-\omega\approx0.16333997$.
+
+\textbf{Our conditional analytical statement.} If $B\geq bI$ and $0\leq s=\rho^2<b$, the lower component may be eliminated exactly. The Schur operator and its derivative are
+\begin{equation}\label{eq:schur}
+\begin{aligned}
+F(s)&=A-sI-4\omega^2s(B-sI)^{-1},\\
+F'(s)&=-I-4\omega^2B(B-sI)^{-2}\leq-I.
+\end{aligned}
+\end{equation}
+No commutativity of $A$ and $B$ is required. The congruence induced by Schur elimination preserves the negative inertia, since $B-sI$ is positive. All ordered eigenvalues of $F$ therefore decrease strictly with $s$. Under established initial-index, gap, and endpoint conditions, the increase in the negative index counts the additional positive-frequency zeros. At a singular right endpoint, its kernel dimension must also be counted. Simply projecting out the translation orthogonally would generally be incorrect; the full coupled inertia avoids this error.
+
+\begin{drafttable}
+\begin{tabularx}{\linewidth}{@{}lXXX@{}}\toprule
+Box / step & Translation eigenvalue of $A$ & $\lambda_{\min}(B)$ & Second eigenvalue of $M$ at test endpoint\\\midrule
+$R=24$ / $h=0.08$ & $-1.5391\times10^{-4}$ & $0.2131403$ & $0.0398112$\\
+$R=32$ / $h=0.04$ & $-3.8457\times10^{-5}$ & $0.2131733$ & $0.0211452$\\
+$R=40$ / $h=0.02$ & $-9.6131\times10^{-6}$ & $0.2131817$ & $0.0132527$\\\bottomrule
+\end{tabularx}
+\end{drafttable}
+The test endpoint is $\rho=1-\omega-10^{-4}$. In all three discrete box problems, the negative index remains one and the endpoint is numerically nonsingular. No additional bound dipole mode was identified. Under simultaneous box and grid refinement, the small negative translation eigenvalue shrinks approximately quadratically with $h$ and is not interpreted as a physical instability. The free negative control passes. Computation time on one server CPU core: $2.558$ CPU-s; software checks on a separate QA host.
+
+\begin{quote}\textbf{No claim of exclusion in the continuum.}
+The finite box shifts weakly bound states. At the test endpoint, the slow asymptotic decay length is about $70.7$, larger than the largest box radius of $40$. The second positive eigenvalue also decreases with increasing box size. Very extended weak binding, the final frequency layer of $10^{-4}$, the exact threshold, and open resonances therefore remain unresolved. The inertia counts are not interval-certified. The shell test remains a functioning linear control model with prescribed shells, but the two positive dipole branches it requires have not yet been established in the original Q-ball.
+\end{quote}
+
+The next proof task is thus specifically to control the outer region, threshold behavior, and validated spectral counting. Our Schur derivation and its assumptions are documented in the accompanying source audit; numerical artifacts are available under \path{coordination/resonance-20260930/qball-l1-gap/}.
+
+\section{Relation to field theory and the literature}\label{sec:literature}
+\textbf{Spin-1 invariants as an algebraic comparison.}
+For a Cartesian complex vector $a$, define $F=-ia^*\times a$. Direct expansion gives $|F|^2=S^2-|a\cdot a|^2$. Equation~\eqref{eq:quartic} therefore becomes $[3S^2-|F|^2-2\sum_\alpha|a_\alpha|^4]/N$: a rotationally invariant density/spin-magnitude contribution plus cubic anisotropy. By contrast, the angular quartic term in Section~\ref{sec:shells} is $3[3S^2-|F|^2]/(20\pi)$ and is invariant under spatial SO(3) rotations. Ho \cite[Eqs.~(4)--(8)]{Ho} describes an interaction $c_0n^2/2+c_2|F|^2/2$ for atomic spin-1 condensates. Our Cartesian rewriting is our own algebraic identity; it identifies polar and circular amplitude orbits, not atomic scattering lengths or quantized particle spins. For a spatial $l=1$ triplet, this representation initially denotes orbital angular momentum.
+
+\textbf{Direct connection to the Q-ball literature.}
+The coupled single-field linearization with sidebands $\omega\pm\rho$ is described by Kovtun, Nugaev, and Shkerin \cite[Eqs.~(11)--(15)]{Kovtun}. For our potential, their coefficients are $h=-2f^2+3f^4$ and $g=1-4f^2+9f^4/2$; these local symbols from the source are not the couplings of the mediator model. The source establishes the linearization structure and angular degeneracy, not our specific spectrum. Panin and Smolyakov \cite{Panin}, by contrast, consider a different two-field potential; its translation mode is a comparison, not a derivation of our spectral result.
+
+\textbf{Distinction from spin $\tfrac12$.}
+A spatial rotation through $2\pi$ acts as the identity on the $l=1$ triplet. This is not the spinor representation, in which a $2\pi$ rotation changes the sign of the state. The internal embedding $\mathrm{SU}(2)\subset\mathrm{SU}(3)$ with decomposition $2\oplus1$, or the description of two selected modes using Pauli matrices, therefore does not yet produce spatial spin $\tfrac12$. Likewise, parametrizing a spin-1 state as the symmetric product of two spinors would be a representation identity, not evidence for two constituent particles. Solitonic fermionic quantization is possible in other models: Krusch and Speight \cite{Krusch} construct it for Hopf solitons with suitable configuration-space topology and Finkelstein--Rubinstein conditions. For the unchanged model with field values in $\C$ or $\C^n$, including zero, and a zero boundary value, the unrestricted space of regular finite-energy field configurations is contractible: $H_t(\varphi)=(1-t)\varphi$ continuously takes every field to the zero field. Hence $\pi_1$ and $H^2$ of this space are trivial. In this field space, neither the Finkelstein--Rubinstein sign choice nor a topologically nontrivial line bundle for the corresponding Wess--Zumino quantization route is available; ordinary canonical scalar-field quantization is bosonic. Modifying the target space, for example to $\C\times S^2$ with suitable stabilizing dynamics, would define a different theory. Separately, a specifically reduced phase space at fixed Noether charge remains to be investigated: the amplitude contraction does not preserve this charge. This qualification does not itself establish spin $\tfrac12$.
+
+The atomic ring modes and subradiance studied by Hammer \cite{Hammer} provide only a distant analogy. His open single-photon dynamics establishes neither the conservative graph construction nor its field derivation.
+
+In QCD, quark fields carry a fundamental SU(3) color index; eight gluon components form the gauge connection. The field strength contains the non-Abelian structure-constant term from which gluon self-interactions follow \cite[Section~9.1, Eqs.~(9.1)--(9.2)]{PDG}. Our model so far possesses only a common global symmetry. Our own algebraic distinction is as follows: for globally single-valued complete basis matrices $G_i$ and links formed exclusively from them, $L_{ij}=G_i^\dagger G_j$, every closed link product telescopes to $I$. Moving projected subspaces, additional connections, or nontrivial transition functions are not covered by this statement. This basis-link calculation is our derivation, not a PDG theorem checked here.
+
+\section{What is missing from a further derivation}\label{sec:missing}
+\begin{enumerate}
+\item \textbf{A common microscopic action.}
+The underlying fields, couplings, boundary conditions, and stationary many-body configurations must be specified. The graph model must follow from this action rather than being postulated alongside it.
+\item \textbf{A canonical field-to-mode map.}
+Linearization and symplectic normalization must yield an actual complex triplet. For rotating Q-balls, the coupled frequency problem must be treated; a spatial Hessian block alone is insufficient. The lower singlet mode must not be silently omitted.
+\item \textbf{A controlled nonlinear reduction.}
+The full quartic coefficient tensor, couplings to excluded modes, and errors over time must be derived. Either the total-density form emerges, or the symmetry breaking must be quantified. Equation~\eqref{eq:quartic} is the mandatory counterexample.
+\item \textbf{A microscopic exchange mechanism.}
+$A$, $B$, $C$, and the four leakage blocks must be computed from field overlaps or a justified mediator. Matched ports or six spatial directions must not be chosen merely to obtain the desired result.
+\item \textbf{The full neighbor network.}
+The central cluster and six independent neighbors must be computed including their relative phases, orthogonal modes, and perturbations. The linear star was tested in Section~\ref{sec:network}: the distance kernel fails invariance, whereas matched connections pass. Nonlinear networks and derived field couplings remain open.
+\item \textbf{Local, rather than only global, symmetry.}
+Independently variable connection degrees of freedom, a derived action, and its Gauss constraints would be required. The theory must allow nontrivial curvature without requiring every state to have curvature. The additional U(1) sector must be explicitly accounted for.
+\item \textbf{Only then, a QCD test.}
+Quantization, statistics, the relativistic limit, and appropriate gauge observables are missing. Eight generators or three amplitudes replace neither gluon dynamics nor confinement or asymptotic freedom.
+\end{enumerate}
+\textbf{Priority.} Test steps 2--5 first. Failure of the nonlinear triplet reduction or network invariance would already be a clear result against the mechanism in question. Adding further gauge fields before this bridge is established would merely define a different model.
+
+\section{Reproducibility and limitations}\label{sec:reproducibility}
+The reported small physics computations ran on a Linux server using one CPU core and limited shared resources. The triplet suite required $0.843$ CPU-s and the interaction suite $4.823$ CPU-s; the supplementary leakage check is logged separately. These are floating-point computations with convergence and conservation checks, not rigorous interval certificates. No historical physics runs were repeated for this text.
+
+Source code, parameters, results, and original input/output hashes are available in the following project directories. The source-file hashes associated with this draft are additionally recorded in \path{SOURCE-SHA256SUMS.txt}:
+\begin{itemize}
+\item \path{coordination/resonance-20260930/su3-triplets/}: \path{PLAN.txt}, \path{run.py}, \path{RESULT.json}, \path{ERGEBNIS.txt}.
+\item \path{coordination/resonance-20260930/su3-interactions/}: \path{PLAN.txt}, \path{run.py}, \path{RESULT.json}, \path{leakage.py}, \path{LEAKAGE.json}, \path{ERGEBNIS.txt}.
+\item \path{coordination/resonance-20260930/su3-network/}: full neighbor network, plan, code, and \path{RESULT.json}.
+\item \path{coordination/resonance-20260930/field-mechanism/}: shell control model, eigenvalues, convergence, and \path{RESULT.json}.
+\item \path{coordination/resonance-20260930/shell-detuning/}: frequency matching and regional energy accounting.
+\item \path{coordination/resonance-20260930/qball-l1-gap/}: finite Q-ball spectral test and boundary limitations.
+\item \path{coordination/resonance-20260930/source-audit/}: versions, reading depth, and limitations of the primary sources.
+\end{itemize}
+The analytical statements are conditional consequences of the stated models. Numerical check residuals are not experimental error bars. Neither a local SU(3) gauge theory nor a QCD model is derived.
+
+\section{Conclusion}\label{sec:conclusion}
+Geometric degeneracy produces a linear triplet but guarantees neither nonlinear SU(3) symmetry nor preservation of the triplet under coupling. Matched sitewise connections and an imposed total-density mediator provide controlled positive examples; a local quartic term and independent neighbors coupled by distance kernels provide counterexamples. Equal three-channel exchange is possible in the linear shell control model, while its self-consistent emergence in the Q-ball remains open. In the finite dipole problem tested, the required pair of levels was not found. The next stage of the derivation therefore requires controlled spectra and actual nonlinear coupling coefficients of the field model.
+
+\phantomsection
+\addcontentsline{toc}{section}{References}
+\begin{thebibliography}{9}
+\bibitem{Hammer}
+H.~Hammer, \emph{Collective excitations in circular atomic configurations, and single-photon traps}, Physical Review A \textbf{70}, 023803 (2004).
+\href{https://arxiv.org/abs/quant-ph/0402065}{arXiv:quant-ph/0402065}.
+Checked: v5, Sections~II--IV and VI, especially Eqs.~(14)--(24), (38)--(39).
+
+\bibitem{PDG}
+J.~Huston, K.~Rabbertz, G.~Zanderighi, \emph{Quantum Chromodynamics}, Particle Data Group, revision August 2025, Section~9.1; S.~Navas et al.\ (Particle Data Group), Phys.\ Rev.\ D \textbf{110}, 030001 (2024) and 2025 update.
+\href{https://pdg.lbl.gov/2025/reviews/rpp2025-rev-qcd.pdf}{PDG QCD Review}.
+Checked: Section~9.1, pp.~1--2, Eqs.~(9.1)--(9.2).
+
+\bibitem{Kaminaga}
+M.~Kaminaga, \emph{Schr\"odinger operators with concentric $\delta$--shell interactions}, arXiv:2602.09376v1 (2026).
+\href{https://arxiv.org/html/2602.09376v1}{Primary text}.
+Checked: Sections~2--7, Lemma~9, Remark~4, Theorem~17, and Appendix~B; documented technical review notes on Sections~6--7 in \path{SOURCE-3.txt}.
+
+\bibitem{Panin}
+A.~G.~Panin, M.~N.~Smolyakov, \emph{Classical behaviour of Q-balls in the Wick--Cutkosky model}, Eur.\ Phys.\ J.\ C \textbf{79}, 150 (2019).
+\href{https://link.springer.com/article/10.1140/epjc/s10052-019-6638-2}{Primary text}.
+Checked: Sections~1, 3.1, Eqs.~(12), (18)--(22), (29)--(31); a different two-field potential, with no transfer of its spectral result.
+
+\bibitem{Ho}
+T.-L.~Ho, \emph{Spinor Bose Condensates in Optical Traps}, Phys.\ Rev.\ Lett.\ \textbf{81}, 742 (1998).
+\href{https://arxiv.org/html/cond-mat/9803231v1}{Primary text v1}.
+Checked: Eqs.~(3)--(11), especially the density/spin interaction and polar/ferromagnetic orbits.
+
+\bibitem{Kovtun}
+A.~Kovtun, E.~Nugaev, A.~Shkerin, \emph{Vibrational modes of Q-balls}, Phys.\ Rev.\ D \textbf{98}, 096016 (2018).
+\href{https://arxiv.org/html/1805.03518v2}{Primary text v2}.
+Checked: Sections~2--3.1, especially Eqs.~(11)--(15); conditions at the origin must be treated according to $l$.
+
+\bibitem{Krusch}
+S.~Krusch, J.~M.~Speight, \emph{Fermionic quantization of Hopf solitons}, Commun.\ Math.\ Phys.\ \textbf{264}, 391--410 (2006).
+\href{https://arxiv.org/html/hep-th/0503067v2}{Primary text v2}.
+Checked by the participating OpenAI readers: introduction and configuration space/Hopf map in Section~2, target space/boundary conditions in Section~3, Eq.~(3.1), and quantization conditions in Section~4; not a complete audit of the quantization. The Anthropic source review for this entry was limited to the abstract. No demonstration of the same assumptions for our model.
+\end{thebibliography}
+
+\bigskip\hrule\smallskip
+{\small Working status: analytical model statements and limited numerical counterchecks. A project-internal review by another AI organization (Anthropic) has been incorporated; a full literature novelty review and journal peer review remain outstanding.\par}
+\end{document}

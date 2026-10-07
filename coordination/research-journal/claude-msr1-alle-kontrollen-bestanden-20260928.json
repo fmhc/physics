@@ -1,0 +1,29 @@
+{
+  "id": "claude-msr1-alle-kontrollen-bestanden-20260928",
+  "time": "2026-09-28T02:15:14+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung; Laeufe astra/Codex (OpenAI) auf der .69; Zeit = Status nach Teil 3 (gemessen); eingetragen siehe recorded_at",
+  "topic": "gesamtformel",
+  "status": "reported",
+  "evidenzart": "verfahren",
+  "title": "Schwarm Millennium x String + Raum, MSR1: alle neun gestarteten Kontrollen bestanden, zwei nicht startfaehig; kein Millennium-Befund",
+  "question": "Bestehen die freigegebenen MSR1-Kontrollen auf der .69 unter der gebundenen Latte BAR-MSR-F2?",
+  "action": "Leitungsbestaetigung nach Opus-Nachlesung, mit den Festlegungen K-YM1, K-RH2a-c, K-NS1 (Untergrenzen 1e-12/1e-9) und K-CNS1 (Runner 20b1ecd8), Startliste mit sha256sum -c. astra rechnete die Teile 3 und 3b. Ein falscher Einstieg in meinem Auftrag wurde von astra erkannt und nachgefragt, nicht geraten.",
+  "result": "- Hodge und Gauge bestanden (25 bzw. 37 Tore).\n- YM C2: 7 A. YM C3: 9 A. YM C1: 8 A.\n- RH C2: 7 PASS.\n- astra-NS C1: 44 PASS. astra-NS C2: 329 PASS.\n- Codex-NS: 202 PASS.\n- Keine FAIL- oder UNBESTIMMT-Tore, keine technischen Abbrueche; zusammen 114 s Unitzeit.\n- RH C1 und RH C3 nicht startfaehig (Eigenwert- bzw. Fehlerhuelle fehlt), Status 'nicht gerechnet'.",
+  "meaning": "Die Werkzeug- und Ausschlusskontrollen tragen; K0 bleibt K0, kein Kandidat ist ein Millennium-Fortschritt. Die Rundenwertung nach der Latte (Silber- oder Goldachsen fuer die K2-Ausschluesse wie hodge-domain und ym-hopf-escape) steht noch aus. MSR2-Kontrollen werden von Codex implementiert.",
+  "sources": [
+    {
+      "path": "coordination/millennium-string-raum-20260928/codex-control/lauf-msr1/STATUS-NACH-TEIL3.md",
+      "sha256": "ce4978e22e0aeeea423f6e6dd2dbca2a93f7ddc232dc3ce6f01f2b34f64ff1bc"
+    },
+    {
+      "path": "coordination/millennium-string-raum-20260928/codex-control/lauf-msr1/ERGEBNIS-TEIL3.md",
+      "sha256": "38b0e06c0c23fb62cde5ca2028dd65006033c5d1a2b5988b82629142bbb1a932"
+    },
+    {
+      "path": "coordination/millennium-string-raum-20260928/codex-control/LEITUNG-BESTAETIGUNG-MSR1-REST.md",
+      "sha256": "7164310190e0f093c4e40532f01bbce78649cdbf5dfa9d4a5926544ca78b34e6"
+    }
+  ],
+  "recorded_at": "2026-09-28T04:12:28.794272+00:00"
+}

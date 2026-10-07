@@ -1,0 +1,50 @@
+NICHTAUTOR-CODELEKTUERE: ANTWORTADAPTER — 2026-10-02
+responses.py SHA256:
+ab9d00726e8f4fc6d4c7f839610d274609cf481485f6312776558cb672558e06
+Keine Ausfuehrung, Interpreter oder Tests. Vollstaendige Erstfassung und
+anschliessend gezielt geaenderter Loader/CLI gelesen. Vergleich mit dem
+unveraenderten outgoing/code.py SHA256
+75b1dce542aa728fe6bf58ecea4aec4a2ddf8a6a5a6e236666075c6902bbd292.
+
+URTEIL
+Kein konkreter Codeblocker fuer den begrenzten8-CPU-s-Antwortprozess,
+NACH erfolgreicher gehashter Praeparation und unter Root-Betriebslimits.
+Der zuerst gefundene Schemafehler ist in dieser Fassung BEHOBEN:
+FINE_INPUTS_PREPARED mit getrennten reference/source/Ritz-Artefakten wird
+nun korrekt geladen; keine hypothetischen PREPARED_FINE_SOURCE-Dateien mehr.
+
+GEPRUEFTE PUNKTE
+- Alte .05-Eingaben werden ueber original outgoing.load_sources geladen,
+  mit Manifestbindung gegen old_inputs der Praeparation. .025-Referenz,
+  Ritz und Quelle werden jeweils auf tatsächliche Dateihashes geprueft;
+  Bezug source->reference/Ritz muss mit den Metadaten uebereinstimmen.
+- Neue R120-Zellen exakt, f/chi float64 und endlich, Quellgroessen passend,
+  omega/rho zwischen NPZ und Manifest identisch, kanonische Norm1.
+  Plus-/Minus-Kombination aus J2 wird erneut verglichen. Keine neue
+  Quellskalierung oder Phasendrehung. Praeparations- und Ritzgates verlangt.
+- R60 nimmt denselben Datenpraefix ohne Renormierung. nu=2rho bleibt pro
+  h unveraendert. Original profile_check kontrolliert Abschneidung und
+  Phasennullanker fuer jeden Fall.
+- solve wird per festem Modulhash importiert, nicht neu implementiert:
+  voller Kanaloperator, Robin-Ghost, sqrtVol-Konvention, E-omegaQ-Work
+  und dessen Nenner bleiben unveraendert. Nur genau vier geplante Faelle.
+- Wiederverwendete Gaussian/Bump/Closed/Incoming-Ergebnisse sind per
+  Ergebnis- UND Artefakthash gebunden; alte Einzelflags muessen bestehen.
+  Nullamplitudenratio ist das neue Paar .05/.025 mit altem Boden/Intervall.
+  Auf .025 kommen allein fehlende Closed/Incoming-Faelle hinzu, ohne
+  unpassende Produktions-Nichtnullgates.
+- Produktion verwendet alte Grenzen: Algebra1e-10, Bilanz1e-7,
+  Fenster-/R-Vergleich1%, h-Betragsvergleich2%, Kontinuums-/FV2% und
+  Signalamplitude>5mal groesste beobachtete Aenderung/Streuung.
+  h vergleicht Beträge; R komplexe Mittel derselben Gauge. Auslassungs-
+  und Kragenanteile werden berichtet, keine Quellschwaenze auf0 behauptet.
+- Ein fehlgeschlagener Fall wird gespeichert und stoppt vor einem PASS.
+  Erst alle vier abgeschlossenen Faelle plus Vergleich ergeben
+  CONTROLLED_FINE_FORCED_RESPONSE. Historische Status bleiben unveraendert.
+
+BETRIEBS-/AUSSAGEGRENZEN
+Checkpoint6 CPU-s benoetigt harten Rootdeckel8 CPU-s inklusive Imports,
+einen Thread, .69 und die geplanten Speicher-/Wallgrenzen. Kein automatischer
+Retry. Der resultierende Status betrifft ausschliesslich die erzwungene
+Antwort der vorgegebenen diagnostischen Ritzquelle; keine nachtraeglich
+bestaetigte gebundene Mode, keine rigorose Fehlerhuelle, keine Lebensdauer.

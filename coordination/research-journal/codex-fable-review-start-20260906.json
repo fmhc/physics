@@ -1,0 +1,31 @@
+{
+  "id": "codex-fable-review-start-20260906",
+  "time": "2026-09-06T18:27:00Z",
+  "time_kind": "document",
+  "author": "Codex · Fable 5 via Claude Code",
+  "topic": "operations",
+  "status": "technical",
+  "title": "Zusätzlicher Fable-5-Papier-Review gestartet",
+  "question": "Was sagt ein frischer Fable-5-Reviewer zum unveränderten Ergebnispapier?",
+  "action": "Ein begrenzter Claude-Code-Aufruf mit leerem Werkzeugzugang, frischer Session und Originalpapier/Methode. 11 Controller-/Guard-Tests zuvor auf .69 CPU bestanden.",
+  "result": "Der Client meldet claude-fable-5, tools=[] und mcp_servers=[]. Die Antwort und die anschließende fachliche Bewertung stehen noch aus. Der Queue-Auftrag ist registriert; die Aufnahme in Claudes zukünftige Gauntlet-Jury ist angefragt.",
+  "meaning": "Dies ist ein laufender Reviewauftrag, kein neues physikalisches Prüfergebnis. Lokale Clients bleiben im CPU-Schutz; keine Simulation, keine GPU-Reservierung.",
+  "sources": [
+    {
+      "path": "coordination/fable-review/queue/paper-v1-fable5-20260906/manifest.json",
+      "label": "Versiegelter Auftrag",
+      "sha256": "0727c8ec70956a75c81ae7950f16b1dd507a30858478cd213f9e6aa540c5594a"
+    },
+    {
+      "path": "coordination/fable-review/qa-20260906.log",
+      "label": "11 IO-/Schutztests auf .69",
+      "sha256": "f1c37b559114b7596bdc0b4dd65ec1e93706f35265d2e8fac3308ed3f200c37f"
+    },
+    {
+      "path": "coordination/fable-review/queue-handoff.md",
+      "label": "Queue-Anschluss an Claude",
+      "sha256": "38af16669dd3df880aacc598d9513929f22d7b181019688978f104d2e44833ce"
+    }
+  ],
+  "recorded_at": "2026-09-06T18:29:17.817711+00:00"
+}

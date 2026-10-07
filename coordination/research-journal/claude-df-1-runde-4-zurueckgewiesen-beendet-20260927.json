@@ -1,0 +1,29 @@
+{
+  "id": "claude-df-1-runde-4-zurueckgewiesen-beendet-20260927",
+  "time": "2026-09-26T22:08:25+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung; Synthese nach astra (bindend) und Fable (Zweitmeinung, Autorhaus); eingetragen 00:08:25 MESZ (gemessen)",
+  "topic": "vertraege",
+  "status": "reported",
+  "evidenzart": "keine",
+  "title": "DF-1 beendet: S0-Runde 4 (Fassung 5) von astra zurueckgewiesen, Fable Zweitmeinung frei mit Auflagen; beide fanden unabhaengig denselben Absturz im S2-Einstieg; nach Finns Bedingung kein weiterer Anlauf, kein Ergebnis fuer oder gegen B17/B21",
+  "question": "Ist DF-1 Fassung 5 in der vereinbarten letzten S0-Runde bindungsfaehig?",
+  "action": "S0-Runde 4 gleichzeitig und blind: astra (OpenAI, einziges fremdes Haus) 23:44:02 bis 23:52:49, Fable (Anthropic, frischer Agent) 23:44:33 bis 00:06:07. Leitung prueft zwei Gegenfaelle lesend am Code und die Q-SONDE auf Eingabekuerzung (Ollama-Journal). Keine Rechnung, keine Aenderung an DF-1-Vertrag oder Code.",
+  "result": "astra ZURUECKWEISEN (3 von 5 Auflagen verhindern Freigabe), Fable FREIGEBEN MIT AUFLAGEN (nur mit astras Urteil). Uebereinstimmend: k2_c2 teilt im S2-Einstieg durch b1*b1 ohne Nullpruefung (ZeroDivisionError bei b = 0); Belegpruefung nicht ueberall ablehnend (Werkzeughash None ohne Befund, fehlendes Unit-Ende, vierter Versuch nur Hinweis); S2-Aufruf nicht allein aus Teil A nachbaubar. Nur astra: programm/einbindung ungeprueft, Pipeline-Status. Leitung bestaetigt beide Codebefunde. Q-SONDE bleibt gueltig: n_ctx 98304, n_tokens 68552, truncated 0.",
+  "meaning": "DF-1 ist beendet (Finn 26.09.: scheitert Runde 4, endet DF-1). Codex 3D-Ergebnisse B17/B21 bleiben ohne unabhaengige radiale Nachrechnung; DF-1 spricht weder fuer noch gegen sie. Register und Ledger unberuehrt, Runde 022 eingefroren. Lehre: Stoerproben pruefen die Ablehnung und jeden Einstiegspunkt, nicht nur keine Ausnahme; Qwen-S2 braucht die Bedingung G5 nicht gekuerzt. Ein neuer Anlauf nur mit neuem Vertrag, neuem Autor und Finns Ja.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260926/df-1-s0/S0-RUNDE-4-SYNTHESE.md",
+      "sha256": "c37461a891672cabc1673f431f0b4aad8861b310aab856333aa83d6f15b5acf6"
+    },
+    {
+      "path": "coordination/vertraege-20260926/df-1-s0/review-astra-f5/REVIEW-astra-DF-1-F5.md",
+      "sha256": "1956c82002181e0f824f97459a2bb2401d45c67960f7970f552144835bcc0226"
+    },
+    {
+      "path": "coordination/vertraege-20260926/df-1-s0/review-fable-f5/REVIEW-fable-DF-1-F5.md",
+      "sha256": "cba34a90c47761dab17f00198d6d8b61e9abc008d938e8858d8543f8564512d1"
+    }
+  ],
+  "recorded_at": "2026-09-26T22:08:29.103949+00:00"
+}

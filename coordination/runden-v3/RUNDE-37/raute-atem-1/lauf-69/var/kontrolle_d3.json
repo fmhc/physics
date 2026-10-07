@@ -1,0 +1,105 @@
+{
+ "modus": "kontrolle",
+ "params": {
+  "OMEGA": 6.283185307179586,
+  "EPS": 0.1,
+  "EPS_VEC": [
+   0.1,
+   0.1,
+   0.05,
+   0.05
+  ],
+  "K": 1.0,
+  "MU_X": 2.0,
+  "KAPPA": 0.01,
+  "MU_PHI": 50.26548245743668,
+  "T_NOISE": 6.283185307179587e-05,
+  "DELTA_F": 0.02,
+  "G_AUF": 0.2,
+  "DT": 0.005,
+  "Z0": 0.05,
+  "JITTER": 0.002,
+  "SUB": 10,
+  "PRUEF_ALLE": 1000,
+  "FD_H": 1e-05
+ },
+ "argv": [
+  "kontrolle",
+  "--dim",
+  "3",
+  "--saaten",
+  "1,2,3,4",
+  "--takte",
+  "500",
+  "--aus",
+  "/home/fmh/fmhc-physics-remote/raute-atem-1/lauf-var/kontrolle_d3.json"
+ ],
+ "laeufe": [
+  {
+   "dim": 3,
+   "B": 0.0,
+   "seed": 1,
+   "takte": 500.0,
+   "npz": "/home/fmh/fmhc-physics-remote/raute-atem-1/lauf-var/kontrolle_d3_s1.npz",
+   "werkzeugprobe": {
+    "n": 101,
+    "n_ausgelassen": 0,
+    "max_int_vs_schleife": 3.903127820947816e-16,
+    "max_schleife_vs_fd": 3.946921955932936e-11,
+    "max_bilanz_mit_reibung": 3.903127820947816e-16,
+    "max_impuls_summe": 1.3877787807814457e-17
+   },
+   "laufzeit_s": 19.97
+  },
+  {
+   "dim": 3,
+   "B": 0.0,
+   "seed": 2,
+   "takte": 500.0,
+   "npz": "/home/fmh/fmhc-physics-remote/raute-atem-1/lauf-var/kontrolle_d3_s2.npz",
+   "werkzeugprobe": {
+    "n": 101,
+    "n_ausgelassen": 0,
+    "max_int_vs_schleife": 3.191891195797325e-16,
+    "max_schleife_vs_fd": 4.059352853857945e-11,
+    "max_bilanz_mit_reibung": 3.191891195797325e-16,
+    "max_impuls_summe": 1.734723475976807e-17
+   },
+   "laufzeit_s": 20.09
+  },
+  {
+   "dim": 3,
+   "B": 0.0,
+   "seed": 3,
+   "takte": 500.0,
+   "npz": "/home/fmh/fmhc-physics-remote/raute-atem-1/lauf-var/kontrolle_d3_s3.npz",
+   "werkzeugprobe": {
+    "n": 101,
+    "n_ausgelassen": 0,
+    "max_int_vs_schleife": 3.8077180297690916e-16,
+    "max_schleife_vs_fd": 4.0549744118045794e-11,
+    "max_bilanz_mit_reibung": 3.8077180297690916e-16,
+    "max_impuls_summe": 1.5612511283791264e-17
+   },
+   "laufzeit_s": 21.2
+  },
+  {
+   "dim": 3,
+   "B": 0.0,
+   "seed": 4,
+   "takte": 500.0,
+   "npz": "/home/fmh/fmhc-physics-remote/raute-atem-1/lauf-var/kontrolle_d3_s4.npz",
+   "werkzeugprobe": {
+    "n": 101,
+    "n_ausgelassen": 0,
+    "max_int_vs_schleife": 3.7816971776294395e-16,
+    "max_schleife_vs_fd": 3.995137554113626e-11,
+    "max_bilanz_mit_reibung": 3.7816971776294395e-16,
+    "max_impuls_summe": 1.3877787807814457e-17
+   },
+   "laufzeit_s": 20.1
+  }
+ ],
+ "laufzeit_s": 81.36,
+ "rss_mb": 42.2
+}

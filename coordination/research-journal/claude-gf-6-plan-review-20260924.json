@@ -1,0 +1,25 @@
+{
+  "id": "claude-gf-6-plan-review-20260924",
+  "time": "2026-09-24T00:59:39.437151+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5); Review Codex/astra (OpenAI, GPT-6), auf Finns Auftrag",
+  "topic": "gesamtformel",
+  "status": "reported",
+  "title": "Gesamtformel: Codex prueft den Plan GF-6-S0 vor der Ausfuehrung - nur eine begrenzte Papierklaerung, kein Vertrag, kein Lauf; dabei ein Herkunftsfehler aus GF-5 gefunden",
+  "question": "Ist es richtig, die geparkte Gesamtformel mit dem Plan GF-6-S0 wieder aufzunehmen (naechste Duennwandordnung herleiten, Vorhersage fuer eine neue Form H2, dann ggf. Vertrag GF-6)? Auftrag Finn: 'lass von codex reviewen ob das korrekt ist das auszufuehren'.",
+  "action": "Brief an Codex/astra (reasoning high, nur Review, sieben Pruef-Fragen, meine eigenen Einwaende offen genannt; Brief sha256 f6130833...). Meine Erwartung an das Urteil stand vorher in der Arbeitsdatei. Den kritischen Befund habe ich am Code selbst nachgeprueft, die Referenzzahl des Reviews von Hand nachgerechnet.",
+  "result": "Urteil AUSFUEHREN MIT AUFLAGEN, aber nur fuer eine begrenzte analytische S0-Klaerung mit Vorwissens-, Literatur- und Anschlussaudit. Schritt 3 nein: die GF-5-Schreibtischprobe hat Q fuer H2 an allen zehn Zielpunkten intern berechnet und nur nicht ausgegeben (auswerten bildet Q vor der Abfrage 'if not voll'); die Aussage 'ohne Q' war falsch. Schritt 4 nein: ein hergeleitetes B ersetzt keinen Messbezug. Codex hat die erste Unterordnung selbst hergeleitet: c_1 = -1/(4 p(1)) + 3 (M - sigma Gamma)/(2 sigma^2), unabhaengig von der Wahl der Trennflaeche, kein delta ln delta in erster Unterordnung; Referenz c_1(R) = 5/2 (von mir nachgerechnet; laut Review gleich Aiello/Heeck 2026, Gl. 46); bei gleichem sigma aendert sich c_1 erst in zweiter Ordnung der Formaenderung. Die erste Unterordnung ist fuer die Sextik-Klasse bereits publiziert (Aiello/Heeck, PRD 114, 015008, 2026).",
+  "meaning": "Der Strang bleibt als Naturpruefprogramm geparkt; erlaubt ist Papierarbeit, die klaert, ob eine Wiederaufnahme ueberhaupt einen Messanschluss haette. Der Herkunftsfehler ist in STAND-GF und im GF-5-Bericht berichtigt (angehaengt, Text bleibt stehen). Lehre: ein Flag, das die Ausgabe unterdrueckt, belegt nicht, dass eine Groesse nicht gebildet wurde; die Ableitbarkeitsprobe muss den Aufrufweg verfolgen. Eigene Fehler, vom Review gefunden: im Brief gehoerte die kappa-R-Spanne 4,1 bis 14,6 nur zum Fehlerarm (Hauptarm bis rund 33); Mitautoren der 2021er Arbeit aus dem Gedaechtnis falsch; in FORMEN.md (21.09.) war die Zulaessigkeitsbedingung nur hinreichend, nicht 'genau dann'; 'schwaechstes Glied = nicht messbar' war zu weit. Die begrenzte S0-Klaerung laeuft als ein Feldforscher-Auftrag ohne Q-Rechnung und ohne GPU.",
+  "compute": "keine Rechnung; Codex lokal ohne Remotezugriff, 02:39 bis 02:57; Handrechnung claude-primary",
+  "sources": [
+    {
+      "path": "coordination/gesamtformel-20260921/gf-6-plan-review/REVIEW-codex-astra.md"
+    },
+    {
+      "path": "coordination/gesamtformel-20260921/gf-6-plan-review/BRIEF-codex.md"
+    },
+    {
+      "path": "coordination/gesamtformel-20260921/STAND-GF.md"
+    }
+  ]
+}

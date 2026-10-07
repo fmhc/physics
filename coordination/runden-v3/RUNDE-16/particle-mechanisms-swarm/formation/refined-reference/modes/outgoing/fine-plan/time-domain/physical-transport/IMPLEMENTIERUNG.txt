@@ -1,0 +1,54 @@
+physical-transport Implementierung, particle_core, 2026-10-03.
+KEIN Interpreter, Test, Rohdatenabruf oder Rechenlauf durch den Autor.
+Code SHA256 50a9cc0a308135a06c84bdc5f51a45f3f408de3dc00f6a4b142f88ddbddfa8bd
+Basis: PLAN + HUELLE + BINDUNG-V2 + ROOT-ABNAHME; alte Dateien unverändert.
+
+CLI:
+python3 code.py --dynamics TIMESTEP_HALF_CODE --time-code TIME_DOMAIN_CODE
+ --phase-code PHASE_CYCLE_CODE --amplitude-code AMPLITUDE_CODE
+ --time-dir TIME_DOMAIN_OUT --phase-dir PHASE_CYCLE_OUT
+ --amplitude-dir AMPLITUDE_OUT --out NEW_EMPTY_OUTPUT
+Hier Dokumentation, keine ausgeführte Shellanweisung.
+
+18 Einzelring-NPZ nach gebundenen RESULT-Manifesten, eigener Code-/Result-
+Hash allerVorläufer, gemeinsame Inputs/omega/rho/alpha/Phasenanker geprüft.
+Tatsächliches Quellenschema: alte time-level.pairs passed/max_error;
+phase/amplitude.pairs complete/odd_passed/odd_max_error, bei amplitude
+zusätzlich phase_degrees-Auswahl. Arm-Samples dieser konkret gebundenen
+Quellen haben321 Zeitpunkte; InitialQA/Kragen/E/Q/Bilanz werden geprüft.
+Originales time-domain UNRESOLVED ist erwarteter historischer Status,
+kein Hindernis für die vollständigen numerisch validierten Einzelarme.
+
+Ring für Ring: gespeichertes p,rd rekonstruieren v=rd+iomega*p, chi/w real;
+exakte r/t-Achsen/komplex128, Komponentenlabels und vollständigeFinite.
+Physische E/Q/G-Skalen zuerst, erst danach Paar-minusBaseline. Halbe
+Grenzkanten, vollständige innereKanten, chi-Fluss, stabilesPotential.
+Nur reduzierte1281-Zeitpunkt-Skalarreihen für2Schalen/3Gesichter bleiben
+armübergreifend imSpeicher; keine gesammelten Rohfeldtrajektorien.
+
+Feste Fehlerformeln für Addieren/Produkt/Quadrat, gamma64 lokal;
+quadratische Nullsensitivität bei chi-Vakuumkante, tatsächliche Faktoren
+beiFlüssen, Auslöschung von v rückrekonstruiert. GeometrischeGewichte und
+Multiplikation berücksichtigt. Raum-/Zeitreduktionen gamma_(n-1).
+Endpunktkoeffizientenrundung aus Zähler/Nenner-Zeitdifferenzen propagiert;
+dies ist NICHT der Approximationsfehler linearerInterpolation. Für ihn
+bleibt nur unveränderte empirische.1/.2-Diagnose. Absolute Fehler werden
+nicht nochmals mitgamma64 kleinmultipliziert. Keine Intervallbibliothek,
+keine Behauptung rigoroser Rundungs- oder Evolutionsfehlerschranken.
+
+AnalytischeQA aus dyn.forces und Kettenregel ohneadvance, reguläreFelder
+und reinechi-Energietransportprobe, exaktesVakuum, quadratischeNullkante.
+Kein numerisches finiteDifferenz-dE/dt. AlteModule sonst nur alsHashbindung;
+keine Vorläufer-main-Funktion wird ausgeführt.
+
+Provenienz/QA/18Arme schrittweise atomisch alsJSON; Fehler INCOMPLETE.
+Roh:432Schalen-/648Gesichtszeilen; Paar:192/288; abschließend72Reserven
+und48Schalenentscheidungen zwingend. Phi/chi-Ströme nicht als komponierte
+D/H-Lösung behandeln. Primär dt=.005,Sample.1; u<=0/nichtfinite keinPass.
+Gesamtausgabe PHYSICAL_TRANSPORT_DIAGNOSIS_COMPLETE bedeutet vollständige
+Diagnose, NICHT alle lokalen Richtungsprüfungen bestanden. Kein globales
+Mehrheitslabel oder Verlust-/Lebensdauerlabel.
+
+Intern8CPU-s-Checkpoint, Ziel insgesamt10CPU-s. ExterneBudgetbindung durch
+Root vor Ausführung. Laufzeit/RAM noch ungemessen; kein behaupteterPass.
+Unabhängige Codelektüre vor .69-Syntax/QA/Auswertung. Kein Auto-Retry.

@@ -1,0 +1,17 @@
+# G2-08 Laufzettel fuer die Leitung (Test-Agent T-1). Rechnen tut die Leitung.
+# Skript: prisma.py = umgebaute Kopie von RUNDE-01/qg1/qg1.py (Original unveraendert). torch, float64/complex128,
+#   --geraet cuda|cpu (qg1 selbst war nur CUDA).
+# Ordner auf der .69: /home/fmh/fmhc-physics-remote/ie-gen02-g2-08/ (prisma.py, KARTE.md, NACHTRAG.md, LAUF.txt)
+# haupt = 24 Laeufe grob (12 Schwellen, 12 Prisma) + fein fuer die 4 Schwellenlaeufe bei omega^2 = 0,70 (L3);
+# gegen = 2 Laeufe grob (ohne Stufe, umgekehrte Stufe). Getrennte Aufrufe.
+#
+# Formprobe lokal (CPU, 1 Faden, nice 19, Zeitfaktor 0,01; zuletzt bis 11:25:52): beide rc 0. Keine Aussage daraus.
+#   haupt: grob 1,8 s (400 Schritte), fein 0,6 s -> CPU voll etwa 180 s + 60 s (etwa 4 min)
+#   gegen: grob 0,2 s                           -> CPU voll etwa 20 s
+# GPU-Schaetzung aus qg1 (27 Laeufe, 8000 Schritte: 9,7 s auf P4000): haupt etwa 1 bis 2 min.
+cd /home/fmh/fmhc-physics-remote/ie-gen02-g2-08 && bash /home/fmh/fmhc-physics-remote/kleintests/kleintest.sh p4000a g208-haupt prisma.py haupt --out ausgabe | tee lauf-69-haupt.log
+cd /home/fmh/fmhc-physics-remote/ie-gen02-g2-08 && bash /home/fmh/fmhc-physics-remote/kleintests/kleintest.sh cpu2 g208-gegen prisma.py gegen --geraet cpu --out ausgabe | tee lauf-69-gegen.log
+# Beide Aufrufe sind ausdruecklich CPU-faehig; haupt ginge auch auf cpu6 mit --geraet cpu (etwa 4 min).
+# Ergebnis: ausgabe/prisma_haupt_bericht.txt und _ergebnis.json (Codeschwellen vor der Entwicklung, Tabelle je Lauf,
+#   Pruefung V1 bis V4 mit scheitert / nicht entscheidbar, L3), ausgabe/prisma_gegen_bericht.txt, *_reihen.pt.
+# formprobe/ und formprobe-*.log sind Rauchtests mit Zeitfaktor 0,01: keine Aussage daraus.

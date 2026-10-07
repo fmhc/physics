@@ -1,0 +1,192 @@
+{
+ "info": {
+  "numpy": "2.4.4",
+  "scipy": "1.18.0",
+  "python": "3.12.3",
+  "host": "ubuntu-auto",
+  "argv": [
+   "code/dtt.py",
+   "netz",
+   "--ordnung",
+   "3/2",
+   "--saaten",
+   "0",
+   "--bz",
+   "2",
+   "--bz-teil",
+   "0/3",
+   "--out",
+   "lauf/n32-s0-bz-a.json"
+  ],
+  "start_utc": "2026-10-05T09:20:52Z",
+  "sha256": {
+   "dtt.py": "c57abffcb9dcc3e83a488db1081e5e592ea9973a1ad1ad1bbbfdafac163fc524",
+   "danzer_naeherung.py": "0571953eb693f87e6989d76dd59852bfbe832da1fedf0a46e3da144c63c8fc24",
+   "dn2.py": "a834b826aaba8a656741882d8e84c8413e2fe7c273fd26fc8e220b32798c0ba9",
+   "tg.py": "ec48a258e266fc2226d0d10564b606052831ffefbf0642e4f7d04f9de85cfd9e",
+   "tti.py": "6d6b6f7b99b334d74d91860fc69af1c6c0c46e22207dc45432d60a9824c08ee5",
+   "ew.py": "fa7b6417d39177102f0b19c5474453cd16a7595e23bc25ca548e081c4060b142",
+   "tp.py": "419d7da6caa211c721eb6a8c87403977415cf3050f03365377f51cb77b374dfd",
+   "dn.py": "0cd5d13e98f41df277ec7d8139970d1e658542f843ed8180bc756a4ea1d4d1ae",
+   "licht_netz.py": "98d3960a174fe9d077d32d79acf096b2c611c19f69dd13fb0d7d1a517f436146",
+   "nachtrag_kinetik.py": "fd0d17b9fb7c92d4b6ad564a46260e3daae3285bcb5ad53f65d9fb3918a32b28"
+  },
+  "omp": "1",
+  "openblas": "1"
+ },
+ "saaten": [
+  {
+   "ordnung": "3/2",
+   "saat": 0,
+   "zitter_versatz": 0,
+   "netz": {
+    "ordnung": "3/2",
+    "saat": 0,
+    "zitter_versatz": 0,
+    "L": 7.206829298588774,
+    "eps_phason": 0.034441853748632976,
+    "gamma": [
+     -5.864779005282987e-08,
+     -7.99832449595631e-08,
+     -1.2771736282029685e-08
+    ],
+    "N": 576,
+    "N_erwartet": 575.9999999999999,
+    "T": 3456,
+    "ecken_sha": "403fbd27fa1e466f749c9edd8fe3ce954e5b1a2d399491c375a1b8bc0317b902",
+    "tetraeder_sha": "dbb29bcc1d4209fd750b266da207039386e8965d995f1fdaffd1fdbfc4f16bca",
+    "fenster": {
+     "N": 576,
+     "N_erwartet": 575.9999999999999,
+     "vol_fenster": 12.310615413200635,
+     "marge_min_innen": 1.1303877833768183e-08,
+     "marge_min_aussen": 1.1303878499901998e-08,
+     "fenster_entartet_1e-5": 98
+    },
+    "rhomboeder": {
+     "rhomboeder": 576,
+     "vol_summe": 374.311100244335,
+     "L3": 374.311100244335,
+     "rel_abw": 0.0,
+     "ecken_fehlen": 0,
+     "je_typ": {
+      "123": 36,
+      "124": 36,
+      "125": 24,
+      "126": 24,
+      "134": 24,
+      "135": 35,
+      "136": 19,
+      "145": 19,
+      "146": 35,
+      "156": 36,
+      "234": 24,
+      "235": 19,
+      "236": 35,
+      "245": 35,
+      "246": 19,
+      "256": 36,
+      "345": 36,
+      "346": 36,
+      "356": 24,
+      "456": 24
+     }
+    },
+    "vol_min": 0.07837136697232953,
+    "vol_max": 0.12680753550602072,
+    "vol_rel_abw": 0.0,
+    "tetraeder_flach_1e-10": 0,
+    "delaunay_verletzt": 0,
+    "kugel_entartet_zusatzpunkte": 2848,
+    "tetraeder_mit_gleichstand": 1424,
+    "t_bau_s": 1.9370291233062744
+   },
+   "pruefung": {
+    "T": 3456,
+    "E": 4032,
+    "nV": 576,
+    "kanten_je_ecke": 14.0,
+    "tetra_je_ecke": 6.0,
+    "selbstkanten": 0,
+    "laengen_abw_max": 4.440892098500626e-16,
+    "volumen_summe_rel_abw": 2.220446049250313e-16,
+    "vol_min": 0.07837136697232953,
+    "vol_min_rel_mittel": 0.7235998186523726,
+    "dieder_summe_minus_2pi_max": 1.7763568394002505e-15,
+    "dieder_min_grad": 35.999999999999915,
+    "dieder_max_grad": 110.90515744788938,
+    "D_sym_max": 1.285383884219688e-15,
+    "schlaefli_lD_max": 1.2574650122553504e-15,
+    "D_absmax": 2.3511410091698997,
+    "l_min": 0.5627774222552386,
+    "l_max": 1.4510592024449198,
+    "Vbox": 374.3111002443349,
+    "t_modell_s": 0.201552152633667
+   },
+   "E": 4032,
+   "nV": 576,
+   "bz": {
+    "Lk": 2,
+    "teil": [
+     0,
+     3
+    ],
+    "nk": 3,
+    "k_mit_wachsend": 0,
+    "k_A_red_nicht_pd": 0,
+    "k_B_red_neg": 0,
+    "k_rangverlust_Mc": 0,
+    "k_mit_unklar": 3,
+    "w2_min_rel": 0.012534177105630505,
+    "punkte": [
+     {
+      "m": [
+       0,
+       0,
+       1
+      ],
+      "n_wachsend": 0,
+      "A_red_pd": true,
+      "B_red_neg": 0,
+      "w2_min_rel": 0.01255905964027014,
+      "n_unklar": 507,
+      "w2im_max": 0.0,
+      "t_s": 126.33498048782349
+     },
+     {
+      "m": [
+       1,
+       0,
+       0
+      ],
+      "n_wachsend": 0,
+      "A_red_pd": true,
+      "B_red_neg": 0,
+      "w2_min_rel": 0.012534177105630505,
+      "n_unklar": 506,
+      "w2im_max": 0.0,
+      "t_s": 129.1188793182373
+     },
+     {
+      "m": [
+       1,
+       1,
+       1
+      ],
+      "n_wachsend": 0,
+      "A_red_pd": true,
+      "B_red_neg": 0,
+      "w2_min_rel": 0.035654516223496295,
+      "n_unklar": 1308,
+      "w2im_max": 0.0,
+      "t_s": 128.68582272529602
+     }
+    ]
+   },
+   "t_s": 386.31295585632324
+  }
+ ],
+ "laufzeit_s": 386.3140597343445,
+ "maxrss_MB": 1134.27734375,
+ "ende_utc": "2026-10-05T09:27:18Z"
+}

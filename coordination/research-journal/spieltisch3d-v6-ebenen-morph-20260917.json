@@ -1,0 +1,32 @@
+{
+  "id": "spieltisch3d-v6-ebenen-morph-20260917",
+  "time": "2026-09-17T07:55:00+02:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5); fuenf Opus-Agenten (Engine, Ebenen, Renderer, HUD, Konzept/Integration); Zweitmeinungen Qwen (Bunker), GLM und DeepSeek (OpenRouter, Freigabe Finn 17.09.)",
+  "topic": "operations",
+  "status": "technical",
+  "title": "Spieltisch 3D (Artefakt Version 6/7): zehn Ebenen mit Morph, Mikro-Agenten mit Ticks und Kicks, alle Kennzahlen ehrlich markiert",
+  "question": "Laesst sich der Spieltisch als 3D-System aus Mikro-Agenten darstellen, das zwischen Ring, 1D-Kette, Zeit-Raum-Spirale, Simplex (K = 2..4), Torus und Hierarchie morpht, kickbar ist und jede Kennzahl mit ihrer Herkunft (gemessen, Regelgroesse, Vermutung, Vertragsreferenz) zeigt?",
+  "action": "Schnittstellenvertrag (SCHNITTSTELLE.md), vier Module parallel (engine.js, layouts.js, render.js, hud.js/main.js), Integration zu einer Datei (320 kB, ohne Netzzugriff), 18 Abnahmebilder in headless Chrome mit GPU, Dreimodell-Kritik (12 Befunde uebernommen, 7 abgelehnt), Veroeffentlichung unter https://claude.ai/artifact/5Un7Ne9Pey6gF6tbkLeS84. OpenRouter-Kosten der fuenf Agenten zusammen 0,48 USD.",
+  "result": "Zehn Ebenen (tisch, kette, spirale, spirale-flach, simplex, torus, hierarchie, phasenkreis, dunkel, welle) mit Bogen-Morph (Abweichung GPU/JS 1,6e-7), fuenf Kick-Arten (Injektion/Umverteilung), 57 Kennzahl-Karten mit Vertragsreferenz und widerlegten Vermutungen markiert, Engine im Gleichlauf mit spieltisch.py. Offen: in headless Chrome verliert WebGL einmal je Lauf den Kontext (Wiederaufbau funktioniert); normaler Browser und Frame-Zeit p95 ohne CPU-Deckel ungeprueft; Simplex K = 4 dicht, Torus-Spuren zackig, Handy-Beschriftung teils verdeckt.",
+  "meaning": "Darstellungswerkzeug, kein physikalischer Befund. Die Seite zeigt dieselben Regeln und korrigierten Kennzahlen wie die Vertragslaeufe und trennt live Gemessenes von Vertragsreferenzen; vertragsexakt sind nur Laeufe mit festem Preset und Seed.",
+  "sources": [
+    {
+      "path": "coordination/design-3d-20260917/ABNAHME.md",
+      "sha256": "0d03e1c433a8e636a2af30b8b955ea188bbab5ebccd7c17d2b50d6ec8fbc5734"
+    },
+    {
+      "path": "coordination/design-3d-20260917/SCHNITTSTELLE.md",
+      "sha256": "b84cbdd5e30d2e9d711ffbc7870a59d9d0eb08b64833b5f9c44909bb63508564"
+    },
+    {
+      "path": "coordination/design-3d-20260917/INTEGRATION-AENDERUNGEN.md",
+      "sha256": "2dd4a45e2342c477438c1f1c454207453ec57756ae2df12b1e5143b709aaa8af"
+    },
+    {
+      "path": "model-lab/spieltisch3d/bundle/spieltisch.html",
+      "sha256": "12a2f567b4a678615b3751e7cd0876c560b5d1c902dd7c9affcff2a7273bafaf"
+    }
+  ],
+  "recorded_at": "2026-09-17T05:42:42.482931+00:00"
+}

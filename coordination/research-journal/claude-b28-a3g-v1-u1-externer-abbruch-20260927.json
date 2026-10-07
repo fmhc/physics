@@ -1,0 +1,33 @@
+{
+  "id": "claude-b28-a3g-v1-u1-externer-abbruch-20260927",
+  "time": "2026-09-27T20:01:59+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung; eingetragen 22:01:59 MESZ (gemessen)",
+  "topic": "modelle",
+  "status": "reported",
+  "evidenzart": "verfahren",
+  "title": "B28 Vorlauf V1 unter A3g: Ausgang U1 (externer Abbruch); astra verweigert die Fremdfreigabe fuer eine technische Korrektur, weil der vorsorgliche Abbruch den Ausgang schon festgelegt hat",
+  "question": "Darf der B28-Vorlauf nach dem vorsorglichen Abbruch in k5_m mit technisch korrigiertem, bitgleichem Code fortgesetzt werden?",
+  "action": "Der Ausfuehrende brach k5_m nach 219 290 ms selbst ab (SIGTERM), weil die K5-Pruefung mit der A3g-Diagnose etwa siebenmal langsamer war als geplant. Er bereitete zwei technische Korrekturen mit archivierten Originalen vor (Buendelung der Majoranten und der Reihenkoeffizienten; bitgleiche Werte an einer Messzelle; frischer Gegenleser). astra (frische Sitzung, Autorhaus, nicht Haus des Ausfuehrenden) entschied ueber die Fremdfreigabe nach A3g 11 (21:57:33 bis 21:59:12).",
+  "result": "FREIGABE: NEIN. Der vorsorgliche SIGTERM ist ein externer Abbruch nach Paragraf 7; der V1-Ausgang U1 ist damit eingetreten, und Paragraf 11 kann einen erfuellten Ausgangstatbestand nicht heilen. Die beiden Buendelungen sind algebraisch Implementierungsaenderungen, aber nicht vollstaendig verhaltensgleich (ein Fehler im vorgezogenen Berichtsteil koennte einen Abschnitt beenden). Budget: 343 253 ms von V verbraucht. Kein V2, kein Hauptarm aus diesem V1.",
+  "meaning": "U-Ergebnis ohne Lesart: keine Aussage zur Stabilitaet. Ursache ist die zu optimistische Budgetannahme fuer die A3g-Diagnose, die vor der Bindung nicht gemessen war. Eine Fortsetzung braucht eine neue Vertragsfassung mit neuer Freigabe durch Finn, die den U1 und den Zeitverbrauch erhaelt.",
+  "sources": [
+    {
+      "path": "coordination/field-b28-lokale-stabilitaet-20260926/vorlauf-a3g/fremdfreigabe-astra/FREMDFREIGABE-astra-B28-K5-KORREKTUR.md",
+      "sha256": "717e6b257de533716eae727280a2816f8314bac1b6c5d02420d020d920f127d4"
+    },
+    {
+      "path": "coordination/field-b28-lokale-stabilitaet-20260926/vorlauf-a3g/budget.log",
+      "sha256": "1fdb8f9e921e2087f6153d488f429104a0c6e47cfe26ae9d4d15110d22fbb7b5"
+    },
+    {
+      "path": "coordination/field-b28-lokale-stabilitaet-20260926/vorlauf-a3g/LAUFPROTOKOLL-A3g.md",
+      "sha256": "da459554f2fa2fcbd569a1cfd552416931be4d2c5e2a7a7ca8bb9149b3e003ab"
+    },
+    {
+      "path": "coordination/field-b28-lokale-stabilitaet-20260926/vorlauf-a3g/CODE-KORREKTUR-K5-VEKTOR.md",
+      "sha256": "6338bcc86d2dc5a09b0d84552b115366a504c110dee82798caafd7065742c8f6"
+    }
+  ],
+  "recorded_at": "2026-09-27T20:01:59.872365+00:00"
+}

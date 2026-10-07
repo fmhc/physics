@@ -1,0 +1,64 @@
+R5-C r5c.py v2 (2026-09-30 02:44: integral fuer (Zeit, Lauf, Ebene); Rohdaten-Sicherung; --roh), Start 2026-09-30T02:47:49+02:00 auf CPU, 1 Thread, torch 2.10.0+cu128, Unterbefehl rauch, Laufzeitfaktor 0.05
+
+Bragg-Kette (W21): gegenphasige Kette (0, pi) im Ring L = 480.0, d = (10.0, 12.0), Paket sigma = 25.0, eps = 0.001 bei x = -120.0; T = 35. T und R bezogen auf den leeren Ring; Bragg k = pi/d.
+  [grob] d = 10.0: k_Bragg 0.3142, Minimum T = -42533.6452 bei k0 = 0.24, T_max 29302.4798; d = 12.0: k_Bragg 0.2618, Minimum T = -6568.5963 bei k0 = 0.22, T_max 9073.2871
+  kette d = 10.0 k0 = 0.22: T = 13488.10904, R = -3349.40927, max Verschiebung 6.48e-03
+  kette d = 10.0 k0 = 0.24: T = -42533.64519, R = -719.46933, max Verschiebung 9.74e-03
+  kette d = 10.0 k0 = 0.25: T = -40846.67629, R = 873.18577, max Verschiebung 1.19e-02
+  kette d = 10.0 k0 = 0.26: T = -20118.18286, R = 1292.14537, max Verschiebung 1.30e-02
+  kette d = 10.0 k0 = 0.27: T = 7780.92854, R = 786.72954, max Verschiebung 1.27e-02
+  kette d = 10.0 k0 = 0.28: T = 29302.47981, R = 32.82195, max Verschiebung 1.12e-02
+  kette d = 10.0 k0 = 0.3: T = 25518.55921, R = -519.36669, max Verschiebung 4.58e-03
+  kette d = 10.0 k0 = 0.31: T = 5499.52217, R = -276.17385, max Verschiebung 5.19e-03
+  kette d = 10.0 k0 = 0.32: T = -14684.67984, R = 73.98205, max Verschiebung 8.50e-03
+  kette d = 10.0 k0 = 0.34: T = -25450.18189, R = 347.97365, max Verschiebung 1.42e-02
+  kette d = 10.0 k0 = 0.38: T = 20604.50827, R = -316.29110, max Verschiebung 1.78e-02
+  kette d = 12.0 k0 = 0.22: T = -6568.59626, R = 892.84254, max Verschiebung 1.00e-02
+  kette d = 12.0 k0 = 0.24: T = 9073.28713, R = 164.76357, max Verschiebung 5.21e-03
+  kette d = 12.0 k0 = 0.25: T = 8177.60391, R = -227.52915, max Verschiebung 6.09e-03
+  kette d = 12.0 k0 = 0.26: T = 2707.94904, R = -325.07475, max Verschiebung 8.20e-03
+  kette d = 12.0 k0 = 0.27: T = -3375.21363, R = -172.16343, max Verschiebung 1.28e-02
+  kette d = 12.0 k0 = 0.28: T = -6494.56835, R = 39.48392, max Verschiebung 1.73e-02
+  kette d = 12.0 k0 = 0.3: T = -945.69041, R = 37.11210, max Verschiebung 2.48e-02
+  kette d = 12.0 k0 = 0.31: T = 3694.57529, R = -112.91755, max Verschiebung 2.76e-02
+  kette d = 12.0 k0 = 0.32: T = 5958.66454, R = -159.28475, max Verschiebung 2.95e-02
+  kette d = 12.0 k0 = 0.34: T = 861.05429, R = 177.38547, max Verschiebung 3.04e-02
+  kette d = 12.0 k0 = 0.38: T = -1629.34368, R = -326.22037, max Verschiebung 2.27e-02
+  einzel d = None k0 = 0.22: T = 0.99943, R = -0.00873, max Verschiebung 6.72e-03
+  einzel d = None k0 = 0.26: T = 1.00056, R = -0.00637, max Verschiebung 5.10e-03
+  einzel d = None k0 = 0.31: T = 1.00009, R = -0.00437, max Verschiebung 3.45e-03
+  einzel d = None k0 = 0.38: T = 0.99926, R = -0.00269, max Verschiebung 4.22e-03
+  Kette d = 10.0 ohne Paket: max Verschiebung 1.137e-13, Restfluss -4.29e-16, -3.47e-15
+  Kette d = 12.0 ohne Paket: max Verschiebung 9.948e-14, Restfluss +2.93e-16, -8.39e-16
+  [fein] d = 10.0: k_Bragg 0.3142, Minimum T = -42537.9006 bei k0 = 0.24, T_max 29310.5230; d = 12.0: k_Bragg 0.2618, Minimum T = -6583.0387 bei k0 = 0.22, T_max 9067.9209
+  kette d = 10.0 k0 = 0.22: T = 13498.78801, R = -3339.74464, max Verschiebung 6.49e-03
+  kette d = 10.0 k0 = 0.24: T = -42537.90060, R = -720.98968, max Verschiebung 9.75e-03
+  kette d = 10.0 k0 = 0.25: T = -40855.26550, R = 867.68332, max Verschiebung 1.19e-02
+  kette d = 10.0 k0 = 0.26: T = -20124.30882, R = 1286.49167, max Verschiebung 1.30e-02
+  kette d = 10.0 k0 = 0.27: T = 7781.92273, R = 784.08514, max Verschiebung 1.27e-02
+  kette d = 10.0 k0 = 0.28: T = 29310.52295, R = 34.06194, max Verschiebung 1.12e-02
+  kette d = 10.0 k0 = 0.3: T = 25526.61121, R = -516.01867, max Verschiebung 4.58e-03
+  kette d = 10.0 k0 = 0.31: T = 5501.14812, R = -275.10968, max Verschiebung 5.20e-03
+  kette d = 10.0 k0 = 0.32: T = -14689.40819, R = 72.44995, max Verschiebung 8.52e-03
+  kette d = 10.0 k0 = 0.34: T = -25456.65290, R = 345.78633, max Verschiebung 1.42e-02
+  kette d = 10.0 k0 = 0.38: T = 20607.52579, R = -314.55844, max Verschiebung 1.78e-02
+  kette d = 12.0 k0 = 0.22: T = -6583.03874, R = 892.96391, max Verschiebung 1.00e-02
+  kette d = 12.0 k0 = 0.24: T = 9067.92089, R = 166.40673, max Verschiebung 5.21e-03
+  kette d = 12.0 k0 = 0.25: T = 8177.20629, R = -226.54135, max Verschiebung 6.10e-03
+  kette d = 12.0 k0 = 0.26: T = 2710.68657, R = -325.10956, max Verschiebung 8.22e-03
+  kette d = 12.0 k0 = 0.27: T = -3371.00355, R = -172.98585, max Verschiebung 1.29e-02
+  kette d = 12.0 k0 = 0.28: T = -6489.83426, R = 38.45673, max Verschiebung 1.73e-02
+  kette d = 12.0 k0 = 0.3: T = -941.48817, R = 37.06605, max Verschiebung 2.49e-02
+  kette d = 12.0 k0 = 0.31: T = 3697.25226, R = -112.42610, max Verschiebung 2.76e-02
+  kette d = 12.0 k0 = 0.32: T = 5958.75335, R = -158.58172, max Verschiebung 2.95e-02
+  kette d = 12.0 k0 = 0.34: T = 855.52847, R = 177.52851, max Verschiebung 3.05e-02
+  kette d = 12.0 k0 = 0.38: T = -1626.54166, R = -326.42006, max Verschiebung 2.28e-02
+  einzel d = None k0 = 0.22: T = 0.99961, R = -0.00874, max Verschiebung 6.73e-03
+  einzel d = None k0 = 0.26: T = 1.00014, R = -0.00637, max Verschiebung 5.10e-03
+  einzel d = None k0 = 0.31: T = 1.00016, R = -0.00437, max Verschiebung 3.45e-03
+  einzel d = None k0 = 0.38: T = 0.99979, R = -0.00269, max Verschiebung 4.23e-03
+  Kette d = 10.0 ohne Paket: max Verschiebung 2.558e-13, Restfluss -2.69e-16, -6.93e-15
+  Kette d = 12.0 ohne Paket: max Verschiebung 2.274e-13, Restfluss +1.61e-15, -7.23e-16
+  L3 (T gegen 1): 22 von 22
+  bragg: 50.4 s bei Faktor 0.05; Hochrechnung volle Laenge etwa 1008 s
+

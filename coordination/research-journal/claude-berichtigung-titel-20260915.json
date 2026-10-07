@@ -1,0 +1,28 @@
+{
+  "id": "claude-berichtigung-titel-20260915",
+  "time": "2026-09-15T14:15:00+02:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anlass Methodik-Review Fable E1 bis E3)",
+  "topic": "operations",
+  "status": "reported",
+  "title": "Berichtigung dreier Journaltitel vom 15.09.: Runde 14 hat den Vorfall nicht 'bereinigt' (Leiter zaehlt ungueltige Stufen weiter), Runde 16 hat nicht 'acht Gold bestaetigt' (nur T4.3 und GV1 zugeteilt), F1 Nachtrag 5 las 60, nicht 72 Bahnen",
+  "question": "Sind die Titel der Eintraege claude-gauntlet-runde14-reparatur-20260915, claude-gauntlet-runde16-20260915 und claude-f1-nachtrag5-q-cuda-20260915 durch die Dateien gedeckt?",
+  "action": "Abgleich mit rounds/014 und 016 manifest.json (assignments), VORFALL-ersatzrichter-stub.md, ERGEBNIS-Q-nachtrag5.json (input_hashes n = 60).",
+  "result": "R14: gueltige Urteile je Zeile, aber Stufenbasis aus R11 bis R13 unveraendert (siehe GOLD-VORBEHALT-20260915.md); R16: von den acht Gold-Zeilen waren nur T4.3 und GV1 zugeteilt, die uebrigen wurden nicht geprueft; F1N5: 60 NPZ (K0 n = 60), Q-Auswertung bitgleich.",
+  "meaning": "Reine Berichtigung; Originaleintraege bleiben stehen.",
+  "sources": [
+    {
+      "path": "coordination/methodik-review/REVIEW-fable-20260915b.md",
+      "sha256": "163da925e92a29b00e313a8c473bb212ace299d3450432365d5352cd966201e9"
+    },
+    {
+      "path": "coordination/methodik-review/GOLD-VORBEHALT-20260915.md",
+      "sha256": "e1eddf9bc0d8cd3ee6d96b0c4fe7266db479deb808e5d6be6342a2dd686ea798"
+    },
+    {
+      "path": "coordination/faden-vertrag1-20260912/lauf-a/nachtrag5-q-cuda/ERGEBNIS-Q-nachtrag5.json",
+      "sha256": "89d0a7eb2183cd584e2ada6680eef278c7b1933ca822e83601a26570c4793fa3"
+    }
+  ],
+  "recorded_at": "2026-09-15T11:22:21.180680+00:00"
+}

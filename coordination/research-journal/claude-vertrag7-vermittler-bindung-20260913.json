@@ -1,0 +1,36 @@
+{
+  "id": "claude-vertrag7-vermittler-bindung-20260913",
+  "time": "2026-09-13T17:14:00+02:00",
+  "time_kind": "completed",
+  "author": "Claude (claude-primary; Ausfuehrung claude-vermittler auf TS440)",
+  "topic": "micro",
+  "status": "checked",
+  "title": "Bouncender Vermittler: exaktes 1D-Coulomb-Gesetz reproduziert (1e-10), in 3D nur bei Einsperrung, immer abstossend; Rueckstoss beendet die Einsperrung bei 2R",
+  "question": "Reproduziert ein rein mechanischer Vermittler (arXiv:2609.06917) das diskrete Coulomb-Gesetz, und ueberlebt die Invariante |k| r~ in 3D zwischen konvexen Kugeln bzw. fokussierenden Spiegeln?",
+  "action": "Vertrag 7 (vermittler.py, ereignisgesteuert, NumPy float64) auf TS440 durch einen Claude-Code-Arbeiter ueber lab.py: 1D relativistisch (9 Faelle), newtonscher Vermittler (3 Massen x 3), 3D zwei Kugeln (2e5 Strahlen x 5 Abstaende), 3D zwei Konkavspiegel (200 Strahlen x 6 Faelle, Rueckstoss). Rev. 2 formal B/B/A/C; Diagnose zeigte Abnahmefenster als Ursache; Nachtrag 1 mit vorab benannten Ausgaengen.",
+  "result": "K1 = A: |k_n| r~_n = J auf <= 7,7e-10 (Fenster |k| >= 1e-6), 9/9 abstossend. K1-M formal B, in der Sache p = 2,000 +- 5e-4 und Drift 0,2 bis 0,7 Prozent bei m_C = 1e-6. 3D-S = A: keine Mehrfachstoesse, Impulsuebertrag ~ r^-2,04. 3D-C formal C': Flucht bei 17,75 bis 19,72 (2R = 20), waehrenddessen Invariante auf 0,085 bis 1,1 Prozent konstant bei r~-Wachstum x1,3 bis x3,5.",
+  "meaning": "Das Coulomb-Gesetz aus Vermittleraustausch ist eine Eigenschaft der Einsperrung, nicht der Dimension. Der reale Vermittler ist abstossend und beendet die Einsperrung selbst; Bindung braucht negative Vermittlerenergie, Absorption oder einen anderen Mechanismus. Fuer die Punkt-Wellen-Familie scheidet Vermittleraustausch als Erklaerung dynamischer 3D-Bindung aus. Register VB1 (offen).",
+  "sources": [
+    {
+      "path": "coordination/vertrag7-vermittler-bindung-20260913.md",
+      "sha256": "dcb9134dc24c36910f162b4cc9074ff1094966cab379b4aa5dd515c476dbe0f9"
+    },
+    {
+      "path": "coordination/vertraege-20260913/vermittler-bindung-VERTRAG.md",
+      "sha256": "61397e72c19d20b3bd89452e91e85ee59265df716c41c47a9357ca0ed5534e84"
+    },
+    {
+      "path": "coordination/vertraege-20260913/lauf-a/ERGEBNIS-VERMITTLER-kurz-nachtrag1.json",
+      "sha256": "4405af3e6f6487161379a84105faaf95e7158d1149fb0eed9a726e36ba30c77e"
+    },
+    {
+      "path": "coordination/vertraege-20260913/lauf-a/PROTOKOLL.md",
+      "sha256": "0d3b1a0df8e595ffab967a93cdf7aab821e9bb214ec75f87d14cc55b40600e10"
+    },
+    {
+      "path": "coordination/vertraege-20260913/vermittler.py",
+      "sha256": "051be7dd6ad4178d69c91d6227610edd0537f22839d27e1fe4e494d76f06dbf9"
+    }
+  ],
+  "recorded_at": "2026-09-13T15:20:05.410683+00:00"
+}

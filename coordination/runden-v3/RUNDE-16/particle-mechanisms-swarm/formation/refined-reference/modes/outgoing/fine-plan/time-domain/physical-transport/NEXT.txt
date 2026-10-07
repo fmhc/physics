@@ -1,0 +1,50 @@
+M2-TRANSPORT: KOSTEN-/NUTZENENTSCHEIDUNG — particle_core, 2026-10-03
+Nur Papier. ERGEBNIS, REVIEW-RESULT und Laufquittung gelesen; keine
+Rechnung, Rohfeldauswertung oder Implementierung. Kein neuer Laufauftrag.
+
+EMPFEHLUNG: diesen Transport-Verfeinerungszweig vorerst kostenbegrenzt
+beenden. Der abgeschlossene Befund bleibt48Schalen/72GesichterUNRESOLVED.
+Das ist keine Aussage gegen Strahlung, Bindung oder Stabilität. Die
+bekannte subthreshold-Mode und kausale Feldantwort bleiben davon unberührt.
+
+Warum eine weitere Stufe nicht automatisch der beste Physikschritt ist:
+Delta_dt dominiert zwar72/72, aber der relevante physische E-Mehrtransport
+ist teilweise schon kleiner als dieser Unterschied. Im unabhängig
+berichteten Falltheta0,epsilon.002,Fenster0,r45 ist J_E=2.42598616e-9
+bei delta_dt=3.22151698e-9; das gilt NICHT als Vorzeichenbestätigung.
+Ein angenommener Faktor4 für Zeitschrittfehler wäre hier noch kein
+begründeter garantierter Signalpass; der nächsteJ-Wert kann sich ändern.
+Der günstigste bisherige Fall gehört zudem zuG=E-omegaQ, nicht automatisch
+zur positivenE-Abgabe. Ihn nachträglich zum Hauptziel zu machen wäre eine
+Auswahl nach Erfolgsaussicht. DichtereAusgabe/Hüllenänderung adressieren
+den dominierenden Evolutionszeitschrittunterschied nicht.
+
+KLEINSTER SACHLICH GESCHLOSSENER ZUSATZTEST, FALLS SPÄTER EXPLIZIT GEWOLLT:
+Eine neue dt=.0025-Stufe für theta0,|epsilon|=.002,h=.05,R120,T128.
+Genau DREI neue physischeArme: +.002, -.002 undepsilon0-Baseline.
+Keine kleineAmplitude, keine zweitePhase, kein neuerEigenvektor. Eine
+alte dt=.005-Baseline in den neuenPaarvergleich einzusetzen wäre falsch.
+Begründung der Auswahl wäre ursprünglicheAnregungsphase und vorhandenes
+größeresSignalniveau, nicht das nachträglich günstigsteG-Gesicht.
+Alte dt=.01/.005-Arme bleiben Referenz; dieselben beidenFenster, beide
+Schalen, E primär undQ/G separat, unveränderte10u-Regel. Zwei alteStufen
+plus neueStufe geben eine zusätzliche Zeitschrittprüfung; keine garantierte
+Ordnung oder Fehlerursachenzerlegung. Keine zweiteVerfeinerung beiFail.
+
+Kosten dieses optionalenDreierpakets: neue PDE statt7.76CPU-sNachanalyse.
+Aus den65.65CPU-s des vierarmigenPhasenversuchs mitdt=.01/.005 folgt
+als grobe Schrittzahlplanung Größenordnung130CPU-s für drei dt=.0025-
+Arme; keine gemessene Zusage. Einschließlich Adapter-QA/Analyse wäre ein
+prospektiver Gesamtdeckel180CPU-s aufeiner.69CPU plausibel. Vorhandene
+Methoden wiederverwenden, keine allgemeineIntegratorsuche. Das Budget ist
+hier nur eine Kostenoption, weder reserviert noch zurAusführung freigegeben.
+
+ErwarteterGewinn selbst beiPass: gerichteter endlicherPaarmehrtransport
+im festen Außenfenster gegenüber einer weiteren dt-Variation. Das trennt
+noch nicht irreversibleDämpfung von kohärenten Einschalt-/Boxtransienten,
+liefert keine stationäreRate und erklärt nicht die stark angeregte
+Bildungswolke. Gegenüber diesem begrenztenGewinn sind drei weiterePDE-Arme
+im jetzigen Zweig nicht vorrangig. Die aufgelösten bisherigen Feld- und
+Amplitudenbefunde und das offeneTransportlimit dokumentieren; eine neue
+physikalische Bildungs-/Relaxationsfrage erst gesondert formulieren.
+Kein automatischerAlternativlauf durch diese Empfehlung.

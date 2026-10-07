@@ -1,0 +1,166 @@
+--- ../../IDEEN-EVOLUTION/GEN-02/G2-10/bic2_2d.py	2026-09-30 11:23:00.804739551 +0200
++++ bic2_2d_praez.py	2026-10-01 17:21:27.284276472 +0200
+@@ -1,5 +1,12 @@
+ #!/usr/bin/env python3
+-"""G2-10 (Ideen-Evolution, Generation 2, Test-Agent T-2): Kopie von RUNDE-07/bic2/bic2_v2.py (sha256 1f8affbd68b2c312...).
++"""RUNDE-12 LEITER-2D-PRAEZ: Kopie von GEN-02/G2-10/bic2_2d.py (sha256 e5f035c994922d35...). Aenderungen (alle mit
++"PRAEZ" markiert; ohne die neuen Optionen ist das Verhalten fuer kurve unveraendert, exakt bei --dim 3 ebenfalls):
++  - --rm: fester Anschlussradius r_m fuer lin_multi (kurve, exakt); Km = round(r_m/h), gerade gemacht, in [2, K-2].
++  - exakt mit --dim: nu = g210_nu() statt fest 1,0 in exakt, umlauf_neu_gelegt, umlauf_rechteck.
++  - kurve: Kernwachstum je omega^2 und je Kandidat; Ausloeschungsmass je Kandidat (groesster Einzelterm von
++    Omega(y_a, z2) mal |nz| an den beiden Nachbarpunkten der Nullstelle, geteilt durch |s|).
++
++G2-10 (Ideen-Evolution, Generation 2, Test-Agent T-2): Kopie von RUNDE-07/bic2/bic2_v2.py (sha256 1f8affbd68b2c312...).
+ Aenderungen (alle mit "G2-10" markiert):
+   - --dim: Raumdimension fuer die Profile in profile_stapel und fuer nu = (dim - 1)/2 (l = 0) im Befehl kurve
+     (Vorgabe 3 = bisheriges Verhalten; die uebrigen Befehle unveraendert mit dim = 3 bzw. eigener dims-Liste).
+@@ -1295,6 +1302,8 @@
+     K = int(math.ceil(R / h))
+     K += K % 2
+     rh = sorted(r_halb(p) for p in profs)[len(profs) // 2]
++    if PRAEZ_RM["r"] is not None:                                                             # PRAEZ: --rm
++        rh = PRAEZ_RM["r"]
+     Km = max(2, min(K - 2, int(round(rh / h))))
+     Km -= Km % 2
+     dv, sv, reihe, om = [], [], [], []
+@@ -1471,7 +1480,10 @@
+     M = torch.stack([torch.stack(ya, 1), torch.stack(yb, 1), torch.stack(z1, 1), torch.stack(z2, 1)], 2)   # (B, 4, 4)
+     # L(y) = Omega(y, z2) mit z2 auf exp(-kappa r) normiert (Faktor exp(i q- R) > 0 bei reellem rho): unabhaengig von R
+     nz = torch.exp(1j * qm[:B] * R)
+-    return {"M": M, "la": omega_bil(ya, z2) * nz, "lb": omega_bil(yb, z2) * nz, "G_in": (g_in[:B], g_in_x, g_in[B:]),
++    # PRAEZ: groesster Einzelterm von Omega(y_a, z2) mal |nz| (Massstab fuer Ausloeschung und Rundung)
++    la_terme = torch.stack([(ya[0] * z2[2]).abs(), (ya[2] * z2[0]).abs(), (ya[1] * z2[3]).abs(),
++                            (ya[3] * z2[1]).abs()]).amax(0) * nz.abs()
++    return {"M": M, "la_terme": la_terme, "la": omega_bil(ya, z2) * nz, "lb": omega_bil(yb, z2) * nz, "G_in": (g_in[:B], g_in_x, g_in[B:]),
+             "G_out": (g_out[:B], g_out_x, g_out[B:]), "J1": (Pp[:B].conj() * Qp[:B]).imag,
+             "J2": (Pm[B:].conj() * Qm[B:]).imag, "qp": qp[:B], "R": R, "omega": om[:B], "rho": rho1,
+             "wachstum": torch.maximum(wachstum[:B], wachstum[B:])}
+@@ -1633,7 +1645,7 @@
+         # 1. Pole (alle omega^2 in einem Stapel)
+         keime = [complex(rho0 + a.drho * (x - x0), -max(1e-10, a.cgam * (x - x0) ** 2)) for x in xs]
+         t0 = uhr()
+-        pol = newton_m(L, keime, list(range(len(xs))), [1.0] * len(xs), iters=a.iter_newton)
++        pol = newton_m(L, keime, list(range(len(xs))), [g210_nu()] * len(xs), iters=a.iter_newton)
+         st["pole_pluecker"] = pol
+         st["sek_newton"] = uhr() - t0
+         zeilen.append(f"  Newton (Pluecker) {uhr() - t0:.1f} s, konvergiert {sum(p['konvergiert'] for p in pol)}/{len(pol)}")
+@@ -1641,7 +1653,7 @@
+         if not budget.ok("Newton direkt", 20.0):
+             continue
+         t0 = uhr()
+-        pold = newton_direkt(L, [p["rho"] for p in pol], list(range(len(xs))), [1.0] * len(xs))
++        pold = newton_direkt(L, [p["rho"] for p in pol], list(range(len(xs))), [g210_nu()] * len(xs))
+         for p_, q_ in zip(pold, pol):
+             p_["rho_pluecker"] = q_["rho"]
+         pol = pold
+@@ -1652,7 +1664,7 @@
+         # 2. Eigenvektoren, A_out, Flussbreite
+         if not budget.ok("Eigenvektoren", 20.0):
+             continue
+-        Dd = direkt_m(L, [p["rho"] for p in pol], list(range(len(xs))), [1.0] * len(xs), gram=True)
++        Dd = direkt_m(L, [p["rho"] for p in pol], list(range(len(xs))), [g210_nu()] * len(xs), gram=True)
+         tab = []
+         zeilen.append("  omega^2 | Re rho | Gamma Newton | Gamma Fluss | N_K | A_norm | arg A | sig_min/sig_2 | Wachstum")
+         for i, x in enumerate(xs):
+@@ -1689,7 +1701,7 @@
+             for dr_ in drs:
+                 pkt_r.append(complex(rc + dr_, 0.0))
+                 pkt_i.append(i)
+-        Dw = direkt_m(L, pkt_r, pkt_i, [1.0] * len(pkt_r), gram=False)
++        Dw = direkt_m(L, pkt_r, pkt_i, [g210_nu()] * len(pkt_r), gram=False)
+         W = [complex(float(Dw["la"][k].real), float(Dw["lb"][k].real)) for k in range(len(pkt_r))]
+         im_rest = max(float(Dw["la"][k].imag.abs() + Dw["lb"][k].imag.abs()) / max(abs(W[k]), 1e-300)
+                       for k in range(len(pkt_r)))
+@@ -1786,7 +1798,7 @@
+     drs = [-1e-4, -3e-5, 0.0, 3e-5, 1e-4]
+     pr = [complex(rc_n + d, 0.0) for _ in xs_ok for d in drs]
+     pi_ = [i for i in range(len(xs_ok)) for _ in drs]
+-    Dw = direkt_m(L1, pr, pi_, [1.0] * len(pr), gram=False)
++    Dw = direkt_m(L1, pr, pi_, [g210_nu()] * len(pr), gram=False)
+     W = [complex(float(Dw["la"][k].real), float(Dw["lb"][k].real)) for k in range(len(pr))]
+     fit2, grund2 = lin_fit_nullstelle([(pr[k].real - rc_n, xs_ok[pi_[k]] - xs_ok[ic_n], W[k]) for k in range(len(pr))])
+     wn2 = wn
+@@ -1895,7 +1907,7 @@
+         pfad.append((r_hi, i))
+     for k in range(1, ns):                          # links: x = x_lo, rho faellt
+         pfad.append((r_hi - 2.0 * drho * k / ns, x_lo))
+-    Dw = direkt_m(L, [complex(p[0], 0.0) for p in pfad], [p[1] for p in pfad], [1.0] * len(pfad), gram=False)
++    Dw = direkt_m(L, [complex(p[0], 0.0) for p in pfad], [p[1] for p in pfad], [g210_nu()] * len(pfad), gram=False)
+     W = [complex(float(Dw["la"][k].real), float(Dw["lb"][k].real)) for k in range(len(pfad))]
+     # rho-Seiten (gleiches Profil) adaptiv verfeinern, bis jeder Phasensprung dort < 0,3 rad ist (billig)
+     for _ in range(8):
+@@ -1907,7 +1919,7 @@
+         if not neu:
+             break
+         mitte = [(0.5 * (pfad[k][0] + pfad[(k + 1) % len(pfad)][0]), pfad[k][1]) for k in neu]
+-        Dn = direkt_m(L, [complex(p[0], 0.0) for p in mitte], [p[1] for p in mitte], [1.0] * len(mitte), gram=False)
++        Dn = direkt_m(L, [complex(p[0], 0.0) for p in mitte], [p[1] for p in mitte], [g210_nu()] * len(mitte), gram=False)
+         Wn = [complex(float(Dn["la"][k].real), float(Dn["lb"][k].real)) for k in range(len(mitte))]
+         p2, w2l = [], []
+         j = 0
+@@ -1969,11 +1981,15 @@
+             pkt_i.append(i)
+     W = []
+     wachs = []
++    terme = []                                                                                # PRAEZ
+     for s0_ in range(0, len(pkt_r), a.stapel):
+         Dw = direkt_m(L, pkt_r[s0_:s0_ + a.stapel], pkt_i[s0_:s0_ + a.stapel], [g210_nu()] * len(pkt_r[s0_:s0_ + a.stapel]),
+                       gram=False)
+         W += [complex(float(Dw["la"][k].real), float(Dw["lb"][k].real)) for k in range(len(Dw["la"]))]
+         wachs += [float(v) for v in Dw["wachstum"].tolist()]
++        terme += [float(v) for v in Dw["la_terme"].tolist()]                                  # PRAEZ
++    # PRAEZ: Kernwachstum je omega^2 (Maximum ueber die rho-Abtastung)
++    st["wachstum_je_x"] = [max(wachs[k] for k in range(len(pkt_r)) if pkt_i[k] == i) for i in range(len(xs))]
+     kand = []
+     for i, x in enumerate(xs):
+         idx = [k for k in range(len(pkt_r)) if pkt_i[k] == i]
+@@ -1985,7 +2001,9 @@
+                 r1_, r2_ = pkt_r[k1].real, pkt_r[k2].real
+                 steig = (w2_.imag - w1.imag) / (r2_ - r1_)
+                 s = w1.real + t_ * (w2_.real - w1.real)
+-                ki.append({"x": x, "ix": i, "rho_b": r1_ + t_ * (r2_ - r1_), "s": s, "s_durch_steigung": s / abs(steig)})
++                ki.append({"x": x, "ix": i, "rho_b": r1_ + t_ * (r2_ - r1_), "s": s, "s_durch_steigung": s / abs(steig),
++                           "wachstum": max(wachs[k1], wachs[k2]), "terme_a": max(terme[k1], terme[k2]),        # PRAEZ
++                           "ausloeschung": max(terme[k1], terme[k2]) / max(abs(s), 1e-300)})                # PRAEZ
+         kand += ki[:a.max_kand]
+     st["kandidaten"] = kand
+     st["wachstum_max"] = max(wachs) if wachs else None
+@@ -2000,10 +2018,12 @@
+             k_["pol"] = p_["rho"]
+             k_["pol_konvergiert"] = p_["konvergiert"]
+             k_["Gamma"] = -p_["rho"].imag
+-        zeilen.append("  omega^2 | rho_b (L(y_b) = 0) | s = L(y_a) | Pol | Gamma")
++        zeilen.append(f"  r_m = {L['r_m']:.3f} (--rm {PRAEZ_RM['r']}), R = {L['R_aus']:.2f}")                     # PRAEZ
++        zeilen.append("  omega^2 | rho_b (L(y_b) = 0) | s = L(y_a) | Pol | Gamma | Kernwachstum | Ausloeschung")
+         for k_ in kand:
+             zeilen.append(f"    {k_['x']:.4f} | {k_['rho_b']:.6f} | {k_['s']:+.3e} | {fz(k_['pol'], 7)} | "
+-                          f"{k_['Gamma']:.3e}{'' if k_['pol_konvergiert'] else ' (nicht konv.)'}")
++                          f"{k_['Gamma']:.3e}{'' if k_['pol_konvergiert'] else ' (nicht konv.)'} | "
++                          f"{k_['wachstum']:.2e} | {k_['ausloeschung']:.2e}")                               # PRAEZ
+         sichern()
+     # Aeste verfolgen (naechster rho_b) und Vorzeichenwechsel von s
+     aeste = []
+@@ -2091,6 +2111,7 @@
+ # ================================================================ G2-10: dim als Parameter, Barriere, Leiter-Auswertung
+ 
+ G210_DIM = {"d": 3.0}
++PRAEZ_RM = {"r": None}                                                                        # PRAEZ: --rm
+ G210_TAB = {1: (0.671, 0.02), 2: (0.5971, 0.003), 3: (0.5674, 0.0015), 4: (0.5515, 0.001), 5: (0.5417, 0.001)}
+ G210_OMEGA_D = {1.0: 2.0, 2.0: 2.0 * PI, 3.0: 4.0 * PI}
+ 
+@@ -2354,6 +2375,7 @@
+     ap.add_argument("kommando", choices=["rauch", "pole", "bruecke", "zeit0", "zeitlin", "exakt", "kurve", "nlfit",
+                                          "barriere", "leiter"])   # G2-10: barriere, leiter
+     ap.add_argument("--dim", type=float, default=3.0, help="G2-10: Raumdimension fuer kurve und barriere (l = 0)")
++    ap.add_argument("--rm", type=float, default=None, help="PRAEZ: fester Anschlussradius r_m (kurve, exakt)")
+     ap.add_argument("--d2", default="", help="G2-10 leiter: kurve.json der Hauptlaeufe (dim 2), Komma")
+     ap.add_argument("--d3", default="", help="G2-10 leiter: kurve.json der Gegenprobe dim 3, Komma")
+     ap.add_argument("--d1", default="", help="G2-10 leiter: kurve.json der Gegenprobe dim 1, Komma")
+@@ -2429,6 +2451,7 @@
+ def main():
+     a = argumente()
+     G210_DIM["d"] = float(a.dim)                                                              # G2-10
++    PRAEZ_RM["r"] = a.rm                                                                      # PRAEZ
+     if a.geraet == "cuda":
+         if not torch.cuda.is_available():
+             raise SystemExit("--geraet cuda, aber kein CUDA-Geraet")

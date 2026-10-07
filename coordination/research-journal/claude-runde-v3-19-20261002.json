@@ -1,0 +1,49 @@
+{
+  "id": "claude-runde-v3-19-20261002",
+  "time": "2026-10-02T17:06:24+02:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung, Karten und Abschaetzung; Code-Agenten Anthropic (Opus 5.5); Fremdstimme pruefer-opus",
+  "topic": "theory",
+  "status": "reported",
+  "evidenzart": "modell",
+  "title": "Runde 19 nach v3 (explorativ): stille Dipol-Stellen (l = 1) im Zweifeldmodell, 19 auf 5 Leitern mit gleichem Sprossenabstand wie l = 0; Sprossenregel sagt 8 neue Stellen auf <= 0,018 voraus, formal nicht bestanden (Pflichtbedingung Knotenzahl konventionsabhaengig), Lesart per Fremdstimme",
+  "question": "Traegt die Huelle auch stille Dipol-Leitern? Sagt die Sprossenregel neue stille Stellen jenseits R = 39 voraus?",
+  "action": "Karten mit Vorhersagen vor jedem Lauf: HUELLEN-LEITER-2 (stabilisierte Kopplung, vorzeichenbasiert), HUELLEN-DIPOL (l = 1, K1 an bewiesener M1-Dipolstelle), HUELLEN-LEITER-3 (lagebasiert, unveraenderte Vorhersagen); Fremdstimme zur Kurvenzuordnung.",
+  "result": "HUELLEN-LEITER-2: nicht auswertbar (K0: 9 Scheinwechsel durch die Stabilisierung, Lagen auf 1e-13 unveraendert). HUELLEN-DIPOL: K1 auf 3e-8; 19 Stellen auf 5 Kurven, Abstand 2,49/2,26/2,37 (Streuung < 4 %), 1,7 bis 2,9 % ueber l = 0, Versatz 0,34 bis 0,47 Abstaende; D4 offen. HUELLEN-LEITER-3: K0-strich auf 1e-13; alle 8 Sprossen auf <= 0,018 (Toleranz 0,10), Umlauf wechselt; formal P1-strich nicht eingetroffen (k = 3 an Knotenzahl-Bedingung), P2-strich eingetroffen; Fremdstimme: beide k = 3-Funde liegen auf k = 3 (Lesart a, nachtraeglich).",
+  "meaning": "Explorativ, keine Messdaten. Der Leitermechanismus der Huelle gilt fuer l = 0 und l = 1 mit derselben Sprossenregel. Ihre Vorhersagekraft ist nachtraeglich stark (<= 0,018), eine vorab gewertete Bestaetigung steht aus (Runde 20).",
+  "sources": [
+    {
+      "path": "coordination/runden-v3/RUNDE-19.md",
+      "sha256": "25564974b72979afcb9d734418ec0755242d381499971d340d466fdaab5dbdb2"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-19/huellen-dipol/ERGEBNIS.md",
+      "sha256": "4cc921df848ee55801ce7d92db6209ca7e9321cd0720912c0a62d4bdc45f483a"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-19/huellen-dipol/KARTE.md",
+      "sha256": "365edc39e4184edfeb541cb4b1afbcd544fd77745e8dba50acba0c0df4e50d1c"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-19/huellen-leiter-2/ERGEBNIS.md",
+      "sha256": "57c97cb6ee2e36eeaea7d2b8fa26a0b4817f5494b693fc5133fe0d6b4e09e9b4"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-19/huellen-leiter-2/KARTE.md",
+      "sha256": "29e320af3f4be95f4afd2c74b8be944ce2745a227379bdf44ea3d07cc178d5cb"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-19/huellen-leiter-3/ERGEBNIS.md",
+      "sha256": "fba05b6a53f37c385aa9e79d196c4bab940cf935f22b361f12ea70d530bbd7da"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-19/huellen-leiter-3/KARTE.md",
+      "sha256": "a0ac5d071a4b7c36b9fbdafb2ebc233397588e876a5f25fe04ef271380a8c278"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-19/huellen-leiter-3/FREMDSTIMME.md",
+      "sha256": "5ecc9ea0717992c14eff748dc76c30ec05d165f38fe96feb2f4eb65698d131b7"
+    }
+  ],
+  "recorded_at": "2026-10-02T15:06:25.616852+00:00"
+}

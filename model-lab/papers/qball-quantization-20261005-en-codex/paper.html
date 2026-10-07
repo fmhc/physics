@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Quantizing the sextic Q-ball sector</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    div.abstract {
+      margin: 2em 2em 2em 2em;
+      text-align: left;
+      font-size: 85%;
+    }
+    div.abstract-title {
+      font-weight: bold;
+      text-align: center;
+      padding: 0;
+      margin-bottom: 0.5em;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Quantizing the sextic Q-ball sector</h1>
+<p class="date">5 October 2026 — English working draft v0.1</p>
+<div class="abstract">
+<div class="abstract-title">Abstract</div>
+<p>We formulate a canonical quantum version of the classical complex
+scalar model with dimensionless potential
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>s</mi><mo>−</mo><msup><mi>s</mi><mn>2</mn></msup><mo>+</mo><msup><mi>s</mi><mn>3</mn></msup><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">U(s)=s-s^2+s^3/2</annotation></semantics></math>.
+On a fixed finite spatial lattice, a positive mass matrix and a
+nonnegative stiffness matrix define a Hamiltonian with exact integer
+global charge sectors. An explicit action normalization
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ζ</mi><annotation encoding="application/x-tex">\zeta</annotation></semantics></math>
+relates the classical charge to integer quantum charge through
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mi>ζ</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">q=\zeta n</annotation></semantics></math>;
+the leading semiclassical energy is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>E</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">l</mi></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>ζ</mi><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>/</mi><mi>ζ</mi></mrow><annotation encoding="application/x-tex">E_{\mathrm{cl}}(\zeta n)/\zeta</annotation></semantics></math>
+rather than an unqualified evaluation at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>.
+Quantization of the collective phase reproduces this relation. We give
+the quadratic rotating-frame Hamiltonian, identify its charge and
+symmetry constraints, and specify a correlator comparison for the
+separate numerical quantization effort. Spatial dimension changes the
+field theory’s power counting, profiles and renormalization
+requirements. This draft establishes a regulated quantum formulation and
+a matching prescription; it reports no new quantum spectrum, binding
+energy, loop mass or experimental particle identification.</p>
+</div>
+</header>
+<p><strong>Provenance and status.</strong> This is a new English
+derivation, not a translation of the existing Q-ball ladder paper or the
+coordinator’s broader particle-model manuscript. The potential and
+charge sign follow the current project convention. The separate Claude
+task QUANT-1 proposes Euclidean correlator measurements; its results are
+working draft</em>; a human authorship decision is pending.</p>
+<h1 id="what-is-being-quantized">What is being quantized</h1>
+<p>We first quantize the scalar field on a fixed background. The
+dimensionless coordinates are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>τ</mi><mo>=</mo><mi>m</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">\tau=m t</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>=</mo><mi>m</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">y=m x</annotation></semantics></math>,
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℏ</mi><mo>=</mo><mi>c</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\hbar=c=1</annotation></semantics></math>
+unless stated otherwise. Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math>
+denote spatial dimension, and define
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mo>=</mo><mfrac><mn>1</mn><mi>ζ</mi></mfrac><mo>∫</mo><mi mathvariant="normal">d</mi><mi>τ</mi><mspace width="0.167em"></mspace><msup><mi mathvariant="normal">d</mi><mi>d</mi></msup><mi>y</mi><mspace width="0.167em"></mspace><mrow><mo stretchy="true" form="prefix">[</mo><msup><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>∂</mi><mi>τ</mi></msub><mi>ϕ</mi><mo stretchy="true" form="postfix">|</mo></mrow><mn>2</mn></msup><mo>−</mo><msup><mrow><mo stretchy="true" form="prefix">|</mo><mi>∇</mi><mi>ϕ</mi><mo stretchy="true" form="postfix">|</mo></mrow><mn>2</mn></msup><mo>−</mo><mi>U</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mrow><mo stretchy="true" form="prefix">|</mo><mi>ϕ</mi><mo stretchy="true" form="postfix">|</mo></mrow><mn>2</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">]</mo></mrow><mo>,</mo><mspace width="2.0em"></mspace><mi>U</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>s</mi><mo>−</mo><msup><mi>s</mi><mn>2</mn></msup><mo>+</mo><mfrac displaystyle="false"><mn>1</mn><mn>2</mn></mfrac><msup><mi>s</mi><mn>3</mn></msup><mo>,</mo><mspace width="1.0em"></mspace><mi>ζ</mi><mo>&gt;</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">\label{eq:action}
+ S=\frac1\zeta\int\mathrm d\tau\,\mathrm d^dy\,
+ \left[|\partial_\tau\phi|^2-|\nabla\phi|^2-U(|\phi|^2)\right],
+ \qquad U(s)=s-s^2+\tfrac12s^3,\quad \zeta&gt;0.</annotation></semantics></math>
+Here
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ζ</mi><annotation encoding="application/x-tex">\zeta</annotation></semantics></math>
+is part of the quantum model. Multiplying a classical action by a
+constant leaves its classical equations unchanged, but changes the
+weight
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>exp</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi mathvariant="normal">i</mi><mi>S</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\exp(\mathrm iS)</annotation></semantics></math>
+and the size of quantum fluctuations. Taking
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ζ</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\zeta=1</annotation></semantics></math>
+defines a possible bare pilot; it is not a weak-coupling argument. No
+value of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>
+in physical units or phenomenological value of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ζ</mi><annotation encoding="application/x-tex">\zeta</annotation></semantics></math>
+has been determined by the present classical project.</p>
+<p>For a canonically normalized dimensionful field,
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Φ</mi><mo>=</mo><mfrac><msup><mi>m</mi><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>d</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>/</mi><mn>2</mn></mrow></msup><msqrt><mi>ζ</mi></msqrt></mfrac><mi>ϕ</mi><mo>,</mo><mspace width="1.0em"></mspace><mi>V</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>Φ</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mi>m</mi><mn>2</mn></msup><msup><mrow><mo stretchy="true" form="prefix">|</mo><mi>Φ</mi><mo stretchy="true" form="postfix">|</mo></mrow><mn>2</mn></msup><mo>−</mo><msub><mi>λ</mi><mn>4</mn></msub><msup><mrow><mo stretchy="true" form="prefix">|</mo><mi>Φ</mi><mo stretchy="true" form="postfix">|</mo></mrow><mn>4</mn></msup><mo>+</mo><msub><mi>λ</mi><mn>6</mn></msub><msup><mrow><mo stretchy="true" form="prefix">|</mo><mi>Φ</mi><mo stretchy="true" form="postfix">|</mo></mrow><mn>6</mn></msup><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>λ</mi><mn>4</mn></msub><mo>=</mo><mi>ζ</mi><msup><mi>m</mi><mrow><mn>3</mn><mo>−</mo><mi>d</mi></mrow></msup><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>λ</mi><mn>6</mn></msub><mo>=</mo><mfrac displaystyle="false"><mn>1</mn><mn>2</mn></mfrac><msup><mi>ζ</mi><mn>2</mn></msup><msup><mi>m</mi><mrow><mn>4</mn><mo>−</mo><mn>2</mn><mi>d</mi></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">\label{eq:rescale}
+ \Phi=\frac{m^{(d-1)/2}}{\sqrt\zeta}\phi,
+ \quad V(\Phi)=m^2|\Phi|^2-\lambda_4|\Phi|^4+\lambda_6|\Phi|^6,
+ \quad \lambda_4=\zeta m^{3-d},\quad
+ \lambda_6=\tfrac12\zeta^2m^{4-2d}.</annotation></semantics></math>
+These are bare, tree-level relations at the specified regulator. Holding
+renormalized parameters fixed while changing the regulator requires
+matching. The equivalent loss of action normalization under classical
+field rescaling is explicitly discussed for a sextic model in Ref. <span
+class="citation" data-cites="xie"></span>, Sec. 2.5, Eqs. (30)–(31). Its
+charge sign and radial amplitude conventions differ from ours; numerical
+charges are not imported.</p>
+<p>This step introduces standard quantum mechanics through the Hilbert
+space and commutation relations below. It does not derive quantum
+mechanics from classical geometry. The dynamical Regge and Maxwell
+sectors of the separate network proposal are not included in this scalar
+Hamiltonian.</p>
+<h1 id="an-explicit-regulated-quantum-hamiltonian">An explicit regulated
+quantum Hamiltonian</h1>
+<p>Write
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ϕ</mi><mi>i</mi></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>q</mi><mrow><mn>1</mn><mi>i</mi></mrow></msub><mo>+</mo><mi mathvariant="normal">i</mi><msub><mi>q</mi><mrow><mn>2</mn><mi>i</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow><mi>/</mi><msqrt><mn>2</mn></msqrt></mrow><annotation encoding="application/x-tex">\phi_i=(q_{1i}+\mathrm iq_{2i})/\sqrt2</annotation></semantics></math>
+on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>N</mi><mi>s</mi></msub><annotation encoding="application/x-tex">N_s</annotation></semantics></math>
+spatial sites. Choose positive site volumes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>w</mi><mi>i</mi></msub><annotation encoding="application/x-tex">w_i</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>W</mi><mo>=</mo><mo>diag</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>w</mi><mi>i</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">W=\operatorname{diag}(w_i)</annotation></semantics></math>,
+and a real symmetric nonnegative stiffness matrix
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>K</mi><annotation encoding="application/x-tex">K</annotation></semantics></math>
+representing the gradient quadratic form. Boundary conditions and the
+geometry are fixed. Then
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><mi>L</mi></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mfrac><mn>1</mn><mi>ζ</mi></mfrac><mrow><mo stretchy="true" form="prefix">[</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><munderover><mo>∑</mo><mrow><mi>a</mi><mo>=</mo><mn>1</mn></mrow><mn>2</mn></munderover><msubsup><mover><mi>q</mi><mo accent="true">̇</mo></mover><mi>a</mi><mi>T</mi></msubsup><mi>W</mi><msub><mover><mi>q</mi><mo accent="true">̇</mo></mover><mi>a</mi></msub><mo>−</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><munderover><mo>∑</mo><mrow><mi>a</mi><mo>=</mo><mn>1</mn></mrow><mn>2</mn></munderover><msubsup><mi>q</mi><mi>a</mi><mi>T</mi></msubsup><mi>K</mi><msub><mi>q</mi><mi>a</mi></msub><mo>−</mo><munder><mo>∑</mo><mi>i</mi></munder><msub><mi>w</mi><mi>i</mi></msub><mi>U</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>s</mi><mi>i</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">]</mo></mrow><mo>,</mo></mtd><mtd columnalign="right" style="text-align: right"><msub><mi>s</mi><mi>i</mi></msub></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mfrac><mrow><msubsup><mi>q</mi><mrow><mn>1</mn><mi>i</mi></mrow><mn>2</mn></msubsup><mo>+</mo><msubsup><mi>q</mi><mrow><mn>2</mn><mi>i</mi></mrow><mn>2</mn></msubsup></mrow><mn>2</mn></mfrac><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><msub><mi>p</mi><mi>a</mi></msub></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><msup><mi>ζ</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mi>W</mi><msub><mover><mi>q</mi><mo accent="true">̇</mo></mover><mi>a</mi></msub><mo>,</mo><mspace width="2.0em"></mspace><mrow><mo stretchy="true" form="prefix">[</mo><msub><mover><mi>q</mi><mo accent="true">̂</mo></mover><mrow><mi>a</mi><mi>i</mi></mrow></msub><mo>,</mo><msub><mover><mi>p</mi><mo accent="true">̂</mo></mover><mrow><mi>b</mi><mi>j</mi></mrow></msub><mo stretchy="true" form="postfix">]</mo></mrow><mo>=</mo><mi mathvariant="normal">i</mi><msub><mi>δ</mi><mrow><mi>a</mi><mi>b</mi></mrow></msub><msub><mi>δ</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>,</mo><mspace width="2.0em"></mspace><mi>ℋ</mi><mo>=</mo><msup><mi>L</mi><mn>2</mn></msup><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>ℝ</mi><mrow><mn>2</mn><msub><mi>N</mi><mi>s</mi></msub></mrow></msup><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><mover><mi>H</mi><mo accent="true">̂</mo></mover><mi>/</mi><mi>m</mi></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mfrac><mi>ζ</mi><mn>2</mn></mfrac><munderover><mo>∑</mo><mrow><mi>a</mi><mo>=</mo><mn>1</mn></mrow><mn>2</mn></munderover><msubsup><mover><mi>p</mi><mo accent="true">̂</mo></mover><mi>a</mi><mi>T</mi></msubsup><msup><mi>W</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><msub><mover><mi>p</mi><mo accent="true">̂</mo></mover><mi>a</mi></msub><mo>+</mo><mfrac><mn>1</mn><mrow><mn>2</mn><mi>ζ</mi></mrow></mfrac><munderover><mo>∑</mo><mrow><mi>a</mi><mo>=</mo><mn>1</mn></mrow><mn>2</mn></munderover><msubsup><mover><mi>q</mi><mo accent="true">̂</mo></mover><mi>a</mi><mi>T</mi></msubsup><mi>K</mi><msub><mover><mi>q</mi><mo accent="true">̂</mo></mover><mi>a</mi></msub><mo>+</mo><mfrac><mn>1</mn><mi>ζ</mi></mfrac><munder><mo>∑</mo><mi>i</mi></munder><msub><mi>w</mi><mi>i</mi></msub><mi>U</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mover><mi>s</mi><mo accent="true">̂</mo></mover><mi>i</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}
+ L&amp;=\frac1\zeta\left[\frac12\sum_{a=1}^2\dot q_a^T W\dot q_a
+ -\frac12\sum_{a=1}^2q_a^TKq_a-\sum_iw_iU(s_i)\right],
+ &amp;s_i&amp;=\frac{q_{1i}^2+q_{2i}^2}{2},\\
+ p_a&amp;=\zeta^{-1}W\dot q_a,\qquad
+ [\hat q_{ai},\hat p_{bj}]=\mathrm i\delta_{ab}\delta_{ij},\qquad
+ \mathcal H=L^2(\mathbb R^{2N_s}),\\
+ \hat H/m&amp;=\frac\zeta2\sum_{a=1}^2\hat p_a^TW^{-1}\hat p_a
+ +\frac1{2\zeta}\sum_{a=1}^2\hat q_a^TK\hat q_a
+ +\frac1\zeta\sum_iw_iU(\hat s_i).\label{eq:ham}
+\end{aligned}</annotation></semantics></math> The coordinates commute,
+so
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mover><mi>s</mi><mo accent="true">̂</mo></mover><mi>i</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">U(\hat s_i)</annotation></semantics></math>
+has no ordering ambiguity in this Cartesian representation. The identity
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>s</mi><mrow><mo stretchy="true" form="prefix">[</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">]</mo></mrow><mi>/</mi><mn>2</mn><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">U(s)=s[(s-1)^2+1]/2\geq0</annotation></semantics></math>
+and the positive kinetic terms give a lower-bounded finite-lattice
+Hamiltonian. This is a specified quantum system even before its
+eigenvalues are computed. Continuum renormalization is a further
+problem. A consistent non-diagonal positive mass matrix could replace
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>W</mi><annotation encoding="application/x-tex">W</annotation></semantics></math>
+with the corresponding inverse in the kinetic term; a proposed irregular
+lattice must supply its actual matrices, not reuse cubic-grid weights
+without checking.</p>
+<p>Global phase rotations have the generator
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>N</mi><mo accent="true">̂</mo></mover><mo>=</mo><munder><mo>∑</mo><mi>i</mi></munder><mrow><mo stretchy="true" form="prefix">(</mo><msub><mover><mi>q</mi><mo accent="true">̂</mo></mover><mrow><mn>1</mn><mi>i</mi></mrow></msub><msub><mover><mi>p</mi><mo accent="true">̂</mo></mover><mrow><mn>2</mn><mi>i</mi></mrow></msub><mo>−</mo><msub><mover><mi>q</mi><mo accent="true">̂</mo></mover><mrow><mn>2</mn><mi>i</mi></mrow></msub><msub><mover><mi>p</mi><mo accent="true">̂</mo></mover><mrow><mn>1</mn><mi>i</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="2.0em"></mspace><mrow><mo stretchy="true" form="prefix">[</mo><mover><mi>H</mi><mo accent="true">̂</mo></mover><mo>,</mo><mover><mi>N</mi><mo accent="true">̂</mo></mover><mo stretchy="true" form="postfix">]</mo></mrow><mo>=</mo><mn>0</mn><mo>,</mo><mspace width="2.0em"></mspace><mrow><mo stretchy="true" form="prefix">[</mo><mover><mi>N</mi><mo accent="true">̂</mo></mover><mo>,</mo><msub><mover><mi>ϕ</mi><mo accent="true">̂</mo></mover><mi>i</mi></msub><mo stretchy="true" form="postfix">]</mo></mrow><mo>=</mo><msub><mover><mi>ϕ</mi><mo accent="true">̂</mo></mover><mi>i</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">\label{eq:charge}
+ \hat N=\sum_i(\hat q_{1i}\hat p_{2i}-\hat q_{2i}\hat p_{1i}),
+ \qquad [\hat H,\hat N]=0,\qquad [\hat N,\hat\phi_i]=\hat\phi_i.</annotation></semantics></math>
+Single-valued wavefunctions under a
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>π</mi></mrow><annotation encoding="application/x-tex">2\pi</annotation></semantics></math>
+global rotation give
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>∈</mo><mi>ℤ</mi></mrow><annotation encoding="application/x-tex">n\in\mathbb Z</annotation></semantics></math>.
+These are charges, not a fixed number of constituents:
+particle–antiparticle pairs can occur within one charge sector. The
+exact projector and sector partition function are
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mi>n</mi></msub><mo>=</mo><mfrac><mn>1</mn><mrow><mn>2</mn><mi>π</mi></mrow></mfrac><msubsup><mo>∫</mo><mn>0</mn><mrow><mn>2</mn><mi>π</mi></mrow></msubsup><mi mathvariant="normal">d</mi><mi>θ</mi><mspace width="0.167em"></mspace><msup><mi>e</mi><mrow><mi mathvariant="normal">i</mi><mi>θ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mover><mi>N</mi><mo accent="true">̂</mo></mover><mo>−</mo><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msup><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>Z</mi><mi>n</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>T</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mo>Tr</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>P</mi><mi>n</mi></msub><msup><mi>e</mi><mrow><mo>−</mo><mi>T</mi><mover><mi>H</mi><mo accent="true">̂</mo></mover><mi>/</mi><mi>m</mi></mrow></msup><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">\label{eq:projector}
+ P_n=\frac1{2\pi}\int_0^{2\pi}\mathrm d\theta\,
+ e^{\mathrm i\theta(\hat N-n)},\qquad
+ Z_n(T)=\operatorname{Tr}(P_n e^{-T\hat H/m}).</annotation></semantics></math>
+The observable sector energy is measured relative to the vacuum:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mi>n</mi></msub><mi>/</mi><mi>m</mi><mo>=</mo><mo>−</mo><munder><mo>lim</mo><mrow><mi>T</mi><mo>→</mo><mi>∞</mi></mrow></munder><msup><mi>T</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>log</mo><mrow><mo stretchy="true" form="prefix">[</mo><msub><mi>Z</mi><mi>n</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>T</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>/</mi><msub><mi>Z</mi><mn>0</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>T</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">]</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">M_n/m=-\lim_{T\to\infty}T^{-1}\log[Z_n(T)/Z_0(T)].</annotation></semantics></math>
+This formula is a definition, not a proposed efficient Monte Carlo
+estimator.</p>
+<h1 id="integer-charge-and-the-collective-phase">Integer charge and the
+collective phase</h1>
+<p>For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϕ</mi><mo>=</mo><msup><mi>e</mi><mrow><mi mathvariant="normal">i</mi><mi>ω</mi><mi>τ</mi></mrow></msup><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\phi=e^{\mathrm i\omega\tau}f(y)</annotation></semantics></math>
+with real localized
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>,
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mn>2</mn><mi>ω</mi><mi>I</mi><mo>,</mo><mspace width="1.0em"></mspace><mi>I</mi><mo>=</mo><mo>∫</mo><msup><mi>f</mi><mn>2</mn></msup><msup><mi mathvariant="normal">d</mi><mi>d</mi></msup><mi>y</mi><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>E</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">l</mi></mrow></msub><mo>=</mo><msup><mi>ω</mi><mn>2</mn></msup><mi>I</mi><mo>+</mo><mo>∫</mo><mrow><mo stretchy="true" form="prefix">[</mo><msup><mrow><mo stretchy="true" form="prefix">|</mo><mi>∇</mi><mi>f</mi><mo stretchy="true" form="postfix">|</mo></mrow><mn>2</mn></msup><mo>+</mo><mi>U</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>f</mi><mn>2</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">]</mo></mrow><msup><mi mathvariant="normal">d</mi><mi>d</mi></msup><mi>y</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">q=2\omega I,\quad I=\int f^2\mathrm d^dy,\quad
+ E_{\mathrm{cl}}=\omega^2I+\int[|\nabla f|^2+U(f^2)]\mathrm d^dy.</annotation></semantics></math>
+The classical solution’s physical charge and energy are
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mfrac><mi>q</mi><mi>ζ</mi></mfrac><mo>,</mo><mspace width="2.0em"></mspace><mfrac><msub><mi>E</mi><mrow><mi mathvariant="normal">p</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">y</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">l</mi></mrow></msub><mi>m</mi></mfrac><mo>=</mo><mfrac><msub><mi>E</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">l</mi></mrow></msub><mi>ζ</mi></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">\label{eq:matching}
+ n=\frac q\zeta,\qquad \frac{E_{\mathrm{physical}}}m=
+ \frac{E_{\mathrm{cl}}}\zeta.</annotation></semantics></math> To derive
+the same result collectively, freeze a profile temporarily and allow
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϕ</mi><mo>=</mo><msup><mi>e</mi><mrow><mi mathvariant="normal">i</mi><mi>α</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>τ</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msup><mi>f</mi></mrow><annotation encoding="application/x-tex">\phi=e^{\mathrm i\alpha(\tau)}f</annotation></semantics></math>.
+If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝒱</mi><mrow><mo stretchy="true" form="prefix">[</mo><mi>f</mi><mo stretchy="true" form="postfix">]</mo></mrow><mo>=</mo><mo>∫</mo><mrow><mo stretchy="true" form="prefix">[</mo><msup><mrow><mo stretchy="true" form="prefix">|</mo><mi>∇</mi><mi>f</mi><mo stretchy="true" form="postfix">|</mo></mrow><mn>2</mn></msup><mo>+</mo><mi>U</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>f</mi><mn>2</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">]</mo></mrow><msup><mi mathvariant="normal">d</mi><mi>d</mi></msup><mi>y</mi></mrow><annotation encoding="application/x-tex">\mathcal V[f]=\int[|\nabla f|^2+U(f^2)]\mathrm d^dy</annotation></semantics></math>,
+then
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mi>α</mi></msub><mo>=</mo><msup><mi>ζ</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>I</mi><msup><mover><mi>α</mi><mo accent="true">̇</mo></mover><mn>2</mn></msup><mo>−</mo><mi>𝒱</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>p</mi><mi>α</mi></msub><mo>=</mo><mn>2</mn><mi>I</mi><mover><mi>α</mi><mo accent="true">̇</mo></mover><mi>/</mi><mi>ζ</mi><mo>,</mo><mspace width="1.0em"></mspace><msub><mover><mi>p</mi><mo accent="true">̂</mo></mover><mi>α</mi></msub><mo>=</mo><mo>−</mo><mi mathvariant="normal">i</mi><msub><mi>∂</mi><mi>α</mi></msub><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>ψ</mi><mi>n</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>α</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac><msup><mi>e</mi><mrow><mi mathvariant="normal">i</mi><mi>n</mi><mi>α</mi></mrow></msup><msqrt><mrow><mn>2</mn><mi>π</mi></mrow></msqrt></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">L_\alpha=\zeta^{-1}(I\dot\alpha^2-\mathcal V),\quad
+ p_\alpha=2I\dot\alpha/\zeta,\quad
+ \hat p_\alpha=-\mathrm i\partial_\alpha,\quad
+ \psi_n(\alpha)=\frac{e^{\mathrm in\alpha}}{\sqrt{2\pi}}.</annotation></semantics></math>
+Consequently the frozen-profile rotor energy is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><msub><mi>H</mi><mi>α</mi></msub><mi>m</mi></mfrac><mo>=</mo><mfrac><mrow><mi>ζ</mi><msup><mi>n</mi><mn>2</mn></msup></mrow><mrow><mn>4</mn><mi>I</mi></mrow></mfrac><mo>+</mo><mfrac><mi>𝒱</mi><mi>ζ</mi></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">\frac{H_\alpha}m=\frac{\zeta n^2}{4I}+\frac{\mathcal V}\zeta.</annotation></semantics></math>
+Minimizing over profiles at fixed
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+is precisely the classical fixed-charge variational problem at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mi>ζ</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">q=\zeta n</annotation></semantics></math>.
+If the chosen classical solution is the relevant lowest-energy
+configuration in that charge sector and the semiclassical expansion is
+controlled, this gives
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><msub><mi>M</mi><mi>n</mi></msub><mi>m</mi></mfrac><mo>=</mo><mfrac><mn>1</mn><mi>ζ</mi></mfrac><msub><mi>E</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">l</mi></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>ζ</mi><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><msub><mi>Δ</mi><mn>1</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>ζ</mi><mi>n</mi><mo>;</mo><mi>Λ</mi><mo>,</mo><mtext mathvariant="normal">matching</mtext><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>ζ</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo></mrow><annotation encoding="application/x-tex">\label{eq:mass}
+ \frac{M_n}m=\frac1\zeta E_{\mathrm{cl}}(\zeta n)
+ +\Delta_1(\zeta n;\Lambda,\text{matching})+O(\zeta),</annotation></semantics></math>
+For a merely local or metastable branch, the right-hand side instead
+describes that branch’s semiclassical energy; it is not automatically
+the lowest sector energy
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>M</mi><mi>n</mi></msub><annotation encoding="application/x-tex">M_n</annotation></semantics></math>
+defined by Eq. <a href="#eq:projector" data-reference-type="eqref"
+data-reference="eq:projector">[eq:projector]</a>. Competing
+single-object and multi-object configurations must be compared. In that
+case the spacing formula below also applies only to the selected branch.
+Here
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Δ</mi><mn>1</mn></msub><annotation encoding="application/x-tex">\Delta_1</annotation></semantics></math>
+denotes a renormalized vacuum-subtracted fluctuation correction, not yet
+evaluated. This expansion is at fixed classical
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mi>ζ</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">q=\zeta n</annotation></semantics></math>
+as
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ζ</mi><mo>→</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\zeta\to0</annotation></semantics></math>,
+hence
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>→</mo><mi>∞</mi></mrow><annotation encoding="application/x-tex">n\to\infty</annotation></semantics></math>.
+It is not a controlled expansion at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">n=2</annotation></semantics></math>
+or
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>3</mn><annotation encoding="application/x-tex">3</annotation></semantics></math>
+simply because a classical profile exists at another charge.</p>
+<p>In a smooth semiclassical branch with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">d</mi><msub><mi>E</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">l</mi></mrow></msub><mi>/</mi><mi mathvariant="normal">d</mi><mi>q</mi><mo>=</mo><mi>ω</mi></mrow><annotation encoding="application/x-tex">\mathrm dE_{\mathrm{cl}}/\mathrm dq=\omega</annotation></semantics></math>,
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><msubsup><mi>M</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow></msubsup><mo>−</mo><msubsup><mi>M</mi><mi>n</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow></msubsup></mrow><mi>m</mi></mfrac><mo>=</mo><mi>ω</mi><mo>+</mo><mfrac><mi>ζ</mi><mn>2</mn></mfrac><mfrac><mrow><mi mathvariant="normal">d</mi><mi>ω</mi></mrow><mrow><mi mathvariant="normal">d</mi><mi>q</mi></mrow></mfrac><mo>+</mo><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>ζ</mi><mn>2</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>ω</mi><mo>+</mo><mfrac><mi>ζ</mi><mrow><mn>2</mn><mi>q</mi><mi>′</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>ω</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac><mo>+</mo><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>ζ</mi><mn>2</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">\label{eq:spacing}
+ \frac{M_{n+1}^{(0)}-M_n^{(0)}}m
+ =\omega+\frac\zeta2\frac{\mathrm d\omega}{\mathrm dq}+O(\zeta^2)
+ =\omega+\frac\zeta{2q&#39;(\omega)}+O(\zeta^2).</annotation></semantics></math>
+This expansion fails near a turning point where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mi>′</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>ω</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">q&#39;(\omega)=0</annotation></semantics></math>
+and cannot replace a finite difference across a branch change. Negative
+curvature between charge sectors is not by itself a negative oscillation
+mode within one fixed-charge sector. The expression concerns leading
+classical masses; loop corrections change the spacing at the next
+relevant order.</p>
+<p>An exact charge eigenstate has
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">⟨</mo><mover><mi>ϕ</mi><mo accent="true">̂</mo></mover><mo stretchy="false" form="postfix">⟩</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\langle\hat\phi\rangle=0</annotation></semantics></math>
+by the charge selection rule. The familiar rotating classical mean field
+is therefore a semiclassical description with a phase reference, not
+literally the one-point function of an exact fixed-charge eigenstate.
+Its density and correlation functions can still encode the localized
+object. In a translation-invariant system a momentum eigenstate also has
+a delocalized center of mass; a localized Q-ball is described by a
+collective-coordinate wavepacket or conditional internal observables. On
+a finite lattice translations have only the lattice symmetry and
+continuum center-of-mass formulas need a convergence check.</p>
+<h1
+id="quantizing-internal-fluctuations-without-double-counting">Quantizing
+internal fluctuations without double counting</h1>
+<p>In the continuum classical background convention, put
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϕ</mi><mo>=</mo><msup><mi>e</mi><mrow><mi mathvariant="normal">i</mi><mi>ω</mi><mi>τ</mi></mrow></msup><mrow><mo stretchy="true" form="prefix">[</mo><mi>f</mi><mo>+</mo><msqrt><mi>ζ</mi></msqrt><mspace width="0.167em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><mi>u</mi><mo>+</mo><mi mathvariant="normal">i</mi><mi>v</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>/</mi><msqrt><mn>2</mn></msqrt><mo stretchy="true" form="postfix">]</mo></mrow><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>L</mi><mo>−</mo></msub><mo>=</mo><mo>−</mo><mi>Δ</mi><mo>+</mo><mn>1</mn><mo>−</mo><mn>2</mn><msup><mi>f</mi><mn>2</mn></msup><mo>+</mo><mfrac displaystyle="false"><mn>3</mn><mn>2</mn></mfrac><msup><mi>f</mi><mn>4</mn></msup><mo>−</mo><msup><mi>ω</mi><mn>2</mn></msup><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>L</mi><mo>+</mo></msub><mo>=</mo><mo>−</mo><mi>Δ</mi><mo>+</mo><mn>1</mn><mo>−</mo><mn>6</mn><msup><mi>f</mi><mn>2</mn></msup><mo>+</mo><mfrac displaystyle="false"><mn>15</mn><mn>2</mn></mfrac><msup><mi>f</mi><mn>4</mn></msup><mo>−</mo><msup><mi>ω</mi><mn>2</mn></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">\phi=e^{\mathrm i\omega\tau}\left[f+\sqrt\zeta\,(u+\mathrm iv)/\sqrt2\right],
+ \quad L_-=-\Delta+1-2f^2+\tfrac32f^4-\omega^2,
+ \quad L_+=-\Delta+1-6f^2+\tfrac{15}{2}f^4-\omega^2.</annotation></semantics></math>
+The quadratic rotating-frame Lagrangian and momenta are
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><msup><mi>L</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow></msup></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mo>∫</mo><msup><mi mathvariant="normal">d</mi><mi>d</mi></msup><mi>y</mi><mrow><mo stretchy="true" form="prefix">[</mo><mfrac displaystyle="false"><mn>1</mn><mn>2</mn></mfrac><mrow><mo stretchy="true" form="prefix">(</mo><msup><mover><mi>u</mi><mo accent="true">̇</mo></mover><mn>2</mn></msup><mo>+</mo><msup><mover><mi>v</mi><mo accent="true">̇</mo></mover><mn>2</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mi>ω</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>u</mi><mover><mi>v</mi><mo accent="true">̇</mo></mover><mo>−</mo><mi>v</mi><mover><mi>u</mi><mo accent="true">̇</mo></mover><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mfrac displaystyle="false"><mn>1</mn><mn>2</mn></mfrac><mi>u</mi><msub><mi>L</mi><mo>+</mo></msub><mi>u</mi><mo>−</mo><mfrac displaystyle="false"><mn>1</mn><mn>2</mn></mfrac><mi>v</mi><msub><mi>L</mi><mo>−</mo></msub><mi>v</mi><mo stretchy="true" form="postfix">]</mo></mrow><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><msub><mi>p</mi><mi>u</mi></msub></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mover><mi>u</mi><mo accent="true">̇</mo></mover><mo>−</mo><mi>ω</mi><mi>v</mi><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>p</mi><mi>v</mi></msub><mo>=</mo><mover><mi>v</mi><mo accent="true">̇</mo></mover><mo>+</mo><mi>ω</mi><mi>u</mi><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}
+ L^{(2)}&amp;=\int\mathrm d^dy\left[\tfrac12(\dot u^2+\dot v^2)
+ +\omega(u\dot v-v\dot u)-\tfrac12uL_+u-\tfrac12vL_-v\right],\\
+ p_u&amp;=\dot u-\omega v,\qquad p_v=\dot v+\omega u.
+\end{aligned}</annotation></semantics></math> Its Hamiltonian is the
+quadratic part of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mi>/</mi><mi>m</mi><mo>−</mo><mi>ω</mi><mi>N</mi></mrow><annotation encoding="application/x-tex">H/m-\omega N</annotation></semantics></math>:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>K</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow></msup><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>∫</mo><msup><mi mathvariant="normal">d</mi><mi>d</mi></msup><mi>y</mi><mrow><mo stretchy="true" form="prefix">[</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>p</mi><mi>u</mi></msub><mo>+</mo><mi>ω</mi><mi>v</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><mo>+</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>p</mi><mi>v</mi></msub><mo>−</mo><mi>ω</mi><mi>u</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><mo>+</mo><mi>u</mi><msub><mi>L</mi><mo>+</mo></msub><mi>u</mi><mo>+</mo><mi>v</mi><msub><mi>L</mi><mo>−</mo></msub><mi>v</mi><mo stretchy="true" form="postfix">]</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">\label{eq:k2}
+ K^{(2)}=\frac12\int\mathrm d^dy\left[(p_u+\omega v)^2+(p_v-\omega u)^2
+ +uL_+u+vL_-v\right].</annotation></semantics></math> It generates
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>u</mi><mo accent="true">̈</mo></mover><mo>−</mo><mn>2</mn><mi>ω</mi><mover><mi>v</mi><mo accent="true">̇</mo></mover><mo>+</mo><msub><mi>L</mi><mo>+</mo></msub><mi>u</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\ddot u-2\omega\dot v+L_+u=0</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>v</mi><mo accent="true">̈</mo></mover><mo>+</mo><mn>2</mn><mi>ω</mi><mover><mi>u</mi><mo accent="true">̇</mo></mover><mo>+</mo><msub><mi>L</mi><mo>−</mo></msub><mi>v</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\ddot v+2\omega\dot u+L_-v=0</annotation></semantics></math>.
+Diagonalizing only
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>L</mi><mo>+</mo></msub><annotation encoding="application/x-tex">L_+</annotation></semantics></math>
+or adding independent sideband frequencies misses the canonical mixing.
+A mode basis must preserve the symplectic form
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∫</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>δ</mi><mi>u</mi><mo>∧</mo><mi>δ</mi><msub><mi>p</mi><mi>u</mi></msub><mo>+</mo><mi>δ</mi><mi>v</mi><mo>∧</mo><mi>δ</mi><msub><mi>p</mi><mi>v</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\int(\delta u\wedge\delta p_u+\delta v\wedge\delta p_v)</annotation></semantics></math>.</p>
+<p>The phase zero mode and the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math>
+translation modes are collective coordinates, not ordinary
+positive-frequency oscillators. The linear charge constraint is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mi>N</mi><mo>=</mo><msqrt><mrow><mn>2</mn><mi>/</mi><mi>ζ</mi></mrow></msqrt><mo>∫</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mi>ω</mi><mi>u</mi><mo>+</mo><mover><mi>v</mi><mo accent="true">̇</mo></mover><mo stretchy="true" form="postfix">)</mo></mrow><msup><mi mathvariant="normal">d</mi><mi>d</mi></msup><mi>y</mi><mo>=</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">\delta N=\sqrt{2/\zeta}\int f(2\omega u+\dot v)\mathrm d^dy=0.</annotation></semantics></math>
+Charge must also be treated at the order needed for the energy
+calculation; a linear constraint alone is not a complete one-loop
+fixed-charge prescription. A negative or growing physical mode
+invalidates a stable harmonic-vacuum interpretation for that background.
+A classical embedded bound mode must be normalizable and correctly
+normalized, but its linear trapping does not by itself suppress
+nonlinear or quantum decay channels.</p>
+<p>For a background that passes the constrained stability checks, the
+positive canonical modes can be promoted to creation and annihilation
+operators. The resulting zero-point sums require continuum scattering
+contributions, vacuum subtraction and counterterms in the same regulator
+and matching scheme. No number for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Δ</mi><mn>1</mn></msub><annotation encoding="application/x-tex">\Delta_1</annotation></semantics></math>
+follows merely from the existing BIC frequency. Ref. <span
+class="citation" data-cites="graham"></span> develops quantum
+corrections for a different potential; its reported correction is not
+imported into this sextic model.</p>
+<h1 id="a-matching-prescription-for-quant-1">A matching prescription for
+QUANT-1</h1>
+<p>Euclidean zero-density sampling and charged correlators can determine
+sector energies without inserting a real chemical potential into the
+sampling weight. This is spectroscopy, not a simulation of real-time
+collisions. Choose an operator
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>O</mi><mi>n</mi></msub><annotation encoding="application/x-tex">O_n</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">[</mo><mi>N</mi><mo>,</mo><msub><mi>O</mi><mi>n</mi></msub><mo stretchy="true" form="postfix">]</mo></mrow><mo>=</mo><mi>n</mi><msub><mi>O</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">[N,O_n]=nO_n</annotation></semantics></math>,
+and a basis of local and spatially extended operators if possible. At
+zero temperature,
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mi>n</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mo stretchy="false" form="prefix">⟨</mo><mn>0</mn><mrow><mo stretchy="true" form="prefix">|</mo><msubsup><mi>O</mi><mi>n</mi><mo>†</mo></msubsup><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><msub><mi>O</mi><mi>n</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">|</mo></mrow><mn>0</mn><mo stretchy="false" form="postfix">⟩</mo><mo>=</mo><munder><mo>∑</mo><mi>a</mi></munder><mrow><mo stretchy="true" form="prefix">|</mo><mo stretchy="false" form="prefix">⟨</mo><mi>n</mi><mo>,</mo><mi>a</mi><mo stretchy="true" form="postfix">|</mo></mrow><msub><mi>O</mi><mi>n</mi></msub><msup><mrow><mo stretchy="true" form="prefix">|</mo><mn>0</mn><mo stretchy="false" form="postfix">⟩</mo><mo stretchy="true" form="postfix">|</mo></mrow><mn>2</mn></msup><msup><mi>e</mi><mrow><mo>−</mo><mrow><mo stretchy="true" form="prefix">[</mo><msub><mi>E</mi><mrow><mi>n</mi><mo>,</mo><mi>a</mi></mrow></msub><mo>−</mo><msub><mi>E</mi><mn>0</mn></msub><mo stretchy="true" form="postfix">]</mo></mrow><mi>t</mi><mi>/</mi><mi>m</mi></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">C_n(t)=\langle0|O_n^\dagger(t)O_n(0)|0\rangle
+ =\sum_a|\langle n,a|O_n|0\rangle|^2
+ e^{-[E_{n,a}-E_0]t/m}.</annotation></semantics></math> A missing
+plateau can mean poor overlap or excited-state contamination; it does
+not demonstrate the absence of a bound state.</p>
+<p>The following information is part of the comparison, not optional
+metadata:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ζ</mi><annotation encoding="application/x-tex">\zeta</annotation></semantics></math>,
+bare versus renormalized mass and couplings, spatial geometry, spacings
+and volumes, time extent, operator definitions, autocorrelation,
+uncertainty estimates and the fitting window. For the classical
+comparison in Eq. <a href="#eq:mass" data-reference-type="eqref"
+data-reference="eq:mass">[eq:mass]</a>, use the same matched theory and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mi>ζ</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">q=\zeta n</annotation></semantics></math>.
+The physical one-particle mass
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>M</mi><mn>1</mn></msub><annotation encoding="application/x-tex">M_1</annotation></semantics></math>
+must be measured rather than silently identified with the bare
+coefficient
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>.</p>
+<p>An exact free-field check is particularly useful. If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Φ</mi><mi>s</mi></msub><annotation encoding="application/x-tex">\Phi_s</annotation></semantics></math>
+is a fixed linear spatial smearing of a free complex Gaussian field and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>O</mi><mi>n</mi></msub><mo>=</mo><msubsup><mi>Φ</mi><mi>s</mi><mi>n</mi></msubsup><mi>/</mi><msqrt><mrow><mi>n</mi><mi>!</mi></mrow></msqrt></mrow><annotation encoding="application/x-tex">O_n=\Phi_s^n/\sqrt{n!}</annotation></semantics></math>,
+Wick contraction gives
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mi>n</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mi>G</mi><mi>s</mi></msub><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>n</mi></msup><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>G</mi><mi>s</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mo stretchy="false" form="prefix">⟨</mo><msubsup><mi>Φ</mi><mi>s</mi><mo>†</mo></msubsup><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><msub><mi>Φ</mi><mi>s</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="false" form="postfix">⟩</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">\label{eq:wick}
+ C_n(t)=G_s(t)^n,\qquad
+ G_s(t)=\langle\Phi_s^\dagger(t)\Phi_s(0)\rangle.</annotation></semantics></math>
+At finite periodic Euclidean time, even a single-mode
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>G</mi><mi>s</mi></msub><annotation encoding="application/x-tex">G_s</annotation></semantics></math>
+contains forward and backward propagation. Its
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>th
+power is generally not a single cosh with mass
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><msub><mi>M</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">nM_1</annotation></semantics></math>.
+Mixed thermal terms can mimic anomalously low energies; the free check
+must use the actual time extent and operator.</p>
+<p>Define
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>B</mi><mn>2</mn></msub><mo>=</mo><mn>2</mn><msub><mi>M</mi><mn>1</mn></msub><mo>−</mo><msub><mi>M</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">B_2=2M_1-M_2</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>B</mi><mn>3</mn></msub><mo>=</mo><mn>3</mn><msub><mi>M</mi><mn>1</mn></msub><mo>−</mo><msub><mi>M</mi><mn>3</mn></msub></mrow><annotation encoding="application/x-tex">B_3=3M_1-M_3</annotation></semantics></math>.
+Positive values with controlled uncertainty and spatial-volume behavior
+are necessary comparisons against free constituents. A three-charge
+bound state must also lie below
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mn>2</mn></msub><mo>+</mo><msub><mi>M</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">M_2+M_1</annotation></semantics></math>
+if a two-charge bound state exists; larger charges require all relevant
+partitions. Finite-volume interaction shifts of scattering states can
+lie below the free threshold without an infinite-volume bound pole. A
+binding claim therefore needs volume dependence as well as a plateau. We
+do not set a numerical binding tolerance before the estimator and budget
+are specified. QUANT-1 remains a separate numerical task, not duplicated
+here.</p>
+<h1 id="what-changes-with-spatial-dimension">What changes with spatial
+dimension</h1>
+<p>Canonical charge quantization and Eqs. <a href="#eq:ham"
+data-reference-type="eqref" data-reference="eq:ham">[eq:ham]</a>–<a
+href="#eq:matching" data-reference-type="eqref"
+data-reference="eq:matching">[eq:matching]</a> apply for any integer
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math>
+at a fixed finite regulator. Profiles and integration measures do not:
+the continuum radial measure is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mrow><mi>d</mi><mo>−</mo><mn>1</mn></mrow></msub><msup><mi>r</mi><mrow><mi>d</mi><mo>−</mo><mn>1</mn></mrow></msup><mi mathvariant="normal">d</mi><mi>r</mi></mrow><annotation encoding="application/x-tex">S_{d-1}r^{d-1}\mathrm dr</annotation></semantics></math>,
+and the angular spectrum is that of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>S</mi><mrow><mi>d</mi><mo>−</mo><mn>1</mn></mrow></msup><annotation encoding="application/x-tex">S^{d-1}</annotation></semantics></math>.
+The one-dimensional problem on the whole line requires its own parity
+sectors rather than importing three-dimensional angular labels.</p>
+<div class="center">
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Spatial
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math></th>
+<th
+style="text-align: left;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">[</mo><mi>Φ</mi><mo stretchy="true" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[\Phi]</annotation></semantics></math></th>
+<th
+style="text-align: left;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">[</mo><msub><mi>λ</mi><mn>4</mn></msub><mo stretchy="true" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[\lambda_4]</annotation></semantics></math></th>
+<th
+style="text-align: left;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">[</mo><msub><mi>λ</mi><mn>6</mn></msub><mo stretchy="true" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[\lambda_6]</annotation></semantics></math></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td
+style="text-align: left;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">1/2</annotation></semantics></math></td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0</td>
+<td
+style="text-align: left;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">-2</annotation></semantics></math></td>
+</tr>
+<tr class="even">
+<td
+style="text-align: left;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math></td>
+<td
+style="text-align: left;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>d</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">(d-1)/2</annotation></semantics></math></td>
+<td
+style="text-align: left;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mo>−</mo><mi>d</mi></mrow><annotation encoding="application/x-tex">3-d</annotation></semantics></math></td>
+<td
+style="text-align: left;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><mo>−</mo><mn>2</mn><mi>d</mi></mrow><annotation encoding="application/x-tex">4-2d</annotation></semantics></math></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Brackets denote mass dimensions. In
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2+1</annotation></semantics></math>
+dimensions the sextic coupling is marginal by power counting; in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">3+1</annotation></semantics></math>
+it is irrelevant and the polynomial is naturally a cutoff effective
+field theory. A cutoff-independent ultraviolet completion is not
+specified by the classical sextic coefficients. Additional operators and
+renormalization conditions must be included to the desired EFT accuracy.
+Lower-dimensional counterterms and stability observations cannot be
+transferred unchanged to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">3+1</annotation></semantics></math>
+dimensions.</p>
+<p>A radial three-dimensional numerical profile is not a one-dimensional
+quantum field theory: discarding angular quantum fluctuations defines a
+truncation. For an additional compact spatial coordinate the transverse
+modes, radius, normalization and thresholds must be retained. An
+internal component index is not automatically that coordinate. None of
+these variants derives spatial dimension from energy or generates the
+time variable used for quantization.</p>
+<h1 id="first-result-and-next-calculation">First result and next
+calculation</h1>
+<p>The completed first step is a concrete, lower-bounded finite-lattice
+quantum Hamiltonian, integer charge projection, and a charge-normalized
+classical matching formula. The rotating-frame fluctuation Hamiltonian
+identifies the next semiclassical calculation without confusing zero
+modes and oscillators. This is a quantum formulation of the scalar
+sector, not yet a solved quantum Q-ball spectrum or a quantization of
+the full evolving network.</p>
+<p>The next numerical result should come from the already assigned
+QUANT-1 spectroscopy with its action normalization and free correlator
+controls fixed. A complementary later semiclassical calculation can use
+one identified stable large-charge profile, its complete constrained
+fluctuation problem and a specified renormalization prescription. It
+should not extrapolate a few classical mode frequencies to a
+small-charge mass spectrum. Elementary excitations of this scalar
+quantization are bosonic; spin one-half, color confinement and Standard
+Model identities require additional structure and are not outcomes of
+integer Q-ball charge.</p>
+<div class="thebibliography">
+<p><span>9</span> Q.-X. Xie, P. M. Saffin, A. Tranberg and S.-Y. Zhou,
+<em>Quantum corrected Q-ball dynamics</em>, arXiv:2312.01139v1 (2023),
+<a href="https://arxiv.org/html/2312.01139v1">primary text</a>. Targeted
+reading: Secs. 2.1, 2.4 and 2.5, especially Eqs. (1)–(8), (26)–(31),
+(35)–(36). The reported real-time scheme is an inhomogeneous Hartree
+approximation; its numerical results are not reproduced here. N. Graham,
+<em>Quantum Corrections to Q-Balls</em>, arXiv:hep-th/0105009v2 (2001),
+<a href="https://arxiv.org/html/hep-th/0105009v2">primary text</a>.
+Targeted reading: abstract and Sec. I through the model definition,
+Eqs. (1)–(2). The cubic–quartic potential differs from ours; no full
+reassessment of its one-loop calculation is claimed.</p>
+</div>
+</body>
+</html>

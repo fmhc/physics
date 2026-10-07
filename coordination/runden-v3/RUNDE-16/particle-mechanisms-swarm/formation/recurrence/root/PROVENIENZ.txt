@@ -1,0 +1,11 @@
+2026-10-03: Autoritative Bestandsprüfung, keine Numerik.
+Die drei cloud-LEVEL-final.npz existieren in
+/tmp/fmhc-physics-m2-reference-refined-20261002/half-t64/ auf .69.
+Sie wurden samt historischem RESULT.json und timestep-half.py als neue
+Sicherung nach /home/fmh/fmhc-physics-remote/m2-second-harmonic-20261002/
+cloud-checkpoints-20261003/ kopiert und dort sha256sum-geprüft.
+CHECKPOINTS.sha256 ist diese JETZIGE Bindung, keine erfundene historische.
+Der Code schreibt die Dateien nach dem letzten T64-Sample; NPZ selbst
+hat keinen Zeitwert. Vor Verwendung sind Quellcodehash, gespeicherte
+Diagnosen beiT64, Achsen, Feldtypen und Endlichkeit gegenzuprüfen.
+Eine passende Kopfzeit allein genügt nicht. Kein Fortsetzungslauf gestartet.

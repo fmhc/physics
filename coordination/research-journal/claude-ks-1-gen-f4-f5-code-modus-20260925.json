@@ -1,0 +1,40 @@
+{
+  "id": "claude-ks-1-gen-f4-f5-code-modus-20260925",
+  "time": "2026-09-25T21:53:30+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung; Vertragsautor Claude-Subagent (Anthropic, Opus 5.5), F4 22:37 bis 23:16, F5 23:23 bis 23:51 MESZ; Formatproben 5 und 6 durch die Leitung (gemessen)",
+  "topic": "binaries",
+  "status": "reported",
+  "title": "KS-1-GEN Fassung 4 und 5: Container auf der TS440 in Teil A erneuert; codex fuehrt Werkzeuge als unsichtbare JavaScript-Programme aus, deshalb neue Pruefregel GR14 (nur strenger); Formatprobe 6 gueltig",
+  "question": "Wie wird Teil A nach den Formatproben erneuert (A10.3 e, A12.5), ohne dass eine Kontrolle wirkungslos wird?",
+  "action": "F4: Wirt TS440, Abbild v2 mit codex-code-mode-host, PATH-Schalter, Anmeldung je Versuch, Abbild per sha256 statt Registry-Digest; Teilmengenprobe V18h fuer den PATH-Schalter. Dabei Fund des Autors: Der Code-Modus fuehrt Werkzeugaufrufe als JavaScript-Programm (exec) aus; es steht nur in den Sitzungsdateien. Leitung: in Probe 4 bestaetigt; Probe 5 mit code_mode_host = false. F5: neue Regel GR14 im Pruefer; V19 auf der .69 mit 125 vorab gebundenen Faellen; Probe 6 unter F5.",
+  "result": "Probe 5: Mit abgeschaltetem Code-Modus-Wirt hat codex 0.153.4 keine Werkzeuge mehr ('Code mode will fail closed'); Abschalten ist kein Weg. F5 (6ecd6fe5...): GR14 liest die Sitzungsdateien und laesst exec-Programme nur in fester Grammatik zu (tools.*-Aufrufe mit Literal-Argumenten, eine feste Ausgabeschleife); Protokoll und Programme muessen sich decken; Befehle mit /codex-home sind gesperrt. V19: 125 von 125 wie erwartet, 35 Faelle von gueltig zu ungueltig, keiner umgekehrt. Probe 6 (neue Sitzung, andere Programmform) nach GR1 bis GR14 gueltig, 0 Treffer. Pruefer f8f75cf0..., Entscheider fcc1ae4a....",
+  "meaning": "Ohne den Fund haette der blinde Ausfuehrende im Container unbemerkt in JavaScript rechnen koennen, obwohl der Auftrag das verbietet; die zweite Linie der Abschirmung haette es nicht gesehen. Die Ergaenzung ist nur strenger und mechanisch belegt. Offen fuer S0 Runde 3, die letzte regulaere: die Ausnahme fuer die Ausgabeschleife, update_plan, das Risiko verlorener Anlaeufe durch neue Programmformen, ein Schutz der Sitzungsdateien gegen Verschleierung, das Sitzungsformat laengerer Sitzungen. Muster des Tages wiederholt: Eine Umgebungsaenderung, die nur ein Format reparieren sollte, oeffnete eine Luecke; gefunden hat sie die ehrliche Teilmengenpruefung.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260925/KS-1-GEN-VERTRAG.md",
+      "sha256": "6ecd6fe5fa37e3f660fabd88c40dcb8d85207c6a41b0b1a985c47e6f9a3451b2"
+    },
+    {
+      "path": "coordination/vertraege-20260925/ks-1-gen-s0/REVISION-F3-F4.md",
+      "sha256": "a08d6d2878dde2a9182036d7ab2b4ce146eab80aaf35b4521d47651b8b885b61"
+    },
+    {
+      "path": "coordination/vertraege-20260925/ks-1-gen-s0/REVISION-F4-F5.md",
+      "sha256": "95700255c463d00d3532c70e4987dcb3921c0ff42f36f7997a08ed1dfd1fa92e"
+    },
+    {
+      "path": "coordination/vertraege-20260925/ks-1-gen-s0/container-ts440/FORMATPROBEN-BERICHT.md",
+      "sha256": "dbb01e051aeeecdc357311944b7398ef8a254c1aab4d813e9145ed767329833d"
+    },
+    {
+      "path": "coordination/vertraege-20260925/ks-1-gen-s0/container-ts440/formatprobe-20260925-211822/SITZUNG-1.jsonl",
+      "sha256": "6142d69f632c0db3a53c0ce8376ae94b2374575af521922107040367e1fb128a"
+    },
+    {
+      "path": "coordination/vertraege-20260925/ks-1-gen-s0/container-ts440/formatprobe-20260925-215238/GUELTIGKEIT-1.json",
+      "sha256": "ac94a29bf2e62394b6b387b9405e58d999f5631493edb40af43dd66f4c7d0fa5"
+    }
+  ],
+  "recorded_at": "2026-09-25T21:53:50.518115+00:00"
+}

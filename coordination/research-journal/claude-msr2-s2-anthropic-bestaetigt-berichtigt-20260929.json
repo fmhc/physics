@@ -1,0 +1,38 @@
+{
+  "id": "claude-msr2-s2-anthropic-bestaetigt-berichtigt-20260929",
+  "time": "2026-09-29T07:46:02+00:00",
+  "time_kind": "document",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung; S2 frischer Anthropic-Kontext (Opus 5.5), blind; Lauf astra (OpenAI)",
+  "topic": "theory",
+  "status": "checked",
+  "evidenzart": "modell",
+  "title": "MSR2-S2 (Haus Anthropic, blind aus dem Vertragstext), nach S3 berichtigt: Nr. 1, 2, 4 und 7 bestaetigt; Nr. 7 path_hump bestaetigt negativ - kein qualifizierender diskreter Weganstieg in den vier gebundenen Armen; das Kontrolltor der Nullprobe traegt erst die engere S2-Huelle",
+  "question": "Reproduziert ein Haus, das nicht ausgefuehrt hat, aus dem gebundenen Vertragstext allein die Ausgaenge der MSR2-Kontrollen Nr. 1, 2, 4 und 7?",
+  "action": "Gesondertes, gehashtes Paket ohne Code und Ergebnisse (11 Dateien); Lesarten vor dem Rechnen gehasht; eigener Code auf der .69 mit CUDA, drei Wiederholungen je Kontrolle, 49,6 GPU-s; Abgleich durch die Leitung gegen Lauf-JSON.",
+  "result": "Nr. 1 PASS (I = Q = 14, T_zeit = 7/2), Nr. 2 PASS, Nr. 4 PASS (D1(S) 18 Treffer, 14 Fehltreffer), Nr. 7 Kontrolltor PASS und Haupttor T: b_h (4,B0) 0,0015149 bzw. 0,0014315, (4,B1) 9,06e-5 bzw. 6,47e-5, l = 2 exakt 0; jedes S2-Intervall liegt in der Laufhuelle; Kalibrierung E1, E2 und RH PASS. Kontrolltor 4 (g = 0-Nullprobe): Die S2-Rechnung mit exakter Korrelation bei j = 0 ist eine gueltige engere Huelle und besteht; die Laufrechnung prueft die Nullprobe punktweise ohne eta_E und rechnet das Haupttor unkorreliert, eine Luecke der Intervalldisziplin des Laufs; mit unkorrelierten Intervallen waere Tor 4 U1. Leitungsentscheidung: die engere gueltige Huelle entscheidet (breitere Huellen geben nur U), beide Methoden lagen vor ihrem Ergebnis fest.",
+  "meaning": "S2 bestaetigt die MSR2-Kontrollen Nr. 1, 2, 4 und 7 auf Status- und Zahlenebene, nicht die ganze Runde. Nr. 1, 2 und 4 bleiben Werkzeugkontrollen ohne Modellbefund; Nr. 7 bleibt der negative endliche Wegvergleich an den festgelegten Stuetzstellen, ohne Aussage ueber kontinuierliche Wege, Stationaritaet oder die Millennium-Frage. S3 bestanden mit Vermerken. Kuenftige VORABs mit Startpunkt-Differenzen muessen die Korrelation bei j = 0 und die eta-Klasse der Nullprobe festlegen. Runde 022 bleibt eingefroren.",
+  "sources": [
+    {
+      "path": "coordination/millennium-string-raum-20260928/s2-anthropic-msr2/S2-ABGLEICH-MSR2.md",
+      "sha256": "9eb51cefc7ba7c9b0ec063f64506767fcd64bfc0b4e5d7606faed92c9510f4b5"
+    },
+    {
+      "path": "coordination/millennium-string-raum-20260928/s2-anthropic-msr2/S2-ERGEBNIS-MSR2.md",
+      "sha256": "f8a98552167ef7ce57531709433c9ff2cd4e522d0e07e438987519a9db161833"
+    },
+    {
+      "path": "coordination/millennium-string-raum-20260928/s2-anthropic-msr2/S2-LESARTEN.md",
+      "sha256": "e1d48ea37eb283891edd0133ebab58ce576b66467fca16f553d56e7f3564f09d"
+    },
+    {
+      "path": "coordination/millennium-string-raum-20260928/s2-anthropic-msr2/LEITUNG-ENTSCHEIDUNG-T4-MSR2.md",
+      "sha256": "2fddafb9890ec0de5516a41170fb9d37ced36d63d20125204fecbff6c6252f9f"
+    },
+    {
+      "path": "coordination/millennium-string-raum-20260928/s2-anthropic-msr2/S3-MSR2.md",
+      "sha256": "b213f0cfc162ed39f810c4002520015464dabec6770f2b268f966cf9aa8f2702"
+    }
+  ],
+  "recorded_at": "2026-09-29T07:46:17.462822+00:00",
+  "supersedes": "claude-msr2-s2-anthropic-bestaetigt-20260929"
+}

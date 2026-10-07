@@ -1,0 +1,7 @@
+# Anzeige (nach dem Einfrieren geschrieben, nicht Teil der Auswertung): eine Zeile je 4D-Modell und eine je Knoten.
+# Aufruf: jq -r -f code/tabellen.jq lauf-69/p4_P4a.json
+.p4 as $p
+| "MODELL \($p.modell) tau=\($p.tau) M=\($p.M) Ordnung=\($p.ordnung) L=\($p.L) | Halbluecke 0: \($p.volumen.halb_0) pi: \($p.volumen.halb_pi) | offen \($p.luecken_offen) | vollstaendig \($p.vollstaendig) | Summenregel \($p.summenregel) | Newton-Starts \($p.newton_starts) | Gitter \($p.suchgitter) | Zeit \($p.laufzeit_s) s",
+  ($p.zaehlung | to_entries[] | "  ZAEHLUNG \(.key): anzahl \(.value.anzahl) netto \(.value.netto) (+\(.value.plus)/-\(.value.minus)) gleich_AB \(.value.gleich_AB) B: \(.value.anzahl_B)/\(.value.netto_B)"),
+  ($p.knoten_A | to_entries[] | .key as $key | .value[] | "  KNOTEN \($key): k=\(.k | map(. * 1000 | round / 1000)) phase=\(.phase) chi=\(.chi) sv=\(.sv | map(. * 100000 | round / 100000)) wt=\(.wt | map(. * 10000 | round / 10000))"),
+  ($p.tiefster_kegel | to_entries[] | select(.value != null) | "  KEGEL \(.key): Luecke \(.value.luecke) k=\(.value.knoten.k | map(. * 1000 | round / 1000)) phase=\(.value.knoten.phase) | q=0.01: v=\(.value.iso["0.01"].v_mittel) spann=\(.value.iso["0.01"].spann_rel) | q=0.05: v=\(.value.iso["0.05"].v_mittel) spann=\(.value.iso["0.05"].spann_rel) alle=\(.value.iso["0.05"].alle_gefunden) | q=0.2: v=\(.value.iso["0.2"].v_mittel) spann=\(.value.iso["0.2"].spann_rel) alle=\(.value.iso["0.2"].alle_gefunden) | linear sv=\(.value.iso.linear_sv) spann=\(.value.iso.linear_spann_rel)")

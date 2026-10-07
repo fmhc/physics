@@ -1,0 +1,38 @@
+Physischer M2-Transport aus gespeicherten Verläufen,2026-10-03.
+Ausgang: vollständigeAuswertung,Transportrichtung UNRESOLVED an sämtlichen
+48Schalenentscheidungen(E,Q,G getrennt) und72Randentscheidungen.
+Das ist weder Nachweis fehlenderAbstrahlung noch Stabilitäts-/Lebensdauerbefund.
+
+18Arme,432Rohschalen,648Rohflächen,192Paarschalen,288Paarflächen,
+72Reserven,48Entscheidungen vollständig. Alle6analytischenFV-Kontrollen
+bestehen, darunter exaktesVakuum und reinechi-Energieflussprobe.
+
+Die Zeit-/Abtastempfindlichkeit dominiert dieReserve an allen72Stellen,
+nicht die verbesserte lokaleArithmetikhülle und nicht der Bilanzrest.
+Selbst das größte |J|/u erreicht nicht dasvorabverlangte10:
+Phase0,epsilon.002,erstesFenster,G,R50:
+J=7.071178073134184e-10;delta_dt=2.269949723956148e-10;
+delta_sampling=2.4774541766290826e-12;Bilanzreserve1.4872317840383587e-12;
+eta6.663467903747992e-14;u2.2854883885869065e-10.
+Diese Auswahl illustriertdasScheitern,ersetztkeineanderenEntscheidungen.
+
+MethodischeGrenze: endlicheSchalen/Fenster,physischePaardifferenzen;
+keine rigoroseGesamtfehlerschranke,keine stationäreRate,keineIrreversibilität.
+Die gerichteteE/Q/G-Auswertung schließt eine Lücke der früherenD/H-Analyse,
+findet aber noch keinen aufgelösten Abtransport. Eine dichtereAusgabezeit
+allein behebt nicht automatisch den Unterschied der Evolutionszeitschritte.
+KeineSchwelle nach Ausgang verändert;keineWiederholung gestartet.
+
+Hostubuntu-auto(.69),CPU8,nice19,einThread,float64,keineGPU/PDE.
+Auswertung7.39user+.37system=7.76CPU-s,7.76wall,194780KiBmaxRSS.
+Syntax.06CPU-s;gesamt7.82CPU-s unter10. Ein vorangehender taskset-
+Syntaxfehler verhinderte noch vorPython jedenStart, separatprotokolliert.
+HEAD e021575ccf971a1169b28f70a821ccf8dd66685e, tatsächlicheQuellengehasht.
+Code50a9cc0a308135a06c84bdc5f51a45f3f408de3dc00f6a4b142f88ddbddfa8bd.
+RESULT63e26aee6c18b7c706627aaa9695394a38506de6d1d1cdaae11fec2be0b3065e.
+UnabhängigeErgebnislektüre separat,keinEigenreviewersatz.
+Präzisierung derReserve: delta_dt ist an allen72Stellen größer als
+Abtaständerung,Bilanzreserveundeta. Kein Anlass,dieArithmetikhülleweiter
+aufzublähen oder dasSignaltorabzusenken. EngerAnschluss wäre eine zusätzliche
+Zeitschrittstufe ausschließlich für einen vorab ausgewählten Armvergleich,
+mit unabhängigerKosten-/Nutzenprüfung; hier nicht gestartet.

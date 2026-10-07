@@ -1,0 +1,190 @@
+{
+  "urteile": {
+    "LF0": {
+      "urteil": "eingetroffen",
+      "werte": {
+        "a": true,
+        "b": true,
+        "c": true,
+        "gitter": {
+          "knoten": 256,
+          "soll": 256,
+          "grad_min": 12,
+          "grad_max": 12,
+          "nachbarn_je_knoten": 12,
+          "schluessel_abweichungen": 0,
+          "schalen": {
+            "2": 12,
+            "4": 6,
+            "6": 24,
+            "8": 12
+          },
+          "bfs_knoten_bis_4": 309,
+          "soll_knorm_bis_4": 309,
+          "bfs_fehler": 0
+        },
+        "kunstfolgen": 7,
+        "kunstfolgen_soll": 7,
+        "durchgangsprobe": [
+          {
+            "typ": "p1_110",
+            "gefunden": 4,
+            "mit_erwartung": 4,
+            "ok": true
+          },
+          {
+            "typ": "p3_111",
+            "gefunden": 4,
+            "mit_erwartung": 4,
+            "ok": true
+          },
+          {
+            "typ": "p4_100",
+            "gefunden": 4,
+            "mit_erwartung": 4,
+            "ok": true
+          }
+        ]
+      }
+    },
+    "LF1": {
+      "urteil": "nicht eingetroffen",
+      "werte": {
+        "gleiter": 0,
+        "regeln_mit_gleitern": 0,
+        "bahnen": 0,
+        "regeln": []
+      },
+      "vermerk": "Stufe 2 unvollstaendig: 1455 von 1788 Kandidaten gerechnet; Urteil auf Stufe 1 plus gerechnetem Teil"
+    },
+    "LF2": {
+      "urteil": "nicht auswertbar",
+      "vermerk": "keine Gleiter gefunden (bedingte Vorhersage)",
+      "werte": {}
+    },
+    "LF3": {
+      "urteil": "nicht auswertbar",
+      "vermerk": "keine Gleiter gefunden (bedingte Vorhersage)",
+      "werte": {}
+    }
+  },
+  "urteile_nur_stufe1": {
+    "LF1": {
+      "urteil": "nicht eingetroffen",
+      "werte": {
+        "gleiter": 0,
+        "regeln_mit_gleitern": 0,
+        "bahnen": 0,
+        "regeln": []
+      }
+    },
+    "LF2": {
+      "urteil": "nicht auswertbar",
+      "vermerk": "keine Gleiter gefunden (bedingte Vorhersage)",
+      "werte": {}
+    },
+    "LF3": {
+      "urteil": "nicht auswertbar",
+      "vermerk": "keine Gleiter gefunden (bedingte Vorhersage)",
+      "werte": {}
+    }
+  },
+  "nebenlesarten": {},
+  "agenten": {
+    "A1": true,
+    "A2": true,
+    "A3": true,
+    "A4": "nicht eingetroffen",
+    "A5": "nicht auswertbar",
+    "A6": "nicht auswertbar",
+    "A7": "nicht auswertbar",
+    "A8": "nicht auswertbar"
+  },
+  "kontrollen": {
+    "LF0": true,
+    "Z0": true,
+    "Z1": true,
+    "Z2": true,
+    "Z3": true,
+    "Z4": true,
+    "stufe1_vollstaendig": true,
+    "stufe2_kandidaten": 1788,
+    "stufe2_gerechnet": 1455,
+    "stufe2_nicht_erreicht": 333,
+    "sperre": false
+  },
+  "zusammenfassung": {
+    "klassen_stufe1": {
+      "Gleiter": 0,
+      "Wachstum": 2946,
+      "offen": 100,
+      "Oszillator": 1174,
+      "Stilleben": 1260,
+      "ausgestorben": 1618
+    },
+    "klassen_stufe2": {
+      "Gleiter": 0,
+      "Wachstum": 606,
+      "offen": 342,
+      "Oszillator": 415,
+      "Stilleben": 92,
+      "ausgestorben": 0
+    },
+    "gleiter_geprueft": 0,
+    "gleiter_roh": 0,
+    "gleiter_stufe1": 0,
+    "bahnen": [],
+    "n_bahnen": 0,
+    "saaten_stufe1": 170352,
+    "saaten_stufe2": 139680,
+    "gekappt_stufe1": 0,
+    "gekappt_stufe2": 0,
+    "objekt_gekappt_stufe1": 0,
+    "objekt_gekappt_stufe2": 0,
+    "objekt_laeufe_stufe1": 1086,
+    "objekt_laeufe_stufe2": 11642,
+    "zeit_stufe1_s": 164.2,
+    "zeit_stufe2_s": 1079.3,
+    "stufe1_saatklassen": {
+      "tot": 58480,
+      "still": 34500,
+      "osz": 11119,
+      "gleiter": 0,
+      "gross": 65168,
+      "offen": 1085
+    },
+    "stufe2_saatklassen": {
+      "tot": 22945,
+      "still": 47788,
+      "osz": 36057,
+      "gleiter": 0,
+      "gross": 18804,
+      "offen": 14086
+    }
+  },
+  "zusatz_s_leer": {
+    "regeln": 78,
+    "klassen": {
+      "Gleiter": 0,
+      "Wachstum": 31,
+      "offen": 0,
+      "Oszillator": 1,
+      "Stilleben": 0,
+      "ausgestorben": 46
+    },
+    "gleiter": 0,
+    "regeln_mit_gleitern": [],
+    "f_max": null
+  },
+  "nachtrag_stufe2": {
+    "geurteilt": false,
+    "datei": "lauf-69/nachtrag-stufe2.jsonl (erste 1455 Zeilen = stufe2.jsonl, danach 333 neue)",
+    "regeln_neu": 333,
+    "saaten_neu": 31968,
+    "einzellaeufe_neu": 194,
+    "gleiter": 0,
+    "stufe2_damit": "1788 von 1788 Kandidaten",
+    "zeit_utc": "06:49:07 bis 06:49:48",
+    "vermerk": "beschreibend; aendert kein Urteil (ERGEBNIS 5.3)"
+  }
+}

@@ -1,0 +1,28 @@
+
+
+def g_diagnose(netz):
+    """Warum ist g != 1 ungueltig? B_red-Traegheit und Gueltigkeit (A1R1, J = 1) an [100], |k| = 1e-3, 2e-3."""
+    d = ew.richtungen()[0][1]
+    kp = np.array([1e-3 * d, 2e-3 * d])
+    ee = np.array([1e-3, 2e-3])
+    ba = tti.basis(netz, kp)
+    out = []
+    for a in netz.frei_kanten:
+        for y in (-1.0, -0.05, 0.05, 1.0):
+            gk = tti.g_eins(netz)
+            gk[a] = float(10.0 ** y)
+            gvec = np.array([gk[b] for b in netz.kart], float)
+            c = tti.c_gew(netz.mod, ba['B'], ba['k'], gvec)
+            zeile = {'kantenart': a, 'log10_g': y, 'B_red_neg': [], 'dim': []}
+            for j in range(len(kp)):
+                U, r, s = ew.phys_basis_rr(ba['M'][j], c[j])
+                S = U[:, r:]
+                Br = np.conj(S.T) @ ba['B'][j] @ S
+                eB = np.linalg.eigvalsh(0.5 * (Br + np.conj(Br.T)))
+                zeile['B_red_neg'].append(int((eB <= 0).sum()))
+                zeile['dim'].append(int(S.shape[1]))
+            pr = tti.prep(netz, ba, gk)
+            w, neg, lu, ok = tti.auswerten(pr, ee, 'A1R1', np.ones((1, len(netz.arten))))
+            zeile.update({'ok': bool(ok[0]), 'neg_k': int(neg[0]), 'luecke': float(lu[0])})
+            out.append(zeile)
+    return out

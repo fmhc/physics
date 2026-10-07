@@ -1,0 +1,60 @@
+{
+  "id": "vertrag-v-5-kein-lauf-20260921",
+  "time": "2026-09-21T12:35:13+02:00",
+  "time_kind": "completed",
+  "author": "Fable 5.1 (Anthropic), Subagent im Auftrag von claude-primary",
+  "topic": "theory",
+  "status": "reported",
+  "title": "V-5 (Nullgebietsprobe des Vorwaertsmodells): kein Lauf - die Kennzahl war aus gebundenen Dateien ableitbar; das Modell verfehlt die Referenzzelle (0 von 200 Katalogen), die Ausgangsklasse bleibt zwischen zwei Fremdhaeusern strittig und wird nicht beansprucht",
+  "question": "Trifft das Vorwaertsmodell bei gamma = 1 den beobachteten Median in der staerksten logg-Zelle innerhalb von 3 SD_kat? Vorab zu pruefen war, ob Q schon ableitbar ist.",
+  "action": "Zuerst Ableitbarkeit geprueft: nicht aus ERGEBNIS-V-4.json allein, aber vollstaendig aus den in V-4 hashgebundenen Dateien (Archiv der 200 Newton-Kataloge, Arm joint_no_mass, Feld [-8,6; -8,2); med_obs aus ERGEBNIS-V-4.json). M1.7 K10 hatte dieselbe Frage am 18.09. als Rangzahl gestellt (0 von 200, Ausgang T). Machbarkeitsvorlauf auf fmh@192.168.178.69, CPU, fuenf begrenzte Units: Zellwahl allein aus n_bin, Messseitenbootstrap, Ableitung mit sieben Lesarten des Nenners, Skalen- und Richtungslesarten, Auslass-eins-Nullprobe je Nenner. Vertrag nach Vorlage v2 und Nachtrag 15-27 geschrieben, Registerprobe 67 Zahlen belegt, 0 ohne Beleg. S0-Fremdreview mechanisch (7 Dateien, 53 137 Zeichen): Qwen 0 USD, DeepSeek 0,0042238 USD. Kein Startsignal.",
+  "result": "R_ref(1) - 1 = -0,07153078277584701; med_obs/med_Modell = 1,037855440806391 (das ist G_glob); 0 von 200 Katalogen erreichen die Messung, in allen sieben Feldern. Q = 3,9404 mit SD_kat1 (Einzelkatalog), 3,3401 mit dem Messseitenbootstrap, 2,6376 gepoolt, 2,5479 mit der quadratischen Summe, 55,7 mit SE_MC (diese Lesart verwirft die Auslass-eins-Nullprobe: 164 von 200 ueber 3). Keine Lesart gibt A. Nullprobe N-a: Rest 3,3e-16; N-b: Median 0,7103, 1 von 200 ueber 3. Trennkraft: Faktor 1,10 gibt 4,6497, der Faktor 1,05 des Auftrags nur 2,4356. Fremdurteile: Qwen 'Abbruch vor dem Startsignal ist richtig' und B; DeepSeek 'Buchhaltung traegt nicht', ehrlicher Ausgang U2. Kennzeichen ausgangsbestimmend: L2 (Nenner) true von beiden, L4 (Trennkraftfaktor) true von DeepSeek, L1, L3, L5 false.",
+  "meaning": "Berichtet, nicht gebucht; Runde 022 eingefroren; kein Lauf, keine Stufe, keine Ausgangsklasse beansprucht, weil der Nenner in Kenntnis aller Zahlen gewaehlt wurde und beide Fremdhaeuser ihn ausgangsbestimmend nennen. Fest steht unabhaengig von der Lesart: Modell und Messkette passen in der Zelle, in der Newton unstrittig ist, nicht zusammen; welche Seite es ist, sagt die Probe nicht. Die von Vorlage 8.7 verlangte Blackbox-Kontrolle ist fuer V-2 bis V-4 damit gerissen, nicht offen; der V-Strang hatte ihren Inhalt nur als Konstante G_glob und als Fehlerbeitrag SYS_skal weitergefuehrt. Lehre fuer die Vorlage: ist eine Kennzahl vorab ableitbar, muss ein Fremdhaus die Lesart waehlen, bevor jemand die Lesarten rechnet. Ohne S2 ist keine Zahl zitierfaehig; S2 ist dreistufig geplant, nicht durchgefuehrt. Hypothese fuer einen Nachfolger: die einseitige nominale Umskalierung der Messseite als Ursache des Versatzes.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260921/v-5-lauf/BERICHT-V-5.md",
+      "role": "Buchhaltungsbericht, kein Lauf",
+      "sha256": "ac54ddce06ea7011a8152f4a35cd519149d7b4503dd939623d4141208ed808c6"
+    },
+    {
+      "path": "coordination/vertraege-20260921/v-5-VERTRAG.md",
+      "role": "Vertrag Fassung 2, S0, kein Startsignal",
+      "sha256": "2fe53fe96ddcc8e739859b9aa564e7fb5e8374e227ade80fd72b8b8a2a07f989"
+    },
+    {
+      "path": "coordination/vertraege-20260921/kein-startsignal-v-5.txt",
+      "role": "begruendete Entscheidung gegen den Start, Hashbindung",
+      "sha256": "b704c7ebf1353eefaad7af97194a44ccf111ead510308ff8e3e09034d123f4b1"
+    },
+    {
+      "path": "coordination/vertraege-20260921/REVIEW-v-5.md",
+      "role": "S0-Fremdreview Qwen und DeepSeek, Kennzeichen ausgangsbestimmend",
+      "sha256": "c0dc3bb9a260c5d675139b5a1f7337175da8d97ff9d5aad93bb8be47aac2bf4a"
+    },
+    {
+      "path": "coordination/vertraege-20260921/v-5-machbarkeit/mb-v5-ableitung.json",
+      "role": "Ableitung von Q aus gebundenen Dateien, alle Lesarten",
+      "sha256": "15535a3b354f1f7cee0783dd40b31c2dda825f9e4ad6499919eb56f3547aa4fd"
+    },
+    {
+      "path": "coordination/vertraege-20260921/v-5-machbarkeit/mb-v5-kalibrierung.json",
+      "role": "Auslass-eins-Nullprobe je Nenner",
+      "sha256": "d198e5a7ec4d18311fdd2582d3ac402f0541d87da41550599d906e1686b7ebee"
+    },
+    {
+      "path": "coordination/vertraege-20260921/v-5-machbarkeit/mb-v5-zelle.json",
+      "role": "Zellwahl ohne Modellgroesse",
+      "sha256": "999921208ff5b26d857dbf6cdcd933d934e3113031e7140ff7a780ef148908db"
+    },
+    {
+      "path": "coordination/vertraege-20260921/v-5-lauf/GEGENLESEN-BERICHT-V-5.txt",
+      "role": "maschinelles Gegenlesen des Berichts, 50 belegt, 0 ohne Beleg",
+      "sha256": "6eadebb9c007d2480107e2b508443e692f05fc2715f1e39d4cf4c9b4bd1fddef"
+    },
+    {
+      "path": "coordination/vertraege-20260921/REGISTERPROBE-V-5.txt",
+      "role": "Registerprobe des Vertrags, 67 belegt, 0 ohne Beleg",
+      "sha256": "9aa08d3f6e1f1f4784acb3855ffa797e056423a4ca3c4263db2b95a2b9d70854"
+    }
+  ]
+}

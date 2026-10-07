@@ -1,0 +1,26 @@
+{
+  "id": "claude-a0-gasreich-20260906",
+  "time": "2026-09-06T14:09:00+02:00",
+  "time_kind": "completed",
+  "author": "Claude",
+  "topic": "galaxies",
+  "status": "checked",
+  "title": "a₀ aus gasreichen Zwerggalaxien: 1,12 ± 0,20, und eine unabhängige Messung landet bei 1,00",
+  "question": "Wie scharf lässt sich a₀ aus SPARC bestimmen, wenn man die Abhängigkeit vom Massen-Leuchtkraft-Verhältnis loswird?",
+  "action": "Teilstichprobe, in der Gas mehr als 60 Prozent der baryonischen Masse stellt: 595 Punkte aus 50 Galaxien. Zusätzlich Korrektur für asymmetrischen Drift, auf den SPARC nicht korrigiert.",
+  "result": "Die M/L-Systematik fällt von ±0,384 auf ±0,096, also um Faktor 4; die Abhängigkeit d ln a₀/d ln Υ von −1,374 auf −0,458. Mit Druckkorrektur ergibt sich a₀ = 1,12 ± 0,20 statt 1,30 ± 0,45 auf der vollen Stichprobe. Zwei neue Systematiken kommen dafür herein: Entfernung (a₀ ∝ D⁻², und 64 Prozent sind Hubble-Fluss-Entfernungen, geeicht an H₀ = 73 — der Test ist also nicht H₀-unabhängig) und asymmetrischer Drift (+11 bis +24 Prozent).",
+  "meaning": "Netto eine Schärfung um Faktor 2,3. Der Wert liegt im Fenster, das cH₀/2π vorhersagt (1,042 Planck bis 1,129 SH0ES), also +0,4 bzw. −0,05 Sigma. Bemerkenswert: MUSE-DARK III (arXiv 2604.22613, April 2026) misst an 79 Galaxien bis z = 1,44 unabhängig a₀(0) = 1,00 ± 0,04 — derselbe Wert, nicht 1,2.",
+  "sources": [
+    {
+      "path": "neue-theorie/subagent-befunde.md",
+      "label": "Rechnung",
+      "sha256": "87c5f80fc81d85633233f3104881ca48f9c120c2bb34c4f261acbb10f8cbc470"
+    },
+    {
+      "path": "neue-theorie/test_a0.py",
+      "label": "Fit über 48 Wahlkombinationen",
+      "sha256": "15b0e637f6289c1d8ca88596860cdf9fa69bd130e161ccade346b613db1f0bb7"
+    }
+  ],
+  "recorded_at": "2026-09-06T14:45:35.162018+00:00"
+}

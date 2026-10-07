@@ -1,0 +1,41 @@
+FSM-43 ROOT-ERGEBNIS, 2026-10-02
+Exakte Ganzzahl-Enumeration auf .69 CPU11 nice19, 0.00393 CPU-s.
+Codehash32a0ac085c9527d36a6da3cde821ad0bd7a83f6b49b8c9e1413f7b2d7cdb7a20;
+Nichtautor-Difflektüre vorStart, CodehashimRunloggleich,Exit0.
+KeineGleitkomma-Physiksimulation; CPUZeitmessungistkeinphysikalischerTick.
+
+Graph         alleStates  Zyklen  rekurrenteStates  Periode  maxTransient
+Dreieck       24          3       18                6        1
+Quadrat       64          4       32                8        3
+TetraederK4   324         16      192                12       3
+Dreistern     12          1       6                 6        1
+Summe424States. InjedemZyklus jedegerichteteKante genaueinmal durchlaufen.
+Perioden entsprechen bekanntemRotorrouter-Lemma, keinNeuheitsanspruch.
+
+Wichtiger negativer Befund: alle4Vollzustandsabbildungen sindnichtbijektiv.
+K4 hat96StatesohneVorgaenger,144mit1,72mit2,12mit3Vorgaengern.
+Die16periodischenKomponenten selbstsindumkehrbar, aber insgesamtistder
+AutomatkeinreversiblesabgeschlossenesMechanikmodell. MehrereVorgaenger
+werdenzusammengefuehrt. EswurdekeineEnergiefunktionoderDauerhergeleitet.
+
+Kontrollen: fehlendesTokenstopptfueralleRotorbelegungen; erzwungener
+Vierphasencounter[0,1,2,3,0] laeuftperDefinitionmitPeriode4. Letzteres
+istgeradekeinBelegemergenterZeit. Nur2von24Permutationender2bitStates
+erhaltendenPopcount: IdentityundSWAP. FredkinMap[0,1,2,3,4,6,5,7]
+bijektiv,selbstinvers,popcounterhaltend. Energieinterpretationnurmit
+zusaetzlicherE=epsilon*popcount-Annahme, keineSchaltenergiegeprueft.
+
+Essenz: lokaleAnkunft+lokalerSpeicher->Zustandsaenderung+Weitergabe ist
+brauchbarerkausalerBaustein. 4Knoten/3Ports ergebeneinekonkrete12Ereignis-
+Schleife, aberkeinedreidimensionaleRaumherleitungundkeinfundamentales4/3Gesetz.
+ErsteAnregungbleibtAnfangsbedingung. EreignisindexistnichtphysikalischeZeit.
+
+NaechsteoffeneFrage: AusdemkontinuierlichenZweifeldmodell metastabile
+BereicheundUebergangszeitenableiten. GleicherbeobachteterStatus beianderem
+Chi-/Rotorzustand muss alsGedächtnisgegenprobe dienen. Wirsetzenkeinen
+VierTaktindieFeldgleichung, umihnnachheralsEntdeckungauszugeben.
+
+V2-Korrekturfassung: ../ARBEITSMODELL-V2.md. Wirkungskern unabhängig
+papiergelesen; Omega²-Fenster, quadratischeChiQuelle undPNotation korrigiert.
+DieMaschineistkeinebereitshergeleiteteDiskretisierungdiesesFeldmodells.
+Originaldownloadunveraendert. KeinweitererPhysiklaufgestartet.

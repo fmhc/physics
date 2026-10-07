@@ -1,0 +1,19 @@
+wirbel: Start 2026-09-30T02:05:18+00:00, Ende 2026-09-30T02:07:42+00:00, Quadro P4000, torch 2.5.1+cu121
+Medium C0 = 0.1, g4 = 0.5, lam = 0.1: c_s = 0.2085, Heilungslaenge etwa 3.23
+Dauer [s]: relax_fein_s 1.0, entw_fein_s 118.0
+Karte wirbel (Wellen 18). Ball m = 0, omega^2 = 0.55 (Q 238.4, R_halb 6.88, D = 2 R_halb = 13.8) gehalten (V_h = 0.0005 r^2), y0 = 0.05 (kleiner Anstoss).
+Lauf | u/c_s | u | Ereignisse | erste Zeit | oben/unten | mittl. Abstand | St (Ereignisse) | Auftrieb Periode | St (Auftrieb) | F_x | F_y RMS | N frei max
+[fein]
+  u0.7 | 0.7 | 0.1453 | 2 | 352 | [1, 1] | - | - | 152.2 | 0.622 | +4.03e-02 | 3.5e-06 | 2
+      erste Ereignisse (t, Seite und Vorzeichen, Zahl): [(352.0, 'N_minus_oben', 1), (352.0, 'N_plus_unten', 1)]
+  u0.85 | 0.85 | 0.1761 | 4 | 252 | [2, 2] | 284.0 | 0.275 | 127.0 | 0.615 | +6.20e-02 | 5.3e-06 | 4
+      erste Ereignisse (t, Seite und Vorzeichen, Zahl): [(252.0, 'N_minus_oben', 1), (252.0, 'N_plus_unten', 1), (536.0, 'N_minus_oben', 1), (537.0, 'N_plus_unten', 1)]
+  Urteil: Schwelle zwischen u/c_s = 0.0 und 0.7
+L3 (grob gegen fein; bestanden, wenn |fein - grob| <= max(0,2 |fein|, Toleranz)):
+  u0.7 N_ereignisse: grob 2, fein 2 -> ok
+  u0.7 erste_zeit: grob 351, fein 352 -> ok
+  u0.7 F_x_mittel: grob 0.040337, fein 0.040345 -> ok
+  u0.85 N_ereignisse: grob 4, fein 4 -> ok
+  u0.85 erste_zeit: grob 253, fein 252 -> ok
+  u0.85 F_x_mittel: grob 0.061959, fein 0.061973 -> ok
+  L3 gesamt: bestanden (6 von 6)

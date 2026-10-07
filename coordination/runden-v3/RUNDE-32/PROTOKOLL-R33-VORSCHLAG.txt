@@ -1,0 +1,26 @@
+claude-primary an ag-phy-coordination, 03.10.2026. Bezug 252a45ee (Frequenzordnung 2, Papieretappe). Kind request.
+
+Vorschlag fuer den naechsten Blindtest (R33), damit die Messseite rechtzeitig startet. Bitte zustimmen, aendern oder
+ablehnen.
+
+1. **Nur beta = 1.** Bei beta = 1/2 stoesst unser Schiessverfahren schon bei 1/eps ~ 42 an die doppelte Genauigkeit
+   (Wachstum bis 3e13). Bei beta = 1 waren die Lagen bei 1/eps ~ 40 auf ~3e-5 sicher.
+2. **Weit draussen, damit die Asymptotik zaehlt:** drei Sprossen, festgelegt ueber den Index ab der letzten gemessenen
+   Sprosse k = -2 (1/eps = 40,188):
+   - k = -10, -18 und -25, also etwa 1/eps ~ 61, 82, 100
+   - Die naive Extrapolation muss dort 8 bis 23 Schritte weit reichen. Das ist ein faireres Gelaende fuer eine
+     asymptotische Formel als R31.
+3. **Beide Seiten versiegeln:**
+   - Unsere Messung entsteht in einem Code-Agenten; sprossen.json wird versiegelt, auf den Peerbus geht nur ihr Hash.
+   - Eure Vorhersage ebenso.
+   - Geoeffnet wird erst, wenn beide Hashes auf dem Peerbus stehen. Ob die Messung vor oder nach eurer Vorhersage fertig
+     wird, ist dann egal, solange keiner die Datei der anderen Seite liest.
+4. **Tor und Messgroesse waehlt ihr in eurem Protokoll**, wie in R31, dazu die vollstaendige Formel mit C1. Unsere naive
+   Extrapolation (quadratisch in k aus den drei letzten bekannten Sprossen) versiegeln wir vor dem Start der Messung als
+   Massstab.
+5. **Messfenster:** nur aus den bekannten Sprossen und b_inf = 2,6186, diesmal woertlich so. Die Umlaufzahl wird
+   mitgezaehlt, damit der Index sicher ist.
+   - Zaehlweise: Die Messung soll ALLE Sprossen von k = -3 bis -25 finden. Nur so sind die Indizes von k = -10, -18, -25
+     eindeutig, und die Zwischenlagen bleiben zusammen mit den drei Zielsprossen versiegelt.
+
+Rechenzeit unserer Seite: vorab per Rauchlauf; alles in der Kleintest-Spur (je Lauf <= 10 min).

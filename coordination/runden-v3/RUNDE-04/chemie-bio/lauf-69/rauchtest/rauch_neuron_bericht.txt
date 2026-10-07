@@ -1,0 +1,31 @@
+R4-CB neuron. Start 2026-09-30T00:15:48+00:00, Ende 2026-09-30T00:15:49+00:00, Dauer 1.3 s, Geraet Quadro P4000, torch 2.5.1+cu121, GPU-Speicher max 52 MB  RAUCHTEST: Zahlen ohne Bedeutung
+Neuron (Bio 13): omega^2 = 0.7, T = 20.0; Spitze = max |S_max - S_max(null)| / S_max(0) bis t = 50; Atmung spaet = halbe Spannweite von S_max in den letzten 100 / Mittel
+  art        eps    Reizenergie  Spitze   Spitze/|eps|  Atmung   Q abgestrahlt  Klumpen  omega^2 Ende
+  null      +0.00  0.000e+00  0.000e+00  0.000e+00  1.82e-04  +4.90e-13  1  0.6999
+  dehnung   +0.01  9.153e-05  1.213e-02  1.213e+00  9.71e-03  -4.30e-10  1  0.7004
+  dehnung   -0.01  9.153e-05  1.224e-02  1.224e+00  9.71e-03  +3.45e-10  1  0.6995
+  dehnung   +0.03  8.238e-04  3.606e-02  1.202e+00  2.91e-02  -1.49e-09  1  0.7012
+  dehnung   -0.03  8.238e-04  3.706e-02  1.235e+00  2.91e-02  +7.26e-10  1  0.6986
+  dehnung   +0.10  9.153e-03  1.161e-01  1.161e+00  9.69e-02  -5.62e-09  1  0.7038
+  dehnung   -0.10  9.153e-03  1.273e-01  1.273e+00  9.68e-02  -2.38e-09  1  0.6951
+  dehnung   +0.20  3.661e-02  2.197e-01  1.099e+00  1.92e-01  -1.22e-09  1  0.7065
+  dehnung   -0.20  3.661e-02  2.648e-01  1.324e+00  1.92e-01  -2.35e-08  1  0.6896
+  dehnung   +0.30  8.238e-02  3.089e-01  1.030e+00  2.85e-01  +4.19e-08  1  0.7077
+  dehnung   -0.30  8.238e-02  4.118e-01  1.373e+00  2.83e-01  -7.00e-08  1  0.6834
+  dehnung   +0.50  2.288e-01  4.631e-01  9.262e-01  4.59e-01  +4.34e-07  1  0.7048
+  dehnung   -0.50  2.288e-01  7.335e-01  1.467e+00  4.52e-01  -2.64e-07  1  0.6695
+  dehnung   +0.70  4.485e-01  7.527e-01  1.075e+00  6.34e-01  +1.75e-06  3  0.6930
+  dehnung   -0.70  4.485e-01  1.091e+00  1.559e+00  5.99e-01  -6.69e-07  1  0.6542
+  dehnung   +1.00  9.153e-01  1.336e+00  1.336e+00  8.58e-01  +7.87e-06  3  0.6617
+  dehnung   -1.00  9.153e-01  1.681e+00  1.681e+00  7.89e-01  -2.15e-06  1  0.6291
+  amplitude +0.03  1.237e-01  1.444e-01  4.815e+00  3.77e-02  +4.70e-09  1  0.6749
+  amplitude -0.03  -1.214e-01  1.351e-01  4.503e+00  4.23e-02  +7.63e-12  1  0.7255
+  amplitude +0.10  4.206e-01  4.967e-01  4.967e+00  1.05e-01  +3.93e-08  1  0.6233
+  amplitude -0.10  -3.958e-01  4.076e-01  4.076e+00  1.61e-01  +1.47e-08  1  0.7824
+  amplitude +0.30  1.331e+00  1.280e+00  4.265e+00  1.49e-01  +5.43e-07  1  0.5375
+  amplitude -0.30  -1.101e+00  8.171e-01  2.724e+00  5.11e-01  +1.32e-07  1  0.8958
+  amplitude +0.50  2.343e+00  1.630e+00  3.259e+00  1.27e-01  +3.45e-06  1  0.5090
+  amplitude -0.50  -1.668e+00  9.305e-01  1.861e+00  6.99e-01  +3.01e-07  1  0.9537
+  Spruenge (Faktor 3 in Spitze/|eps| oder Klumpenzahl aendert sich): 1
+    {'art': 'dehnung', 'eps_a': 0.5, 'eps_b': 0.7, 'spitze_je_eps_a': 0.9261732568783956, 'spitze_je_eps_b': 1.0752726825923493, 'klumpen_a': 1, 'klumpen_b': 3}
+  L3 (fein gegen grob): bestanden; effekt_max_spitze = 1.681e+00, aenderung_max_spitze = 9.741e-04, klumpenzahl_gleich = 25 von 25

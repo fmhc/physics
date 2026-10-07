@@ -1,0 +1,215 @@
+{
+ "info": {
+  "numpy": "2.4.4",
+  "python": "3.12.3",
+  "host": "ubuntu-auto",
+  "start_utc": "2026-10-04T20:14:23Z",
+  "argv": [
+   "/home/fmh/fmhc-physics-remote/tt-iso-1/code/tti.py",
+   "verfeinern",
+   "--netz",
+   "S",
+   "--paarung",
+   "A3R2",
+   "--ng",
+   "2",
+   "--nmfaktor",
+   "0.04",
+   "--Lst",
+   "2",
+   "--rauch",
+   "--out",
+   "/home/fmh/fmhc-physics-remote/tt-iso-1/rauch/r5-verf-S-A3R2.json"
+  ],
+  "skript_sha256": "6d6b6f7b99b334d74d91860fc69af1c6c0c46e22207dc45432d60a9824c08ee5",
+  "ew_sha256": "fa7b6417d39177102f0b19c5474453cd16a7595e23bc25ca548e081c4060b142",
+  "nk_sha256": "fd0d17b9fb7c92d4b6ad564a46260e3daae3285bcb5ad53f65d9fb3918a32b28",
+  "tp_sha256": "419d7da6caa211c721eb6a8c87403977415cf3050f03365377f51cb77b374dfd"
+ },
+ "schluessel": {
+  "netz": "str",
+  "paarung": "str",
+  "arten": "list",
+  "kantenarten": "list",
+  "tb1_starts": "list",
+  "tb1_best": {
+   "start": "list",
+   "x": "list",
+   "spanne": "float",
+   "nf": "int"
+  },
+  "t_tb1_s": "float",
+  "tb1_symm_best": {
+   "y_kegel_sechs": "list",
+   "x": "list",
+   "spanne": "float",
+   "nf": "int"
+  },
+  "tb2_g_gitter_t_s": "float",
+  "tb2_g_gitter_n_ok": "int",
+  "tb2_g_gitter_besten": "list",
+  "tb2_starts": "list",
+  "tb2_best": {
+   "start": "list",
+   "z": "list",
+   "spanne": "float",
+   "nf": "int"
+  },
+  "t_tb2_nm_s": "float",
+  "pruef_tb1": {
+   "J": [
+    "achse",
+    "finn_ab",
+    "finn_auf",
+    "kegel_T1",
+    "kegel_T2"
+   ],
+   "g": [
+    "achse",
+    "c_speiche",
+    "pyro"
+   ],
+   "spanne_13": "float",
+   "w13_min": "float",
+   "w13_max": "float",
+   "luecke_13": "float",
+   "spanne_23ew": "float",
+   "ok_23ew": "bool",
+   "neg_23ew": "int",
+   "w13_je_richtung": [
+    "100",
+    "110",
+    "111",
+    "210",
+    "211",
+    "221",
+    "310",
+    "311",
+    "320",
+    "321",
+    "322",
+    "331",
+    "332"
+   ],
+   "tt": "list",
+   "stabil_L8": [
+    "L",
+    "k_mit_A_oder_K_red_nicht_pd",
+    "k_mit_B_red_nicht_pd",
+    "k_mit_komplex",
+    "k_mit_negativ",
+    "nk",
+    "w2_min_rel"
+   ]
+  },
+  "pruef_tb1_symm": {
+   "J": [
+    "achse",
+    "finn_ab",
+    "finn_auf",
+    "kegel_T1",
+    "kegel_T2"
+   ],
+   "g": [
+    "achse",
+    "c_speiche",
+    "pyro"
+   ],
+   "spanne_13": "float",
+   "w13_min": "float",
+   "w13_max": "float",
+   "luecke_13": "float",
+   "spanne_23ew": "float",
+   "ok_23ew": "bool",
+   "neg_23ew": "int",
+   "w13_je_richtung": [
+    "100",
+    "110",
+    "111",
+    "210",
+    "211",
+    "221",
+    "310",
+    "311",
+    "320",
+    "321",
+    "322",
+    "331",
+    "332"
+   ],
+   "tt": "list",
+   "stabil_L8": [
+    "L",
+    "k_mit_A_oder_K_red_nicht_pd",
+    "k_mit_B_red_nicht_pd",
+    "k_mit_komplex",
+    "k_mit_negativ",
+    "nk",
+    "w2_min_rel"
+   ]
+  },
+  "pruef_tb2": {
+   "J": [
+    "achse",
+    "finn_ab",
+    "finn_auf",
+    "kegel_T1",
+    "kegel_T2"
+   ],
+   "g": [
+    "achse",
+    "c_speiche",
+    "pyro"
+   ],
+   "spanne_13": "float",
+   "w13_min": "float",
+   "w13_max": "float",
+   "luecke_13": "float",
+   "spanne_23ew": "float",
+   "ok_23ew": "bool",
+   "neg_23ew": "int",
+   "w13_je_richtung": [
+    "100",
+    "110",
+    "111",
+    "210",
+    "211",
+    "221",
+    "310",
+    "311",
+    "320",
+    "321",
+    "322",
+    "331",
+    "332"
+   ],
+   "tt": "list",
+   "stabil_L8": [
+    "L",
+    "k_mit_A_oder_K_red_nicht_pd",
+    "k_mit_B_red_nicht_pd",
+    "k_mit_komplex",
+    "k_mit_negativ",
+    "nk",
+    "w2_min_rel"
+   ]
+  },
+  "t_pruef_s": "float",
+  "zeitabbruch_nm": "int"
+ },
+ "laufzeit_s": 6.475584030151367,
+ "maxrss_MB": 67.21875,
+ "t": {
+  "t_tb1_s": 0.23914289474487305,
+  "tb2_g_gitter_t_s": 0.07074379920959473,
+  "t_tb2_nm_s": 3.8832767009735107,
+  "t_pruef_s": 1.775984287261963
+ },
+ "n_J": null,
+ "nf_tb1": [
+  43
+ ],
+ "nf_tb2": [
+  110
+ ]
+}

@@ -1,0 +1,10 @@
+1 Koeffizienten gamma -> 0: |dt| = 0.0e+00, max|dc| = 7.1e-15, c6, c7 = 3.0e-299, 4.0e-300 (Soll: alle ~1e-15)
+  gamma = 0,1: F(f_top) = 3.3e-16; G(u) aus Taylor gegen direkt bei u = 0,3: 5.0e-16
+2 anker-artig: Tiefpunkt 1, R2 innen 0.99992, x*lin 0.79766, x* 0.79761, g0 -4.01e-08, g0/Gref -1.0e-04, Teile [True, True, True, True] -> F2 ja (Soll ja)
+2 Boden 1e-6: Tiefpunkt 1, R2 innen 0.99572, x*lin 0.79694, x* 0.79763, g0 9.95e-07, g0/Gref 2.5e-03, Teile [True, True, True, False] -> F2 nein (Soll nein)
+2 monoton 1D-artig: Tiefpunkt 5, R2 innen 0.99939, x*lin 0.82607, x* 0.81591, g0 1.29e-09, g0/Gref 7.3e-01, Teile [False, True, False, False] -> F2 nein (Soll nein)
+3 Anker 0,7 Stufe A: rho = [1.7018102864766265, -0.001468016309009953], Q = 473.413, E/Q = 0.9054, 10.2 s (Soll R6: 1,7018102 - 1,468e-3 i; Q(0,7) aus R6-Profil nicht gedruckt)
+  gamma = 0,1 bei 0,8 Stufe A: rho = [1.7758723602555653, -0.0017974642019430462], pol_ok True, Q = 256.260, 13.7 s
+  Log bei 0,5 Stufe A: Profil ok True, S0 = 15.917613536727337, Q = 1912.7900984207254, Grund 1, 9.6 s
+Ende Teil 1 bis 3 2026-09-30T04:54:14+02:00, 33.4 s
+rc1=0

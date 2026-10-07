@@ -1,0 +1,29 @@
+Q-Ball-Geometrie und Literaturanschluss 2+2, 30.09.2026
+
+Eigenes vorhandenes Profil:
+model-lab/simulation-environment/qball-explorer/data/bic-initial-profile.json
+omega²=.7976767871108792, radialer Hintergrund am eigenen BIC-Kandidaten, nicht das omega²=.7-Profil und nicht Higgsportal-Q250. f(0)=1.02423550657.
+Darstellung GEOMETRIE.png/.svg: echte vorhandene radiale Hintergrundwerte, räumlich durch Kugelsymmetrie rekonstruiert. Es wurde kein neues Feldproblem gelöst. Normierte Felddichte S=f², NICHT volle Energiedichte. Die drei dargestellten Flächen sind frei gewählte Anzeige-Niveaus 80/30/5 Prozent, keine physikalischen Schalen. Interpolierte Radien 1.46604/2.87332/4.38686 Modelleinheiten. Der Schwanz besitzt keine harte Außenkante. Kein Metermaßstab abgeleitet.
+Render auf TS440, ein CPU-Kern0 nice19 unter bestehendem Laborlock, 2.070 CPU-s nach Imports; RENDER.json bindet Inputhash. Renderer und Ausgaben hier gespeichert; keine lokale Interpreterausführung. Bild visuell geprüft. Das ältere bic-view/desktop.png ist ausdrücklich schematisch und wird nicht als echte Geometrie benutzt.
+Die Hintergrundphase exp(-i omega t) rotiert im komplexen Feldraum, die Dichte f² bleibt stationär. Die gezeigte Kugelsymmetrie wurde im radialen Ansatz vorausgesetzt; das Bild beweist keine Stabilität gegen unsymmetrische Störungen.
+
+Literatur: begrenzte neue Quellenprüfung
+
+1. Xie/Saffin/Zhou,2101.06988, https://arxiv.org/html/2101.06988
+Subagent las Modell/Vorbereitung und Abschnitte4–5; Koordination las zusätzlich4–5 selbst. Sextik-Referenz g=.5 stimmt mit unserem U=S-S²+.5S³ überein. Freie Q-/Anti-Q-Überlagerungen bilden langlebige Ladungswechselzustände; auch planare Quadrupole und dreidimensionale höhere Multipole werden behandelt. Die Energiehülle kann fast rund sein, während die Ladungsdichte mehrpolig wechselt. Kein Nachweis räumlich umlaufender 2+2-Paare. Höhere Multipole verlieren bei g=.5 ihre Ladungsstruktur relativ rasch; 3D-Lebensdauern kürzer als2D. Abbildung22 zeigt2D-Muster, nicht unsere3D-Lösung.
+
+2. Hou/Saffin/Xie/Zhou,2202.08392, https://arxiv.org/pdf/2202.08392
+Subagent gezielt Modell und Abschnitte4.2–4.4; Koordination Abstract. Logarithmisches, also anderes Potential. Sehr lange beobachtete Lebensdauern auch höherer Ladungswechselverbünde; endliche Untergrenzen, kein ewiger Stabilitätsbeweis. Spiegelbedingungen langer symmetrischer Läufe begrenzen Aussagen über symmetriebrechende Störungen. Überschneidende Autoren mit1: keine unabhängige Replikation.
+
+3. Loiko/Perapechka/Shnir,2012.01052, https://arxiv.org/html/2012.01052
+Subagent gezielt AbschnitteII–IV, Koordination Abstract. Gauged Friedberg-Lee-Sirlin-Modell mit zusätzlichem reellen Feld und elektromagnetischer Dynamik. Ketten mit2/4/6 Bestandteilen, stationäre axialsymmetrische Tori mit Drehimpuls; keine umlaufenden vier Punktkörper. Mehrtoruszustände Energiesattelpunkte, kein allgemeiner Stabilitätsbeweis. Eigene Modelländerung erforderlich.
+
+4. Brihaye/Hartmann,0711.1969v2, https://arxiv.org/pdf/0711.1969
+Koordination Einleitung, Modell/Ansatz und Stabilitätsdiskussion gezielt gelesen; Text war bereits im lokalen Quellenbestand. Zwei komplexe Felder mit separaten U(1)-Ladungen und Dichtekopplung. Stationäre nichtrotierende/rotierende Komponenten und winkelangeregte Formen. Numerische Existenz und energetische Vergleiche ersetzen keine volle dynamische Stabilität. Kein neuer2+2-Umlaufbeleg.
+
+5. Almumin et al.,2302.11589, https://link.springer.com/article/10.1140/epjc/s10052-024-12712-x
+Koordination Einleitung, EndeAbschnitt4 und Abschnitt5 gezielt gelesen. Kleine räumlich rotierende Störungen werden perturbativ konstruiert; höhere Ordnungen können Strahlung erzeugen. Die führende l1-Radialform enthält f', weshalb die Abgrenzung zu Translation/Schwerpunktbewegung vor Übernahme in unser internes Modenspektrum eigenständig geprüft werden muss. Kein Zertifikat für unsere fehlende positive Dipolmode und kein stabiler freier Viererverbund.
+
+Eigene Konsequenz für das Paper:
+Der unmittelbarste neue Vergleich ist1: gleiches Potential, aber andere Anfangsdaten und anderer Gesamtladungssektor als unser einzelner geladener Q-Ball. Positive/negative Ladungsgebiete nicht als elektrische Plus-/Minusladungen ausgeben. Vier Ladungslappen, vier Energiekerne und vier Teilchenbahnen sind verschiedene Observablen.
+Sinnvolle nächste Forschungsfrage wäre, ob ein solches Ladungsmuster unter kleiner Drehimpulszugabe bestehen bleibt oder zerfällt. Dafür wären neue3D-Anfangsdaten, Absorber-/Volumenkontrolle und unsymmetrische Störungen nötig. Hier nicht gerechnet; keine Simulationfreigabe aus Literaturtreffer abgeleitet. Kein Nachweis, dass unser BIC und ein CSQ derselbe Mechanismus sind.

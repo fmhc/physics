@@ -1,0 +1,83 @@
+{
+  "status": "PASS",
+  "synthetic_only": true,
+  "time_steps": 0,
+  "source_sha256": "0ce21bee477cb41ade234611fd832abc5a7a90ed10d83d526f532cf28c6fd899",
+  "script_sha256": "9f6095a0591b737688b9a3067526232687a0136a45703e46de51eae710900160",
+  "cases": [
+    {
+      "case": "all_gates_pass",
+      "expected": "RADIAL_FORMATION_CANDIDATE",
+      "actual": "RADIAL_FORMATION_CANDIDATE",
+      "passed": true
+    },
+    {
+      "case": "compact_pulsating_same_Q_omega",
+      "expected": "NO_CANDIDATE_IN_FIXED_WINDOW",
+      "actual": "NO_CANDIDATE_IN_FIXED_WINDOW",
+      "passed": true
+    },
+    {
+      "case": "one_bad_reference",
+      "expected": "NUMERICALLY_UNRESOLVED_REFERENCE",
+      "actual": "NUMERICALLY_UNRESOLVED_REFERENCE",
+      "passed": true
+    },
+    {
+      "case": "one_incomplete_numerical_arm",
+      "expected": "INCOMPLETE",
+      "actual": "INCOMPLETE",
+      "passed": true
+    },
+    {
+      "case": "one_bad_grid_sensitivity",
+      "expected": "NUMERICALLY_UNRESOLVED_SENSITIVITY",
+      "actual": "NUMERICALLY_UNRESOLVED_SENSITIVITY",
+      "passed": true
+    },
+    {
+      "case": "one_grid_fails_contraction",
+      "expected": "NO_CANDIDATE_IN_FIXED_WINDOW",
+      "actual": "NO_CANDIDATE_IN_FIXED_WINDOW",
+      "passed": true
+    }
+  ],
+  "structural_probes": [
+    {
+      "case": "missing_sample",
+      "actual": "NUMERICALLY_UNRESOLVED_SAMPLE_STRUCTURE",
+      "rejected": true,
+      "note": "Malformed input must not yield a formation candidate"
+    },
+    {
+      "case": "unsynchronised_sample",
+      "actual": "NUMERICALLY_UNRESOLVED_SAMPLE_STRUCTURE",
+      "rejected": true,
+      "note": "Malformed input must not yield a formation candidate"
+    },
+    {
+      "case": "duplicate_arm",
+      "actual": "NUMERICALLY_UNRESOLVED_SAMPLE_STRUCTURE",
+      "rejected": true,
+      "note": "Malformed input must not yield a formation candidate"
+    },
+    {
+      "case": "empty_samples",
+      "actual": "NUMERICALLY_UNRESOLVED_SAMPLE_STRUCTURE",
+      "rejected": true,
+      "note": "Malformed input must not yield a formation candidate"
+    },
+    {
+      "case": "wrong_end_time",
+      "actual": "NUMERICALLY_UNRESOLVED_SAMPLE_STRUCTURE",
+      "rejected": true,
+      "note": "Malformed input must not yield a formation candidate"
+    },
+    {
+      "case": "nan_time",
+      "actual": "NUMERICALLY_UNRESOLVED_SAMPLE_STRUCTURE",
+      "rejected": true,
+      "note": "Malformed input must not yield a formation candidate"
+    }
+  ]
+}

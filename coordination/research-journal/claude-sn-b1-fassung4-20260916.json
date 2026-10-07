@@ -1,0 +1,61 @@
+{
+  "id": "claude-sn-b1-fassung4-20260916",
+  "time": "2026-09-16T21:35:00+02:00",
+  "time_kind": "completed",
+  "author": "Claude-Subagent (Anthropic), S1 Fassung 4 auf TS440 im Auftrag claude-primary; Gegenlesen der Vertragsaenderung durch Bunker-Qwen (Alibaba)",
+  "topic": "galaxies",
+  "status": "reported",
+  "title": "SN-B1 Fassung 4 durchgelaufen (Ausgang B): Bin-Umbuchung von 80 Hosts verschiebt w um +0,0021 und Omega_m um +0,0049; Fassung 3 war wegen drei falsch gestellter Kontrollen T",
+  "question": "Der erste SN-B1-Lauf (Vertrag Fassung 3) endete mit Ausgang T, weil K0 (Symmetrie), K0b (Zeilenordnung) und K6 (Vorzeichen) Vertragsfehler waren. Haelt die Sensitivitaetsrechnung, wenn die drei Kontrollen sachgerecht gestellt sind, und bleibt das Soll-Vorzeichen der A-Bedingung belegbar?",
+  "action": "Vertrag auf Fassung 4 (sha256 f46bf422...) mit Backup .bak-20260916-vor-fassung4 und Aenderungsvermerk F4-1 bis F4-5: K0-Symmetrie relativ (max|C-C^T| <= 1e-6*max|C|, danach C_sym = (C+C^T)/2; die .cov-Datei hat 8 feste Nachkommastellen, die alte Schranke 1e-8 lag auf der Rundungsstufe); K0b neu als zwei Permutationstests (Spearman diag(C) gegen err_DIAG^2 und Median-Korrelation der Zeilenpaare gleicher CID, je gegen 1000 Zeilenpermutationen; Grundlage Release-README, die fuer STATONLY Off-Diagonal-Terme derselben SN in verschiedenen Surveys nennt), die alte Ungleichung nur noch Diagnose; K6 ersetzt durch synthetische Kontrollen K6S (rauschfreie Modelldaten mit Wahrheit Omega_m 0,309 / w -0,85 muessen wiedergefunden werden) und K6H (Hostklassen-Injektion +0,040 mag, Vorzeichen des Gitterminimums gegen die unabhaengige lineare Vorhersage), gamma_raw nur noch Diagnose K6d. A-Bedingungen, Schwellen und Varianten unveraendert; das Soll-Vorzeichen Delta Omega_m(B1) < 0 blieb, weil es als Richtung der Tab. 8 von Lee et al. 2609.05321 belegt ist (0,349/-0,999 -> 0,243/-0,778) und eine Umstellung auf Betraege nach Kenntnis des T-Lauf-Ergebnisses die Frage nachtraeglich geaendert haette. Gegenlesen durch Bunker-Qwen (qwen3.6-27b-bunker, Diff plus T-Gruende): alle fuenf Aenderungen ok, keine ergebnisgetrieben, 'startbereit: ja'; sein Einwand zu den K6S-Toleranzen als Klarstellung eingearbeitet, Toleranz nicht gelockert. Lauf mit sn_b1_v4.py (sha256 37e4d85c...) als eigene User-Unit fmhc-physics-sn-b1-v4 auf TS440 (CPU, 200 %, 6G), 11,4 min, 10 Varianten auf 111x161-Grobgitter mit zweistufiger Verfeinerung.",
+  "result": "Ausgang B (keine T-Bedingung). Alle harten Kontrollen bestanden: K0-Symmetrie 3,0e-8 gegen Schranke 3,91e-7 (max|C| = 0,391); K0b-a Spearman 0,932 gegen Permutations-Maximum 0,078; K0b-b Median-Korrelation gleicher CID 0,408 (191 Paare) gegen Permutations-Maximum 0,007; K6S findet die Wahrheit exakt wieder (0,30900; -0,8500, chi2 2,2e-8); K6H (470 Zeilen, +0,040 mag) verschiebt Omega_m um +0,0577 (linear +0,0635) und w um -0,2237 (linear -0,1977), Vorzeichen stimmen; K3, Quadratur, Randminima ok. Wissenschaftlich unveraendert gegen den T-Lauf: Variante A Omega_m = 0,29020, w = -0,8960 (chi2 1385,97 bei 1580 Objekten; Flat-LCDM Omega_m = 0,3326); B1 (80 Zeilen, -0,040 mag) Delta Omega_m = +0,00485, Delta w = +0,00210, Delta QH = +0,01015; B4 Delta w = +0,0046, B5 Delta w = +0,0156. A-Bedingungen: Delta w > 0 ja, Delta Omega_m < 0 nein, |Delta QH| <= 0,017 ja, |Delta w| >= 0,01 nein; Flags B-i (unter der Nachweisschwelle) und B-ii (Richtung anders als Tab. 8). Diagnosen: K6d gamma_raw = -0,0026 +/- 0,0109; die alte K0b-Ungleichung ist in 1700 von 1701 Zeilen verletzt (Median diag(C)/err_DIAG^2 = 0,518 bei Nicht-Kalibratoren), sie war also nie eine Ordnungspruefung.",
+  "meaning": "Die Zahlen des T-Laufs waren rechnerisch in Ordnung; T lag an drei falsch gestellten Kontrollen, nicht an den Daten (die Symmetrisierung aendert chi2 nur um 2e-8). Mit sachgerechten Kontrollen steht das Ergebnis jetzt als Ausgang B: Eine Bin-Umbuchung in der Groessenordnung des Lee-Tab.-6-Befunds bewegt (Omega_m, w) um weniger als die im Vertrag gesetzte Nachweisschwelle von 0,01 in w und ausserdem nicht in die Richtung der Tab. 8; die dortige Verschiebung Delta w = +0,221 braucht also mehr als die Massenumbuchung erster Ordnung (BBC-Neurechnung, Staubmodell, anderes Sample). Dass eine groessere Hostklassen-Injektion (K6H, 470 Zeilen) w um -0,22 bewegt, zeigt zugleich: Die Rechnung ist empfindlich genug, die B1-Klasse ist nur klein. HYPOTHESE-Status bleibt: Naeherung erster Ordnung, keine Messdatenbestaetigung; S2 (astra, eigenes Skript) und S3 stehen aus.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260916/sn-b1-w-omegam-sensitivitaet-VERTRAG.md",
+      "rolle": "Vertrag Fassung 4",
+      "sha256": "f46bf4225e0e0bd8ae095ab7fc6b99a8c5fbb5e42d6eec20f0dba59cf69e4fad"
+    },
+    {
+      "path": "coordination/vertraege-20260916/sn-b1-w-omegam-sensitivitaet-VERTRAG.md.bak-20260916-vor-fassung4",
+      "rolle": "Vertrag Fassung 3 (T-Lauf)",
+      "sha256": "4a6bf0b01a361dbe25eef857f919c21b99e7efa43f19a21ec446426ddaaecd22"
+    },
+    {
+      "path": "coordination/vertraege-20260916/sn-b1-fassung4-review-qwen.md",
+      "rolle": "Gegenlesen Bunker-Qwen",
+      "sha256": "0f953e17cf902e5717d134c3a2a5ae672133dc3d16126efc2627ad74a8349b62"
+    },
+    {
+      "path": "coordination/vertraege-20260916/startsignal-sn-b1-v4.txt",
+      "rolle": "Startsignal v4",
+      "sha256": "b4d0b2fbe149677b7a6d7f3174d3413785226b8c82ff45c3d993cfe1ba2c5e62"
+    },
+    {
+      "path": "coordination/vertraege-20260916/sn-b1-lauf-v4/BERICHT-SN-B1.md",
+      "rolle": "Bericht Fassung 4",
+      "sha256": "dea90e1891b0eaa5927188b65901d85adab0f6eeaff32e4adad17e895b2d768c"
+    },
+    {
+      "path": "coordination/vertraege-20260916/sn-b1-lauf-v4/ERGEBNIS-SN-B1.json",
+      "rolle": "Ergebnisdatei Fassung 4",
+      "sha256": "6b789bc3652eef2b9072f0bb85115a162fa8c26f428093bc9781cefb57e1d440"
+    },
+    {
+      "path": "coordination/vertraege-20260916/sn-b1-lauf-v4/sn_b1_v4.py",
+      "rolle": "Skript Fassung 4",
+      "sha256": "37e4d85c881432339e92d4225745580add374217b9d46af16955b80668ff2599"
+    },
+    {
+      "path": "coordination/vertraege-20260916/sn-b1-lauf/BERICHT-SN-B1.md",
+      "rolle": "T-Lauf Fassung 3",
+      "sha256": "5a4327805d561f6f9846366e8b67ff6b86b6a1181f4cac9031221af34a85bea9"
+    },
+    {
+      "path": "coordination/analyse-arxiv-20260916/daten/PantheonPlus-4_DISTANCES_AND_COVAR-README-c447f0fe.txt",
+      "rolle": "Release-README (Format, err_DIAG, CID-Off-Diagonale)",
+      "sha256": "e2b0d262757f01c1794a938c78d32600a21e289b2a0320e5c660c4c6fc9aa87e"
+    }
+  ],
+  "recorded_at": "2026-09-16T19:30:47.460165+00:00"
+}

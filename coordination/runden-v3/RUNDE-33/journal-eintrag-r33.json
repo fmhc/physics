@@ -1,0 +1,36 @@
+{
+  "id": "claude-runde-v3-33-20261003",
+  "time": "2026-10-03T14:59:56+02:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung, Protokoll, Baseline; Code-Agent Anthropic (Opus 5.5) Messung; Codex (OpenAI) Vorhersageseite",
+  "topic": "theory",
+  "status": "reported",
+  "evidenzart": "modell",
+  "title": "Runde 33 nach v3 (explorativ): zweiseitig versiegelter Blindtest der 3D-Sprossenformel bei beta = 1 weit draussen UNRESOLVED (Codex' zweite Wandordnung verfehlte ihr eigenes Sensitivitaetstor); Messung von 23 Sprossen bis 1/eps ~ 100 mit stabilisiertem Verfahren vollstaendig und versiegelt aufbewahrt",
+  "question": "Trifft die um die naechste Ordnung ergaenzte parameterfreie Formel die Sprossen k = -10, -18, -25 (1/eps ~ 61, 82, 100) bei beta = 1 auf 0,10 und besser als eine quadratische Fortschreibung?",
+  "action": "Protokoll mit Codex vereinbart (Tore vorab, beidseitige Versiegelung, keine selektive Entblindung); Baseline vor jedem Lauf gebunden (0a5fb36c...); Messagent mit eingefrorenem Plan und stabilisiertem Schiessen (Godunov/Conte), alle Fortsetzungen k = -3 bis -25; beide Hashes per Peerbus.",
+  "result": "Vorhersageseite UNRESOLVED (eigenes Sensitivitaetstor verfehlt, keine Zahlen, eingefroren 12:11 UTC, Hash 20efcdd2...). Messseite vollstaendig: 23 Fortsetzungen in Unsicherheitsklasse A (< 1e-4 in z), bekannte Sprossen auf <= 5e-12 wiedergefunden, versiegelt (Hash 034df190...). Ausgang R33: UNRESOLVED.",
+  "meaning": "Explorativ, keine Messdaten. Kein Befund zur Formel. Die versiegelte Messung bleibt unentblindet als Ziel fuer einen eigenen spaeteren Test; methodisch neu ist das stabilisierte Schiessen, das die Leiter bis R ~ 50 traegt, wo das bisherige Verfahren versagt.",
+  "sources": [
+    {
+      "path": "coordination/runden-v3/RUNDE-33.md",
+      "sha256": "76e31012ffb472d3618fbf741f4438a39f1155fb8ab4211465aca65031956311"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-33/r33-messung/PLAN.md.eingefroren-20261003-142805",
+      "sha256": "682f2fd6c0d2c71086b5cc9645adf148c3f87cf9657ce8395d88beaa0653e8bb"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-33/r33-messung/ERGEBNIS-OHNE-ZAHLEN.md",
+      "sha256": "dae1983ffe253bf4bfe629492c40e3d9e3207697944091f58d074dc04f5662b2"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-33/r33-messung/BASELINE-R33-VERSIEGELT.json",
+      "sha256": "0a5fb36cf32b8c21d24909cfa614094be8fd1c9ecddd4eba5e18bc4dcaca7d83"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-33/r33-messung/lauf-69/MESSUNG-R33-VERSIEGELT.json",
+      "sha256": "034df190a68dadbc9c9df0e332d71c6e2ad1f61be72c9033ff9f20f096179084"
+    }
+  ]
+}

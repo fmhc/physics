@@ -1,0 +1,9 @@
+    for fn in sorted(os.listdir(kdir)):
+        if fn.endswith('.json') and 'E2' in fn and 'st2' in fn:
+            d = json.load(open(os.path.join(kdir, fn)))
+            for e in d.get('minima', []):
+                if 'T' in e:
+                    b.semilogy(e['w2'], e['T'], 'v', ms=6, color='purple', mfc='none')
+            if 'tau' in d:
+                b.axhline(d['tau']['tau_E2'], color='purple', ls='--', lw=1)
+                b.axhline(d['tau']['tau_E3'], color='green', ls=':', lw=1)

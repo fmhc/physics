@@ -1,0 +1,57 @@
+% Result, detuning lemma and text independently reviewed; v0.10 stage.
+\paragraph{A prescribed local pulse.}
+For the exact T2 mode, write $u=(A,B)^T$ with the reduced real components
+of Eq.~\eqref{eq:ansatz}, in the exact-mode Jost normalization specified in
+Section~\ref{nl:conditional-monopole}. The projection identity gives a
+concrete excitation test for this already existing bound mode.
+In dimensionless mass-one units, prescribe a source with real angular
+profile $Y_{10}$. Choose the radial envelope
+$\chi(r)=(r-1)^2(2-r)^2$ on $1\le r\le2$
+and zero elsewhere, and temporal envelope $\eta(t)=\sin^2(\pi t)$ on
+$0\le t\le1$ and zero otherwise. The physical source in the original field equation is
+$J_\phi=\epsilon\chi Y_{10}\eta\exp[i(\omega+\rho)t]$, with real
+$\epsilon$, the small strength of the external drive in this linear-response
+calculation. It is added to the right-hand side of Eq.~\eqref{nl:model}.
+The reduced source in Eq.~\eqref{env:time} is
+$S=\epsilon r\chi\eta(e^{i\rho t},e^{-i\rho t})^T$;
+its conjugate channel is not independent and must be retained. For the fixed real
+radial mode components $A,B$, define
+\[
+ I_A=\int_1^2 r\chi(r)A(r)\,dr,\qquad
+ I_B=\int_1^2 r\chi(r)B(r)\,dr.
+\]
+The resulting finite-pulse overlap is
+\[
+L(0)=\frac{I_A}{2}+I_B\int_0^1\eta(t)e^{-2i\rho t}\,dt.
+\]
+With $N>0$ from Eq.~\eqref{env:norm}, vanishing initial projection and
+vanishing Green boundary form, the pulse leaves
+$c(1)=-i\epsilon e^{i\rho}L(0)/N$.
+Exact integration of the stored nominal polynomials, combined with their
+certified componentwise error bounds and the same certified frequency box,
+gives an enclosure separated from zero. Conditional on the same exact T2
+mode identification and normalization,
+a conservative bound is $|L(0)|>1/500$. This certifies nonzero linear mode
+projection for nonzero $\epsilon$, vanishing initial projection and the
+stated boundary conditions; it does not determine an absolute excitation
+energy without the mode norm. Replacing $Y_{10}$ by $Y_{00}$ gives zero
+direct dipole projection by angular orthogonality; other modes are not excluded.
+
+% Detuning bound independently checked in DETUNING-REVIEW.txt.
+\paragraph{Finite detuning.}
+The conclusion need not require an exactly tuned external source. Replacing
+its carrier by $\omega+\rho+\delta$ gives
+\[
+ L(\delta)=I_A\int_0^1\eta(t)e^{i\delta t}\,dt
+ +I_B\int_0^1\eta(t)e^{-i(2\rho+\delta)t}\,dt.
+\]
+Since $\int_0^1t\eta(t)\,dt=1/4$,
+\[
+ |L(\delta)-L(0)|\le\tfrac14(|I_A|+|I_B|)|\delta|.
+\]
+The conservative bounds $|I_A|<3/1000$, $|I_B|<6/1000$ therefore imply
+$|L(\delta)|>7/8000$ for $|\delta|\le1/2$. This is a sufficient excitation
+bound for the prescribed local source, not a linewidth or a decay rate.
+Its duration is dimensionless, not a measured physical loading time.
+Neither calculation describes formation of the underlying Q-ball,
+self-sustained excitation, or coupling to a specified cosmological field.

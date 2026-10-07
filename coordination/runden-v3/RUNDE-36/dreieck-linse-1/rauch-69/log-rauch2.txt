@@ -1,0 +1,22 @@
+start 2026-10-03T23:42:16+00:00 spur=p4000a unit=fmhc-physics-klein-r36li-rauch2-234216
+Running as unit: fmhc-physics-klein-r36li-rauch2-234216.service; invocation ID: f3d46975d9b34ee0a75af0c57cac1d3e
+torch 2.5.1+cu121, Geraet cuda (Quadro P4000)
+Netz n=6 h=0.35 R=50: 74005 Ecken, 73021 frei, Grad Spitze 6, Defekt 0.000000, Euler 1 (4.5 s)
+Kartenpruefung: {"winkelsumme_spitze": 6.283185307179585, "Theta_soll": 6.283185307179586, "winkelsumme_minus_soll": -8.881784197001252e-16, "einlauf": {"kanten": 221028, "isometrisch": 221028, "am_schnitt": 0, "max_abw_isometrisch": 1.2140288774276087e-13, "max_abw_geklebt": null}, "auslauf": {"kanten": 221028, "isometrisch": 221028, "am_schnitt": 0, "max_abw_isometrisch": 1.2140288774276087e-13, "max_abw_geklebt": null}}
+Ball b=16: E 119.33715340 omega 0.750993 c -7.2e-10 -4.7e-10 res 1.9e-08 aussen 9 (2.5 s)
+Ball b=-16: E 119.33715340 omega 0.750993 c -9.0e-10 6.0e-10 res 4.9e-08 aussen 2 (1.5 s)
+/home/fmh/fmhc-physics-remote/runde36-linse/code/linse.py:217: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at ../aten/src/ATen/SparseCsrTensorImpl.cpp:53.)
+  Lt = torch.sparse_csr_tensor(torch.tensor(Lff.indptr, dtype=torch.int64), torch.tensor(Lff.indices, dtype=torch.int64),
+Start: E0 ['120.504338', '120.504338'] Q0 ['150.000000', '150.000000'] K_eff ['0.60252', '0.60252']
+t 100.0 d 21.27 21.27 E 241.005104 Q 299.995280 (2.75 ms/Schritt)
+t 200.0 d 16.50 16.50 E 241.004966 Q 299.995177 (2.75 ms/Schritt)
+t 300.0 d 17.07 17.07 E 241.004984 Q 299.995172 (2.75 ms/Schritt)
+t 400.0 d 22.58 22.58 E 241.004989 Q 299.995168 (2.75 ms/Schritt)
+Ende: T erreicht, t 450.0, 2.75 ms/Schritt, Dauer 21.9 s, geschrieben /home/fmh/fmhc-physics-remote/runde36-linse/rauch/li-rauch2.json
+Finished with result: success
+Main processes terminated with: code=exited/status=0
+Service runtime: 22.558s
+CPU time consumed: 22.518s
+Memory peak: 352.0K
+Memory swap peak: 0B
+ende 2026-10-03T23:42:38+00:00 rc=0 unit=fmhc-physics-klein-r36li-rauch2-234216

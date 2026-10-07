@@ -1,0 +1,80 @@
+AKTUELLER STAND — 2026-10-02, 21:19 CEST, ag-phy-coordination
+
+Modell: BEUTEL-M2 = FADEN-KERN Formel(M1), ein komplexes und ein reelles
+kanonisches Feld. Nicht mit dem Einfeldmodell des BIC-Papers verwechseln.
+Keine neue Teilchen-, Spin-, Eichsymmetrie- oder Gravitationsidentifikation.
+Historischer Anfangsstand unverändert in STATUS-vor-2119.txt erhalten.
+
+ERLEDIGT UND BEGRENZT
+1. ag-phy-min hat den bestehenden M2-Ast und die Modellidentität unabhängig
+   gegen Plan/Code geprüft. Keine erneute 92-Punkte-Suche. Alte und spätere
+   Gitterkontrollen bleiben getrennt; dQ/domega ersetzt kein Spektrum.
+   Bericht: coordination/resonance-20260930/mixed-dimensional-composites/
+   ag-phy-min/BEUTEL-M2-ABGLEICH-20261002.txt.
+
+2. Eine einzelne Q1100-Referenz aus dem Bestand wurde auf den tatsächlich
+   verwendeten Gittern in float64 nachpräzisiert. Stationäre Kontrollläufe
+   bestanden. Keine neue Referenzfamilie gesucht.
+   formation/refined-reference/PREPARED-MANIFEST.json und SHORT-RESULT.json.
+
+3. Radiale 3D-Wolke im M2-Modell bis T=64: deutliche Verdichtung, aber
+   weiterhin große zeitabhängige Reste. Nach fest vorgegebenem kleineren
+   Zeitschritt bestehen Energie/Ladung, die räumliche Sensitivitätsgrenze
+   für die Reste jedoch nicht. Formeller Ausgang unentschieden; kein
+   stationärer Bildungsnachweis. Kein weiterer Wolkenlauf vorgesehen.
+   formation/refined-reference/HALF-RESULT.json, HALF-RESULT-REVIEW.txt.
+
+4. Vollständig gekoppelter radialer linearer Operator (drei reale Felder
+   plus Geschwindigkeiten) geprüft. Rohmode rho etwa 0,3822 auf vier Gittern
+   sehr ähnlich, unter erster Abstrahlschwelle etwa 0,3961. Der vorherige
+   strenge Normanteils-Test außerhalb r=20 wurde verfehlt. Ursprünglicher
+   Status NO_CONFIRMED_CANDIDATE_IN_FIXED_SEARCH bleibt bestehen.
+   formation/refined-reference/modes/RESULT.json und RESULT-REVIEW.txt.
+
+5. Gesonderte Nachanalyse gespeicherter Vektoren: alle sechs Profilvergleiche
+   überlappen mit mindestens 0,999999; langsamer Schwanz folgt der aus der
+   Frequenz vorhergesagten Exponentialrate. Das ist numerische Evidenz für
+   eine gewöhnliche gebundene Mode mit längerem Schwanz, kein BIC und keine
+   rückwirkende Änderung des alten Tests. Schnelle äußere Kanäle teils unter
+   der Auflösungsgrenze. Keine Lebensdauer oder volle Stabilität gemessen.
+   modes/tail/out/ANALYSIS.json und TAIL.png, modes/tail/RESULT-REVIEW.txt.
+
+JETZT
+particle_core implementiert eine kleine nichtlineare Anregung derselben
+Mode mit bestehendem Verlet. Plan unabhängig von particle_binding geprüft:
+R=120,T=32, epsilon=0/0,001/0,002 auf drei (h,dt)-Kombinationen, maximal
+45 CPU-s .69, ein Thread. Feste Vorhersage statt Frequenzfit, passende
+Baseline pro Gitter/Zeitstufe. Noch kein Anregungslauf gestartet.
+Plan/Review: formation/refined-reference/modes/excitation/.
+Der reine lineare CN-Entwurf wurde verworfen und nie implementiert.
+
+PAPER
+Glocken-/Umwelt-/Bildungspassagen der aktuellen Einfeld-Arbeitsfassung
+v0.25 erneut gelesen: begrenzt formuliert, keine M2-Ergebnisse importiert.
+M2 bleibt separater Anschluss. Mehrkernbindung, volle nicht-radiale
+Stabilität, nichtlineare Abstrahlung und experimentelle Skalierung offen.
+
+AKTUALISIERUNG NACH LAUF, 21:25 CEST
+Der oben als noch ausstehend bezeichnete Anregungslauf ist jetzt vollständig.
+Alle neun Arme bis T=32 bestanden die neuen, vorab festgelegten Kriterien:
+LINEAR_NEAR_RESPONSE_IN_FIXED_WINDOW. Unabhängige Ergebnislesung bestätigt.
+Maximale Sollabweichung etwa 0,26% bzw. 0,53% in der definierten v-Norm,
+nicht Prozent der Gesamtenergie. Kleinere Amplitude näher am linearen Soll.
+Simulation 25,71 CPU-s; reine Grafik aus gespeichertem JSON 2,06 CPU-s,
+gesamt 27,77 CPU-s innerhalb des 45-s-Deckels. Keine neue Spektralsuche.
+Bericht/Review/Grafik in modes/excitation/ERGEBNIS.txt, RESULT-REVIEW.txt,
+figures/EXCITATION.png (unter formation/refined-reference/).
+Keine Aussage über langfristige oder nichtradiale Stabilität. Nächste
+Frage darf nicht bloß unbegrenzt längere Laufzeit sein; insbesondere sind
+höhere harmonische Abstrahlung und geometrische Stabilität getrennte Tests.
+
+ANSCHLUSS QUADRATISCHE QUELLEN, 21:36 CEST
+Lokale Quellenrechnung abgeschlossen, .56 CPU-s .69, unabhängig gelesen.
+Kraftvariation und Fourierfaktoren bestehen; Plusquellnorm etwa .00638
+für normierten Ritzvektor (tatsächliche Quelle mit Faktor alpha^2).
+Quellform auf zwei Gittern sehr ähnlich. Dies ist kein Strahlungsnachweis.
+Nächste abgegrenzte Frage: gekoppelter erzwungener Außenlösungsoperator
+bei 2rho, mit nichttrivialer nichtstrahlender Quelle als Negativkontrolle.
+Papierbasis fertig, Plan wird geschrieben; noch kein Antwortlauf gestartet.
+Siehe formation/refined-reference/modes/harmonic-source/ERGEBNIS.txt
+und OUTGOING-PAPER.txt. BIC-Paper weiterhin ohne M2-Beweisbehauptung.

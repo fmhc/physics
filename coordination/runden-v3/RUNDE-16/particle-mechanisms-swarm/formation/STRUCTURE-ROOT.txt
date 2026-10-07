@@ -1,0 +1,78 @@
+Strukturelle Gesamtpruefung — ag-phy-coordination, 02.10.2026
+Anlass Finn: 'ok review das strukturell noch mal'. Keine neue Rechnung.
+Gelesen aktueller/ausgefuehrter code.py ea841390, PLAN, initialQA-RESULT,
+ROOT-QUESTION, beide bisherigen Nichtautorberichte und parallele Befunde.
+
+URTEIL
+Als begrenzter Test konservativer Verdichtung in einem vorgegebenen klassischen
+Zweifeldmodell sinnvoll. Noch NICHT startfaehig fuer physikalische Hauptaussage:
+Referenzpraeparation verfehlt ihr Tor. Kein grundsaetzlicher Modellwiderspruch
+oder Fehler der geprueften Energie-/Ladungsidentitaeten gefunden. Hauptintegrator
+und seine Zeitschrittkonvergenz wurden nicht durch die algebraischeQA validiert.
+
+1. Erkenntnisfrage (bereinigt, keine Torlinie verschieben)
+Der Start besitzt schon E/Q<sqrt2 und etwa78.8% Kernladung beiRadius12.
+Gefragt ist nicht 'entsteht Bindung aus nichts', sondern ob eine vorbereitete
+Wolke sich ohne externe Falle deutlich verdichtet und einen stationaerartigen
+gemeinsamen Kern bildet. Zusätzliche Gates R50-Kontraktion/chi-Absenkung und
+gekoppelte Feldreste sind deshalb sachlich noetig. Sie wurden vor irgendeiner
+Evolution festgelegt. Ein negativer endlicher Versuch ist kein Nichtexistenzsatz.
+Eine Positivkontrolle aus einem vorbereiteten Gleichgewicht kontrolliert dessen
+Evolution, aber belegt NICHT Bildung aus einer Wolke. Die Bildungsauswertung
+braucht fuer ihren spaeteren Code mindestens einen bewusst nichtstationaeren
+Verdichtungs-/Pulsdatensatz als negativen Entscheider-Test, nicht nur das
+statische Vakuum der Operator-QA. Kein neuer physikalischer Sucharm dafuer noetig.
+
+2. Modell und Numerik (tragfaehiger Kern)
+Phi komplex/chi reell mit positiver Kinetik und nichtnegativem Potential;
+Kopplung wechselseitig, konstantes Vakuum, erhaltenes globalesQ.
+FV-Energievariation und RHS mit richtigen Faktoren2/1; diskrete globale/lokale
+Noetherbilanz und Vakuum haben QA bestanden. Ein zusaetzlicher Kanal ist damit
+noch keine zusaetzliche Raumdimension und keine fermionische Spinvariable.
+Zeit ist ein Parameter dieser Gleichungen, nicht von ihnen hergeleitet.
+Die sphärische Reduktion ist eine3D-radiale Modellrechnung, keine allgemeine
+3D-Simulation. Nicht-radiale l>=1/Mischkanal-Stabilitaet ist eigener Test.
+
+3. Aktueller Blocker: Praeparation statt Dynamik
+Archiv f/chi wurden aufdr.16 ausgeduennt und alsfloat32 gespeichert. Lineare
+Interpolation aufh.1/.05 erzeugt bei den stationaeren Raumresten .049/.047
+bzw .166/.159 statt<.004. Der Anstieg passt zu nichtglatten rekonstruierten
+Ableitungen; er identifiziert fuer sich keine alleinige Fehlerursache.
+0 Zeitschritte, arms=[]: kein Bildungs-/Instabilitaetsbefund vorliegend.
+Referenzomega wurde fuerQ1100 leicht korrigiert; auch dadurch geaenderte
+Stationaritaet muss mitgemessen werden. Kleine E-Abweichung allein genuegt nicht.
+
+Minimaler reparierter Ablauf ohne neues Framework:
+A) Vorhandenen Seed bei festQ auf JEDEM Zielgitter gezielt nachkorrigieren.
+   Ein Punkt, kein Astscan. Separates neues Artefakt mit Herkunft, Anfang/Ende,
+   E,Q,omega, max/gewichtetenResten und Profilabstand. Abbruch bei falschemAst,
+   Knoten, unzureichendemRest oderBudget. Schwellen VOR Rechnung konkretisieren.
+B) Gebundene korrigierteReferenz separat verifizieren. OperatorQA bleibt;
+   zuerst kurzer Referenz-Zeitkontrolllauf mit getrennter Raum/dt-Pruefung.
+C) Erst danach unveraenderteWolkenentwicklung und eingefroreneAuswertung.
+Originalarchiv und QA-Fehlschlag behalten. Keine grossenResiduenschranken zur
+Reparatur, kein nachtraegliches Glaetten der Evolutionsresultate.
+
+4. Messschicht — vor Hauptlauf zu bereinigen
+R50-Code ordnet kumulierte gesamte Schalenmasse den ZellMITTEN zu. Dadurch
+erhaelt der Median einen systematischen Positionsversatz. Fuer eine geometrisch
+konsistente Diagnose: kumulierteMasse an aeusserenSchalenraendern binden und
+innerhalb derTrefferschale volumetrisch interpolieren. Mit konstantemDichte-
+Kugeltest pruefen. R50 bleibt |phi|²-Median, nicht allgemeinerLadungsradius.
+'chi0' ist aktuell chi(h/2), nicht extrapolierterWert bei r0: exakt benennen.
+Restnormen bei chi=1 haben absichtlich einen kleinenNenner und sind anfangs
+riesig. Der aktuelleArchivcode vergleicht Residualsensitivitaet korrekt erst
+ab t48; fruehere Gegenaussage desReviewers ist zurueckgenommen. Auch spaeter
+beide Feldnormen+unnormiertenReste speichern, um Verhältnisartefakte zu sehen.
+GlobalE/Q undKernQ-Fluss werden getrennt getestet. Energiefluss jeKanal fehlt;
+Strahlungskuehlung darf deshalb nicht als gemessener Mechanismus ausgegeben
+werden. Kein umfassenderFernraumbeweis aus kleinemKragenwert.
+
+5. Aussageleiter und Prioritaet
+StationaererKern -> saubereReferenz -> begrenzteRealzeitverdichtung ->
+nicht-radialeStabilitaet -> Mehrkernbindung/Wechselwirkungen -> erst danach
+Teilcheneigenschaften/Quantisierung und experimentelleZuordnung.
+Diese Pfeile sind Arbeitsabhaengigkeiten, keine behaupteten logischenImplikationen.
+VorhandeneBIC-/Uhrbefunde entscheiden andereFragen. Weder regelmaessigeTicks
+noch positiveVerschiebungssteifigkeit innerhalbEINESKerns ersetzen Paarbindung.
+Unmittelbar nur Referenzreparatur und Messschicht; kein Detektornebenstrang.

@@ -1,0 +1,945 @@
+{
+ "info": {
+  "numpy": "2.4.4",
+  "scipy": "1.18.0",
+  "python": "3.12.3",
+  "host": "ubuntu-auto",
+  "start_utc": "2026-10-05T10:13:12Z",
+  "argv": [
+   "code/sf.py",
+   "aw",
+   "--lauf",
+   "lauf",
+   "--out",
+   "lauf/auswertung.json"
+  ],
+  "sha256": {
+   "dn.py": "0cd5d13e98f41df277ec7d8139970d1e658542f843ed8180bc756a4ea1d4d1ae",
+   "ew.py": "fa7b6417d39177102f0b19c5474453cd16a7595e23bc25ca548e081c4060b142",
+   "hm.py": "0ed5e2ce3a2a26525ef8a3320da394e6f403306384015187baf4dd46623fd5f2",
+   "inz.py": "e65a5cbf380defef0468f50de5a2dec5936d4228b72e1db8ff913ed765def8f2",
+   "lrm.py": "a6cdd898fc3fc80aa96d0b39e7c437ab7c7b22b73ff963f5600ed0d0210f684d",
+   "mn.py": "b36984d3f04276454a792f14c5655bff432332316d1b968dea46d4cb6eb96bbf",
+   "nachtrag_iso.py": "1c92cb23988886731096dd44ce33aecfcde3b65cecf16b4232111550e4debc6c",
+   "nachtrag_kinetik.py": "fd0d17b9fb7c92d4b6ad564a46260e3daae3285bcb5ad53f65d9fb3918a32b28",
+   "pn.py": "c8034e40c3238cecdcc72ecd35f1f70d38ea330c9ae18911966581c10e592567",
+   "sf.py": "d4e03bf6bab9389d690c336c53a7e9d8ba1f338f348e63b38d16f861d4ca458a",
+   "sf_aw.py": "05cdf4d1eb1fd243f263acd57e0dfb8fbb50ddf6b3586d28a47d88a24904eb65",
+   "smi.py": "9459838bb02f1894e2124927a28904679536bb2fb77ca2f338c8f6570326942d",
+   "tg.py": "ec48a258e266fc2226d0d10564b606052831ffefbf0642e4f7d04f9de85cfd9e",
+   "tp.py": "419d7da6caa211c721eb6a8c87403977415cf3050f03365377f51cb77b374dfd",
+   "tti.py": "6d6b6f7b99b334d74d91860fc69af1c6c0c46e22207dc45432d60a9824c08ee5"
+  }
+ },
+ "ergebnis": {
+  "dateien": {
+   "bau-s13.json": "c1a862059f6e1adce0a55b8906be383e7d3a64e7eddaeea50c466e7fdaae0e2d",
+   "bau-s24.json": "d1bb57721ef6dcbf8b2333ffb46bbe59b12ee036472d868620f4ddf0c06cc6ca",
+   "hm-orig-s1-a.json": "3d353dcb4d0dfca1447b08d97c3416eb39cd1e0c8edc74c4290841771a8159be",
+   "hm-orig-s1-b.json": "605f7b98a92f859d6af1d47568b8a78f0c5e0ff141e7b3f010108e5d08d1f8f6",
+   "hm-orig-s2-a.json": "5c2f7ccb2f3973600de4e21d0a6cf381a05821f77c33519ce6e7acf242e7bfa5",
+   "hm-orig-s2-b.json": "0de0dda418bf12ca2bebf78485595d30327f1d2c42861b826e4f4ea4d6d18e56",
+   "hm-orig-s3-a.json": "fe805f40aa2c25637ee13b3385d6331f7615f428d9ac8a45fcae9bac2d61f409",
+   "hm-orig-s3-b.json": "f7532b571efba4167a54e5b2ae8e39356cbc2dea14a5c0eac5a8aefea29c9666",
+   "hm-orig-s4-a.json": "25ebe229880fa155303630971dfc99eb7064091e876f000c421895610248e647",
+   "hm-orig-s4-b.json": "ce410c4e868e4c2571becd7e4ae49f8bb685c76601f0cfbb8f5f602568fd3177",
+   "hm-sf-s1-a.json": "bc3052037b7855ce18fb67d473b110fc77e80fa79c9be17da9a4f818ff9ef1d3",
+   "hm-sf-s1-b.json": "fee21d449477a07e1de7297aac5bb85362fb3ef21c25540a5188ff271b720fc4",
+   "hm-sf-s2-a.json": "1c33e4b7f9151b6957e4f0c679441ed9ce72ff99f67ce413f27849fd9d3eed19",
+   "hm-sf-s2-b.json": "b75058eae5351bd35a591cd32a49821e9efd682eeda2de71eeaa2ba610b84bba",
+   "hm-sf-s3-a.json": "1a75e6b52f4a190b2e812d450b6ef219af239ea0e014cb4b398584e63bd8d309",
+   "hm-sf-s3-b.json": "242f6f430a90e523ae732204e9d5315d8b9ca2f6c2504cd81b4531af7770e2cf",
+   "hm-sf-s4-a.json": "b2f8b8dc725f4f7709aedd8151f23c8886751a4b044a4f1993fcd3183f172298",
+   "hm-sf-s4-b.json": "5c3d9fac9c9e3e2abb1d7f9e97189d2364159bae73354c4e4af4a076e0ab8418",
+   "lr-orig-s1.json": "90885b5b37ac64e190bf721ede7ffc0d0c7d36e5a4708c782bb21bc8500278b0",
+   "lr-orig-s2.json": "1a84ee32ba34fb84d858caf770f4842db08eab607805cfd21dd9b5a5c87c35ba",
+   "lr-orig-s3.json": "0e286cc906fe8286bac4cda469e79bd9f3b6c73f505883444f95452865f9bdfc",
+   "lr-orig-s4.json": "c88a081475f58774f289488ff3c4e6ea47530d8b9e13c5cc6aab6731533d1667",
+   "lr-sf-s1.json": "2114b17f29f7048fd58f86ac1ca4a7ad8efefa4c75c9c09fd49526e78612f6c0",
+   "lr-sf-s2.json": "4181e860007bccf9cab0c9b6d2285cdf2573b16d43452301a4ce37f0c8419567",
+   "lr-sf-s3.json": "65e8df288879bf09426d364d5428cfb7b4816f9ce4731ded4bcb27544a6a9f3d",
+   "lr-sf-s4.json": "e267ffe3ffeb4b5f93e3f66e78d7945bf5bd1ab7535e0ee0a964ebc49a29fc11",
+   "sp-glas-s1-a.json": "0eca67b28d05dc7de5984660cfeddfee44e6aff22c23e3bfdeacb923bcc52eed",
+   "sp-glas-s1-b.json": "28d73773a5824c57c7984e5758757c37a203b35b5f9db1eb7c71cc44d39590d6",
+   "sp-glas-s1.json(lrref)": "3eeb584d04b6949da8d8e1c08e11002a7485ceeb70e048232c77b5c320a9c6f1",
+   "sp-glas-s2-a.json": "b8fa483e879214511c96a341a4e8b99dbf99f6e880cd1e2d612a26ba073329bb",
+   "sp-glas-s2-b.json": "1e6142aa97710b401073122dee6040b6c69b0032203a6081fb0502b968338fbe",
+   "sp-glas-s2.json(lrref)": "60b75323d96460db3eb174d8269ac760cdc343ebd291e2d20eb2a0665cb39bc9",
+   "sp-glas-s3-a.json": "1a0e07d43123f07f8f9c94af570986159e4a663ed6d914183c34db8f76149995",
+   "sp-glas-s3-b.json": "c45106badcf91358b55683ba24518a7a3b51523be0dd820b8447d8632d80ff59",
+   "sp-glas-s3.json(lrref)": "6db13f2418f09e63145c94347b3d58ab18858a242db0f7b2daa7213775331890",
+   "sp-glas-s4-a.json": "5178f806b2090da8d2be01e3263be70ab9ffd1a1a7c345b116f1cd613f6603b0",
+   "sp-glas-s4-b.json": "5758768bcabe6fe92c3f1bf949a455e27871e18e8c9c6121dfbc74bf3ddd8c86",
+   "sp-glas-s4.json(lrref)": "b80e9a4807ce8c78abaeb4ec1f3b211331a7a493aa1c33a0c11f4994db7a7d2c"
+  },
+  "vollstaendig": {
+   "orig-s1": true,
+   "orig-s2": true,
+   "orig-s3": true,
+   "orig-s4": true,
+   "sf-s1": true,
+   "sf-s2": true,
+   "sf-s3": true,
+   "sf-s4": true,
+   "lr-orig-s1": true,
+   "lr-orig-s2": true,
+   "lr-orig-s3": true,
+   "lr-orig-s4": true,
+   "lr-sf-s1": true,
+   "lr-sf-s2": true,
+   "lr-sf-s3": true,
+   "lr-sf-s4": true
+  },
+  "sf_gueltig": {
+   "1": true,
+   "2": true,
+   "3": true,
+   "4": true
+  },
+  "kontrolle_hm": {
+   "1": {
+    "A1R1": {
+     "hier": 0.10926325573903273,
+     "hm": 0.10926325573903273
+    },
+    "A1RH": {
+     "hier": null,
+     "hm": null
+    },
+    "A2R1": {
+     "hier": 0.15230878403361725,
+     "hm": 0.15230878403361725
+    },
+    "A2RH": {
+     "hier": 0.7100653281681406,
+     "hm": 0.7100653281681406
+    },
+    "A2LR2": {
+     "hier": 0.08185232609627002,
+     "hm": 0.08185232609627002
+    },
+    "A2LRH": {
+     "hier": null,
+     "hm": null
+    },
+    "A2LRHL": {
+     "hier": null,
+     "hm": null
+    },
+    "A2LR1": {
+     "hier": 0.3466058948129469,
+     "hm": 0.3466058948129469
+    },
+    "w2k2_rel_abw_max": 0.0
+   },
+   "2": {
+    "A1R1": {
+     "hier": 0.11381850825907014,
+     "hm": 0.11381850825907014
+    },
+    "A1RH": {
+     "hier": 0.509459729745519,
+     "hm": 0.509459729745519
+    },
+    "A2R1": {
+     "hier": 0.18080275815917024,
+     "hm": 0.18080275815917024
+    },
+    "A2RH": {
+     "hier": null,
+     "hm": null
+    },
+    "A2LR2": {
+     "hier": 0.07184715453496437,
+     "hm": 0.07184715453496437
+    },
+    "A2LRH": {
+     "hier": null,
+     "hm": null
+    },
+    "A2LRHL": {
+     "hier": null,
+     "hm": null
+    },
+    "A2LR1": {
+     "hier": 0.7638029381600622,
+     "hm": 0.7638029381600622
+    },
+    "w2k2_rel_abw_max": 0.0
+   },
+   "3": {
+    "A1R1": {
+     "hier": 0.2369727887903832,
+     "hm": 0.2369727887903832
+    },
+    "A1RH": {
+     "hier": 0.6308202857363756,
+     "hm": 0.6308202857363756
+    },
+    "A2R1": {
+     "hier": 0.2410633862725946,
+     "hm": 0.2410633862725946
+    },
+    "A2RH": {
+     "hier": null,
+     "hm": null
+    },
+    "A2LR2": {
+     "hier": 0.08014040607129003,
+     "hm": 0.08014040607129003
+    },
+    "A2LRH": {
+     "hier": null,
+     "hm": null
+    },
+    "A2LRHL": {
+     "hier": null,
+     "hm": null
+    },
+    "A2LR1": {
+     "hier": null,
+     "hm": null
+    },
+    "w2k2_rel_abw_max": 0.0
+   },
+   "4": {
+    "A1R1": {
+     "hier": 0.12460601587718134,
+     "hm": 0.12460601587718134
+    },
+    "A1RH": {
+     "hier": null,
+     "hm": null
+    },
+    "A2R1": {
+     "hier": 0.14196181717528455,
+     "hm": 0.14196181717528455
+    },
+    "A2RH": {
+     "hier": null,
+     "hm": null
+    },
+    "A2LR2": {
+     "hier": 0.08539009773661066,
+     "hm": 0.08539009773661066
+    },
+    "A2LRH": {
+     "hier": null,
+     "hm": null
+    },
+    "A2LRHL": {
+     "hier": null,
+     "hm": null
+    },
+    "A2LR1": {
+     "hier": 9.49962131524944,
+     "hm": 9.49962131524944
+    },
+    "w2k2_rel_abw_max": 0.0
+   }
+  },
+  "urteile": {
+   "SF0": {
+    "plan": "eingetroffen",
+    "wortlaut": "eingetroffen",
+    "n_vergleiche": 232,
+    "abweichungen": [],
+    "je_saat": {
+     "1": {
+      "A1RH_max": 10,
+      "A2RH_max": 6,
+      "LR_bereich": [
+       27,
+       28
+      ],
+      "gleich": true
+     },
+     "2": {
+      "A1RH_max": 9,
+      "A2RH_max": 5,
+      "LR_bereich": [
+       30,
+       31
+      ],
+      "gleich": true
+     },
+     "3": {
+      "A1RH_max": 10,
+      "A2RH_max": 7,
+      "LR_bereich": [
+       31,
+       33
+      ],
+      "gleich": true
+     },
+     "4": {
+      "A1RH_max": 9,
+      "A2RH_max": 6,
+      "LR_bereich": [
+       28,
+       28
+      ],
+      "gleich": true
+     }
+    }
+   },
+   "SF1": {
+    "plan": "verfehlt",
+    "wortlaut": "verfehlt",
+    "n_moden": 949,
+    "f_min": 0.0720676062480884,
+    "f_median": 0.16852550323386867,
+    "f_max": 0.3832099221950237,
+    "n_ab_0.5": 0,
+    "n_ab_0.25": 48,
+    "inkonsistent_eigh_gegen_hm": []
+   },
+   "SF2": {
+    "plan": "verfehlt",
+    "wortlaut": "verfehlt",
+    "saaten_gewertet": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "punkte_mit_wachsend": 128,
+    "max_n_neg": {
+     "A1RH": 7,
+     "A2RH": 6
+    },
+    "liste": [
+     [
+      1,
+      0,
+      "eps1",
+      "A1RH",
+      6
+     ],
+     [
+      1,
+      0,
+      "eps1",
+      "A2RH",
+      6
+     ],
+     [
+      1,
+      0,
+      "eps2",
+      "A1RH",
+      6
+     ],
+     [
+      1,
+      0,
+      "eps2",
+      "A2RH",
+      6
+     ],
+     [
+      1,
+      1,
+      "eps1",
+      "A1RH",
+      7
+     ],
+     [
+      1,
+      1,
+      "eps1",
+      "A2RH",
+      5
+     ],
+     [
+      1,
+      2,
+      "eps1",
+      "A1RH",
+      7
+     ],
+     [
+      1,
+      2,
+      "eps1",
+      "A2RH",
+      6
+     ],
+     [
+      1,
+      3,
+      "eps1",
+      "A1RH",
+      7
+     ],
+     [
+      1,
+      3,
+      "eps1",
+      "A2RH",
+      6
+     ],
+     [
+      1,
+      3,
+      "eps2",
+      "A1RH",
+      7
+     ],
+     [
+      1,
+      3,
+      "eps2",
+      "A2RH",
+      6
+     ],
+     [
+      1,
+      4,
+      "eps1",
+      "A1RH",
+      6
+     ],
+     [
+      1,
+      4,
+      "eps1",
+      "A2RH",
+      5
+     ],
+     [
+      1,
+      5,
+      "eps1",
+      "A1RH",
+      7
+     ],
+     [
+      1,
+      5,
+      "eps1",
+      "A2RH",
+      6
+     ],
+     [
+      1,
+      6,
+      "eps1",
+      "A1RH",
+      6
+     ],
+     [
+      1,
+      6,
+      "eps1",
+      "A2RH",
+      6
+     ],
+     [
+      1,
+      7,
+      "eps1",
+      "A1RH",
+      7
+     ],
+     [
+      1,
+      7,
+      "eps1",
+      "A2RH",
+      5
+     ],
+     [
+      1,
+      8,
+      "eps1",
+      "A1RH",
+      7
+     ],
+     [
+      1,
+      8,
+      "eps1",
+      "A2RH",
+      6
+     ],
+     [
+      1,
+      9,
+      "eps1",
+      "A1RH",
+      7
+     ],
+     [
+      1,
+      9,
+      "eps1",
+      "A2RH",
+      5
+     ],
+     [
+      1,
+      9,
+      "eps2",
+      "A1RH",
+      7
+     ],
+     [
+      1,
+      9,
+      "eps2",
+      "A2RH",
+      5
+     ],
+     [
+      1,
+      10,
+      "eps1",
+      "A1RH",
+      7
+     ],
+     [
+      1,
+      10,
+      "eps1",
+      "A2RH",
+      6
+     ],
+     [
+      1,
+      11,
+      "eps1",
+      "A1RH",
+      7
+     ],
+     [
+      1,
+      11,
+      "eps1",
+      "A2RH",
+      6
+     ],
+     [
+      1,
+      12,
+      "eps1",
+      "A1RH",
+      6
+     ],
+     [
+      1,
+      12,
+      "eps1",
+      "A2RH",
+      5
+     ],
+     [
+      2,
+      0,
+      "eps1",
+      "A1RH",
+      4
+     ],
+     [
+      2,
+      0,
+      "eps1",
+      "A2RH",
+      5
+     ],
+     [
+      2,
+      0,
+      "eps2",
+      "A1RH",
+      4
+     ],
+     [
+      2,
+      0,
+      "eps2",
+      "A2RH",
+      5
+     ],
+     [
+      2,
+      1,
+      "eps1",
+      "A1RH",
+      4
+     ],
+     [
+      2,
+      1,
+      "eps1",
+      "A2RH",
+      5
+     ],
+     [
+      2,
+      2,
+      "eps1",
+      "A1RH",
+      4
+     ],
+     [
+      2,
+      2,
+      "eps1",
+      "A2RH",
+      5
+     ],
+     [
+      2,
+      3,
+      "eps1",
+      "A1RH",
+      4
+     ],
+     [
+      2,
+      3,
+      "eps1",
+      "A2RH",
+      5
+     ],
+     [
+      2,
+      3,
+      "eps2",
+      "A1RH",
+      4
+     ],
+     [
+      2,
+      3,
+      "eps2",
+      "A2RH",
+      5
+     ],
+     [
+      2,
+      4,
+      "eps1",
+      "A1RH",
+      5
+     ],
+     [
+      2,
+      4,
+      "eps1",
+      "A2RH",
+      5
+     ],
+     [
+      2,
+      5,
+      "eps1",
+      "A1RH",
+      5
+     ],
+     [
+      2,
+      5,
+      "eps1",
+      "A2RH",
+      5
+     ],
+     [
+      2,
+      6,
+      "eps1",
+      "A1RH",
+      4
+     ],
+     [
+      2,
+      6,
+      "eps1",
+      "A2RH",
+      5
+     ],
+     [
+      2,
+      7,
+      "eps1",
+      "A1RH",
+      4
+     ],
+     [
+      2,
+      7,
+      "eps1",
+      "A2RH",
+      5
+     ],
+     [
+      2,
+      8,
+      "eps1",
+      "A1RH",
+      5
+     ],
+     [
+      2,
+      8,
+      "eps1",
+      "A2RH",
+      5
+     ],
+     [
+      2,
+      9,
+      "eps1",
+      "A1RH",
+      4
+     ],
+     [
+      2,
+      9,
+      "eps1",
+      "A2RH",
+      5
+     ],
+     [
+      2,
+      9,
+      "eps2",
+      "A1RH",
+      4
+     ],
+     [
+      2,
+      9,
+      "eps2",
+      "A2RH",
+      5
+     ],
+     [
+      2,
+      10,
+      "eps1",
+      "A1RH",
+      4
+     ],
+     [
+      2,
+      10,
+      "eps1",
+      "A2RH",
+      5
+     ],
+     [
+      2,
+      11,
+      "eps1",
+      "A1RH",
+      5
+     ],
+     [
+      2,
+      11,
+      "eps1",
+      "A2RH",
+      5
+     ],
+     [
+      2,
+      12,
+      "eps1",
+      "A1RH",
+      4
+     ],
+     [
+      2,
+      12,
+      "eps1",
+      "A2RH",
+      5
+     ],
+     [
+      3,
+      0,
+      "eps1",
+      "A1RH",
+      6
+     ],
+     [
+      3,
+      0,
+      "eps1",
+      "A2RH",
+      5
+     ],
+     [
+      3,
+      0,
+      "eps2",
+      "A1RH",
+      6
+     ],
+     [
+      3,
+      0,
+      "eps2",
+      "A2RH",
+      5
+     ],
+     [
+      3,
+      1,
+      "eps1",
+      "A1RH",
+      6
+     ],
+     [
+      3,
+      1,
+      "eps1",
+      "A2RH",
+      5
+     ],
+     [
+      3,
+      2,
+      "eps1",
+      "A1RH",
+      6
+     ],
+     [
+      3,
+      2,
+      "eps1",
+      "A2RH",
+      5
+     ],
+     [
+      3,
+      3,
+      "eps1",
+      "A1RH",
+      6
+     ],
+     [
+      3,
+      3,
+      "eps1",
+      "A2RH",
+      5
+     ],
+     [
+      3,
+      3,
+      "eps2",
+      "A1RH",
+      6
+     ],
+     [
+      3,
+      3,
+      "eps2",
+      "A2RH",
+      5
+     ],
+     [
+      3,
+      4,
+      "eps1",
+      "A1RH",
+      6
+     ],
+     [
+      3,
+      4,
+      "eps1",
+      "A2RH",
+      5
+     ],
+     [
+      3,
+      5,
+      "eps1",
+      "A1RH",
+      6
+     ],
+     [
+      3,
+      5,
+      "eps1",
+      "A2RH",
+      5
+     ]
+    ]
+   },
+   "SF3": {
+    "plan": "eingetroffen",
+    "wortlaut": "eingetroffen",
+    "saaten_gewertet": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "n_wachsend_bereich": [
+     20,
+     24
+    ],
+    "unter_10_LR_satz": [],
+    "unter_10_HM_satz_A2LR1": [],
+    "legendre_singulaer": []
+   },
+   "SF4": {
+    "plan": "verfehlt",
+    "wortlaut": "verfehlt",
+    "mittel_orig": 0.14616514216641685,
+    "mittel_sf": 0.12250712747539577,
+    "je_saat": {
+     "1": {
+      "orig": [
+       0.10926325573903273,
+       true
+      ],
+      "sf": [
+       0.11384709175474694,
+       true
+      ]
+     },
+     "2": {
+      "orig": [
+       0.11381850825907014,
+       true
+      ],
+      "sf": [
+       0.10291273464845574,
+       true
+      ]
+     },
+     "3": {
+      "orig": [
+       0.2369727887903832,
+       true
+      ],
+      "sf": [
+       0.12814121792343025,
+       true
+      ]
+     },
+     "4": {
+      "orig": [
+       0.12460601587718134,
+       true
+      ],
+      "sf": [
+       0.14512746557495015,
+       true
+      ]
+     }
+    }
+   }
+  },
+  "tabellen_md": "auswertung-tabellen.md"
+ },
+ "laufzeit_s": 0.19061923027038574,
+ "maxrss_MB": 79.93359375,
+ "ende_utc": "2026-10-05T10:13:12Z"
+}

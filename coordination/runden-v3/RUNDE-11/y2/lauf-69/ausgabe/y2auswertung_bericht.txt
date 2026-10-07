@@ -1,0 +1,62 @@
+Y-2 Auswertung 2026-09-30T11:01:42+00:00 (Ordner ausgabe)
+
+Arm B: c = 2, b_0 = 1.6667, eps = 0, Q = 3600.0; Ball: b 1.1667 m 1.000: omega 0.57758, S_0 1.1786, R_halb 29.025
+  g+0.5_gleich9_neutral_B: E 2166.79485, dE1000 1.4e-12, Schub 0.02, Gegenwirbel False, Windung r 2,5/4,5: 1:1/1 2:1/1 3:1/1, Arme mit Rippe 0/3, Rippen Mitte 0/0/0, P-Umlauf J1,5 2.00, Kantenmitten min n_a/S 0.277/0.277/0.277
+  g+0.5_gleich9_Y_B: E 2166.79485, dE1000 9.1e-13, Schub 0.02, Gegenwirbel False, Windung r 2,5/4,5: 1:1/1 2:1/1 3:1/1, Arme mit Rippe 0/3, Rippen Mitte 0/0/0, P-Umlauf J1,5 2.00, Kantenmitten min n_a/S 0.277/0.277/0.277
+  g+0.5_gleich12_neutral_B: E 2172.14813, dE1000 5.0e-12, Schub 0.07, Gegenwirbel False, Windung r 2,5/4,5: 1:1/1 2:1/1 3:1/1, Arme mit Rippe 0/3, Rippen Mitte 0/0/0, P-Umlauf J1,5 2.00, Kantenmitten min n_a/S 0.318/0.319/0.319
+  g+0.5_gleich12_Y_B: E 2172.14813, dE1000 4.5e-12, Schub 0.07, Gegenwirbel False, Windung r 2,5/4,5: 1:1/1 2:1/1 3:1/1, Arme mit Rippe 0/3, Rippen Mitte 0/0/0, P-Umlauf J1,5 2.00, Kantenmitten min n_a/S 0.318/0.319/0.319
+  g+0.5_kollinear8_neutral_B: E 2168.88533, dE1000 8.3e-08, Schub 0.00, Gegenwirbel False, Windung r 2,5/4,5: 1:1/1 2:1/1 3:1/1, Arme mit Rippe 0/2, Rippen Mitte 0/0, P-Umlauf J1,5 2.00, Kantenmitten min n_a/S 0.054/0.054/0.000
+  g+0.5_kollinear8_Y_B: E 2168.88533, dE1000 8.4e-08, Schub 0.00, Gegenwirbel False, Windung r 2,5/4,5: 1:1/1 2:1/1 3:1/1, Arme mit Rippe 0/2, Rippen Mitte 0/0, P-Umlauf J1,5 2.00, Kantenmitten min n_a/S 0.054/0.054/0.000
+  beste Saat: gleich9 neutral E 2166.79485, gleich12 Y E 2172.14813, kollinear8 neutral E 2168.88533
+  (i) ohne Gegenwirbel 6 von 6 Nicht-Meson-Laeufen (bindend: Anteil >= 0,8; Zaehlung >= 4: True) -> True
+  (ii) je Geometrie (beste Saat): gleich9: Arme mit Rippe 0/3, Knoten J True; gleich12: Arme mit Rippe 0/3, Knoten J True; kollinear8: Arme mit Rippe 0/2, Knoten J True -> False
+  (iii) E(gleich 12) - E(gleich 9) = 5.3533 (Soll 3 bis 5) -> False
+  Meson haupt: E(6/9/12) = 2155.1914 / 2160.1952 / 2164.0607; Steigung 6->9 1.6679, 9->12 1.2885, flach False, Gegenwirbel [True, True, True], dE1000 [5.4569682106375694e-12, 2.0949755707988515e-08, 5.885158316232264e-08]
+  Meson kl2: E(6/9/12) = 2162.2493 / 2164.3412 / 2164.3916; Steigung 6->9 0.6973, 9->12 0.0168, flach True, Gegenwirbel [True, True, True], dE1000 [6.139089236967266e-11, 1.0322764865122736e-10, 1.532498572487384e-10]
+  (iv) Meson Hauptreihe beide Steigungen in [0,6; 1,0] -> False
+  (v) E(kollinear 8) - E(gleich 9) = 2.0905 (Soll < 1) -> False
+  Scheiterregel: auswertbar True; Geometrien mit Gegenwirbel 0 von 3; Meson flach False; Kantenmitten-Rippe gleich 9 und 12 False, nicht auf den Armen True; Y-Bedingung False
+  zutreffende Ausgaenge [] -> URTEIL Arm B: weder noch
+  Erwartung A ((i) verfehlt in >= 2 von 5, bindend Anteil >= 0,4): mit Gegenwirbel 0 von 6 -> False
+  Erwartung C (eine Rippe je Arm, >= 2/3 der Arme in der Mitte genau 1): 0 von 8 (zwei oder mehr: 0) -> False
+
+Arm A: c = 1, b_0 = 1.0000, eps = 0, Q = 3600.0; Ball: b 0.8333 m 1.000: omega 0.81421, S_0 0.8453, R_halb 28.825, b 1.1667 m 1.000: omega 0.57758, S_0 1.1786, R_halb 29.025
+  g+0.5_gleich9_neutral_A: E 2978.34514, dE1000 4.5e-13, Schub 0.03, Gegenwirbel False, Windung r 2,5/4,5: 1:1/1 2:1/1 3:1/1, Arme mit Rippe 0/3, Rippen Mitte 0/0/0, P-Umlauf J1,5 2.00, Kantenmitten min n_a/S 0.254/0.254/0.254
+  g+0.5_gleich9_Y_A: E 2978.34514, dE1000 0.0e+00, Schub 0.03, Gegenwirbel False, Windung r 2,5/4,5: 1:1/1 2:1/1 3:1/1, Arme mit Rippe 0/3, Rippen Mitte 0/0/0, P-Umlauf J1,5 2.00, Kantenmitten min n_a/S 0.254/0.254/0.254
+  g+0.5_gleich12_neutral_A: E 2981.01313, dE1000 1.4e-11, Schub 0.09, Gegenwirbel False, Windung r 2,5/4,5: 1:1/1 2:1/1 3:1/1, Arme mit Rippe 0/3, Rippen Mitte 0/0/0, P-Umlauf J1,5 2.00, Kantenmitten min n_a/S 0.301/0.301/0.301
+  g+0.5_gleich12_Y_A: E 2981.01313, dE1000 1.3e-11, Schub 0.09, Gegenwirbel False, Windung r 2,5/4,5: 1:1/1 2:1/1 3:1/1, Arme mit Rippe 0/3, Rippen Mitte 0/0/0, P-Umlauf J1,5 2.00, Kantenmitten min n_a/S 0.301/0.301/0.301
+  g+0.5_kollinear8_neutral_A: E 2979.39026, dE1000 6.7e-08, Schub 0.00, Gegenwirbel False, Windung r 2,5/4,5: 1:1/1 2:1/1 3:1/1, Arme mit Rippe 0/2, Rippen Mitte 0/0, P-Umlauf J1,5 2.00, Kantenmitten min n_a/S 0.039/0.039/0.000
+  g+0.5_kollinear8_Y_A: E 2979.39026, dE1000 6.9e-08, Schub 0.00, Gegenwirbel False, Windung r 2,5/4,5: 1:1/1 2:1/1 3:1/1, Arme mit Rippe 0/2, Rippen Mitte 0/0, P-Umlauf J1,5 2.00, Kantenmitten min n_a/S 0.039/0.039/0.000
+  beste Saat: gleich9 neutral E 2978.34514, gleich12 Y E 2981.01313, kollinear8 neutral E 2979.39026
+  (i) ohne Gegenwirbel 6 von 6 Nicht-Meson-Laeufen (bindend: Anteil >= 0,8; Zaehlung >= 4: True) -> True
+  (ii) je Geometrie (beste Saat): gleich9: Arme mit Rippe 0/3, Knoten J True; gleich12: Arme mit Rippe 0/3, Knoten J True; kollinear8: Arme mit Rippe 0/2, Knoten J True -> False
+  (iii) E(gleich 12) - E(gleich 9) = 2.6680 (Soll 3 bis 5) -> False
+  Meson haupt: E(6/9/12) = 2970.8831 / 2973.9630 / 2976.3173; Steigung 6->9 1.0266, 9->12 0.7848, flach False, Gegenwirbel [True, True, True], dE1000 [4.274625098332763e-11, 2.19279172597453e-09, 2.5638655642978847e-09]
+  Meson kl2: E(6/9/12) = 2972.0630 / 2974.8999 / 2974.9910; Steigung 6->9 0.9456, 9->12 0.0304, flach True, Gegenwirbel [True, True, True], dE1000 [3.501554601825774e-11, 5.093170329928398e-11, 6.684786058031023e-11]
+  (iv) Meson Hauptreihe beide Steigungen in [0,6; 1,0] -> False
+  (v) E(kollinear 8) - E(gleich 9) = 1.0451 (Soll < 1) -> False
+  Scheiterregel: auswertbar True; Geometrien mit Gegenwirbel 0 von 3; Meson flach False; Kantenmitten-Rippe gleich 9 und 12 False, nicht auf den Armen True; Y-Bedingung False
+  zutreffende Ausgaenge [] -> URTEIL Arm A: weder noch
+  Erwartung A ((i) verfehlt in >= 2 von 5, bindend Anteil >= 0,4): mit Gegenwirbel 0 von 6 -> False
+  Erwartung C (eine Rippe je Arm, >= 2/3 der Arme in der Mitte genau 1): 0 von 8 (zwei oder mehr: 0) -> False
+  Reproduktion Y-1 dreier_k4 gleich 9 Y: E 2166.6778595005 gegen 2166.6778595005, relativ 0.00e+00 (Soll <= 1e-9)
+
+Arm C: c = 0, b_0 = 1.0000, eps = 0.3, Q = 1142.5; Ball: b 1.1667 m 0.700: omega 0.18329, S_0 1.1786, R_halb 29.025
+  g+0.5_gleich9_neutral_C: E 298.39364, dE1000 8.0e-13, Schub 0.03, Gegenwirbel True, Windung r 2,5/4,5: 1:1/1 2:1/1 3:1/0, Arme mit Rippe 0/3, Rippen Mitte 0/0/0, P-Umlauf J1,5 2.00, Kantenmitten min n_a/S 0.297/0.297/0.297
+  g+0.5_gleich9_Y_C: E 298.39364, dE1000 9.1e-13, Schub 0.03, Gegenwirbel True, Windung r 2,5/4,5: 1:1/1 2:1/1 3:1/0, Arme mit Rippe 0/3, Rippen Mitte 0/0/0, P-Umlauf J1,5 2.00, Kantenmitten min n_a/S 0.297/0.297/0.297
+  g+0.5_gleich12_neutral_C: E 303.85887, dE1000 4.5e-12, Schub 0.08, Gegenwirbel True, Windung r 2,5/4,5: 1:1/0 2:1/-0 3:1/-0, Arme mit Rippe 0/3, Rippen Mitte 0/0/0, P-Umlauf J1,5 2.00, Kantenmitten min n_a/S 0.327/0.327/0.327
+  g+0.5_gleich12_Y_C: E 303.85887, dE1000 5.2e-12, Schub 0.08, Gegenwirbel True, Windung r 2,5/4,5: 1:1/0 2:1/-0 3:1/0, Arme mit Rippe 0/3, Rippen Mitte 0/0/0, P-Umlauf J1,5 2.00, Kantenmitten min n_a/S 0.327/0.327/0.327
+  g+0.5_kollinear8_neutral_C: E 300.35822, dE1000 8.9e-08, Schub 0.00, Gegenwirbel True, Windung r 2,5/4,5: 1:1/0 2:1/1 3:1/0, Arme mit Rippe 0/2, Rippen Mitte 0/0, P-Umlauf J1,5 2.00, Kantenmitten min n_a/S 0.005/0.005/0.000
+  g+0.5_kollinear8_Y_C: E 300.35822, dE1000 9.0e-08, Schub 0.00, Gegenwirbel True, Windung r 2,5/4,5: 1:1/0 2:1/1 3:1/0, Arme mit Rippe 0/2, Rippen Mitte 0/0, P-Umlauf J1,5 2.00, Kantenmitten min n_a/S 0.005/0.005/0.000
+  beste Saat: gleich9 neutral E 298.39364, gleich12 neutral E 303.85887, kollinear8 neutral E 300.35822
+  (i) ohne Gegenwirbel 0 von 6 Nicht-Meson-Laeufen (bindend: Anteil >= 0,8; Zaehlung >= 4: False) -> False
+  (ii) je Geometrie (beste Saat): gleich9: Arme mit Rippe 0/3, Knoten J True; gleich12: Arme mit Rippe 0/3, Knoten J True; kollinear8: Arme mit Rippe 0/2, Knoten J True -> False
+  (iii) E(gleich 12) - E(gleich 9) = 5.4652 (Soll 3 bis 5) -> False
+  Meson haupt: E(6/9/12) = 297.0529 / 292.7872 / 296.7193; Steigung 6->9 -1.4219, 9->12 1.3107, flach False, Gegenwirbel [True, True, True], dE1000 [3.524291969370097e-11, 4.494859240367077e-08, 1.5820444332348416e-07]
+  Meson kl2: E(6/9/12) = 295.0887 / 297.5227 / 297.6651; Steigung 6->9 0.8113, 9->12 0.0475, flach True, Gegenwirbel [True, True, True], dE1000 [4.615685611497611e-11, 7.810285751475021e-11, 1.0527401173021644e-10]
+  (iv) Meson Hauptreihe beide Steigungen in [0,6; 1,0] -> False
+  (v) E(kollinear 8) - E(gleich 9) = 1.9646 (Soll < 1) -> False
+  Scheiterregel: auswertbar True; Geometrien mit Gegenwirbel 3 von 3; Meson flach False; Kantenmitten-Rippe gleich 9 und 12 False, nicht auf den Armen True; Y-Bedingung False
+  zutreffende Ausgaenge ['Quartik traegt das Y nicht'] -> URTEIL Arm C: Quartik traegt das Y nicht
+  Erwartung A ((i) verfehlt in >= 2 von 5, bindend Anteil >= 0,4): mit Gegenwirbel 6 von 6 -> True
+  Erwartung C (eine Rippe je Arm, >= 2/3 der Arme in der Mitte genau 1): 0 von 8 (zwei oder mehr: 0) -> False

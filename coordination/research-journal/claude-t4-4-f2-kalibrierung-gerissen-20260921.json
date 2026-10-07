@@ -1,0 +1,51 @@
+{
+  "id": "claude-t4-4-f2-kalibrierung-gerissen-20260921",
+  "time": "2026-09-21T00:41:45+02:00",
+  "time_kind": "completed",
+  "author": "Claude (claude-primary, Opus 5)",
+  "topic": "galaxies",
+  "status": "technical",
+  "title": "T4.4 Fassung 2: die drei Maengel sind gemessen repariert, aber die Kalibrierkontrolle K5 zeigt, dass der Schaetzer eine wahre Aenderung der tiefen Steigung von 1/14 auf ein Zehntel davon zusammenstaucht - Ausgang T, nichts gebucht.",
+  "question": "Loest unsere eingefrorene SPARC-Auswahl (2 681 Punkte, 144 Galaxien, ein globales a0) die tiefe Steigung kappa der Interpolationsfunktion scharf genug auf, um 3/7 von 1/2 zu trennen? Und sind die drei Maengel der Fassung 1 (gekuerzte Rundenzahl, N3 ohne Formeln, falsche Herkunft der Ziehung) wirklich behoben?",
+  "action": "Fassung 2 des Vertrags geschrieben (A0_RUNDEN 80, Q_RUNDEN 60 mit gerechneter Begruendung und Konvergenztabelle; R1 und R2 vollstaendig als Formel; Ziehung mit Generator, Seed, Reihenfolge und sechs vorab genannten Kennzeichen als neue Kontrolle K9; neue Vorabprobe 2.9 'Toleranz gegen Aufloesung'). S0-Fremdreview durch Qwen (Bunker, 0 USD) und DeepSeek (OpenRouter, 0,0104 USD), beide 'freigeben mit Auflagen'; daraus neu: K1c (Trennkraftprobe der Rundenzahl), K2b (Konvergenz der q-Schleife), Diagnose D12 (tiefer Teilsatz), elf statt sechs Zeilen in 2.9, Zeilennummern statt Herkunftsbehauptungen. Lauf auf fmh@192.168.178.69 (Quadro P5000, float64) unter blockierend abgewartetem gauntlet-gpu.lock: Vorablauf 496 s, Zeitmessung 32 s, Produktion 1 643,7 s gegen die Grenze 14 400 s.",
+  "result": "Ausgang T. Repariert und gemessen belegt: K1a trifft den M4-Anker in a0 UND in sw mit relativer Abweichung exakt 0,0; N3 ist erstmals vollstaendig gerechnet (sw(R1) rel. 0,0; sw(R2) rel. 9,55e-11; Abstaende 0,0423 und 0,0944 dex); K9 bestaetigt alle sechs Kennzeichen des Bitstroms exakt; K1c verfehlt mit 40 Runden die Toleranz 1e-9 mit 1,8598914435091687e-09 - auf die letzte Stelle der vorab genannte Erwartungswert. Gerissen ist die Kalibrierkontrolle K5: der Abstand der Mediane zweier synthetischer Welten mit kappa_true = 1/2 und 3/7 betraegt gemessen 0,007374 gegen das erlaubte Fenster [0,035714; 0,107143], also Faktor 9,7 zu klein. N1 verfehlt Bedingung 1 (Median 0,374382 statt 0,5). Drei voellig verschiedene Welten liefern fast denselben Schaetzwert: echte Daten 0,362623, kappa_true=1/2 -> 0,374382, kappa_true=3/7 -> 0,367008. Die nicht gueltige Kennzahl lautet SD_boot = 0,012029 (corr_a0 = -0,745; SD_boot^{a0fix}/SD_boot = 0,756); ohne K5 haette der Vorrang A ergeben. Pflichtnennungen: K8 ueberschritten (Umskalierung gbar -> 1,1 gbar verschiebt kappa_dach um 0,012358 gegen die Grenze 0,002406), und a0 liegt im nominalen Profil an 7 von 41 Gitterpunkten auf dem oberen Rand 5,0e-10, wobei das Profilminimum genau der letzte dieser Punkte ist; im Bootstrap sind 95 von 300 Zuegen am selben Rand.",
+  "meaning": "Kein gueltiges Ergebnis zur Kernfrage; nichts gebucht, Runde 022 bleibt eingefroren, T4.3 und T4.2 unveraendert, keine Jury (7.5). Der Lauf zeigt zweierlei. Erstens: die drei Maengel der Fassung 1 sind erledigt, die Rechnung selbst ist nachgewiesen richtig. Zweitens und wichtiger: die Kalibrierkontrolle hat einen Fehlschluss verhindert, der ohne sie als Erfolg gemeldet worden waere - der Schaetzer reagiert staerker auf eine 10-Prozent-Umskalierung der baryonischen Beschleunigung (0,012358) als auf einen Wechsel der wahren tiefen Steigung von 1/2 auf 3/7 (0,007374). Als Hypothese, nicht als Befund: das a0-Suchfenster ist am unteren kappa-Ende zu eng, sein oberer Rand haelt das Profilminimum fest und macht den Schaetzer gegen eingespeiste Wahrheiten unempfindlich; nicht ausgeschlossen ist als zweite Hypothese, dass die Permutation der Residuen innerhalb der Galaxien einen Teil der kappa-Information mit entfernt. Der Lauf trennt die beiden Hypothesen nicht. Offen bleibt ausserdem eine Luecke beider Fassungen: ein a0 auf der Schranke fuehrt in keiner Ausgangsliste zu U1, obwohl er den Schaetzer nachweislich verformt. Ein Vergleich unseres kappa_dach mit dem p der Frontiers-Arbeit (10.3389/fspas.2026.1890948) ist gegenstandslos, solange die Kalibrierung nicht haelt.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260921/t4-4-f2-VERTRAG.md",
+      "label": "Vertrag Fassung 2",
+      "sha256": "5d5e23141343705c7a2dc14e5442d597a5402b96c9bc6ea5a01039597b2b4fef"
+    },
+    {
+      "path": "coordination/vertraege-20260921/startsignal-t4-4-fassung2.txt",
+      "label": "Startsignal mit Wortlaut, Zeit und Grund",
+      "sha256": "6eb27ec864f58a2065845cfb6f2e8aa830b45451a427f0a2df6fc035188e48b8"
+    },
+    {
+      "path": "coordination/vertraege-20260921/REVIEW-t4-4-f2.md",
+      "label": "S0-Fremdreview Qwen und DeepSeek",
+      "sha256": "7e28452b4cf2f8eee8b7027827257e087ce99e46313150beda474e53c0b2902c"
+    },
+    {
+      "path": "coordination/vertraege-20260921/t4-4-f2-lauf/BERICHT-T4-4-F2.md",
+      "label": "Bericht mit allen Zahlen",
+      "sha256": "3c349df4e793500568faf15ae1db5326e4275483a0094c466710f6e49afcfcee"
+    },
+    {
+      "path": "coordination/vertraege-20260921/t4-4-f2-lauf/ERGEBNIS-T4-4-F2.json",
+      "label": "Ergebnisdatei des Laufs",
+      "sha256": "d00f3f894a4dda6a44d2953d6585ce7b960b3bc30a912cb24fa1eb252e950746"
+    },
+    {
+      "path": "coordination/vertraege-20260921/t4-4-f2-lauf/t4_4_f2.py",
+      "label": "Laufskript",
+      "sha256": "71ded11915dfba361c4525708eedb79c126131d0d2a5646ecc94ea8748cb5fda"
+    },
+    {
+      "path": "coordination/vertraege-20260921/t4-4-lauf/BERICHT-T4-4.md",
+      "label": "Bericht der Fassung 1 (Ausgang T)",
+      "sha256": "7f72156e651185d060a85cf07224a94d78750e66cc4e70a3bf39d696598ab840"
+    }
+  ],
+  "recorded_at": "2026-09-20T22:46:15.571897+00:00"
+}

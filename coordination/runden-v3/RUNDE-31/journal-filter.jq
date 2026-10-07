@@ -1,0 +1,15 @@
+split("\n") | map(select(length>0) | split(" ") | {path: .[2], sha256: .[0]}) as $src | {
+  id: "claude-runde-v3-31-20261003",
+  time: $t,
+  time_kind: "completed",
+  author: "claude-primary (Anthropic, Opus 5.5), Leitung, Protokoll, naive Extrapolation, Vergleich; Code-Agent Anthropic (Opus 5.5) Messung; Codex (OpenAI) versiegelte Vorhersage",
+  topic: "theory",
+  status: "reported",
+  evidenzart: "modell",
+  title: "Runde 31 nach v3 (explorativ): Blindtest der parameterfreien 3D-Sprossenformel an sechs neuen Sprossen nicht bestanden (beta = 1: 0,23 bis 0,26 in 1/eps gegen Tor 0,10; beta = 1/2: 0,04 bis 0,06 im Tor); naive Extrapolation genauer",
+  question: "Trifft Codex' parameterfreie Formel z_j = [(j + 1/2) pi - C]/(k0 A) (aus A, B_R, c_rho, k0, k1, phi0) die Lage neuer, noch nie gerechneter 3D-Sprossen?",
+  action: "Codex versiegelte die Vorhersage (Hash per Peerbus, Protokoll mit Tor 0,10 je Punkt und Vergleich gegen eine naive Extrapolation); die Leitung versiegelte die naive Extrapolation; ein Code-Agent mass sechs neue Sprossen (beta = 1/2: n = 16 bis 18; beta = 1: drei unter eps = 0,0309) ohne Kenntnis beider Dateien; Vergleich nach Messfreeze.",
+  result: "Gemessen z = 1/eps: 37,4316 / 39,7413 / 42,0389 (beta = 1/2), 34,98284 / 37,58462 / 40,18844 (beta = 1). Formel minus Messung: -0,056 / -0,056 / -0,043 und -0,262 / -0,245 / -0,230. Naive Extrapolation: +0,003 / +0,003 / +0,016 und +0,002 / +0,005 / +0,010. Tor nicht bestanden, Zusatz nicht bestanden, Gesamterfolg nein; Urteil eindeutig.",
+  meaning: "Explorativ, keine Messdaten. Die nach der O(1)-Ordnung abgebrochene Formel ist bei diesen eps zu grob; die O(eps)-Glieder sind gross (nachtraeglich, versiegelt). Kein Widerspruch zur Wandtangente; asymptotische Richtigkeit ungeprueft. Naechster Schritt: O(eps)-Glieder blind herleiten, Test an kleineren eps.",
+  sources: $src
+}

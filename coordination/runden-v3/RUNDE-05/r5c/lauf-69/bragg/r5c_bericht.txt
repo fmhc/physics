@@ -1,0 +1,24 @@
+R5-C r5c.py Start 2026-09-30T00:36:00+00:00 auf Quadro P4000, torch 2.5.1+cu121, Unterbefehl bragg, Laufzeitfaktor 1.0
+
+bragg FEHLER:
+Traceback (most recent call last):
+  File "/home/fmh/fmhc-physics-remote/runde5-r5c/r5c.py", line 1222, in main
+    res, zeilen, st = TESTS[name](faktor)
+                      ^^^^^^^^^^^^^^^^^^^
+  File "/home/fmh/fmhc-physics-remote/runde5-r5c/r5c.py", line 1027, in t_bragg
+    erg = {s: auswerten(st[s]["t"], st[s]["daten"]) for s in st}
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fmh/fmhc-physics-remote/runde5-r5c/r5c.py", line 1017, in auswerten
+    zz = transmission_auswerten(t, d, laeufe, ref_von, basis_von, kz)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fmh/fmhc-physics-remote/runde5-r5c/r5c.py", line 935, in transmission_auswerten
+    flu = integral(t, d[:, :, c["j"]].reshape(len(t), len(laeufe), 2))      # (B, 2)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fmh/fmhc-physics-remote/runde5-r5c/r5c.py", line 310, in integral
+    return 0.5 * ((y[1:] + y[:-1]) * dt_).sum(0)
+                  ~~~~~~~~~~~~~~~~~^~~~~
+RuntimeError: The size of tensor a (2) must match the size of tensor b (1400) at non-singleton dimension 2
+
+  bragg: 73.4 s
+
+Ende 2026-09-30T00:37:13+00:00, Dauer 73.4 s, Torch-Speicher max 132 MB, Fehler in: ['bragg']

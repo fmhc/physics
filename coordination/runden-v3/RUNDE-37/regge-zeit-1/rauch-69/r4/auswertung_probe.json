@@ -1,0 +1,225 @@
+{
+ "hinweis": "Urteile nach PLAN.md Abschnitt 7 (mechanisch)",
+ "urteile": {
+  "Z0": {
+   "urteil": "nicht eingetroffen",
+   "werte": {
+    "teilpruefungen": {
+     "quelle_4d": false,
+     "d3_ausserhalb": true,
+     "d3_weltlinie": true
+    },
+    "quelle_auf_nullraum_rel_max_je_L": {},
+    "d3_ausserhalb_max_rel": 5.5040115945288794e-14,
+    "d3_weltlinie_rel_abw": 2.1316282072803006e-14,
+    "d3_eps_weltlinie": 25.13274122871781,
+    "d3_soll": 25.132741228718345,
+    "d3_quelle_auf_nullraum": 3.379462171739212e-16
+   }
+  },
+  "Z1": {
+   "urteil": "nicht auswertbar",
+   "vermerk": "L = 32 fehlt",
+   "werte": {}
+  },
+  "Z2": {
+   "urteil": "nicht auswertbar",
+   "vermerk": "L = 32 fehlt",
+   "werte": {}
+  },
+  "Z3": {
+   "urteil": "nicht auswertbar",
+   "vermerk": "L = 32 fehlt",
+   "werte": {}
+  }
+ },
+ "geometrie": {
+  "flach_max_abs_eps": 1.7763568394002505e-15,
+  "weg_T_fehlerschaetzung": 7.549627589753527e-12,
+  "weg_T_betroffen": [
+   89,
+   88,
+   87,
+   86,
+   52,
+   51,
+   51,
+   50,
+   50,
+   50,
+   47,
+   47,
+   47,
+   47,
+   58
+  ],
+  "weg_K_gegen_T": 3.848773152033876e-12,
+  "winkel_gram_gegen_winkel": 2.220446049250313e-16
+ },
+ "kalibrierung_kontrollen": {
+  "N": {
+   "rnc_gegen_statisch_rel": 5.268189394332e-12,
+   "rnc_riemann_rel": 1.467845285991866e-16,
+   "verschiebung_rel": 2.050468262202996e-10,
+   "versklavung_rel": 0.5887512120363744,
+   "projektion_rel": 0.04564793489093868
+  },
+  "S": {
+   "rnc_gegen_statisch_rel": 9.504253112283219e-12,
+   "rnc_riemann_rel": 1.6238827952883478e-16,
+   "verschiebung_rel": 1.5767421634761494e-10,
+   "versklavung_rel": 0.4368732155405243,
+   "projektion_rel": 0.024843464953824126
+  }
+ },
+ "antwort_achse_einheit": {
+  "N_versklavt": {
+   "tx": [
+    -0.24999999999943628,
+    -0.2499999999981626
+   ],
+   "yz": [
+    1.2499999999991347,
+    1.249999999999135
+   ],
+   "tz": [
+    0.1250000000001006,
+    0.12499999999946376
+   ],
+   "xy": [
+    -0.6249999999995108,
+    -0.624999999999867
+   ]
+  },
+  "N_kinematisch": {
+   "tx": [
+    -9.251904797835664e-13,
+    5.057759766557979e-13
+   ],
+   "yz": [
+    1.0000000000003955,
+    1.0000000000003957
+   ],
+   "tz": [
+    4.811012699335038e-13,
+    -2.3438195828617836e-13
+   ],
+   "xy": [
+    -0.49999999999988326,
+    -0.5000000000004754
+   ]
+  },
+  "S_versklavt": {
+   "tx": [
+    1.250000000001466,
+    1.250000000000488
+   ],
+   "yz": [
+    -0.2500000000008491,
+    -0.25000000000084904
+   ],
+   "tz": [
+    -0.6250000000011993,
+    -0.6250000000007105
+   ],
+   "xy": [
+    0.12499999999933077,
+    0.12500000000235162
+   ]
+  },
+  "S_kinematisch": {
+   "tx": [
+    1.0000000000016949,
+    1.0000000000005598
+   ],
+   "yz": [
+    -1.0077355616644468e-12,
+    -1.0077355616644468e-12
+   ],
+   "tz": [
+    -0.5000000000008785,
+    -0.5000000000003112
+   ],
+   "xy": [
+    -1.1556172685445176e-12,
+    2.1011109518909166e-12
+   ]
+  }
+ },
+ "fixierung_kontrollen": {
+  "diagonalmode_rel": 4.602454142227786e-16,
+  "eichmode_rel": 5.53822931897635e-12,
+  "periodisch_F_rel": 1.359296387653002e-14,
+  "periodisch_F_ohne_rel": 1.0155821317352845e-14,
+  "reell_F_minus_k_rel": 8.711474232537355e-15,
+  "E_top_norm_min_stichprobe": 4.704746141256103
+ },
+ "hintergrund_kappa_diff": 5.130675885833824e-05,
+ "kontrollen_je_L": {
+  "8": {
+   "quelle_auf_nullraum_rel_max": 3.7278396230215096e-16,
+   "residuum_gleichung_rel_max": 1.1047092619396904e-11,
+   "nullraum_residuum_rel_max": 1.267072696081993e-12,
+   "komplement_min_eigen_rel": 0.003271151800831292,
+   "nullbasis_min_singulaer_rel": 0.1549544879505419,
+   "M_imag_rel_max": 1.7833198924203666e-12,
+   "M_hermitesch_rel_max": 3.5665894432768106e-12,
+   "eps_eichmode_rel_max": 5.116173588761929e-13,
+   "E_top_norm_min": 4.690415759828003,
+   "eps_imag_max": 1.7710233640586676e-15,
+   "eps_real_max": 4.669817380530288,
+   "ds_tau_imag_max": 1.14588548363754e-15
+  },
+  "12": {
+   "quelle_auf_nullraum_rel_max": 5.440730028703117e-16,
+   "residuum_gleichung_rel_max": 2.5199658901689537e-11,
+   "nullraum_residuum_rel_max": 1.229867517638597e-12,
+   "komplement_min_eigen_rel": 0.0014860867864045376,
+   "nullbasis_min_singulaer_rel": 0.1549544879505419,
+   "M_imag_rel_max": 1.7833198924203666e-12,
+   "M_hermitesch_rel_max": 3.5665894432768106e-12,
+   "eps_eichmode_rel_max": 5.127678575156787e-13,
+   "E_top_norm_min": 4.690415759828003,
+   "eps_imag_max": 1.6803742702620858e-15,
+   "eps_real_max": 4.679568792165254,
+   "ds_tau_imag_max": 2.3796848969131296e-15
+  }
+ },
+ "kontrolle_3d": {
+  "winkel_gram_gegen_winkel": 1.1102230246251565e-16,
+  "weg_K_gegen_T": 3.709033080667723e-12,
+  "weg_T_fehlerschaetzung": 6.291411835945837e-12,
+  "flach_max_abs_eps": 1.7763568394002505e-15,
+  "kontrollen_loesung": {
+   "quelle_auf_nullraum_rel_max": 3.379462171739212e-16,
+   "residuum_gleichung_rel_max": 1.4053547280840177e-14,
+   "nullraum_residuum_rel_max": 3.63012961797036e-16,
+   "komplement_min_eigen_rel": 0.00516477472680065,
+   "nullbasis_min_singulaer_rel": 0.31118924164000444,
+   "M_imag_rel_max": 4.440892098500625e-16,
+   "M_hermitesch_rel_max": 8.88178419700125e-16,
+   "eps_eichmode_rel_max": 8.339630386682937e-17,
+   "eps_imag_max": 2.2630189269183192e-15,
+   "eps_real_max": 25.034566458293668,
+   "ds_tau_imag_max": 1.729797305317907e-14
+  },
+  "hintergrund": [
+   -2.3022738650192492e-11,
+   -1.4459929077229887e-10,
+   1.9385107873106786e-10,
+   25.13274122858012,
+   3.533517956784211e-10,
+   1.66416698911667e-11,
+   6.229379431212467e-11
+  ],
+  "hintergrund_kappa_diff": 3.013654460971394e-10,
+  "zeit_gelenk": 3,
+  "eps_weltlinie": 25.13274122871781,
+  "soll_8piGM": 25.132741228718345,
+  "weltlinie_rel_abw": 2.1316282072803006e-14,
+  "ausserhalb_max_rel": 5.5040115945288794e-14,
+  "roh_ausserhalb_max_rel": 0.003906250000000074,
+  "L3": 16,
+  "laufzeit_s": 0.17934060096740723
+ }
+}

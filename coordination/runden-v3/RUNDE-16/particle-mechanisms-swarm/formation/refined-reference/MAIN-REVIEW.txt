@@ -1,0 +1,102 @@
+Integrierte Nichtautorprüfung des geplanten Hauptlaufs, 02.10.2026
+particle_binding; reine Akten-/Codelektüre, keine Ausführung.
+
+URTEIL
+Ein eng begrenzter explorativer Start der festgelegten sechs radialen
+Arme bis T64 ist fachlich tragfähig. Kein konkreter verbleibender
+Physik-/Numerikblocker wurde gefunden. Das ist keine Vorhersage eines
+positiven Bildungsbefunds. Root muss vor Start weiterhin Peerabstimmung,
+CPU-Slot, eingefrorene Eingaben und Budgetbindung abschließen. Keine
+Ausführung oder Ressourcenfreigabe durch diesen Bericht.
+
+Geprüfter Umfang
+formation/PLAN.txt vollständig, MAIN-ADDENDUM.txt und MAIN-ADDENDUM-V2.txt,
+maincode.py einschließlich Dynamik/Normen/Klassifikation, ursprünglicher
+QA-Fehler, neue PREPARED-MANIFEST/QA/T4-Artefakte und CLASSIFIER-V2-RESULT.
+Maßgebliche Mainquelle (SHA256 erneut geprüft):
+0ce21bee477cb41ade234611fd832abc5a7a90ed10d83d526f532cf28c6fd899.
+Originalplan ist historisch als Entwurf beschriftet und enthält die alte
+Interpolation. Die ausdrücklich benannten Addenda ersetzen GENAU diesen
+Referenzimport, die Radius-/Zellwertbezeichnung und den Strukturguard.
+Root sollte diese vollständige Dateikette zusammen als Startvertrag binden,
+nicht die veraltete Original-CLI mit NPZ-Pfad als aktuellen Aufruf verwenden.
+Main erhält das neue Referenzverzeichnis mit Manifest, keinen einzelnen NPZ.
+
+1. Physikalische Frage und Gleichungen
+M2-Potential, komplexe Kinetik1 und reelle Kinetik1/2 sowie gekoppelte
+Kräfte sind konsistent. Q=2Im Integral phi*phi_t; kein zusätzlicher
+geschützter Kernzähler und keine Topologie. Radiale Daten erzwingen
+P=J=0 und schließen nicht-radiale Instabilitäten absichtlich aus.
+Die Wolke mit Q1100, Breite8, phi_t=i sqrt2 phi, chi=1 ist bereits
+E/Q≈1.4061<sqrt2 präpariert. Vollständige freie Zerstreuung ist nicht
+der faire Gegenarm; gefragt ist Verdichtung/annähernde Stationarität
+dieser vorhandenen Ladung. Der Q1100-Referenzkern besitzt andere Energie.
+Kein Kausalvergleich zweier Präparationen bei gleicher E und kein
+Nachweis von Teilchenerzeugung oder Bindung zunächst freier Strahlung.
+
+2. Numerik und Referenz
+Gleiche Schalenvolumina/Flächen/Laplacevariation in Fest-Q-Präparation
+und Evolution. Kick-drift-kick verwendet simultan gekoppelte Kräfte;
+U1-Ladung bleibt im exakten diskreten Schema erhalten, E nur näherungsweise.
+Geprüfte Energievariation und Q/Flussidentität stützen die Implementierung.
+Die drei (h,dt)=(.1,.02),(.05,.02),(.1,.01) trennen jeweils eine räumliche
+und zeitliche Verfeinerung. Kein neuer Parameter oder Solverzweig.
+
+Neue exakte Zielgitterreferenzen beheben den nachgewiesenen Importblocker:
+je2 Newtonupdates, letzte punktweise Diskretisierungsreste etwa5.0e-11/
+3.0e-11, kleine Astnäheänderung. Hash/Status/float64/exakte r-Prüfung;
+kein Interpolieren oder Nachnormalisieren in der anschließenden Dynamik.
+Die eigenständige QA besteht; T4-Referenzrest maximal7.90e-5 und Formdrift
+6.37e-5 bleiben deutlich unter.004. Das reicht als Startfähigkeitsbefund,
+garantiert aber weder T64 noch nichtlineare Wolkenauflösung. Dafür werden
+die vollständigen Referenzarme und h/dt-Gates im Hauptlauf erneut benötigt.
+
+R120 liegt weit außerhalb des zunächst relevanten Wolken-/Kernbereichs
+und dessen Lichtausbreitungsstrecke bisT64. Gaußschwänze sind nicht kompakt;
+das Kragengate kontrolliert numerische Ankunft, liefert keinen rigorosen
+Freiraumfehler. Ein größerer Kasten wird nicht behauptet oder nachbestellt.
+
+3. Definitionen und unveränderte Entscheidungen
+E-/Q-Drift, Kern-Q-Flussbilanz und Kragen werden von run_arm an Samples
+geprüft, bevor complete=True gilt. Nichtbestand führt zu unentschieden,
+nicht zu physikalischem Negativbefund. Referenzreste/Formdriften<.004
+über alle Samples; Wolken-Q-Sensitivität<.002, Restdifferenzen<.004
+im Fenster48..64. Keine nachträgliche Schwellenlockerung.
+
+Gemeinsames omega aus Kern-Q/(2Icore), komplexer Raumrest und phi_t-
+Phasendrehrest prüfen unterschiedliche Stationaritätsbedingungen.
+chi-Norm verwendet chi-1, nicht den großen Vakuumwert. Floor1e-14
+macht Anfangs-rchi riesig, aber diese Anfangsrestwerte sind bewusst
+kein Stationaritätsgate und kein Rest-Sensitivitätsvergleich. Eine
+praktisch ungedresste Schlusswolke könnte wegen derselben Norm als
+numerisch unentschieden enden; kein positiver Befund wird dadurch erleichtert.
+
+80% Kernladung allein reicht wegen anfangs78.8% nicht aus. Zusätzlich
+verlangt der Code auf ALLEN Gittern im Schlussfenster geringe Schwankung,
+vier Reste<.02, chi_first_cell<.2 und r50_density<=.8 des Startwerts.
+r50_density ist korrekt im Schalenvolumen interpolierter |phi|²-Median,
+kein dynamischer Noetherladungsmedian; chi_first_cell ist chi(h/2).
+minchi<.5 ist bei erstem Zellwert<.2 redundant, aber kein Widerspruch.
+
+Klassifikator V2 hat sechs normale und sechs Defektproben tatsächlich
+bestanden (synthetic_only,true;time_steps0). Sechs eindeutige Arme mit
+81 geordneten/synchronen Zeitpunkten sind vor zip vorgeschrieben.
+Dies stützt nur die Statuslogik. Die synthetische pulsierende Wolke ist
+keine PDE-Lösung, und classify ersetzt nicht die Vorprüfungen von run_arm.
+
+4. Konservative Ergebnisgrenze und Betrieb
+Alle Gates beziehen sich auf gespeicherte Samples alle.8. Schnelle
+Zwischenzeit-Schwingungen oder ein durchgängiges Plateau sind damit
+nicht ausgeschlossen; positives Ergebnis nur „radialer Kandidat an den
+geprüften Samples im Fenster48..64“. Keine kontinuierliche/Langzeit-
+Stabilität, kein Minimierer-, Teilchen- oder voller3D-Nachweis. Fehlende
+Energieflusszerlegung verhindert die positive Deutung als nachgewiesene
+Strahlungskühlung. Numerisch guter Fehlschlag betrifft nur diesen Start
+und Horizont, nicht die Existenz anderer M2-Kerne oder Bildungswege.
+
+Ein CPU-Thread am koordinierten Remoteort, ausdrücklich CPU statt CUDA,
+höchstens180CPU-s gemäß Hauptplan, externe Zeit-/Speicherquittung und
+frischer Ausgabeordner. Interner165-Check/175-178-Limit ersetzt Roots
+Deckel nicht; keine engeren geerbten Limits blind erhöhen. Kein Neustart,
+dt-Rettung, Zusatzscan oder weitere Physikrechnung bei Gate-/Budgetfehler.
+Die bereits abgeschlossenen Vorbereitungen behalten ihre eigene Provenienz.

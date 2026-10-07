@@ -1,0 +1,41 @@
+{
+  "id": "claude-sp-2-f2-s1-20260920",
+  "time": "2026-09-20T19:16:08+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5), Vertrag; Claude-Subagent (Opus 5), S1-Lauf",
+  "topic": "theory",
+  "status": "reported",
+  "title": "SP-2 Fassung 2: eine reine Belegungsgrenze erzeugt kein Korrelationsloch beim Nachbarabstand -- und dieselbe Rechenkette findet eines, wenn es da ist",
+  "question": "Erzeugt auf einem Ring aus 16 Knoten mit 4 erhaltenen Ladungseinheiten allein die Belegungsgrenze L = 1 ein relatives Loch der stationaeren Paarkorrelation beim Nachbarabstand, und wuerde das Verfahren ein solches Loch ueberhaupt nachweisen, wenn eines vorhanden waere?",
+  "action": "Nachfolgefassung des am 17.09.2026 mit Ausgang T gescheiterten Vertrags SP-2 (dort fehlte in der Normierungsformel des Vertragstextes der Faktor N, weshalb die Nullkontrolle mit z = 3231 bis 4815 riss). Fassung 2 nach Vertragsvorlage v2, S0-Fremdreview durch Qwen (Bunker) und DeepSeek (OpenRouter) vor dem Start, Startsignal 'full go' von Finn am 20.09.2026. Gerechnet auf .69 als begrenzte CPU-User-Unit (Regel-10-Ausnahme, ganzzahlige Gillespie-Simulation): zehn Varianten x 800 Realisierungen, Einschwingzeit 200, Messfenster [200,700], 43,7 Millionen Ereignisse, dazu sechs exakte Aufzaehlungen des stationaeren Zustands (1820 bis 3876 Zustaende). 523 s Wanduhr, 522,7 CPU-Sekunden.",
+  "result": "Ausgang B: die gepaarte Kennzahl Dbar = g(1) - Mittel g(2..8) betraegt im Hauptarm +0,001620 +- 0,002712, also weit unter der vorab festgelegten Nachweisgrenze 0,02 in g; es gibt kein relatives Korrelationsloch. Die exakte Aufzaehlung gibt g(s) = N/(N-1) = 1,0666667 fuer jeden Abstand s >= 1. Die Gegenprobe mit echter Nachbarabstossung (beta = 1) faellt durch denselben Codepfad in den Ausgang A: Dbar = -0,630403 +- 0,001868 gegen den vorab in der Ergebnisdatei festgeschriebenen Aufzaehlungswert -0,630508 (z = 0,056), also das 32fache der Nachweisgrenze -- das Verfahren ist nicht blind. Alle acht Kontrollen bestanden, darunter die Summenregel K6 (groesste Abweichung 1,07e-14 gegen Toleranz 1e-10), die den Normierungsfehler der Fassung 1 sofort gefangen haette, und die Nullprobe ohne wirksame Grenze (Dbar = -0,000233). In der offenen Zelle mit Antrieb und Abstossung, deren stationaerer Zustand nicht in geschlossener Form bekannt ist, liefert die Aufzaehlung -0,628392 gegen -0,630508 ohne Antrieb; der Unterschied von +0,002116 liegt unter der 4-sigma-Aufloesung des simulierten Arms (0,0105).",
+  "meaning": "Die Aussage der Fassung 1 war richtig, nur um den Faktor 16 falsch normiert: eine Onsite-Belegungsgrenze ist keine Wechselwirkung zwischen verschiedenen Knoten, sie hebt die Paarkorrelation gleichmaessig auf N/(N-1) und macht kein Loch beim Nachbarabstand. Neu ist, dass diese Nicht-Aussage jetzt eine Nachweisgrenze hat (0,02 in g) und dass die Nachweisfaehigkeit im selben Lauf belegt ist. Offen und ausdruecklich als Restrisiko notiert: der Hauptarm war analytisch vorab entschieden, beide Fremdhaeuser haben das so festgehalten; der einzige Teil, dessen Zahl vorher niemand kannte, ist die Zelle mit gebrochenem detailliertem Gleichgewicht, und dort ist der Antriebseffekt in der Aufzaehlung sichtbar, im simulierten Arm aber noch unter der Aufloesung -- Kandidat fuer einen Nachfolgevertrag mit groesserer Realisierungszahl. Keine Aussage ueber Teilchen, Spin oder Quantenstatistik. NICHT GEBUCHT: Gauntlet-Runde 022 ist eingefroren, keine Registerzeile, keine Jury; Zitiersperre bis zur Reproduktion S2 durch ein anderes Haus.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260920/sp-2-f2-lauf/BERICHT-SP-2-F2.md",
+      "label": "Bericht des Laufs, alle Zahlen",
+      "sha256": "0b8dbf885a5e1f4e946f9c14d61f1a88bbe9cfb29ccf9746cbf6aae5c2c18f5f"
+    },
+    {
+      "path": "coordination/vertraege-20260920/sp-2-f2-lauf/ERGEBNIS-SP-2-F2.json",
+      "label": "Ergebnisdatei",
+      "sha256": "bff81de164db5938c78d2d23bff6a207b60bea8e7d002c24b0534449b356ac22"
+    },
+    {
+      "path": "coordination/vertraege-20260920/sp-2-VERTRAG-fassung2.md",
+      "label": "Vertrag Fassung 2",
+      "sha256": "c791990d8b00a71d0d97f06cb7ffbd40fca861b6b69bc016216ad1264dc10b9d"
+    },
+    {
+      "path": "coordination/vertraege-20260920/REVIEW-sp-2-f2.md",
+      "label": "S0-Fremdreview vor dem Start",
+      "sha256": "23d6df4e49086229265f052a86da35b53a45f6c52befe79986de9b4f4b67c03e"
+    },
+    {
+      "path": "coordination/vertraege-20260920/startsignal-sp-2-f2.txt",
+      "label": "Startsignal",
+      "sha256": "d9250d0fdb25cfb9c13c1c6ca2cd298e73bf9390523c2bff3e5aed1175ec8241"
+    }
+  ],
+  "recorded_at": "2026-09-20T19:25:33.533815+00:00"
+}

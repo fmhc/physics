@@ -1,0 +1,70 @@
+{
+  "id": "vertrag-vm-1-lauf-20260922",
+  "time": "2026-09-22T19:14:29+02:00",
+  "time_kind": "completed",
+  "author": "Fable 5.1 (Anthropic), Subagent im Auftrag von claude-primary",
+  "topic": "theory",
+  "status": "reported",
+  "title": "VM-1 (Zerlegung des Referenzzellversatzes): Ausgang U2 - die Messkette erklaert praktisch nichts (0,02 Streuungen), Exzentrizitaetsprior und Sternmassen erreichen den Versatz je fuer sich; die Form der Abweichung passt zu keinem von beiden; Umskalierung der Messseite ist algebraisch aequivalent (astra Finding 4)",
+  "question": "Welcher Anteil des Versatzes zwischen beobachtetem und modelliertem Referenzzellmedian (W-Feld 6, c = 0,05) entfaellt auf gebundene Messketteneffekte, welcher ist durch benannte Modellannahmen erreichbar, und bleibt ein unerklaerter Rest?",
+  "action": "Lesartenliste vor jeder Zahl geschrieben und gehasht (15:12); Vertrag Fassung 0 zahlenlos und mechanisch geschwaerzt an Qwen (Bunker, no-cache): Skala ln, Nenner SD_kat1 der Kalibriergruppe (Kataloge 0..99), k = 2, Regel W4-a, f_B blind festgelegt. Machbarkeitsvorlauf auf fmh@192.168.178.69 (CPU, begrenzte Units, 200 Kataloge, 13 gepaarte Arme mit je genau einer Aenderung, 9 s je Katalog): jede T-Kette gerechnet, N2 mit f_B = 1,25 unerreichbar -> nur dieser Arm zurueck an Qwen (a2): f_B = 1,50. astra-Anforderungen eingearbeitet: Abbildungsprobe K3 zuerst, absolute Groessen je Feld, drei Kombinationsarme, Kalibrier-/Pruefgruppe, SE_MC gestrichen. Fassung 1 mit allen Vorlaufzahlen an Qwen und DeepSeek (0,02 USD): beide freigeben mit Auflagen, eingearbeitet (S_gruppe, +inf-Definition, vierter K3-Fall, Offenlegung f_B). Startsignal mit 25 Hashes, Lauf in vier Units (pruefe, zwei Arm-Units, Auswertung), bitgleiche Reproduktion des Vorlaufs. Nachtrag nach dem Startsignal (MS-2-Befund r_plx = 1,659): zwei gebundene Fehlermodell-Arme K-R und K-RG als Diagnose.",
+  "result": "K3 (astra Finding 4): die nominale Umskalierung x_arch*dmu/dmu_arch ist eine aequivalente Umrechnung gespeicherter Groessen, keine Asymmetrie: max|g_k - 1| = 6,66e-16 auf allen 599 097 Modellzeilen und auf vier synthetischen Eingaben. L_0 = 0,037942 (3,777 Streuungen SD_kat1 = 0,009999, ln); gebundene Kettenarme K = 0,000173 (Verunreinigung M2 mit n_c = 1: 0,000121; ev-Schnitt auf dem Katalogwert: 0,000052); Rest_K = 0,037769. Hypothesenarme (ln, gepaart): M-E0 gleichverteilte Exzentrizitaet +0,095925 (9,6 SD), M-EC Kreisbahnen +0,209734 (21,0 SD), M-M Masse x1,10 +0,047443 (4,7 SD), M-A Halbachsenprior a^-1,6 -0,041581 (-4,2 SD), K-SIG Rauschen x1,2 +0,000387, K-ISO +0,000174, K-XC +0,000040. S (W4-a) = 0,353703, |Rest_K| - |S| = -31,6 SD: Klasse U2 in 18 von 24 Lesarten (nur quad/k=3 gaebe A, W4-c B); S_gruppe = 0,257738 ebenfalls U2. Nullprobe N1 Auslass-eins: Median |z| 0,6881, 13 von 200 ueber 2, 187 A; N2 f_B = 1,50: 200 von 200 B; N3 1,05: 0 von 200 A. Verteilungsform: Versatz waechst zu den oberen Quantilen (ln-Differenzen -0,0064/+0,0163/+0,0372/+0,0639/+0,1340), der Exzentrizitaetsprior verschiebt die unteren am staerksten. Nachtrag MS-2-Arm: K-R +0,000911 (0,091 SD), K-RG +0,000691 (0,069 SD); Klasse bleibt U2; im schwaechsten Feld hebt K-R den Median um 0,0163.",
+  "meaning": "Berichtet, nicht gebucht; Runde 022 eingefroren; Stufe S1, ohne S2 keine Zahl zitierfaehig; U2 ist kein Teilerfolg. Was feststeht: der Versatz in der Zelle, in der Newton unstrittig ist, liegt nicht an der Messkette (Verunreinigung, Auswahl, Fehleramplitude, Fehlerform, Kreuzterme zusammen unter 0,1 Streuungen) und nicht an der Definition des Schaetzers (K3), sondern in der Reichweite der Modellannahmen: der Exzentrizitaetsprior allein bewegt den Referenzzellmedian zwischen thermisch und Kreisbahn um 21 Prozent, die Masse um 5 Prozent. Unser Vorwaertsmodell taugt als absolute Referenz auf dem 4-Prozent-Niveau deshalb nicht, weil seine Normierung an einer nicht gemessenen Bahnannahme um das Fuenffache dieses Niveaus haengt; als Referenz fuer Feldverhaeltnisse (Gamma) bleibt es brauchbar, solange die Annahme feldunabhaengig wirkt (delta_M-E0 je Feld 0,087 bis 0,096). Hypothese fuer den Nachfolger: die Form des Versatzes (oben staerker) spricht gegen die beiden reichweitenstarken Arme und fuer einen zu schmalen oberen Rand des Modells. Kein Registerbezug; keine Physik.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260922/vm-1-lauf/BERICHT-VM-1.md",
+      "role": "Bericht mit Abstract, Nachtrag MS-2-Arm, Einfach gesagt",
+      "sha256": "01ed2b135c8b441deeb7880e3b26386e9516c8519924e0b77674c154883ad942"
+    },
+    {
+      "path": "coordination/vertraege-20260922/vm-1-lauf/ERGEBNIS-VM-1.json",
+      "role": "Ergebnisdatei des Laufs (Ausgang U2)",
+      "sha256": "86c2981f4d76931fbf7ffb17092031dddc20c6e955f6cc9c4bbadf0e849038dd"
+    },
+    {
+      "path": "coordination/vertraege-20260922/vm-1-VERTRAG.md",
+      "role": "Vertrag Fassung 2 (S0, Startsignal nach Auftrag)",
+      "sha256": "86cb3d734c65bb0aa54edae62cc671f4d650842dc06d9958bf1568fbcaf3de23"
+    },
+    {
+      "path": "coordination/vertraege-20260922/startsignal-vm-1.txt",
+      "role": "Startsignal mit Hashbindung von 25 Dateien",
+      "sha256": "e655bf8ef23b4f6a4b2f3d4815564b313809ec173a10f21e2cdf702fbf9f9745"
+    },
+    {
+      "path": "coordination/vertraege-20260922/REVIEW-vm-1.md",
+      "role": "S0-Fremdreview dreistufig: Qwen blind, Rueckfrage, Qwen und DeepSeek vollstaendig",
+      "sha256": "4fb2b6456c2cdbab169238a8f38e9e6eb69f6fe59118b81e8299a65375c7114a"
+    },
+    {
+      "path": "coordination/vertraege-20260922/vm-1-machbarkeit/LESARTEN-VORAB.md",
+      "role": "Lesarten vor jeder Zahl geschrieben und gehasht",
+      "sha256": "9975273cd4204816afcbd2e082b2b0a5db72ff21ec3fecfbb4e0beacedd62ff2"
+    },
+    {
+      "path": "coordination/vertraege-20260922/vm-1-machbarkeit/mb-vm1-abbildung.json",
+      "role": "Abbildungsprobe K3 (astra Finding 4): aequivalente Umrechnung",
+      "sha256": "fd8cd9899de767ec4d83e513ae21413689946640de75a95b3d47e2fac3430a87"
+    },
+    {
+      "path": "coordination/vertraege-20260922/vm-1-machbarkeit/mb-vm1-auswertung.json",
+      "role": "Vorlauf, alle Lesarten, Nullproben, Positivarme",
+      "sha256": "5efe8f10d26e095769551c76cd91cb0ba5a089635da79ca05aae7c85337da8a5"
+    },
+    {
+      "path": "coordination/vertraege-20260922/vm-1-machbarkeit/mb-vm1-nachtrag-plx-auswertung.json",
+      "role": "Nachtragsarme K-R und K-RG aus dem MS-2-Befund",
+      "sha256": "03114afecb4a55243a7d9a8ec3305ab32e2e3b4ac71e8d26d2ceae40ac84f004"
+    },
+    {
+      "path": "coordination/vertraege-20260922/vm-1-lauf/GEGENLESEN-BERICHT-VM-1.txt",
+      "role": "maschinelles Gegenlesen des Berichts, 233 belegt, 0 ohne Beleg",
+      "sha256": "07cca96a10036af1e819728760bbb6c9a6281d6482262f8339d123443258ece5"
+    },
+    {
+      "path": "coordination/vertraege-20260922/REGISTERPROBE-VM-1.txt",
+      "role": "Registerprobe des Vertrags, 184 belegt, 0 ohne Beleg",
+      "sha256": "ab464ca01cfdd600a2ecc8ebc82e48f193488c06eb84e0c9747aaf0f27fc28cd"
+    }
+  ]
+}

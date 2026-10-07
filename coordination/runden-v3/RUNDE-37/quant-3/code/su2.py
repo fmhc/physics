@@ -1,0 +1,541 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""QUANT-3 (fmhc-physics, Runde 50), Code-Agent fuer die Leitung claude-primary (Finn: "einfach machen und ausprobieren").
+
+SU(2)-Gittereichtheorie, euklidisch, Wilson-Wirkung S = beta Summe_f w_f (1 - Re Tr U_f / 2).
+Links sind Einheitsquaternionen (FP64, torch auf CUDA). Plakette f = geordnetes Produkt seiner Links (Vorzeichen -1:
+konjugiert); (1/2) Re Tr U = Skalarteil.
+Waermebad: lokale Verteilung exp(beta (U W)_0), W = Summe_f w_f (Rest-Produkt), W = k V, alpha = beta k.
+  a0 nach Kennedy-Pendleton fuer alpha >= 2, nach Creutz fuer alpha < 2 (beide exakt; Wahl haengt nur an alpha),
+  je Link 8 Versuche gebuendelt, erster angenommener zaehlt; Rest wiederholt. U = X V^+.
+Ueberrelaxation: U -> V^+ U^+ V^+ (Wirkung bleibt gleich, Involution).
+Links einer Farbe teilen keine Plakette und werden gleichzeitig erneuert. R Replikas (je eigenes beta und Start)
+laufen gebuendelt; je Replika kann beta stufenweise wechseln (Zyklus heiss aufwaerts / kalt abwaerts).
+Gitterbau unveraendert aus QUANT-2 (qu2.py als Kopie: kubisch, netz, faerben).
+Messungen je Messpunkt und Replika: Plakette (w-gewichtet, ungewichtet, Scheibe, zeitartig), Polyakov-Mittel L roh,
+L_mh mit Multihit (E[U] = I2/I1(alpha) V^+; auf dem Netz exakt fuer alle Zeltstangen zugleich, weil kein Dreieck zwei
+Zeltstangen enthaelt), optional Polyakov-Korrelator C(b, b', Delta n) per FFT (Multihit, Selbstterm abgezogen).
+Aufruf nur ueber kleintest.sh auf der .69:
+  su2.py lauf --gitter kubisch|netz --L L --Nt Nt [--tau T --gew datei:...] --betas b1 b2 ... (oder b1:b2:b3 je Replika)
+         --starts heiss|kalt|datei.npy ... --ntherm --nmess --nbin --nor --mabst --seed --zeitlimit [--korr] [--ende]
+         --out PFAD
+"""
+import argparse
+import hashlib
+import json
+import os
+import platform
+import sys
+import time
+
+import numpy as np
+import torch
+
+HIER = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HIER)
+import qu2  # noqa: E402  (Kopie aus QUANT-2, unveraendert)
+
+T0 = time.time()
+DEV = torch.device('cuda')
+DT = torch.float64
+
+
+def log(*a):
+    print('[%7.1f s]' % (time.time() - T0), *a, flush=True)
+
+
+def sha(p):
+    with open(p, 'rb') as f:
+        return hashlib.sha256(f.read()).hexdigest()
+
+
+def kopf():
+    return {'python': platform.python_version(), 'numpy': np.__version__, 'torch': torch.__version__,
+            'gpu': torch.cuda.get_device_name(0), 'host': platform.node(),
+            'start_utc': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime(T0)), 'argv': sys.argv,
+            'skript_sha256': sha(os.path.abspath(__file__)), 'qu2_sha256': sha(qu2.__file__),
+            'gpu_frei_MB_start': torch.cuda.mem_get_info()[0] / 1e6}
+
+
+# ================================================================================================ Quaternionen
+KONJ = torch.tensor([1.0, -1.0, -1.0, -1.0], dtype=DT, device=DEV)
+
+
+# Hamilton-Produkt (q p)_k = Summe_i q_i (e_i p)_k mit e_i p = Vorzeichen * Permutation von p (wenige Kernel)
+PERM = torch.tensor([[0, 1, 2, 3], [1, 0, 3, 2], [2, 3, 0, 1], [3, 2, 1, 0]], device=DEV)
+SIGN = torch.tensor([[1.0, 1, 1, 1], [-1, 1, -1, 1], [-1, 1, 1, -1], [-1, -1, 1, 1]], dtype=DT, device=DEV)
+
+
+def qmul(a, b):
+    return (a[..., :, None] * (b[..., PERM] * SIGN)).sum(-2)
+
+
+def qmul_alt(a, b):
+    a0, a1, a2, a3 = a.unbind(-1)
+    b0, b1, b2, b3 = b.unbind(-1)
+    return torch.stack((a0 * b0 - a1 * b1 - a2 * b2 - a3 * b3,
+                        a0 * b1 + a1 * b0 + a2 * b3 - a3 * b2,
+                        a0 * b2 - a1 * b3 + a2 * b0 + a3 * b1,
+                        a0 * b3 + a1 * b2 - a2 * b1 + a3 * b0), -1)
+
+
+def qkonj(a):
+    return a * KONJ
+
+
+def maske(s, dt=torch.float32):
+    """Vorzeichen s (+1/-1) -> Multiplikator [1, s, s, s] (Konjugation fuer s = -1)."""
+    s = torch.as_tensor(np.asarray(s, float), dtype=dt, device=DEV)
+    return torch.stack((torch.ones_like(s), s, s, s), -1)
+
+
+def ti(x):
+    return torch.as_tensor(np.asarray(x, np.int64), device=DEV)
+
+
+# ================================================================================================ Gitter
+class Inzidenz:
+    """Alle (Plakette, Position) eines Link-Satzes: Rest-Links in zyklischer Folge, Vorzeichen, Gewicht."""
+
+    def __init__(self, K, linkmenge_maske):
+        m = K.Pe.shape[1]
+        sel = linkmenge_maske[K.Pe]                      # (nf, m)
+        f_idx, p_idx = np.nonzero(sel)
+        e = K.Pe[f_idx, p_idx]
+        ed = np.unique(e)
+        self.n_inz = len(e)
+        self.ed = ti(ed)
+        self.ned = len(ed)
+        self.loc = ti(np.searchsorted(ed, e))
+        self.oth = [ti(K.Pe[f_idx, (p_idx + j) % m]) for j in range(1, m)]
+        self.om = [maske(K.Ps[f_idx, (p_idx + j) % m]) for j in range(1, m)]
+        self.spw = maske(K.Ps[f_idx, p_idx], DT) * torch.as_tensor(K.w[f_idx], dtype=DT, device=DEV)[:, None]
+
+
+class Gitter:
+    def __init__(self, K, mh_erzwingen=False):
+        t0 = time.time()
+        self.K = K
+        self.nE = int(K.nE)
+        self.m = K.Pe.shape[1]
+        farbe = qu2.faerben(K.nE, K.Pe)
+        self.nfarb = int(farbe.max() + 1)
+        srt = np.sort(K.Pe, axis=1)
+        if (srt[:, 1:] == srt[:, :-1]).any():
+            raise RuntimeError('Plakette mit doppeltem Link')
+        # Farbprobe: keine Plakette mit zwei Links gleicher Farbe
+        fp = np.sort(farbe[K.Pe], axis=1)
+        if (fp[:, 1:] == fp[:, :-1]).any():
+            raise RuntimeError('Faerbung ungueltig')
+        self.farben = [Inzidenz(K, farbe == c) for c in range(self.nfarb)]
+        abged = np.zeros(self.nE, bool)
+        for F in self.farben:
+            abged[F.ed.cpu().numpy()] = True
+        if not abged.all():
+            raise RuntimeError('Links ohne Plakette')
+        # Plaketten (in Bloecken gemessen)
+        self.Pe = ti(K.Pe)
+        self.Pm = [maske(K.Ps[:, j]) for j in range(self.m)]
+        self.w = torch.as_tensor(K.w, dtype=DT, device=DEV)
+        self.scheibe = torch.as_tensor(K.fl_t >= 0, device=DEV)
+        self.wsum = float(K.w.sum())
+        self.ws = float(K.w[K.fl_t >= 0].sum())
+        self.wt = float(K.w[K.fl_t < 0].sum())
+        self.nF = len(K.Pe)
+        # Polyakov-Linien
+        self.pe = ti(K.poly_e)                              # (nS, Nt)
+        self.pm = [maske(K.poly_s[:, t]) for t in range(K.Nt)]
+        self.nS = K.poly_e.shape[0]
+        zk = np.unique(K.poly_e)
+        isz = np.zeros(self.nE, bool)
+        isz[zk] = True
+        self.mh_max = int(isz[K.Pe].sum(1).max())
+        # erzwungen (kubisch): Linien an benachbarten Orten teilen Plaketten; exakt nur fuer Paare im Abstand >= 2
+        self.mh = Inzidenz(K, isz) if (self.mh_max <= 1 or mh_erzwingen) else None
+        if self.mh is not None:
+            assert (self.mh.ed.cpu().numpy() == zk).all()
+            self.mh_pos = ti(np.searchsorted(zk, K.poly_e))
+        self.NV = int(K.rsub.max() + 1)
+        self.L = int(K.L)
+        self.Nt = int(K.Nt)
+        self.zeit_bau = time.time() - t0
+        self.fehl = torch.zeros((), dtype=torch.int64, device=DEV)
+
+    # -------------------------------------------------------------------------------------------- Staples
+    def staple(self, Q, F):
+        A = Q[:, F.oth[0]] * F.om[0]
+        for j in range(1, self.m - 1):
+            A = qmul(A, Q[:, F.oth[j]] * F.om[j])
+        A = A * F.spw
+        W = torch.zeros((Q.shape[0], F.ned, 4), dtype=DT, device=DEV)
+        W.index_add_(1, F.loc, A)
+        return W
+
+    # -------------------------------------------------------------------------------------------- Updates
+    def waermebad(self, Q, F, beta, gen):
+        W = self.staple(Q, F)
+        k = W.norm(dim=-1)
+        V = W / k.clamp_min(1e-300)[..., None]
+        b, ok = ziehe_b_fest(beta * k)                     # b = 1 - a0; ok = angenommen
+        a0 = 1.0 - b
+        rv = torch.sqrt((b * (2.0 - b)).clamp_min(0.0))
+        u = torch.rand(k.shape + (2,), dtype=DT, device=DEV)
+        ct = 2.0 * u[..., 0] - 1.0
+        st = torch.sqrt((1.0 - ct * ct).clamp_min(0.0))
+        ph = 2.0 * np.pi * u[..., 1]
+        X = torch.stack((a0, rv * st * torch.cos(ph), rv * st * torch.sin(ph), rv * ct), -1)
+        # ohne Annahme in allen Versuchen bleibt der alte Link (Mischung aus Identitaet und exaktem Waermebad,
+        # Gewicht haengt nur an alpha: Zielverteilung bleibt invariant); Zaehler fuer den Bericht
+        Q[:, F.ed] = torch.where(ok[..., None], qmul(X, qkonj(V)), Q[:, F.ed])
+        self.fehl += (~ok).sum()
+
+    def ueberrel(self, Q, F):
+        W = self.staple(Q, F)
+        k = W.norm(dim=-1)
+        Vb = qkonj(W / k.clamp_min(1e-300)[..., None])
+        U = Q[:, F.ed]
+        Un = qmul(qmul(Vb, qkonj(U)), Vb)
+        Q[:, F.ed] = torch.where((k > 1e-12)[..., None], Un, U)
+
+    def sweep(self, Q, beta, gen, nor):
+        for F in self.farben:
+            self.waermebad(Q, F, beta, gen)
+        for _ in range(nor):
+            for F in self.farben:
+                self.ueberrel(Q, F)
+        Q /= Q.norm(dim=-1, keepdim=True)
+
+    # -------------------------------------------------------------------------------------------- Messung
+    def plaketten(self, Q, block=200000):
+        R = Q.shape[0]
+        sw = torch.zeros(R, dtype=DT, device=DEV)
+        su = torch.zeros(R, dtype=DT, device=DEV)
+        ss = torch.zeros(R, dtype=DT, device=DEV)
+        for i0 in range(0, self.nF, block):
+            sl = slice(i0, min(i0 + block, self.nF))
+            P = Q[:, self.Pe[sl, 0]] * self.Pm[0][sl]
+            for j in range(1, self.m):
+                P = qmul(P, Q[:, self.Pe[sl, j]] * self.Pm[j][sl])
+            p0 = P[..., 0]
+            w = self.w[sl]
+            sw += (p0 * w).sum(1)
+            su += p0.sum(1)
+            ss += (p0 * w * self.scheibe[sl]).sum(1)
+        return sw / self.wsum, su / self.nF, ss / self.ws, (sw - ss) / self.wt
+
+    def polyakov(self, Q):
+        P = Q[:, self.pe[:, 0]] * self.pm[0]
+        for t in range(1, self.Nt):
+            P = qmul(P, Q[:, self.pe[:, t]] * self.pm[t])
+        return P[..., 0]
+
+    def polyakov_mh(self, Q, beta):
+        W = self.staple(Q, self.mh)
+        k = W.norm(dim=-1)
+        al = beta * k
+        alc = al.clamp_min(1e-3)
+        c = torch.where(al < 1e-3, al / 4.0, torch.special.i0e(alc) / torch.special.i1e(alc) - 2.0 / alc)
+        Ub = c[..., None] * qkonj(W / k.clamp_min(1e-300)[..., None])
+        P = Ub[:, self.mh_pos[:, 0]] * self.pm[0]
+        for t in range(1, self.Nt):
+            P = qmul(P, Ub[:, self.mh_pos[:, t]] * self.pm[t])
+        return P[..., 0]
+
+    def korrelator(self, q):
+        R = q.shape[0]
+        L, NV = self.L, self.NV
+        X = q.reshape(R, L, L, L, NV).permute(0, 4, 1, 2, 3)
+        Fk = torch.fft.fftn(X, dim=(2, 3, 4))
+        C = torch.fft.ifftn(Fk.conj()[:, :, None] * Fk[:, None, :], dim=(3, 4, 5)).real / L ** 3
+        ar = torch.arange(NV, device=DEV)
+        C[:, ar, ar, 0, 0, 0] -= (X * X).mean(dim=(2, 3, 4))
+        return C
+
+    def messung(self, Q, beta, korr, kacc):
+        """(R, 6): pw, pu, ps, pt, L roh, L Multihit; Korrelator wird in kacc aufaddiert."""
+        pw, pu, ps, pt = self.plaketten(Q)
+        Lr = self.polyakov(Q).mean(1)
+        if self.mh is not None:
+            qm = self.polyakov_mh(Q, beta)
+            Lm = qm.mean(1)
+            if korr:
+                kacc += self.korrelator(qm)
+        else:
+            Lm = torch.full_like(Lr, float('nan'))
+        return torch.stack((pw, pu, ps, pt, Lr, Lm), 1)
+
+
+def ziehe_b_fest(alpha, T=12):
+    """Wie ziehe_b, aber ohne Schleife und ohne Synchronisation: T Versuche je Link, erster angenommener zaehlt.
+    Annahme je Versuch >= 0,69 (Creutz unter 2, KP ab 2), also P(alle scheitern) <= 0,31^12 = 8e-7."""
+    a = alpha.clamp_min(1e-12)[..., None]
+    r = 1.0 - torch.rand(alpha.shape + (T, 4), dtype=DT, device=DEV)
+    lam2 = -(torch.log(r[..., 0]) + torch.cos(2.0 * np.pi * r[..., 1]) ** 2 * torch.log(r[..., 2])) / (2.0 * a)
+    ok_kp = r[..., 3] ** 2 <= 1.0 - lam2
+    e = torch.exp(-2.0 * a)
+    b_cr = -torch.log(e + (1.0 - e) * r[..., 0]) / a
+    ok_cr = r[..., 1] <= torch.sqrt((b_cr * (2.0 - b_cr)).clamp_min(0.0))
+    kp = a >= 2.0
+    b = torch.where(kp, 2.0 * lam2, b_cr)
+    ok = torch.where(kp, ok_kp, ok_cr)
+    erst = ok.to(torch.float32).argmax(-1, keepdim=True)
+    return b.gather(-1, erst)[..., 0], ok.any(-1)
+
+
+def ziehe_b(alpha, gen, T=8):
+    """b = 1 - a0 mit Dichte ~ sqrt(1 - a0^2) exp(alpha a0); KP fuer alpha >= 2, Creutz darunter."""
+    n = alpha.numel()
+    out = torch.empty_like(alpha)
+    offen = torch.arange(n, device=DEV)
+    runden = 0
+    while offen.numel() > 0:
+        runden += 1
+        a = alpha[offen].clamp_min(1e-12)[:, None]
+        r = 1.0 - torch.rand((offen.numel(), T, 4), dtype=DT, device=DEV, generator=gen)   # (0, 1]
+        lam2 = -(torch.log(r[..., 0]) + torch.cos(2.0 * np.pi * r[..., 1]) ** 2 * torch.log(r[..., 2])) / (2.0 * a)
+        ok_kp = r[..., 3] ** 2 <= 1.0 - lam2
+        e = torch.exp(-2.0 * a)
+        x = e + (1.0 - e) * r[..., 0]
+        b_cr = -torch.log(x) / a
+        ok_cr = r[..., 1] <= torch.sqrt((b_cr * (2.0 - b_cr)).clamp_min(0.0))
+        kp = a >= 2.0
+        b = torch.where(kp, 2.0 * lam2, b_cr)
+        ok = torch.where(kp, ok_kp, ok_cr)
+        hat = ok.any(1)
+        erst = ok.to(torch.float32).argmax(1)
+        wahl = b.gather(1, erst[:, None])[:, 0]
+        out[offen[hat]] = wahl[hat]
+        offen = offen[~hat]
+        if runden > 200:
+            raise RuntimeError('Waermebad: keine Annahme nach 200 Runden')
+    return out
+
+
+# ================================================================================================ Lauf
+def baue(a):
+    if a.gitter == 'kubisch':
+        K = qu2.kubisch(a.L, a.Nt)
+    else:
+        K = qu2.netz(a.L, a.Nt, a.tau, a.gew)
+    return K
+
+
+def lauf(a):
+    t_start = time.time()
+    K = baue(a)
+    t_k = time.time() - t_start
+    G = Gitter(K, a.mh)
+    log('Gitter', a.gitter, 'L', a.L, 'Nt', a.Nt, 'nE', G.nE, 'nF', G.nF, 'nS', G.nS, 'Farben', G.nfarb,
+        'mh_max', G.mh_max, 'Bau %.1f + %.1f s' % (t_k, G.zeit_bau))
+    folgen = [[float(x) for x in s.split(':')] for s in a.betas]
+    R = len(folgen)
+    S = len(folgen[0])
+    if any(len(f) != S for f in folgen):
+        raise RuntimeError('ungleiche Stufenzahl')
+    starts = a.starts if len(a.starts) == R else a.starts * R
+    torch.manual_seed(a.seed)
+    gen = None
+    Q = torch.zeros((R, G.nE, 4), dtype=DT, device=DEV)
+    for r, s in enumerate(starts):
+        if s == 'kalt':
+            Q[r, :, 0] = 1.0
+        elif s == 'heiss':
+            x = torch.randn((G.nE, 4), dtype=DT, device=DEV)
+            Q[r] = x / x.norm(dim=-1, keepdim=True)
+        else:
+            dat = np.load(s.split('@')[0])
+            j = int(s.split('@')[1]) if '@' in s else 0
+            Q[r] = torch.as_tensor(dat[j], dtype=DT, device=DEV)
+    beta = torch.as_tensor([f[0] for f in folgen], dtype=DT, device=DEV)[:, None].clone()
+    graph = None
+    if a.graph:
+        try:
+            st = torch.cuda.Stream()
+            st.wait_stream(torch.cuda.current_stream())
+            with torch.cuda.stream(st):
+                for _ in range(3):
+                    G.sweep(Q, beta, gen, a.nor)
+            torch.cuda.current_stream().wait_stream(st)
+            graph = torch.cuda.CUDAGraph()
+            with torch.cuda.graph(graph):
+                G.sweep(Q, beta, gen, a.nor)
+            torch.cuda.synchronize()
+            log('CUDA-Graph erfasst')
+        except Exception as ex:  # noqa: BLE001
+            log('CUDA-Graph gescheitert, eager weiter:', repr(ex)[:300])
+            graph = None
+
+    def sweep():
+        if graph is not None:
+            graph.replay()
+        else:
+            G.sweep(Q, beta, gen, a.nor)
+    mit_mh = G.mh is not None
+    kacc = torch.zeros((R, G.NV, G.NV, G.L, G.L, G.L), dtype=DT, device=DEV) if (a.korr and mit_mh) else None
+    gmess, mess_out = None, None
+    if graph is not None:
+        try:
+            Q0 = Q.clone()
+            st = torch.cuda.Stream()
+            st.wait_stream(torch.cuda.current_stream())
+            with torch.cuda.stream(st):
+                for _ in range(2):
+                    G.messung(Q, beta, a.korr, kacc)
+            torch.cuda.current_stream().wait_stream(st)
+            gmess = torch.cuda.CUDAGraph()
+            with torch.cuda.graph(gmess):
+                mess_out = G.messung(Q, beta, a.korr, kacc)
+            torch.cuda.synchronize()
+            pruef = G.messung(Q0, beta, False, None)
+            gmess.replay()
+            torch.cuda.synchronize()
+            abw = float((pruef - mess_out).abs().nan_to_num(0.0).max())
+            del Q0
+            log('Mess-Graph erfasst, Abweichung zu eager %.2e' % abw)
+            if not abw < 1e-10:
+                raise RuntimeError('Mess-Graph weicht ab')
+            if kacc is not None:
+                kacc.zero_()
+        except Exception as ex:  # noqa: BLE001
+            log('Mess-Graph gescheitert, eager weiter:', repr(ex)[:300])
+            gmess = None
+            if kacc is not None:
+                kacc.zero_()
+    res = {'kopf': kopf(), 'gitter': a.gitter, 'L': a.L, 'Nt': a.Nt, 'tau': float(K.tau), 'gew': a.gew,
+           'nE': G.nE, 'nF': G.nF, 'nS': G.nS, 'NV': G.NV, 'farben': G.nfarb, 'w_summe': G.wsum,
+           'n_neg_w': int((K.w < 0).sum()), 'mh_max_je_plakette': G.mh_max, 'multihit': mit_mh,
+           'R': R, 'S': S, 'folgen': folgen, 'starts': starts, 'ntherm': a.ntherm, 'nmess': a.nmess,
+           'nbin': a.nbin, 'nor': a.nor, 'mabst': a.mabst, 'seed': a.seed, 'korr': a.korr,
+           'zeit_bau_s': time.time() - t_start, 'stufen': [], 'abbruch': None}
+    if a.korr:
+        res['rpos'] = K.rpos.tolist()
+        res['rsub'] = K.rsub.tolist()
+        res['box'] = K.box.tolist()
+    arr = {}
+    stop = False
+    for s in range(S):
+        t0 = time.time()
+        beta.copy_(torch.as_tensor([f[s] for f in folgen], dtype=DT, device=DEV)[:, None])
+        for _ in range(a.ntherm):
+            sweep()
+        torch.cuda.synchronize()
+        t_th = time.time() - t0
+        B = max(1, a.nmess // a.nbin)
+        tsbuf = torch.zeros((a.nbin * B, R, 6), dtype=DT, device=DEV)
+        if kacc is not None:
+            korb = torch.zeros((a.nbin, R, G.NV, G.NV, G.L, G.L, G.L), dtype=DT, device=DEV)
+            kacc.zero_()
+        nm = 0
+        for im in range(a.nbin * B):
+            if time.time() - t_start > a.zeitlimit:
+                stop = True
+                break
+            for _ in range(a.mabst):
+                sweep()
+            if gmess is not None:
+                gmess.replay()
+                tsbuf[im].copy_(mess_out)
+            else:
+                tsbuf[im].copy_(G.messung(Q, beta, a.korr, kacc))
+            nm += 1
+            if kacc is not None and nm % B == 0:
+                korb[nm // B - 1].copy_(kacc / B)
+                kacc.zero_()
+        nb = nm // B
+        torch.cuda.synchronize()
+        e = {'stufe': s, 'betas': [f[s] for f in folgen], 'nmess': nm, 'nbin': nb, 'zeit_s': time.time() - t0,
+             'zeit_therm_s': t_th}
+        ts = tsbuf[:nm].cpu().numpy()
+        for j, k in enumerate(('pw', 'pu', 'ps', 'pt', 'L', 'Lmh')):
+            if nm > 0 and (k != 'Lmh' or mit_mh):
+                x = ts[:, :, j]                                    # (nm, R)
+                arr['%s_%d' % (k, s)] = x
+                if k in ('pw', 'L', 'Lmh'):
+                    e[k + '_mittel'] = x.mean(0).tolist() if k != 'L' else np.abs(x).mean(0).tolist()
+        if kacc is not None and nb > 0:
+            arr['kor_%d' % s] = korb[:nb].cpu().numpy()
+        res['stufen'].append(e)
+        log(json.dumps({k: (np.round(v, 5).tolist() if isinstance(v, list) else v) for k, v in e.items()
+                        if k in ('stufe', 'nmess', 'zeit_s', 'pw_mittel', 'L_mittel', 'Lmh_mittel')}))
+        if stop:
+            res['abbruch'] = 'Zeitlimit in Stufe %d nach %d Messungen' % (s, nm)
+            break
+    res['zeit_gesamt_s'] = time.time() - t_start
+    res['gpu_speicher_max_MB'] = torch.cuda.max_memory_allocated() / 1e6
+    res['cuda_graph'] = graph is not None
+    res['waermebad_ohne_annahme'] = int(G.fehl)
+    np.savez_compressed(a.out + '.npz', **arr)
+    if a.ende:
+        np.save(a.out + '.ende.npy', Q.cpu().numpy())
+    with open(a.out + '.json.tmp', 'w') as f:
+        json.dump(res, f, indent=1)
+    os.replace(a.out + '.json.tmp', a.out + '.json')
+    log('fertig', a.out, 'Zeit %.1f s' % res['zeit_gesamt_s'], 'GPU max %.0f MB' % res['gpu_speicher_max_MB'])
+
+
+def test(a):
+    """Kurze Selbstpruefung: Quaternionen, Waermebad-Verteilung gegen I2/I1, Ueberrelaxation erhaelt die Wirkung."""
+    gen = torch.Generator(device=DEV)
+    gen.manual_seed(1)
+    out = {'kopf': kopf()}
+    torch.manual_seed(1)
+    for al in (0.3, 1.0, 1.99, 2.01, 5.0, 30.0):
+        alpha = torch.full((400000,), al, dtype=DT, device=DEV)
+        b, ok = ziehe_b_fest(alpha)
+        out['ohne_annahme_alpha_%g' % al] = int((~ok).sum())
+        a0 = (1.0 - b)[ok]
+        soll = float(torch.special.i0e(torch.tensor(al, dtype=DT)) / torch.special.i1e(torch.tensor(al, dtype=DT))
+                     - 2.0 / al)
+        # zweites Moment: <a0^2> = 1 - 3 I2/(alpha I1)  (aus d/dalpha), hier nur Mittel und Varianz gemeldet
+        out['a0_alpha_%g' % al] = {'mittel': float(a0.mean()), 'soll_I2_I1': soll,
+                                   'fehler': float(a0.std() / np.sqrt(a0.numel())),
+                                   'min': float(a0.min()), 'max': float(a0.max())}
+        log(out['a0_alpha_%g' % al])
+    x = torch.randn((1000, 4), dtype=DT, device=DEV, generator=gen)
+    x = x / x.norm(dim=-1, keepdim=True)
+    y = torch.randn((1000, 4), dtype=DT, device=DEV, generator=gen)
+    y = y / y.norm(dim=-1, keepdim=True)
+    out['norm_produkt_abw'] = float((qmul(x, y).norm(dim=-1) - 1).abs().max())
+    out['inverse_abw'] = float((qmul(x, qkonj(x)) - torch.tensor([1.0, 0, 0, 0], dtype=DT, device=DEV)).abs().max())
+    z = torch.randn((1000, 4), dtype=DT, device=DEV, generator=gen)
+    out['assoz_abw'] = float((qmul(qmul(x, y), z) - qmul(x, qmul(y, z))).abs().max())
+    out['qmul_gegen_alt'] = float((qmul(x, z) - qmul_alt(x, z)).abs().max())
+    log(out)
+    with open(a.out, 'w') as f:
+        json.dump(out, f, indent=1)
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    sub = ap.add_subparsers(dest='modus', required=True)
+    p = sub.add_parser('lauf')
+    p.add_argument('--gitter', choices=['kubisch', 'netz'], required=True)
+    p.add_argument('--L', type=int, required=True)
+    p.add_argument('--Nt', type=int, required=True)
+    p.add_argument('--tau', type=float, default=1.0)
+    p.add_argument('--gew', default='eins')
+    p.add_argument('--betas', nargs='+', required=True)
+    p.add_argument('--starts', nargs='+', default=['heiss'])
+    p.add_argument('--ntherm', type=int, default=100)
+    p.add_argument('--nmess', type=int, default=500)
+    p.add_argument('--nbin', type=int, default=20)
+    p.add_argument('--nor', type=int, default=2)
+    p.add_argument('--mabst', type=int, default=1)
+    p.add_argument('--seed', type=int, default=20261005)
+    p.add_argument('--zeitlimit', type=float, default=520.0)
+    p.add_argument('--korr', action='store_true')
+    p.add_argument('--ende', action='store_true')
+    p.add_argument('--graph', action='store_true')
+    p.add_argument('--mh', action='store_true')
+    p.add_argument('--out', required=True)
+    p = sub.add_parser('test')
+    p.add_argument('--out', required=True)
+    a = ap.parse_args()
+    if a.modus == 'lauf':
+        lauf(a)
+    else:
+        test(a)
+
+
+if __name__ == '__main__':
+    main()

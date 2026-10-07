@@ -1,0 +1,28 @@
+{
+  "id": "claude-synchronisation-energiebilanz-20260912",
+  "time": "2026-09-12T09:17:55+02:00",
+  "time_kind": "completed",
+  "author": "Claude (claude-primary, TS440)",
+  "topic": "micro",
+  "status": "checked",
+  "title": "Energiebilanz je Kanal: der gebundene Cluster ist eine Mittelfeld-Kondensation oberhalb g_c = omega/sqrt(N chi) = 0,5, keine Synchronisation",
+  "question": "Welcher Kanal nimmt beim Einfang die Relativenergie auf, und ist die Phasenordnung echt?",
+  "action": "Neun Laeufe (drei Modenmengen x drei Seeds, g = 1,0, T = 60, h = 0,00015625) mit Energieanteilen aus physics.energy_parts, Einfangzeit, zentriertem Ordnungsparameter; Abnahme 1e-5 alle bestanden.",
+  "result": "Nach dem Einfang (t_c 6 bis 9): Feld 61 bis 62 H0, Oszillatoren 32 bis 33 H0, Kopplung -96 H0, Punkte 2 bis 3,5 H0; q_mean = +-1,4 gemeinsam; Rc 0,16 bis 0,31 (Zufall 0,44) bei R 0,97 bis 0,99. Cutoff aendert nur die Clustergroesse (r_max 2,5 bis 4 gegen 5 bis 6).",
+  "meaning": "Die \"Synchronisation\" der Teile 1 bis 3 war eine gemeinsame Gleichverschiebung; der \"gebundene Cluster\" ist der raeumliche Abdruck der Instabilitaet des Nullzustands (physics.energy_lower_bound), Schwelle g_c = 0,5 fuer N = 4, 0,71 fuer N = 2, passend zum gemessenen Fenster. PW1 umformuliert; die Atlas-These Phasenordnung -> Anziehung ist in dieser Familie nicht belegt. Kein Bindungsargument fuer den Fadenstrang.",
+  "sources": [
+    {
+      "path": "coordination/claude-synchronisation-20260912/runs/m/ERGEBNIS.json",
+      "sha256": "4ede56f61135c21110c7c4b3cc9844422e3bd02cb2db2e93e782e444df186d07"
+    },
+    {
+      "path": "coordination/synchronisation-warp-archive-20260912.md",
+      "sha256": "5473cf003d2896cbf1c73bea976e6575d45e2653af93e517210dd8cb060ff287"
+    },
+    {
+      "path": "coordination/claude-synchronisation-20260912/run_sync6.py",
+      "sha256": "14dfd2c840452529a8d2e4f9984d6b9fd3753a30b5879c199a55baa763fb3ac1"
+    }
+  ],
+  "recorded_at": "2026-09-12T07:17:55.669033+00:00"
+}

@@ -1,0 +1,33 @@
+{
+  "id": "claude-pd-1-startfaehig-kosten-20260928",
+  "time": "2026-09-28T06:59:28+00:00",
+  "time_kind": "document",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung; Ausfuehrender astra (OpenAI), frische Sitzung",
+  "topic": "modelle",
+  "status": "technical",
+  "evidenzart": "verfahren",
+  "title": "PD-1 startfaehig: Budget nach A8.4 aus gemessenen Zeiten 337 s gegen den Deckel von 1200 s, ohne Kuerzung; vor dem Startsignal Nachlesung des Skripts gegen die berichtigte DP1-Klarstellung; Start entscheidet Finn",
+  "question": "Passt PD-1 nach der gebundenen, physikfreien Kostenmessung in den Deckel von 1200 s?",
+  "action": "astra schrieb das Laufskript (pd_1.py mit CUDA-Kern, eingefroren) und fuehrte die Kostenmessung nach KOSTENPROTOKOLL-F3.md auf der P4000 der .69 aus (beendet 08:46:08 MESZ); nur Zeiten, keine Physikwerte. Gebunden ist die dritte Messserie; zwei fruehere Serien wurden nach technischen Korrekturen verworfen.",
+  "result": "R_V 93 s, R_H 138 s, R_S2 106 s, Summe 337 s gegen 1200 s: startfaehig ohne Kuerzung. Groesster Kostenanteil ist der Hauptstapel mit 20 x t_2000 = 39,6 s von P_H = 43,9 s; der groesste Einzelmesswert ist t_init 3,1 s. Das Skript wurde nach einem fehlerhaften Leitungsvermerk geschrieben (nicht endlicher Wert in DP1 ohne K0; richtig ist nach A2.5 K0 und damit T); der Vermerk ist per gestempelter Berichtigung korrigiert, ob das Skript an dieser Stelle abweicht, prueft die laufende Nachlesung.",
+  "meaning": "Kein Physikergebnis; das Budget ist eine Vertragsgrenze, keine Startfreigabe, und die Kostenmessung ist kein Kontrollbestehen. Die harte Grenze in A8.4 ist fuer PD-1 genauso unbelegt wie fuer WM-1 (Unit-Nachweis dort gescheitert). Vor dem Startsignal: Nachlesung; weicht das Skript ab, technische Korrektur nach A11.1 und, falls sich ein gemessener Posten aendern kann, erneute Kostenmessung; danach entscheidet Finn den Start.",
+  "sources": [
+    {
+      "path": "coordination/farben-20260927/pd-1-lauf/KOSTENMESSUNG-PROTOKOLL.md",
+      "sha256": "24c47dc7b4ad08992485c3c2075670181baefb23545ddaebfbedccdc655382d4"
+    },
+    {
+      "path": "coordination/farben-20260927/pd-1-lauf/KOSTEN-PD-1.json",
+      "sha256": "21f9fe017d4ec948a2dc22f715ce3590c8acacc5cc602816b797d5ca9c179f32"
+    },
+    {
+      "path": "coordination/farben-20260927/pdwm-bindung/BERICHTIGUNG-1-VERMERK-LEITUNG-PD-1-WM-1.md",
+      "sha256": "f1c08ed04a7bd4b9083038185963459890662cfe45264bc997f83456fac85e46"
+    },
+    {
+      "path": "coordination/farben-20260927/GEGENLESEN-J28-J29.md",
+      "sha256": "a761b6c4c3ddc4a1d6d21185ba569f15e5abb967be9be689b5ab6f4f442af963"
+    }
+  ],
+  "recorded_at": "2026-09-28T06:59:46.090034+00:00"
+}

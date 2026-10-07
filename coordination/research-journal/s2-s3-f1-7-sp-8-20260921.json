@@ -1,0 +1,28 @@
+{
+  "id": "s2-s3-f1-7-sp-8-20260921",
+  "time": "2026-09-21T00:20:00+02:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5); S2/S3-Agent (Opus 5) mit Bunker-Qwen als reproduzierendem Haus",
+  "topic": "theory",
+  "status": "checked",
+  "title": "S2/S3 von F1.7 und SP-8: F1.7 traegt fuer F1, loest aber F2.2 nicht auf; SP-8 traegt nicht",
+  "question": "Halten die Ergebnisse von F1.7 (Schrittweiten-Sweep, Ausgang A) und SP-8 (Rundenwahrscheinlichkeiten, B und T) dem Abgleich mit den Rohdaten und einer Reproduktion aus dem Vertragstext allein stand?",
+  "action": "S3: Bericht gegen Ergebnisdatei und Ergebnisdatei gegen alle Rohbahnen. S2: Qwen schrieb je Fall aus dem Vertragstext allein ein eigenes Skript; Ausfuehrung als begrenzte CPU-Units auf .69 (F1.7 in drei Paketen, 27,9e6 Schritte, 2,1 h).",
+  "result": "F1.7: 0 Abweichungen in beiden Abgleichen; Qwen reproduziert alle 56 dH-Werte auf 2,7e-8 und alle 47 Ordnungswerte auf 6,3e-8, meldete aber selbst T, weil es die Nullprobe N1 falsch umsetzte. Einschraenkungen: neu gemessen sind 20 von 56 Zellen, an der Sprosse h = 1e-4 nur 2 von 6; 5 Zellen sind an der Ankersprosse Tautologie. Es wurde keine F2.2-Bahn gerechnet, der Patch idx 120/121 bleibt offen. SP-8: Zahlen stimmen, aber beide Ausgaenge standen vorab fest (Vertragsabschnitte FA1, FA2 und FB3), die Windung aendert die Kennzahl nur um 1,45e-4 bei 1,8e-3 Seed-Streuung, die Nullkontrolle K2 deckt w = 0 nicht ab, eine Schranke liegt bei Ueberlast um Faktor 250 daneben.",
+  "meaning": "Fuer Runde 23 ist F1.7 als Evidenz fuer F1 vorlegbar, mit den drei Einschraenkungen im Vorbehalt; fuer F2.2 ist es KEINE Evidenz, meine frueher zu starke Formulierung ist im Kandidatenentwurf berichtigt. SP-8 wird nicht vorgelegt. Register und Ledger blieben gesperrt.",
+  "sources": [
+    {
+      "path": "coordination/methodik-review/s2-s3-20260920/S2-S3-F1-7.md",
+      "sha256": "c551a0f364a45123fc2bec013503f8d176086c3f7438542b6384bfba60ef63c3"
+    },
+    {
+      "path": "coordination/methodik-review/s2-s3-20260920/S2-S3-SP-8.md",
+      "sha256": "ee95883970af43880ce759d9917117da5eb1a1d26ebd7ab79ac8106df7d230a5"
+    },
+    {
+      "path": "coordination/steuerung-20260918-r22/KANDIDATEN-R23-ENTWURF.md",
+      "sha256": "8fb7f67b152c017ed56d92b179ef143ff4187547ec194072b88e5e741547446a"
+    }
+  ],
+  "recorded_at": "2026-09-20T20:59:47.890265+00:00"
+}

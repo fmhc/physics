@@ -1,0 +1,36 @@
+{
+  "id": "claude-cx-1-f3-vorlauf-t-vorab-20260925",
+  "time": "2026-09-25T02:20:46+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung; Vertragsautor CX-1 (Anthropic, Opus 5.5)",
+  "topic": "theory",
+  "status": "open",
+  "title": "CX-1 Fassung 3: Vorlauf zeigt einen vorab feststehenden Ausgang T (Nullwelt 3,02 % gegen 3 %); nichts gelockert, Verfahren wird verfeinert",
+  "question": "Qualifiziert das Verfahren fuer Weg 1 (C x S^2, Hopfionen und Q-Ball-Referenzaeste) mit den vorab festgelegten Schwellen, bevor an P* gerechnet wird?",
+  "action": "Vorlauf der Fassung 3 in Kontrollwelten auf der .69: GPU 54 min 18,6 s fuer Nullwelt und Fehlerarme, Q-Ball auf der CPU, hoechstens 2770 MiB je Fall. Die Auswertung lief mit dem vorab gebundenen Skript. P* blieb unberuehrt. Teil A ist nach dem Vorlauf unveraendert (hashgleich zum Stand vor dem Vorlauf). Danach Leitungsentscheidungen zu den offenen Punkten.",
+  "result": "Nullwelt bei Omega = 0,12: Die Gitterabweichung der Drehladung Q4u betraegt 3,0155 % gegen die Grenze 3 %; der Fehlerarm FN liegt bei 3,0303 %. Weil Lauf 1 genau diese Faelle rechnet, stuende T vorab fest. Der Abstand zur Schwelle ist 30- bis 60-mal groesser als die Nachrechenstreuung. Dazu: K11 bei 0,995 verletzt (2,90e-7 gegen 1e-8), was vorab aus exp(-2 kappa L) ablesbar war; Fehlerarm FQb fuer K10(b) unsichtbar, weil alle Pruefpunkte wegfallen; K9.NW nicht auswertbar. Die Toleranz AUFL_U ist auf 0,03 zurueckgesetzt, gelockert wurde nichts.",
+  "meaning": "Ein Vertrag mit vorab feststehendem T ist so wertlos wie einer mit vorab feststehendem A; der Vorlauf hat das vor der Bindung gezeigt. Leitung, 04:19 MESZ, nach Sicht auf Kontrollweltdaten und offen fuer S0: Gitter feiner bei gleichem Kasten (Abstaende mal 6/7), Schwelle 3 % unveraendert. Die Q-Ball-Stellvertreter werden nur nach der Formel gewaehlt (omega <= 0,9896). Ein Fehlerarm gilt als erkannt, wenn er nie zu A fuehren kann; dazu kommt ein neuer, vorab festgelegter Fehlerarm. Es gibt sechs statt vier Nullwelt-Stuetzstellen. Der neue Vorlauf braucht etwa 4,4 GB auf der P5000 und startet nur, wenn dort mindestens 6 GB frei sind; derzeit haelt Ollama 9,5 GB, die Entscheidung liegt bei Finn. Danach S0 Runde 3 mit astra und lokalem Qwen. Kein physikalischer Befund.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260924/CX-1-VERTRAG.md",
+      "sha256": "41d60bca17b141b35aa6fdac34da5ace258b3aefc073bf988877328da0a282cf"
+    },
+    {
+      "path": "coordination/vertraege-20260924/CX-1-VERTRAG.md.bak-20260925-fassung2",
+      "sha256": "5de7ade0a95260a22ca9db9cfbe9b6e53ad410f697cef00bac4bc8dc17594d05"
+    },
+    {
+      "path": "coordination/vertraege-20260924/cx-1-s0/vorlauf-f3/ergebnis/bericht-f3.md",
+      "sha256": "1628b1ce498248bad296a5f47be6ed13c1709e4a5ae1cf655a645b558c08158b"
+    },
+    {
+      "path": "coordination/vertraege-20260924/cx-1-s0/vorlauf-f3/cx1_auswertung_f3.py",
+      "sha256": "779e47e415261d55752f5ca5ea1aca466da82a9946bd91e81974cf50e52b6e28"
+    },
+    {
+      "path": "coordination/vertraege-20260924/cx-1-s0/review-astra-f2/REVIEW-astra-CX-1-F2.md",
+      "sha256": "3e25d1fae2fb75af3ecc90bbbd8d36585209aafb7f58d350bf1f04d7b6d36d9c"
+    }
+  ],
+  "recorded_at": "2026-09-25T02:20:47.904279+00:00"
+}

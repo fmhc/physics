@@ -1,0 +1,19 @@
+KOLL-1 voll Start 2026-09-30T07:42:12+02:00, Geraet cpu, torch 2.10.0+cu128
+  Argumente: {"kommando": "voll", "geraet": "cpu", "out": "lauf-lokal/rauch-voll3", "w2": 0.7976768, "rho0": 1.728147, "h": 0.3, "cfl": 0.4, "rmax": 14.0, "zmax": 24.0, "schicht": 4.0, "sig0": 2.0, "rfluss": 9.0, "zfluss": 18.0, "abstaende": [10.0, 12.0, 14.0], "kette": 10.0, "d": 10.0, "eps": 0.005, "T": 120.0, "dtmess": 0.2, "budget": 500.0, "weiter": false, "faeden": 1, "profil_h": 0.01, "profil_rmax": 30.0}
+  Profil omega^2 = 0.7976768: f0 = 1.024235494350164 (Klammer 6.2e-11), S0 = 1.049058, r_c = 14.35, A = 7.518211 (Streuung 4.4e-05 auf [r_c-4, r_c]), Q = 189.1443, E = 184.6243
+  stille Stelle: Singulaerwerte 5.036e-01, 4.270e-04 (Verhaeltnis 8.48e-04); a-Zeile +1.271e-04, +4.766e-04
+  Mode rho = 1.744617500: kappa_c = 0.524371, q = 2.440840, N (r <= 12.0) = 2.690973e+02, C_v = +1.514904e+01, offene Aussenamplitude 1.692e-07 (reduziert), wachsender Rest bei r_m +3.02e-04, V(r_m) +3.743e-03, u(0) = +0.4998, v(0) = +0.5002
+  Gitter h = 0.3, dt = 0.1200, nr = 47, nz = 161, Glieder 6: ['paar0', 'paar+', 'paar-', 'einzel0', 'einzel+', 'einzel-'], Punkte je Glied 7567
+  Ueberlappmatrizen M (Zeile = Messball, Spalte = Mode): paar0: [[1.0, 0.0144], [-0.0144, -1.0]]; paar+: [[1.0, 0.0144], [-0.0144, -1.0]]; paar-: [[1.0, 0.0144], [-0.0144, -1.0]]; einzel0: [[1.0171]]; einzel+: [[1.0171]]; einzel-: [[1.0171]]
+  Start Zeitschleife 2026-09-30T07:42:13+02:00, t = 0.00 bis 120.0, Messung alle 2 Schritte, Budget 500.0 s
+  Ende Zeitschleife 2026-09-30T07:42:23+02:00, t = 120.00, Schritte 1000, 9.1 s (9.07 ms je Schritt in diesem Aufruf)
+=== Auswertung lauf-lokal/rauch-voll3 (voll, omega^2 = 0.7976768, h = 0.3, t bis 120.0) ===
+  Uebersprechen am Anfang M_BA/M_BB = +0.0123, am Ende +3.46e-07
+  Demodulation bei rho_d = 1.7455046 (+8.87e-04); Einzelball Gamma = +3.890e-06, a(Ende) 0.99536
+  Paar: b_max = 0.0856 bei t = 69; a_A(Ende) 0.9562; Summe a^2 Ende 0.9214
+  t =    25.2: d = 12.401, z_E = -5.0016, Q_A 177.434, Q_B 177.434, a_A 0.9703, a_B 0.0677, a_einzel 1.0000
+  t =    50.2: d = 16.393, z_E = -5.0025, Q_A 177.379, Q_B 177.379, a_A 0.9651, a_B 0.0789, a_einzel 0.9989
+  t =   100.1: d = 24.957, z_E = -5.0025, Q_A 177.350, Q_B 177.350
+  Fluss (lineare Antwort, 2. Haelfte) Paar +2.739e-01, Einzel +1.065e-02; zweite Ordnung Paar +1.080e+01, Einzel +3.060e+00
+  Hintergrundatmung ohne Anregung als aequivalentes eps: Einzel max 6.20e-04, Paar-A max 9.69e-03 (Anregung eps = 0.005)
+Ende 2026-09-30T07:42:23+02:00, 10.8 s

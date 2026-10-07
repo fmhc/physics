@@ -1,0 +1,45 @@
+G2-08 prisma.py haupt Start 2026-09-30T11:25:47+02:00 auf CPU, 1 Thread, torch 2.10.0+cu128, Faktor 0.01  FORMPROBE: Zahlen ungueltig
+Phi2 = 0.01, Stufe bei x_s = 0.0, w = 1.0, Start x0 = -20.0, Zone |x - x_s| < 6.0
+Codeschwellen (bindend): Variante omega^2 | v_cl | M1 | M2 | (M2/M1 - 1)/Phi2 | Licht hinten
+  A|0.55 | 0.079244 | 3.371076 | 3.381710 | 0.3155 | 1.01980
+  A|0.7 | 0.065530 | 2.298607 | 2.303558 | 0.2154 | 1.01980
+  A|0.9 | 0.036516 | 1.268979 | 1.269825 | 0.0667 | 1.01980
+  C|0.55 | 0.141198 | 3.371076 | 3.405191 | 1.0120 | 1.02020
+  C|0.7 | 0.141267 | 2.298607 | 2.321892 | 1.0130 | 1.02020
+  C|0.9 | 0.141373 | 1.268979 | 1.281853 | 1.0146 | 1.02020
+  v_P1 = 0.051023, v_P2 = 0.072387
+[grob] 1.8 s
+  Lauf | v | T_run | Soll | Ausgang | Anteile zurueck/stufe/durch/frei | v2 | S_max-Schwankung | Ladung, Energie bis Schwamm
+  A w2=0.55 0,95 v_cl            | 0.07528 | 11 | reflektiert | vor der Stufe | 1.0000/0.0000/0.0000/0.0e+00 | +0.07527 | 2.89e-04 | 2.3e-16, 6.6e-08
+  A w2=0.55 1,05 v_cl            | 0.08321 | 10 | durch | vor der Stufe | 1.0000/0.0000/0.0000/1.1e-16 | +0.08319 | 2.49e-04 | 1.2e-16, 6.6e-08
+  A w2=0.7 0,95 v_cl             | 0.06225 | 13 | reflektiert | vor der Stufe | 1.0000/0.0000/0.0000/-4.4e-16 | +0.06224 | 4.37e-04 | 3.6e-16, 1.2e-07
+  A w2=0.7 1,05 v_cl             | 0.06881 | 12 | durch | vor der Stufe | 1.0000/0.0000/0.0000/-2.2e-16 | +0.06879 | 2.55e-04 | 0.0e+00, 1.2e-07
+  A w2=0.9 0,95 v_cl             | 0.03469 | 20 | reflektiert | vor der Stufe | 0.9998/0.0002/0.0000/1.1e-16 | +0.03463 | 2.76e-04 | 3.4e-16, 1.6e-07
+  A w2=0.9 1,05 v_cl             | 0.03834 | 20 | durch | vor der Stufe | 0.9998/0.0002/0.0000/2.2e-16 | +0.03827 | 4.19e-04 | 1.7e-16, 1.6e-07
+  C w2=0.55 0,95 v_cl            | 0.13414 | 6 | reflektiert | vor der Stufe | 1.0000/0.0000/0.0000/0.0e+00 | +nan | 2.09e-04 | 2.3e-16, 7.1e-08
+  C w2=0.55 1,05 v_cl            | 0.14826 | 5 | durch | vor der Stufe | 1.0000/0.0000/0.0000/1.1e-16 | +nan | 1.50e-04 | 2.3e-16, 7.2e-08
+  C w2=0.7 0,95 v_cl             | 0.13420 | 6 | reflektiert | vor der Stufe | 1.0000/0.0000/0.0000/0.0e+00 | +nan | 3.20e-04 | 1.8e-16, 1.2e-07
+  C w2=0.7 1,05 v_cl             | 0.14833 | 5 | durch | vor der Stufe | 1.0000/0.0000/0.0000/2.2e-16 | +nan | 6.63e-05 | 3.6e-16, 1.3e-07
+  C w2=0.9 0,95 v_cl             | 0.13430 | 6 | reflektiert | vor der Stufe | 0.9998/0.0002/0.0000/0.0e+00 | +nan | 8.92e-05 | 1.7e-16, 1.7e-07
+  C w2=0.9 1,05 v_cl             | 0.14844 | 5 | durch | vor der Stufe | 0.9998/0.0002/0.0000/-2.2e-16 | +nan | 1.50e-04 | 0.0e+00, 1.7e-07
+  A w2=0.55 P1 v=0.05102         | 0.05102 | 16 | reflektiert | vor der Stufe | 1.0000/0.0000/0.0000/4.4e-16 | +0.05101 | 2.87e-04 | 5.8e-16, 6.5e-08
+  A w2=0.7 P1 v=0.05102          | 0.05102 | 16 | reflektiert | vor der Stufe | 1.0000/0.0000/0.0000/1.1e-16 | +0.05101 | 3.40e-04 | 3.6e-16, 1.2e-07
+  A w2=0.9 P1 v=0.05102          | 0.05102 | 16 | durch | vor der Stufe | 0.9997/0.0003/0.0000/2.2e-16 | +0.05093 | 2.97e-04 | 3.4e-16, 1.6e-07
+  A w2=0.55 P2 v=0.07239         | 0.07239 | 11 | reflektiert | vor der Stufe | 1.0000/0.0000/0.0000/-2.2e-16 | +0.07237 | 4.32e-04 | 3.5e-16, 6.6e-08
+  A w2=0.7 P2 v=0.07239          | 0.07239 | 11 | durch | vor der Stufe | 1.0000/0.0000/0.0000/-2.2e-16 | +0.07237 | 5.32e-04 | 3.6e-16, 1.2e-07
+  A w2=0.9 P2 v=0.07239          | 0.07239 | 11 | durch | vor der Stufe | 0.9998/0.0002/0.0000/0.0e+00 | +0.07224 | 1.53e-04 | 1.7e-16, 1.6e-07
+  C w2=0.55 P1 v=0.05102         | 0.05102 | 16 | reflektiert | vor der Stufe | 1.0000/0.0000/0.0000/3.3e-16 | +0.05101 | 2.87e-04 | 3.5e-16, 6.5e-08
+  C w2=0.7 P1 v=0.05102          | 0.05102 | 16 | reflektiert | vor der Stufe | 1.0000/0.0000/0.0000/2.2e-16 | +0.05101 | 3.40e-04 | 1.8e-16, 1.2e-07
+  C w2=0.9 P1 v=0.05102          | 0.05102 | 16 | reflektiert | vor der Stufe | 0.9997/0.0003/0.0000/-2.2e-16 | +0.05093 | 2.97e-04 | 3.4e-16, 1.6e-07
+  C w2=0.55 P2 v=0.07239         | 0.07239 | 11 | reflektiert | vor der Stufe | 1.0000/0.0000/0.0000/-2.2e-16 | +0.07237 | 4.32e-04 | 3.5e-16, 6.6e-08
+  C w2=0.7 P2 v=0.07239          | 0.07239 | 11 | reflektiert | vor der Stufe | 1.0000/0.0000/0.0000/-2.2e-16 | +0.07237 | 5.32e-04 | 0.0e+00, 1.2e-07
+  C w2=0.9 P2 v=0.07239          | 0.07239 | 11 | reflektiert | vor der Stufe | 0.9998/0.0002/0.0000/0.0e+00 | +0.07224 | 1.53e-04 | 1.7e-16, 1.6e-07
+  Pruefung [grob]: {"V1_C_schwellen_richtig": false, "V1_C_schwellen_spanne": 0.0012398174139369722, "V2_A_schwellen_richtig": false, "V3_prisma_A_falsch": ["A w2=0.55 P1 v=0.05102", "A w2=0.7 P1 v=0.05102", "A w2=0.9 P1 v=0.05102", "A w2=0.55 P2 v=0.07239", "A w2=0.7 P2 v=0.07239", "A w2=0.9 P2 v=0.07239"], "V3_prisma_C_sortiert": ["C w2=0.55 P1 v=0.05102", "C w2=0.7 P1 v=0.05102", "C w2=0.9 P1 v=0.05102", "C w2=0.55 P2 v=0.07239", "C w2=0.7 P2 v=0.07239", "C w2=0.9 P2 v=0.07239"], "V4_durch_97pz_und_Smax_2pz": true, "falsche_schwellenlaeufe": ["A w2=0.55 0,95 v_cl", "A w2=0.55 1,05 v_cl", "A w2=0.7 0,95 v_cl", "A w2=0.7 1,05 v_cl", "A w2=0.9 0,95 v_cl", "A w2=0.9 1,05 v_cl", "C w2=0.55 0,95 v_cl", "C w2=0.55 1,05 v_cl", "C w2=0.7 0,95 v_cl", "C w2=0.7 1,05 v_cl", "C w2=0.9 0,95 v_cl", "C w2=0.9 1,05 v_cl"], "spaltende_laeufe": [], "scheitert": true, "nicht_entscheidbar": false, "plausibilitaet_bestanden": true}
+[fein] 0.6 s
+  Lauf | v | T_run | Soll | Ausgang | Anteile zurueck/stufe/durch/frei | v2 | S_max-Schwankung | Ladung, Energie bis Schwamm
+  A w2=0.7 0,95 v_cl             | 0.06225 | 13 | reflektiert | vor der Stufe | 1.0000/0.0000/0.0000/1.1e-16 | +0.06225 | 4.88e-05 | 1.8e-16, 7.4e-09
+  A w2=0.7 1,05 v_cl             | 0.06881 | 12 | durch | vor der Stufe | 1.0000/0.0000/0.0000/-2.2e-16 | +0.06880 | 1.15e-04 | 3.6e-16, 7.4e-09
+  C w2=0.7 0,95 v_cl             | 0.13420 | 6 | reflektiert | vor der Stufe | 1.0000/0.0000/0.0000/2.2e-16 | +nan | 1.04e-04 | 1.8e-16, 7.8e-09
+  C w2=0.7 1,05 v_cl             | 0.14833 | 5 | durch | vor der Stufe | 1.0000/0.0000/0.0000/1.1e-16 | +nan | 2.97e-05 | 3.6e-16, 7.9e-09
+L3 (fein = dx/2, dt/2; gleicher Ausgang, v2 Effekt >= 5 x Aenderung): 4 von 4 bestanden
+Ende 2026-09-30T11:25:49+02:00

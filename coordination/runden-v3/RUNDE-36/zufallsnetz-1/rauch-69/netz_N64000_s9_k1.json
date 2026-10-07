@@ -1,0 +1,94 @@
+{
+ "modus": "netz",
+ "N": 64000,
+ "saat": 9,
+ "feder": "k1",
+ "rauch": true,
+ "start_utc": "2026-10-03T21:09:12Z",
+ "skript_sha256": "361847c1fe4f0351613fed466be58042eea56d6406eba9843c05a7ea33036767",
+ "numpy": "2.4.4",
+ "scipy": "1.18.0",
+ "dichte": 1.0,
+ "rand": 5.0,
+ "cg_rtol": 1e-10,
+ "L": 39.99999999999999,
+ "V": 63999.99999999996,
+ "rho": 1.0000000000000007,
+ "delaunay": {
+  "punkte_erweitert": 125265,
+  "delaunay_s": 6.607329607009888,
+  "tetraeder_gesamt": 842591,
+  "tetraeder_mit_ecke_im_wuerfel": 469929,
+  "tetraeder_periodisch": 433409.0,
+  "tetraeder_je_punkt": 6.772015625,
+  "tetraeder_ganzzahlig": true,
+  "kanten": 497409,
+  "mittlerer_grad": 15.54403125,
+  "grad_min": 5,
+  "grad_max": 33,
+  "euler_E_gleich_N_plus_T": true,
+  "umkugel_max_ueberstand": -2.2706350758783462,
+  "umkugeln_im_rand": true,
+  "umkugel_radius_max": 1.552528900760629,
+  "kanten_beidseitig_gefunden": true,
+  "kanten_verschiebung_ok": true,
+  "koplanar_ausgelassen_orig": 0,
+  "selbstkanten": 0,
+  "kanten_sha256": "3c7e911adbbf0edd52e6aae66d7a181955468dd832930ac2f70688e3dab38406"
+ },
+ "netz_s": 8.107532024383545,
+ "elast_diag": {
+  "cg": [
+   {
+    "verzerrung": 1,
+    "iterationen": 199,
+    "cg_info": 0,
+    "rel_residuum": 9.104408932596412e-11,
+    "dauer_s": 4.664532423019409
+   },
+   {
+    "verzerrung": 2,
+    "iterationen": 199,
+    "cg_info": 0,
+    "rel_residuum": 9.042084821416862e-11,
+    "dauer_s": 4.771248817443848
+   },
+   {
+    "verzerrung": 3,
+    "iterationen": 198,
+    "cg_info": 0,
+    "rel_residuum": 9.942108188310105e-11,
+    "dauer_s": 4.779821395874023
+   },
+   {
+    "verzerrung": 4,
+    "iterationen": 197,
+    "cg_info": 0,
+    "rel_residuum": 9.949093089432738e-11,
+    "dauer_s": 4.734899997711182
+   },
+   {
+    "verzerrung": 5,
+    "iterationen": 197,
+    "cg_info": 0,
+    "rel_residuum": 9.439176342184921e-11,
+    "dauer_s": 4.737428665161133
+   },
+   {
+    "verzerrung": 6,
+    "iterationen": 198,
+    "cg_info": 0,
+    "rel_residuum": 9.580963241897923e-11,
+    "dauer_s": 4.761132717132568
+   }
+  ],
+  "asym_C_alt": 2.874431605157485e-13,
+  "diff_C_C_alt": 4.639131574138631e-13,
+  "nnz_H": 9529362,
+  "stabil": true,
+  "stabil_affin": true
+ },
+ "dauer_s": 37.5948121547699,
+ "maxrss_mb": 541.71875,
+ "ende_utc": "2026-10-03T21:09:49Z"
+}

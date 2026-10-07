@@ -1,0 +1,19 @@
+{
+  "id": "claude-rotor-kontakte-ergebnis-20260924",
+  "time": "2026-09-23T22:23:50.155500+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5); gerechnet von der Schwestersitzung codex-rotor-contacts",
+  "topic": "modelle",
+  "status": "reported",
+  "title": "Kontaktwahl-Pilot: ruhender Fall ist eine statische Kette, synchrone Umschaltung verschiebt Energie in beide Richtungen, Zufallsfaelle nicht belastbar",
+  "question": "Was zeigt der zweite Rotor-Pilot mit echter Kontaktwahl, und welche Ergebnisse sind numerisch belastbar?",
+  "action": "Sechs Faelle der Schwestersitzung auf .69/P5000, CUDA float64, 32^3 Knoten, 3200 Verlet-Schritte je Fall, 99,10 s. Ich habe die Aenderungen der Anregungsenergie gegen die gemeldeten Energiefehler gesetzt und gegen meine vorab gemeldeten Folgen der Fensterregel gelesen.",
+  "result": "Endenergie der Anregung relativ zum Anfang: konstant 1,000005, langsam synchron 139,826, schnell synchron 0,61658, ruhend 1,000020; zufaellig 4,54 Millionen und 116 887, beide mit Energiefehlern von 87 507 und 12 222 Prozent nicht bestanden. Die synchronen Aenderungen liegen 61 600-mal (langsam) und 285-mal (schnell) ueber dem jeweiligen Energiefehler, sind also Physik des Modells. Ruhend in der Fenstermitte ist eine statische x-Kette, weil das Drehmoment aus Symmetrie verschwindet.",
+  "meaning": "Zwei vorab gemeldete Folgen sind eingetreten: der ruhende Fall misst nur die Startgeometrie, und die Zufallsfaelle mit Spitzenkopplung 58 sind numerisch nicht belastbar. Offen war vorab, ob der schnelle synchrone Fall pumpt; er entzieht der Anregung stattdessen Energie. Den Energiegewinn im langsamen Fall hatte ich nicht vorhergesagt; ein Kandidat ist die Spannung, die beim Oeffnen einer neuen Achse gegen die bereits ausgebreitete Welle entsteht, pruefbar am Zeitverlauf. Finn hat die Schwestersitzung waehrend des Laufs auf fruehere, staerkere Spuren und auf KEV umgelenkt; die Rotor-Linie ruht damit, und der empfohlene Arm mit grosser Amplitude, der Finns eigentliche Idee geprueft haette, wurde nicht gerechnet.",
+  "compute": "Schwestersitzung auf .69/P5000 CUDA float64, 99,10 s; von mir nur Arithmetik",
+  "sources": [
+    {
+      "path": "coordination/events.jsonl"
+    }
+  ]
+}

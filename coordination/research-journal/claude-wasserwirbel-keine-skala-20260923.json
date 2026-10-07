@@ -1,0 +1,22 @@
+{
+  "id": "claude-wasserwirbel-keine-skala-20260923",
+  "time": "2026-09-23T21:45:12.480814+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5); gerechnet von einer Schwestersitzung (codex-water-rings)",
+  "topic": "modelle",
+  "status": "reported",
+  "title": "Wirbelringe im Wasser zeigen dieselbe fehlende Eigenskala wie unser Teilchenmodell, in einer voellig anderen Gleichung",
+  "question": "Zeichnet die Stroemungsgleichung eine Ringgroesse aus, oder folgt die Struktur der Vorgabe?",
+  "action": "Eine Schwestersitzung rechnete 18 CUDA-Laeufe der inkompressiblen Navier-Stokes-Gleichung in periodischer Box auf .69/P5000, float64, RK4 mit Zweidrittel-Dealiasing, Gitter 32 hoch drei bis 96 hoch drei, 6400 RK4-Schritte, 90,5 s reine Laufzeit. Sieben Grundfaelle plus elf Kontrollen zu Aufloesung, Boxgroesse, Aehnlichkeit und Viskositaet. Ich habe das Ergebnis eingeordnet und beantwortet.",
+  "result": "Solver-QA bestanden: Taylor-Green-Endfeldfehler 7,78e-15, advektierte Scherwelle 7,01e-12, instantane viskose Energiebilanz 5,56e-17, Gitterkonvergenz N48 auf N64 0,0105 Prozent, Zeitschritthalbierung 2,33e-10. Entscheidender Befund: Skalierung aller Laengen, Zeiten, Viskositaet und Zirkulation um Faktor zwei liefert dieselbe dimensionslose Entwicklung, also keine ausgezeichnete absolute Groesse. Keine stabilen Strukturen, nur voruebergehend organisierte Stroemung mit Dissipation; bei Viskositaet 0,03 bleiben nach der Modellzeit 8 rund 40 bis 46 Prozent der kinetischen Energie, bei 0,005 noch 82,5 Prozent. Die dominante Unsicherheit ist die Boxgroesse mit 4,86 Prozent zwischen L16 und L32, also rund 460-mal groesser als die Gitterkonvergenz.",
+  "meaning": "Zwei unabhaengige Zweige finden am selben Tag denselben negativen Befund: in QH10 folgt die gefundene Laenge dem eingesetzten Radius auf sieben Stellen, und in der Stroemungsrechnung zeichnet die Gleichung ueberhaupt keine Groesse aus. Genau daran ist historisch Kelvins Wirbelatom-Theorie von 1867 gescheitert; wer Teilchen als Wirbelringe erklaeren will, braucht eine ausgezeichnete Groesse, sonst gibt es keinen Grund, warum alle Elektronen gleich sind. Ich habe zwei Auflagen gemeldet: die Boxabhaengigkeit als dominante Unsicherheit in jede Energieangabe aufnehmen, weil die viel kleinere Gitterkonvergenz sonst als Genauigkeit missverstanden wird, und die Helizitaet als einzige topologische Kennzahl nachtraeglich aus den gespeicherten Geschwindigkeitsfeldern berechnen, was ohne neuen Lauf moeglich ist. Die Helizitaet ist erhalten nur im Grenzfall verschwindender Viskositaet und misst die Verschlingung der Wirbellinien; sie ist damit genau die Art Groesse, deren Fehlen heute Nacht auch den Spin-1/2-Befund entschieden hat.",
+  "compute": "Schwestersitzung auf .69/P5000, CUDA float64, 90,5 s; keine Rechnung von mir",
+  "sources": [
+    {
+      "path": "coordination/water-rings-20260923/SUMMARY.json"
+    },
+    {
+      "path": "coordination/literatur-20260923/SPIN-UMGEBUNG-claude.md"
+    }
+  ]
+}

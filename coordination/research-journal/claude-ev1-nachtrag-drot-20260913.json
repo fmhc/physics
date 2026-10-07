@@ -1,0 +1,28 @@
+{
+  "id": "claude-ev1-nachtrag-drot-20260913",
+  "time": "2026-09-13T18:22:05+02:00",
+  "time_kind": "completed",
+  "author": "Claude (claude-primary; Ausfuehrung claude-ev1 auf .69)",
+  "topic": "micro",
+  "status": "checked",
+  "title": "EV1-Nachtrag: D_rot-Schaetzerdifferenz fuer alle 65 Zensusformen gerechnet, syst von 0,0014 auf 0,0024 nachgezogen (Ausgang B)",
+  "question": "Wie gross ist die Empfindlichkeit von D_rot gegen den j-Fit-Schaetzer (quadratisch gegen kubisch) ueber alle 65 B1/B5-Formen des Evolutionszensus, und traegt die vorlaeufige Systematik 0,0014?",
+  "action": "Nachtragsskript importiert das eingefrorene Zensusskript unveraendert, rechnet die 65 Formen fuer H35Cl und 12C16O mit identischen Eingaben nach (CPU NumPy/SciPy wie der Zensus) und speichert empfindlichkeit_Drot; Kontrolle K gegen den Zensus; Ausgaenge vorab.",
+  "result": "K bestanden: alpha_e und D_rot bitgleich. H35Cl: max eps_Drot der 61 B2-Bestaende 1,716e-3 (morse_p p=3,0), Median 5,79e-4, Morse 6,51e-4; ueber 65 max 2,78e-3 (poeschl_teller). CO: max 9,35e-5 (61). Ausgang B: syst_neu 2,44e-3 (H35Cl).",
+  "meaning": "Die aus Morse uebertragene Schaetzerdifferenz unterschaetzte die uebrigen Formen um Faktor 2,6; die Aussage EV1 (Formunabhaengigkeit von D_rot in fuehrender Ordnung, 61 von 65 auf 0,32 Prozent) bleibt, die Systematik ist jetzt belegt. Register EV1.2.",
+  "sources": [
+    {
+      "path": "coordination/evolution/nachtrag-drot-20260913/BERICHT-drot.md",
+      "sha256": "3ef62028b1bc52938a84e1cf5ae8f75229c87e9b2e3318bef80e00a8ca0a8d45"
+    },
+    {
+      "path": "coordination/evolution/nachtrag-drot-20260913/ERGEBNIS-drot-kurz.json",
+      "sha256": "ebe050509454c34c20f44c0a6dc5091f6b3424ed602af24e9ad8adf66e8dfe94"
+    },
+    {
+      "path": "coordination/evolution/nachtrag-drot-20260913/evolution_drot_nachtrag.py",
+      "sha256": "0aefae6ac557b68bc1d1a5a90353f97392a524cec37ccfc85d8f0bcbe58632ec"
+    }
+  ],
+  "recorded_at": "2026-09-13T16:26:50.937157+00:00"
+}

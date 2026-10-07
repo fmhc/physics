@@ -1,0 +1,69 @@
+NICHTAUTOR-CODELEKTUERE — 2026-10-02
+Reviewer: tetra_next_review. Keine Ausfuehrung/Interpreter/Tests.
+Basis: FOLLOWUP-PLAN.txt und run.py.
+run.py SHA256: 0d2184c3e3407d167131317816ef3c66b40827ca65f2708b190e38be278dd5cc
+
+STARTBEWERTUNG
+Kein konkreter Codeblocker fuer die vorgesehenen zentrierten, rangvollen
+12/20-Vertexketten als begrenzte Float64-Rechnung. Kein Nachweis strenger
+Exaktheit oder zertifizierter Vollstaendigkeit. INPUT.json war bei dieser
+Lektuere noch nicht vorhanden: Eingabehash, Zentrierung, Kanten und aeussere
+CPU/Wall-Limits sind vor Start separat zu verifizieren.
+
+KORREKTHEIT
+- Kanonisierung der Kreisnormalen und orient-Mapping erhalten Vertexzeichen.
+  Eine umgekehrte Normale bekommt das entsprechend umgekehrte Vorzeichen.
+- Das LP maximiert eine gemeinsame positive Halbraummarge; t>0 beschreibt
+  eine offene sphaerische Zelle. Die Box beschraenkt nur die radiale Skala.
+- Der Adjazenzgraph voller Zellen ist ueber einzelne Kreiswechsel verbunden,
+  wenn identische Grosskreise zusammengefasst sind. Auch Mehrfachkreuzungen
+  erzwingen keine Verbindung allein ueber nulldimensionale Zellkontakte.
+- Kreuzprodukte liefern moegliche Eckpunkte; alle signierten Halbraeume
+  filtern sie zur jeweiligen Zelle. Winkelordnung um den inneren Punkt und
+  sphärische Dreiecksflaechen sind fuer spitze dreidimensionale Kegel passend.
+- P verwendet eindeutige Kanten. C_face=S-E ist die Wald-Komponentenzahl;
+  geometrische Komponenten sind damit nur bei gepruefter Einbettung belegt.
+- Oktanten, Gesamtflaeche4pi, Antipodenexistenz und Flaechengleichheit sind
+  sinnvolle unabhaengige Kontrollen. Die Verteilung wird mit4pi normiert,
+  nicht nachtraeglich mit einer fehlerhaften gefundenen Flaechensumme.
+
+DEGENERIERTE FAELLE / GRENZEN
+- Zentraler Vertex und degenerierter Seed brechen explizit ab.
+- Rangarme Anordnungen mit Halbkugeln oder Lunen sind nicht allgemein
+  unterstuetzt: weniger als drei Polygonecken fuehrt zu Abbruch. Das ist
+  fuer die vorgesehenen rangvollen Ketten kein ersichtlicher Blocker.
+- Toleranzen fuer Kreiszusammenfassung, Eckpunktzusammenfassung und
+  Halbraumfilter koennen sehr kleine Zellen verschlucken/veraendern.
+- Insbesondere 0<t<=1e-11 wird still als leer behandelt; nur der Bereich
+  1e-11<t<=1e-9 wird als unresolved markiert. Damit ist das Verfahren auch
+  bei bestandenem Gesamtflaechengate nicht vollstaendig zertifiziert.
+  Dies passt nur zur ausdruecklichen Float64-Einordnung im Plan.
+- LP-Standardtoleranzen sind kein Beweis fuer das exakte Vorzeichen einer
+  numerischen Marge. Das Flaechengate kann relevante Ausfaelle entdecken,
+  aber keine beliebig kleinen fehlenden Zellen ausschliessen.
+
+ABBRUCH / VERÖFFENTLICHUNG
+checktime prueft zwischen LP-Aufrufen und nach Polygonvorbereitung nicht
+kontinuierlich. Harter aeusserer CPU/Wall-Abbruch ist daher erforderlich,
+wie im Plan vorgesehen. Ein Thread muss ebenfalls aeusserlich sichergestellt
+werden. Bei einem Gate-Fehler wird RESULT.json nicht neu publiziert;
+RESULT.partial.json kann einen vorangegangenen erfolgreichen Modellarm
+enthalten und darf dann nicht als Gesamterfolg interpretiert werden.
+In einem frischen Zielverzeichnis vermeidet dies Verwechslung mit alten
+RESULT.json-Dateien. Der finale os.replace ist innerhalb desselben
+Verzeichnisses ein geeigneter atomischer Abschluss.
+
+NACHTRAG NACH ROOT-LAUF — GETRENNT VOM VORSTARTURTEIL
+Read-only gelesen: RUN.log und relevante Felder von RESULT.json.
+Kein eigener Wiederholungslauf. Result meldet Oktantenkontrolle=true,
+128 bzw376 Zellen, beide Flaechensummen12.566370614359172 (4pi),
+Antipodenflaechenfehler1.1102230246251565e-16 und2.220446049250313e-16.
+Die Mittelwerte sind10.218695761462609 und12.644437130837925;
+C_face>1 hat Gewichte0.0010072099270555523 und0.012439680534245726.
+CPU-Zeit im Ergebnis17.282151355s. Root meldet Rechenort .69;
+der hier gelesene RUN.log selbst enthaelt keinen Hostnamen.
+RUN.log-Codehash entspricht dem oben vor Start gelesenen Code.
+RUN.log-Eingabehash f06cb323803e6d0f5036eb5d782a1c879ffbd9eec75b3bb363f012c335dcddb6
+stimmt mit dem read-only gehashten ../RESULT.json ueberein.
+Die geplanten Float64-Gates sind damit laut publiziertem Ergebnis bestanden.
+Die oben genannten Grenzen der Zertifizierung und C_face-Deutung bleiben.

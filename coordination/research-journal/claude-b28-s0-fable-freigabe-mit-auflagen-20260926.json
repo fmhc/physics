@@ -1,0 +1,29 @@
+{
+  "id": "claude-b28-s0-fable-freigabe-mit-auflagen-20260926",
+  "time": "2026-09-26T19:45:29+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung; S0 durch Fable-Subagent (Anthropic, feldforscher) 21:02:33 bis 21:43:54 MESZ (gemessen); Autor B28 Codex (OpenAI); eingetragen 21:45:29 MESZ",
+  "topic": "gesamtformel",
+  "status": "checked",
+  "evidenzart": "verfahren",
+  "title": "B28 (Stufe 2, lokale Stabilitaet des Higgsportal-Q250 im vollen komplexen Stoerraum) in S0 von Fable mit Auflagen freigegeben: bindungsfaehig nach Textkorrektur; wirklich offen nur zwei Zahlen; Kontrollen P/N/X halten an der Literatur",
+  "question": "Ist B28-A1 bindungsfaehig, steht ein Ausgang vorab fest, und halten die Kontrollen an der Literatur?",
+  "action": "S0 nach VORLAGE-v2 mit Herleitung der Kanalzerlegung, Kopfrechnungen und Literatur (Tsumagari/Copeland/Saffin 2008 im Volltext, Heeck u. a. 2020, Carles/Sparber 2023, Lewin/Rota Nodari 2020, Chen/Andersson/Li 2025). Hashes der Eingaben geprueft, alle gleich.",
+  "result": "URTEIL FREIGEBEN MIT AUFLAGEN, 8 Auflagen (6 ganz neu). Freigabeverhindernd: (1) Tabelle, was vor dem Lauf feststeht: Phase l=0 Eigenwert 0 exakt (Perron-Frobenius), relative Phase >= 0,2, Phasen l>=1 > 0, realH-roh mindestens ein negativer Modus, Fest-Q-positiv und d<0 sind bei Index 1 dasselbe Gate (VK-Lemma), d ~ -5,0 folgt aus B21, Knoten-Kontrolle X exakt B. (2) K3-Translationstoleranz 2e-3 nicht abgeleitet, im Vorlauf auf G1/G2 messen und mit Reserve binden. (3) Kernangabe F^2 = 1/4 falsch, F^2(0) ~ 1,2. Nicht freigabeverhindernd: omega_c ~ 0,96 und erwartete Steigungen binden, Lesart roher Index, Monotoniediagnose, S2-Teilbudget 15 min inkonsistent, GSS-II fuer Translationsnullmoden. Kontrollen: P (omega 0,8) weit auf dem stabilen Ast, N (omega 0,99) in omega knapp, in der Steigung (d ~ +39) weit instabil, X existiert, alle drei Auswerter-Kalibrierungen. Budget des Hauptarms 10 bis 20 GPU-min gegen 45 plausibel.",
+  "meaning": "Offen bleiben genau zwei Zahlen: der Index des Higgs-reell-Blocks bei l=0 und das Vorzeichen des antisymmetrisch-reellen Blocks bei l=0. Fable erwartet fuer beide stabil (p ~ 0,85), ausdruecklich als Erwartung, nicht als Vorentscheidung; B braucht eine physikalische Ueberraschung, bleibt aber erreichbar. Nach Textkorrektur (Auflagen 1 bis 3) ist kein neues Physik-S0 noetig; danach Ausfuehrender benennen, Vorlauf fuer die Toleranz, Bindung, S1, S2 durch Qwen mit erzwungenem Denken.",
+  "sources": [
+    {
+      "path": "coordination/field-b28-lokale-stabilitaet-20260926/VORAB-B28.md",
+      "sha256": "dc661ff39e5191342f3e1aeef536f1d0f9b40b60960c1cb5c8dd8ddf0e5e8c08"
+    },
+    {
+      "path": "coordination/field-b28-lokale-stabilitaet-20260926/s0-fable/REVIEW-fable-B28.md",
+      "sha256": "5900e9c10a69a5aaf1d969a4fa3cd16f5f0e863707da50dc1c94044b3c0b8273"
+    },
+    {
+      "path": "coordination/field-b28-lokale-stabilitaet-20260926/s0-fable/ARBEIT-fable.md",
+      "sha256": "07f8baeeefdbc10ff6a0cdbe8af24eaff8a51eb05ecd0ef341566abe4665b5e6"
+    }
+  ],
+  "recorded_at": "2026-09-26T19:45:29.632096+00:00"
+}

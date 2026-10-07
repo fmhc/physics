@@ -1,0 +1,105 @@
+{
+ "kopf": {
+  "karte": "Z2-SCHUTZ-1 (Runde 49)",
+  "modus": "hesse",
+  "args": {
+   "modus": "hesse",
+   "aus": "/home/fmh/fmhc-physics-remote/z2-schutz-1/rauch2",
+   "r0": 6.0,
+   "R": 12.0,
+   "nmax": 20000,
+   "ftol": 1e-07,
+   "dtmax": 0.1,
+   "dtstart": 0.02,
+   "capw": 0.05,
+   "start": "/home/fmh/fmhc-physics-remote/z2-schutz-1/rauch2/start-r6-R12.npz",
+   "eingaben": "../eingaben-gfn1",
+   "aufgabe": "haupt",
+   "verfahren": "neb",
+   "M": 12,
+   "d_grad": 90.0,
+   "sigma": 0.001,
+   "ks": 1.0,
+   "nvor": 150,
+   "ftol_ci": 0.001,
+   "ftol_band": 0.005,
+   "budget": 480.0,
+   "zs0_nmax": 3000,
+   "nmax_rel": 20000,
+   "zusatz": [
+    "SA=/home/fmh/fmhc-physics-remote/z2-schutz-1/rauch2/weg-haupt-r6-R12-neb.npz:X"
+   ],
+   "k": 4,
+   "tol": 1e-09,
+   "maxiter": 200000
+  },
+  "code_sha256": "e773926d9de1741425a7507642f54406eb41db47cfc435a9ad8b4385d9df1f2e",
+  "finn_sha256": "e9f357b63788918f7edd6e4e4abc84dcafb7924fbbbb5e147150c16f12d6c155",
+  "g2_sha256": "c9374a9898c9ab0ff8458b5077ed0e31f4cec53362d432ab21ef670e3be67933",
+  "start_utc": "2026-10-05T11:15:17Z",
+  "schreibzeit_utc": "2026-10-05T11:15:17Z",
+  "numpy": "2.4.4"
+ },
+ "netz_info": {
+  "art": "diamant",
+  "feld": "so3",
+  "N": 9249,
+  "frei": 6278,
+  "kern": 915,
+  "rand": 2056,
+  "bindungen": 17548,
+  "grad_frei_min": 4,
+  "grad_frei_max": 4,
+  "bindungslaenge_min": 0.8660254037844386,
+  "bindungslaenge_max": 0.8660254037844386,
+  "innen_frei": 1234,
+  "z3_gleich_g2": null
+ },
+ "ergebnisse": {
+  "S": {
+   "eigenwerte": [
+    0.9304046195659011,
+    0.9304046195659029,
+    1.0319521285200157,
+    1.0319521285200273
+   ],
+   "fehler": null,
+   "dim": 18834,
+   "nnz": 264582,
+   "zahl_negativ": 0,
+   "laufzeit_s": 0.7704148292541504,
+   "symmetrie_ueberlapp": [
+    0.49840346261973434,
+    0.3993565053841216
+   ]
+  },
+  "T": {
+   "eigenwerte": [
+    0.9304046195658929,
+    0.9304046195659061,
+    1.031952128520035,
+    1.0319521285200393
+   ],
+   "fehler": null,
+   "dim": 18834,
+   "nnz": 264582,
+   "zahl_negativ": 0,
+   "laufzeit_s": 0.7119207382202148
+  },
+  "SA": {
+   "eigenwerte": [
+    -21.32789942726757,
+    -18.02850294570283,
+    -15.553215669470871,
+    -12.444544097924213
+   ],
+   "fehler": null,
+   "dim": 18834,
+   "nnz": 264582,
+   "zahl_negativ": 4,
+   "laufzeit_s": 0.1958000659942627
+  }
+ },
+ "laufzeit_s": 1.7190721035003662,
+ "maxrss_mb": 118.2109375
+}

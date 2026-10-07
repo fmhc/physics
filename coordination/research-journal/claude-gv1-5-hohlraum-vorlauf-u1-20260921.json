@@ -1,0 +1,61 @@
+{
+  "id": "claude-gv1-5-hohlraum-vorlauf-u1-20260921",
+  "time": "2026-09-21T03:32:58+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5)",
+  "topic": "theory",
+  "status": "open",
+  "title": "GV1.5: die Anordnung traegt, die Aufloesung nicht - Abbruch im Pflicht-Vorlauf am Gate V2",
+  "question": "Schwingt ein starrer Hohlraum mit eingesperrten masselosen Vermittlern in einer harmonischen Falle mit der Traegheit seiner Gesamtruheenergie (Q_T = 1,000209) oder nur mit der Ruhemasse seiner Materie (Q_T = 0,833333)? GV1.4 konnte die Frage nicht stellen, weil 217 von 240 Vermittlern den Hohlraum verliessen; GV1.5 sollte pruefen, ob die vorgeschlagene Reparatur traegt.",
+  "action": "Reihenfolge Machbarkeitsprobe -> Vertrag -> S0-Fremdreview -> Lauf, alles auf ubuntu-auto (CPU, begrenzte User-Units, GPU-Lock unberuehrt, lokal keine Numerik). (1) Machbarkeitsprobe mit 14 Konfigurationen, blind gegen omega, <E_r> und Q_T; ihre Bahnintegration ist im Modus mb0 Zahl fuer Zahl identisch mit der von GV1.4 (Rasterabweichung exakt 0). (2) Vertrag GV1.5 nach VORLAGE-v2 mit allen 13 Pflichtabschnitten; geaendert gegenueber GV1.4 wurden nur die Anfangsbedingung (Vermittler ueber die Hohlraumachse verteilt statt alle auf einer Kappe, Laufphase s ~ U(0;0,5)) und die Aufteilung n = 150 statt 20 bei |k| = 4/3 statt 10, so dass n|k| = 200 und beide Vorhersagen unveraendert bleiben. (3) S0-Fremdreview durch Qwen (Bunker) und DeepSeek (OpenRouter), beide 'freigeben mit Auflagen', Quote neu/gesamt 8 von 11, Kosten 0,01046 USD. (4) Lauf: Modus pruefe bestanden, Pflicht-Vorlauf mit 24 Bahnen je Arm gerechnet.",
+  "result": "Ausgang U1, entschieden im Pflicht-Vorlauf, ohne Produktion und ohne eine einzige Kennzahl Q_T. Sieben der acht Gates sind bestanden, darunter alle, an denen GV1.4 gescheitert ist: Fluchtzahl 0 von 3600 Vermittlerbahnen (GV1.4: 217 von 240), kleinste aktive Vermittlerzahl 150 von 150, Stosszahl 169637 je Bahn gegen die geometrische Vorhersage 169646 (5,3e-5 relativ), rms|V_K|/V_0 = 0,676 gegen 17,50 in GV1.4 und gegen 0,7071 fuer eine reine Sollschwingung, max|V_K|/V_0 = 2,41 (Gate 3,0), f_quer = 0,1666699 gegen f_0 = 0,1666667, Winkelvorrat der Blende zu 37,5 Prozent ausgeschoepft, Nullprobe 3600 von 3600 entkommen bei 0 Stoessen je Bahn im Median (GV1.4 behauptete 0 und mass 10). Gerissen ist allein V2: der im Vorlauf gemessene Streuungswert s_rel = 0,00279 ergibt N_noetig = 1227 gegen die Obergrenze 1200, mit dem vertraglichen Sicherheitsfaktor 1,5 sogar 1841. Ursache belegt: die Machbarkeitsprobe hatte s_rel aus 12 Bahnen zu 0,00112 (Seed 23) bzw. 0,00125 (Seed 24) bestimmt; der Quantilabstand ((p84-p16)/2)/Median waechst systematisch mit der Bahnzahl, weil die Verteilungsfluegel erst spaeter besetzt werden. Der Fehlgriff ist Faktor 2,5, der eingebaute Sicherheitsfaktor war auf 1,5 geeicht. Es wurde keine Schwelle, kein Gate, keine Kontrolle, kein Seed und keine Bahnzahl geaendert. Eine Aenderung nach 11.1 betraf ausschliesslich Berichtscode (mechanisch nachgewiesen: nur die Funktionen bericht und ja, Modulebene identisch).",
+  "meaning": "Der Befund ist methodisch und nicht physikalisch: die Anordnung dieses Vertrags ist tragfaehig geworden, aber die Vorabschaetzung ihrer Aufloesung war es nicht. Weder 1,000209 noch 0,833333 ist damit gestuetzt oder geschwaecht - es gibt kein gemessenes Q_T, und der Vorlauf gibt konstruktiv keine Kriteriumsgroesse aus. Die uebertragbare Lehre steht im Nachfolgevorschlag: eine Machbarkeitsprobe darf eine Streuung nicht aus weniger Bahnen schaetzen als der Pflicht-Vorlauf, der an ihr haengt, und der Sicherheitsfaktor gehoert aus dem gemessenen Aufwaertstrend des Schaetzers gebildet statt gesetzt. Fuer GV1.6 ist der einzige nachweislich wirksame Hebel mehr Vermittler (gemessene Skalierung s_rel ~ n^-0,75 bis n^-0,9); ein laengeres Messfenster wurde gemessen und traegt nicht (Faktor 1,2 bei doppelten Kosten). Runde 022 ist eingefroren: nichts gebucht, keine Evidenzbindung, keine Stufe, keine Jury; die Silberzeile GV1 bleibt unveraendert. Autor und Ausfuehrender sind dasselbe Haus, S2 bleibt Pflicht vor jedem Zitat.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260921/gv1-5-lauf/BERICHT-GV1-5.md",
+      "role": "Bericht des Laufs",
+      "sha256": "5c8e523d42cf66c9644035ed232b23cee1d978009f778456c414d0fc992e0ec5"
+    },
+    {
+      "path": "coordination/vertraege-20260921/gv1-5-lauf/VORLAUF-GV1-5.json",
+      "role": "Messwerte des Pflicht-Vorlaufs mit allen acht Gates",
+      "sha256": "589241c433a6a30a2072e41007a15285e587559ac99c2b8d9ff8a798bc86bf18"
+    },
+    {
+      "path": "coordination/vertraege-20260921/gv1-5-lauf/PRUEFE-GV1-5.json",
+      "role": "bestandener Pruefmodus einschliesslich K16",
+      "sha256": "c06c8908505b91e9eade1a0174c76d7e17ee8869dbf3b44d226863e3d41d9b49"
+    },
+    {
+      "path": "coordination/vertraege-20260921/gv1-5-VERTRAG.md",
+      "role": "Vertrag, 13 Pflichtabschnitte",
+      "sha256": "c3b2e00e6b47ec0203446ed98d1e76ce6900553b1b5c16c3d3dbee77ddd96a3c"
+    },
+    {
+      "path": "coordination/vertraege-20260921/MACHBARKEIT-GV1-5.md",
+      "role": "Machbarkeitsprobe vor dem Vertrag, Quelle aller Vorabzahlen",
+      "sha256": "f7e057d5e738ffbea0e696ffa3f7ea970fccc5eaf6a37f1308f27196165a22ed"
+    },
+    {
+      "path": "coordination/vertraege-20260921/REVIEW-gv1-5.md",
+      "role": "S0-Fremdreview, Einarbeitung und begruendete Ablehnungen",
+      "sha256": "ca4a27f1b8780d3f8d0a1312b05977ab4eed8cadc2726177163421dff732d683"
+    },
+    {
+      "path": "coordination/vertraege-20260921/startsignal-gv1-5.txt",
+      "role": "Startsignal mit Wortlaut, Zeit und Grund",
+      "sha256": "925c3c737f72c2015208a9ba810019e38fa29b295d4dc3e6c2681436a57bfff4"
+    },
+    {
+      "path": "coordination/vertraege-20260921/VORSCHLAG-GV1-6.md",
+      "role": "Nachfolgevorschlag",
+      "sha256": "068d5f8c717898411402a26c88715a316afdf9df98cb9f5beec24d64bbb3af61"
+    },
+    {
+      "path": "coordination/vertraege-20260921/gv1-5-lauf/AENDERUNG-gv1-5-berichtscode.md",
+      "role": "Aenderung nach 11.1, nur Berichtscode",
+      "sha256": "df0cc14fa5c2f3d5479ee9b289296e197dddbb1ab325d648b72928de3e1ebe11"
+    }
+  ],
+  "recorded_at": "2026-09-21T03:38:38.332697+00:00"
+}

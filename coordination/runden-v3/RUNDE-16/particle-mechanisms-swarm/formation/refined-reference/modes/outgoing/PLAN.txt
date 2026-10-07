@@ -1,0 +1,129 @@
+Stationäre gekoppelte Antwort auf feste2rho-Quelle, 02.10.2026
+Nur prospektiverPlan; keinCode/Run. OUTGOING-PAPER.txt vollständig gelesen.
+KeineZeitentwicklung, Modensuche, neuenProfile oder Parameter-/Boxscans.
+Frage: welche auslaufende harmonischeAntwort erzeugt die feste gespeicherte
+Quelle im vollständigen gekoppelten M2-Hintergrund? Kein Gamma/Lebensdauer.
+
+1. INPUTS UND UMFANG
+Quellresultat harmonic-source/out/RESULT.json SHA256
+a2270a05c7270eeeb16e5fd04d12bd1367bff38af0205062b2643aea05b2a574.
+Genau die zwei dort gehashten SOURCE-h.1/.05.npz samt float64-Referenzen
+des bereits gebundenen PREPARED-MANIFEST. Quellen sind PHYSISCHE komplexe
+J2-Fourierkoeffizienten für ||vq||=1, keine erneuteNormierung/Phasendrehung.
+VierProduktionsfälle R60/120 × h.1/.05, Frequenz nu=2rho undomega jeh aus
+derselbenQuelldatei. R60 ist lediglich Zellabschneidung derselbenR120Quelle
+und desselbenHintergrunds. GleichekomplexeGauge beiR-Vergleich; h-Vergleich
+primär Beträge/Leistungen, da gespeicherteModenphasen unterschiedlich sind.
+Jplus=(J2x+iJ2y)/sqrt2,Jminus=(J2x-iJ2y)/sqrt2,Jchi=J2z.
+Keine Beträge anstelle komplexer Quellen in den Löser einsetzen.
+
+2. OPERATOR, ORIGIN UND ROBIN-GHOST
+Die reellen kanonischen Felder zweiterOrdnung sind
+a exp(i nu t)+a* exp(-i nu t); KEIN zusätzliches Re oderFaktor1/2.
+Kanalantwort(p,m,c), deltaPhi=p exp(i(omega+nu)t)+m*exp(i(omega-nu)t).
+Lbar=-Delta+1+g²-4f²+4.5f⁴-omega²,D=-2f²+3f⁴,B=2gf,
+Hchi=-Delta+3g²-1+2f². Matrix:
+ [Lbar-nu²-2omega nu, D, B;
+  D,Lbar-nu²+2omega nu,B;
+  B,B,Hchi-nu²] (p,m,c) = (Jplus,Jminus,Jchi).
+Volumengewicht V=4pi h(r²+h²/12), Ursprung nullFluss, identischer FV-
+Gradientoperator wieReferenzen. Matrix undQuelle über sqrtV transformieren.
+Ein komplexerSparse-LU solve jeFall, keinEigenwertsolver.
+
+NurPlusoffen: k=sqrt((omega+nu)²-2),
+kappa_minus=sqrt(2-(omega-nu)²),kappa_chi=sqrt(2-nu²), jeweilspositiv.
+Bei anderenVorzeichen keinunbemerkter andererKanalzweig:unentschieden.
+R=Nh istäußereFläche,r_last=R-h/2,r_ghost=R+h/2.
+ beta_plus=(r_last/r_ghost)exp(-ik h),
+ beta_minus/chi=(r_last/r_ghost)exp(-kappa_minus/chi h).
+Störfeldghost=beta*Störfeldlast, ZEITKONVENTION exp(+iOmega t).
+Wenn D0 die bestehende Dirichlet-sqrtV-LaplaceMatrix ist:
+ D_channel(last,last)=D0(last,last)-[4pi R²/(h V_last)]beta_channel.
+Keine Änderung andererInnenkanten oderVolumina. Dadurch komplexe offene
+Randmatrix, geschlosseneDiagonalkorrekturen reell. Hintergrundrand separat:
+abgeschnittene stationäreProfilresiduen inklusiveletzterZelle<1e-8 und
+abgeschnittenerQ-Anteil<1e-10 wievorigerModenprüfung, keinNachpolieren.
+FreieRobin-Exponenten sind Kontinuumswerte; diskreteDispersion und verbleibende
+Hintergrund-/Quellschwänze werden ausdrücklich durchR/h-Kontrollen begrenzt.
+
+3. EXAKTE DISKRETE BILANZ UND FERNAMPLITUDE
+Für Lösung a=(p,m,c) inphysischerKanalbasis:
+W=2nu Im sum V conj(a)·J_channels = Quellenleistung vonE−omegaQ.
+OffeneGhostkante liefert
+Frot_FV=2nu [4pi R²/h] [-Im(beta_plus)] |p_last|².
+Geschlossene beta reell, deshalb kein eigener Randmittelstrom.
+Diese diskreteIdentität folgt aus demselben Operator; starkeKontrolle,
+aber kein unabhängiger physikalischerStrahlungsnachweis.
+FV-Ladungsstrom=Frot_FV/nu, FV-Laborleistung=(omega+nu)Frot_FV/nu.
+
+Gemeinsame feste Auslesefenster40..45 und45..50 fürALLEvierProduktionsfälle.
+JeZellzentrum A(r)=r p(r)exp(+ikr); komplexeFenstermittel undmaxAbweichung
+vomMittel ausgeben. KeinParameterfit. Diese gemeinsamenRadien verhindern,
+dass einR-Vergleich allein verschiedene lange diskretePhasenwege misst.
+Zusätzlich letztesZentrum/r_ghost klarbeschriftet, keineUmbenennungzuR.
+Kontinuums-Flüsse aus jedemA-Mittel: FQ=8pi k|A|²,
+FE=8pi(omega+nu)k|A|²,Frot=8pi nu k|A|².
+W niemals direkt mitFE vergleichen. Die tatsächliche Quelle istalpha²J,
+also tatsächlicheLeistungalpha⁴malKoeffizientenleistung; keineModenenergie-
+Abnahmerate oderLebensdauer daraus ableiten.
+
+4. FESTE VORAB-FREIKONTROLLEN
+Alle auf R30,h.1/.05,keineweiterenBoxen. FreierVakuumoperator, feste
+omega=.8,nu=1 (Plusk=sqrt(1.8²−2),Minus/chi geschlossen).
+(a) GlattePlusquelle s=exp(-r²/L²),L=2, übrigeQuellen0.
+ExakteGanzraumamplitude A=sqrt(pi)L³/4 exp(-k²L²/4),positivreell.
+Quelleist nichtkompakt: normierteweggelasseneIntegralgrenze
+|DeltaA|<=L² exp(-R²/L²)/(2k) zusätzlichausweisen.
+Extraktionin15..20 und20..25. RelativeBETRAGSabweichung
+||A_num|-A_exact|/A_exact<.005 aufbeidenh; komplexeAbweichung
+|A_num-A_exact|/A_exact<.02 separat. VorabReserve: diskretefreieDispersion
+hat k_discrete-k≈k³h²/24. Bei k≈1.114,h.1,r25 ist allein dadurch eine
+Phasenabweichung≈.0144rad erwartbar. Die komplexe.02-Grenze lässt dafür
+eine festeReserve, dieBetragsgrenze.005 wird nichtalskomplexeGrenzeausgegeben.
+Kein Herausfitten diesesPhasenfehlers odernachträglichePhasenkorrektur.
+relativerFV-/KontinuumsrotFlussabgleich<.005. Absichtlicherfalscher
+Robinexp(+ikh) muss Flussrichtungumkehren (Frot_FV<0), keinPositivPASS.
+(b) NichttrivialeanalytischekompakteNullquelle, a=4,m=4,
+b(r)=(1-r²/a²)^4 für r<a, sonst0. Mitu=r²/a²:
+s=(-Delta-k²)b=24/a²(1-u)^3-48r²/a⁴(1-u)^2-k²(1-u)^4 innen,außen0.
+NICHT aus derselbenDiskretmatrix erzeugen. ExakteLösungb undA=0.
+||s||V>1e-3 verlangen; |A_null|/|A_Gauss|<.005 und
+||p-b||V/||b||V<.005 aufbeidenh. Halbierung sollA_null-Fehler reduzieren;
+falls beideAmplituden<1e-10|A_Gauss|,alsunterAuflösungsbodenberichten,
+ansonsten Verhältnisgrobs/feins zwischen2und6. KeineNullquellealsBeweis.
+(c) Nurgeschlossenechi-Quelle derselbeGauss, splus=sminus=0.
+||p||V/||c||V<1e-12 und |Frot_FV|/[2nu||a||V||s||V]<1e-12.
+KeineEichung aufphysischeM2-Antwort, lediglich Kanalentkopplungsprobe.
+
+5. FESTE NUMERIK-/SENSITIVITÄTSGRENZEN
+AlleLösungen finite; algebraischerRest
+||M b−sqrtV J||/[||M b||+||sqrtV J||+1e-30]<1e-10.
+Quellenwork/FV-Bilanz:
+|W-Frot_FV|/[max(|W|,|Frot_FV|,1e-12*2nu||a||V||J||V)]<1e-7.
+Die folgenden Nichtnull-Fenster-/Amplituden-/Signalgrenzen gelten
+AUSSCHLIESSLICH fürdie4M2-Produktionsfälle, NICHT fürNullkontrolle(b)
+oderentkoppeltegeschlosseneKontrolle(c). DerenNullgrenzen stehen in§4.
+Fensteramplitudenvariation max|A(r)-Amean|/|Amean|<.01;
+beideFenstermittel komplexrelativ<.01 innerhalbjedesFalles.
+R60/R120 bei gleichemh komplexeAmean-Differenzrelativ<.01;
+h.1/.05 bei gleichemR ||Amean_fine|-|Amean_coarse||/|Amean_fine|<.02.
+KontinuumsrotFluss ausAmean gegenFrot_FV relativ<.02.
+Quellenanteil außerhalbjeweiligerBox undKragen50..60 bzw110..120 berichten;
+keineerzwungenenNullquellen außerhalbbehaupten. LokalerHintergrundrest am
+Robinrand undgeschlosseneKanalwerte mit ausweisen, nichtalsReinexponentenfit.
+
+Bei Amean=0 oderNumerik-/Sensitivitätsversagen:UNRESOLVED,keinexaktesNull-
+oderStrahlungsurteil. Einepositive finiteAntwort muss zusätzlich inBetrag
+größerals5malmax(beobachteteR-/h-Amplitudenänderung,innerFensterstreuung)
+sein; sonstSignalunaufgelöst. Das ist prospektiveDiagnoseauflösung, keine
+rigoroseFehlerhülle. EinPASS heißt nur kontrollierte stationäreharmonische
+Antwort imangegebenenQuellmodell; keine volleNichtlinearität/Grundmodendämpfung.
+Kein nachträglichesLockern beiInterferenz/klenemSignal; keineZusatzscans.
+
+6. BUDGET/STATUS
+<=10CPU-s gesamte neueEinheit inklusiveImports/alleFreikontrollen/4M2Fälle/IO,
+.69einThread,nice19; internerCheckpoint8CPU-s,äußererRootdeckel10s.
+TeilJSON nachjeder abgeschlossenenQA/Fall sichern. Sparse-nativeOperation
+kann abgeschnittenwerden; dannINCOMPLETE mitletztergesicherterTeilserie.
+Kein neuerDienst/Worker,keineEigenschleife/Retry. ZuerstNichtautorreview.
+Hier nurPlan geschrieben; keineBerechnung,keineRemoteänderung/Codeausführung.

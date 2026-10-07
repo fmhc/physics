@@ -1,0 +1,41 @@
+{
+  "id": "claude-gegenlesung-dritte-lesung-20260909",
+  "time": "2026-09-09T00:10:00+02:00",
+  "time_kind": "completed",
+  "author": "Claude",
+  "topic": "operations",
+  "status": "checked",
+  "title": "Die Gegenlesung der Gegenlesung findet vier weitere Fehler und deckt auf, dass die Nachpruefung gar keine dritte Familie war.",
+  "question": "Haelt das Qwen-Gutachten stand, wenn ein weiteres Modell es prueft -- und wieviele unabhaengige Familien haben hier tatsaechlich geurteilt?",
+  "action": "Zwei Nachlesungen der drei Qwen-Gutachten, jeweils MIT den Quellen, gegen die geurteilt wurde. Erstens gpt-6-astra als Agent, der die Zeilenverweise selbst nachschlaegt (coordination/gegen-astra-20260908.md, 27,5 kB). Zweitens gemma4:26b auf .69 ueber coordination/gegenlesen.py. Beim ersten Gemma-Lauf blieb das Urteil leer: das Modell hat alle erlaubten 3000 Marken im Denkkanal verbraucht und nichts nach content geschrieben, bei Rueckgabewert 0 -- ein stiller Totalausfall. Behoben durch groesseres Budget und dadurch, dass ein leeres Urteil jetzt als solches ausgewiesen wird statt als leere Datei.",
+  "result": "Erstens eine Einordnung, die alles andere relativiert: gpt-6-astra ist KEINE dritte Familie, denn die stimmberechtigte Jury der zehn Runden war laut BERICHT.md Zeile 13 bereits gpt-6-astra. Die Nachlesung kommt also aus der Familie, die geprueft hat. Zweitens vier Stellen, die Qwen uebersehen hatte, davon zwei nachgeprueft und korrigiert: der Bericht behauptete, T1 bis T3 haetten gar keinen numerischen Lauf, waehrend der Registereintrag zu T2 einen Lauf auf .69 mit 524288 Punkten und Stabilitaet bis 1,2e-11 dokumentiert; und die Vetozahlen im Bericht (M1 2x, M3 3x) sind gegen das Register (3 und 4) auseinandergelaufen, ohne dass sich der Abschlussstand rekonstruieren liess, weil die Rundenordner nur Briefe und Protokolle enthalten. Drittens ein Einwand gegen mich selbst: meine Formulierung, eine Zahl mit ueberdeckender Systematik trage 'keine Abstandsangabe', war zu weit gegriffen; der bedingte Abstand bleibt unter dem festen Modell wohldefiniert. Viertens ein Hinweis von Gemma, der auf eine nie geprueften Tabelle zeigte: das Scoreboard stimmt Zeile fuer Zeile, aber die 157 Urteile zaehlen Einzelurteile je Richter, waehrend das Register 117 Sichtungen fuehrt. Die Differenz ist in allen zehn Runden konstant vier, weil jede Kernstimme die Kalibrierpaare M7 und K1 vollstaendig liefern muss. 60 der 157 Urteile sind Kalibrierung, 97 betreffen die uebrigen Behauptungen.",
+  "meaning": "Der Ertrag einer fremden Familie ist real, aber kleiner als die Erzaehlung darueber. Qwen hat einen echten Fehler gefunden und ihn anschliessend selbst entwertet, indem es die Zaehleinheit wechselte, ohne fuer die neue Zaehlung einen einzigen Beleg zu nennen. Die Nachpruefung aus der Jury-Familie hat mehr gefunden als die fremde Familie -- was zeigt, dass Familienwechsel kein Ersatz fuer genaues Nachschlagen ist. Und Gemma, die einzige wirklich dritte Familie, hat bei zwei von drei Auftraegen kurz und brauchbar geurteilt und beim dritten gar nicht. Was offen bleibt: das ist eine Stichprobe von drei Gutachten, keine Kalibrierung des Verfahrens. Wer daraus eine Regel ableitet, macht denselben Fehler wie der Bericht mit den elf Ruecknahmen.",
+  "sources": [
+    {
+      "path": "coordination/gegen-astra-20260908.md",
+      "label": "Nachlesung aus der Jury-Familie",
+      "sha256": "3f6744dddca2c279bc659b5ef3b8c7e1c9edd68f2e286cabe65174411ad35a50"
+    },
+    {
+      "path": "coordination/gegen-gemma-bericht-20260909.md",
+      "label": "Gemma ueber den Bericht",
+      "sha256": "59e28d46d2d118b6e7b1584dac34b81b8994ff190e3d813bd306f49898f166bc"
+    },
+    {
+      "path": "coordination/gegen-gemma-gitter-20260909.md",
+      "label": "Gemma ueber das Rangargument",
+      "sha256": "e0bc569a4d0ff611612675cf33df5c79756ca9ce7e4589d6d46ba7775d8ba62f"
+    },
+    {
+      "path": "coordination/gegenlesen.py",
+      "label": "Der Aufruf, mit dem Denkkanal-Fallback",
+      "sha256": "48847596bb3dfb3831b378570ba4b5087a3646d9647d8363e1553368157a0e08"
+    },
+    {
+      "path": "gauntlet/BERICHT.md",
+      "label": "Bericht mit den drei Korrekturen",
+      "sha256": "7888c54efcede94c8cd44f5296a8b011290e37b246ebb9a808f1903727367eb7"
+    }
+  ],
+  "recorded_at": "2026-09-08T22:16:39.917102+00:00"
+}

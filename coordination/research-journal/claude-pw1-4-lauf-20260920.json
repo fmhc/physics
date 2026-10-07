@@ -1,0 +1,46 @@
+{
+  "id": "claude-pw1-4-lauf-20260920",
+  "time": "2026-09-20T18:11:14+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5); Ausfuehrung Claude-Subagent (Anthropic, Opus 5) in eigenem Kontext",
+  "topic": "theory",
+  "status": "open",
+  "title": "PW1.4 endet mit T: alle drei Nullproben und alle drei A-Bedingungen sind erfuellt, doch die Schrittweitenkontrolle K6 reisst um das 4450-fache ihrer Grenze",
+  "question": "Ist der gestaffelte Ordnungszustand von vier gekoppelten Punkten von Unordnung trennbar, und haengt er an der Kopplung? Gemessen wird die Kennzahl P = <R_1^stag> im Spaetfenster, mit dem Ausgang A ab Seed-Median 0,85 bei zwoelf Seeds plus dem gepaarten Kontrast D_n = n_alt(W) - n_alt(N1) >= 120 gegen den Nullarm.",
+  "action": "Lauf nach Vertrag PW1.4 (sha256 84614eb7...) auf fmh@192.168.178.69, CPU, NumPy float64, ein Thread je Lauf, vier Laeufe parallel, kein CUDA, begrenzte User-Unit fmhc-physics-pw1-4-20260920 (CPUQuota 400 %, MemoryMax 8G, RuntimeMaxSec 10800). Startsignal Finn 'full go' vom 20.09.2026. Vor der Freigabe S0-Fremdreview durch Alibaba/Qwen (Bunker) und DeepSeek, beide 'freigeben mit Auflagen'; daraus stammt die Umstellung der Ausgangsbedingung A2 von einem bereits bekannten absoluten Niveau auf die gepaarte Differenz zum nie gerechneten Nullarm. Reihenfolge: pruefe (K0, K1, K2, K2a, K3, K5), dann die Nullarme N1 und N2 und der Kontrollarm P, dann der Hauptarm W, dann N3 auf dessen Zeitreihen, zuletzt die Diagnosearme V und U und die beiden h/2-Laeufe. 69 Einzellaeufe, 8385,5 s CPU, 2133,4 s Wanduhr (Grenze 10800 s), dazu 132,3 s pruefe. Alle acht gebundenen Dateien vor und nach dem Lauf hashgleich.",
+  "result": "Ausgang T (Vorrang T > U1 > B > A > U2), gerissen ist ausschliesslich die Kontrolle K6 (Schrittweitentreue). Bestanden sind K0, K1, K2, K3, K4, K5, K7, K8 und alle drei Nullproben N1, N2, N3. K1 und K2 sind mit Abweichung exakt 0 bestanden, die eigene Kraftfunktion und die Umeichung sind also bitgleich mit dem gebundenen physics.py-Referenzpfad. Die Kennzahlen: unterer Median P(W) = 0,976895 (A1-Schwelle 0,85), gepaarte Differenz D_n = 290 von 301 (A2-Schwelle 120), alle 12 von 12 Seeds mit P >= 0,85 (A3-Schwelle 9), Nullarm P(N1) = 0,494879 und P(N2) = 0,385749 (beide unter der 0,65-Schranke), groesstes Fremdmuster F = 0,518236 (N3a-Schwelle 0,70), Kontrollarm P mit musterfremder Kopplung bei Median 0,095240. K6 reisst im Paar W11: P(h) = 0,979732 gegen P(h/2) = 0,975281, Abstand 0,004 bei einer Grenze von 0,001 - das 4450-fache. Im Nullarmpaar N1_11 betraegt derselbe Abstand 2,37e-09, also sechs Groessenordnungen unter der Grenze; der Unterschied zwischen beiden Paaren ist genau die Kopplung. Die Zaehlung n_alt ist in beiden Paaren schrittweitenfest (301 gegen 301 und 65 gegen 65), die Energiekontrolle K4 haelt ueber alle 69 Laeufe (groesster Wert 8,38e-06 bei Grenze 1e-05).",
+  "meaning": "Der Lauf entscheidet die Frage NICHT, obwohl alle inhaltlichen Bedingungen fuer A numerisch erfuellt sind. Das ist der Sinn des Vorrangs: ein gerissener Lauf traegt keine Aussage. An Schwellen, Kontrollen, Armen oder Seeds ist nichts geaendert worden, es wurde nichts wiederholt. Der Befund selbst ist inhaltlich: ueber 60 Zeiteinheiten laufen zwei Integrationen mit verschiedener Schrittweite in den Phasen langsam auseinander, waehrend Vorzeichenfolge, Energie und Niveau der Kennzahl gleich bleiben - das gemittelte Phasenmass ist damit in der dritten Nachkommastelle schrittweitenabhaengig, die Zaehlung nicht. Die Grenze 0,001 war im Vertrag gesetzt und nicht hergeleitet, denn K6 war in PW1.3 gar nicht geprueft worden. Der Vorschlag fuer PW1.5 lautet deshalb, zuerst eine Konvergenzreihe h, h/2, h/4 zu rechnen und die Grenze daraus herzuleiten, statt sie zu setzen. Zitiersperre: keine Zahl dieses Laufs darf als Stuetze zitiert werden, bevor S2 aus einem anderen Haus vorliegt (Vertrag 10.3). Die Auflage beider Fremdhaeuser gilt weiter: die Zeitreihen sind nicht unabhaengig reproduziert worden, physics.py bleibt eine hashgebundene Blackbox, und ein Fehler darin, der gerade die Klasse des Ablesemusters beguenstigt, wird von keiner Kontrolle dieses Vertrags gefunden. Nicht gebucht - Gauntlet-Runde 022 ist eingefroren, keine Registerzeile, keine Evidenzbindung, keine Stufenaenderung.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260920/pw1-4-lauf/BERICHT-PW1-4.md",
+      "label": "Bericht nach den Vorabkriterien",
+      "sha256": "27ba95ed3aecd47fc980adaab47ba2758e296088c8f433ea860246219b5fc288"
+    },
+    {
+      "path": "coordination/vertraege-20260920/pw1-4-lauf/ERGEBNIS-PW1-4.json",
+      "label": "Ergebnisdatei, alle Zahlen",
+      "sha256": "396a7a4d193572e76fd3e1809aa2c21db24bf82a8b41a080a6c51ed4bb2e3120"
+    },
+    {
+      "path": "coordination/vertraege-20260920/pw1-4-lauf/PRUEFE-PW1-4.json",
+      "label": "Pruefdatei der Kontrollen",
+      "sha256": "86ced9b73268ec38ad6c9dfb9ac9f7eb121cbd035c8c1a13f71f4ad0fa859634"
+    },
+    {
+      "path": "coordination/vertraege-20260920/pw1-4-VERTRAG.md",
+      "label": "Vertrag, Vorabkriterien",
+      "sha256": "84614eb7e2a1051c201f484aeffcf1fee021adc924219d573e2afa5d817cc491"
+    },
+    {
+      "path": "coordination/vertraege-20260920/startsignal-pw1-4.txt",
+      "label": "Startsignal, Wortlaut Zeit Grund, gefuellte Vertragsluecken",
+      "sha256": "d120a603bbf415e7049d8e05574480f6054fa93adfc5fde6a63961ac5d661a42"
+    },
+    {
+      "path": "coordination/vertraege-20260920/REVIEW-pw1-4.md",
+      "label": "S0-Fremdreview Qwen und DeepSeek vor der Freigabe",
+      "sha256": "1a88244125009344014b89ad9a0bf0720b2bc061f2e9f51bd5267ab90ebe2bca"
+    }
+  ],
+  "recorded_at": "2026-09-20T18:19:15.217567+00:00"
+}

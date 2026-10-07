@@ -1,0 +1,51 @@
+{
+  "id": "claude-gv1-3-fassung2-lauf-20260920",
+  "time": "2026-09-20T17:53:00+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5), Vertragsautor; Ausfuehrung Claude-Subagent (Anthropic, Opus 5, eigener Kontext)",
+  "topic": "theory",
+  "status": "open",
+  "title": "GV1.3 Fassung 2 im Pflicht-Vorlauf gestoppt: das Vermittlergas verliert 60 Prozent seiner Energie an die Kette, und der eingebaute Trennkraftnachweis K10 ist algebraisch leer",
+  "question": "Reagiert der Materieort eines gebundenen Hohlraums mit Vermittlern auf eine konstante aeussere Kraft mit der Gesamtenergie als Traegheit (Q_S = 1) oder nur mit der Materieenergie (Q_S = 1 - f)?",
+  "action": "Vertrag GV1.3 Fassung 2 (S0, Startsignal Finn 20.09.2026 'full go') auf fmh@192.168.178.69 gerechnet, User-Unit fmhc-physics-gv13f2-20260920, CPU, NumPy float64, ein Thread, Regel-10-Ausnahme wie GV1.2 und SP-3; der GPU-Lock wurde nicht angefasst. Fassung 2 heilt die Normierung der Fassung 1 (dort galt exakt Q = 1/gamma_S): Q := 2F/(a * N_h) mit dem harmonischen Kernmittel N_h = 1/<1/(E_r gamma_S^3)>_K der Ruheenergie, damit Q = 1 exakt fuer jede Geschwindigkeit. Parameter: M = 500, n = 60 Photonen |k| = 1, c_s = 0,9, K+1 = 9 Glieder, L0 = 5, F = 0,25, Fenster [100; 500], 57600 Kettenschritte, Seed 17. Reihenfolge pruefe -> Pflicht-Vorlauf (G1 und G0, je N = 40, Gates V1 bis V6) -> Produktion. Der Vorlauf gibt vertragsgemaess KEINE Kriteriumsgroesse aus, nur Streuungen, Zaehlungen und Verhaeltnisse. S0-Fremdreview durch Qwen (Bunker) und DeepSeek (OpenRouter) vor der Freigabe; beide hatten unabhaengig die Streuungsrechnung des Entwurfs widerlegt, worauf Abschnitt 6.4c neu gerechnet und die Bahnzahlregel V2 eingefuehrt wurde. Rechenzeit 247 s.",
+  "result": "Ausgang U1, keine Produktion. Der Pruefmodus ist vollstaendig bestanden: K0a 6,7e-16, K0b <= 2,4e-15, K1 r_flucht-Median auf 5,6e-16 relativ und Stosszahlen 126/111/137 exakt, K2 beide GV1.2-Mediane bitgenau (relative Abweichung 0,0), K5'i dE_innen/E_innen = 3,71e-5 gegen die an den Integrator gebundene Schranke 6,25e-3, K5'iii Grundfrequenz 0,5001064549737927 gegen den analytisch exakten Wert 0,5001067516807594 (relative Abweichung 5,93e-7), K13a 9,97e-14, K13b 1,45e-11; alle Hashes vorher gleich nachher. Der Pflicht-Vorlauf reisst drei Gates: f_quer = 0,02092 gegen 0,045 (V3), groesste relative Segmentdehnung 0,7849 gegen 0,5 (V5), |f_quer - f_0|/f_0 = 0,6305 gegen 0,25 (V6). Gemessen: 1857 Stoesse je Bahn (Band 1547 bis 2449), |k|_letzt/|k|_erst = 0,398, max|L-L0|/L0 = 0,2005 (Vorhersage 0,18, Gate 0,35 gehalten), L zwischen 4,122 und 6,005. Die Aufloesung war NICHT der begrenzende Punkt: aus der gemessenen Streuung s = 5,06e-3 folgt N_noetig = 161 von hoechstens 1200. Zweiter Befund, im Pruefmodus gemessen: der Trennkraftnachweis K10 ist algebraisch unerfuellbar, weil U_s*(x_i+x_{i+1})/2 = (U_s/2)*x_i + (U_s/2)*x_{i+1} gilt; gemessener Unterschied der Materieorte 3,19e-16 gegen eine geforderte Schranke von 5e-3.",
+  "meaning": "Der Pflicht-Vorlauf hat genau das getan, wofuer er nach dem Fremdreview gebaut wurde: er hat vor jeder Produktion und ohne einen einzigen Wert von Q_S gemessen, dass die Frage mit diesen Parametern nicht entscheidbar ist. Die Ursache ist die, die Vertrag 6.2 benannt, aber um Faktor 10 zu guenstig geschaetzt hatte: der Anteil der Vermittlerenergie, der in die Kette uebergeht, ist rund 0,6 statt der geschaetzten 0,0625. Damit wird die dort hergeleitete Unvereinbarkeit von K6 (Bindung haelt auf 1 Prozent) und der Aufloesung der Traegheitsachse nicht entschaerft, sondern von Faktor 50 auf Faktor 475 verschaerft. Der schwerere Befund betrifft den Vertragsautor: K10 konnte nie reissen, jede Produktion der Fassung 2 haette zwingend mit T geendet, und Fassung 1 hatte denselben Defekt geerbt. Nebenbei ist ein echter Defekt der Praezisierung P6 aus Fassung 1 gefunden und vor jedem Ergebnis behoben worden (Scheinstoesse an weglaufenden Vermittlern, gemessen d.n = +0,979 im Spiegel-Ruhesystem); die daraus entstandene Integritaetsprobe 'jeder Stoss hat d.n < 0' gehoert in jede Folgefassung. An Gates, Schwellen und Kontrollen ist nach dem Abbruch nichts gedreht worden. Der Vorschlag fuer eine Fassung 3 steht in VORSCHLAG-GV1-3-FASSUNG3.md: langsame massive Vermittler (u = 0,3) statt Photonen, ein K10, dessen Wirkung vorab als Zahl im Vertrag steht, und als eigentlich naechster Schritt die kraftunabhaengige Traegheitsprobe ueber die Grundfrequenz der Kette, die mit 6,1 Prozent Effekt gegen 5,9e-7 Messgenauigkeit fuenf Groessenordnungen Reserve haette. U1 ist kein Teilerfolg: keine Registerzeile, keine Evidenzbindung, keine Stufenaenderung, keine Jury; Runde 022 ist eingefroren, es ist nichts gebucht.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260920/gv1-3-f2-lauf/BERICHT-GV1-3-F2.md",
+      "label": "Bericht mit vollem Kopf, Kontrollen, Vorlaufzahlen, Ausgang und 'Was dieser Lauf NICHT zeigt'",
+      "sha256": "15198a1500c39d6641536dc729e07cd666d4d6b19d01751180586c3cf6625824"
+    },
+    {
+      "path": "coordination/vertraege-20260920/gv1-3-f2-lauf/VORLAUF-GV1-3-F2.json",
+      "label": "Pflicht-Vorlauf: Streuungen, Zaehlungen, Verhaeltnisse, Gates V1 bis V6",
+      "sha256": "3e5b2d0fb06be12993570f7246011b4a925f34e9ee7765dd0757d57b7ab4ceab"
+    },
+    {
+      "path": "coordination/vertraege-20260920/gv1-3-f2-lauf/PRUEFE-GV1-3-F2.json",
+      "label": "Pruefmodus mit allen Kontrollen und der K10-Vorprobe",
+      "sha256": "275f8c867580da0f2e0faaba48658240638bbe8e571a34972a85244764166ef4"
+    },
+    {
+      "path": "coordination/vertraege-20260920/gv1-3-VERTRAG-fassung2.md",
+      "label": "Vertrag Fassung 2, Kriterien, Gates und Streichungen vorab",
+      "sha256": "649dc7caaf41c4d7c88a6c0bacb8869cc12878f3ac61700dd9abe3aea3e4d848"
+    },
+    {
+      "path": "coordination/vertraege-20260920/startsignal-gv1-3-f2.txt",
+      "label": "Startsignal Finn 'full go' 20.09.2026, Wortlaut, Zeit, Grund",
+      "sha256": "0157f8a23591e5c1f379987295e724991b5d4032b5bfab628ecb68f07332d06b"
+    },
+    {
+      "path": "coordination/vertraege-20260920/REVIEW-gv1-3-f2.md",
+      "label": "S0-Fremdreview Qwen und DeepSeek, Einarbeitung und Ablehnungen, Quote neu/gesamt 6 von 18",
+      "sha256": "2c5a28f4d82fbbd52b5efcbe6c234495f05aca146ef77ab4189b1701ed323c17"
+    },
+    {
+      "path": "coordination/vertraege-20260920/VORSCHLAG-GV1-3-FASSUNG3.md",
+      "label": "Vorschlag Fassung 3 mit Ursachen, Zahlen und naechsten Schritten",
+      "sha256": "5209c6c8a94e16999e3891369f411f8148fb35ed0c349b7208a6671a4b79288a"
+    }
+  ],
+  "recorded_at": "2026-09-20T17:57:14.214986+00:00"
+}

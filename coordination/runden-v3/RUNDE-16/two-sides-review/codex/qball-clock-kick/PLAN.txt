@@ -1,0 +1,20 @@
+QBALL-CLOCK-KICK, 2026-10-02. Neue Stoerungsfrage, keine Wiederholung alterHistorie.
+Unveraenderter radial3D-l0 Live-Solver und eigenesBIC-Startprofil; epsilon=.005,
+R80, Absorber65..80, h=.2/.1, dt=.2h, T100. AchtArme: k=0,+.01,-.01,+.05
+jeGitter. Bei t20 einmal pi->pi+k exp(-r²/4)q, gleichbedeutend p->p+... im
+rotierendenSystem. q bleibtstetig, pi=p-iomegaq. DieserImpuls ist extern.
+DeltaQ=0 analytisch: Im(q*deltaPi)=0. DeltaE ausvorher/nachher separatmessen.
+KeinekünstlichePhasenrücksetzung und keinweitererAntrieb.
+
+Hypothese: kleineImpulse koennenGangphaseaendern, ohnePeriodezuzerstoeren;
+starkerImpuls kannMultimoden/Periodenstreuung erzeugen. KeinvorabErfolg.
+Fenster40..100, Radien0,1,2,4, Rohdichte minusfeste numerischeStartbaseline.
+DerselbeHysteresedetektor: unter-eta,danachaufwaerts+eta, eta=1e-5 max(1,rho0).
+>=9Ticks, CV<1%, Mittelperiodeinnerhalb2%von2pi/rho; beideGitterund
+Mittelperiodendifferenz<1%. SonstTestverfehlt oderbeiNumerikfehlerunbestimmt.
+TaktphasealsnaechsteReferenz-Tickdifferenz inPeriodeneinheiten ausgeben;
+dieserModuloeinePeriode-Vergleich kannverlorenevolleZyklen nichtnachweisen.
+Numerik: max|E+AbsE-E0-DeltaE|/|E0|<.005; gleicheQ-Bilanz<.005;
+relativeImpuls-Ladungsaenderung<1e-10. Referenz k0 noetig bisneuemT100.
+Anfangsprofile/Anregunggleich; rohePsi-Zeitentwicklung, keineSinusvorgabe.
+.69 CPU11 nice19,einThread,keinGPU. Timeout90s,JSbudget45s. KeinDauerdienst.

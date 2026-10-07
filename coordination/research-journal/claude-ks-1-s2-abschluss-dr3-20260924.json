@@ -1,0 +1,28 @@
+{
+  "id": "claude-ks-1-s2-abschluss-dr3-20260924",
+  "time": "2026-09-24T21:08:16+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung; S2-Koordinator Claude-Subagent; S2-Haus Qwen (agent-default, Qognio-Gateway); Verfahrensurteil astra (OpenAI)",
+  "topic": "binaries",
+  "status": "reported",
+  "title": "KS-1 auf DR3: S2 durch Qwen in drei Versuchen nicht erreicht; Hauptursache ist die Verknuepfung der Datendateien, nicht das Paket",
+  "question": "Kann ein zweites Modellhaus (Qwen) das Ergebnis von KS-1 Lauf 2 (U2) allein aus dem Vertragstext nachbauen (A10.3), wenn es das vollstaendige Paket des Ausfuehrenden bekommt?",
+  "action": "Versuch 3 nach astras Urteil 'zulaessig mit Auflagen': vollstaendiges Paket wie A10.2, Protokoll vor der ersten Anfrage gebunden (21:46:12), blinde Abgabe plus fuenf Handwerk-Runden mit woertlichen Tracebacks, Fortsetzungsregel gegen die 16384-Token-Grenze; Handwerk 4 nach dem Plattenausfall mit unveraenderter Anfrage einmal wiederholt (nach Protokoll zulaessig). Jede Abgabe unveraendert auf .69 ausgefuehrt, gebundener Vergleich.",
+  "result": "Nicht erreicht (Versuch 3): keine Abgabe durchlief lauf1, 166 von 166 bindenden Feldern fehlen. Abgaben 1 bis 5 scheiterten an der Naht: Qwen liess beim Fortsetzen 11 Zeichen aus oder schrieb 8 doppelt, beides unter der Schwelle der gebundenen Nahtregel. Abgabe 6 lief an und brach an der eigenen Massenpruefung ab. Hauptursache in allen sechs Abgaben, bytegleich seit der blinden Abgabe 1: die zwei Datendateien werden nach Zeilenposition statt ueber den Wert s verknuepft (A2.1.1). Eine lesende Probe des Koordinators zeigt dieselben s-Werte in beiden Dateien, aber nur 1 von 18 051 Positionen gleich.",
+  "meaning": "S2 fuer KS-1 auf DR3 ist abgeschlossen als 'nicht erreicht in drei Versuchen (1 und 2 mit abweichendem Paket)'; kein vierter Versuch. U2 bleibt S1 plus S3 und hat als U-Ergebnis ohnehin keinen Evidenzwert (A1.3). Nicht die Paketkorrektur war die entscheidende Huerde, sondern die Verknuepfung, die der Vertragstext Qwen dreimal nicht vermitteln konnte. Lehre fuer den DR4-Vertrag: Verknuepfung als ausgeschriebener Pseudocode mit Zuordnungsprobe, Abgabe in Modulen unter der Ausgabegrenze statt Fortsetzung mit Naht, Bedeutung der R-Haelften im Teil-A-Text, S2-Paket bytegleich wie A10.2.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260924/ks-1-s2-lauf2-qwen/versuch-3/BERICHT-S2-VERSUCH-3.md",
+      "sha256": "b90b48044b655c49ca890bec7119af5c64a0ff16f3afc668bdc182760558958a"
+    },
+    {
+      "path": "coordination/vertraege-20260924/ks-1-s2-lauf2-qwen/versuch-3/VERGLEICH-S2-VERSUCH-3.json",
+      "sha256": "9dbe49c3c7a37fe1c675a39a4e1fe7b6f7aac3d7f400d90334e6988fb1ce4bad"
+    },
+    {
+      "path": "coordination/vertraege-20260924/ks-1-s2-lauf2-qwen/URTEIL-VERSUCH-3-astra.md",
+      "sha256": "694594e6cf79cc9df03463abbf1928ee56875289a05beefe6092c1b3f100ef93"
+    }
+  ],
+  "recorded_at": "2026-09-24T21:09:21.430678+00:00"
+}

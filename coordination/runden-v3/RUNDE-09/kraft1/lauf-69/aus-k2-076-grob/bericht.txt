@@ -1,0 +1,32 @@
+KOLL-1 bj Start 2026-09-30T07:58:08+00:00, Geraet cuda (Quadro P4000), torch 2.5.1+cu121
+  Argumente: {"kommando": "bj", "phasen": [0.0, 60.0, 90.0, 120.0, 180.0], "tk1": 16.0, "geraet": "cuda", "out": "/home/fmh/fmhc-physics-remote/runde9-kraft1/aus-k2-076-grob", "w2": 0.76, "rho0": 1.728147, "h": 0.15, "cfl": 0.4, "rmax": 22.0, "zmax": 36.0, "schicht": 8.0, "sig0": 2.0, "rfluss": 12.0, "zfluss": 12.0, "abstaende": [30.0, 30.654, 31.309, 31.9635], "kette": 10.0, "vorzeichen": -1, "halten": false, "paritaet": 0, "d": 12.0, "eps": 0.05, "T": 300.0, "dtmess": 0.5, "budget": 480.0, "weiter": false, "faeden": 1, "profil_h": 0.002, "profil_rmax": 36.0}
+  Profil und Mode aus cache-profil-mode-w2_0.7600000-h_0.002-r_36.npz: A = 11.331052, Q = 254.1160, E = 241.9027, rho = 1.728150089, Bs = 1.835e-01
+  Streuphase l = 1 bei rho = 1.7281501 (Ball): q = 2.399924, kappa_c = 0.516362, delta_1 = +0.256797 rad (mod pi), Wachstumskoeffizienten der zwei Loesungen +5.725e-01, +2.568e+00
+  Streuphase l = 1 bei rho = 1.7281501 (frei): q = 2.399924, kappa_c = 0.516362, delta_1 = +0.000000 rad (mod pi), Wachstumskoeffizienten der zwei Loesungen +0.000e+00, +1.123e+01
+  K2/K1-3D: omega^2 = 0.76, rho = 1.728150089, Omega = 2.599930, q = 2.399924, 2 pi/q = 2.61808, v_g = 0.92307, delta_1 = +0.256797 (frei +5.00e-09), eps = 0.05
+  Gitter h = 0.15, dt = 0.0600, nr = 147, nz = 481, Glieder 16: ['bj+30', 'bj-30', 'bj+30.654', 'bj-30.654', 'bj+31.309', 'bj-31.309', 'bj+31.9635', 'bj-31.9635', 'bj030', 'einzel+', 'einzel0', 'k1_0', 'k1_60', 'k1_90', 'k1_120', 'k1_180'], Punkte je Glied 70707
+  Start Zeitschleife 2026-09-30T07:58:11+00:00, t bis 300.0, Messung alle 8 Schritte, Budget 480.0 s
+  Ende Zeitschleife 2026-09-30T07:58:46+00:00, t = 300.00, Schritte 5000, 35.6 s (7.13 ms je Schritt)
+=== Auswertung K2/K1-3D /home/fmh/fmhc-physics-remote/runde9-kraft1/aus-k2-076-grob: omega^2 = 0.76, h = 0.15, t bis 300.0 ===
+  Einzelball: P(50) = 1.1467e-02, P(Ende) = 4.1782e-03, Fit t > 40: P0 = 1.3635e-02, Gamma (Amplitude) = 1.9504e-03; Drift z_E: mit Atmung +4.12e-18, ohne -1.57e-18; Ladung Q(Ende)/Q(0) - 1 = -3.61e-08
+  d = 30.0000: Delta d(Ende) = +1.5328e-02 (Vorhersage +1.8089e-02); F/P gemessen +2.8272e-03, vorhergesagt +3.4024e-03, Verhaeltnis +0.831; Fitrest 1.68e-03; gerader Anteil d(Ende) - d0 -8.664e-03
+  d = 30.6540: Delta d(Ende) = +6.1071e-02 (Vorhersage +6.4054e-02); F/P gemessen +1.1441e-02, vorhergesagt +1.2104e-02, Verhaeltnis +0.945; Fitrest 1.82e-03; gerader Anteil d(Ende) - d0 -5.874e-03
+  d = 31.3090: Delta d(Ende) = -1.5476e-02 (Vorhersage -1.7131e-02); F/P gemessen -3.2696e-03, vorhergesagt -3.2522e-03, Verhaeltnis +1.005; Fitrest 1.84e-03; gerader Anteil d(Ende) - d0 -2.726e-03
+  d = 31.9635: Delta d(Ende) = -6.0122e-02 (Vorhersage -6.0853e-02); F/P gemessen -1.1823e-02, vorhergesagt -1.1606e-02, Verhaeltnis +1.019; Fitrest 1.65e-03; gerader Anteil d(Ende) - d0 -2.289e-03
+  Fit ueber die Abstaende: Amplitudenfaktor alpha = 0.976 (Vorhersage 1), Phase chi = +0.496 rad (Vorhersage 2 delta_1 = +0.514), Rest^2 5.48e-07 gegen Summe kappa^2 2.89e-04
+  Paar ohne Atmung bei d = 30: d(Ende) - d(0) = -8.6215e-03; Formel (gleichphasig, Anziehung, feste Kraft) -F T^2/M = -8.6727e-03
+  K1-3D Delta theta =   0.0 Grad: d''(0) = -2.8879e-03 (d0 gemessen 11.8413), Formel -3.5661e-03; Verhaeltnis zu 0 Grad +1.000 (cos = +1.000); gegen gleichphasige Formel +0.810
+  K1-3D Delta theta =  60.0 Grad: d''(0) = -1.6002e-03 (d0 gemessen 11.9107), Formel -1.7831e-03; Verhaeltnis zu 0 Grad +0.554 (cos = +0.500); gegen gleichphasige Formel +0.449
+  K1-3D Delta theta =  90.0 Grad: d''(0) = -4.7420e-05 (d0 gemessen 11.9802), Formel -2.1836e-19; Verhaeltnis zu 0 Grad +0.016 (cos = +0.000); gegen gleichphasige Formel +0.013
+  K1-3D Delta theta = 120.0 Grad: d''(0) = +1.4285e-03 (d0 gemessen 12.0512), Formel +1.7831e-03; Verhaeltnis zu 0 Grad -0.495 (cos = -0.500); gegen gleichphasige Formel -0.401
+  K1-3D Delta theta = 180.0 Grad: d''(0) = +2.7804e-03 (d0 gemessen 12.1074), Formel +3.5661e-03; Verhaeltnis zu 0 Grad -0.963 (cos = -1.000); gegen gleichphasige Formel -0.780
+Ende 2026-09-30T07:58:47+00:00, 38.6 s
+KOLL-1 auswerten_k1 Start 2026-09-30T07:59:57+00:00, Geraet cpu, torch 2.5.1+cu121
+  Argumente: {"kommando": "auswerten_k1", "phasen": [0.0, 60.0, 90.0, 120.0, 180.0], "tk1": 16.0, "geraet": "cpu", "out": "/home/fmh/fmhc-physics-remote/runde9-kraft1/aus-k2-076-grob", "w2": 0.7976768, "rho0": 1.728147, "h": 0.1, "cfl": 0.4, "rmax": 22.0, "zmax": 32.0, "schicht": 8.0, "sig0": 2.0, "rfluss": 13.0, "zfluss": 23.0, "abstaende": [10.0, 12.0, 14.0], "kette": 10.0, "vorzeichen": -1, "halten": false, "paritaet": 0, "d": 10.0, "eps": 0.005, "T": 3000.0, "dtmess": 0.2, "budget": 500.0, "weiter": false, "faeden": 1, "profil_h": 0.002, "profil_rmax": 36.0}
+=== K1-3D integral /home/fmh/fmhc-physics-remote/runde9-kraft1/aus-k2-076-grob: omega^2 = 0.76, h = 0.15, T = 300.0, M = 241.9027, A = 11.33105, k0 = 0.48990 ===
+  dth =   0.0 Grad: d(0) = 11.8413, d(T) = 3.9397, min d = 2.3645 bei t = 52.3; d' spaet -0.00032, mitte -0.00003; Formel d'_inf 0.00000 (E_int -7.5245e-01); Verhaeltnis nan
+  dth =  60.0 Grad: d(0) = 11.9107, d(T) = 50.9190, min d = 9.4784 bei t = 57.6; d' spaet +0.14528, mitte +0.19996; Formel d'_inf 0.00000 (E_int -3.7623e-01); Verhaeltnis nan
+  dth =  90.0 Grad: d(0) = 11.9802, d(T) = 33.5348, min d = 11.9781 bei t = 1.9; d' spaet +0.09235, mitte +0.09246; Formel d'_inf 0.00000 (E_int -4.6074e-17); Verhaeltnis nan
+  dth = 120.0 Grad: d(0) = 12.0512, d(T) = 35.7384, min d = 12.0512 bei t = 0.0; d' spaet +0.08918, mitte +0.08917; Formel d'_inf 0.07887 (E_int +3.7623e-01); Verhaeltnis 1.1306
+  dth = 180.0 Grad: d(0) = 12.1074, d(T) = 41.8373, min d = 12.1074 bei t = 0.0; d' spaet +0.10715, mitte +0.10714; Formel d'_inf 0.11154 (E_int +7.5245e-01); Verhaeltnis 0.9606
+Ende 2026-09-30T07:59:57+00:00, 0.5 s

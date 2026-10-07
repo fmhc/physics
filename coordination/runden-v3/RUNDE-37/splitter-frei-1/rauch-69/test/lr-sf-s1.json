@@ -1,0 +1,201 @@
+{
+ "info": {
+  "numpy": "2.4.4",
+  "scipy": "1.18.0",
+  "python": "3.12.3",
+  "host": "ubuntu-auto",
+  "start_utc": "2026-10-05T09:40:57Z",
+  "argv": [
+   "code-r4/sf.py",
+   "lr",
+   "--art",
+   "sf",
+   "--saat",
+   "1",
+   "--bau",
+   "rauch/test/bau-s1.json",
+   "--rauch",
+   "--out",
+   "rauch/test/lr-sf-s1.json"
+  ],
+  "sha256": {
+   "dn.py": "0cd5d13e98f41df277ec7d8139970d1e658542f843ed8180bc756a4ea1d4d1ae",
+   "ew.py": "fa7b6417d39177102f0b19c5474453cd16a7595e23bc25ca548e081c4060b142",
+   "hm.py": "0ed5e2ce3a2a26525ef8a3320da394e6f403306384015187baf4dd46623fd5f2",
+   "inz.py": "e65a5cbf380defef0468f50de5a2dec5936d4228b72e1db8ff913ed765def8f2",
+   "lrm.py": "a6cdd898fc3fc80aa96d0b39e7c437ab7c7b22b73ff963f5600ed0d0210f684d",
+   "mn.py": "b36984d3f04276454a792f14c5655bff432332316d1b968dea46d4cb6eb96bbf",
+   "nachtrag_iso.py": "1c92cb23988886731096dd44ce33aecfcde3b65cecf16b4232111550e4debc6c",
+   "nachtrag_kinetik.py": "fd0d17b9fb7c92d4b6ad564a46260e3daae3285bcb5ad53f65d9fb3918a32b28",
+   "pn.py": "c8034e40c3238cecdcc72ecd35f1f70d38ea330c9ae18911966581c10e592567",
+   "sf.py": "d4e03bf6bab9389d690c336c53a7e9d8ba1f338f348e63b38d16f861d4ca458a",
+   "sf_aw.py": "05cdf4d1eb1fd243f263acd57e0dfb8fbb50ddf6b3586d28a47d88a24904eb65",
+   "smi.py": "9459838bb02f1894e2124927a28904679536bb2fb77ca2f338c8f6570326942d",
+   "tg.py": "ec48a258e266fc2226d0d10564b606052831ffefbf0642e4f7d04f9de85cfd9e",
+   "tp.py": "419d7da6caa211c721eb6a8c87403977415cf3050f03365377f51cb77b374dfd",
+   "tti.py": "6d6b6f7b99b334d74d91860fc69af1c6c0c46e22207dc45432d60a9824c08ee5"
+  }
+ },
+ "ergebnis": {
+  "art": "sf",
+  "saat": 1,
+  "info": {
+   "quelle": "sf.triang(Bau bau-s1.json, Saat 1)",
+   "pruefung": {
+    "saum": 4.0,
+    "umkugel_ausserhalb_saum": 0,
+    "R_umkugel_max": 1.312145100736028,
+    "punkte_mit_kopien": 2168
+   },
+   "pos_sha256": "807ee63b5dd27e2a8929c691ef3c6366f5f34ff8a183ff0267f52d0711d0e11e",
+   "qs": 0.2
+  },
+  "E": 978,
+  "T": 850,
+  "l_mittel": 1.2783074895249793,
+  "kl": [
+   0.005,
+   0.2
+  ],
+  "zeilen": [
+   {
+    "richtung": "100",
+    "d": [
+     1.0,
+     0.0,
+     0.0
+    ],
+    "kl0.005": {
+     "eps": 0.003911421970826445,
+     "K": {
+      "n_neg": 83,
+      "n_null": 0,
+      "absmin_rel": 3.2114466234348496e-05,
+      "min_rel": -0.04823872061608596,
+      "max": 321.24652495149166,
+      "min": -15.496521366023494
+     },
+     "dim": 466,
+     "weg": "qr",
+     "sv_rel_min": 1.208904624537953e-05,
+     "QKQ": {
+      "n_neg": 0,
+      "n_null": 0,
+      "absmin_rel": 6.649057010735326e-08,
+      "min_rel": 6.649057010735326e-08,
+      "max": 33.13782972248354,
+      "min": 2.203353190368326e-06
+     },
+     "XKX": {
+      "n_neg": 57,
+      "n_null": 0,
+      "absmin_rel": 0.00021799092855075044,
+      "min_rel": -0.17489994971168776,
+      "max": 74.27256749652656,
+      "min": -12.99026832010043
+     },
+     "B_red": {
+      "n_neg": 0,
+      "n_null": 0,
+      "absmin_rel": 9.383365275885528e-08,
+      "min_rel": 9.383365275885528e-08,
+      "max": 203.4722801491771,
+      "min": 1.9092547281570407e-05
+     },
+     "B_red_pd": true,
+     "A1R1": {
+      "A_red": {
+       "n_neg": 0,
+       "n_null": 0,
+       "absmin_rel": 0.0709286229717456,
+       "min_rel": 0.0709286229717456,
+       "max": 6.926809182853034,
+       "min": 0.49130903692780803
+      },
+      "n_wachsend": 0
+     },
+     "legendre_regulaer": true,
+     "A_red": {
+      "n_neg": 26,
+      "n_null": 0,
+      "absmin_rel": 0.0001597397422053141,
+      "min_rel": -1.0,
+      "max": 1.4134079442047478,
+      "min": -3.1857238458133277
+     },
+     "n_wachsend": 26,
+     "w2_min_rel": -1.0,
+     "w2_im_max_rel": 0.0,
+     "t_s": 10.454973697662354
+    },
+    "kl0.2": {
+     "eps": 0.1564568788330578,
+     "K": {
+      "n_neg": 83,
+      "n_null": 0,
+      "absmin_rel": 2.395182991468125e-05,
+      "min_rel": -0.04822189081703137,
+      "max": 321.2465249627531,
+      "min": -15.491114852104621
+     },
+     "dim": 466,
+     "weg": "qr",
+     "sv_rel_min": 0.01927386388636161,
+     "QKQ": {
+      "n_neg": 0,
+      "n_null": 0,
+      "absmin_rel": 0.00010614127382684302,
+      "min_rel": 0.00010614127382684302,
+      "max": 33.14152434129676,
+      "min": 0.0035176836101485625
+     },
+     "XKX": {
+      "n_neg": 57,
+      "n_null": 0,
+      "absmin_rel": 9.749441399662044e-05,
+      "min_rel": -0.1747569942801639,
+      "max": 74.28400281415551,
+      "min": -12.981649054901053
+     },
+     "B_red": {
+      "n_neg": 0,
+      "n_null": 0,
+      "absmin_rel": 0.0001497815559009332,
+      "min_rel": 0.0001497815559009332,
+      "max": 203.47441500396627,
+      "min": 0.03047671446532626
+     },
+     "B_red_pd": true,
+     "A1R1": {
+      "A_red": {
+       "n_neg": 0,
+       "n_null": 0,
+       "absmin_rel": 0.07081645186736363,
+       "min_rel": 0.07081645186736363,
+       "max": 6.927870590950905,
+       "min": 0.4906072142473987
+      },
+      "n_wachsend": 0
+     },
+     "legendre_regulaer": true,
+     "A_red": {
+      "n_neg": 26,
+      "n_null": 0,
+      "absmin_rel": 5.8103050270200135e-05,
+      "min_rel": -1.0,
+      "max": 1.4865815601868082,
+      "min": -4.831025542133341
+     },
+     "n_wachsend": 26,
+     "w2_min_rel": -1.0,
+     "w2_im_max_rel": 0.0,
+     "t_s": 10.364383459091187
+    }
+   }
+  ],
+  "t_s": 21.130171537399292
+ },
+ "laufzeit_s": 21.13489532470703,
+ "maxrss_MB": 215.6328125,
+ "ende_utc": "2026-10-05T09:41:18Z"
+}

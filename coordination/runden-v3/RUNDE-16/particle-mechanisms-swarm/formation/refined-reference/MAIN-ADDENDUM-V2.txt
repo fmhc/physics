@@ -1,0 +1,35 @@
+Minimaler Strukturguard, 02.10.2026, vor Ausführung und Review
+Neue maincode.py ist Kopie repairedcode.py mit ausschließlich einer
+Vorschaltprüfung in classify. Originale Quell-/Defektcheckdateien unverändert.
+
+Neuer Quellhash maincode.py:
+0ce21bee477cb41ade234611fd832abc5a7a90ed10d83d526f532cf28c6fd899.
+Alle Änderungen aus MAIN-ADDENDUM.txt gelten; dessen Quellhash wird für
+einen etwaigen späteren Hauptlauf durch diesen neuen Hash ersetzt.
+Keine Änderung der Physik, Numerik, Referenzen oder bisherigen Schwellen.
+
+Vor allen Klassifikationsvergleichen verlangen:
+- Genau sechs eindeutige(kind,level)-Paare, kartesisches Produkt von
+  reference/cloud und base/space/time; keine fehlenden/zusätzlichen Paare.
+- Pro Arm genau81 Samples. t muss endliche reelle numerische Zeit sein
+  (keine bool-Werte), geordnet t_i=.8*i für i0..80 innerhalb1e-10 absolut.
+  Diese Toleranz erlaubt lediglich Floatdarstellung derselben Samplezeit.
+- Sonst exakt NUMERICALLY_UNRESOLVED_SAMPLE_STRUCTURE, kein Kandidat.
+Bei gültiger Struktur und complete=False bleibt INCOMPLETE.
+Erst danach unveränderte bisherigen Referenz-, Sensitivitäts- und Physikgates.
+Das vorhandene zip kann damit keine still fehlenden/unsynchronen Samples
+mehr als vollständigen Gittervergleich verarbeiten.
+
+classifier-check-v2.py importiert ausschließlich diesen Hash und führt
+keine PDE aus. Die sechs ursprünglichen wohlgeformten Sollfälle bleiben.
+Defektsonden: fehlendes Sample, unsynchrones Sample, doppelter Arm bei
+sechs Einträgen, leere Sampleliste, falsche Endzeit und NaN-Zeit.
+Jede muss exakt NUMERICALLY_UNRESOLVED_SAMPLE_STRUCTURE liefern;
+eine Ausnahme zählt nun NICHT als bestanden. Alle Originaldefektdateien
+und ihre Hashes bleiben historisch erhalten.
+
+Grenze bleibt: Energiedrift/Qdrift/Kragen werden durch run_arm geprüft,
+nicht erneut durch classify. Dieser Guard validiert keine kompletten
+numerischen Ergebnisdateien beliebiger Herkunft. Keine Gates wurden zur
+Ermöglichung eines Hauptlaufs gelockert. Keine lokale Ausführung, kein SSH.
+Nichtautorreview und Root-Ausführungsentscheidung stehen noch aus.

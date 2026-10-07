@@ -1,0 +1,168 @@
+ESSENZ-REVIEW: 4/3-PATTERN, MOTOR-TICK UND ARBEITSMODELL V2
+2. Oktober 2026. Reine Papierkritik; keine Runs, Interpreter oder Tests.
+Gelesen: ARBEITSMODELL-V2.md im selben Verzeichnis und der von der
+Koordination mitgeteilte Entwurf zu Rotorrouter und reversiblen Gattern.
+Keine Behauptung, dass eine geplante Enumeration bereits ausgefuehrt sei.
+
+KURZURTEIL
+Die Beispiele koennen eine konkrete, lokal kausal verkettete Zustandsfolge
+zeigen. Sie sind hilfreich, sofern 4, 3, Ereignis, Speicher und Erhaltung
+jeweils exakt definiert bleiben. Sie liefern weder eine physikalische
+Energiequelle noch einen Beweis fuer drei Raumdimensionen oder fundamentale
+Zeit. Die Zahl 12 auf K4 waere zuerst eine Graph-/Portzaehlung.
+
+1. ROTORROUTER: MINIMALER DEFINIERTER AUTOMAT
+Gegeben: fester endlicher zusammenhaengender ungerichteter Graph G ohne
+isolierte Knoten. Jedem Knoten v ist eine zyklische Ordnung p_v seiner d_v
+Nachbarn zugeordnet. Zustand Z=(v,r), mit einem Token bei v und je einem
+Rotor r_w in Z/d_w Z an allen Knoten. Ein Uebergang ist:
+ r'_v = r_v+1 mod d_v,
+ r'_w = r_w fuer w != v,
+ v' = p_v(r'_v).
+Nur der besuchte Rotor aendert sich. 'Erst drehen, dann gehen' ist Teil
+der Definition; umgekehrte Reihenfolge ist eine andere Konvention.
+Der Ereignisindex n in Z_(n+1)=F(Z_n) ordnet Uebergaenge. Er misst keine
+Dauer. Die Definition ist ein autonomer diskreter Automat, kein Nachweis,
+wie ein materieller Motor ohne weitere Dynamik seinen Uebergang ausloest.
+Ein physikalisches Triggergesetz und Energiebudget sind hier ausgelassen.
+
+Die Zahl moeglicher Zustaende ist |V| mal Produkt_v d_v, wenn keine
+Symmetriezustaende identifiziert werden:
+ Dreieck: 3*2^3=24; C4: 4*2^4=64; K4: 4*3^4=324.
+Das sind elementare Zustandszaehlungen, keine Simulationsergebnisse.
+Fuer ein festes G und feste Portordnungen ist eine vollstaendige
+Enumeration sinnvoll: alle F-Kanten, transiente Laengen, periodische
+Komponenten, minimale volle Zustandsperiode und gerichtete Kantennutzung.
+Die Periode des Tokenortes allein oder einer zusammengefassten Messgroesse
+kann kleiner als die volle Zustandsperiode sein. Gleiches Ortsbild ist
+kein vollstaendiger Zustandsruecklauf.
+
+Der erwartete Rotorrouter-Ruecklauf mit einmaligem Durchlaufen jeder
+gerichteten Kante hat auf einem bidirektionalen Graphen 2|E| Ereignisse:
+Dreieck 6, C4 8, K4 12. Bei K4 ist 12=4*3=2*6 unmittelbar die Zahl
+gerichteter Ports. Ob jede enumerierte rekurrente Komponente diese
+Eigenschaft zeigt, ist eine explizite Auswertung; transiente Zustaende
+nicht als bereits rekurrent behandeln. Die bekannte Rotorrouter-Struktur
+ist ein positiver Referenzfall, keine neue physikalische Entdeckung.
+Unterschiedliche zyklische Portordnungen koennen verschiedene Bahnen
+liefern. Eine einzelne Ordnung ist eine deklarierte Modellwahl; alternativ
+alle Portordnungen pruefen oder ihre Aequivalenz begruenden.
+
+Wichtig zur Reversibilitaet: Determinismus bedeutet nicht globale
+Umkehrbarkeit. Auf dem gesamten Zustandsraum kann F transiente Baeume
+haben; dort koennen verschiedene Vorgaenger zusammenlaufen. Auf einer
+periodischen Komponente ist der Rueckschritt eindeutig. Diese beiden
+Aussagen nicht mit der Reversibilitaet der untenstehenden Logikgatter
+vermischen.
+
+2. WAS DIE KONTROLLEN ENTSCHEIDEN
+Token entfernen -> Stillstand folgt nur, wenn ein Nulltokenzustand mit
+F(leer,r)=(leer,r) ausdruecklich aufgenommen wird. Das ist eine gute
+Implementierungskontrolle, aber als direkt eingebaute Regel noch keine
+unabhaengige Evidenz fuer einen physikalischen Mechanismus.
+Rotor einfrieren -> deterministischer Weg auf einem festen gerichteten
+Graphen. Das isoliert die Wirkung lokalen Speichers.
+Dreieck gegen C4 -> gleiche lokale Portzahl 2 bei verschiedener Knotenzahl.
+C4 gegen K4 -> gleiche Knotenzahl 4 bei verschiedener Portzahl 2 bzw. 3.
+Diese beiden Vergleiche verhindern, dass jede Viererstruktur als 4/3-Gesetz
+interpretiert wird. Zusaetzlich kann dieselbe abstrakte K4-Struktur in der
+Ebene gezeichnet oder tetraedrisch in R^3 eingebettet werden. Ohne eine
+positionsabhaengige Uebergangsregel ist die Zustandsfolge identisch.
+Damit entscheidet der Automat seine Einbettungsdimension gerade nicht.
+Eine Kreuzung in einer Zeichnung ist kein neuer Graphknoten, sofern die
+Graphdefinition ihn nicht ausdruecklich hinzufuegt.
+
+Kein Zeitraster vorzugeben beseitigt eine externe metrische Uhr. Es
+beseitigt nicht die vorausgesetzte Uebergangsregel und Ereignisordnung.
+Mit genau einem Token existiert eine vollstaendige sequentielle Ordnung;
+das prueft noch keine verteilte kausale Teilordnung. Mehrere Tokens braeuchten
+Konflikt-, Gleichzeitigkeit- und Schedulingregeln, bevor man Asynchronie
+oder Schedulerunabhaengigkeit beanspruchen koennte. Fuer den kleinen Test
+ist ein Token die klarere Wahl.
+
+3. ZWEI BIT GEGEN DREI BIT: PRAEZISE AUSSAGE
+Unter den GLEICHZEITIGEN Anforderungen 'bijektiv', 'zwei binaere
+Eingaenge und Ausgaenge', 'gleiche Gewichtung beider Bits' und 'Popcount
+fuer jeden Eingang erhalten' muessen 00 und 11 fix bleiben. Im
+Gewicht-1-Sektor koennen nur 01 und 10 fixiert oder vertauscht werden.
+Daher sind die einzigen solchen Gatter Identitaet und SWAP.
+Das ist keine Unmoeglichkeit komplexer Dynamik mit zwei Zustandsvariablen
+allgemein; andere Alphabete, Speicher, Hilfsbits oder andere Invarianten
+aendern die Voraussetzungen.
+
+Drei Bits erlauben Fredkin:
+ F(a,b,c)=(a,b,c), falls a=0;
+ F(a,b,c)=(a,c,b), falls a=1.
+Es ist selbstinvers und erhaelt a+b+c. In Boolean-Arithmetik ueber GF(2):
+ b'=b+a(b+c), c'=c+a(b+c).
+Die Produkte zeigen die Nichtlinearitaet. Das Wort 'nichtlinear' meint
+hier eine nicht-affine Boolesche Abbildung, keine Feld-Nichtlinearitaet
+oder automatisch chaotische Bewegung. Kontrollierter Austausch ist ein
+sauberes Beispiel fuer eine zustandsabhaengige reversible lokale Regel.
+Alle dreibittigen popcounterhaltenden Bijektionen permutieren unabhaengig
+die drei Gewicht-1- und drei Gewicht-2-Zustaende; daraus ergeben sich
+3!*3!=36 Moeglichkeiten. Fredkin ist eine davon.
+
+Popcounterhaltung wird erst dann zu Erhaltung einer gewaehlten Energie,
+wenn H=epsilon*(a+b+c)+const mit identischem epsilon fuer alle Bits als
+Modell angenommen wird. Das belegt noch nicht die Energie eines realen
+Schaltprozesses, die Barrieren, die Steuerarbeit oder Verlustfreiheit.
+Eine periodische Zustandsfolge kann keine dauerhafte Nutzarbeit ohne
+entsprechende Energieabnahme/Zufuhr garantieren. Reversible Logik ist
+keine Energiequelle.
+
+Insbesondere besteht kein hergeleiteter Uebergang von 'drei Bits sind fuer
+dieses nichtlineare konservative Gatter ausreichend' zu 'drei Raumachsen
+sind notwendig'. Ebenso ist ein K4-Knoten mit drei Ports etwas anderes
+als ein dreibittiges Gatter: unterschiedliche Zustandsraeume und Regeln.
+Eine Verbindung waere eine weitere explizite Abbildung, kein Zahlengleichnis.
+
+4. GEGENLESUNG ARBEITSMODELL-V2: KERN IST FAKTORENSICHER
+Die gewaehlte Kinetik |psi_dot|^2 plus chi_dot^2/2 ist konsistent mit
+beiden Feldgleichungen. Die Zerlegung von U in zwei nichtnegative Terme
+stimmt; die angegebenen Vakuua folgen fuer S>=0. Die mechanische Kraft
+hat die passenden Faktoren, insbesondere K'/2. Abnehmende J,K liefern
+fuer festgehaltene Felder den korrekt benannten abstossenden Beitrag.
+Q=2 Im sum psi*psi_dot und die reelle Massenmatrix mit Eintraegen 2 fuer
+Re/Im psi passen zusammen. Die gemeinsamen Erhaltungsaussagen gelten
+unter den genannten autonomen freien Bedingungen. Beide kleinen
+Vakuumfrequenzen haben omega^2=2; diese sind Modellfrequenzen, keine
+beobachteten Elementarteilchenmassen.
+
+KLEINE KONKRETE TEXTKORREKTUREN:
+(a) Abschnitt 4 nennt ein 'Frequenzfenster' zwischen
+m^2-lambda^2/(4g) und m^2. Das muss explizit das Fenster fuer omega^2
+heissen (mit den jeweiligen Existenzvoraussetzungen), nicht fuer omega.
+Bei negativem unteren Ausdruck sind nichtreelle Frequenzen dadurch nicht
+zugelassen. Fuer die im Text hervorgehobene nichtnegative V-Variante ist
+dieser Sonderfall durch die genannte Parameterbedingung ausgeschlossen.
+(b) Abschnitt 5 'Linear um psi=0, chi=1' ist fuer die forcierte Gleichung
+missverstaendlich: S=|psi|^2 ist quadratisch im kleinen psi. In strikt
+linearer Gesamtentwicklung sind die Kanaele entkoppelt. Praeziser:
+'Linearisiert in eta, mit S als vorgegebener fuehrender quadratischer
+Quelle' oder 'fuehrende nichtlineare Rueckantwort'. Fuer bewegliche x
+ist L_K gegebenenfalls zeitabhaengig; der retardierte Operator darf dann
+nicht ohne Weiteres als zeittranslationsinvariante Faltung verwendet werden.
+(c) Abschnitt 7 verwendet P fuer eine Schnittpunktzahl, waehrend
+Abschnitt 3 P fuer Gesamtimpuls reserviert. Besser durchgaengig
+N_cut(t;s) fuer die Punktzahl. A fuer Schnittflaeche ebenfalls definieren.
+(d) Die Aussage 'Spektrum L_K+2I' im Ideenabschnitt meint quadrierte
+Frequenzen des linearen chi-Kanals; eigentliche Frequenzen sind deren
+positive Quadratwurzeln.
+
+Keine dieser vier Praezisierungen aendert den Wirkungskern. Es bleibt ein
+klassisches System mit vorausgesetzten x in R^3 und kontinuierlichem t.
+Der Rotorrouter ist ein SEPARATES diskretes Modell. Ihn daneben zu testen
+ist sinnvoll; als Diskretisierung oder Grenzfall des Zweifeldmodells gilt
+er erst nach einer expliziten Herleitung. Der Motorvergleich allein
+leistet diese Herleitung nicht.
+
+EMPFEHLUNG FUER DIE ERGEBNISSPRACHE
+Zulaessig: 'Die endliche Enumeration bestaetigt/widerlegt fuer die
+festgelegten Graphen und Portordnungen die erwarteten Zustandszyklen.'
+Zulaessig: 'Unter gleicher Popcount-Erhaltung erweitert ein drittes Bit
+die moeglichen reversiblen Gatter um kontrollierten Austausch.'
+Nicht gedeckt: '4/3 erzeugt Energie', '12 Ereignisse definieren die
+fundamentale Zeit' oder 'die Zustandsmaschine beweist drei Raumdimensionen'.
+Das Interessante liegt in expliziter lokaler Rueckwirkung und reproduzierbarer
+Ereignisordnung; die Physikzuordnung bleibt ein eigener offener Schritt.

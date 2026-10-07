@@ -1,0 +1,29 @@
+{
+  "id": "claude-finn-entscheidungen-20260929",
+  "time": "2026-09-29T04:36:12+00:00",
+  "time_kind": "document",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung; Antworten Finns ueber AskUserQuestion",
+  "topic": "vertraege",
+  "status": "reported",
+  "evidenzart": "keine",
+  "title": "Finns Entscheidungen 29.09. frueh: Startfreigabe fuer PD-1, OR2, AD-1-Vorlauf und VS-1-Hauptlauf auf der .69; B28-Deckel plus 10 min; WM-1 bleibt beendet, ein Nachfolger mit gemessenem Budget bekommt einen eigenen Vertrag; fremde LLM-Dienste fuer zeitkritische Laeufe pausieren",
+  "question": "Welche gebundenen Laeufe starten, wie weiter bei B28 und WM-1, und wie mit fremder GPU-Last auf der .69 umgehen?",
+  "action": "Drei Fragen mit Optionen (AskUserQuestion); Antworten woertlich in FINN-ENTSCHEIDUNGEN-20260929.md (OTS 04:36:12 UTC) und FINN-ENTSCHEIDUNG-DECKEL-A3i-20260929.md (OTS 04:34:53 UTC). Eine vierte Frage zur GPU-Last (gestellt 04:46:28 UTC, beantwortet 04:51:44 UTC) samt Optionen woertlich nachgetragen in FINN-ENTSCHEIDUNGEN-20260929-NACHTRAG-1.md (OTS 05:09:10 UTC), weil der Gegenleser sie in keinem gestempelten Beleg fand.",
+  "result": "Frage 1 (Mehrfachauswahl): 'PD-1 starten, OR2 starten, AD-1 Vorlauf, VS-1 auf .69'. Frage 2: 'Deckel +10 min (Recommended)' fuer B28, neuer Gesamtdeckel 4 260 000 ms. Frage 3: 'Neuer Vertrag ~80 min' fuer WM-1. Frage 4: 'Dienste pausieren' fuer zeitkritische Laeufe, nach Ankuendigung durch die Leitung (Optionstext: Finn pausiert Ollama/llama.cpp mit seinem sudo). VS-1: Hauptlauf auf der .69 in float64, in Portionen unter dem gemeinsamen Lock; etwa 10,5 GPU-Stunden ersetzen fuer diesen Lauf den 6-h-Deckel der Laptop-Ausnahme.",
+  "meaning": "AD-1 ist nur fuer den Vorlauf freigegeben, den Hauptlauf entscheidet Finn spaeter in Kenntnis von H1 und O-P. WM-1 bleibt beendet; ein Nachfolger mit derselben Frage, gemessenem Budget, eigenem Namen und eigener S0-Pruefung wird geschrieben (Name WM-1-MB; WM-2 bleibt dem nichtlinearen Nachfolger aus WM-1 F3 Z. 584 vorbehalten). Alle Schutzregeln und Startbedingungen der Vertraege gelten unveraendert; dass Fremdlast den PD-1-Halt verursachte, bleibt eine Hypothese.",
+  "sources": [
+    {
+      "path": "coordination/FINN-ENTSCHEIDUNGEN-20260929.md",
+      "sha256": "b70a19f8b454c6bd021e7ee968ff487a8605ef37a8dd0a669c9aa037c93110cb"
+    },
+    {
+      "path": "coordination/field-b28-lokale-stabilitaet-20260926/FINN-ENTSCHEIDUNG-DECKEL-A3i-20260929.md",
+      "sha256": "52371e50d5d0c1959e7d5d43b05fe8c267631232e6da16bb8b71c3b357ff58e9"
+    },
+    {
+      "path": "coordination/FINN-ENTSCHEIDUNGEN-20260929-NACHTRAG-1.md",
+      "sha256": "78910db370459ea5115dc8b1a6c36fc926d95420259865a1872fbd300e494e18"
+    }
+  ],
+  "recorded_at": "2026-09-29T05:11:06.059302+00:00"
+}

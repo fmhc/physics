@@ -1,0 +1,17 @@
+start 2026-10-03T16:51:45+00:00 spur=p4000b unit=fmhc-physics-klein-r34ef2-rauch-ik200-165145
+Running as unit: fmhc-physics-klein-r34ef2-rauch-ik200-165145.service; invocation ID: 44edd5d6955d42299d81cba4ef3341c8
+torch 2.5.1+cu121, Geraet cuda (Quadro P4000)
+Netz ikosaeder: {"nu": 200, "a": 40.0, "h": 0.2, "ecken": 400002, "ecken_soll": 400002, "euler": 2, "grade": {"5": 12, "6": 399990}, "anzahl_defekte": 12, "defekt_rest_max": 4.440892098500626e-14, "w_min": 0.5773502691895671, "w_max": 0.5773502691896994, "flaeche": 13856.406460551018, "flaeche_soll": 13856.406460551016} (Bauzeit bis jetzt 3.4 s)
+statischer Ball und Start: {"Q_lat": 150.0, "E_lat": 119.91235632577852, "omega_lat": 0.7509061452582344, "res_max": 2.395495379914939e-07, "dauer_s": 2.378939777612686, "gitterfehler_flicken": 2.6645352591003757e-13, "gitterfehler_ziel": 1.9895196601282805e-13, "R_trans": 19.0, "knoten_mit_feld": 32729, "E_rest": 119.91235632577852, "K_nominal": 0.0}
+/home/fmh/fmhc-physics-remote/runde34-einfang2/einfang2.py:495: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at ../aten/src/ATen/SparseCsrTensorImpl.cpp:53.)
+  Lt = torch.sparse_csr_tensor(torch.tensor(Lc.indptr, dtype=torch.int64), torch.tensor(Lc.indices, dtype=torch.int64),
+Karten: [201001, 201001, 201001, 201001, 201001, 201001, 201001, 201001, 201001, 201001, 201001, 201001] Knoten je Spitze (10.0 s)
+Start: E 119.91235945 Q 149.99999936 E_rest 119.91235633 K_eff 0.000003 K_nominal 0.000000 Lage 20.0000 Q_ball 149.999874
+Ende: T erreicht, t 10.0, 6.10 ms/Schritt, Dauer 11.5 s, Zustand /home/fmh/fmhc-physics-remote/runde34-einfang2/rauch/ef2-rauch-ik200-zustand.npz, geschrieben /home/fmh/fmhc-physics-remote/runde34-einfang2/rauch/ef2-rauch-ik200.json
+Finished with result: success
+Main processes terminated with: code=exited/status=0
+Service runtime: 12.289s
+CPU time consumed: 12.236s
+Memory peak: 328.0K
+Memory swap peak: 0B
+ende 2026-10-03T16:51:57+00:00 rc=0 unit=fmhc-physics-klein-r34ef2-rauch-ik200-165145

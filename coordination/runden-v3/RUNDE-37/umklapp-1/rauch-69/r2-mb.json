@@ -1,0 +1,70 @@
+{
+ "info": {
+  "numpy": "2.4.4",
+  "scipy": "1.18.0",
+  "python": "3.12.3",
+  "host": "ubuntu-auto",
+  "argv": [
+   "code/uk.py",
+   "mb",
+   "--N",
+   "256",
+   "--saaten",
+   "901",
+   "--zieh",
+   "2",
+   "--rauch",
+   "--out",
+   "rauch/r2-mb.json"
+  ],
+  "skript_sha256": "f52df7438c3d33b4fe86d4352bed3373b38e27a083f3d60eb12d4143fa6b71e0",
+  "tg_sha256": "ec48a258e266fc2226d0d10564b606052831ffefbf0642e4f7d04f9de85cfd9e",
+  "start_utc": "2026-10-05T04:11:08Z"
+ },
+ "schluessel": {
+  "N": "int",
+  "saat": "int",
+  "T0": "int",
+  "F0": "int",
+  "E0": "int",
+  "l_mittel": "float",
+  "selbsttest_a0": "bool",
+  "mu0_min": "float",
+  "mu0_n_neg": "int",
+  "mu0_cdf": {
+   "0.0001": "int",
+   "0.001": "int",
+   "0.01": "int",
+   "0.03": "int",
+   "0.1": "int"
+  },
+  "n_zieh": "int",
+  "a": "list",
+  "zufall": [
+   {
+    "a": "float",
+    "n_weg": "list",
+    "n_neu": "list",
+    "T_neu": "list",
+    "n_verletzt": "list",
+    "n_cluster": "list",
+    "n_23": "list",
+    "n_32": "list",
+    "n_sonst": "list",
+    "saum_verletzt": "list",
+    "typen": []
+   }
+  ],
+  "dehnung": [
+   {
+    "richtung": "str",
+    "pol": "int",
+    "n_verletzt": "list"
+   }
+  ],
+  "t_s": "float"
+ },
+ "laufzeit_s": 1.3505215644836426,
+ "maxrss_MB": 79.30078125,
+ "t_punkt_s": []
+}

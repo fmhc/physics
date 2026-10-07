@@ -1,0 +1,2250 @@
+{
+ "start": "2026-09-30T00:07:42+00:00",
+ "geraet": "Quadro P4000",
+ "argumente": {
+  "test": "2f",
+  "stufen": "0,1,2",
+  "nu": "kern",
+  "w2": 0.7,
+  "T": 1500.0,
+  "probe": true,
+  "vorher": [],
+  "profil": "/home/fmh/fmhc-physics-remote/tests1d-20260930/rauchtest/profil_1d.pt",
+  "rauch": true,
+  "out": "/home/fmh/fmhc-physics-remote/tests1d-20260930/fein/rauch2f"
+ },
+ "fehler": null,
+ "2f": {
+  "w2": 0.7,
+  "laeufe": [
+   {
+    "art": "ball+paket",
+    "nu": 1.5,
+    "eps": 0.001
+   },
+   {
+    "art": "ball+paket",
+    "nu": 1.9,
+    "eps": 0.001
+   },
+   {
+    "art": "ball+paket",
+    "nu": 2.25,
+    "eps": 0.001
+   },
+   {
+    "art": "ball+paket",
+    "nu": 2.325,
+    "eps": 0.001
+   },
+   {
+    "art": "ball+paket",
+    "nu": 2.375,
+    "eps": 0.001
+   },
+   {
+    "art": "ball+paket",
+    "nu": 2.75,
+    "eps": 0.001
+   },
+   {
+    "art": "ball+paket",
+    "nu": 2.9,
+    "eps": 0.001
+   },
+   {
+    "art": "paket",
+    "nu": 1.5,
+    "eps": 0.001
+   },
+   {
+    "art": "paket",
+    "nu": 1.9,
+    "eps": 0.001
+   },
+   {
+    "art": "paket",
+    "nu": 2.25,
+    "eps": 0.001
+   },
+   {
+    "art": "paket",
+    "nu": 2.325,
+    "eps": 0.001
+   },
+   {
+    "art": "paket",
+    "nu": 2.375,
+    "eps": 0.001
+   },
+   {
+    "art": "paket",
+    "nu": 2.75,
+    "eps": 0.001
+   },
+   {
+    "art": "paket",
+    "nu": 2.9,
+    "eps": 0.001
+   },
+   {
+    "art": "ball"
+   },
+   {
+    "art": "stoss_q"
+   },
+   {
+    "art": "stoss_alt"
+   },
+   {
+    "art": "ball+paket",
+    "nu": 2.25,
+    "eps": 0.0005
+   },
+   {
+    "art": "ball+paket",
+    "nu": 2.325,
+    "eps": 0.0005
+   },
+   {
+    "art": "ball+paket",
+    "nu": 2.375,
+    "eps": 0.0005
+   },
+   {
+    "art": "ball+paket",
+    "nu": 2.75,
+    "eps": 0.0005
+   },
+   {
+    "art": "ball+paket",
+    "nu": 2.9,
+    "eps": 0.0005
+   },
+   {
+    "art": "ball+paket",
+    "nu": 2.325,
+    "eps": 0.002
+   }
+  ],
+  "stufen": {
+   "0": {
+    "w2": 0.7,
+    "dx": 0.1,
+    "dt": 0.05,
+    "T": 75.0,
+    "zeilen": [
+     {
+      "nu": 1.5,
+      "eps": 0.001,
+      "ein_Q": 4.2529953479788897e-05,
+      "T_Q": 1.3615303671438008e-07,
+      "R_Q": -0.00011428853116934184,
+      "auslese": [
+       {
+        "t": 75.0,
+        "dA_Q": 0.00011415244631459676,
+        "dA_E": 6.426118221401684e-05,
+        "kern": 3.4619189191345656,
+        "aussen": -3.461805272654755,
+        "bilanzrest": -5.059665035422477e-07
+       }
+      ],
+      "dA500_Q": 0.00011415244631459676,
+      "dA_ende_Q": 0.00011415244631459676,
+      "speicher_rate": NaN,
+      "speicher_verhaeltnis": NaN,
+      "tau_schwerpunkt": 1.6441374714978991,
+      "phase_T": 1.4247108452078652,
+      "betrag_T": 1.7313442791854132,
+      "rand_rueck_frei": 0.0,
+      "rand_rueck_ball": 0.0,
+      "kanal": {
+       "teilchen_durch": 1.8591848173394842e-10,
+       "teilchen_reflektiert": 4.41452019773844e-09,
+       "antiteilchen_rechts": 1.3146894854992588e-11,
+       "antiteilchen_links": 8.268696890593334e-06,
+       "frei_teilchen_durch": 6.240536278065392e-11,
+       "frei_antiteilchen": 8.26880381618127e-06
+      },
+      "abstrahlung_rechts": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "abstrahlung_links": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "tau_phase": NaN
+     },
+     {
+      "nu": 1.9,
+      "eps": 0.001,
+      "ein_Q": 5.388262519992334e-05,
+      "T_Q": -1.908410095066027e-06,
+      "R_Q": -2.7265899850542697e-06,
+      "auslese": [
+       {
+        "t": 75.0,
+        "dA_Q": 4.668010932662676e-06,
+        "dA_E": 2.510726118313324e-06,
+        "kern": 7.298963860803863,
+        "aussen": -7.298959081593253,
+        "bilanzrest": 1.1119967770241423e-07
+       }
+      ],
+      "dA500_Q": 4.668010932662676e-06,
+      "dA_ende_Q": 4.668010932662676e-06,
+      "speicher_rate": NaN,
+      "speicher_verhaeltnis": NaN,
+      "tau_schwerpunkt": 1.423949448529143,
+      "phase_T": 1.1563642844592321,
+      "betrag_T": 1.3571138049622715,
+      "rand_rueck_frei": 0.0,
+      "rand_rueck_ball": 0.0,
+      "kanal": {
+       "teilchen_durch": 5.678799573631272e-08,
+       "teilchen_reflektiert": -9.192506961371877e-10,
+       "antiteilchen_rechts": 3.0554484803069192e-09,
+       "antiteilchen_links": 1.0800866887232956e-08,
+       "frei_teilchen_durch": 3.088053167464899e-08,
+       "frei_antiteilchen": 1.2493160085989818e-08
+      },
+      "abstrahlung_rechts": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "abstrahlung_links": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "tau_phase": NaN
+     },
+     {
+      "nu": 2.25,
+      "eps": 0.001,
+      "ein_Q": 6.380846521563424e-05,
+      "T_Q": -4.016543826302066e-06,
+      "R_Q": -4.013023843477039e-07,
+      "auslese": [
+       {
+        "t": 75.0,
+        "dA_Q": 4.890341683919979e-06,
+        "dA_E": 2.840527638056973e-06,
+        "kern": -3.0271392217267596,
+        "aussen": 3.027143912044351,
+        "bilanzrest": -2.000240922502537e-07
+       }
+      ],
+      "dA500_Q": 4.890341683919979e-06,
+      "dA_ende_Q": 4.890341683919979e-06,
+      "speicher_rate": NaN,
+      "speicher_verhaeltnis": NaN,
+      "tau_schwerpunkt": 0.31179574495875784,
+      "phase_T": 0.9811493533054146,
+      "betrag_T": 1.2211232947734474,
+      "rand_rueck_frei": 0.0,
+      "rand_rueck_ball": 0.0,
+      "kanal": {
+       "teilchen_durch": 6.679799369547807e-07,
+       "teilchen_reflektiert": -2.4695035793621187e-11,
+       "antiteilchen_rechts": 2.9069313883868786e-08,
+       "antiteilchen_links": 3.410742707819781e-10,
+       "frei_teilchen_durch": 4.481026953715418e-07,
+       "frei_antiteilchen": 2.0104206833554676e-08
+      },
+      "abstrahlung_rechts": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "abstrahlung_links": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "tau_phase": NaN
+     },
+     {
+      "nu": 2.325,
+      "eps": 0.001,
+      "ein_Q": 6.593543961798131e-05,
+      "T_Q": 5.665716712321045e-07,
+      "R_Q": 2.2442910932568528e-07,
+      "auslese": [
+       {
+        "t": 75.0,
+        "dA_Q": -8.776804781570757e-08,
+        "dA_E": -6.811966342043559e-08,
+        "kern": -5.111440901836367,
+        "aussen": 5.111441384787645,
+        "bilanzrest": 5.707193258857325e-07
+       }
+      ],
+      "dA500_Q": -8.776804781570757e-08,
+      "dA_ende_Q": -8.776804781570757e-08,
+      "speicher_rate": NaN,
+      "speicher_verhaeltnis": NaN,
+      "tau_schwerpunkt": -24.75531867659246,
+      "phase_T": 0.949601771937399,
+      "betrag_T": 1.202103072246745,
+      "rand_rueck_frei": 0.0,
+      "rand_rueck_ball": 0.0,
+      "kanal": {
+       "teilchen_durch": 9.6593463134994e-07,
+       "teilchen_reflektiert": -1.358820116998536e-11,
+       "antiteilchen_rechts": 4.031642800532657e-08,
+       "antiteilchen_links": 2.6949087557196126e-10,
+       "frei_teilchen_durch": 6.685373980908866e-07,
+       "frei_antiteilchen": 2.8533860528093584e-08
+      },
+      "abstrahlung_rechts": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "abstrahlung_links": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "tau_phase": -0.4124873423813149
+     },
+     {
+      "nu": 2.375,
+      "eps": 0.001,
+      "ein_Q": 6.735342509769172e-05,
+      "T_Q": 9.097501936627254e-06,
+      "R_Q": 1.432561908887016e-07,
+      "auslese": [
+       {
+        "t": 75.0,
+        "dA_Q": -8.346090376065975e-06,
+        "dA_E": -5.23590498370748e-06,
+        "kern": -6.042059245448427,
+        "aussen": 6.042050746892914,
+        "bilanzrest": -1.5246513644070232e-07
+       }
+      ],
+      "dA500_Q": -8.346090376065975e-06,
+      "dA_ende_Q": -8.346090376065975e-06,
+      "speicher_rate": NaN,
+      "speicher_verhaeltnis": NaN,
+      "tau_schwerpunkt": 0.541265569751971,
+      "phase_T": 0.9295884355077503,
+      "betrag_T": 1.190794322527633,
+      "rand_rueck_frei": 0.0,
+      "rand_rueck_ball": 0.0,
+      "kanal": {
+       "teilchen_durch": 1.207732896838823e-06,
+       "teilchen_reflektiert": -2.1338862913303465e-11,
+       "antiteilchen_rechts": 4.906147838650705e-08,
+       "antiteilchen_links": 1.563199133763275e-10,
+       "frei_teilchen_durch": 8.518203466302312e-07,
+       "frei_antiteilchen": 3.519565648040326e-08
+      },
+      "abstrahlung_rechts": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "abstrahlung_links": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "tau_phase": NaN
+     },
+     {
+      "nu": 2.75,
+      "eps": 0.001,
+      "ein_Q": 7.79883983956619e-05,
+      "T_Q": -2.0312558764645014e-06,
+      "R_Q": -6.698276002034393e-08,
+      "auslese": [
+       {
+        "t": 75.0,
+        "dA_Q": 5.514276196102894e-06,
+        "dA_E": 2.2905694818377697e-06,
+        "kern": -1.8893135932488276,
+        "aussen": 1.8893200792259026,
+        "bilanzrest": 9.717008788976817e-07
+       }
+      ],
+      "dA500_Q": 5.514276196102894e-06,
+      "dA_ende_Q": 5.514276196102894e-06,
+      "speicher_rate": NaN,
+      "speicher_verhaeltnis": NaN,
+      "tau_schwerpunkt": 5.083036545413137,
+      "phase_T": 0.8019138162055521,
+      "betrag_T": 1.1297533099320576,
+      "rand_rueck_frei": 0.0,
+      "rand_rueck_ball": 0.0,
+      "kanal": {
+       "teilchen_durch": 4.1914354336719e-06,
+       "teilchen_reflektiert": -6.440145800350836e-13,
+       "antiteilchen_rechts": 1.4142016519044193e-07,
+       "antiteilchen_links": 3.378745300912579e-11,
+       "frei_teilchen_durch": 3.2834976228992348e-06,
+       "frei_antiteilchen": 1.1193105904277808e-07
+      },
+      "abstrahlung_rechts": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "abstrahlung_links": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "tau_phase": NaN
+     },
+     {
+      "nu": 2.9,
+      "eps": 0.001,
+      "ein_Q": 8.224243933223477e-05,
+      "T_Q": 3.2894127353910005e-06,
+      "R_Q": -1.1241164362712556e-08,
+      "auslese": [
+       {
+        "t": 75.0,
+        "dA_Q": 1.658639990420453e-06,
+        "dA_E": 4.768646278443186e-07,
+        "kern": -2.6314528628751637,
+        "aussen": 2.631453285179523,
+        "bilanzrest": -1.2363356311518096e-06
+       }
+      ],
+      "dA500_Q": 1.658639990420453e-06,
+      "dA_ende_Q": 1.658639990420453e-06,
+      "speicher_rate": NaN,
+      "speicher_verhaeltnis": NaN,
+      "tau_schwerpunkt": 1.202266975663946,
+      "phase_T": 0.7599891978313748,
+      "betrag_T": 1.1132878820030867,
+      "rand_rueck_frei": 0.0,
+      "rand_rueck_ball": 0.0,
+      "kanal": {
+       "teilchen_durch": 5.9012203628456035e-06,
+       "teilchen_reflektiert": 1.7503729779977476e-12,
+       "antiteilchen_rechts": 1.8618283618786456e-07,
+       "antiteilchen_links": 4.7155027164609666e-11,
+       "frei_teilchen_durch": 4.759733986041205e-06,
+       "frei_antiteilchen": 1.5170177066845247e-07
+      },
+      "abstrahlung_rechts": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "abstrahlung_links": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "tau_phase": NaN
+     },
+     {
+      "nu": 2.25,
+      "eps": 0.0005,
+      "ein_Q": 1.595211630390856e-05,
+      "T_Q": -8.736967381477997e-06,
+      "R_Q": -8.03167022007987e-07,
+      "auslese": [
+       {
+        "t": 75.0,
+        "dA_Q": 1.0012629876700916e-05,
+        "dA_E": 5.97471271212482e-06,
+        "kern": -6.013643477637528,
+        "aussen": 6.013653099976374,
+        "bilanzrest": -3.902910293066732e-07
+       }
+      ],
+      "dA500_Q": 1.0012629876700916e-05,
+      "dA_ende_Q": 1.0012629876700916e-05,
+      "speicher_rate": NaN,
+      "speicher_verhaeltnis": NaN,
+      "tau_schwerpunkt": 0.283557221143127,
+      "phase_T": 0.9811491681342611,
+      "betrag_T": 1.2211231545914623,
+      "rand_rueck_frei": 0.0,
+      "rand_rueck_ball": 0.0,
+      "kanal": {
+       "teilchen_durch": 6.679797943678504e-07,
+       "teilchen_reflektiert": 1.335311793524251e-10,
+       "antiteilchen_rechts": 2.906928510040714e-08,
+       "antiteilchen_links": 3.4145162644301027e-10,
+       "frei_teilchen_durch": 4.481026953715418e-07,
+       "frei_antiteilchen": 2.0104206833554676e-08
+      },
+      "abstrahlung_rechts": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "abstrahlung_links": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "tau_phase": NaN
+     },
+     {
+      "nu": 2.325,
+      "eps": 0.0005,
+      "ein_Q": 1.6483859904495328e-05,
+      "T_Q": 1.17686769899319e-07,
+      "R_Q": 4.483245697935021e-07,
+      "auslese": [
+       {
+        "t": 75.0,
+        "dA_Q": 1.3722139305739048e-07,
+        "dA_E": 2.3702035984423744e-07,
+        "kern": -10.183554927042728,
+        "aussen": 10.183556218542819,
+        "bilanzrest": 1.1542786984119396e-06
+       }
+      ],
+      "dA500_Q": 1.3722139305739048e-07,
+      "dA_ende_Q": 1.3722139305739048e-07,
+      "speicher_rate": NaN,
+      "speicher_verhaeltnis": NaN,
+      "tau_schwerpunkt": 14.57882806074403,
+      "phase_T": 0.9496017429288279,
+      "betrag_T": 1.2021033257757128,
+      "rand_rueck_frei": 0.0,
+      "rand_rueck_ball": 0.0,
+      "kanal": {
+       "teilchen_durch": 9.65935178258357e-07,
+       "teilchen_reflektiert": 1.3900872237764054e-10,
+       "antiteilchen_rechts": 4.0316449542323574e-08,
+       "antiteilchen_links": 2.6923700157269727e-10,
+       "frei_teilchen_durch": 6.685373980908866e-07,
+       "frei_antiteilchen": 2.8533860528093584e-08
+      },
+      "abstrahlung_rechts": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "abstrahlung_links": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "tau_phase": NaN
+     },
+     {
+      "nu": 2.375,
+      "eps": 0.0005,
+      "ein_Q": 1.683835627442293e-05,
+      "T_Q": 1.692724719759931e-05,
+      "R_Q": 2.8601290087025053e-07,
+      "auslese": [
+       {
+        "t": 75.0,
+        "dA_Q": -1.6318592347169807e-05,
+        "dA_E": -1.0038411574618256e-05,
+        "kern": -12.04570327312425,
+        "aussen": 12.045686664876966,
+        "bilanzrest": -2.8965493629895346e-07
+       }
+      ],
+      "dA500_Q": -1.6318592347169807e-05,
+      "dA_ende_Q": -1.6318592347169807e-05,
+      "speicher_rate": NaN,
+      "speicher_verhaeltnis": NaN,
+      "tau_schwerpunkt": 0.5838917088139794,
+      "phase_T": 0.9295886327736865,
+      "betrag_T": 1.1907944151895813,
+      "rand_rueck_frei": 0.0,
+      "rand_rueck_ball": 0.0,
+      "kanal": {
+       "teilchen_durch": 1.2077330084962798e-06,
+       "teilchen_reflektiert": 1.381567123303076e-10,
+       "antiteilchen_rechts": 4.906152679829264e-08,
+       "antiteilchen_links": 1.5631095709253013e-10,
+       "frei_teilchen_durch": 8.518203466302312e-07,
+       "frei_antiteilchen": 3.519565648040326e-08
+      },
+      "abstrahlung_rechts": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "abstrahlung_links": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "tau_phase": NaN
+     },
+     {
+      "nu": 2.75,
+      "eps": 0.0005,
+      "ein_Q": 1.9497099598915476e-05,
+      "T_Q": -8.421530116693287e-06,
+      "R_Q": -1.3435183008382995e-07,
+      "auslese": [
+       {
+        "t": 75.0,
+        "dA_Q": 1.1971919506446839e-05,
+        "dA_E": 5.5800065651780005e-06,
+        "kern": -3.7475293351002756,
+        "aussen": 3.7475432872534618,
+        "bilanzrest": 1.9802336792285007e-06
+       }
+      ],
+      "dA500_Q": 1.1971919506446839e-05,
+      "dA_ende_Q": 1.1971919506446839e-05,
+      "speicher_rate": NaN,
+      "speicher_verhaeltnis": NaN,
+      "tau_schwerpunkt": 2.742671420662816,
+      "phase_T": 0.801913649073786,
+      "betrag_T": 1.129753298296641,
+      "rand_rueck_frei": 0.0,
+      "rand_rueck_ball": 0.0,
+      "kanal": {
+       "teilchen_durch": 4.191435649357256e-06,
+       "teilchen_reflektiert": 1.6245919442117616e-10,
+       "antiteilchen_rechts": 1.4142004115509467e-07,
+       "antiteilchen_links": 3.382255110213326e-11,
+       "frei_teilchen_durch": 3.2834976228992348e-06,
+       "frei_antiteilchen": 1.1193105904277808e-07
+      },
+      "abstrahlung_rechts": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "abstrahlung_links": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "tau_phase": NaN
+     },
+     {
+      "nu": 2.9,
+      "eps": 0.0005,
+      "ein_Q": 2.056060983305869e-05,
+      "T_Q": 4.6015011551937116e-07,
+      "R_Q": -2.283227379803834e-08,
+      "auslese": [
+       {
+        "t": 75.0,
+        "dA_Q": 4.499493719781881e-06,
+        "dA_E": 2.1900714887278875e-06,
+        "kern": -5.234798770356226,
+        "aussen": 5.234800842578019,
+        "bilanzrest": -2.4272719270289744e-06
+       }
+      ],
+      "dA500_Q": 4.499493719781881e-06,
+      "dA_ende_Q": 4.499493719781881e-06,
+      "speicher_rate": NaN,
+      "speicher_verhaeltnis": NaN,
+      "tau_schwerpunkt": 4.246331136301976,
+      "phase_T": 0.759989323405276,
+      "betrag_T": 1.1132878001630562,
+      "rand_rueck_frei": 0.0,
+      "rand_rueck_ball": 0.0,
+      "kanal": {
+       "teilchen_durch": 5.901218762637438e-06,
+       "teilchen_reflektiert": 1.672510877441926e-10,
+       "antiteilchen_rechts": 1.8618292090315348e-07,
+       "antiteilchen_links": 4.718078445655545e-11,
+       "frei_teilchen_durch": 4.759733986041205e-06,
+       "frei_antiteilchen": 1.5170177066845247e-07
+      },
+      "abstrahlung_rechts": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "abstrahlung_links": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "tau_phase": NaN
+     },
+     {
+      "nu": 2.325,
+      "eps": 0.002,
+      "ein_Q": 0.00026374175847192525,
+      "T_Q": 7.910132634364975e-07,
+      "R_Q": 1.1197316137590357e-07,
+      "auslese": [
+       {
+        "t": 75.0,
+        "dA_Q": -1.9975369219140626e-07,
+        "dA_E": -3.9204158231175887e-07,
+        "kern": -2.575447817427189,
+        "aussen": 2.5754478965603713,
+        "bilanzrest": 2.7888687422174636e-07
+       }
+      ],
+      "dA500_Q": -1.9975369219140626e-07,
+      "dA_ende_Q": -1.9975369219140626e-07,
+      "speicher_rate": NaN,
+      "speicher_verhaeltnis": NaN,
+      "tau_schwerpunkt": -3.8863914591449316,
+      "phase_T": 0.9496018301484588,
+      "betrag_T": 1.2021025647139745,
+      "rand_rueck_frei": 0.0,
+      "rand_rueck_ball": 0.0,
+      "kanal": {
+       "teilchen_durch": 9.659335366949093e-07,
+       "teilchen_reflektiert": -6.111379238758785e-10,
+       "antiteilchen_rechts": 4.031638484227865e-08,
+       "antiteilchen_links": 2.6999920287773064e-10,
+       "frei_teilchen_durch": 6.685373980908866e-07,
+       "frei_antiteilchen": 2.8533860528093584e-08
+      },
+      "abstrahlung_rechts": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "abstrahlung_links": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "tau_phase": NaN
+     }
+    ],
+    "moden": {
+     "stoss_q": {
+      "Omega_2": 1.4943748899617266,
+      "amplitude": 0.0025970030666154346,
+      "ladungsrate": 0.0007005661432031763,
+      "schwelle": 0.17831623465535118
+     },
+     "stoss_alt": {
+      "Omega_2": 1.4809293343358276,
+      "amplitude": 0.0006901521986076439,
+      "ladungsrate": -0.000214001713771835,
+      "schwelle": 0.18223851022278922
+     },
+     "ball": {
+      "Omega_2": 1.4934970678348995,
+      "amplitude": 4.0008120568708094e-05,
+      "ladungsrate": -9.727942356723313e-05,
+      "schwelle": 0.1713658453698336
+     }
+    },
+    "nu_res": 2.331034916495802,
+    "punkte_je_wellenlaenge_nu_2_3": 30.335504521936112,
+    "gitter_verschiebung_bei_nu_res": -0.002195809438735541,
+    "rand_rueck_frei_max": 0.0,
+    "nu_spitze": 2.7173268205440317,
+    "dA_spitze": 5.641699849845091e-06,
+    "sigma_nu": NaN,
+    "amplitudenprobe": [
+     {
+      "nu": 2.25,
+      "eps": 0.0005,
+      "verhaeltnis": 2.0474295098077966
+     },
+     {
+      "nu": 2.325,
+      "eps": 0.0005,
+      "verhaeltnis": -1.5634549984012793
+     },
+     {
+      "nu": 2.375,
+      "eps": 0.0005,
+      "verhaeltnis": 1.9552379152239379
+     },
+     {
+      "nu": 2.75,
+      "eps": 0.0005,
+      "verhaeltnis": 2.171077233111348
+     },
+     {
+      "nu": 2.9,
+      "eps": 0.0005,
+      "verhaeltnis": 2.712760903974884
+     },
+     {
+      "nu": 2.325,
+      "eps": 0.002,
+      "verhaeltnis": 2.27592725556392
+     }
+    ],
+    "sek": 3.306219747290015
+   },
+   "1": {
+    "w2": 0.7,
+    "dx": 0.05,
+    "dt": 0.025,
+    "T": 75.0,
+    "zeilen": [
+     {
+      "nu": 1.5,
+      "eps": 0.001,
+      "ein_Q": 4.253014336744216e-05,
+      "T_Q": 3.55598406806094e-08,
+      "R_Q": -2.8406376037890488e-05,
+      "auslese": [
+       {
+        "t": 75.0,
+        "dA_Q": 2.8370888625050552e-05,
+        "dA_E": 1.603200327805811e-05,
+        "kern": 3.5630890222465665,
+        "aussen": -3.5630607036176527,
+        "bilanzrest": -5.225971137282534e-08
+       }
+      ],
+      "dA500_Q": 2.8370888625050552e-05,
+      "dA_ende_Q": 2.8370888625050552e-05,
+      "speicher_rate": NaN,
+      "speicher_verhaeltnis": NaN,
+      "tau_schwerpunkt": 1.6112334775014148,
+      "phase_T": 1.4211098122375898,
+      "betrag_T": 1.731842644316991,
+      "rand_rueck_frei": 0.0,
+      "rand_rueck_ball": 0.0,
+      "kanal": {
+       "teilchen_durch": 1.9763106345662285e-10,
+       "teilchen_reflektiert": 1.3682721359685772e-09,
+       "antiteilchen_rechts": 1.396293844389613e-11,
+       "antiteilchen_links": 8.105522809818449e-06,
+       "frei_teilchen_durch": 6.62957649256712e-11,
+       "frei_antiteilchen": 8.105548552976447e-06
+      },
+      "abstrahlung_rechts": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "abstrahlung_links": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "tau_phase": NaN
+     },
+     {
+      "nu": 1.9,
+      "eps": 0.001,
+      "ein_Q": 5.38825903502624e-05,
+      "T_Q": -4.70880257388147e-07,
+      "R_Q": -6.589356191025597e-07,
+      "auslese": [
+       {
+        "t": 75.0,
+        "dA_Q": 1.1669629089092354e-06,
+        "dA_E": 6.254389576416472e-07,
+        "kern": 7.4639100561868545,
+        "aussen": -7.463908873984879,
+        "bilanzrest": 1.523906691934703e-08
+       }
+      ],
+      "dA500_Q": 1.1669629089092354e-06,
+      "dA_ende_Q": 1.1669629089092354e-06,
+      "speicher_rate": NaN,
+      "speicher_verhaeltnis": NaN,
+      "tau_schwerpunkt": 1.5077050598583952,
+      "phase_T": 1.151740390310843,
+      "betrag_T": 1.3570190859883313,
+      "rand_rueck_frei": 0.0,
+      "rand_rueck_ball": 0.0,
+      "kanal": {
+       "teilchen_durch": 6.390616885079505e-08,
+       "teilchen_reflektiert": -2.1180703809793632e-10,
+       "antiteilchen_rechts": 3.4288658868596184e-09,
+       "antiteilchen_links": 9.888630338212022e-09,
+       "frei_teilchen_durch": 3.475568482087376e-08,
+       "frei_antiteilchen": 1.1784194275842771e-08
+      },
+      "abstrahlung_rechts": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "abstrahlung_links": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "tau_phase": NaN
+     },
+     {
+      "nu": 2.25,
+      "eps": 0.001,
+      "ein_Q": 6.380834459173458e-05,
+      "T_Q": -3.22963103751209e-07,
+      "R_Q": -9.531275377200156e-08,
+      "auslese": [
+       {
+        "t": 75.0,
+        "dA_Q": 9.811490792414186e-07,
+        "dA_E": 4.7337390814230826e-07,
+        "kern": -3.3194045268698567,
+        "aussen": 3.3194054715463372,
+        "bilanzrest": -3.647259825878594e-08
+       }
+      ],
+      "dA500_Q": 9.811490792414186e-07,
+      "dA_ende_Q": 9.811490792414186e-07,
+      "speicher_rate": NaN,
+      "speicher_verhaeltnis": NaN,
+      "tau_schwerpunkt": 0.542934422708484,
+      "phase_T": 0.9755518854529794,
+      "betrag_T": 1.2207991350376135,
+      "rand_rueck_frei": 0.0,
+      "rand_rueck_ball": 0.0,
+      "kanal": {
+       "teilchen_durch": 7.95551841964659e-07,
+       "teilchen_reflektiert": 5.479772322315784e-13,
+       "antiteilchen_rechts": 3.4443491207656474e-08,
+       "antiteilchen_links": 2.7734132282724934e-10,
+       "frei_teilchen_durch": 5.339521994527126e-07,
+       "frei_antiteilchen": 2.371016481071044e-08
+      },
+      "abstrahlung_rechts": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "abstrahlung_links": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "tau_phase": NaN
+     },
+     {
+      "nu": 2.325,
+      "eps": 0.001,
+      "ein_Q": 6.593529103931839e-05,
+      "T_Q": 8.675150182786964e-07,
+      "R_Q": 5.6122445697171336e-08,
+      "auslese": [
+       {
+        "t": 75.0,
+        "dA_Q": -7.48086330836651e-08,
+        "dA_E": -1.8390868587303236e-07,
+        "kern": -5.2820593803086116,
+        "aussen": 5.28205937780983,
+        "bilanzrest": 7.23098510056383e-08
+       }
+      ],
+      "dA500_Q": -7.48086330836651e-08,
+      "dA_ende_Q": -7.48086330836651e-08,
+      "speicher_rate": NaN,
+      "speicher_verhaeltnis": NaN,
+      "tau_schwerpunkt": -1.9209090366196762,
+      "phase_T": 0.9437985521578035,
+      "betrag_T": 1.201765808492563,
+      "rand_rueck_frei": 0.0,
+      "rand_rueck_ball": 0.0,
+      "kanal": {
+       "teilchen_durch": 1.1655813187186972e-06,
+       "teilchen_reflektiert": -3.831113045536316e-12,
+       "antiteilchen_rechts": 4.837239761357266e-08,
+       "antiteilchen_links": 2.202142332778667e-10,
+       "frei_teilchen_durch": 8.071724371537378e-07,
+       "frei_antiteilchen": 3.4158680303171176e-08
+      },
+      "abstrahlung_rechts": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "abstrahlung_links": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "tau_phase": -0.4151919854017798
+     },
+     {
+      "nu": 2.375,
+      "eps": 0.001,
+      "ein_Q": 6.735325549025237e-05,
+      "T_Q": 3.6352661489946354e-06,
+      "R_Q": 2.6018483722873445e-08,
+      "auslese": [
+       {
+        "t": 75.0,
+        "dA_Q": -2.571669686977719e-06,
+        "dA_E": -1.761217182794824e-06,
+        "kern": -6.052558933588775,
+        "aussen": 6.052556345808708,
+        "bilanzrest": -1.6110379432877248e-08
+       }
+      ],
+      "dA500_Q": -2.571669686977719e-06,
+      "dA_ende_Q": -2.571669686977719e-06,
+      "speicher_rate": NaN,
+      "speicher_verhaeltnis": NaN,
+      "tau_schwerpunkt": 0.3007989862095286,
+      "phase_T": 0.9236528872777571,
+      "betrag_T": 1.190418024198455,
+      "rand_rueck_frei": 0.0,
+      "rand_rueck_ball": 0.0,
+      "kanal": {
+       "teilchen_durch": 1.4704312197556658e-06,
+       "teilchen_reflektiert": -4.827363972752617e-12,
+       "antiteilchen_rechts": 5.9368019803186884e-08,
+       "antiteilchen_links": 1.3680022678847791e-10,
+       "frei_teilchen_durch": 1.0377287845563677e-06,
+       "frei_antiteilchen": 4.257180081521108e-08
+      },
+      "abstrahlung_rechts": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "abstrahlung_links": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "tau_phase": NaN
+     },
+     {
+      "nu": 2.75,
+      "eps": 0.001,
+      "ein_Q": 7.798799414881547e-05,
+      "T_Q": 3.331826335375885e-06,
+      "R_Q": -1.6889444456540236e-08,
+      "auslese": [
+       {
+        "t": 75.0,
+        "dA_Q": 1.1579566881308998e-06,
+        "dA_E": -4.365004416051527e-08,
+        "kern": -1.7233789402577735,
+        "aussen": 1.723380198928126,
+        "bilanzrest": 1.0071366455410943e-07
+       }
+      ],
+      "dA500_Q": 1.1579566881308998e-06,
+      "dA_ende_Q": 1.1579566881308998e-06,
+      "speicher_rate": NaN,
+      "speicher_verhaeltnis": NaN,
+      "tau_schwerpunkt": -1.227516775864828,
+      "phase_T": 0.7949359140312431,
+      "betrag_T": 1.1292968861472197,
+      "rand_rueck_frei": 0.0,
+      "rand_rueck_ball": 0.0,
+      "kanal": {
+       "teilchen_durch": 5.485768110903191e-06,
+       "teilchen_reflektiert": 1.4597276074795295e-14,
+       "antiteilchen_rechts": 1.8333617561251898e-07,
+       "antiteilchen_links": 2.2210867590613752e-11,
+       "frei_teilchen_durch": 4.300926111533613e-06,
+       "frei_antiteilchen": 1.4523842274431246e-07
+      },
+      "abstrahlung_rechts": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "abstrahlung_links": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "tau_phase": NaN
+     },
+     {
+      "nu": 2.9,
+      "eps": 0.001,
+      "ein_Q": 8.224189291144989e-05,
+      "T_Q": 8.45242978549588e-06,
+      "R_Q": -6.059887704413211e-09,
+      "auslese": [
+       {
+        "t": 75.0,
+        "dA_Q": -1.7740621302181395e-06,
+        "dA_E": -1.6268853013287714e-06,
+        "kern": -2.9918670004719856,
+        "aussen": 2.9918650133172373,
+        "bilanzrest": -2.130926177281463e-07
+       }
+      ],
+      "dA500_Q": -1.7740621302181395e-06,
+      "dA_ende_Q": -1.7740621302181395e-06,
+      "speicher_rate": NaN,
+      "speicher_verhaeltnis": NaN,
+      "tau_schwerpunkt": 0.29054450129108034,
+      "phase_T": 0.7525432032346828,
+      "betrag_T": 1.1128412931076994,
+      "rand_rueck_frei": 0.0,
+      "rand_rueck_ball": 0.0,
+      "kanal": {
+       "teilchen_durch": 7.972056711895302e-06,
+       "teilchen_reflektiert": 4.3553629428321455e-13,
+       "antiteilchen_rechts": 2.4884066084919686e-07,
+       "antiteilchen_links": 3.734023270729204e-11,
+       "frei_teilchen_durch": 6.435526218522157e-06,
+       "frei_antiteilchen": 2.028849169272141e-07
+      },
+      "abstrahlung_rechts": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "abstrahlung_links": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "tau_phase": NaN
+     },
+     {
+      "nu": 2.25,
+      "eps": 0.0005,
+      "ein_Q": 1.5952086147933645e-05,
+      "T_Q": -1.484015864121376e-06,
+      "R_Q": -1.9064979546665324e-07,
+      "auslese": [
+       {
+        "t": 75.0,
+        "dA_Q": 2.237538881334848e-06,
+        "dA_E": 1.2858949193017743e-06,
+        "kern": -6.597786969810208,
+        "aussen": 6.597789140096134,
+        "bilanzrest": -6.725295451922907e-08
+       }
+      ],
+      "dA500_Q": 2.237538881334848e-06,
+      "dA_ende_Q": 2.237538881334848e-06,
+      "speicher_rate": NaN,
+      "speicher_verhaeltnis": NaN,
+      "tau_schwerpunkt": 0.18749897313749386,
+      "phase_T": 0.9755517016553761,
+      "betrag_T": 1.2207988964452496,
+      "rand_rueck_frei": 0.0,
+      "rand_rueck_ball": 0.0,
+      "kanal": {
+       "teilchen_durch": 7.955515011721909e-07,
+       "teilchen_reflektiert": 3.040593977201872e-11,
+       "antiteilchen_rechts": 3.444344863826575e-08,
+       "antiteilchen_links": 2.774286141067757e-10,
+       "frei_teilchen_durch": 5.339521994527126e-07,
+       "frei_antiteilchen": 2.371016481071044e-08
+      },
+      "abstrahlung_rechts": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "abstrahlung_links": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "tau_phase": NaN
+     },
+     {
+      "nu": 2.325,
+      "eps": 0.0005,
+      "ein_Q": 1.6483822759829597e-05,
+      "T_Q": 5.100390596193975e-07,
+      "R_Q": 1.1223151487168103e-07,
+      "auslese": [
+       {
+        "t": 75.0,
+        "dA_Q": 2.265582564035265e-07,
+        "dA_E": 7.163685589165489e-08,
+        "kern": -10.52447786272144,
+        "aussen": 10.524478241705966,
+        "bilanzrest": 1.5242626809713817e-07
+       }
+      ],
+      "dA500_Q": 2.265582564035265e-07,
+      "dA_ende_Q": 2.265582564035265e-07,
+      "speicher_rate": NaN,
+      "speicher_verhaeltnis": NaN,
+      "tau_schwerpunkt": -9.356468983882706,
+      "phase_T": 0.9437984381471587,
+      "betrag_T": 1.2017661046321195,
+      "rand_rueck_frei": 0.0,
+      "rand_rueck_ball": 0.0,
+      "kanal": {
+       "teilchen_durch": 1.1655821404193352e-06,
+       "teilchen_reflektiert": 2.6539280766862926e-11,
+       "antiteilchen_rechts": 4.837241279411507e-08,
+       "antiteilchen_links": 2.2015267040250783e-10,
+       "frei_teilchen_durch": 8.071724371537378e-07,
+       "frei_antiteilchen": 3.4158680303171176e-08
+      },
+      "abstrahlung_rechts": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "abstrahlung_links": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "tau_phase": NaN
+     },
+     {
+      "nu": 2.375,
+      "eps": 0.0005,
+      "ein_Q": 1.6838313872563093e-05,
+      "T_Q": 5.727470339093e-06,
+      "R_Q": 5.202864496643061e-08,
+      "auslese": [
+       {
+        "t": 75.0,
+        "dA_Q": -4.6898840382979215e-06,
+        "dA_E": -3.005948484466229e-06,
+        "kern": -12.06643131009095,
+        "aussen": 12.066426597062655,
+        "bilanzrest": -2.314425539794874e-08
+       }
+      ],
+      "dA500_Q": -4.6898840382979215e-06,
+      "dA_ende_Q": -4.6898840382979215e-06,
+      "speicher_rate": NaN,
+      "speicher_verhaeltnis": NaN,
+      "tau_schwerpunkt": 0.3879541155201309,
+      "phase_T": 0.923653097073038,
+      "betrag_T": 1.1904182324656358,
+      "rand_rueck_frei": 0.0,
+      "rand_rueck_ball": 0.0,
+      "kanal": {
+       "teilchen_durch": 1.4704317250972029e-06,
+       "teilchen_reflektiert": 2.8075012005596033e-11,
+       "antiteilchen_rechts": 5.93680986225627e-08,
+       "antiteilchen_links": 1.368078387379741e-10,
+       "frei_teilchen_durch": 1.0377287845563677e-06,
+       "frei_antiteilchen": 4.257180081521108e-08
+      },
+      "abstrahlung_rechts": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "abstrahlung_links": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "tau_phase": NaN
+     },
+     {
+      "nu": 2.75,
+      "eps": 0.0005,
+      "ein_Q": 1.9496998537203868e-05,
+      "T_Q": 9.606749865778385e-07,
+      "R_Q": -3.377490020739303e-08,
+      "auslese": [
+       {
+        "t": 75.0,
+        "dA_Q": 3.5459934925574266e-06,
+        "dA_E": 1.2049999371829341e-06,
+        "kern": -3.4155559534270337,
+        "aussen": 3.415559724292492,
+        "bilanzrest": 2.248719652068065e-07
+       }
+      ],
+      "dA500_Q": 3.5459934925574266e-06,
+      "dA_ende_Q": 3.5459934925574266e-06,
+      "speicher_rate": NaN,
+      "speicher_verhaeltnis": NaN,
+      "tau_schwerpunkt": -10.39368917044711,
+      "phase_T": 0.7949357317451075,
+      "betrag_T": 1.1292967137329133,
+      "rand_rueck_frei": 0.0,
+      "rand_rueck_ball": 0.0,
+      "kanal": {
+       "teilchen_durch": 5.48576637316221e-06,
+       "teilchen_reflektiert": 3.791416550203111e-11,
+       "antiteilchen_rechts": 1.8333591737580225e-07,
+       "antiteilchen_links": 2.2218346455057607e-11,
+       "frei_teilchen_durch": 4.300926111533613e-06,
+       "frei_antiteilchen": 1.4523842274431246e-07
+      },
+      "abstrahlung_rechts": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "abstrahlung_links": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "tau_phase": NaN
+     },
+     {
+      "nu": 2.9,
+      "eps": 0.0005,
+      "ein_Q": 2.056047322786247e-05,
+      "T_Q": 8.642262497838302e-06,
+      "R_Q": -1.2111792883805094e-08,
+      "auslese": [
+       {
+        "t": 75.0,
+        "dA_Q": -1.957842937325695e-06,
+        "dA_E": -1.6011020474997902e-06,
+        "kern": -5.955569121744169,
+        "aussen": 5.9555667673980865,
+        "bilanzrest": -3.965031445011097e-07
+       }
+      ],
+      "dA500_Q": -1.957842937325695e-06,
+      "dA_ende_Q": -1.957842937325695e-06,
+      "speicher_rate": NaN,
+      "speicher_verhaeltnis": NaN,
+      "tau_schwerpunkt": 0.5619557441962542,
+      "phase_T": 0.7525434253734294,
+      "betrag_T": 1.1128413507083714,
+      "rand_rueck_frei": 0.0,
+      "rand_rueck_ball": 0.0,
+      "kanal": {
+       "teilchen_durch": 7.972056790654459e-06,
+       "teilchen_reflektiert": 3.970647455645769e-11,
+       "antiteilchen_rechts": 2.488410000734006e-07,
+       "antiteilchen_links": 3.734976497077904e-11,
+       "frei_teilchen_durch": 6.435526218522157e-06,
+       "frei_antiteilchen": 2.028849169272141e-07
+      },
+      "abstrahlung_rechts": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "abstrahlung_links": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "tau_phase": NaN
+     },
+     {
+      "nu": 2.325,
+      "eps": 0.002,
+      "ein_Q": 0.00026374116415727356,
+      "T_Q": 1.0462517341914073e-06,
+      "R_Q": 2.796737496696902e-08,
+      "auslese": [
+       {
+        "t": 75.0,
+        "dA_Q": -2.2539027810968779e-07,
+        "dA_E": -4.830884742134799e-07,
+        "kern": -2.6609243521433155,
+        "aussen": 2.660924159108305,
+        "bilanzrest": 3.2355267192362046e-08
+       }
+      ],
+      "dA500_Q": -2.2539027810968779e-07,
+      "dA_ende_Q": -2.2539027810968779e-07,
+      "speicher_rate": NaN,
+      "speicher_verhaeltnis": NaN,
+      "tau_schwerpunkt": -0.7504581363820506,
+      "phase_T": 0.9437987802922224,
+      "betrag_T": 1.2017652155421201,
+      "rand_rueck_frei": 0.0,
+      "rand_rueck_ball": 0.0,
+      "kanal": {
+       "teilchen_durch": 1.1655796741092775e-06,
+       "teilchen_reflektiert": -1.224679753518304e-10,
+       "antiteilchen_rechts": 4.8372367114298857e-08,
+       "antiteilchen_links": 2.203374009138252e-10,
+       "frei_teilchen_durch": 8.071724371537378e-07,
+       "frei_antiteilchen": 3.4158680303171176e-08
+      },
+      "abstrahlung_rechts": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "abstrahlung_links": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "tau_phase": NaN
+     }
+    ],
+    "moden": {
+     "stoss_q": {
+      "Omega_2": 1.4944717062953417,
+      "amplitude": 0.0026291034424360746,
+      "ladungsrate": 0.0006822447429214769,
+      "schwelle": 0.19446485708013214
+     },
+     "stoss_alt": {
+      "Omega_2": 1.4810012722122765,
+      "amplitude": 0.0006615186304668343,
+      "ladungsrate": -0.00019644020249178203,
+      "schwelle": 0.18198622488997004
+     },
+     "ball": {
+      "Omega_2": 1.4936064400458318,
+      "amplitude": 1.0009704762271681e-05,
+      "ladungsrate": -0.00011404018580846876,
+      "schwelle": 0.1711095196537343
+     }
+    },
+    "nu_res": 2.331131732829417,
+    "punkte_je_wellenlaenge_nu_2_3": 60.671009043872225,
+    "gitter_verschiebung_bei_nu_res": -0.0005487905830161566,
+    "rand_rueck_frei_max": 0.0,
+    "nu_spitze": NaN,
+    "dA_spitze": NaN,
+    "sigma_nu": NaN,
+    "amplitudenprobe": [
+     {
+      "nu": 2.25,
+      "eps": 0.0005,
+      "verhaeltnis": 2.2805289518946648
+     },
+     {
+      "nu": 2.325,
+      "eps": 0.0005,
+      "verhaeltnis": -3.0285041587398935
+     },
+     {
+      "nu": 2.375,
+      "eps": 0.0005,
+      "verhaeltnis": 1.8236727920565776
+     },
+     {
+      "nu": 2.75,
+      "eps": 0.0005,
+      "verhaeltnis": 3.062285082770362
+     },
+     {
+      "nu": 2.9,
+      "eps": 0.0005,
+      "verhaeltnis": 1.1035932191872884
+     },
+     {
+      "nu": 2.325,
+      "eps": 0.002,
+      "verhaeltnis": 3.012891277636552
+     }
+    ],
+    "sek": 4.712244280613959
+   },
+   "2": {
+    "w2": 0.7,
+    "dx": 0.025,
+    "dt": 0.0125,
+    "T": 75.0,
+    "zeilen": [
+     {
+      "nu": 1.5,
+      "eps": 0.001,
+      "ein_Q": 4.2530192085849906e-05,
+      "T_Q": 9.505315907007994e-09,
+      "R_Q": -7.370619378406377e-06,
+      "auslese": [
+       {
+        "t": 75.0,
+        "dA_Q": 7.361187592787138e-06,
+        "dA_E": 4.235733982107606e-06,
+        "kern": 3.6087166955319487,
+        "aussen": -3.6087093100029346,
+        "bilanzrest": 2.434142157188799e-08
+       }
+      ],
+      "dA500_Q": 7.361187592787138e-06,
+      "dA_ende_Q": 7.361187592787138e-06,
+      "speicher_rate": NaN,
+      "speicher_verhaeltnis": NaN,
+      "tau_schwerpunkt": 1.542129701680281,
+      "phase_T": 1.4202080533730697,
+      "betrag_T": 1.7319623224313134,
+      "rand_rueck_frei": 0.0,
+      "rand_rueck_ball": 0.0,
+      "kanal": {
+       "teilchen_durch": 2.0067258655675813e-10,
+       "teilchen_reflektiert": 6.159398205645687e-10,
+       "antiteilchen_rechts": 1.4174603156617258e-11,
+       "antiteilchen_links": 8.065269895704616e-06,
+       "frei_teilchen_durch": 6.730595824868338e-11,
+       "frei_antiteilchen": 8.065275908731304e-06
+      },
+      "abstrahlung_rechts": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "abstrahlung_links": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "tau_phase": NaN
+     },
+     {
+      "nu": 1.9,
+      "eps": 0.001,
+      "ein_Q": 5.388259051680341e-05,
+      "T_Q": -7.141142196540278e-08,
+      "R_Q": -1.7491244914793977e-07,
+      "auslese": [
+       {
+        "t": 75.0,
+        "dA_Q": 2.8458151156418424e-07,
+        "dA_E": 1.357578029500504e-07,
+        "kern": 7.461204378909518,
+        "aussen": -7.4612040976874665,
+        "bilanzrest": -3.3594594034075355e-09
+       }
+      ],
+      "dA500_Q": 2.8458151156418424e-07,
+      "dA_ende_Q": 2.8458151156418424e-07,
+      "speicher_rate": NaN,
+      "speicher_verhaeltnis": NaN,
+      "tau_schwerpunkt": 2.552387268207667,
+      "phase_T": 1.1505870261451163,
+      "betrag_T": 1.3569879515913696,
+      "rand_rueck_frei": 0.0,
+      "rand_rueck_ball": 0.0,
+      "kanal": {
+       "teilchen_durch": 6.581680749730755e-08,
+       "teilchen_reflektiert": -3.7358707965561865e-11,
+       "antiteilchen_rechts": 3.528903568216428e-09,
+       "antiteilchen_links": 9.673062951385785e-09,
+       "frei_teilchen_durch": 3.579632288509406e-08,
+       "frei_antiteilchen": 1.1623238576044384e-08
+      },
+      "abstrahlung_rechts": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "abstrahlung_links": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "tau_phase": NaN
+     },
+     {
+      "nu": 2.25,
+      "eps": 0.001,
+      "ein_Q": 6.380833906627783e-05,
+      "T_Q": 5.891227406213538e-07,
+      "R_Q": -2.688778405371489e-08,
+      "auslese": [
+       {
+        "t": 75.0,
+        "dA_Q": 2.5711884069522378e-08,
+        "dA_E": -1.1098580354151061e-07,
+        "kern": -3.4503820664936518,
+        "aussen": 3.450382082905091,
+        "bilanzrest": -9.300444766503093e-09
+       }
+      ],
+      "dA500_Q": 2.5711884069522378e-08,
+      "dA_ende_Q": 2.5711884069522378e-08,
+      "speicher_rate": NaN,
+      "speicher_verhaeltnis": NaN,
+      "tau_schwerpunkt": -0.03342112377951878,
+      "phase_T": 0.9741584176374917,
+      "betrag_T": 1.2207103597944393,
+      "rand_rueck_frei": 0.0,
+      "rand_rueck_ball": 0.0,
+      "kanal": {
+       "teilchen_durch": 8.309271722093733e-07,
+       "teilchen_reflektiert": 6.726952093850357e-12,
+       "antiteilchen_rechts": 3.59285725947507e-08,
+       "antiteilchen_links": 2.6316044852169687e-10,
+       "frei_teilchen_durch": 5.577735968072927e-07,
+       "frei_antiteilchen": 2.471085395178555e-08
+      },
+      "abstrahlung_rechts": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "abstrahlung_links": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "tau_phase": NaN
+     },
+     {
+      "nu": 2.325,
+      "eps": 0.001,
+      "ein_Q": 6.593528372299635e-05,
+      "T_Q": 1.1668786632353396e-06,
+      "R_Q": 6.3044512635321045e-09,
+      "auslese": [
+       {
+        "t": 75.0,
+        "dA_Q": -2.836582947194015e-07,
+        "dA_E": -3.476821511002517e-07,
+        "kern": -5.349796099329995,
+        "aussen": 5.349795813409058,
+        "bilanzrest": -2.262642378802369e-09
+       }
+      ],
+      "dA500_Q": -2.836582947194015e-07,
+      "dA_ende_Q": -2.836582947194015e-07,
+      "speicher_rate": NaN,
+      "speicher_verhaeltnis": NaN,
+      "tau_schwerpunkt": -0.36859019832799333,
+      "phase_T": 0.9423554438877546,
+      "betrag_T": 1.2016730490151188,
+      "rand_rueck_frei": 0.0,
+      "rand_rueck_ball": 0.0,
+      "kanal": {
+       "teilchen_durch": 1.2213570009902372e-06,
+       "teilchen_reflektiert": -9.966773549631015e-13,
+       "antiteilchen_rechts": 5.061434182509432e-08,
+       "antiteilchen_links": 2.092415823409055e-10,
+       "frei_teilchen_durch": 8.459297550327954e-07,
+       "frei_antiteilchen": 3.572800926364529e-08
+      },
+      "abstrahlung_rechts": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "abstrahlung_links": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "tau_phase": -0.41585932350834653
+     },
+     {
+      "nu": 2.375,
+      "eps": 0.001,
+      "ein_Q": 6.735324683112142e-05,
+      "T_Q": 2.153958732299685e-06,
+      "R_Q": -8.136398167820541e-10,
+      "auslese": [
+       {
+        "t": 75.0,
+        "dA_Q": -1.0087622733401045e-06,
+        "dA_E": -8.236653200912104e-07,
+        "kern": -6.056432357434837,
+        "aussen": 6.056431337149748,
+        "bilanzrest": -1.1522816463184917e-08
+       }
+      ],
+      "dA500_Q": -1.0087622733401045e-06,
+      "dA_ende_Q": -1.0087622733401045e-06,
+      "speicher_rate": NaN,
+      "speicher_verhaeltnis": NaN,
+      "tau_schwerpunkt": 0.1110487771683637,
+      "phase_T": 0.9221760021989487,
+      "betrag_T": 1.1903149568941926,
+      "rand_rueck_frei": 0.0,
+      "rand_rueck_ball": 0.0,
+      "kanal": {
+       "teilchen_durch": 1.5441946225564421e-06,
+       "teilchen_reflektiert": -8.4993489401885e-13,
+       "antiteilchen_rechts": 6.22500220435714e-08,
+       "antiteilchen_links": 1.325202695592365e-10,
+       "frei_teilchen_durch": 1.0899672022996508e-06,
+       "frei_antiteilchen": 4.463725364702098e-08
+      },
+      "abstrahlung_rechts": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "abstrahlung_links": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "tau_phase": NaN
+     },
+     {
+      "nu": 2.75,
+      "eps": 0.001,
+      "ein_Q": 7.798797061093164e-05,
+      "T_Q": 5.435165320216294e-06,
+      "R_Q": -8.718962929620062e-09,
+      "auslese": [
+       {
+        "t": 75.0,
+        "dA_Q": -6.442946820860365e-07,
+        "dA_E": -1.0095128930948136e-06,
+        "kern": -1.6983642254114093,
+        "aussen": 1.6983635802345072,
+        "bilanzrest": -8.822200110492783e-10
+       }
+      ],
+      "dA500_Q": -6.442946820860365e-07,
+      "dA_ende_Q": -6.442946820860365e-07,
+      "speicher_rate": NaN,
+      "speicher_verhaeltnis": NaN,
+      "tau_schwerpunkt": -0.2030414736098578,
+      "phase_T": 0.7932048344421739,
+      "betrag_T": 1.1291701601697823,
+      "rand_rueck_frei": 0.0,
+      "rand_rueck_ball": 0.0,
+      "kanal": {
+       "teilchen_durch": 5.864295947670114e-06,
+       "teilchen_reflektiert": 1.5153367355907946e-13,
+       "antiteilchen_rechts": 1.9551468318518179e-07,
+       "antiteilchen_links": 1.9924033047593742e-11,
+       "frei_teilchen_durch": 4.598718114472665e-06,
+       "frei_antiteilchen": 1.5492702090053352e-07
+      },
+      "abstrahlung_rechts": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "abstrahlung_links": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "tau_phase": NaN
+     },
+     {
+      "nu": 2.9,
+      "eps": 0.001,
+      "ein_Q": 8.224186039700619e-05,
+      "T_Q": 9.037091767406242e-06,
+      "R_Q": -2.157790032322659e-09,
+      "auslese": [
+       {
+        "t": 75.0,
+        "dA_Q": -1.8457386282275839e-06,
+        "dA_E": -1.7850532750269535e-06,
+        "kern": -3.0795422889889337,
+        "aussen": 3.079540403400816,
+        "bilanzrest": -3.984948974641081e-08
+       }
+      ],
+      "dA500_Q": -1.8457386282275839e-06,
+      "dA_ende_Q": -1.8457386282275839e-06,
+      "speicher_rate": NaN,
+      "speicher_verhaeltnis": NaN,
+      "tau_schwerpunkt": 0.07401398152528316,
+      "phase_T": 0.7507007543562735,
+      "betrag_T": 1.1127196092970355,
+      "rand_rueck_frei": 0.0,
+      "rand_rueck_ball": 0.0,
+      "kanal": {
+       "teilchen_durch": 8.588458615840362e-06,
+       "teilchen_reflektiert": -1.6149290092458693e-14,
+       "antiteilchen_rechts": 2.673579799565228e-07,
+       "antiteilchen_links": 3.516174165719971e-11,
+       "frei_teilchen_durch": 6.93476028262274e-06,
+       "frei_antiteilchen": 2.1802236004740923e-07
+      },
+      "abstrahlung_rechts": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "abstrahlung_links": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "tau_phase": NaN
+     },
+     {
+      "nu": 2.25,
+      "eps": 0.0005,
+      "ein_Q": 1.5952084766569458e-05,
+      "T_Q": 3.029462304436883e-07,
+      "R_Q": -5.378935993093995e-08,
+      "auslese": [
+       {
+        "t": 75.0,
+        "dA_Q": 3.3878997001284534e-07,
+        "dA_E": 1.2983895892414324e-07,
+        "kern": -6.859718008788776,
+        "aussen": 6.859718331839234,
+        "bilanzrest": -1.5739511686614364e-08
+       }
+      ],
+      "dA500_Q": 3.3878997001284534e-07,
+      "dA_ende_Q": 3.3878997001284534e-07,
+      "speicher_rate": NaN,
+      "speicher_verhaeltnis": NaN,
+      "tau_schwerpunkt": -0.077557116897637,
+      "phase_T": 0.9741582383563714,
+      "betrag_T": 1.2207100936490611,
+      "rand_rueck_frei": 0.0,
+      "rand_rueck_ball": 0.0,
+      "kanal": {
+       "teilchen_durch": 8.30926763635519e-07,
+       "teilchen_reflektiert": 4.3870041518842865e-12,
+       "antiteilchen_rechts": 3.592852630616779e-08,
+       "antiteilchen_links": 2.631837498102919e-10,
+       "frei_teilchen_durch": 5.577735968072927e-07,
+       "frei_antiteilchen": 2.471085395178555e-08
+      },
+      "abstrahlung_rechts": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "abstrahlung_links": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "tau_phase": NaN
+     },
+     {
+      "nu": 2.325,
+      "eps": 0.0005,
+      "ein_Q": 1.6483820930749087e-05,
+      "T_Q": 1.0502396486109525e-06,
+      "R_Q": 1.2606225331240659e-08,
+      "auslese": [
+       {
+        "t": 75.0,
+        "dA_Q": -1.7332105414277977e-07,
+        "dA_E": -2.3738571229874232e-07,
+        "kern": -10.659940728224802,
+        "aussen": 10.659940554202953,
+        "bilanzrest": -7.007947002586758e-10
+       }
+      ],
+      "dA500_Q": -1.7332105414277977e-07,
+      "dA_ende_Q": -1.7332105414277977e-07,
+      "speicher_rate": NaN,
+      "speicher_verhaeltnis": NaN,
+      "tau_schwerpunkt": -0.8216433226080966,
+      "phase_T": 0.9423553039591849,
+      "betrag_T": 1.201673351243818,
+      "rand_rueck_frei": 0.0,
+      "rand_rueck_ball": 0.0,
+      "kanal": {
+       "teilchen_durch": 1.2213578964934348e-06,
+       "teilchen_reflektiert": -1.1115758167953088e-12,
+       "antiteilchen_rechts": 5.061435323081241e-08,
+       "antiteilchen_links": 2.092245079767137e-10,
+       "frei_teilchen_durch": 8.459297550327954e-07,
+       "frei_antiteilchen": 3.572800926364529e-08
+      },
+      "abstrahlung_rechts": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "abstrahlung_links": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "tau_phase": NaN
+     },
+     {
+      "nu": 2.375,
+      "eps": 0.0005,
+      "ein_Q": 1.6838311707780356e-05,
+      "T_Q": 2.6875665825027746e-06,
+      "R_Q": -1.6276844794463918e-09,
+      "auslese": [
+       {
+        "t": 75.0,
+        "dA_Q": -1.5415560788620986e-06,
+        "dA_E": -1.1074930956127284e-06,
+        "kern": -12.074175559470161,
+        "aussen": 12.074173999545438,
+        "bilanzrest": -1.8368643627524967e-08
+       }
+      ],
+      "dA500_Q": -1.5415560788620986e-06,
+      "dA_ende_Q": -1.5415560788620986e-06,
+      "speicher_rate": NaN,
+      "speicher_verhaeltnis": NaN,
+      "tau_schwerpunkt": 0.18812083936066415,
+      "phase_T": 0.9221762093133375,
+      "betrag_T": 1.1903151986863214,
+      "rand_rueck_frei": 0.0,
+      "rand_rueck_ball": 0.0,
+      "kanal": {
+       "teilchen_durch": 1.544195273575298e-06,
+       "teilchen_reflektiert": 1.3612238537020645e-12,
+       "antiteilchen_rechts": 6.225010944084374e-08,
+       "antiteilchen_links": 1.3252390177381738e-10,
+       "frei_teilchen_durch": 1.0899672022996508e-06,
+       "frei_antiteilchen": 4.463725364702098e-08
+      },
+      "abstrahlung_rechts": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "abstrahlung_links": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "tau_phase": NaN
+     },
+     {
+      "nu": 2.75,
+      "eps": 0.0005,
+      "ein_Q": 1.949699265273291e-05,
+      "T_Q": 4.7744056388912395e-06,
+      "R_Q": -1.7433051236445394e-08,
+      "auslese": [
+       {
+        "t": 75.0,
+        "dA_Q": 2.5179087522996375e-08,
+        "dA_E": -6.411294368931587e-07,
+        "kern": -3.365573837644325,
+        "aussen": 3.3655738732188323,
+        "bilanzrest": 1.0395420276502629e-08
+       }
+      ],
+      "dA500_Q": 2.5179087522996375e-08,
+      "dA_ende_Q": 2.5179087522996375e-08,
+      "speicher_rate": NaN,
+      "speicher_verhaeltnis": NaN,
+      "tau_schwerpunkt": -0.4489473230193113,
+      "phase_T": 0.7932046648903116,
+      "betrag_T": 1.1291699384785236,
+      "rand_rueck_frei": 0.0,
+      "rand_rueck_ball": 0.0,
+      "kanal": {
+       "teilchen_durch": 5.864293368668639e-06,
+       "teilchen_reflektiert": 7.288387388464853e-12,
+       "antiteilchen_rechts": 1.9551439340861424e-07,
+       "antiteilchen_links": 1.9926225536715806e-11,
+       "frei_teilchen_durch": 4.598718114472665e-06,
+       "frei_antiteilchen": 1.5492702090053352e-07
+      },
+      "abstrahlung_rechts": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "abstrahlung_links": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "tau_phase": NaN
+     },
+     {
+      "nu": 2.9,
+      "eps": 0.0005,
+      "ein_Q": 2.0560465099251548e-05,
+      "T_Q": 9.173587749262834e-06,
+      "R_Q": -4.309373299223558e-09,
+      "auslese": [
+       {
+        "t": 75.0,
+        "dA_Q": -1.9800830267889815e-06,
+        "dA_E": -1.7939831410889648e-06,
+        "kern": -6.130985326774451,
+        "aussen": 6.13098328247555,
+        "bilanzrest": -6.421587414765387e-08
+       }
+      ],
+      "dA500_Q": -1.9800830267889815e-06,
+      "dA_ende_Q": -1.9800830267889815e-06,
+      "speicher_rate": NaN,
+      "speicher_verhaeltnis": NaN,
+      "tau_schwerpunkt": 0.15555764657500504,
+      "phase_T": 0.7507009850683045,
+      "betrag_T": 1.1127197229107435,
+      "rand_rueck_frei": 0.0,
+      "rand_rueck_ball": 0.0,
+      "kanal": {
+       "teilchen_durch": 8.588459827953615e-06,
+       "teilchen_reflektiert": 7.907219753025897e-12,
+       "antiteilchen_rechts": 2.6735839900635925e-07,
+       "antiteilchen_links": 3.5164886136643743e-11,
+       "frei_teilchen_durch": 6.93476028262274e-06,
+       "frei_antiteilchen": 2.1802236004740923e-07
+      },
+      "abstrahlung_rechts": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "abstrahlung_links": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "tau_phase": NaN
+     },
+     {
+      "nu": 2.325,
+      "eps": 0.002,
+      "ein_Q": 0.0002637411348919854,
+      "T_Q": 1.225196802808583e-06,
+      "R_Q": 3.1547812489846405e-09,
+      "auslese": [
+       {
+        "t": 75.0,
+        "dA_Q": -3.388267642420205e-07,
+        "dA_E": -5.742513323053753e-07,
+        "kern": -2.694799537497444,
+        "aussen": 2.694799195588235,
+        "bilanzrest": -3.0824445483181195e-09
+       }
+      ],
+      "dA500_Q": -3.388267642420205e-07,
+      "dA_ende_Q": -3.388267642420205e-07,
+      "speicher_rate": NaN,
+      "speicher_verhaeltnis": NaN,
+      "tau_schwerpunkt": -0.18165912939655016,
+      "phase_T": 0.942355723906705,
+      "betrag_T": 1.2016724437878423,
+      "rand_rueck_frei": 0.0,
+      "rand_rueck_ball": 0.0,
+      "kanal": {
+       "teilchen_durch": 1.2213552102209744e-06,
+       "teilchen_reflektiert": -1.4737423458621237e-13,
+       "antiteilchen_rechts": 5.061431856992566e-08,
+       "antiteilchen_links": 2.0927572673771576e-10,
+       "frei_teilchen_durch": 8.459297550327954e-07,
+       "frei_antiteilchen": 3.572800926364529e-08
+      },
+      "abstrahlung_rechts": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "abstrahlung_links": {
+       "nu": NaN,
+       "amplitude": NaN,
+       "amplitudenrate": NaN
+      },
+      "tau_phase": NaN
+     }
+    ],
+    "moden": {
+     "stoss_q": {
+      "Omega_2": 1.4944966363885854,
+      "amplitude": 0.0026372059611237536,
+      "ladungsrate": 0.0006775472166138851,
+      "schwelle": 0.2769015647946753
+     },
+     "stoss_alt": {
+      "Omega_2": 1.4810193378739818,
+      "amplitude": 0.0006543152182327695,
+      "ladungsrate": -0.00019344333457712833,
+      "schwelle": 0.18192472665002374
+     },
+     "ball": {
+      "Omega_2": 1.4935997637383822,
+      "amplitude": 2.450450686756927e-06,
+      "ladungsrate": -0.00015031290563446452,
+      "schwelle": 0.1710350182825703
+     }
+    },
+    "nu_res": 2.3311566629226608,
+    "punkte_je_wellenlaenge_nu_2_3": 121.34201808774445,
+    "gitter_verschiebung_bei_nu_res": -0.00013718769768011896,
+    "rand_rueck_frei_max": 0.0,
+    "nu_spitze": NaN,
+    "dA_spitze": NaN,
+    "sigma_nu": NaN,
+    "amplitudenprobe": [
+     {
+      "nu": 2.25,
+      "eps": 0.0005,
+      "verhaeltnis": 13.176396140274704
+     },
+     {
+      "nu": 2.325,
+      "eps": 0.0005,
+      "verhaeltnis": 0.6110205742942622
+     },
+     {
+      "nu": 2.375,
+      "eps": 0.0005,
+      "verhaeltnis": 1.5281658717845037
+     },
+     {
+      "nu": 2.75,
+      "eps": 0.0005,
+      "verhaeltnis": -0.039080079695014557
+     },
+     {
+      "nu": 2.9,
+      "eps": 0.0005,
+      "verhaeltnis": 1.0727862528891239
+     },
+     {
+      "nu": 2.325,
+      "eps": 0.002,
+      "verhaeltnis": 1.194489181348257
+     }
+    ],
+    "sek": 9.15095001552254
+   }
+  },
+  "neu_gerechnet": [
+   "0",
+   "1",
+   "2"
+  ],
+  "vergleich": {
+   "folgen": [
+    {
+     "nu": 1.5,
+     "stufen": [
+      "0",
+      "1",
+      "2"
+     ],
+     "dA500_Q": [
+      0.00011415244631459676,
+      2.8370888625050552e-05,
+      7.361187592787138e-06
+     ],
+     "q": 0.24492095501809436,
+     "p_beob": 2.0296118811840693,
+     "richardson": 3.5795391536600083e-07,
+     "urteil": "kein Effekt"
+    },
+    {
+     "nu": 1.9,
+     "stufen": [
+      "0",
+      "1",
+      "2"
+     ],
+     "dA500_Q": [
+      4.668010932662676e-06,
+      1.1669629089092354e-06,
+      2.8458151156418424e-07
+     ],
+     "q": 0.25203350292780574,
+     "p_beob": 1.988312570308622,
+     "richardson": -9.545620884166153e-09,
+     "urteil": "kein Effekt"
+    },
+    {
+     "nu": 2.25,
+     "stufen": [
+      "0",
+      "1",
+      "2"
+     ],
+     "dA500_Q": [
+      4.890341683919979e-06,
+      9.811490792414186e-07,
+      2.5711884069522378e-08
+     ],
+     "q": 0.24440780790089997,
+     "p_beob": 2.0326377203691055,
+     "richardson": -2.927671809877764e-07,
+     "urteil": "kein Effekt"
+    },
+    {
+     "nu": 2.325,
+     "stufen": [
+      "0",
+      "1",
+      "2"
+     ],
+     "dA500_Q": [
+      -8.776804781570757e-08,
+      -7.48086330836651e-08,
+      -2.836582947194015e-07
+     ],
+     "q": 16.11567080412593,
+     "p_beob": -4.010392335760421,
+     "richardson": -3.5327484859798027e-07,
+     "urteil": "kein Effekt"
+    },
+    {
+     "nu": 2.375,
+     "stufen": [
+      "0",
+      "1",
+      "2"
+     ],
+     "dA500_Q": [
+      -8.346090376065975e-06,
+      -2.571669686977719e-06,
+      -1.0087622733401045e-06
+     ],
+     "q": 0.2706604692988497,
+     "p_beob": 1.885443901501674,
+     "richardson": -4.877931354608997e-07,
+     "urteil": "kein Effekt"
+    },
+    {
+     "nu": 2.75,
+     "stufen": [
+      "0",
+      "1",
+      "2"
+     ],
+     "dA500_Q": [
+      5.514276196102894e-06,
+      1.1579566881308998e-06,
+      -6.442946820860365e-07
+     ],
+     "q": 0.41370963881754896,
+     "p_beob": 1.273309524280028,
+     "richardson": -1.2450451388250152e-06,
+     "urteil": "kein Effekt"
+    },
+    {
+     "nu": 2.9,
+     "stufen": [
+      "0",
+      "1",
+      "2"
+     ],
+     "dA500_Q": [
+      1.658639990420453e-06,
+      -1.7740621302181395e-06,
+      -1.8457386282275839e-06
+     ],
+     "q": 0.020880488749227752,
+     "p_beob": 5.581700708334613,
+     "richardson": -1.869630794230732e-06,
+     "urteil": "kein Effekt"
+    }
+   ],
+   "lage": [
+    {
+     "stufe": "0",
+     "nu_spitze": 2.7173268205440317,
+     "dA_spitze": 5.641699849845091e-06,
+     "nu_res": 2.331034916495802,
+     "Omega_2": 1.4943748899617266,
+     "gitter_verschiebung": -0.002195809438735541
+    },
+    {
+     "stufe": "1",
+     "nu_spitze": NaN,
+     "dA_spitze": NaN,
+     "nu_res": 2.331131732829417,
+     "Omega_2": 1.4944717062953417,
+     "gitter_verschiebung": -0.0005487905830161566
+    },
+    {
+     "stufe": "2",
+     "nu_spitze": NaN,
+     "dA_spitze": NaN,
+     "nu_res": 2.3311566629226608,
+     "Omega_2": 1.4944966363885854,
+     "gitter_verschiebung": -0.00013718769768011896
+    }
+   ],
+   "spitzenhoehe": null
+  }
+ },
+ "ende": "2026-09-30T00:08:01+00:00",
+ "dauer_s": 19.162120960652828,
+ "torch_speicher_max_mb": 46.74560546875
+}

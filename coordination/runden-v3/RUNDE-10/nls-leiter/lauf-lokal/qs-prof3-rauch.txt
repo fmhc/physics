@@ -1,0 +1,11 @@
+nls1.py profile (qs-prof3-rauch), Start 2026-09-30 11:38:09 CEST
+Argumente: {"kommando": "profile", "dim": 3, "modell": "qs", "h": 0.02, "l": 0, "omega": "0.02,0.04,0.06,0.07,0.08,0.083", "omega_von": 0.05, "omega_bis": 0.175, "n_omega": 6, "nu_min": 0.002, "n_scan": 240, "re_unter": 0.0, "re_breite": 0.8, "im_tiefe": 0.4, "n_re": 41, "n_im": 11, "iters": 25, "nu_von": 0.02, "nu_bis": 1.0, "n_nu": 121, "nu0": 0.3, "dnu": 0.01, "omega0": 0.15, "domega": 0.002, "n_kante": 41, "n_kante_om": 15, "aus": "lauf-lokal", "name": "qs-prof3-rauch"}
+CQ-NLS-Profile d = 3, h = 0.02 (Profilschritt 0.01); PW-Kinkradius m = 0: sqrt(3)/(8 (3/16 - Omega)) (2D), in 3D das Doppelte
+Omega | w(0) | a_* - w(0) | N (Norm) | R_kink (w = a_*/2) | PW-Formel | R_halb | Anschluss
+0.02000 | 0.9760388178 | -3.323e-02 | 1052.350957 | 6.6225 | nan | 5.0541 | 1.0e-04 Schwanz
+0.04000 | 0.9770512698 | -3.424e-02 | 2501.810563 | 9.1806 | nan | 7.6988 | 1.0e-04 Schwanz
+0.06000 | 0.9647452075 | -2.194e-02 | 11213.495012 | 15.0960 | nan | 13.6722 | 1.3e-04 Divergenz
+0.07000 | 0.9574446886 | -1.464e-02 | 40233.749891 | 22.8709 | nan | 21.4610 | 1.2e-02 Divergenz
+0.08000 | 0.9495159579 | -6.707e-03 | 5868718.129379 | 47.8091 | nan | 46.3971 | 7.3e-01 Ende
+0.08300 | 0.9469940754 | -4.185e-03 | 6179603.246054 | 47.1623 | nan | 45.7012 | 6.8e-01 Ende
+Ende 2026-09-30 11:38:14 CEST, Laufzeit 5.9 s

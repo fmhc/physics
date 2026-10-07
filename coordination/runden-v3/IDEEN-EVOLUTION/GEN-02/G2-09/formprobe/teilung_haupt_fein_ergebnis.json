@@ -1,0 +1,460 @@
+{
+ "test": "teilung",
+ "start": "2026-09-30T11:14:50+02:00",
+ "ende": "2026-09-30T11:14:59+02:00",
+ "rauch": true,
+ "dauer_s": {
+  "schiessen_s": 8.11397035200207,
+  "entwicklung_fein_s": 1.2504192839987809
+ },
+ "geraet": "CPU (nur Form- und Syntaxprobe)",
+ "torch": "2.10.0+cu128",
+ "notizen": [],
+ "parameter": {
+  "T": 300.0,
+  "teil": "haupt",
+  "eps": 0.01,
+  "l_max": 6,
+  "L": 38.4,
+  "stufen": [
+   [
+    "grob",
+    0.6,
+    0.1
+   ],
+   [
+    "fein",
+    0.4,
+    0.05
+   ]
+  ],
+  "schwelle_rel": 0.5,
+  "q_min_rel": 0.03,
+  "blur": 1.0
+ },
+ "profile": [
+  {
+   "omega2": 0.65,
+   "m": 1,
+   "p": 0.27470034238594,
+   "klammer": 1.4948930981972808e-11,
+   "x_schwanz": 15.780000000000001,
+   "N": 58.209898686419415,
+   "G": 12.041204793619627,
+   "VU": 37.836434142229656,
+   "Q": 93.8606413424517,
+   "E": 87.71407308202191,
+   "virialrest": -5.210539992398207e-11,
+   "S_zentrum": 0.0,
+   "S_max": 0.7105140929569308,
+   "R_halb": 5.278617028228214,
+   "R_kern_halb": 2.0117896430651343,
+   "R_max": 3.59,
+   "f_top": 1.061195061429805,
+   "gueltig": true
+  },
+  {
+   "omega2": 0.7569,
+   "m": 1,
+   "p": 0.2070727092245757,
+   "klammer": 1.4948930981972808e-11,
+   "x_schwanz": 17.73,
+   "N": 37.48718208630166,
+   "G": 7.150233638393326,
+   "VU": 28.374048118504476,
+   "Q": 65.22769683016489,
+   "E": 63.898329878019524,
+   "virialrest": -4.61204659445115e-11,
+   "S_zentrum": 0.0,
+   "S_max": 0.4399384004750629,
+   "R_halb": 5.343235344432465,
+   "R_kern_halb": 2.1266795348137477,
+   "R_max": 3.67,
+   "f_top": 1.0945588005537332,
+   "gueltig": true
+  },
+  {
+   "omega2": 0.7569,
+   "m": 2,
+   "p": 0.012459403401843375,
+   "klammer": 1.4948930981972808e-11,
+   "x_schwanz": 20.85,
+   "N": 69.14060419634122,
+   "G": 13.24466216428004,
+   "VU": 52.332523330014375,
+   "Q": 120.30465130163371,
+   "E": 117.9097088105051,
+   "virialrest": 1.3188458864248705e-10,
+   "S_zentrum": 0.0,
+   "S_max": 0.4332362408002835,
+   "R_halb": 8.469537585649896,
+   "R_kern_halb": 5.107182169741127,
+   "R_max": 6.76,
+   "f_top": 1.0945588005537332,
+   "gueltig": true
+  }
+ ],
+ "ergebnis": {
+  "fein": [
+   {
+    "lauf": "m1_06500",
+    "m": 1,
+    "omega2": 0.65,
+    "gestoert": true,
+    "stufe": "fein",
+    "dx": 0.4,
+    "dt": 0.05,
+    "Q_profil": 93.8606413424517,
+    "n_max": 1,
+    "n_ende": 1,
+    "teilung": false,
+    "t_teilung": null,
+    "Q_box_verlust": 7.771561172376096e-16,
+    "E_box_verlust": 1.0671406358575553e-07,
+    "J_box_aenderung": -3.694822225952521e-13,
+    "J_box_start": 93.87756475413282,
+    "Q_box_start": 93.87756475413283,
+    "windung_ende": [
+     1
+    ],
+    "l_dominant": 2,
+    "A_start_ende": [
+     0.008038051520851148,
+     0.007625757085543367
+    ],
+    "gamma": null,
+    "gamma_2": null,
+    "A2_start_ende": [
+     0.008038051520851148,
+     0.007625757085543367
+    ],
+    "gamma_3": null,
+    "A3_start_ende": [
+     0.007377905482909389,
+     0.0029883895104248844
+    ],
+    "plausibel": {
+     "Q_nie_wachsend": true,
+     "Q_max_rel": 0.0,
+     "Q_erhalten_bis_t": 6.0,
+     "Q_rel_aenderung": 7.771561172376096e-16,
+     "Q_erhalten": true,
+     "J_durch_Q_start": 0.9999999999999999,
+     "JQ_gleich_m": true,
+     "gamma_ok": true,
+     "bestanden": true
+    },
+    "gebiete": [
+     [
+      0.0,
+      1,
+      [
+       [
+        76.1484,
+        1,
+        0.9999,
+        -0.028,
+        -0.026,
+        0.00273,
+        -0.00292
+       ]
+      ]
+     ],
+     [
+      5.0,
+      1,
+      [
+       [
+        76.1871,
+        1,
+        0.9997,
+        -0.001,
+        -0.034,
+        0.00312,
+        -0.00088
+       ]
+      ]
+     ]
+    ]
+   },
+   {
+    "lauf": "m1_07569",
+    "m": 1,
+    "omega2": 0.7569,
+    "gestoert": true,
+    "stufe": "fein",
+    "dx": 0.4,
+    "dt": 0.05,
+    "Q_profil": 65.22769683016489,
+    "n_max": 1,
+    "n_ende": 1,
+    "teilung": false,
+    "t_teilung": null,
+    "Q_box_verlust": 1.8685053504441385e-13,
+    "E_box_verlust": -4.5065182918690994e-08,
+    "J_box_aenderung": -1.2192913345643319e-11,
+    "J_box_start": 65.23919719136289,
+    "Q_box_start": 65.23919719136292,
+    "windung_ende": [
+     1
+    ],
+    "l_dominant": 2,
+    "A_start_ende": [
+     0.007888677186925578,
+     0.0127409519748613
+    ],
+    "gamma": null,
+    "gamma_2": null,
+    "A2_start_ende": [
+     0.007888677186925578,
+     0.0127409519748613
+    ],
+    "gamma_3": null,
+    "A3_start_ende": [
+     0.007222323255924217,
+     0.007069233404412461
+    ],
+    "plausibel": {
+     "Q_nie_wachsend": true,
+     "Q_max_rel": 0.0,
+     "Q_erhalten_bis_t": 6.0,
+     "Q_rel_aenderung": 1.8685053504441385e-13,
+     "Q_erhalten": true,
+     "J_durch_Q_start": 0.9999999999999996,
+     "JQ_gleich_m": true,
+     "gamma_ok": true,
+     "bestanden": true
+    },
+    "gebiete": [
+     [
+      0.0,
+      1,
+      [
+       [
+        51.2167,
+        1,
+        0.9998,
+        -0.037,
+        -0.042,
+        0.00245,
+        -0.00238
+       ]
+      ]
+     ],
+     [
+      5.0,
+      1,
+      [
+       [
+        51.2172,
+        1,
+        0.9996,
+        -0.029,
+        -0.074,
+        0.00309,
+        -0.00282
+       ]
+      ]
+     ]
+    ]
+   },
+   {
+    "lauf": "m2_07569",
+    "m": 2,
+    "omega2": 0.7569,
+    "gestoert": true,
+    "stufe": "fein",
+    "dx": 0.4,
+    "dt": 0.05,
+    "Q_profil": 120.30465130163371,
+    "n_max": 1,
+    "n_ende": 1,
+    "teilung": false,
+    "t_teilung": null,
+    "Q_box_verlust": 2.359556994235845e-12,
+    "E_box_verlust": -1.0412636330947578e-07,
+    "J_box_aenderung": -5.708216122002341e-10,
+    "J_box_start": 240.66491639860823,
+    "Q_box_start": 120.33245819930352,
+    "windung_ende": [
+     2
+    ],
+    "l_dominant": 3,
+    "A_start_ende": [
+     0.008811880884324459,
+     0.015050334341993607
+    ],
+    "gamma": null,
+    "gamma_2": null,
+    "A2_start_ende": [
+     0.009206090419955546,
+     0.014438926060619773
+    ],
+    "gamma_3": null,
+    "A3_start_ende": [
+     0.008811880884324459,
+     0.015050334341993607
+    ],
+    "plausibel": {
+     "Q_nie_wachsend": true,
+     "Q_max_rel": 0.0,
+     "Q_erhalten_bis_t": 6.0,
+     "Q_rel_aenderung": 2.359556994235845e-12,
+     "Q_erhalten": true,
+     "J_durch_Q_start": 2.0000000000000098,
+     "JQ_gleich_m": true,
+     "gamma_ok": true,
+     "bestanden": true
+    },
+    "gebiete": [
+     [
+      0.0,
+      1,
+      [
+       [
+        95.3877,
+        2,
+        1.9996,
+        -0.067,
+        -0.067,
+        0.00279,
+        -0.00292
+       ]
+      ]
+     ],
+     [
+      5.0,
+      1,
+      [
+       [
+        95.4464,
+        2,
+        1.9994,
+        -0.058,
+        -0.109,
+        0.00336,
+        -0.00287
+       ]
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ "kennzahlen": {
+  "grob_quelle": "formprobe/teilung_haupt_grob_ergebnis.json",
+  "V1": {
+   "folge_m1": [
+    [
+     0.55,
+     false
+    ],
+    [
+     0.65,
+     false
+    ],
+    [
+     0.7569,
+     false
+    ]
+   ],
+   "monoton": true,
+   "t_teilung_065": null,
+   "t_teilung_07569": null,
+   "frueher_als_065": false,
+   "info_gamma_groesser_als_065": null,
+   "reproduktion_065_teilt": false,
+   "bestanden": false
+  },
+  "V2": {
+   "t_teilung_07569": null,
+   "gamma_07569": null,
+   "t_grenze": 150.0,
+   "gamma_band": [
+    0.09,
+    0.3
+   ],
+   "bestanden": false
+  },
+  "V3": {
+   "moden_m1": {},
+   "windungen_toechter": {},
+   "regel": "gamma_3 fehlt (l = 3 waechst nicht auf 3 A_3(0)) zaehlt als gamma_3 < gamma_2",
+   "bestanden": null
+  },
+  "V4": {
+   "folge_m2": [
+    [
+     0.55,
+     false
+    ],
+    [
+     0.65,
+     false
+    ],
+    [
+     0.7569,
+     false
+    ]
+   ],
+   "reproduktion_055_ruhig": true,
+   "bestanden": false
+  },
+  "scheitert": true,
+  "plausibel": {
+   "fein_m1_06500": true,
+   "fein_m1_07569": true,
+   "fein_m2_07569": true
+  },
+  "profilprobe": {
+   "m1_06500": {
+    "S_max": 0.7105140929569308,
+    "x_schwanz": 15.780000000000001,
+    "grenze": 30.4,
+    "gueltig": true,
+    "bestanden": true
+   },
+   "m1_07569": {
+    "S_max": 0.4399384004750629,
+    "x_schwanz": 17.73,
+    "grenze": 30.4,
+    "gueltig": true,
+    "bestanden": true
+   },
+   "m2_07569": {
+    "S_max": 0.4332362408002835,
+    "x_schwanz": 20.85,
+    "grenze": 30.4,
+    "gueltig": true,
+    "bestanden": true
+   }
+  },
+  "plausibilitaet_bestanden": true,
+  "L3": {
+   "laeufe": [
+    {
+     "lauf": "m1_06500",
+     "ausgang_und_toechterzahl_gleich": true,
+     "t_teilung_ok_info": true,
+     "gamma_rel_aenderung": null,
+     "bestanden": true
+    },
+    {
+     "lauf": "m1_07569",
+     "ausgang_und_toechterzahl_gleich": true,
+     "t_teilung_ok_info": true,
+     "gamma_rel_aenderung": null,
+     "bestanden": true
+    },
+    {
+     "lauf": "m2_07569",
+     "ausgang_und_toechterzahl_gleich": true,
+     "t_teilung_ok_info": true,
+     "gamma_rel_aenderung": null,
+     "bestanden": true
+    }
+   ],
+   "bestanden": true
+  }
+ }
+}

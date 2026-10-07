@@ -1,0 +1,140 @@
+{
+ "info": {
+  "numpy": "2.4.4",
+  "scipy": "1.18.0",
+  "python": "3.12.3",
+  "host": "ubuntu-auto",
+  "argv": [
+   "code/td.py",
+   "lauf",
+   "--netz",
+   "glas-N128-s901",
+   "--A",
+   "1e-3",
+   "--arm",
+   "a",
+   "--rauch",
+   "--out",
+   "rauch/r7.json"
+  ],
+  "skript_sha256": "fbc02c4899a82ca17fa82ba7574c5ffa0c0776aeb4e6a75c3e3110a419e7015d",
+  "module_sha256": {
+   "tg": "ec48a258e266fc2226d0d10564b606052831ffefbf0642e4f7d04f9de85cfd9e",
+   "uk": "f52df7438c3d33b4fe86d4352bed3373b38e27a083f3d60eb12d4143fa6b71e0",
+   "tu": "6c5c3a9509ad0be5a8e72ab9a3cabb85a2300d11a2581c7d9ecf2b9e7fa9720a"
+  },
+  "start_utc": "2026-10-05T06:47:08Z"
+ },
+ "laufzeit_s": 3.441004991531372,
+ "maxrss_MB": 121.3515625,
+ "schluessel": {
+  "netz": "str",
+  "ninfo": {
+   "N": "int",
+   "saat": "int"
+  },
+  "A": "float",
+  "arm": "str",
+  "lesart": "str",
+  "h": "float",
+  "perioden_soll": "int",
+  "fertig": "bool",
+  "abschnitt": "int",
+  "n": "int",
+  "nges": "int",
+  "NT": "int",
+  "dt": "float",
+  "T": "float",
+  "omega_max": "float",
+  "mode": {
+   "j": "int",
+   "w2": "float",
+   "omega": "float",
+   "anteil_TT_welle": "float",
+   "naechste_anteile": "list",
+   "tt_leser_mode": "list",
+   "alpha": "float",
+   "tt_richtung": "list",
+   "n_null": "int",
+   "w2_max": "float",
+   "w2_min_pos": "float"
+  },
+  "H0": "float",
+  "N0": {
+   "E": "int",
+   "T": "int",
+   "nV": "int",
+   "m": "int",
+   "weg": "str",
+   "rang_rel": "float",
+   "kontr_S": "float",
+   "n_A_neg": "int",
+   "A_min_rel": "float",
+   "eig": {
+    "w2_max": "float",
+    "n_wachsend": "int",
+    "n_null": "int",
+    "w2_min": "float",
+    "w2im_max": "float",
+    "w2_wachsend": "list",
+    "A_pd": "bool"
+   },
+   "t_bau_s": "float",
+   "skalen": {
+    "s1max": "float",
+    "s2max": "float",
+    "Pmax": "float",
+    "stern1_neg": "int",
+    "stern2_neg": "int",
+    "mu_min": "float",
+    "mu_n_verletzt": "int"
+   },
+   "F": "int"
+  },
+  "k1": "list",
+  "proben_spalten": "list",
+  "proben": "list",
+  "ereignisse": "list",
+  "perioden": [
+   {
+    "periode": "int",
+    "t": "float",
+    "flaechen_wie_anfang": "float",
+    "flaechen_neu": "int",
+    "gleiche_zerlegung": "bool",
+    "eig": [
+     "A_pd",
+     "n_null",
+     "n_wachsend",
+     "w2_max",
+     "w2_min",
+     "w2_wachsend",
+     "w2im_max"
+    ],
+    "n_zuege": "int",
+    "modal": [
+     "H",
+     "anteil_TT",
+     "anteil_null",
+     "anteil_rest",
+     "q_TT",
+     "qd_TT"
+    ]
+   }
+  ],
+  "abbruch": "NoneType",
+  "wand_s": "float"
+ },
+ "fertig": true,
+ "n": 1880,
+ "nges": 1880,
+ "NT": 188,
+ "dt": 0.013903442253643332,
+ "omega_max": 35.810155977150565,
+ "mode_omega": 2.403807476791349,
+ "mode_anteil": 0.21810168601085395,
+ "t_bau_N0": 0.47324442863464355,
+ "m": 476,
+ "n_ereig": 0,
+ "wand_s": 3.43715763092041
+}

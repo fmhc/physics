@@ -1,0 +1,29 @@
+Antwortdriver responses.py, particle_binding, 02.10.2026
+Nur geschrieben; keine Ausführung. Nichtautorreview vor Rootlauf.
+
+Abgestimmtes tatsächliches Präparationsschema: RESULT.status
+FINE_INPUTS_PREPARED, reference.artifact.{file,sha256},
+source.artifact.{file,sha256}, ritz_task.artifact.{file,sha256}.
+Quell-/Referenz-/Ritzverknüpfung und numerische Ritz-/Profilflags geprüft.
+Source-NPZ r,J2,local_channels,omega,rho,canonical_q_normalization;
+Reference-NPZ r,f,chi,omega. Keine Umnormierung/Interpolation.
+Altes h=.05 wird direkt über unverändertes outgoing.load_sources mit
+Originalmanifest/Quellhashes geladen und gegen old_inputs abgeglichen.
+
+CLI --outgoing OLD_CODE --operator MODES_CODE --prepared NEW_RESULT
+ --prepared-sha256 HASH_OF_COMPLETED_NEW_RESULT --reference OLD_PREPARED_DIR
+ --source-dir OLD_HARMONIC_SOURCE_OUT --null-result NULL_DIAGNOSTIC_RESULT
+ --free-result REMAINING_FREE_RESULT --out FRESH_OUTPUT_DIRECTORY.
+Root bindet den tatsächlichen neuen Präparationsresultathash vor Aufruf.
+
+Geprüfte Archivfälle genau Gaussian/Bump h=.05/.025, Closed/Incoming h=.05
+einschließlich NPZ-Hashes. Fehlend nur Closed/Incoming h=.025, danach vier
+Fälle R60/120 x h=.05/.025. Plan-Gates unverändert; Fehler stoppen nach
+gesichertem Fall. Archivierter coarse FAIL bleibt im Provenienzblock.
+Endstatus CONTROLLED_FINE_FORCED_RESPONSE nur bei vier bestandenen Fällen
+und Raum-/Gitter-/Signalprüfung. Alpha^4-Koeffizientenleistung, kein Gamma.
+
+Interner Checkpoint6CPU-s; harter äußerer Rootdeckel8CPU-s, ein Thread,
+nice19,.69 und RAM<512MB gemäß Gesamtplan. Native Löser können nur durch
+äußeren Deckel unterbrochen werden; JSON wird vor Arbeit und nach jedem
+abgeschlossenen Teil gesichert. Kein Retry, keine Evolution/Eigensuche.

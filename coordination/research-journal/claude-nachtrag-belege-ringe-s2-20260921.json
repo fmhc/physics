@@ -1,0 +1,36 @@
+{
+  "id": "claude-nachtrag-belege-ringe-s2-20260921",
+  "time": "2026-09-21T05:14:17.182789+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5)",
+  "topic": "verkettete-ringe",
+  "status": "reported",
+  "title": "Nachtrag zu claude-s2-ringe-20260915: die vier nur auf .69 liegenden Belege sind in den Bestand geholt, alle vier Hashes treffen den im Eintrag gebundenen Sollwert",
+  "question": "Sind die vier Belegdateien des S2-Laufs zu den verketteten Ringen, die der Eintrag vom 15.09.2026 nur mit absoluten Pfaden auf .69 nennt, noch vorhanden und unveraendert?",
+  "action": "Die vier Dateien von fmh@192.168.178.69 nach coordination/vertraege-20260912/verkettete-ringe-lauf-a/belege-s2/ kopiert (ERGEBNIS.json aus auswertung-neu/ als ERGEBNIS-auswertung-neu.json, um den Namen eindeutig zu halten) und lokal sha256 gebildet. Keine Rechnung, keine Datei veraendert, Register und Ledger nicht angefasst, Runde 022 bleibt eingefroren.",
+  "result": "4 von 4 Belegen gefunden und bitgleich: BAHNHASHES-S2.json: sha256 ce33cebe41a3a1dc..., Sollwert aus dem Eintrag getroffen; NEURECHNUNG-S2.json: sha256 61f9c2b5cca2e643..., Sollwert aus dem Eintrag getroffen; ERGEBNIS-auswertung-neu.json: sha256 1d51c16fa2f7192e..., Sollwert aus dem Eintrag getroffen; MORSE-ID47-S2.json: sha256 b5055f279a57ca45..., Sollwert aus dem Eintrag getroffen.",
+  "meaning": "Die Belegkette dieses S2-Laufs war sechs Tage lang nur auf .69 pruefbar; das Dashboard hat die vier Quellen als fehlend gemeldet. Jetzt liegen sie im Bestand und stimmen bis aufs Bit mit dem, was der Eintrag vom 15.09.2026 gebunden hat -- der S2-Befund zu den verketteten Ringen ist damit ohne Zugriff auf .69 nachpruefbar. Der alte Eintrag bleibt unveraendert stehen (Anhaengeregel); seine Warnung im Dashboard bleibt deshalb bestehen und zeigt nur noch auf die Fernpfade.",
+  "sources": [
+    {
+      "path": "coordination/research-journal/claude-s2-ringe-20260915.json",
+      "sha256": "268620ceb27aff5deaab9e17f49c72679dc63cdbe57a740453dd961be4dd26dd"
+    },
+    {
+      "path": "coordination/vertraege-20260912/verkettete-ringe-lauf-a/belege-s2/BAHNHASHES-S2.json",
+      "sha256": "ce33cebe41a3a1dcacb6f60c201a08e7d669c9493dc766014f31cb3b240e8ae7"
+    },
+    {
+      "path": "coordination/vertraege-20260912/verkettete-ringe-lauf-a/belege-s2/NEURECHNUNG-S2.json",
+      "sha256": "61f9c2b5cca2e6434126f1b3b21a527a40c32dc96de5e0465aa3e80f42004be2"
+    },
+    {
+      "path": "coordination/vertraege-20260912/verkettete-ringe-lauf-a/belege-s2/ERGEBNIS-auswertung-neu.json",
+      "sha256": "1d51c16fa2f7192e45307020db9a3eefc450a46aedb2aed35731269cfd7faef5"
+    },
+    {
+      "path": "coordination/vertraege-20260912/verkettete-ringe-lauf-a/belege-s2/MORSE-ID47-S2.json",
+      "sha256": "b5055f279a57ca4535e1da8fc9e1b501668ee2a147096bc41746f607708a52c2"
+    }
+  ],
+  "recorded_at": "2026-09-21T05:14:17.182789+00:00"
+}

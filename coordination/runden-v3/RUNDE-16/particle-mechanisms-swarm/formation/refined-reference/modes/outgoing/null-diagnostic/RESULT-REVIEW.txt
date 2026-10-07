@@ -1,0 +1,42 @@
+Unabhängige Ergebnislektüre, particle_binding, 02.10.2026
+
+Gelesen out/RESULT.json und TIME.txt gegen geprüften Plan/Code.
+Ergebnishash des Codes 5ce698913dae029f62aba86da2a1e56ebbdd8f15168f75f13a29b67e12d6b575
+entspricht der finalen geprüften Fassung; unveränderte solve-/Operator-
+und Altresultathashes sind eingetragen. Keine eigene Rechnung/Ausführung.
+
+DIAGNOSTIC_COMPLETE ist als Diagnoseabschluss gerechtfertigt: sechs freie
+Fälle vorhanden, alle Rest-/Workbilanzflags wahr, keine M2-Fälle. TIME.txt
+nennt user=.52 s, system=.07 s, wall=.92 s, exit=0; interne CPU=.5165 s.
+Der historische Status bleibt ausdrücklich UNRESOLVED.
+
+Die festgelegte Außenresthypothese wird durch diese Daten gestützt:
+Außenanteile am FEHLERQUADRAT .86927463/.86906485/.86901237 auf
+h=.1/.05/.025. Die regionalen Quadratsummen stimmen bis auf Rundung mit
+dem Gesamtfehler überein. Globale relative L2-Fehler sind
+.0097728383/.0024369064/.0006088327, ihre Halbierungsverhältnisse
+4.010346/4.002588. Das ist mit einem Fehler zweiter Ordnung in h vereinbar.
+Auch die Nullamplituden reduzieren sich ungefähr um vier, oberhalb des
+vorgegebenen Auflösungsbodens.
+
+Die gemessenen Außenquadrate stimmen in beiden Regionen mit
+4pi|A|^2 DeltaR nahezu überein (Verhältnisse .9999466 bis .9999971).
+Das ist eine Form-/Lokalisationsdiagnose desselben Feldes: die Amplitude
+wird aus dessen festem Fenster entnommen, also kein unabhängiger
+Strahlungsnachweis. Der numerische Außenrest dominiert hier den globalen
+Normfehler. Der Kernfehler ist dennoch nicht null; sein Beitrag bleibt
+gesondert sichtbar und nimmt ebenfalls ab. Keine Umbenennung der globalen
+Norm in eine Kernnorm und kein Herausrechnen des Außenfehlers.
+
+Der ursprüngliche h=.1-Profilfehler bleibt .00977>.005 und damit FAIL.
+Die feineren freien Bumpfälle bestehen dieselbe .005-Grenze; alle drei
+Gaussian-Fälle bestehen ihre Originalflags. Dies vervollständigt noch
+nicht die gesamte alte QA, denn Closed-/Incoming-Kontrollen wurden hier
+nicht ausgeführt. Es liefert weder M2-Antwort noch eine Freigabe dafür.
+
+Engste nächste offene Frage: Bestehen die bislang fehlenden freien
+Closed-/Incoming-Kontrollen auf dem bereits profilgenauen h=.05 mit den
+unveränderten ursprünglichen Grenzen? Das wäre ein kleiner separater
+QA-Abschluss, kein automatischer M2-Lauf. Ein etwaiger späterer neuer
+M2-Plan müsste seine Gitterbasis ausdrücklich benennen; der gescheiterte
+alte Vierfallplan darf durch diese Diagnose nicht nachträglich PASS heißen.

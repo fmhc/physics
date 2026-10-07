@@ -1,0 +1,25 @@
+TET-1 Start 2026-09-30T08:34:05+02:00, Geraet cpu, torch 2.10.0+cu128
+  Argumente: {"geraet": "cpu", "w2": 0.76, "abstaende": "8,10,12", "h": 0.3, "na": 48, "rand": 8.0, "nphi": 12, "block": 16, "profil_h": 0.01, "profil_rmax": 30.0, "out": "lauf-lokal/rauch-tet1"}
+  Profil omega^2 = 0.76: f0 = 1.050899025696587 (Klammer 7.2e-12), S0 = 1.104389, r_c = 15.47, A = 11.331039 (Streuung 1.1e-05 auf [r_c-4, r_c]), Q = 254.1160, E = 241.9027
+  k0 = 0.489898, A = 11.331039, E_Ball = 241.902667
+  d = 8: Gitter nr 43 x na 48 x nz 76 = 0.2 Mio Punkte, 0.5 s; Einzelbaelle E = [241.75606, 241.75606, 241.75606, 242.04248] (Streuung 2.86e-01); J33 = 6.0054e-02, c3_paar = 2 beta Sum J33 = 1.8016e-01
+    neutral E: c0 -9.125356e+01 | c1 +2.368e-15 (s1 -1.4e-14) | c2 -3.908e-14 (s2 -1.4e-14) | c3 +8.314783e-02 (s3 +1.4e-14) | c4 +4.14e-14 | c6 -5.68e-14
+    neutral F: c0 +3.035406e+00 | c1 +7.105e-15 | c2 -3.183e-15 | c3 +8.314783e-02
+    gleich  E: c0 +1.460655e+02 | c1 +1.576e+02 (s1 +9.5e-15) | c2 -2.371e+00 (s2 -4.3e-14) | c3 +5.659824e-01 (s3 +1.9e-14) | c4 -1.89e-14 | c6 +2.84e-14
+    gleich  F: c0 -4.251248e+01 | c1 -3.107e+01 | c2 -2.371e+00 | c3 +5.659824e-01
+  d = 10: Gitter nr 46 x na 48 x nz 81 = 0.2 Mio Punkte, 0.7 s; Einzelbaelle E = [241.72551, 241.72551, 241.72551, 242.03646] (Streuung 3.11e-01); J33 = 2.2742e-03, c3_paar = 2 beta Sum J33 = 6.8225e-03
+    neutral E: c0 -3.718058e+01 | c1 -3.316e-14 (s1 +1.0e-14) | c2 +6.513e-15 (s2 -5.3e-14) | c3 +3.858095e-03 (s3 +1.7e-14) | c4 +3.55e-15 | c6 +7.58e-14
+    neutral F: c0 +2.250584e+00 | c1 +5.144e-15 | c2 -9.992e-16 | c3 +3.858095e-03
+    gleich  E: c0 +6.806092e+01 | c1 +7.007e+01 (s1 +2.4e-14) | c2 -6.231e-01 (s2 +1.7e-14) | c3 +1.844760e-02 (s3 +6.6e-14) | c4 -1.56e-13 | c6 +3.79e-14
+    gleich  F: c0 -1.080140e+01 | c1 -8.885e+00 | c2 -6.231e-01 | c3 +1.844760e-02
+  d = 12: Gitter nr 50 x na 48 x nz 86 = 0.2 Mio Punkte, 0.8 s; Einzelbaelle E = [241.7336, 241.7336, 241.7336, 242.02797] (Streuung 2.94e-01); J33 = 8.0674e-05, c3_paar = 2 beta Sum J33 = 2.4202e-04
+    neutral E: c0 -1.487008e+01 | c1 -7.698e-15 (s1 -1.8e-14) | c2 -1.066e-14 (s2 +1.5e-14) | c3 +1.511213e-04 (s3 -8.9e-16) | c4 -4.74e-15 | c6 +9.47e-15
+    neutral F: c0 +9.520504e-01 | c1 +1.351e-15 | c2 +4.774e-15 | c3 +1.511213e-04
+    gleich  E: c0 +2.890620e+01 | c1 +2.924e+01 (s1 -1.0e-14) | c2 -8.488e-02 (s2 +3.3e-14) | c3 +6.035137e-04 (s3 +2.4e-14) | c4 -2.07e-14 | c6 +2.84e-14
+    gleich  F: c0 -2.738060e+00 | c1 -2.462e+00 | c2 -8.488e-02 | c3 +6.035137e-04
+  Steigung 8-10: neutral c3 3.134 k0 (eigene Vorhersage 3.683, Fenster der Leitung 2,5 bis 3,5), Paaranteil 3.341 k0; 0/0/0 c1 0.828 k0 (Vorhersage 1.228)
+  Steigung 10-12: neutral c3 3.307 k0 (eigene Vorhersage 3.558, Fenster der Leitung 2,5 bis 3,5), Paaranteil 3.408 k0; 0/0/0 c1 0.892 k0 (Vorhersage 1.186)
+  d = 8: c3 voll / c3_paar = 0.4615; |c1|, |c2| neutral = 2.4e-15, 3.9e-14 bei |c0| 9.125e+01
+  d = 10: c3 voll / c3_paar = 0.5655; |c1|, |c2| neutral = 3.3e-14, 6.5e-15 bei |c0| 3.718e+01
+  d = 12: c3 voll / c3_paar = 0.6244; |c1|, |c2| neutral = 7.7e-15, 1.1e-14 bei |c0| 1.487e+01
+Ende 2026-09-30T08:34:09+02:00

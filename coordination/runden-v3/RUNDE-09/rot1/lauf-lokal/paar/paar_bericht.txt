@@ -1,0 +1,11 @@
+ROT-1 paar RAUCH. Start 2026-09-30T08:21:30+02:00, Ende 2026-09-30T08:21:35+02:00, CPU (nur Rauchtest), torch 2.10.0+cu128
+Q = 700.0, dx 0.6, L 38.4, Pinning Hoehe 0.0, Radius 0.8; tau 0.3, Iterationen 400; Dauer 5.1 s
+Ball radial: b 1.0000: omega^2 0.52867, S_0 1.0275, R_halb 12.175; b 1.1250: omega^2 0.39905, S_0 1.1523, R_halb 12.325
+Phasenklammer Ring 0.5 bis 2.0; Konvergenz: max |E(letzte) - E(1000 Iterationen davor)| = - (Residuum unten enthaelt die Klammerzonen)
+
+g | d | psi2*i | E | E_pin | omega | C | Q1-Anteil | Residuum | Kreis um beide: Wechsel/F90/Windung | um A: Windung | um B: Windung | Wirbel A Abstand | n_e-Wechsel auf x = 0 (y) | n_e(0,0)
+0 | 6.5 | - | 530.11822 | 0.0000 | 0.72787/0.72787 | 36.924 | 0.5000 (S1 Ring A 0.040) | 2.5e-01 | 0/0.273/0.00 | 0.00 (W1 -0.00, W2 0.00) | -0.00 | 0.35 |  | -1.000
+0.5 | 6.5 | - | 484.59891 | 0.0000 | 0.63536/0.63536 | 135.859 | 0.5000 (S1 Ring A 0.093) | 2.4e-01 | 0/0.680/0.00 | -1.00 (W1 1.00, W2 -0.00) | 1.00 | 0.25 | -0.27,0.27 | -1.000
+-0.5 | 6.5 | ja | 484.59891 | 0.0000 | 0.63536/0.63536 | -135.859 | 0.5000 (S1 Ring A 0.093) | 2.4e-01 | 0/0.680/0.00 | -1.00 (W1 1.00, W2 0.00) | 1.00 | 0.25 | -0.27,0.27 | -1.000
+E_0(d) bei g = 0 (Textur ohne Waende, psi_1 kann den Bereich um A raeumen): d 6.5: 530.1182
+K4 paar: E(g = -0.5, psi_2 -> i psi_2, d = 6.5) = 484.59891128 gegen E(g = 0.5) = 484.59891128, Differenz 0.00e+00

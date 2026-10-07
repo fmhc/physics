@@ -1,0 +1,26 @@
+{
+  "id": "claude-finn-entscheidungen-hooks-cx1-20260926",
+  "time": "2026-09-26T16:28:44+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung; Entscheidungen Finn per Rueckfrage 26.09. etwa 18:15 MESZ; eingetragen 18:28:44 MESZ (gemessen)",
+  "topic": "operations",
+  "status": "reported",
+  "evidenzart": "keine",
+  "title": "Finns Entscheidungen 26.09.: Keine Hooks in seinem System (auch fuer Codex), Q-SONDE ja, KS-1-GEN spaeter, DF-1 F5 ja eng begrenzt nach KS-1-GEN, Ollama-Stopp fuer CX-1 ja; Stopp braucht Finns Passwort; CX-1-Budget 9000 s in Teil B nachgetragen",
+  "question": "Was entscheidet Finn zu den offenen Punkten aus Methodik-Review und Lagebericht, und was folgt daraus fuer Codex, CX-1, DF-1, KS-1-GEN und Qwen?",
+  "action": "Rueckfrage mit vier Punkten. Danach geprueft: sudo -n -l auf der .69, Ollama-Anfragen der letzten 12 h aus journalctl, Hooks und Dienste auf dem Laptop (nur gelesen, nichts geaendert), Text des CX-1-Vertrags und des Waechters. Codex informiert: Peerbus-Ereignis 67ac2983..., codex queue 01a0de8b-56a4-7d93-8fce-24a5347bf6fd. CX-1-VERTRAG.md um B15 ergaenzt (Teil B; beide Kopien a3caf38b...; Sicherung .bak-20260926-vor-b15).",
+  "result": "(1) Finn woertlich: \"Keine Scheiss hooks in mein system mehr, du machst damit andere Prozesse kaputt sag das auch Codex\". Daraus folgt: keine Hooks, Shims, Wrapper, Sammel-Dienste und keine Sperrlogik. Bindungskette und python3-Shim entfallen. (2) Q-SONDE: ja. (3) KS-1-GEN F6: spaeter. (4) DF-1 F5: ja, eng begrenzt, nach KS-1-GEN; wartet daher. (5) CX-1: \"Mach das fuer mich full go\". Ohne Passwort erlaubt sudo auf der .69 nur restart, nicht stop. Entladen per API genuegt nicht, denn myga-gauntlet (Laptop) fragt alle 30 min an, 69 von 84 Anfragen in 12 h. Neu laden wuerde die P5000 waehrend des Laufs mitbelegen; bei duennem Budgetrand waere das ausgangswirksam. Deshalb kein Start ohne gestoppten Dienst. (6) Bestand: Von fmhc-physics stammen nur der SessionStart-Hook in .claude/settings.local.json (local_guard.py, 08.09.) und der Dienst fmhc-physics-local-guard. Sie ziehen claude- und codex-Sitzungen samt MCP-Servern in einen Scope mit 50 % eines Kerns (memory.high 4 GB, erreicht, 509 MB Swap). Die globalen Git- und Claude-Hooks sind Finns eigene.",
+  "meaning": "Regeln werden kuenftig nur durch Vertragstext, Journal, Review und Disziplin durchgesetzt, nicht technisch. Ob der vorhandene Guard-Hook und der Drossel-Dienst bleiben, entscheidet Finn. CX-1 wartet weiter auf den Stopp durch Finn. Die Q-SONDE laeuft, sobald Ollama frei ist und die Erwartung vorab abgelegt ist.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260924/CX-1-VERTRAG.md",
+      "sha256": "a3caf38b68a438811ac3965247bf4c83552d351c8818e989df234375977353d4"
+    },
+    {
+      "path": "coordination/events.jsonl",
+      "event_id": "67ac2983195e4d149c054f6c2a0e2bcd",
+      "sha256": "a7ca6640783f8a511738b6d2b05dbc0bad533742bb777059da4f525a02458a09"
+    }
+  ],
+  "recorded_at": "2026-09-26T16:28:51.514515+00:00"
+}

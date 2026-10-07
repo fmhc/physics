@@ -1,0 +1,36 @@
+{
+  "id": "claude-m3-medianbias-20260911",
+  "time": "2026-09-11T15:27:00+02:00",
+  "time_kind": "completed",
+  "author": "Claude",
+  "topic": "binaries",
+  "status": "checked",
+  "title": "Die Anisotropie der Gaia-Eigenbewegungs-Fehlerellipse verschiebt den M1-Median nicht: ΔΓ = −0,0006 ± 0,0022",
+  "question": "M3 misst quer/längs = 0,925 ± 0,008 für die PM-Fehlerellipse relativ zur Trennungsrichtung. Seit Runde 5 offen: welchen Bias erzeugt das auf den Median der relativen Eigenbewegung, die M1-Messgröße?",
+  "action": "Gepaarter Lauf auf TS440 (lab.py, CPU float64, 431 s) mit der unveränderten Stage-C-Messabbildung des Parallaxenpiloten: 200 innere Kataloge, je Arm A (volle 3×3-Kovarianz je Quelle, bitgleich zum Piloten) und Arm B (dieselben Standardnormalen, Kovarianz isotropisiert auf gleiche Spur, Korrelationen null), dazu Arm B' mit anderem Rauschstrom als Nullkontrolle.",
+  "result": "Kontrolle 1: 32 von 32 Katalogen archivgleich zum Piloten (Abweichung 0,0), Mittel 1,0693010762019923. Kontrolle 2: B − B' = −0,00406 ± 0,00517. Ergebnis: Γ(B) − Γ(A) im schwächsten Bin −0,000624623637879112 bei MC-SE 0,0021530334701193917, also −0,27 % des Abstands 0,2323 zum Messwert; in allen acht Bins |ΔΓ| < 0,0011. Die Auswahl ist in beiden Armen identisch, nur die relative Eigenbewegung ändert sich.",
+  "meaning": "Ausgang 1 der vorab benannten beiden: die Anisotropie der Katalog-Fehlerellipse ist für den Median folgenlos; der offene Punkt in M3 ist beziffert (Schranke etwa 0,005 bei 2 MC-SE). Damit sind drei kohärente Kanäle (Nullpunkt, Kamm, PM-Anisotropie) klein gegen den Abstand. Grenzen: Katalog-Fehlermodell bei gleicher Spur, kein physikalischer Anisotropieeffekt; Isotropisierung entfernt auch PLX–PM-Korrelationen; keine kalibrierte Signifikanz, keine M1-Vetoentscheidung. Unbeziffert bleiben Perspektivkorrektur und differentielle Astrometrie auf Bogensekundenskalen.",
+  "sources": [
+    {
+      "path": "coordination/m3-medianbias-20260911.md",
+      "label": "Bericht",
+      "sha256": "ed949c6553a77bbf4c2853de0810e59f31fbe97cdef5cf13c8c87cdbf2d5a868"
+    },
+    {
+      "path": "coordination/claude-m3-medianbias-20260911/runs/claude-m3-medianbias-20260911-a/output/ERGEBNIS.json",
+      "label": "Ergebnis, 200 Kataloge",
+      "sha256": "baec3065331ca750f80667dfdf88138076ffe5f877adb3533a8651af4c84ca21"
+    },
+    {
+      "path": "coordination/claude-m3-medianbias-20260911/model_m3.py",
+      "label": "Modell (drei Arme)",
+      "sha256": "02b9fc8949187c9887dff697771a50793563826580f6e742c4f9ad0fab128574"
+    },
+    {
+      "path": "coordination/claude-m3-medianbias-20260911/runs/claude-m3-medianbias-20260911-a/status.json",
+      "label": "Laborstatus, exit 0",
+      "sha256": "f5e70b12f345df490122c34f13fb3093cae14f62578fbd9c30d5247329a596ed"
+    }
+  ],
+  "recorded_at": "2026-09-11T13:29:03.263541+00:00"
+}

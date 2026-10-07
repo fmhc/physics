@@ -1,0 +1,42 @@
+Runde 6 M1 medium1d.py massenwirkung Start 2026-09-30T03:39:11+02:00 auf CPU, 1 Thread, torch 2.10.0+cu128, Zeitfaktor 0.02, Stufen grob/fein
+
+massenwirkung (Chemie 9): drei Baelle omega^2 = 0,6 / 0,7 / 0,8 bei -100 / 0 / 100 im Medium mc2 = 0.5, eps = 0.01, lam = 0; mu_Medium^2 = 0,5 + C. Vorhersage: Vorzeichen der Rate = Vorzeichen von mu - omega.
+  Ball | Rate | dQ gesamt | omega Ball | mu Medium | mu - omega | Vorzeichen passt
+  [grob]
+  C=0.1 Ball omega^2=0.6             | 9.51e-05 | +1.290e-03 | 0.77924 | 0.77432 | -0.0049 | None
+  C=0.1 Ball omega^2=0.7             | 2.59e-05 | +3.833e-04 | 0.83139 | 0.77432 | -0.0571 | False
+  C=0.1 Ball omega^2=0.8             | -1.87e-06 | -4.358e-05 | 0.88316 | 0.77432 | -0.1088 | True
+  C=0.2 Ball omega^2=0.6             | 1.07e-05 | +2.338e-04 | 0.78861 | 0.83632 | +0.0477 | True
+  C=0.2 Ball omega^2=0.7             | -5.70e-05 | -6.169e-04 | 0.84077 | 0.83632 | -0.0045 | None
+  C=0.2 Ball omega^2=0.8             | -4.95e-05 | -6.175e-04 | 0.88865 | 0.83632 | -0.0523 | True
+  C=0.3 Ball omega^2=0.6             | -9.58e-05 | -9.011e-04 | 0.79690 | 0.89404 | +0.0971 | False
+  C=0.3 Ball omega^2=0.7             | -1.85e-04 | -1.992e-03 | 0.85280 | 0.89404 | +0.0412 | False
+  C=0.3 Ball omega^2=0.8             | -1.88e-04 | -2.114e-03 | 0.89945 | 0.89404 | -0.0054 | None
+  C=0.2 eps=0 Ball omega^2=0.6       | -2.27e-08 | -2.235e-07 | 0.77458 | 0.83675 | +0.0622 | False
+  C=0.2 eps=0 Ball omega^2=0.7       | -2.19e-08 | -4.227e-07 | 0.83661 | 0.83675 | +0.0001 | None
+  C=0.2 eps=0 Ball omega^2=0.8       | -1.98e-09 | -3.134e-07 | 0.89444 | 0.83675 | -0.0577 | True
+  C=0 Vakuum Ball omega^2=0.6        | -3.54e-07 | -6.484e-06 | 0.77544 | nan | nan | None
+  C=0 Vakuum Ball omega^2=0.7        | -1.46e-07 | -2.934e-06 | 0.83760 | nan | nan | None
+  C=0 Vakuum Ball omega^2=0.8        | -1.48e-08 | -7.474e-07 | 0.89516 | nan | nan | None
+  Vorzeichen passt: 3 von 6 (|mu - omega| > 0,01)
+  [fein]
+  C=0.1 Ball omega^2=0.6             | 9.46e-05 | +1.289e-03 | 0.77925 | 0.77428 | -0.0050 | None
+  C=0.1 Ball omega^2=0.7             | 2.64e-05 | +3.934e-04 | 0.83141 | 0.77428 | -0.0571 | False
+  C=0.1 Ball omega^2=0.8             | -1.12e-06 | -3.212e-05 | 0.88316 | 0.77428 | -0.1089 | True
+  C=0.2 Ball omega^2=0.6             | 1.16e-05 | +2.495e-04 | 0.78862 | 0.83625 | +0.0476 | True
+  C=0.2 Ball omega^2=0.7             | -5.52e-05 | -5.929e-04 | 0.84078 | 0.83625 | -0.0045 | None
+  C=0.2 Ball omega^2=0.8             | -4.82e-05 | -6.000e-04 | 0.88865 | 0.83625 | -0.0524 | True
+  C=0.3 Ball omega^2=0.6             | -9.29e-05 | -8.666e-04 | 0.79691 | 0.89396 | +0.0970 | False
+  C=0.3 Ball omega^2=0.7             | -1.81e-04 | -1.948e-03 | 0.85282 | 0.89396 | +0.0411 | False
+  C=0.3 Ball omega^2=0.8             | -1.85e-04 | -2.079e-03 | 0.89943 | 0.89396 | -0.0055 | None
+  C=0.2 eps=0 Ball omega^2=0.6       | -5.35e-09 | -5.304e-08 | 0.77459 | 0.83668 | +0.0621 | False
+  C=0.2 eps=0 Ball omega^2=0.7       | -5.03e-09 | -1.004e-07 | 0.83665 | 0.83668 | +0.0000 | None
+  C=0.2 eps=0 Ball omega^2=0.8       | -1.22e-10 | -7.269e-08 | 0.89443 | 0.83668 | -0.0577 | True
+  C=0 Vakuum Ball omega^2=0.6        | -3.27e-07 | -6.144e-06 | 0.77546 | nan | nan | None
+  C=0 Vakuum Ball omega^2=0.7        | -1.25e-07 | -2.539e-06 | 0.83763 | nan | nan | None
+  C=0 Vakuum Ball omega^2=0.8        | -1.23e-08 | -4.888e-07 | 0.89515 | nan | nan | None
+  Vorzeichen passt: 3 von 6 (|mu - omega| > 0,01)
+  L3 (Effekt >= 5 x Aenderung grob -> fein): 8 von 9 Kenngroessen bestanden
+  Rechenzeit grob 1.0 s, fein 5.2 s
+
+Ende 2026-09-30T03:39:17+02:00, Dauer 6.2 s, Torch-Speicher max nan MB, Fehler in: keine

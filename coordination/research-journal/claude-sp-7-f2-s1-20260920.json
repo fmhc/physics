@@ -1,0 +1,41 @@
+{
+  "id": "claude-sp-7-f2-s1-20260920",
+  "time": "2026-09-20T19:35:52+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5), Vertrag; Claude-Subagent (Opus 5), S1-Lauf",
+  "topic": "theory",
+  "status": "reported",
+  "title": "SP-7 Fassung 2 endet mit T: die neue NaN-Regel greift, aber eine Kontrolle des Vertrags ist von keiner korrekten Rechnung erfuellbar",
+  "question": "Erbt die bei drei gegenseitig hemmenden Einheiten entstehende Dreierfolge ihre Umlaufrichtung vom Startzustand, oder waehlt die Kopplung sie? Und traegt die neu eingefuehrte Regel, was ein nicht definierter Kennzahlwert bedeutet?",
+  "action": "Nachfolgefassung des am 17.09.2026 mit Ausgang T gescheiterten Vertrags SP-7 (dort lieferte der Konvergenztest ein NaN, weil bei starker Hemmung kein auswertbarer Zyklus zustande kam und der Vertrag keine Regel dafuer hatte). Fassung 2 schreibt die Definiertheitsregel aus, streicht die marginale Kopplungsstaerke aus den Pflichtzellen, rechnet drei statt zwei Schrittweiten mit interpolierten Feuerzeiten und misst die Richtungsvererbung seedweise gegen den ungekoppelten Fall. S0-Fremdreview durch Qwen und DeepSeek vor dem Start, Startsignal 'full go' von Finn. Gerechnet auf .69 als begrenzte CPU-User-Unit (Regel-10-Ausnahme): 14 Zellen x 100 Seeds x 3 Schrittweiten, 883 s Wanduhr.",
+  "result": "Ausgang T: die Kontrolle K1 (ungekoppelte Feuerrate gegen den analytischen Wert 0,62554256, Toleranz 1e-3 relativ) ist in 162 von 900 Einzelwerten verletzt. Ursache ist ein Fehler im Vertrag selbst, nicht in der Rechnung: die geprueften Raten r = n/T sind Zaehlgroessen mit der Aufloesung 1/T = 0,0025, also dem Vierfachen der Kontrollgrenze 6,255e-04; je nach Startwert feuert eine Einheit im Fenster 250- oder 251-mal, und der zweite Wert liegt zwangslaeufig ausserhalb der Toleranz. Die ueber Seeds und Einheiten gemittelte Rate liegt bei allen drei Schrittweiten innerhalb von 1e-3 relativ (0,625300 bzw. zweimal 0,625525), die Integration ist also richtig. Die uebrigen acht Kontrollen sind bestanden, darunter die Symmetrieprobe und ihre Gegenprobe mit absichtlich unvollstaendiger Kopplungsmatrix. Die neue Regel fuer nicht definierte Werte hat gehalten: in der Diagnosezelle mit starker Hemmung war die Kennzahl wie erwartet undefiniert, wurde als U1-Zelle gefuehrt und erreichte keinen Zahlenvergleich -- genau der Fall, an dem Fassung 1 zerbrochen ist. Als Diagnose (kein Ausgang): M_erb = 1,000 bei 100 gemeinsam definierten Seeds, Permutations-Nullprobe 0,460 gegen die Schranke 0,660, und der vom Fremdreview verlangte Warnflag ist ausgeloest, weil die Kopplung die Feuerreihenfolge in keinem einzigen Zyklus geaendert hat.",
+  "meaning": "Der Lauf sagt nichts ueber die Vertragsfrage; der T-Ausgang steht. Zwei Dinge sind trotzdem belegt: erstens traegt die neue Regel, dass ein nicht definierter Kennzahlwert Unentscheidbarkeit einer Zelle bedeutet und nicht eine gerissene Kontrolle -- der Fehler der Fassung 1 kann sich so nicht wiederholen. Zweitens hat das S0-Fremdreview zweier Haeuser diese unerfuellbare Kontrollgrenze nicht gefunden; gefunden hat sie erst das ausfuehrende Haus beim Rechnen. Das ist ein Befund ueber die Reichweite des Fremdreviews und gehoert in die naechste Methodikrunde. Nachfolgevorschlag des Ausfuehrenden, uebernommen: K1 auf die Rate aus den interpolierten Feuerzeiten legen, r = (n-1)/(t_letzt - t_erst), die nicht auf das Zeitfenster quantisiert ist; das braucht einen Nachfolgevertrag, keine Aenderung dieses. Der Diagnosewert M_erb = 1,000 darf ohne den Warnsatz nicht zitiert werden. NICHT GEBUCHT: Runde 022 eingefroren, keine Registerzeile, keine Jury, Zitiersperre bis S2.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260920/sp-7-f2-lauf/BERICHT-SP-7-F2.md",
+      "label": "Bericht des Laufs, alle Zahlen",
+      "sha256": "ce2dd7e880328b3232d92f65cb463f08083a88ada2007bc4c6ec2200bfd7bc4c"
+    },
+    {
+      "path": "coordination/vertraege-20260920/sp-7-f2-lauf/ERGEBNIS-SP-7-F2.json",
+      "label": "Ergebnisdatei",
+      "sha256": "40a58b679ca52c6618f7ea650f8e2278b509c28fa14ae71b76ebdd79af685a09"
+    },
+    {
+      "path": "coordination/vertraege-20260920/sp-7-VERTRAG-fassung2.md",
+      "label": "Vertrag Fassung 2",
+      "sha256": "9ce50beb1131fb5f25ffeca9be6611758212e115be86c90f87934206f5cfbeea"
+    },
+    {
+      "path": "coordination/vertraege-20260920/REVIEW-sp-7-f2.md",
+      "label": "S0-Fremdreview vor dem Start",
+      "sha256": "dde937621eeb45935c9f28f21ab5fe6627cd17bd49e5bc7a962368c08a19c21d"
+    },
+    {
+      "path": "coordination/vertraege-20260920/startsignal-sp-7-f2.txt",
+      "label": "Startsignal",
+      "sha256": "793f83d3bcf7235b1f5ebf08b0f74aa7efff6e4bf2a2edafc88c556b61656887"
+    }
+  ],
+  "recorded_at": "2026-09-20T19:37:25.495355+00:00"
+}

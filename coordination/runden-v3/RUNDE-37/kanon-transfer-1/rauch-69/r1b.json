@@ -1,0 +1,108 @@
+{
+ "info": {
+  "numpy": "2.4.4",
+  "scipy": "1.18.0",
+  "python": "3.12.3",
+  "host": "ubuntu-auto",
+  "argv": [
+   "code/kanon.py",
+   "lauf",
+   "--saat",
+   "1",
+   "--eingabe",
+   "eingabe/konfluenz-s1.json",
+   "--rauch",
+   "--out",
+   "rauch/r1b.json"
+  ],
+  "skript_sha256": "e2c853e573ff6d4dd3dde88cf69d320f173d740a265341c2575b01abdd47999e",
+  "module_sha256": {
+   "tg": "ec48a258e266fc2226d0d10564b606052831ffefbf0642e4f7d04f9de85cfd9e",
+   "uk": "f52df7438c3d33b4fe86d4352bed3373b38e27a083f3d60eb12d4143fa6b71e0",
+   "tu": "6c5c3a9509ad0be5a8e72ab9a3cabb85a2300d11a2581c7d9ecf2b9e7fa9720a",
+   "td": "fbc02c4899a82ca17fa82ba7574c5ffa0c0776aeb4e6a75c3e3110a419e7015d",
+   "hm_td": "c62c15ab25ecfdc5ed12eb5b7c7229ca357861a39ebe4ad462f1a1a4643552eb",
+   "konfluenz": "56f9a6f0801949896cdf42558f8deb4afaa1bfdba4dbb0190b41ecdec67e4458"
+  },
+  "start_utc": "2026-10-05T13:04:00Z"
+ },
+ "laufzeit_s": 8.82380723953247,
+ "maxrss_MB": 179.80078125,
+ "schluessel": {
+  "saat": "int",
+  "eingabe": "str",
+  "eingabe_sha256": "str",
+  "l_mittel": "float",
+  "l_mittel_gespeichert": "float",
+  "L_kasten": "float",
+  "k1": "list",
+  "faelle": [
+   {
+    "nr": "int",
+    "art": "str",
+    "X": "int",
+    "Y": "int",
+    "mu": [
+     "0.0001",
+     "0.001"
+    ]
+   }
+  ],
+  "wand_s": "float"
+ },
+ "technik": [
+  {
+   "mu": "0.001",
+   "gueltig": true,
+   "grund": null,
+   "wiedergabe_mu": 0.0,
+   "geo_A_pd": true,
+   "t_s": 4.141729116439819,
+   "X": {
+    "gueltig": true,
+    "kante_neu_gleich": true,
+    "t_s": 1.4830553531646729,
+    "lagen_probe_rel": 1.3119869762091036e-09,
+    "lagen_schritt_rel": 6.418114053815423e-09,
+    "homogenitaet_max": 7.993605777301127e-15,
+    "s0_laengen_gegen_lagen": 3.106881699396057e-15
+   },
+   "Y": {
+    "gueltig": true,
+    "kante_neu_gleich": true,
+    "t_s": 1.4635074138641357,
+    "lagen_probe_rel": 2.2903705131251415e-09,
+    "lagen_schritt_rel": 4.3041850091614635e-08,
+    "homogenitaet_max": 7.65609797781508e-13,
+    "s0_laengen_gegen_lagen": 2.8841702694301685e-14
+   }
+  },
+  {
+   "mu": "0.0001",
+   "gueltig": true,
+   "grund": null,
+   "wiedergabe_mu": null,
+   "geo_A_pd": true,
+   "t_s": 4.125412225723267,
+   "X": {
+    "gueltig": true,
+    "kante_neu_gleich": true,
+    "t_s": 1.463365077972412,
+    "lagen_probe_rel": 1.679402766572029e-09,
+    "lagen_schritt_rel": 5.209039525296557e-09,
+    "homogenitaet_max": 7.993605777301127e-15,
+    "s0_laengen_gegen_lagen": 2.4730186062188642e-15
+   },
+   "Y": {
+    "gueltig": true,
+    "kante_neu_gleich": true,
+    "t_s": 1.4457948207855225,
+    "lagen_probe_rel": 5.814572858409443e-09,
+    "lagen_schritt_rel": 4.8554406970614826e-08,
+    "homogenitaet_max": 6.31494856406789e-13,
+    "s0_laengen_gegen_lagen": 1.1590842912904366e-14
+   }
+  }
+ ],
+ "wand_s": 8.821994304656982
+}

@@ -1,0 +1,272 @@
+{
+ "argumente": {
+  "kommando": "auswertung",
+  "modell": "kg",
+  "alpha": 0.0,
+  "r_fak": 1.0,
+  "quelle": "rho",
+  "phi_misch": 1.0,
+  "t": 0.0,
+  "band": "",
+  "x": "",
+  "h": 0.02,
+  "n1": 4000,
+  "n2": 2000,
+  "dicht_lo": 1.5,
+  "dicht_hi": 1.95,
+  "n_mid": 2,
+  "n_zw": 1500,
+  "ast_tol": 0.3,
+  "max_kand": 4,
+  "rdx": 0.0004,
+  "rdrho": 0.002,
+  "r_nx": 5,
+  "r_extra": 40.0,
+  "pole": "nein",
+  "budget": 520.0,
+  "aus": "/home/fmh/fmhc-physics-remote/runde13-q-stern/aus",
+  "name": "auswertung2"
+ },
+ "start": "2026-10-01 20:53:53 UTC",
+ "K1": {
+  "treffer": {
+   "0.02": [
+    {
+     "x": 0.7976767749549938,
+     "rho": 1.7446175407630613,
+     "umlauf": -1,
+     "umlauf_roh": -1.0000000000000002,
+     "aufgeloest": true,
+     "max_sprung": 0.358971194377549,
+     "datei": "k1-h0.02.json"
+    }
+   ],
+   "0.01": [
+    {
+     "x": 0.7976767863570934,
+     "rho": 1.7446175445848233,
+     "umlauf": -1,
+     "umlauf_roh": -0.9999999999999999,
+     "aufgeloest": true,
+     "max_sprung": 0.35897125423304277,
+     "datei": "k1-h0.01.json"
+    }
+   ]
+  },
+  "bestanden": true
+ },
+ "K2": {
+  "0.01": [
+   true
+  ],
+  "0.03": [
+   true
+  ],
+  "0.1": [
+   true
+  ]
+ },
+ "alpha_ergebnisse": [
+  {
+   "alpha": 0.1,
+   "dateien": [
+    [
+     "a0.1-h0.02-pa.json",
+     "a0.1-h0.02-pb.json",
+     "a0.1-h0.02-pc.json",
+     "neben-a0.1-h0.02.json"
+    ],
+    [
+     "a0.1-h0.01-pa1.json",
+     "a0.1-h0.01-pa2.json",
+     "a0.1-h0.01-pb1.json",
+     "a0.1-h0.01-pb2.json",
+     "a0.1-h0.01-pc1.json",
+     "a0.1-h0.01-pc2.json"
+    ],
+    []
+   ],
+   "treffer_h0.02": [],
+   "treffer_h0.01": [],
+   "treffer_K3": [],
+   "K2_bestanden": true,
+   "gesehen": [],
+   "k3_verfehlt": [],
+   "stufen": [
+    {
+     "stufe": "h0.02",
+     "zeilen": 31,
+     "x_min": 0.65,
+     "x_max": 0.9,
+     "ungueltig": [
+      0.6,
+      0.61,
+      0.62,
+      0.63,
+      0.64
+     ],
+     "streifen": 35,
+     "streifen_umlauf_ungleich_0": 0,
+     "streifen_nicht_aufgeloest": 12,
+     "s_wechsel_im_fenster": 0,
+     "deckt_fenster": true,
+     "nicht_gesehen_ok": false
+    },
+    {
+     "stufe": "h0.01",
+     "zeilen": 26,
+     "x_min": 0.7,
+     "x_max": 0.9,
+     "ungueltig": [],
+     "streifen": 21,
+     "streifen_umlauf_ungleich_0": 0,
+     "streifen_nicht_aufgeloest": 3,
+     "s_wechsel_im_fenster": 0,
+     "deckt_fenster": true,
+     "nicht_gesehen_ok": false
+    }
+   ],
+   "ausgang": "Unentschieden",
+   "kompaktheit_zeile": {
+    "x": 0.8,
+    "kompaktheit": 0.3837834574612766,
+    "Phi0": -0.1918917287306383,
+    "Phi_Rw": -0.14470960132347993,
+    "R_w": 2.3273516294472936,
+    "c_asym": 0.4301533691256785
+   }
+  },
+  {
+   "alpha": 0.03,
+   "dateien": [
+    [
+     "a0.03-h0.02-pa.json",
+     "a0.03-h0.02-pb.json",
+     "a0.03-h0.02-pc.json",
+     "neben-a0.03-h0.02.json"
+    ],
+    [
+     "a0.03-h0.01-pa1.json",
+     "a0.03-h0.01-pa2.json",
+     "a0.03-h0.01-pb1.json",
+     "a0.03-h0.01-pb2.json",
+     "a0.03-h0.01-pc1.json",
+     "a0.03-h0.01-pc2.json"
+    ],
+    []
+   ],
+   "treffer_h0.02": [],
+   "treffer_h0.01": [],
+   "treffer_K3": [],
+   "K2_bestanden": true,
+   "gesehen": [],
+   "k3_verfehlt": [],
+   "stufen": [
+    {
+     "stufe": "h0.02",
+     "zeilen": 33,
+     "x_min": 0.63,
+     "x_max": 0.9,
+     "ungueltig": [
+      0.6,
+      0.61,
+      0.62
+     ],
+     "streifen": 35,
+     "streifen_umlauf_ungleich_0": 1,
+     "streifen_nicht_aufgeloest": 19,
+     "s_wechsel_im_fenster": 2,
+     "deckt_fenster": true,
+     "nicht_gesehen_ok": false
+    },
+    {
+     "stufe": "h0.01",
+     "zeilen": 26,
+     "x_min": 0.7,
+     "x_max": 0.9,
+     "ungueltig": [],
+     "streifen": 25,
+     "streifen_umlauf_ungleich_0": 1,
+     "streifen_nicht_aufgeloest": 15,
+     "s_wechsel_im_fenster": 2,
+     "deckt_fenster": true,
+     "nicht_gesehen_ok": false
+    }
+   ],
+   "ausgang": "Unentschieden",
+   "kompaktheit_zeile": {
+    "x": 0.8,
+    "kompaktheit": 0.18885568899352403,
+    "Phi0": -0.09442784449676202,
+    "Phi_Rw": -0.07052506656172645,
+    "R_w": 2.3956977893403115,
+    "c_asym": 0.20716983434667757
+   }
+  },
+  {
+   "alpha": 0.01,
+   "dateien": [
+    [
+     "a0.01-h0.02-pa.json",
+     "a0.01-h0.02-pb.json",
+     "a0.01-h0.02-pc.json"
+    ],
+    [
+     "a0.01-h0.01-pa.json",
+     "a0.01-h0.01-pb1.json",
+     "a0.01-h0.01-pb2.json",
+     "a0.01-h0.01-pc1.json",
+     "a0.01-h0.01-pc2.json"
+    ],
+    []
+   ],
+   "treffer_h0.02": [],
+   "treffer_h0.01": [],
+   "treffer_K3": [],
+   "K2_bestanden": true,
+   "gesehen": [],
+   "k3_verfehlt": [],
+   "stufen": [
+    {
+     "stufe": "h0.02",
+     "zeilen": 27,
+     "x_min": 0.7,
+     "x_max": 0.9,
+     "ungueltig": [],
+     "streifen": 26,
+     "streifen_umlauf_ungleich_0": 0,
+     "streifen_nicht_aufgeloest": 14,
+     "s_wechsel_im_fenster": 2,
+     "deckt_fenster": true,
+     "nicht_gesehen_ok": false
+    },
+    {
+     "stufe": "h0.01",
+     "zeilen": 27,
+     "x_min": 0.7,
+     "x_max": 0.9,
+     "ungueltig": [],
+     "streifen": 26,
+     "streifen_umlauf_ungleich_0": 0,
+     "streifen_nicht_aufgeloest": 21,
+     "s_wechsel_im_fenster": 2,
+     "deckt_fenster": true,
+     "nicht_gesehen_ok": false
+    }
+   ],
+   "ausgang": "Unentschieden",
+   "kompaktheit_zeile": {
+    "x": 0.8,
+    "kompaktheit": 0.08559025227328457,
+    "Phi0": -0.042795126136642284,
+    "Phi_Rw": -0.031458426144715536,
+    "R_w": 2.6514588003579047,
+    "c_asym": 0.0985275702531581
+   }
+  }
+ ],
+ "ende": "2026-10-01 20:53:53 UTC",
+ "laufzeit": 0.1525570172816515,
+ "stand": "2026-10-01 20:53:53 UTC",
+ "laufzeit_bisher": 0.15257584769278765
+}

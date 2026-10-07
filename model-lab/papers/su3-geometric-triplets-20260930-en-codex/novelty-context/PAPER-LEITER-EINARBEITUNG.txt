@@ -1,0 +1,106 @@
+BIC-LEITER: KONKRETE PAPER-EINARBEITUNG, 30.09.2026
+Verantwortung: ag-phy-coordination, Übergabe an ag-phy-lat/claude-primary.
+Status: quellengebundener Entwurf, keine neue Rechnung oder volle Beweisprüfung.
+
+ENTSCHEIDUNG
+Eigenes zweites Paper über die Leiter. Im SU(3)-Paper nur abgegrenzter
+Ausblick/Querverweis: Eine radiale BIC und eine l-Entartung liefern keine
+lokale SU(3)-Eichtheorie. Das SU3-Triplettexperiment bleibt sein eigener Sektor.
+
+ARBEITSTITEL
+A ladder of radiative cancellations in the breathing spectrum of
+three-dimensional Q-balls.
+Nach abgeschlossenem unabhängigen Beweisaudit kann der präzisere BIC-Titel
+mit computer-assisted existence for the first embedded mode verwendet werden.
+Keine pauschale Gleichsetzung aller 15 Breitenminima mit bewiesenen BICs.
+
+HAUPTAUSSAGE / DIREKT VERWENDBARER ENGLISCHER ABSATZ
+We investigate a sequence of radiative cancellations in the linearized
+breathing spectrum of three-dimensional sextic Q-balls. At beta=1/2,
+our numerical continuation identifies fifteen candidate locations, with
+heterogeneous evidence ranging from resolved width minima to winding-number
+checks. Sequential predictions successfully locate additional width minima
+at indices 11–15. A thin-wall phase-matching description accounts for the
+approximately uniform spacing of the inverse detuning from the thin-wall
+threshold. A separate computer-assisted argument establishes existence of
+the first radial embedded mode according to the proof package and its
+completed internal code reviews; independent verification remains pending.
+Finite-amplitude evolution and an independently solved forced radiation
+problem show that linear trapping does not generally persist nonlinearly:
+the leading resolved harmonic carries power consistent with fourth-order
+amplitude scaling. These results distinguish a structured linear spectrum
+from nonlinear stability and from a universal or infinite-ladder theorem.
+
+EVIDENZTABELLE FÜR HAUPTTEXT
+- n=1, l=0: BEWEIS-1, unendlicher Raum mit analytischen Tail-Lemmata und
+  Ballarithmetik/Existenzabbildung. Status: Autorenbeweis + zwei frische
+  Anthropic-Lesungen, letzte Auflagen erledigt. Fremdhausprüfung und zweites
+  Programm offen. Eigenraumdimension eins != eindeutiges Parameterpaar.
+- n=2..10: Einträge pro Stelle aus BIC-3/4 separat übernehmen; kein
+  kollektives Beweislabel. Frühere Umläufe vs Minimum/interpolierte Werte
+  in getrennten Spalten, genaue Provenienz aus Datenpaket erforderlich.
+- n=11..15: erfolgreiche numerische Vorhersageprüfungen von Breitenminima;
+  RUNDE-09 explizit OHNE Umlauftest. Die signierte Wurzel wurde aus wenigen
+  Punkten von Hand rekonstruiert. Nicht auf exakte Nullstellen aufrunden.
+- SP-1: l=1/l=2-Erweiterung, 4/5 Lagen und 5/5 Umläufe nach Berichtsvergleich;
+  Ausnahme beibehalten, keine bewiesene volle Winkelstabilität.
+- Dünnwand: modellgestützte Phasenregel plus kalibrierte Wandphase/Niveau-
+  verschiebung. Nicht vollständig parameterfreie Vorhersage nennen.
+- n=1 nichtlinear: numerische eps^4-Leckage, dominante zweite Seitenband-
+  Harmonische ohne Fit vorhergesagt. R44-I2 mit Intervall-Nichtnullbeleg;
+  Transfer auf Originalkontinuum als eigene offene Aufgabe.
+
+BLINDTEST-TABELLE (Bericht RUNDE-09, FORMEL-1/2/3 und MOD-2)
+ n  numerische Lage    Leiterformel           MOD-2
+11  ~0.53860           0.53867 +/-0.00030      0.538619 +/-0.000025
+12   0.535449          0.53544 +/-0.00012      0.535468 +/-0.000030
+13   0.532772          0.53276 +/-0.00012      0.532792 +/-0.000035
+14   0.530470          0.530460 +/-0.00004     0.530490 +/-0.000040
+15   0.528470          0.528458 +/-0.00005     0.528489 +/-0.000050
+Dies sind berichtete Diagnose-/Vorhersagefenster, keine rigorosen
+Intervallzertifikate und keine Naturmessungen. Auswahlregeln je Arm nennen:
+MOD-2 hatte seine eigene 3-Balken-Regel; Formel 1-Balken. Die Aussage
+'die Formel stets ~1e-5 zu tief' gilt nicht für die ursprüngliche n11-Zeile
+(0.53867 liegt dort oberhalb ~0.53860). Tabellenwerte vor Zusammenfassung.
+MOD-2 war gegenüber dem Autor blind; teils lagen Resultate bereits anderen
+Personen vor. FORMEL-2/3 wurden sequentiell nach neuen Ergebnissen aktualisiert.
+Nicht als einen einzigen unverändert eingefrorenen Fünfpunkt-Test darstellen.
+Zwei Vorhersageansätze verwenden dieselben Zielrechnungen: keine zwei
+unabhängigen numerischen Replikationen derselben Stellen.
+
+MODELL UND FIGUREN
+omega_c²=1-1/(4 beta), epsilon=omega²-omega_c².
+R_tw≈1/(2 sqrt(beta) epsilon), k_c R_tw≈pi(n+theta).
+Damit modellbedingt omega_n²-omega_c² ~ 1/[b_infty n].
+Bei beta=.5: letzte gemessene Inversdetuning-Schritte ~2.305;
+kalibriertes MOD-2 gab 2.298. Endliche Daten belegen keinen Grenzwertsatz.
+'1/n-Anhäufung' als asymptotische Modellvorhersage + numerische Unterstützung.
+Fig1: Lage/Fehler und Breitenminima, Klassen der Evidenz durch Symbole.
+Fig2: inverse Detuning gegen n, Fitpunkte anders als Vorhersagepunkte.
+Fig3: drei Zonen Kern/Wand/Außenraum mit echten f/u/v-Profilen.
+Fig4: eps-Abhängigkeit des nichtlinearen Flusses + unangeglichene Vorhersage.
+WebGPU/Gaussian-Ansicht illustriert die Feldgeometrie; ihre f32-Pilotbahnen
+sind keine Datenbasis der Beweis-/Leiterfiguren.
+
+GLIEDERUNG
+1 Fragestellung und begrenzte Neuheit (QNM/Feshbach/BIC bekannt).
+2 Modell, Symmetrien, lineares Zweikanalproblem, Normierung.
+3 Numerische Fortsetzung, Fehlerschichten und Kandidatenleiter.
+4 Zeitlich gebundene/sequentielle Vorhersageprüfungen.
+5 Dünnwand-Phasenmodell: reine Herleitung versus kalibrierte Größen.
+6 Computer-assisted existence n1, mit gesondertem prüfbarem Anhang.
+7 l>0 und gemischte Felder als getrennte Erweiterungen.
+8 Nichtlineare Leckage und bedingtes Fortsetzungshindernis.
+9 Grenzen, experimentelle Übertragbarkeit und offene Sätze.
+
+LITERATUR UND GEGENBEFUNDE
+Schott/Bohm-Weinstein sowie Neuheit 'selbsterhaltene Quelle' sind noch
+gezielt am Primärtext gegen diese Behauptung zu prüfen. Yu/Lu als strenger
+Nachbar; Ciurla, Gegenrotations-QNM und 3D-Streuung nicht auslassen.
+Das neue MESS-1 meldet im untersuchten Petrov-Tröpfchenbereich keine stillen
+Stellen. Keine einfache Übertragbarkeit auf vorhandene Tröpfchenexperimente
+behaupten. Bericht und Modellgrenzen vor Manuskriptübernahme separat prüfen.
+
+Quellen: RUNDE-09.md (337–430,461ff,647ff), MODELL-DUENNWAND.md M.1–M.4,
+RUNDE-07/beweis/BEWEIS.md; gezielte Lektüre. Unabhängige Statusnotizen
+BEWEIS1-STATUS.txt und LEITER-STATUS.txt ergänzen dieses Blatt.

@@ -1,0 +1,28 @@
+{
+  "id": "claude-codex-nachlass-qsr0-n4-20260916",
+  "time": "2026-09-16T21:36:55+02:00",
+  "time_kind": "completed",
+  "author": "Claude-Subagent (Abnahme/Nachweis) im Auftrag claude-primary; Bau Codex/astra und claude-x1",
+  "topic": "operations",
+  "status": "reported",
+  "title": "Codex-Nachlass abgearbeitet: QSR-0-Benchmark technisch abgenommen, Morse-Gruppenlauf bitgleich mit Gewinn 1,2 bis 1,3, Langlauf angehalten",
+  "question": "Was von Codex' liegengebliebenen Arbeiten ist belastbar, und lohnt der parallele Morse-Gruppenlauf?",
+  "action": "Finn 'mach die sachen fertig'. QSR-0: Quellenfreeze (FREEZE-QSR0-20260916.json), qa.py und run.py als begrenzte User-Units auf .69 (CPU, Vertrag ohne CUDA). N4-Gruppenlauf: isolierter CUDA-Nachweis mit halber GPU-Pacht, 20 Pakete unter flock (16 Bench, compare, checkpoint, auswerten, gate). Serieller Langlauf von claude-x1 vorher angehalten (10-h-Freigabe ueberschritten, Leerlaufschleife auf fertigem Block; n4_langlauf.sh korrigiert).",
+  "result": "QSR-0: QA 79/79, Lauf Exit 0, 36 Faelle + 108 Dimensionsvergleiche, Identitaeten max 7e-15, Tailreste < 1e-96, Quadratur 4e-16; keine freien Parameter, keine Zufallsquellen; nur eine Ausfuehrung, keine S2. N4-Gruppenlauf: 102/102 Vergleiche bitgleich (Stufe 2+3, 2/3/4 Worker), Altcheckpoint bitgleich fortgesetzt, Gate 24 Negativpruefungen bestanden, TECHNIK_QA bestanden true; Gewinn 1,22 bis 1,33 (Saettigung bei 3 Workern, GIL), nicht 4. Restschritte des seriellen Langlaufs 30 Mio, rund 97 GPU-Stunden seriell, mit Gruppenlauf rund 75.",
+  "meaning": "Der Streubenchmark ist als Werkzeug abgenommen, nicht als Physikresultat. Der Gruppenlauf ist korrekt, bringt aber nur ein Drittel Zeitgewinn; ob die restlichen 75 bis 97 GPU-Stunden fuer Nachtrag 4 gerechnet werden, ist eine Budgetentscheidung von Finn (MK4.1 bleibt bis dahin offen).",
+  "sources": [
+    {
+      "path": "coordination/quark-response-20260916/ABNAHME-QSR0-20260916.md",
+      "sha256": "98bbb7016e9d28a56d4b1528e24ac57fcb7951b78e572a1ade52f2bdb0f4b233"
+    },
+    {
+      "path": "coordination/quark-response-20260916/FREEZE-QSR0-20260916.json",
+      "sha256": "f01143d5314c2c8b2263b558c2b0f32f6855fdd136c5df025d5e495cc2afc347"
+    },
+    {
+      "path": "coordination/vertraege-20260912/morse-kette-lauf-a/BERICHT-gruppenlauf-astra.md",
+      "sha256": "a46341c76703035c8e893de023836c405f7072855e9d790b6e732eb195222177"
+    }
+  ],
+  "recorded_at": "2026-09-16T19:36:55.978770+00:00"
+}

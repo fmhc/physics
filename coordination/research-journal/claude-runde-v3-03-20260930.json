@@ -1,0 +1,65 @@
+{
+  "id": "claude-runde-v3-03-20260930",
+  "time": "2026-09-30T03:18:01+02:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung und Abschaetzung; Code 1D und 2D sowie Ernte: Anthropic Opus 5.5 (frische Agenten)",
+  "topic": "theory",
+  "status": "reported",
+  "evidenzart": "modell",
+  "title": "Runde 3 nach v3 (explorativ): Zwei Q-Baelle bilden in 1D kein Molekuel mit festem Abstand (nur Verschmelzen oder Abstossen); das Tropfenbild bestaetigt sich in 2D ohne freie Parameter; der steile Brechungsverlust war wohl ein Messfehler",
+  "question": "Halten die Chemie- und Wellenanalogien (Chemie 1, 2/3, 7, 14, 15; Wellen 5, 8/9, 14, 16, 20) einem kleinen 1D- bzw. 2D-Test mit vorab notierter Vorhersage stand?",
+  "action": "Finn 30.09.: \"mach das alles\". Zwei Code-Agenten (Anthropic) schrieben tests1d_r3.py und tests2d_r3.py mit Vorhersagen vorab; die Leitung rechnete auf der .69 (kleintest.sh, P4000). t2 brach in v1 mit instabiler Relaxation ab und lief nach Umbau (Punktzwang in der Mitte) als v2 am 30.09. 03:04 mit rc 0. Ein frischer Ernte-Agent wertete Vorhersage gegen Ergebnis aus (ERGEBNISSE-R3.md, 02:52:48-03:15:06); Abschaetzung der Leitung in RUNDE-03.md.",
+  "result": "t2 (Bindungskurve, v2): gleichphasig ueberall anziehend, gegenphasig abstossend; einziges Minimum d 2,637 / Tiefe 0,448 mit Energie, Abstand und omega des verschmolzenen Einzelballs, also keine Bindung mit festem Abstand; Asymptotik kappa 0,554 gegen sqrt(1-omega^2) 0,548. Tropfen (2D): Rayleigh ohne freie Parameter, Omega/P1 0,94 und 0,93. Brechung (2D): 4 von 6 Laeufen auf 0,03 Grad nach Snellius; die Verluste 92/94 % bei 0 und 20 Grad sind fraglich (Ball vermutlich schon im Randbereich). t1: Ladungsfluss klein -> gross bei d = 10 (wie Ostwald-Reifung). t5 (Anti-Q): Zerstrahlung auch bei d = 8 und 12, Kontrolle reisst. 2D-Profile m = 1 durch Schiessfehler ungueltig (spaeter berichtigt). L3 in keinem gerechneten Test gerissen. Abschaetzung: weiter 1 (Brechung, als Weber-Test), parken 8, verwerfen 1 (Knoten im Ein-Feld).",
+  "meaning": "Explorativ, keine formale Bestaetigung, keine Messdaten. Das Molekuel-Bild fuer Q-Baelle traegt im Ein-Feld-1D nicht; Chemie-Analogien, die Bindung mit Abstand brauchen, sind damit zu. Das Tropfenbild ist die stabilste Analogie (2D hier, 3D in Runde 6). Keine direkte Beruehrung der Spin-2-Kette oder der Gesamtformel.",
+  "sources": [
+    {
+      "path": "coordination/runden-v3/RUNDE-03.md",
+      "sha256": "7750f6870fb79714783249bb99e5aaf6fe774739d45b5912ef3244d734febf47"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-03/ERGEBNISSE-R3.md",
+      "sha256": "7c190e0c9b3fa5ecacae6bd41948915de9a8e0683609db12dac6423a08927f4e"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-03/tests1d-r3/PLAN.md",
+      "sha256": "5033afff7af29e8a5a2b766879aab695dab040fdbd756b61639ff80e491b02e6"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-03/tests1d-r3/tests1d_r3.py",
+      "sha256": "02fbbd1f767708411208673ed18a3d3d580c65ac750895fdcb3f5e8c8e0ac0c9"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-03/tests1d-r3/lauf-69/ausgabe/t2_bericht.txt",
+      "sha256": "462ca535ca3cd69c08358d42e493b8854d7ce6089aa73eb310fc33156f655ef4"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-03/tests1d-r3/lauf-69/LAUF.log",
+      "sha256": "61a26cd6792000931b8fa505e9a0541997858824d7514e779dc43c3ca43be9d4"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-03/tests1d-r3/lauf-69/LAUF-T2V2.log",
+      "sha256": "421ff2959d28262d2be33ec97060ff8d0e5719fc8d383613934119d2b8492c5f"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-03/tests2d-r3/PLAN.md",
+      "sha256": "b8d187818ab88414126cd69e18c08f1f4c4fe63f52c4a2a1548473873001353b"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-03/tests2d-r3/tests2d_r3.py",
+      "sha256": "2eeaf3337d3db104207793cffe90d1a5f13b247a568e3b1bb8309eab248b1f48"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-03/tests2d-r3/lauf-69/ausgabe/tropfen_bericht.txt",
+      "sha256": "0867a9bce8886e73e26468a229f50167897d2e6326848c9fa1cb16cccf727456"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-03/tests2d-r3/lauf-69/ausgabe/brechung_bericht.txt",
+      "sha256": "5a87b2db91e3b602ff91c87baeb2eca160d0aaddb1dd4fcb62418136e5c2ca66"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-03/tests2d-r3/KNOTEN-PAPIER.md",
+      "sha256": "e0495454e4fd70754072672ba6c3616f3ec0ce08487afb43c891b9eeffa200f4"
+    }
+  ],
+  "recorded_at": "2026-09-30T01:18:02.154497+00:00"
+}

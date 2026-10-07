@@ -1,0 +1,65 @@
+Unabhängiger Plan-/Code-Review, 02.10.2026, particle_binding
+PLAN, ROOT-ABGLEICH, DERIVATION sowie finaler code.py vollständig gelesen.
+Keine eigene Rechnung, kein Interpreter, keine zusätzlichen Prozessauflagen.
+
+Urteil: Kein konkreter Blocker für die begrenzte lokale Quellenanalyse
+mit bestehendem5CPU-s-Umfang. Keine Zeitentwicklung oder Eigenwertsuche,
+keine neue Klassifikation von Abstrahlung/Modenexistenz aus lokalen Normen.
+
+Finalhashes unabhängig bestätigt:
+code.py
+5ba2d7e001f6145ff5f75afedadf6850565df8fac25412f84cab1c1c1a21443f
+PLAN.txt
+362d6dcf0bf4e2834b55c9f7ae8e831f70411e43746a64437237056f84ac7766
+
+Quellenalgebra
+source() implementiert das Negative der quadratischen kanonischen
+Potentialgradienten. Koeffizienten a=-2+3f²,b=-3+7.5f²,c=-1+1.5f²
+liefern exakt die unabhängige DERIVATION einschließlich sqrt2 und
+der gemischten xz/yz-Terme. Gradienten und Rotation sind linear und
+tragen keine zusätzliche quadratische Quelle bei.
+
+q-Zeitform ist Re(q exp(i rho t)) bei||q||=1 vor sqrtV-Rücktransformation.
+Komplexe Erweiterung des homogenen quadratischen Polynoms ohne Konjugation:
+J2=J(q)/4 und JDC=[J(Re q)+J(Im q)]/2 sind korrekt. Insbesondere wird
+nicht abs(q)² für die zweite Harmonische verwendet. Kein verborgenes
+weiteres Halbieren der oberen Laborquelle:
+Jplus=(J2x+i J2y)/sqrt2. Das lokale Jminus=(J2x-i J2y)/sqrt2 ist
+das Konjugierte des tatsächlichen unteren Labor-Fourierkoeffizienten;
+diese Konvention ist nun explizit dokumentiert, Normen unverändert.
+Die reale physische Quellstärke trägt zusätzlich alpha²; Ausgabe ist
+der ausgeklammerte Koeffizient für die festgelegte Modennormierung.
+
+Unabhängige QA gegen vorhandene Kräfte
+Kanonische Beschleunigung wird aus vollständigen dyn.forces gebildet.
+[F(+eps)-2F(0)+F(-eps)]/(2eps²) prüft den quadratischen Koeffizienten,
+nicht die unhalbierte zweiteAbleitung. Drei feste Schritte, Reduktions-
+prüfung, Faktor2-/Vorzeichenmutanten entsprechen dem Plan. Die linearen
+Gradientterme heben sich in dieser zweitenVariation auf.
+Die8festenPhasen prüfenDC und komplexesexp(2it)-Fourierglied; Frequenzen
+0,±2 sind damit in dieser reinen quadratischenAlgebra eindeutig getrennt.
+Die korrekte Normfunktion summiert V-gewichtet über alle drei Komponenten.
+
+Herkunft/Normen/Gitter
+Module,Suchresultat,Referenzmanifest/Profil- undRitzdateien werden vor
+Verwendung gebunden; RESULT- undNPZ-Reihenfolge gegengeprüft.
+op.load_refs liefert die hier erwarteten(f,g,omega)-Einträge. Kein
+advance/eigs-Aufruf. q wird einmal aufNorm1 gesetzt, keine Kanalphase
+unabhängig gedreht. DC ist unter gemeinsamer Modenphase invariant;
+J2 erhält nur einen gemeinsamen doppelten Phasenfaktor. Komponentennormen,
+Absolutwertprofilabstand und Betrag des HermiteschenÜberlapps sind daher
+geeignete phaseninvariante Gitterdiagnosen ohne nachträgliche Ausrichtung.
+
+Restriction benutzt physischeQuellfelder→sqrtV→Volumenmittel→zurück;
+keine künstliche Nachnormalisierung. Normdifferenzen werden roh ausgegeben,
+kein Bestehenstor für „Quellevorhanden“ erfunden. Nullkanal-Tail wirdNone,
+nicht ein behaupteter messbarer Nullstrahlungsanteil. DC/J2 werden getrennt
+gespeichert, mitsamt ursprünglichem Modensuchstatus.
+
+Konservative Bedeutung
+Positive lokaleQuellnorm und kinematisch offenes(omega+2rho)-Seitenband
+beweisen keine auslaufendeAmplitude. Dafür fehlen die gekoppelte
+inhomogeneAntwort, offeneRanddaten und deren Interferenz-/Flussauswertung.
+Auch DC-Quellwerte lösen nicht die statische Ladungs-/Frequenzkorrektur.
+Keine Lebensdauer, Zerfallsrate, BIC- oderStabilitätsaussage aus dieser
+maximal5CPU-s-Quellalgebra ableiten; alteGates bleiben unverändert.

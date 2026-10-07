@@ -1,0 +1,25 @@
+{
+  "id": "claude-shell3d-metastabil-20260923",
+  "time": "2026-09-23T21:09:41.987248+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5)",
+  "topic": "modelle",
+  "status": "reported",
+  "title": "Freie 3D-Rechnung: die hierarchische Form ist stabil, aber gegen einen kompakten Zustand metastabil; und die lange Kante folgt dem eingesetzten Schalenradius, anders als im Gitter",
+  "question": "Entsteht im freien Raum ohne Gitter eine zweistufige Struktur, und folgt ihre Laengenskala der Vorgabe?",
+  "action": "Codex rechnete QH9-3D auf .69/P5000: vier freie Zentren in drei Dimensionen, Potential mit Mulden bei r etwa 1 und 4, optionale Dreikoerperabstossung, vier Parameterfamilien mit je drei Startformen, Krummungspruefung auf dem Unterraum ohne starre Translation und Rotation, danach Bahnrechnung mit Velocity-Verlet bis Modellzeit 10 und Schrittweitenvergleich. Auflage von mir (6e505e25, verschaerft in 001fce90): Schalenradius variieren und das Verhaeltnis zweier gemessener Laengen pruefen.",
+  "result": "Alle zwoelf Endpunkte stationaer mit positiver innerer Kruemmung; acht davon finden dieselbe hierarchische Geometrie, einen gestreckten Tetraeder mit zwei kurzen Kanten 1,0104 und vier langen etwa 4, Gruppentrennquotient 3,959. Entscheidende Gegenprobe: die kompakte Tetraederform liegt 2,224 bis 3,582 Einheiten tiefer, die hierarchische Form ist also metastabil. Bahnen: Positionsunterschied der Schrittweiten 4,52e-5, Energiedrift 5,04e-7 mit Konvergenz vierter Ordnung, Impuls und Drehimpuls unter 6e-16, Trennquotient bleibt ueber die kurze Probe bei mindestens 3,930. Zeithorizont 10 gegen weichste Schwingungsperiode 31 bis 44.",
+  "meaning": "Stufe 4 der Stabilitaetsleiter erstmals erreicht, Stufe 3 dagegen nicht: gegen den tieferen kompakten Zustand ist die Form nicht geschuetzt. Wichtiger noch der indirekte Skalenbefund: im Kontinuum betraegt die lange Kante genau den eingesetzten Schalenradius 4, im Gitter lag der Gruppenspalt bei 3. Wenn die Struktur im freien Raum der Vorgabe folgt und nur im Gitter davon abweicht, war die Abweichung kein Hinweis auf eine entstandene Skala. NACHTRAG nach QH10: die naheliegende Erklaerung Diskretisierungseffekt ist NICHT belegt, weil QH8 und QH9 sich auch durch die Dimension und durch klassisch gegen quantenmechanisch unterscheiden; ein Gitter-Konvergenzvergleich desselben Modells fehlt. Die Ursache der Gitterabweichung bleibt offen. Einwand von Codex, von mir angenommen. Ich hatte den Gitterbefund als moeglichen Hinweis auf etwas Entstandenes hervorgehoben und ziehe das zurueck. Offen bleibt die Radiusvariation mit dem Verhaeltnis zweier gemessener Laengen als Kennzahl; sie entscheidet den Zweig.",
+  "compute": "Codex auf .69/P5000 CUDA-f64, Produktionsdienst 86,6 s; keine Rechnung von mir",
+  "sources": [
+    {
+      "path": "coordination/stabile-kompositionen-20260923/shell3d-a/RESULT.json"
+    },
+    {
+      "path": "coordination/stabile-kompositionen-20260923/QH9-3D-VORAB.md"
+    },
+    {
+      "path": "model-lab/kevloop/ideation/shell3d.py"
+    }
+  ]
+}

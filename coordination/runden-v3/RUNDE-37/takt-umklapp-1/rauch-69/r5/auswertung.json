@@ -1,0 +1,466 @@
+{
+ "info": {
+  "numpy": "2.4.4",
+  "scipy": "1.18.0",
+  "python": "3.12.3",
+  "host": "ubuntu-auto",
+  "argv": [
+   "code-rauch1/tu.py",
+   "auswertung",
+   "--ordner",
+   "rauch/r5",
+   "--out",
+   "rauch/r5/auswertung.json"
+  ],
+  "skript_sha256": "0b2abf1bd2e60b5cef48b98433b04b85bfcc3f1dfd6ffe00506fc8f470b8539e",
+  "module_sha256": {
+   "tg": "ec48a258e266fc2226d0d10564b606052831ffefbf0642e4f7d04f9de85cfd9e",
+   "uk": "f52df7438c3d33b4fe86d4352bed3373b38e27a083f3d60eb12d4143fa6b71e0",
+   "ew": "fa7b6417d39177102f0b19c5474453cd16a7595e23bc25ca548e081c4060b142",
+   "mn": "b36984d3f04276454a792f14c5655bff432332316d1b968dea46d4cb6eb96bbf",
+   "tg_auswertung": "88cbd2ce05766c34750d6c710a008c5615b7cf49ea61f6d3c3bea2a1db601071"
+  },
+  "start_utc": "2026-10-05T05:41:36Z"
+ },
+ "ergebnis": {
+  "eingaben_sha256": {
+   "teilA-r5.json": "cc8311278d1e77173985e5713d8da7701910a060471423203407720e312807a7",
+   "teilB-r5.json": "c082f4df35e21d40a851f2039e641c1df579c4433fed08fafa3ab59a5868c97f"
+  },
+  "netze_A": [
+   "S",
+   "SD",
+   "V",
+   "VD",
+   "glas-N32-s901",
+   "uk-N32-s901-f0.2"
+  ],
+  "netze_B": [
+   "glas-N32-s901"
+  ],
+  "urteile": {
+   "HT0": {
+    "wortlaut": "eingetroffen",
+    "plan": "eingetroffen",
+    "c_V": 7.999999999999998,
+    "c_S": 8.0,
+    "c_V_durch_c_S_minus_1": -2.220446049250313e-16,
+    "rest_max_V": 6.60628576636457e-16,
+    "rest_max_S": 5.462211934094298e-16,
+    "c_streuung_rel_max": 4.440892098500626e-16,
+    "P_mn_gegen_tg_abw_max": 5.4622119340943e-16,
+    "n_k_V": 252,
+    "n_k_S": 252
+   },
+   "HT1'": {
+    "wortlaut": "eingetroffen",
+    "plan": "eingetroffen",
+    "V_stern2_neg": 12,
+    "V_stern1_neg": 0,
+    "V_stern1_min": 0.00138888888888889,
+    "VD_stern2_neg": 0,
+    "VD_stern2_min": 0.5333333333333332,
+    "VD_mu_verletzt": 0,
+    "VD_zuege": {
+     "n23": 12,
+     "n32": 0,
+     "ok": true,
+     "stecken": false
+    },
+    "S": {
+     "stern1_n_neg": 0,
+     "stern2_n_neg": 0,
+     "mu_n_verletzt": 0,
+     "stern1_min": 0.09765625000000001,
+     "stern2_min": 1.666666666666666
+    }
+   },
+   "HT2": {
+    "wortlaut": "verfehlt",
+    "plan": "verfehlt",
+    "netze": [
+     "uk-N32-s901-f0.2"
+    ],
+    "stern2_neg": {
+     "uk-N32-s901-f0.2": 206
+    },
+    "P_psd": {
+     "uk-N32-s901-f0.2": false
+    },
+    "P_lmin_rel_min": {
+     "uk-N32-s901-f0.2": -1.0
+    },
+    "stern1_neg": {
+     "uk-N32-s901-f0.2": 125
+    },
+    "vermerk": "nur 1 von 7 Netzen"
+   },
+   "HT3": {
+    "plan": "eingetroffen",
+    "wortlaut": "eingetroffen",
+    "n_punkte": 1014,
+    "n_gueltig": 1014,
+    "n_identitaet_verletzt": 0,
+    "n_P_negativ": 3,
+    "P_negativ_bei": [
+     "uk-N32-s901-f0.2",
+     "uk-N32-s901-f0.2",
+     "uk-N32-s901-f0.2"
+    ],
+    "B_null_groesst_rel_max": 7.790381983706045e-16,
+    "B_nichtnull_kleinst_rel_min": 2.5817187411004267e-09
+   },
+   "TU1": {
+    "wortlaut": "verfehlt",
+    "plan": "verfehlt",
+    "n_faelle": 2,
+    "n_faelle_mit_zug": 2,
+    "D_stabil_alle": 1.0,
+    "Z_stabil_alle": 1.0,
+    "D_stabil_mit_zug": 1.0,
+    "Z_stabil_mit_zug": 1.0,
+    "vermerk": "nur 2 von 26 Faellen"
+   }
+  },
+  "faelle_B": [
+   {
+    "netz": "glas-N32-s901",
+    "a": 0.001,
+    "n23": 0,
+    "n32": 1,
+    "n": 1,
+    "D_stabil": true,
+    "Z_stabil": true,
+    "D_regulaer": true,
+    "Z_regulaer": true,
+    "D_wachsend": 0,
+    "Z_wachsend": 0,
+    "D_Bred_neg": 0,
+    "Z_Bred_neg": 0,
+    "D_ok": true,
+    "Z_fehl": 0
+   },
+   {
+    "netz": "glas-N32-s901",
+    "a": 0.01,
+    "n23": 3,
+    "n32": 3,
+    "n": 6,
+    "D_stabil": true,
+    "Z_stabil": true,
+    "D_regulaer": true,
+    "Z_regulaer": true,
+    "D_wachsend": 0,
+    "Z_wachsend": 0,
+    "D_Bred_neg": 0,
+    "Z_Bred_neg": 0,
+    "D_ok": true,
+    "Z_fehl": 0
+   }
+  ],
+  "tabelle_A": [
+   {
+    "netz": "S",
+    "E": 40,
+    "F": 68,
+    "stern1_neg": 0,
+    "stern2_neg": 0,
+    "stern0_neg": 0,
+    "stern1_min": 0.09765625000000001,
+    "stern2_min": 1.666666666666666,
+    "mu_verletzt": 0,
+    "widerspruch_mu_s2": 0,
+    "P_psd": true,
+    "P_lmin_rel_min": -1.1031875215371786e-16,
+    "c": 8.0,
+    "rest_max": 5.462211934094298e-16,
+    "je_tet_rest_max": 8.033774650553893e-16,
+    "kontrolle": {
+     "sum_lA_durch_3V": 1.0,
+     "sum_s0_durch_V": 1.0000000000000002,
+     "sum_fL_durch_3V": 1.0,
+     "V": 0.25,
+     "Vbox": 0.25
+    },
+    "zuege": null
+   },
+   {
+    "netz": "SD",
+    "E": 40,
+    "F": 68,
+    "stern1_neg": 0,
+    "stern2_neg": 0,
+    "stern0_neg": 0,
+    "stern1_min": 0.09765625000000001,
+    "stern2_min": 1.666666666666666,
+    "mu_verletzt": 0,
+    "widerspruch_mu_s2": 0,
+    "P_psd": true,
+    "P_lmin_rel_min": -1.1031875215371786e-16,
+    "c": 8.0,
+    "rest_max": 5.462211934094298e-16,
+    "je_tet_rest_max": 8.033774650553893e-16,
+    "kontrolle": {
+     "sum_lA_durch_3V": 1.0,
+     "sum_s0_durch_V": 1.0000000000000002,
+     "sum_fL_durch_3V": 1.0,
+     "V": 0.25,
+     "Vbox": 0.25
+    },
+    "zuege": {
+     "n23": 0,
+     "n32": 0,
+     "ok": true,
+     "stecken": false
+    }
+   },
+   {
+    "netz": "V",
+    "E": 68,
+    "F": 116,
+    "stern1_neg": 0,
+    "stern2_neg": 12,
+    "stern0_neg": 0,
+    "stern1_min": 0.00138888888888889,
+    "stern2_min": -0.8888888888888894,
+    "mu_verletzt": 12,
+    "widerspruch_mu_s2": 0,
+    "P_psd": true,
+    "P_lmin_rel_min": 3.5093191603041156e-16,
+    "c": 7.999999999999998,
+    "rest_max": 6.60628576636457e-16,
+    "je_tet_rest_max": 8.96144145437346e-16,
+    "kontrolle": {
+     "sum_lA_durch_3V": 1.0000000000000004,
+     "sum_s0_durch_V": 1.0000000000000004,
+     "sum_fL_durch_3V": 1.0,
+     "V": 0.25,
+     "Vbox": 0.25
+    },
+    "zuege": null
+   },
+   {
+    "netz": "VD",
+    "E": 80,
+    "F": 140,
+    "stern1_neg": 0,
+    "stern2_neg": 0,
+    "stern0_neg": 0,
+    "stern1_min": 0.00833333333333333,
+    "stern2_min": 0.5333333333333332,
+    "mu_verletzt": 0,
+    "widerspruch_mu_s2": 0,
+    "P_psd": true,
+    "P_lmin_rel_min": 4.4006061479890968e-16,
+    "c": 7.999999999999998,
+    "rest_max": 9.601928861622964e-16,
+    "je_tet_rest_max": 3.5527136788004915e-15,
+    "kontrolle": {
+     "sum_lA_durch_3V": 1.0000000000000004,
+     "sum_s0_durch_V": 1.0000000000000004,
+     "sum_fL_durch_3V": 1.0000000000000002,
+     "V": 0.25,
+     "Vbox": 0.25
+    },
+    "zuege": {
+     "n23": 12,
+     "n32": 0,
+     "ok": true,
+     "stecken": false
+    }
+   },
+   {
+    "netz": "glas-N32-s901",
+    "E": 246,
+    "F": 428,
+    "stern1_neg": 0,
+    "stern2_neg": 0,
+    "stern0_neg": 0,
+    "stern1_min": 2.4796943406881964e-06,
+    "stern2_min": 0.002286519520537429,
+    "mu_verletzt": 0,
+    "widerspruch_mu_s2": 0,
+    "P_psd": true,
+    "P_lmin_rel_min": -2.9108516045174573e-16,
+    "c": 8.0,
+    "rest_max": 1.059533103094672e-15,
+    "je_tet_rest_max": 8.119678300758242e-14,
+    "kontrolle": {
+     "sum_lA_durch_3V": 1.0,
+     "sum_s0_durch_V": 1.0,
+     "sum_fL_durch_3V": 1.0,
+     "V": 31.999999999999993,
+     "Vbox": 32.0
+    },
+    "zuege": null
+   },
+   {
+    "netz": "uk-N32-s901-f0.2",
+    "E": 332,
+    "F": 600,
+    "stern1_neg": 125,
+    "stern2_neg": 206,
+    "stern0_neg": 14,
+    "stern1_min": -496.97234404705034,
+    "stern2_min": -1417.5708192933666,
+    "mu_verletzt": 206,
+    "widerspruch_mu_s2": 0,
+    "P_psd": false,
+    "P_lmin_rel_min": -1.0,
+    "c": 8.000000000001705,
+    "rest_max": 1.501032353420604e-11,
+    "je_tet_rest_max": 1.0077364172941117e-10,
+    "kontrolle": {
+     "sum_lA_durch_3V": 0.9999999999999861,
+     "sum_s0_durch_V": 0.9999999999999989,
+     "sum_fL_durch_3V": 0.9999999999999991,
+     "V": 31.999999999999993,
+     "Vbox": 32.0
+    },
+    "zuege": {
+     "n_ziel": 86,
+     "n_zuege": 86,
+     "f_eff": 0.20093457943925233,
+     "T": 300
+    }
+   }
+  ],
+  "tabelle_B": [
+   {
+    "netz": "glas-N32-s901",
+    "a": 0.001,
+    "arm": "D",
+    "T": 213,
+    "E": 245,
+    "stern1_neg": 0,
+    "stern2_neg": 0,
+    "mu_verletzt": 0,
+    "P_psd": true,
+    "rest_max": 1.0596072853757701e-15,
+    "c": 8.0,
+    "traegheit": {
+     "n_B_neg": 32,
+     "n_P_pos": 32,
+     "n_P_neg": 0,
+     "n_Bred_neg": 0,
+     "ueberschuss": 0,
+     "identitaet": true
+    },
+    "kennzahlen": {
+     "regulaer": true,
+     "n_wachsend_max": 0,
+     "B_red_neg_max": 0,
+     "A_red_pd_alle": true,
+     "spanne": 0.20877469089574108,
+     "w_mittel": 4.691137626739499,
+     "n_masselos": [
+      2
+     ],
+     "tt_min": 0.9999999999997568
+    }
+   },
+   {
+    "netz": "glas-N32-s901",
+    "a": 0.001,
+    "arm": "Z",
+    "T": 213,
+    "E": 245,
+    "stern1_neg": 0,
+    "stern2_neg": 1,
+    "mu_verletzt": 1,
+    "P_psd": true,
+    "rest_max": 8.475901981104407e-16,
+    "c": 8.0,
+    "traegheit": {
+     "n_B_neg": 32,
+     "n_P_pos": 32,
+     "n_P_neg": 0,
+     "n_Bred_neg": 0,
+     "ueberschuss": 0,
+     "identitaet": true
+    },
+    "kennzahlen": {
+     "regulaer": true,
+     "n_wachsend_max": 0,
+     "B_red_neg_max": 0,
+     "A_red_pd_alle": true,
+     "spanne": 0.16209273421548254,
+     "w_mittel": 4.707280185940292,
+     "n_masselos": [
+      2
+     ],
+     "tt_min": 0.9999999999996364
+    }
+   },
+   {
+    "netz": "glas-N32-s901",
+    "a": 0.01,
+    "arm": "D",
+    "T": 214,
+    "E": 246,
+    "stern1_neg": 0,
+    "stern2_neg": 0,
+    "mu_verletzt": 0,
+    "P_psd": true,
+    "rest_max": 7.421056033043248e-16,
+    "c": 8.000000000000002,
+    "traegheit": {
+     "n_B_neg": 32,
+     "n_P_pos": 32,
+     "n_P_neg": 0,
+     "n_Bred_neg": 0,
+     "ueberschuss": 0,
+     "identitaet": true
+    },
+    "kennzahlen": {
+     "regulaer": true,
+     "n_wachsend_max": 0,
+     "B_red_neg_max": 0,
+     "A_red_pd_alle": true,
+     "spanne": 0.15442916554823305,
+     "w_mittel": 4.644731476327572,
+     "n_masselos": [
+      2
+     ],
+     "tt_min": 0.9999999999996989
+    }
+   },
+   {
+    "netz": "glas-N32-s901",
+    "a": 0.01,
+    "arm": "Z",
+    "T": 214,
+    "E": 246,
+    "stern1_neg": 10,
+    "stern2_neg": 12,
+    "mu_verletzt": 12,
+    "P_psd": true,
+    "rest_max": 9.343341432261002e-14,
+    "c": 8.000000000000002,
+    "traegheit": {
+     "n_B_neg": 32,
+     "n_P_pos": 32,
+     "n_P_neg": 0,
+     "n_Bred_neg": 0,
+     "ueberschuss": 0,
+     "identitaet": true
+    },
+    "kennzahlen": {
+     "regulaer": true,
+     "n_wachsend_max": 0,
+     "B_red_neg_max": 0,
+     "A_red_pd_alle": true,
+     "spanne": 0.17525698100199083,
+     "w_mittel": 4.648776686013912,
+     "n_masselos": [
+      2
+     ],
+     "tt_min": 0.9999999999961884
+    }
+   }
+  ]
+ },
+ "laufzeit_s": 0.036524057388305664,
+ "maxrss_MB": 75.546875,
+ "ende_utc": "2026-10-05T05:41:36Z"
+}

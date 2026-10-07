@@ -1,0 +1,485 @@
+{
+ "karte": "Z2-SCHUTZ-1 (Runde 49)",
+ "code_sha256": "7ca0805780af4a6fcec64d4ec1060d899835b4930f3e3ceda9b4945d027fae32",
+ "zeit_utc": "2026-10-05T12:08:28Z",
+ "groessen": {
+  "G1": {
+   "hesse_S_ok": true,
+   "hesse_S": "lambda [1.0551624976729832e-09, 1.0551692658318845e-09, 0.04068765223606875, 0.040687652236077676], ueberlapp [0.9999999999999996, 0.999999999999999]",
+   "hesse_T_ok": true,
+   "E_S": 4545.313250942401,
+   "start_fmax": 8.269474815502978e-08,
+   "start_grund": "konvergiert",
+   "zug": {
+    "gueltig": true,
+    "status": "gueltig",
+    "barriere": 25.03391253168411,
+    "klammer": true,
+    "lambda_lo": 0.33770751953125,
+    "lambda_hi": 0.3377685546875,
+    "schritte": [
+     {
+      "lambda": 1.0,
+      "klasse": "T",
+      "schritte": 0,
+      "fmin": 10.923237736476672,
+      "E_fmin": 4398.159299756764
+     },
+     {
+      "lambda": 0.5,
+      "klasse": "T",
+      "schritte": 35,
+      "fmin": 3.816084838640173,
+      "E_fmin": 4538.1941660555685,
+      "it_fmin": 35
+     },
+     {
+      "lambda": 0.25,
+      "klasse": "S",
+      "schritte": 30,
+      "fmin": 0.957315082413212,
+      "E_fmin": 4595.958519528356,
+      "it_fmin": 30
+     },
+     {
+      "lambda": 0.375,
+      "klasse": "T",
+      "schritte": 91,
+      "fmin": 1.1933437767070625,
+      "E_fmin": 4542.8195907175705,
+      "it_fmin": 91
+     },
+     {
+      "lambda": 0.3125,
+      "klasse": "S",
+      "schritte": 52,
+      "fmin": 0.4592600710803093,
+      "E_fmin": 4582.332817707529,
+      "it_fmin": 48
+     },
+     {
+      "lambda": 0.34375,
+      "klasse": "T",
+      "schritte": 123,
+      "fmin": 0.3606520918009659,
+      "E_fmin": 4588.613364196866,
+      "it_fmin": 59
+     },
+     {
+      "lambda": 0.328125,
+      "klasse": "S",
+      "schritte": 79,
+      "fmin": 0.27392537836176223,
+      "E_fmin": 4578.806453108158,
+      "it_fmin": 58
+     },
+     {
+      "lambda": 0.3359375,
+      "klasse": "S",
+      "schritte": 107,
+      "fmin": 0.17586334955371977,
+      "E_fmin": 4578.330865842406,
+      "it_fmin": 65
+     },
+     {
+      "lambda": 0.33984375,
+      "klasse": "T",
+      "schritte": 129,
+      "fmin": 0.17004004723862484,
+      "E_fmin": 4571.742038067816,
+      "it_fmin": 82
+     },
+     {
+      "lambda": 0.337890625,
+      "klasse": "T",
+      "schritte": 166,
+      "fmin": 0.06345213272224377,
+      "E_fmin": 4570.396457819783,
+      "it_fmin": 104
+     },
+     {
+      "lambda": 0.3369140625,
+      "klasse": "S",
+      "schritte": 131,
+      "fmin": 0.11383630759158532,
+      "E_fmin": 4570.36227904125,
+      "it_fmin": 97
+     },
+     {
+      "lambda": 0.33740234375,
+      "klasse": "S",
+      "schritte": 144,
+      "fmin": 0.07113964215240937,
+      "E_fmin": 4570.42796124023,
+      "it_fmin": 101
+     },
+     {
+      "lambda": 0.337646484375,
+      "klasse": "S",
+      "schritte": 179,
+      "fmin": 0.027380565684131806,
+      "E_fmin": 4570.333469898453,
+      "it_fmin": 127
+     },
+     {
+      "lambda": 0.3377685546875,
+      "klasse": "T",
+      "schritte": 195,
+      "fmin": 0.025462978635482178,
+      "E_fmin": 4570.347163474085,
+      "it_fmin": 124
+     },
+     {
+      "lambda": 0.33770751953125,
+      "klasse": "S",
+      "schritte": 227,
+      "fmin": 0.0054379281370002305,
+      "E_fmin": 4570.341742860827,
+      "it_fmin": 150
+     }
+    ],
+    "freigabe": {
+     "schritte": 1706,
+     "E_end": 0.00089131714279711,
+     "fmax_end": 0.0018247919806910163,
+     "E_max": 4543.1458393869925,
+     "T_erreicht": true,
+     "E_max_unter_ES": true
+    },
+    "fmin_T": 0.025462978635482178,
+    "fmin_S": 0.0054379281370002305,
+    "L6": 0.6689668856971771,
+    "n50": 5,
+    "laufzeit_s": 96.79091215133667
+   },
+   "neb": {
+    "gueltig": true,
+    "status": "gueltig",
+    "barriere": 25.028515686495666,
+    "ki": 4,
+    "iterationen": 76,
+    "fki": 0.0033359432437451127,
+    "fband": 0.07510958376877283,
+    "L6": 0.6635180462140282,
+    "n50": 5,
+    "erstes_sprungbild": 3,
+    "laufzeit_s": 16.91343903541565
+   },
+   "B": 25.028515686495666,
+   "B_verfahren": "neb",
+   "K_weg_rel": 0.00021562785648351004,
+   "K_weg": "bestanden"
+  },
+  "G2": {
+   "hesse_S_ok": true,
+   "hesse_S": "lambda [-3.0841671312215596e-09, -3.0841669969869102e-09, 0.028301543711630198, 0.02830154371163693], ueberlapp [0.9999999999999981, 1.0000000000000009]",
+   "hesse_T_ok": true,
+   "E_S": 5516.379302079782,
+   "start_fmax": 8.00453942408108e-08,
+   "start_grund": "konvergiert",
+   "zug": {
+    "gueltig": true,
+    "status": "gueltig",
+    "barriere": 67.99931269060835,
+    "klammer": true,
+    "lambda_lo": 0.38671875,
+    "lambda_hi": 0.388671875,
+    "schritte": [
+     {
+      "lambda": 1.0,
+      "klasse": "T",
+      "schritte": 0,
+      "fmin": 10.72445610302122,
+      "E_fmin": 5501.5224904174975
+     },
+     {
+      "lambda": 0.5,
+      "klasse": "T",
+      "schritte": 53,
+      "fmin": 3.384566090618641,
+      "E_fmin": 5549.16447234822,
+      "it_fmin": 47
+     },
+     {
+      "lambda": 0.25,
+      "klasse": "S",
+      "schritte": 30,
+      "fmin": 1.3820181253998391,
+      "E_fmin": 5593.900357724172,
+      "it_fmin": 30
+     },
+     {
+      "lambda": 0.375,
+      "klasse": "S",
+      "schritte": 76,
+      "fmin": 0.5765957673429957,
+      "E_fmin": 5592.388542542665,
+      "it_fmin": 69
+     },
+     {
+      "lambda": 0.4375,
+      "klasse": "T",
+      "schritte": 79,
+      "fmin": 2.426659069177692,
+      "E_fmin": 5578.4953668392045,
+      "it_fmin": 60
+     },
+     {
+      "lambda": 0.40625,
+      "klasse": "T",
+      "schritte": 164,
+      "fmin": 1.2874512597989225,
+      "E_fmin": 5602.605677491067,
+      "it_fmin": 105
+     },
+     {
+      "lambda": 0.390625,
+      "klasse": "T",
+      "schritte": 210,
+      "fmin": 0.5102917064351747,
+      "E_fmin": 5561.449475157404,
+      "it_fmin": 150
+     },
+     {
+      "lambda": 0.3828125,
+      "klasse": "S",
+      "schritte": 101,
+      "fmin": 0.4231815929975182,
+      "E_fmin": 5583.9519800479975,
+      "it_fmin": 86
+     },
+     {
+      "lambda": 0.38671875,
+      "klasse": "S",
+      "schritte": 151,
+      "fmin": 0.41776534209534144,
+      "E_fmin": 5584.37861477039,
+      "it_fmin": 99
+     },
+     {
+      "lambda": 0.388671875,
+      "klasse": "T",
+      "schritte": 226,
+      "fmin": 0.3621992471545209,
+      "E_fmin": 5575.059703099085,
+      "it_fmin": 123
+     },
+     {
+      "lambda": 0.3876953125,
+      "klasse": "offen",
+      "schritte": 799,
+      "fmin": 1.2809491335957507e-14,
+      "E_fmin": 5516.379302079761,
+      "it_fmin": 796
+     }
+    ],
+    "freigabe": {
+     "schritte": 3091,
+     "E_end": 0.000821534585076833,
+     "fmax_end": 0.0011340637398694739,
+     "E_max": 5514.833196254993,
+     "T_erreicht": true,
+     "E_max_unter_ES": true
+    },
+    "fmin_T": 0.3621992471545209,
+    "fmin_S": 0.41776534209534144,
+    "L6": 0.29130924080578785,
+    "n50": 12,
+    "laufzeit_s": 254.5207874774933
+   },
+   "neb": {
+    "gueltig": true,
+    "status": "gueltig",
+    "barriere": 41.402716818032786,
+    "ki": 3,
+    "iterationen": 550,
+    "fki": 0.004567513354481819,
+    "fband": 0.012593546431238698,
+    "L6": 0.43622454788783654,
+    "n50": 8,
+    "erstes_sprungbild": 2,
+    "laufzeit_s": 203.55739045143127
+   },
+   "B": 41.402716818032786,
+   "B_verfahren": "neb",
+   "K_weg_rel": 0.6423876961859547,
+   "K_weg": "verfehlt"
+  },
+  "G3": {
+   "hesse_S_ok": null,
+   "hesse_S": "fehlt",
+   "hesse_T_ok": null,
+   "E_S": 6558.695145461932,
+   "start_fmax": 9.514625353363532e-08,
+   "start_grund": "konvergiert",
+   "zug": {
+    "gueltig": false,
+    "status": "S besteht K-Hesse nicht",
+    "barriere": 132.5286137829262,
+    "klammer": true,
+    "lambda_lo": 0.40625,
+    "lambda_hi": 0.4140625,
+    "schritte": [
+     {
+      "lambda": 1.0,
+      "klasse": "T",
+      "schritte": 14,
+      "fmin": 11.347870747596543,
+      "E_fmin": 6549.262146954188
+     },
+     {
+      "lambda": 0.5,
+      "klasse": "T",
+      "schritte": 79,
+      "fmin": 2.4121774862614966,
+      "E_fmin": 6634.855034433054,
+      "it_fmin": 63
+     },
+     {
+      "lambda": 0.25,
+      "klasse": "S",
+      "schritte": 30,
+      "fmin": 1.2190822668560857,
+      "E_fmin": 6687.8156014765555,
+      "it_fmin": 30
+     },
+     {
+      "lambda": 0.375,
+      "klasse": "S",
+      "schritte": 30,
+      "fmin": 5.271667532558262,
+      "E_fmin": 7013.427690333609,
+      "it_fmin": 30
+     },
+     {
+      "lambda": 0.4375,
+      "klasse": "T",
+      "schritte": 124,
+      "fmin": 1.3838618669272893,
+      "E_fmin": 6581.79396850077,
+      "it_fmin": 114
+     },
+     {
+      "lambda": 0.40625,
+      "klasse": "S",
+      "schritte": 127,
+      "fmin": 0.9364871948548337,
+      "E_fmin": 6691.223759244858,
+      "it_fmin": 96
+     },
+     {
+      "lambda": 0.421875,
+      "klasse": "T",
+      "schritte": 286,
+      "fmin": 0.7728044968906491,
+      "E_fmin": 6560.763092203662,
+      "it_fmin": 281
+     },
+     {
+      "lambda": 0.4140625,
+      "klasse": "T",
+      "schritte": 435,
+      "fmin": 0.3607110919796845,
+      "E_fmin": 6594.234201699042,
+      "it_fmin": 338
+     },
+     {
+      "lambda": 0.41015625,
+      "klasse": "offen",
+      "schritte": 799,
+      "fmin": 1.0957112707615826e-12,
+      "E_fmin": 6558.695145461912,
+      "it_fmin": 786
+     }
+    ],
+    "freigabe": {
+     "schritte": 863,
+     "E_end": 6339.140567031666,
+     "fmax_end": 9.084118930337673e-08,
+     "E_max": 6557.653938186031,
+     "T_erreicht": false,
+     "E_max_unter_ES": true
+    },
+    "fmin_T": 0.3607110919796845,
+    "fmin_S": 0.9364871948548337,
+    "L6": 0.15645797851918034,
+    "n50": 28,
+    "laufzeit_s": 217.8755075931549
+   },
+   "neb": {
+    "gueltig": false,
+    "status": "nicht konvergiert (wandzeit)",
+    "barriere": 56.18048788046963,
+    "ki": 3,
+    "iterationen": 828,
+    "fki": 0.9630212258701842,
+    "fband": 0.4179274135678788,
+    "L6": 0.2803255485624633,
+    "n50": 13,
+    "erstes_sprungbild": 2,
+    "laufzeit_s": 480.6517086029053
+   },
+   "B": null,
+   "K_weg": "nicht auswertbar"
+  }
+ },
+ "urteile": {
+  "ZS1": {
+   "plan": "nicht auswertbar",
+   "wortlaut": "nicht auswertbar"
+  },
+  "ZS2": {
+   "plan": "nicht auswertbar",
+   "wortlaut": "nicht auswertbar"
+  },
+  "ZS3": {
+   "plan": "nicht auswertbar",
+   "L6": {
+    "G1": 0.6635180462140282,
+    "G2": 0.43622454788783654
+   },
+   "wortlaut": "nicht eingetroffen"
+  },
+  "B": {
+   "G1": 25.028515686495666,
+   "G2": 41.402716818032786
+  },
+  "ZS0": {
+   "plan": "eingetroffen",
+   "wortlaut": "eingetroffen",
+   "A": {
+    "monoton": true,
+    "sonde_lauf": 0.796661407795358,
+    "sonde_ok": true,
+    "E_0": 7463.247071655665,
+    "E_vor_GF2": 7463.247071655665,
+    "E_ende": 3850.0420462079956,
+    "E_end_GF2": 3850.0420462079956,
+    "endenergien_ok": true,
+    "konvergiert": true,
+    "grund": "konvergiert (ohne Klettern)"
+   },
+   "B": {
+    "monoton": true,
+    "sonde_lauf": 0.796661407795358,
+    "sonde_ok": true,
+    "E_0": 7463.247071655665,
+    "E_vor_GF2": 7463.247071655665,
+    "E_ende": 3850.0420462079956,
+    "E_end_GF2": 3850.0420462079956,
+    "endenergien_ok": true,
+    "konvergiert": true,
+    "grund": "konvergiert (ohne Klettern)"
+   }
+  }
+ },
+ "gegenprobe_so2": {
+  "urteil": "verfehlt",
+  "E_0": 7464.588612586613,
+  "E_max": 7464.588612586613,
+  "E_ende": 3850.042044398583,
+  "sonde_lauf": 13.544547822352207,
+  "grund": "wandzeit",
+  "ki": -1
+ }
+}

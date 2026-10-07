@@ -1,0 +1,51 @@
+Nichtautorlektüre particle_binding, 03.10.2026; keine Ausführung.
+Vollständig gelesen: de8fed43248022a43d783eda84ab48335498038e3d04a21a2c451a900f9f6548.
+Planbasis zuletzt d8bb196570b0936ce919bc62e7b03a78974a1012c1e7d2d3ddc08a3566c48fd9.
+
+Konsistent: gehashte alte Resultate/Module und verwendete Initial-/Final-/
+Ringdateien; h=.05-Metadatengleichheit; korrekte Wiederverwendungsmenge
+einschließlich kleiner theta0-Amplitude nur bei dt=.01. Alte Diagnosen,
+volle Odd-Gates, Startidentitäten, Samplezeiten, Komponenten und echte
+Ringgitter werden erneut gelesen/geprüft. Keine alte main-Ausführung
+durch Imports. Die kausale Referenz wird nicht als Delta-Fehler importiert;
+der alte split-Code liefert allein die feste Intervallabbildung.
+
+Genau drei neue +/-Paare: base/theta90, time/theta0, time/theta90. Derselbe
+exc.initial-Adapter prüft Q-Quadratik und kanonische Anfangsdaten. Alpha,
+Profilnorm, Grid und Volumen stimmen mit der alten Normierung überein;
+v->iv betrifft den ganzen Eigenvektor ohne erneute Verankerung. Paarloop
+verwendet dyn.advance unverändert und volle kanonische Odd-Norm. Eigene
+E/Q-Anfangswerte statt erzwungener Gleichheit zwischen Phasen/Amplituden.
+
+Rohe Delta-Zähler haben korrekt +6B für theta0/theta90, +12B für D und
+keine Baseline für H. D/H-Nenner4alpha_H², theta-Nenner2alpha_H².
+H wird vor Baselinesubtraktion gebildet. Positive Hüllen verwenden jeden
+Einzelvorzeichenbetrag mit richtigen absoluten Gewichten. Band-eta nimmt
+coefficient(...,0), also den positiven Zeitmittelwert. Maximum beiderdt
+und feste64eps wie geplant; keine Behauptung einer Integrationsfehlergrenze.
+
+Alle32 Auflösungsprüfungen beziehen sich auf phi: Zeit-/Volumennorm oder
+L2 des komplexen +2rho-Koeffizienten. d ist Norm der Felddifferenz, nicht
+Differenz der Normen. N>10d und N>100eta werden gemeinsam mit Endlichkeit
+gefordert. Bei N=0 können die strikten Ungleichungen nicht bestehen.
+Vollständigkeit verlangt exakt sechs Arme/321Samples/T128, drei passende
+Odd-Paare und16 eindeutig adressierte Doppel-Normzeilen. UNRESOLVED ist
+ein vorgesehener Ausgang ohne automatische Folgeläufe. Neue Artefakte,
+atomische Teilergebnisse und150CPU-Checkpoint; externer159CPU-Abbruch
+innerhalb160CPU-Gesamtrahmen bleibt Roots Ausführungsaufgabe.
+
+Ein kleiner konkreter Abschlussbedarf im erstgelesenen Stand: Ein Paar
+mit odd_passed=false wird gespeichert, verhindert aber den Start des
+nächsten Paars noch nicht. PLAN verbietet einen neuen Versuchsarm nach
+Gateverletzung. Autor/Root informiert: nach Speicherung des Paarbefunds
+require(odd_passed) oder gleichwertige Sperre vor nächstem Paar ergänzen.
+Dies ist keine neue Schwelle. Finalen Delta/Hash anschließend nachlesen.
+
+FINAL-Nachtrag: SHA256 lokal mit Autorfreeze abgeglichen:
+5e8f8c201f9d0f0090f442f6d6173c9e4f1362cfecbd55fc9ac9f823614dc4c9.
+Die Sperre require(pair['odd_passed']) steht jetzt nach Speicherung des
+Paarbefunds und vor der Rückkehr zum Aufrufer; kein Folgepaar nach Fail.
+Budgetmetadaten unterscheiden nun extern159CPU-s und240Wandsekunden,
+Checkpoint150CPU-s unverändert. Damit ist der benannte Abschlussbedarf
+behoben. Kein verbleibender konkreter Codeblocker für den vereinbarten
+Sechsarmversuch; kein vorweggenommener Ergebnispass. Keine Ausführung.

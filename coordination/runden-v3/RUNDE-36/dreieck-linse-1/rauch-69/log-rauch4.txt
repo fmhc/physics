@@ -1,0 +1,18 @@
+start 2026-10-03T23:44:30+00:00 spur=p4000a unit=fmhc-physics-klein-r36li-rauch4-234430
+Running as unit: fmhc-physics-klein-r36li-rauch4-234430.service; invocation ID: fbdcbf60163040a38f1ea7a1b545fa12
+torch 2.5.1+cu121, Geraet cuda (Quadro P4000)
+Netz n=5 h=0.2 R=85: 546001 Ecken, 543551 frei, Grad Spitze 5, Defekt 1.047198, Euler 1 (15.8 s)
+Kartenpruefung: {"winkelsumme_spitze": 5.235987755982988, "Theta_soll": 5.235987755982989, "winkelsumme_minus_soll": -8.881784197001252e-16, "einlauf": {"kanten": 1635550, "isometrisch": 1634571, "am_schnitt": 979, "max_abw_isometrisch": 1.5210055437364645e-13, "max_abw_geklebt": 1.4377388168895777e-13}, "auslauf": {"kanten": 1635550, "isometrisch": 1634701, "am_schnitt": 849, "max_abw_isometrisch": 1.5706880240884402e-13, "max_abw_geklebt": 9.198197759019422e-14}}
+Ball b=11: E 119.34771874 omega 0.751021 c 1.0e-11 -1.1e-11 res 2.6e-07 aussen 2 (17.0 s)
+Ball b=-11: E 119.34771874 omega 0.751021 c 7.8e-12 5.4e-12 res 2.6e-07 aussen 2 (16.1 s)
+/home/fmh/fmhc-physics-remote/runde36-linse/code/linse.py:217: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at ../aten/src/ATen/SparseCsrTensorImpl.cpp:53.)
+  Lt = torch.sparse_csr_tensor(torch.tensor(Lff.indptr, dtype=torch.int64), torch.tensor(Lff.indices, dtype=torch.int64),
+Start: E0 ['120.515815', '120.515815'] Q0 ['150.000000', '150.000000'] K_eff ['0.60342', '0.60342']
+Ende: T erreicht, t 20.0, 10.57 ms/Schritt, Dauer 54.2 s, geschrieben /home/fmh/fmhc-physics-remote/runde36-linse/rauch/li-rauch4.json
+Finished with result: success
+Main processes terminated with: code=exited/status=0
+Service runtime: 54.846s
+CPU time consumed: 54.810s
+Memory peak: 320.0K
+Memory swap peak: 0B
+ende 2026-10-03T23:45:25+00:00 rc=0 unit=fmhc-physics-klein-r36li-rauch4-234430

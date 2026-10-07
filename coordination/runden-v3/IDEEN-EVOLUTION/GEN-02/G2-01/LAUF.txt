@@ -1,0 +1,43 @@
+G2-01 Teilungsschwelle m = 3: Aufrufe fuer die Leitung
+Geschrieben vom Test-Agenten T-2, 2026-09-30 11:25:01 CEST (date). Vorhersage in KARTE.md seit 11:06:31.
+
+Code:  teilung_m3.py = Kopie von GEN-01/G1-03/teilung_schwelle.py (sha256 28733baa...; Vorlage unveraendert).
+       Messlaeufe nur mit CUDA; CPU nur fuer die Formprobe --rauch --mini.
+Spur:  GPU p4000a (oder p4000b, nur wenn WM-1-MB nicht laeuft; kleintest.sh prueft das).
+
+Formprobe (Laptop, CPU, 1 Thread, nice 19, CUDA_VISIBLE_DEVICES leer, je timeout 120, --rauch --mini --geraet cpu):
+  11:14:33 bis 11:15:38: eich grob, haupt grob, haupt fein (liest die grob-Datei), gegen grob; alle rc 0.
+  11:17:04 bis 11:17:33: haupt grob mit --t-end 6000 (Mini, T = 120), rc 0. Wiederholung gegen grob nach der
+  Info-Zeile f_top^2 (siehe NACHTRAG.md). Zahlen ungueltig (dx 0,6/0,4), nicht ernten. Dateien in formprobe/.
+
+Geschaetzte Laufzeit, hochgerechnet aus G1-03 auf der P4000 (grob 0,0078 s je Lauf und Zeiteinheit bei n = 256,
+fein 0,037 s bei n = 384, Schiessen etwa 60 s je Aufruf; L = 48 heisst n = 320 bzw. 480, Flaechenfaktor 1,56):
+  1) eich grob:  2 Laeufe x 2400 x 0,0078 s = 37 s  + Schiessen 60 s  -> etwa 2 min
+  2) haupt grob: 6 Laeufe x 2400 x 0,0122 s = 176 s + Schiessen 60 s -> etwa 4 min
+  3) haupt fein: 2 Laeufe x 2400 x 0,058 s  = 277 s + Schiessen 60 s -> etwa 5,5 min
+  4) gegen grob: 2 Laeufe x 2400 x 0,0122 s = 59 s  + Schiessen 60 s -> etwa 2 min
+  Zusammen etwa 14 min; jeder Aufruf unter 10 min. Keine Kuerzung von T noetig.
+
+Vorbereitung auf der .69:
+  mkdir -p /home/fmh/fmhc-physics-remote/ie-gen02-g2-01
+  dorthin kopieren: teilung_m3.py, KARTE.md, NACHTRAG.md, LAUF.txt (formprobe/ nicht noetig)
+
+Reihenfolge: 1 vor 2 (V3 liest lauf-69/teilung_eich_grob_ergebnis.json), 2 vor 3 (der fein-Aufruf liest fuer V1 bis V3
+und L3 lauf-69/teilung_haupt_grob_ergebnis.json). 4 ist unabhaengig.
+
+1) Eichung m = 2 bei 0,560 / 0,565 (L = 38,4), T = 2400, grob
+cd /home/fmh/fmhc-physics-remote/ie-gen02-g2-01 && bash /home/fmh/fmhc-physics-remote/kleintests/kleintest.sh p4000a g201-eich teilung_m3.py teilung --teil eich --stufe grob --out lauf-69 | tee /home/fmh/fmhc-physics-remote/ie-gen02-g2-01/lauf-69-eich.log
+
+2) Hauptlauf grob: m = 3 bei 0,530 / 0,535 / 0,540 / 0,545 / 0,550 / 0,560 (L = 48,0), T = 2400, dx 0,3, dt 0,05
+cd /home/fmh/fmhc-physics-remote/ie-gen02-g2-01 && bash /home/fmh/fmhc-physics-remote/kleintests/kleintest.sh p4000a g201-grob teilung_m3.py teilung --teil haupt --stufe grob --out lauf-69 | tee /home/fmh/fmhc-physics-remote/ie-gen02-g2-01/lauf-69-grob.log
+
+3) Hauptlauf fein: m = 3 bei 0,535 und 0,550 (L = 48,0), dx 0,2, dt 0,025
+cd /home/fmh/fmhc-physics-remote/ie-gen02-g2-01 && bash /home/fmh/fmhc-physics-remote/kleintests/kleintest.sh p4000a g201-fein teilung_m3.py teilung --teil haupt --stufe fein --out lauf-69 | tee /home/fmh/fmhc-physics-remote/ie-gen02-g2-01/lauf-69-fein.log
+
+4) Gegenprobe (getrennter Lauf): m = 0 bei 0,55 und 0,56 (L = 48,0), gleich gestoert, T = 2400, grob
+cd /home/fmh/fmhc-physics-remote/ie-gen02-g2-01 && bash /home/fmh/fmhc-physics-remote/kleintests/kleintest.sh p4000a g201-gegen teilung_m3.py teilung --teil gegen --stufe grob --out lauf-69 | tee /home/fmh/fmhc-physics-remote/ie-gen02-g2-01/lauf-69-gegen.log
+
+Ausgaben: lauf-69/teilung_<teil>_<stufe>_{ergebnis.json, bericht.txt, zeitreihen.pt}.
+  "kennzahlen": V1, V2, V3, "scheitert" und "scheitert_hypothese_V1_V2" (haupt, im grob- und fein-Aufruf), "eich_bestanden"
+  (eich), "gegenprobe_bestanden" (gegen), "L3" (nur fein), "profilprobe" und "plausibilitaet_bestanden" (jeder Aufruf).
+Vor dem Start bitte NACHTRAG.md, Punkt "Profilprobe S_max < 1", lesen.

@@ -1,0 +1,18 @@
+{
+ "start": "2026-09-30T00:36:00+00:00",
+ "geraet": "Quadro P4000",
+ "torch": "2.5.1+cu121",
+ "unterbefehl": "bragg",
+ "faktor": 1.0,
+ "ergebnisse": {},
+ "fehler": {
+  "bragg": "Traceback (most recent call last):\n  File \"/home/fmh/fmhc-physics-remote/runde5-r5c/r5c.py\", line 1222, in main\n    res, zeilen, st = TESTS[name](faktor)\n                      ^^^^^^^^^^^^^^^^^^^\n  File \"/home/fmh/fmhc-physics-remote/runde5-r5c/r5c.py\", line 1027, in t_bragg\n    erg = {s: auswerten(st[s][\"t\"], st[s][\"daten\"]) for s in st}\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/fmh/fmhc-physics-remote/runde5-r5c/r5c.py\", line 1017, in auswerten\n    zz = transmission_auswerten(t, d, laeufe, ref_von, basis_von, kz)\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/fmh/fmhc-physics-remote/runde5-r5c/r5c.py\", line 935, in transmission_auswerten\n    flu = integral(t, d[:, :, c[\"j\"]].reshape(len(t), len(laeufe), 2))      # (B, 2)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/fmh/fmhc-physics-remote/runde5-r5c/r5c.py\", line 310, in integral\n    return 0.5 * ((y[1:] + y[:-1]) * dt_).sum(0)\n                  ~~~~~~~~~~~~~~~~~^~~~~\nRuntimeError: The size of tensor a (2) must match the size of tensor b (1400) at non-singleton dimension 2\n"
+ },
+ "sek": {
+  "bragg": 73.41287796013057
+ },
+ "hochrechnung_s": {},
+ "ende": "2026-09-30T00:37:13+00:00",
+ "dauer_s": 73.41382010933012,
+ "torch_speicher_max_mb": 132.44384765625
+}

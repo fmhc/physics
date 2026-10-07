@@ -1,0 +1,167 @@
+Freie nichtlineare M2-Zeitentwicklung: zweite Harmonische
+Prospektiver Plan, particle_core, 2026-10-02. NUR TEXT; kein Code/Lauf.
+Root ersetzt das ursprüngliche 10-CPU-s-Pilotziel ausdrücklich durch einen
+festen Gesamtdeckel300 CPU-s auf .69, eine CPU/ein Thread,nice19.
+Keine Ausführung vor Nichtautorreview und gebundenem Implementierungsstand.
+
+1. KONKRETE FRAGE UND DATENGRUNDLAGE
+Entsteht aus einer frei gestarteten kleinen realen Modenstörung im vollen
+M2-Verlet eine aufgelöste zweite Harmonische, deren komplexes Außenfeld
+mit alpha² mal gespeicherter stationärer Antwort und deren bandbegrenzter
+Fluss mit alpha^4 mal Antwortkoeffizient übereinstimmt? Keine aufgeprägte
+Quelle während der Evolution, keine Lebensdauer-/Dämpfungsrate ableiten.
+Historischer Moden-LokalisierungsFAIL und coarse-UNRESOLVED bleiben erhalten.
+
+Vorhandene Bindungen:
+excitation/out/RESULT.json e97a2682133dc45f9fc8584b870c31bdb8921b78866641f17eb964bb3532fe52
+fine-plan/prepared/RESULT.json 0c148cf401d6bca109dc311401df1ea59b4b6d10b4ffb919ec1589c8b0b769da
+fine-plan/responses-out/RESULT.json 2cd3dfc3b9d1d2a315daeb8be9c0661a8358c10e2879189202157708cb04ca5a
+Evolution unverändert timestep-half.py
+466b25fb813770a1ab13eea962c93b39308dfe1ad22171fe638c60fdafef998d.
+Für h=.05/.025 tatsächliche Referenz-, R120-Ritz-, Quell- und Antwort-NPZ
+gegen diese Manifeste prüfen; keine Referenz-/Q-Nachnormalisierung.
+
+2. SIGNAL UND ANKUNFT — PAPIERABSCHÄTZUNG, KEINE NEURECHNUNG
+Vorlauf: s≈36.973, alpha=epsilon*s≈.03697/.07395 für epsilon=.001/.002.
+Feine stationäre Antwort: |Aplus|≈1.978e-5, Laborflusskoeffizient≈1.902e-8.
+Daraus grob |r deltaPhi_2|≈2.7e-8/1.08e-7, bei r40 Feldamplituden
+≈6.8e-10/2.7e-9 und Laborflüsse≈3.6e-14/5.7e-13. Dies sind mit
+gerundeten Bestandswerten abgeschätzte Größen, keine gemessenen Zeitsignale.
+Der tatsächliche Faktor ist alpha^4=(epsilon*s)^4, keinesfalls epsilon^4.
+Die globale E-Drift im T32-Vorlauf war bis6.7e-9 relativ, bei E≈1213 also
+Größenordnung1e-5 absolut: viel größer als diese Emission über hundert
+Zeiteinheiten. Gesamtenergiedifferenz ist hier KEIN Strahlungsmessgerät.
+
+omega≈1.01817,rho≈.382263,nu=2rho≈.764526,Omega_plus=omega+nu≈1.78270.
+k=sqrt(Omega_plus²-2)≈1.085, Gruppengeschwindigkeit k/Omega_plus≈.61.
+Vom Kernzentrum bis r40/50 somit grob66/82 Zeiteinheiten; endliche
+Quellausdehnung verbreitert den Einsatz. Ein T32-Lauf misst dort keine
+etablierte Außenantwort. Perioden: Grundmode≈16.44, zweite Harmonische≈8.22.
+R120 bleibt bestehen. Von einem Kernbereich r<=12 wäre selbst der
+schnellste hin-/rücklaufende Randweg bis r50 mindestens178 lang (>T128).
+Das ist KEIN strenger Kausalitätsbeweis für nichtkompakte Anfangsfelder:
+Moden-/Hintergrundtails liegen bereits nahe dem Rand, dispersive
+Einschalttransienten können lange dauern. Deshalb separate eingehende
+Bandamplitude und zwei feste Zeitfenster prüfen; bei Kontamination offen.
+
+3. FESTE ELF ARME, KEIN NACHSCAN
+Alle R120,T128, vorhandener nichtlinearer Verlet mit eigener Baseline:
+ base: h=.05, dt=.01, epsilon=0,+.001,-.001,+.002,-.002 (5 Arme);
+ space: h=.025,dt=.01,epsilon=0,+.002,-.002 (3 Arme);
+ time: h=.05,dt=.005,epsilon=0,+.002,-.002 (3 Arme).
+Damit zwei Amplituden mit Paritätskontrolle auf Basisgitter und unabhängige
+h-/dt-Kontrolle der stärkeren, besser messbaren Amplitude. KEIN vollständiger
+2-Amplituden-x-3-Level-Faktoriellauf behauptet. Die kleinere Amplitude hat
+keine eigene feine h-/dt-Serie; ihr Ergebnis bleibt entsprechend begrenzt.
+
+Je h den ganzen komplexen Ritzvektor(q,p) mit gemeinsamer Phase theta
+drehen (größtes |q|-Element realpositiv), gemeinsam auf ||q||=1 normieren.
+Pivotindex, theta und s=sqrt(sum V[2f²+(chi-1)²]) speichern.
+x,y,z=Re(q)/sqrtV; px,py,pz=Re(p)/sqrtV. Für signiertes alpha:
+ phi=f+alpha*(x+i y)/sqrt2,
+ pi=i omega phi+alpha*(px+i py)/sqrt2,
+ chi=g+alpha*z, chi_t=alpha*pz.
+Exakte bisherige Anfangs-Q-Quadratik und Kanonikidentität auf1e-10 relativ
+prüfen, E/Q/Normen je Arm dokumentieren. Kein Q-Ausgleich und kein
+Hineinpräparieren der stationären zweiten Harmonischen: ihr Fehlen erzeugt
+gerade den physikalischen Einschalttransient der frei gestarteten Daten.
+Zum Vergleich stationäre komplexe Quelle/Antwort mit exp(2i theta) drehen,
+entsprechend der EINEN tatsächlichen Modenphase, nicht nachträglich fitten.
+
+4. PARITÄT UND FESTE FOURIERAUSWERTUNG
+Lab-Felder und Geschwindigkeiten mit festem omega ins rotierende System
+zurückführen; pi_rot=exp(-i omega t)pi-i omega phi_rot.
+Für jedes Paar und dieselbe Baseline:
+ U_even=(U_plus+U_minus-2U_baseline)/(2alpha²).
+U bezeichnet Felder UND Geschwindigkeiten. Das entfernt die ungerade
+lineare Mode algebraisch und liefert die quadratische Antwort plus
+O(alpha²)-Korrekturen nach Skalierung. Keine exakt quadratische Dynamik
+behaupten. U_odd=(U_plus-U_minus)/(2alpha) separat gegen die bekannte
+Grundmode verfolgen; starke Grundmodenänderung macht eine zeitunabhängige
+quadratische Quellprognose unzulässig.
+
+Nur Messschalen40..45 und45..50; volle Felder nicht bei jedem Sample
+serialisieren. Felder/Geschwindigkeiten dort alle .1 speichern, globale
+QA höchstens alle .4, Anfang/Endfelder separat. Für Demodulation exakt
+vorgegebene Frequenz nu=2rho je h, keine FFT-Peaks oder Frequenz-/Dämpfungsfits.
+Zwei vorab feste Fenster: [88,88+2pi/rho] und [104.5,104.5+2pi/rho],
+also jeweils eine Grundperiode/zwei zweite-Harmonische-Perioden, beide<T128.
+Endpunkte nicht auf Zeitschritte runden: lineare Endpunktinterpolation und
+Trapezquadratur des modulierten Signals; Quelle/Sollfeld durch identischen
+Auswertepfad als reine algebraische Extraktions-QA schicken. DC und reine
+erste Harmonische müssen dabei auf<1e-4 der vorgegebenen Testamplitude
+vom zweiten Band getrennt werden, zweite Koeffizienten relativ<1e-4 treffen.
+Das sind feste Testfelder, keine zusätzliche PDE und kein freier Fit.
+
+Koeffizient (1/DeltaT) integral U_even,phi(t)exp(-i nu t)dt entspricht
+direkt p2, negativer Koeffizient direkt conj(m2); KEIN weiterer Faktor1/2.
+chi liefert ebenso c2 und conj(c2). DC-Mittel separat aufzeichnen.
+Vergleich mit vollständigem gespeicherten komplexen Antwortfeld in den
+Schalen, nicht lediglich mit |A|/r. Frühere Zeitfenster dienen nur zur
+Darstellung des Einschaltens, nicht zur nachträglichen Fensterwahl.
+
+5. SIGNALSPEZIFISCHE TORE, VOR LAUF GEBUNDEN
+Feste Numerik-QA wie Vorlauf: separate relative E-/Q-Drift und Kern-Q-
+Bilanz<=1e-5, finite, Baseline-Reste/Formdriften<.004,
+Kragenenergie/E0<=1e-8. Diese Kriterien allein lösen kein Emissionssignal
+auf; nicht als Fehlergrenze für die winzige Außenleistung ausgeben.
+Für beide Amplituden/base und stärkere Amplitude/space,time:
+ a) U_odd bleibt in voller kanonischer6Blocknorm über Samples innerhalb
+    .05 der festphasigen linearen Prognose; keine Frequenznachanpassung.
+ b) Zweite-Harmonische-Plusfeld: volumenbezogener komplexer relativer
+    Fehler gegen gespeichertes p2 je Schale/Zeitfenster<.10.
+ c) Änderung der demodulierten komplexen Plusamplitude zwischen den beiden
+    Zeitfenstern<.10 relativ zum stationären Sollbetrag.
+ d) Aus radialer Ableitung von r*p: aus-/eingehende Koeffizienten
+    Aout=e^(ikr)[r*p+(i/k)partial_r(r*p)]/2,
+    Ain=e^(-ikr)[r*p-(i/k)partial_r(r*p)]/2.
+    Gleiche diskrete Ableitung beim gespeicherten Sollfeld; keine
+    nachträgliche Phasenkorrektur. |Ain|/|Aout|<.10 je Schale/Fenster.
+ e) Skalierte |Aout|: h-Einfluss<.05, dt-Einfluss<.05, Unterschied der
+    beiden Amplituden/base<.10, jeweils relativ zum passenden stationären
+    Soll. Komplexe dt-/Amplitudendifferenzen zusätzlich mitführen;
+    h-Vergleich der Beträge wegen unterschiedlicher gemeinsamer Phasen.
+ f) Bandbegrenzte lokale Ladungs-/Energieflüsse aus dem rekonstruierten
+    harmonischen Feld UND seinen diskreten Ableitungen bestimmen,
+    eigene Vorzeichen-/Faktor-QA mit analytischer auslaufender Testwelle.
+    Plus-Laborfluss nach Division durch alpha^4 stimmt auf .20 relativ
+    mit derselben stationären Diskret-Auswertung überein. Verhältnis
+    großer/kleiner physischer Bandflüsse folgt (alpha2/alpha1)^4 mit
+    relativer Abweichung<.20. Das ist ein Test der Bandantwort, NICHT
+    der gesamten Energieabnahme des Kerns. E-omega Q separat ausweisen.
+
+Zusätzliche Auflösungsreserve: Sollbetrag jeder gemessenen Aout größer
+als5mal Maximum aus beobachteter h-/dt-/Fenster-/Amplitudenänderung und
+gemessener Extraktions-QA-Leckage (alle in derselben alpha²-skalieren
+Amplitude). Sonst Signal UNRESOLVED trotz kleiner globaler E-Drift.
+Keinen einzelnen Null-/Minus-/chi-Koeffizienten mit ungeeignetem kleinem
+Nenner zum Pflicht-Pass machen: deren absolute komplexe Abweichungen
+gegen Soll und Anteile am Plus-Soll separat berichten.
+Alle Gates über sämtliche bezeichneten Messkombinationen; kein
+Mehrheitspass. Fehlende Arme, kontaminierte Fenster, Numerik-/Signalfehler
+ergeben UNRESOLVED/INCOMPLETE, keine Verlängerung oder Amplitudenerhöhung.
+
+6. KOSTEN, ABLAUF UND REICHWEITE
+Altzeit 25.71 CPU-s für9Arme R120,T32 mit Aufwandsgewichten
+3*(1+2+2)=15 bezogen auf h=.1,dt=.01. Neue11Arme haben
+5*2+3*4+3*4=34; T128 gibt weiteren Faktor4. Grobe Papierabschätzung
+25.71*(34/15)*4 ≈233 CPU-s. Arrays/Cache, Auswertungen und Serialisierung
+können davon abweichen; keine gemessene Laufzeitzusage. Fester Rootdeckel
+300 CPU-s inklusive Imports/QA/IO, interner Checkpoint280. Erwartung
+etwa4 Minuten; kein stilles Überschreiten, keine automatischen Wiederholungen.
+Root prüft freie .69-Kapazität; ein Thread/eine CPU, Speicher<512MB.
+Baseline/Paare müssen während der Auswertung konsistent vorliegen;
+Messschalen-Zeitreihen speichern statt vollständiger Felder aller Schritte.
+Nach jedem Arm und Auswerteschritt atomische Teilresultate/Hashes sichern.
+Budgetende kann eine native Operation unterbrechen; unvollständige Serie
+wird nicht als physikalischer Misserfolg oder fehlende Strahlung gedeutet.
+
+Möglicher positiver Befund: freie nichtlineare Kurzzeitdynamik zeigt auf
+diesen Gittern/Fenstern die prognostizierte quadratische Außenbandantwort
+und deren quartische Bandfluss-Skalierung. Keine unabhängige Langzeit-
+Stabilität, kein Gamma, keine Lebensdauer, kein exakter BIC-Nachweis.
+Insbesondere lässt eine unruhige freie Einschaltantwort bisT128 die
+bereits geprüfte stationäre erzwungene Antwort unberührt. Es ist ein
+zulässiger und vorab akzeptierter Ausgang, dass das Signal hier unaufgelöst
+bleibt. Nach Review zuerst Implementierung, danach Root-Freigabe; hier
+keine Ausführung, keine Remoteänderung und keine neue Rechnung.

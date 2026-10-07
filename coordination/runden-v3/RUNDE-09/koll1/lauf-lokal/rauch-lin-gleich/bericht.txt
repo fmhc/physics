@@ -1,0 +1,21 @@
+KOLL-1 lin Start 2026-09-30T07:54:09+02:00, Geraet cpu, torch 2.10.0+cu128
+  Argumente: {"kommando": "lin", "geraet": "cpu", "out": "lauf-lokal/rauch-lin-gleich", "w2": 0.7976768, "rho0": 1.728147, "h": 0.3, "cfl": 0.4, "rmax": 14.0, "zmax": 20.0, "schicht": 4.0, "sig0": 2.0, "rfluss": 9.0, "zfluss": 15.0, "abstaende": [10.0], "kette": 10.0, "vorzeichen": 1, "d": 10.0, "eps": 0.005, "T": 100.0, "dtmess": 0.2, "budget": 500.0, "weiter": false, "faeden": 1, "profil_h": 0.01, "profil_rmax": 30.0}
+  Profil omega^2 = 0.7976768: f0 = 1.024235494350164 (Klammer 6.2e-11), S0 = 1.049058, r_c = 14.35, A = 7.518211 (Streuung 4.4e-05 auf [r_c-4, r_c]), Q = 189.1443, E = 184.6243
+  stille Stelle: Singulaerwerte 5.036e-01, 4.270e-04 (Verhaeltnis 8.48e-04); a-Zeile +1.271e-04, +4.766e-04
+  Mode rho = 1.744617500: kappa_c = 0.524371, q = 2.440840, N (r <= 12.0) = 2.690973e+02, C_v = +1.514904e+01, offene Aussenamplitude 1.692e-07 (reduziert), wachsender Rest bei r_m +3.02e-04, V(r_m) +3.743e-03, u(0) = +0.4998, v(0) = +0.5002
+  Gitter h = 0.3, dt = 0.1200, nr = 47, nz = 135, Glieder 3: ['einzel', 'paar10', 'kette10'], Punkte je Glied 6345
+  Ueberlappmatrizen M (Zeile = Messball, Spalte = Mode): einzel: [[1.0]]; paar10: [[1.0168, 0.0162], [0.0162, 1.0168]]; kette10: [[1.0169, 0.0162, 0.0], [0.0163, 1.0336, 0.0163], [0.0, 0.0162, 1.0169]]
+  Start Zeitschleife 2026-09-30T07:54:10+02:00, t = 0.00 bis 100.0, Messung alle 2 Schritte, Budget 500.0 s
+  Ende Zeitschleife 2026-09-30T07:54:12+02:00, t = 100.08, Schritte 834, 1.5 s (1.78 ms je Schritt in diesem Aufruf)
+=== Auswertung lauf-lokal/rauch-lin-gleich (lin, omega^2 = 0.7976768, h = 0.3, t bis 100.1) ===
+  paar10: Uebersprechen M_BA/M_BB = +0.0159, M_AB/M_AA = +0.0159
+  kette10: Uebersprechen M_BA/M_BB = +0.0158, M_AB/M_AA = +0.0159
+  Demodulation bei rho_d = 1.7451168 (Nachfuehrung +4.99e-04); Bezug |a_A| Einzelball bei t = 36.2; Amplituden nach Inversion der Ueberlappmatrix (chi-Bild, CMT: arg(b/a) = -pi/2 fuer t_AB < 0)
+  Einzelball: Gamma (Abklingen a_A) = -6.238e-05; a_A(Ende) = 0.99508; Fluss/a^2 Mittel = 1.7257e-02
+  einzel  : Summe a^2 Ende/Anfang 0.99018, Gamma_Summe -6.238e-05
+            a(t): 
+  paar10  : Summe a^2 Ende/Anfang 0.98106, Gamma_Summe -1.375e-05; b_max 0.4883 bei t = 64; J aus atan2(b, a) +8.518e-03 -> pi/(2J) = 184; arg(b/a) frueh -1.707
+            a(t): 
+  kette10 : Summe a^2 Ende/Anfang 0.96130, Gamma_Summe +6.763e-05; b_max 0.4298 bei t = 64; J aus atan2(b, a) +7.839e-03 -> pi/(2J) = 200; arg(b/a) frueh -1.749; c_max 0.1452 bei t = 62
+            a(t): 
+Ende 2026-09-30T07:54:12+02:00, 3.3 s

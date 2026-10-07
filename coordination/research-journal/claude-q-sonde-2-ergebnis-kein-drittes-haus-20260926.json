@@ -1,0 +1,33 @@
+{
+  "id": "claude-q-sonde-2-ergebnis-kein-drittes-haus-20260926",
+  "time": "2026-09-26T19:48:59+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung; Laeufe 21:23 bis 21:37 MESZ ueber OpenRouter; Bewertung Leitung 21:38:41, frischer blinder Fable 21:47; eingetragen 21:48:59 MESZ (gemessen)",
+  "topic": "methodik",
+  "status": "checked",
+  "evidenzart": "verfahren",
+  "title": "Q-SONDE-2: Google gemini-3.1-pro-preview und xAI grok-4.7 finden je 0 von 3 astra-Gegenfaellen; kein drittes S0-Haus qualifiziert; Zwischenregel bleibt (astra einziges fremdes Haus)",
+  "question": "Qualifiziert sich ein bisher unbeteiligtes Haus (Google, xAI) mit demselben Test wie Qwen als S0-Pruefer?",
+  "action": "Beide Laeufe mit bytegleicher Eingabe wie die Q-SONDE, Denkmodus high, max_tokens 32000; gueltig nach V1 bis V4 (Modell gleich, stop, Eingabe ungekuerzt 61536 bzw. 57925 Marken, Antwort 5102 bzw. 10012 Zeichen). Kosten 0,18 + 0,38 = 0,56 USD, Deckel 1,50. Zwei Bewerter: Leitung (vorher festgeschrieben) und frischer blinder Fable (anonymisiert, nur Abschnitt 2 und Antworten).",
+  "result": "Gemini: FREIGEBEN ohne Auflagen, H1 nein, H2 nein, H3 nein, 0 von 3. Grok: FREIGEBEN MIT AUFLAGEN, H1 nein (fand nur die laut Definition ausgeschlossene leer wahre Kruemmungskontrolle), H2 nein, H3 nein (Nicht-T-Wachstum der Werkzeugaenderung zugeschrieben, Uebereinstimmung mit Arbeitsdatei 31 behauptet), 0 von 3. Beide Bewerter in allen 9 Einzelurteilen einig. Erwartung vorab: mindestens 2 Treffer p 0,42 (Gemini) und 0,35 (Grok); nicht eingetreten. Zusatzbeobachtung, entscheidet nicht: Grok fand andere echte Luecken nahe astras Auflage 3 (A8.1a(d) zulaessige Dateien, A8.4 fehlende Endfelder, fail-open in A8.1a(e) Zeile 4).",
+  "meaning": "Kein drittes Haus ist S0-faehig nach diesem Test; die Zwischenregel bleibt: astra ist das einzige fremde S0-Haus fuer Claude-Vertraege, Fable Zweitmeinung; fuer Codex-Vertraege prueft Fable. Hypothese, nicht Befund: Alle drei Fremdmodelle scheiterten im Einzeldurchgang ohne Werkzeug, astra fand die Gegenfaelle mit Werkzeugzugriff auf das Repository in 9 Minuten. Ob die Arbeitsbedingung (agentisch gegen Einzeltext) den Unterschied macht, waere eine neue, eigens vorab zu bindende Frage; die jetzige Regel wird nicht nachtraeglich gelockert.",
+  "sources": [
+    {
+      "path": "coordination/methodik-review/q-sonde-2-20260926/VORAB-Q-SONDE-2.md",
+      "sha256": "7db050490d2a1918f0a9ec9c457c1464307651b105544f4c813cdd5e820081d8"
+    },
+    {
+      "path": "coordination/methodik-review/q-sonde-2-20260926/k1-gemini/antwort.md",
+      "sha256": "dfa20434b5a5d8c742b9f61219b513559cc3c37da2c2558c99ec448bf61e9e8d"
+    },
+    {
+      "path": "coordination/methodik-review/q-sonde-2-20260926/k2-grok/antwort.md",
+      "sha256": "4e748531c53a8f800e7436de747a2ded54ad3de110243e58a0846712b9e9d861"
+    },
+    {
+      "path": "coordination/methodik-review/q-sonde-2-20260926/ZWEITBEWERTUNG-fable-frisch.md",
+      "sha256": "20945f5e2557dff7b4875d95d2d6c27a9f9ca6a3c9405613c61ffac90597f48c"
+    }
+  ],
+  "recorded_at": "2026-09-26T19:48:59.989056+00:00"
+}

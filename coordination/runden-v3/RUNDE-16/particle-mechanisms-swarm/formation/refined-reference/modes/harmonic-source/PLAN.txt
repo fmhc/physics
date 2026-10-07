@@ -1,0 +1,58 @@
+Lokale quadratische Quelle gespeicherter M2-Mode, 02.10.2026, vor Ausführung
+ROOT-PAPER.txt liefert zu prüfende Formel; unabhängige Herleitung läuft
+separat und wird hier nicht vorweggenommen. Kein Solver/Eigenwertscan/Fit.
+
+Genau R120,h.1/.05,shift.3,Ritzrho in(.38,.39), wie bisherige Hashbindung:
+RESULT77ecf9bbe03b96db901d76728e074a897725eb52213f90dae76c7200ba5364ea;
+Operator467ad3e19cd8efcdac4ec2dcc670b50aaa59cc6f7e9e44d625ebbf94ba0d32c6;
+Dynamik466b25fb813770a1ab13eea962c93b39308dfe1ad22171fe638c60fdafef998d.
+Ritz-NPZ-Hashes über genau dieseRESULT-Datei; Referenzmanifest undfloat64-
+Profile über gehashtenOperatorloader prüfen. Alle Originaldaten unverändert.
+
+Komplexen q-Ritzteil normieren ||q||=1, physq=q/sqrtV. KeinePhasenrotation.
+Zeitform qphys(t)=Re(physq exp(i rho t)). Quelle J ist quadratisches
+Polynom ohne Konjugation, wieRootpapier. Fourierkoeffizienten:
+J2=J(physq)/4 bei exp(2i rho t), DC=.5[J(Re physq)+J(Im physq)].
+Die tatsächliche Quelle trägt zusätzlich Gesamtamplitudealpha²; hier
+ausgeklammert, keine Modenamplitude aus demBildungslauf einsetzen.
+Lokale Kanalprojektionen für komplexeFourierkoeffizienten:
+Jplus=(J2x+iJ2y)/sqrt2,Jminus=(J2x-iJ2y)/sqrt2,Jchi=J2z.
+Dies sind örtliche Quellkombinationen, KEINE auslaufenden Amplituden.
+Jminus ist das Konjugierte des tatsächlichen unteren Laborseitenband-
+Fourierkoeffizienten. Die ausgegebenen Normen bleiben dadurch unverändert.
+DERIVATION.txt nach Fertigstellung gelesen; Formeln stimmen mit Rootpapier
+überein. Die hiesige Fourierform benötigt keine reellen Harmonischenprofile.
+
+VORAB QA GEGEN BESTEHENDE KRÄFTE
+Eigenständiger fester glatterAnker R8,h.1:
+f=.6exp(-r²/9),g=1-.3exp(-r²/7), Richtungen
+x=.2exp(-r²/5),y=.17exp(-r²/6),z=.13exp(-r²/4).
+Bestehende dynamics.forces bei phi=f±epsilon(x+iy)/sqrt2,chi=g±epsilon z.
+Kanonische Beschleunigung=(sqrt2 ReFphi,sqrt2 ImFphi,Fchi).
+[F(+epsilon)-2F(0)+F(-epsilon)]/(2epsilon²) ist der quadratische
+TaylorKOEFFIZIENT J, nicht die unhalbierte zweiteAbleitung.
+Feste epsilon=.02,.01,.005. V-L2-relativerFehler fein<1e-5 und jeweilige
+Fehlerreduktion zwischen2und6; keine nachträgliche Schrittauswahl.
+FalscherFaktor2J und falschesVorzeichen-J müssen beide relativenFehler>.1
+gegen feinstenKräfteanker ergeben, sonstQAunentschieden.
+Zusätzlich 8festePhasen eines festen komplexenTestvektors prüfen DC/J2
+per diskreter Fourier-Summe gegen Formeln; relativerFehler<1e-12.
+Das validiert nur Algebra/Faktoren, nicht reale Abstrahlung.
+
+DATENAUSGABE
+JeGitter: rho,omega,2rho unddrei freieWellenzahlquadrate bei2rho;
+volle DC-/J2-Profile alsNPZ, komponentenweise V-L2-Normen, lokale
+Plus-/Minus-/chi-Normen und Quelleanteilr>20. Kein positiverStrahlungsgate.
+Gittervergleich: roheNormendifferenzen, Absolutwertprofilabstand und
+absoluter HermitescherÜberlapp nach exakterZellvolumenrestriction h.05→.1.
+DC undJ2 separat. Keine Phasenanpassung, keine neueSchwelle fürphysische
+„Quellevorhanden“-Klassifikation; numerische Werte auch bei kleinerQuelle.
+Modulimport nutzt vorhandeneKräfte/Loader/Restriction, niemals advance/eigs.
+Code liefert QAstatus undexplorativeQuellzahlen; alteResultate/Gates bleiben.
+
+CLI --dynamics timestep-half.py --operator modes/code.py --search-dir modes-search
+ --reference prepared --out FRISCHER_ORDNER. Reine lokalräumliche Rechnung,
+<=5CPU-s geschätzt,.69einThread; RootReceipt/Limit. KeinAutor-Lauf/SSH.
+UnabhängigerCode-/Formelreview vor Ausführung. Eine nichtverschwindende
+2rho-Quelle beweist weder nichtverschwindende auslaufendeAntwort noch
+Zerfallsrate: gekoppelter propagierenderKanal, Überlapp und Interferenz offen.

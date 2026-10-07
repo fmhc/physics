@@ -1,0 +1,341 @@
+{
+ "start": "2026-10-01T19:19:59+02:00",
+ "kommando": "praez",
+ "argumente": {
+  "kommando": "praez",
+  "n_zeilen": 3,
+  "zeilen_dx": 0.00025,
+  "rho_steig": 3.3,
+  "n_dicht": 41,
+  "dicht_halb": 0.02,
+  "iter_wurzel": 80,
+  "tol_wurzel": 1e-13,
+  "u_runden": 30,
+  "pr_drho": 0.01,
+  "pr_drho_max": 0.03,
+  "pr_u_halb": 3,
+  "x_pol": 0.5598,
+  "rho_pol": null,
+  "art": "leiter",
+  "pole": "nein",
+  "beta": 0.5,
+  "x0": 0.5598,
+  "rho0": 1.5897567,
+  "drho": 0.4049,
+  "cgam": 1.07,
+  "offsets": "0,2e-5,-2e-5,1e-4,-1e-4,3e-4,-3e-4,5e-4,-5e-4,2e-3,-2e-3,8e-3,-8e-3",
+  "w_drho": "-3e-4,-1e-4,-3e-5,0,3e-5,1e-4,3e-4",
+  "w_dx": 0.0005,
+  "u_dx": "5e-4,1e-4",
+  "u_drho": 2e-05,
+  "u_n": 20,
+  "reserve": 5.0,
+  "rc": null,
+  "neu_legen": "ja",
+  "neu_profile": 3,
+  "u_drho_ohne_fit": 0.0005,
+  "pot": "poly",
+  "omega2_liste": null,
+  "xmin": 0.62,
+  "xmax": 0.905,
+  "dx": 0.02,
+  "abstand": 0.12,
+  "n_rho": 100,
+  "stapel": 3000,
+  "max_kand": 8,
+  "ast_tol": 0.03,
+  "n_wechsel_fein": 2,
+  "n_fein": 4,
+  "fein_fenster": 0.01,
+  "n_fein_rho": 81,
+  "dateien": "",
+  "geraet": "cpu",
+  "out": "lauf-lokal/rauch2",
+  "budget": 105.0,
+  "omega2": "0.7",
+  "l": "0,1,2",
+  "h": "0.04",
+  "bereich": "alles",
+  "n_gebunden": 300,
+  "n_resonanz": 700,
+  "n_flaeche": 160,
+  "n_kante": 240,
+  "kasten_im": -0.1,
+  "kontur_runden": 8,
+  "kontur_max": 6000,
+  "rho_max": 9.0,
+  "iter_newton": 25,
+  "iter_illinois": 30,
+  "null_eps": 0.001,
+  "dims": "1,1.25,1.5,1.75,2,2.25,2.5,2.75,3",
+  "start": null,
+  "ciurla": false,
+  "eta": "0,0.001,0.01",
+  "dr": "0.05,0.025,0.0125",
+  "T": 800.0,
+  "rmax": 200.0,
+  "rsd": 130.0,
+  "mess": 0.2
+ },
+ "ergebnisse": {
+  "praez": {
+   "potential": "U = S - S^2 + 0.5 S^3",
+   "h": 0.04,
+   "f_rand": 1e-08,
+   "x0": 0.5598,
+   "rho0": 1.5897567,
+   "rho_steig": 3.3,
+   "x_pol": 0.5598,
+   "art": "leiter",
+   "x_geplant": [
+    0.55955,
+    0.5598,
+    0.5600499999999999
+   ],
+   "n_rho_grob": 100,
+   "n_dicht": 41,
+   "dicht_halb": 0.02,
+   "tol_wurzel": 1e-13,
+   "u_runden": 30,
+   "x": [
+    0.55955,
+    0.5598,
+    0.5600499999999999
+   ],
+   "S0": [
+    1.0550104941782048,
+    1.0552250047116452,
+    1.0554393958556865
+   ],
+   "R_halb": [
+    12.093350251129818,
+    12.043192436152909,
+    11.993447768981323
+   ],
+   "R_aus": 38.64,
+   "r_m": 12.0,
+   "K": 966,
+   "sek_profil_max": 6.899887559004128,
+   "sek_nach_profilen": 20.32265306901536,
+   "profile_vollstaendig": true,
+   "sek_abtastung": 0.9764580059854779,
+   "rho_ref": [
+    1.5889317,
+    1.5897567,
+    1.5905816999999998
+   ],
+   "wachstum_fenster_max": 14303887.42701917,
+   "sek_wurzeln": 15.716064962995006,
+   "zeilen": [
+    {
+     "x": 0.55955,
+     "n_rho": 141,
+     "wachstum_fenster": 14303887.42701917,
+     "wachstum_dicht": 283122.6531878561,
+     "drho_dicht": 0.001,
+     "nullstellen": [
+      {
+       "x": 0.55955,
+       "ix": 0,
+       "richtung": 1,
+       "klammer_start": 0.001000000000000112,
+       "s_lin_grob": -1.4444473227431809e-05,
+       "steigung_lb": 866.0018267740429,
+       "rho": 1.5896262521461846,
+       "s": 1.0630560906368197e-05,
+       "lb_rest": 2.6358290084250193e-14,
+       "wachstum": 237376.76932809324,
+       "terme_a": 12.76317419417423,
+       "klammer_end": 6.661338147750939e-16,
+       "iter": 5,
+       "konvergiert": true,
+       "fehler": null,
+       "ausloeschung": 1200611.548778061
+      }
+     ]
+    },
+    {
+     "x": 0.5598,
+     "n_rho": 141,
+     "wachstum_fenster": 13815298.676782787,
+     "wachstum_dicht": 271442.28659887484,
+     "drho_dicht": 0.001,
+     "nullstellen": [
+      {
+       "x": 0.5598,
+       "ix": 1,
+       "richtung": 1,
+       "klammer_start": 0.001000000000000112,
+       "s_lin_grob": -1.0018239416619001e-05,
+       "steigung_lb": 856.6468903268715,
+       "rho": 1.589872495476302,
+       "s": 1.7927966322422265e-06,
+       "lb_rest": 1.9863173785009667e-13,
+       "wachstum": 228635.9532805855,
+       "terme_a": 11.669524840942698,
+       "klammer_end": 2.220446049250313e-16,
+       "iter": 6,
+       "konvergiert": true,
+       "fehler": null,
+       "ausloeschung": 6509118.006512417
+      }
+     ]
+    },
+    {
+     "x": 0.5600499999999999,
+     "n_rho": 141,
+     "wachstum_fenster": 13331334.270101264,
+     "wachstum_dicht": 259921.25464854942,
+     "drho_dicht": 0.001,
+     "nullstellen": [
+      {
+       "x": 0.5600499999999999,
+       "ix": 2,
+       "richtung": 1,
+       "klammer_start": 0.001000000000000112,
+       "s_lin_grob": -3.553067984617131e-05,
+       "steigung_lb": 828.8454670019141,
+       "rho": 1.5901185277750742,
+       "s": -7.502126905001517e-06,
+       "lb_rest": 8.922513222420244e-11,
+       "wachstum": 219944.4208348635,
+       "terme_a": 10.542582590364669,
+       "klammer_end": 1.0746958878371515e-13,
+       "iter": 22,
+       "konvergiert": true,
+       "fehler": null,
+       "ausloeschung": 1405279.159345617
+      }
+     ]
+    }
+   ],
+   "ziel": [
+    {
+     "x": 0.55955,
+     "ix": 0,
+     "richtung": 1,
+     "klammer_start": 0.001000000000000112,
+     "s_lin_grob": -1.4444473227431809e-05,
+     "steigung_lb": 866.0018267740429,
+     "rho": 1.5896262521461846,
+     "s": 1.0630560906368197e-05,
+     "lb_rest": 2.6358290084250193e-14,
+     "wachstum": 237376.76932809324,
+     "terme_a": 12.76317419417423,
+     "klammer_end": 6.661338147750939e-16,
+     "iter": 5,
+     "konvergiert": true,
+     "fehler": null,
+     "ausloeschung": 1200611.548778061
+    },
+    {
+     "x": 0.5598,
+     "ix": 1,
+     "richtung": 1,
+     "klammer_start": 0.001000000000000112,
+     "s_lin_grob": -1.0018239416619001e-05,
+     "steigung_lb": 856.6468903268715,
+     "rho": 1.589872495476302,
+     "s": 1.7927966322422265e-06,
+     "lb_rest": 1.9863173785009667e-13,
+     "wachstum": 228635.9532805855,
+     "terme_a": 11.669524840942698,
+     "klammer_end": 2.220446049250313e-16,
+     "iter": 6,
+     "konvergiert": true,
+     "fehler": null,
+     "ausloeschung": 6509118.006512417
+    },
+    {
+     "x": 0.5600499999999999,
+     "ix": 2,
+     "richtung": 1,
+     "klammer_start": 0.001000000000000112,
+     "s_lin_grob": -3.553067984617131e-05,
+     "steigung_lb": 828.8454670019141,
+     "rho": 1.5901185277750742,
+     "s": -7.502126905001517e-06,
+     "lb_rest": 8.922513222420244e-11,
+     "wachstum": 219944.4208348635,
+     "terme_a": 10.542582590364669,
+     "klammer_end": 1.0746958878371515e-13,
+     "iter": 22,
+     "konvergiert": true,
+     "fehler": null,
+     "ausloeschung": 1405279.159345617
+    }
+   ],
+   "paare": [
+    [
+     [
+      0,
+      0
+     ]
+    ],
+    [
+     [
+      0,
+      0
+     ]
+    ]
+   ],
+   "ziel_konsistent": [
+    true,
+    true
+   ],
+   "ziel_wechsel": [
+    {
+     "i": 1,
+     "x_lo": 0.5598,
+     "x_hi": 0.5600499999999999,
+     "x_stern": 0.5598482197789217,
+     "rho_stern": 1.5899199499685195,
+     "s_lo": 1.7927966322422265e-06,
+     "s_hi": -7.502126905001517e-06,
+     "steigung_rho_x": 0.9841291950892757,
+     "kernwachstum_kandidat": 228635.9532805855,
+     "ausloeschung_kandidat": 6509118.006512417,
+     "ast_konsistent": true
+    }
+   ],
+   "neben_wechsel": [],
+   "rechtecke": [
+    {
+     "x_lo": 0.55955,
+     "x_hi": 0.5600499999999999,
+     "reihen": [
+      0,
+      1,
+      2
+     ],
+     "rho_lo": 1.5799199499685195,
+     "rho_hi": 1.5999199499685195,
+     "rho_c": 1.5899199499685195,
+     "drho": 0.01,
+     "umlauf": -1.0,
+     "umlauf_kreuzung": -1.0,
+     "max_sprung": 0.2975413240476736,
+     "aufgeloest": true,
+     "max_sprung_seiten": {
+      "unten": 0.00010993261929585564,
+      "rechts": 0.28129964514693384,
+      "oben": 0.00010726538039552804,
+      "links": 0.2975413240476736
+     },
+     "punkte": 97,
+     "runden_benutzt": 19,
+     "runden_max": 30,
+     "min_absW": 7.289950651871796e-06,
+     "median_absW": 0.04392262206382289,
+     "wachstum_max_pfad": 259106.5354452562,
+     "sek": 13.967364125011954,
+     "art": "wechsel",
+     "x_c": 0.5598482197789217
+    }
+   ]
+  }
+ },
+ "ende": "2026-10-01T19:20:50+02:00",
+ "sek": 50.99295260000508,
+ "entfallen": []
+}

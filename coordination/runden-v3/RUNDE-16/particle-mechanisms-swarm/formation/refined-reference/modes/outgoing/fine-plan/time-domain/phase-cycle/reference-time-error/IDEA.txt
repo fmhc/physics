@@ -1,0 +1,121 @@
+M2: VORZEICHENGEBUNDENE REFERENZ-ZEITSCHRITTDIAGNOSE
+particle_core, 2026-10-03. Nur Papierentwurf; keine Rohfeldauswertung,
+Numerik oder Implementierung. Keine automatische Laufbeauftragung.
+Gelesen: amplitude/ERGEBNIS.txt, amplitude/REVIEW-RESULT.txt,
+causal-split/ERGEBNIS.txt sowie unveränderte kausale Ableitung/Methodik.
+
+1. WARUM DIESER VERGLEICH SINNVOLL IST
+Die inzwischen aufgelöste endliche Amplitudenänderung beträgt relativ
+zur passenden kausalen Referenz nur3.28..5.31ppm im Zeitmaß und
+2.81..7.91ppm im Band. Der Bericht begrenzt damit korrekt die Änderung
+DESSELBEN Targetrests unter dieser Amplitudenhalbierung, nicht den
+Abstand nach alpha=0 und nicht seine Ursache. Die größere bisherige
+Referenzabweichung bleibt offen. Ein bekannter Mittelpunkt-dt²-Anteil
+ist eine konkret vorzeichen- und größenbestimmte mögliche Komponente.
+Die vorhandenen zwei Referenzstufen ermöglichen deren Diagnose ohne
+weitere PDE; sie beweisen nicht, dass bereits der asymptotische Bereich
+oder nur geradzahlige Fehlerpotenzen bis zur nötigen Genauigkeit gelten.
+
+2. FELDVORHERSAGE OHNE FIT
+Für jede der kausalen Quellenkomponenten R=C beziehungsweise H sei
+ R_dt=R_*+dt² A+höhere Terme.
+Mit Rc=R_.02 und Rf=R_.01 ist die feste Korrektur
+ c=(Rf-Rc)/3,
+ Rex=Rf+c=(4Rf-Rc)/3.
+N ist die GESPEICHERTE nichtlineare Phasenkomponente bei epsilon=.002,
+h=.05, dt=.005: D=(E0+E90)/2 oder H=(E0-E90)/2, mit unverändertem alpha,
+Phasenanker und jeweiliger diskreter Baseline. Kein Amplitudenextrapolat.
+Der bisherige Rest Z=N-Rf wird zu Zex=Z-c. Wenn die führende kausale
+Referenz-Zeitdiskretisierung den Rest dominiert, muss Z in Richtung c
+liegen. Nur Normen von Rc und Rf zu vergleichen prüft diese Vorhersage
+nicht. Bewusst falsche Richtung: Rwrong=Rf-c, Zwrong=Z+c.
+
+Auch Null-/Jordananteile werden als gespeicherte FELDER linear kombiniert.
+Kein L^-1, keine Projektion, Frequenz-/Phasenanpassung oder selektive
+Entfernung von DC. Der alte endliche Generator und Rand bleiben identisch.
+Ein vermeintlich verbessertes Rex ist kein neues autoritatives Target.
+
+3. FESTE EINGABEN UND MESSUNG
+Alle drei Ergebnisbindungen und jeweils referenzierten NPZ-Hashes prüfen:
+ causal-split RESULT15593347f6b1caff683315fab65ce74734ae85fb5eff97b8a25d9276c0a568b9;
+ phase-cycle RESULTb7d938e4bda00bb05598f540f05320b2e3cad7a8a8f3f4be940a9d5884b8eafd;
+ amplitude RESULT2fa8c40331f18ed677788629733806109dbc9a622c4d8ff22e065c82979adefd
+ (letzteres nur bestehender Befund/Provenienz, keine neuen kleinen Arme).
+Causal-rings dt=.02/.01, phase-cycle separated-rings dt=.005 und .01.
+Prüfen: Referenz/Ritz/Gauge, R120,h=.05, Komponentenreihenfolge, identische
+r-/t-Abtastung; keine Neuberechnung oder unabhängige Resynchronisierung.
+
+Unveränderte phi-Messabbildung: Fenster[88,88+2pi/rho] und
+[104.5,104.5+2pi/rho], Schalen[40,45),[45,50), FV-Volumengewichte.
+Je C/H, Fenster undSchale: Zeit-L2 und räumlichesL2 des komplexen
++2rho-Koeffizienten; also8Positionen mit insgesamt16Normprüfungen.
+Gleiche Interpolation der Fensterendpunkte/Trapezabbildung wie vorher.
+Erst Feldkombination, dann Bandabbildung/Norm. Keine Fits oder neue Fenster.
+
+Pro Position/Norm ausweisen: ||N||,||Rf||,||c||,||Z||,||Z-c||,||Z+c||,
+Re<Z,c> und die Ausrichtung Re<Z,c>/(||Z||||c||), mit Nullnenner als
+unaufgelöst. Re<.,.> ist das zur jeweiligen Norm passende komplexe
+Volumen-/Zeit-Skalarprodukt, keine Korrelation unabhängig normalisierter
+Zeitkurven. Quadratische Identität
+ ||Z-c||²=||Z||²+||c||²-2Re<Z,c>
+als Auswertediagnose offen berichten; keine additive Fehlerursachenquote.
+Zusätzlich alle Größen relativ zum UNVERÄNDERTEN ||Rf|| berichten.
+
+4. PROSPEKTIVE ZUORDNUNGSREGEL, KEIN PHYSIK-PASS
+Empirische Störskala u = ||N_.005-N_.01|| + eta.
+Das ist der direkte bereits verfügbare dt-Unterschied derselben
+NICHTLINEAREN Komponente, keine Differenz von Beträgen. eta ist das
+Maximum der passenden 64eps-positiven Summandenhüllen für Z, Z-c, Z+c;
+Bandhülle mit positivem ZEITMITTEL, nicht oszillierender Auswertung.
+Die kausale Korrektur selbst darf nicht als Störskala gegen sich geprüft
+werden. u enthält keine kontrollierte Schranke des unbekannten höheren
+Referenzfehlers; es ist ausdrücklich nur eine empirische Reserve.
+
+Feste lokale Kennzeichnung 'KONSISTENT_MIT_DOMINANTER_DT2_KOMPONENTE'
+nur wenn alle Größen endlich, ||Z||>0, ||c||>0 und zugleich:
+ (a) Re<Z,c>/(||Z||||c||) > .8,
+ (b) ||Z-c|| < .5 ||Z||,
+ (c) ||Z||-||Z-c|| > 2u,
+ (d) ||Z+c||-||Z|| > 2u.
+Die gleichen Grenzen gelten vorab für alle16 Prüfungen. Sonst dort
+'NICHT_ZUGEORDNET', mit allen Rohwerten; das ist kein Nachweis, dass
+Referenz-Zeitfehler überhaupt fehlen. Ist die Verbesserung kleiner als
+die Reserve, lautet die Beschreibung ausdrücklich 'unter Auflösung'.
+Ein Gesamtsatz zur dominanten Komponente wäre nur bei16/16 zulässig;
+sonst nur die festen Einzelzuordnungen, kein Mehrheitslabel. Es gibt
+keinen Anspruch, dass der vorgeschlagene strenge Test bestehen muss.
+
+Die falsche Richtung muss beim REALEN Datensatz nicht aus prinzipiellen
+Gründen scheitern: andere Restanteile können überwiegen. Genau dies macht
+die Vorzeichenprobe diagnostisch. Ein ungefähr gleich guter oder besserer
+falscher Arm verhindert die vorgesehene Zuordnung, keine Nachjustierung.
+
+5. METHODENPROBE UND GRENZEN VOR EINER AUSWERTUNG
+Kleine algebraische synthetische Kontrolle mit festen regulären komplexen
+Feldarrays F und nichtverschwindendem A auf denselben Samples:
+ Rc=F+.02² A, Rf=F+.01² A, N=F.
+Rex muss F bis Rundung rekonstruieren, Z-c null; die falsche Korrektur
+verdoppelt den ursprünglichen Fehler. Dieselbe Zeit-/Bandabbildung und
+alle Schalen benutzen; A vorab mit nichtverschwindender DC- und
++2rho-Komponente festlegen, etwa festes glattes Radialprofil mal
+[1+exp(i2rho*t)]. Relative Identitätsfehler<1e-10 gegen den bekannten
+NICHTNULL-Korrekturmaßstab. Keine Division durch den exakten Nullrest.
+Zweite triviale Kontrolle A=0: die Auswertung darf keine dominante
+Komponente aus null/fehlenden Nennern behaupten. Die synthetischen
+Kontrollen kalibrieren Algebra und Vorzeichen, nicht die tatsächliche
+Mittelpunkt-Fehlerentwicklung. Keine neue Integrator-/PDE-Kontrollserie.
+
+Zwei dt-Stufen können weder Ordnung2 empirisch bestimmen noch den
+höheren Rest des Extrapolats unabhängig abschätzen. Gemeinsame h-,
+Ritz-, Hintergrund-/Baseline- und Abtastfehler bleiben; ebenso endliche
+alpha-Korrekturen. Der Amplitudenbericht liefert keinen alpha->0-Bound.
+Insbesondere wird keine kausale .005-Referenz still als vorhanden
+behandelt. Rex ist eine gerichtete Diagnosehypothese, kein bewiesener
+zeitkontinuierlicher Grenzwert. Kein stationäres Einschwingen,
+Randunabhängigkeit, Strahlungsrate oder Lebensdauer folgt daraus.
+
+Falls später ausdrücklich beauftragt: reine gespeicherte Feldauswertung
+auf .69, ein Thread, <=5CPU-s einschließlich QA, keine PDE/Eigenwertsuche,
+keine Parameteranpassung, keine Nachläufe; eigener neuer Ausgabeordner.
+Bei fehlender Bindung/QA: INCOMPLETE, nicht auslassen. Alte Status/Gates
+und originale Daten bleiben unverändert. Dieser Entwurf startet nichts.

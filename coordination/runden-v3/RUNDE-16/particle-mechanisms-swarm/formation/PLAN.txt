@@ -1,0 +1,102 @@
+M2: konservative Verdichtung einer bereits energetisch gebundenen Wolke
+Entwurf 02.10.2026, noch nicht eingefroren. Code geschrieben, nicht ausgeführt.
+ROOT-QUESTION.txt und PLAN-REVIEW.txt berücksichtigt. Kein Laufauftrag hier.
+
+Frage: Entwickelt genau die vorbereitete M2-Wolke einen kompakten annähernd
+stationären gemeinsamen Kern bis T64? E0/Q≈1.4061<sqrt2 bereits anfangs;
+kein Nachweis von Bindung zunächst freier Strahlung oder Vakuumerzeugung.
+Potential V=(chi²-1)²/4+(1+chi²)|phi|²-|phi|⁴+|phi|⁶/2.
+
+Anfang: Q1100, phi=A exp(-r²/128), phi_t=i sqrt2 phi, chi=1, chi_t=0.
+A exakt auf diskretes Q1100 normieren, später keinerlei Nachnormierung.
+Referenz: vorhandenes BEUTEL-1 M2-profile.npz, Auswahl Q1100,sweep=seed,
+omega²=1.03666310756389 (Toleranzen1e-5,1e-10). Original dokumentierter
+SHA256 1bb153a166e15d8ca43848613e638e8e0d20978833be6c564dcf7bc33f926d8c.
+CLI liest und berichtet tatsächlichen Hash; Root muss ihn vor Ausführung
+gegen Herkunft prüfen. Schema r,f,g,Q,omega2,sweep; keine Indexannahme.
+Original f/g float32,jeder vierte .04-Knoten: linear interpolierter Seed,
+KEIN exakter Gleichgewichtszustand. Links konstant, rechts Vakuum 0/1.
+Amplitude unverändert; omega=Q1100/(2 sum V|phi|²) bindet Ladung nach
+Interpolation neu, Korrektur gegenüber gespeichertem omega wird ausgegeben.
+Keine Glättung, kein Nachpolieren, keine Astneuberechnung.
+
+Diskretisierung: Zellzentren r=(i+.5)h, Volumen4pi h(r²+h²/12),
+rechte Flächen4pi((i+1)h)². Linker Ursprungsfluss null, rechte Ghostwerte
+phi=0,chi=1. Genau BEUTEL-1-Gradientenergie sum A|Delta phi|²/h und
+sum A(Delta chi)²/(2h). Laplace ist negative diskrete Energievariation
+mit diesen Randwerten, auch am äußeren Rand. Effektive äußere Ghostlage
+R+h/2 ist offengelegt; keine exakt bei R liegende Dirichletfläche behauptet.
+Positive kinetische Energie sum V(|pi|²+chi_t²/2). Kick-drift-kick Verlet,
+komplex phi und reell chi, simultane gekoppelte Kräfte an jeder Kickstufe.
+U1-Noetherladung wird durch jeden Kick/Drift in exakter Arithmetik erhalten;
+Verlet erhält Energie nur näherungsweise, deshalb separates Energiegate.
+
+R120,T64,RC12; je interpolierte Referenz und Wolke für (h,dt)=
+(.1,.02),(.05,.02),(.1,.01). Sechs Arme; Referenz kein neuer Ast.
+Samples alle .8. Nur Endfelder je abgeschlossenem Arm plus alle Samples.
+
+NORMEN UND DIAGNOSTIK
+Kernnorm ||x||c²=sum(r<12) V|x|². nphi=max(||phi||c,1e-14),
+nchi=max(||chi-1||c,1e-14); feste absolute Normfloors in Modelleinheiten.
+omega=Qcore/(2 nphi²), eine Phasendrehung für den gesamten Messkern.
+Mit a_phi=Delta phi-V_S phi, a_chi=Delta chi-V_chi:
+ rphi=||a_phi+omega²phi||c/(2nphi), rchi=||a_chi||c/(2nchi),
+ tphi=||pi-iomega phi||c/(sqrt2 nphi), tchi=||chi_t||c/(sqrt2 nchi).
+Zusätzlich punktweise Maximalreste der beiden Raumgleichungen ausgeben.
+Bei chi=1 anfangs ist rchi wegen Nullnorm groß: Diagnose, kein Bildungs-
+oder Numerikfehler. Stationaritätssensitivität nur im Schlussfenster prüfen.
+R50 aus kumulierter positiver |phi|²-Dichte, NICHT signierter Noetherladung.
+Globale phasenbereinigte phi-Formdrift und chi-Formdrift gegen jeweiliges
+Anfangsprofil, normiert durch dessen gesamte phi-/chi-1-Norm.
+Qcore-Fluss F=-2 A_face Im(phi_k*phi_(k+1))/h, Trapez in Kickpositionen.
+Qcore(t)-Qcore(0)+IntegralF ist diskret bis Rundung null: konsistente
+Erhaltungskontrolle, kein unabhängiger physikalischer Befund.
+Positive Gesamtenergie im Kragen r>112, zugeordnet linke Gradienten-Kante;
+kein aus diesem Kragen abgeleiteter rigoroser Freiraumfehler.
+
+DREI QA-KONTROLLEN, ALLE OHNE ZEITINTEGRATION
+1. Richtungsableitung diskreter Gesamtenergie gegen -2Re<V a_phi,dphi>
+   -<V a_chi,dchi> für feste glatte Felder; symmetrisch epsilon1e-5,
+   relativer/skaliert-max(1,|Soll|)-Fehler<1e-7.
+2. Instantane globale Q-Zeitableitung und Kern-Q-Zeitableitung+F für
+   komplexen Chirp-Testzustand; jeweilige Abweichung/Q<1e-11.
+3. Exakte Vakuumkräfte und Vakuumenergie gleich null.
+Danach Referenzschema und sechs diskrete Anfangszustände prüfen, E,Q,
+omega, alle Normen/Maximalreste/Kragen/R50 ausgeben. Referenzinitialgate:
+vier normierte Reste jeweils <.004; Q aller Starts relativ1e-11 genau.
+--qa-only beendet DANACH OHNE JEDEN ZEITSCHRITT, auch bei bestandenem Gate.
+Hauptmodus verweigert Evolution bei verfehltem Referenzinitialgate.
+
+PROSPEKTIVE GATES FÜR SPÄTEREN HAUPTLAUF
+Getrennt an allen Samples |E/E0-1|<1e-5, |Q/Q0-1|<1e-5,
+|Qcore-Qcore0+IntegralF|/Q0<1e-5; Kragenenergie/E0<1e-8; endlich.
+Referenz über gesamtes Fenster: alle vier Reste und beide Formdriften<.004.
+Raum-/Zeitvergleich getrennt bei gleichen Samples: Delta Qcore/Q0<.002
+über gesamten Lauf, Differenzen der vier Reste<.004 nur t48..64.
+Wolke auf ALLEN Gittern t48..64: Qcore/Q0>=.8, Schwankung<=.01,
+vier Reste<.02, chi(0)<.2 und R50<=.8 R50(initial).
+Ebenfalls min chi<.5; durch chi(0)<.2 praktisch redundant und offengelegt.
+Das schärft die anfänglich schon .788 Kernladungsfraktion durch wirkliche
+Verdichtung und selbst erzeugte chi-Absenkung. Keine Anpassung nach Ergebnis.
+Keine Energiefluss-Rekonstruktion implementiert: Gesamtenergie wird
+kontrolliert, aber mögliche Strahlungskühlung NICHT positiv zugeschrieben.
+
+Grenzen: gute Numerik ohne Gates = kein Kandidat in diesem Fenster.
+Verfehlte Referenz-/Numerikgates = unentschieden. Erfolg nur radialer
+Kandidat aus vorgebundener Wolke; keine 3D-/Langzeit-/Teilchenbehauptung.
+Kein stationäres Profil aus bloßem Dichtebild identifizieren.
+
+BETRIEB, NOCH NICHT AUSGEFÜHRT
+QA/Start ausschließlich auf abgestimmtem Remotehost, Projekt-QA .69.
+Ein CPU-Thread (OMP/BLAS-Umgebung durch Root), numpy float64, kein CUDA.
+180 CPU-s Gesamtdeckel, interner Check165, RLIMIT175/178; äußere walltime
+und Receipt durch Root erforderlich. Geschätzter RAM<256MB, nicht gemessen;
+kein neu eingerichteter Dienst. Frischer Outputpfad erforderlich.
+Bei normaler Exception Teil-RESULT; hartes CPU-Signal kann aktuelle Daten
+verlieren (letzter fertig gespeicherter Arm bleibt). Kein Autorestart.
+Root bindet HEAD, tatsächliche Inputs/Codehash, abgestimmten Slot und Review.
+Code implementiert SHA256 für eigenen Code/Referenz, ersetzt das Manifest nicht.
+
+CLI: code.py --reference /absoluter/pfad/M2-profile.npz --out NEUER_PFAD --qa-only
+Dieser Text und Code sind ein ungeprüfter Entwurf. Kein lokaler Interpreter,
+Test, SSH oder Simulationsstart wurde zur Erstellung ausgeführt.

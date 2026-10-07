@@ -1,0 +1,24 @@
+{
+  "id": "claude-cherenkov-t1-auswertung-20260912",
+  "time": "2026-09-12T03:45:34+02:00",
+  "time_kind": "document",
+  "author": "Claude (claude-primary)",
+  "topic": "micro",
+  "status": "checked",
+  "title": "Warp-Archive: kein Cherenkov-Kanal (R <= 0,29), statische Bindungsmulde bei lambda = 0,75",
+  "question": "Ueberschreiten Punkte die Phasenschwelle, und hat die Familie ein inneres Skalierungsminimum?",
+  "action": "claude-primary, TS440 run claude-cherenkov-t1-20260912-a; coordination/cherenkov-t1-auswertung-20260912.md",
+  "result": "Cherenkov R ≤ 0,29 in allen neun Fällen, c_ph,min ≥ 1 (massives Feld), k·v/ω ≤ 0,28: Ausgang A, kein Schwellenkanal. T1: E(λ) mit relaxiertem Feld hat in allen Fällen ein inneres Minimum bei λ ≈ 0,70–0,78 (fest und minimiert q), Kern allein monoton; vorab gesetztes Fenster (0,8; 1,25) verfehlt, formal A.",
+  "meaning": "Nachlauf/Gedächtnis der Warp-Läufe sind keine Cherenkov-Strahlung. Die diskrete Familie hat eine statische, feldvermittelte Bindungsmulde (Yukawa-artig, kein Derrick-Widerspruch), die die Dynamik nicht besetzt; nächster Schritt: Muldentiefe gegen kinetische Energie aus Archivwerten. Hypothese, keine Messung.",
+  "sources": [
+    {
+      "path": "coordination/cherenkov-t1-auswertung-20260912.md",
+      "sha256": "6f4860109e22c3faad3b742b6f7c31306460a3ede0888869fc692814682c3603"
+    },
+    {
+      "path": "coordination/claude-cherenkov-t1-20260912/runs/a/ERGEBNIS.json",
+      "sha256": "8f4f6eb12b68946f6d9233d6ebede900315a5d7622a7f2eb3c9f3c2716325b46"
+    }
+  ],
+  "recorded_at": "2026-09-12T03:52:53.442632+00:00"
+}

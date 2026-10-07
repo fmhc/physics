@@ -1,0 +1,52 @@
+{
+  "id": "claude-s2-s3-hu-m6-20260923",
+  "time": "2026-09-23T07:05:00+02:00",
+  "time_kind": "completed",
+  "author": "Fable 5.1 (Anthropic), S3 Gegenlesen und S2-Fuehrung zu HU-M6 Fassung 3",
+  "topic": "galaxies",
+  "status": "reported",
+  "title": "S2/S3 zu HU-M6 F3: S3 185 von 185 (U2 zwingend, aber vorab bekannt); Lockerung K10 von F2 nach F3 formal sauber, in der Sache eine nach dem Befund gesetzte Schwelle; S2 dreistufig: blind 0 von 17, nach Handwerk (i) 10 von 17 (ganzer Arm M), Trennschaerfe-Arm nicht in der Zeitgrenze",
+  "question": "Stimmt der Bericht HU-M6 F3 (Ausgang U2) mit der Ergebnisdatei an jeder Stelle, ist U2 zwingend und war die Lesartenbedingung vorab da, wurde von F1 ueber F2 nach F3 eine Kontrolle nach einem T gelockert - und kann ein fremdes Haus die 10.3-Groessen allein aus dem Vertragstext nachbauen, in welcher Stufe?",
+  "action": "S3: 185 Einzelvergleiche, jede Berichtszahl an Feldpfad/Einheit/Arm/Rundung gebunden oder nachgerechnet (Ausgangslogik 7.3, Raten, Wilson, s-Aequivalente, beide Kippfaktoren, Margen, Fitzahl, X1-X14, F1-Log und F2-Ergebnis gegen F3, Hashes, Zeitstempel, Prompts der drei S0-Reviews). S2: Rundenplan vorab gebunden (VORAB-S2-HU-M6.md sha256 41fd1c75..., vor dem ersten Aufruf), Paket mechanisch (paket.py) nur aus Vertragsabschnitten 2 bis 4 plus Datenwoerterbuch (kein Zielwert im Paket; 2 Groessen mit gedrucktem Hinweis in 2.8), qwen3.6-27b-bunker, fuenf Aufrufe no-cache mit ID-Vergleich, Skripte byteidentisch auf .69 unter systemd-Grenzen (CPU, 3600 s); Rueckmeldungen Runde 2/3/4 nur Tracebacks bzw. Zeitueberschreitung (Klasse i), Runde 5 ein Handwerkshinweis (Klasse ii), keine Klasse iii; vorab zugelassener Zusatzlauf mit 32 Permutationen als Handwerksabweichung. Eigene Tabellen maschinell gegengelesen (60 von 60). Runde 022 eingefroren, nichts gebucht, 0 USD.",
+  "result": "S3: 185 von 185 stimmen; U2 folgt aus der Datei ohne Wahlmoeglichkeit, die Upsilon-Arme tragen nur das Stabilitaetskennzeichen; Arm M stand mit denselben Zahlen schon im Log des abgebrochenen F1-Laufs, das Kennzeichen A/U2/B im Vorlauf. F2 -> F3: Nachfolgevertrag, Hash, Fremdreview, D12 vorhanden - aber Schwelle 1e-04 gleich 19,7-mal dem beobachteten Anteil, F3-Lauf bitgleich mit dem T-Lauf, Laufskript F3 vor Vertrag und Review geschrieben, Fremdhaus ueber die Groessenordnung des Befunds informiert, ausgangsbestimmend-Frage auf den Arm M verengt. Nebenbefund: fuenf Sechstel der Fits des Trennschaerfe-Arms gehen in keine Kennzahl ein (2.9 braucht je Permutation nur q(0)); die acht Rand-Fits von F2 lagen genau dort (Bootstrap bei s = 0,5). Trennschaerfe: effektives Niveau 9,4 % vorab im Band; 's = 0,05 vertraeglich' ist eine Nullprobe ohne Kraft (Verwerfung unter der Nullhypothese 46 %; P_U2 landet in A). Buchstaben s = +0,3 -> A sind vertraglich begruendet (2.8, 5.4, 6.3). Upsilon: Kipppunkte f = 0,812 und 1,059 (Upsilon_Scheibe 0,41 bis 0,53) liegen innerhalb der ueblichen Konventionsunsicherheit - keine der beiden Lesarten ist ohne unabhaengiges Upsilon entscheidbar. K3 'exakt' vergleicht zwei Exporte derselben DuckDB mit derselben Formel. S2: blind 0/17 (NumPy-2-Schluesselwort), nach Handwerk (i) 10/17 (alle Arm-M-Groessen auf < 7e-10 dex), nach Handwerk (ii) 10/17; r(s), s_80 in keiner Runde in 3600 s (Runde 5: Permutation 250 von 256); Zusatzlauf 32 x 256 trifft 5 von 6 Zaehlern und s_80 als Diagnose.",
+  "meaning": "Weitergereicht werden darf D_ca(s), q_lo(0), q_hi(0), S_ok und s_max mit der Stufe 'S2 nach Handwerk (i), Runde 3, blind 0 von 17'; r(s) und s_80 mit keiner Stufe; nach 15.8.1 ohnehin keine Zahl als Kennzahl (U2). Die Kontrollenlockerung F2 -> F3 war formal sauber und in der Sache nicht (feedback-vertraege-nicht-selbsterfuellend); praktische Folge keine, weil U2 wie T nicht zitierfaehig ist; fuer Nachfolger: K10 nur ueber die Fits zaehlen, die das Kriterium liest, und dort 0 verlangen; K12 auf alle Arme. Der eigentliche Befund von HU-M6 ist die Upsilon-Entartung: die eine Messung, die sie aufhebt, ist die vertikale Sterngeschwindigkeitsdispersion (DiskMass-Art) fuer eine SPARC-Teilstichprobe; die billige Probe mit vorhandenen Daten der M6-Kontrast auf den gasdominierten Galaxien allein. Kein Nachfolgevertrag mit Hus Volltext, bevor Upsilon unabhaengig festliegt. Runde 022 eingefroren, Register und Ledger unberuehrt, kein STAND-HU angelegt.",
+  "sources": [
+    {
+      "path": "coordination/methodik-review/s2-s3-hu-m6-20260922/S2-S3-HU-M6.md",
+      "sha256": "cfcbbadc34d92614e30dcef52c920b0c4c5331d8739bb59599919b898be4c74e"
+    },
+    {
+      "path": "coordination/methodik-review/s2-s3-hu-m6-20260922/VORAB-S2-HU-M6.md",
+      "sha256": "41fd1c75c69b7d262d434d092a205bfe873b40936a11051f06d317b1152ccb49"
+    },
+    {
+      "path": "coordination/methodik-review/s2-s3-hu-m6-20260922/belege/S3-GEGENLESEN.txt",
+      "sha256": "2213769ea5628e101ed35e22ee26d09ce4eed8ec3351e3ea2714b5b0b0db5756"
+    },
+    {
+      "path": "coordination/methodik-review/s2-s3-hu-m6-20260922/belege/SELBSTGEGENLESEN.txt",
+      "sha256": "5e5ef4f8bcdaf9f7cda5b9742421dbf60ca8791f14cc50222381cab5dbbfe416"
+    },
+    {
+      "path": "coordination/methodik-review/s2-s3-hu-m6-20260922/belege/FASSUNGSDIFF.txt",
+      "sha256": "b5ae8b558f2ffde02b20020cca6c49c9fcbb16f636a7cb549aca5c5b8773a17f"
+    },
+    {
+      "path": "coordination/methodik-review/s2-s3-hu-m6-20260922/s2-qwen/modell-aufrufe-s2-hu-m6.jsonl",
+      "sha256": "867022dac29d0f1656858525dfd0a097ffc5994cd3c4fbf9d671054892389621"
+    },
+    {
+      "path": "coordination/methodik-review/s2-s3-hu-m6-20260922/s2-qwen/lauf-runde3/S2-VERGLEICH-HU-M6-runde3.json",
+      "sha256": "5b04fc75b0f12191038b538ecc6f41dd3d72ad908234fac068724fe87bd3d4ee"
+    },
+    {
+      "path": "coordination/methodik-review/s2-s3-hu-m6-20260922/s2-qwen/lauf-runde5/S2-VERGLEICH-HU-M6-runde5.json",
+      "sha256": "f88280adba189836e04c292c30fbcf70bdb8b6806576dfa1ec957f612bd4c0e8"
+    },
+    {
+      "path": "coordination/vertraege-20260922/hu-m6-f3-lauf/ERGEBNIS-HU-M6-F3.json",
+      "sha256": "f4f2fc7f82efb7a6acdc92a270c3b68ab1e2f547c56d8388ffffd0e040a435dd"
+    }
+  ],
+  "recorded_at": "2026-09-23T05:42:12.821534+00:00"
+}

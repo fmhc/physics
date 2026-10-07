@@ -1,0 +1,44 @@
+{
+  "id": "claude-s2-s3-vm-1-20260922",
+  "time": "2026-09-22T20:05:00+02:00",
+  "time_kind": "completed",
+  "author": "Fable 5.1 (Anthropic), S3 Gegenlesen und S2-Fuehrung zu VM-1",
+  "topic": "binaries",
+  "status": "reported",
+  "title": "S2/S3 zu VM-1: S3 311 von 319 feldgebundenen Vergleichen (U2 zwingend, K3 auf 1,8 Mio Rohzeilen bestaetigt), S2 blind 18 von 18 in einer Runde ohne Rueckmeldung; die e-Arme zeigen fuer eine 1000-AU-Zelle wahrscheinlich in die falsche Richtung",
+  "question": "Stimmt der VM-1-Bericht (Ausgang U2, attribuierbar, nicht trennbar) an jedem Feldpfad, ist U2 zwingend, war das Kriterium vor Sicht der Zahlen gebunden, traegt astras Widerlegung der Abbildungsasymmetrie, und kann ein fremdes Haus die 10.3-Groessen aus dem geschwaerzten Vertragstext und den gespeicherten Medianen nachbauen, in welcher Stufe?",
+  "action": "S3: 319 Einzelvergleiche, jede Berichtszahl an Datei, Feldpfad, Arm/Zelle und Rundungsregel gebunden (Praezisierung 20), Betriebszeiten an lauf.log und journalctl; Kennzahl, 48 Lesartenklassen, N1-N3, Bezugsgroessen, Quantilform mit Katalogstreuung und Feldabhaengigkeit der Arme aus den 200 x 13 Medianen unabhaengig neu gebildet; K3 (g_k) direkt aus vier Spalten von full-input.npz ohne Referenzcode; Zeitkette aus Dateizeiten und kopf.zeit_utc. S2: Rundenplan vorab gebunden (VORAB-S2-VM-1.md sha256 a2e8c29f..., 19:45:37, vor dem ersten Aufruf), Paket nach Vertrag 10.3 mechanisch geschwaerzt (6.4 und 14 entfernt, 27 Ersetzungen, Restprobe) und durch paket.py gebaut, Daten mechanisch aus den Arm-Dateien; qwen3.6-27b-bunker mit no-cache und ID-Vergleich; Skript byteidentisch auf .69 unter systemd-Grenzen; eigene Tabellen maschinell gegengelesen (96 von 96).",
+  "result": "S3: 311 von 319 stimmen; 8 Abweichungen ohne Wirkung auf den Ausgang: Vertrag 6.1/6.4b/6.6 drucken L_0 als 3,777 SD (richtig 3,795; 3,777 ist Rest_K), 'U2 robust in 18 von 24 Lesarten' hat kein Feld (Zaehlungen: 16 von 18, 22 von 24, 17 von 27), REVIEW S_gruppe 0,257534 statt 0,257738, Kopf 'Stufe a' fuer f_B, zwei Mittelungen der Quantilverschiebung, 879 s ist Katalogzeit (Units 888 s). Nachgerechnet: alle Kennzahlen Differenz 0,0, Vorlauf und Lauf bitgleich, N1 0,6881/13/187, N2 200, N3 0; f_B > 1,453 arithmetisch erzwungen; L_0 gegen quad nur 2,59 SD (A bei k = 3), gegen SD_kat1 3,795; K3 g_k = 1 auf 6,66e-16 fuer alle 1 817 594 Elternzeilen. Zeitkette: Lesartenliste 15:12 vor Rechenstart 15:16; Fremdhaus blind (Paket a 0 Treffer); die Anfrage lag aber fuenf Minuten nach der 40-Katalog-Erstfassung. Form: Versatz -0,27 SD im unteren Zehntel, 18,6 SD im oberen; Steigung +0,140 gegen M-E0 -0,199, M-EC -0,631, M-M 0. M-E0 feldabhaengig +0,0087 +- 0,0009 (9,3 SE, 11 % von d_0 - d_ref). S2: Runde 1 blind, ID chatcmpl-b964942c..., 51,3 s, Skript 10 710 Zeichen, 0 Annahmen, 0 einkopierte Konstanten, 0,33 s Lauf, E = 18 von 18 mit relativer Abweichung 0 (Klasse gedruckt, nicht einkopiert), Teil 2 (S_gruppe, N1-N3) 6 von 6; keine Rueckmeldung noetig.",
+  "meaning": "Die 10.3-Groessen von VM-1 (L_0, K, Rest_K, S, SD_kat1, zwoelf delta_X, Klasse U2) duerfen mit S2-Stufe blind weitergereicht werden, mit dem Vorbehalt: S2 bestaetigt die Auswertung der Arme, nicht ihre Erzeugung (K1/K4/K7 sind Archiv- und Selbstkontrollen); S ist zur Haelfte ein Stresstest (Kreisbahnen); und der 'empirisch begruendete Bereich' der e-Arme ist fuer eine Zelle bei 1000 bis 1500 AU nach Literatur (Hypothese, vom Scout zu pruefen) thermisch bis superthermal, also die Gegenrichtung - mit einem superthermischen Arm laege |Rest_K| - |S| an der B-Grenze und die Frage B oder U2 hinge an 10 Prozent Sternmasse. Die eine Messung, die die Bahnannahme normierungsfrei entscheidet: die Verteilung des Winkels zwischen projizierter Trennung und projizierter Relativgeschwindigkeit der 5005 Referenzpaare gegen die Modellkataloge der Arme (VM-2). Dazu ein Begleiterarm statt des gleichfoermigen Massenfaktors, weil nur er die oberen Quantile hebt. Runde 022 eingefroren, nichts gebucht, 0 USD.",
+  "sources": [
+    {
+      "path": "coordination/methodik-review/s2-s3-vm-1-20260922/S2-S3-VM-1.md",
+      "sha256": "352adbfa8be81eef2ab10461e3c078c2653cdd2beccb34f42cbef7fae55a5191"
+    },
+    {
+      "path": "coordination/methodik-review/s2-s3-vm-1-20260922/VORAB-S2-VM-1.md",
+      "sha256": "a2e8c29f1c27a8654f5ea6a273d237ea904e69752b981be6a7ab4ca1ac2f4bf4"
+    },
+    {
+      "path": "coordination/methodik-review/s2-s3-vm-1-20260922/belege/S3-GEGENLESEN.txt",
+      "sha256": "dfcc360fc8412796c081e1e6b844f53a11ab14e77191a0045a847bcc8b8c15c7"
+    },
+    {
+      "path": "coordination/methodik-review/s2-s3-vm-1-20260922/belege/S3-NACHRECHNEN.json",
+      "sha256": "6c1b33f1db74d507c04a83a0b9f47f271da9140542cff78da4a007847f62bdb5"
+    },
+    {
+      "path": "coordination/methodik-review/s2-s3-vm-1-20260922/belege/SELBSTGEGENLESEN.txt",
+      "sha256": "891b56b3bab1f3d1f2c89e099caa49294f19a9c45e11846ac5558ab3f233119a"
+    },
+    {
+      "path": "coordination/methodik-review/s2-s3-vm-1-20260922/s2-qwen/modell-aufrufe-s2-vm-1.jsonl",
+      "sha256": "eab68990b71fae7c576768e84b2605b962102200959e0a57ae5c09f5d56fd6e4"
+    },
+    {
+      "path": "coordination/methodik-review/s2-s3-vm-1-20260922/s2-qwen/lauf-runde1/S2-VERGLEICH-VM-1-runde1.json",
+      "sha256": "ec6c5e98eab74a57a335a19b8dfe84889588433b4fdfb7d2b15da18391d26f78"
+    }
+  ],
+  "recorded_at": "2026-09-22T17:57:07.453625+00:00"
+}

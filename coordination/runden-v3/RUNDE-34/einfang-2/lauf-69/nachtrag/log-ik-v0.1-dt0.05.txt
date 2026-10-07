@@ -1,0 +1,37 @@
+start 2026-10-03T17:29:45+00:00 spur=p4000a unit=fmhc-physics-klein-r34ef2-ik-v0.1-dt0.05-172945
+Running as unit: fmhc-physics-klein-r34ef2-ik-v0.1-dt0.05-172945.service; invocation ID: cdb5b1ce7e054d13b1fa17ec490a0e65
+torch 2.5.1+cu121, Geraet cuda (Quadro P4000)
+Netz ikosaeder: {"nu": 134, "a": 40.0, "h": 0.29850746268656714, "ecken": 179562, "ecken_soll": 179562, "euler": 2, "grade": {"5": 12, "6": 179550}, "anzahl_defekte": 12, "defekt_rest_max": 2.3092638912203256e-14, "w_min": 0.5773502691895966, "w_max": 0.5773502691896608, "flaeche": 13856.40646055102, "flaeche_soll": 13856.406460551016} (Bauzeit bis jetzt 2.7 s)
+statischer Ball und Start: {"Q_lat": 198.997487421324, "E_lat": 156.54153052244902, "omega_lat": 0.7449454729797798, "res_max": 2.591482333704344e-07, "dauer_s": 0.9577260063961148, "gitterfehler_flicken": 1.8030021919912542e-13, "gitterfehler_ziel": 1.3145040611561853e-13, "R_trans": 19.0, "knoten_mit_feld": 14707, "E_rest": 157.288347729539, "K_nominal": 0.79238963828813}
+/home/fmh/fmhc-physics-remote/runde34-einfang2/einfang2.py:495: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at ../aten/src/ATen/SparseCsrTensorImpl.cpp:53.)
+  Lt = torch.sparse_csr_tensor(torch.tensor(Lc.indptr, dtype=torch.int64), torch.tensor(Lc.indices, dtype=torch.int64),
+Karten: [90451, 90451, 90451, 90451, 90451, 90451, 90451, 90451, 90451, 90451, 90451, 90451] Knoten je Spitze (6.2 s)
+Start: E 158.07940618 Q 199.99999801 E_rest 157.28834773 K_eff 0.791058 K_nominal 0.792390 Lage 20.0000 Q_ball 199.999583
+t 200.0 Spitze 0 d 4.9369 th 2.6180 E 158.07959689 Q 199.99999801 E_ball 158.062843 Q_ball 199.984186 S_max 1.0314 (2.68 ms/Schritt)
+t 400.0 Spitze 0 d 18.1058 th -2.6180 E 158.07946529 Q 199.99999801 E_ball 157.974743 Q_ball 199.901790 S_max 1.0517 (2.68 ms/Schritt)
+t 600.0 Spitze 5 d 20.6768 th 0.7962 E 158.07963800 Q 199.99999801 E_ball 157.911184 Q_ball 199.840939 S_max 1.0373 (2.74 ms/Schritt)
+t 800.0 Spitze 5 d 20.9495 th 1.3517 E 158.07929180 Q 199.99999801 E_ball 157.874312 Q_ball 199.807221 S_max 1.0608 (2.80 ms/Schritt)
+t 1000.0 Spitze 10 d 16.9074 th -1.5708 E 158.07921814 Q 199.99999801 E_ball 157.850867 Q_ball 199.786241 S_max 1.0632 (2.86 ms/Schritt)
+t 1200.0 Spitze 10 d 2.0957 th -1.5708 E 158.07942105 Q 199.99999801 E_ball 157.816959 Q_ball 199.753638 S_max 1.0394 (2.91 ms/Schritt)
+t 1400.0 Spitze 10 d 18.7105 th 1.0472 E 158.07966228 Q 199.99999801 E_ball 157.753249 Q_ball 199.693788 S_max 1.0327 (2.95 ms/Schritt)
+t 1600.0 Spitze 9 d 4.7476 th 2.0944 E 158.07926293 Q 199.99999801 E_ball 157.723454 Q_ball 199.666351 S_max 1.0571 (2.99 ms/Schritt)
+t 1800.0 Spitze 9 d 12.4828 th -0.5236 E 158.07930239 Q 199.99999801 E_ball 157.571537 Q_ball 199.522844 S_max 1.0605 (3.02 ms/Schritt)
+t 2000.0 Spitze 9 d 20.8074 th -0.5236 E 158.07987783 Q 199.99999801 E_ball 157.410841 Q_ball 199.369703 S_max 1.0193 (3.05 ms/Schritt)
+t 2200.0 Spitze 3 d 20.7737 th -1.3181 E 158.07895691 Q 199.99999801 E_ball 157.332621 Q_ball 199.297796 S_max 1.0831 (3.07 ms/Schritt)
+t 2400.0 Spitze 3 d 20.1758 th -0.9127 E 158.07935240 Q 199.99999801 E_ball 157.300574 Q_ball 199.267850 S_max 1.0549 (3.09 ms/Schritt)
+t 2600.0 Spitze 3 d 22.8189 th -0.5449 E 158.07960951 Q 199.99999801 E_ball 157.298276 Q_ball 199.266048 S_max 1.0398 (3.11 ms/Schritt)
+t 2800.0 Spitze 1 d 15.3821 th 2.6180 E 158.07885677 Q 199.99999801 E_ball 157.233387 Q_ball 199.207654 S_max 1.0902 (3.12 ms/Schritt)
+t 3000.0 Spitze 1 d 6.4214 th 2.6180 E 158.07975883 Q 199.99999801 E_ball 157.152670 Q_ball 199.129816 S_max 1.0387 (3.13 ms/Schritt)
+t 3200.0 Spitze 1 d 13.5596 th -0.0000 E 158.07957139 Q 199.99999801 E_ball 156.998608 Q_ball 198.985957 S_max 1.0389 (3.15 ms/Schritt)
+t 3400.0 Spitze 0 d 14.1293 th 0.0000 E 158.07971503 Q 199.99999801 E_ball 156.984480 Q_ball 198.975328 S_max 1.0284 (3.17 ms/Schritt)
+t 3600.0 Spitze 0 d 5.3599 th -2.6180 E 158.07935019 Q 199.99999801 E_ball 156.867570 Q_ball 198.867833 S_max 1.0502 (3.19 ms/Schritt)
+t 3800.0 Spitze 0 d 14.6031 th -2.6180 E 158.07923964 Q 199.99999801 E_ball 156.779277 Q_ball 198.788104 S_max 1.0623 (3.20 ms/Schritt)
+t 4000.0 Spitze 0 d 22.3971 th -2.6180 E 158.07952605 Q 199.99999801 E_ball 156.788344 Q_ball 198.795932 S_max 1.0432 (3.21 ms/Schritt)
+Ende: T erreicht, t 4000.0, 3.21 ms/Schritt, Dauer 263.5 s, Zustand /home/fmh/fmhc-physics-remote/runde34-einfang2/nachtrag/ef2-ik-v0.1-dt0.05-zustand.npz, geschrieben /home/fmh/fmhc-physics-remote/runde34-einfang2/nachtrag/ef2-ik-v0.1-dt0.05.json
+Finished with result: success
+Main processes terminated with: code=exited/status=0
+Service runtime: 4min 24.272s
+CPU time consumed: 4min 24.045s
+Memory peak: 1.3M
+Memory swap peak: 0B
+ende 2026-10-03T17:34:09+00:00 rc=0 unit=fmhc-physics-klein-r34ef2-ik-v0.1-dt0.05-172945

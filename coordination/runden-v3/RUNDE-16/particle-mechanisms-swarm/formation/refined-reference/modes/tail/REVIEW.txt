@@ -1,0 +1,63 @@
+Enger unabhängiger Tailanalyse-Review, 02.10.2026, particle_binding
+Vollständige Erstlektüre plus finales Auflösungsdelta gelesen.
+Keine Ausführung, keine Eigenwertrechnung, keine zusätzlichen Prozessauflagen.
+
+Urteil: Finale Fassung für die begrenzte gespeicherte Vektoranalyse
+fachlich geeignet. Kein verbleibender konkreter Blocker. Root darf
+seinen vereinbarten5CPU-s-Umfang nutzen; kein neuer Physiklauf impliziert.
+
+Finalhashes unabhängig bestätigt:
+analysis.py
+c6548c3cbecdf0e80af2ca455c37a2772e4bf911fe3533dc902792485ec4d01d
+PLAN.txt
+7d18c28f035826a66adf68a96c6a7331383b9db376424604871013ee38b36860
+
+Input/Auswahl
+RESULT-, Operator- und Referenzmanifesthash sind hart gebunden.
+Pro Gitter genau die gespeicherte shift.3-Aufgabe mit einem Ritzwert
+im festgelegten.38..39-Fenster, NPZ-Hash und JSON-Reihenfolge geprüft.
+Dies ist offen deklarierte Nachanalyse des bereits gesehenen Rohwerts,
+keine prospektiv blinde Entdeckung und keine Auswahl neuer Frequenzen.
+Importiert werden nur grid/overlap; kein eigs-/PDE-Aufruf. Frische Outputs.
+
+Faktoren/Physik
+Normierung auf||q||=1, Feldrücktransformation mit sqrtV und v=i*q_y
+sind korrekt. Kanäle(u+v)/sqrt2,(u-v)/sqrt2,w passen zu den
+Vakuumexponenten sqrt[2-(omega±rho)²] bzw.sqrt(2-rho²).
+|r*channel| entfernt den l0-Faktor1/r vor dem Log-Nachbarquotienten.
+kappa wird allein aus gespeichertem omega/rho bestimmt, nicht gefittet.
+Plot-Theorie hat einen offengelegten einzelnen Amplitudenanker; kein
+geschätzter Exponent und keine neue Parameteroptimierung.
+
+Auflösung
+Erstfassung hatte nur1e-10*kanaleigenemPeak: ein insgesamt winziger
+Rauschkanal konnte dadurch fälschlich als aufgelöst erscheinen.
+Vor Ausführung korrigiert: floor=1e-10*max(channelPeak,sharedPeak),
+sharedPeak über alle drei normierten |r*channel|. Fenster und Plotanker
+benutzen denselben Floor; beide Peaks und gültige/verworfene Paare werden
+ausgegeben. Kein gültiges Paar bleibt UNRESOLVED, nicht Nullfehler/PASS.
+RESOLVED heißt hier lediglich mindestens ein amplitudenaufgelöstes
+Nachbarpaar, nicht validierte Asymptotik; Paarezahl und Streuung mitlesen.
+Dieser praktische Floor ist keine rigorose Fehlerschranke des Ritzvektors.
+
+Vergleich/Auslegung
+Feste Fenster20..30 und30..40, alle lokalen Quotienten, Min/Median/Max
+und Vergleich mit kappa bzw.absichtlich2kappa sind nachvollziehbar.
+Keine positive Modenklassifikation daraus. Modenüberlapp benutzt die
+bereits geprüfte Volumenrestriction und gemeinsame komplexe Phase;
+posthoc_overlaps ist klar getrennt von historisch leeren RESULT.matches.
+Normschwänze an festen Radien bleiben ungeschönt, altes R20-Tor unverändert.
+
+Nichtkompakte Hintergrundkopplung kann schnelle Kanäle weiterhin
+inhomogen treiben; deren asymptotische Form muss nicht ihrem homogenen
+freien Exponenten entsprechen. Slowplus ist die primäre Vergleichsfrage.
+Abweichung oder unaufgelöste schnelle Kanäle sind weder automatisch
+Solverfehler noch Nichtbindung. Endlicher Differenzenquotient, diskreter
+Radialoperator und Dirichletreflex im endlichen Kasten bleiben Grenzen.
+
+Die Analyse beschreibt einen gespeicherten rohen subthreshold-Ritzwert.
+Sie ändert NO_CONFIRMED_CANDIDATE_IN_FIXED_SEARCH nicht, beweist keine
+Spektralvollständigkeit, keine Lebensdauer/nichtlineare Stabilität und
+identifiziert nicht die frühere starke Wolkenbewegung als Eigenmode.
+PNG-Lesbarkeit erst nach Rendering prüfen; keine neue Renderauflage
+oder zusätzliche Rechnung außerhalb der vereinbarten Analyse eingeführt.

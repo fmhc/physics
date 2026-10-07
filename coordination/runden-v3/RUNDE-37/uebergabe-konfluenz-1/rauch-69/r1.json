@@ -1,0 +1,137 @@
+{
+ "info": {
+  "numpy": "2.4.4",
+  "scipy": "1.18.0",
+  "python": "3.12.3",
+  "host": "ubuntu-auto",
+  "argv": [
+   "code/konfluenz.py",
+   "lauf",
+   "--saat",
+   "1",
+   "--rauch",
+   "--out",
+   "rauch/r1.json"
+  ],
+  "skript_sha256": "6552763c2666d27cff4b3d78ba18a07259611d08fa1dc693f2237d596800c04f",
+  "module_sha256": {
+   "tg": "ec48a258e266fc2226d0d10564b606052831ffefbf0642e4f7d04f9de85cfd9e",
+   "uk": "f52df7438c3d33b4fe86d4352bed3373b38e27a083f3d60eb12d4143fa6b71e0",
+   "tu": "6c5c3a9509ad0be5a8e72ab9a3cabb85a2300d11a2581c7d9ecf2b9e7fa9720a",
+   "td": "fbc02c4899a82ca17fa82ba7574c5ffa0c0776aeb4e6a75c3e3110a419e7015d",
+   "hm_td": "c62c15ab25ecfdc5ed12eb5b7c7229ca357861a39ebe4ad462f1a1a4643552eb"
+  },
+  "start_utc": "2026-10-05T09:37:26Z"
+ },
+ "laufzeit_s": 26.082217931747437,
+ "maxrss_MB": 347.43359375,
+ "schluessel": {
+  "saat": "int",
+  "netz": {
+   "nV": "int",
+   "E": "int",
+   "T": "int",
+   "F": "int",
+   "l_mittel": "float",
+   "mu0_min": "float",
+   "mu0_n_verletzt": "int"
+  },
+  "faelle": [
+   {
+    "art": "str",
+    "X": "int",
+    "Y": "int",
+    "V5_X": "list",
+    "V5_Y": "list",
+    "mu0_X": "float",
+    "mu0_Y": "float",
+    "verschiebung": [
+     "ecken",
+     "mu_X",
+     "mu_Y",
+     "mu_andere_min",
+     "norm",
+     "norm_rel",
+     "typ_X",
+     "typ_Y"
+    ],
+    "zuege_XY": [
+     [
+      "kante_neu",
+      "kante_weg",
+      "mu",
+      "typ"
+     ]
+    ],
+    "status_XY": "str",
+    "zuege_YX": [
+     [
+      "kante_neu",
+      "kante_weg",
+      "mu",
+      "typ"
+     ]
+    ],
+    "status_YX": "str",
+    "gleiche_endzerlegung": "bool",
+    "t_kombinatorik_s": "float",
+    "gleiche_kanten": "bool",
+    "skalar_kontrolle": [
+     "mu_n_verletzt_ende",
+     "s0_durch_V_anfang",
+     "s0_min_rel_alle",
+     "s0_min_rel_anfang",
+     "stern0_n_neg_max"
+    ],
+    "skalar": [
+     "P",
+     "R"
+    ],
+    "licht": "str",
+    "formen": [
+     "A1",
+     "A2",
+     "A2L"
+    ],
+    "t_gesamt_s": "float"
+   }
+  ],
+  "auswahl": {
+   "D": {
+    "kandidaten": "int",
+    "versucht": "int",
+    "angenommen": "int",
+    "t_s": "float"
+   },
+   "T": {
+    "kandidaten": "int",
+    "versucht": "int",
+    "angenommen": "int",
+    "t_s": "float"
+   },
+   "K": {
+    "kandidaten": "int",
+    "versucht": "int",
+    "angenommen": "int",
+    "t_s": "float"
+   }
+  },
+  "wand_s": "float"
+ },
+ "auswahl_angenommen": {
+  "D": 1,
+  "T": 1,
+  "K": 1
+ },
+ "auswahl_t_s": {
+  "D": 8.43176555633545,
+  "T": 9.703794479370117,
+  "K": 7.078357458114624
+ },
+ "fall_t_s": [
+  8.327945232391357,
+  9.090245723724365,
+  6.80221962928772
+ ],
+ "wand_s": 26.07927370071411
+}

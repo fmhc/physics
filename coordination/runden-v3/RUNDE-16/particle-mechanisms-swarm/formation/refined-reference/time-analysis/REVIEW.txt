@@ -1,0 +1,57 @@
+Unabhängiger Nichtautor-Lesereview, 02.10.2026, particle_binding
+Keine Ausführung und keine eigene numerische Auswertung.
+
+Urteil: Korrigierte Fassung ist für die begrenzte .69-Nachanalyse der
+gespeicherten Diagnosen geeignet. Kein PDE-Schritt, kein Fit, keine
+Neuklassifikation/Gatenachwahl. Root führt gegebenenfalls innerhalb
+des beauftragten <5CPU-s-Umfangs mit eigener Receipt aus.
+
+Vollständig gelesen, finale Deltaänderungen und SHA256 bestätigt:
+analysis.py
+1921bdb5328e7c43b0e148cfa1594d42fe5278c2d2786b4bf6ac28a5bcaf501c
+ANALYSIS-PLAN.txt
+345f899c487a64a0fed6827a6789e6a4832b6a69c9b116c12555068d56df3a4f
+Erstfassung enthielt eine beschreibende LS-Trendsteigung. Auf meinen
+Scopehinweis vor Ausführung entfernt; finales Skript enthält keinen Fit.
+
+Input/Umfang
+Genau HALF-RESULT mit hartem Hash97cfb7…; drei eindeutige komplette
+Wolkenarme und81 finite synchrone Zeitpunkte. Benötigte Diagnostikwerte
+werden auf Endlichkeit geprüft. Kein Laden zusätzlicher Feldprofile,
+keine PDE-Imports oder neue Startdaten. Frischer Ausgabeordner; CSV,
+SUMMARY und PNG. Originalstatus bleibt im Summary und Bildtitel sichtbar;
+CSV ist reine Zeitreihe und muss zusammen mit dieser Herkunft geführt
+werden, nicht als eigenständiger positiver Physikbefund.
+
+Diagnostik
+Min/Max mit erstem Samplezeitpunkt, Nettoänderung, strikte innere
+Nachbarextrema und Intervalle aufeinanderfolgender Maxima sind korrekt
+als gespeicherte Stichproben definiert. Endpunkte werden nicht als
+lokale Peaks gezählt, Plateaus nicht künstlich gebrochen; kleine
+numerische Zacken können mitzählen. Ohne vorherige Modentrennung
+ist Median/Spanne dieser Abstände keine Eigenfrequenz oder Lebensdauer.
+Der Plan nennt diese Einschränkung ausdrücklich.
+
+RMS der vier normierten Reste nur im festen Schlussfenster48..64
+ist ein gleichgewichteter Sample-RMS, keine kontinuierliche Integralnorm.
+Die .8-Abtastung begrenzt Zeitauflösung und kann schnelle Bewegung
+aliasen. pi/.8 und2pi/64 sind formale Sampling-/Fensterskalen, kein
+Nachweis von Bandbegrenzung, Spektrallinien oder aufgelösten Feldmoden.
+Kein FFT/Autokorrelation/Frequenzfit implementiert. Komplexe Felddaten
+und Energieflusszerlegung fehlen in dieser Analyse weiterhin.
+
+Grafik
+Panel1 zeigt jeweils R50/R50_initial, Qcore/1100 und ersten chi-Zellwert.
+Panel2 zeigt Schlussreste logarithmisch und maskiert echte Nullen,
+statt sie auf einen künstlichen positiven Wert zu setzen. Das vermeidet
+die t0-chi-Normfloorartefakte. Panel3 vergleicht Raum/Zeit getrennt zur
+base-Serie; R50-Differenz hat gemeinsamen Nenner R50_base(0), im
+korrigierten Label eindeutig bezeichnet. Keine Konvergenzextrapolation
+und keine neuen Schwellenlinien. Die tatsächlich erzeugte PNG muss
+anschließend visuell geprüft werden; Lesbarkeit hier nicht vorweggenommen.
+
+Ergebnisbedeutung
+Nur anschauliche Beschreibung der numerisch räumlich sensitiven Serie.
+Originalausgang NUMERICALLY_UNRESOLVED_SENSITIVITY bleibt maßgeblich.
+Wiederholte Maxima können eine Mechanismusfrage motivieren, beweisen
+weder eine stationäre Mode noch einen langlebigen gebundenen Teilchenzustand.

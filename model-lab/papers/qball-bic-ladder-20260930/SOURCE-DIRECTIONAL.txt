@@ -1,0 +1,44 @@
+DETUNING-2 paper extension — draft, result review pending at assignment
+2026-10-01T23:50:11+02:00 (date before writing)
+Author context exterior_paper_text, OpenAI. Only these two draft files written.
+No canonical changes, staging, build, test, interpreter or numerical evaluation.
+
+Placement: append after current sections/DETUNING.tex last paragraph, as
+paragraph 'Local direction and one mirror detuning'. Existing DETUNING/EXTERIOR
+stale draft-only comments should be cleaned separately by Root at next build;
+this task does not change them or promote this unreviewed result itself.
+
+Read in full directional PLAN.txt and CODE-REVIEW.txt, RESULT keys/comparison/
+levels via jq, and canonical DETUNING.tex. DIRECTIONAL-KERNEL-NOTE and REVIEW
+were read/written in the preceding separate paper-review assignment; their
+algebra provides the causal-kernel interpretation, not a measured decomposition.
+No raw saved arrays analysed; numbers copied/rounded from the result.
+
+Hashes:
+directional/PLAN.txt 94cd428a853af5a89299e6e8abedc0708e6ce82dde21515b64b89feee34e7a1e
+directional/CODE-REVIEW.txt b1949b4c5ec33082148ec480c6740c19fb6367c9d8b9effb46caf772e7dc9ed9
+directional/out/RESULT.json 0900b90836fdff2e47989ad27e44130424f73b7ae53f5989825075ce7b3a921f
+../DIRECTIONAL-KERNEL-NOTE.txt 33d827b5bf0640c14d4716d33aaa152b9791eb1aedba36258c966277e74e230d
+../DIRECTIONAL-KERNEL-REVIEW.txt 6a1c0e39eb0293ea2c9bf0b672bfe70cb721aabf223e228f4ddf69ee7d99e9a1
+
+Numerical mapping: fine level h=.02,dt=.0025 fields m_minus,m_zero,m_plus,
+derivative,odd,even,odd_minus_local. Main label from comparison.verdict
+'direction_agrees'; guards empirical and certified_error_bound=false.
+The text intentionally does not foreground the small residual's guard label
+as a new physical effect or treat it as a continuum Taylor certificate.
+O,E,R have work units; m' has work/frequency units, quoted in model units.
+The exact tangent refers to the differentiated equation, not exact numerical
+integration or a certified derivative of the continuum PDE.
+Both W' product-rule terms retained. Two quadratures independently evolved;
+no i-times-response substitution. No new first-pulse calculation, and reused
+positive detuning is not called an independent replication. The uniform
+initial-phase average excludes chosen-phase pair-work conclusions.
+No new literature assertion is needed: free accelerator and causal kernel
+are elementary independently reviewed paper identities. No kernel estimated
+from these data, no thermal/noise or unique rotation-cause attribution.
+
+Root integration update: result review now completed and read in full.
+RESULT-REVIEW.txt SHA a935ef48d8b449501d9ab3a3f1170bc6a788f63a50563073e893ce7ca06a2c86.
+Text checked against all three means, tangent and odd/even/residual values.
+Draft comments omitted from integrated section; no numeric/content changes.
+Parent source files remain historical; only this staging copy updated.

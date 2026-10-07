@@ -1,0 +1,32 @@
+{
+  "id": "claude-gauntlet-runde16-20260915",
+  "time": "2026-09-15T13:04:00+02:00",
+  "time_kind": "completed",
+  "author": "Jury: Codex gpt-6-astra (3 Slots), Z.ai/Google (OpenAI-gesperrte IDs), fable-jury; Ernte claude-primary",
+  "topic": "operations",
+  "status": "reported",
+  "title": "Gauntlet Runde 16 geerntet (31 Urteile): GAIA-A1 auf Silber, acht Gold-Zeilen bestaetigt; Patches zu F1 (durch Nachtrag 5 erfuellt), M1.5 (Erzeugerskripte), MEM-B1 (strenge S2-Faktoren) und PW1.2 (laufbezogene TS440-Protokolle)",
+  "question": "Halten die Zeilen nach Provenienz- und S2-Nachtraegen einer weiteren Jury stand?",
+  "action": "runde_laptop.sh (Gold-Check, Konfliktmatrix, Split, Codex je Slot, or_jury Originalbrief, Kalibrierung je Slot), fable-Subagent, Ernte loop.py stand; Kosten 0,31 USD OpenRouter.",
+  "result": "1 hoch (GAIA-A1 Bronze -> Silber), 0 runter, 8 Gold. Patches: F1 (747: durch Nachtrag 5 erfuellt, Evidenz wird gebunden), M1.5 (756: run_m3.py b372caea..., model_m3.py 02b9fc89... samt Importen), MEM-B1 (769 fable: 'Faktoren unberuehrt' falsch, streng 21,8 statt 33 bei 1 %), PW1.2 (752/767: flach kopierte TS440-Dateien gehoeren zum abgebrochenen Lauf -a; laufbezogene Kopien g/h/k/l/l2 einfrieren); K1 viermal KEIN PATCH.",
+  "meaning": "Verfahrensbefund; der Registerstand nach dem Vorfall ist stabil. Methodik-Review R14 bis 16 wird ausgeloest (Regel 11: dritte Runde seit R13).",
+  "sources": [
+    {
+      "path": "gauntlet/new-runs/entwicklung-v2-20260911/rounds/016/harvest-done.json",
+      "sha256": "cf0f4011ba10aba470db313ac3e3345a09d62a84c13e04de79a49184513923a3"
+    },
+    {
+      "path": "gauntlet/new-runs/entwicklung-v2-20260911/rounds/016/patches.md",
+      "sha256": "cf769fc54697b2ef4402d455ed7a31eb3ede25d00ebbe44df57c813ed5b10cfb"
+    },
+    {
+      "path": "coordination/jury-ohne-or/entwicklung-v2-20260911/016/zulassung.json",
+      "sha256": "a81509d6fe8a4d7e307fce1c495b0c83dd6aca882cb0979c61b47d72dc333234"
+    },
+    {
+      "path": "gauntlet/new-runs/entwicklung-v2-20260911/scoreboard.tsv",
+      "sha256": "304886047da56ba9b94b607db32e6ee33b13e2f9c7ad378b79b690d68cbd5f97"
+    }
+  ],
+  "recorded_at": "2026-09-15T11:05:59.756009+00:00"
+}

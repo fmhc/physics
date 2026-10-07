@@ -1,0 +1,64 @@
+{
+  "id": "vertrag-ev1-3-s0-20260920",
+  "time": "2026-09-20T21:00:00+02:00",
+  "time_kind": "document",
+  "author": "claude-primary (Anthropic, Opus 5)",
+  "topic": "theory",
+  "status": "proposal",
+  "title": "EV1.3: der leere Falsifikator der Goldzeile EV1.2 bekommt einen S0-Vertrag mit voller Numerik",
+  "question": "Die Goldzeile EV1.2 nennt einen Falsifikator, der im eigenen Code nicht eintreten kann: coordination/evolution/evolution_potential.py Zeile 369 setzt Drot_fuehrend = 4*Be**3/we**2, also fuer jede Form identisch und nur vom Molekuel abhaengig. Laesst sich dieselbe Frage so stellen, dass sie scheitern kann - naemlich an der voll numerisch gerechneten Zentrifugaldehnung und auf Molekuelen, gegen die der Formraum nie ausgewaehlt wurde?",
+  "action": "Vertrag EV1.3 nach coordination/vertraege-vorlage/VORLAGE-v2.md geschrieben, alle 13 Pflichtabschnitte. Kennzahl Q(F,M) = D_rot,fit/(4 Be^3/we^2) - 1, voll numerisch (Kalibrierung, Sinus-DVR 512/1024, Fitabbildung aus Vertrag 6) und mit linearer Fehlerabschaetzung sigma; Latte L = 0,01 (Modellskala Vertrag 6). Pflichtzellen sind 61 Formen mal 4 neue Molekuele; die Ankermolekuele H35Cl und 12C16O sind ausdruecklich KEINE Pflichtzellen, weil die Formmenge ueber genau diese Groesse auf H35Cl ausgewaehlt wurde. Drei Nullproben (vier bekannte Ausreisser; eine neue morse_p-Leiter p = 4/5/6/8 mit vorab genannter Vorhersage; Identitaetsprobe morse_p(p=1) gegen morse), acht Kontrollen einschliesslich der geschlossenen Kratzer-Fues-Loesung als unabhaengige Quelle. S0-Fremdreview durch Qwen (Bunker, 0 USD) und DeepSeek (OpenRouter, reasoning aus, 0,0138 USD) mit mechanisch erzeugtem Materialpaket und der Leitfrage 'Kann dieses Kriterium scheitern, und wo ist es noch selbsterfuellend?'. Nichts gerechnet, kein Startsignal, Runde 022 unberuehrt.",
+  "result": "Beide Haeuser: freigeben mit Auflagen; beide halten das Kriterium fuer scheiterbar und die Verlagerung des Ausgangs auf Nicht-Anker-Molekuele fuer eine echte Heilung. Quote neu gegenueber dem Paket 10 von 16 Befunden (Qwen 4/7, DeepSeek 6/9), eingearbeitet 7, begruendet abgelehnt 3. Der schwerste Befund war ein Rechenfehler dieses Hauses: die erste Fassung behauptete, ein Molekuel mit omega_e/B_e = 200 erreiche bei effektivem Exponenten 2,7 den Wert 1,1e-2 und damit Ausgang B; richtig sind 8,25e-3, also unentschieden. Neu hinzugekommen: Kontrolle K7 (Fitabbildung gegen den analytisch abgeleiteten Dunham-Wert der Kratzer-Form, je Molekuel), K3b (Schattenlauf n = 64), K8 (zwei unabhaengige Lesungen der Molekuelkonstanten vor dem Start), die Nachweisgrenzen-Regel ohne Molekuel mit omega_e/B_e <= 200, das Verbot des Nachrueckens und zwei neue Restrisiken. Aus den vorhandenen Ergebnisdateien nachgerechnet und in den Vertrag aufgenommen: waehlt man die Formmenge statt auf H35Cl auf 12C16O aus, erhaelt man 63 Formen und die bisherigen 61 sind vollstaendig enthalten - die Vorauswahl ist nicht molekuelspezifisch.",
+  "meaning": "Der Unterschied zwischen EV1.2 und EV1.3 laesst sich in einem Satz sagen: dort wurde D_rot gesetzt, hier wird es gerechnet. Die Latte ist damit erreichbar - im eingefrorenen Zensus liegen vier von 65 numerisch abgenommenen Formen mit 1,11 bis 225 Prozent darueber -, waehrend die alte, fuehrende Groesse ueber alle 120 Formen exakt einen einzigen Wert je Molekuel annimmt und die Latte nie ueberschreiten kann. Innerhalb der Pruefmenge liegt der groesste bekannte Wert mit 0,320 Prozent aber dreimal unter der Latte, und der Vertrag sagt offen, dass A oder U2 der erwartbare Ausgang ist; B ist erst bei omega_e/B_e unter etwa 180 erreichbar. EV1.2 bleibt als Goldzeile unveraendert (Regel 12.5); EV1.3 ist eine eigene neue Behauptung, und was aus ihrem Ergebnis fuer EV1.2 folgt, entscheidet die Jury in Runde 23. Der Vertrag steht auf S0: kein Startsignal, keine Produktion, Runde 022 eingefroren.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260921/ev1-3-VERTRAG.md",
+      "sha256": "2b56cca7b033c141956ef1735fe933bc68c3c9a6cbb085a6df60e80606f737ca"
+    },
+    {
+      "path": "coordination/vertraege-20260921/REVIEW-ev1-3.md",
+      "sha256": "9d9a7aed7f3553f54eb6edda1e972c3301ff089a8e1261e77f0eb945e188b807"
+    },
+    {
+      "path": "coordination/vertraege-20260921/PRUEFMENGE-S.json",
+      "sha256": "67edb4f4f30026244c5d30e01fa4c4bb2672ca54a0606f99e879f93f9eb2c84c"
+    },
+    {
+      "path": "coordination/vertraege-20260921/dateiliste-ev1-3.txt",
+      "sha256": "5c8991e9c4e2622c84aef2fa7aab166ae8915b325b1d4fa4622592b887ae7242"
+    },
+    {
+      "path": "coordination/vertraege-20260921/fremdreview-roh/MATERIAL-ev1-3.txt",
+      "sha256": "9a65efbfe1687318e02440071fbf32b3f48ef55f86a73d3052c28282f3316ab3"
+    },
+    {
+      "path": "coordination/vertraege-20260921/fremdreview-roh/antwort-ev1-3-qwen.md",
+      "sha256": "c075e3259813a78b3df243c136c0cef8e8e39caeed8612ae957319bb5d422bdd"
+    },
+    {
+      "path": "coordination/vertraege-20260921/fremdreview-roh/antwort-ev1-3-deepseek.md",
+      "sha256": "953860a4bcbcfd5ba0fe5bb079e95e7c5e7994de78ea7b49834615fc9bf7011a"
+    },
+    {
+      "path": "coordination/deepseek-20260920/audit/AUDIT-SELBSTERFUELLUNG.md",
+      "sha256": "ff3b0e0675cbe6ee1acf22d844aa50837620a310142a1b02aea8ed7a249a4c7a"
+    },
+    {
+      "path": "coordination/deepseek-20260920/audit/ENTSCHEIDUNG-LEITUNG.md",
+      "sha256": "d720408dcffa34dc8878d67296be9a926a7ce654d3341d5025d0d59b8bc55f47"
+    },
+    {
+      "path": "coordination/evolution/evolution_potential.py",
+      "sha256": "ccac3b66f617decffe17aeead0820c4ff77af8b46826752a3bec03143bdae513"
+    },
+    {
+      "path": "coordination/evolution/nachtrag-drot-20260913/ERGEBNIS-drot.json",
+      "sha256": "594be311e9415f89595637515d5572e02102ad521c9fc07ea48070b4a8142a59"
+    },
+    {
+      "path": "coordination/evolution/lauf-a/generationen/gen-900-zensus.json",
+      "sha256": "2a3a414b277879db492542f56d84cca821f0d278860b01d9bd83a5d21f5e92c1"
+    }
+  ],
+  "recorded_at": "2026-09-20T18:52:04.530250+00:00"
+}

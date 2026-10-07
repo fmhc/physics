@@ -1,0 +1,164 @@
+{
+ "info": {
+  "numpy": "2.4.4",
+  "python": "3.12.3",
+  "host": "ubuntu-auto",
+  "start_utc": "2026-10-05T08:35:27Z",
+  "argv": [
+   "code-r3/lrm.py",
+   "rauch",
+   "--out",
+   "rauch/r3.json"
+  ],
+  "sha256": {
+   "dn.py": "0cd5d13e98f41df277ec7d8139970d1e658542f843ed8180bc756a4ea1d4d1ae",
+   "ew.py": "fa7b6417d39177102f0b19c5474453cd16a7595e23bc25ca548e081c4060b142",
+   "hm.py": "0ed5e2ce3a2a26525ef8a3320da394e6f403306384015187baf4dd46623fd5f2",
+   "inz.py": "e65a5cbf380defef0468f50de5a2dec5936d4228b72e1db8ff913ed765def8f2",
+   "lrm.py": "7db4eac2ba752ecd00b36593f3e1e6c21c511d98dbfed12c619c66cd5ff5dce1",
+   "mn.py": "b36984d3f04276454a792f14c5655bff432332316d1b968dea46d4cb6eb96bbf",
+   "nachtrag_iso.py": "1c92cb23988886731096dd44ce33aecfcde3b65cecf16b4232111550e4debc6c",
+   "nachtrag_kinetik.py": "fd0d17b9fb7c92d4b6ad564a46260e3daae3285bcb5ad53f65d9fb3918a32b28",
+   "pn.py": "c8034e40c3238cecdcc72ecd35f1f70d38ea330c9ae18911966581c10e592567",
+   "smi.py": "9459838bb02f1894e2124927a28904679536bb2fb77ca2f338c8f6570326942d",
+   "tg.py": "ec48a258e266fc2226d0d10564b606052831ffefbf0642e4f7d04f9de85cfd9e",
+   "tp.py": "419d7da6caa211c721eb6a8c87403977415cf3050f03365377f51cb77b374dfd",
+   "tti.py": "6d6b6f7b99b334d74d91860fc69af1c6c0c46e22207dc45432d60a9824c08ee5"
+  }
+ },
+ "schluessel": {
+  "spanne_V": {
+   "netz": "str",
+   "E": "int",
+   "T": "int",
+   "nV": "int",
+   "l_mittel": "float",
+   "vref": "float64",
+   "info": [
+    "quelle"
+   ],
+   "zeilen": "list[2]",
+   "kl": "list[2]",
+   "teil": "NoneType",
+   "t_s": "float"
+  },
+  "t_spanne_V": "float",
+  "stabil_V": {
+   "netz": "str",
+   "E": "int",
+   "T": "int",
+   "nV": "int",
+   "gitter_n": "int",
+   "teil": "NoneType",
+   "zusammen": [
+    "A1R1_k_A_red_nicht_pd",
+    "A1R1_k_wachsend",
+    "K_absmin_rel_min",
+    "K_n_neg_bereich",
+    "QKQ_absmin_rel_min",
+    "QKQ_n_neg_bereich",
+    "XKX_absmin_rel_min",
+    "XKX_n_neg_bereich",
+    "diag",
+    "gitter_n",
+    "k_A_red_nicht_pd",
+    "k_B_red_neg",
+    "k_K_fast_singulaer_1e-8",
+    "k_K_singulaer",
+    "k_wachsend",
+    "max_A_red_neg",
+    "nk",
+    "nk_ohne_gamma",
+    "summe_A_red_neg",
+    "summe_wachsend",
+    "w2_min_rel"
+   ],
+   "gamma": "NoneType",
+   "zeilen": "list[6]",
+   "t_s": "float"
+  },
+  "t_stabil_V": "float",
+  "t_bau_glas": "float",
+  "t_punkt_glas_voll": "float",
+  "t_punkt_glas_stabil": "float",
+  "gang": {
+   "kl": "float",
+   "LP": "float",
+   "s": "float",
+   "nd": "int",
+   "bahnen": "list[12]",
+   "summe_m4": "list[12]",
+   "kontr_J_iso": [
+    "G",
+    "abw_gegen_G_P_max",
+    "gang",
+    "w2_spanne"
+   ],
+   "kontr_J1": [
+    "G",
+    "gang",
+    "w2_spanne"
+   ],
+   "K_n_neg_bereich": "list[2]",
+   "K_n_null_max": "int",
+   "A_red_nicht_pd": "int",
+   "LR": [
+    "G",
+    "G_nur_TT",
+    "gang",
+    "kappa",
+    "luecke_max",
+    "w2_spanne"
+   ],
+   "t_s": "float"
+  },
+  "t_gang_rauch20": "float",
+  "zusammen_spanne_V_gleich": "bool",
+  "t_spanne_V_voll_und_teile": "float",
+  "zusammen_stabil_glas": {
+   "nk": "int",
+   "nk_ohne_gamma": "int",
+   "gitter_n": "int",
+   "k_K_singulaer": "int",
+   "k_K_fast_singulaer_1e-8": "int",
+   "k_A_red_nicht_pd": "int",
+   "k_wachsend": "int",
+   "summe_A_red_neg": "int",
+   "summe_wachsend": "int",
+   "max_A_red_neg": "int",
+   "k_B_red_neg": "int",
+   "K_n_neg_bereich": "list[2]",
+   "QKQ_n_neg_bereich": "list[2]",
+   "QKQ_absmin_rel_min": "float",
+   "XKX_n_neg_bereich": "list[2]",
+   "XKX_absmin_rel_min": "float",
+   "K_absmin_rel_min": "float",
+   "w2_min_rel": "float",
+   "A1R1_k_wachsend": "int",
+   "A1R1_k_A_red_nicht_pd": "int",
+   "diag": [
+    "spur_neg_min",
+    "spur_neg_mittel",
+    "spur_pos_mittel",
+    "weyl_neg_mittel",
+    "weyl_pos_mittel"
+   ]
+  },
+  "t_stabil_glas_6k": "float",
+  "t_bild": "float"
+ },
+ "zeiten": {
+  "t_spanne_V": 0.15246105194091797,
+  "t_stabil_V": 0.1532917022705078,
+  "t_bau_glas": 0.1513357162475586,
+  "t_punkt_glas_voll": 7.3498828411102295,
+  "t_punkt_glas_stabil": 6.4940550327301025,
+  "t_gang_rauch20": 0.7230465412139893,
+  "t_spanne_V_voll_und_teile": 1.6844093799591064,
+  "t_stabil_glas_6k": 43.768869400024414,
+  "t_bild": 1.3626627922058105
+ },
+ "codeprobe_zusammen_gleich": true,
+ "laufzeit_s": 61.84248685836792,
+ "maxrss_MB": 325.48046875
+}

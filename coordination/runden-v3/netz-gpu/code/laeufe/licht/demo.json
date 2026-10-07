@@ -1,0 +1,50 @@
+{
+ "netz": [
+  115200,
+  783360,
+  1336320,
+  668160
+ ],
+ "zellen": [
+  20,
+  12,
+  12
+ ],
+ "M": 0.19289823495873543,
+ "phi_min": -0.11999999999999998,
+ "poisson": {
+  "iter": 216,
+  "rest_rel": 7.932638083488549e-13,
+  "rest_gleichung": 1.5577226039400373e-13,
+  "M": 1.0
+ },
+ "omega_max": 23.045002927800745,
+ "dt": 0.06944444444444445,
+ "schritte": 216,
+ "zeit_je_schritt_ms": 2.042074998219808,
+ "energie_rel_drift_max": 0.0012388071476143736,
+ "gauss_rest_max": 3.5867142589296463e-14,
+ "front_x_achse": 15.553879280655552,
+ "front_x_rand": 16.86214290215782,
+ "verzoegerung_achse_gegen_rand": 1.3082636215022685,
+ "datensatz_MB": 34.0992,
+ "stern_min": [
+  0.0023582032683151775,
+  0.030190171349248947,
+  1.616617341929897
+ ],
+ "_meta": {
+  "argv": [
+   "/home/fmh/fmhc-physics-remote/netz-gpu/code/lauf_licht.py",
+   "demo",
+   "/home/fmh/fmhc-physics-remote/netz-gpu/datensaetze/licht-linse-v",
+   "/home/fmh/fmhc-physics-remote/netz-gpu/lauf/licht/demo.json"
+  ],
+  "torch": "2.5.1+cu121",
+  "gpu": "Quadro P4000",
+  "laufzeit_s": 5.1180384159088135,
+  "gpu_speicher_max_MB": 1081.764352,
+  "ende_utc": "2026-10-05T15:43:54Z",
+  "fassung": "netzgpu 0.1 (2026-10-05)"
+ }
+}

@@ -1,0 +1,19 @@
+R33 Messseite, Ankuendigung nach dem Rauchlauf (Code-Agent, Claude), geschrieben 2026-10-03 nach 14:26 CEST, vor jeder
+echten Rechnung. Keine Zahlen zu den Zielfenstern.
+
+Verfahren: stabilisiertes Schiessen (Gram-Schmidt-Orthonormierung der zwei regulaeren Loesungen waehrend der
+Integration, Godunov/Conte), sonst Physik und Gitter wie RUNDE-31. Rauchlauf: bekannte Sprossen k = 0, -1, -2 auf
+h = 0,04 und 0,02 auf <= 5e-12 in omega^2 wiedergefunden (Auftrag: < 1e-6), Umlaeufe -1, +1, -1. Das ungeschuetzte
+Verfahren aus RUNDE-31 versagt bei R ~ 56 (Kernwachstum 1e17, falsches Vorzeichen); das stabilisierte bleibt dort auf
+~1e-12 relativ stabil.
+
+Geplante Laeufe (.69, kleintest.sh, Spuren cpu, cpu2, cpu3, cpu4, hoechstens vier zugleich, je <= 10 min, 1 Kern):
+- Phase 1: 13 Abtastlaeufe (221 Zeilen, Abstand b_inf/8 in z, ganzer Bereich aller moeglichen Fenster k = -3 .. -25)
+- Phase 2: 8 Wurzellaeufe h = 0,04 mit Umlauf-Rechteck
+- Phase 3: 8 Gitterlaeufe h = 0,02 und 8 Randproben (Aussenrand + 20)
+- Phase 4: 1 Auswertung (Fensterlogik der Reihe nach, Schritt b_inf, Fenster +-b_inf/2)
+- dazu 24 Wiederholungsaufrufe (--fortsetzen), die nur fehlende Klammern nachholen und sonst leer sind (~5 s)
+
+Zusammen 38 Laeufe plus bis zu 24 Wiederholungen. Geschaetzte Gesamtzeit: etwa 2 h CPU (Summe ueber Spuren),
+Wanduhr etwa 30 bis 45 min; obere Grenze 2 h Wanduhr. Abbruchregel: Stand um 16:05 CEST wird ausgewertet, Fehlendes
+ist UNRESOLVED. Danach Versiegelung (chmod a-w) und nur der sha256 an die Leitung.

@@ -1,0 +1,173 @@
+    def stopp_klasse(it, E, p, fmax):
+        d = np.sin(p[fr] - pS[fr])
+        D = float((d * d).max())
+        bereich = bool(D >= args.d_sattel and fmax > args.f_ruhe_bereich)
+        if E < ES - args.delta_k:
+            return "T", bereich
+        if it >= args.nskip and D <= args.eps_s:
+            return "S", bereich
+        if it >= args.nskip and fmax <= args.ftol_m:
+            return "M", bereich
+        if wand() > t_bahn:
+            return "offen", bereich
+        return None, bereich
+
+    def bahn(p0, lam):
+        kl, p, it, best, E, fm, Emax, cl = fire_psi(eb, p0, args.nbis, stopp_klasse, dtmax=args.dtmax,
+                                                    nskip=args.nskip)
+        if kl is None:
+            kl = "offen"
+        d = np.sin(p[fr] - pS[fr])
+        info = {"lambda": lam, "klasse": kl, "schritte": it, "fmin": best[0], "E_fmin": best[2], "it_fmin": best[3],
+                "fmax_ende": fm, "E_ende": E, "D_ende": float((d * d).max()), "fmin_im_sattelbereich": bool(best[3] >= 0),
+                "t": wand()}
+        return kl, p, best, info
+
+    def bisektion(zustand, nh, t_grenze, pruef0, ziel):
+        """Halbierungen auf [0, 1]. ziel "S": Rand des Beckens von S (oben "T" oder "M", unten "S"); ziel "T": Rand des
+        Beckens von T (oben "T", unten "S" oder "M"). Erst 1 (muss oben sein), bei pruef0 auch 0 (muss unten sein)."""
+        oben, unten = (("T", "M"), ("S",)) if ziel == "S" else (("T",), ("S", "M"))
+        lo, hi = 0.0, 1.0
+        sch = []
+        kl, p, best, info = bahn(zustand(1.0), 1.0)
+        sch.append(info)
+        letzte = {"o": (1.0, p, best, kl) if kl in oben else None, "u": None}
+        if letzte["o"] is None:
+            return lo, hi, sch, letzte, 0
+        if pruef0:
+            kl, p, best, info = bahn(zustand(0.0), 0.0)
+            sch.append(info)
+            if kl not in unten:
+                return lo, hi, sch, letzte, 0
+            letzte["u"] = (0.0, p, best, kl)
+        n_h = 0
+        for _ in range(nh):
+            if wand() > t_grenze:
+                break
+            lam = 0.5 * (lo + hi)
+            kl, p, best, info = bahn(zustand(lam), lam)
+            sch.append(info)
+            if kl in oben:
+                hi = lam
+                letzte["o"] = (lam, p, best, kl)
+                n_h += 1
+            elif kl in unten:
+                lo = lam
+                letzte["u"] = (lam, p, best, kl)
+                n_h += 1
+            else:
+                break
+        return lo, hi, sch, letzte, n_h
+
+    def nachschaerfen(letzte, ziel, t_grenze):
+        """Stufe 2 (edge tracking): Strecke zwischen den Zustaenden kleinster Kraft der letzten unteren und oberen Bahn."""
+        info = {"gerechnet": False}
+        if not (letzte["o"] is not None and letzte["u"] is not None and letzte["o"][2][3] >= 0
+                and letzte["u"][2][3] >= 0 and args.nbisekt2 > 0):
+            return letzte, info
+        pa, pb = letzte["u"][2][1].copy(), letzte["o"][2][1].copy()
+        lo2, hi2, sch2, l2, n2 = bisektion(lambda mu: (1.0 - mu) * pa + mu * pb, args.nbisekt2, t_grenze, True, ziel)
+        ok2 = bool(l2["o"] is not None and l2["u"] is not None and n2 >= args.nbisekt2_min
+                   and l2["o"][2][3] >= 0 and l2["u"][2][3] >= 0)
+        info = {"gerechnet": True, "gilt": ok2, "mu_lo": lo2, "mu_hi": hi2, "n_halb": n2, "schritte": sch2,
+                "abstand_start": float(np.sqrt(((pb - pa) ** 2).sum()))}
+        return (l2 if ok2 else letzte), info
+
+    def sattel_info(letzte):
+        bo, bu = letzte["o"][2], letzte["u"][2]
+        info = {"E_fmin_oben": bo[2], "E_fmin_unten": bu[2], "fmin_oben": bo[0], "fmin_unten": bu[0],
+                "klasse_oben": letzte["o"][3], "klasse_unten": letzte["u"][3],
+                "sattelbereich": [bool(bo[3] >= 0), bool(bu[3] >= 0)],
+                "genau": bool(bo[3] >= 0 and bu[3] >= 0 and max(bo[0], bu[0]) <= args.fmin_max),
+                "E_sattel": float(max(bo[2], bu[2])), "barriere": float(max(bo[2], bu[2]) - ES)}
+        return info, (bo[1] if bo[2] >= bu[2] else bu[1])
+
+    def q_(p):
+        return q_aus_psi(p, qS, netz)
+
+    # Stufe 1: Kappenfamilie, Rand des Beckens von S (PLAN Abschnitt 3)
+    lo, hi, schritte, letzte, n_halb = bisektion(lambda lam: pS * (1.0 - lam * w), args.nbisekt, t_halb, False, "S")
+    aus = {"kopf": kopf(args), "netz_info": netz.info(), "E_S": ES, "E_S_quat": float(ESq[0]),
+           "schritte": schritte, "lambda_lo": lo, "lambda_hi": hi, "n_halb": n_halb,
+           "lambda1_klasse": schritte[0]["klasse"], "stufe2": {"gerechnet": False}, "stufe3": {"gerechnet": False}}
+    gut = letzte["o"] is not None and letzte["u"] is not None
+    aus["klammer"] = bool(gut)
+    if gut:
+        letzte, aus["stufe2"] = nachschaerfen(letzte, "S", t_halb2)
+        s1, sattel1 = sattel_info(letzte)
+        aus["sattel1"] = s1
+        pfad = [qS, q_(letzte["u"][2][1]), q_(letzte["o"][2][1])]
+        ende, barriere, genau, sattel, pfad_ok = letzte["o"][1], s1["barriere"], s1["genau"], sattel1, True
+        aus["weg_art"] = "S -> Sattel -> T"
+        if letzte["o"][3] == "M":
+            # Stufe 3 (PLAN Abschnitt 3): Zwischenminimum M an der Nicht-S-Seite; Rand des Beckens von T in der
+            # Kappenfamilie zwischen lambda_M (Klasse M) und lambda_T (Klasse T), dann Nachschaerfen.
+            pM = letzte["o"][1].copy()
+            pfad.append(q_(pM))
+            lt = [s["lambda"] for s in schritte if s["klasse"] == "T"]
+            lamT = min(lt) if lt else None
+            lm = [s["lambda"] for s in schritte if s["klasse"] == "M" and lamT is not None and s["lambda"] < lamT]
+            lamM = max(lm) if lm else None
+            info3 = {"gerechnet": False, "lambda_M": lamM, "lambda_T": lamT}
+            pfad_ok = False
+            if lamT is not None and lamM is not None:
+                lo3, hi3, sch3, l3, n3 = bisektion(lambda mu: pS * (1.0 - (lamM + mu * (lamT - lamM)) * w),
+                                                   args.nbisekt, t_halb3, True, "T")
+                info3.update({"gerechnet": True, "mu_lo": lo3, "mu_hi": hi3, "n_halb": n3, "schritte": sch3})
+                if l3["o"] is not None and l3["u"] is not None and n3 >= args.nbisekt2_min:
+                    l3, info3["stufe3b"] = nachschaerfen(l3, "T", t_halb3b)
+                    s3, sattel3 = sattel_info(l3)
+                    d = np.sin(l3["u"][1][fr] - pM[fr])
+                    s3["unten_ende_D_zu_M"] = float((d * d).max())
+                    s3["unten_ende_gleich_M"] = bool(l3["u"][3] == "M" and s3["unten_ende_D_zu_M"] <= args.eps_s)
+                    info3["sattel2"] = s3
+                    if l3["u"][3] == "S":
+                        aus["weg_art"] = "S -> Sattel 2 -> T (unten S)"
+                        pfad = [qS, q_(l3["u"][2][1]), q_(l3["o"][2][1])]
+                        barriere, genau, sattel, pfad_ok = s3["barriere"], s3["genau"], sattel3, True
+                    elif s3["unten_ende_gleich_M"]:
+                        aus["weg_art"] = "S -> Sattel 1 -> M -> Sattel 2 -> T"
+                        pfad += [q_(l3["u"][2][1]), q_(l3["o"][2][1])]
+                        barriere = max(s1["barriere"], s3["barriere"])
+                        sattel = sattel1 if s1["E_sattel"] >= s3["E_sattel"] else sattel3
+                        genau, pfad_ok = bool(s1["genau"] and s3["genau"]), True
+                    ende = l3["o"][1]
+            aus["stufe3"] = info3
+        aus["barriere"] = float(barriere)
+        aus["genau"] = bool(genau)
+        aus["pfad_ok"] = bool(pfad_ok)
+        aus["lokalisierung"] = lokal2(netz, q_(sattel), qS)
+        np.savez_compressed(os.path.join(args.aus, "bisekt-%s.npz" % gtag(args.r0, args.R)),
+                            Z=np.stack(pfad + [q_(ende)]))
+
+        def stopp_frei(it, E, p, fmax):
+            if E < args.e_T:
+                return "T", False
+            if fmax <= args.ftol_ruhe:
+                return "ruhe", False
+            if wand() > args.budget:
+                return "zeit", False
+            return None, False
+
+        kl2, p2, it2, _, E2, fm2, Emax2, cl2 = fire_psi(eb, ende.copy(), args.nfrei, stopp_frei,
+                                                        dtmax=args.dtmax, merke=False)
+        kl2 = kl2 if kl2 is not None else "nmax"
+        c2 = np.cos(p2[netz.a] - p2[netz.b])
+        aus["freigabe"] = {"klasse": kl2, "schritte": it2, "E_end": E2, "fmax_end": fm2, "E_max": Emax2,
+                           "T_erreicht": kl2 == "T", "zwischenminimum": kl2 == "ruhe",
+                           "E_max_unter_ES": bool(Emax2 < ES), "bindungen_c_le_0_ende": int((c2 <= 0).sum()),
+                           "t": wand()}
+        np.savez_compressed(os.path.join(args.aus, "freigabe-%s.npz" % gtag(args.r0, args.R)), q=q_(p2))
+        aus["gueltig_A_ohne_S"] = bool(aus["lambda1_klasse"] in ("T", "M") and n_halb >= args.nbisekt_min
+                                       and pfad_ok and genau and aus["freigabe"]["T_erreicht"]
+                                       and aus["freigabe"]["E_max_unter_ES"])
+    else:
+        aus["gueltig_A_ohne_S"] = False
+    alle_sch = (schritte + (aus["stufe2"].get("schritte") or []) + (aus["stufe3"].get("schritte") or [])
+                + ((aus["stufe3"].get("stufe3b") or {}).get("schritte") or []))
+    aus["zahl_M"] = int(sum(1 for s in alle_sch if s["klasse"] == "M"))
+    aus["zahl_offen"] = int(sum(1 for s in alle_sch if s["klasse"] == "offen"))
+    aus["laufzeit_s"] = time.time() - t0
+    aus["maxrss_mb"] = maxrss_mb()
+    g2.schreibe_json(os.path.join(args.aus, "bisekt-%s.json" % gtag(args.r0, args.R)), aus)
+    print("bisekt fertig %s laufzeit %.1f s" % (gtag(args.r0, args.R), aus["laufzeit_s"]))

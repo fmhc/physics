@@ -1,0 +1,21 @@
+{
+  "id": "codex-p3-formelkandidaten-20260922",
+  "time": "2026-09-22T17:11:40Z",
+  "time_kind": "completed",
+  "author": "codex-agent-review",
+  "topic": "formelkandidaten",
+  "status": "reported",
+  "title": "P3 und lokale Vergleichsfamilie P3-L hergeleitet und intern kontrolliert",
+  "question": "Kann Paartransfer den inneren Modenimpuls erhalten, und bleibt die Ueberlaufschwelle bei vollstaendiger lokaler Projektion erhalten?",
+  "action": "Eigene Herleitung, Fourierprojektion, zwei kleine sequenzielle CPU-Kontrollen auf ubuntu-auto (.69), keine historische Wiederholung und kein Datenfit.",
+  "result": "P3 erhaelt Q und K bei 0+0 <-> (+1)+(-1). Freies Band |g|A^2 > k^2+M^2. P3-L bindet Transfer und Dichteverschiebung an dasselbe Potential; Band 0 < k^2+M^2 < 4S-6S^2, daher bei S=1 stabil. 15 P3-Kontrollen und acht Algebra-/zwei Betriebskontrollen P3-L bestanden.",
+  "meaning": "Zwei unterscheidbare Modellfamilien, keine Naturbestaetigung und keine unabhaengige Reproduktion. Lokale Herkunft garantiert keinen Ueberlastschalter. Laboranschluss ueber stimulierte Partnerantwort und Band vorgeschlagen, Einheiten-/Koeffizientenkalibrierung offen.",
+  "compute": "CPU auf ubuntu-auto, kein CUDA; CPUQuota=25%, MemoryMax=512M, RuntimeMaxSec=120 je sequenzieller Unit",
+  "peer_ack": "5054fa920ae54bc9bf5fd642d7c18495",
+  "sources": [
+    {"path": "coordination/formelkandidaten-20260922/KANDIDAT-P3.md", "sha256": "2d230f10bbff4d0ce6f05b1617777a10f9d29d0277c9c21ca324c4ab55d6b4ac"},
+    {"path": "coordination/formelkandidaten-20260922/KANDIDAT-P3-L.md", "sha256": "ffef9e1895cca464f4b1177255b4d068e5569bfec1136cd08de5a6f21599e0b4"},
+    {"path": "coordination/formelkandidaten-20260922/CHECK-P3.json", "sha256": "31438104042fcba6c2bda483e497028ce749e32949b0ccb3bf5b6d8813bca1d0"},
+    {"path": "coordination/formelkandidaten-20260922/CHECK-P3-L.json", "sha256": "2b6805ede874e123c8b45f9670779b3163cf28dc57168025cb493efa23b40c3b"}
+  ]
+}

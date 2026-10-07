@@ -1,0 +1,26 @@
+brechung: Start 2026-09-30T01:41:16+00:00, Ende 2026-09-30T01:41:27+00:00, Quadro P4000, torch 2.5.1+cu121 RAUCHTEST: Zahlen ungueltig
+Medium C0 = 0.1, g4 = 0.5, lam = 0.1: c_s = 0.2085, Heilungslaenge etwa 3.23
+Dauer [s]: massen_grob_s 0.6, relax_grob_s 0.5, entw_grob_s 2.7, massen_fein_s 1.5, relax_fein_s 0.5, entw_fein_s 4.9
+Hochrechnung Hauptlauf (nur --rauch ohne --mini gilt): 155 s = nicht entwickelnde Teile 3 s + Entwicklung x 20; Relaxation im Rauchtest gekuerzt. Ueber 540 s je Aufruf: Stufen einzeln (--stufe grob / --stufe fein).
+Karte brechung (Wellen 14). Ball m = 0, omega^2 = 0.7 (Q 23.996, Vakuum-E 22.6258), Soll v1 = 0.12; Stufe C0 -> C0 + dC bei x = 0 (Breite 2.0), Fits fuer |X| >= 9.0.
+[grob]
+  M_eff (F mit Ball - F ohne Ball): {"dC-0.04": 22.70122083947343, "dC0.0": 22.75531308448153, "dC0.04": 22.810153396628778, "dC0.06": 22.83771978307925, "lam0": 22.62574548426279}; Kontrolle lam0 gegen Vakuum-E: -8.40e-06
+  Lauf | dC | th1 soll/mess | v1 | M* (Stoss/v1) | m mitgef. | Ausgang | th2 mess | P1 th2 | d P1 | v2/P1 | P2 th2 | d P2 | vy2/vy1 | Q-Verlust
+  abst20 | +0.04 | 20/20.00 | 0.1199 | 22.936 | 0.015 | unklar (durchgelaufen) | - | 24.72 | - | - | 24.75 | - | - | 4.0e-08
+  abst40 | +0.04 | 40/40.00 | 0.1199 | 22.935 | 0.014 | unklar (durchgelaufen) | - | 51.79 | - | - | 51.88 | - | - | 3.7e-08
+  abst50 | +0.06 | 50/50.01 | 0.1199 | 22.936 | 0.015 | unklar (reflektiert) | - | 50.01 | - | - | 50.01 | - | - | 5.1e-07
+  anz20 | -0.04 | 20/20.00 | 0.1199 | 22.931 | 0.010 | unklar (durchgelaufen) | - | 17.28 | - | - | 17.27 | - | - | 4.0e-08
+  anz40 | -0.04 | 40/40.00 | 0.1199 | 22.931 | 0.011 | unklar (durchgelaufen) | - | 33.94 | - | - | 33.90 | - | - | 3.7e-08
+  senkrecht | +0.04 | 0/-0.00 | 0.1199 | 22.936 | 0.015 | unklar (durchgelaufen) | - | -0.00 | - | - | -0.00 | - | - | 4.1e-08
+  ohne40 | +0.00 | 40/40.00 | 0.1199 | 22.933 | 0.013 | unklar (durchgelaufen) | - | 40.00 | - | - | 40.00 | - | - | 3.7e-08
+  lam0_40 | +0.04 | 40/40.00 | 0.1203 | 22.734 | -0.057 | unklar (durchgelaufen) | - | 40.00 | - | - | 40.02 | - | - | 3.8e-08
+  Urteil nach PLAN.md: offen
+[fein]
+  M_eff (F mit Ball - F ohne Ball): {"dC-0.04": 22.70122083950796, "dC0.0": 22.75531308448155, "dC0.04": 22.810153396628806, "dC0.06": 22.837719783079223, "lam0": 22.625745484262808}; Kontrolle lam0 gegen Vakuum-E: -8.40e-06
+  Lauf | dC | th1 soll/mess | v1 | M* (Stoss/v1) | m mitgef. | Ausgang | th2 mess | P1 th2 | d P1 | v2/P1 | P2 th2 | d P2 | vy2/vy1 | Q-Verlust
+  abst20 | +0.04 | 20/20.00 | 0.1199 | 22.941 | 0.020 | unklar (durchgelaufen) | - | 24.72 | - | - | 24.75 | - | - | 3.9e-08
+  abst40 | +0.04 | 40/40.00 | 0.1199 | 22.940 | 0.019 | unklar (durchgelaufen) | - | 51.80 | - | - | 51.88 | - | - | 3.6e-08
+  anz40 | -0.04 | 40/40.00 | 0.1199 | 22.936 | 0.015 | unklar (durchgelaufen) | - | 33.94 | - | - | 33.90 | - | - | 3.6e-08
+  Urteil nach PLAN.md: offen
+L3 (grob gegen fein; bestanden, wenn |fein - grob| <= max(0,2 |fein|, Toleranz)):
+  L3 gesamt: bestanden (0 von 0)

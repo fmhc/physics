@@ -1,0 +1,36 @@
+{
+  "id": "claude-s2-ringe-20260915",
+  "time": "2026-09-15T04:56:00+00:00",
+  "time_kind": "completed",
+  "author": "claude-s2-ringe (Anthropic, Opus 5), Stufe S2 Reproduktion/Kontrolle",
+  "topic": "verkettete-ringe",
+  "status": "reported",
+  "title": "S2 zu Vertrag 5 (verkettete Ringe, Lauf A): Auswertung bitgleich reproduziert, 51/51 Bahnen bitgleich im Praefix; beide Abnahmekontrollen kippen an der Energietoleranz H_rel<=1e-4, nicht an der Physik; rechenminuten um Faktor 3,3538 zu hoch",
+  "question": "Sind Hashes, Bahndaten, Auswertungskette und Simulation des S1-Laufs verkettete-ringe-a reproduzierbar, und welche Teilbedingung laesst kontrollen.K_Lk.bestanden und kontrollen.K_frei.bestanden auf false kippen?",
+  "action": "Auf ubuntu-auto (.69), Interpreter /home/fmh/fmhc-physics-gpu-venv/bin/python, torch 2.5.1+cu121, numpy 2.4.4, float64, threads 1, OMP_NUM_THREADS=1, OPENBLAS_NUM_THREADS=1. CPU statt .69-GPU nach Regel 10 Ausnahme c (Bitgleichheit mit einem CPU-Original; das S1-Original ist geraet=cpu). Arbeit ausschliesslich in /home/fmh/fmhc-physics-claude/verkettete-ringe-s2/, Laufordner nur lesend. Skriptkopie morse_ringe-s2.py bit-identisch zum Original (leerer diff). Vier Schritte: (1) sha256 der vier im Ergebniskopf genannten Dateien plus der neun Spiegelkopien im Vertragsordner; (2) eigener Bahnhash je Bahn ueber die Rohbytes der npz-Spalten plus unabhaengige Nachrechnung von 15 Kennzahlen mit eigenem numpy-Code; (3) --auswertung erneut in ein eigenes Ausgabeverzeichnis und feldweiser Vergleich beider ERGEBNIS.json; (4) Neusimulation beider Batches bei h=0,005 in acht Paketen zu je 195 s als lokale User-Units (CPUQuota 200 Prozent, MemoryMax 6G), bitweiser Praefixvergleich mit np.array_equal ohne Toleranzfenster. S2-Rechenzeit 1567,7 s.",
+  "result": "(b) 4 von 4 Soll-Ist-Hashpaaren gleich, zusaetzlich 9 von 9 Spiegelkopien hashgleich. (c) 51 von 51 Bahnenpaaren geprueft, 51 uebereinstimmend, 0 Abweichungen, keine Bahn fehlt oder ist doppelt, alle vier npz tragen den in ihrer Checkpoint-JSON eingetragenen sha256. (d) 2820 Blattfelder verglichen, genau 1 abweichendes Feld: zeit_utc. Alles andere bitgleich, einschliesslich P1=A, P2=A, P3=offen, P4=A und beider bestanden=false. (e) 51 von 51 Bahnen bitgleich auf dem gerechneten Praefix (Batch H2,F2,K-Lk,K-frei bis t=170,5 von 2000, 8,548 Prozent; Batch B3,F3,C3 bis t=87,0, 4,374 Prozent), 0 Abweichungen. Das Rissereignis der Kontrollbahn id 47 wurde mit eigenem Code auf eigenen Daten unabhaengig reproduziert: t_b=19,0 exakt wie S1 bei h=0,005. Nicht reproduziert: die gesamte feine Schrittweite h=0,0025 und 91,5 bzw. 95,6 Prozent der groben Bahnlaenge (Zeitbudget). (f) K_frei kippt ausschliesslich ueber abnahme und dort ausschliesslich ueber H_TOLERANZ=1e-4 (morse_ringe.py Zeile 1001 und Kopplung 1058/1059); getrennt ist 3 von 3 erfuellt. H_rel fein/grob: id48 3,09e-05 (haelt) / 1,14e-04; id49 1,46e-04 / 5,21e-04; id50 6,49e-04 / 3,24e-03. K_Lk kippt an id46 allein ueber H_rel (3,54e-04 fein, 2,18e-03 grob) und an id47 dreifach: riss=true mit t_b=21,0 und komponenten=5, H_rel 6,13e-04 fein, und konvergenz=false weil t_b zwischen den Schrittweiten 19,0 gegen 21,0 liegt (9,5 Prozent, Toleranz 5 Prozent). Alle 45 Hauptbahnen haben abnahme=true mit maximal 0,213 (fein) und 0,850 (grob) der Energietoleranz; genau die 5 Bahnen 46 bis 50 sind die einzigen mit abnahme=false. Keine Kontrollbahn geht in die Auswahlmengen von P1 bis P4 ein (P1 12 Bahnen, P2 18, P3/P4 27, davon 0 Kontrollbahnen). Zusatzbefund: rechenminuten=3647,178427 ist eine 4- bzw. 3-fache Zaehlung derselben zwei Batches, weil die Schleife ueber sieben Blocknamen laeuft (Zeile 1025 und 1037); echte Wandzeit 1087,47 min, Ueberzaehlungsfaktor 3,3538, von mir aus dem Code auf alle 12 Stellen nachgebildet.",
+  "meaning": "Der Lauf ist reproduzierbar, aber nicht abgenommen. Beide verfehlten Abnahmen haben eine gemeinsame numerische Wurzel: die relative Energiedrift des Integrators haelt 1e-4 bei den Kontrollenergien E_rel 0,5/2,0/8,0 nicht ein und waechst systematisch mit E_rel und h. Bei K_frei ist die Physik einwandfrei (alle drei Ringpaare bleiben getrennt, com_abstand_ende 815/1632/3265) und nur die Numerik faellt durch; bei K_Lk kommt ein echter, aber nicht schrittweitenkonvergierter Riss hinzu. P1, P2 und P4 sind arithmetisch unberuehrt, weil keine Kontrollbahn in ihre Auswahl faellt - aber nach Regel 8 hat die verfehlte Abnahme Vorrang, und die durchgefallenen Kontrollen sind gerade die Abnahme der Groessen lk_erhalten, riss, t_b und getrennt, auf denen P1 und P4 rechnen. HYPOTHESE fuer die Heilung: die sechs Kontrollbahnen 45 bis 50 mit kleinerem h nachrechnen, statt den ganzen Lauf zu verwerfen. Zwei Konstruktionsmaengel sind unabhaengig davon zu klaeren: P4 wertet schwelle(C3)==schwelle(H2)==None als A, waehrend P3 dieselbe Datenlage als offen wertet - P4=A ist damit entartet und kein Nachweis, dass C3 sich wie H2 verhaelt; und rechenminuten ist dreifach gezaehlt, auch in der Verdichtung ERGEBNIS-RINGE-verdichtet.json. Meine Wiederholung erzeugt dieselben falschen Zahlen, weil derselbe Code dieselben Daten liest - Reproduzierbarkeit ist hier belegt, Richtigkeit nicht.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260912/verkettete-ringe-lauf-a/S2-REPRODUKTION-RINGE.md",
+      "sha256": "92444869117bd9cecb43180a7fa72162d6492fe80db6c7c3ef6845024b524cfc"
+    },
+    {
+      "path": "/home/fmh/fmhc-physics-claude/verkettete-ringe-s2/BAHNHASHES-S2.json",
+      "sha256": "ce33cebe41a3a1dcacb6f60c201a08e7d669c9493dc766014f31cb3b240e8ae7"
+    },
+    {
+      "path": "/home/fmh/fmhc-physics-claude/verkettete-ringe-s2/NEURECHNUNG-S2.json",
+      "sha256": "61f9c2b5cca2e6434126f1b3b21a527a40c32dc96de5e0465aa3e80f42004be2"
+    },
+    {
+      "path": "/home/fmh/fmhc-physics-claude/verkettete-ringe-s2/auswertung-neu/ERGEBNIS.json",
+      "sha256": "1d51c16fa2f7192e45307020db9a3eefc450a46aedb2aed35731269cfd7faef5"
+    },
+    {
+      "path": "/home/fmh/fmhc-physics-claude/verkettete-ringe-s2/MORSE-ID47-S2.json",
+      "sha256": "b5055f279a57ca4535e1da8fc9e1b501668ee2a147096bc41746f607708a52c2"
+    }
+  ],
+  "recorded_at": "2026-09-15T04:57:08.589830+00:00"
+}

@@ -1,0 +1,21 @@
+{
+  "id": "claude-richtungstest-fehlerellipse-20260906",
+  "time": "2026-09-06T14:07:00+02:00",
+  "time_kind": "completed",
+  "author": "Claude",
+  "topic": "binaries",
+  "status": "withdrawn",
+  "title": "Der Richtungstest an Doppelsternen ist nicht sauber: Gaias Fehlerellipse zeigt zum galaktischen Zentrum",
+  "question": "Hängt die Relativbewegung weiter Doppelsterne davon ab, wie ihre Trennung zur Richtung des galaktischen Außenfeldes steht? Das unterscheidet MOND von Newton, und die Winkelklassen liegen im selben Feldbin, so dass das Rauschen herausfallen sollte.",
+  "action": "147.380 Paare nach allen Kontrollen, Raster aus fünf Feldbins mal drei Winkelklassen. Danach die Kontrolle, ob der Messfehler selbst vom Winkel abhängt — erst skalar, dann als volle Fehlerellipse, projiziert auf die Trennungsrichtung.",
+  "result": "Der skalare Fehler ist unauffällig, quer zu längs 0,998 ± 0,006. Die Fehlerellipse ist es nicht: die Varianz LÄNGS der Trennungsrichtung gibt 0,9257 ± 0,0083, also −8,9 Sigma, und die Anisotropie selbst −66 Sigma, während die Gesamtvarianz mit 1,0065 ± 0,0081 unauffällig bleibt. Gaias Abtastgeometrie richtet die Fehlerellipse relativ zur Richtung zum galaktischen Zentrum aus.",
+  "meaning": "Das erklärt den gemessenen Rest von einem Prozent, der in ALLEN Feldbins auftrat, auch im stärksten, wo kein Modell eine Winkelabhängigkeit vorhersagt. Die Doppeldifferenz aus Winkel und Feldstärke entfernt ihn nur, wenn die Anisotropie feldunabhängig ist; das ist noch nicht geprüft. Bis dahin ist der Test nicht sauber. Der Einwand kam von der Codex-Sitzung und war berechtigt.",
+  "sources": [
+    {
+      "path": "neue-theorie/modellfinder.py",
+      "label": "Raster und Kontrolle",
+      "sha256": "db3bf6447afa066724536186a063ac57e8841604359a398adeaefafb5e670002"
+    }
+  ],
+  "recorded_at": "2026-09-06T14:46:14.353744+00:00"
+}

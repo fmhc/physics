@@ -1,0 +1,88 @@
+NICHTAUTOR-PAPIERREVIEW: NORMIERUNG/PHASE/STROM — 2026-10-02
+Gelesen PLAN.txt insbesondere3–5, harmonic-source/code.py source/qa,
+sowie die bereits gepruefte responses.py-/outgoing.solve-Konvention.
+Keine neue Rechnung, Codeaenderung, Interpreter oder Laeufe.
+
+URTEIL
+Die geplanten Faktoren, Fourierzuordnung und Auslaufvorzeichen sind
+konsistent. Kein konkreter Normierungsblocker. Dies ist kein Review der
+noch entstehenden Zeitlaufimplementierung und kein Beleg der Aufloesbarkeit
+des sehr kleinen Zeitsignals.
+
+1. GEMEINSAME RITZPHASE UND ANFANGSDATEN
+Sei qtilde=e^(i theta)q/||q|| und ptilde=e^(i theta)p/||q|| der tatsaechlich
+gedrehte erste-Ordnungs-Vektor. theta muss der ANGEWENDETE Winkel sein;
+beim Anker q_j realpositiv ist theta=-arg(q_j). Die gemeinsame Norm
+wird aus dem Positionsblock bestimmt, derselbe Faktor gilt fuer p.
+Mit qphys=qtilde/sqrtVol folgt die reale lineare Stoerung
+alpha Re(qphys e^(i rho t)). Die angegebenen phi/pi-Anfangsdaten
+enthalten korrekt pi=i omega phi plus rotierende Modengeschwindigkeit.
+Die Rotation pi_rot=e^(-i omega t)pi-i omega phi_rot ist ebenfalls richtig.
+
+Quadratische Quelle und stationaere Antwort drehen mit e^(2i theta),
+sofern die gespeicherten Daten sich auf den ungedrehten normierten
+Ritzvektor beziehen. Nicht e^(-2i theta) einsetzen, wenn theta bereits
+als angewendeter Winkel definiert ist; keine komponentenweisen Phasen.
+Die tatsächliche Gesamtamplitude bleibt alpha=epsilon*s. Normierung
+von J2 oder Antwort auf1 waere falsch.
+
+2. FAKTOREN2/4 UND PARITAET
+Fuer die homogene quadratische Kraft J und
+q1(t)=Re(qphys e^(i rho t)) gilt durch algebraische Expansion
+ J(q1)=J_DC+J2 e^(2i rho t)+J2* e^(-2i rho t),
+ J_DC=[J(Re qphys)+J(Im qphys)]/2, J2=J(qphys)/4.
+Das ist genau die Implementierung von harmonic-source.source/qa;
+komplexe Argumente werden algebraisch quadriert, nicht betragsquadriert.
+
+Wenn das frei entwickelte Feld U(alpha)=U0+alpha U1+alpha²U2+... ist,
+liefert [U(+alpha)+U(-alpha)-2U0]/(2alpha²)=U2+O(alpha²).
+Es entsteht kein weiterer Faktor2 in U2. Dasselbe gilt fuer Geschwindig-
+keiten, wenn Baseline und Paar identisch ausgewertet werden.
+
+Schreibe kanonische Antwort U2=a e^(i nu t)+a*e^(-i nu t), a=(X,Y,Z).
+Das komplexe rotierende phi-Feld lautet
+ (x2+i y2)/sqrt2=p2 e^(i nu t)+m2*e^(-i nu t),
+ p2=(X+iY)/sqrt2, m2=(X-iY)/sqrt2.
+Folglich liefert das positive Fouriermittel unmittelbar p2 und das
+negative m2*, wie geplant. Fuer chi entsprechend c2 und c2*.
+Kein zusaetzliches Halbieren. Die freie Einschaltantwort kann weitere
+Frequenzen enthalten; die endliche Fensterprojektion ist dann eine
+Diagnose und nicht automatisch die stationaere Loesung.
+
+3. AUS-/EINLAUF UND FLUSS
+Fuer e^(+i Omega t), Omega=omega+nu>0, schreibe rp2=Aout e^(-ikr)
++Ain e^(+ikr), k>0. Dann exakt im freien radialen Aussenfeld:
+ Aout=e^(ikr)[rp2+(i/k)(rp2)']/2,
+ Ain=e^(-ikr)[rp2-(i/k)(rp2)']/2.
+Die Vorzeichen im Plan stimmen. Endlicher Hintergrund und diskrete
+Ableitungsfehler begrenzen diese Trennung; derselbe Operator am Sollfeld
+ist deshalb sinnvoll, ersetzt aber keinen unabhängigen Fernraumbeweis.
+
+Mit jQ=-2 Im(phi*phi_r), jE=-2 Re(phi_t*phi_r)-chi_t chi_r gilt fuer
+das isolierte Plusband mit Laborzeitfaktor e^(i Omega t):
+ jE_plus=Omega jQ_plus,
+ jrot_plus=(Omega-omega)jQ_plus=nu jQ_plus.
+Fuer freies Fernfeld nach Flaechenintegration:
+ FQ=8pi k(|Aout|²-|Ain|²), FE=(omega+nu)FQ, Frot=nu FQ.
+Auslaufend ergibt positives Vorzeichen. Keine zusaetzliche Zeitmittel-
+Haelfte beim komplexen phi-Laborband; seine Amplitude ist p2 selbst.
+Der reelle chi-Fourierkoeffizient verwendet dagegen das explizite Paar
+c2 e^(i nu t)+c2*e^(-i nu t); Testwellen-QA muss diese Konvention wahren.
+
+Aus der schon durch alpha² dividierten Feldantwort folgt ein skaliertes
+Bandflusskoeffizient direkt; physischer Fluss ist alpha^4 mal diesem Wert.
+Entweder Rohbandfluss durch alpha^4 teilen ODER aus U_even den Koeffizienten
+bilden, nicht beides. Fuer die beiden Basisamplituden ist das erwartete
+Verhaeltnis (alpha2/alpha1)^4, sofern beide denselben s-Faktor benutzen.
+
+4. PRUEFGRENZEN
+Die feste Demodulation ueber ganze Grundperioden trennt ideal DC/erste/
+zweite Harmonische. Sample-/Endpunktinterpolation und Trapezregel machen
+das numerisch nur naeherungsweise: die geplante Extraktions-QA ist daher
+notwendig, keine analytische Garantie fuer jedes transient kontaminierte
+Signal. Quell-/Antwortphase darf dabei nicht an das Ergebnis angepasst
+werden. Globale Energieerhaltung ist kein Fehlerbalken dieser winzigen
+Bandemission. U_odd-Kontrolle, zwei Fenster, Einlaufanteil und h/dt/
+Amplitudenvergleiche begrenzen die Aussage wie im Plan beschrieben.
+Auch bei PASS keine Lebensdauer, keine Gesamtenergie-Abnahmerate,
+kein neuer gebundener Kandidat und kein exakter BIC-Nachweis.

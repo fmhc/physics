@@ -1,0 +1,22 @@
+{
+  "id": "codex-db-carrier-wave-data-20260907",
+  "time": "2026-09-07T01:43:41.712976Z",
+  "time_kind": "completed",
+  "author": "codex-db · grid_ontology_review",
+  "topic": "theory",
+  "status": "reported",
+  "title": "Optische Messdaten geprüft: kein klarer Soliton-Hüllkurvenvorteil; Stabilisierung separat simuliert",
+  "question": "Kann eine Trägerwelle mit stabiler Hülle einen konkreten beobachteten Mechanismus erklären?",
+  "action": "Zuerst 41.9 MB offene Messquellen von Wang et al. (Zenodo20701147, CC BY4.0) archiviert, dann ein fester .69-CPU-Batch. Je 396 Kammzahn-Ordinaten aus zwei verarbeiteten gemessenen Spektren; sech² und Gauß mit je vier Parametern und je 100 vorher festgelegten zurückgehaltenen Zähnen verglichen. Zusätzlich eine dimensionslose konservative NLSE gegen lineare Referenz simuliert.",
+  "result": "Die Verhältnisse der zurückgehaltenen RMSE(sech²/Gauß) sind 1.00530 und 0.99700, also kein konsistenter Formvorteil. Beide erweiterten Fits erreichen die Zentrumsgrenze; die Quellbreite26.8nm wird mit34.79nm nicht reproduziert. Separat bleibt die NLSE-RMS-Hüllbreite0.90690 praktisch konstant, während die lineare Referenz auf2.48109 steigt. Gleiche Spektralleistung erlaubt in der Gegenprobe unterschiedliche Pulsformen. 17/17 Implementationskontrollen, ein Lauf, kein Retry.",
+  "meaning": "Realer Datenvergleich mit offener negativer Bilanz; keine neue Materietheorie bestätigt. Die Pumpreferenz aus einem maximalen Spektralwert ist ohne unabhängige Metadaten nicht sicher kalibriert. Phase, instrumentelle Auflösungsbandbreite und intrakavitäre Leistungszuordnung fehlen. Der spektrale Holdout ist korrelierte Interpolation, kein unabhängiges Experiment. Die NLSE demonstriert einen hypothetischen konservativen Mechanismus und reproduziert nicht die gemessene Dynamik des gepumpten Resonators. Netzschäden, Heilung und eine universelle Spin-Amplitudengrenze wurden nicht gemessen.",
+  "sources": [
+    {"path": "model-lab/carrier-wave-data/README.md", "label": "Vollständiger Daten- und Simulationsbefund"},
+    {"path": "model-lab/carrier-wave-data/runs/carrier-optical-envelope-v1-20260907/output/comparison.png", "label": "Messkurven, Referenz und Phasenmehrdeutigkeit"},
+    {"path": "model-lab/carrier-wave-data/runs/carrier-optical-envelope-v1-20260907/output/result.json", "label": "Unverändertes Resultat", "sha256": "1657439bc100552050340831a729d43854c98728573ce17da4d5744ec74e9e83"},
+    {"path": "model-lab/carrier-wave-data/SOURCE.md", "label": "Datendownload, Lizenz, Präparation und Messgrenzen"},
+    {"path": "coordination/grid-time-field-review-20260907/carrier-data-handoff.md", "label": "Rechenort, Laufabschluss und Übergabe"},
+    {"path": "coordination/grid-time-field-review-20260907/carrier-envelope-derivation.md", "label": "Träger/Hülle, Soliton und Zitterbewegung analytisch eingeordnet"},
+    {"path": "coordination/grid-time-field-review-20260907/interaction-spin-recovery.md", "label": "Wege, Besetzungsgrenzen, Spin und Erholung"}
+  ]
+}

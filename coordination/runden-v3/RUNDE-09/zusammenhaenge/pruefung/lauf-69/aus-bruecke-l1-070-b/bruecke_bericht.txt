@@ -1,0 +1,31 @@
+Runde 7 bic2 bruecke Start 2026-09-30T06:48:25+00:00, Geraet cpu, torch 2.5.1+cu121
+Bruecke omega^2 = 0.7, l = 1, Start 1.7752231559 - 1.442e-03 i, h = 0.02:
+  dim = 2.0000: S0 = 0.850026, rho = 1.7806670099 - 1.483e-03 i, |D| = 3.3e-16, konvergiert True
+  dim = 3.0000: S0 = 1.135061, rho = 1.7635198803 - 3.657e-03 i, |D| = 4.1e-16, konvergiert True
+  dim = 2.0000: S0 = 0.850026, rho = 1.7806670099 - 1.483e-03 i, |D| = 3.2e-16, konvergiert True
+  dim = 4.0000: S0 = 1.159503, rho = 1.7617157193 - 3.194e-03 i, |D| = 2.5e-16, konvergiert True
+  dim = 2.0000: S0 = 0.850026, rho = 1.7806670099 - 1.483e-03 i, |D| = 2.3e-16, konvergiert True
+  dim = 5.0000: S0 = 1.160986, rho = 1.7588638993 - 2.005e-04 i, |D| = 1.5e-16, konvergiert True
+  dim = 2.0000: S0 = 0.850026, rho = 1.7806670099 - 1.483e-03 i, |D| = 3.2e-16, konvergiert True
+  dim = 6.0000: S0 = 1.161074, rho = 1.7544510538 - 1.592e-03 i, |D| = 2.9e-16, konvergiert True
+  dim = 2.0000: S0 = 0.850026, rho = 1.7806670099 - 1.483e-03 i, |D| = 2.6e-16, konvergiert True
+  dim = 7.0000: S0 = 1.161080, rho = 1.7558504343 - 5.842e-03 i, |D| = 1.6e-16, konvergiert True
+  dim = 2.0000: S0 = 0.850026, rho = 1.7806670099 - 1.483e-03 i, |D| = 1.7e-16, konvergiert True
+  dim = 8.0000: S0 = 1.161080, rho = 1.7590014372 - 2.495e-03 i, |D| = 2.8e-16, konvergiert True
+  dim = 2.0000: S0 = 0.850026, rho = 1.7806670099 - 1.483e-03 i, |D| = 3.5e-16, konvergiert True
+  dim = 9.0000: S0 = 1.161080, rho = 1.7553997939 - 1.845e-05 i, |D| = 4.1e-16, konvergiert True
+  dim = 3.0000: S0 = 1.135061, rho = 1.7635198803 - 3.657e-03 i, |D| = 3.6e-16, konvergiert True
+ABBRUCH durch unerwarteten Fehler nach 387.8 s (Sicherheitsnetz):
+  Traceback (most recent call last):
+    File "/home/fmh/fmhc-physics-remote/runde9-zus10/bic2.py", line 2386, in <module>
+      main()
+    File "/home/fmh/fmhc-physics-remote/runde9-zus10/bic2.py", line 2349, in main
+      sp = bruecke(w2, dims, st, l, hB, BETA, dev, budget, zeilen)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "/home/fmh/fmhc-physics-remote/runde9-zus10/bic2.py", line 869, in bruecke
+      prof = profil(w2, dim, beta, 0.5 * h, dev)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "/home/fmh/fmhc-physics-remote/runde9-zus10/bic2.py", line 216, in profil
+      f2 = -float(g_u(u0[1:2], c)[0]) / (2.0 * (dm1 + 1.0))
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~
+  ZeroDivisionError: float division by zero

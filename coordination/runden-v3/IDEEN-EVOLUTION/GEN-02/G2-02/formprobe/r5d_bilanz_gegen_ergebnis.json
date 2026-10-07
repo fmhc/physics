@@ -1,0 +1,558 @@
+{
+ "start": "2026-09-30T11:22:21+02:00",
+ "geraet": "CPU, 1 Thread",
+ "torch": "2.10.0+cu128",
+ "unterbefehl": "bilanz_gegen",
+ "faktor": 0.05,
+ "ergebnisse": {
+  "bilanz_gegen": {
+   "laeufe": [
+    {
+     "name": "Gegenprobe m_chi=1,2 w2=0.500001",
+     "w2": 0.500001,
+     "eps": 0.05,
+     "mc2": 1.44,
+     "kc": 0.0,
+     "art": "schwer"
+    },
+    {
+     "name": "Gegenprobe m_chi=1,2 w2=0.7",
+     "w2": 0.7,
+     "eps": 0.05,
+     "mc2": 1.44,
+     "kc": 0.0,
+     "art": "schwer"
+    },
+    {
+     "name": "Gegenprobe eps=0 w2=0.7",
+     "w2": 0.7,
+     "eps": 0.0,
+     "mc2": 0.0025000000000000005,
+     "kc": 0.0,
+     "art": "ohne"
+    }
+   ],
+   "ergebnis": {
+    "grob": [
+     {
+      "name": "Gegenprobe m_chi=1,2 w2=0.500001",
+      "art": "schwer",
+      "omega2": 0.500001,
+      "omega": 0.7071074882929752,
+      "Q0": 14.548316215827544,
+      "E0": 10.968078380054669,
+      "Q_win_T": 14.548316215827544,
+      "Q_psi_win_T": 14.511283163332923,
+      "Q_chi_win_T": 0.03703305249462257,
+      "Q_neg_win_T": 0.0,
+      "Q_schale_T": 8.319236006835213e-22,
+      "Q_schwamm_T": 8.455451884651098e-65,
+      "Q_abs_T": 0.0,
+      "E_abs_T": -4.8754111023896485e-06,
+      "dQ_schale_T_rel": 1.613994199235467e-29,
+      "x_max_T": 0.0,
+      "S_max_0": 0.9985857864376068,
+      "S_max_T": 0.9979111471263225,
+      "x_betrag_0": 2.7248330005785277,
+      "x_betrag_T": 2.7354849862908583,
+      "omega_T": 0.7040736505186551,
+      "t_ereignis": NaN,
+      "Gamma_fit": 1.0600839202872462e-16,
+      "Gamma_formel": 0.0,
+      "spaet": {
+       "R_EQ": -1347486633.8648648,
+       "omega_quer": 0.7045717760125746,
+       "R_EQ_zu_omega": -1912490224.1908937,
+       "steigung_Q": -1.0600839202872462e-16,
+       "steigung_E": 1.4284489133621311e-07
+      },
+      "frueh": {
+       "R_EQ": NaN,
+       "omega_quer": 0.7051533129182361,
+       "R_EQ_zu_omega": NaN,
+       "steigung_Q": 0.0,
+       "steigung_E": 3.7903285261946124e-08
+      },
+      "ball_ganz": {
+       "x_max_betrag_max": 0.0,
+       "Q_neg_min": -1.082794252608443e-15,
+       "bestanden": true
+      },
+      "ball_frueh": {
+       "x_max_betrag_max": 0.0,
+       "Q_neg_min": 0.0,
+       "bestanden": true
+      },
+      "plaus": {
+       "Q_ges_bis_Kontakt_1e-9": {
+        "max_rel": 2.442010213481199e-16,
+        "bestanden": true
+       },
+       "E_ges_bis_Kontakt_1e-4": {
+        "max_rel": 4.6456635935873466e-07,
+        "bestanden": true
+       },
+       "E_ges_steigt_nie_1e-6": {
+        "max_anstieg_rel": 6.881779940135808e-07,
+        "bestanden": true
+       },
+       "omega_unter_1": {
+        "max": 0.7071074882929752,
+        "bestanden": true
+       },
+       "buchfuehrung_1e-9": {
+        "max_rest_rel": 0.0,
+        "bestanden": true
+       }
+      },
+      "diagnose_E_glatt_anstieg_rel": 2.2104074106982396e-07,
+      "V4_R5D_Q_win_T": 14.548131602250464,
+      "V4_rel": 1.2689847887491954e-05,
+      "V4_bestanden": null
+     },
+     {
+      "name": "Gegenprobe m_chi=1,2 w2=0.7",
+      "art": "schwer",
+      "omega2": 0.7,
+      "omega": 0.8366600265340756,
+      "Q0": 2.4516895381001635,
+      "E0": 2.3027092480311797,
+      "Q_win_T": 2.4516895381001635,
+      "Q_psi_win_T": 2.4416920740622583,
+      "Q_chi_win_T": 0.009997464037904642,
+      "Q_neg_win_T": 0.0,
+      "Q_schale_T": 5.787370621335737e-19,
+      "Q_schwamm_T": 2.8916294173358253e-52,
+      "Q_abs_T": 0.0,
+      "E_abs_T": -1.3694844094302994e-06,
+      "dQ_schale_T_rel": 6.107117942124194e-29,
+      "x_max_T": 0.0,
+      "S_max_0": 0.3675444679663242,
+      "S_max_T": 0.3688685274839799,
+      "x_betrag_0": 1.3440107988407948,
+      "x_betrag_T": 1.3437785292745177,
+      "omega_T": 0.8337743613383465,
+      "t_ereignis": NaN,
+      "Gamma_fit": 1.5758004220486093e-17,
+      "Gamma_formel": 0.0,
+      "spaet": {
+       "R_EQ": -216862963.70454547,
+       "omega_quer": 0.833862590336822,
+       "R_EQ_zu_omega": -260070383.55917615,
+       "steigung_Q": -1.5758004220486093e-17,
+       "steigung_E": 3.4173274973233497e-09
+      },
+      "frueh": {
+       "R_EQ": NaN,
+       "omega_quer": 0.8339654761174529,
+       "R_EQ_zu_omega": NaN,
+       "steigung_Q": 0.0,
+       "steigung_E": -1.2212387061212707e-07
+      },
+      "ball_ganz": {
+       "x_max_betrag_max": 0.0,
+       "Q_neg_min": 0.0,
+       "bestanden": true
+      },
+      "ball_frueh": {
+       "x_max_betrag_max": 0.0,
+       "Q_neg_min": 0.0,
+       "bestanden": true
+      },
+      "plaus": {
+       "Q_ges_bis_Kontakt_1e-9": {
+        "max_rel": 3.622719785264421e-16,
+        "bestanden": true
+       },
+       "E_ges_bis_Kontakt_1e-4": {
+        "max_rel": 1.1533051282320248e-06,
+        "bestanden": true
+       },
+       "E_ges_steigt_nie_1e-6": {
+        "max_anstieg_rel": 1.1720023787391062e-06,
+        "bestanden": false
+       },
+       "omega_unter_1": {
+        "max": 0.8368292288837399,
+        "bestanden": true
+       },
+       "buchfuehrung_1e-9": {
+        "max_rest_rel": 0.0,
+        "bestanden": true
+       }
+      },
+      "diagnose_E_glatt_anstieg_rel": 1.4511655543339393e-07,
+      "V4_R5D_Q_win_T": 2.451577115106216,
+      "V4_rel": 4.585741694797372e-05,
+      "V4_bestanden": null
+     },
+     {
+      "name": "Gegenprobe eps=0 w2=0.7",
+      "art": "ohne",
+      "omega2": 0.7,
+      "omega": 0.8366600265340756,
+      "Q0": 2.4414916653982712,
+      "E0": 2.2985707874964363,
+      "Q_win_T": 2.441491665398271,
+      "Q_psi_win_T": 2.441491665398271,
+      "Q_chi_win_T": 0.0,
+      "Q_neg_win_T": 0.0,
+      "Q_schale_T": 5.713589760395597e-19,
+      "Q_schwamm_T": 2.8546223645334146e-52,
+      "Q_abs_T": 4.440892098500626e-16,
+      "E_abs_T": -1.5484179316516133e-07,
+      "dQ_schale_T_rel": 2.683926443678521e-30,
+      "x_max_T": 0.0,
+      "S_max_0": 0.3675444679663242,
+      "S_max_T": 0.36792502317500314,
+      "x_betrag_0": 1.3440107988407948,
+      "x_betrag_T": 1.343089996040111,
+      "omega_T": 0.8363715639173608,
+      "t_ereignis": NaN,
+      "Gamma_fit": 6.446456272017038e-18,
+      "Gamma_formel": 0.0,
+      "spaet": {
+       "R_EQ": -189996773.8333333,
+       "omega_quer": 0.836353073615061,
+       "R_EQ_zu_omega": -227172924.72195905,
+       "steigung_Q": -6.446456272017038e-18,
+       "steigung_E": 1.2248058943408943e-09
+      },
+      "frueh": {
+       "R_EQ": -144341584.55555555,
+       "omega_quer": 0.836373347352285,
+       "R_EQ_zu_omega": -172580325.53583765,
+       "steigung_Q": 7.266914343001025e-17,
+       "steigung_E": -1.0489179310982619e-08
+      },
+      "ball_ganz": {
+       "x_max_betrag_max": 0.0,
+       "Q_neg_min": 0.0,
+       "bestanden": true
+      },
+      "ball_frueh": {
+       "x_max_betrag_max": 0.0,
+       "Q_neg_min": 0.0,
+       "bestanden": true
+      },
+      "plaus": {
+       "Q_ges_bis_Kontakt_1e-9": {
+        "max_rel": 1.8189257663413733e-16,
+        "bestanden": true
+       },
+       "E_ges_bis_Kontakt_1e-4": {
+        "max_rel": 1.1588056204746146e-07,
+        "bestanden": true
+       },
+       "E_ges_steigt_nie_1e-6": {
+        "max_anstieg_rel": 1.2818890536725105e-07,
+        "bestanden": true
+       },
+       "omega_unter_1": {
+        "max": 0.8366600265340757,
+        "bestanden": true
+       },
+       "buchfuehrung_1e-9": {
+        "max_rest_rel": 0.0,
+        "bestanden": true
+       }
+      },
+      "diagnose_E_glatt_anstieg_rel": 1.9879261606231386e-08,
+      "V4_R5D_Q_win_T": 2.4414914913415955,
+      "V4_rel": 7.129112508165091e-08,
+      "V4_bestanden": null
+     }
+    ],
+    "fein": [
+     {
+      "name": "Gegenprobe m_chi=1,2 w2=0.500001",
+      "art": "schwer",
+      "omega2": 0.500001,
+      "omega": 0.7071074882929752,
+      "Q0": 14.548316215827544,
+      "E0": 10.968133730555587,
+      "Q_win_T": 14.548316215827544,
+      "Q_psi_win_T": 14.511286977552581,
+      "Q_chi_win_T": 0.03702923827496218,
+      "Q_neg_win_T": 0.0,
+      "Q_schale_T": 8.035264833755402e-22,
+      "Q_schwamm_T": 8.166841408426828e-65,
+      "Q_abs_T": 0.0,
+      "E_abs_T": -1.1680982847650512e-06,
+      "dQ_schale_T_rel": 1.3891680934429074e-29,
+      "x_max_T": 0.0,
+      "S_max_0": 0.9985857864376068,
+      "S_max_T": 0.9979343464816575,
+      "x_betrag_0": 2.7249546707026733,
+      "x_betrag_T": 2.73526329539724,
+      "omega_T": 0.7042016827051474,
+      "t_ereignis": NaN,
+      "Gamma_fit": -1.3179421711679277e-16,
+      "Gamma_formel": 0.0,
+      "spaet": {
+       "R_EQ": 263195850.29347828,
+       "omega_quer": 0.7046750831962968,
+       "R_EQ_zu_omega": 373499583.8077072,
+       "steigung_Q": 1.3179421711679277e-16,
+       "steigung_E": 3.468769103781756e-08
+      },
+      "frueh": {
+       "R_EQ": -33587169.11111111,
+       "omega_quer": 0.7052460214372792,
+       "R_EQ_zu_omega": -47624755.17786125,
+       "steigung_Q": -2.90676573720041e-16,
+       "steigung_E": 9.763003238173372e-09
+      },
+      "ball_ganz": {
+       "x_max_betrag_max": 0.0,
+       "Q_neg_min": -2.3251842348793355e-15,
+       "bestanden": true
+      },
+      "ball_frueh": {
+       "x_max_betrag_max": 0.0,
+       "Q_neg_min": 0.0,
+       "bestanden": true
+      },
+      "plaus": {
+       "Q_ges_bis_Kontakt_1e-9": {
+        "max_rel": 2.442010213481199e-16,
+        "bestanden": true
+       },
+       "E_ges_bis_Kontakt_1e-4": {
+        "max_rel": 1.1055594934528075e-07,
+        "bestanden": true
+       },
+       "E_ges_steigt_nie_1e-6": {
+        "max_anstieg_rel": 1.6488318045355332e-07,
+        "bestanden": true
+       },
+       "omega_unter_1": {
+        "max": 0.7071074882929752,
+        "bestanden": true
+       },
+       "buchfuehrung_1e-9": {
+        "max_rest_rel": 0.0,
+        "bestanden": true
+       }
+      },
+      "diagnose_E_glatt_anstieg_rel": 5.34323742424718e-08,
+      "V4_R5D_Q_win_T": 14.548131621502684,
+      "V4_rel": 1.2688524524177482e-05,
+      "V4_bestanden": null
+     },
+     {
+      "name": "Gegenprobe m_chi=1,2 w2=0.7",
+      "art": "schwer",
+      "omega2": 0.7,
+      "omega": 0.8366600265340756,
+      "Q0": 2.4516895381001635,
+      "E0": 2.3027364152178684,
+      "Q_win_T": 2.4516895381001635,
+      "Q_psi_win_T": 2.4416832862237605,
+      "Q_chi_win_T": 0.01000625187640244,
+      "Q_neg_win_T": 0.0,
+      "Q_schale_T": 5.633139303880873e-19,
+      "Q_schwamm_T": 2.814808466098934e-52,
+      "Q_abs_T": 0.0,
+      "E_abs_T": -3.102286858513992e-07,
+      "dQ_schale_T_rel": 5.780646403701815e-29,
+      "x_max_T": 0.0,
+      "S_max_0": 0.3675444679663242,
+      "S_max_T": 0.36857056914141884,
+      "x_betrag_0": 1.3443257693779098,
+      "x_betrag_T": 1.3447857936447747,
+      "omega_T": 0.8340151151361117,
+      "t_ereignis": NaN,
+      "Gamma_fit": 4.655773974234528e-18,
+      "Gamma_formel": 0.0,
+      "spaet": {
+       "R_EQ": -127540747.69230768,
+       "omega_quer": 0.8340920847862775,
+       "R_EQ_zu_omega": -152909672.70716628,
+       "steigung_Q": -4.655773974234528e-18,
+       "steigung_E": 5.938008937602585e-10
+      },
+      "frueh": {
+       "R_EQ": NaN,
+       "omega_quer": 0.8341777466855252,
+       "R_EQ_zu_omega": NaN,
+       "steigung_Q": 0.0,
+       "steigung_E": -2.8457799502748767e-08
+      },
+      "ball_ganz": {
+       "x_max_betrag_max": 0.0,
+       "Q_neg_min": 0.0,
+       "bestanden": true
+      },
+      "ball_frueh": {
+       "x_max_betrag_max": 0.0,
+       "Q_neg_min": 0.0,
+       "bestanden": true
+      },
+      "plaus": {
+       "Q_ges_bis_Kontakt_1e-9": {
+        "max_rel": 1.8113598926322105e-16,
+        "bestanden": true
+       },
+       "E_ges_bis_Kontakt_1e-4": {
+        "max_rel": 2.6682674719622955e-07,
+        "bestanden": true
+       },
+       "E_ges_steigt_nie_1e-6": {
+        "max_anstieg_rel": 2.7132147162281153e-07,
+        "bestanden": true
+       },
+       "omega_unter_1": {
+        "max": 0.8368345696395684,
+        "bestanden": true
+       },
+       "buchfuehrung_1e-9": {
+        "max_rest_rel": 0.0,
+        "bestanden": true
+       }
+      },
+      "diagnose_E_glatt_anstieg_rel": 3.328471166138338e-08,
+      "V4_R5D_Q_win_T": 2.4515774815862885,
+      "V4_rel": 4.570792264029084e-05,
+      "V4_bestanden": null
+     },
+     {
+      "name": "Gegenprobe eps=0 w2=0.7",
+      "art": "ohne",
+      "omega2": 0.7,
+      "omega": 0.8366600265340756,
+      "Q0": 2.4414916653982717,
+      "E0": 2.2985979229991615,
+      "Q_win_T": 2.441491665398271,
+      "Q_psi_win_T": 2.441491665398271,
+      "Q_chi_win_T": 0.0,
+      "Q_neg_win_T": 0.0,
+      "Q_schale_T": 5.561324676011221e-19,
+      "Q_schwamm_T": 2.7787842000794802e-52,
+      "Q_abs_T": 8.881784197001252e-16,
+      "E_abs_T": -9.657810551289003e-09,
+      "dQ_schale_T_rel": 1.8463432383241078e-30,
+      "x_max_T": 0.0,
+      "S_max_0": 0.3675444679663242,
+      "S_max_T": 0.3676395131594708,
+      "x_betrag_0": 1.3443257693779098,
+      "x_betrag_T": 1.3440954320164333,
+      "omega_T": 0.8365880721704043,
+      "t_ereignis": NaN,
+      "Gamma_fit": 1.2534776084477573e-17,
+      "Gamma_formel": 0.0,
+      "spaet": {
+       "R_EQ": -6103001.914285715,
+       "omega_quer": 0.8365832877767905,
+       "R_EQ_zu_omega": -7295151.604694812,
+       "steigung_Q": -1.2534776084477573e-17,
+       "steigung_E": 7.649976243870943e-11
+      },
+      "frueh": {
+       "R_EQ": -3861661.1904761903,
+       "omega_quer": 0.8365883475487291,
+       "R_EQ_zu_omega": -4615963.396802223,
+       "steigung_Q": 1.6956133467002392e-16,
+       "steigung_E": -6.547884255005763e-10
+      },
+      "ball_ganz": {
+       "x_max_betrag_max": 0.0,
+       "Q_neg_min": 0.0,
+       "bestanden": true
+      },
+      "ball_frueh": {
+       "x_max_betrag_max": 0.0,
+       "Q_neg_min": 0.0,
+       "bestanden": true
+      },
+      "plaus": {
+       "Q_ges_bis_Kontakt_1e-9": {
+        "max_rel": 3.6378515326827457e-16,
+        "bestanden": true
+       },
+       "E_ges_bis_Kontakt_1e-4": {
+        "max_rel": 7.242227327297199e-09,
+        "bestanden": true
+       },
+       "E_ges_steigt_nie_1e-6": {
+        "max_anstieg_rel": 8.011808966414518e-09,
+        "bestanden": true
+       },
+       "omega_unter_1": {
+        "max": 0.8366600265340757,
+        "bestanden": true
+       },
+       "buchfuehrung_1e-9": {
+        "max_rest_rel": 0.0,
+        "bestanden": true
+       }
+      },
+      "diagnose_E_glatt_anstieg_rel": 1.242703999801514e-09,
+      "V4_R5D_Q_win_T": 2.441491654529432,
+      "V4_rel": 4.451720610128603e-09,
+      "V4_bestanden": null
+     }
+    ]
+   },
+   "pruefung": {
+    "grob": {
+     "gegenproben": {
+      "Gegenprobe m_chi=1,2 w2=0.500001": {
+       "Gamma_fit": 1.0600839202872462e-16,
+       "grenze": 5.393562722995611e-05,
+       "Q_abs_T": 0.0,
+       "bestanden": true
+      },
+      "Gegenprobe m_chi=1,2 w2=0.7": {
+       "Gamma_fit": 1.5758004220486093e-17,
+       "grenze": 9.645262799656789e-06,
+       "Q_abs_T": 0.0,
+       "bestanden": true
+      },
+      "Gegenprobe eps=0 w2=0.7": {
+       "Gamma_fit": 6.446456272017038e-18,
+       "Q_abs_T": 4.440892098500626e-16,
+       "Q_neg_min": 0.0,
+       "bestanden": true
+      }
+     },
+     "alle_bestanden": true,
+     "plausibilitaet_bestanden": false
+    },
+    "fein": {
+     "gegenproben": {
+      "Gegenprobe m_chi=1,2 w2=0.500001": {
+       "Gamma_fit": -1.3179421711679277e-16,
+       "grenze": 5.393562722995611e-05,
+       "Q_abs_T": 0.0,
+       "bestanden": true
+      },
+      "Gegenprobe m_chi=1,2 w2=0.7": {
+       "Gamma_fit": 4.655773974234528e-18,
+       "grenze": 9.645262799656789e-06,
+       "Q_abs_T": 0.0,
+       "bestanden": true
+      },
+      "Gegenprobe eps=0 w2=0.7": {
+       "Gamma_fit": 1.2534776084477573e-17,
+       "Q_abs_T": 8.881784197001252e-16,
+       "Q_neg_min": 0.0,
+       "bestanden": true
+      }
+     },
+     "alle_bestanden": true,
+     "plausibilitaet_bestanden": true
+    }
+   },
+   "L3": [],
+   "sek": {
+    "grob": 0.4174731620005332,
+    "fein": 1.4065660890046274
+   }
+  }
+ },
+ "fehler": {},
+ "ende": "2026-09-30T11:22:22+02:00",
+ "dauer_s": 1.8457149360037874,
+ "torch_speicher_max_mb": NaN
+}

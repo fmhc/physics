@@ -1,0 +1,73 @@
+{
+ "test": "stopp",
+ "stufe": "grob",
+ "start": "2026-09-30T08:03:00+02:00",
+ "ende": "2026-09-30T08:03:00+02:00",
+ "rauch": 0.01,
+ "sek": 0.6338150899973698,
+ "geraet": "cpu",
+ "argumente": {
+  "test": "stopp",
+  "geraet": "cpu",
+  "out": "formprobe",
+  "fein": false,
+  "rauch": 0.01,
+  "gammas": "2e-3,1e-3,5e-4",
+  "mit_gegen": true,
+  "L": 600.0,
+  "x_schwamm": 550.0,
+  "dauer_json": null,
+  "qd": 0.2,
+  "a": null,
+  "b": null
+ },
+ "laeufe": [
+  {
+   "name": "stopp 1e-3",
+   "gamma": 0.001,
+   "t_stop": 2467.0278386274476,
+   "T": 4467.027838627448,
+   "T_eff": 44.5,
+   "t_stop_eff": 24.670278386274475,
+   "Q0": 1.8859777277311167,
+   "Q_erw_ende": 1.840019365866334,
+   "t_bruch": null,
+   "Q_d": null,
+   "S_c_0": 0.2254033307585166,
+   "t90": null,
+   "t50": null,
+   "t10": null,
+   "om_abw_max_folge": 0.00040770063650241717,
+   "om_max_vor_bruch": 0.899490336552218,
+   "om_ende": 0.8980115310371984,
+   "Q_erw_stopp": 1.840019365866334,
+   "q_rel_stopp_ende": 1.0000199704555452,
+   "plausibel": {
+    "bestanden": true,
+    "verstoesse": []
+   },
+   "reihe_duenn": {
+    "t": [
+     0.0
+    ],
+    "q_rel": [
+     1.0
+    ],
+    "S_c": [
+     0.2254033307585166
+    ],
+    "S_fam": [
+     0.22540333091064313
+    ],
+    "omega": [
+     null
+    ]
+   },
+   "Q_d_quelle": "--qd (nur Formprobe)",
+   "Q_d_vorgabe": 0.2
+  }
+ ],
+ "plausibilitaet": {
+  "bestanden": true
+ }
+}

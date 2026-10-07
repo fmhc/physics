@@ -1,0 +1,63 @@
+Unabhängige enge Ergebnislesung, 02.10.2026, particle_binding
+RESULT.json vollständig gegen geprüften Code/Plan gelesen, Hashes geprüft.
+Keine neue Rechnung, keine Rohfeld-Neuauswertung, kein neuer Lauf.
+
+Urteil: LOCAL_SOURCE_DIAGNOSTICS_COMPLETE ist korrekt. Die feste
+Quellenalgebra besteht die vorgesehenen QA-Prüfungen; beide Gitter zeigen
+ähnliche, nichtverschwindende lokale zweite-Harmonische-Quellen.
+Das ist KEIN Nachweis einer auslaufenden Antwort oder Abstrahlungsrate.
+
+Herkunft
+RESULT.json SHA256:
+a2270a05c7270eeeb16e5fd04d12bd1367bff38af0205062b2643aea05b2a574.
+Code-SHA5ba2d7e… stimmt mit finalem Nichtautorreview/Ergebnisbindung.
+Dynamik-, Operator-, Such-, Referenz- und Ritzbindungen entsprechen den
+zuvor geprüften Quellen. Zwei Quellen-NPZ sind mit eigenen Hashes genannt;
+deren Felder wurden hier nicht neu numerisch geprüft. Originalsuchstatus
+NO_CONFIRMED_CANDIDATE_IN_FIXED_SEARCH bleibt im Ergebnis erhalten.
+TIME.txt: user.47+system.09=.56CPU-s,wall.57s,maxrss62688,exit0.
+Root-Ausführung auf.69, keine Evolution/Eigenwertrechnung in diesem Lauf.
+
+QA: alle vorgegebenen Kriterien erfüllt
+Kräftevariation bei eps=.02,.01,.005 hat relativeFehler
+1.0671630e-5,2.6679079e-6,6.6697418e-7. Verhältnisse≈3.99999949/
+4.00001680 liegen zwischen2und6, feinsterFehler<1e-5.
+Der gröbsteFehler darf>1e-5 sein: das Gate galt ausdrücklich dem feinsten.
+Faktor2-MutanteFehler≈1 und Vorzeichenmutante≈2, beide>.1.
+Fourier-DC-Fehler9.66e-17 und zweiteHarmonische3.70e-16, beide<1e-12.
+Damit sind Taylor-Koeffizient/(2eps²), komplexerFourierfaktor1/4 und
+Vorzeichen im getesteten glatten Anker bestätigt, keine Strahlungsphysik.
+
+Normierung und lokale Werte
+Gespeicherten q-Teil zuerst auf kanonischeVolumennorm1 normiert, dann
+physisch durchsqrtV zurücktransformiert. AusgabeJ2 ist der Koeffizient
+vonexp(2i rho t): J2=J(qphys)/4. Für eine tatsächliche Störung mit
+Gesamtamplitudealpha gilt Quelle=alpha²[JDC+2Re(J2 exp(2i rho t))].
+Die folgenden Normen sind daher Koeffizientennormen nach Ausklammern
+vonalpha², keine real gemessene Leistung und keine Energie.
+
+Lokales||Jplus||VL2 bei h=.1/.05:
+.0063872134137421075 / .006380060470778056.
+Jminus≈.01232033/.01230796; Jchi≈.00129139/.00129018.
+Plus verwendet(J2x+iJ2y)/sqrt2 ohne zusätzlichesHalbieren.
+Die dokumentierte untereLaborseitenband-Konjugation verändert Normen nicht.
+DC-y≈4e-18/9e-18 ist im erwarteten Rundungsbereich, kein neuer Kanal.
+
+Phaseninvarianter Gittervergleich
+DC-Überlapp .9999999432836717, J2-Überlapp .999999907548137.
+Rohe Gesamtnormdifferenzen: DC−3.38354e-5, J2−1.43302e-5;
+Absolutwertprofilabstände4.17179e-5 bzw.1.80132e-5. Keine nachträgliche
+Phasenanpassung oder Normangleichung. Ähnliche Zweigprofile sind damit
+gestützt, aber keine rigorose Kontinuum- oder Nullquellenprüfung geleistet.
+Extrem kleine Quellanteile außerhalb20 sind diagnostische normierte
+Zahlen, kein Zertifikat einer exakt kompakten Quelle.
+
+Physikalische Grenze
+FreieWellenzahlquadrate bei2rho: Plus≈1.1775/1.1779 positiv,
+Minus≈−1.9356 undchi≈−1.4156 negativ. Damit ist das obereSeitenband
+kinematisch offen. Eine örtlich nichtverschwindende Plusquelle muss
+aber nicht einen nichtverschwindenden auslaufenden Koeffizienten besitzen:
+gekoppelter Antwortoperator, alleQuellkomponenten und Interferenz bleiben
+unberechnet. Keine Lebensdauer, Gamma, Energiefluss- oderStabilitätsaussage.
+Die DC-Quelle löst ebenso wenig bereits die statische Frequenz-/Ladungs-
+korrektur. AlteSuch- undKompaktheitsgates bleiben ausdrücklich unverändert.

@@ -1,0 +1,166 @@
+{
+ "kopf": {
+  "karte": "GUERTEL-FINN-NETZ-1 (Runde 43)",
+  "modus": "prot",
+  "args": {
+   "modus": "prot",
+   "aus": "/home/fmh/fmhc-physics-remote/guertel-finn-netz-1/rauch",
+   "netz": "diamant",
+   "feld": "so2",
+   "r0": 12.0,
+   "R": 24.0,
+   "tmax": 60.0,
+   "raster": 30.0,
+   "speicher": "30,60",
+   "fdtheta": 10.0,
+   "fgitter": 90.0,
+   "fnrelax": 30,
+   "fngitter": 150,
+   "fftol": 1e-05,
+   "fdtmax": 0.1,
+   "frausch": 0.001,
+   "fchunk": 8,
+   "lauf": ".",
+   "ziel": "420,450",
+   "grenze": 450.0,
+   "unten": 360.0,
+   "refsumme": 720.0,
+   "zust": "prot-diamant-so3-d10-zust.npz",
+   "wahl": "wahl.json",
+   "wahl_k": -1,
+   "ref": 0,
+   "theta": 450.0,
+   "eps": 0.0,
+   "nmax": 3000
+  },
+  "code_sha256": "e2f5056882f24b9bf7cd4fbb82a5eccf1fce2006f00d43aff85aaf09449f7d17",
+  "stab_code_sha256": "b7093e59727727a9a2f2ce88ac57e9b9fe36bc16ba0e7196b4ec1214f9275b69",
+  "g2_code_sha256": "c9374a9898c9ab0ff8458b5077ed0e31f4cec53362d432ab21ef670e3be67933",
+  "g1_code_sha256": "795f474d70f864f732e22b96308521436cdaf61926e5bf30575e9e1c5736c3cf",
+  "start_utc": "2026-10-04T19:38:02Z",
+  "schreibzeit_utc": "2026-10-04T19:38:04Z",
+  "numpy": "2.4.4"
+ },
+ "saat": [
+  42,
+  2,
+  120,
+  24,
+  4
+ ],
+ "netz_info": {
+  "art": "diamant",
+  "feld": "so2",
+  "N": 65441,
+  "frei": 50632,
+  "kern": 7193,
+  "rand": 7616,
+  "bindungen": 127508,
+  "grad_frei_min": 4,
+  "grad_frei_max": 4,
+  "bindungslaenge_min": 0.8660254037844386,
+  "bindungslaenge_max": 0.8660254037844386,
+  "innen_frei": 10024,
+  "z3_gleich_g2": null
+ },
+ "protokoll": {
+  "theta_schritt": [
+   0.0,
+   10.0,
+   20.0,
+   30.0,
+   40.0,
+   50.0,
+   60.0
+  ],
+  "E_schritt": [
+   0.0,
+   4.393932709307939,
+   17.428748046605882,
+   39.11150867312362,
+   69.45645176305543,
+   108.437956054207,
+   156.05746593034831
+  ],
+  "sonde_schritt": [
+   0.0,
+   0.023124523746286374,
+   0.04751934550099435,
+   0.0728559852922997,
+   0.0981770540226593,
+   0.12370402719991413,
+   0.1494455410653498
+  ],
+  "sonde_lauf_schritt": [
+   0.0,
+   0.02561748963365537,
+   0.04751934550099435,
+   0.0728559852922997,
+   0.0981770540226593,
+   0.12370402719991413,
+   0.1494455410653498
+  ],
+  "gitter": [
+   0.0
+  ],
+  "E_gitter": [
+   0.0
+  ],
+  "sonde_gitter": [
+   0.0
+  ],
+  "fmax_gitter": [
+   0.0
+  ],
+  "raster": {
+   "theta": [
+    0.0,
+    30.0,
+    60.0
+   ],
+   "E": [
+    0.0,
+    39.11150867312362,
+    156.05746593034831
+   ],
+   "sonde": [
+    0.0,
+    0.0728559852922997,
+    0.1494455410653498
+   ],
+   "sonde_lauf": [
+    0.0,
+    0.0728559852922997,
+    0.1494455410653498
+   ],
+   "struktur": [
+    {
+     "phi_mittel_aussen": 0.0,
+     "phi_mittel_innen": 0.0,
+     "phi_min_frei": 0.0,
+     "phi_max_frei": 0.0,
+     "kipp_amplitude": 0.0
+    },
+    {
+     "phi_mittel_aussen": 0.09744749674111296,
+     "phi_mittel_innen": 0.3627676862672043,
+     "phi_min_frei": 0.004876941458214742,
+     "phi_max_frei": 0.5035797808719324,
+     "kipp_amplitude": 0.0
+    },
+    {
+     "phi_mittel_aussen": 0.19552915017024086,
+     "phi_mittel_innen": 0.7215168384535968,
+     "phi_min_frei": 0.0105148193413373,
+     "phi_max_frei": 1.0058593421222999,
+     "kipp_amplitude": 0.0
+    }
+   ]
+  },
+  "laufzeit_s": 1.5962955951690674
+ },
+ "laufzeit_s": 1.6659979820251465,
+ "maxrss_mb": 78.98828125,
+ "theta_max_raster": null,
+ "theta_sprung_fein": null
+}

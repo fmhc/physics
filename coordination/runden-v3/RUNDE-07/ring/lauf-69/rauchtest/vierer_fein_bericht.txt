@@ -1,0 +1,12 @@
+RING vierer (b): Vierer-Ring mit Windung 2 pi/4, Stufe fein. Start 2026-09-30T02:40:21+00:00, Ende 2026-09-30T02:40:34+00:00, Quadro P4000, torch 2.5.1+cu121 RAUCHTEST: Zahlen ungueltig
+Dauer [s]: profile_s 0.0, entwicklung_grob_s 8.8, entwicklung_fein_s 3.8
+Hochrechnung Hauptlauf: 251 s (nicht entwickelnde Teile 0 s + Entwicklung x 20); Profile aus dem Cache. Ueber 480 s: Stufen einzeln (--stufe grob / --stufe fein) oder Laeufe teilen (--laeufe).
+Ball omega2 0.7: Q 23.996, R_halb 1.916; T 50, dx 0.2, dt 0.025
+Lauf | Klasse | gueltig bis | r Start/Mittel/min/max | d_Paar Start/max | Drift (x Fenster/r0) | Periode | Amplitude 1./2. Haelfte | Drehrate | Spreizung Start/max | gamma | t_Bruch 0,1 | t_verschm | Q-Verlust | Sektor Start
+  n4_windung_sym | gebunden | 50 | 5.549/5.757/5.549/6.046 | 8.931/9.732 | 1.02e-02 (+0.092) | - | 0.043/0.030 | -4.60e-03 | 1.8e-16/0.00 | - | None | None | 2.5e-05 | 1.8e-09
+    Reihe (t, r, d_Paar, Spreizung, Winkel, J_Box): [[0.0, 5.5488, 8.9306, 1.802e-16, 0.7854, 38.1019], [50.0, 6.0465, 9.7317, 0.0, 0.5599, 38.1036]]
+    Bilanz: Q: +93.621->+93.619 geschluckt +0.002 Rest 1.3e-07 J: +38.102->+38.104 geschluckt -0.002 Rest 1.3e-06 E: +88.530->+88.526 geschluckt +0.004 Rest 4.5e-07; Schranken {"bilanz_Q": true, "bilanz_J": true, "bilanz_E": true, "startzerlegung": true, "sektor_start": true}; Windungen Klumpen Ende [0, 0, 0, 0]
+  n4_windung_s1e-6 | gebunden | 50 | 5.549/5.757/5.549/6.046 | 8.931/9.732 | 1.02e-02 (+0.092) | - | 0.043/0.030 | -4.60e-03 | 2.0e-06/0.00 | - | None | None | 2.5e-05 | 4.4e-07
+    Reihe (t, r, d_Paar, Spreizung, Winkel, J_Box): [[0.0, 5.5488, 8.9306, 2.014e-06, 0.7854, 38.102], [50.0, 6.0465, 9.7316, 1.61e-05, 0.5599, 38.1036]]
+    Bilanz: Q: +93.621->+93.619 geschluckt +0.002 Rest 1.3e-07 J: +38.102->+38.104 geschluckt -0.002 Rest 1.3e-06 E: +88.530->+88.526 geschluckt +0.004 Rest 4.5e-07; Schranken {"bilanz_Q": true, "bilanz_J": true, "bilanz_E": true, "startzerlegung": true, "sektor_start": true}; Windungen Klumpen Ende [0, 0, 0, 0]
+Kennzahlen: {"klassen": {"n4_windung_sym": "gebunden", "n4_windung_s1e-6": "gebunden"}}

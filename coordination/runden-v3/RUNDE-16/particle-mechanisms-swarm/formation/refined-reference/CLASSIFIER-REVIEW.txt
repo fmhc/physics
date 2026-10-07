@@ -1,0 +1,66 @@
+Unabhängige Nichtautorlektüre, 02.10.2026, particle_binding
+Keine Ausführung, kein Interpreter, kein Hauptlauf.
+
+Urteil: Der vorgeschlagene begrenzte .69-Softwarecheck ist für seinen
+angegebenen Zweck geeignet. Nach Papierprüfung sind sechs Sollfälle und
+CLASSIFIER_GAPS_FOUND aus beiden Struktursonden zu erwarten. Das ist ein
+prospektives Urteil, kein bereits beobachtetes Testergebnis. Kein Main-GO.
+
+Vollständig gelesen und Hashes mit sha256sum bestätigt:
+classifier-check.py
+7e08c2d19a928a6221591162860e5539aaf1f170aea539576e521089ee671ea4
+CLASSIFIER-PLAN.txt
+a22f47c90d3382a35d9c7b3b89f6140d099df45ce7b850e0b6c2022465e7f13b
+MAIN-ADDENDUM.txt
+ad476ac90ba4544ff8bba9996ad87f051a4fa0f73f685fb1afcd88f965478fac
+Zielclassify ist an bereits gelesenen repairedcode-Hash4f2ca1da… gebunden.
+
+Ausführungspfad und Sollfälle
+Import mit Main-Guard führt keine QA, PDE oder Zeitschritte aus; nur
+classify erhält künstliche Ergebniswörterbücher. Hauptmodulimporte
+benötigen trotzdem NumPy/CPU und gehören in Roots äußere .69-Begrenzung.
+Alle sechs normalen Fälle erreichen nach gelesener Reihenfolge die
+erwarteten Rückgaben. Im Pulsfall sind Zeitreste auf ALLEN Wolkengittern
+identisch .01/.03; daher schlägt das Stationaritätsgate zu und kein
+vorgeschalteter Gittervergleich. Q/omega-Gleichheit macht diese Daten
+nicht zu einer dynamischen Lösung. Die Puls-Negativprobe ist ausschließlich
+ein Softwaretest, weder Existenz- noch Nichtbildungsbefund.
+Der Einzelgitter-Radiusfehler muss jeden Mehrheitsentscheid verhindern;
+auch das ist im aktuellen all(passed) erfüllt.
+
+Strukturlücken
+classify verlangt6 Arme und complete=True, verifiziert aber nicht die
+Samplestruktur. zip kürzt auf die kürzere Liste; kein Vergleich der
+Zeitstempel. Entfernen des letzten space-Samples lässt daher noch ein
+nichtleeres Schlussfenster mit konstant gültigen Werten übrig. Verschieben
+von t[70] um.1 verändert im synthetischen Beispiel ebenfalls kein Gate.
+Beide malformed-Eingaben dürften RADIAL_FORMATION_CANDIDATE liefern.
+Script meldet dann bewusst CLASSIFIER_GAPS_FOUND/Exit2; das ist kein
+unerwarteter Programmabbruch und kein bestandenes Gesamtschema-QA.
+Die Sonde akzeptiert auch Exceptions als rejection: damit wäre nur eine
+Kandidatenfehlmeldung vermieden, nicht saubere Fehlerbehandlung bewiesen.
+
+Vor einem Main-Entscheid geeigneter enger Guard, ohne neue Physikschwelle:
+genau einmal jede Kombination(level base/space/time,kind reference/cloud),
+je81 Samples, erwartete geordnete Zeiten0,.8,...,64 einschließlich Endpunkt
+und paarweise Synchronität; vorhandene/finite benötigte Diagnostikwerte.
+Schemafehler als INCOMPLETE/unentschieden ausweisen, vor zip/last-Auswertung.
+Keine neue Suche oder Toleranzoptimierung aus dieser Softwarelücke ableiten.
+Hier wurde kein Guard geschrieben; neue Implementierung separat reviewen.
+
+Pipelinegrenze
+run_arm prüft E/Q-Drift, Ladungsflussbilanz und Kragen bereits vor
+complete=True; Abbruch verhindert den normalen classify-Abschluss.
+classify selbst wiederholt diese Prüfungen nicht. Ein künstlich gesetztes
+complete=True mit schlechten Energiedaten wäre deshalb kein vollständig
+validierter Eingang. Fall4 prüft den Statusvertrag, nicht die numerische
+Erhaltung. Die aktuelle Hauptpipeline erzeugt Zeiten deterministisch;
+die Struktursonden decken Schnittstellenfehler bei fremden/gekürzten Daten
+auf und belegen keinen beobachteten Zeitverlust der bisherigen T4-Läufe.
+
+Addendum
+Neue Referenzen, r50_density-Schalenvolumen und chi_first_cell sind präzise
+abgegrenzt; alter Fehlbefund wird nicht umgeschrieben. Gleiches Q bedeutet
+weiterhin nicht gleiche Anfangsenergie. Die Wolke ist bereits unter der
+freien Schwelle präpariert. Addendum startet keinen Hauptarm und ersetzt
+keinen noch ausstehenden Main-Entscheid nach Struktur-QA.

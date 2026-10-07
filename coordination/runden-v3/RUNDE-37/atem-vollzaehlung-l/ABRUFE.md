@@ -1,0 +1,21 @@
+# ABRUFE ATEM-VOLLZAEHLUNG-L
+
+Je Abruf eine Zeile: Nr, Zeit (date, CEST), Adresse, Zweck, Ergebnis. Hoechstens 15.
+
+| Nr | Zeit | Adresse | Zweck | Ergebnis |
+|---|---|---|---|---|
+| A1 | 09:05:38 | https://arxiv.org/pdf/0806.3737v2 (curl, quellen/A1-*) | Coh/Vanderbilt 2008 Volltext: Kipp-Varianten, Mannigfaltigkeiten | W/L 1975 = I-42d; exakt starre 3D-Mannigfaltigkeit P2_12_12_1 je X-Punkt; P2_13 fehlt; "nicht kombinierbar" (Paare) |
+| A2 | ~~09:08:5x (nach Erwartung 09:08:45; Ende des Lesens siehe Arbeitsfeld)~~ berichtigt: zwischen 09:08:45 und 09:09:16 (date-Klammer; der Zeitpunkt der Suche selbst ist nicht gemessen, "5x" war geschaetzt) | WebSearch "beta-cristobalite thermal expansion ... Schmahl ... Bourova Richet" | Primaerquellen der Ausdehnung finden | Treffer: LMU-epub 18597 (Schmahl 1992?), earthref ERR/18636 (Bourova/Richet 1998); Zahlen nur als Suchtext |
+| A3 | 09:09:30 | https://epub.ub.uni-muenchen.de/18597/ (curl, quellen/A3-*) | Schmahl u. a. 1992 Abstract | Tc ~533 K, erste Ordnung, 5 % Volumensprung, P4_12_12; Abstract abgeschnitten, kein beta-Koeffizient |
+| A4 | 09:10:02 | https://api.openalex.org/works?search=Quartz and cristobalite high-temperature cell parameters volumes of fusion (curl, quellen/A4-*) | Bourova/Richet 1998 Abstract | beta-Volumen steigt bis 1300 K, faellt bis 2000 K auf den 750-K-Wert 27,4 cm^3/mol; Beifang Stokes 2024 (ohne Zahl) |
+| A5 | 09:11:04 | https://api.openalex.org/works?search=cristobalite&filter=publication_year:1932..1991 (curl, quellen/A5-*) | Klassiker: Barth, W/L, O'K/H, H/G | W/L 1975 = I-42d-Domaenen (6 Orientierungen), kein P2_13; L/W 1976: ~4 % Sprung; Barth, O'K/H, H/G ohne Abstract |
+| A6 | 09:11:38 | https://journals.iucr.org/paper?S0567740876009308 (curl) | O'Keeffe/Hyde 1976 Abstract | HTTP 403 (Cloudflare), nichts gelesen |
+| A7 | 09:11:53 | https://link.springer.com/article/10.1007/BF00202234 (curl) | Hatch/Ghose 1991 Abstract | Springer Client Challenge, nichts gelesen |
+| A8 | 09:12:42 | https://api.openalex.org/works?filter=doi:(5 DOIs) (curl, quellen/A8-*) | ZrW2O8: Mary 1996, Tucker 2005, Cao 2002, Bridges 2014; Swainson/Dove 1993 | Mary: NTE 0,3 bis 1050 K isotrop, keine Zahl im Abstract; Tucker: RUM; Cao/Bridges: korrelierte starre Translation, steife Zr-O-W-Bruecke |
+| A9 | 09:13:26 | https://api.openalex.org/works?search=ZrW2O8 negative thermal expansion coefficient&filter=publication_year:1995-2000 (curl, quellen/A9-*) | Zahl fuer ZrW2O8, RUM-Primaerquelle | Evans/David/Sleight 1999: alpha = -9,07e-6/K (2-350 K); Pryde u. a. 1997: RUM erklaeren NTE; Evans 2000: negative Grueneisen-Parameter |
+| A10 | 09:13:57 | http://export.arxiv.org/api/query?... (curl ohne -L) | Gegensweep 24 Monate | HTTP 301, kein Inhalt (eigener Fehler, gezaehlt) |
+| A11 | 09:14:12 | https://export.arxiv.org/api/query?(abs:cristobalite OR abs:"rigid unit") AND submittedDate[2024-10-05 TO 2026-10-05] | Gegensweep 24 Monate | HTTP 503, kein Inhalt |
+| A12 | 09:15:18 | https://api.openalex.org/works?search=cristobalite OR "rigid unit mode(s)"&filter=from_publication_date:2024-10-05 (curl, quellen/A12-*) | Gegensweep 24 Monate | Campbell/Eggers/Stokes 2025: erster systematischer Suchalgorithmus fuer grosswinklige RUM; Eggers u. a. 2024: Kleinwinkel-RUM mit Verzerrung; Glas-ROSA 2026: Drehungen an Biegung gekoppelt; keine Verwerfung des RUM-Bildes |
+| A13 | zwischen 09:16:23 und 09:16:52 (date-Klammer) | WebSearch "large-angle rigid unit modes" Campbell Eggers Stokes cristobalite | Anwendung auf Cristobalit? | nur BYU-Seiten (Campbell 2018, 2021, ISOTILT); keine Cristobalit-Anwendung des Grosswinkel-Algorithmus sichtbar |
+| A14 | 09:16:57 | https://arxiv.org/pdf/1110.4661v1 (curl, quellen/A14-*) | Borcea/Streinu 2011 Volltext | Theorem 2: Deformationsraum des idealen Cristobalits (primitive Zelle) = offene Menge in SO(3); nichts zu isotrop |
+| A15 | 09:18:11 | https://api.openalex.org/works?search=rigid unit modes thermal expansion silica&filter=publication_year:1994-2021 (curl, quellen/A15-*) | RUM-Deutung der Ausdehnung in Silica | Heine/Welche/Dove 1999: negativer geometrischer Beitrag, Vorzeichen kehrt ueber Kipp-Uebergang; Huang/Kieffer 2003 (MD): beta fast null bis 2000 K; Dove 2020 (ScF3): nicht nur RUM |

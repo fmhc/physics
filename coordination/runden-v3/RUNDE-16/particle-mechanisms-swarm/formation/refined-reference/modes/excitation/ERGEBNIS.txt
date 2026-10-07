@@ -1,0 +1,74 @@
+M2: gezielte nichtlineare Anregung einer radialen inneren Mode
+2026-10-02, Root-Auswertung, unabhängig gegengelesener Adapter
+
+AUSGANG
+LINEAR_NEAR_RESPONSE_IN_FIXED_WINDOW. Alle neun Arme sind vollständig:
+T=32, je 81 Samples, epsilon=0/0,001/0,002 auf (h,dt)=(0,1;0,01),
+(0,05;0,01),(0,1;0,005). Keine Toränderung und kein wiederholter Lauf.
+Die unabhängige Ergebnislesung wird separat in RESULT-REVIEW.txt geführt.
+
+Was wirklich verglichen wurde: die baselineabgezogene, durch alpha
+geteilte sechskomponentige kanonische Feld-/Geschwindigkeitsantwort
+gegen Re(v exp(i rho t)). rho und v stammen aus der vorherigen linearen
+Rechnung. Keine Frequenz-, Phasen- oder Amplitudenanpassung an den Verlauf.
+Fehlernorm = ||Z-Zlin||/||v||, keine relative Energieabweichung und kein
+punktweiser Prozentfehler eines Feldes.
+
+MAXIMA DES SOLLFEHLERS (Grenze 0,05)
+                 epsilon=0,001      epsilon=0,002
+ h=0,1,dt=0,01    0,002552146        0,005230638
+ h=0,05,dt=0,01   0,002548647        0,005223586
+ h=0,1,dt=0,005   0,002645604        0,005327330
+Halbe Anregung hat ungefähr halben skalierten Fehler. Das ist mit einer
+quadratischen ersten nichtlinearen Korrektur vereinbar, aber kein
+bewiesenes asymptotisches Skalengesetz aus nur zwei Amplituden.
+Die kleinere dt-Stufe senkt den Gesamt-Sollfehler hier nicht monoton;
+physikalische Nichtlinearität und Integrationsfehler überlagern sich.
+
+Maximale Differenz der zwei skalierten Amplitudenantworten je Level:
+0,002681899 / 0,002678200 / 0,002681879 (Grenze jeweils 0,05).
+Räumliche Änderung der Sollfehlerdiagnose maximal 8,02e-6, zeitliche
+maximal 9,88e-5 (Grenze 0,01). Separater voller Feldvergleich:
+Raum maximal 0,001518, Zeit maximal 0,000154. Diese Felddifferenzen waren
+Diagnostik, kein nachträglich hinzugefügtes Bestehenskriterium.
+Die vorab unabhängige Pivotwahl ergibt zwischen Gittern eine Phasendifferenz
+von nur 3,52e-15; keine Nachrotation war erforderlich oder vorgenommen.
+
+NUMERIK UND PRÄPARATION
+Maximale relative Energiedrift 6,71e-9, Ladungsdrift 2,23e-15,
+Kernladungs-Flussrest 2,20e-15; Grenzen jeweils 1e-5.
+Baseline-Reste maximal 2,538e-5, Formdrift maximal 2,208e-5 (<0,004).
+Kragenenergie/E maximal 6,13e-25 (<1e-8).
+Die neun anfänglichen direkten Ladungsänderungen erfüllen die exakte
+quadratische Formel bis Rundung. Keine Ladungsnachnormalisierung.
+Beim groben Gitter DeltaQ=0,001094059 bzw. 0,004376234: die Arme besitzen
+absichtlich leicht verschiedene Q und E, keine identischen Gesamtenergien.
+
+REICHWEITE
+Die vorbereitete kleine Störung bewegt sich im vollständigen nichtlinearen
+radialen M2-Modell wie die vorhergesagte innere Mode, im getesteten kurzen
+Fenster und mit den genannten numerischen Kontrollen. Das erweitert den
+rein spektralen/tailbezogenen Befund um tatsächliche Zeitentwicklung.
+T=32 umfasst nur knapp zwei Perioden, nicht einen Langzeitnachweis.
+Keine Aussage über volle nicht-radiale Stabilität, Lebensdauer, fehlende
+nichtlineare Abstrahlung oder Bildung aus der früheren starken Wolke.
+Es handelt sich um eine subthreshold-Mode, nicht um eine BIC. Das alte
+R20-Kompaktheitstor bleibt verfehlt; sein Ergebnis wurde nicht umgewertet.
+
+PROVENIENZ
+Code SHA256 1af408e1269a53036c080ec820e750940d5f8b70ac41c32e457e5ad531dc5bc1
+RESULT SHA256 e97a2682133dc45f9fc8584b870c31bdb8921b78866641f17eb964bb3532fe52
+Vollständige Eingabebindung/Commit/Befehl in BINDUNG.txt.
+.69/ubuntu-auto, CPU8 nice19, ein Thread, float64/complex128; kein CUDA.
+TIME.txt: user=25,35 s, system=0,36 s, zusammen 25,71 CPU-s;
+wall=25,80 s, maxRSS=129772 KiB, exit=0. Innerhalb 45 CPU-s Gesamtdeckel.
+
+ABSCHLUSS
+RESULT-REVIEW.txt bestätigt den begrenzten Ausgang unabhängig durch
+Nichtautorlektüre, keine zweite Implementierung/Simulation.
+figures/EXCITATION.png und .svg zeigen feste Modenkoordinaten sowie alle
+sechs Fehlerverläufe. Root hat Plotcode und gerendertes Bild gelesen:
+keine neuen Solverwerte/Fits; Kurven sind fast deckungsgleich, deshalb
+zeigt das untere Panel ausdrücklich die kleinen Unterschiede.
+PLOT-TIME.txt: 1,98+0,08=2,06 CPU-s; Simulation und Grafik zusammen
+27,77 CPU-s, weiterhin unter Gesamtdeckel45. Kein Papertext geändert.

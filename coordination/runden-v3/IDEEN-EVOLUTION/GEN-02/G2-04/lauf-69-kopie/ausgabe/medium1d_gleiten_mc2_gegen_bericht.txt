@@ -1,0 +1,26 @@
+Runde 6 M1 medium1d.py gleiten_mc2_gegen Start 2026-09-30T09:46:38+00:00 auf Quadro P4000, torch 2.5.1+cu121, Zeitfaktor 1.0, Stufen grob/fein
+
+gleiten_mc2_gegen (G2-04, Gegenproben): lam = 0, Spiegel (mit Partner +0,90), Medium allein; mc2 = 0.
+  [grob]
+  Lauf | u Gitter | u/c_s | k' | F_med (1./2. Haelfte) | F_std | F_Falle | Bilanz rel | S gehalten | dQ psi, chi rel | C fern Ende
+  lam=0 mc2=0 u=+0.90          | +0.8995 | +1.56 | 1.227 | 0.00e+00 (0.00e+00, 0.00e+00) | 0.00e+00 | 2.54e-18 | nan | 1.0025 | 1.5e-15, 4.1e-14 | 0.100019
+  Spiegel mc2=0 u=-0.90        | -0.8995 | -1.56 | 1.227 | -1.44e-04 (-1.44e-04, -1.42e-04) | 2.07e-04 | 1.25e-04 | 0.132 | 0.9823 | 1.3e-15, 9.5e-15 | 0.100138
+  Partner mc2=0 u=+0.90        | +0.8995 | +1.56 | 1.227 | 1.44e-04 (1.44e-04, 1.42e-04) | 2.07e-04 | -1.25e-04 | 0.132 | 0.9823 | 1.8e-15, 7.7e-15 | 0.100138
+  Medium allein mc2=0 u=+0.90  | +0.8995 | +1.56 | 1.227 | 0.00e+00 (0.00e+00, 0.00e+00) | 0.00e+00 | 0.00e+00 | nan | nan | 0.0e+00, 4.1e-14 | 0.100019
+  lam0_F_unter_1e-10: F = 0.00e+00, bestanden = True
+  spiegel_2pz: F_minus = -1.44e-04, F_plus = 1.44e-04, rel = 6.23e-15, bestanden = True
+  medium_allein_konstant: C_spanne_ende = 0.00e+00, C_fern_ende = 1.00e-01, bestanden = True
+  ladung_1e-6: bestanden = True
+  [fein]
+  Lauf | u Gitter | u/c_s | k' | F_med (1./2. Haelfte) | F_std | F_Falle | Bilanz rel | S gehalten | dQ psi, chi rel | C fern Ende
+  lam=0 mc2=0 u=+0.90          | +0.8999 | +1.56 | 1.227 | 0.00e+00 (0.00e+00, 0.00e+00) | 0.00e+00 | 1.99e-18 | nan | 1.0024 | 2.2e-15, 1.2e-13 | 0.100005
+  Spiegel mc2=0 u=-0.90        | -0.8999 | -1.56 | 1.227 | -1.43e-04 (-1.44e-04, -1.42e-04) | 2.07e-04 | 1.24e-04 | 0.133 | 0.9817 | 1.1e-15, 3.2e-14 | 0.100127
+  Partner mc2=0 u=+0.90        | +0.8999 | +1.56 | 1.227 | 1.43e-04 (1.44e-04, 1.42e-04) | 2.07e-04 | -1.24e-04 | 0.133 | 0.9817 | 1.5e-15, 2.5e-14 | 0.100127
+  Medium allein mc2=0 u=+0.90  | +0.8999 | +1.56 | 1.227 | 0.00e+00 (0.00e+00, 0.00e+00) | 0.00e+00 | 0.00e+00 | nan | nan | 0.0e+00, 1.2e-13 | 0.100005
+  lam0_F_unter_1e-10: F = 0.00e+00, bestanden = True
+  spiegel_2pz: F_minus = -1.43e-04, F_plus = 1.43e-04, rel = 3.99e-14, bestanden = True
+  medium_allein_konstant: C_spanne_ende = 0.00e+00, C_fern_ende = 1.00e-01, bestanden = True
+  ladung_1e-6: bestanden = True
+  Rechenzeit grob 41.7 s, fein 76.4 s
+
+Ende 2026-09-30T09:48:37+00:00, Dauer 119.2 s, Torch-Speicher max 21 MB, Fehler in: keine

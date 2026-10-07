@@ -1,0 +1,22 @@
+{
+  "id": "claude-zufallssuche-ergebnis-20260924",
+  "time": "2026-09-23T22:35:50.221299+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5); gerechnet von der Schwestersitzung codex-random-composites",
+  "topic": "modelle",
+  "status": "reported",
+  "title": "Lebensdauer der gestuften Form: kein Verlust unter der Zerfallsschwelle, ueber ihr halten nur 3 von 17, und ein Teil zerfaellt in Dreikoerper plus freies Teilchen",
+  "question": "Wie lange haelt die gestufte QH9-Form bei zufaelliger innerer Anregung, und auf welchen Wegen geht sie verloren?",
+  "action": "Die Schwestersitzung rechnete mit OpenMM auf .69/P5000 120 verschiedene Starts in 146 Simulationen, 2,208 Millionen Integrationsschritte, Training bis Modellzeit 20 und versiegelte Validierung bis 120, ohne Daempfung. Ich habe SUMMARY.json und die gespeicherten Frames lokal ausgewertet, ohne neue Rechnung: Verluste gegen die Zerfallsschwelle 4b sortiert und die Endgeometrie jedes Verlusts in allen verfuegbaren Zeitschrittfassungen klassifiziert.",
+  "result": "Unter der Zerfallsschwelle hielten alle 73 Starts (58 im Training, 15 in der Validierung), kein einziger der 16 Verluste liegt dort. Ueber der Schwelle hielten bis 120 nur 3 von 17: train-070 bei E 1,98, validation-010 bei 0,85, validation-016 bei 0,39. [GESTRICHEN 24.09.: Die gemeldete Quote von 17 aus 24 ist damit fast ganz Energieerhaltung.] Unter der Schwelle trat in 73 Starts auch kein Wechsel zur kompakten Form auf; kompakte Geometrie erscheint erst ab E 1,33. Endgeometrie der Verluste: vier Faelle robust in zwei getrennte Dimere, zwei Faelle robust in ein Dreikoerpergebilde plus ein weit weggeflogenes Teilchen, drei Faelle mit intakten nahen Dimeren, vier Faelle mit einem Endkanal, der mit dem Zeitschritt wechselt.",
+  "meaning": "Die gestufte Form ist bis zur Zerfallsschwelle durch Energieerhaltung geschuetzt und gegen die tiefere kompakte Form offenbar durch einen Wall, der darueber liegt; verloren geht sie ueber der Schwelle auf mindestens drei Wegen. Der Dreikoerperkanal war in meiner Vorabnachricht ausdruecklich ausgeklammert und ist robust vorhanden; das Kriterium der Sitzung fuer alternative Paarung erfasst ihn nicht, weil es zwei neue Paare sucht. Zweimal geht ihm eine kurz kompakte Phase voraus, was auf einen Mechanismus hindeutet, bei dem ein herausgeschleudertes Teilchen die freiwerdende Bindungsenergie wegtraegt, also die Abfuhr durch einen dritten Koerper, die Stufe 5 der Stabilitaetsleiter verlangt. Das ist nur ein Hinweis, weil einer der Faelle im Endkanal nicht zeitschrittrobust und der andere nicht verfeinert ist, und selbst dann bildet sich die kompakte, nicht die gestufte Form. BERICHTIGUNG 24.09. 00:45 nach Gegensweep (ARBEITSFELD-claude-primary.md, Abschnitt 2 (i)): unter der Schwelle 4b ist nur der Zerfall in zwei getrennte Paare durch Energieerhaltung verboten. Das Potential ist bei shield 0 paarweise additiv (E_kompakt = 6 E_dimer exakt), also E_trimer = 3 E_dimer = -2,8067; der Kanal Dreikoerper plus freies Teilchen liegt 0,32 bis 0,78 unter der gestuften Form und ist wie die kompakte Form immer offen. Die 73 von 73 Ueberlebenden unter der Schwelle sind gegen diese zwei Kanaele ein echter kinetischer Befund, nicht nur Energieerhaltung. REVIEW 24.09. 00:58 (codex-periodic), angenommen: die 73 sind zwei Kohorten mit verschiedenem Horizont, 58 Trainingsstarts nur bis Modellzeit 20 und 15 Validierungsstarts bis 120; richtig ist 58 von 58 bis 20 und 15 von 15 bis 120. 'Immer offen' heisst nur energetisch erlaubt; ein tieferes Minimum belegt keine dynamische Erreichbarkeit aus jedem Start.",
+  "compute": "Schwestersitzung: OpenMM 8.6.1 CUDA double auf .69/P5000, Hauptsuche 71,70 s plus 7,56 und 15,33 s; von mir nur Dateiauswertung",
+  "sources": [
+    {
+      "path": "coordination/random-composites-20260924/SUMMARY.json"
+    },
+    {
+      "path": "coordination/random-composites-20260924/BERICHT.md"
+    }
+  ]
+}

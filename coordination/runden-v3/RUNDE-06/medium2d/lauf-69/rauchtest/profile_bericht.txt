@@ -1,0 +1,10 @@
+profile: Start 2026-09-30T01:40:22+00:00, Ende 2026-09-30T01:40:51+00:00, Quadro P4000, torch 2.5.1+cu121 RAUCHTEST: Zahlen ungueltig
+Medium C0 = 0.1, g4 = 0.5, lam = 0.1: c_s = 0.2085, Heilungslaenge etwa 3.23
+Dauer [s]: schiessen_s 29.2
+Hochrechnung Hauptlauf (nur --rauch ohne --mini gilt): 29 s = nicht entwickelnde Teile 29 s + Entwicklung x 20; Relaxation im Rauchtest gekuerzt. Ueber 540 s je Aufruf: Stufen einzeln (--stufe grob / --stufe fein).
+omega2 m | p | Klammer | S_max | R_max | R_halb | Q | E | E/Q | Virialrest | gueltig
+  0.60 0 | 1.030139156258561 | 2.2e-16 | 1.06119 | 0.000 | 3.358 | 66.6160 | 56.5272 | 0.84855 | 1.1e-07 | ja
+  0.60 1 | 0.281471314133109 | 2.2e-16 | 0.86743 | 4.010 | 5.957 | 138.7568 | 123.0739 | 0.88698 | -3.9e-11 | ja
+  0.55 0 | 1.022994303264939 | 2.2e-16 | 1.04652 | 0.000 | 6.880 | 238.4322 | 185.8629 | 0.77952 | 1.5e-08 | ja
+  0.70 0 | 0.921968444982739 | 1.1e-16 | 0.85003 | 0.000 | 1.916 | 23.9958 | 22.6258 | 0.94290 | 4.2e-07 | ja
+Erwartung: Virialrest < 1e-6; Werte wie RUNDE-05/r5-2d-a/lauf-lokal/profile_bericht.txt (m = 1 bei 0,60: Q etwa 138,8, R_halb etwa 5,96).

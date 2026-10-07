@@ -1,0 +1,85 @@
+NICHTAUTOR-CODELEKTUERE — 2026-10-02
+
+Gelesen: PLAN.txt und reconstruct.py. Keine Ausfuehrung, keine Tests,
+kein Interpreterstart. Urteil gilt fuer den gelesenen Stand; Quellhash
+beim Start separat festhalten.
+
+STARTBEWERTUNG
+
+Als explizit bedingte Rekonstruktion ist der begrenzte CPU-Lauf startfaehig.
+Die Startumgebung muss CPU11, nice19, ein numerisches Thread und timeout60
+extern setzen. Das Skript selbst erzwingt diese Grenzen nicht. Es schreibt
+RESULT.json relativ zum Arbeitsverzeichnis mit Ueberschreiben; deshalb nur
+in eigenem neuen Ergebnisverzeichnis starten. Keine Aussage ueber Annahme
+des Rechenauftrags/Locks: Diese prueft der koordinierende Agent separat.
+
+ABGLEICH GEGEN DEN PLAN
+
+- geometry(n) startet mit einem regulaeren Einheitstetraeder. Die Spiegelung
+  des aeltesten Vertex an der Flaeche der letzten drei Vertices erzeugt
+  wie geplant neue regulaere Tetraeder mit aufeinanderfolgenden Viererfenstern.
+  Die Zentrierung subtrahiert den arithmetischen Mittelwert aller Vertices.
+- Fuer n=12/20 gibt es n-3 Tetraeder. Die Vereinigung aller Fensterkanten
+  wird nach Vertexindizes dedupliziert; P zaehlt Vorzeichenwechsel auf
+  genau diesen Kanten. Unter Einbettungsannahme sind das eindeutige
+  geometrische Kantenschnittpunkte.
+- Vertexvorzeichensummen 1/3 ergeben T3, Summe 2 ergibt T4. Gemeinsame
+  Nachbarflaechen haben Indizes k+1 bis k+3. Der verwendete Ausdruck
+  C=S-E berechnet korrekt die Komponentenzahl dieses Flaechenschnittwaldes.
+- 200000 normalverteilte Dreiervektoren werden auf Einheitslaenge gebracht;
+  das entspricht dem im PLAN explizit gesetzten uniformen Kugelmass.
+  Beide Modelle verwenden denselben Seed neu, also dieselben Normalen.
+  Das ist zulaessig, ihre Monte-Carlo-Fehler sind damit aber korreliert.
+- Ebenen laufen durch den jeweiligen Vertexschwerpunkt. Originalmarkdown
+  spezifiziert weder dieses Zentrum noch dieses Wahrscheinlichkeitsmass.
+  Das Statusfeld hypothesis_reconstruction ist deshalb sachgerecht.
+- Laengenfehler, Formelabweichungsanzahl und P-Antipodalsymmetrie werden
+  ausgegeben. Sie fuehren bei Fehlschlag nicht automatisch zum Abbruch.
+  Der koordinierende Agent muss die Ergebnisse vor Interpretation lesen.
+- Vergleich mit Originalwahrscheinlichkeiten, Differenzen und binomiale
+  Standardfehler stehen noch nicht im Code. Das ist nachgelagerte Auswertung,
+  kein Hindernis fuer den begrenzten Rohdatenlauf. Stichprobenextrema bleiben
+  Stichprobenextrema. Codefelder min/max allein dokumentieren das nicht.
+
+BEGRENZUNGEN DER VALIDIERUNG
+
+C ist zunaechst C_face, nicht nachgewiesenes geometrisches C. Selbstkontakte,
+Rueckkontakte und Ueberlappungen werden nicht geprueft. P dedupliziert
+Kantenindizes, keine geometrisch zufaellig identischen Schnittpunkte.
+Die Formelkontrolle beweist deshalb keine Einbettung: Fuer die gegebene
+Fensterkombinatorik gilt die Zaehleridentitaet bereits auf Vorzeichenebene.
+Aus bestandenem formula_failures=0 darf kein bestandener geometrischer
+Komponententest abgeleitet werden. Die Ergebnisbezeichnung
+islands_probability ist nur mit diesem Vorbehalt zu verwenden.
+
+Eine explizite polygonale Schnittkonstruktion mit Kontrolle der drei/vier
+verschiedenen Punkte erfolgt nicht; T3/T4 werden aus Vorzeichen abgeleitet.
+Fuer nichtdegenerierte eingebettete Tetraeder ist dies mathematisch korrekt,
+aber kein unabhaengiger numerischer Polygontest.
+
+Es gibt keine Behandlung exakter Nullabstaende oder eine Toleranzdiagnostik.
+Beim kontinuierlichen Zufallsmodell ist ein exakter Eckentreffer ein
+Nullmassereignis; bei Gleitkommazahlen bleibt es eine technische Grenze.
+Antipodalsymmetrie prueft nur P, nicht separat C,T3,T4.
+
+TICKS
+
+Die Ereignisformel (atan2(y,x)+pi/2) modulo pi fuer
+n(t)=(cos(pi*t),sin(pi*t),0) ist korrekt. Vorher/nachher wird mit t±1e-8
+numerisch ausgewertet, nicht analytisch exakt. Nahe oder gleichzeitige
+Vertexereignisse werden nicht gruppiert, weshalb mehrere Vertexzeilen
+denselben gemeinsamen Anzahlwechsel tragen koennen. Vertices genau auf
+der Drehachse (x=y=0) waeren fuer alle Winkel degeneriert und sind nicht
+gesondert behandelt. Das Skript liefert hier ein Referenzexperiment,
+keine Bestaetigung der unbekannten Originaldrehachse oder eine garantierte
+vollstaendige exakte Anzahl-Tick-Sequenz. Fuer den ersten Lauf genuegt
+explizites Kennzeichnen dieser Auswertung als numerische Tick-Stichprobe
+um analytisch bestimmte Vertexereignisse.
+
+FAZIT FUER DIE ERGEBNISFREIGABE
+
+Keine offensichtliche Startblockade im bedingten Monte-Carlo-Kern.
+Vor Bericht: Laufgrenzen/Quelle protokollieren, Kontrollen lesen,
+C_face benennen, fehlende Verteilungsdifferenzen/SE ergaenzen und
+Originalreproduktion sowie geometrische Selbstkontaktfreiheit nicht
+behaupten. PROOF-REVIEW.txt enthaelt die praezisen Satzvoraussetzungen.

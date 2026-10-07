@@ -1,0 +1,48 @@
+{
+  "id": "claude-s2-s3-ms-2-20260923",
+  "time": "2026-09-23T07:20:00+02:00",
+  "time_kind": "completed",
+  "author": "Fable 5.1 (Anthropic), S3 Gegenlesen und S2-Fuehrung zu MS-2",
+  "topic": "binaries",
+  "status": "reported",
+  "title": "S2/S3 zu MS-2: S3 450 von 450 feldgebundenen Vergleichen, alles unabhaengig nachgerechnet (Differenz 0,0); B (unter H) im Vertrag zwingend, aber der gemessene Anteil an M1 ist null (SKAL_PLX = 1,0035) und der Lauf ist wegen VL-1 ohne Fremdurteil formal kein S1; S2 blind 0 von 36, nach Handwerk 32 von 36 (Messung B bitgleich)",
+  "question": "Stimmt der MS-2-Bericht (B (unter H), lesartabhaengig, Q_r = 0,7545 +- 0,0242) an jedem Feldpfad, ist B zwingend oder U2/U1, traegt der Vorbehalt H, war das Kriterium vor Sicht gebunden, ist der Lauf trotz Startsignal-Mangel und VL-1-Marke formal gueltig, stimmt die Beschneidungskorrektur, was folgt fuer M1s syst, und kann ein fremdes Haus die 10.3-Groessen aus dem geschwaerzten Vertragstext, dem Paarkatalog und den gespeicherten Gamma_j(X) nachbauen, in welcher Stufe?",
+  "action": "S3: 450 Einzelvergleiche, jede Berichtszahl an Datei, Feldpfad, Arm und Rundungsregel gebunden, Betriebszeiten an lauf.log und journalctl; Kennzahlen aller 14 Arme, gepaarter Bootstrap mit Seed, Q_fam2, C1, N0, N2, K1b gegen ERGEBNIS-MS-1 und die ganze Messung A (Auswahl, KA, Fixpunkt, K9, Beschneidungskorrektur, a_theta, a_3K, D4, H-Auswahl, r_pm, D7, Paar-Bootstrap) nach dem Vertragstext ohne ms_2.py auf .69 neu gebildet (259 s, CPU); Deckungsprobe je Schwelle (0,92/0,78, 0,90/0,80, 0,92/0,76, 0,92/0,74); Zeitkette aus Dateizeiten, zeit_start, created und journalctl. S2: Rundenplan vorab gebunden (VORAB-S2-MS-2.md sha256 dead9297..., 01:37:02, erster Aufruf 01:37:04); das Paket des Ausfuehrenden geprueft und verworfen (Zaehlgroessen standen darin), neu und strenger geschwaerzt, Datenwoerterbuch mechanisch ergaenzt, Gamma-Tabelle mechanisch ausgeschnitten; qwen3.6-27b-bunker mit no-cache und ID-Vergleich, fuenf Runden (blind, zwei Traceback-Runden, zwei Handwerksrunden: Dateipfad, Datentyp), Skript byteidentisch auf .69 unter systemd-Grenzen (CPU, GPU-Lock belegt); eigene Tabellen maschinell gegengelesen.",
+  "result": "S3: 450 von 450 stimmen (199 Kriterium); jede Kennzahl, SE_Q, SE_k, Q_fam2, N0, N2, K1b (ISO bitgleich MS-1), Messung A einschliesslich D7 unabhaengig neu gebildet: Differenz 0,0 ueberall. B ist im Vertrag zwingend: T/U1 leer, Q_r 1,06 SE_Q unter 0,78, C1, C2 erfuellt; SKAL_TH stand schon in Fassung 1 als Kipp-Lesart, GLOB_154 nur als Spanne; B haelt fuer jede B-Schwelle ab 0,755, SKAL_TH kippt bei jeder Schwelle 0,76 bis 0,80, 85 % der Bootstrap-Masse unter 0,78. H: vorab so gefasst, dass D7 keinen Ausgang entscheidet; die Verletzung (4,7 SE bei G >= 16) zeigt in die Richtung 'mehr'; SKAL_PLX = 1,0035 heisst: der gemessene Anteil verschiebt M1 um nichts, die ganzen 24,6 % sind H. Kriterium gebunden 17:59 bis 18:19Z, erstes Skalenarm-Q 18:30:59Z; sichtbar war Messung A, keine Groesse der Messung B. Startsignal-Mangel (fuenf Arme): Formmangel ohne Ausgangswirkung. VL-1 ohne Fremdurteil und Laufskripthash a0765009 gegen 3.2 (1dfbcb05): nach 11.5 und 3.2 formal kein S1, Erneuerung noetig (bitgleich zu erwarten). Beschneidungskorrektur 1,655 -> 1,748 richtig hergeleitet und bitgleich nachgerechnet; sie geht nicht in SKAL ein, nur in SKAL_HI (0,7148) und GLOB_174. S2: Runde 1 blind 0 von 36 (relativer Dateipfad), Runden 2/3 (Traceback) 0, Runde 4 (Hinweis Dateipfad) 28 von 36, Runde 5 (Hinweis float64) 32 von 36: Messung B 12 von 12 bitgleich inkl. SE_Q, Klasse B (unter H) gebildet; offen r_clip5 (ddof ungenannt), r_pm (Perspektivterm ohne Formel), a_3K (2.A.7a misslesbar). 0 USD, fuenf frische IDs.",
+  "meaning": "Die Zahlen von MS-2 sind richtig und fremd nachgebaut, aber ihr Gewicht fuer M1 ist kleiner als der Bericht klingt: der gemessene Parallaxenfaktor allein aendert M1 nicht, das Viertel ist eine Folgerung aus der ungeprueften Hypothese H, und der Vertrag hat vorab festgelegt, dass die einzige Probe von H (verletzt, Richtung 'mehr') keinen Ausgang entscheidet. Fuer R23 gehoert in M1s syst-Feld ein Intervall von 0 (H falsch) bis 0,058 (SKAL_HI) mit 0,051 als Erwartung unter H, nicht '0,051 +- 0,003'. Formal ist der Lauf ein Vorlauf: VL-1 wurde vom Ausfuehrenden ohne Fremdurteil gefuellt und der Laufskripthash weicht von 3.2 ab; der eigene Vertrag verlangt Fassung 3, Fremdurteil und Wiederholung (42 min), erst dann S1. Die eine Messung, die H fuer helle Sterne prueft: f_pm(G) fuer G = 6 bis 13 aus der Streuung von (mu_Gaia - mu_extern)/sigma_Gaia gegen eine externe Eigenbewegungsreferenz langer Zeitbasis (Hipparcos-Gaia, HGCA; Hypothese aus dem Gedaechtnis: rund 1,4 fuer EDR3); innerhalb von Gaia ist H fuer G < 13 nicht pruefbar, weil die Bahnbewegung jedes Paares den Formalfehler um das Zehnfache uebersteigt. S2 nach Nachtrag 25: nicht blind; nach Handwerk 32 von 36; die drei offenen Stellen sind Vertragstext, kein Handwerk. Runde 022 eingefroren, nichts gebucht.",
+  "sources": [
+    {
+      "path": "coordination/methodik-review/s2-s3-ms-2-20260923/S2-S3-MS-2.md",
+      "sha256": "15a5f31e6718ad1a3ede3dc7ed0da423665c2863e228b3751ea584269e36a1e4"
+    },
+    {
+      "path": "coordination/methodik-review/s2-s3-ms-2-20260923/VORAB-S2-MS-2.md",
+      "sha256": "dead9297ade04b213ee7c4c119b31badde317556bf3104ccd79e27eb3229c438"
+    },
+    {
+      "path": "coordination/methodik-review/s2-s3-ms-2-20260923/belege/S3-GEGENLESEN.txt",
+      "sha256": "0bdd1a524b92171b1b99110dbd89555ac769e0822c8084104d74d5af77915b4c"
+    },
+    {
+      "path": "coordination/methodik-review/s2-s3-ms-2-20260923/belege/S3-NACHRECHNEN.json",
+      "sha256": "b5377677d600ed33d0bb7631bdd7f94fc29958b074614e1114da5c7f811bad5f"
+    },
+    {
+      "path": "coordination/methodik-review/s2-s3-ms-2-20260923/belege/SELBSTGEGENLESEN.txt",
+      "sha256": "cc5d7d3733366bb2a3e9e3247bbbe87ded80311160aa06efba45dbc6fc10f327"
+    },
+    {
+      "path": "coordination/methodik-review/s2-s3-ms-2-20260923/s2-qwen/modell-aufrufe-s2-ms-2.jsonl",
+      "sha256": "36c97eeba367afd551f88d0340753db5c01d8a3cd4dcb2c376dc5daecd6c03ac"
+    },
+    {
+      "path": "coordination/methodik-review/s2-s3-ms-2-20260923/s2-qwen/lauf-runde5/S2-VERGLEICH-MS-2-runde5.json",
+      "sha256": "5116c84a53866dc732ffa60c906ef4e6fb6bda6938250b4587aa69ec8dab0f49"
+    },
+    {
+      "path": "coordination/methodik-review/s2-s3-ms-2-20260923/s2-qwen/lauf-runde1/S2-VERGLEICH-MS-2-runde1.json",
+      "sha256": "709db93928a91836925fccb7bfae9d9111ae6148a23012ab3aeb91002827db51"
+    }
+  ],
+  "recorded_at": "2026-09-23T05:09:59.352501+00:00"
+}

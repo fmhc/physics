@@ -1,0 +1,36 @@
+{
+  "id": "claude-runde-v3-26-20261003",
+  "time": "2026-10-03T05:12:02+02:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung, Karten, Schreibtisch, Abschaetzung; Code-Agenten Anthropic (Opus 5.5)",
+  "topic": "theory",
+  "status": "reported",
+  "evidenzart": "modell",
+  "title": "Runde 26 nach v3 (explorativ): ebene Wandphase sagt Lage und Abstand der 1D-Sprossen voraus (versiegelte beta-1-Vorhersage <= 0,77 %), in 3D fester Versatz mit k(rho_z) (gescheitert), Q-Ball haftet an Fuenfer-Ecken (exakte Formel 0,05 %), Tetrahelix klingt in Dreierstufen ab",
+  "question": "Liefert die ebene Wand auch die absolute Lage der stillen Sprossen (1D, 3D)? Haftet ein Q-Ball an einer Fuenfer-Ecke? Wie weit traegt eine Tetraederkette die Spannung eines Defekts?",
+  "action": "Karten mit Vorhersagen vor jedem Lauf: PHASE-WAND (mit versiegelter beta-1-Vorhersage), PHASE-3D, TETRA-KETTE, KEGEL-Q; Zufallskarte F-1 (Schreibtisch); Wartung der Kleintest-Spur (Threads); Codex-Abstimmung und Stups (Ideation-Lauf, Bildbericht).",
+  "result": "PHASE-WAND: PW1 bis PW3 ja; k_in x_w + phi = m pi/2 trifft bekannte 1D-Sprossen (beta = 1/2) auf <= 0,19 % und neun neue versiegelt vorhergesagte (beta = 1) auf <= 0,77 %. PHASE-3D: P3D-1 bis P3D-3 nein; fester Versatz -0,29 (beta = 1/2) bzw. -0,12 (beta = 1) mit k(rho_z), Zusatzform mit lokaler Wellenzahl trifft (nur berichtet). KEGEL-Q: KQ0 bis KQ3 ja; Bindung +0,74 bis +2,00 (Fuenfer), -0,68 bis -1,85 (Siebener), exakte Formel auf 0,05 %, kurze Reichweite. TETRA-KETTE: TKe0, TKe3 ja, TKe1, TKe2 nein; Abklingen in Dreierstufen, Faktor ~10 je drei Tetraeder.",
+  "meaning": "Explorativ, keine Messdaten. In 1D sind Abstand und Lage der stillen Leiter aus der ebenen Wand berechenbar [H, versiegelte Vorhersage]; in 3D nur mit lokaler Wellenzahl, also mit der Kruemmungsfunktion c(eps). Q-Baelle binden an positive Kruemmung (Bruecke Defekt - Feldteilchen) [H]. Winkelspannung ist in Tetraederketten abgeschirmt [H].",
+  "sources": [
+    {
+      "path": "coordination/runden-v3/RUNDE-26.md",
+      "sha256": "e05595ee2af44c1954c554361b4104873d1401e71ac5eb1ca3cd1ca71b66acd5"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-26/phase-wand/ERGEBNIS.md",
+      "sha256": "25464613bed5beda2e93897b18cc29042c205329dbedfd907c33bb1b9830e25e"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-26/phase-3d/ERGEBNIS.md",
+      "sha256": "f0fd4fb64b8c614f00a7749ce5e98335ba95fb78a54890ee3a3c4c207292b874"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-26/tetra-kette/ERGEBNIS.md",
+      "sha256": "e05a26ee2c964abe4f674c305a1925e788ba8050c73ec27509ebba5e090f90fe"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-26/kegel-q/ERGEBNIS.md",
+      "sha256": "3a8fa8af1359f16b76e8350790b6c8ba1dcb77b2bbb1bf04fcbd671ba9ef32d4"
+    }
+  ]
+}

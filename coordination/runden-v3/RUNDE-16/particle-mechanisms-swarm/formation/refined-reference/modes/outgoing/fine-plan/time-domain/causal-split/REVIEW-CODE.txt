@@ -1,0 +1,65 @@
+Unabhängige Codelektüre, particle_binding, 02.10.2026
+Gelesen causal-split/code.py gegen CAUSAL-SPLIT-PLAN und NACHTRAG sowie
+die verwendeten gehashten time-domain-/response-/Operator-APIs.
+Lesestand SHA256 887224d30ce564a277992293920fba7d341fa7553a91abd4a19559fe8c047217.
+Keine Rechnung, keine Ausführung/Tests. Finale Autor-Freeze-Bestätigung
+ist gesondert abzugleichen, falls sich dieser Stand noch ändert.
+
+Urteil: kein konkreter Implementierungsblocker im gelesenen Stand.
+Die Nachtragspräzisierung zur Null-Jordan-Kraft ist umgesetzt.
+
+Mittelpunktmatrix M und rechte Seite Bq+delta p+delta²j/2 besitzen die
+korrekten Vorzeichen und Faktoren. Pro Schritt werden zwei reale RHS
+mit derselben LU gelöst; p_next folgt konsistent aus q_t=p. Restprüfung
+gilt für jede RHS. K/G stammen aus dem unveränderten Operator, keine
+Nullraumprojektion oder Inversion von L. Der bekannte Jordan-Test nutzt
+F=(0,1), q=t²/2,p=t; Oszillator-q/p und Reduktionsregel entsprechen Plan.
+Der echte Phasenvektor wird am Operator und mit einem homogenen Schritt
+geprüft. Alle diese Gates dürfen weiterhin offen scheitern.
+
+Der vorhandene time-loader bindet Referenz, Ritzvektor und Antwort samt
+derselben Pivotphase. j0/j2 werden aus dessen gemeinsam normiertem und
+gedrehtem q direkt mit gehashter Quellenfunktion erzeugt: damit ist DC
+invariant und die zweite Harmonische bereits passend exp(2i theta)
+gedreht. Keine weitere Quellen- oder Ladungsnormierung. Beide Systeme
+starten bei q=p=0; einzig ihre Quellgeschichten unterscheiden sich.
+
+Beobachtete drei Basisarme werden mit konkreten Manifest-/NPZ-Hashes,
+identischen r/t und vier Komponenten geladen; signierte alpha-Paarung
+wird geprüft. Ueven-Nenner ist2alpha². Die Rücktransformation der neuen
+q/p-Ringsamples nutzt sqrtV und sqrt2 korrekt. Neue Quellenantworten
+sind schon skalierte Zweitordnungskoeffizienten, ohne erneutes alpha.
+
+H=.5(p.p+q.Kq) und Arbeit delta*p_mid.j_mid passen zum Mittelpunkt.
+Absolut aufsummierte Arbeit und |H| bilden den festgelegten Nenner;
+beide Quellen werden getrennt geprüft. Ladungsbericht berechnet ell(q,p)
+und den quadratischen Beitrag der bekannten linearen Modenbewegung;
+er wird korrekt nicht als exakte zusätzliche diskrete Q-Projektion benutzt.
+
+Die beiden alten Fenster und Schalen ergeben genau vier Kombinationen.
+Zeitnormen verwenden Volumen und Trapezgewichte; Bandnormen dieselben
+Volumina. dt-Vergleich und Summenvergleich nutzen jeweils die beobachtete
+Norm des passenden Zeit-/Bandfeldes. Positive plus-Koeffizienten werden
+vor Ursachenbenennung validiert; negative/weitere Komponenten werden
+separat berichtet. Falls eines der vier Summen-/Zeittore scheitert,
+bleibt attribution UNRESOLVED_SUM_OR_TIMESTEP_VALIDATION.
+
+C und H-P sind komplexe Radialfelder. Interferenz ist2Re<C,H-P> mit
+derselben Volumennorm; die Dominanzregeln werden erst bei bestandener
+Summenvalidierung und aufgelöstem Delta-Nenner über ALLE vier Fälle
+angewandt. Der Status einer abgeschlossenen Diagnose bedeutet keine
+veränderte alte Stationaritätsentscheidung oder garantierte Dominanz.
+H-P bleibt inklusive unterschiedlicher Randdefinitionen zum Robin-Soll.
+
+Teilstände sichern Kontrollen und laufende Diagnosen; komplette Ring-
+und Endfelder tragen Hashes. Checkpoint80CPU-s und äußerer Rootdeckel90
+bleiben komplementär, insbesondere für LU/native Arbeit. Fehlende
+Teilstände sind keine negativen Physikresultate. Kein Retry/Scan im Code.
+
+Finaldelta gelesen und Freezehash bestätigt:
+ac87c195092b607cdf106a9ad7a88606bcf0579623cd581297485f76bf7cceaa.
+Ungenutztes dynamics-CLI entfernt; Energie-/Arbeitswerte werden vor
+JSON-Aufnahme auf Endlichkeit geprüft. Zusätzliche Komponenten besitzen
+nun auch Zeitnormberichte mit korrektem beobachtetem Plus-Zeitnenner.
+Keine neuen Gates oder Quelländerungen. Kein verbleibender konkreter
+Blocker für den begrenzten Rootlauf dieses finalen Codes.

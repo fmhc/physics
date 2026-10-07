@@ -1,0 +1,49 @@
+{
+  "id": "claude-runde-v3-04-20260930",
+  "time": "2026-09-30T02:57:04+02:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung und Abschaetzung; Code R4-W und R4-CB sowie Ernte: Anthropic Opus 5.5 (frische Agenten)",
+  "topic": "theory",
+  "status": "reported",
+  "evidenzart": "modell",
+  "title": "Runde 4 nach v3 (explorativ): Von 12 Wellen-, Chemie- und Biologie-Karten traegt nur die Stokes-Drift weiter, und nur als Umbau ins stabile Zwei-Feld-Medium; 8 geparkt, 3 verworfen",
+  "question": "Halten zwoelf Analogien aus Wellen/Segeln, Chemie und Biologie (Wellen 1, 2, 3, 12, 13; Chemie 8, 16, 20; Bio 13, 18, 27, 41) einem kleinen 1D-Test mit vorab notierter Vorhersage stand?",
+  "action": "Finn 30.09.: \"schön weiter machen noch mehr parallel\". Zwei Code-Agenten (Anthropic) schrieben wellen.py und chemie_bio.py mit Vorhersagen vorab (PLAN.md); die Leitung rechnete 13 Aufrufe auf der .69 (Quadro P4000, je unter 3 min, alle rc 0); ein frischer Ernte-Agent wertete Vorhersage gegen Ergebnis, L3 und Latten aus (ERGEBNISSE-R4.md, 02:27:59-02:47:08 CEST); Abschaetzung durch die Leitung in RUNDE-04.md.",
+  "result": "2 getroffen (Kette: Reichweite 0; Artbildung: monotone Familien, 3D Q_min 111,9 bei omega^2 0,93), 6 teilweise, 4 verfehlt. Stokes: dX 1,44/2,92/6,01 bei a = 0,01/0,02/0,04, linear statt quadratisch, Anfangsgeschwindigkeit ebenfalls linear in a (Verdacht Starteffekt). Brandung: 0 von 12 aufgenommen, 3 durchgereicht, eine Bilanz unlesbar (nur eine Seewand gemessen). Katalyse: Bruecke laesst ein gegenphasiges Paar an je einem v-Punkt knapp ueber der Schwelle verschmelzen (1,52/1,53 Q0 bei 1,5). Russell: gleichphasig 3,6-6,8 % abgestrahlt, gegenphasig unter 6e-5, L2/L3 gerissen. Nervenfaser: Messgroesse ueber c = 1, L3 gerissen. Chromatographie: bis 52,6 % Ladungsverlust. L3 in 10 von 12 bestanden. Abschaetzung: weiter 1 (Stokes, neu im chi-Medium), parken 8, verwerfen 3 (Monsterwelle, Kette, Artbildung = Zufallskarte).",
+  "meaning": "Explorativ, keine formale Bestaetigung, keine Messdaten. Karten, die ein ruhiges Medium brauchen, waren im Ein-Feld-Modell schlecht gestellt (duenner Hintergrund modulationsinstabil, Fable-Review); sie laufen jetzt im stabilen zweiten Feld chi (U_chi = C + g4 C^2) weiter. Kein Befund dieser Runde beruehrt die Spin-2-Kette oder die Gesamtformel direkt.",
+  "sources": [
+    {
+      "path": "coordination/runden-v3/RUNDE-04.md",
+      "sha256": "d989c47b9698c6c8e0c6f1640d661165e48b4fdcd1a4265ff118916a6c52a5f5"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-04/ERGEBNISSE-R4.md",
+      "sha256": "447a2d2852865c3c9fc2d2bc96790fca10ed7e373735392120aaa790503ad9d9"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-04/wellen/PLAN.md",
+      "sha256": "897bff0ce5c5e4a242677dc6d59d1bb1247b9fc341fbeaa34a2f1988420b003f"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-04/wellen/wellen.py",
+      "sha256": "832a0ddca6a308ce2abedef1c3407eda8505dd366b37af64b8639c4b2643743c"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-04/chemie-bio/PLAN.md",
+      "sha256": "2e7d847b5c0c899ae325ba7d9df17e19ddeacf128514183ff527cd6d8215fa4a"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-04/chemie-bio/chemie_bio.py",
+      "sha256": "6f6560be47e4d43034c6038ef73e1c8be8948a396d3d04992c3bd4a18cefb973"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-04/wellen/lauf-69/LAUF.log",
+      "sha256": "87cff7bd780bb79de6626f337fbbab7c021ba7ae568b1972d3724721faee1906"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-04/chemie-bio/lauf-69/LAUF.log",
+      "sha256": "08a36b922e3bccbbb966599dc620dfe761a623ec6979192f3506f3e192353c07"
+    }
+  ],
+  "recorded_at": "2026-09-30T00:57:24.403482+00:00"
+}

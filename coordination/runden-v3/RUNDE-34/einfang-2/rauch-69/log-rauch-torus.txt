@@ -1,0 +1,17 @@
+start 2026-10-03T16:51:50+00:00 spur=p4000a unit=fmhc-physics-klein-r34ef2-rauch-torus-165150
+Running as unit: fmhc-physics-klein-r34ef2-rauch-torus-165150.service; invocation ID: 0825984dde5c4bb691578f7fb29c53ab
+torch 2.5.1+cu121, Geraet cuda (Quadro P4000)
+Netz torus: {"geo": "torus", "N1": 168, "N2": 194, "h": 0.297619047619, "Wx": 49.999999999992, "Wy": 50.0026572423078, "ecken": 32592, "kanten": 97776, "dreiecke": 65184, "euler": 0, "grade": {"6": 32592}, "defekt_max": 6.217248937900877e-15, "kanten_alle_doppelt": true, "w_min": 0.5773502691896043, "w_max": 0.5773502691896563, "w_soll": 0.5773502691896258, "flaeche": 2500.1328621149896} (Bauzeit bis jetzt 2.3 s)
+statischer Ball und Start: {"Q_lat": 148.30289949963893, "E_lat": 118.63157461649573, "omega_lat": 0.7511495134070818, "res_max": 1.5143836371593303e-07, "dauer_s": 0.8090695813298225, "gitterfehler_flicken": 1.8562928971732617e-13, "gitterfehler_ziel": 2.1316282072803006e-14, "R_trans": 19.0, "knoten_mit_feld": 14779, "E_rest": 119.90635083154486, "K_nominal": 1.3721453098978764}
+/home/fmh/fmhc-physics-remote/runde34-einfang2/einfang2.py:495: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at ../aten/src/ATen/SparseCsrTensorImpl.cpp:53.)
+  Lt = torch.sparse_csr_tensor(torch.tensor(Lc.indptr, dtype=torch.int64), torch.tensor(Lc.indices, dtype=torch.int64),
+Start: E 121.27500016 Q 149.99999937 E_rest 119.90635083 K_eff 1.368649 K_nominal 1.372145 Lage 25.1488 Q_ball 149.999877
+t 200.0 cx 55.1017 cy 25.0013 E 121.27507024 Q 149.99999937 E_ball 121.274483 Q_ball 149.999559 S_max 1.0573 (0.72 ms/Schritt)
+Ende: T erreicht, t 240.0, 0.72 ms/Schritt, Dauer 7.2 s, Zustand /home/fmh/fmhc-physics-remote/runde34-einfang2/rauch/ef2-rauch-torus-zustand.npz, geschrieben /home/fmh/fmhc-physics-remote/runde34-einfang2/rauch/ef2-rauch-torus.json
+Finished with result: success
+Main processes terminated with: code=exited/status=0
+Service runtime: 8.033s
+CPU time consumed: 7.959s
+Memory peak: 324.0K
+Memory swap peak: 0B
+ende 2026-10-03T16:51:58+00:00 rc=0 unit=fmhc-physics-klein-r34ef2-rauch-torus-165150

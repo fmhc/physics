@@ -1,0 +1,199 @@
+{
+ "info": {
+  "numpy": "2.4.4",
+  "scipy": "1.18.0",
+  "python": "3.12.3",
+  "host": "ubuntu-auto",
+  "argv": [
+   "code/hm.py",
+   "spanne",
+   "--netz",
+   "glas-s1",
+   "--rauch",
+   "--out",
+   "rauch/r4-glas.json"
+  ],
+  "skript_sha256": "22d5d1e9ccd7df56b2adffbd5474ef48340930364e9bde8eb92fc8b40b83aec4",
+  "module_sha256": {
+   "tp": "419d7da6caa211c721eb6a8c87403977415cf3050f03365377f51cb77b374dfd",
+   "ew": "fa7b6417d39177102f0b19c5474453cd16a7595e23bc25ca548e081c4060b142",
+   "tg": "ec48a258e266fc2226d0d10564b606052831ffefbf0642e4f7d04f9de85cfd9e",
+   "tti": "6d6b6f7b99b334d74d91860fc69af1c6c0c46e22207dc45432d60a9824c08ee5",
+   "dn": "0cd5d13e98f41df277ec7d8139970d1e658542f843ed8180bc756a4ea1d4d1ae"
+  },
+  "start_utc": "2026-10-05T07:49:07Z"
+ },
+ "laufzeit_s": 78.99733829498291,
+ "maxrss_MB": 312.515625,
+ "schluessel": {
+  "netz": "str",
+  "info": {
+   "quelle": "str",
+   "pruefung": [
+    "R_umkugel_max",
+    "punkte_mit_kopien",
+    "saum",
+    "umkugel_ausserhalb_saum"
+   ]
+  },
+  "E": "int",
+  "T": "int",
+  "nV": "int",
+  "pruefung": {
+   "T": "int",
+   "E": "int",
+   "nV": "int",
+   "kanten_je_ecke": "float",
+   "tetra_je_ecke": "float",
+   "selbstkanten": "int",
+   "laengen_abw_max": "float",
+   "volumen_summe_rel_abw": "float",
+   "vol_min": "float",
+   "vol_min_rel_mittel": "float",
+   "dieder_summe_minus_2pi_max": "float",
+   "dieder_min_grad": "float",
+   "dieder_max_grad": "float",
+   "D_sym_max": "float",
+   "schlaefli_lD_max": "float",
+   "D_absmax": "float",
+   "l_min": "float",
+   "l_max": "float",
+   "Vbox": "float",
+   "t_modell_s": "float"
+  },
+  "geo_kontr": {
+   "A0_gleich_Phi_GH_Phi": "float",
+   "A2t_mal_Kt_minus_1": "float",
+   "vol_summe_rel_abw": "float",
+   "vol_min_rel": "float",
+   "Phi_cond_max": "float"
+  },
+  "vref": "float64",
+  "eps": "list",
+  "zeilen": "list",
+  "spannen": {
+   "A1R1": [
+    "alle_ok",
+    "n_neg_max",
+    "n_werte",
+    "ritz_spanne_alle",
+    "ritz_spanne_eps1",
+    "spanne_alle",
+    "spanne_eps1",
+    "w_max",
+    "w_min"
+   ],
+   "A1RH": [
+    "alle_ok",
+    "n_neg_max",
+    "n_werte",
+    "ritz_spanne_alle",
+    "ritz_spanne_eps1",
+    "spanne_alle",
+    "spanne_eps1",
+    "w_max",
+    "w_min"
+   ],
+   "A2R1": [
+    "alle_ok",
+    "n_neg_max",
+    "n_werte",
+    "ritz_spanne_alle",
+    "ritz_spanne_eps1",
+    "spanne_alle",
+    "spanne_eps1",
+    "w_max",
+    "w_min"
+   ],
+   "A2RH": [
+    "alle_ok",
+    "n_neg_max",
+    "n_werte",
+    "ritz_spanne_alle",
+    "ritz_spanne_eps1",
+    "spanne_alle",
+    "spanne_eps1",
+    "w_max",
+    "w_min"
+   ],
+   "A2LR2": [
+    "alle_ok",
+    "n_neg_max",
+    "n_werte",
+    "ritz_spanne_alle",
+    "ritz_spanne_eps1",
+    "spanne_alle",
+    "spanne_eps1",
+    "w_max",
+    "w_min"
+   ],
+   "A2LRH": [
+    "alle_ok",
+    "n_neg_max",
+    "n_werte",
+    "ritz_spanne_alle",
+    "ritz_spanne_eps1",
+    "spanne_alle",
+    "spanne_eps1",
+    "w_max",
+    "w_min"
+   ],
+   "A2LRHL": [
+    "alle_ok",
+    "n_neg_max",
+    "n_werte",
+    "ritz_spanne_alle",
+    "ritz_spanne_eps1",
+    "spanne_alle",
+    "spanne_eps1",
+    "w_max",
+    "w_min"
+   ],
+   "A2LR1": [
+    "alle_ok",
+    "n_neg_max",
+    "n_werte",
+    "ritz_spanne_alle",
+    "ritz_spanne_eps1",
+    "spanne_alle",
+    "spanne_eps1",
+    "w_max",
+    "w_min"
+   ]
+  },
+  "hm0": {
+   "A2_k0_cond": "float",
+   "A1_k0_cond": "float",
+   "zeilen": "list",
+   "fehler_norm_A2L": "float64",
+   "fehler_norm_A2": "float64",
+   "A2_ueber_kont_spurfrei": "list",
+   "A1_ueber_kont_spurfrei": "list"
+  },
+  "t_s": "float"
+ },
+ "t_punkt": [
+  33.3943555355072,
+  16.96195363998413
+ ],
+ "geo_kontr": {
+  "A0_gleich_Phi_GH_Phi": 1.5543122344752164e-15,
+  "A2t_mal_Kt_minus_1": 1.292391971219331e-09,
+  "vol_summe_rel_abw": 2.220446049250313e-16,
+  "vol_min_rel": 0.009045820139857462,
+  "Phi_cond_max": 13765.297639511253
+ },
+ "code_kontr": {
+  "100_eps1": {
+   "A1_gleich_tg": 1.614869854000228e-16,
+   "cM_null": 5.082818324253998e-16,
+   "A2LR1_gleich_K_schur_ueber_M_und_c": 4.766629150507976e-15,
+   "A1RH_hamilton_gegen_lagrange": 3.281502829033202e-14,
+   "A2LRH_hamilton_gegen_lagrange": 1.7379899528720027e-10,
+   "A1_cond": 8547.967869594986,
+   "K_cond": 41503.46939190665
+  }
+ },
+ "E": 990,
+ "T": 862
+}

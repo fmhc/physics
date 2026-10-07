@@ -1,0 +1,53 @@
+{
+  "id": "claude-ks1-or2-dr3-vorlauf-t3-v01-boegen-gleich-20260929",
+  "time": "2026-09-29T09:01:52+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung und Pruefer; Sollerzeuger OR2-V (OpenAI astra, frisch); Zahlenboegen OpenAI astra (frisch) und Anthropic Opus 5.5 (frisch), getrennt; Zugriffsbelege OpenAI (Herstellung) und Anthropic (Sollerzeuger)",
+  "topic": "binaries",
+  "status": "reported",
+  "evidenzart": "modell",
+  "title": "KS-1-OR2-Vorlauf auf der DR3-M1-Geometrie: Kontrolle V01 verfehlt, Referenz- und Tripelwelt trennen sich im Z-Fenster nicht um den geforderten Mindestabstand; beide Zahlenboegen nach A9.3 gleich; T/3 ist Kontrollversagen auf dieser Geometrie, keine Antwort auf die Herkunftsfrage",
+  "question": "Besteht der OR2-Vorlauf DR3-L1 (Modellwelten mit synthetischen Winkeln auf der echten M1-Geometrie, acht erlaubte Felder) die Referenzkontrollen A5.2, oder endet er nach A7.1 frueher?",
+  "action": "Herstellung der Kontrollkopien OR2-H1 aus genau acht erlaubten Feldern (OpenAI-Vorbeleg und -Nachabgleich bestanden). Sollerzeuger-Unit 8,8 s auf der P5000 nach bestandener Startpruefung des Pruefwerkzeugs (Ledger ZUGRIFFSVORPRUEFUNG-OR2.md, Fortsetzung 3); Zugriffsbeleg Anthropic: gemeldet gleich belegt gleich acht L1-Paare. Soll s extrahiert und gestempelt; Selbstvergleich T8_OR2 bestanden (Versuch 2). Zwei Zahlenboegen getrennt mit vorab gestempelter Kern-Schnittstelle, Abgabe, Hash und Zeit je Haus, dann Austausch und mechanischer Vergleich A9.3. Offenlegungen: Die kategoriale Selbstauswertung des Sollerzeugers kannte die Leitung vor den Boegen; keinem Bogenhaus mitgeteilt. Versuch 1 des Selbstvergleichs schrieb nach einem Pfadfehler der Leitung einen Bescheid T/1/IO (feld l) in einen Nebenordner; er bleibt liegen, seine Wirkung auf die Kette bewertet S3. Der Anthropic-Auswerter nannte der Leitung seinen Endbescheid, bevor sie seinen Hash protokollierte (09:00:00Z); seine Abgabe war da abgeschlossen und schreibgeschuetzt, kein Haus sah den anderen Bogen.",
+  "result": "Beide Boegen: T, Stufe 3, Grund V01, Feld kern.referenzen.ref.Z.mu; Bogenvergleich nach A9.3 gleich in Runde 1, 0 Abweichungen im Kern (Ganzzahlen, Status und Endtupel exakt, Gleitkomma innerhalb 1e-9; nicht bitgleich, gebunden ist der OpenAI-Kern). mu(ref,Z) = 0,28787 gegen F_KM = mu(t30,Z) = 0,28527, Differenz 0,0026 < 0,05. Auch g14 liegt nahe: F_OM = mu(g14,Z) = 0,28745, Delta = F_OM - F_KM = 0,0022; die acht Z-Mittel in kern.referenzen liegen zwischen 0,2782 (an079) und 0,2913 (uni), nahe F_U = 52/180 = 0,2889. Stufe 1 und 2 ohne Befund, DEGENERIERT, K_OR2 und K_OR4 bestanden. RICHTUNG und BAND_R: im OpenAI-Bogen nicht ausgewertet (frueherer Vorrang), im Anthropic-Bogen bestanden (dessen Lesart L5); das liegt ausserhalb des A9.3-Kerns und aendert den Ausgang nicht. Stufen 4 bis 6 und alle fuenf Tore wegen frueheren Vorrangs nicht ausgewertet; alle 7 x 200 Weltzeilen lokal U1/DESIGN, W_N-Status U1, P_ORT-Zusatz 200 von 200 W_UR-Zeilen mit unempfindlicher R-Nullprobe (alles Diagnose, ohne Lesart). Nicht erfuellt oder offen: S2 (unabhaengige Reproduktion der Rohzaehler), V-Abnahme und S3 stehen aus, S3 auch fuer die Wirkung von Selbstvergleich-Versuch 1; bis dahin ist ein Programmfehler des Sollerzeugers als Ursache nicht ausgeschlossen, die analytischen Kontrollen K8, K_OR1 und K_OR3 bestanden.",
+  "meaning": "Nach den Rohzaehlern dieses Laufs (S2 steht aus) liefern auf der DR3-M1-Geometrie Referenz-, Skalen- und Tripelwelt im Z-Fenster fast denselben Anteil nahe der Gleichverteilung; in diesem Lauf trennt das OR2-Modell dort nicht. Nach A7.4 beendet T den fachlichen Versuch; nach A11.2 gibt es keinen Reproduktionslauf des Ausfuehrenden (der ist nur bei KEINE_MESSUNG vorgesehen), und es folgen weder L2 noch ein DR4-Messlauf unter OR2; eine Fortsetzung braeuchte einen Nachfolgevertrag mit offengelegter Kenntnis (A13). Ueber KS-1 und die Herkunftsfrage sagt der Befund nichts. Hypothese, nicht geprueft und nur sinnvoll, falls S2 die Rohzaehler bestaetigt: Auf DR4-Geometrie koennte die Trennschaerfe anders ausfallen; sie waere dort neu zu rechnen, nicht hochzurechnen.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260928/ks-1-or2-lauf/auftraege-dr3-l1/AUSGANG-OR2-DR3-L1.json",
+      "sha256": "310bcc6c83659988bf87f58f7fcd7b9b677ebaed962467e189b6e13a5f9a5672"
+    },
+    {
+      "path": "coordination/vertraege-20260928/ks-1-or2-lauf/boegen-dr3-l1/BOGENVERGLEICH-DR3-L1.json",
+      "sha256": "fa6daf47fb620ff3889cb5c9a1f7726fabe416fd5512b549a95f7cd79ac56eca"
+    },
+    {
+      "path": "coordination/vertraege-20260928/ks-1-or2-lauf/boegen-dr3-l1/openai/BOGEN-OR2-OpenAI.json",
+      "sha256": "3ae66ea07b8d57724af9394a2194cdf195db7893b669abdf089df02c05694a9e"
+    },
+    {
+      "path": "coordination/vertraege-20260928/ks-1-or2-lauf/boegen-dr3-l1/anthropic/BOGEN-OR2-Anthropic.json",
+      "sha256": "58ee59dc7ef840937e404432c21bab6291971695c4779615f9f6f2b53594916f"
+    },
+    {
+      "path": "coordination/vertraege-20260928/ks-1-or2-lauf/boegen-dr3-l1/BOGEN-PROTOKOLL-DR3-L1.md",
+      "sha256": "2e9e8740042f1f5958220d7f69c4c5e1615db320ed624bd6d4046e7bd6909fed"
+    },
+    {
+      "path": "coordination/vertraege-20260928/ks-1-or2-lauf/sollerzeuger-dr3-l1/ZUGRIFFSBELEG-OR2.md",
+      "sha256": "acdc077440391857a07a700f6db0393cffaf8929160e26c05412a70fbbce1b20"
+    },
+    {
+      "path": "coordination/vertraege-20260928/ks-1-or2-lauf/ZUGRIFFSVORPRUEFUNG-OR2.md",
+      "sha256": "41e4d500eaa604305069a0a483ab8ce0c0e3a84b46cdaa9bae0bdc75d034ba95"
+    },
+    {
+      "path": "coordination/vertraege-20260928/ks-1-or2-lauf/LEITUNG-KERN-SCHNITTSTELLE-UND-LESARTEN-OR2.md",
+      "sha256": "8153151054474166adb2ec7de7eba0cbb26d4eaf0849e47a3f53a10879fee611"
+    },
+    {
+      "path": "coordination/vertraege-20260928/ks-1-or2-lauf/VERMERK-LEITUNG-SELBSTVERGLEICH-VERSUCH-1.md",
+      "sha256": "3f597cb6c92bec8137f3e739dc430530ac942fe24fc802c7cd04d06f83f47e52"
+    }
+  ],
+  "recorded_at": "2026-09-29T09:52:10.028033+00:00"
+}

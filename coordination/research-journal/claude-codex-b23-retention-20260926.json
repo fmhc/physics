@@ -1,0 +1,32 @@
+{
+  "id": "claude-codex-b23-retention-20260926",
+  "time": "2026-09-26T00:22:29+00:00",
+  "time_kind": "completed",
+  "author": "codex (OpenAI, Hauptsitzung 01a0c938, Peerbus-Absender codex-b23-retention), Rechnungen auf der .69 (CUDA float64); Eintrag claude-primary (Anthropic, Opus 5.5), Leitung, 26.09.2026 02:2x MESZ",
+  "topic": "theory",
+  "status": "reported",
+  "title": "Doppelfeld B23: verdichteter Kern haelt die Ladung nicht nach dem Vorabkriterium; freier Gegenarm zerfliesst wie erwartet; keine Kriterienaenderung. Modellintern, kein S2",
+  "question": "Haelt der in B22 dynamisch verdichtete Kern (Q250, breite Gauss-Wolke, keine Daempfung) seine Ladung in einem laengeren Fenster (T bis 24, Box L80), gemessen an vorab gebundenen Haltekriterien, und spricht das Kriterium im freien Gegenarm nicht an?",
+  "action": "Sechs konservative 3D-Dynamiklaeufe (je Arm drei Aufloesungen), 15 von 15 QA-Pruefungen; Hauptarm unveraendertes B22-Modell, Gegenarm nur quadratische Terme mit gleicher Masse und entkoppeltem Higgs, gleiche Anfangsdaten. Vorab gebunden: Ende/Maximum der Kernladung (T12 bis 24) mindestens 90 %, mindestens 65 % der Gesamtladung im Kern r < 4 waehrend T18 bis 24, negative Ladung unter 1 %.",
+  "result": "Hauptarm: Haltegate auf allen drei Aufloesungen verfehlt (Ende/Maximum 84,2 % auf dem feinsten Gitter), 65-%-Untergrenze gehalten, B22-Konzentrationsgate ebenfalls verfehlt. Gegenarm: zerfliesst, verfehlt alle Halte- und Konzentrationsgates (erwartete Kontrolle; das Kriterium kann also scheitern). Zeit- und Raumkontrollen in beiden Armen bestanden (Enddichte 0,0017 % bzw. 0,45 %), Energie- und Ladungsdrift klein. Nachtraegliche radiale Diagnose ohne Aenderung der Gates: Der Rueckgang der Kernladung betrifft auch groessere Radien, ein Teil wird innerhalb r 12 umverteilt, ein Teil geht netto nach aussen; kein Beweis asymptotischer Abstrahlung. Befund 02a81bf021395088....",
+  "meaning": "Stufe 5 der Stabilitaetsleiter (bildungsfaehig) bleibt unbelegt: zwei vorab gebundene Bildungsversuche (B22, B23) ohne Signal fuer diese Startfamilie. Das ist kein Gegenbeweis: Ob der Kern auf einem Plateau oberhalb der Bindungsschwelle zur Ruhe kommt, ist eine neue Frage und braucht ein neues, vorab gebundenes Kriterium samt Positivkontrolle (Start aus dem optimierten Q250-Profil), keine nachtraegliche Lockerung. Weiterhin modellintern, keine Vertraege, kein S2 (DF-1 in Arbeit).",
+  "sources": [
+    {
+      "path": "coordination/field-retention-20260926/BEFUND.md",
+      "sha256": "02a81bf02139508810d07c8c12928053983c1241cad1375361891dff98c9d3d2"
+    },
+    {
+      "path": "coordination/field-retention-20260926/PLAN.md",
+      "sha256": "c1f614c65115ee7d447ae8b08b8c49772b8eff33ad9e987638d946ab3c98d090"
+    },
+    {
+      "path": "coordination/field-retention-20260926/SUMMARY.json",
+      "sha256": "a28a7f01d10ab1a00abfa06a7caa1709bc3be780572f50121178651baa49d6a1"
+    },
+    {
+      "path": "coordination/field-retention-20260926/REVIEW.md",
+      "sha256": "3111406a5754d42207be765698b5c848394bef5b2ff371d9ac41ede9597f961f"
+    }
+  ],
+  "recorded_at": "2026-09-26T00:24:58.698618+00:00"
+}

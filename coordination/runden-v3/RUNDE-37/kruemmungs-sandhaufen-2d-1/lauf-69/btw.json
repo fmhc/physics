@@ -1,0 +1,130 @@
+{
+ "karte": "KRUEMMUNGS-SANDHAUFEN-2D-1",
+ "modus": "btw",
+ "code_sha256": "f2c3627a491136dc13adc7fa081a79971fb1428a12d8c2461912ebbaec2a0f18",
+ "python": "3.12.3",
+ "numpy": "2.4.4",
+ "scipy": "1.18.0",
+ "host": "ubuntu-auto",
+ "start_utc": "2026-10-05T09:48:42Z",
+ "rauch": false,
+ "argv": [
+  "btw",
+  "--N",
+  "500,2000,8000",
+  "--budget",
+  "40,80,300",
+  "--seed",
+  "16",
+  "--out",
+  "lauf/btw"
+ ],
+ "konstanten": {
+  "SMIN": 2,
+  "CAPF": 50,
+  "RELAXF": 100,
+  "EINF": 10,
+  "EIN_ANTEIL": 0.4,
+  "MMAX": 300000,
+  "VOLLPRUEF": 2000,
+  "REIHE": 1000,
+  "BTW_EINF": 2
+ },
+ "geo": "scheibe",
+ "arm": "BTW",
+ "seed": 16,
+ "faelle": [
+  {
+   "netz": {
+    "bau": "Delaunay: N_rand Punkte gleichabstaendig auf dem Einheitskreis, N - N_rand gleichverteilt im Kreis vom Radius 1 - h/2",
+    "saat": 2500,
+    "versuch": 0,
+    "N_rand": 79,
+    "F": 919,
+    "N": 500,
+    "E": 1418
+   },
+   "einschwingen": {
+    "soll": 1000,
+    "schritte": 1000,
+    "zeitbegrenzt": false
+   },
+   "messung": {
+    "schritte": 300000,
+    "zeit_s": 3.57,
+    "mmax": 300000,
+    "budget_s": 40.0
+   },
+   "stabil_ende": true,
+   "zeit_fall_s": 4.01,
+   "name": "btw-N500",
+   "geo": "scheibe",
+   "arm": "BTW",
+   "N": 500,
+   "r": 0.0,
+   "npz": "btw-btw-N500.npz"
+  },
+  {
+   "netz": {
+    "bau": "Delaunay: N_rand Punkte gleichabstaendig auf dem Einheitskreis, N - N_rand gleichverteilt im Kreis vom Radius 1 - h/2",
+    "saat": 4000,
+    "versuch": 0,
+    "N_rand": 159,
+    "F": 3839,
+    "N": 2000,
+    "E": 5838
+   },
+   "einschwingen": {
+    "soll": 4000,
+    "schritte": 4000,
+    "zeitbegrenzt": false
+   },
+   "messung": {
+    "schritte": 300000,
+    "zeit_s": 14.87,
+    "mmax": 300000,
+    "budget_s": 80.0
+   },
+   "stabil_ende": true,
+   "zeit_fall_s": 15.26,
+   "name": "btw-N2000",
+   "geo": "scheibe",
+   "arm": "BTW",
+   "N": 2000,
+   "r": 0.0,
+   "npz": "btw-btw-N2000.npz"
+  },
+  {
+   "netz": {
+    "bau": "Delaunay: N_rand Punkte gleichabstaendig auf dem Einheitskreis, N - N_rand gleichverteilt im Kreis vom Radius 1 - h/2",
+    "saat": 10000,
+    "versuch": 0,
+    "N_rand": 317,
+    "F": 15681,
+    "N": 8000,
+    "E": 23680
+   },
+   "einschwingen": {
+    "soll": 16000,
+    "schritte": 16000,
+    "zeitbegrenzt": false
+   },
+   "messung": {
+    "schritte": 300000,
+    "zeit_s": 71.2,
+    "mmax": 300000,
+    "budget_s": 300.0
+   },
+   "stabil_ende": true,
+   "zeit_fall_s": 78.7,
+   "name": "btw-N8000",
+   "geo": "scheibe",
+   "arm": "BTW",
+   "N": 8000,
+   "r": 0.0,
+   "npz": "btw-btw-N8000.npz"
+  }
+ ],
+ "ende_utc": "2026-10-05T09:50:20Z",
+ "maxrss_MB": 111.5
+}

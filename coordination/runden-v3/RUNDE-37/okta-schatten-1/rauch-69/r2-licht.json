@@ -1,0 +1,145 @@
+{
+ "info": {
+  "numpy": "2.4.4",
+  "python": "3.12.3",
+  "host": "ubuntu-auto",
+  "start_utc": "2026-10-05T05:37:11Z",
+  "argv": [
+   "code/okta.py",
+   "licht",
+   "--klein",
+   "--rauch",
+   "--out",
+   "/home/fmh/fmhc-physics-remote/okta-schatten-1/rauch/r2-licht.json"
+  ],
+  "skript_sha256": "cc1cb0e128bd0ca3f0b594681b74e795c04f23045ea283dbe5739e238dd16992",
+  "ew_sha256": "fa7b6417d39177102f0b19c5474453cd16a7595e23bc25ca548e081c4060b142",
+  "tp_sha256": "419d7da6caa211c721eb6a8c87403977415cf3050f03365377f51cb77b374dfd",
+  "ln_sha256": "98d3960a174fe9d077d32d79acf096b2c611c19f69dd13fb0d7d1a517f436146",
+  "tti_sha256": "6d6b6f7b99b334d74d91860fc69af1c6c0c46e22207dc45432d60a9824c08ee5"
+ },
+ "schluessel": {
+  "geometrie": {
+   "E": "int",
+   "V": "int",
+   "F_dreieck": "int",
+   "F_sechseck": "int",
+   "kantenlaengen_l": "list",
+   "zellen_je_kante": "list",
+   "zellen_je_flaeche": "list",
+   "stern1": "list",
+   "stern2_dreieck": "list",
+   "stern2_sechseck": "list",
+   "hand_abw": [
+    "dreieck",
+    "kante",
+    "sechseck"
+   ],
+   "duale": [
+    "patch_1form_abw",
+    "patch_2form_abw",
+    "summe_flaechen_doppelpyramiden_durch_V",
+    "summe_kanten_rauten_durch_V",
+    "umkreis_abw_max",
+    "zellvolumen"
+   ],
+   "mittelebene_max": "float",
+   "nicht_senkrecht_max": "float",
+   "rot_grad_max": "float"
+  },
+  "gewichte_dec": {
+   "w": [
+    "dreieck",
+    "sechseck"
+   ],
+   "s1": "float",
+   "verhaeltnis_H_D": "float"
+  },
+  "kliste_n": "int",
+  "varianten": {
+   "ohne": [
+    "baender",
+    "bandpfad",
+    "s1",
+    "w"
+   ],
+   "dec": [
+    "baender",
+    "bandpfad",
+    "dispersion",
+    "dispersion_voll",
+    "s1",
+    "symm48",
+    "w"
+   ],
+   "ohne_eins": [
+    "baender",
+    "bandpfad",
+    "s1",
+    "w"
+   ],
+   "eins": [
+    "baender",
+    "bandpfad",
+    "dispersion",
+    "dispersion_voll",
+    "s1",
+    "symm48",
+    "w"
+   ]
+  },
+  "abtastung": "list",
+  "kontrolle_KL": {
+   "a2_abw_max": "float",
+   "ok": "bool",
+   "sechsringe": "int"
+  },
+  "urteile": "NoneType",
+  "laufzeit_s": "float"
+ },
+ "technik": {
+  "E": 12,
+  "V": 4,
+  "F_dreieck": 8,
+  "F_sechseck": 4,
+  "kantenlaengen_l": [
+   1.0
+  ],
+  "zellen_je_kante": [
+   [
+    "finn_ab",
+    "stumpf_T1",
+    "stumpf_T2",
+    "stumpf_T2"
+   ],
+   [
+    "finn_auf",
+    "stumpf_T1",
+    "stumpf_T1",
+    "stumpf_T2"
+   ]
+  ],
+  "zellen_je_flaeche": [
+   2
+  ],
+  "hand_abw": {
+   "dreieck": 4.440892098500626e-16,
+   "sechseck": 0.0,
+   "kante": 0.0
+  },
+  "duale": {
+   "zellvolumen": 5.656854249492379,
+   "umkreis_abw_max": 0.0,
+   "summe_kanten_rauten_durch_V": 1.0000000000000002,
+   "summe_flaechen_doppelpyramiden_durch_V": 0.9999999999999999,
+   "patch_1form_abw": 1.1102230246251565e-16,
+   "patch_2form_abw": 0.0
+  },
+  "mittelebene_max": 0.0,
+  "nicht_senkrecht_max": 0.0,
+  "rot_grad_max": 9.155133597044475e-16,
+  "kontrolle_KL_ok": true
+ },
+ "laufzeit_s": 0.6141409873962402,
+ "maxrss_MB": 46.21875
+}

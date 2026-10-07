@@ -1,0 +1,13 @@
+ROT-1 regge (REGGE-1) grob RAUCH. Start 2026-09-30T10:18:58+02:00, Ende 2026-09-30T10:19:00+02:00, CPU (nur Rauchtest), torch 2.10.0+cu128
+Q = 700.0, dx 0.6, dt 0.1, L 38.4, T 20.0 (erreicht 20.0, Abbruch False), Entwicklung 1.4 s; Mittel ab t = 10.0
+Ball: b 1.0000: omega 0.72710, S_0 1.0275, R_halb 12.175; b 1.1250: omega 0.63171, S_0 1.1523, R_halb 12.325
+
+g | d0 | d(t>=30) | Omega(t>=30) | d(t>=60) | Omega(t>=60) | fehlt | Q_w | j = J_w - Q_w (std) | eps = E_w - omega_b Q_w (std) | Q/E/J geschluckt
+0.5 | 5 | 6.632 | -0.05224 | 6.632 | -0.05224 | 0.00 | 677.135 | -28.386 (0.003) | 71.4220 (0.3087) | 0.000/0.000/-0.000
+0.5 | 7 | 7.607 | 0.01355 | 7.607 | 0.01355 | 0.00 | 677.317 | -55.618 (0.018) | 88.5049 (0.5874) | 0.000/0.000/-0.000
+0 | 5 | 3.063 | 0.07854 | 3.063 | 0.07854 | 0.00 | 676.767 | -29.126 (0.001) | 33.3416 (0.0350) | 0.000/0.000/0.000
+
+g = 0.5: j gegen d^2: Steigung -1.9619 +- nan (Fitrest 0.000); Magnus -pi rho_a/2 = -1.1434; Regge (sigma 1,75) +0,687
+   eps gegen d: Steigung 17.5230 +- nan (Fitrest 0.000)
+   j - j_min gegen (eps - eps_min)^2: Koeffizient -0.0933 +- nan; Magnus -pi rho_a/(2 F^2) mit F = Steigung eps: -0.0037; Regge +1/(2 pi sigma)
+   Hamilton-Probe (Nachbarn): d 6.63->7.61: dj -27.23, deps +17.083, Omega_H -0.6273 gegen Omega -0.0193 (Verh. 32.43)

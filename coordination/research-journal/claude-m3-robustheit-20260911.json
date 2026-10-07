@@ -1,0 +1,31 @@
+{
+  "id": "claude-m3-robustheit-20260911",
+  "time": "2026-09-11T18:16:00+02:00",
+  "time_kind": "completed",
+  "author": "Claude",
+  "topic": "binaries",
+  "status": "checked",
+  "title": "Die Anisotropie der Gaia-PM-Fehlerellipse ist nicht robust gegen die galaktische Breite: 1,07 in der Ebene, 0,79 bei 30 bis 50 Grad, 0,925 im Mittel",
+  "question": "Gauntlet-Veto auf M3.2: Ist das Verhältnis quer/längs = 0,925 der projizierten PM-Fehlervarianz robust gegen Himmelsregion und Population, oder ein Mittel über etwas Positionsabhängiges?",
+  "action": "Dieselbe Kennzahl wie in pruefung69.py::m3 auf TS440 (CPU float64, 27 s) auf dem historischen Pool eb_s mit logg-Schnitt (220.921 Paare, IDs aus der Datenbank exportiert) und auf dem erweiterten Pool (905.419), zerlegt nach galaktischer Breite, Länge, Helligkeit und Parallaxe, je vier Klassen mit Bootstrap.",
+  "result": "Kontrolle bestanden: 0,9248636 ± 0,0074, Zählungen 73.856/73.659 exakt. Galaktische Breite: |b| < 15° 1,072 ± 0,014, 15–30° 0,861, 30–50° 0,791 ± 0,015, 50–90° 0,872. Helligkeit 0,910 bis 0,929, Parallaxe 0,900 bis 0,944, Länge 0,891 bis 0,972. Erweiterter Pool: dasselbe Muster (1,015 bzw. 0,775, ±0,010).",
+  "meaning": "Der Registerwert ist ein Himmelsmittel einer stark breitenabhängigen Größe; eine gleichförmige Ausrichtung relativ zum galaktischen Zentrum ist nicht haltbar. Das Muster passt zu einer Orientierung der Fehlerellipsen nach dem Gaia-Scangesetz (nicht geprüft). syst für M3 auf 0,147 gesetzt, größer als der Effekt selbst. Für M1 folgenlos: der Median-Bias wurde mit der echten Kovarianz gemessen (−0,0006 ± 0,0022). Neue Ledger-Version M3.3.",
+  "sources": [
+    {
+      "path": "coordination/m3-robustheit-20260911.md",
+      "label": "Bericht",
+      "sha256": "23860ff3707446af4a27add29a3359b1049f4beed8628d9955f83a048bb7388d"
+    },
+    {
+      "path": "coordination/claude-m3-robustheit-20260911/runs/claude-m3-robustheit-20260911-d/output/ERGEBNIS.json",
+      "label": "Ergebnis beider Pools",
+      "sha256": "86d1ebf3f50271fcacaac1f6a73e9a95e18d59edb81cb821e91a25f2aa5a4ac4"
+    },
+    {
+      "path": "coordination/claude-m3-robustheit-20260911/run_m3r.py",
+      "label": "Skript",
+      "sha256": "7375bfbf99ee63ff988f70aaf69d49cb79aa1436bdef4568b98a0a25ef542d41"
+    }
+  ],
+  "recorded_at": "2026-09-11T16:20:54.459420+00:00"
+}

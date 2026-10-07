@@ -1,0 +1,116 @@
+{
+ "argumente": {
+  "kommando": "gebunden",
+  "omega2_liste": "0.52,0.54,0.60",
+  "n_geb": 100,
+  "nu_min": 0.001,
+  "name": "Z1",
+  "h": 0.08,
+  "frand": 1e-06,
+  "offs": "0,-5e-4,5e-4,-2e-3,2e-3",
+  "dxs": "5e-4,1e-4",
+  "iter_newton": 20,
+  "u_n": 60,
+  "u_drho": 2e-05,
+  "u_drho_ohne_fit": 0.0005,
+  "g": 0.2,
+  "x0": null,
+  "nu0": null,
+  "cgam": null,
+  "l": 1,
+  "kanal": "anti",
+  "dnu": null,
+  "geraet": "cpu",
+  "out": "/home/fmh/fmhc-physics/coordination/runden-v3/RUNDE-09/sd1/lauf-lokal/aus-rauch-anti-l1-gebunden",
+  "budget": 540.0
+ },
+ "start": "2026-09-30T08:31:35+02:00",
+ "gebunden": {
+  "kanal": "anti",
+  "g": 0.2,
+  "l": 1,
+  "h": 0.08,
+  "x": [
+   0.52,
+   0.54,
+   0.6
+  ],
+  "R_aus": 29.44,
+  "r_m": 8.32,
+  "zustaende": [
+   {
+    "x": 0.52,
+    "kante": 0.2788897449072021,
+    "max_rel_imD_reell": 0.0,
+    "wurzeln": [
+     0.15888541512215043
+    ],
+    "newton": [
+     {
+      "nu": [
+       0.2963152124667175,
+       -0.010188070951839986
+      ],
+      "konvergiert": true,
+      "absD": 3.950439511883122e-16
+     }
+    ],
+    "E_aus_nu": [
+     0.774392379597056
+    ],
+    "gegenlaeufer_erwartet": [
+     1.6011059253077462
+    ]
+   },
+   {
+    "x": 0.54,
+    "kante": 0.26515307716504655,
+    "max_rel_imD_reell": 0.0,
+    "wurzeln": [
+     0.16051897062255382
+    ],
+    "newton": [
+     {
+      "nu": [
+       0.1605183626423198,
+       -7.022245252117221e-12
+      ],
+      "konvergiert": false,
+      "absD": 0.7848378593677163
+     }
+    ],
+    "E_aus_nu": [
+     0.8016800831669603
+    ],
+    "gegenlaeufer_erwartet": [
+     1.6302128162924607
+    ]
+   },
+   {
+    "x": 0.6,
+    "kante": 0.2254033307585166,
+    "max_rel_imD_reell": 0.0,
+    "wurzeln": [
+     0.17181204041044257
+    ],
+    "newton": [
+     {
+      "nu": [
+       0.17181204041043452,
+       -1.4222541249469021e-33
+      ],
+      "konvergiert": true,
+      "absD": 0.6465879130425704
+     }
+    ],
+    "E_aus_nu": [
+     0.8956894457050236
+    ],
+    "gegenlaeufer_erwartet": [
+     1.7210053788934094
+    ]
+   }
+  ]
+ },
+ "ende": "2026-09-30T08:32:08+02:00"
+}

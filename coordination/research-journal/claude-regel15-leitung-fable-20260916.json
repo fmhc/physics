@@ -1,0 +1,28 @@
+{
+  "id": "claude-regel15-leitung-fable-20260916",
+  "time": "2026-09-16T19:25:39+02:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Fable), Auftrag Finn",
+  "topic": "operations",
+  "status": "reported",
+  "title": "Leitung zurueck an Fable ab Runde 21, DeepSeek v4.1 als viertes Richterhaus (Regel 15)",
+  "question": "Wer leitet nach dem Codex-Dreirundenmandat, und wie wird die Jury verbreitert?",
+  "action": "Finn 16.09. 19:05: 'leitung von fable und runs mit deepseek 4.1 auch neu jetzt'. Regel 15 in HANDLUNGSANWEISUNG-jury-ohne-openrouter.md (Backup .bak-20260916-regel15); runde.py: JURY um codex-jury-d erweitert, Adapter openrouter/DeepSeek, Slot d erst ab Runde 21 verpflichtend (Backup runde.py.bak-20260916-regel15). OpenRouter: deepseek/deepseek-v4.1-flash verfuegbar (1M Kontext, 0,15/0,60 USD je Mio Token), Restguthaben ca. 8 USD. Vor Runde 21: Dreihaus-Review (Fable-Subagent, Qwen, astra) der vier neuen Vertragsentwuerfe (CMS-X1, SN-A1, SN-A2, SN-B1) und der Rundenpipeline gestartet; Ergebnis coordination/methodik-review/review-20260916-vertraege-pipeline/.",
+  "result": "Codex-Mandat R18-R20 erfuellt (ABSCHLUSS-R18-R20.md): R18 formal verworfen, R19 Qwen-Einhausrunde ohne Stufenwechsel, R20 Dreihausrunde mit 72 Stimmen, 12 Aufstiege, 2 Rueckstufungen, GAIA-A1 Gold, sechs Textpatches. Neu durch Codex: Kandidatenmatrix mit Herkunft und Stimmbelegen vor dem Einfrieren (runde.py kandidaten_pruefen, stimmbeleg_pruefen), Request-/Raw-Archiv je Richteraufruf, Leselueckenprotokoll, 69 befangene Altstimmen ausgeschlossen, Zeilen VR5.1/MK4.1 angelegt, Morse-Entscheidung (kein Nachtrag 4 durch Lead; Finn hat N4 separat freigegeben), Empfehlungsliste fuer R21.",
+  "meaning": "Die Jury steht jetzt auf vier Haeusern; Fable fuehrt wieder. Erst Review, dann Startsignale fuer die vier Vertraege, dann Runde 21.",
+  "sources": [
+    {
+      "path": "coordination/HANDLUNGSANWEISUNG-jury-ohne-openrouter.md",
+      "sha256": "921f8b30008155a3605826625289a02e6313c89ef435afb3f07ad3f3414d1859"
+    },
+    {
+      "path": "gauntlet/runde.py",
+      "sha256": "11369d34fbc3d992a4d02497ee36e7cd8f0f876962d1cd6873cb0ff0b1a91138"
+    },
+    {
+      "path": "coordination/steuerung-20260915-drei-runden/ABSCHLUSS-R18-R20.md",
+      "sha256": "debe5209eb0268f634c016a7308b832d3c16a0fe3a0c66ac1b3b30611148e65d"
+    }
+  ],
+  "recorded_at": "2026-09-16T17:25:39.275260+00:00"
+}

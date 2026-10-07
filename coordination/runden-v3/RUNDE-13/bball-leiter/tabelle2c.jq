@@ -1,0 +1,8 @@
+# Tabelle B-BALL-2c aus der Ausgabe von auswertung2c.jq (jq -r -f tabelle2c.jq <auswertung2c.json>)
+def f($n): if . == null then "-" else ((. * pow(10; $n) | round) / pow(10; $n) | tostring) end;
+def s3: if . == null then "-" else (. as $v | if ($v | fabs) == 0 then "0" else (($v | fabs | log10 | floor) as $e |
+  (($v / pow(10; $e)) * 100 | round / 100 | tostring) + "e" + ($e | tostring)) end) end;
+"| t | s-Wechsel h = 0,02 / 0,01 | Lagen omega*^2 (h = 0,02) | Lagen rho* (h = 0,02) | Stufen gleich auf (omega^2) | Umlaeufe der kleinen Rechtecke h = 0,02 / 0,01 | groesster Sprung Rechteck / Streifen (rad) | Streifen Umlauf != 0 (h = 0,02) | Streifen nicht aufgeloest / fehlend | Breitenminimum Gamma (Zeile, h = 0,02) | je t |",
+"|---|---|---|---|---|---|---|---|---|---|---|",
+(.je_t[] | . as $e | $e.stufen[0] as $a | $e.stufen[1] as $c |
+  "| \($e.t) | \($e.n_wechsel[0]) / \($e.n_wechsel[1]) | \([$a.kand[]?.x | f(6)] | join("; ")) | \([$a.kand[]?.rho | f(6)] | join("; ")) | \([range(0; ([($a.kand | length), ($c.kand | length)] | min)) as $i | (($a.kand[$i].x - $c.kand[$i].x) | fabs | s3)] | join("; ")) | \([$a.kand[]?.u] | map(tostring) | join(", ")) / \([$c.kand[]?.u] | map(tostring) | join(", ")) | \([$a.kand[]?.sprung, $c.kand[]?.sprung] | max | f(3)) / \([$a.max_sprung_streifen, $c.max_sprung_streifen] | max | f(3)) | \([$a.streifen_u_ne0[] | "\(.x_lo)..\(.x_hi): \(.umlauf)"] | join("; ")) | \($a.streifen_nicht_aufl + $c.streifen_nicht_aufl) / \($a.streifen_fehlend + $c.streifen_fehlend) | \(($a.gamma | min_by(.Gamma)) as $g | if $g == null then "-" else "\($g.Gamma | s3) (\($g.x))" end) | \(if $e.eine then "eine" elif $e.falte then "falte" else "weder" end) |")

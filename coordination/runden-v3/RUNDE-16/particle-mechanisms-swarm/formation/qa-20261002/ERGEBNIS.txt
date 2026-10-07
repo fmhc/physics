@@ -1,0 +1,33 @@
+M2-Vorbereitung geprueft, keine Realzeitentwicklung — 02.10.2026
+.69 ubuntu-auto CPU8 nice19, OMP/BLAS1, 0.161486 CPU-s, time_steps=0.
+Codehash ea841390a6dff7f6d552d00e7e79c4c3fdc1f67ec36cb4924bb20701fb979af3.
+Referenzhash stimmt mit Originalarchiv1bb153a166e15d8ca43848613e638e8e0d20978833be6c564dcf7bc33f926d8c.
+
+Diskrete Identitaeten bestehen: Energiegradient2.113e-12 Abweichung,
+globaleQ-Ableitung7.65e-18, lokaleQ/Fluss3.82e-18, Vakuum exakt.
+Das prueft Kraft/Energie/Fluss-Implementierung, nicht Realzeitkonvergenz.
+
+Referenzinitialgate VERFEHLT (jeRest<.004 vorgegeben):
+h=.1 rphi=.0491052,rchi=.0468229;
+h=.05 rphi=.166464,rchi=.159210.
+Halbierterdt hat ohneZeitschritte definitionsgemaess gleicheStartwerte.
+Quelle f/chi float32, radialeSamples.16, lineareInterpolation. Zweite
+Ableitungen dieser interpolierten Profile sind keine stationaeren
+Zielgitterloesungen. Restanstieg bei feineremGitter beweist keineInstabilitaet.
+Die Umrechnung omega fuerQ1100 ist offen dokumentiert, keine Relaxation.
+
+Cloudinitialwerte: E≈1546.6894,Q1100, also E/Q≈1.40608<sqrt2;
+Q(r12)/Q≈.78772, Dichte-R50≈8.6511 aufh.1.
+Rchiinitialriesig durch ||chi-1||=0 und absolutenNormfloor: mathematisch
+gewollteDiagnose, keinNaN/Ghost und keineStationaritaet dieser Wolke.
+R50ist positive|phi|²-Medianposition, keinallgemeinerLadungsradius.
+
+Entscheidung: keinHauptlauf aus diesenStartdaten. Nicht alsnegativer
+Bildungs-/Stabilitaetsbefund melden. VorhandenerRadialast bleibt als
+historischerBefund unveraendert. NaechsterroutinemaessigerSchritt ist eine
+explizite gezielte Fest-Q-Nachkorrektur nurdiesesgespeichertenQ1100Seeds
+auf h.1/.05 mitQ, Energie, stationaerenResten undProfilabstand als
+Kontrollen. Kein erneuterAstscan, keine nachtraeglicheLockerung des .004-Tors.
+Ein neuer korrigierterReferenzstand braucht eigeneHashes/QA und darf den
+jetzigenFehlschlag nicht ueberschreiben. Hauptlauf bleibt zusaetzlich
+code-/normreviewbeduerftig. Keine Papertexte geaendert, keinNaturbefund.

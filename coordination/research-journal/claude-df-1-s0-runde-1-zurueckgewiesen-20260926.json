@@ -1,0 +1,32 @@
+{
+  "id": "claude-df-1-s0-runde-1-zurueckgewiesen-20260926",
+  "time": "2026-09-26T01:22:47+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung; Koordination Claude-Subagent (Anthropic, Opus 5.5); Review astra (OpenAI, gpt-6-astra, high) 03:12:38 bis 03:21:32 MESZ; Review Qwen (batiai/qwen3.6-35b:q4, Ollama auf der .69) 03:16:58 bis 03:22:47 MESZ (gemessen)",
+  "topic": "theory",
+  "status": "reported",
+  "title": "DF-1 Fassung 2, S0 Runde 1: astra weist zurueck (zwoelf freigabeverhindernde Auflagen), Qwen gibt mit Auflagen frei; nicht bindungsfaehig, Fassung 3 fuer Runde 2 beauftragt",
+  "question": "Ist der Vertrag DF-1 (radiale Nachrechnung von Codex B17/B21) nach S0 bindungsfaehig?",
+  "action": "Koordinator: astra REVIEW-ONLY (42 lesende Befehle), Qwen direkt an Ollama mit vollem Vertrag, Faktenliste und dem Diff F1 zu F2 (Modellfeld geprueft, nicht abgeschnitten, erster Anlauf erfolgreich nach 3 min 53 s Laden). Synthese S0-RUNDE-1-SYNTHESE.md (bc81f830...).",
+  "result": "astra ZURUECKWEISEN (71c9316c...): K6 (R20 auf R40) und K4 sind nicht nur strenger und ausgangsbestimmend, K4 kann auch T in U1 wandeln; die rein radiale Kruemmungsbewertung erweitert die A-Menge, der Satz in B13.7 sei falsch; Uebertragung auf Q165/Q170 mit zwei 3D-Gittern nur als offengelegte Annahme; Ae2 und Ae3 nicht nur strenger, A8.3 erzwingt die Rechenzeitgrenze nicht; keine echte radiale A-Positivkontrolle (Nachtrag 21); K2-Vorlauf nicht nach A3.3 (ungedaempfte Newton-Schritte); Luecken im Referenzentscheider (fehlendes V, extra, Pflichtfelder); S2-Schnittstellen fehlen in Teil A; ein nicht qualifizierter Fehlerarm FA2 zaehlt als bestanden; Blindheitsregel widerspruechlich (/tmp, Beleg vor Rechteentzug); B4/B5 als bedingtes Vorwissen berichtigen, B8 auf Energievergleich begrenzen. Qwen FREIGEBEN MIT AUFLAGEN (zwei Auflagen, beide im Text schon erfuellt; 24 Zeilen Antwort) und widerspricht astra bei K6, K4, Ae2/Ae3 und S2.",
+  "meaning": "Nicht gebunden, keine Zielrechnung. Erwartung vorab: astra weist zurueck p = 0,65 (eingetreten), Qwen gibt frei p = 0,75 (eingetreten). Wieder sieht Qwen die Luecken nicht, die astra findet; die Regel 'S0 nie auf Qwen allein' bestaetigt sich. Nebenfund fuer die Blindheit: astras S0-Sitzungsdatei unter ~/.codex/sessions enthaelt Teil B und die Vergleichswerte und gehoert in die gesperrte Pfadliste. Kleiner Regelverstoss der Koordination: ein lesendes git status. Fassung 3 vom selben Autor bis 06:15, danach Runde 2.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260926/df-1-s0/S0-RUNDE-1-SYNTHESE.md",
+      "sha256": "bc81f83075acc4c03bd314885964deb5db9d813541a6cbf8a691f3f5d779d3b4"
+    },
+    {
+      "path": "coordination/vertraege-20260926/df-1-s0/review-astra-f2/REVIEW-astra-DF-1-F2.md",
+      "sha256": "71c9316c119113f402579c3ddbe4ac8bf25dea4a3dfc9dba6fc9143810190eb2"
+    },
+    {
+      "path": "coordination/vertraege-20260926/df-1-s0/review-qwen69-f2/antwort.md",
+      "sha256": "0329e51272c21e0361ac4490fcb3e1be391cefacf2b0f1720a3119af0d36a3a6"
+    },
+    {
+      "path": "coordination/vertraege-20260926/DF-1-VERTRAG.md",
+      "sha256": "751044cde8c4261b6da265e2ee740a77efbeb7f88e67ecef6737fee535f40809"
+    }
+  ],
+  "recorded_at": "2026-09-26T01:31:07.494191+00:00"
+}

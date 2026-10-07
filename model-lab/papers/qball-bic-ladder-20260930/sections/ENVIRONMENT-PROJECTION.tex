@@ -1,0 +1,71 @@
+\paragraph{Linear coupling to the localized mode.}
+For radiation of the same scalar field, a conditional projection identity
+makes the distinction between scattering and local forcing precise.
+In a fixed real $l=1$ harmonic, complexify the doubled reduced perturbation
+$\psi=(rz_l,r\overline z_l)^T$ and write an additive source as $S$.
+Equation~\eqref{nl:linear} and its conjugate give
+\begin{equation}
+ \psi_{tt}+2i\omega\sigma_3\psi_t+\mathcal K\psi=S,
+ \qquad
+ \mathcal K=-\partial_r^2+\frac{2}{r^2}
+ +(D-\omega^2)I+C\sigma_1,
+ \label{env:time}
+\end{equation}
+where $D,C$ are those of Eqs.~\eqref{eq:radialA}--\eqref{eq:radialB},
+$\sigma_3=\operatorname{diag}(1,-1)$, and
+$\sigma_1=\left(\begin{smallmatrix}0&1\\1&0\end{smallmatrix}\right)$.
+The physical perturbation is recovered by the conjugate frequency pairing.
+For a physical additive source in this real harmonic block,
+$S_2=\overline{S_1}$; independent components are used only in the formal
+complexification, with the conjugate pairing restored for physical forcing.
+Use the radial inner product with measure $dr$ and the regular
+self-adjoint domain of $\mathcal K$. With $X=(\psi,\psi_t)^T$, define
+\begin{equation}
+ \mathcal G=\begin{pmatrix}0&I\\-\mathcal K&-2i\omega\sigma_3\end{pmatrix},
+ \qquad
+ \mathcal J=\begin{pmatrix}2\omega\sigma_3&-iI\\iI&0\end{pmatrix}.
+ \label{env:generator}
+\end{equation}
+Then $\mathcal G^\dagger\mathcal J+\mathcal J\mathcal G=0$ on that domain.
+For a nonzero localized fundamental mode
+$H(\rho)u=0$, where $H(\rho)=\mathcal K-\rho^2I-2\omega\rho\sigma_3$,
+put $X_u=(u,i\rho u)^T$. If $\rho>|\omega|$, its conserved form is positive:
+\begin{equation}
+ N=\langle X_u,\mathcal JX_u\rangle
+   =-\langle u,H'(\rho)u\rangle
+   =2\langle u,(\rho I+\omega\sigma_3)u\rangle>0.
+ \label{env:norm}
+\end{equation}
+Here $\rho$ is the fundamental frequency, not $2\rho$.
+Positivity on this mode is neither a linear nor a nonlinear stability
+theorem for the full system.
+The corresponding left projection $c=\langle X_u,\mathcal JX\rangle/N$
+obeys
+\begin{equation}
+ \dot c=i\rho c-\frac{i}{N}\langle u,S\rangle,
+ \label{env:projection}
+\end{equation}
+provided the radial Green boundary form vanishes. On $[0,R]$ the
+additional term is $i[u'^\dagger\psi-u^\dagger\psi']_0^R/N$.
+At the origin this follows from regular values $u,\psi=O(r^2)$ and
+regular derivatives $u',\psi'=O(r)$. At infinity the localized mode and
+its derivative must decay against the controlled scattering field and
+its derivative; this includes suitable finite wave packets.
+
+Thus a homogeneous linear solution ($S=0$) with $c(0)=0$ cannot populate
+this projection on the fixed background. Spatial separation of an
+incoming packet alone does not imply exact orthogonality, because the
+localized mode has tails. A prescribed local additive source can instead
+have $\langle u,S\rangle\ne0$ and drive the mode. For $c(0)=0$ and a
+finite square-integrable projected source, Eq.~\eqref{env:projection} gives
+\begin{equation}
+ N|c(T)|^2\leq\frac{T}{N}\int_0^T|\langle u,S(t)\rangle|^2\,dt.
+ \label{env:pulse}
+\end{equation}
+This is a mode-projection bound, not a statement about the energy supplied
+by an unspecified environment. Although Eq.~\eqref{env:norm} is positive
+on this eigenspace, $\mathcal J$ is indefinite on the full phase space.
+No globally passive port model, loading rate, nonlinear formation
+mechanism, or indefinite maintenance follows. The local source and its
+physical coupling must be specified separately; the nonlinear radiation
+obstruction in Section~\ref{nl:section} addresses a different question.

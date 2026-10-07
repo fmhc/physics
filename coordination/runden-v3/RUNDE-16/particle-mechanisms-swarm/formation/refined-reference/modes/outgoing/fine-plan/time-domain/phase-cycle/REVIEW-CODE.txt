@@ -1,0 +1,75 @@
+Nichtautor-Codelektüre, particle_binding, 02.10.2026
+Erster vollständig gelesener Stand:
+61cd65b3bd75d309dc9bf0d789036b8f7d78660e0bb7132fcba2bb9a77494366.
+Keine Ausführung oder Tests; finaler Reserve-/Direct90-Nachtrag wird
+gesondert nachgelesen. Keine theoretische Neubestimmung durch diesen Code.
+
+Grundpfade konsistent: Der alte gehashte Loader erzeugt zunächst genau
+die frühere normierte/pivotfixierte Mode. Anschließend wird deren GANZER
+Eigenvektor einmal mit i multipliziert. Keine neue Normierung oder
+Phasenverankerung folgt. initial() sieht q UND p in dieser Phase; seine
+vorhandene exakte Ladungsquadratik/Kanonik-QA bleibt aktiv. Alpha und
+Referenznorm werden gegen die jeweiligen alten Vorzeichenarme verglichen.
+
+Alte theta0-/Nullarme werden separat für base(dt=.01) und time(.005)
+geladen. Resultathash, verwendete Ring-/Initial-/Finalhashes, Komponenten,
+vollständige Samplezeiten, Grid und die alte gemeinsame Input-Gauge
+werden geprüft. Baseline-/Erhaltungsdiagnosen werden aus den gehashten
+Altdaten wieder geprüft; kein Baseline-Lauf wird wiederholt. Kausale
+DC/H2-Referenzen haben überprüfte Labels und passende Ringe für beide
+gespeicherten Mittelpunkt-Schrittweiten. Ihre Resultat-/Codebindung und
+vorherige Summenvalidierung werden geprüft.
+
+Neue +/-Arme laufen paarweise, sodass volle kanonische Odd-Normen
+tatsächlich verfügbar sind. Die Prognose ist Re(i v exp(i rho t));
+kein Vergleich mit der alten Quadratur. Erhaltung verwendet jeweils
+eigene Anfangswerte; zwischen Phasen/Vorzeichen wird kein identisches
+E oder Q erzwungen. Der rotierende Frame und alpha bleiben identisch.
+
+even90 wird mit2alpha² und passender Baseline gebildet. Die gespeicherten
+Quellenreihenfolgen sind (DC,H2), und separated=(even0+even90)/2,
+(even0-even90)/2 wird korrekt zugeordnet. Referenzquelle wird hier nicht
+nochmals phasenverdreht: die zu vergleichenden DC/H2 sind die alten
+theta0-Quellgeschichten. Zeit-/Bandnormen benutzen die jeweilige separate
+Komponentenreferenz, Schalenvolumen und passende Trapezgewichte; keine
+kleine Summennorm als Ersatz. Der bereits zugesagte Reserve-Nachtrag ist
+notwendig, bevor diese Nenner als numerisch aufgelöst ausgegeben werden.
+
+Endvollständigkeit verlangt genau vier Vorzeichen/Levelarme bisT128 mit
+je321 QA-Samples, zwei vollständige Odd-Paare,16 Komponentenmessungen
+und8dt-Vergleiche. Kein Mehrheitspass. Alte Experiment-main-Funktionen
+werden durch die Imports nicht aufgerufen. Artefakte/JSON werden atomisch
+gesichert, Zwischenstände tragen terminal_complete=false. Interner
+Checkpoint115CPU-s erfordert weiterhin den äußeren120CPU-s-Deckel.
+Kein grundsätzlicher Blocker in diesen bereits fertig gelesenen Pfaden.
+
+Abschließende Deltalektüre: finaler SHA256 lokal geprüft und vom Autor
+bestätigt: 3509332b4732c8497e9246855fc7be6254ff1681e3e2e99b823457180aaa1446.
+Kein konkreter Blocker für den vereinbarten begrenzten Versuch. Keine
+Ausführung durch diesen Reviewer; kein vorweggenommener Ergebnispass.
+
+Die letzten Änderungen sind konsistent: D wird aus Paar0+Paar90−4Baseline,
+H aus Paar0−Paar90 gebildet, jeweils /4alpha². Dadurch entfällt die Baseline
+in H bereits vor der Floating-Auswertung. Dies entspricht der verlangten
+Halbsumme/Halbdifferenz und der baselinefreien positiven H-Hülle. Der
+gesamte ursprüngliche Modezustand wird weiterhin einmal mit i gedreht;
+keine erneute Normierung oder Verankerung wurde eingeführt.
+
+Die Reserve prüft D und H separat, jeweils Zeitnorm und Bandnorm in jeder
+Schale und jedem Fenster: Nref >100 max(DeltaRef,DeltaDt,eta). DeltaRef
+vergleicht die beiden gespeicherten kausalen Schrittweiten, DeltaDt beide
+neuen nichtlinearen Schrittweiten. eta verwendet 64eps und die positive
+Summandenhülle, für die Bandnorm deren positiven Zeitmittelwert bei
+Frequenz null. Die Größen besitzen jeweils dieselben Normdimensionen;
+eine oszillatorische Fourierauslöschung der Hülle findet nicht statt.
+Alle Auflösungsflags gehen in den Endstatus ein. Die 64eps-Größe ist nur
+eine explizite empirische Sensitivitätsskala, kein Fehlerzertifikat für
+PDE-Integration, Datenwiederverwendung oder kumulierte Rundung.
+
+Direct90 vergleicht even90 mit dem unabhängig gespeicherten kausalen D−H,
+nicht mit einer tautologischen Rückkombination der neuen Komponenten.
+Die Normierung durch die alte theta0-even-Antwort ist beschriftet und
+bleibt reine Zusatzdiagnostik. Alle acht solchen Zeilen sind für die
+Vollständigkeit erforderlich. Die prospektiven 5%-Komponenten- und
+1%-dt-Gates bleiben unverändert; vier vollständige Arme, beide Odd-Paare
+und sämtliche 16+8 bewerteten Zeilen sind weiterhin obligatorisch.

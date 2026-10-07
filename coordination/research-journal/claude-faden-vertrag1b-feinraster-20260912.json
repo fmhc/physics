@@ -1,0 +1,28 @@
+{
+  "id": "claude-faden-vertrag1b-feinraster-20260912",
+  "time": "2026-09-12T08:02:31+02:00",
+  "time_kind": "completed",
+  "author": "Claude (claude-primary; Ausfuehrung claude-x1 auf .69 GPU)",
+  "topic": "micro",
+  "status": "checked",
+  "title": "1b Feinraster: Stabilitaetsschwelle in (3,0; 3,1] trifft die lineare Vorhersage; Q-0,05-Amplitudenschwelle bei 3,21 +- 0,01",
+  "question": "Wo liegt die Rotationsschwelle des Formschutzes auf +-0,02, und stimmt sie mit der linearen Vorhersage 3,0 ueberein?",
+  "action": "Fuenf s-Werte 3,12 bis 3,22 x zwoelf Starts x zwei h als ein CUDA-Batch (51 s) mit dem eingefrorenen Skript in Phase test; vorab fixierte Definition von s*; Werkzeugabnahme aus Nachtrag 1.",
+  "result": "zy+- treten bei 3,12 bis 3,20 mit Q_max 0,063 bis 0,050 bei t ~ 5 aus (gebundene Schwingung, kein Wachstum), bei 3,22 nicht; s* = 3,21 +- 0,01. Exponentielles Wachstum endet in (3,0; 3,1]. 60/60 abgenommen, monoton.",
+  "meaning": "Die physikalische Schwelle liegt bei der linearen Vorhersage (A); die 0,05-Umgebung misst eine Amplitude (A-Strich). F2 in place ergaenzt, beide Zahlen mit Kriterium.",
+  "sources": [
+    {
+      "path": "coordination/faden-vertrag1-20260912/lauf-1b-nachtrag2/ERGEBNIS-test.json",
+      "sha256": "c8aaf5612f1ae62618d7502e04924892210285b752e12723ae704433caa9e359"
+    },
+    {
+      "path": "coordination/faden-vertrag1-20260912/lauf-1b-nachtrag2/ERGEBNIS-abnahme-gestaffelt.json",
+      "sha256": "e8db7c9b9c23dec23ce27cd9c9ffdbc9b87106fabfc1e0daacccd95efa11b16c"
+    },
+    {
+      "path": "coordination/vertraege-20260912/faden-vertrag-1b-s-sweep.json",
+      "sha256": "5725f0d1518e331e9130d694c17d05596c7bf10e806ee9d00c04edae3c91a383"
+    }
+  ],
+  "recorded_at": "2026-09-12T06:02:31.604179+00:00"
+}

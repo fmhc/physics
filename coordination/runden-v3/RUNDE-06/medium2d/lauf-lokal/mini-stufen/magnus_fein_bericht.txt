@@ -1,0 +1,24 @@
+magnus: Start 2026-09-30T03:28:45+02:00, Ende 2026-09-30T03:29:02+02:00, CPU (1 Thread), torch 2.10.0+cu128 RAUCHTEST: Zahlen ungueltig
+Medium C0 = 0.1, g4 = 0.5, lam = 0.1: c_s = 0.2085, Heilungslaenge etwa 3.23
+Dauer [s]: relax_fein_s 0.4, entw_fein_s 1.5
+Hochrechnung Hauptlauf (nur --rauch ohne --mini gilt): 74 s = nicht entwickelnde Teile 0 s + Entwicklung x 50; Relaxation im Rauchtest gekuerzt. Ueber 540 s je Aufruf: Stufen einzeln (--stufe grob / --stufe fein).
+Karte magnus (Wellen 8/9). Ball omega^2 = 0.6: m = 1 Q 138.76, E 123.07, R_halb 5.96, R_max 4.01; m = 0 Q 66.62, E 56.53, R_halb 3.36.
+Lauf | u/c_s | u | dX | dY gesamt | Moeller m Q v_x/E | dY nach Rampe | v_x | v_x/u | v_y | a_y | F_y | Zirk. chi | Wind. psi | c2 max | N frei
+[fein]
+  m+1_u0.8 | 0.8 | 0.1658 | +0.003 | +4.518e-04 | +4.394e-04 | +4.47e-04 | +3.90e-04 | 0.002 | +1.0e-04 | +2.1e-07 | -1.4e-06 | [0.0] | [1.0] | 0.000 | 0
+  m-1_u0.8 | 0.8 | 0.1658 | +0.003 | -4.518e-04 | -4.394e-04 | -4.47e-04 | +3.90e-04 | 0.002 | -1.0e-04 | -2.1e-07 | +1.4e-06 | [0.0] | [-1.0] | 0.000 | 0
+  m0_u0.8 | 0.8 | 0.1658 | +0.002 | +2.432e-15 | +0.000e+00 | +4.60e-15 | +3.73e-04 | 0.002 | +5.2e-16 | -4.9e-17 | +5.6e-18 | [0.0] | [0.0] | 0.000 | 0
+  Kontrollen: {"K_spiegel_u0.8_max|Y+ + Y-|": 2.4974089511649512e-14, "K_m0_max|Y|": 5.550837772162113e-15}
+  Urteil: m+1_u0.8: Zwischenbereich: dY - Moeller +1.236e-05, v_y +1.0e-04
+  Urteil: m-1_u0.8: Zwischenbereich: dY - Moeller -1.236e-05, v_y -1.0e-04
+L3 (grob gegen fein; bestanden, wenn |fein - grob| <= max(0,2 |fein|, Toleranz)):
+  m+1_u0.8 v_x: grob 0.00039877, fein 0.00038974 -> ok
+  m+1_u0.8 dY: grob 0.00050092, fein 0.00045175 -> ok
+  m+1_u0.8 v_y: grob 0.00010468, fein 0.00010213 -> ok
+  m-1_u0.8 v_x: grob 0.00039877, fein 0.00038974 -> ok
+  m-1_u0.8 dY: grob -0.00050092, fein -0.00045175 -> ok
+  m-1_u0.8 v_y: grob -0.00010468, fein -0.00010213 -> ok
+  m0_u0.8 v_x: grob 0.0003886, fein 0.00037264 -> ok
+  m0_u0.8 dY: grob 1.6446e-15, fein 2.4323e-15 -> ok
+  m0_u0.8 v_y: grob 8.8418e-17, fein 5.2222e-16 -> ok
+  L3 gesamt: bestanden (9 von 9)

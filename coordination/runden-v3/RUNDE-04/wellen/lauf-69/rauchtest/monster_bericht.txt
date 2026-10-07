@@ -1,0 +1,16 @@
+R4-W monster. Start 2026-09-30T00:19:06+00:00, Ende 2026-09-30T00:19:07+00:00, Geraet Quadro P4000, torch 2.5.1+cu121, T = 12.0
+Dauer [s]: profil_s 0.0, grob_s 0.7, fein_s 0.5
+
+S0 | Fenster | Referenz | M | V | S_max/S0 | Persistenz(4 S0) | Schwelle: beobachtet / Rice-erwartet (Verhaeltnis)
+  0.1 | 2-6 | Rice  | 0.1000 | 2.073e-07 | 1.016 | - | 4 S0: 0 / 0 (1); 2 M: 0 / 0 (1); 4 M: 0 / 0 (1); 6 M: 0 / 0 (1); M + 2 sd: 4600 / 4.43e+03 (1.04); M + 3 sd: 140 / 269 (0.521); M + 4 sd: 0 / 6.54 (0.0711); M + 5 sd: 0 / 0.0636 (0.887)
+  0.1 | 6-12 | Rice  | 0.1000 | 2.863e-07 | 1.021 | - | 4 S0: 0 / 0 (1); 2 M: 0 / 0 (1); 4 M: 0 / 0 (1); 6 M: 0 / 0 (1); M + 2 sd: 5705 / 5.89e+03 (0.969); M + 3 sd: 442 / 360 (1.23); M + 4 sd: 0 / 8.85 (0.0535); M + 5 sd: 0 / 0.0873 (0.851)
+  0.3 | 2-6 | Rice  | 0.3000 | 1.306e-06 | 1.018 | - | 4 S0: 0 / 0 (1); 2 M: 0 / 0 (1); 4 M: 0 / 0 (1); 6 M: 0 / 0 (1); M + 2 sd: 4225 / 4.4e+03 (0.96); M + 3 sd: 500 / 267 (1.87); M + 4 sd: 51 / 6.49 (7.37); M + 5 sd: 0 / 0.0626 (0.889)
+  0.3 | 6-12 | Rice  | 0.3000 | 6.220e-06 | 1.045 | - | 4 S0: 0 / 0 (1); 2 M: 0 / 0 (1); 4 M: 0 / 0 (1); 6 M: 0 / 0 (1); M + 2 sd: 7506 / 5.93e+03 (1.27); M + 3 sd: 1417 / 365 (3.88); M + 4 sd: 299 / 9.25 (30.7); M + 5 sd: 52 / 0.0946 (88.3)
+  0.8 | 2-6 | Rice  | 0.8000 | 6.935e-07 | 1.004 | - | 4 S0: 0 / 0 (1); 2 M: 0 / 0 (1); 4 M: 0 / 0 (1); 6 M: 0 / 0 (1); M + 2 sd: 4343 / 4.46e+03 (0.973); M + 3 sd: 296 / 269 (1.1); M + 4 sd: 7 / 6.42 (1.08); M + 5 sd: 0 / 0.0593 (0.894)
+  0.8 | 6-12 | Rice  | 0.8000 | 6.610e-07 | 1.004 | - | 4 S0: 0 / 0 (1); 2 M: 0 / 0 (1); 4 M: 0 / 0 (1); 6 M: 0 / 0 (1); M + 2 sd: 5929 / 5.96e+03 (0.995); M + 3 sd: 468 / 359 (1.3); M + 4 sd: 35 / 8.58 (3.91); M + 5 sd: 0 / 0.0794 (0.863)
+  Erhaltung (fein, max ueber Laeufe): S0 0.1: dE 3.4e-09, dQ 0.0e+00, S0 0.3: dE 2.5e-09, dQ 0.0e+00, S0 0.8: dE 3.3e-11, dQ 2.2e-16
+
+Kontrollen und Latten:
+  L2_gegenprobe_stabil_S0_0.8: {"verhaeltnis_M+2sd_M+3sd": [0.9952715524930646, 1.3039665566239447], "bestanden": true}
+  L3_aufloesung_4S0_spaetfenster: {"S0=0.1": {"log_verhaeltnis_fein": 0.0, "aenderung_fein_grob": 0.0, "bestanden": true}, "S0=0.3": {"log_verhaeltnis_fein": 0.0, "aenderung_fein_grob": 0.0, "bestanden": true}}
+  K0_profil_gegen_anker: {"max_abw_f": 1.201214199181115e-10, "bestanden": true, "herkunft": "profil_cache.pt", "f0_quadrat_schuss": [0.6837722339948578, 0.3675444679705876, 0.10557280900028279], "f0_quadrat_anker": [0.683772233983162, 0.36754446796632423, 0.10557280900008414]}

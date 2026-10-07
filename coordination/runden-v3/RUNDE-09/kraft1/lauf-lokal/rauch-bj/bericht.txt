@@ -1,0 +1,25 @@
+KOLL-1 bj Start 2026-09-30T08:27:13+02:00, Geraet cpu, torch 2.10.0+cu128
+  Argumente: {"kommando": "bj", "phasen": [0.0, 60.0, 90.0, 120.0, 180.0], "tk1": 10.0, "geraet": "cpu", "out": ".", "w2": 0.7976768, "rho0": 1.728147, "h": 0.3, "cfl": 0.4, "rmax": 12.0, "zmax": 24.0, "schicht": 4.0, "sig0": 2.0, "rfluss": 7.0, "zfluss": 7.0, "abstaende": [30.0, 30.654, 31.309, 31.9635], "kette": 10.0, "vorzeichen": -1, "halten": false, "paritaet": 0, "d": 12.0, "eps": 0.05, "T": 40.0, "dtmess": 0.5, "budget": 500.0, "weiter": false, "faeden": 1, "profil_h": 0.01, "profil_rmax": 30.0}
+  Profil omega^2 = 0.7976768: f0 = 1.024235494350164 (Klammer 6.2e-11), S0 = 1.049058, r_c = 14.35, A = 7.518211 (Streuung 4.4e-05 auf [r_c-4, r_c]), Q = 189.1443, E = 184.6243
+  stille Stelle: Singulaerwerte 5.036e-01, 4.270e-04 (Verhaeltnis 8.48e-04); a-Zeile +1.271e-04, +4.766e-04
+  Mode rho = 1.744617500: kappa_c = 0.524371, q = 2.440840, N (r <= 12.0) = 2.690973e+02, C_v = +1.514904e+01, offene Aussenamplitude 1.692e-07 (reduziert), wachsender Rest bei r_m +3.02e-04, V(r_m) +3.743e-03, u(0) = +0.4998, v(0) = +0.5002
+  Streuphase l = 1 bei rho = 1.7446175 (Ball): q = 2.440840, kappa_c = 0.524371, delta_1 = +0.364309 rad (mod pi), Wachstumskoeffizienten der zwei Loesungen +4.272e-01, +2.371e+00
+  Streuphase l = 1 bei rho = 1.7446175 (frei): q = 2.440840, kappa_c = 0.524371, delta_1 = -0.000001 rad (mod pi), Wachstumskoeffizienten der zwei Loesungen +0.000e+00, +1.089e+01
+  K2/K1-3D: omega^2 = 0.7976768, rho = 1.744617500, Omega = 2.637745, q = 2.440840, 2 pi/q = 2.57419, v_g = 0.92535, delta_1 = +0.364309 (frei -7.99e-07), eps = 0.05
+  Gitter h = 0.3, dt = 0.1200, nr = 40, nz = 161, Glieder 16: ['bj+30', 'bj-30', 'bj+30.654', 'bj-30.654', 'bj+31.309', 'bj-31.309', 'bj+31.9635', 'bj-31.9635', 'bj030', 'einzel+', 'einzel0', 'k1_0', 'k1_60', 'k1_90', 'k1_120', 'k1_180'], Punkte je Glied 6440
+  Start Zeitschleife 2026-09-30T08:27:16+02:00, t bis 40.0, Messung alle 4 Schritte, Budget 500.0 s
+  Ende Zeitschleife 2026-09-30T08:27:22+02:00, t = 40.08, Schritte 334, 6.0 s (18.07 ms je Schritt)
+=== Auswertung K2/K1-3D .: omega^2 = 0.7976768, h = 0.3, t bis 39.8 ===
+  Einzelball: P(50) = 2.1775e-04, P(Ende) = 2.1775e-04, Fit t > 40: P0 = nan, Gamma (Amplitude) = nan; Drift z_E: mit Atmung +5.22e-18, ohne +1.64e-18; Ladung Q(Ende)/Q(0) - 1 = -7.48e-06
+  d = 30.0000: Delta d(Ende) = +8.2793e-03 (Vorhersage +2.4351e-05); F/P gemessen +1.1492e+00, vorhergesagt +1.2515e-02, Verhaeltnis +91.831; Fitrest 3.79e-03; gerader Anteil d(Ende) - d0 -6.480e-02
+  d = 30.6540: Delta d(Ende) = +1.0869e-02 (Vorhersage -3.5442e-06); F/P gemessen +2.1886e+00, vorhergesagt -2.0348e-03, Verhaeltnis -1075.607; Fitrest 5.42e-03; gerader Anteil d(Ende) - d0 -8.972e-02
+  d = 31.3090: Delta d(Ende) = +1.1001e-02 (Vorhersage -1.9267e-05); F/P gemessen +2.4621e+00, vorhergesagt -1.1885e-02, Verhaeltnis -207.163; Fitrest 7.60e-03; gerader Anteil d(Ende) - d0 -1.331e-01
+  d = 31.9635: Delta d(Ende) = +1.1343e-02 (Vorhersage +3.6961e-06); F/P gemessen +4.7392e+00, vorhergesagt +2.5817e-03, Verhaeltnis +1835.720; Fitrest 9.72e-03; gerader Anteil d(Ende) - d0 -1.887e-01
+  Fit ueber die Abstaende: Amplitudenfaktor alpha = 112.522 (Vorhersage 1), Phase chi = +2.522 rad (Vorhersage 2 delta_1 = +0.729), Rest^2 3.10e+01 gegen Summe kappa^2 3.46e+01
+  Paar ohne Atmung bei d = 30: d(Ende) - d(0) = -6.6011e-02; Formel (gleichphasig, Anziehung, feste Kraft) -F T^2/M = -2.7124e-04
+  K1-3D Delta theta =   0.0 Grad: d''(0) = -1.5536e-03 (d0 gemessen 11.8323), Formel -3.0953e-03; Verhaeltnis zu 0 Grad +1.000 (cos = +1.000); gegen gleichphasige Formel +0.502
+  K1-3D Delta theta =  60.0 Grad: d''(0) = -7.5129e-04 (d0 gemessen 11.9095), Formel -1.5476e-03; Verhaeltnis zu 0 Grad +0.484 (cos = +0.500); gegen gleichphasige Formel +0.243
+  K1-3D Delta theta =  90.0 Grad: d''(0) = +3.1536e-04 (d0 gemessen 11.9817), Formel -1.8953e-19; Verhaeltnis zu 0 Grad -0.203 (cos = +0.000); gegen gleichphasige Formel -0.102
+  K1-3D Delta theta = 120.0 Grad: d''(0) = +1.0066e-03 (d0 gemessen 12.0545), Formel +1.5476e-03; Verhaeltnis zu 0 Grad -0.648 (cos = -0.500); gegen gleichphasige Formel -0.325
+  K1-3D Delta theta = 180.0 Grad: d''(0) = +2.2407e-03 (d0 gemessen 12.1095), Formel +3.0953e-03; Verhaeltnis zu 0 Grad -1.442 (cos = -1.000); gegen gleichphasige Formel -0.724
+Ende 2026-09-30T08:27:22+02:00, 8.6 s

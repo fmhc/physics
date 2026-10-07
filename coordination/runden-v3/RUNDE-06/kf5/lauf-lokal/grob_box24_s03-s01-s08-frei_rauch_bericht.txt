@@ -1,0 +1,32 @@
+KF-5 Geburt in 2D, Aufruf grob_box24_s03-s01-s08-frei_rauch. Start 2026-09-30T03:16:02+02:00, Ende 2026-09-30T03:16:04+02:00, cpu, torch 2.10.0+cu128 RAUCHTEST: Zahlen ungueltig
+Gitter: Box 24.0, dx 0.25, dt 0.04, n 96, T_Ende 40.0, Fenster 10.0; GPU-Speicher max - MB
+Dauer [s]: auswertung 0.1, fenster 0.0, entwicklung 2.4, gesamt 2.5
+Hochrechnung fuer denselben Aufruf mit T_Ende 800: 51 s (Auswertung x 2 gerechnet); ueber 540 s: Aufruf teilen (--arme einzeln).
+Arm s03: S0 0.3, frei False, Seed 31. Theorie: omega0 0.7314, gamma_max 0.2256, lambda_max 11.89, q lambda^2 62.07, Zellen 4.072, E/Q Kondensat 0.875
+  Wachstum: Kontrast Start 0.01999, max 1.193; T_sat (Kontrast >= 0,5) 19.53; gamma_mess 0.2094 (7 Punkte), gamma_mess/gamma_max 0.928
+  Netz: umspannend zuerst -, zuletzt -; N_Tropfen max 2 bei t 20; Verlauf {"30": 0}
+  Erste Generation (t 20, N 2): Q-Quartile [4.348838, 6.4788195, 8.608801], Vorhersage q lambda^2 62.07
+  Ende t 40: Urteil gemischt (obere Schwelle: getrennte Tropfen); N_Tropfen 2 (oben 3), N_Netz 1, groesste 0.4994; Q-Quartile [-5.165151, 1.1086810000000002, 7.382513]; Ladung in Tropfen 0.008771, Energie in Tropfen -0.08855
+  Verschmelzungen 0, Teilungen 1 (Maskendiagnose); Drift Q 2.2e-16, E 8.9e-06; Kontrolle (Kontrast < 0,05, keine Komponente): nicht bestanden
+  Familie (Fenster): {}; Urteil keine Tropfen im Fenster (mit Q_roh: keine Tropfen im Fenster)
+Arm s01: S0 0.1, frei False, Seed 31. Theorie: omega0 0.9028, gamma_max 0.09415, lambda_max 15.65, q lambda^2 44.24, Zellen 2.351, E/Q Kondensat 0.9526
+  Wachstum: Kontrast Start 0.01999, max 0.1221; T_sat (Kontrast >= 0,5) -; gamma_mess 0.08216 (9 Punkte), gamma_mess/gamma_max 0.8726
+  Netz: umspannend zuerst -, zuletzt -; N_Tropfen max 0 bei t 0; Verlauf {"30": 0}
+  Erste Generation (t 0, N 0): Q-Quartile null, Vorhersage q lambda^2 44.24
+  Ende t 40: Urteil keine Verdichtung (obere Schwelle: keine Verdichtung); N_Tropfen 0 (oben 0), N_Netz 0, groesste -; Q-Quartile null; Ladung in Tropfen 0, Energie in Tropfen 0
+  Verschmelzungen 0, Teilungen 0 (Maskendiagnose); Drift Q 1.1e-16, E 9.8e-08; Kontrolle (Kontrast < 0,05, keine Komponente): nicht bestanden
+  Familie (Fenster): {}; Urteil keine Tropfen im Fenster (mit Q_roh: keine Tropfen im Fenster)
+Arm s08: S0 0.8, frei False, Seed 31. Theorie: omega0 0.6, gamma_max -, lambda_max -, q lambda^2 -, Zellen -, E/Q Kondensat 0.7333
+  Wachstum: Kontrast Start 0.01999, max 0.01999; T_sat (Kontrast >= 0,5) -; gamma_mess - (0 Punkte), gamma_mess/gamma_max -
+  Netz: umspannend zuerst -, zuletzt -; N_Tropfen max 0 bei t 0; Verlauf {"30": 0}
+  Erste Generation (t 0, N 0): Q-Quartile null, Vorhersage q lambda^2 -
+  Ende t 40: Urteil keine Verdichtung (obere Schwelle: keine Verdichtung); N_Tropfen 0 (oben 0), N_Netz 0, groesste -; Q-Quartile null; Ladung in Tropfen 0, Energie in Tropfen 0
+  Verschmelzungen 0, Teilungen 0 (Maskendiagnose); Drift Q 0.0e+00, E 1.0e-07; Kontrolle (Kontrast < 0,05, keine Komponente): bestanden
+  Familie (Fenster): {}; Urteil keine Tropfen im Fenster (mit Q_roh: keine Tropfen im Fenster)
+Arm frei: S0 0.3, frei True, Seed 31. Theorie: omega0 1, gamma_max -, lambda_max -, q lambda^2 -, Zellen -, E/Q Kondensat 1
+  Wachstum: Kontrast Start 0.01999, max 0.01999; T_sat (Kontrast >= 0,5) -; gamma_mess - (0 Punkte), gamma_mess/gamma_max -
+  Netz: umspannend zuerst -, zuletzt -; N_Tropfen max 0 bei t 0; Verlauf {"30": 0}
+  Erste Generation (t 0, N 0): Q-Quartile null, Vorhersage q lambda^2 -
+  Ende t 40: Urteil keine Verdichtung (obere Schwelle: keine Verdichtung); N_Tropfen 0 (oben 0), N_Netz 0, groesste -; Q-Quartile null; Ladung in Tropfen 0, Energie in Tropfen 0
+  Verschmelzungen 0, Teilungen 0 (Maskendiagnose); Drift Q 1.1e-16, E 7.2e-08; Kontrolle (Kontrast < 0,05, keine Komponente): bestanden
+  Familie (Fenster): {}; Urteil keine Tropfen im Fenster (mit Q_roh: keine Tropfen im Fenster)

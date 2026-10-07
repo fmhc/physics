@@ -1,0 +1,107 @@
+M2: KANONISCHE QUADRATISCHE QUELLEN — 2026-10-02
+Papierableitung, keine Numerik/Simulation. Gelesen: OPERATOR-INDEPENDENT,
+HARMONIC-REVIEW und die Vorzeichenabbildung in modes/code.py sowie
+tail/analysis.py. Keine behauptete gemessene Abstrahlung.
+
+1. KONVENTION UND GESPEICHERTES v
+phi=e^(i omega t)[f+(x+i y)/sqrt2], chi=g+z, f,g reell stationaer.
+Mit q=(x,y,z) lautet die Stoerungsgleichung
+ q_tt+G q_t+H q=Q^(2)(q)+O(q³),
+G_xy=-2omega, G_yx=+2omega; H ist der bereits hergeleitete kanonische
+Raumoperator. Q^(2) ist die quadratische RECHTE SEITE, also das Negative
+der quadratischen Potentialgradienten. Diese Vorzeichenkonvention gilt
+fuer alle unten stehenden Quellen.
+
+Die gespeicherten Eigenvektoren sind komplexe erste-Ordnungs-Vektoren zu
+lambda≈+i rho. code.py setzt u=q_x, v=i q_y, w=q_z; tail/analysis.py
+teilt zusaetzlich durch sqrt(Zellvolumen). Nach EINER gemeinsamen
+Phasenwahl lauten die reellen physischen Profile deshalb
+ U=Re(e^(-i theta)q_x)/sqrtVol,
+ V=Re(e^(-i theta)i q_y)/sqrtVol,
+ W=Re(e^(-i theta)q_z)/sqrtVol.
+Dann Re(q e^(i rho t)) ergibt x=U cos(rho t), y=V sin(rho t),
+z=W cos(rho t). Insbesondere V=-Im(e^(-i theta)q_y)/sqrtVol,
+NICHT +Im(q_y). Nur eine gemeinsame Phase; nicht je Komponente drehen.
+Verbleibende imaginaere Profilanteile messen, nicht durch Betragbildung
+oder unabhängige Vorzeichenwechsel verstecken. Nichtentartete reelle
+harmonische Profile werden hier vorausgesetzt. Jede gewaehlte gemeinsame
+Modennormierung muss festgehalten werden; Quellen skalieren quadratisch.
+
+2. TAYLORENTWICKLUNG
+Setze d=-2+3f² und
+ S=f²+sqrt2 f x+(x²+y²)/2.
+Fuer A=1+chi²-2S+(3/2)S² gilt bis Ordnung2:
+ A=A0+[2g z+sqrt2 f d x]
+       +[z²+(d/2)(x²+y²)+3f²x²]+O(q³).
+Die kanonischen Potentialgradienten sind
+ grad_x V=sqrt2(f+x/sqrt2)A,
+ grad_y V=y A,
+ grad_z V=(g+z)[(g+z)²-1+2S].
+Definiere alpha=(f/sqrt2)(-6+15f²), beta=(f/sqrt2)(-2+3f²).
+Die expliziten quadratischen Kraftquellen sind somit
+
+ Qx= -[alpha x²+beta y²+sqrt2 f z²+2g xz],
+ Qy= -[sqrt2 f d xy+2g yz],
+ Qz= -[g(x²+y²)+3g z²+2sqrt2 f xz].
+
+Rotation und Gradienten liefern keine weiteren quadratischen Terme:
+ihre Operatoren sind linear. Die Formeln nehmen f,g als eingefrorenen
+Hintergrund. Eine Frequenz-/Hintergrundkorrektur zweiter Ordnung ist
+bei spaeterer voller Stoerungsrechnung gesondert zu behandeln.
+
+3. DC UND ZWEITE HARMONISCHE
+Schreibe die Grundmode mit kleinem Parameter epsilon als
+(x,y,z)=epsilon(U cos tau,V sin tau,W cos tau), tau=rho t.
+Nach Abziehen epsilon² gilt
+ Qx=qx0+qx2 cos(2tau), Qy=qy2 sin(2tau),
+ Qz=qz0+qz2 cos(2tau), mit
+
+ qx0=-(alpha U²+beta V²+sqrt2 f W²+2g UW)/2,
+ qx2=-(alpha U²-beta V²+sqrt2 f W²+2g UW)/2,
+ qy2=-(sqrt2 f d UV+2g VW)/2,
+ qz0=-(g(U²+V²)+3g W²+2sqrt2 f UW)/2,
+ qz2=-(g(U²-V²)+3g W²+2sqrt2 f UW)/2.
+
+Qy hat keinen DC-Anteil. Die statische Antwort wird durch H auf den
+DC-Vektor (qx0,0,qz0) bestimmt, die harmonische Antwort durch
+ K(2rho)(X2,Y2,Z2)^T=(qx2,qy2,qz2)^T.
+Hier besitzen die beiden gyroskopischen Offdiagonalen den Wert-4omega rho.
+Der statische Phasennullraum und eine feste Gesamtladung verlangen bei
+einer vollstaendigen Antwort geeignete Konsistenz-/Normierungsbedingungen;
+die reine Quellenberechnung loest diese Aufgabe noch nicht.
+
+4. WELCHE QUELLE GEHOERT ZUM OFFENEN PLUSKANAL?
+Die asymptotisch orthonormalen kanonischen Kombinationen sind
+ q_plus=(qx2+qy2)/sqrt2, q_minus=(qx2-qy2)/sqrt2, q_chi=qz2.
+Die direkte komplexe phi-Quellamplitude bei LABORFREQUENZ omega+2rho
+ist (qx2+qy2)/(2sqrt2); bei omega-2rho ist sie
+(qx2-qy2)/(2sqrt2). Der Faktor1/2 stammt aus cos/sin-Zerlegung.
+Das ist von der orthonormalen kanonischen Kombination zu unterscheiden.
+
+Der Pluskanal ist fuer die vorgegebenen Modewerte kinematisch offen.
+Es strahlt aber nicht automatisch eine lokal von null verschiedene
+q_plus ab: Alle drei Quellen treiben den GEKOPPELTEN inhomogenen Operator.
+Auch q_minus und q_chi koennen ueber die Kernkopplung zum auslaufenden
+Pluskoeffizienten beitragen. Umgekehrt koennen Quellprojektionen bzw.
+Interferenz dessen Koeffizienten aufheben. Weder ein positiver Quellen-
+Normwert noch eine lokale Plusprojektion ersetzt den auslaufenden
+Antwortoperator oder eine Energieflussmessung. Ein reeller Dirichlet-
+Kastenloeser allein liefert keine physikalische Abstrahlamplitude.
+
+5. ENGSTE MOEGLICHE ENDLICHE QUELLENPRUEFUNG — NICHT AUSGEFUEHRT
+Ein einziges bereits gespeichertes, zugeordnetes Moden-/Referenzpaar
+verwenden; keine neue Eigenwertsuche, keine Zeitentwicklung. Gemeinsame
+Phase, Volumenruecktransformation und Modennormierung dokumentieren.
+Aus den expliziten Formeln die fuenf radialen Quellenprofile und ihre
+kanonischen Normen bilden. Unabhaengige Gegenprobe mit dem unveraenderten
+exakten lokalen Kraftgesetz F an vier festen Grundphasen:
+ tau=0,pi/2,pi/4,3pi/4.
+Der zentrierte Quotient
+ [F(q0+epsilon q1)+F(q0-epsilon q1)-2F(q0)]/(2epsilon²)
+muss die jeweilige quadratische Kraft Q^(2)(q1) bis O(epsilon²) treffen.
+Dabei die phi-Kraft zuvor kanonisch in x/y umrechnen. Zwei ausreichend
+kleine epsilon-Werte pruefen die erwartete Fehlerreduktion, ohne so kleine
+Werte zu waehlen, dass Subtraktionsrundung dominiert. Diese vier Phasen
+trennen DC, cos2tau und sin2tau und kontrollieren insbesondere das v-Zeichen.
+Auswertungsziel allein: korrekte Quellenkoeffizienten fuer dieses Paar;
+keine Aussage ueber Zerfallsrate, Fluss oder nichtlineare Dauerhaftigkeit.

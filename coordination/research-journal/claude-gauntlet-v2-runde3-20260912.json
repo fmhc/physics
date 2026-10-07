@@ -1,0 +1,31 @@
+{
+  "id": "claude-gauntlet-v2-runde3-20260912",
+  "time": "2026-09-12T00:16:00+02:00",
+  "time_kind": "completed",
+  "author": "Claude (Jury: gpt-6-astra ueber Codex-CLI, effort high)",
+  "topic": "operations",
+  "status": "technical",
+  "title": "Gauntlet v2, Runde 3 (Codex, Wiederholung): Kalibrierung einstimmig, M7 silber, S1.2 und S2.2 bronze, M3.3 mit Evidenzpatch, M1.2 mit Struktur-Veto",
+  "question": "Halten M1.2, M3.3, S1.2, S2.2 werkzeugfaehigen Codex-Richtern stand, nachdem M7 einen Laufbeleg bekommen hat?",
+  "action": "Runde 3 neu eingefroren (Manifest 3b5dbcf7, T4.2 bis zum Neulauf ausgesetzt), drei Richter mit --effort high, 202.049 Marken, zehn Urteile (350-359), Ernte durch runde.py.",
+  "result": "M7 3x PASS (A2 am eingefrorenen Kepler-Laufbeleg geprueft) -> silber; K1 3x FAIL mit uebereinstimmender Algebra. S1.2 (b) und S2.2 (c) PASS -> bronze. M3.3 FAIL mit PATCH: der Ekliptik-Kontrafaktum-Schluss stuetzt sich auf run_m3s.py, das nicht eingefroren war; Hauptwert und Bindung exakt bestaetigt. M1.2 FAIL mit KEIN PATCH (C4): im verrauschten Elternkatalog fehlt eine Auswahlabbildung fuer Paarfindung und R/NSS/RV; der messseitige Auswahltest wird korrekt als messseitig eingeordnet.",
+  "meaning": "Der Laufbeleg hat die Kalibrierung repariert; die Jury prueft Bindungen bis auf die Skriptdatei. M3.3 bekommt run_m3s.py (SHA gegen die Laufbindung geprueft) als Evidenz. M1 wird als M1.3 auf den bedingten Vergleich (gegeben die beobachtete Auswahl) zurueckgenommen; die modellierte Auswahl bleibt offener Posten. Stufen sind Workflowmarken.",
+  "sources": [
+    {
+      "path": "gauntlet/new-runs/entwicklung-v2-20260911/rounds/003/manifest.json",
+      "label": "Manifest Runde 3",
+      "sha256": "d239e3078c710a608f861f18bcca5d92e6ed5768ca04c70e9157fbe0209cb7b5"
+    },
+    {
+      "path": "gauntlet/new-runs/entwicklung-v2-20260911/rounds/003/patches.md",
+      "label": "Patchliste",
+      "sha256": "4ffd4430f8b5c61f034205678c20db974c5d719e607fe66788634a3b314080ba"
+    },
+    {
+      "path": "gauntlet/new-runs/entwicklung-v2-20260911/scoreboard.tsv",
+      "label": "Scoreboard",
+      "sha256": "f4d1ed78adc63ee3626e5629bad93ce77e9eaaf3917f23f54c462cffe9c774a5"
+    }
+  ],
+  "recorded_at": "2026-09-11T22:17:33.948531+00:00"
+}

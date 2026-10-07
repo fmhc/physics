@@ -1,0 +1,153 @@
+INDEPENDENT ALGEBRAIC REVIEW — PROPOSED EXTENSION A/B, OPTIONAL C
+Reviewer: independent proposition_review agent for ag-phy-lat
+Date measured with date: 2026-10-01T01:57:42+02:00
+Source read: coordination/resonance-20260930/paper-ideation-next/BEITRAG.txt
+Scope: fresh symbolic derivation and logical checking, no literature audit,
+no numerical computation, no interpreter, no tests, no manuscript edits.
+
+VERDICT
+A and B are valid conditional finite-dimensional statements after the
+assumptions and scope restrictions below are made explicit. C's elementary
+matrix algebra is also valid, with real omega included among the assumptions.
+These are established algebraic constructions, without a novelty claim.
+They neither establish the proposed project's physical mechanism nor apply
+automatically to the coupled Q-ball frequency pencil.
+
+A. SCHUR ELIMINATION
+Work on a finite-dimensional complex Hilbert space with its positive-definite
+inner product. H=H^dagger is time-independent. P=P^dagger=P^2 has rank three;
+Q=I-P. Blocks are restrictions to Ran(P) and Ran(Q), not full-space matrices:
+A=PHP|Ran(P)=lambda I_P, D=QHQ|Ran(Q), V=PHQ:Ran(Q)->Ran(P).
+Lambda is real. The full block matrix is [[A,V],[V^dagger,D]].
+P need not commute with H. Calling P a spectral projector of the full H
+would instead impose V=0 and exclude the proposed nonzero-coupling example.
+A triplet of a compressed or reference operator is the appropriate meaning.
+
+For real z not in spec(D), write an eigenvector as p+q. Its equations are
+(A-zI_P)p+Vq=0 and V^dagger p+(D-zI_Q)q=0.
+The second equation gives q=-(D-zI_Q)^(-1)V^dagger p. Substitution gives
+[H_eff(z)-zI_P]p=0,
+H_eff(z)=lambda I_P-V(D-zI_Q)^(-1)V^dagger.
+Here p cannot be zero for a nonzero eigenvector at such z. Conversely, a
+nonzero p in this kernel reconstructs a unique full eigenvector by the same
+formula. Equivalently,
+det(H-zI)=det(D-zI_Q) det(H_eff(z)-zI_P).
+Thus the determinant condition is exact on the stated resolvent domain.
+At z in spec(D), this expression cannot be used by substituting into the
+inverse; such eigenvalues require a separate full-block analysis. A Q-only
+eigenvector can occur at these excluded values when Vq=0. Pole positions
+are neither automatically full eigenvalues nor automatically absent.
+
+H_eff(z) is Hermitian for real z on this domain. It is an energy-dependent
+Schur operator. It must not silently be treated as a single autonomous
+three-dimensional Hamiltonian generating P exp(-iHt) P. Eliminating Q in
+time generally produces memory and dependence on Q initial data.
+
+COUNTEREXAMPLE
+Let dim Ran(Q)=1, D=Delta with real Delta, and V=g e_1. Then
+H_eff(z)-lambda I_P=-|g|^2/(Delta-z) diag(1,0,0).
+The source's g^2 is correct if g is stipulated real. For arbitrary complex
+g, |g|^2 is required by Hermiticity. For nonzero g and real z != Delta,
+this is not scalar; the two unaffected channels have eigenvalue lambda
+while the first channel has a nonzero Schur shift. Hence compression
+A=lambda I_P alone does not protect scalar effective response.
+For additional verification, the full spectrum consists of lambda twice
+and (lambda+Delta +/- sqrt((lambda-Delta)^2+4|g|^2))/2.
+If lambda=Delta, the two exact lambda eigenvalues are at an excluded
+resolvent pole; this illustrates why the determinant-domain caveat matters.
+No large-detuning or weak-coupling approximation is needed for this example.
+
+NORM BOUND
+With the induced Hilbert-space operator norm and
+delta=dist(z,spec(D))>0, the spectral theorem gives
+||(D-zI_Q)^(-1)||=1/delta. Submultiplicativity and
+||V^dagger||=||V|| imply
+||H_eff(z)-lambda I_P|| <= ||V||^2/delta.
+This upper-bounds the entire shift. It does not lower-bound anisotropy,
+force splitting, or prove the existence of a self-consistent full eigenvalue
+inside a prescribed interval. The distance concerns spec(D), not spec(H).
+At poles the displayed bound is unavailable. Isotropic nonzero shifts are
+possible, for example with equivalent coupled triplets in P and Q.
+
+SUFFICIENT SYMMETRY PROTECTION
+Let U(g) be a unitary representation on the full finite-dimensional complex
+space, with [U(g),H]=[U(g),P]=0 for every group element. The decomposition
+is preserved, D commutes with U_Q(g), and
+U_P(g)V=V U_Q(g).
+Therefore U_P(g) commutes with V(D-zI_Q)^(-1)V^dagger and H_eff(z).
+If U_P is irreducible over the complex numbers, Schur's lemma makes H_eff(z)
+scalar on Ran(P). State the full representation and these commuting
+conditions; merely naming a triplet or a symmetry of A is insufficient.
+This protects scalar response, but does not in general protect closure:
+equivalent representations in Q can permit nonzero V and leakage.
+Closure is separately characterized by QHP=0 (and, by Hermiticity, PHQ=0).
+
+B. FINITE-TIME LEAKAGE
+Use the same H and orthogonal P, and units hbar=1. The bound itself does
+not require rank(P)=3 or A=lambda I_P. Let ||psi(0)||=1 and Qpsi(0)=0.
+Unitary evolution gives ||psi(t)||=1 for every real t. Set p=Ppsi and q=Qpsi;
+then i q_dot=Dq+V^dagger p. Variation of constants gives exactly
+q(t)=-i integral_0^t exp[-iD(t-s)] V^dagger p(s) ds.
+The exponential is unitary on Ran(Q), and ||p(s)||<=1. Consequently,
+||q(t)|| <= |t| ||V^dagger|| = |t| ||QHP||.
+The integral remains oriented when t<0; the triangle inequality bounds it
+by the integral over [t,0], of length |t|. The separate normalization bound
+||q(t)||<=1 then gives
+||Qpsi(t)|| <= min(1, |t| ||QHP||),
+||Qpsi(t)||^2 <= min(1, t^2 ||QHP||^2).
+If physical hbar is retained, replace |t| ||QHP|| by
+|t| ||QHP||/hbar throughout.
+
+QHP=0 is sufficient for exact invariance of Ran(P) at all times; it is also
+necessary for invariance of that entire subspace, by differentiating at
+t=0 for arbitrary initial vectors in Ran(P). A particular state can remain
+nonleaking even if QHP is nonzero. The bound is conservative and does not
+assert monotone leakage, a sharp lifetime, spectral isolation, or nonlinear
+stability. In a classical amplitude model its squared norm is a leakage
+fraction in the chosen Hilbert norm; calling it a probability presupposes
+the quantum single-state interpretation. General indefinite norms, open
+systems, time-dependent projections, and nonlinear fields need separate
+arguments. A tolerated fraction epsilon in [0,1] is guaranteed for
+|t| ||QHP|| <= sqrt(epsilon), without implying that leakage must reach
+epsilon when this sufficient condition fails.
+
+C. OPTIONAL TWO-MODE EXAMPLE
+Assume omega,J,gamma,gamma12 are real and gamma>=|gamma12|. Write the proposed
+matrix as H_coh-i Gamma/2, with H_coh=omega I+J sigma_x and
+Gamma=gamma I+gamma12 sigma_x. Gamma is positive semidefinite, so the model
+is passive: d||psi||^2/dt=-psi^dagger Gamma psi <= 0.
+Both matrices are diagonalized by the normalized symmetric and
+antisymmetric vectors. Eigenvalues are
+omega+J-i(gamma+gamma12)/2,
+omega-J-i(gamma-gamma12)/2.
+For gamma12=gamma, the antisymmetric eigenvalue is real, omega-J; a
+nonzero coherent coupling J is algebraically compatible with a dark
+channel. Gamma eigenvalues are norm-squared decay rates, whereas amplitude
+decay rates are half as large. If gamma=gamma12=0 both channels are dark.
+The algebra by itself imposes no microscopic response kernel and proves no
+spatial force, physical realization, project-specific radiation rate, or
+nonlinear many-body interaction. It is an effective linear coherent-coupling
+example; terminology should preserve that limitation.
+
+EDITORIAL DISPOSITION
+Suitable as explicitly conditional supplementary propositions after these
+clarifications. Do not alter the frozen v0.5 translation to make these new
+results appear present in the German source. Do not identify Hermitian
+finite-block algebra with the actual Q-ball frequency pencil, its norm,
+exterior boundary conditions, or nonlinear radiation dynamics. Literature
+claims and source fidelity beyond the supplied proposal were not audited.
+
+FINAL TEXTUAL CHECK OF extension.tex
+The completed proposed supplement was read directly after drafting.
+No algebraic corrections are required. It explicitly states the orthogonal
+projector and Hermitian-block assumptions, excludes the resolvent poles,
+uses |g|^2 for complex coupling, separates symmetry protection from
+leakage suppression, and includes the classical-norm/probability caveat.
+The Duhamel proof treats negative time correctly. Section 3 states real
+omega and the loss-matrix positivity condition, so its passive two-mode
+example is correctly qualified. The additional Frobenius-norm sentence
+is valid as a conditional upper bound in the matching orthonormal metric.
+The evolution convention i psi_dot=H psi already fixes the units; adding
+'units hbar=1' is an optional clarity edit, not an algebraic correction.
+No tests, compilation, or numerical derivation were performed for this
+textual check. No change to extension.tex was made by this reviewer.

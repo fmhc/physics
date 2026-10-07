@@ -1,0 +1,99 @@
+{
+ "modus": "rauch",
+ "params": {
+  "OMEGA": 6.283185307179586,
+  "EPS": 0.1,
+  "K": 1.0,
+  "MU_X": 2.0,
+  "KAPPA": 0.01,
+  "MU_PHI": 50.26548245743668,
+  "T_NOISE": 6.283185307179587e-05,
+  "DELTA_F": 0.02,
+  "G_AUF": 0.2,
+  "DT": 0.005,
+  "Z0": 0.05,
+  "JITTER": 0.002,
+  "SUB": 10,
+  "PRUEF_ALLE": 1000,
+  "FD_H": 1e-05
+ },
+ "argv": [
+  "rauch",
+  "--dim",
+  "2",
+  "--B",
+  "0.03",
+  "--takte",
+  "10",
+  "--aus",
+  "/home/fmh/fmhc-physics-remote/raute-atem-1/rauch/test/haupt_d2_B0.03.json"
+ ],
+ "laeufe": [
+  {
+   "dim": 2,
+   "B": 0.03,
+   "seed": 1,
+   "takte": 10.0,
+   "npz": "/home/fmh/fmhc-physics-remote/raute-atem-1/rauch/test/haupt_d2_B0.03_s1.npz",
+   "werkzeugprobe": {
+    "n": 3,
+    "n_ausgelassen": 0,
+    "max_int_vs_schleife": 6.938893903907228e-18,
+    "max_schleife_vs_fd": 3.84737103287236e-11,
+    "max_bilanz_mit_reibung": 6.938893903907228e-18,
+    "max_impuls_summe": 1.3877787807814457e-17
+   },
+   "laufzeit_s": 0.77
+  },
+  {
+   "dim": 2,
+   "B": 0.03,
+   "seed": 2,
+   "takte": 10.0,
+   "npz": "/home/fmh/fmhc-physics-remote/raute-atem-1/rauch/test/haupt_d2_B0.03_s2.npz",
+   "werkzeugprobe": {
+    "n": 3,
+    "n_ausgelassen": 0,
+    "max_int_vs_schleife": 1.3877787807814457e-17,
+    "max_schleife_vs_fd": 4.095125627490148e-11,
+    "max_bilanz_mit_reibung": 1.3877787807814457e-17,
+    "max_impuls_summe": 1.3877787807814457e-17
+   },
+   "laufzeit_s": 0.73
+  },
+  {
+   "dim": 2,
+   "B": 0.03,
+   "seed": 3,
+   "takte": 10.0,
+   "npz": "/home/fmh/fmhc-physics-remote/raute-atem-1/rauch/test/haupt_d2_B0.03_s3.npz",
+   "werkzeugprobe": {
+    "n": 3,
+    "n_ausgelassen": 0,
+    "max_int_vs_schleife": 5.204170427930421e-18,
+    "max_schleife_vs_fd": 4.030785427655559e-11,
+    "max_bilanz_mit_reibung": 5.204170427930421e-18,
+    "max_impuls_summe": 1.1275702593849246e-17
+   },
+   "laufzeit_s": 0.73
+  },
+  {
+   "dim": 2,
+   "B": 0.03,
+   "seed": 4,
+   "takte": 10.0,
+   "npz": "/home/fmh/fmhc-physics-remote/raute-atem-1/rauch/test/haupt_d2_B0.03_s4.npz",
+   "werkzeugprobe": {
+    "n": 3,
+    "n_ausgelassen": 0,
+    "max_int_vs_schleife": 6.938893903907228e-18,
+    "max_schleife_vs_fd": 3.927337621778548e-11,
+    "max_bilanz_mit_reibung": 6.938893903907228e-18,
+    "max_impuls_summe": 5.204170427930421e-18
+   },
+   "laufzeit_s": 0.73
+  }
+ ],
+ "laufzeit_s": 2.94,
+ "rss_mb": 36.4
+}

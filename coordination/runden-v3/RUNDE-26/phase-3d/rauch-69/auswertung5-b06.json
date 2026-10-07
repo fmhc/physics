@@ -1,0 +1,276 @@
+{
+ "kommando": "auswertung",
+ "beginn": "2026-10-03T02:57:49+0000",
+ "konfig": {
+  "beta": 0.6,
+  "sprossen_datei": "rauch/sprossen-b06.json",
+  "phase_wand_datei": "rauch/pw-phase-b06.json",
+  "phase_datei": "rauch/phase5-b06.json",
+  "profil_dateien": [
+   "rauch/profile5-b06.json"
+  ],
+  "haupt": "rk4:0.005",
+  "proben_regel": [
+   "rk4:0.01",
+   "bic2:0.01"
+  ],
+  "proben_bericht": [
+   "dop853:1e-12",
+   "dop853:1e-10"
+  ],
+  "tol_R": 1e-05,
+  "tol_bisektion": 1e-09,
+  "regeln": [
+   {
+    "name": "R-1",
+    "art": "betrag",
+    "sprossen": [
+     1,
+     2
+    ],
+    "grenze": 0.03
+   },
+   {
+    "name": "R-2",
+    "art": "ausgleich",
+    "sprossen": [
+     1,
+     2
+    ],
+    "grenze_b": 0.02,
+    "monoton": true
+   }
+  ],
+  "berichtsausgleiche": [
+   [
+    "neben",
+    "Delta_neben",
+    [
+     1,
+     2
+    ]
+   ],
+   [
+    "zusatz",
+    "Delta_zusatz",
+    [
+     1,
+     2
+    ]
+   ],
+   [
+    "haupt",
+    "Delta",
+    [
+     1,
+     2
+    ]
+   ]
+  ]
+ },
+ "beta": 0.6,
+ "k_in_rho_z": 2.0864733754998235,
+ "phi_rho_z": 2.448463263561859,
+ "theta_inf_karte": 0.720629937250432,
+ "zeilen": [
+  {
+   "id": 1,
+   "omega2": 0.62,
+   "eps": 0.036666666666666736,
+   "R_tw": 17.604469755488225,
+   "rho": 1.65,
+   "quelle": "rauch",
+   "R": 17.94002963276622,
+   "R_minus_R_tw": 0.3355598772779942,
+   "S0": 0.8678548732157395,
+   "S0_minus_Sc_minus_eps": -0.002145126784260598,
+   "aufloesung_bisektion": 1.588063014423824e-12,
+   "x": 12.19415288530073,
+   "Delta": 0.1941528853007295,
+   "n_strich": 12,
+   "proben_dR": {
+    "rk4:0.01": 8.188330014036183e-10,
+    "bic2:0.01": 8.187086564248602e-10,
+    "dop853:1e-12": -5.030642569181509e-11,
+    "dop853:1e-10": 5.65695046361725e-10
+   },
+   "K_profil": true,
+   "dR_domega2": -481.51558823228413,
+   "dDelta_domega2": -319.79621978896427,
+   "Delta_neben": -0.4944957820303397,
+   "n_strich_neben": 13,
+   "k_in_rho_n": 2.131613196473168,
+   "phi_rho_n": 2.6167925970803907,
+   "Delta_zusatz": 0.4232101615379573,
+   "n_strich_zusatz": 12,
+   "k_lokal": 2.1265850515119884,
+   "k_lokal_kontrolle_rho_z": 0.0
+  },
+  {
+   "id": 2,
+   "omega2": 0.65,
+   "eps": 0.06666666666666676,
+   "R_tw": 9.682458365518528,
+   "rho": 1.67,
+   "quelle": "rauch",
+   "R": 9.976418909623355,
+   "R_minus_R_tw": 0.2939605441048272,
+   "S0": 0.8934742774228354,
+   "S0_minus_Sc_minus_eps": -0.006525722577164772,
+   "aufloesung_bisektion": 7.709388682997087e-13,
+   "x": 6.905159823868628,
+   "Delta": -0.09484017613137219,
+   "n_strich": 7,
+   "proben_dR": {
+    "rk4:0.01": 9.048761739904876e-11,
+    "bic2:0.01": 9.066347672614938e-11,
+    "dop853:1e-12": -4.369837824924616e-12,
+    "dop853:1e-10": 3.6003200420964276e-11
+   },
+   "K_profil": true,
+   "dR_domega2": -146.62048448244036,
+   "dDelta_domega2": -97.37727672170756,
+   "Delta_neben": 0.20362944607555544,
+   "n_strich_neben": 7,
+   "k_in_rho_n": 2.153879783108912,
+   "phi_rho_n": 2.713658676505773,
+   "Delta_zusatz": 0.0946088419742308,
+   "n_strich_zusatz": 7,
+   "k_lokal": 2.1461312195520867,
+   "k_lokal_kontrolle_rho_z": 0.0
+  }
+ ],
+ "urteile": {
+  "R-1": {
+   "name": "R-1",
+   "sprossen": [
+    1,
+    2
+   ],
+   "fehlend": [],
+   "K_profil_nicht_bestanden": [],
+   "Delta": {
+    "1": 0.1941528853007295,
+    "2": -0.09484017613137219
+   },
+   "max_betrag": 0.1941528853007295,
+   "grenze": 0.03,
+   "auswertbar": true,
+   "eingetroffen": false
+  },
+  "R-2": {
+   "name": "R-2",
+   "sprossen": [
+    1,
+    2
+   ],
+   "fehlend": [],
+   "K_profil_nicht_bestanden": [],
+   "ausgleich": {
+    "a": -9.633102047736719,
+    "b": 0.5473666270510767,
+    "b_gewickelt": -0.45263337294892325,
+    "rest_max": 2.220446049250313e-16,
+    "rest_rms": 1.7554167342883506e-16,
+    "n": 2,
+    "abwicklung": false,
+    "punkte": [
+     {
+      "id": 1,
+      "eps": 0.036666666666666736,
+      "Delta": 0.1941528853007295,
+      "Delta_abgew": 0.1941528853007295
+     },
+     {
+      "id": 2,
+      "eps": 0.06666666666666676,
+      "Delta": -0.09484017613137219,
+      "Delta_abgew": -0.09484017613137219
+     }
+    ]
+   },
+   "grenze_b": 0.02,
+   "auswertbar": true,
+   "b_ok": false,
+   "monoton_streng": false,
+   "spearman_betrag_eps": -1.0,
+   "monoton_mild_bericht": false,
+   "eingetroffen": false
+  }
+ },
+ "berichtsausgleiche": {
+  "neben": {
+   "feld": "Delta_neben",
+   "a": -10.062492396470155,
+   "b": -0.12553772749309994,
+   "b_gewickelt": -0.12553772749309994,
+   "rest_max": 5.551115123125783e-17,
+   "rest_rms": 3.925231146709438e-17,
+   "n": 2,
+   "abwicklung": true,
+   "punkte": [
+    {
+     "id": 1,
+     "eps": 0.036666666666666736,
+     "Delta": -0.4944957820303397,
+     "Delta_abgew": -0.4944957820303397
+    },
+    {
+     "id": 2,
+     "eps": 0.06666666666666676,
+     "Delta": 0.20362944607555544,
+     "Delta_abgew": -0.7963705539244446
+    }
+   ]
+  },
+  "zusatz": {
+   "feld": "Delta_zusatz",
+   "a": -10.95337731879088,
+   "b": 0.8248339965602907,
+   "b_gewickelt": -0.17516600343970934,
+   "rest_max": 3.3306690738754696e-16,
+   "rest_rms": 2.482534153247273e-16,
+   "n": 2,
+   "abwicklung": false,
+   "punkte": [
+    {
+     "id": 1,
+     "eps": 0.036666666666666736,
+     "Delta": 0.4232101615379573,
+     "Delta_abgew": 0.4232101615379573
+    },
+    {
+     "id": 2,
+     "eps": 0.06666666666666676,
+     "Delta": 0.0946088419742308,
+     "Delta_abgew": 0.0946088419742308
+    }
+   ]
+  },
+  "haupt": {
+   "feld": "Delta",
+   "a": -9.633102047736719,
+   "b": 0.5473666270510767,
+   "b_gewickelt": -0.45263337294892325,
+   "rest_max": 2.220446049250313e-16,
+   "rest_rms": 1.7554167342883506e-16,
+   "n": 2,
+   "abwicklung": false,
+   "punkte": [
+    {
+     "id": 1,
+     "eps": 0.036666666666666736,
+     "Delta": 0.1941528853007295,
+     "Delta_abgew": 0.1941528853007295
+    },
+    {
+     "id": 2,
+     "eps": 0.06666666666666676,
+     "Delta": -0.09484017613137219,
+     "Delta_abgew": -0.09484017613137219
+    }
+   ]
+  }
+ },
+ "ende": "2026-10-03T02:57:49+0000"
+}

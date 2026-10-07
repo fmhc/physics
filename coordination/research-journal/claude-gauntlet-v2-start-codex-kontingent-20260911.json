@@ -1,0 +1,36 @@
+{
+  "id": "claude-gauntlet-v2-start-codex-kontingent-20260911",
+  "time": "2026-09-11T10:35:00+02:00",
+  "time_kind": "completed",
+  "author": "Claude",
+  "topic": "operations",
+  "status": "technical",
+  "title": "Gauntlet-Lauf v2 vorbereitet und Runde 1 eingefroren; alle Codex-Agenten scheitern am erschöpften ChatGPT-Kontingent bis 17.09.",
+  "question": "Nutzerauftrag: Codex-Prozesse neu starten und eine Gauntlet-Schleife mit gpt-6-astra als Jury, um M1-Kohärenzarme, M3 und T4 weiterzuentwickeln.",
+  "action": "Neuer gebundener Lauf gauntlet/new-runs/entwicklung-v2-20260911 mit sieben frischen Behauptungsversionen (Kontrollen M7/K1, M1 v2, S1 Parallaxenpilot, S2 CMD-Abbildung, M3 v2, T4 v2), Schleifensteuerung gauntlet/loop.py (runde/jury/stand/patches), Rechenbriefe für M3 (TS440) und T4 (.69 CUDA) unter coordination/briefe-20260911/. Runde 1 eingefroren, drei Richter und zwei Rechenagenten gestartet.",
+  "result": "Alle fünf Codex-Prozesse endeten in der ersten Sekunde: 'You've hit your usage limit ... try again at Sep 17th, 2026 2:56 PM'. Dasselbe Kontingent erklärt die seit 03:23 UTC stumme interaktive Codex-Sitzung. Verifizierter Ausweg: Codex-CLI über OpenRouter per -c Provider-Override (wire_api responses), Testlauf mit openai/gpt-5.6-sol erfolgreich; Restguthaben 2,12 USD; gpt-6-astra kostet dort 10/50 USD je Million Marken.",
+  "meaning": "Keine physikalische Aussage. Der Lauf ist startbereit, die Jury braucht ein bezahltes Backend: Warten bis 17.09., Codex-Credits, OpenRouter-Aufladung für astra, oder ein günstigeres OpenAI-Modell als Ersatzjury mit Provenienzvermerk. Entscheidung liegt beim Nutzer.",
+  "sources": [
+    {
+      "path": "gauntlet/new-runs/entwicklung-v2-20260911/behauptungen.jsonl",
+      "label": "Ledger v2",
+      "sha256": "a881e3ffeaa0f48a8bf2dc805ba0ed68f695a2ed0b17033c4e491775340643f9"
+    },
+    {
+      "path": "gauntlet/new-runs/entwicklung-v2-20260911/rounds/001/manifest.json",
+      "label": "Runde 1, Manifest",
+      "sha256": "32640338188e1fff873b3a4794a1cba5eb5d875ddfbab715dc27277d7031fe3c"
+    },
+    {
+      "path": "gauntlet/loop.py",
+      "label": "Schleifensteuerung",
+      "sha256": "d3d861276f3f03f5b2a99c0a64d45207e88e0267f46b172b5bdd8eba7f284349"
+    },
+    {
+      "path": "coordination/agent-logs/codex-jury-a-20260911-1030.log",
+      "label": "Kontingentfehler, Beleg",
+      "sha256": "c3b918759fb1bdf17b4d524b467847ab79e2438d7d4cc0d14ceb42abc61441c4"
+    }
+  ],
+  "recorded_at": "2026-09-11T08:35:37.743059+00:00"
+}

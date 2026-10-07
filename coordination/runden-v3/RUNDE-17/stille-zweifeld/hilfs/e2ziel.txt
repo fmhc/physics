@@ -1,0 +1,24 @@
+def cmd_e2ziel(stufe, pdir, aus, punkte):
+    """PLAN-NACHTRAG-1: gedaempfte Minimierung von T ab vorgegebenen Startpunkten (w2:rho)."""
+    mod = modell_von('M2')
+    erg = dict(stufe=stufe, nachtrag=1, punkte=[])
+    for pk in punkte:
+        w2s, rhos = (float(x) for x in pk.split(':'))
+        za = min(ZEILEN, key=lambda z: abs(z - w2s))
+        anker = lade_profil(profil_pfad(pdir, za))
+        U = Umgebung(mod, anker)
+
+        def grenze(w2, rho, w2c=za):
+            w2 = min(max(w2, w2c - 0.03, ZEILEN[0] - 0.005), w2c + 0.03, ZEILEN[-1] + 0.005)
+            w = math.sqrt(w2)
+            rho = min(max(rho, SQ2 + RAND), w + SQ2 - RAND)
+            return w2, rho
+        w2, rho, v, verl = gn_E2(U, w2s, rhos, grenze)
+        p = U.profil(w2)
+        e = dict(start=dict(w2=w2s, rho=rhos), anker=za, w2=w2, rho=rho, T=float(v['T'][0]), G=v['G'][0].tolist(),
+                 gn=verl, chi0=p['chi0'], bereich=bereich(mod, w2, rho), r_m=U.n_m * anker['hp'])
+        erg['punkte'].append(e)
+        log('E2ziel', json.dumps(e))
+        schreibe(aus, erg)
+
+

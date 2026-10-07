@@ -1,0 +1,81 @@
+Unabhängige Planlektüre particle_binding, 03.10.2026. Keine Rechnung.
+PLAN.txt vollständig gelesen, aufbauend auf REVIEW-FV.txt.
+Autorfinalisierung/Hashabgleich folgen gesondert.
+
+Urteil: implementierbarer enger gespeicherter Transportvergleich, kein
+grundsätzlicher FV- oder Reservefehler. Ein aufgelöster endlicher
+signierter Beobachtungsunterschied ist die passende mögliche Aussage;
+kein Strahlungs-/Irreversibilitäts-/Lebensdauernachweis.
+
+Eingaben:18 ist richtig: je dt eine Baseline plus2Phasen x2Beträge x2
+Vorzeichen, also9 pro dt. time-domain liefert8, phase-cycle4, amplitude6.
+Manifest-QA unterscheidet sich: alter time-domain benutzt levels/pairs
+mit epsilon und passed/max_error; spätere Ergebnisse eigene pairs mit
+level und odd_passed/odd_max_error, amplitude zusätzlich phase_degrees.
+Keine einzige pauschale Schemaannahme. Der alte Gesamtstatus UNRESOLVED
+war der stationäre Vergleich, kein Scheitern aller individuellen Arme;
+diese müssen über vollständige321Erhaltungsproben, zugehörige Odd-Paare
+und Anfangsidentitäten sowie gebundene Ringhashes einzeln validiert werden.
+Die18 Auswahlschlüssel müssen eindeutig und vollständig sein, Baselines
+nur einmal pro dt. Gleiche Gauge/rho/omega/s und echte Ringachsen prüfen.
+
+Physik/Auswertung: Labor-v aus rd+iomega*p, reelle chi/w, stabile
+Potentialform, richtige Kantenhälften und alle drei Gesichter40/45/50
+sind konsistent. Gemeinsames45-Gesicht nur einmal berechnen. Zuerst
+vollständige physische Armobservablen, dann Paar-/Baselinekombination;
+kein Fluss des isolierten parity-even Felds. Primäre Größen ohne
+alpha-Normierung. G=E−omegaQ bleibt signiert und nicht positiv definit.
+Skalarzeitreihen vor offgrid-Endpunktinterpolation bilden, dann auf
+dem ergänzten signierten Fluss Jpos/Jneg aufteilen; damit ist Jnet
+die signierte Trapezsumme. Kein Vorzeichen-Gate aus getrennt interpolierten
+positiven/negativen Summen. Zeitintegration statt Zeitmittel für Strometa.
+
+Reserve: direkte dt-Variation, .1/.2-Ausdünnung, angrenzendeSchalen-
+Bilanzen und positiveSummandenhülle sind geeignete voneinander getrennt
+auszuweisende empirische Diagnosen. Für Gesicht45 beide Schalen, für
+40/50 nur verfügbare Nachbarschale; beide dt/Abtastungen im Bilanzmaximum.
+Pair-Bilanz darf benutzt werden, roheArmbilanzen zusätzlich offenlegen.
+Wichtige Blindstelle: Gleich große Fehler an beiden Schalenflächen
+heben sich aus B=D+Jouter−Jinner auf. Auch Paarbildung kann gemeinsame
+Baseline-/Vorzeichenfehler subtrahieren. Kleine B und dt-/Samplingänderung
+sind daher KEINE Kontrolle jedes absoluten Gesichtsflusses. Dies sollte
+im finalen Plan ausdrücklich neben der Aliasinggrenze stehen. Keine
+zusätzliche neue Schwelle oder größerer Rechenumfang wird daraus verlangt.
+
+Klassifikation präzisieren: J in J>10u ist der feste feine Wert
+J(dt=.005,Sample=.1), analog Einwärts J<−10u. Beide begrenzenden
+Gesichter müssen dieselbe Richtung erfüllen, sonst Schalen-Nettozuordnung
+UNRESOLVED. Fehlende/nichtfinite Werte und Nullreserven nicht als
+automatischen Pass behandeln. Rohflüsse, Speicheränderung und positive/
+negative Anteile bleiben auch ohne Richtungspass berichtenswert.
+Keine Bedingung Q/G>0 als Ersatz für Energie. Kein Mehrheitslabel über
+Fenster, Phasen oder Amplituden und kein Umdeuten eines Pair-Signals als
+Energiebestand einer einzelnen realisierten Lösung.
+
+QA: semidiskrete analytische Energiederivative mit allen lokalen
+Potential-/Kantenableitungen gegen Kräfte/Flüsse vergleichen; bloßer
+Vergleich zweier Kopien derselben Flussformel wäre nicht unabhängig.
+Deterministischer nichttrivialer komplexer Zustand plus separater chi-
+Strom und Vakuum decken Faktor2, Vorzeichen, reellen Beitrag und Offset.
+Bei relativer1e−10-Prüfung bekannten Nichtnullmaßstab verwenden. Kein
+Zeitschritt wird benötigt. Alle festen Ausgabepositionen kontrollieren.
+
+<=10CPU-s für18komprimierteRinge ist noch keine gemessene Laufzeitzusage.
+Armweise Datenreduktion,8CPU-Checkpoint und externer harter Rahmen sind
+passend; bei Ressourcenende INCOMPLETE statt stiller Unterauswahl.
+Keine automatische Wiederholung. Plan kann nach obigen eindeutigen
+Bezeichnungs-/Grenzpräzisierungen in Code umgesetzt werden; finale
+Hüllen und QA-Implementierung separat gegenlesen.
+
+Finalnachtrag: Autorfreeze lokal geprüft und die ergänzten Abschnitte
+nachgelesen, SHA256
+bc5717949578efa12928012d0c976a04c75f5331885cbd078edf3b921bc42771.
+Die benannten Präzisierungen sind jetzt ausdrücklich enthalten: primäres
+J=.005/.1, u<=0 unaufgelöst, gemeinsame Bilanzblindstelle, unterschiedliche
+QA-Schemata, gültige Einzelarme trotz altem UNRESOLVED und analytische
+RHS-/Kettenregel-QA. Die elementaren positiven Hüllen sind vorab fixiert,
+einschließlich halber Grenzkanten sowie Endpunkt-/Flussanteilen für B;
+Maximum über beide dt/Abtastungen. Die grobe chi-Kantenhülle darf später
+nicht nach Ergebniskenntnis verkleinert werden. Kein verbleibender
+konkreter Planblocker. Codeprüfung der tatsächlichen Operationen folgt;
+kein Lauf durch diese Zustimmung.

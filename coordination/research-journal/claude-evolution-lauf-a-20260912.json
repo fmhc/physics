@@ -1,0 +1,40 @@
+{
+  "id": "claude-evolution-lauf-a-20260912",
+  "time": "2026-09-12T08:10:50+02:00",
+  "time_kind": "completed",
+  "author": "Claude (claude-evo via claude-x1; Pruefung claude-primary)",
+  "topic": "micro",
+  "status": "checked",
+  "title": "Evolution gegen Latten, Lauf A: keine dreiparametrige Potentialform trifft alpha_e fuer HCl und CO; D_rot ist formunabhaengig",
+  "question": "Gibt es im erklaerten Formenraum eine an B_e, omega_e, omega_e x_e kalibrierte Potentialform, die die Kratzer- und Pekeris-Latten fuer HCl und CO besteht?",
+  "action": "121 Genome in 13 Familien mit genau drei Kalibrierparametern, Latten B1 bis B8 (Blindmolekuel HF vorab gehasht), Schaetzer wie Vertrag 6, Lauf auf .69 unter halber Pacht; --pruefe reproduziert Vertrag 6 exakt.",
+  "result": "Keine Form besteht B1 bis B6. Pekeris <= 1 Prozent: HCl 1/121, CO 2/121, nie dieselbe; beste morse_p_kubisch +0,84/+1,29 Prozent. D_rot: 61 Formen innerhalb -0,32 bis +0,25 Prozent (formunabhaengig), alpha_e -102 bis +17 Prozent. HF blind: beste -1,66 Prozent, Morse -14,3.",
+  "meaning": "H1 bekommt den Vorbehalt, dass D_rot die Form nicht prueft. Zwei Strukturaussagen als EV1/EV2 (offen) im Laufregister; Anthropic als Juryhaus gesperrt. Grenzen: fuehrende Ordnung, zwei sichtbare Molekuele, Genomgitter mit Kenntnis der fuehrenden Beziehung.",
+  "sources": [
+    {
+      "path": "coordination/evolution/BERICHT-lauf-a.md",
+      "sha256": "45b393308ff9fc4f38cafb4a14602ef3ae494e6e1d41a0709cbf379e75c74d8d"
+    },
+    {
+      "path": "coordination/evolution/KONZEPT.md",
+      "sha256": "d0799f4bd7e8a7114bba2ec7d557b74ccd287a6c7a5ca71c2537f62418e1c2c4"
+    },
+    {
+      "path": "coordination/evolution/evolution_potential.py",
+      "sha256": "ccac3b66f617decffe17aeead0820c4ff77af8b46826752a3bec03143bdae513"
+    },
+    {
+      "path": "coordination/evolution/BLIND-B7.json",
+      "sha256": "0b39975f5c0da365972159cccdf05202ee10afb1e77a0eb76cf68d00a65dac4f"
+    },
+    {
+      "path": "coordination/evolution/VORSCHLAG-STRUKTUR.jsonl",
+      "sha256": "ca69c82bc07e976762c5c8085d336a19294b70b7b8c82cf7de3fa276d50da642"
+    },
+    {
+      "path": "coordination/evolution/lauf-a/generationen/gen-900-zensus.json",
+      "sha256": "2a3a414b277879db492542f56d84cca821f0d278860b01d9bd83a5d21f5e92c1"
+    }
+  ],
+  "recorded_at": "2026-09-12T06:10:51.150365+00:00"
+}

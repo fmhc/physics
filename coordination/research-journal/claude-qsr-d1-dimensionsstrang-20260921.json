@@ -1,0 +1,48 @@
+{
+  "id": "claude-qsr-d1-dimensionsstrang-20260921",
+  "time": "2026-09-21T00:30:00+02:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5); Fremdreview Qwen (qwen3.6-27b-bunker, Alibaba, Bunker) und DeepSeek (deepseek-v4.1-flash, OpenRouter)",
+  "topic": "theory",
+  "status": "reported",
+  "title": "Dimensionsstrang ist rechenbar, aber das Kriterium trennt nur frei von gebunden - Lauf QSR-D1 endet mit U1 am eigenen Rundungsboden",
+  "question": "Welche messbare Groesse unterscheidet eine echte kompakte Zusatzdimension von einem inneren Schwingungsfreiheitsgrad mit demselben Spektrum, laesst sie sich mit dem eingefrorenen QSR-0-Rechenwerk ohne neue Physikannahme berechnen, und wo ist die Grenze?",
+  "action": "Machbarkeitssonde auf .69 (1,39 s CPU) ueber die 36 eingefrorenen QSR-0-Faelle: vier Kandidaten (Leiterabstand, Entartung, Auswahlregel, inelastische Summe) einzeln geprueft und die Kennzahl Q = S0*M2/M1^2 (relative Energiestreuung der Streuantwort) hergeleitet. Daraus Vertrag QSR-D1 nach VORLAGE-v2 mit allen 13 Pflichtabschnitten, S0-Fremdreview durch zwei fremde Haeuser (0,0061 USD), alle Auflagen eingearbeitet, dann Lauf auf .69 als begrenzte User-Unit (1,434 s CPU, Exit 0).",
+  "result": "Q = 1 + 4<p^2>/(hbar^2 kappa^2) misst den inneren Nullpunktsimpuls in Einheiten des Uebertrags: eine freie kompakte Richtung liefert Q = 1 (bei Massen 1:3 durch Modenaufspaltung Q = 1,64), die gebundene harmonische Richtung Q = 1 + 1/(a z)^2. Auf dem eingefrorenen Gitter sind nur 15 von 36 Zellen im kompakten Arm ueberhaupt zulaessig (gequantelter Uebertrag), davon 9 nicht trivial; kleinster Trennabstand 0,111 bei numerischem Boden 1e-12. Nachweisgrenze: oberhalb z = 14,7 (Massen 1:3) bzw. z = 20,0 (1:1) faellt der Unterschied bei voller Staerke unter ein Prozent. Der Lauf endete mit Ausgang U1: die Staerkeschwelle s* = 1,0 lag exakt auf dem erwarteten Wert, und zwei Pflichtzellen verfehlten sie in float64 um 2,2e-16 bzw. 2,1e-15. Alle zwoelf Kontrollen und beide Nullproben bestanden, N1 (Isomorphie kompakte Richtung gegen inneren Rotor) exakt 0. Nebenbefund K10: unter der reduzierten Masse sind 15 Zellen zulaessig, unter der Gesamtmasse nur 9.",
+  "meaning": "Die Machbarkeit ist bejaht und die Grenze ist scharf benannt: Q trennt unlokalisiert von lokalisiert, nicht Raumdimension von innerem Freiheitsgrad - ein innerer Rotor ist als Operatoralgebra dieselbe Rechnung wie eine kompakte Richtung, und beide Fremdhaeuser sagen das unabhaengig. Ein Modellvergleich bleibt ein Modellvergleich; kein Naturbefund, keine Registerwirkung. Der U1-Ausgang ist der methodisch wichtigste Teil: eine Besetzungsschwelle lag auf einem Gitterpunkt, was VORLAGE-v2 Abschnitt 6.6 nur fuer Kriteriumsschwellen verbietet. Nichts wurde nachtraeglich verschoben; Fassung 2 ist vorgeschlagen (s* = 0,9 mit Abstand nach beiden Seiten) und die Vorlagenregel sollte auf Besetzungsschwellen erweitert werden. Runde 022 bleibt eingefroren, nichts gebucht, Zitiersperre bis S2.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260921/MACHBARKEIT-DIMENSION.md",
+      "sha256": "ca32ebba7d24eda322ad3d1a794e87e211d2d2576c99aa88aa5e82312863f39c"
+    },
+    {
+      "path": "coordination/vertraege-20260921/QSR-D1-VERTRAG.md",
+      "sha256": "a8d81b84b477b9ec6c3dd8641298af30f5e330ff4dd2d764efd804cd7588cb24"
+    },
+    {
+      "path": "coordination/vertraege-20260921/REVIEW-QSR-D1.md",
+      "sha256": "6226833da5975bb3f963f86541927f24682d36126745ed5f914a81517ef9f31d"
+    },
+    {
+      "path": "coordination/vertraege-20260921/VERTRAGSLUECKE-qsr-d1.md",
+      "sha256": "d539d3a2b8466225dfb28f31fa3f0a405f86cb3881d17b1ee60da04687e0bbfe"
+    },
+    {
+      "path": "coordination/vertraege-20260921/qsr-d1-lauf/BERICHT-QSR-D1.md",
+      "sha256": "f7a5241a8b70f25fc6025fd2713b3fb0d3280dff82e721f7f5739a555a0cbe26"
+    },
+    {
+      "path": "coordination/vertraege-20260921/qsr-d1-lauf/ERGEBNIS-QSR-D1.json",
+      "sha256": "a746de6b6bb1ae07607f6ee6d8152d054c1580c73395afd1dcc937ea687edba1"
+    },
+    {
+      "path": "coordination/vertraege-20260921/VORSCHLAG-QSR-D1-FASSUNG2.md",
+      "sha256": "f9341eb603fea64ac2da0d69bc1a6662b35ff080c0416e745ca254512e550a7c"
+    },
+    {
+      "path": "coordination/vertraege-20260921/machbarkeit/SONDE-DIMENSION.json",
+      "sha256": "a5bcc7e3d07590b0c6430be169ace12fd6ea8db1e737a2b536807764374053ef"
+    }
+  ],
+  "recorded_at": "2026-09-20T19:20:20.552436+00:00"
+}

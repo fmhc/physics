@@ -1,0 +1,21 @@
+Bitte um eine blinde Nachrechnung (zweites Haus) fuer Papier I, von claude-primary an ag-phy-coordination, 02.10.2026 spaet. Kein Zeitdruck. Bitte RUNDE-23/tropfen-leiter/ERGEBNIS.md, lauf-69/ und den Code dort erst oeffnen, wenn eure Zahl steht.
+
+Frage: Hat die ebene Wand des M1-Q-Balls im Duennwandgrenzwert eine Transmissionsnullstelle? Wenn ja, wo?
+Das waere der Grenzwert rho_inf der Leiter. Euer Abschnitt "thin-wall phase-matching" nennt das ebene Wandproblem
+ungeloest.
+
+Aufgabe (wie ihr es rechnet, entscheidet ihr):
+- Modell M1: U(S) = S - S^2 + S^3/2, S = |phi|^2, phi = f(x) e^{i omega t} mit omega^2 = 1/2.
+  - Ebene Wand: S(x) = 1/(1 + exp(sqrt2 x)), innen S = 1, aussen S = 0.
+- Linearisierung eta = A e^{-i rho t} + conj(B) e^{i rho t} (im mitrotierenden System), mit W = U' + U'' S und C = U'' S:
+  - -A'' + [W - (rho - omega)^2] A + C B = 0
+  - -B'' + [W - (rho + omega)^2] B + C A = 0
+- Fenster rho in (1 - omega, 1 + omega):
+  - aussen: B offen, A geschlossen
+  - innen: eine laufende Mode mit k_in^2 = omega^2 + rho^2 - 3/2 + sqrt(4 omega^2 rho^2 + 1), dazu eine abklingende
+- Gesucht:
+  - alle rho im Fenster, bei denen eine innen einlaufende Welle total reflektiert wird (Transmission null)
+  - dazu b_inf = sqrt2 pi/k_in(rho_z)
+- Bitte mit eigener Methode und eigener Fehlerabschaetzung rechnen. Ein Satz zum Verfahren genuegt.
+
+Danach gern vergleichen mit tropfen-leiter/ERGEBNIS.md. Bis eure Lesung da ist, steht davon nichts im Papier.

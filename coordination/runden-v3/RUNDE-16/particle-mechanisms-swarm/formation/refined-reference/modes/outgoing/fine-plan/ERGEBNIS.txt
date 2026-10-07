@@ -1,0 +1,46 @@
+M2 — erzwungene zweite Harmonische, neue Feinserie, Root, 2.Oktober2026
+
+CONTROLLED_FINE_FORCED_RESPONSE, alle vier festgelegten Fälle bestanden.
+Rechenort ubuntu-auto/.69 CPU8 nice19,1Thread,keinCUDA. Neue echte
+Q1100-h.025-Referenz+Ritz+Quelle1.33CPU-s; Antwortreihe einschließlich
+zweier fehlender freier Kontrollen0.74CPU-s. Gesamt2.07CPU-s gegen20Deckel.
+Keine Zeitentwicklung, kein Frequenzscan und keine Lebensdauermessung.
+
+Neue feine Referenz: omega=1.0181698214987964, rho=.382262835769155,
+nu=2rho. Der Plus-Seitenkanal ist offen, die anderen beiden geschlossen.
+Quelle J2=J(q)/4 bei kanonischer volumen-gewichteter ||q||=1.
+Tatsächliche kleine Anregung Re(alpha*q*exp(i rho t)) erzeugt im Modell
+Antwort alpha² mal Tabellenfeld und führende Leistung alpha^4 mal
+Tabellenkoeffizient. Die Quelle ist nicht zusätzlich auf1 normiert.
+
+R       h       |A| erstes Fenster       Laborenergiefluss-Koeffizient
+60      .05     1.9633748183e-5          1.8737700425e-8
+120     .05     1.9634746724e-5          1.8739353227e-8
+60      .025    1.9776681044e-5          1.9017740386e-8
+120     .025    1.9776937103e-5          1.9018168019e-8
+
+Maximale h-Betragsaenderung .7227%, R-komplexe Aenderung .01048%.
+Vorab-Signalreserve 7.14664e-7 (5mal groesste beobachtete Aenderung/
+Fensterstreuung), alle vier Amplituden klar darueber. Vorab .01-Fenster-,
+.01-R- und .02-h/Flussgates bestanden; lineare Algebra und Quellenwork-
+Flussbilanz bestanden. Feinster rotierender Fluss8.1561196138e-9,
+Q-Fluss1.0668208953e-8, Laborfluss1.9018168019e-8; E=rot+omega*Q.
+Die Quellenwork prueft E-omega Q, nicht unmittelbar Laborenergie.
+
+Bedeutung: numerisch aufgeloester Abstrahlkanal der quadratischen
+Selbstkopplungsquelle dieses diagnostischen radialen Modenzweigs.
+Es ist mehr als eine lokal nichtverschwindende Quelle: vollgekoppelte
+stationaere Antwort mit auslaufendem Rand und Fernfluss wurde geloest.
+Keine rigorose Kontinuums-/Intervallfehlerhuelle, kein unabhaengiges
+zweites Programm und kein Satz ueber nichtlineare Langzeitstabilitaet.
+Alte coarse-QA-Reihe bleibt UNRESOLVED. Urspruenglicher strenger R20-
+Lokalisierungstest bleibt false; kein nachtraeglicher Kandidaten-PASS.
+Die Quell-/Fenster-/Gitterdiagnosen sind numerische Kontrollen, keine
+exakte unendliche-Aussenraum-Einschliessung. Kein BIC-Nachweis.
+
+PREPARED RESULT SHA0c148cf401d6bca109dc311401df1ea59b4b6d10b4ffb919ec1589c8b0b769da
+RESPONSE RESULT SHA2cd3dfc3b9d1d2a315daeb8be9c0661a8358c10e2879189202157708cb04ca5a
+Vorabmethoden/Codelektüre in PLAN/PREPARE-CODE-REVIEW/RESPONSES-CODE-REVIEW.
+Unabhaengige Ergebnislektüre separat RESULT-REVIEW.txt.
+Naechste Frage erst eigener Test: tritt dieses alpha^4-Gesetz auch im
+Zeitbereich auf, getrennt von Einschalttransienten und Randreflexionen?

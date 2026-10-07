@@ -1,0 +1,136 @@
+{
+  "status": "LOCAL_SOURCE_DIAGNOSTICS_COMPLETE",
+  "code_sha256": "5ba2d7e001f6145ff5f75afedadf6850565df8fac25412f84cab1c1c1a21443f",
+  "profiles": [
+    {
+      "h": 0.1,
+      "R": 120,
+      "rho": 0.382201524606267,
+      "omega": 1.0181382710767997,
+      "second_frequency": 0.764403049212534,
+      "original_qnorm": 0.9340990083045903,
+      "source_artifact": "SOURCE-h0.1.npz",
+      "source_sha256": "52fa102b997936a7f4346515f6044320b651fc79da4d0ba5ff41276a9d2de268",
+      "ritz_sha256": "868230c0e14a68ebe754cabeac833cf2aaf63cfec86d5026e949f506990f6cae",
+      "free_wavenumber_squared": [
+        1.1774535585388408,
+        -1.9356184371854919,
+        -1.4156879783545804
+      ],
+      "DC_component_L2": [
+        0.03483702081666935,
+        4.009526148218976e-18,
+        0.0034721705131966593
+      ],
+      "J2_component_L2": [
+        0.013182783320626059,
+        0.00433605030491394,
+        0.0012913917958180551
+      ],
+      "local_channel_L2": {
+        "plus": 0.0063872134137421075,
+        "minus": 0.012320333320679023,
+        "chi": 0.0012913917958180551
+      },
+      "local_channel_outer20_fraction": {
+        "plus": 1.6447667264203114e-20,
+        "minus": 6.439923450048551e-35,
+        "chi": 3.0336476445698995e-20
+      }
+    },
+    {
+      "h": 0.05,
+      "R": 120,
+      "rho": 0.38225060735841676,
+      "omega": 1.018163515240714,
+      "second_frequency": 0.7645012147168335,
+      "original_qnorm": 0.9340837179598839,
+      "source_artifact": "SOURCE-h0.05.npz",
+      "source_sha256": "889d194b8503e3bc3d47be37ba1a3e142ba8b2bf6e6083b519d5806452deb649",
+      "ritz_sha256": "67658ad2e278e7708e82039ae1b487f86d86ef666e42198ea3752bf765e4fbed",
+      "free_wavenumber_squared": [
+        1.1778935394346157,
+        -1.9356554372929324,
+        -1.415537892696486
+      ],
+      "DC_component_L2": [
+        0.0348030073827692,
+        9.38968978044364e-18,
+        0.0034722725884007094
+      ],
+      "J2_component_L2": [
+        0.013168966157599354,
+        0.00433235850877856,
+        0.0012901750492840002
+      ],
+      "local_channel_L2": {
+        "plus": 0.006380060470778056,
+        "minus": 0.012307957925578001,
+        "chi": 0.0012901750492840002
+      },
+      "local_channel_outer20_fraction": {
+        "plus": 1.6842518378897077e-20,
+        "minus": 6.426466136141243e-35,
+        "chi": 3.048976666386078e-20
+      }
+    }
+  ],
+  "minus_convention": "Local (J2x-i J2y)/sqrt2 is conjugate of the lower lab sideband Fourier coefficient; norms unchanged.",
+  "interpretation": "Local source only; no outgoing amplitude, radiation rate or gate reclassification",
+  "dynamics_sha256": "466b25fb813770a1ab13eea962c93b39308dfe1ad22171fe638c60fdafef998d",
+  "operator_sha256": "467ad3e19cd8efcdac4ec2dcc670b50aaa59cc6f7e9e44d625ebbf94ba0d32c6",
+  "search_sha256": "77ecf9bbe03b96db901d76728e074a897725eb52213f90dae76c7200ba5364ea",
+  "reference": {
+    "manifest_sha256": "8c33ace3a5465a8fd481d26b35457425ee3c5d5f0111b3f11c09f4a9dd72fdf4",
+    "profiles": [
+      {
+        "h": 0.1,
+        "sha256": "8265a508c85b5823e1a46f47ea3a9cadb26c790fe89f8ad711699164483d3adb",
+        "file": "prepared/reference-h0.1.npz"
+      },
+      {
+        "h": 0.05,
+        "sha256": "bf03078bb52e4fe515cb3a5fbd01608efec3df18b8845a3ae37aaef6c9661011",
+        "file": "prepared/reference-h0.05.npz"
+      }
+    ]
+  },
+  "original_search_status": "NO_CONFIRMED_CANDIDATE_IN_FIXED_SEARCH",
+  "qa": {
+    "passed": true,
+    "steps": [
+      0.02,
+      0.01,
+      0.005
+    ],
+    "relative_errors": [
+      1.067163027046518e-05,
+      2.667907910372114e-06,
+      6.66974176821424e-07
+    ],
+    "error_reduction_ratios": [
+      3.9999994861054726,
+      4.000016796881809
+    ],
+    "wrong_factor_error": 0.9999999556209577,
+    "wrong_sign_error": 2.000000044379375,
+    "fourier_dc_error": 9.663545469604677e-17,
+    "fourier_second_error": 3.704212326293699e-16
+  },
+  "grid_comparison": {
+    "DC": {
+      "coarse_L2": 0.035009627068190344,
+      "fine_L2": 0.03497579162525483,
+      "raw_norm_difference": -3.383544293551061e-05,
+      "absolute_profile_difference_L2": 4.171794656791873e-05,
+      "absolute_hermitian_overlap": 0.9999999432836717
+    },
+    "J2": {
+      "coarse_L2": 0.013937532102048308,
+      "fine_L2": 0.013923201915018616,
+      "raw_norm_difference": -1.433018702969198e-05,
+      "absolute_profile_difference_L2": 1.8013178510243688e-05,
+      "absolute_hermitian_overlap": 0.999999907548137
+    }
+  }
+}

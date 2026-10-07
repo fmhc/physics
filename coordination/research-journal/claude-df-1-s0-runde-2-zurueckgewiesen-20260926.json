@@ -1,0 +1,33 @@
+{
+  "id": "claude-df-1-s0-runde-2-zurueckgewiesen-20260926",
+  "time": "2026-09-26T02:50:47+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung; Koordination Claude-Subagent (Anthropic, Opus 5.5); Review astra (OpenAI, gpt-6-astra, high) 04:34:36 bis 04:42:24 MESZ; Review Qwen (batiai/qwen3.6-35b:q4, Ollama auf der .69) 04:36:35 bis 04:45:29 MESZ (gemessen)",
+  "topic": "theory",
+  "status": "reported",
+  "evidenzart": "verfahren",
+  "title": "DF-1 Fassung 3, S0 Runde 2: astra weist wieder zurueck (acht Auflagen, sieben blockierend), fuenf der zwoelf Runde-1-Auflagen erledigt, sieben teilweise; Qwen gibt mit Auflagen frei; Fassung 4 fuer die letzte regulaere Runde",
+  "question": "Ist DF-1 Fassung 3 nach S0 bindungsfaehig?",
+  "action": "Koordinator: astra REVIEW-ONLY (18 lesende Befehlsbloecke) mit Pruefung jeder Runde-1-Auflage; Qwen in neuer Sitzung mit vollem Vertrag, Revisionstabelle und Diff, ausdruecklich zu jeder Auflage einzeln (Antwort 69 Zeilen statt 24). Synthese S0-RUNDE-2-SYNTHESE.md (92ef3ad7...).",
+  "result": "astra ZURUECKWEISEN (32c6b259...): (1) A3.7/K5 und Referenzentscheider nicht deckungsgleich (qf fehlt, konvergiert mit newton_grund budget angenommen, leeres VP nicht abgefangen); (2) neu: keine Gleichstandsregel in A4.1 fuer K6 und die Elternwahl von Start C; (3) Widerspruch fehlender Beleg (T) gegen aeusseren Abbruch (U1); (4) Nachtrag-21-Ausnahme fuer die Q600-Kontrolle vor Bindung entscheiden, F-Q600.json nicht schemafest; (5) Abbruchschema und S2-Regeln fuer nicht qualifizierte Pflichtfaelle offen; (6) Chronologie und Einstufung berichtigen, F3-14 (c) ist eine spaetere Lockerung; (7, nicht blockierend) Begruendungswidersprueche; (8) zweites Haus und mechanisches Paket vor S1. Einig: R2.2, R2.3, R2.4 angenommen, K4 nach Fassung 1. Qwen FREIGEBEN MIT AUFLAGEN (fuenf, keine blockierend).",
+  "meaning": "Nicht gebunden, keine Zielrechnung. Erwartung vorab: astra weist zurueck p = 0,55 (eingetreten), Qwen gibt frei p = 0,8 (eingetreten). Die Maengel sind jetzt ueberwiegend Konsistenz zwischen Vertragstext, Schema und Entscheider, nicht mehr Methode. Entscheidungen der Leitung: Ausnahme zu Nachtrag 21 angenommen (Positivkontrolle an Zielladungen wuerde das Ergebnis vorwegnehmen; Q600 mit bekanntem B13-Wert; Grenzen werden genannt), F3-3 bleibt ausgangsbestimmend, das mechanische Paket baut die Leitung nach der Bindung. Fassung 4 geht in Runde 3, die letzte regulaere; eine weitere Runde braucht Finns Ja.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260926/df-1-s0/S0-RUNDE-2-SYNTHESE.md",
+      "sha256": "92ef3ad745845b48a076fb1e3ccd6b217aeb059c5005c33cce0ae87bbdda4511"
+    },
+    {
+      "path": "coordination/vertraege-20260926/df-1-s0/review-astra-f3/REVIEW-astra-DF-1-F3.md",
+      "sha256": "32c6b259acc482803d9f8a51704e8312691e811478c089fd39ea02f0354d545d"
+    },
+    {
+      "path": "coordination/vertraege-20260926/df-1-s0/review-qwen69-f3/antwort.md",
+      "sha256": "413cf1feb6463ddfc019354e0ad82293e6ced12da362b83cb4c02ec9c4a471ac"
+    },
+    {
+      "path": "coordination/vertraege-20260926/DF-1-VERTRAG.md",
+      "sha256": "029335da06a1f6e323b04b1d3b772a179ba8b0b146146d4930d92839d90821a5"
+    }
+  ],
+  "recorded_at": "2026-09-26T02:52:06.401391+00:00"
+}

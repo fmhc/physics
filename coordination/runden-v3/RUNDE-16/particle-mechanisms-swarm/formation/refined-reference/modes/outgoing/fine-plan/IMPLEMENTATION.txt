@@ -1,0 +1,28 @@
+Präparationsadapter, particle_core, 2026-10-02. Nicht ausgeführt.
+code.py SHA256 2c50a597e689ccc9dd52e339b9ff3478553a0189a0411c33005b316e4bcb1bef
+PLAN.txt SHA256 d4e098b88c5174efa6d58ba72133c017dc2d0e40b7b6b85fb73a324eb7b116ea
+
+Aufrufargumente: --beutel --operator --source-code --dynamics --seed
+--reference --search-dir --source-dir --out (jeweils Dateipfad/Verzeichnis).
+Module/alte Resultate und Artefakte werden vor Nutzung hashgeprüft.
+Keine Änderung importierter Module, kein eigener FV-/Kraft-/Quelloperator.
+Neue Newton-Steuerung übernimmt unveränderte ursprüngliche Gates und
+ruft beutel.newton_Q für jeweils ein Update auf. Nur ein fester Ritz-Aufruf.
+
+RESULT.json status FINE_INPUTS_PREPARED nur nach allen Präparationsgates.
+reference.artifact = {file,sha256}; NPZ r,f,chi,omega,Q,h float64.
+source.artifact = {file,sha256}; NPZ r,DC,J2,local_channels,rho,omega,
+canonical_q_normalization. source.reference_sha256 und ritz_sha256 binden
+die neue Kette. ritz_task enthält alle vier Rohwerte und Eigenvektor-NPZ;
+selected_ritz enthält Originaldiagnostik einschließlich candidate-Flag,
+ohne Änderung des alten R20-Lokalisierungsgates.
+old_inputs.reference und old_inputs.source_profile dokumentieren das
+wiederzuverwendende h=.05. Consumer muss Gesamtstatus, Manifesthash und
+alle konkreten Artefakthashes prüfen. Getrennte Antwortimplementation
+responses.py gehört particle_binding; deren Schnittstelle wird vor Lauf
+auf dieses Schema abgeglichen und unabhängig gegengelesen.
+
+Interner Checkpoint10 CPU-s vor/zwischen Aufgaben; Rootdeckel12 CPU-s.
+Native ARPACK-Iteration kann erst durch äußeren Deckel gestoppt werden.
+Kein automatischer Retry, keine Reduktion auf ein Gitter bei Fehler.
+Laufzeit-/Import-/Syntax-QA hier nicht ausgeführt; Root übernimmt .69.

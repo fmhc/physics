@@ -1,0 +1,19 @@
+wirbel: Start 2026-09-30T01:58:35+00:00, Ende 2026-09-30T02:00:13+00:00, Quadro P4000, torch 2.5.1+cu121
+Medium C0 = 0.1, g4 = 0.5, lam = 0.1: c_s = 0.2085, Heilungslaenge etwa 3.23
+Dauer [s]: relax_grob_s 1.1, entw_grob_s 71.7
+Karte wirbel (Wellen 18). Ball m = 0, omega^2 = 0.55 (Q 238.4, R_halb 6.88, D = 2 R_halb = 13.8) gehalten (V_h = 0.0005 r^2), y0 = 0.05 (kleiner Anstoss).
+Lauf | u/c_s | u | Ereignisse | erste Zeit | oben/unten | mittl. Abstand | St (Ereignisse) | Auftrieb Periode | St (Auftrieb) | F_x | F_y RMS | N frei max
+[grob]
+  u0.4 | 0.4 | 0.0833 | 0 | - | [0, 0] | - | - | - | - | +3.84e-04 | 3.8e-06 | 0
+  u0.55 | 0.55 | 0.1144 | 0 | - | [0, 0] | - | - | - | - | +5.02e-03 | 3.8e-06 | 0
+  u0.7 | 0.7 | 0.1453 | 2 | 351 | [1, 1] | - | - | 152.5 | 0.621 | +4.03e-02 | 3.5e-06 | 2
+      erste Ereignisse (t, Seite und Vorzeichen, Zahl): [(351.0, 'N_minus_oben', 1), (352.0, 'N_plus_unten', 1)]
+  u0.85 | 0.85 | 0.1761 | 4 | 253 | [2, 2] | 283.0 | 0.276 | 127.7 | 0.612 | +6.20e-02 | 5.3e-06 | 4
+      erste Ereignisse (t, Seite und Vorzeichen, Zahl): [(253.0, 'N_minus_oben', 1), (253.0, 'N_plus_unten', 1), (536.0, 'N_plus_unten', 1), (537.0, 'N_minus_oben', 1)]
+  u1.0 | 1.0 | 0.2066 | 10 | 208 | [5, 5] | 112.8 | 0.591 | 204.6 | 0.325 | +8.64e-02 | 1.2e-05 | 4
+      erste Ereignisse (t, Seite und Vorzeichen, Zahl): [(208.0, 'N_minus_oben', 1), (208.0, 'N_plus_unten', 1), (389.0, 'N_minus_oben', 1), (389.0, 'N_plus_unten', 1), (644.0, 'N_plus_oben', 1), (644.0, 'N_minus_oben', 1), (644.0, 'N_plus_unten', 1), (644.0, 'N_minus_unten', 1), (656.0, 'N_plus_unten', 1), (659.0, 'N_minus_oben', 1)]
+  u0.85_lam0 | 0.85 | 0.1761 | 0 | - | [0, 0] | - | - | - | - | +0.00e+00 | 0.0e+00 | 0
+  Urteil: u0.4: 0 Wirbel -> unter der Schwelle (V-W1)
+  Urteil: Schwelle zwischen u/c_s = 0.55 und 0.7
+  Urteil: lam0: 0 Wirbel (erwartet 0)
+L3: grob oder fein fehlt, kein Vergleich

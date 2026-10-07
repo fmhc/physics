@@ -1,0 +1,46 @@
+Implementierungsabgabe particle_core, 2026-10-03. KEINE Ausführung.
+code.py SHA256 5e8f8c201f9d0f0090f442f6d6173c9e4f1362cfecbd55fc9ac9f823614dc4c9
+PLAN/REVIEW-PLAN gelesen einschließlich Zeitmittel-Präzisierung.
+
+Eigener neuer Adapter; alle Vorläufer unverändert. Jeweils nur ein +/-Paar
+im Vollgitter, volle kanonische Odd-Norm direkt im Loop. Gespeichert werden
+Schalenringe mit alten Halos, Anfang/Ende und321QA-Samples jeArm. Keine
+vollständigen räumlichen Zeittrajektorien. Wiederverwendete Ringe bleiben
+bis zur Differenzbildung im Speicher, werden danach freigegeben. Keine
+zusätzlichen kosmetischen Vollfeldkopien; 1GiB extern bindend.
+
+Sechs neue Arme/3Paare, zwei dt-Differenzartefakte,16Positionen je2Normen.
+H direkt baselinefrei; phi-Hüllen aus Einzelvorzeichenbeträgen. Bandhülle
+ist coefficient(...,frequency=0), also positiver Zeitmittelwert.
+Norm(Delta_fine),Norm(Delta_coarse),Norm(Delta_fine-Delta_coarse), beide
+eta-Skalen, ihrMaximum und beide absoluten Reserven separat imJSON.
+Alle32Auflösungstore plus Odd/Erhaltung/Start/Vollständigkeit erforderlich.
+150CPU-s interner Check;159CPU-s und240Wandsekunden außen durch Root. JSON atomisch
+nach Armstart, alle4Zeit-Einheiten, jedem abgeschlossenen Arm/Artefakt.
+Fehler erhalten INCOMPLETE und bereits gespeicherte Teilergebnisse.
+Reviewdelta vor Freeze: Nach gespeicherten vollständigen Paardaten stoppt
+ein verletztes Odd-Gate vor dem nächsten Paar. Keine Schwellenänderung.
+CPU- undWandgrenze sind jetzt getrennte JSON-Metadaten.
+
+Lokal per sha256sum bestätigt: beide alten Resultmanifeste, Phasecode,
+Timecode, Causal-Splitcode sowie excitation/dynamics/operator/outgoing/
+responses stimmen mit den imAdapter oder gehashten timecode gebundenen
+Hashes überein. Alte ARCHIVE-COPY-CHECK.txt belegen die archivierten
+benötigten .001theta0- und .002/Baseline-/theta90-Artefakte. Die NPZ selbst
+werden vollständig vom Adapter vor neuen Armen aufHash, Ringgitter,
+Zeiten undForm geprüft; keine lokale numerische NPZ-Auswertung behauptet.
+Causal-Splitcode wird ausschließlich für interval() importiert, keine
+kausalen Ergebnisdaten als Target geladen. Vorhandenes td.load_inputs
+bindet wie bisher Referenz/Ritz/Quelle/Antwort; nur sein h=.05-Modus wird
+entwickelt. Die mitgeladenen h=.025-Metadaten sind kein neuer h-Test.
+
+CLI (alle Pfade explizit, neuer leerer Ausgabeordner):
+python3 code.py --phase-code PHASE_CODE --time-code TIME_CODE
+ --split-code CAUSAL_SPLIT_CODE --excitation EXCITATION_CODE
+ --dynamics TIMESTEP_HALF_CODE --operator MODE_CODE --outgoing OUTGOING_CODE
+ --response-code FINE_RESPONSES_CODE --reference REFERENCE_MANIFEST
+ --source-dir HARMONIC_SOURCE_RUN --prepared-dir FINE_PREPARED
+ --response-dir FINE_RESPONSES_RUN --search-dir MODES_SEARCH
+ --observed-dir TIME_DOMAIN_RUN --phase-dir PHASE_CYCLE_RUN --out NEW_OUT
+Die Zeilen hier sind Dokumentation, kein ausgeführtes Shellkommando.
+Syntax-/Laufprüfung erst durch Root auf .69 nach Nichtautorprüfung.

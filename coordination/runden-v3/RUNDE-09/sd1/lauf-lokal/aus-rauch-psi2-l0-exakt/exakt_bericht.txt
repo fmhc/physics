@@ -1,0 +1,17 @@
+Runde 9 SD-1 exakt Kanal psi2, g = 0.2, l = 0, Start 2026-09-30T08:27:09+02:00, Geraet cpu, torch 2.10.0+cu128; sd1.py sha256 ee06078d54e019a3, bic2.py /home/fmh/fmhc-physics/coordination/runden-v3/RUNDE-07/bic2/bic2.py sha256 ee1ef6d226e8ec2c
+=== exakt U = S - S^2 + 0.5 S^3, h = 0.08, f_rand = 1e-08, x0 = 0.6459, rho0 = 1.6104
+  5 Profile (je bis 4.6 s), R = 33.44, r_m = 4.800
+  Newton (Pluecker) 0.9 s, konvergiert 5/5
+  Newton (direkt) 1.1 s, konvergiert 5/5, max |rho_direkt - rho_pluecker| = 8.36e-06
+  omega^2 | Re rho | Gamma Newton | Gamma Fluss | N_K | A_norm | arg A | sig_min/sig_2 | Wachstum
+    0.6458000 | 1.6102901648 | 2.1205e-10 | 2.1205e-10 | 3.89753e+01 | -1.080655e-05 -8.732285e-06i | -2.461959 | 4.6e-16 | 3.6e+00
+    0.6458800 | 1.6103882594 | 2.2188e-11 | 2.2201e-11 | 3.89173e+01 | +3.497507e-06 +2.824239e-06i | +0.679298 | 1.9e-16 | 3.6e+00
+    0.6459000 | 1.6104127821 | 9.0726e-11 | 9.0760e-11 | 3.89028e+01 | +7.071964e-06 +5.709636e-06i | +0.679214 | 4.2e-17 | 3.6e+00
+    0.6459200 | 1.6104373045 | 2.0558e-10 | 2.0564e-10 | 3.88883e+01 | +1.064579e-05 +8.593530e-06i | +0.679130 | 6.8e-16 | 3.6e+00
+    0.6460000 | 1.6105353905 | 1.1274e-09 | 1.1276e-09 | 3.88305e+01 | +2.493457e-05 +2.011398e-05i | +0.678795 | 2.8e-16 | 3.6e+00
+  Phasentest: Sprung zwischen Nachbarn - pi = -4.194e-04; Phase mod pi (rel. links aussen): +0.00e+00, -3.36e-04, -4.19e-04, -5.03e-04, -8.38e-04
+  Naechster Abstand zum Ursprung: d_min = 4.769e-12 bei omega^2 = 0.6458604337, |A'| = 2.2972e-01, d_min/|A'| = 2.076e-11 (Einheit omega^2), Fitrest 3.2e-11
+  s(x) = L(y_a) an L(y_b) = 0: 0.6458000: -8.9635e-07 (rho 1.610290263), 0.6458800: +2.9150e-07 (rho 1.610388227), 0.6459000: +5.8890e-07 (rho 1.610412717), 0.6459200: +8.8647e-07 (rho 1.610437205)
+  Nullstelle von W (linearer Fit, 20 Punkte): rho* = 1.6103642048, omega*^2 = 0.645860364, det J = -1.215e-02, cond J = 1.4e+02, Fitrest 4.7e-08, |Im|/|W| max 0.0e+00
+  Umlauf W auf Rechteck dx = 1.0e-04, drho = 3.675e-04 (50 Punkte): +1.0000, groesster Phasensprung 0.329 rad (aufgeloest: True), min |W| = 8.962e-07
+Ende 2026-09-30T08:27:31+02:00, 22.7 s; entfallen: nichts

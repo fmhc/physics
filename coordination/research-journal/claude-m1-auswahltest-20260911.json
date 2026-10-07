@@ -1,0 +1,31 @@
+{
+  "id": "claude-m1-auswahltest-20260911",
+  "time": "2026-09-11T21:05:00+02:00",
+  "time_kind": "completed",
+  "author": "Claude",
+  "topic": "binaries",
+  "status": "checked",
+  "title": "Die konditionierten Auswahlschnitte (NSS, Zufallspaar-R, RV) verschieben den gemessenen M1-Überschuss um höchstens 0,10 und kehren ihn nicht um",
+  "question": "Gauntlet-Veto C4 auf M1.2: Sind Paarfindung und die konditionierte RV/NSS/R-Auswahl vernachlässigbar für die Größe des Überschusses 1,30 gegen 1,07?",
+  "action": "Messseitiger Test auf TS440 (9 s): Γ mit dem korrigierten Schätzer x_k (exakt wie model._observe nominal) im beobachteten Katalog unter Varianten der Schnitte neu gebildet, auf einem gelockerten Pool von 599.097 Paaren; Kontrolle reproduziert 18.051 Paare und Γ = 1,30158651067974 auf 3·10⁻¹⁴; Bootstrap 300 Ziehungen.",
+  "result": "Ohne R_chance-Schnitt 1,405 (+0,10, 0,8 Bootstrap-sd), ohne NSS 1,315, ohne beide 1,397, R < 0,001: 1,369, beide RVs statt einer 1,267, ohne Hauptreihenschnitt 1,366, ev ≤ 0,10: 1,369, ev ≤ 0,03: 1,206. Bootstrap-Streuung des nominalen Γ 0,126 (269 Paare im schwächsten Bin). RV-Verfügbarkeit ist Voraussetzung des Schätzers, nicht weglassbar.",
+  "meaning": "Auf der Messseite sind NSS- und R-Schnitt keine tragende Ursache des Überschusses; das Vernachlässigbarkeits-Kriterium (unter einer Bootstrap-Streuung) ist erfüllt, aber knapp. Nicht belegt bleibt die Modellseite: ob die Abhängigkeit der Auswahl von verrauschten Größen den Modellwert verschiebt, weil die R-Statistik im Vorwärtsmodell nicht nachgebildet ist. Die statistische Streuung des gemessenen Γ (0,126) ist mehr als die Hälfte des Abstands, das ist die eigentliche Grenze der Aussage.",
+  "sources": [
+    {
+      "path": "coordination/m1-auswahl-20260911.md",
+      "label": "Bericht",
+      "sha256": "167c5c684ddc4fa75f4859bc58b5c199fcd2e2d03db7ae9c1f3794296aad57f0"
+    },
+    {
+      "path": "coordination/claude-m1-auswahl-20260911/runs/claude-m1-auswahl-20260911-b/output/ERGEBNIS.json",
+      "label": "Ergebnis",
+      "sha256": "1469aafc35156610beb84b83780ee6292c3bc4c1eb25ced56ec40f6038fd2220"
+    },
+    {
+      "path": "coordination/claude-m1-auswahl-20260911/run_m1sel.py",
+      "label": "Skript",
+      "sha256": "76ab908ea58f9858356057ff15167ed78c532f3e59d741b5d69a1d384d83285a"
+    }
+  ],
+  "recorded_at": "2026-09-11T19:21:42.050342+00:00"
+}

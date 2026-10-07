@@ -1,0 +1,70 @@
+\section{Separate numerical-method controls}\label{app:method-controls}
+The original finite-correlation field calculation remains a numerical
+acceptance failure, and no accepted OU mean is inferred from it. A separate
+constant-source control exposed a finite-step defect in the RK4 quadratic
+balance: an exact finite-step RK4 identity reproduced the stored endpoint and
+accumulated-rate discrepancies, within the prescribed floating-point
+comparison tolerances, for 27 case--step combinations sampled at 31 times
+each. This identifies the numerical mechanism in those controls, not the
+complete cause of the earlier spatial-field failure. A subsequent two-stage
+Gauss control evaluated nine constant-system cases (three damping rates and
+three complex sources) at three time steps. Its recorded acceptance checks
+passed, including independent exact-state and directly integrated-rate
+references at the finest step, the prescribed error non-growth checks, and
+rejection of an intentionally incorrect rate. The conclusion therefore does
+not rest solely on Gauss's algebraic quadratic-balance property. These
+controls alone do not validate the original physical-pulse field calculation
+or decide the OU-versus-Wiener comparison; the subsequent prescribed-pulse
+calculation is reported separately in the main text.
+
+A subsequent spatial adapter used a smooth manufactured solution on the actual
+finite operator with $R=20$, $h=0.04$ and 499 interior nodes, through $T=1$.
+It covered nine damping rates $\lambda=1,11,\ldots,81$ and a separate zero
+control at time steps $0.005$, $0.0025$ and $0.00125$.
+Independent full-state references and direct integral references for five
+original rates and three modified quadratic rates passed their finest-step
+accuracy checks and prescribed error non-growth checks, with a non-author
+result review supporting the recorded outcome.
+This control alone validates only the manufactured solution, not the prescribed
+physical pulse, an OU mean, or a continuum limit.
+
+The finite-step comparison and the Gauss control have separate non-author
+result reviews. Their fixed plans, results and reviews are recorded under
+\path{coordination/resonance-20260930/source-shaping-20261001/phase-diffusion/finite-correlation/diagnostic-step/},
+in \path{recurrence-check/} and \path{gauss-control/}, respectively; the spatial
+adapter's separate result and review are in \path{gauss-control/spatial-manufactured/}.
+The small-correlation-time derivation and its independent paper review are
+recorded in \path{gauss-control/}. These local method checks are not
+additional physical findings or interval-certified integration errors.
+The subsequent physical-pulse comparison, with its own fixed plan, result,
+non-author review and figure receipts, is recorded in
+\path{coordination/resonance-20260930/source-shaping-20261001/phase-diffusion/finite-correlation/gauss-physical/}.
+Its \path{exterior-sensitivity/} subdirectory records the separate $R=30$
+comparison, fixed decision rule, retained $R=20$ reference and non-author
+result review. No historical trajectory was rerun for that comparison.
+The accepted signed-lag calculation, its fixed plan, independent result
+review and stored-data figure are recorded in \path{kernel-mechanism/},
+another subdirectory of \path{gauss-physical/}, with
+\path{out/RESULT.json}, \path{RESULT-REVIEW.txt} and \path{figure/out/}.
+The restricted weak-potential discussion follows the project model review
+and its independent algebraic reading in
+\path{coordination/resonance-20260930/qstern-paper-review/}, namely
+\path{REVIEW-ROOT.txt} and \path{REVIEW-MODEL-NONAUTHOR.txt}; the latter
+is not a new audit of the numerical matching claims.
+The angular second-variation derivation, fixed plan, code and result reviews
+are in \path{coordination/resonance-20260930/formation-next-20261002/};
+the accepted result is \path{execution-r2/out/RESULT.json}, and the
+stored-data figure is in \path{figure/out/}. The preceding import-only
+adapter failure remains recorded separately. The subsequent continuum
+preparation-energy identity and its algebraic review are explanatory
+checks, not additional prospective gates or physical replications.
+The separately specified energy-compensated chirp tangent, its derivation,
+plan and code are in the \path{fixed-energy/} subdirectory of
+\path{formation-next-20261002/}, with the new stored result in
+\path{execution/out/RESULT.json}. Its reference angular second variation
+retains its original result and provenance; it was not evolved again.
+The energy-compensated comparison figure uses the stored data and receipt
+in \path{fixed-energy/figure/out/}. Its separate local-clock check is in
+\path{fixed-energy/time-shift/}, including the derivation, fixed endpoint
+plan and \path{execution/out/RESULT.json}; it reuses the existing Cauchy
+states rather than evolving another trajectory.

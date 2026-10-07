@@ -1,0 +1,75 @@
+--- induziert-dichte-2d/code/dichte2d.py.eingefroren-20261004-073639	2026-10-04 07:36:39.379691163 +0200
++++ induziert-dichte-2d-grob/code/dichte2d_grob.py	2026-10-04 09:12:03.039944130 +0200
+@@ -23,6 +23,10 @@
+   python dichte2d.py kontrolle <aus.json>
+   python dichte2d.py fest <N> <saat0> <anzahl> <aus.json> <n-Liste> <S>
+   python dichte2d.py dichte <N> <saat0> <anzahl> <aus.json> <n-Liste> <S-Liste> [richtungen=r000,r090] [intr=0/1]
++
++INDUZIERT-DICHTE-2D-GROB (Runde 38): Kopie von dichte2d.py (eingefroren 20261004-073639) mit L als Argument.
++  Neu im Modus dichte: Option A=<Torusflaeche>, L = sqrt(A) (Vorgabe A = N, also L = sqrt N wie eingefroren).
++  Randstreifen RAND gilt in mittleren Abstaenden L/sqrt(N) (bei L = sqrt N unveraendert 8). Sonst nichts geaendert.
+ """
+ import json
+ import math
+@@ -47,9 +51,9 @@
+ 
+ 
+ # ---------------------------------------------------------------------- Grundpunkte, Abbildung psi
+-def grundpunkte(N, saat):
++def grundpunkte(N, saat, L=None):
+     rng = np.random.default_rng([SAAT_BASIS, int(N), int(saat)])
+-    L = math.sqrt(N)
++    L = math.sqrt(N) if L is None else L
+     return rng.uniform(0.0, L, size=(N, 2)), L
+ 
+ 
+@@ -97,13 +101,14 @@
+     """Delaunay der Punkte plus Randstreifen der Breite RAND aus den 8 Nachbarkopien (Qhull); behalten werden die
+     Dreiecke mit Schwerpunkt im Grundbereich (genau ein Bild je Torusdreieck), Ecken modulo N, Orientierung > 0."""
+     N = pos.shape[0]
++    rand = RAND * (L / math.sqrt(N))     # RAND in mittleren Abstaenden; bei L = sqrt N genau 8
+     tp, ti = [pos], [np.arange(N)]
+     for a in (-1, 0, 1):
+         for b in (-1, 0, 1):
+             if a == 0 and b == 0:
+                 continue
+             q = pos + np.array([a, b], dtype=float) * L
+-            m = (q[:, 0] > -RAND) & (q[:, 0] < L + RAND) & (q[:, 1] > -RAND) & (q[:, 1] < L + RAND)
++            m = (q[:, 0] > -rand) & (q[:, 0] < L + rand) & (q[:, 1] > -rand) & (q[:, 1] < L + rand)
+             tp.append(q[m])
+             ti.append(np.nonzero(m)[0])
+     P = np.concatenate(tp)
+@@ -271,18 +276,19 @@
+ 
+ 
+ # ---------------------------------------------------------------------- Modi
+-def modus_dichte(N, saat0, anzahl, ziel, nlist, Slist, richtungen, mit_intr, protokoll, out):
+-    out.update({"N": N, "L": math.sqrt(N), "nlist": nlist, "S": Slist, "richtungen": richtungen,
++def modus_dichte(N, saat0, anzahl, ziel, nlist, Slist, richtungen, mit_intr, protokoll, out, A_torus=None):
++    A_torus = float(N) if A_torus is None else float(A_torus)
++    out.update({"N": N, "L": math.sqrt(A_torus), "A": A_torus, "nlist": nlist, "S": Slist, "richtungen": richtungen,
+                 "mit_intr": mit_intr, "saaten": []})
+     for saat in range(saat0, saat0 + anzahl):
+         t0 = time.time()
+-        z, L = grundpunkte(N, saat)
++        z, L = grundpunkte(N, saat, math.sqrt(A_torus))
+         n0 = periodisches_netz(z, L, "basis")
+         p0 = netz_pruefen(n0, n0.l0)
+         p0_z2 = n0.pruefen()
+         g0 = n0.gamma(n0.l0)
+         sch0 = kanten_schluessel(n0)
+-        A = float(N)
++        A = A_torus
+         pts = []
+         for rn in richtungen:
+             r = RICHTUNGEN[rn]
+@@ -535,7 +541,8 @@
+         opt = dict(a.split("=", 1) for a in sys.argv[8:])
+         richt = opt.get("richtungen", "r000,r090").split(",")
+         mit_intr = opt.get("intr", "0") == "1"
+-        modus_dichte(N, saat0, anzahl, ziel, nlist, Slist, richt, mit_intr, protokoll, out)
++        A_torus = float(opt["A"]) if "A" in opt else None
++        modus_dichte(N, saat0, anzahl, ziel, nlist, Slist, richt, mit_intr, protokoll, out, A_torus)
+     else:
+         raise SystemExit("unbekannter Modus")
+     out["laufzeit_gesamt_s"] = time.time() - t0

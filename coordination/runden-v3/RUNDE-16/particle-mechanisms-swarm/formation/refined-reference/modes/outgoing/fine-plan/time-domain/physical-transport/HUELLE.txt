@@ -1,0 +1,125 @@
+VORABNACHTRAG: LOKALE AUSWERTESENSITIVITÄT STATT ROHER KANTENHÜLLE
+particle_core, 2026-10-03. Nur Papier, keine neuen Daten gelesen/ausgewertet.
+PLAN.txt bleibt unverändert. Kein Code-/Laufauftrag durch diesen Nachtrag.
+
+1. BEFUND UND EMPFEHLUNG VOR EINEM LAUF
+Roots Einwand trifft zu: 64eps*k*(|cL|+|cR|)² setzt bereits der ruhenden
+Vakuumkante eine O(eps)*k-Skala zu. Das folgt nicht aus dem lokalen
+Rechenweg d=cR-cL; d². Für d=0 ist der fortgepflanzte Differenzfehler
+im Quadrat von zweiter Ordnung. Die bisherige H_Gedge ist zwar eine sehr
+grobe Betragsreserve, kann aber im Summieren vieler Vakuumkanten eine
+künstliche Unterauflösung erzeugen. Vor Lauf ist ihre Ersetzung durch
+eine operationsbezogene Fehlerfortpflanzung sachlich erforderlich.
+Das ist eine prospektive Präzisierung der Auswertesensitivität, keine
+Lockerung der Faktoren10 oder anderer physikalischer Zuordnungstore.
+Neue Planfassung/Abnahme muss sie ausdrücklich binden, nicht still ändern.
+
+2. WAS DIE SCHRANKE BESCHREIBT
+Gespeicherte float64-Werte sind Eingaben, nicht als exakte physikalische
+Trajektorien zertifiziert. Ziel: lokale Rundung der NEUEN Auswertung
+und klar erklärte hypothetische lokale Eingangsstörung beschreiben.
+Keine Schranke für vorherige Zeitentwicklung, Paar-Auslöschung,
+Zeitinterpolation, Quadratur-/Aliasingfehler oder höhere Physikfehler.
+Implementierungsumfang: nur diese festen lokalen Float64-Formeln parallel
+zu den Beobachtungsgrößen; keine allgemeine Intervall-/Ballbibliothek.
+Normale endliche Gleitkommazahlen, keine Über-/Unterläufe vorausgesetzt;
+solche Ausnahmen wären INCOMPLETE. u=float64-Maschinenepsilon und
+ gamma_m=m*u/(1-m*u). Dies verwendet Maschinenepsilon konservativ
+statt der kleineren Rundungseinheit u/2. Gezählt werden reale Operationen;
+für komplexe Ausdrücke deren reale Zerlegung. gamma64 darf als feste
+obere LOKALE Operationsreserve verwendet werden, aber nicht als Behauptung
+von höchstens64 Operationen über sämtliche Raum-/Zeitsummen.
+
+3. REELLE KANTENDIFFERENZ UND QUADRAT
+Hat kennzeichnet berechnete Werte. Mit
+ d=cR-cL, dhat=fl(cR-cL), e_d>=|dhat-d|,
+ e_d=gamma1*(|cR|+|cL|)
+steht eine konservative absolute Differenzschranke zur Verfügung.
+Für ausgewiesene lokale Eingangsstörungen e_L,e_R kämen diese zusätzlich
+hinzu; nicht heimlich als bereits kontrollierte Evolutionsfehler setzen.
+Mit shat=fl(dhat*dhat) gilt
+ |shat-d²| <= 2|dhat|e_d+e_d²+gamma1*|dhat|².
+Die letzten Multiplikationsrundungen und k/.5-Faktoren separat propagieren.
+Insbesondere dhat=0: e_d² statt O(eps)*(|cL|+|cR|)².
+Bei exakt gespeicherten cL=cR=1 ist sogar die Subtraktion exakt0; die
+allgemeine Formel bleibt konservativ O(eps²). Es wird kein positives
+Vakuumenergierauschen ersterOrdnung aus einer expandiertenQuadratform
+künstlich eingeführt. Nicht cR²-2cRcL+cL² berechnen.
+
+Für die komplexe Kante pR-pL denselben Schritt pro Real-/Imaginärteil,
+danach die beiden Quadratfehler und Rundung ihrer Addition summieren.
+Alternativ normweise mit ausreichend konservativem e_dp:
+ error(|dphat|²) <= 2|dphat|e_dp+e_dp²+gamma_m|dphat|².
+Damit lokale Fehler der tatsächlichen Gedge=k(|dp|²+.5dc²) bilden;
+keine erneute Multiplikation mit64eps NACH fertiger Fehlerfortpflanzung.
+
+4. ENERGIEFLUSS: TATSÄCHLICHE KLEINE FAKTOREN ERHALTEN
+Reeller Anteil FE_chi=-.5*k*W*d, W=wL+wR.
+Sei e_W>=|What-W|, z.B. gamma1(|wL|+|wR|). Dann vor Vorfaktoren
+ error(fl(What*dhat)) <= |What|e_d+|dhat|e_W+e_W*e_d
+                         +gamma1|What*dhat|.
+Ein O(eps)-Differenzfehler wird also mit dem TATSÄCHLICHEN kleinen W
+multipliziert, nicht mit einem künstlichen O(1)-Geschwindigkeitshüllwert.
+Für exakt wL=wR=0 verschwindet diese neue lokale Flussfehlerreserve;
+eine hypothetische frühere Geschwindigkeitsstörung wäre separat nötig.
+
+Komplexer Anteil FE_phi=-k Re(conj(V)*dp), V=vL+vR:
+ error <= |Vhat|e_dp+|dphat|e_V+e_V*e_dp
+          +gamma_m |Vhat|*|dphat|,
+mit realer/komplexer Multiplikations-/Additionsrundung korrekt gezählt.
+Für FQ=-2k Im(conj(pL)*pR) analoge Produktfortpflanzung mit e_pL,e_pR
+und Rundung des tatsächlichen komplexenProdukts. Eine kleine Imaginär-
+komponente allein darf nicht als Reserve des subtrahiertenProdukts dienen.
+Für FG=FE-omega FQ Fehler FE +|omega|FehlerFQ plus Rundung des Produktes
+und der letzten Subtraktion addieren; keine günstige Fehlerkompensation.
+
+5. RÜCKREKONSTRUKTION UND STABILES POTENTIAL
+Gespeichert sind z=phi exp(-iomega t), d=rotierendeAbleitung, nicht v.
+Berechne vhat=fl(d+iomega*z). Ein konservatives e_v enthält die
+Multiplikations-/Additionsrundungen, etwa gamma_m(|d|+|omega||z|).
+Wenn d und iomega*z sich auslöschen, darf e_v nicht proportional nur
+zu |vhat| angesetzt werden. Bei Energie |v|² ist anschließend
+ 2|vhat|e_v+e_v²+gamma_m|vhat|²
+zu propagieren. Bei FE gehen vhat UND e_v in die Produktformel ein.
+Diese Reserve deckt nicht die frühere Herstellung des gespeicherten d.
+
+Potential fest als .25*g²+(1+c²)s-s²+.5s³, s=|p|²,
+ g=(c-1)*(c+1). Für a=c-1,b=c+1 ihre lokalen Fehler e_a,e_b bestimmen,
+ e_g<=|ahat|e_b+|bhat|e_a+e_a*e_b+gamma1|ahat*bhat|.
+Dann Quadratfortpflanzung auf g² wie§3. Bei c=1,g=0 bleibt auch diese
+Vakuumreserve zweiterOrdnung; kein expandiertes c^4-2c²+1.
+s,s²,s³ und ihre Multiplikations-/Additionsfehler entsprechend propagieren.
+Die finale Summe mit -s² benötigt absolute Summanden für ihre Rundung;
+keine Annahme, dass Potentialterme unabhängige Fehler besitzen.
+
+6. RAUMSUMMEN, PAARE UND ZEITINTEGRALE
+Kanten-/Onsitefehler mit denselben V/k und halben Grenzkanten wie PLAN.
+Zusätzliche Summationsreserve separat, z.B. gamma_(n-1)*Sum|Summanden|
+für n sequenzielle Summanden. Das gilt auch als konservative Obergrenze
+bei günstigerer paarweiserSummation; kein globales fixesgamma64 dafür.
+Multiplikationen mit Gewichten ebenfalls zählen. Grenzfall n=1 hat
+keine Summationsrundung. Für Differenzen/Paarmittel erst Fehler der
+physischenObservablen addieren, dann Rundung ihrer gewichteten Kombination.
+So wird ein kleiner Paarwert nicht zum falschen Maßstab seiner Vorwerte.
+
+FensterendpunktInterpolation: lokale Rechenrundung fortpflanzen, ihren
+NICHT kontrollierten Approximationsfehler weiterhin über die unveränderte
+.1/.2-Abtastdiagnose offen behandeln. Integrale: positive gewichteteSumme
+der lokalenFlussfehler plus tatsächliche Quadratur-/Summationsrundung.
+Hier Integral, kein Zeitmittel. Bilanzrestreserve zusätzlich aus beiden
+Speicherendpunkten und beidenGesichtsintegralen. Bereits berechnete
+Fehleroberwerte nicht erneut mit64eps kleinmultiplizieren.
+
+7. ENTSCHEIDUNG UND UNVERÄNDERTE GRENZEN
+Die fehlerfortgepflanzte eta ersetzt vorab die rohe64eps-Betragshülle
+für diese neue Auswertung; u-Bildung, direktesdt/.2-Sampling, Bilanzmax
+und unverändert J>10*u aus PLAN bleiben bestehen.
+Null/fehlendeReserve bleibt wie vereinbart unaufgelöst. Keine Rohwerte
+wurden zur Auswahl dieses Nachtrags eingesehen. Die Vakuum-/Chi-Fluss-QA
+soll zusätzlich das erwartete Verschwinden bzw. die quadratische kleine
+Differenzsensitivität der Formeln prüfen, nicht neue Physiktore eröffnen.
+
+Auch die verbesserte eta zertifiziert keine absolutePhysikgenauigkeit.
+Gemeinsame Bilanzblindstellen und unerkannte Abtastfehler bleiben.
+Vor Implementierung: Nichtautorprüfung der einzelnen Fortpflanzungen und
+neue explizite Planbindung erforderlich; bisheriger Plan bleibt Archiv.

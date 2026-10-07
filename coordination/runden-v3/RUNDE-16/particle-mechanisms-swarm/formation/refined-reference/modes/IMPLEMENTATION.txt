@@ -1,0 +1,30 @@
+Implementierungsstand 02.10.2026, keine Ausführung durch Autor
+code.py SHA256
+467ad3e19cd8efcdac4ec2dcc670b50aaa59cc6f7e9e44d625ebbf94ba0d32c6.
+Gebundener PLAN.txt 99acc3a864f3d6264ddf8d0b105a19e796a4ddbf758667704b61fa9a0a1b8136
+bleibt unverändert. Seine damalige Schlussaussage „noch kein Suchcode“ wird
+durch diese getrennte Implementierungsnotiz fortgeschrieben.
+
+CLI --reference VERZEICHNIS_MIT_MANIFEST_UND_NPZ --out NEUER_ORDNER --qa-only.
+Ohne --qa-only feste Kandidatensuche. QA-only: gemischter kanonischer
+Ableitungsanker/Mutante, gesamte Hesse-Richtungsableitung, freie kleine
+240x240-Matrix gegen40x40-Laplace-Seitenbandreferenz; vier Profil-/Phase-/
+Boxprüfungen. Keine Sparse-Modensuche in QA-only.
+
+Produktion: exakt feste2Shifts*k4*4Diskretisierungen. Nach jeder Aufgabe
+RESULT atomisch speichern; jede abgeschlossene Ritzserie als NPZ mit Hash.
+Partielle ARPACK-Konvergenz archivieren, dann INCOMPLETE. Zwischen Aufrufen
+Checkpoint25CPU-s; äußeres Rootlimit30s wie Review maßgeblich. Keine
+Worker-/Watchdog-Dienste. Ein blockierter nativer Aufruf kann vom äußeren
+Timeout beendet werden, dann letzte vollständige RESULT-Datei verwenden.
+
+Matcher benutzt exact-volume Restriction auf gemeinsamem gröberen Gitter,
+komplexen absoluten Überlapp und erhaltene Norm auf gemeinsamer Box.
+Verschiedene nahe Treffer innerhalb derselben Vergleichstoleranz bleiben
+explizit ambiguous, kein Mehrheitsentscheid. Shift-Duplikate am selben
+Anker und jedem Zielgitter werden nur mit Frequenz UND Überlapp zusammengefasst.
+
+Alle festgelegten physikalischen/technischen Grenzen sind unverändert.
+Keine Vollständigkeit, keine Aussage zu komplexen Instabilitäten außerhalb
+der gefundenen Ritzwerte. Die gemessene Ausführungszeit und der RAMbedarf
+liegen noch nicht vor. Autor hat ausschließlich geschrieben und gelesen.

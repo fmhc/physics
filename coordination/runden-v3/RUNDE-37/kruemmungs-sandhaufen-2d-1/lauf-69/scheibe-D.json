@@ -1,0 +1,349 @@
+{
+ "karte": "KRUEMMUNGS-SANDHAUFEN-2D-1",
+ "modus": "lauf",
+ "code_sha256": "f2c3627a491136dc13adc7fa081a79971fb1428a12d8c2461912ebbaec2a0f18",
+ "python": "3.12.3",
+ "numpy": "2.4.4",
+ "scipy": "1.18.0",
+ "host": "ubuntu-auto",
+ "start_utc": "2026-10-05T09:41:19Z",
+ "rauch": false,
+ "argv": [
+  "lauf",
+  "--geo",
+  "scheibe",
+  "--arm",
+  "D",
+  "--N",
+  "500,2000,8000",
+  "--budget",
+  "50,90,300",
+  "--seed",
+  "14",
+  "--out",
+  "lauf/scheibe-D"
+ ],
+ "konstanten": {
+  "SMIN": 2,
+  "CAPF": 50,
+  "RELAXF": 100,
+  "EINF": 10,
+  "EIN_ANTEIL": 0.4,
+  "MMAX": 300000,
+  "VOLLPRUEF": 2000,
+  "REIHE": 1000,
+  "BTW_EINF": 2
+ },
+ "geo": "scheibe",
+ "arm": "D",
+ "seed": 14,
+ "faelle": [
+  {
+   "netz": {
+    "bau": "Delaunay: N_rand Punkte gleichabstaendig auf dem Einheitskreis, N - N_rand gleichverteilt im Kreis vom Radius 1 - h/2",
+    "saat": 2500,
+    "versuch": 0,
+    "N_rand": 79,
+    "F": 919,
+    "N": 500,
+    "E": 1418,
+    "chi": 1,
+    "innere_kanten": 1339
+   },
+   "relax": {
+    "s": 1376,
+    "T": 35,
+    "A": 178,
+    "status": 3,
+    "instabil_danach": 42
+   },
+   "einschwingen": {
+    "soll": 5000,
+    "schritte": 301,
+    "zeit_s": 19.66,
+    "zeitbegrenzt": true
+   },
+   "messung": {
+    "schritte": 203,
+    "zeit_s": 30.07,
+    "mmax": 300000,
+    "budget_s": 50.0
+   },
+   "kh0": {
+    "verletzungen": {
+     "summe": 0,
+     "grad": 0,
+     "kanten": 0,
+     "doppel": 0
+    },
+    "pruef_schritte": 505,
+    "vollpruefungen": 4,
+    "vollpruefung_fehler": []
+   },
+   "zaehler": {
+    "extra_antrieb": 0,
+    "blockiert_versuche": 0,
+    "pruef_schritte": 505,
+    "antrieb_fehlversuche": 42
+   },
+   "cap": 25000,
+   "zeitreihe_spalten": [
+    "schritt",
+    "s_mittel_1000",
+    "defektanteil",
+    "q2_mittel",
+    "instabil",
+    "rand_grad_mittel",
+    "rand_grad_max",
+    "grad_min",
+    "grad_max"
+   ],
+   "zeitreihe_einschwingen": [],
+   "zeitreihe_messung": [],
+   "grad_hist_innen_start": {
+    "3": 4,
+    "4": 47,
+    "5": 102,
+    "6": 133,
+    "7": 86,
+    "8": 34,
+    "9": 11,
+    "10": 4
+   },
+   "grad_hist_innen_ende": {
+    "3": 28,
+    "4": 67,
+    "5": 71,
+    "6": 80,
+    "7": 117,
+    "8": 30,
+    "9": 13,
+    "10": 7,
+    "11": 2,
+    "12": 1,
+    "14": 1,
+    "15": 2,
+    "19": 1,
+    "40": 1
+   },
+   "rand_grad_ende": {
+    "mittel": 3.367088607594937,
+    "min": 3,
+    "max": 6
+   },
+   "instabil_ende": 153,
+   "zeit_fall_s": 50.17,
+   "name": "scheibe-D-N500",
+   "geo": "scheibe",
+   "arm": "D",
+   "N": 500,
+   "r": 0.0,
+   "npz": "scheibe-D-scheibe-D-N500.npz"
+  },
+  {
+   "netz": {
+    "bau": "Delaunay: N_rand Punkte gleichabstaendig auf dem Einheitskreis, N - N_rand gleichverteilt im Kreis vom Radius 1 - h/2",
+    "saat": 4000,
+    "versuch": 0,
+    "N_rand": 159,
+    "F": 3839,
+    "N": 2000,
+    "E": 5838,
+    "chi": 1,
+    "innere_kanten": 5679
+   },
+   "relax": {
+    "s": 18332,
+    "T": 75,
+    "A": 949,
+    "status": 3,
+    "instabil_danach": 274
+   },
+   "einschwingen": {
+    "soll": 20000,
+    "schritte": 156,
+    "zeit_s": 35.79,
+    "zeitbegrenzt": true
+   },
+   "messung": {
+    "schritte": 162,
+    "zeit_s": 54.95,
+    "mmax": 300000,
+    "budget_s": 90.0
+   },
+   "kh0": {
+    "verletzungen": {
+     "summe": 0,
+     "grad": 0,
+     "kanten": 0,
+     "doppel": 0
+    },
+    "pruef_schritte": 319,
+    "vollpruefungen": 4,
+    "vollpruefung_fehler": []
+   },
+   "zaehler": {
+    "extra_antrieb": 0,
+    "blockiert_versuche": 0,
+    "pruef_schritte": 319,
+    "antrieb_fehlversuche": 23
+   },
+   "cap": 100000,
+   "zeitreihe_spalten": [
+    "schritt",
+    "s_mittel_1000",
+    "defektanteil",
+    "q2_mittel",
+    "instabil",
+    "rand_grad_mittel",
+    "rand_grad_max",
+    "grad_min",
+    "grad_max"
+   ],
+   "zeitreihe_einschwingen": [],
+   "zeitreihe_messung": [],
+   "grad_hist_innen_start": {
+    "3": 22,
+    "4": 194,
+    "5": 496,
+    "6": 529,
+    "7": 368,
+    "8": 154,
+    "9": 54,
+    "10": 19,
+    "11": 3,
+    "12": 2
+   },
+   "grad_hist_innen_ende": {
+    "3": 52,
+    "4": 194,
+    "5": 429,
+    "6": 417,
+    "7": 603,
+    "8": 85,
+    "9": 35,
+    "10": 15,
+    "11": 7,
+    "12": 2,
+    "14": 1,
+    "15": 1
+   },
+   "rand_grad_ende": {
+    "mittel": 3.779874213836478,
+    "min": 3,
+    "max": 6
+   },
+   "instabil_ende": 392,
+   "zeit_fall_s": 91.19,
+   "name": "scheibe-D-N2000",
+   "geo": "scheibe",
+   "arm": "D",
+   "N": 2000,
+   "r": 0.0,
+   "npz": "scheibe-D-scheibe-D-N2000.npz"
+  },
+  {
+   "netz": {
+    "bau": "Delaunay: N_rand Punkte gleichabstaendig auf dem Einheitskreis, N - N_rand gleichverteilt im Kreis vom Radius 1 - h/2",
+    "saat": 10000,
+    "versuch": 0,
+    "N_rand": 317,
+    "F": 15681,
+    "N": 8000,
+    "E": 23680,
+    "chi": 1,
+    "innere_kanten": 23363
+   },
+   "relax": {
+    "s": 800000,
+    "T": 823,
+    "A": 3795,
+    "status": 2,
+    "instabil_danach": 1106
+   },
+   "einschwingen": {
+    "soll": 80000,
+    "schritte": 23,
+    "zeit_s": 94.4,
+    "zeitbegrenzt": true
+   },
+   "messung": {
+    "schritte": 122,
+    "zeit_s": 179.6,
+    "mmax": 300000,
+    "budget_s": 300.0
+   },
+   "kh0": {
+    "verletzungen": {
+     "summe": 0,
+     "grad": 0,
+     "kanten": 0,
+     "doppel": 0
+    },
+    "pruef_schritte": 146,
+    "vollpruefungen": 4,
+    "vollpruefung_fehler": []
+   },
+   "zaehler": {
+    "extra_antrieb": 0,
+    "blockiert_versuche": 0,
+    "pruef_schritte": 146,
+    "antrieb_fehlversuche": 2
+   },
+   "cap": 400000,
+   "zeitreihe_spalten": [
+    "schritt",
+    "s_mittel_1000",
+    "defektanteil",
+    "q2_mittel",
+    "instabil",
+    "rand_grad_mittel",
+    "rand_grad_max",
+    "grad_min",
+    "grad_max"
+   ],
+   "zeitreihe_einschwingen": [],
+   "zeitreihe_messung": [],
+   "grad_hist_innen_start": {
+    "3": 86,
+    "4": 823,
+    "5": 1983,
+    "6": 2298,
+    "7": 1507,
+    "8": 681,
+    "9": 228,
+    "10": 56,
+    "11": 18,
+    "12": 3
+   },
+   "grad_hist_innen_ende": {
+    "3": 171,
+    "4": 562,
+    "5": 2010,
+    "6": 1896,
+    "7": 2562,
+    "8": 387,
+    "9": 58,
+    "10": 23,
+    "11": 10,
+    "12": 3,
+    "13": 1
+   },
+   "rand_grad_ende": {
+    "mittel": 3.8864353312302837,
+    "min": 3,
+    "max": 7
+   },
+   "instabil_ende": 1215,
+   "zeit_fall_s": 301.31,
+   "name": "scheibe-D-N8000",
+   "geo": "scheibe",
+   "arm": "D",
+   "N": 8000,
+   "r": 0.0,
+   "npz": "scheibe-D-scheibe-D-N8000.npz"
+  }
+ ],
+ "ende_utc": "2026-10-05T09:48:41Z",
+ "maxrss_MB": 89.86328125
+}

@@ -1,0 +1,66 @@
+{
+  "id": "s2-s3-sw-1-20260921",
+  "time": "2026-09-21T01:45:00+02:00",
+  "time_kind": "document",
+  "author": "claude-primary (Anthropic, Opus 5)",
+  "topic": "theory",
+  "status": "checked",
+  "title": "S2/S3 zu SW-1: DeepSeek reproduziert U(Z3) = 0,3300580 bitgleich, faellt aber in eine Vertragsluecke und bekommt T",
+  "question": "Stimmen alle Berichtszahlen des Laufs SW-1 mit der Ergebnisdatei, ist U + V + R = 1 nur Kontrolle, sind die vier Nullproben unabhaengig, und traegt DeepSeeks Einwand, der Ausgang A sei durch die Amplitudenklemmung vorbestimmt?",
+  "action": "S3-Gegenlesen jeder Kennzahl gegen ERGEBNIS-SW-1.json und PRUEFE-SW-1.json (belege/s3_gegenlesen.py, s3_nachtrag.py, beide auf .69 in begrenzten User-Units). S2-Reproduktion durch das Haus DeepSeek (deepseek/deepseek-v4.1-flash, OpenRouter, reasoning aus, max_tokens 8000, 0,00757593 USD von 0,40 USD Deckel, Reserve 1,00 USD unangetastet): mechanisch erzeugtes Paket aus Vertragstext plus Beschreibung der gespeicherten Rohdaten, kein Laufskript, keine Ergebnisdatei, kein Bericht, keine Sonde. DeepSeek wurde gewaehlt, weil es den Vertrag im S0-Fremdreview NICHT freigegeben hatte. Sein Skript (305 Zeilen, sha256 1c65c3a2...) wurde zeilenweise auf Vertragstreue geprueft, ohne eine einzige Korrektur unveraendert auf fmh@192.168.178.69 ausgefuehrt (systemd-run --user, CPUQuota 100 %, MemoryMax 8G, RuntimeMaxSec 7200, 1274,6 s) und zusaetzlich ein zweites Mal mit genau einer geaenderten Zeile je Zelle (Vertragsluecke L1 gefuellt, 1380,1 s).",
+  "result": "S3: alle Kennzahlen des Berichts stimmen mit der Ergebnisdatei (Entscheidungszelle, Lastreihe, Randbilanz, vier Nullproben, K0 bis K9, Verstimmungsscan, Umeichung). Drei Ungenauigkeiten: Bericht 6.4 nennt beim Bilanzrest je Schrittweite die Werte der Nullprobenzellen (5,2e-12 / 3,4e-13 / 1,5e-14) statt der Maxima (5,243e-12 / 6,104e-13 / 2,646e-13) und widerspricht Bericht 5 -- die Entscheidungszelle faellt von h = 2e-3 auf 1e-3 nur um den Faktor 1,04 statt wie h^4; die Anschwingzeit-Vorhersage unterschaetzt in V4, V8 und fuenf von zwoelf Z3-Gliedern; K5-P2 ist nur ueber den Bilanzrest erfuellt, die Entgleisung bei t = 804 liegt ausserhalb des Fensters [200, 400]. U ist keine Definition: es weicht von 1 - V - R um 2,48e-13 ab, und in den Nullproben waere 1 - V - R = -3,4e-13 statt der gemessenen 0,0. Die vier Nullproben sind NICHT unabhaengig: alle senken dieselbe Wachstumsrate s(delta) unter null, auf nur drei Achsen. Elf Vertragsluecken L1 bis L11 hat das Laufskript selbst gefuellt; sie stehen nur in der Ergebnisdatei, nicht im Startsignal und nicht im Bericht, obwohl Vertrag 11.5 beides verlangt, und L4 ist als ausgangsbestimmend markiert. S2: DeepSeek trifft U(Z3) = 0,3300580366748691 bitgleich, ebenso U(Z2), U(Z4), Z0 und Z5 auf 1e-16, V(Z3), R(Z3), alle drei Randbilanzen und die Nullproben N2, N3, N4. Ausgang von S2 ist trotzdem T, weil DeepSeek Vertrag 2.6 woertlich liest und fuer N1 (g = 0) F = 0 bekommt; mit gefuellter Luecke L1 gibt auch S2 A. Klemmung: geklemmt ist a1; ohne Klemmung ist a1 = rho A_krit und damit U EXAKT 0. Gemessen klemmt a1 in Z3 auf 70,3 Prozent, in N1, N2 und N4 gar nicht, und U ist dort exakt 0 -- in N4 bei rho_eff = 1,70.",
+  "meaning": "Die Zahlen von SW-1 tragen: eine Reproduktion aus einem Haus, das den Vertrag abgelehnt hatte, trifft sie bis auf die letzte Stelle. Der Einwand der Amplitudenklemmung traegt als Aussage ueber Neuigkeit (A ist die Standarderwartung), nicht als Aussage ueber Trivialitaet: ohne Klemmung ist U exakt null, und genau dieser Fall ist bei voller Kopplung, vollem Antrieb und hoeherer Last viermal gemessen. Zwei Dinge sind zu reparieren, bevor SW-1 zitiert wird: der Pruefsatz 2.7 des Vertrags ('ein fremdes Haus kann das Skript aus dem Text allein schreiben, fuer die gesamte Rechnung') ist widerlegt, und die elf vom Laufskript gefuellten Vertragsluecken gehoeren nach Vertrag 11.5 in Startsignal und Bericht. Runde 022 ist eingefroren; es wird nichts gebucht, keine Registerzeile, keine Behauptung, keine Jury.",
+  "sources": [
+    {
+      "path": "coordination/methodik-review/s2-s3-sw-1-20260921/S2-S3-SW-1.md",
+      "role": "S2/S3-Bericht",
+      "sha256": "c1ffaf3071323e183211425d3f8bfb06d6ec4425224a512c1f0a067741fd1b96"
+    },
+    {
+      "path": "coordination/methodik-review/s2-s3-sw-1-20260921/belege/S3-GEGENLESEN.txt",
+      "role": "S3-Abgleich aller Berichtszahlen",
+      "sha256": "4010dc0922800249b75d1eda5d03371c32e316ef961c1283d46ebc05647787d0"
+    },
+    {
+      "path": "coordination/methodik-review/s2-s3-sw-1-20260921/belege/S3-NACHTRAG.txt",
+      "role": "S3-Nachtrag: Bilanzrest, Anschwingzeit, Nullproben-Unabhaengigkeit",
+      "sha256": "2a12a9185f6239a5b6d9320660f39c8c557ee3fe50f5cbbccfc7e86d3cc260f0"
+    },
+    {
+      "path": "coordination/methodik-review/s2-s3-sw-1-20260921/belege/S2-VERGLEICH.txt",
+      "role": "Vergleichstabelle S1 gegen S2",
+      "sha256": "c3f6837857f62de3d7069030bdc06820cf16e10adf6a8f5e64b191185090d208"
+    },
+    {
+      "path": "coordination/methodik-review/s2-s3-sw-1-20260921/s2-deepseek/S2-antwort-deepseek.md",
+      "role": "Rohantwort DeepSeek",
+      "sha256": "d230e6b28434a2c46a888d97b73d6bfc5725d3793a201f7a2280670fd2c77cb0"
+    },
+    {
+      "path": "coordination/methodik-review/s2-s3-sw-1-20260921/s2-ergebnis/S2-ERGEBNIS-SW-1-unveraendert.json",
+      "role": "S2-Ergebnis, unveraendertes Skript",
+      "sha256": "e439c30c3c1167ef5617113d3f69c33a338b73b8db9ff81af4f03b86f439fddb"
+    },
+    {
+      "path": "coordination/methodik-review/s2-s3-sw-1-20260921/s2-ergebnis/S2-ERGEBNIS-SW-1-L1.json",
+      "role": "S2-Ergebnis, Vertragsluecke L1 gefuellt",
+      "sha256": "be1e7a996da8ece50ebd93cff4516f2bf2b254d515c89d326a5c9aaedda1d396"
+    },
+    {
+      "path": "coordination/vertraege-20260921/sw-1-umschalten-oder-verwurf-VERTRAG.md",
+      "role": "geprueferter Vertrag",
+      "sha256": "21a3534a4e70dfe75f243a5e756e5b3e5af77ce30c49541c631bc273af3a86d9"
+    },
+    {
+      "path": "coordination/vertraege-20260921/sw-1-lauf/BERICHT-SW-1.md",
+      "role": "geprueferter Bericht",
+      "sha256": "42970d66e5006f007be32e8ed0841c2a0acedfd6ff5f55fa15d746c2642ca98a"
+    },
+    {
+      "path": "coordination/vertraege-20260921/sw-1-lauf/ERGEBNIS-SW-1.json",
+      "role": "Ergebnisdatei des Laufs",
+      "sha256": "9186b4afa61b81088ec2de50d46c2e058adcc87164274e19d46d72a0138c3650"
+    }
+  ],
+  "recorded_at": "2026-09-20T23:42:35.016904+00:00"
+}

@@ -1,0 +1,25 @@
+{
+  "id": "claude-kompositionen-loops-20260923",
+  "time": "2026-09-23T16:02:31.986650+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5)",
+  "topic": "modelle",
+  "status": "reported",
+  "title": "Codex-Kompositionsrunden: innere Zustaende erzeugen exakte Mehrkoerperkraefte, aber ueber fuenf PMF-Varianten und 117 Starts keine einzige raeumliche Hierarchie; Valenzbeschraenkung liefert sie auch nicht",
+  "question": "Koennen Bausteine mit innerem Zustand verschachtelte stabile Verbaende bilden (zwei Ebenen mit Skalentrennung)?",
+  "action": "Codex (codex-ideation-million) fuhr drei Runden auf .69/P5000: N=2..8, fuenf PMF-Varianten (voll, Paarsumme, saturated mit Valenzbeschraenkung, zwei Abstossungsstaerken), drei geometrische Starts je Groesse, exakte kanonische Summation ueber die 2^N inneren Zustaende, analytische Orakel fuer N=2 und N=3, Elterntransport in Loop 3. Auflagen von mir: Erreichbarkeitsprobe vor dem Lauf, Variantenzaehler, Abbruchkriterium, umgekehrte Erreichbarkeitsprobe fuer den Valenzkandidaten, Stufenangabe nach der Stabilitaetsleiter. Unabhaengiger Lesereview durch einen zweiten Codex-Subagenten.",
+  "result": "117 Optimierungsstarts, 64 qualifizierte lokale Minima, 19 N8-Endpunkte, davon 0 mit der vorab verlangten zweistufigen Skalentrennung (beide Trennquotienten >= 2). Auch der Kandidat mit eingebauter Valenzbeschraenkung (13 Minima aus 21 Starts) liefert keine. Analytischer Nebenbefund: F_voll - F_Paarsumme = -log[1 + tanh(J12) tanh(J13) tanh(J23)] ist ein exakter Dreikoerperterm, der in keiner Paarsumme steckt. Elterntransport qualifiziert 12 von 12 zuvor verfehlten Kombinationen.",
+  "meaning": "Bindung ist noch keine Hierarchie: klassische PMF-Modelle mit innerem Zustand klumpen, statt Ebenen zu bilden. Der Befund gilt fuer Stufe 1 und 2 der Stabilitaetsleiter, Stufe 3 nur gegen gefundene Kanaele, Stufe 5 (Bildungsfaehigkeit) gar nicht; er ist kein Unmoeglichkeitssatz. Die Mehrkoerperkraefte aus inneren Zustaenden sind dagegen analytisch belegt und unabhaengig davon brauchbar. Erster belegter Nutzen eines evolutionaeren Schrittes in unserem Bestand, aber nur fuer die Erreichbarkeit, ohne statistischen Vorteil.",
+  "compute": "Codex auf .69/P5000 CUDA-f64, CPU-Steuerung; drei Units 17,3 / 37,5 / 6,3 s; keine Rechnung von mir",
+  "sources": [
+    {
+      "path": "coordination/stabile-kompositionen-20260923/LOOP-BERICHT.md"
+    },
+    {
+      "path": "coordination/stabile-kompositionen-20260923/ERGEBNISREVIEW.md"
+    },
+    {
+      "path": "coordination/stabile-kompositionen-20260923/ANALYSE.md"
+    }
+  ]
+}

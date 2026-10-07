@@ -1,0 +1,28 @@
+Root decision before any new numerical evaluation, 2026-10-02
+Original new proposal 'formation from diffuse cloud' needs a restricted name:
+conservative compaction and settling of a PREPARED, energetically sub-threshold
+charged cloud in the selfconsistent M2 potential. Not creation from vacuum or
+proof that arbitrary unbound radiation captures.
+
+For f=A exp(-r^2/(2L^2)), chi=1, phi_t=i sqrt2 phi,
+I=A^2 pi^(3/2)L^3, Q=2sqrt2 I,
+E/Q=sqrt2+3/(4sqrt2 L^2)-A^2/(8)+A^4/(4sqrt2*3^(3/2)).
+At Q1100,L8, A^2 about.1364, E/Q about1.4061<sqrt2.
+Derived using int f^4/I=A^2/2^(3/2) and int f^6/I=A^4/3^(3/2).
+Thus complete late dilution into free massive modes with nonzero conserved
+Q is excluded by energy, under the usual asymptotically free interpretation.
+Finite compact stationarity is NOT forced: extended oscillations, multiple
+objects, radiation and mixed states remain possibilities.
+
+At r=12, initialQfraction=erf(1.5)-3 exp(-2.25)/sqrtpi about.788.
+An 80% late-core gate alone would be almost a starting condition. Before any
+run add contraction r50_late<=.8 r50_initial and actual chi-core chi(0)<.2,
+in addition to full small stationarity residuals and retention plateau.
+Exact discrete start diagnostics and all norms must be specified in PLAN.
+
+Existing M2-profile.npz is float32 and every4th point of dr.04. It is a seed
+with provenance, not exact equilibrium. First perform QA-only import and
+stationary-residual checks; stop before evolution if reference fails. No
+silent reference smoothing/relaxation or change of tolerances after results.
+Any repair requires new clearly identified reference construction, no old
+result rewritten. Literature and BIC-paper statements stay unchanged here.

@@ -1,0 +1,77 @@
+Unabhängige Ergebnislesung particle_binding, 03.10.2026.
+Keine neue Rechnung, Tests oder Rohfeldauswertung; gespeicherte JSON-
+Einzelwerte gelesen. RESULT-SHA256:
+63e26aee6c18b7c706627aaa9695394a38506de6d1d1cdaae11fec2be0b3065e.
+Code50a9cc0a308135a06c84bdc5f51a45f3f408de3dc00f6a4b142f88ddbddfa8bd.
+
+Urteil: PHYSICAL_TRANSPORT_DIAGNOSIS_COMPLETE bezeichnet korrekt eine
+vollständige Auswertung. Sämtliche48Schalenentscheidungen UNRESOLVED;
+auch alle72 einzelnenGesichtsreserven ohne aufgelösteRichtung. Damit
+kein kontrollierter Netto-Paarmehrtransport nach den vorab fixierten
+Kriterien. Das bedeutet NICHT 'kein Transport' oder 'keine Strahlung'.
+
+Vollständigkeit:18 korrekte Armschlüssel einschließlich nur einerBaseline
+prodt, allecomplete.432Rohschalen/648Rohgesichter,192Paarschalen/
+288Paargesichter,72Reserven und48Entscheidungen wie ROOT-ABNAHME.
+Die48 umfassen je16E,Q,G. QA regular/vacuum/chi_only je2Schalen,
+alle6passed. ReguläreQ-Defekte bis1.044e−14 bei Skalen.649..3.509;
+E-Defekte bis5.330e−15 bei Skalen≈721..757. Vakuumdefekte exakt0,
+chi-onlyQ exakt0 und Energiedefekte höchstens1.333e−15 bei Skalen>228.
+Dies kontrolliert die semidiskreteAlgebra, nicht das realeTransportsignal.
+
+Hauptreserveursache ist in allen72 gelesenenZeilen die direkte
+dt=.01/.005-Variation. Sie übersteigt jeweils Samplingänderung,
+maximalen angrenzendenBilanzrest und lokaleAuswertesensitivität.
+Beispiele aus gespeicherten Werten (keine neu berechneten Quoten):
+
+theta0,epsilon.002,Fenster0,r45,E:
+ J=2.42598616e−9; delta_dt=3.22151698e−9;
+ delta_sampling=2.26475944e−12; max|B|=1.52818745e−12;
+ eta=6.66348722e−14; u=3.22311180e−9.
+Der positive Primärwert liegt bereits unteru statt über10u.
+
+theta90,epsilon.001,Fenster0,r45,E:
+ J=−8.78281185e−13; delta_dt=1.22888235e−11;
+ delta_sampling=4.59549537e−14; max|B|=1.58888880e−13;
+ eta=6.97108162e−14; u=1.25174232e−11.
+Auch das negative Vorzeichen trägt keine kontrollierteEinwärtszuordnung.
+
+theta90,epsilon.001,Fenster0,r45,G:
+ J=3.17804942e−12; delta_dt=4.30630036e−12;
+ delta_sampling=5.81348040e−14; max|B|=1.99215144e−13;
+ eta=6.97108222e−14; u=4.57522633e−12.
+Selbst hier mit relativ sichtbaren kleinerenReservetermen bleibt dt
+der Hauptbeitrag. Die vorab verfeinerte lokaleHülle verursacht den
+aktuellen Gesamtausgang also nicht; sie nachträglich zu verkleinern
+wäre weder begründet noch eine Lösung der beobachteten dt-Empfindlichkeit.
+
+Roharme und Paarbeobachtung unterscheiden: Beim ersten E-Beispiel sind
+Jplus=4.33067760e−9, Jminus=2.07913188e−9, Jbaseline=7.78918584e−10
+gespeichert. PairJ ist deren Mittel-minusBaseline, kein eigenständiger
+Zustand. Dort PairJpositive=PairJ und Jnegative=0 auf den verwendeten
+Samples; auch dieser reinpositive Samplingbefund ersetzt keine bestandene
+dt-Reserve. Andere Größen haben negative/wechselnde Beiträge. Keine
+allgemeine Aussage über sämtliche Einzelarme aus dem Pairlabel ableiten.
+
+Interpretation: Auflösung des endlichen signiertenNettoflusses ist mit
+den zwei vorhandenenZeitschritten nicht erreicht. Kleine lokaleBilanz-
+reste und kleine.1/.2-Abtaständerungen zertifizieren keine absoluten
+Gesichtsflüsse; gemeinsameFehler können sich aufheben. Keine Ursache
+des dt-Effekts isoliert, keine Kontinuumsextrapolation und kein Beweis
+irreversibler Abgabe, stationärerAbstrahlung, Lebensdauer oder BIC-
+Stabilität. Auch frühere aufgelösteFeld-/Amplitudenbefunde werden durch
+diesen anderen, empfindlicherenStromtest nicht rückwirkend widerlegt.
+Keine Gateänderung oder automatische weitereRechnung aus diesem Review.
+
+Ressourcen: intern7.61203CPU-s; äußereQuittung7.39User+.37System=
+7.76CPU-s,7.76Wandsekunden,194780KiB maximalRSS,Exit0. CPU8/nice19,
+einThread,keinePDE. Vollständiger gültiger Ausgang im vereinbartenRahmen.
+Remote-NPZ-Hashes wurden vom gebundenenLoader geprüft; dieser Reviewer
+hat sie hier nicht nochmals byteweise gelesen.
+
+Root ERGEBNIS.txt danach gegengelesen: Zahlen, Gesamtausgang und Grenzen
+konsistent. Die abschließende Präzisierung benennt richtig delta_dt
+(nicht pauschal Sampling) als dominierenden Beitrag an allen72Stellen.
+Das ausgewiesene stärksteG-Beispiel bleibt unter dem unverändertenTor
+und wird nicht zum Ersatz für die übrigenEntscheidungen erhoben.
+Kein Einwand gegen die Berichtssätze; kein neuer Rechenauftrag.

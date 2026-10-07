@@ -1,0 +1,26 @@
+Netz-Ansicht (physics.fmhc.io/netz/) - Lizenzen
+================================================
+
+(c) 2026 Finn Malte Hinrichsen. Erstellt mit KI-Systemen.
+Arbeitsstand, keine begutachtete Veroeffentlichung. Synthetische Modellrechnungen, keine Messdaten.
+
+Texte, Abbildungen, Daten: CC BY 4.0
+  index.html (Text), bilder/*.webp, data/ (manifest.json, netz/, frames/)
+  https://creativecommons.org/licenses/by/4.0/deed.de
+
+Code: Apache-2.0
+  ansicht.html, index.html (Auszeichnung), js/*.js, stil.css, start.css, schriften.css, bilder/zeichen.svg
+  https://www.apache.org/licenses/LICENSE-2.0
+
+Fremdbestandteile (unveraendert, bis auf eine Importzeile):
+  vendor/three/three.module.js, vendor/three/three.core.js, vendor/three/OrbitControls.js
+    three.js r186 (0.186.1), MIT-Lizenz, Copyright 2010-2026 three.js authors, siehe vendor/three/LICENSE
+    In OrbitControls.js ist der Import "from 'three'" durch "from './three.module.js'" ersetzt
+    (Auslieferung ohne Importmap).
+  vendor/schriften/*.woff2
+    IBM Plex Sans Condensed, IBM Plex Mono, IBM Plex Serif (Latin-Teilmenge, Fassung von fontsource),
+    Copyright IBM Corp., SIL Open Font License 1.1, siehe vendor/schriften/OFL-*.txt
+
+Vorgeschlagene Namensnennung bei Weiterverwendung:
+  "<Titel>" von Finn Malte Hinrichsen, erstellt mit KI-Unterstuetzung, https://physics.fmhc.io/netz/,
+  lizenziert unter CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/deed.de).

@@ -1,0 +1,28 @@
+{
+  "id": "claude-synchronisation-gc-pruefung-20260912",
+  "time": "2026-09-12T09:54:18+02:00",
+  "time_kind": "completed",
+  "author": "Claude (claude-primary, TS440)",
+  "topic": "micro",
+  "status": "checked",
+  "title": "Kondensationsschwelle ist ortsabhaengig: g_c(r) = omega/sqrt(lambda_max(G(r))) zwischen 0,5 und 1,0; bei g = 0,6 kollabiert nur ein Seed",
+  "question": "Liegt die Kollapsschwelle der Punkt-Wellen-Familie bei der analytischen Zahl 0,5 (N = 4)?",
+  "action": "Sechs Laeufe (g 0,4 und 0,6, drei Seeds, T = 60, h = 0,00015625), Messgroessen |q_mean|, zentrierter Ordnungsparameter, Feld-/Oszillatoranteil, r_max; Abnahme 1e-5 alle bestanden.",
+  "result": "g = 0,4: |q_mean| <= 0,07, Feld <= 0,6 H0, Trennung (r_max 26 bis 28). g = 0,6: zwei Seeds getrennt (r_max 15 bis 20, |q_mean| 0,1), ein Seed teilweise kondensiert (|q_mean| 0,29, Feld 1,3 H0, r_max 5,4). Formal B gegen die Vorab-Erwartung.",
+  "meaning": "Die Schwelle 0,5 gilt nur fuer zusammenfallende Punkte; allgemein g_c(r) = omega/sqrt(lambda_max(G(r))) in [0,5; 1,0]. Zweistufiger Mechanismus: statische Paaranziehung bringt zusammen, kooperative Instabilitaet haelt fest; erklaert Fenster und Seedabhaengigkeit. PW1 ergaenzt.",
+  "sources": [
+    {
+      "path": "coordination/claude-synchronisation-20260912/runs/n/ERGEBNIS.json",
+      "sha256": "8f090b67a5d9c1217041f8eff86cd4750665e3343b452f2b9b4803879a8718a1"
+    },
+    {
+      "path": "coordination/synchronisation-warp-archive-20260912.md",
+      "sha256": "d7474fa98265b8d9e6ed68f5cb55246bb39fa501affbb50aa2f5eb534b2e0492"
+    },
+    {
+      "path": "coordination/claude-synchronisation-20260912/run_sync7.py",
+      "sha256": "409b1b95648147bbe644ca3e864905b7bb2c592420086be74be30cf48f071d16"
+    }
+  ],
+  "recorded_at": "2026-09-12T07:54:18.828599+00:00"
+}

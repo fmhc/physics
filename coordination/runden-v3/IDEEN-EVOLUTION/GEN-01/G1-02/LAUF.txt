@@ -1,0 +1,27 @@
+# G1-02 Laufzettel fuer die Leitung (Test-Agent T-1). Rechnen tut die Leitung.
+# Skript: stufe_pi.py (Kopie der 1D-Teile aus RUNDE-06/weber/weber.py, torch, float64; --geraet cuda|cpu ohne Umbau).
+# Ordner: den Kartenordner G1-02 nach /home/fmh/fmhc-physics-remote/evo-gen01-g1-02 kopieren (Name frei waehlbar).
+# Spur: p4000a (GPU). Ausweich cpu/cpu2/cpu5 nur fuer "haupt" grob (siehe Minuten unten); alles andere dort zu lang.
+#
+# Formprobe lokal (CPU, 1 Faden, nice 19, T x 0,05 bzw. 0,02): alle Unterbefehle laufen, rc = 0.
+#   haupt grob 12,3 s bei T x 0,05  -> CPU voll etwa 250 s (4 min)
+#   haupt fein 35,0 s bei T x 0,02  -> CPU voll etwa 1750 s (29 min): auf CPU passt es nicht in 10 min
+#   gegen grob 50,6 s bei T x 0,05  -> CPU voll etwa 1010 s (17 min): auf CPU passt es nicht in 10 min
+#   GPU (P4000): nicht gemessen; 1D-Stapel mit 0,16 bis 0,5 Mio. Punkten, erwartet deutlich unter 10 min je Aufruf.
+#   Liegt ein GPU-Aufruf ueber 10 min, bricht kleintest.sh ab (RuntimeMaxSec 600); dann gegen mit --nur b25 und
+#   --nur v0 getrennt aufrufen (und bei fein haupt mit --v2 0.01,0.05 und --v2 0.10,0.20 teilen; urteil braucht
+#   dann je eine zusammengefuehrte Datei, das waere Handarbeit).
+#
+# Reihenfolge (jede Zeile ein Aufruf, jeweils mit date davor im Protokoll):
+cd /home/fmh/fmhc-physics-remote/evo-gen01-g1-02 && bash /home/fmh/fmhc-physics-remote/kleintests/kleintest.sh cpu g102-papier stufe_pi.py papier --geraet cpu --out ausgabe | tee lauf-69-papier.log
+cd /home/fmh/fmhc-physics-remote/evo-gen01-g1-02 && bash /home/fmh/fmhc-physics-remote/kleintests/kleintest.sh p4000a g102-haupt stufe_pi.py haupt --out ausgabe | tee lauf-69-haupt.log
+cd /home/fmh/fmhc-physics-remote/evo-gen01-g1-02 && bash /home/fmh/fmhc-physics-remote/kleintests/kleintest.sh p4000a g102-gegen stufe_pi.py gegen --out ausgabe | tee lauf-69-gegen.log
+cd /home/fmh/fmhc-physics-remote/evo-gen01-g1-02 && bash /home/fmh/fmhc-physics-remote/kleintests/kleintest.sh p4000a g102-haupt-f stufe_pi.py haupt --fein --out ausgabe | tee lauf-69-haupt-fein.log
+cd /home/fmh/fmhc-physics-remote/evo-gen01-g1-02 && bash /home/fmh/fmhc-physics-remote/kleintests/kleintest.sh p4000a g102-gegen-f stufe_pi.py gegen --fein --out ausgabe | tee lauf-69-gegen-fein.log
+# Auswertung (nur JSON lesen, Sekunden, CPU):
+cd /home/fmh/fmhc-physics-remote/evo-gen01-g1-02 && bash /home/fmh/fmhc-physics-remote/kleintests/kleintest.sh cpu g102-urteil stufe_pi.py urteil --geraet cpu --a ausgabe/haupt_grob_ergebnis.json --b ausgabe/gegen_grob_ergebnis.json --out ausgabe | tee lauf-69-urteil.log
+cd /home/fmh/fmhc-physics-remote/evo-gen01-g1-02 && bash /home/fmh/fmhc-physics-remote/kleintests/kleintest.sh cpu g102-urteil-f stufe_pi.py urteil --geraet cpu --a ausgabe/haupt_fein_ergebnis.json --b ausgabe/gegen_fein_ergebnis.json --out ausgabe | tee lauf-69-urteil-fein.log
+cd /home/fmh/fmhc-physics-remote/evo-gen01-g1-02 && bash /home/fmh/fmhc-physics-remote/kleintests/kleintest.sh cpu g102-l3h stufe_pi.py l3 --geraet cpu --a ausgabe/haupt_grob_ergebnis.json --b ausgabe/haupt_fein_ergebnis.json --out ausgabe | tee lauf-69-l3-haupt.log
+cd /home/fmh/fmhc-physics-remote/evo-gen01-g1-02 && bash /home/fmh/fmhc-physics-remote/kleintests/kleintest.sh cpu g102-l3g stufe_pi.py l3 --geraet cpu --a ausgabe/gegen_grob_ergebnis.json --b ausgabe/gegen_fein_ergebnis.json --out ausgabe | tee lauf-69-l3-gegen.log
+# Ergebnis: ausgabe/urteil_grob_bericht.txt (Ausgang nach KARTE.md), ausgabe/l3_haupt_bericht.txt, ausgabe/l3_gegen_bericht.txt.
+# Die Formprobe-Dateien (formprobe/, formprobe-*.log) sind Rauchtests mit T x 0,05: keine Aussage daraus.

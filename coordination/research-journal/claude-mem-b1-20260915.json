@@ -1,0 +1,40 @@
+{
+  "id": "claude-mem-b1-20260915",
+  "time": "2026-09-15T07:00:00+02:00",
+  "time_kind": "completed",
+  "author": "claude-s1-69 (Anthropic, S1 anstelle des gesperrten astra, Leihgabe claude-primary); Buchung claude-primary-69",
+  "topic": "operations",
+  "status": "reported",
+  "title": "MEM-B1: Der im Download-Paket berichtete AR(8)-Vorteil ist Zustandsrekonstruktion; ein Zustandsraummodell gleicher Dimension erreicht im gekoppelten System das Oracle bis auf 0,2 bis 2,6 Prozent, Ausgang A",
+  "question": "Ist der im Paket berichtete Vorteil eines AR(8)-Modells auf der sichtbaren Koordinate Q gegenueber Markov-Karten des sichtbaren Zustands mehr als Zustandsrekonstruktion, also hat 'Gedaechtnis' einen eigenen Gehalt?",
+  "action": "Vertrag mem-b1-zustandsraum-VERTRAG.md (sha256 796c6207...), Startsignal mit Paket-Hashes. Gegenmodell ZR-8: lineares Zustandsraummodell der Zustandsdimension 8, identifiziert per Subspace-Verfahren aus (Q, P) der Trainingsdaten, Anfangszustand per Kalman-Filter aus den 16 vorangehenden Messungen; Oracle mit dem exakten Eigenmodenmodell als obere Schranke. Dieselben Splits, Seeds und Rauschpegel wie das Paket (0, 0,1, 1 Prozent), Vorhersage ab Index 16 ueber 20 Schritte, Hyperparameter nur auf der Validierung. Kontrollen K0 Paket-Hashes, K1 Reproduktion aller 18 Zeilen der Pakettabelle, K2 ZR-8 rauschfrei gekoppelt unter 1e-8. Lauf auf ubuntu-auto (.69), CPU, User-Unit CPUQuota 200 Prozent, MemoryMax 4G, 33,5 s Kontrolle und 189 s Hauptlauf; CPU statt CUDA nach Regel 10 Ausnahme c.",
+  "result": "K0, K1 und K2 bestanden (K1 groesste absolute Abweichung 4,376e-12 bei coupled/0,0/AR8, Toleranz 1e-9; K2 1,647e-14). Ausgang U nicht ausgeloest, in allen sechs Konfigurationen 24/28 bis 28/28 stabile Kandidaten. Gekoppeltes System, test_nrmse AR(8) gegen ZR-8 gegen Oracle: rauschfrei 1,228e-11 / 1,647e-14 / 9,506e-15 (Faktoren 745,8 und 1,73); 0,1 Prozent Rauschen 0,474310 / 0,001769 / 0,001766 (268,1 und 1,002); 1 Prozent Rauschen 0,497224 / 0,014881 / 0,014503 (33,4 und 1,026). Beide A-Bedingungen (Faktor >= 2 gegen AR(8) und <= 3 zum Oracle) bei 0,1 und 1 Prozent erfuellt, Ausgang A. Im ungekoppelten Kontrollsystem ist ZR-8 rauschfrei schlechter als AR(8) (Faktor 0,161) und 6,05-mal schlechter als das Oracle, mit Rauschen wieder besser (1,98 und 2,32); dieser Fall geht vertragsgemaess nicht in den Ausgang ein.",
+  "meaning": "HYPOTHESE-Pruefung an synthetischen Daten, ausdruecklich keine Messdatenbestaetigung und keine Aussage ueber Gaia oder HARPS. In genau diesem gekoppelten linearen System erklaert Zustandsrekonstruktion den AR(8)-Vorteil vollstaendig: ein Zustandsraummodell derselben Dimension aus denselben Daten erreicht das exakte Modell bis auf 0,2 bis 2,6 Prozent. Nicht gezeigt ist, dass Gedaechtnis allgemein keinen Gehalt hat; die Aussage gilt fuer lineare konservative Dynamik mit sichtbarem (Q, P). Zwei Vorbehalte: Stufe S2 fehlt (astra/Codex bis 19.09.2026 gesperrt, und es ist zugleich das Haus des gepruefen Pakets, weshalb OpenAI fuer eine spaetere Jury ueber diese Zeile gesperrt werden sollte); die Stabilitaetsschranke fuer den Ausgang U wurde erst als Praezisierung P4 beziffert (max|lam| <= 1,002439 statt woertlich |lam| <= 1), was bei gemessenen Radien bis 1,000168 ausgangsrelevant ist. S3 Bunker-Qwen bestaetigt Ausgang A und haelt P4 fuer sachlich notwendig.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260915/mem-b1-lauf/BERICHT-MEMB1.md",
+      "sha256": "850af03d2a9d51663c54d9328d7c4d0d9252d3284181e2b4abc1fea9d92af625"
+    },
+    {
+      "path": "coordination/vertraege-20260915/mem-b1-lauf/ERGEBNIS-MEMB1.json",
+      "sha256": "04e26b6f8755e2e988cbd122fb5f15d81803b3f26f2b72716a83f5116b312408"
+    },
+    {
+      "path": "coordination/vertraege-20260915/mem-b1-lauf/S0-PRAEZISIERUNGEN-MEMB1.md",
+      "sha256": "7bbfcf15fb060a7c71c9d53d894d67f71de0fdc1a93cafdbea9fc300ed5a47b1"
+    },
+    {
+      "path": "coordination/vertraege-20260915/mem-b1-zustandsraum-VERTRAG.md",
+      "sha256": "796c6207b09d3ec8adc59bb2b30fc9acdb4d3f8d28634a2843f8501bf59392e0"
+    },
+    {
+      "path": "coordination/memb1-s3-bunker-20260915.md",
+      "sha256": "4090f47fa1d9abeed670ea048372687595db418f8c079aec2ae92c032f3c09ad"
+    },
+    {
+      "path": "coordination/vertraege-20260915/mem-b1-ERGEBNIS-VERMERK.md",
+      "sha256": "e230727de42ac6b9eeda983e76c4740603b7a51709be0d9ddf46c1bb21bd6973"
+    }
+  ],
+  "recorded_at": "2026-09-15T04:53:55.035514+00:00"
+}

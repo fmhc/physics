@@ -1,0 +1,33 @@
+{
+  "id": "claude-wm-1-nicht-startfaehig-kosten-20260928",
+  "time": "2026-09-28T06:38:47+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung; Ausfuehrender astra (OpenAI), frische Sitzung",
+  "topic": "modelle",
+  "status": "technical",
+  "evidenzart": "verfahren",
+  "title": "WM-1 nicht startfaehig: Budget nach A8.4 aus gemessenen Zeiten 4875 s gegen den Deckel von 1200 s; endet nach Vertrag ohne Physikrechnung, ohne Kuerzung und ohne hoeheren Deckel",
+  "question": "Passt WM-1 nach der gebundenen, physikfreien Kostenmessung in den Deckel von 1200 s?",
+  "action": "astra schrieb das Laufskript (wm_1.py, eingefroren), fuehrte den Unit-Nachweis mit Dummy-Last und die Kostenmessung nach KOSTENPROTOKOLL-F3.md in drei Durchgaengen auf der P4000 der .69 aus; nur Zeiten, keine Physikwerte.",
+  "result": "R_V 440 s, R_H 3821 s, R_S2 614 s, Summe 4875 s gegen 1200 s: nicht startfaehig. Groesster Kostenanteil ist DP-G mit 150 x t_G200 = 873 s von P_H = 1885 s; die groessten Einzelmesswerte sind t_init 39,1 s und t_1000 24,0 s. Unit-Nachweis: Die Prozessgruppe endet vollstaendig, die Restregel A8.5 ist als Codeprobe belegt; der harte Verbrauchsnachweis ist nicht bestanden (Service-Laufzeit 3,178 s bei RuntimeMaxSec 3), die Vertragsaussage, der Verbrauch koenne R_Topf nicht ueberschreiten, ist auf der .69 also nicht belegt. Das ist eine eigene Startauflage, die auch ein passendes Budget nicht ersetzt.",
+  "meaning": "Die Handabschaetzung der Fassung 3 (A8.2, ausdruecklich keine Zusage) ergab nach derselben Formel etwa 920 s plus 150 s Zuschlag, also rund 1070 s; das Budget aus den Messwerten ist gut 4,5-mal so gross, ohne den festen Zuschlag gut 5-mal (4725 s gegen 920 s). Die im Leitungsvermerk genannten 1130 s waren ein Rechenbeispiel mit angenommenen Zahlen, keine Prognose. Der Vertrag schliesst eine weitere S0-Fassung und eine hoehere Grenze aus (A8.4); WM-1 endet ohne Physikergebnis. Ob die Frage als neuer Vertrag mit gemessenem Budget gestellt wird, entscheidet Finn.",
+  "sources": [
+    {
+      "path": "coordination/farben-20260927/wm-1-lauf/KOSTENMESSUNG-PROTOKOLL.md",
+      "sha256": "8588deb820ef8790fb04fa811f4a1b5007997e25f862106d1e730b137287a6ed"
+    },
+    {
+      "path": "coordination/farben-20260927/wm-1-lauf/KOSTEN-ABLEITUNG.json",
+      "sha256": "0352715e0307e19a8a5172c191d621048ef3cab344a68174734127eae52ef698"
+    },
+    {
+      "path": "coordination/farben-20260927/wm-1-lauf/UNIT-NACHWEIS.md",
+      "sha256": "cd7f714ae17803f5afbf5d365e66e21d00e5effd354c70ffa088a20e8a1d6ef0"
+    },
+    {
+      "path": "coordination/farben-20260927/GEGENLESEN-J28-J29.md",
+      "sha256": "a761b6c4c3ddc4a1d6d21185ba569f15e5abb967be9be689b5ab6f4f442af963"
+    }
+  ],
+  "recorded_at": "2026-09-28T06:59:45.533350+00:00"
+}

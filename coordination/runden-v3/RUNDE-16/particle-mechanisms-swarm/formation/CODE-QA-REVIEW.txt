@@ -1,0 +1,77 @@
+Enger unabhängiger Code-Lesereview, 02.10.2026, particle_binding
+Geltung ausschließlich --qa-only; keine eigene Ausführung/Tests.
+Gelesen: formation/code.py vollständig, Stand mit initial_checks und
+reference_residual_pass<.004. Main-Zeitentwicklung NICHT freigegeben.
+Gelesener Code-SHA256:
+8bff949121e6a451f4d52e2e5af2cd544a237681d34826c35d0a81fce381a080.
+
+Urteil: Als algebraischer/Präparations-QA-only-Versuch auf .69 innerhalb
+des von Root gesetzten 20-s-Deckels geeignet. Bestandene QA wird hier
+nicht behauptet. Ein Fehler des importierten Kontrollprofils ist ein
+nützliches Prüfergebnis und keine Erlaubnis, Residualgates zu lockern.
+
+Ausführungspfad
+qa() führt keine Zeitschritte aus: Energierichtungsableitung, momentane
+Noether-/Kernflussidentität und exaktes Vakuum. Anschließend werden NPZ
+gelesen und sechs Anfangsdiagnosen erstellt. Bei --qa-only werden weder
+run_arm noch advance erreicht. CPU-Aufwand ist O(N) je Anfangsdiagnose.
+Ausgabeordner muss neu sein. Reference ist auch für QA zwingend.
+
+Finite Volumen, Kinetik und Vorzeichen
+Grid.vol sind exakte Schalenvolumina; Flächenterme derselben Kanten sind
+in lap und Energie identisch. Aus Gradientenergie Sum A|Delta phi|²/h
+folgt -2 V lap(phi) in der reellen Variation; aus halbem chi-Term
+-V lap(chi). Zusammen mit Kinetik |phi_t|²+chi_t²/2 liefert das die
+implementierten Kräfte mit komplexem/reellem Faktor 2/1. qa() prüft
+diesen Unterschied korrekt durch
+ dE=-2 Re Sum V conj(a)delta_phi - Sum V b delta_chi.
+Die Zeitkinetik selbst wird damit nicht durch Zeitintegration getestet.
+
+Q=2 Im Sum V conj(phi)v ist konsistent. Momentan gilt
+dQ/dt=2 Im Sum V conj(phi)a, weil conj(v)v reell ist.
+Der positive Außenfluss an RC ist -2 A Im(conj(phi_k)phi_(k+1))/h;
+damit dQcore/dt+Flux=0. Beide QA-Summen verwenden denselben diskreten
+Operator und dieselbe Oberfläche. Der Dirichletwert wird in einem
+ghost-center im Abstand h verwendet: die äußere Diskretisierung darf
+nicht als exakter Halbzellenrand bei R bezeichnet werden. Für den
+beabsichtigten weit entfernten Vakuumrand ist das kein QA-only-Hindernis.
+
+Referenzimport
+Lader erwartet genau eine Q1100-Zeile, liest omega2, castet float32-Daten
+nach float64, prüft endliche Profile und monotones r und protokolliert
+Hash, Zeile, ursprünglichen dtype und Sampleabstand. Er prüft nicht
+sweep='seed' und vergleicht den Hash nicht selbst mit einer Sollbindung.
+Root muss den erwarteten Eingabehash separat binden; zusätzlich seed
+und gespeicherte omega²=1.03666310756389 kontrollieren. Ein einzelner
+passender Q-Wert allein beweist keine richtige Modellprovenienz.
+
+Lineare Interpolation reduziert keine Speicherungsmängel. Q wird bei
+der Referenz ausschließlich durch omega=Q0/(2I) repariert; das erhält
+die Profilform, kann Stationarität aber verändern. Korrektur gegenüber
+gespeichertem omega wird offengelegt. Initiale rphi/rchi/tphi/tchi<.004
+ist deshalb sinnvoll. Falls sie scheitert, schreibt QA einen negativen
+Präparationsstatus und macht ausdrücklich keine Zeitschritte.
+
+Normen und Messsemantik
+Raum-/Zeitreste im Kern r<12 nutzen Schalenvolumina und passende
+Vakuummassenskalen. chi-Nenner ist ||chi-1||, nicht ||chi|| im Vakuum.
+Floor 1e-14 führt für die anfänglich exakt ungedresste Wolke zu riesigem
+rchi; das ist mathematisch die dokumentierte relative Norm, kein
+NaN/0/0. Für spätere main-Gittervergleiche ist diese Singularitätsnähe
+gesondert zu prüfen; QA-only bewertet Wolkenreste nicht als Gate.
+Die Phasenfrequenz qc/(2Icore) und der komplexe phi-Rest sind konsistent.
+
+r50 ist Halbmassradius von Sum V|phi|². Es ist KEIN Radius der
+signierten lokalen Ladung 2 Im(conj(phi)phi_t), sobald lokale
+Phasengeschwindigkeit nicht homogen ist. Im PLAN/Auswertung deshalb
+„Amplituden-Dichteradius r50“ nennen. Bei t0 mit homogener Phase stimmt
+er mit dem Ladungsradius überein, während der Dynamik nicht allgemein.
+
+Operativer Vorbehalt für den 20-s-Deckel
+main setzt vor try unconditional RLIMIT_CPU=(175,178). Ein geerbtes
+hartes CPU-Limit20 darf der Prozess nicht auf178 anheben; dann scheitert
+er vor Resultatsicherung. Vor Aufruf entweder limits=min(geerbt,Ziel)
+implementieren oder einen externen 20-s-Wallclock-Deckel verwenden,
+der nicht durch dieses setrlimit überschrieben/angehoben wird.
+Auch vorbestehende stärkere Hostlimits nicht ersetzen. Keine weiteren
+Änderungen durch diesen Reviewer; keine Main-Freigabe aus QA-only ableiten.

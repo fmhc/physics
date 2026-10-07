@@ -1,0 +1,51 @@
+{
+  "id": "claude-fm-1-lauf-20260920",
+  "time": "2026-09-20T23:01:59+02:00",
+  "time_kind": "completed",
+  "author": "Claude",
+  "topic": "theory",
+  "status": "reported",
+  "title": "Feldmodell zum ersten Mal gerechnet: Ausgang T, weil vier der elf eigenen Kontrollen gar nicht erfuellbar waren",
+  "question": "Ist das analytisch notwendige Frequenzfenster 1/2 < omega^2 < 1 des komplexen klassischen Skalarfeldes mit U(s) = s[(s-1)^2+1]/2 im Innern auch hinreichend, und existiert der m = 1 Zweig als eigene lokalisierte Loesung?",
+  "action": "Vertrag FM-1 nach VORLAGE-v2 (13 Pflichtabschnitte) geschrieben, S0-Fremdreview durch Qwen (Bunker) und DeepSeek (OpenRouter, 0,015 USD) mit mechanischem Materialpaket, 13 von 15 neuen Befunden eingearbeitet. Laufskript von einem Claude-Subagenten allein aus dem Vertragstext geschrieben. Lauf am 20.09.2026 auf .69 (CPU, Unit fmhc-physics-fm-1-20260921, kein CUDA, GPU-Lock unberuehrt): 1D-Newton mit exakter Abklingrandbedingung ueber vier Gebietsgroessen, unabhaengiges Schiessverfahren, 2D-Newton in (rho, z) fuer m = 0 und m = 1, zwei Nullproben, elf Kontrollen. Laufzeit 229,4 s.",
+  "result": "Ausgang T (Vorrang T > U1 > B > A > U2). Vier Kontrollen mit Folge T sind verfehlt, und zwar alle vier aus Gruenden, die im Vertragstext selbst stecken: K2 laesst in der Abklingformel den bekannten 1/r-Anteil weg (max D = 0,1999 gegen Schwelle 0,02; nach Abzug des Anteils waere max D = 3,6e-5), K3 und K6 scheitern an einem zu groben bzw. zu kurzen Startwertgitter des Schiessverfahrens (O-Band bei omega = 0,780 nur 1,7e-4 breit gegen Gitterschritt 5e-3; kubischer Grundzustand bei F(0) = 3,067 oberhalb der Gittergrenze 3,0), K10 verlangt eine Newton-Konvergenz, die ohne Spiegelbedingung wegen einer z-Verschiebungs-Nullmode nicht erreichbar ist. Bestanden: K1, K4 (1D gegen 2D, 1e-4), K5, K7, K8 (100 % der Punkte), K9 (Trennkraftnachweis reisst wie gefordert, G_vir = 0,57), K11. Die Nullproben blieben leer (alle 9 Punkte S = 0 und X = 0, freies Modell max f <= 4,5e-12).",
+  "meaning": "Der Lauf sagt nach seinen eigenen Regeln nichts ueber die Frage; die gerechneten Zahlen (Q(omega) mit eindeutigem Minimum Q = 111,88 bei omega = 0,962, Kanten je Gebietsgroesse, m = 1 Loesungen bei omega = 0,820 und 0,870 mit Ringradius 6,23 bzw. 4,84) sind ausdruecklich keine Befunde und werden nicht gebucht. Zwei Dinge sind trotzdem gelernt: erstens ist die untere Frequenzkante nicht durch das Rechengebiet begrenzt, wie der Vertrag vorhergesagt hatte, sondern durch die Schrittweite der Newton-Fortsetzung (bei L = 40, 80 und 160 dieselbe Kante 0,740, waehrend das Randverhaeltnis f(L)/f(0) = 2e-20 betraegt); zweitens hat sich die im Vertrag als schwaechste Stelle benannte 2D-Aufloesung als unkritisch erwiesen (d_wall/h = 81 gegen m_min = 12). Am Kriterium wurde nichts gedreht; FM-1 bleibt unveraendert liegen, der Bericht enthaelt einen Nachfolgevorschlag FM-2 mit sieben geheilten Punkten. Ein klassisches Feldmodell mit eingesetzter Selbstwechselwirkung ist kein Nachweis, dass Teilchen so gebaut sind; J_z = m Q und der Ringstrom sind Identitaeten des Ansatzes und keine Entdeckung. Keine Registerzeile, Runde 022 eingefroren, Zitiersperre bis S2 aus einem anderen Haus.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260921/fm-1-lauf/BERICHT-FM-1.md",
+      "label": "Bericht mit allen Zahlen und dem Abschnitt 'Was dieser Lauf NICHT zeigt'",
+      "sha256": "58f8dcc7368b4342a8bc765036cff24a1855319c03063260c60033de7ccace65"
+    },
+    {
+      "path": "coordination/vertraege-20260921/fm-1-VERTRAG.md",
+      "label": "Vertrag FM-1 (S0, 13 Pflichtabschnitte)",
+      "sha256": "c1e13f4ec5515e6df43240c47ada4fe20b6e96da33f952c8c04520e07c5f0efa"
+    },
+    {
+      "path": "coordination/vertraege-20260921/REVIEW-fm-1.md",
+      "label": "S0-Fremdreview Qwen und DeepSeek",
+      "sha256": "e78cf311380f9f66095b0be190605c2b0c64ecdd873a92925c5b8e10f1a9bae8"
+    },
+    {
+      "path": "coordination/vertraege-20260921/startsignal-fm-1.txt",
+      "label": "Startsignal mit Wortlaut, Zeit und Grund",
+      "sha256": "cf4bb85f1c737eeee86b3ba577639580b8588428821c04903fc3bbc0a2dd2dd1"
+    },
+    {
+      "path": "coordination/vertraege-20260921/fm-1-lauf/ERGEBNIS-FM-1.json",
+      "label": "Ergebnisdatei des Laufs",
+      "sha256": "b76d54df9086abe9d9baaff72eeebb0f1636611bcf716a01fded984b7e00ae9f"
+    },
+    {
+      "path": "coordination/quark-response-20260916/FIELD-MODES.md",
+      "label": "Grundlage: Herleitung des Modells",
+      "sha256": "892c434de9614ef128475db15731db38c5374a312ffe2ef1eb1b079208c5025a"
+    },
+    {
+      "path": "coordination/quark-response-20260916/FIELD-MODES-REVIEW.md",
+      "label": "Grundlage: unabhaengige analytische Pruefung",
+      "sha256": "4b3d07788897f6398f7657d70e5cb4e3829f408c2e854c91697e5b26ded210d8"
+    }
+  ],
+  "recorded_at": "2026-09-20T21:07:14.696105+00:00"
+}

@@ -1,0 +1,215 @@
+{
+ "start": "2026-09-30T06:19:11+00:00",
+ "geraet": "CPU, 1 Faden",
+ "torch": "2.5.1+cu121",
+ "unterbefehl": "blase",
+ "kand": 256,
+ "runden": 5,
+ "ergebnis": {
+  "profil": {
+   "omega2": 0.52,
+   "profil_gueltig": true,
+   "Q_profil": 280336.0296006546,
+   "S_c": 1.0194335081419454,
+   "sigma": 0.3668147695491798,
+   "rho": 1.0602108484676234,
+   "R_d0": 35.660787068973285,
+   "P_in": 0.020196169902108707
+  },
+  "vorhersage_T_E": {
+   "8.0": {
+    "T_E": 14.951618679411702,
+    "t70_unbegrenzt": 18.477143652549174,
+    "T_E_durch_unbegrenzt": 0.8091953475367889,
+    "t70_unbegrenzt_durch_sqrt(rho R0^3/sigma)": 0.4803160951586409
+   },
+   "12.0": {
+    "T_E": 24.56339397319366,
+    "t70_unbegrenzt": 33.94468038973581,
+    "T_E_durch_unbegrenzt": 0.7236301444340933,
+    "t70_unbegrenzt_durch_sqrt(rho R0^3/sigma)": 0.4803160951600266
+   },
+   "18.0": {
+    "T_E": 37.44329105029006,
+    "t70_unbegrenzt": 62.3603598275069,
+    "T_E_durch_unbegrenzt": 0.6004341725073558,
+    "t70_unbegrenzt_durch_sqrt(rho R0^3/sigma)": 0.48031609515982265
+   }
+  },
+  "laeufe": {
+   "grob": [
+    {
+     "R0": 8.0,
+     "R_v_start": 8.00007703262545,
+     "R_d_start": 35.66077619943227,
+     "t70": 9.662681629065023,
+     "T_E": 14.951618679411702,
+     "abw_rel": -0.3537367534412522,
+     "t70_durch_unbegrenzt": 0.5229532123993594,
+     "R_v_max_anstieg_vor_t70": -0.000561239526353674,
+     "v_wand_max_bis_t70": 0.5134434442769749,
+     "inkompressibel_max_abw": 0.007378996609714195,
+     "plausibel": {
+      "Q_rel_bis_t_chk": 8.881784197001252e-16,
+      "E_rel_bis_t_chk": 4.786901568798463e-06,
+      "t_chk": 69.33921293102671,
+      "erhaltung_ok": true,
+      "v_wand_ok": true,
+      "inkompressibel_ok": true,
+      "bestanden": true
+     }
+    },
+    {
+     "R0": 12.0,
+     "R_v_start": 12.000077032625454,
+     "R_d_start": 35.66077619943227,
+     "t70": 18.32712867439417,
+     "T_E": 24.56339397319366,
+     "abw_rel": -0.2538845122789303,
+     "t70_durch_unbegrenzt": 0.5399116581441117,
+     "R_v_max_anstieg_vor_t70": 0.007400781320722416,
+     "v_wand_max_bis_t70": 0.401202770947517,
+     "inkompressibel_max_abw": 0.025489302325453655,
+     "plausibel": {
+      "Q_rel_bis_t_chk": 4.440892098500626e-16,
+      "E_rel_bis_t_chk": 8.344176773533718e-06,
+      "t_chk": 69.33921293102671,
+      "erhaltung_ok": true,
+      "v_wand_ok": true,
+      "inkompressibel_ok": true,
+      "bestanden": true
+     }
+    },
+    {
+     "R0": 18.0,
+     "R_v_start": 18.00007703264039,
+     "R_d_start": 35.66077619941728,
+     "t70": 33.8491394631033,
+     "T_E": 37.44329105029006,
+     "abw_rel": -0.0959892009054294,
+     "t70_durch_unbegrenzt": 0.542798976092062,
+     "R_v_max_anstieg_vor_t70": 0.01085286165441346,
+     "v_wand_max_bis_t70": 0.361039724575118,
+     "inkompressibel_max_abw": 0.06145147171293153,
+     "plausibel": {
+      "Q_rel_bis_t_chk": 5.551115123125783e-16,
+      "E_rel_bis_t_chk": 1.3224218978979962e-05,
+      "t_chk": 69.33921293102671,
+      "erhaltung_ok": true,
+      "v_wand_ok": true,
+      "inkompressibel_ok": false,
+      "bestanden": false
+     }
+    }
+   ],
+   "fein": [
+    {
+     "R0": 8.0,
+     "R_v_start": 8.00007693336283,
+     "R_d_start": 35.66078706897329,
+     "t70": 9.66423089408354,
+     "T_E": 14.951618679411702,
+     "abw_rel": -0.353633134893205,
+     "t70_durch_unbegrenzt": 0.5230370600463577,
+     "R_v_max_anstieg_vor_t70": -0.0006490538507275545,
+     "v_wand_max_bis_t70": 0.5129124238149725,
+     "inkompressibel_max_abw": 0.007301949138329933,
+     "plausibel": {
+      "Q_rel_bis_t_chk": 4.440892098500626e-16,
+      "E_rel_bis_t_chk": 1.2033074490158668e-06,
+      "t_chk": 69.33921293102671,
+      "erhaltung_ok": true,
+      "v_wand_ok": true,
+      "inkompressibel_ok": true,
+      "bestanden": true
+     }
+    },
+    {
+     "R0": 12.0,
+     "R_v_start": 12.000076933362832,
+     "R_d_start": 35.660787068973285,
+     "t70": 18.333379173974333,
+     "T_E": 24.56339397319366,
+     "abw_rel": -0.25363004827501523,
+     "t70_durch_unbegrenzt": 0.540095795968018,
+     "R_v_max_anstieg_vor_t70": 0.007297347439221724,
+     "v_wand_max_bis_t70": 0.4008424297044648,
+     "inkompressibel_max_abw": 0.025340067524018295,
+     "plausibel": {
+      "Q_rel_bis_t_chk": 6.661338147750939e-16,
+      "E_rel_bis_t_chk": 2.09282682672729e-06,
+      "t_chk": 69.33921293102671,
+      "erhaltung_ok": true,
+      "v_wand_ok": true,
+      "inkompressibel_ok": true,
+      "bestanden": true
+     }
+    },
+    {
+     "R0": 18.0,
+     "R_v_start": 18.000076933377752,
+     "R_d_start": 35.660787068958356,
+     "t70": 33.87284183321168,
+     "T_E": 37.44329105029006,
+     "abw_rel": -0.095356180424496,
+     "t70_durch_unbegrenzt": 0.5431790632207114,
+     "R_v_max_anstieg_vor_t70": 0.010693984324163353,
+     "v_wand_max_bis_t70": 0.36071832535137816,
+     "inkompressibel_max_abw": 0.06123891875552845,
+     "plausibel": {
+      "Q_rel_bis_t_chk": 5.551115123125783e-16,
+      "E_rel_bis_t_chk": 3.3095707590025114e-06,
+      "t_chk": 69.33921293102671,
+      "erhaltung_ok": true,
+      "v_wand_ok": true,
+      "inkompressibel_ok": false,
+      "bestanden": false
+     }
+    }
+   ]
+  },
+  "kennzahlen": {
+   "V1_alle_innerhalb_15_prozent": false,
+   "V2_abfall_8_zu_18": -0.019845763692702523,
+   "V2_bestanden": false,
+   "V3_monoton_bis_0_7_R0": true,
+   "scheitert": true,
+   "L3": {
+    "laeufe": [
+     {
+      "R0": 8.0,
+      "t70_grob": 9.662681629065023,
+      "t70_fein": 9.66423089408354,
+      "rel": 0.00016033489231981335,
+      "bestanden": true
+     },
+     {
+      "R0": 12.0,
+      "t70_grob": 18.32712867439417,
+      "t70_fein": 18.333379173974333,
+      "rel": 0.0003410517649113931,
+      "bestanden": true
+     },
+     {
+      "R0": 18.0,
+      "t70_grob": 33.8491394631033,
+      "t70_fein": 33.87284183321168,
+      "rel": 0.0007002355298932894,
+      "bestanden": true
+     }
+    ],
+    "bestanden": true
+   },
+   "plausibilitaet_bestanden": false
+  },
+  "t_chk": 69.33921293102671,
+  "sek": {
+   "grob": 3.1863351613283157,
+   "fein": 8.233195857144892
+  }
+ },
+ "fehler": null,
+ "ende": "2026-09-30T06:19:40+00:00",
+ "dauer_s": 29.352818542160094,
+ "torch_speicher_max_mb": NaN
+}

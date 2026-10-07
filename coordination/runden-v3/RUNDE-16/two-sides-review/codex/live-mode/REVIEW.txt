@@ -1,0 +1,91 @@
+Independent live-mode review — 2026-10-02
+Reviewer: causal_live_review; source inspection only on local host.
+Runtime/browser QA must run on ubuntu-auto (.69), by coordinating agent.
+
+REFERENCE CONTRACT
+ARBEITSMODELL-V2.md: moving graph geometry x plus complex psi and real chi.
+Real-coordinate mass factors are m for geometry, 2 for Re/Im psi, 1 for chi.
+Decreasing J(r), K(r) give repulsive mechanical field-difference contributions
+at fixed fields. Graph edges must be counted once in energy, forces antisymmetric.
+Observation planes are passive; cutting counts are not a physical energy.
+Finite graph evolution is neither continuum Q-ball proof nor physical proper time.
+state-machine/run.py counts transition events without assigning energy or duration.
+
+PLANNED ACCEPTANCE CHECKS
+1. Scalar potential gradient agrees with psi/chi force including factor 2.
+2. Pairwise finite-difference geometry gradient agrees with stated coupling force.
+3. Energy/charge/momentum diagnostics use consistent kinetic normalization.
+4. dt versus dt/2 short finite-run convergence; no unsupported long-time claim.
+5. Empty/tokenless event state stays fixed; one event is one computed transition.
+6. Fresh state changes after explicit Step/Run; no prerecorded state fetch or replay.
+7. Paused state stays bitwise fixed under camera movement and wall-clock delay.
+8. Reset reproduces initial state, parameter changes have explicit reset semantics.
+9. Hidden document stops compute; pause/visibility does not accumulate catch-up debt.
+10. Failure/nonfinite state stops visibly; no silent clipping or fallback trajectory.
+11. Timeline labels separate model integration parameter, event count and wall time.
+12. Desktop/mobile browser controls remain operable, no page errors or overflow.
+
+SOURCE REVIEW STATUS
+Read causal-solver.js, solver-test.mjs, METHOD-CAUSAL.txt, causal.html, causal.css.
+Potential square completion expands to the v2 U. psi, chi and geometry forces
+match its derivatives with correct masses. J=K implementation includes both
+reciprocal geometry terms with correct repulsive sign for declining coupling.
+Energy and Q normalization match the reference. All degrees of freedom share
+the same kick/drift/kick update. Edge forces are pairwise antisymmetric.
+Rotor step changes only source rotor and token; no token means no change.
+Full-state repeat detects cycles, without imposing a fixed four-phase period.
+Source has no solver timers, prerecorded trajectories, clipping or damping.
+Intersection area is explicitly a sum of cell sections, not their union;
+degenerate contacts are reported and not mislabelled located crossing events.
+
+Finding R1 RESOLVED: star4 initially had five nodes/four leaves despite
+reference/UI specifying four nodes/three leaves. Now matches K1,3, four nodes.
+Test gap R2: initial gradient test used zero imaginary psi and uniform chi,
+missing nontrivial chi coupling and imaginary-psi terms. Stronger fixture
+RESOLVED by solver owner (nonuniform chi, imaginary psi, displaced geometry,
+both psi components and second x component). Added isolated-pair repulsion gate.
+
+HTML distinguishes rotor event order from dimensionless integration time and
+states CPU browser execution. No claim of fundamental time or Q-ball proof.
+APP SOURCE REVIEW
+render and camera callbacks perform no solver advancement. advance calls the
+solver directly; frame permits bounded work, fixed dt and no historical frames.
+stop cancels rAF, clears accumulated work and last-frame timestamp. Hidden
+document, offscreen viewport and reduced-motion setting stop the run. Restart
+reconstructs the solver and clears counters, histories and failure status.
+Parameter changes restart paused; plane and display changes only read state.
+Model time comes only from actual Verlet steps. Rotor cycles derive from
+full state repeats, not camera phase or a prescribed animation period.
+Failure disables Step/Run; Reset reconstructs. Rendering does not mask solver
+errors by substituting prerecorded values. Export is computed state plus history.
+
+Finding R3 RESOLVED: elastic field arrays exist but contain psi=0, chi=1. App selected
+phase/density colors by array truthiness, showing constant color where movement
+was promised. Root asked to gate field colors by model kind and use elastic
+displacement. Root fix verified: explicit two-field gates and elastic displacement.
+Finding R4 RESOLVED (label): kick changes geometry initial velocity only, and has no
+effect for fixed-geometry two-field mode. Root asked for explicit mechanical
+label and disabled control in that mode. Both fixes verified in source.
+Finding R5 RESOLVED (label): tokenless Step leaves eventIndex fixed but status
+formerly said an event was evaluated. Now states unchanged/no signal.
+Finding R6 RESOLVED: density color used |psi| despite |psi|^2 label;
+now uses Math.hypot(...state.psi[i])**2, consistent with plot and table.
+Mobile CSS also inspected: metrics use two columns below 480px.
+
+Solver reviewed SHA256:
+32ca4f866ec6026bc76aee300bced63b51e4a970b045f645acf32f7d1c21bf74
+No static force/energy/time/hidden-evolution blocker found in this revision.
+All six review findings are resolved. Final reviewed UI SHA256 values:
+causal-app.js 82f4bd50a077931be929442ac0cbbf9267bb0b6967bd40ecbc9359000b230c83
+causal.html f6050524ba7d5453a3f74bebbba12837846fdc8b645c990d2de11916ae3250b9
+causal.css b3069a0477bf4502dadc7a5170070ca1c3d078efb431a8ca6575771fe3af0572
+
+RUNTIME EVIDENCE (EXECUTED BY ROOT, NOT THIS REVIEWER)
+Read live-mode/QA.json: host ubuntu-auto (.69). Root reports PASS for solver
+geometry, action gradients, timestep convergence, conservation and fail-stop;
+and browser models, reset, passive detector, pause, visibility handler,
+reduced motion, export and mobile UI. Visibility coverage uses a synthetic
+hidden event and tests the handler; it does not certify OS tab lifecycle.
+Source review and reported bounded runtime QA support this live explorer;
+they do not establish long-time stability or validate speculative physics.
+No numerical or browser execution performed by this reviewer.

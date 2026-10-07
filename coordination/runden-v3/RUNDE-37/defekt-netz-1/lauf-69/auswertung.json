@@ -1,0 +1,283 @@
+{
+ "info": {
+  "numpy": "2.4.4",
+  "scipy": "1.18.0",
+  "python": "3.12.3",
+  "host": "ubuntu-auto",
+  "argv": [
+   "code/dn.py",
+   "auswertung",
+   "--dn0",
+   "lauf/dn0.json",
+   "--tt",
+   "lauf/tt-C15.json",
+   "lauf/tt-A15.json",
+   "lauf/tt-V.json",
+   "lauf/tt-S.json",
+   "--out",
+   "lauf/auswertung.json"
+  ],
+  "start_utc": "2026-10-05T06:04:58Z",
+  "skript_sha256": "0cd5d13e98f41df277ec7d8139970d1e658542f843ed8180bc756a4ea1d4d1ae",
+  "tg_sha256": "ec48a258e266fc2226d0d10564b606052831ffefbf0642e4f7d04f9de85cfd9e",
+  "tti_sha256": "6d6b6f7b99b334d74d91860fc69af1c6c0c46e22207dc45432d60a9824c08ee5",
+  "ew_sha256": "fa7b6417d39177102f0b19c5474453cd16a7595e23bc25ca548e081c4060b142",
+  "tp_sha256": "419d7da6caa211c721eb6a8c87403977415cf3050f03365377f51cb77b374dfd",
+  "dn0_sha256": "90564ea0ecd8a94265c0fc7c526e12514d7b92684a572bfa647504c007cb4c5e",
+  "sha256_tt-C15.json": "3ddc7e3d198b3097ecb157bada84a04ea364930a0a2373eac045f0552751e522",
+  "sha256_tt-A15.json": "91df51958c982bcbf374e08f04fdbaf4bb92f322633c80c0d93006feb6e5fb00",
+  "sha256_tt-V.json": "682e89c0e1a54afa34eba6974567bc96285381586c5dad0e6de196f780c026f2",
+  "sha256_tt-S.json": "21dbae60eeabe342c1c95581cb824a52048ae74ea32a3afa3e4cd28cc5b4b6ff"
+ },
+ "ergebnis": {
+  "DN0": {
+   "je_netz": {
+    "C15": {
+     "teile": {
+      "a_nur_tetraeder": true,
+      "b_kanten_5_oder_6": true,
+      "c_q": true,
+      "d_diamant": true
+     },
+     "q": 5.1,
+     "q_soll": 5.1,
+     "q_abw": 0.0
+    },
+    "A15": {
+     "teile": {
+      "a_nur_tetraeder": true,
+      "b_kanten_5_oder_6": true,
+      "c_q": true
+     },
+     "q": 5.111111111111111,
+     "q_soll": 5.111111111111111,
+     "q_abw": 0.0
+    }
+   },
+   "plan": "eingetroffen",
+   "kartenwortlaut": "eingetroffen"
+  },
+  "kontrollen": {
+   "V_spanne": 0.0633880750020046,
+   "V_abw_rel_ttiso": 3.254027389765213e-07,
+   "V_kontrolle_ok": true,
+   "S_spanne": 0.026847165686945784,
+   "S_abw_rel_ttiso": 5.749434028867739e-08,
+   "C15_grundtempo_spanne_richardson": 2.7131017824139396e-08,
+   "C15_grundtempo_isotrop": true,
+   "C15_symmetrie48_abw": 9.386851232207601e-08,
+   "C15_symmetrie48_ok": true,
+   "A15_grundtempo_spanne_richardson": 8.1151912485645e-09,
+   "A15_grundtempo_isotrop": true,
+   "A15_symmetrie48_abw": 4.473694408208361e-08,
+   "A15_symmetrie48_ok": true,
+   "C15_gleich_S_spanne_abw": 6.436098329842821e-07
+  },
+  "DN1": {
+   "plan": "eingetroffen",
+   "kartenwortlaut": "eingetroffen",
+   "s_C15": 0.02684718450960677,
+   "s_V": 0.0633880750020046
+  },
+  "DN2": {
+   "plan": "verfehlt",
+   "kartenwortlaut": "verfehlt",
+   "s_C15": 0.02684718450960677,
+   "s_A15": 0.009338681518611835
+  },
+  "DN3": {
+   "plan": "eingetroffen",
+   "kartenwortlaut": "eingetroffen",
+   "s_C15": 0.02684718450960677
+  },
+  "tabelle": {
+   "C15": {
+    "spanne": 0.02684718450960677,
+    "w_min": 0.2113033014790053,
+    "w_max": 0.21697620020130123,
+    "w_mittel": 0.21477598500083228,
+    "regulaer": true,
+    "regel": {
+     "genau_2_masselos_alle": true,
+     "zwei_positive_werte_alle": true,
+     "wachsend_summe": 0,
+     "unklar_summe": 0,
+     "A_red_pd_alle": true,
+     "B_red_neg_summe": 0,
+     "tt_anteil_min": 1.0,
+     "n_tt_werte": 6,
+     "linear_max": 7.820682390580203e-08,
+     "luecke_min": 5.24002266408222,
+     "n_masselos_je_punkt": [
+      [
+       2,
+       26
+      ]
+     ],
+     "regulaer": true
+    },
+    "grundtempo_spanne_richardson": 2.7131017824139396e-08,
+    "symmetrie48": 9.386851232207601e-08,
+    "spanne_23ew": 0.026847121188440015,
+    "keil91_spanne": 0.026847153272089308,
+    "zerlegung": {
+     "richtungsspanne_zweigmittel": 0.004415263034204697,
+     "aufspaltung_max": 0.026847115971389002
+    },
+    "bz_L8": {
+     "nk": 511,
+     "k_mit_wachsend": 0,
+     "k_A_red_nicht_pd": 0,
+     "k_B_red_neg": 0,
+     "k_rangverlust_Mc": 0,
+     "w2_min_rel": 0.010374405728958118
+    },
+    "affin_spanne": 3.463373743350928e-08,
+    "affin_min": 0.9999995124415363,
+    "affin_max": 0.9999995470752568,
+    "superzelle_abw": 9.243144738491083e-08
+   },
+   "A15": {
+    "spanne": 0.009338681518611835,
+    "w_min": 0.6148109801818011,
+    "w_max": 0.6205525041198645,
+    "w_mittel": 0.617094990521745,
+    "regulaer": true,
+    "regel": {
+     "genau_2_masselos_alle": true,
+     "zwei_positive_werte_alle": true,
+     "wachsend_summe": 0,
+     "unklar_summe": 0,
+     "A_red_pd_alle": true,
+     "B_red_neg_summe": 0,
+     "tt_anteil_min": 1.0,
+     "n_tt_werte": 6,
+     "linear_max": 8.500222492546783e-08,
+     "luecke_min": 5.333333965660356,
+     "n_masselos_je_punkt": [
+      [
+       2,
+       26
+      ]
+     ],
+     "regulaer": true
+    },
+    "grundtempo_spanne_richardson": 8.1151912485645e-09,
+    "symmetrie48": 4.473694408208361e-08,
+    "spanne_23ew": 0.009338611960749699,
+    "keil91_spanne": 0.00933862256607676,
+    "zerlegung": {
+     "richtungsspanne_zweigmittel": 0.0015515847849341124,
+     "aufspaltung_max": 0.009338630987898666
+    },
+    "bz_L8": {
+     "nk": 511,
+     "k_mit_wachsend": 0,
+     "k_A_red_nicht_pd": 0,
+     "k_B_red_neg": 0,
+     "k_rangverlust_Mc": 0,
+     "w2_min_rel": 0.019839233827477563
+    },
+    "affin_spanne": 2.403178813725759e-07,
+    "affin_min": 0.9999988952600036,
+    "affin_max": 0.9999991355776194,
+    "superzelle_abw": 3.2254235282636046e-08
+   },
+   "V": {
+    "spanne": 0.0633880750020046,
+    "w_min": 0.11888966907430171,
+    "w_max": 0.12642585633454706,
+    "w_mittel": 0.121789695982473,
+    "regulaer": true,
+    "regel": {
+     "genau_2_masselos_alle": true,
+     "zwei_positive_werte_alle": true,
+     "wachsend_summe": 0,
+     "unklar_summe": 0,
+     "A_red_pd_alle": true,
+     "B_red_neg_summe": 0,
+     "tt_anteil_min": 0.9999999999999999,
+     "n_tt_werte": 6,
+     "linear_max": 1.1055631066181348e-07,
+     "luecke_min": 3.42730058164439,
+     "n_masselos_je_punkt": [
+      [
+       2,
+       26
+      ]
+     ],
+     "regulaer": true
+    },
+    "grundtempo_spanne_richardson": 5.321916341287243e-08,
+    "symmetrie48": 1.7249692587827195e-07,
+    "spanne_23ew": 0.06338802676800248,
+    "keil91_spanne": 0.06338810095970127,
+    "zerlegung": {
+     "richtungsspanne_zweigmittel": 0.01034605519914833,
+     "aufspaltung_max": 0.06338799628460023
+    },
+    "bz_L8": {
+     "nk": 511,
+     "k_mit_wachsend": 0,
+     "k_A_red_nicht_pd": 0,
+     "k_B_red_neg": 0,
+     "k_rangverlust_Mc": 0,
+     "w2_min_rel": 0.014484054659974462
+    },
+    "affin_spanne": 2.193662900218385e-07,
+    "affin_min": 0.9999995312915408,
+    "affin_max": 0.999999750657728,
+    "superzelle_abw": null
+   },
+   "S": {
+    "spanne": 0.026847165686945784,
+    "w_min": 0.2113033017198727,
+    "w_max": 0.2169761964713448,
+    "w_mittel": 0.21477598432787864,
+    "regulaer": true,
+    "regel": {
+     "genau_2_masselos_alle": true,
+     "zwei_positive_werte_alle": true,
+     "wachsend_summe": 0,
+     "unklar_summe": 0,
+     "A_red_pd_alle": true,
+     "B_red_neg_summe": 0,
+     "tt_anteil_min": 1.0,
+     "n_tt_werte": 6,
+     "linear_max": 5.249418189023913e-08,
+     "luecke_min": 5.820417603495507,
+     "n_masselos_je_punkt": [
+      [
+       2,
+       26
+      ]
+     ],
+     "regulaer": true
+    },
+    "grundtempo_spanne_richardson": 3.41585418753917e-08,
+    "symmetrie48": 3.3837873781097776e-08,
+    "spanne_23ew": 0.02684710297251769,
+    "keil91_spanne": 0.026847109810838488,
+    "zerlegung": {
+     "richtungsspanne_zweigmittel": 0.004415265868383145,
+     "aufspaltung_max": 0.026847087545430526
+    },
+    "bz_L8": {
+     "nk": 511,
+     "k_mit_wachsend": 0,
+     "k_A_red_nicht_pd": 0,
+     "k_B_red_neg": 0,
+     "k_rangverlust_Mc": 0,
+     "w2_min_rel": 0.03111698635689761
+    },
+    "affin_spanne": 3.4677531735027856e-08,
+    "affin_min": 0.9999995124011248,
+    "affin_max": 0.9999995470786397,
+    "superzelle_abw": null
+   }
+  }
+ },
+ "laufzeit_s": 0.005431413650512695,
+ "maxrss_MB": 72.76953125,
+ "ende_utc": "2026-10-05T06:04:58Z"
+}

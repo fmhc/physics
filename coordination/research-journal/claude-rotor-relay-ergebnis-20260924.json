@@ -1,0 +1,19 @@
+{
+  "id": "claude-rotor-relay-ergebnis-20260924",
+  "time": "2026-09-23T22:12:14.274996+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5); gerechnet von der Schwestersitzung codex-rotor-relay",
+  "topic": "modelle",
+  "status": "reported",
+  "title": "Rotor-Punktnetz: die Verstaerkung ist parametrische Resonanz aus dem Rotorreservoir, kein Weitergabemechanismus",
+  "question": "Was zeigt der erste Lauf des Punktnetzes mit rotierenden Kopplungen, und haelt die Deutung als Weitergabemechanismus?",
+  "action": "Die Schwestersitzung rechnete 13 Laeufe auf .69/P5000, CUDA float64, 32^3 Knoten plus Kontrollkasten 48^3, 114,27 s. Ich habe die gemeldete Konvergenzordnung und die Energiebilanz nachgerechnet und das Ergebnis gegen meine vorab gemeldeten Effekte gelesen.",
+  "result": "Anregungsenergie bei t 12 relativ zum Anfang: ohne Kopplung 1,000, konstante Kopplung 1,00047, langsam zyklisch 1,0513, schnell zyklisch 427,35, schnell gleichphasig 2305,77. Die Verstaerkung stammt aus der Rotorenergie; im schwach angeregten zyklischen Fall schliesst die Bilanz exakt, 0,005 plus 2,13175 gleich 2,13675. Konvergenzordnung aus den gemeldeten Energiefehlern 2,00 in allen vier Verfeinerungsschritten, etwa Fehlerabfall 626,1-fach gegen erwartete 625-fach. Sieben von 13 Laeufen bestehen das Energiegatter, sechs grobe Vorlaeufe sind als nicht bestanden archiviert. Gleichphasig pumpt 5,4-mal staerker als zyklisch.",
+  "meaning": "Zwei der drei vorab gemeldeten Effekte sind eingetreten: die Verstaerkung ist Mathieu-Resonanz, und die 120-Grad-Phasen daempfen das Pumpen, weil sich die Modulation fuer isotrope Moden exakt aufhebt. Die Deutung der Sitzung als aktiver Weitergabemechanismus geht zu weit: die Ausbreitung existiert schon bei konstanter Kopplung, die Rotoren fuegen nur Energie hinzu. Das ist ein Verstaerker, kein Relais, und genau das unterscheidet das Ergebnis von Finns Idee des Weiterreichens von Punkt zu Punkt. Die spaeteren Ankunftszeiten im zyklischen Fall folgen aus der Normierung auf das spaetere verstaerkte Maximum, nicht aus langsamerer Ausbreitung. Der interessanteste Fall mit ruhenden Rotoren, der einzige ohne Energiepumpe und der einzige mit gravitationsaehnlicher Selbstverlangsamung, fehlt in der Ergebnistabelle; er ist zusammen mit dem Vorzeichen-Kontrollarm der naechste billige Lauf. EINSCHRAENKUNG 24.09. 00:45 nach Regel 1 (zwei Regime): 'Verstaerker, kein Relais' gilt fuer das schnelle Regime (Rotorfrequenz 4, Faktoren 427 bis 2306). Im langsamen Regime (Frequenz 0,25, Faktor 1,05) moduliert die Rotation die Ausbreitung; ob sie dort die Weitergabe formt, ist offen. Die pauschale Aussage ist gestrichen.",
+  "compute": "Schwestersitzung auf .69/P5000 CUDA float64, 114,27 s; von mir nur Arithmetik",
+  "sources": [
+    {
+      "path": "coordination/events.jsonl"
+    }
+  ]
+}

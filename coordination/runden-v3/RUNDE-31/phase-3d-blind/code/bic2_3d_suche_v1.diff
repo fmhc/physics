@@ -1,0 +1,304 @@
+2c2,13
+< """RUNDE-13 LEITER-3D-PRAEZ: Kopie von RUNDE-07/bic2/bic2.py (sha256 ee1ef6d226e8ec2c...). Aenderungen nur in Abtastung
+---
+> """RUNDE-31 PHASE-3D-BLIND (Code-Agent, 03.10.2026): Kopie von RUNDE-13/leiter3d-praez/bic2_3d_praez.py (sha256
+> ba86ae6a...). Aenderungen nur in Suche und Auswertung, alle mit "SUCHE31" markiert; Physik (Profile, Gleichungen,
+> direkt_m, praez_W, praez_illinois, praez_rechteck) unveraendert:
+>   - lin_multi: optionales rm_fest (fester Anschluss r_m); ohne Angabe wie bisher (Median R_halb).
+>   - neues Kommando suche: Fenster in u = 1/eps mit n_scan Zeilen (oder Startklammer aus einer frueheren suche-Datei),
+>     je Zeile Profil, rho-Abtastung, Nullstelle von L(y_b) (Illinois), s = L(y_a) exakt dort; jeder Vorzeichenwechsel von
+>     s zwischen Nachbarzeilen wird per Illinois in omega^2 verfeinert (neues Profil je Schritt, festes R und r_m je
+>     Lauf); danach Umlauf-Rechteck auf den zwei Startzeilen (praez_rechteck). Halbhoehenradius in zwei Konventionen.
+>   - Ohne das neue Kommando ist das Verhalten unveraendert.
+> 
+> --- Kopf RUNDE-13 ---
+> RUNDE-13 LEITER-3D-PRAEZ: Kopie von RUNDE-07/bic2/bic2.py (sha256 ee1ef6d226e8ec2c...). Aenderungen nur in Abtastung
+1301c1312
+< def lin_multi(profs, h, f_rand, dev, r_min=20.0):
+---
+> def lin_multi(profs, h, f_rand, dev, r_min=20.0, rm_fest=None):
+1303c1314,1315
+<     Einzelrand, Anschluss r_m = Median der R_halb; K und Km gerade (Simpson). Koeffizienten als Tensoren je Zeile."""
+---
+>     Einzelrand, Anschluss r_m = Median der R_halb; K und Km gerade (Simpson). Koeffizienten als Tensoren je Zeile.
+>     SUCHE31: rm_fest (optional) legt den Anschluss r_m fest; ohne Angabe unveraendert."""
+1310c1322
+<     rh = sorted(r_halb(p) for p in profs)[len(profs) // 2]
+---
+>     rh = sorted(r_halb(p) for p in profs)[len(profs) // 2] if rm_fest is None else rm_fest   # SUCHE31
+2603a2616,2875
+> # ================================================================ SUCHE31: Nullstellensuche in omega^2 (Runde 31)
+> 
+> def hermite_wurzel(r0, y0, p0, r1, y1, p1, ziel):
+>     """SUCHE31 (wie RUNDE-26 phase_3d.hermite_wurzel): kubische Hermite-Interpolation auf [r0, r1] (Werte y,
+>     Ableitungen p), Wurzel von H(r) = ziel per Bisektion."""
+>     hh = r1 - r0
+> 
+>     def H(tau):
+>         t2, t3 = tau * tau, tau * tau * tau
+>         return ((2 * t3 - 3 * t2 + 1) * y0 + (t3 - 2 * t2 + tau) * hh * p0 + (-2 * t3 + 3 * t2) * y1
+>                 + (t3 - t2) * hh * p1 - ziel)
+>     lo, hi = 0.0, 1.0
+>     flo = H(lo)
+>     for _ in range(80):
+>         mid = 0.5 * (lo + hi)
+>         fm = H(mid)
+>         if (fm < 0.0) == (flo < 0.0):
+>             lo, flo = mid, fm
+>         else:
+>             hi = mid
+>     return r0 + 0.5 * (lo + hi) * hh
+> 
+> 
+> def r_wand(prof, beta):
+>     """SUCHE31: Halbhoehenradius in der Konvention PHASE-WAND (RUNDE-26): S(R) = S_c/2 mit S_c = 1/(2 beta), also
+>     f(R) = sqrt(1/(4 beta)); Hermite auf dem Profilgitter wie RUNDE-26 R_bic2. None, wenn nicht erreicht."""
+>     f_w = math.sqrt(0.25 / beta)
+>     f, fp, hp = prof["f"], prof["fp"], prof["h"]
+>     for j in range(len(f) - 1):
+>         if f[j] > f_w >= f[j + 1]:
+>             return hermite_wurzel(j * hp, f[j], fp[j], (j + 1) * hp, f[j + 1], fp[j + 1], f_w)
+>     return None
+> 
+> 
+> def suche_auswerten(x, p, t_prof, pot, beta, h, f_rand, dev, R_fest, rm_fest, rho_ref, a, nu):
+>     """SUCHE31: eine Zeile omega^2 = x mit fertigem Profil p: lin auf festem R (r_min) und r_m, rho-Abtastung (ganzes
+>     Fenster grob plus dicht um rho_ref), alle Nullstellen von L(y_b) (praez_illinois), Zielast = naechste an rho_ref
+>     innerhalb dicht_halb, s = L(y_a) exakt dort."""
+>     t0 = uhr()
+>     L = lin_multi([p], h, f_rand, dev, r_min=R_fest, rm_fest=rm_fest)
+>     om = math.sqrt(x)
+>     r0, r1 = 1.0 - om + 0.002, 1.0 + om - 0.002
+>     g = [r0 + (r1 - r0) * k / (a.n_rho - 1) for k in range(a.n_rho)]
+>     d = [rho_ref + a.dicht_halb * (2.0 * k / (a.n_dicht - 1) - 1.0) for k in range(a.n_dicht)]
+>     alle = sorted(set(g + [v for v in d if r0 < v < r1]))
+>     W, wa, _ = praez_W(L, alle, [0] * len(alle), nu, a.stapel)
+>     kl, info = [], []
+>     for k in range(len(alle) - 1):
+>         w1, w2_ = W[k], W[k + 1]
+>         if w1.imag * w2_.imag < 0:
+>             kl.append([alle[k], alle[k + 1], w1.imag, w2_.imag, 0])
+>             info.append({"richtung": 1 if w2_.imag > w1.imag else -1})
+>     wz = praez_illinois(L, kl, nu, a.iter_wurzel, a.tol_wurzel)
+>     nullst = []
+>     for inf, w_ in zip(info, wz):
+>         z = dict(inf)
+>         z.update(w_)
+>         if "s" in z:
+>             z["ausloeschung"] = z["terme_a"] / max(abs(z["s"]), 1e-300)
+>         nullst.append(z)
+>     kand = [z for z in nullst if "s" in z and z.get("konvergiert") and abs(z["rho"] - rho_ref) <= a.dicht_halb]
+>     ziel = min(kand, key=lambda z: abs(z["rho"] - rho_ref)) if kand else None
+>     eps = x - omega2_min(pot)
+>     return {"x": x, "eps": eps, "u": 1.0 / eps, "rho_ref": rho_ref, "R_aus": L["R_aus"], "r_m": L["r_m"],
+>             "R_rand_einzel": radius_wo(p, f_rand * p["f0"]), "R_wand": r_wand(p, beta), "R_halb_S0": r_halb(p),
+>             "S0": p["f0"] ** 2, "r_cut": p["r_cut"], "grund": p["grund"], "rueckfall": p["rueckfall"],
+>             "klammer_profil": p["klammer"], "sek_profil": t_prof, "n_rho": len(alle),
+>             "wachstum_fenster": max(wa) if wa else None, "n_nullstellen": len(nullst), "nullstellen": nullst,
+>             "ziel": ziel, "s": ziel["s"] if ziel else None, "rho": ziel["rho"] if ziel else None,
+>             "sek_auswertung": uhr() - t0}
+> 
+> 
+> def suche(a, dev, budget, zeilen, erg, sichern, l=0):
+>     """SUCHE31: Startzeilen (Fenster in u = 1/eps oder Startklammern einer frueheren suche-Datei), Vorzeichenwechsel von
+>     s zwischen Nachbarzeilen, je Wechsel Illinois in omega^2 (neues Profil je Schritt) bis |Klammer| <= tol_x, danach
+>     Umlauf-Rechteck auf den zwei Startzeilen (praez_rechteck, unveraendert)."""
+>     pot = pot_poly(a.beta)
+>     beta = a.beta
+>     h = float(a.h.split(",")[0])
+>     f_rand = FRAND.get(h, 1e-8)
+>     nu = l + 1.0
+>     om2min = omega2_min(pot)
+>     st = {"potential": pot_text(pot), "beta": beta, "h": h, "f_rand": f_rand, "omega_min2": om2min,
+>           "r_zusatz": a.r_zusatz, "tol_x": a.tol_x, "iter_x": a.iter_x, "n_rho": a.n_rho, "n_dicht": a.n_dicht,
+>           "dicht_halb": a.dicht_halb, "tol_wurzel": a.tol_wurzel, "u_runden": a.u_runden}
+>     erg["suche"] = st
+> 
+>     def drucke(t):
+>         zeilen.append(t)
+>         print(t, flush=True)
+>     # 1. Startzeilen
+>     if a.klammer_aus:
+>         with open(a.klammer_aus) as fh:
+>             alt = json.load(fh)["ergebnisse"]["suche"]
+>         st["klammer_aus"] = a.klammer_aus
+>         st["modus"] = "klammer"
+>         pos = {}
+>         for w in alt.get("wurzeln", []):
+>             if "klammer_start" in w and "rho_start" in w:
+>                 for xv, rv in zip(w["klammer_start"], w["rho_start"]):
+>                     pos[xv] = rv
+>         xs = sorted(pos)
+>         rref = [pos[xv] for xv in xs]
+>         paare_soll = [(xs.index(w["klammer_start"][0]), xs.index(w["klammer_start"][1]))
+>                       for w in alt.get("wurzeln", []) if "klammer_start" in w and "rho_start" in w]
+>     else:
+>         u_lo, u_hi = [float(v) for v in a.fenster_u.split(",")]
+>         st["modus"] = "fenster"
+>         st["fenster_u"] = [u_lo, u_hi]
+>         us = [u_lo + (u_hi - u_lo) * j / (a.n_scan - 1) for j in range(a.n_scan)]
+>         xs = sorted(om2min + 1.0 / u for u in us)
+>         rref = [a.rho0 + a.rho_steig * (xv - a.x0) for xv in xs]
+>         paare_soll = None
+>     st["x_start"] = xs
+>     drucke(f"=== suche {pot_text(pot)}, h = {h}, f_rand = {f_rand}, Modus {st['modus']}, {len(xs)} Startzeilen "
+>            f"{xs[0]:.9f} .. {xs[-1]:.9f}, r_zusatz {a.r_zusatz}, tol_x {a.tol_x}")
+>     profs, tps = [], []
+>     for xv in xs:
+>         t0 = uhr()
+>         profs.append(profil_pot(xv, 3.0, pot, 0.5 * h, dev))
+>         tps.append(uhr() - t0)
+>         drucke(f"  Profil {xv:.9f}: {tps[-1]:.1f} s, nach {uhr():.0f} s")
+>     R_fest = max(radius_wo(p, f_rand * p["f0"]) for p in profs) + a.r_zusatz
+>     rm_fest = sorted(r_halb(p) for p in profs)[len(profs) // 2]
+>     st.update({"R_fest_vorgabe": R_fest, "rm_fest_vorgabe": rm_fest})
+>     recs = []
+>     for xv, p, tp, rr in zip(xs, profs, tps, rref):
+>         rec = suche_auswerten(xv, p, tp, pot, beta, h, f_rand, dev, R_fest, rm_fest, rr, a, nu)
+>         recs.append(rec)
+>         drucke(f"  Zeile {xv:.9f} (u {rec['u']:.5f}): {rec['n_nullstellen']} Nullstellen L(y_b); Zielast rho "
+>                f"{rec['rho'] if rec['rho'] is None else format(rec['rho'], '.10f')}, s "
+>                f"{rec['s'] if rec['s'] is None else format(rec['s'], '+.6e')}, R {rec['R_aus']:.2f}, r_m "
+>                f"{rec['r_m']:.3f}, R_wand {rec['R_wand']}, Kernwachstum "
+>                f"{rec['ziel']['wachstum'] if rec['ziel'] else None}, nach {uhr():.0f} s")
+>     st["R_aus"] = recs[0]["R_aus"] if recs else None
+>     st["r_m"] = recs[0]["r_m"] if recs else None
+>     st["zeilen_start"] = recs
+>     sichern()
+>     # 2. Vorzeichenwechsel zwischen Nachbarzeilen (Fenster) bzw. in den Startklammern
+>     paare = paare_soll if paare_soll is not None else [(i, i + 1) for i in range(len(xs) - 1)]
+>     wechsel = []
+>     for i, j in paare:
+>         A, B = recs[i], recs[j]
+>         if A["ziel"] is None or B["ziel"] is None:
+>             continue
+>         if A["s"] * B["s"] < 0:
+>             wechsel.append((i, j))
+>     st["wechsel_start"] = [{"i": i, "j": j, "x": [recs[i]["x"], recs[j]["x"]], "s": [recs[i]["s"], recs[j]["s"]],
+>                             "rho": [recs[i]["rho"], recs[j]["rho"]],
+>                             "richtung": [recs[i]["ziel"]["richtung"], recs[j]["ziel"]["richtung"]],
+>                             "ast_konsistent": (recs[i]["ziel"]["richtung"] == recs[j]["ziel"]["richtung"]
+>                                                and abs(recs[i]["rho"] - recs[j]["rho"]) <= a.ast_tol)}
+>                            for i, j in wechsel]
+>     st["n_wechsel_start"] = len(wechsel)
+>     drucke(f"  Vorzeichenwechsel von s zwischen Startzeilen: {len(wechsel)}")
+>     sichern()
+>     # 3. Illinois in omega^2 je Wechsel
+>     st["wurzeln"] = []
+>     t_eval = max(tps) + max(r["sek_auswertung"] for r in recs)
+>     for i, j in wechsel:
+>         A, B = recs[i], recs[j]
+>         w = {"klammer_start": [A["x"], B["x"]], "rho_start": [A["rho"], B["rho"]], "s_start": [A["s"], B["s"]],
+>              "verlauf": []}
+>         st["wurzeln"].append(w)
+>         ra, rb = A, B                  # Klammerenden (wahre Werte)
+>         fa, fb = A["s"], B["s"]        # Illinois-Werte
+>         fehler = None
+>         for it in range(a.iter_x):
+>             if abs(rb["x"] - ra["x"]) <= a.tol_x:
+>                 break
+>             if not budget.ok(f"Illinois-Schritt {it} (Wurzel {len(st['wurzeln'])})", t_eval + a.reserve):
+>                 fehler = "Zeit"
+>                 break
+>             xa, xb = ra["x"], rb["x"]
+>             xn = xb - fb * (xb - xa) / (fb - fa) if fb != fa else 0.5 * (xa + xb)
+>             if not (min(xa, xb) < xn < max(xa, xb)):
+>                 xn = 0.5 * (xa + xb)
+>             t_ = (xn - xa) / (xb - xa)
+>             rr = ra["rho"] + t_ * (rb["rho"] - ra["rho"])
+>             t0 = uhr()
+>             p = profil_pot(xn, 3.0, pot, 0.5 * h, dev)
+>             tp = uhr() - t0
+>             rec = suche_auswerten(xn, p, tp, pot, beta, h, f_rand, dev, R_fest, rm_fest, rr, a, nu)
+>             t_eval = max(t_eval, uhr() - t0)
+>             kurz = {k: rec[k] for k in ("x", "eps", "u", "rho_ref", "rho", "s", "R_aus", "r_m", "R_wand", "R_halb_S0",
+>                                         "S0", "r_cut", "grund", "sek_profil", "sek_auswertung", "n_nullstellen",
+>                                         "wachstum_fenster")}
+>             if rec["ziel"] is not None:
+>                 kurz.update({"richtung": rec["ziel"]["richtung"], "wachstum": rec["ziel"]["wachstum"],
+>                              "terme_a": rec["ziel"]["terme_a"], "ausloeschung": rec["ziel"]["ausloeschung"],
+>                              "lb_rest": rec["ziel"]["lb_rest"], "iter_rho": rec["ziel"]["iter"]})
+>             w["verlauf"].append(kurz)
+>             if rec["ziel"] is None:
+>                 fehler = "kein Zielast"
+>                 drucke(f"    Schritt {it}: x = {xn:.12f}: kein Zielast")
+>                 break
+>             if rec["ziel"]["richtung"] != A["ziel"]["richtung"]:
+>                 w["richtung_abweichend"] = w.get("richtung_abweichend", 0) + 1
+>             fx = rec["s"]
+>             drucke(f"    Schritt {it}: x = {xn:.12f}, s = {fx:+.6e}, rho = {rec['rho']:.10f}, Klammer "
+>                    f"{abs(xb - xa):.2e}, Profil {tp:.1f} s, nach {uhr():.0f} s")
+>             if fx == 0.0:
+>                 ra, rb, fa, fb = rec, rec, 0.0, 0.0
+>                 break
+>             if fx * fb < 0:
+>                 ra, fa = rb, fb
+>             else:
+>                 fa = 0.5 * fa
+>             rb, fb = rec, fx
+>             sichern()
+>         sa, sb = ra["s"], rb["s"]
+>         xa, xb = ra["x"], rb["x"]
+>         t_ = 0.0 if sb == sa else (0.0 - sa) / (sb - sa)
+>         xs_ = xa + t_ * (xb - xa)
+> 
+>         def lin_i(k):
+>             va, vb = ra.get(k), rb.get(k)
+>             return None if va is None or vb is None else va + t_ * (vb - va)
+>         wa_ = [r["ziel"]["wachstum"] if "ziel" in r and r["ziel"] else r.get("wachstum") for r in (ra, rb)]
+>         te_ = [r["ziel"]["terme_a"] if "ziel" in r and r["ziel"] else r.get("terme_a") for r in (ra, rb)]
+>         st_s = (sb - sa) / (xb - xa) if xb != xa else None
+>         w.update({"x_stern": xs_, "eps_stern": xs_ - om2min, "u_stern": 1.0 / (xs_ - om2min),
+>                   "rho_stern": lin_i("rho"), "R_wand_stern": lin_i("R_wand"), "R_halb_S0_stern": lin_i("R_halb_S0"),
+>                   "klammer_end": [xa, xb], "s_end": [sa, sb], "breite_end": abs(xb - xa),
+>                   "konvergiert": abs(xb - xa) <= a.tol_x, "schritte": len(w["verlauf"]), "fehler": fehler,
+>                   "wachstum_kandidat": max([v for v in wa_ if v is not None] or [float("nan")]),
+>                   "terme_a_max": max([v for v in te_ if v is not None] or [float("nan")]),
+>                   "steigung_s_x": st_s,
+>                   "x_rausch_1e15": (1e-15 * max([v for v in te_ if v is not None] or [float("nan")]) / abs(st_s))
+>                   if st_s else None})
+>         drucke(f"  Wurzel: omega*^2 = {xs_:.12f} (eps {xs_ - om2min:.10f}, 1/eps {1.0 / (xs_ - om2min):.6f}), rho* = "
+>                f"{w['rho_stern']}, Klammer {abs(xb - xa):.2e}, konvergiert {w['konvergiert']}, Schritte "
+>                f"{len(w['verlauf'])}, R_wand* {w['R_wand_stern']}")
+>         sichern()
+>         # 4. Umlauf-Rechteck auf den zwei Startzeilen
+>         if not budget.ok("Rechteck", 20.0):
+>             w["rechteck"] = {"fehler": "Zeit"}
+>             sichern()
+>             continue
+>         L2 = lin_multi([profs[i], profs[j]], h, f_rand, dev, r_min=R_fest, rm_fest=rm_fest)
+>         xs2 = [xs[i], xs[j]]
+>         sl = (B["rho"] - A["rho"]) / (B["x"] - A["x"])
+>         halb_x = max(abs(xs2[1] - xs_), abs(xs_ - xs2[0]))
+>         drho = min(a.pr_drho_max, max(a.pr_drho, 2.0 * abs(sl) * halb_x))
+>         try:
+>             e = praez_rechteck(L2, xs2, [0, 1], w["rho_stern"], drho, a.u_n, a.u_runden, nu)
+>         except (RuntimeError, ValueError, ZeroDivisionError) as err:
+>             e = {"fehler": f"{type(err).__name__}: {err}", "aufgeloest": False}
+>         e["steigung_ast"] = sl
+>         w["rechteck"] = e
+>         if "umlauf" in e:
+>             drucke(f"  Rechteck omega^2 {e['x_lo']:.9f} .. {e['x_hi']:.9f}, rho {e['rho_lo']:.6f} .. {e['rho_hi']:.6f} "
+>                    f"({e['punkte']} Punkte, {e['runden_benutzt']} Runden): Umlauf {e['umlauf']:+.4f} (Kreuzung "
+>                    f"{e['umlauf_kreuzung']:+.1f}), groesster Sprung {e['max_sprung']:.3f} rad (aufgeloest: "
+>                    f"{e['aufgeloest']}), {e['sek']:.0f} s")
+>         else:
+>             drucke(f"  Rechteck: Fehler {e['fehler']}")
+>         sichern()
+> 
+> 
+2609c2881,2889
+<                                          "praez", "regel"])   # PRAEZ3D: praez, regel
+---
+>                                          "praez", "regel", "suche"])   # PRAEZ3D: praez, regel; SUCHE31: suche
+>     # SUCHE31: suche
+>     ap.add_argument("--fenster-u", dest="fenster_u", default=None, help="SUCHE31: Fenster in u = 1/eps, 'u_lo,u_hi'")
+>     ap.add_argument("--n-scan", dest="n_scan", type=int, default=5, help="SUCHE31: Startzeilen im Fenster (gleich in u)")
+>     ap.add_argument("--klammer-aus", dest="klammer_aus", default=None,
+>                     help="SUCHE31: Startklammern (klammer_start, rho_start) aus einer frueheren suche.json")
+>     ap.add_argument("--r-zusatz", dest="r_zusatz", type=float, default=0.0, help="SUCHE31: Zusatz zum Aussenrand R")
+>     ap.add_argument("--tol-x", dest="tol_x", type=float, default=1e-9, help="SUCHE31: Endklammer in omega^2")
+>     ap.add_argument("--iter-x", dest="iter_x", type=int, default=14, help="SUCHE31: hoechstens Illinois-Schritte")
+2797a3078,3079
+>     elif a.kommando == "suche":                                                               # SUCHE31
+>         suche(a, dev, budget, zeilen, ergebnis["ergebnisse"], sichern, l=l_ek)

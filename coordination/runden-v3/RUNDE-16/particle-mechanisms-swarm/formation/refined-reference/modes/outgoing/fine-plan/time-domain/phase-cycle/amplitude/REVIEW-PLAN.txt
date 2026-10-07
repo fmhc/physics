@@ -1,0 +1,74 @@
+Unabhängige Vorab-Papierprüfung, particle_binding, 03.10.2026
+Gelesen ROOT-NEXT.txt und AMPLITUDE-NEXT.txt sowie Roots konkreter
+Sechsarm-/Gateauftrag. PLAN.txt lag bei dieser Lektüre noch nicht vor.
+Keine Rechnung, kein Code, keine Kenntnis neuer Amplitudenergebnisse.
+
+Urteil: Der ausdrücklich erweiterte Sechsarmplan ist für einen engen
+empirischen Amplitudenvergleich sachlich tragfähig. Kein konkreter
+Blocker in der vorgeschlagenen Regel. ROOT-NEXT ersetzt den älteren
+Zweiarmumfang: theta90,+/−.001 bei dt=.01; theta0 UND theta90,+/−.001
+bei dt=.005. Große Amplituden, theta0-klein bei dt=.01 und je passende
+Baseline werden vollständig gehasht wiederverwendet. Keine neue Baseline,
+keine Nachnormierung, keine geänderte Mode oder Phase; alpha_H=2alpha_L.
+160CPU-s/CPU8/ein Thread ist der vereinbarte äußere Umfang, kein Autoretry.
+
+Baselinegewichte (a=alpha_H, P=Uplus+Uminus, B bei demselben dt):
+ Delta_theta = [P_theta,H −4P_theta,L +6B]/(2a²).
+ Delta_D = [P_0,H+P_90,H −4P_0,L−4P_90,L +12B]/(4a²).
+ Delta_H = [P_0,H−P_90,H −4P_0,L+4P_90,L]/(4a²).
+Die Faktoren6 und12 sind notwendig. Nur in Delta_H entfällt B. Diese
+rohen gewichteten Kombinationen sollten direkt ausgewertet werden,
+damit die baselinefreie H-Auswertehülle tatsächlich zur Implementierung
+passt. Eigene dt-Baselines dürfen nicht zwischen Stufen vertauscht oder
+vor ihrer gewichteten Subtraktion als identisch angenommen werden.
+
+Positive Hüllen aus den EINZELNEN Vorzeichenfeldern, nicht |P|:
+ S_theta = [|U_theta,+H|+|U_theta,−H|
+             +4|U_theta,+L|+4|U_theta,−L|+6|B|]/(2a²).
+ Für S_D: Summe der vier großen Einzelbeträge, viermal Summe der vier
+ kleinen Einzelbeträge, plus12|B|, alles/(4a²).
+ Für S_H: dieselbe Hülle OHNE Baseline, alles/(4a²).
+eta=64eps mal passende Hüllnorm; im Band positive Zeitmittelhülle,
+nicht oszillatorischer Fourierkoeffizient der Hülle. Zur konservativen
+empirischen Verwendung kann eta pro Messung als Maximum beider dt-Hüllen
+festgelegt werden. Dies ist keine Evolutions-/Rundungsfehlerschranke.
+
+Normierung und Tore: Delta zuerst als komplexes phi-Feld bilden, danach
+jeweils Schalen-/Zeit-L2 oder räumliches L2 des komplexen +2rho-Koeffizienten.
+Nfine=||Delta_fine|| und d=||Delta_fine−Delta_coarse|| im selben Maß.
+Nfine>10d fordert weniger als10% Änderung des beobachteten Effekts unter
+dieser einen dt-Halbierung; Nfine>100eta eine feste Auswertesensitivitäts-
+Reserve. Beides dimensionsrichtig, prospektiv und nicht sachlich falsch.
+Ein gemeinsamer kausaler Targetfehler gehört NICHT in diesen Nenner.
+Weder Normdifferenz noch Differenz von Koeffizientenbeträgen ersetzt d.
+Null/fehlende/nichtfinite Werte bestehen nicht, auch wenn d=eta=0 wäre.
+
+Alle4 Größen theta0/theta90/D/H x2 Fenster x2 Schalen x2 Normarten geben
+genau32 Auflösungsprüfungen. Gesamtpass verlangt alle32 sowie sämtliche
+bisherigen Start-/Erhaltungs-/Rand-/vollen Odd- und Vollständigkeitsgates.
+Teilweise aufgelöste Effekte dürfen einzeln berichtet werden, jedoch
+bleibt der Gesamtstatus dann UNRESOLVED. Die beiden dt-Approximationen
+teilen systematische Fehler; das Tor zertifiziert keinen Kontinuumsfehler.
+
+Zulässige Aussage bei Pass: endliche Änderung der skalierten geraden
+Antwort zwischen diesen zwei Amplituden ist auf diesem festen räumlichen
+Gitter gegenüber der direkt gemessenen dt-Halbierungsänderung und der
+festen Auswertesensitivität empirisch aufgelöst. Der führende gemeinsame
+diskrete Antwortterm fällt in Delta algebraisch weg; Hintergrunddrift,
+endliche Modeabweichung und räumliche Diskretisierung sind damit nicht
+allgemein beseitigt. Kein Exponent aus zwei Amplituden, kein Nachweis
+eines alpha->0- oder h->0-Grenzwerts, keine neue stationäre Strahlung,
+Lebensdauer oder BIC-Stabilität. Auch die beiden Phasen behalten ihre
+jeweiligen quadratischen Anfangs-Q/E-Verschiebungen; kein fixed-Q-Vergleich.
+
+Nachtrag: konkreten Root-PLAN.txt vollständig gelesen, SHA256
+6a70671ce1fc7d01f7337eaa3a89194eaa46e6909e7b9b64a9390954ce18ce39.
+Er stimmt mit dieser Vorabprüfung überein: genau sechs neue Arme, korrekte
+Baselinekoeffizienten, eta-Maximum beiderdt, alle32Tore, keine Targetreserve,
+keine Ausweitung der Interpretation. Kein zusätzlicher Planblocker.
+Eine Implementierungspräzisierung: Das positive Zeitintegral der Bandhülle
+ist mit derselben Fensterlängen-Normierung wie coefficient(...,0) zu
+verwenden, also als positiver ZeitMITTELwert. Ein unnormiertes Integral
+hätte gegenüber dem Bandkoeffizienten eine zusätzliche Zeitdimension.
+Dieser Punkt ändert kein Tor, sondern legt seine bereits beabsichtigte
+dimensionsgleiche Umsetzung fest. Codeprüfung folgt am Autor-Finalhash.

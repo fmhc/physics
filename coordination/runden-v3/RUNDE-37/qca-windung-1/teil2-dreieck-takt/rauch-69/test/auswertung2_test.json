@@ -1,0 +1,358 @@
+{
+ "vorbedingungen": {
+  "dateien": [
+   true,
+   true,
+   true
+  ],
+  "alle_haupt": false,
+  "unitaer_max": 2.255751141433393e-12,
+  "unitaer_ok": true,
+  "lam1_min_abstand_null": 0.0,
+  "lam3_min_abstand_null_pi": 0.13025315023320283,
+  "nachbau_kitagawa_ok": true,
+  "alle_ok": false
+ },
+ "urteile": {
+  "DT0": "nicht auswertbar",
+  "DT1": "nicht auswertbar",
+  "DT2": "nicht auswertbar",
+  "DT3": "nicht auswertbar"
+ },
+ "vermerke": {
+  "DT0": {
+   "teil_a_produkte_takte": true,
+   "teil_b_chern": [
+    {
+     "C": -0.9999999999999999,
+     "C_rund": -1,
+     "eindeutig": true
+    },
+    {
+     "C": 0.9999999999999999,
+     "C_rund": 1,
+     "eindeutig": true
+    }
+   ],
+   "teil_b_chern_ok": true,
+   "teil_b_rand_lam3": {
+    "vorhanden": false,
+    "ok": false
+   },
+   "additivitaet": [
+    [
+     "S1*R",
+     -0.9999999999999611
+    ],
+    [
+     "R*S1",
+     -0.9999999999999697
+    ],
+    [
+     "R",
+     8.353824090936928e-18
+    ],
+    [
+     "S1*R",
+     -0.9999999999999668
+    ],
+    [
+     "R*S1",
+     -0.9999999999999641
+    ],
+    [
+     "R",
+     -6.112411328116434e-17
+    ]
+   ],
+   "additivitaet_ok": true
+  },
+  "DT1": {
+   "anzahl_automaten": 21,
+   "max_abs_W3": 7.90834391034119e-15,
+   "higashikawa_halbbox": {
+    "16": [
+     -0.9999835763908169,
+     -3.2472779997147655e-18
+    ],
+    "32": [
+     -0.9999989813566945,
+     1.901610566266059e-18
+    ],
+    "48": [
+     -0.9999997990707206,
+     1.9863988255679346e-18
+    ],
+    "64": [
+     -0.9999999364561416,
+     1.5100892157729797e-18
+    ]
+   },
+   "higashikawa_andere_halbbox": {
+    "16": [
+     0.9999835763908167,
+     4.2700318378504115e-18
+    ],
+    "32": [
+     0.9999989813566945,
+     1.6757202534753186e-18
+    ],
+    "48": [
+     0.9999997990707206,
+     1.0521291114490518e-18
+    ],
+    "64": [
+     0.9999999364561416,
+     3.5675685831887075e-20
+    ]
+   },
+   "higashikawa_rand_abw": [
+    6.69473481947325e-16,
+    6.691362740129693e-16
+   ]
+  },
+  "DT2": {
+   "kegel_k0": {
+    "0.0001": {
+     "v_mittel": 0.9999999999166694,
+     "std_rel": 3.63407001808836e-11,
+     "spann_rel": 1.3843126646139214e-10
+    },
+    "0.05": {
+     "v_mittel": 0.9999791655715711,
+     "std_rel": 9.092442251738501e-06,
+     "spann_rel": 3.44757243263765e-05
+    },
+    "0.2": {
+     "v_mittel": 0.9996664382775148,
+     "std_rel": 0.0001456056582144924,
+     "spann_rel": 0.000552042289430906
+    }
+   },
+   "U_bei_k0": [
+    [
+     "(1+0j)",
+     "0j"
+    ],
+    [
+     "0j",
+     "(1+0j)"
+    ]
+   ],
+   "U_bei_k3_2pi": [
+    [
+     "(1+0j)",
+     "(-0+0j)"
+    ],
+    [
+     "0j",
+     "(1-0j)"
+    ]
+   ]
+  },
+  "DT3": {
+   "voll": {
+    "vorhanden": false,
+    "ok": false
+   },
+   "lam3": {
+    "vorhanden": false,
+    "ok": false
+   },
+   "lam4": {
+    "vorhanden": false,
+    "ok": false
+   },
+   "chern": {
+    "voll|vorwaerts": [
+     {
+      "C": -8.984417622158106e-16,
+      "C_rund": 0,
+      "eindeutig": true
+     },
+     {
+      "C": -2.6059610455782028e-15,
+      "C_rund": 0,
+      "eindeutig": true
+     }
+    ],
+    "voll|umkehr": [
+     {
+      "C": -2.2790975993308637e-15,
+      "C_rund": 0,
+      "eindeutig": true
+     },
+     {
+      "C": -2.1834036430578032e-15,
+      "C_rund": 0,
+      "eindeutig": true
+     }
+    ],
+    "lam3|vorwaerts": [
+     {
+      "C": -0.9999999999999999,
+      "C_rund": -1,
+      "eindeutig": true
+     },
+     {
+      "C": 0.9999999999999999,
+      "C_rund": 1,
+      "eindeutig": true
+     }
+    ],
+    "lam3|umkehr": [
+     {
+      "C": 1.0,
+      "C_rund": 1,
+      "eindeutig": true
+     },
+     {
+      "C": -1.0,
+      "C_rund": -1,
+      "eindeutig": true
+     }
+    ],
+    "lam4|vorwaerts": [
+     {
+      "C": 0.0,
+      "C_rund": 0,
+      "eindeutig": true
+     },
+     {
+      "C": 1.4135798584282297e-16,
+      "C_rund": 0,
+      "eindeutig": true
+     }
+    ],
+    "lam4|umkehr": [
+     {
+      "C": 0.0,
+      "C_rund": 0,
+      "eindeutig": true
+     },
+     {
+      "C": -7.067899292141149e-17,
+      "C_rund": 0,
+      "eindeutig": true
+     }
+    ],
+    "lam1|vorwaerts": [
+     {
+      "C": -7.774689221355263e-16,
+      "C_rund": 0,
+      "eindeutig": false
+     },
+     {
+      "C": -5.654319433712919e-16,
+      "C_rund": 0,
+      "eindeutig": false
+     }
+    ],
+    "lam1|umkehr": [
+     {
+      "C": -7.774689221355263e-16,
+      "C_rund": 0,
+      "eindeutig": false
+     },
+     {
+      "C": -5.654319433712919e-16,
+      "C_rund": 0,
+      "eindeutig": false
+     }
+    ]
+   },
+   "luecken": {
+    "voll|vorwaerts": [
+     {
+      "mitte": -2.4492935982947064e-16,
+      "breite": 3.1415926535897913
+     },
+     {
+      "mitte": 3.141592653589793,
+      "breite": 3.1415926535897913
+     }
+    ],
+    "voll|umkehr": [
+     {
+      "mitte": -2.4492935982947064e-16,
+      "breite": 3.1415926535897913
+     },
+     {
+      "mitte": 3.141592653589793,
+      "breite": 3.1415926535897913
+     }
+    ],
+    "lam3|vorwaerts": [
+     {
+      "mitte": 3.141592653589793,
+      "breite": 0.392699081698725
+     },
+     {
+      "mitte": -2.4492935982947064e-16,
+      "breite": 0.260506300466405
+     }
+    ],
+    "lam3|umkehr": [
+     {
+      "mitte": 3.141592653589793,
+      "breite": 0.392699081698725
+     },
+     {
+      "mitte": -2.4492935982947064e-16,
+      "breite": 0.26050630046640677
+     }
+    ],
+    "lam4|vorwaerts": [
+     {
+      "mitte": 3.141592653589793,
+      "breite": 0.7641058795101356
+     },
+     {
+      "mitte": -2.4492935982947064e-16,
+      "breite": 0.5690891155900637
+     }
+    ],
+    "lam4|umkehr": [
+     {
+      "mitte": 3.141592653589793,
+      "breite": 0.7641058795101352
+     },
+     {
+      "mitte": -2.4492935982947064e-16,
+      "breite": 0.5690891155900637
+     }
+    ],
+    "lam1|vorwaerts": [
+     {
+      "mitte": 3.141592653589793,
+      "breite": 2.7488935718910685
+     },
+     {
+      "mitte": -0.011422437269566179,
+      "breite": 0.022844874539131865
+     }
+    ],
+    "lam1|umkehr": [
+     {
+      "mitte": 3.141592653589793,
+      "breite": 2.7488935718910685
+     },
+     {
+      "mitte": -0.011422437269566179,
+      "breite": 0.022844874539131865
+     }
+    ]
+   }
+  }
+ },
+ "kennzahlen": {
+  "produkte_anzahl": 18,
+  "produkte_max_abs_W3": 7.90834391034119e-15,
+  "takt_anzahl": 2,
+  "takt_max_abs_W3": 1.7811136052604203e-16,
+  "lm_treffer": 0,
+  "lm_starts": 6,
+  "lm_max_abs_W3": null,
+  "higashikawa_ganzer_torus": 3.7466407170233813e-16
+ }
+}

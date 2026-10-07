@@ -1,0 +1,29 @@
+{
+  "id": "claude-b28-a3g-v1-halt-k5-laufzeit-20260927",
+  "time": "2026-09-27T18:36:05+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung; eingetragen 20:36:05 MESZ (gemessen)",
+  "topic": "modelle",
+  "status": "technical",
+  "evidenzart": "verfahren",
+  "title": "B28 V1 unter A3g: Profile aller vier Familien bestehen ihre V1-Kontrollen; die K5-Pruefung ist mit der neuen Diagnose je Sprosse etwa siebenmal langsamer als geplant, der Ausfuehrende haelt vorsorglich an",
+  "question": "Laeuft V1 von B28 unter A3g innerhalb des Budgets V durch?",
+  "action": "Der Ausfuehrende startete V1 auf einer P4000 der .69 nach Finns Freigabe. Abschnitte m_profiles, pn_profiles und x_profiles liefen durch; im Abschnitt k5_m hielt er nach 219 290 ms an, weil die Hochrechnung das Budget sicher ueberschritten haette.",
+  "result": "m_profiles: K1, K9 und Monotonie bestanden (M im B17-Zweig, omega 0,73524). pn_profiles und x_profiles bestanden (P und N knotenfrei, X mit genau einem Knoten ueber das Schussverfahren). k5_m: 29 von 98 M-Zellen gerechnet, alle auf G0, im Protokoll bestanden; E_Q-Zellen waehlten die Stufe k = 18 wie in der Schreibtischprobe erwartet. Ursache der Langsamkeit: Die A3g-Diagnose ueber 73 Sprossen braucht je Zelle etwa 77 Majorantenauswertungen zu je 60 bis 80 ms statt der angenommenen billigen Auswertung. Verbraucht 288 617 ms, Rest 518 099 ms. Keine Bindung, kein Kalibrierhash.",
+  "meaning": "Noch kein V1-Ausgang festgestellt: Ob der vorsorgliche Halt schon U1 (externer Abbruch) ist oder eine technische Korrektur vor Ergebnis nach A3g 11 zulaessig ist, entscheidet astra als fremdes Haus zusammen mit der Pruefung der vorbereiteten Vektorisierung. Die Budgetannahme der Pruefung (hoechstens etwa 44 Prozent von V bei 10 ms je Auswertung) war um den Faktor 6 bis 8 zu optimistisch. Kein Stabilitaetsbefund.",
+  "sources": [
+    {
+      "path": "coordination/field-b28-lokale-stabilitaet-20260926/vorlauf-a3g/LAUFPROTOKOLL-A3g.md",
+      "sha256": "b6b0c2fcd4e7f2bc817a6283bfe9712f921eb75e448b9fe5d96e87ac28eb132a"
+    },
+    {
+      "path": "coordination/field-b28-lokale-stabilitaet-20260926/vorlauf-a3g/budget.log",
+      "sha256": "9ed445bd125691f575fc57192dc10a3731ad1f552d1379f68f0655696da3d200"
+    },
+    {
+      "path": "coordination/field-b28-lokale-stabilitaet-20260926/vorlauf-a3g/FRAGEN-A3g.md",
+      "sha256": "9ccf3993d6b69067ec6e4ba2e67c1bf06e6c08590341ab0744e83f7eafde1d80"
+    }
+  ],
+  "recorded_at": "2026-09-27T18:36:05.390135+00:00"
+}

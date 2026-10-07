@@ -1,0 +1,44 @@
+Enger unabhängiger Deltareview, 02.10.2026, particle_binding
+Keine Ausführung/Rechnung. MAIN-RESULT-REVIEW.txt enthält die bereits
+abgeschlossene unabhängige Ergebnislesung des ursprünglichen Abbruchs.
+
+Urteil: Vorgeschlagene einmalige neue Numerikstufe ist fachlich begründet;
+kein konkreter Blocker im gelesenen Delta. Root koordiniert vor einem
+Start Ressourcen und Restbudget. Keine stillschweigende Autoretry-Freigabe.
+
+Hashes unabhängig bestätigt:
+timestep-half.py
+466b25fb813770a1ab13eea962c93b39308dfe1ad22171fe638c60fdafef998d
+TIMESTEP-HALF-PLAN.txt
+cd1db2407c542a934fafd319b040ca826b8731f36a21fa350475ad995913c0eb
+
+diff -u gegen maincode0ce21bee… zeigt ausschließlich die LEVELS-Zeile:
+base(h=.1,dt=.01), space(h=.05,dt=.01), time(h=.1,dt=.005).
+Keine Änderung von Modell, Q1100, Gaußbreite8, chi/Phasenpräparation,
+Referenzen, R120,RC12,T64, Schlussfenster, Normen, Schwellen oder Klassifikation.
+Genau6 Arme; räumlicher Vergleich bei gleichemdt und zeitlicher Vergleich
+bei gleichemh bleiben erhalten. .8/dt ergibt80 bzw.160 Schritte,
+also weiterhin exakt81 vorgesehene Samplezeiten und passenden Zeitguard.
+
+Der konkrete Ausgangslauf überschritt sein Energiegate beiT40.8;
+Q und Kern-Q-Bilanz blieben nahe Rundung. Kleinere dt sind daher eine
+gezielte Zeitfehlerprobe, keine physikalische Ergebnisoptimierung.
+Verlet-O(dt²) motiviert kleinere Fehler, garantiert weder Faktor4
+noch Bestehen bisT64. Alle Fehlergates bleiben unverändert.
+
+V2-Synthetik-/Identitätslogik ist bytegleich. Ihr früheres PASS gehört
+formal zum damaligen Quellenhash; hier überträgt der gelesene Einzeilen-
+Diff die unveränderte Logik, nicht eine behauptete neue Testausführung.
+Hauptprogramm wiederholt die eigenen algebraischen QA bei Start ohnehin.
+
+Alter MAIN-RESULT-Status NUMERICALLY_UNRESOLVED bleibt bestehen. Frischer
+Output mit neuer Quellen-/Referenzbindung; keine historische Überschreibung.
+Keine neue Referenzsuche nötig. Einmaliger kompletter neuer Vergleich,
+höchstens180CPU-s für die vonRoot gebundene gesamte Fortsetzung;
+Vorverbrauch und Imports in externen Receipts berücksichtigen.
+Weder interne175/178-Grenze noch ungenutztes Budget berechtigen zu weiterer
+Halbierung. Erneuter Gate-/Budgetfehler beendet diesen Versuch.
+
+Erfolg wäre weiterhin nur sampled radialer Kandidat aus einer schon
+subthreshold geladenen Wolke. Physikalische Frage bleibt bis zu einer
+vollständig numerisch brauchbaren sechsarmigen Serie unentschieden.

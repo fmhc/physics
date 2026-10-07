@@ -1,0 +1,155 @@
+KAUSALE QUELLENZERLEGUNG — prospektiver Papierplan, 2026-10-02
+particle_core. Kein Code, kein Lauf. Der zuvor vorgeschlagene lokale
+Außenresttest ist von Root NICHT beauftragt und wird nicht umgesetzt.
+Der abgeschlossene nichtlineare T128-Test bleibt UNRESOLVED; keine neuen
+Auslesefenster, längere Evolution oder Stationaritätsnachwertung.
+
+FRAGE UND IDENTIFIZIERBARKEIT
+Kann die kausale zweite Variation mit der bekannten führenden Modenbewegung
+den gespeicherten geraden Zeitanteil reproduzieren? Falls ja: kommt dessen
+Abweichung vom stationären Soll überwiegend aus dem DC-Einschaltanteil,
+oder aus der Antwort auf die eingeschaltete zweite Harmonische, oder sind
+beide samt Interferenz wesentlich? Die Zuordnung erfolgt erst NACH dem
+Vergleich der Summe mit dem nichtlinearen Datensatz, nicht aus schönen
+Einzelkurven. Ein Scheitern bleibt eine offene Modell-/Numerikdiagnose.
+
+1. EIN PHYSIKFALL, ZWEI ZEITSCHRITTE
+Identischer endlicher Generator L wie modes.operators auf R120,h=.05,
+Q1100-Referenz, dieselbe sqrt(V)-Basis und Dirichlet-Vakuumghost-Konvention
+wie im Zeitlauf. Kein auslaufender Robinrand in dieser Evolution, kein
+Absorber, kein Entfernen des Phasen-/Nullraums. Keine neue Referenz oder
+Modensuche. Genau T128, dt=.02 und .01 als interne Zeitdiskretisierungskontrolle.
+Keine neue h-Serie: dies ist eine Ursachenprüfung am fest gewählten
+diskreten Basisproblem, kein zusätzlicher Kontinuumsnachweis.
+
+Vergleichsdaten: nur base,+.002,-.002,0 aus dem abgeschlossenen Zeitlauf,
+RESULT SHA256 a3f302b50f184ef2b7fdf9d92afb903068e22436d2b3547fa4248f80e9a56cc3.
+Ring-NPZ r,t und alle vier Feld-/Geschwindigkeitskomponenten anhand ihrer
+Manifesthashes prüfen. Unveränderte Referenz-/Ritz-/Quell-/Antwortbindung
+aus time-domain/code.py und den dort genannten Manifesten übernehmen.
+Gemeinsame Ritzphase theta=-arg(pivot), ||vq||=1 wie tatsächlich gestartet;
+Quelle J2 und stationäres Antwortfeld erhalten exp(2i theta), DC bleibt
+unverändert. Alpha=.002*s wird ausschließlich zum Rekonstruieren des
+beobachteten Ueven benötigt; beide neuen linearen Antworten sind bereits
+Koeffizienten zweiter Ordnung. Keine zusätzliche Quellnormierung.
+
+2. ZWEI KAUSALE QUELLEN, GEMEINSAMER GENERATOR
+u1(t)=Re(uhat exp(i rho t)), nu=2rho, bekannte feste rho.
+J0=[J(Re uhat)+J(Im uhat)]/2, J2=J(uhat)/4.
+In der gewichteten Dreifeldbasis j0=sqrt(V)J0, j2=sqrt(V)J2.
+Separat integrieren, beide q(0)=p(0)=0:
+ DC: q_t=p, p_t=-Kq-Gp+j0;
+ H2: q_t=p, p_t=-Kq-Gp+2Re(j2 exp(i nu t)).
+Die Summe ist die kausale Duhamel-Antwort auf die vollständige quadratische
+Quelle. Keine Inverse L^-1; insbesondere keine pseudoinverse DC-Relaxation.
+Die Nullmode und ein etwaiger Jordanpartner laufen dynamisch mit.
+Die Quelle setzt die feste lineare Modenprognose voraus, nicht die genaue
+nichtlineare Kernbewegung. Der alte Uodd-Fehler<.001 ist dafür Motivation,
+aber keine strenge relative Schranke der winzigen Außenbandantwort.
+
+3. INTEGRATOR: IMPLIZITER MITTELPUNKT, ZWEI RHS PRO FAKTORISIERUNG
+Für q_tt+Gq_t+Kq=j(t) auf jedem Schritt delta:
+ M=I+(delta/2)G+(delta²/4)K,
+ M q_next=[I+(delta/2)G-(delta²/4)K]q+delta*p
+          +(delta²/2)j(t+delta/2),
+ p_next=2(q_next-q)/delta-p.
+Das ist die algebraische Eliminierung des impliziten Mittelpunktverfahrens
+für denselben6Block-Generator L, keine veränderte Physik. M ist3N=7200
+dimensional, pro delta einmal sparse-LU; DC/H2 als zwei rechte Seiten
+gemeinsam lösen. L selbst wird niemals invertiert. Bekannte Phasen-/Null-
+Jordanpolynome werden daher nicht durch Nullraumprojektion verfälscht.
+Das Verfahren ist zweitordentlich und auf imaginären linearen Moden ohne
+künstliche Dämpfung; es garantiert weder korrekte Phase bei beliebigem
+delta noch numerische Stabilität eines physikalisch instabilen Generators.
+Diese Risiken bleiben über feste Schritt-/Restkontrollen sichtbar.
+
+Jede gelöste RHS: relativer linearer Rest<1e-10 mit Nenner Summe der
+Normen beider Gleichungsseiten plus1e-14. Endliche Felder verlangen.
+Zusätzlich je Quelle die diskrete Rotations-Energieidentität
+ H2=.5 p^T p+.5 q^T Kq,
+ H2_next-H2=delta*p_mid^T*j_mid
+prüfen (G ist schiefsymmetrisch). Über die Serie Bilanzrest<1e-8 relativ
+zur Summe absoluter Arbeitsschritte und |H2| plus1e-14. H2 kann indefinit
+sein; dies ist eine Integratoridentität, kein positiver Gesamtenergie-
+oder Strahlungsnachweis. Erste-/zweite Ladungsbedingung separat berichten,
+keine nachträgliche Q-Projektion oder Phasenausrichtung.
+
+Vorab kleine unabhängige bekannte Kontrollen, im selben Prozessbudget:
+- 2x2-Null-Jordanblock N²=0 und konstante Kraft: exakte Lösung
+  X=tF+t²NF/2. Derselbe Mittelpunktalgorithmus trifft relativ<1e-10.
+- Freier Skalaroszillator mit Omega0=.9 und derselben nu, beide Quellen:
+  q_DC=(1-cos(Omega0*t))/Omega0²,
+  q_H2=[cos(nu*t)-cos(Omega0*t)]/(Omega0²-nu²).
+  q,p von Nullstart, gleiche dt/T; maximaler kombinierter q/p-Fehler
+  relativ zur maximalen analytischen q/p-Norm<.005 und Reduktion grob/fein
+  zwischen2 und6, sofern nicht beide unter1e-10 liegen.
+- Echter U(1)-Phasenvektor: ursprünglicher L-Residualanker<1e-8 und
+  ein homogener Mittelpunkt-Schritt hält ihn relativ auf1e-10 fest.
+Kein positiver Moden-/Strahlungsbefund aus diesen Kontrollen.
+
+4. SUMMENVALIDIERUNG VOR URSACHENZUORDNUNG
+Speichern nur Ringsamples alle.1 mit ursprünglichen Ableitungshalos sowie
+Norm-/Rest-/Ladungsdiagnosen; keine vollständigen Gitterzeittrajektorien.
+q,p in dieselben rotierenden physikalischen Felder wie Ueven umrechnen.
+Originalschalen40..45/45..50 und Originalfenster
+[88,88+2pi/rho], [104.5,104.5+2pi/rho] unverändert verwenden.
+Identischer gehashter coefficient-Auswertepfad des Zeitbereichsadapters,
+kein Frequenzfit und kein neuer Startzeitpunkt nach Ergebnissichtung.
+
+Erst zeitlich konvergente Summenantwort verlangen: dt.02/.01-Differenz
+der komplexen Plus-Zeitfelder UND ihres positiven nu-Fourierkoeffizienten
+<.01 relativ zur jeweiligen beobachteten Ueven-L2-Norm, je Schale/Fenster.
+Daraufhin feine Summe gegen beobachtetes Ueven: beide Unterschiede<.05
+mit demselben Nenner. L2 benutzt Schalenvolumen und bei Zeitfeldern
+Trapez-Zeitgewichte. Beobachteter Nullnenner/unvollständige Daten => offen.
+Feldgeschwindigkeiten, chi und negatives Band zusätzlich absolut und
+relativ zur beobachteten Plusnorm berichten, keine winzigen Eigen-Nenner.
+Diese neuen Tore sind ausschließlich Validierung der Ursachenzerlegung;
+kein Ersatz der verfehlten Stationaritäts-/Incoming-/Signalreservegates.
+
+5. DISKRIMINIERENDE ZERLEGUNG, MIT INTERFERENZ
+Je ursprünglicher Messkombination C=Fourier_nu[DC-Antwort],
+H=Fourier_nu[H2-Antwort], P=gespeichertes stationäres Plus-Sollfeld.
+Für die validierte Summe gilt Delta=(C+H)-P=C+(H-P).
+Alle Größen sind komplexe RADIALFELDER, nicht bloße Beträge oder Leistungen.
+Ausweisen:
+ ||Delta||²=||C||²+||H-P||²+2Re<C,H-P>.
+Die Kreuzgröße kann negativ sein; keine additiven positiven Prozentanteile
+erfinden. Flüsse ebenfalls nicht unbesehen addieren: sie sind quadratisch
+im summierten Bandfeld. Für diese Ursachenprüfung genügt die Feldzerlegung.
+
+Prospektive enge Zuordnung nach bestandener Summenvalidierung:
+- ||C||/||Delta||<.10 in ALLEN vier Kombinationen: Abweichung ist im
+  festgelegten Modell überwiegend dem H2-Antwort-minus-stationär-Term
+  zugeordnet; ein dominanter DC-Einschaltbeitrag wird damit widerlegt.
+- ||H-P||/||Delta||<.10 in ALLEN vier Kombinationen: DC-Einschaltantwort
+  dominiert die Abweichung; die alternative H2-Dominanz ist widerlegt.
+- Sonst gemischte/fensterabhängige Beiträge, gegebenenfalls Interferenz;
+  kein Erzwingen einer eindeutigen Ursache. Numerischer Null-Delta-Nenner
+  unter1e-8 der Sollnorm => für diese Zuordnung unaufgelöst.
+Schon ein nicht erfülltes Summen-/Numeriktor verhindert beide Zuordnungen.
+
+H-P heißt ausdrücklich nicht ausschließlich "Schalttransient": im
+Vergleich liegen auch die verschiedenen endlichen Randdefinitionen
+Dirichlet versus frequenzabhängiges Robin. Die Zerlegung unterscheidet
+die beiden Quellgeschichten am IDENTISCHEN endlichen Generator; sie
+isoliert nicht zusätzlich einzelne Kontinuumsmoden oder Randreflexionen.
+Insbesondere kann DC durch seine Einschaltantwort im endlichen Fenster
+einen nu-Koeffizienten besitzen, ohne lineare Frequenzmischung im zeitlich
+konstanten Operator zu behaupten.
+
+6. BUDGET UND ABBRUCH
+Nur dieser eine Basis-Physikfall, zwei Zeitschritte und zwei RHS. Vorlauf
+elf nichtlineare Arme kostete168.72 CPU-s; grobe Aufwandsgewichte ergeben
+etwa10 CPU-s für einen h=.05,dt=.01,T128-Arm. Die neue Serie hat gegenüber
+diesem Arm etwa3 RHS-Schrittvolumina (2Quellen*(1+.5)); wiederverwendete
+Sparse-LU kann teurer oder günstiger als der bisherige Array-Verlet sein.
+Prospektive Schätzung40–90 CPU-s, nicht gemessen. Fester Gesamtdeckel90
+CPU-s inklusive Kontrollen, Imports, Faktorisierungen und IO; interner
+Checkpoint80, eine CPU/ein Thread .69,nice19, RAM<512MB.
+JSON-Teilstände nach Kontrollen und regelmäßig je delta; Quell-/Code-/
+Artefakthashes binden. Bei Zeit-/RAM-/Rest-/Kontrollfehler INCOMPLETE oder
+UNRESOLVED, keine anderen dt, kein Zusatzgitter und kein automatischer
+Budgetnachschlag. Nichtautorreview dieses Plans, erst dann Codeauftrag.
+Dies ist eine Ursachendiagnose, kein neuer Physik-/Skalierungssatz und
+keine Wiedereröffnung der abgeschlossenen Stationaritätsentscheidung.

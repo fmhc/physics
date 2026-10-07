@@ -1,0 +1,307 @@
+{
+ "info": {
+  "numpy": "2.4.4",
+  "scipy": "1.18.0",
+  "python": "3.12.3",
+  "host": "ubuntu-auto",
+  "argv": [
+   "code/uw.py",
+   "rauch1",
+   "--netz",
+   "V",
+   "--out",
+   "/home/fmh/fmhc-physics-remote/ueberleitung-v-2/rauch/r1-V.json"
+  ],
+  "start_utc": "2026-10-05T13:33:33Z",
+  "skript_sha256": "6024eda925f0905767fdcdcf1765720cd782d8f36e12199ac712d2c00073d7e8",
+  "module_sha256": {
+   "uv": "7abc883cffaa41860ef6b77bd5f4a92c5adb54c8eb38128245d54b132079c8c1",
+   "rk": "afd778897795839f84695db580e401507b5d9ba00266913bd23b8ad6fecac17f",
+   "pt": "bc360991aaa4eeecb3ed6e74f7491e3df1ba744a378f5bbfa7e0dc085ba53280",
+   "rk2": "eb361e43564a2aa76a3109f88df44485cacd068cc293c891d1c3d1a2059cff81",
+   "ew": "fa7b6417d39177102f0b19c5474453cd16a7595e23bc25ca548e081c4060b142",
+   "tp": "419d7da6caa211c721eb6a8c87403977415cf3050f03365377f51cb77b374dfd",
+   "tg": "ec48a258e266fc2226d0d10564b606052831ffefbf0642e4f7d04f9de85cfd9e",
+   "hm": "0ed5e2ce3a2a26525ef8a3320da394e6f403306384015187baf4dd46623fd5f2",
+   "tti": "6d6b6f7b99b334d74d91860fc69af1c6c0c46e22207dc45432d60a9824c08ee5",
+   "dn": "0cd5d13e98f41df277ec7d8139970d1e658542f843ed8180bc756a4ea1d4d1ae",
+   "nachtrag_kinetik": "fd0d17b9fb7c92d4b6ad564a46260e3daae3285bcb5ad53f65d9fb3918a32b28"
+  }
+ },
+ "ergebnis": {
+  "netz": "V",
+  "t_aufbau_s": 0.7109556198120117,
+  "l_mittel": 0.3589683417646019,
+  "kontrollen": {
+   "h=0.00390625": {
+    "K1": 3.8060866739759454e-16,
+    "K2": 2.5717478683737786e-16
+   },
+   "h=0.000244141": {
+    "K1": 3.806477409134342e-16,
+    "K2": 6.130654173673928e-15
+   },
+   "K3": {
+    "0.00390625": {
+     "fehlwinkel_max_abs": 2.6645352591003757e-14,
+     "schlaefli": 1.7504410283953262e-14,
+     "M_sym": 3.1362319312611684e-14,
+     "vol_summe_rel_fehler": 0.0,
+     "vol_min_rel": 0.0003041365384510252,
+     "tote_kanten": [],
+     "NE": 146,
+     "S": 232
+    },
+    "0.000976562": {
+     "fehlwinkel_max_abs": 1.163513729807164e-13,
+     "schlaefli": 9.05291039613363e-14,
+     "M_sym": 1.755780519444183e-13,
+     "vol_summe_rel_fehler": 8.881784197001252e-16,
+     "vol_min_rel": 7.622224585262164e-05,
+     "tote_kanten": [],
+     "NE": 146,
+     "S": 232
+    },
+    "0.000244141": {
+     "fehlwinkel_max_abs": 3.4638958368304884e-13,
+     "schlaefli": 3.8199191577828617e-13,
+     "M_sym": 5.912810241840275e-13,
+     "vol_summe_rel_fehler": 8.881784197001252e-16,
+     "vol_min_rel": 1.906708435586986e-05,
+     "tote_kanten": [],
+     "NE": 146,
+     "S": 232
+    }
+   },
+   "K3_3d_ops": {
+    "B_herm": 2.9844156993804295e-16,
+    "A_herm": 0.0,
+    "BM_null": 5.141171373349164e-16,
+    "cM_null": 9.31073400197006e-16
+   },
+   "K3_3d_pruefung": {
+    "T": 58,
+    "E": 68,
+    "nV": 10,
+    "dieder_summe_minus_2pi_max": 1.7763568394002505e-15,
+    "Vbox": 0.25
+   },
+   "K4_Mdisp_zufall": 1.484151213845455e-16,
+   "struktur": {
+    "NE": 146,
+    "NV": 10,
+    "nq": 68,
+    "n_diag": 68,
+    "dt": [
+     -1
+    ],
+    "tot": [],
+    "n_lebend_diag": 68
+   }
+  },
+  "pruefung_3d": {
+   "T": 58,
+   "E": 68,
+   "nV": 10,
+   "dieder_summe_minus_2pi_max": 1.7763568394002505e-15,
+   "Vbox": 0.25,
+   "selbstkanten": 0
+  },
+  "NV": 10,
+  "NE": 146,
+  "nq": 68,
+  "n_diag": 68,
+  "tot": [],
+  "technik": [
+   {
+    "art": "kl",
+    "K4": 1.4749850279168492e-16,
+    "rang_B_s": [
+     30,
+     30,
+     30
+    ],
+    "n_L": [
+     38,
+     38,
+     38
+    ],
+    "J_rang_ok": [
+     true,
+     true,
+     true
+    ],
+    "D0_regulaer": [
+     true,
+     true,
+     true
+    ],
+    "K8_bloecke2_gleich_uv": 0.0,
+    "t_s": 0.44498205184936523
+   },
+   {
+    "art": "kl",
+    "K4": 1.4751040313813023e-16,
+    "rang_B_s": [
+     30,
+     30,
+     30
+    ],
+    "n_L": [
+     38,
+     38,
+     38
+    ],
+    "J_rang_ok": [
+     true,
+     true,
+     true
+    ],
+    "D0_regulaer": [
+     true,
+     true,
+     true
+    ],
+    "K8_bloecke2_gleich_uv": 0.0,
+    "t_s": 0.43318939208984375
+   },
+   {
+    "art": "kl",
+    "K4": 1.4759384908575152e-16,
+    "rang_B_s": [
+     30,
+     30,
+     30
+    ],
+    "n_L": [
+     38,
+     38,
+     38
+    ],
+    "J_rang_ok": [
+     true,
+     true,
+     true
+    ],
+    "D0_regulaer": [
+     true,
+     true,
+     true
+    ],
+    "K8_bloecke2_gleich_uv": 0.0,
+    "t_s": 0.43076086044311523
+   },
+   {
+    "art": "bz",
+    "K4": 1.5604805748025496e-16,
+    "rang_B_s": [
+     30,
+     30,
+     30
+    ],
+    "n_L": [
+     38,
+     38,
+     38
+    ],
+    "J_rang_ok": [
+     true,
+     true,
+     true
+    ],
+    "D0_regulaer": [
+     true,
+     true,
+     true
+    ],
+    "K8_bloecke2_gleich_uv": 0.0,
+    "t_s": 0.42989063262939453
+   },
+   {
+    "art": "bz",
+    "K4": 1.6034555354363152e-16,
+    "rang_B_s": [
+     30,
+     30,
+     30
+    ],
+    "n_L": [
+     38,
+     38,
+     38
+    ],
+    "J_rang_ok": [
+     true,
+     true,
+     true
+    ],
+    "D0_regulaer": [
+     true,
+     true,
+     true
+    ],
+    "K8_bloecke2_gleich_uv": 0.0,
+    "t_s": 0.429699182510376
+   },
+   {
+    "art": "bz",
+    "K4": 1.5284673139936007e-16,
+    "rang_B_s": [
+     30,
+     30,
+     30
+    ],
+    "n_L": [
+     38,
+     38,
+     38
+    ],
+    "J_rang_ok": [
+     true,
+     true,
+     true
+    ],
+    "D0_regulaer": [
+     true,
+     true,
+     true
+    ],
+    "K8_bloecke2_gleich_uv": 0.0,
+    "t_s": 0.43103909492492676
+   }
+  ],
+  "t_punkt_s": 0.2575399875640869,
+  "punkt_schluessel": [
+   "C_rest_kappa",
+   "D0",
+   "D0_pd_alle_h",
+   "G_rel",
+   "J_sv_min_rel",
+   "K4_Mdisp",
+   "K6_herm",
+   "Meff_absmin_rel",
+   "Meff_eig",
+   "dM12_2norm_rel",
+   "definiert",
+   "eps",
+   "k",
+   "kappa",
+   "konvergent",
+   "ls",
+   "nn_rel",
+   "p_h",
+   "r12",
+   "r8",
+   "r_V",
+   "rang_B_s",
+   "t_s",
+   "traegheit",
+   "traegheit_stabil",
+   "traegheit_x0",
+   "uw2"
+  ]
+ },
+ "laufzeit_s": 4.102279186248779,
+ "maxrss_MB": 94.73828125,
+ "ende_utc": "2026-10-05T13:33:38Z"
+}

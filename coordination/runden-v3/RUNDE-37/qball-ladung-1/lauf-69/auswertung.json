@@ -1,0 +1,71 @@
+{
+  "urteile": {
+    "QL0": {
+      "urteil": "eingetroffen",
+      "werte": {
+        "omega2_0_6": {
+          "f0_2": 1.088133188,
+          "Q": 2873.1814,
+          "E": 2332.5905
+        },
+        "omega2_0_7": {
+          "f0_2": 1.135060506,
+          "Q": 473.41306,
+          "E": 428.64169
+        },
+        "omega2_0_8": {
+          "f0_2": 1.044571865,
+          "Q": 186.10953,
+          "E": 181.91188
+        },
+        "bezug": "RUNDE-02 Test 4, Druckgenauigkeit"
+      }
+    },
+    "QL1": {
+      "urteil": "eingetroffen",
+      "werte": {
+        "steigung_Q300": 1.99811,
+        "steigung_Q1000": 1.99734,
+        "dE_Q300": [
+          0.025742,
+          0.102961,
+          0.411630,
+          2.562826
+        ],
+        "dE_Q1000": [
+          0.210456,
+          0.841654,
+          3.364068,
+          20.914901
+        ],
+        "e": [
+          0.005,
+          0.01,
+          0.02,
+          0.05
+        ]
+      }
+    },
+    "QL2": {
+      "urteil": "nicht auswertbar",
+      "vermerk": "Das Ende der Familien ist nicht verlaesslich bestimmt. e = 0,2: keine einzige gueltige Loesung; das Klassenmuster ist umgekehrt (+ bei kleinem S0, - bei grossem), der Loeser sucht nur Uebergaenge - nach +. e = 0,05 und 0,1: Abbruch durch keine Klammer bzw. ungueltige Kandidaten, mit Q noch steigend; Ursache vermutlich zu enge Fenster nahe der Spitze [H].",
+      "werte": {
+        "Q_groesste_gueltig": {
+          "e0_05": 1376,
+          "e0_1": 1126,
+          "e0_2": null
+        }
+      }
+    },
+    "QL3": {
+      "urteil": "nicht auswertbar",
+      "vermerk": "haengt an Q_max (QL2)",
+      "werte": {
+        "E_durch_Q_am_letzten_gueltigen_Punkt": {
+          "e0_05": 0.8694,
+          "e0_1": 0.9424
+        }
+      }
+    }
+  }
+}

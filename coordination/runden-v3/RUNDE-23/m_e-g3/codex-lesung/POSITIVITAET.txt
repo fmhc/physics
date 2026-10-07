@@ -1,0 +1,145 @@
+Unabhängige Positivitätslektüre, particle_binding, 02.10.2026
+Nur lokale Papier-/Code-/Protokolllektüre; keine Interpreter, Tests oder
+Reproduktion von Rechnungen. Keine Autorendateien geändert.
+
+Kurzurteil: Numerisch plausibler Kandidat, universelle Positivität OFFEN.
+Kein belastbares Gegenbeispiel zum neuen q=.95,N10,kend4-Funktional
+gefunden. FALSCH wäre jedoch die Folgerung, endliches Raster plus die
+hier vorliegende führende Asymptotik gewährleisteten bereits Positivität
+für sämtliche schweren Zustände. Damit trägt dieser Prüfungsteil eine
+gesicherte Klasse A nicht. Nach den eingefrorenen Klassen passt der
+benennbare offene Positivitätsschritt zu C (PLAN Z.112–114), sofern
+'geprüft' in A die physikalisch benötigte universelle Aussage bedeutet.
+Als ausdrücklich heuristisches Kandidatenlabel kann 'vorläufig A' eine
+Arbeitsvermutung sein; die bewiesene Schlussfolgerung ist es nicht.
+Über die anderen BBIRRS-/IR-Übertragungen wird hier nicht abschließend
+geurteilt.
+
+1. Was der Code tatsächlich richtig abbildet
+
+CHLPSD, lokale 2201.06602.txt Z.697–734: B2 und B3 haben für k=2,3
+denselben positiven m^-6-Faktor; ihre beiden Koeffizienten sind
+
+ F++(m,J)=Int_0^q dp [(2m²-p²)psi2+psi3] P_J(1-2p²/m²),
+ F+-(m,J)=Int_0^q dp [(2m²-p²)psi2-psi3] P_(J-4)^(0,8)(1-2p²/m²).
+
+Den gemeinsamen positiven Faktor wegzulassen ist für das Vorzeichen
+zulässig. w5b_lp_q.py Z.321–329 und w5c_verify.py Z.63–74 implementieren
+genau diese Gewichte. ++ verwendet gerade J>=0, +- alle ganzzahligen
+J>=4; das entspricht CHLPSD Z.987–1006. In diesem MHV-Teil sind die
+beiden unabhängigen |c|²-Koeffizienten zu prüfen; kein hier erkennbar
+vergessener zusätzlicher Interferenzblock.
+
+Die q-Normierung ist ebenfalls konsistent: LP setzt den u=p/q-
+Koeffizienten a1=1 (w5b Z.334–339), aber der physische p-Koeffizient
+ist1/q. ir_side_q Z.293–303 benutzt diesen tatsächlichen Koeffizienten.
+Das gespeicherte Kandidatenresultat lpq4_N10_q095_d1.out Z.12–20 nennt
+K=.0094093145, a1=1.05263158 und slope894.96983. Kein gefundener
+verlorener q-Faktor in c=8a1/K. Das ist die IR-Algebra eines Kandidaten,
+noch nicht die universelle Gültigkeit der daraus gelesenen Schranke.
+
+2. Fehlende Quantoren / weshalb Asymptotik die Lücke nicht schließt
+
+Benötigt ist F++>=0 für ALLE reellen m>=1 und ALLE geraden J>=0 sowie
+F+->=0 für ALLE reellen m>=1 und ALLE ganzzahligen J>=4. Zusätzlich muss
+die behauptete Grenz-/Restkontrolle die unbeschränkten gemeinsamen
+Grenzrichtungen abdecken. Implementiert sind dagegen:
+- endliche Massenliste bis40 und J<=jmax_lp im LP (w5b Z.317–329);
+- Nachraster bis60,J<=400 (Z.361–364);
+- Besselgrenzfunktion an endlichen b-Punkten bis400 bzw600
+  (Z.319,330–332,361 und heavy_min Z.118–124);
+- Hochspinprüfung bis3000 an genau13 bzw8 Massen, mit5 als gemeinsamem
+  Wert (w5c Z.59–61). Kein lückenloses Massenintervall wird dadurch geprüft.
+
+Offen bleiben Zwischenräume der Massenraster, alle weiteren Spins und
+Massen sowie alle b zwischen/oberhalb der Proben. Die beiden linearen
+Groß-b-Bedingungen an p²-Koeffizienten (w5b Z.340–346) kontrollieren einen
+führenden Schwanzkoeffizienten. Es fehlen ein expliziter Gültigkeits-
+schwellenwert und eine nachweisliche Schranke des Restes, die das
+Vorzeichen dahinter garantiert. Insbesondere ist der Grenzfall
+m,J->unendlich bei FESTEM b nicht automatisch uniform in b und beweist
+weder J->unendlich bei festem m noch alle gemeinsamen Übergangsbereiche.
+Der Grenzwert lässt außerdem B3 führend verschwinden (CHLPSD Z.1012–1045);
+sein endlicher-Masse-Rest kann nahe einer Nullstelle relevant bleiben.
+
+q<1 und vierfaches Verschwinden am Endpunkt vermeiden die spezielle
+Rückwärtsecke x=-1 und unterdrücken oszillatorische Beiträge. Das ist
+eine sinnvolle Konstruktion, aber ohne kontrollierten Rest kein
+Vorzeichenbeweis für alle restlichen Zustände. CHLPSD benennt selbst
+Endpunktoszillationen (Z.1241–1245) und nutzt eigene Diagramme/Asymptotik
+(Z.995–1015). Diese praktische Evidenz ist kein übertragbares Zertifikat
+für andere Polynomkoeffizienten. 'Maßstab wie Abb.3' ersetzt die fehlende
+Abdeckung nicht.
+
+3. Konkrete Implementierungs-/Protokollgrenzen
+
+a) Der Block 'schwelle_bis_J3000' in der LP-Ausgabe wird weiterhin mit
+PN/PW aus700 Gauss-Punkten erzeugt (w5b Z.308–309,364; thr_check
+Z.202–211). Er integriert Polynome ungefähr vom Grad2J+deg(psi), die
+700-Punkte-Exaktheit endet bei1399. Dieser Block ist somit bei hohen J
+kein verlässlicher Nachweis, weder positiv noch negativ. Der Autor
+erkennt dies selbst (ERGEBNIS Z.198–199). Die separate w5c-Prüfung mit
+6200 Punkten verbessert das für ihre endliche Liste wesentlich, aber
+macht den alten Block nicht nachträglich gültig.
+
+b) LP-Optimierungsstatus0 ist keine Positivitätszertifizierung nach
+Rundung. w5c Z.72–83 und w5d Z.28–47 geben Minima aus, besitzen keinen
+rigorosen Fehlerabschluss und keine universelle PASS-Bedingung.
+Float-Rekursion, ausmultiplizierte Polynome und Quadratur sind nicht
+intervallgesichert. Ein gespeichertes Minus von ungefähr1e-12 bei einer
+aktiven Bedingung ist plausibel numerisch, aber ohne Fehlerschranke
+weder bewiesene echte Negativität noch bewiesene Null. Beispiel:
+ver_q095_k4.out Z.9–19: m=1,J=12, F++≈−1.10e-13, relativ−2.21e-12.
+Höhergradige Kandidaten besitzen außerdem größere berichtete Defekte
+(ARBEITSFELD Z.76–78). Ein Plateau der Zielfunktion misst keine
+Zertifikatsgüte und beweist keine Optimalität.
+
+c) Leichte Materie: w5d Z.23 prüft m_l in[1e-3,1], nicht das ganze in
+ERGEBNIS Z.82–85 genannte(0,1]. Zwischenwerte fehlen ebenfalls.
+Die Ausgabe liefert allerdings explizite Polynome in z=m_l²:
+Spin0 linear, m_l^4*Spin2 kubisch (w5d Z.24–32). Eine vollständige
+Intervallprüfung wäre algebraisch anhand Endpunkten und stationären
+Punkten möglich, ist im vorhandenen Code aber nicht enthalten. Für den
+N10-Kandidaten sind die ausgegebenen Spin0-Koeffizienten beide positiv,
+was die offene Untergrenze in diesem Teil bereits plausibel schließt;
+auch das ersetzt keine kontrollierte Koeffizienten-/Integrationsfehler-
+schranke. Hier kein Gegenbeispiel behauptet. CHLPSD arbeitet ebenfalls
+mit Materierastern (Quellentext Z.1254–1260), nicht mit einem universell
+für jedes neue Funktional verfügbaren Positivitätssatz.
+
+d) Ein kleiner unzertifizierter negativer Funktionalwert kann nicht
+einfach als unschädlicher O(G)-Rest gelten: die entsprechende positive
+UV-Spektraldichte ist unbekannt. Ohne quantitative Kontrolle ihres
+Gewichts ist die Verstärkung nicht begrenzt. Das ist gerade der Grund
+für den universellen Vorzeichenquantor, nicht eine Genauigkeitskosmetik.
+
+4. Konsequenz für Ergebnisformulierung und Klasse
+
+WAHR als Bestand: Ein explizites reines B2/B3-Kandidatenfunktional mit
+Baum-IR-Koeffizient c≈895 wurde gefunden und auf den angegebenen
+endlichen Mengen weitgehend nichtnegativ ausgewertet; die Quellen-
+und Spinkanalformeln sind im gelesenen Code konsistent.
+OFFEN: dieses konkrete Funktional ist auf der gesamten schweren
+Spektralmenge positiv und gibt deshalb eine universelle Schranke.
+NICHT GEZEIGT: ein Vorzeichen-Gegenbeispiel zum neuen q=.95,N10-Fall;
+daher kein D-/Unmöglichkeitsurteil.
+
+ERGEBNIS Z.16–18,89–92,182–184 nennt die Numerikgrenze fair. Dennoch
+gehen 'daraus folgt ohne neue physikalische Annahme' (Z.12–15),
+'belegt ist c=895' (Z.28/140) und der universelle Materieschluss
+(Z.84–85) über die durch diese Positivitätsprüfung gedeckte Aussage
+hinaus. Eine saubere Fassung wäre: bedingte Schranke, sofern das
+angegebene Kandidatenfunktional die noch offene universelle Positivität
+besitzt; numerische Evidenz vorhanden, kein vollständiges Zertifikat.
+Ein unabhängiger Positivitätsnachweis oder eine uniforme Rest-/Raster-
+Überbrückung wäre der konkret fehlende Schritt, kein automatischer
+Auftrag für neue Rechnungen. Andere IR-/Unitaritätsfragen bleiben dem
+Gesamtreview vorbehalten.
+
+Gelesene Dateistände (SHA256):
+ERGEBNIS 341f490bd81bfd3cf654a59c3e288f28bb3fd07ab1b69ddcc49bee9b5bc21680
+PLAN(frozen)94d373a3ce28252b3187ba7d1943172ecd900ca6e7588362a2d3f979dbdd5a4b
+w5b_lp_q 085e1ad85f2628ca52c909d9f4b6c97ce4948d6f48edac7f3dea3c9e0e09db20
+w5c_verify e30968fa0c13ea91a32dac22aa8642385c9654b7f8e580d7dcfabaf6752b018b
+w5d_materie fedd0ae7afa371290c757cb2c04886f7cd085487c3a4c33cd3f8afd6170b0b99
+Alle angegebenen Zeilen beziehen sich auf diese lokalen Textstände.

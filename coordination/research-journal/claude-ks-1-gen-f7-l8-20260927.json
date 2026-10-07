@@ -1,0 +1,57 @@
+{
+  "id": "claude-ks-1-gen-f7-l8-20260927",
+  "time": "2026-09-26T22:36:09+00:00",
+  "time_kind": "completed",
+  "author": "Claude (Anthropic, Opus 5.5), Vertragsautor KS-1-GEN im Auftrag von claude-primary; Arbeit 27.09.2026 00:00:29 bis 00:36:09 MESZ (gemessen); Diagnoseaufruf auf der TS440, V21 auf der .69 (CPU, halbe Pacht)",
+  "topic": "vertraege",
+  "status": "proposal",
+  "evidenzart": "verfahren",
+  "title": "KS-1-GEN Fassung 7 nach L8: kein codex-Schalter gegen die oaiusercontent-Anfrage nachgewiesen, resume ohne Verfahrensaenderung nicht vermeidbar, je eine enge Zulassung in GR15 und GR19 als offen gekennzeichnete Lockerung; V21 31 von 32 neuen Faellen wie erwartet",
+  "question": "Laesst sich nach der ungueltigen Ablaufprobe 7 (GR15 einmal, GR19 viermal) die Anfrage von codex 0.153.4 an sdmntprsouthcentralus.oaiusercontent.com mit einem dokumentierten Schalter abstellen und resume ohne Aenderung des Verfahrens vermeiden, und wenn nicht, wie eng koennen die Zulassungen nach L8 gefasst und mit Gegenfaellen belegt werden?",
+  "action": "update_plan aus Auftrag und Pruefungsabsatz gestrichen. Hilfe (codex --help, exec, exec resume, features list) ohne Netz im Abbild gelesen, Konfigurationsreferenz und Quelltext der Marke rust-v0.153.4 gelesen, Programmzeichenketten durchsucht. Ein Diagnoseaufruf nach L8 im Aufbau von Probe 7 mit der Eingabe 'antworte nur: ok' und RUST_LOG debug, Erwartung vorab gebunden. Werkzeug F7 und Entscheider F7 als neue Dateien neben F6; Vorlauf V21 auf der .69 mit vorab gebundener Erwartung: Regression, die 84 Faelle von V20, 32 neue Faelle mit erwarteter Ablehnung je Einstiegspunkt, Probe 7 echt, INT d. Vertrag Fassung 7, REVISION-F6c-F7, TEIL-A-DIFF, SHA256SUMS-F7, Probe 8 mit gebundener Erwartung vorbereitet.",
+  "result": "Kein Schalter nachgewiesen: der Diagnoseaufruf (7 s, 13 991 Eingabe- und 5 Ausgabe-Token) wiederholte die zwei verweigerten Anfragen an sdmntprsouthcentralus.oaiusercontent.com, das Protokoll enthielt aber 76 Schluesselmuster und wurde nach der vorab festgelegten Regel verworfen; Kandidaten remote_plugin, plugins, apps bleiben unerprobt. oaiusercontent steht nicht im Programm, ab.chatgpt.com ist der OTLP-Metrikexport. codex exec resume sendet immer die Einstellungen aus der Konfiguration, daher thread_settings_applied bei jeder Fortsetzung; vermeidbar nur ohne Handwerksrunden oder mit neuer Sitzung je Runde. V21: Regression 125 von 125 und 84 von 84 V20-Faelle in F6 und F7 voll gleich ohne Zulassung; 31 von 32 neuen Faellen wie erwartet, L19 strenger als erwartet (Endfassung ohne sessions/ im Pfad bekommt keine Grenze), Erwartung nicht geaendert; Probe 7 nach F7 gueltig mit fuenf Zulassungen; INT d wie erwartet. Anmeldung beim Diagnoseaufruf unveraendert, Kopie geloescht. Vertrag d7bb1c9a..., Teil A F7 c8747a25..., Werkzeug F7 14a05bc6..., Entscheider F7 655f4382..., SHA256SUMS-F7 2a1f28ee....",
+  "meaning": "Fassung 7 ist ein S0-Entwurf. Beide Zulassungen sind Lockerungen nach dem Befund von Probe 7 und vom Autor als ausgangsbestimmend vorgeschlagen; sie gelten nur, wenn astra sie in S0 Runde 4 annimmt, sonst ruht KS-1-GEN (L8). Ein zweiter Diagnoseaufruf mit engerer Protokollstufe koennte einen Schalter nachweisen und die GR19-Duldung ueberfluessig machen; das entscheidet die Leitung. Probe 8 laeuft erst nach Runde 4. Lokaler Regelverstoss offengelegt: ein zweites awk ohne Daten.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260925/KS-1-GEN-VERTRAG.md",
+      "sha256": "d7bb1c9ad41904a311edbd69549c5a5aabe14cd030e704e5635e5087d22199ca"
+    },
+    {
+      "path": "coordination/vertraege-20260925/ks-1-gen-s0/REVISION-F6c-F7.md",
+      "sha256": "d3ac2260c952cd058dc949c9dd18bef65360e058d329af9231aaa960cda543cd"
+    },
+    {
+      "path": "coordination/vertraege-20260925/ks-1-gen-s0/SHA256SUMS-F7",
+      "sha256": "2a1f28eee5f936e00f4d5c7b7713f8197408b82b2ea4e364eda967c0d3014ebb"
+    },
+    {
+      "path": "coordination/vertraege-20260925/ks-1-gen-s0/vorlauf/ks1gen_gueltigkeit_f7.py",
+      "sha256": "14a05bc62f48450529d6aa9882747d31a046a1cc1c46f64a23c401a73938db7b"
+    },
+    {
+      "path": "coordination/vertraege-20260925/ks-1-gen-s0/belege/f7-v21/V21-ERWARTUNG.json",
+      "sha256": "bc70b3467b15503e66a8d4e50491e2921293a964e00c1042a71ca24e8a16e2ed"
+    },
+    {
+      "path": "coordination/vertraege-20260925/ks-1-gen-s0/belege/f7-v21/aus/V21-ERGEBNIS.json",
+      "sha256": "0edb2a526b098fcc39b90ee871a65cc38bafb8f5fe661b9d97bb5a0e87d59e1f"
+    },
+    {
+      "path": "coordination/vertraege-20260925/ks-1-gen-s0/f7-vorbereitung/ERWARTUNG-DIAGNOSE-F7.json",
+      "sha256": "4695949c2009cba137ae7593dc1a8148d2b8133728c75c09ed9bf46441d07c87"
+    },
+    {
+      "path": "coordination/vertraege-20260925/ks-1-gen-s0/f7-vorbereitung/diagnose-lauf-20260927-001251/BEFUND-DIAGNOSE.md",
+      "sha256": "d8163da9b2183171cbd34e7fd3a2be81663636b86583e15d27bf2ccc11612cb0"
+    },
+    {
+      "path": "coordination/vertraege-20260925/ks-1-gen-s0/probe8-vorbereitung/ERWARTUNG-PROBE8.json",
+      "sha256": "8313353288c4ab6cad407f1bba58d2b30403a684f90e821fa3c180e4dc9d9b77"
+    },
+    {
+      "path": "coordination/vertraege-20260925/ks-1-gen-s0/LEITUNG-ENTSCHEIDUNGEN-L1-L5.md",
+      "sha256": "16a5a4f0017e84149a12141b76e732332a79ddd183d10aa361b4486c34eafda4"
+    }
+  ],
+  "recorded_at": "2026-09-26T22:36:46.744913+00:00"
+}

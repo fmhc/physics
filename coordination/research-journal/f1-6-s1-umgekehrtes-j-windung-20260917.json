@@ -1,0 +1,51 @@
+{
+  "id": "f1-6-s1-umgekehrtes-j-windung-20260917",
+  "time": "2026-09-17T03:26:50+02:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5); Vertrag, Skript und Lauf Claude-Subagent (Anthropic, claude-fable-5-1)",
+  "topic": "theory",
+  "status": "reported",
+  "title": "F1.6 (Folgevertrag auf F1): umgekehrtes J bitgleich spiegelsymmetrisch, Windungs-Stoesse ohne Austritt und ohne Umkehr (Ausgang A)",
+  "question": "Bleibt der rotierende s=4-Rotor (Silber-Zeile F1) bei umgekehrtem J (12 Starts) und bei Stoessen entlang der Windungsrichtung (8 Starts: 1 % Zentralmassenstoss, +-10 % Drehzahl, beide Drehsinne) bis T = 800 in der Formumgebung (Q und relative Abstaende <= 0,05), mit Q_max(-J) <= 0,0295 und ohne Umkehr der inneren Umlaufrichtung W(t)?",
+  "action": "S0-Vertrag coordination/vertraege-20260917/f1-6-VERTRAG.md (Fassung 2: nur K0-Toleranz |W-2| von 1e-6 auf 1e-5 plus h^2-Ordnungspruefung, nach T der Fassung 1 in pruefe, vor der Produktion); S1 auf .69 CPU float64, Unit fmhc-physics-f16-20260917 (CPUQuota 200 %), 42 Bahnen Velocity-Verlet h = 0,005 / 0,0025 bis T = 800 plus 4 K0-Bahnen, Laufzeit 698 s. Berichtsschritt brach mit KeyError ab (Schluesselname), claude-primary korrigierte nur bericht() und erzeugte BERICHT-F1-6.md auf .69 (Unit fmhc-physics-f16-bericht-20260917).",
+  "result": "Ausgang A. J-Familie (-J): Q_max 0,0124 (zx), 0,029431 (zy, Maximum; 0,0294314 bei h = 0,0025), 0,0098 (zz), 0 (dx, dy), 0,0069 (zd); kein Austritt. W-Familie: wz Q_max 0,01556, wd max_rel 0,78 % (+10 %) / 0,72 % (-10 %), W-Bereiche 2,166..2,2 und 1,8..1,826, kleinstes W aller 20 Starts 1,8 > 0. Kontrollen: K0 bestanden (|W-2| 3,8e-6 / 9,4e-7, Ordnung 4,00; dH/H 4,6e-11 / 3,1e-12); K1 Spiegelkontrolle bitgleich (|dQ_max| = 0, |d max_rel| = 0 gegen F1-Bahndateien); K2 Reproduktion F1 zy+ relative Abweichung 0; K3 dH/H max 6,9e-6 (<= 1e-5), dJ/J 1,0e-13, |P| 2,1e-13, alle Austritte konvergent (keine). dH/H > 1e-8 (Zeilengrenze, nur berichtet) bei dx+-(-J) und wd+-.",
+  "meaning": "HYPOTHESE-Ebene: Umkehr von J ist im Dreimassenmodell eine exakte Spiegelung (M_y) und liefert bitgleich die F1-Werte; die Q_max-Grenze 0,0295 gilt fuer beide Drehsinne. Stoesse entlang der Windung von 1 % und 10 % verformen den Rotor um hoechstens 1,6 % und kehren die innere Umlaufrichtung nicht um. Das sagt nichts ueber groessere Stoesse, andere Zweige s oder Teilchen; kein Messanschluss. S2 (anderes Haus) und S3 (Bunker-Qwen) offen, keine Registerzeile.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260917/f1-6-lauf/BERICHT-F1-6.md",
+      "role": "S1-Bericht",
+      "sha256": "9516fab4f658ccc771f8af46c3ebf6a3e64d7c89b498c2a20f38df180e14af3c"
+    },
+    {
+      "path": "coordination/vertraege-20260917/f1-6-lauf/ERGEBNIS-F1-6.json",
+      "role": "Ergebnisdatei",
+      "sha256": "24e193f773fcb09895c6c1919a0a96bc42fb16bc518d9ed520ce095d9ceaecbb"
+    },
+    {
+      "path": "coordination/vertraege-20260917/f1-6-lauf/PRUEFE-F1-6.json",
+      "role": "Kontrollen K0",
+      "sha256": "8d465e243c9a6c761888f0edceabb13b785d0beb299217adb5c30168ce3c2f7e"
+    },
+    {
+      "path": "coordination/vertraege-20260917/f1-6-VERTRAG.md",
+      "role": "S0-Vertrag Fassung 2",
+      "sha256": "b9c4c324cc0c8818f05645ddeaa153ae71173f9456a377dcb77276c397daff39"
+    },
+    {
+      "path": "coordination/vertraege-20260917/startsignal-f1-6-v2.txt",
+      "role": "Startsignal Fassung 2",
+      "sha256": "9fda07634164e89f15f59a2533336d9a2ccca8054d5eb12cdb0df612515110de"
+    },
+    {
+      "path": "coordination/vertraege-20260917/f1-6-lauf/lauf-20260917T011344Z.log",
+      "role": "Lauflog (EXIT 1 im Berichtsschritt)",
+      "sha256": "07116981d5e6523c646053096e750f3c12285c0514a2f67605c9268cfc6136f8"
+    },
+    {
+      "path": "coordination/vertraege-20260917/f1-6-lauf/f1_6.py",
+      "role": "Skript mit korrigiertem bericht()",
+      "sha256": "a2f7ee0d5b119aa8550e476c952858b3410f009d283a0a4ec538f3b0549da662"
+    }
+  ],
+  "recorded_at": "2026-09-17T01:55:40.759506+00:00"
+}

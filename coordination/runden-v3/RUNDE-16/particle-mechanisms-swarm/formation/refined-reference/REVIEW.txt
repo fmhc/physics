@@ -1,0 +1,81 @@
+Unabhängiger Nichtautor-Lesereview, 02.10.2026, particle_binding
+Keine Rechnung, keine Interpreter oder Tests durch Reviewer.
+
+Urteil: Kein fachlicher Blocker für den ausdrücklich begrenzten nächsten
+Schritt Vorbereitung -> zeitfreie QA -> T4-NUR-Referenztest gefunden.
+Root-Abnahme, äußere Ressourcengrenzen und echte Testergebnisse bleiben
+erforderlich. KEINE Wolkenevolution und KEIN Bildungsnachweis freigegeben.
+
+Gelesen und per sha256sum gebunden:
+prepare.py cf2cba9d065f33cbb34de1a4d7d3f6f35e2e6c65e945d3e3ab174d2b6150e630
+PLAN.txt ffc025d48603081ba66e5c7a5be99c5b1cf877dfa5e9d47df169b2c626ceb1d4
+repairedcode.py 4f2ca1da379617413e642be02fc6b2cec565fcd9183a2300ac0eda6906a9ff0c
+beutel_source.py f831e818b4f2a00f56e281f5972badb1d9ed344dcd2242826ab6b31076917ecb
+beutel_source ist per cmp bytegleich zum gelesenen BEUTEL-1-Produzentencode.
+PLAN, prepare vollständig sowie repairedcode-Diff und unveränderte
+Rechen-/QA-/Ausgabefunktionen aus dem unmittelbar vorigen Review gelesen.
+
+1. Fest-Q-Präparation und Faktoren
+lambda=omega², I=Sum V f², C=2sqrt(lambda)I-Q. Die stationären Reste
+Rf=2Vf(U_S-lambda)-2lap_flux(f), Rc=V U_chi-lap_flux(chi)
+haben die korrekten komplexen/reellen Kinetikfaktoren2/1.
+Borderableitungen: b_f=-2Vf, c_f=4sqrt(lambda)Vf, d=I/sqrt(lambda).
+Mit H y1=-R, H y2=b ist
+ dlambda=(-C-c.y1)/(d-c.y2), dx=y1-y2 dlambda
+der richtige Schur-Schritt. maxit=1 im aufgerufenen newton_Q führt
+höchstens EIN Update aus; äußere it=0..30 erlaubt maximal30 Updates.
+Keine versteckte Fortsetzung oder Gradientenflussroutine wird aufgerufen.
+
+Jeder gespeicherte Iterat wird vor Beobachtungen auf finite Felder und
+lambda>0 geprüft. Astnähe: volumenbezogene f/chi-Profilabweichung<=2%,
+omega relativ Archiv<=1%, Energiedifferenz<=2%, Vorzeichen/Bereich.
+Die Schranken gelten auch vor Erfolgsannahme. Zielrest<1e-9 und zusätzliche
+Q-Schranke1e-10 sind implementiert. Zwischeniterationen dürfen Q verletzen;
+das ist Newton-Präparation und keine erhaltende physikalische Evolution.
+Nach Erreichen des diskreten Punkts bleibt dessen Eindeutigkeit unbewiesen.
+
+2. Identischer diskreter Hamiltonian und neue Herkunft
+BEUTEL-Grid und repairedcode-Grid haben identische Zellzentren,
+V=4pi h(r²+h²/12), Kantenflächen und Ghostwerte. Das durch Newton
+gelöste Problem ist damit dasselbe diskrete Problem der anschließenden
+Referenzevolution. Die separat ausgeschriebene Energie kontrolliert
+dieselbe Gradient-/Potential-/omega²f²-Summe; sie ist keine unabhängige
+Kontinuumzertifizierung. Gezielte zwei Gitter h=.1/.05, Q1100,R120.
+
+Originalseed/Quellcode vor Import gehasht; Originalartefakte nur gelesen.
+Jeder Outputordner muss neu sein. Float64-Profile werden vollständig
+gespeichert, mit eigenem Hash/Manifest. Bei späterem Fehler können einzelne
+NPZ bestehen bleiben, doch Loader verlangt Gesamtstatus PREPARED_REFERENCES.
+Er prüft jeden NPZ-Hash, beide Gitter, exakte r-Gleichheit, float64,
+Form/Endlichkeit und gespeichertesQ. Anschließend KEINE Interpolation und
+KEINE Amplituden-/omega-Nachnormierung. Anfangs-Q wird unabhängig nochmals
+gemessen; strengeres1e-11-Gate darf dokumentiert scheitern, wird nicht gerettet.
+
+3. Radiusreparatur
+density_radius50 verwendet die tatsächlich aufaddierten Schalenmassen.
+In Trefferschale j gilt r³=(jh)³+a[((j+1)h)³-(jh)³], korrekt bei
+stückweise konstanter Zelldichte. QA der uniformen Kugel r<2 auf beiden
+Gittern erwartet2*2^(-1/3), mit unabhängiger Nullfeld-None-Kontrolle.
+Das überprüft den alten Zellmittenfehler sinnvoll. r50_density bezeichnet
+|phi|²-Median, nicht allgemein Noetherladungsradius; chi_first_cell
+bezeichnet chi(h/2), nicht eine exakte Ursprungsmessung.
+
+4. Begrenzter Startumfang
+--qa-only: Algebra/Radiuschecks plus Anfangsdiagnosen, keine Zeitschritte.
+--reference-short-test: T wird auf4 gesetzt; genau drei h/dt-Arme und
+ausschließlich kind='reference' werden an run_arm gegeben. Beide Flags
+gleichzeitig sind verboten. Anfangsdiagnosen der Wolke bleiben dabei
+rein zeitfrei und dürfen nicht als Wolkenlauf gezählt werden.
+Erhaltung/Kragen und alle sechs Referenzrest-/Formdriftgrößen bleiben
+mit unveränderten Gates geprüft. Samples liegen alle.8 bis einschließlich4.
+Pass wäre eine kurze radiale numerische Referenzkontrolle, weder volle
+Stabilität noch Bildung. Default-Aufruf ohne eines dieser Flags könnte
+weiterhin den NICHT autorisierten Hauptlauf starten: Root muss die
+expliziten freigegebenen CLI-Aufrufe des Plans benutzen.
+
+Äußere Budgetquittungen müssen zusammen<=60CPU-s inklusive Import halten;
+interne prepare-Zeit misst Imports nicht mit, internes175/178-Limit ersetzt
+Roots engeren Deckel nicht. Bei äußerem hartem RLIMIT_CPU<178 kollidiert
+weiterhin das alte setrlimit; der Plan verlangt externe Root-Begrenzung.
+Jede Stufe nur bei bestandenem vorherigem Gate und Restbudget fortsetzen.
+Keine Schwellenlockerung oder automatische Nachsuche bei Scheitern.

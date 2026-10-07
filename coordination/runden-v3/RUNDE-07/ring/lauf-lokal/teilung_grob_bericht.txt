@@ -1,0 +1,17 @@
+RING teilung (a): m = 1-Ball mit 1-%-Stoerung, Stufe grob. Start 2026-09-30T04:28:44+02:00, Ende 2026-09-30T04:28:52+02:00, CPU (nur Formprobe), torch 2.10.0+cu128 RAUCHTEST: Zahlen ungueltig
+Dauer [s]: profile_s 0.0, entwicklung_grob_s 8.4
+Hochrechnung Hauptlauf: 421 s (nicht entwickelnde Teile 0 s + Entwicklung x 50); Profile aus dem Cache. Ueber 480 s: Stufen einzeln (--stufe grob / --stufe fein) oder Laeufe teilen (--laeufe).
+Lauf | omega2 | Q | Teilung t | n_max | Toechter (Q, W, Jspin/Q, vx, vy) | l_dom | gamma | A_max l=1..6 | spaet J/Q, omega_eff, Anteil W1
+  m1_0550 | 0.550 | 370.21 | None (Fenster None) | 1 | - | 2 | - | 3.3e-03 8.4e-03 7.7e-03 7.2e-03 6.8e-03 6.1e-03 | 0.9998, 0.74118, 1.000
+    Bilanz: Q: +370.280->+370.258 geschluckt +0.022 Rest 1.1e-06 J: +370.280->+370.228 geschluckt +0.049 Rest 7.3e-06 E: +297.458->+297.391 geschluckt +0.065 Rest 8.9e-06; Schranken {"bilanz_Q": true, "bilanz_J": true, "bilanz_E": true, "startzerlegung": true, "profil_selbst_L2_unter_0p05": true}
+  m1_0575 | 0.575 | 199.35 | None (Fenster None) | 1 | - | 2 | - | 2.6e-03 8.3e-03 7.6e-03 7.1e-03 6.7e-03 6.0e-03 | 0.9999, 0.75773, 1.000
+    Bilanz: Q: +199.387->+199.371 geschluckt +0.016 Rest 1.4e-06 J: +199.387->+199.356 geschluckt +0.030 Rest 7.0e-06 E: +169.518->+169.476 geschluckt +0.040 Rest 1.0e-05; Schranken {"bilanz_Q": true, "bilanz_J": true, "bilanz_E": true, "startzerlegung": true, "profil_selbst_L2_unter_0p05": true}
+  m1_0590 | 0.590 | 157.07 | None (Fenster None) | 1 | - | 2 | - | 2.3e-03 8.2e-03 7.6e-03 7.0e-03 6.7e-03 6.0e-03 | 0.9999, 0.76751, 1.000
+    Bilanz: Q: +157.098->+157.085 geschluckt +0.013 Rest 1.5e-06 J: +157.098->+157.074 geschluckt +0.024 Rest 7.0e-06 E: +137.249->+137.216 geschluckt +0.031 Rest 1.0e-05; Schranken {"bilanz_Q": true, "bilanz_J": true, "bilanz_E": true, "startzerlegung": true, "profil_selbst_L2_unter_0p05": true}
+  m1_0600 | 0.600 | 138.76 | None (Fenster None) | 1 | - | 2 | - | 2.0e-03 8.2e-03 7.5e-03 7.0e-03 6.6e-03 5.9e-03 | 0.9999, 0.77397, 1.000
+    Bilanz: Q: +138.782->+138.771 geschluckt +0.011 Rest 1.5e-06 J: +138.782->+138.761 geschluckt +0.021 Rest 7.0e-06 E: +123.118->+123.090 geschluckt +0.027 Rest 9.7e-06; Schranken {"bilanz_Q": true, "bilanz_J": true, "bilanz_E": true, "startzerlegung": true, "profil_selbst_L2_unter_0p05": true}
+  m1_0625 | 0.625 | 110.17 | None (Fenster None) | 1 | - | 2 | 0.0634 | 1.5e-03 1.4e-01 7.4e-03 7.6e-03 6.6e-03 5.9e-03 | 0.9999, 0.79068, 1.000
+    Bilanz: Q: +110.194->+110.185 geschluckt +0.008 Rest 1.5e-06 J: +110.194->+110.177 geschluckt +0.017 Rest 7.3e-06 E: +100.760->+100.739 geschluckt +0.020 Rest 1.2e-05; Schranken {"bilanz_Q": true, "bilanz_J": true, "bilanz_E": true, "startzerlegung": true, "profil_selbst_L2_unter_0p05": true}
+  m1_0650 | 0.650 | 93.86 | 50.0 (Fenster None) | 2 | [37.936, 0, 0.0722, 0.0191, -0.2911]; [36.406, 0, 0.0653, -0.014, 0.2931] | 2 | 0.0925 | 1.0e-02 7.0e-01 1.6e-02 2.7e-01 1.7e-02 7.2e-02 | -
+    Bilanz: Q: +93.878->+93.871 geschluckt +0.007 Rest 1.4e-06 J: +93.878->+93.864 geschluckt +0.014 Rest 7.7e-06 E: +87.739->+87.718 geschluckt +0.015 Rest 6.3e-05; Schranken {"bilanz_Q": true, "bilanz_J": true, "bilanz_E": true, "startzerlegung": true, "profil_selbst_L2_unter_0p05": null}
+Kennzahlen: {"stabil_bis_T": [0.55, 0.575, 0.59, 0.6, 0.625], "geteilt": [0.65], "schwelle_eingeschachtelt": true, "schwelle_zwischen": [0.625, 0.65], "Q_zwischen": [110.1735616706806, 93.8606413424517]}

@@ -1,0 +1,36 @@
+Hauptlauf-Anschluss, 02.10.2026, prospektiv; Hauptlauf weiterhin offen
+Gilt ausschließlich als Präparations-/Diagnoseersatz zu formation/PLAN.txt.
+Kein neues Potential, keine Startparameteränderung, keine neue Schwelle.
+
+1. Die alte float32-Subsample-Interpolation als Realzeitreferenz entfällt.
+Stattdessen neue float64-Q1100-Referenzen aus prepare.py, genau h.1/.05,R120.
+Vollständiges MANIFEST muss PREPARED_REFERENCES melden; jeder NPZ-Hash und
+jedes r-Gitter werden geprüft. Kein Nachinterpolieren, Glätten oder Q-Renormieren.
+Die Vorbereitungs-/QA-/T4-Receipts gehören zu diesen neuen Artefakten und
+beweisen keine Änderung der historischen BEUTEL-Ergebnisse. Main nutzt
+repairedcode.py, SHA256
+4f2ca1da379617413e642be02fc6b2cec565fcd9183a2300ac0eda6906a9ff0c.
+
+2. R50 wird als r50_density ausgegeben: Median der positiven |phi|²-Dichte,
+Trefferschale mit exakter Kugelschalenvolumen-Interpolation bei konstanter
+Zelldichte. Nullfeld -> null/undefiniert. Kein Ladungsmedian. Schwelle bleibt
+R50_late<=.8 R50_initial; gleiche Definition in beiden Größen.
+
+3. chi0 heißt chi_first_cell. Es ist chi(h/2), kein extrapoliertes chi(0).
+Schwelle bleibt <.2. Ursprungseffekt ist durch vorhandene h-Variation zu
+beurteilen, nicht durch nachträglich angepasste Schwellwerte.
+
+Alle übrigen bereits festgelegten Main-Grenzen bleiben: sechs Arme R120,T64,
+Q1100,Gaußbreite8, ungechirpte Phasegeschwindigkeit sqrt2, chi=1;
+drei h/dt-Stufen, gleiche Normen/Floors und Schlussfenster48..64,
+Kernladung>=.8 mit Schwankung<=.01, vier Reste<.02, Referenzgrenzen.004,
+E/Q-Bilanzen einzeln1e-5, Kragen1e-8 und bisherige Sensitivitätsgrenzen.
+Die Wolke ist schon energetisch unter freier Schwelle; Frage bleibt ihre
+konservative Verdichtung und Annäherung an Stationarität, keine Erzeugung
+eines Teilchens aus Vakuum oder bewiesene Bindung zunächst freier Strahlung.
+
+Classifier-Software-QA ist ein separater synthetischer Check. classify
+vertraut auf vorgeprüfte complete-Arme; Energie-/Q-/Kragengates leben in
+run_arm. Fehlende/unpassende Samples sind gezielte Schnittstellenproben.
+Ein gefundener Defekt ist vor Hauptlauf explizit zu entscheiden, nicht
+durch dieses Addendum still repariert. Kein Hauptlauf wurde hier gestartet.

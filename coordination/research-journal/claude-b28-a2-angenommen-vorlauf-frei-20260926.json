@@ -1,0 +1,25 @@
+{
+  "id": "claude-b28-a2-angenommen-vorlauf-frei-20260926",
+  "time": "2026-09-26T20:22:37+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung; Einarbeitungspruefung A2 (Autor Codex, 21:57) gegen Fables S0-Auflagen; Vorlauf-Freigabe auf Finns Auftrag (Loop: Vertraege rechnen lassen; Weiter mit allem); eingetragen 22:22:37 MESZ (gemessen)",
+  "topic": "gesamtformel",
+  "status": "checked",
+  "evidenzart": "verfahren",
+  "title": "B28-A2 angenommen: alle S0-Auflagen eingearbeitet, K3-Toleranz als vorab festgelegte Kalibrierung ohne Eigenwertauswahl, Erwartungen unveraendert; Vorlauf (Profile und Translationskalibrierung) freigegeben, Hauptspektren erst nach Bindung",
+  "question": "Arbeitet Fassung A2 die S0-Auflagen ein, ohne eine Regel nach Kenntnis von Ergebnissen zu lockern, und darf der Vorlauf starten?",
+  "action": "A2 (5962f1b8...) und REVISION-A1-A2.md (0908cef4...) gelesen; A1 und ERWARTUNG-VORAB unveraendert (dc661ff3..., 2ca94b30...). Geprueft: Tabelle Was vorab feststeht je Gate; K3-Kalibrierung (Abschnitt Translation, Zeilen 498 bis 540): rho und r_trans nur am analytischen Translationsvektor, ohne Eigenwertzerlegung, tau = max(1e-8, 2 x Messwert), Obergrenze 0,01 sonst U1, Bindung per Datei und Leitungsbestaetigung vor jedem Abruf von Hauptarm-Spektren oder -Steigungen; Kernangabe F^2(0) ~ 1,2 bis 1,25 berichtigt; Erwartungen T/U1/B/A/U2 = 0,15/0,15/0,20/0,40/0,10 wie vor der Volltextlektuere.",
+  "result": "Alle freigabeverhindernden Auflagen (1 Vorab-Tabelle, 2 K3-Kalibrierung, 3 Kernangabe) erledigt; 4 bis 8 eingearbeitet (Budget jetzt 15 Vorlauf + 15 Hauptarm + 30 S2). Begruendete Widersprueche des Autors gegen Fable angenommen: B21 liefert nur eine Sekante; Fables Negativmodus-Argument setzt F^2 < 5/6 voraus und passt nicht zur eigenen Kernabschaetzung, ersetzt durch eine Skalierungsvariation; alle Spektren bleiben im Umfang. Neue technische Obergrenze 0,01 (sonst U1) ist keine Lockerung, weil sie ungeeignete Gitter aus dem Hauptarm nimmt. Keine Rechnung bisher.",
+  "meaning": "B28 ist startbereit fuer den Vorlauf. Ausfuehrender und Codeautor: frischer Claude-Kontext (Anthropic), nicht der Vertragsautor. Er rechnet nur Profile und die K3-Translationskalibrierung, sichert TRANSLATION-CALIBRATION.json und haelt an. Hauptspektren erst nach Bestaetigung der Bindung durch die Leitung. S2 spaeter durch Qwen allein aus dem Vertragstext, direkt an Ollama mit erzwungenem Denken.",
+  "sources": [
+    {
+      "path": "coordination/field-b28-lokale-stabilitaet-20260926/VORAB-B28-A2.md",
+      "sha256": "5962f1b8a135c26728b49135325ea12330f8845eeaeb64f6fffb7f064c4f00b6"
+    },
+    {
+      "path": "coordination/field-b28-lokale-stabilitaet-20260926/REVISION-A1-A2.md",
+      "sha256": "0908cef4801cc39a39454363d9f742246cf9f04f4230b15e17a8da01536104c8"
+    }
+  ],
+  "recorded_at": "2026-09-26T20:22:38.101266+00:00"
+}

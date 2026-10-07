@@ -1,0 +1,45 @@
+Unabhängige Ergebnislektüre, particle_binding, 02.10.2026
+
+Gelesen outgoing/out/RESULT.json gegen Code/Plan. Eingetragener Codehash
+75b1dce542aa728fe6bf58ecea4aec4a2ddf8a6a5a6e236666075c6902bbd292
+entspricht der geprüften Fassung. Keine neue Rechnung oder Ausführung.
+
+Der Status UNRESOLVED ist korrekt. Nur Gaussian und Nullbump bei h=.1
+sind abgeschlossen; cases=[] enthält KEINE M2-Antwort. Closed/Incoming-
+Kontrollen, h=.05 und Nullfehler-Konvergenz sind noch nicht geprüft.
+Die interne CPU-Zeit beträgt laut JSON .43883856 s. Eine TIME.txt wurde
+unter outgoing/out/ nicht gefunden; daraus keine externe Laufzeit ableiten.
+
+Gaussian besteht seine vorab gesetzten Gates: Betragsfehler .001394/.001384,
+komplexer Fehler .010422/.013309, FV-/Kontinuumsabweichung .001603/.001582.
+Die Trennung von Betrags- und Phasenfehler funktioniert wie vorgesehen.
+
+Nullbump scheitert ausschließlich am globalen Profilgate:
+||p-b||_V/||b||_V=.0097728383 > .005. Nichttrivialität, algebraischer Rest
+(1.327e-14), Workbilanz (4.868e-13) und Nullamplitude/Gauss (.001750642)
+bestehen. Der Fehler ist somit weder ein dokumentierter Bilanzfehler
+noch eine fehlgeschlagene lineare Gleichungslösung. Ein kleiner linearer
+Löserrest beweist allerdings keine Kontinuumsgenauigkeit des Profils.
+Der historische QA-Fail bleibt unverändert gültig; die M2-Frage ist offen.
+
+Enger Diagnosevorschlag, ohne Gateumwertung:
+Separates Diagnoseartefakt nur für dieselbe freie Nullquelle bei denselben
+bereits vorgesehenen R30 und h=.1/.05. Quelle, Robinbedingung, globale Norm
+und alle alten Grenzen unverändert lassen. Lösungsvektor und analytisches
+b speichern; den quadrierten Fehler exakt in r<4 und r>=4 zerlegen und
+beide Beiträge jeweils durch die GEMEINSAME gesamte ||b||_V^2 dividieren.
+Zusätzlich globalen Fehler, Nullamplituden und deren h-Verhältnisse ausgeben.
+Keine neue lokale PASS-Grenze, kein Abziehen eines angepassten Strahlungstails,
+keine Produktionsfälle im Diagnoseschritt.
+
+Die vorgeschlagene Hypothese ist plausibel, aber bislang nicht nachgewiesen:
+außerhalb r=4 gilt b=0; ein künstlicher numerischer A exp(-ikr)/r-Tail
+trägt in der radialen Volumennorm näherungsweise
+4pi |A|^2 (R-4) zum quadrierten Fehler bei. Eine kleine Fernamplitude kann
+daher den globalen Profilfehler über eine lange Box bestimmen. Die zwei
+gespeicherten Fenster zeigen tatsächlich einen kleinen, annähernd konstanten
+Betrag r|p|. Ohne räumlich getrennte Fehlerbilanz ist nicht entschieden,
+wie viel des globalen Fehlers im Kern und wie viel im Außenraum liegt.
+Der h-Vergleich könnte eine gewöhnliche Diskretisierungsursache stützen;
+er ist noch kein vorhandener Konvergenzbefund. Der Diagnosezweck ist die
+Fehlerlokalisation, nicht die Rettung des gescheiterten .005-Gates.

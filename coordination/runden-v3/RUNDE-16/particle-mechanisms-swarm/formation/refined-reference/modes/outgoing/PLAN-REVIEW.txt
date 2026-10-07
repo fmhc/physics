@@ -1,0 +1,51 @@
+Unabhängiger Planreview, particle_binding, 02.10.2026
+
+Gelesen: harmonic-source/OUTGOING-PAPER.txt und outgoing/PLAN.txt,
+abschließender Planhash SHA256
+2d7d7732a3139a29645902cbd381a8e08ddd80138b47f810f2a1738b784fbc22.
+Nur Papierlektüre; keine numerische Rechnung oder Codeausführung.
+
+Urteil: im vereinbarten Umfang implementierbar. Kein konkreter fachlicher
+Blocker im präzisierten Plan. Dies ist eine Planfreigabe zur Implementierung,
+kein Nachweis eines bereits kontrollierten Lösers oder einer Strahlungsrate.
+
+Fourierkonvention und Quellenfaktoren sind konsistent: J2 ist der positive
+komplexe Fourierkoeffizient J(q)/4, die reelle kanonische Antwort lautet
+a exp(i nu t)+a* exp(-i nu t). In den komplexen Plus-/Minuskanälen tritt
+kein weiterer Faktor 1/2 auf. Die Quellen müssen komplex bleiben. Der
+Minuskanal ist beim Rückgang ins Laborfeld zu konjugieren. Die gemeinsame
+physische Normierung bleibt erhalten; die berechnete Leistungsgröße ist
+mit alpha^4 zu multiplizieren, nicht ohne s^4 mit epsilon^4.
+
+Der gekoppelte Operator stimmt einschließlich D, B und Gyroverschiebungen
+mit der kanonischen Linearisierung überein. Für exp(+i Omega t) ist
+exp(-ikr)/r auslaufend: beta_plus=(r_last/r_ghost)exp(-ikh) und die
+negative Randdiagonalkorrektur zur Dirichlet-FV-Matrix sind richtig.
+Die geschlossenen Ghostfaktoren sind reell und liefern keinen eigenen
+gemittelten Randstrom. Ursprung, exakte Schalenvolumina und sqrtV-
+Transformation sind mit der Referenzdiskretisierung vereinbar.
+
+Die diskrete Quellenbilanz W=2nu Im<a,J> entspricht E-omega Q;
+der FV-Randfluss hat dazu das richtige Vorzeichen und denselben Faktor.
+Laborleistung und Ladungsstrom folgen erst durch (omega+nu)/nu bzw.1/nu.
+Der freie Green-Amplitudenfaktor, die Gaußamplitude und die ausgeschriebene
+kompakte Nullquelle sind algebraisch richtig. Nullquelle, geschlossener
+Kanal und falsches Robinvorzeichen prüfen unterschiedliche Fehlerarten.
+
+Die zuletzt präzisierten Grenzen lösen die zwei konkreten Unklarheiten:
+Gauß-Betragsfehler <.005 und komplexer Fehler <.02 sind getrennt; die
+vorab abgeschätzte diskrete Phasendrift ca..0144 bei h=.1/r=25 begründet
+die Reserve ohne nachträgliche Phasenanpassung. Produktionsfenster,
+Nichtnullbedingung und fünffache Signalreserve gelten ausschließlich
+für die vier M2-Fälle. Null-/Closed-Kontrollen haben eigene absolute bzw.
+Gauß-relative Grenzen; der Nulltestboden ist ausdrücklich ausgewiesen.
+
+Gemeinsame Radialfenster machen R-Vergleiche sinnvoll; h-Vergleiche
+über Beträge berücksichtigen die gespeicherten Modenphasen. Freie
+Robinwerte, endliche Boxen und verbleibende Kopplungsschwänze bleiben
+Approximationen, deren geplante R-/h-/Fensterkontrollen aussagekräftig
+sein können. Ein Scheitern bleibt UNRESOLVED, keine Quellenanpassung oder
+Grenzlockerung. Ein Bestehen bedeutet nur eine kontrollierte stationäre
+Antwort auf diese feste Quelle, weder Lebensdauer noch vollständige
+nichtlineare Abstrahlung. Der vorgesehene begrenzte CPU-Umfang und
+INCOMPLETE bei Abbruch genügen dem vereinbarten Umfang.

@@ -1,0 +1,79 @@
+Unabhängige QA-Ergebnisnachlesung, 02.10.2026, particle_binding
+Nur Dateien gelesen/gehasht, keine neuen Rechnungen oder Tests.
+
+Urteil: NUMERICALLY_UNRESOLVED_REFERENCE_INITIAL korrekt. Drei algebraische
+Checks bestanden; importierte Referenz verfehlt initiales Raumresidualgate.
+Keine Zeitentwicklung, kein negativer physikalischer Bildungsbefund und
+keine Widerlegung des bekannten stationären M2-Kerns. Main bleibt offen.
+
+Provenienz
+Archivcode und aktueller formation/code.py sind bytegleich (diff leer).
+Tatsächlicher SHA256 stimmt mit INPUT.sha256 UND RESULT.code_sha256:
+ea841390a6dff7f6d552d00e7e79c4c3fdc1f67ec36cb4924bb20701fb979af3.
+Das ist ein späterer Stand als mein erster Code-Lesereview 8bff949…;
+seine Auswahl fordert jetzt Q1100, sweep='seed' und gespeicherte Frequenz.
+PLAN-/QA-AUFTRAG-Hashes stimmen mit INPUT.sha256; RESULT-Hash:
+00ce49b114a78de662abadea1b7ceb3b2866fb0762cd6f22251ed88b89b697a3.
+NPZ-Hash im RESULT entspricht dokumentiertem BEUTEL-1-Original:
+1bb153a166e15d8ca43848613e638e8e0d20978833be6c564dcf7bc33f926d8c.
+NPZ-Rohbytes liegen nicht in diesem QA-Ordner; hier keine unabhängige
+erneute Hashmessung dieser Datei behauptet. Geladene Metadaten: row0,
+Q1100, omega1.0181665421550101, float32, Sampleabstand.16.
+
+Ausführung laut Auftrag und Ergebnis: ubuntu-auto/.69, CPU NumPy float64,
+CPU8 nice19 ein Thread, timeout20s Wallclock. RESULT misst .161486439
+CPU-s und 36868KiB PeakRSS; keine eigene externe Wallclockquittung im
+gelesenen Ordner. Nicht als CUDA oder als 20s tatsächlich verbraucht angeben.
+
+Null Zeitschritte
+RESULT.qa.time_steps=0, arms=[] und ausschließlich initial_checks passen
+zum gelesenen --qa-only-Zweig: er erreicht weder advance noch run_arm.
+Die h/dt-Einträge sind Anfangskonfigurationen, KEINE drei dynamischen Läufe.
+Insbesondere identische base/time-Werte sind ohne Zeitschritte erwartbar.
+
+Algebra bestanden
+Energierichtungsableitungsfehler 2.11281e-12 (<1e-7);
+globaler Q-Ableitungsfehler 7.64606e-18 und lokaler Flussfehler
+3.82303e-18 (<1e-11); Vakuumkräfte/E exakt null.
+Dies bestätigt die geprüften diskreten Identitäten, nicht Langzeit-
+Energieerhaltung, Integratorkonvergenz oder physikalische Stabilität.
+
+Initiale Referenz nicht stationär auf Zielgittern
+                  rphi          rchi          Gate jeweils
+h=.1          .049105218     .046822918          <.004
+h=.05         .166464030     .159209588          <.004
+h=.1,dt=.01   .049105218     .046822918          <.004
+Alle Q_pass=true; tphi nahe Rundung, tchi=0. Das folgt aus der
+uniformen Phasendrehpräparation und repariert die Raumreste nicht.
+Punktweise Rohmaxima bei h=.05: rphi_max=.6142245, rchi_max=.3610794.
+Kleine Energiedifferenzen zum alten Astpunkt sind daher kein Ersatz
+für Stationarität. Referenz-E ist 1212.97175 bzw.1213.06821.
+
+Die bekannte Speicherung subsampelt auf .16 und float32; lineare
+Interpolation auf .1/.05 reproduziert keinen exakten diskreten
+Gleichgewichtszustand. Wachsende zweite-Ableitungsreste beim feineren
+Zielgitter sind damit vereinbar; dieser Lauf isoliert nicht den einzelnen
+Anteil von Interpolation, Rundung und Frequenzkorrektur. Gespeichertes
+Profil ist ein Rekonstruktionsseed, keine bestandene Realzeitkontrolle.
+Gezielte stationäre Rekonstruktion am vorhandenen Punkt wäre eine neue
+Präparation mit eigenem Plan/QA, kein Anlass zur Wiederholung des Astscans.
+
+Wolken-Anfangsdiagnosen, keine Bildung
+E0=1546.68938/.68960 bei Q1100 liegt unter1100sqrt(2), wie die
+Papierformel erwartete. Qcore=866.49218/866.48356, etwa78.8% vonQ0.
+r50=8.6511/8.6762 ist |phi|²-Dichteradius, nicht allgemein Ladungsradius.
+chi=1 am Start, also noch keine neue Hülle. Dies sagt nichts überT64.
+
+Normgrenze, ohne daraus einen Main-Blocker abzuleiten
+Cloud rchi≈4.267e14 stammt vom Floor1e-14 bei ||chi-1||=0. Die Werte
+unterscheiden sich zwischen h=.1/.05 bereits um ungefähr1e9. Das ist
+keine sinnvoll relative Startdiagnose. Der tatsächlich archivierte Code
+ea841390… vergleicht die Residualsensitivität jedoch NUR für t>=48;
+das t0-Problem löst dort ausdrücklich KEIN Sensitivitygate aus. Meine
+vorherige Nachricht über einen sicheren all-times-Main-Blocker bezog
+sich irrtümlich auf den älteren gelesenen Stand und wird zurückgenommen.
+Der Ladungsvergleich gilt weiterhin für alle Samples. Über die
+späteren Residualnenner sagt dieser reine Anfangstest nichts aus.
+
+Fazit: Algebra-QA erfolgreich, Präparationsgate hat korrekt gestoppt.
+Die dynamische Bildungsuntersuchung bleibt vollständig ausstehend.

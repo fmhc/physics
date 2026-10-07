@@ -1,0 +1,25 @@
+{
+  "id": "claude-theorie-seite-zahlenpruefung-20260926",
+  "time": "2026-09-26T07:55:34+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung; Pruefung Claude-Subagent (Anthropic, Opus 5.5, unbeteiligt), 09:27:49 bis 09:53:33 MESZ (gemessen)",
+  "topic": "operations",
+  "status": "reported",
+  "evidenzart": "verfahren",
+  "title": "Theorie-Seite: Gegenlesen jeder Zahl gegen die Quelldatei (Regel 15.8.2) nachgeholt; 225 Zahlen, 215 belegt, 8 richtig abgeleitet, 2 abweichend, 1 Fall zu Regel 15.8.1; alles berichtigt (Fassung 8)",
+  "question": "Stimmt jede Zahl der Theorie-Seite (Fassung 7, 3d1e51c1...) mit ihrer Quelldatei, und nennt die Seite Zahlen aus Laeufen mit Ausgang T oder U?",
+  "action": "Mechanische Rohliste aller Zahlen (227 Treffer, jeder genau einmal zugeordnet), Suche der Quelle per grep, Urteil je Pruefeinheit; nur Shell-Textwerkzeuge. Bericht ZAHLENPRUEFUNG-THEORIE-KANDIDATEN-20260926.md (84be649b4d79f8fd...).",
+  "result": "123 Pruefeinheiten mit 225 Zahlen: 215 belegt, 8 nur abgeleitet und richtig nachgerechnet, 2 abweichend, 0 ohne Quelle. Abweichend: 'der einzige Weg zu halbem Spin' und 'nur er' (die Quelle nennt mehrere Wege und keinen Vollstaendigkeitssatz); 'etwa 2,5 Stunden' (Vorhersage 115 min +-20 %, 2,5 h ist das Budget). Regel 15.8.1: der GV2-Faktor stammt aus einem Lauf mit Ausgang T; auf der Seite jetzt ohne Zahl. Weitere Klarstellungen: Modell-Ladung und Modellzeit dimensionslos, 50 GeV gesetzter Richtwert, g = 0,001 erst ab B17, Protonvergleich nur zur Anschauung, 40 Prozent ist der Entwurfswert gamma = 1,4 des Tests, drei Tests derselben Startform, Faktor 3500 nur im Rechenweg der Originalarbeit, DR4-Termin 2. Dezember nur aus unserem Vertrag (ESA-Seite ohne Datum), daher 'voraussichtlich'.",
+  "meaning": "Damit ist die zweite Pflicht aus Regel 15.8.2 fuer die Rangfolge auf der Theorie-Seite erfuellt, nachtraeglich. Die Seite (Fassung 8, c8f7e866971ad7ea...) nennt keine Zahl aus T- oder U-Laeufen mehr. Die Rangfolge selbst ist unveraendert; der Eintrag claude-theorie-kandidaten-seite-20260926 band noch Fassung 5.",
+  "sources": [
+    {
+      "path": "coordination/lagebericht/ZAHLENPRUEFUNG-THEORIE-KANDIDATEN-20260926.md",
+      "sha256": "84be649b4d79f8fd1da0dd19835bdc57caa282ea3f9f4d443d957f573717563b"
+    },
+    {
+      "path": "coordination/lagebericht/theorie-kandidaten.html",
+      "sha256": "c8f7e866971ad7ea4381500f7bc8afe853a217f1d4c49e400836a5171047e5d4"
+    }
+  ],
+  "recorded_at": "2026-09-26T07:55:34.305277+00:00"
+}

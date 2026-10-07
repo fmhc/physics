@@ -1,0 +1,27 @@
+KOLL-1 lin Start 2026-09-30T05:41:26+00:00, Geraet cuda (Quadro P4000), torch 2.5.1+cu121
+  Argumente: {"kommando": "lin", "geraet": "cuda", "out": "/home/fmh/fmhc-physics-remote/runde9-koll1/aus-lin-still-fein", "w2": 0.7976768, "rho0": 1.728147, "h": 0.1, "cfl": 0.4, "rmax": 22.0, "zmax": 32.0, "schicht": 8.0, "sig0": 2.0, "rfluss": 13.0, "zfluss": 23.0, "abstaende": [10.0, 12.0, 14.0], "kette": 10.0, "d": 10.0, "eps": 0.005, "T": 3500.0, "dtmess": 0.2, "budget": 480.0, "weiter": false, "faeden": 1, "profil_h": 0.002, "profil_rmax": 36.0}
+  Profil omega^2 = 0.7976768: f0 = 1.024235494599965 (Klammer 2.8e-13), S0 = 1.049058, r_c = 20.36, A = 7.518252 (Streuung 1.4e-07 auf [r_c-4, r_c]), Q = 189.1443, E = 184.6243
+  stille Stelle: Singulaerwerte 5.036e-01, 4.201e-04 (Verhaeltnis 8.34e-04); a-Zeile +1.166e-04, +4.773e-04
+  Mode rho = 1.744617500: kappa_c = 0.524371, q = 2.440840, N (r <= 12.0) = 2.690974e+02, C_v = +1.514904e+01, offene Aussenamplitude 1.575e-07 (reduziert), wachsender Rest bei r_m +2.97e-04, V(r_m) +3.738e-03, u(0) = +0.4998, v(0) = +0.5002
+  Gitter h = 0.1, dt = 0.0400, nr = 220, nz = 641, Glieder 5: ['einzel', 'paar10', 'paar12', 'paar14', 'kette10'], Punkte je Glied 141020
+  Ueberlappmatrizen M (Zeile = Messball, Spalte = Mode): einzel: [[1.0]]; paar10: [[0.9832, 0.0141], [-0.0141, -0.9832]]; paar12: [[0.9943, 0.0043], [-0.0043, -0.9943]]; paar14: [[0.998, 0.0013], [-0.0013, -0.998]]; kette10: [[0.9833, 0.0141, 0.0], [-0.014, -0.9664, -0.014], [0.0, 0.0141, 0.9833]]
+  Start Zeitschleife 2026-09-30T05:41:47+00:00, t = 0.00 bis 3500.0, Messung alle 5 Schritte, Budget 480.0 s
+  Ende Zeitschleife 2026-09-30T05:48:54+00:00, t = 3500.04, Schritte 87501, 426.9 s (4.88 ms je Schritt in diesem Aufruf)
+=== Auswertung /home/fmh/fmhc-physics-remote/runde9-koll1/aus-lin-still-fein (lin, omega^2 = 0.7976768, h = 0.1, t bis 3500.0) ===
+  paar10: Uebersprechen M_BA/M_BB = +0.0144, M_AB/M_AA = +0.0144
+  paar12: Uebersprechen M_BA/M_BB = +0.0044, M_AB/M_AA = +0.0044
+  paar14: Uebersprechen M_BA/M_BB = +0.0013, M_AB/M_AA = +0.0013
+  kette10: Uebersprechen M_BA/M_BB = +0.0145, M_AB/M_AA = +0.0144
+  Demodulation bei rho_d = 1.7446804 (Nachfuehrung +6.29e-05); Bezug |a_A| Einzelball bei t = 36.2; Amplituden nach Inversion der Ueberlappmatrix (chi-Bild, CMT: arg(b/a) = -pi/2 fuer t_AB < 0)
+  Einzelball: Gamma (Abklingen a_A) = +8.072e-08; a_A(Ende) = 0.99556; Fluss/a^2 Mittel = 3.3202e-02
+  einzel  : Summe a^2 Ende/Anfang 0.99113, Gamma_Summe +8.072e-08
+            a(t): t=500: 0.997; t=1000: 0.996; t=2000: 0.999; t=3000: 0.995
+  paar10  : Summe a^2 Ende/Anfang 207212627644046493011399618887351638562756448335288267609660932277434770112236962709504.00000, Gamma_Summe -3.090e-02; b_max 10281619892789504685318951732308909821526016.0000 bei t = 3464; J aus atan2(b, a) +3.781e-03 -> pi/(2J) = 415; arg(b/a) frueh -1.793
+            a(t): t=500: 336.915/337.802; t=1000: 2288612056.064/2288612055.355; t=2000: 104315053625717626503168.000/104315053625717408399360.000; t=3000: 4754685436801304709175867674751664128.000/4754685436801291132372229424521674752.000
+  paar12  : Summe a^2 Ende/Anfang 11019002247786509967027467524465333520799188910080.00000, Gamma_Summe -1.825e-02; b_max 2359712841214651952791552.0000 bei t = 3464; J aus atan2(b, a) +1.391e-03 -> pi/(2J) = 1129; arg(b/a) frueh -1.603
+            a(t): t=500: 0.718/0.786; t=1000: 2771.184/2771.994; t=2000: 866489254631.593/866489254630.681; t=3000: 270920411524699553792.000/270920411524726030336.000
+  paar14  : Summe a^2 Ende/Anfang 3986482848320625431281664.00000, Gamma_Summe -9.224e-03; b_max 1415005245997.9097 bei t = 3464; J aus atan2(b, a) +4.778e-04 -> pi/(2J) = 3287; arg(b/a) frueh -1.620
+            a(t): t=500: 0.973/0.230; t=1000: 0.737/0.556; t=2000: 31136.330/31135.725; t=3000: 5302848032.425/5302848032.198
+  kette10 : Summe a^2 Ende/Anfang 475107776907907904180067099338342030327903918895729736317532215005657097529666166036849470009888345245614080.00000, Gamma_Summe -3.808e-02; b_max 562914370528819509050015439199320788281188565628485632.0000 bei t = 3464; J aus atan2(b, a) +3.787e-03 -> pi/(2J) = 415; arg(b/a) frueh -2.371; c_max 289982496119368388211692174017730690535846620805726208.0000 bei t = 3464
+            a(t): t=500: 8151.684/15823.352/8150.428; t=1000: 1876705886946.568/3643063654622.379/1876705812587.765; t=2000: 97962121907718714384734748672.000/190164188967636112161034469376.000/97962121907717078311432617984.000; t=3000: 5113522361447662551971955640186631685735972864.000/9926375763365381595813005446742650673222909952.000/5113522361447648607815353129663215222000713728.000
+Ende 2026-09-30T05:48:55+00:00, 448.6 s

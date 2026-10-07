@@ -1,0 +1,14 @@
+Runde 7 bic2 exakt Start 2026-10-01T15:30:56+00:00, Geraet cpu, torch 2.5.1+cu121
+=== exakt U = S - S^2 + 0.5 S^3, h = 0.04, f_rand = 1e-08, x0 = 0.62, rho0 = 1.65
+  3 Profile (je bis 7.9 s), R = 31.28, r_m = 8.960
+  Newton (Pluecker) 20.1 s, konvergiert 0/3
+  Newton (direkt) 10.6 s, konvergiert 0/3, max |rho_direkt - rho_pluecker| = 1.00e-02
+  omega^2 | Re rho | Gamma Newton | Gamma Fluss | N_K | A_norm | arg A | sig_min/sig_2 | Wachstum
+    0.6190000 | 1.5884665953 | 1.3697e-01 | 1.3696e-01 | 1.12434e+05 | -2.505763e-03 +1.946628e-03i | +2.481121 | 6.0e-03 | 2.2e+01
+    0.6200000 | 1.5861683606 | 1.3722e-01 | 1.3720e-01 | 1.13420e+05 | -2.493982e-03 +1.921291e-03i | +2.485181 | 5.9e-03 | 2.3e+01
+    0.6210000 | 1.5818728016 | 1.3783e-01 | 1.3782e-01 | 1.17431e+05 | -2.454649e-03 +1.872816e-03i | +2.489844 | 5.7e-03 | 2.3e+01
+  W-Gitter: weniger als 3 Profile im Fenster +-5e-04, genommen die 3 naechsten um omega^2 = 0.6210000
+  s(x) = L(y_a) an L(y_b) = 0: 
+  Nullstelle von W (linearer Fit, 15 Punkte): rho* = 1.5745123616, omega*^2 = 0.707120782, det J = 2.328e-01, cond J = 1.5e+01, Fitrest 8.0e-06, |Im|/|W| max 0.0e+00
+  Umlauf W auf Rechteck dx = 1.0e-03: zu wenige Profile (2) um omega^2 = 0.6210000
+Ende 2026-10-01T15:31:52+00:00, 56.6 s; entfallen: nichts

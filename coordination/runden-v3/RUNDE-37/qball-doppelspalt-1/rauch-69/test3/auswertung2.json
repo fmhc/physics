@@ -1,0 +1,1311 @@
+{
+ "start_utc": "2026-10-05T04:02:34Z",
+ "festlegungen": {
+  "SIG": 2.0,
+  "MIN_DURCH": 3,
+  "TOL_KONV": 0.02,
+  "PER_MIN_PEAKS": 3,
+  "PER_CV": 0.25,
+  "PER_PROM": 0.1
+ },
+ "kombis": {
+  "lin|0.9|h0.25|3|2R|v0.6|n41": {
+   "modell": "lin",
+   "omega": "0.9",
+   "h": 0.25,
+   "nspalt": 3,
+   "d": "2R",
+   "v": "0.6",
+   "gitter": 41,
+   "konfigs": [
+    "A",
+    "AB",
+    "ABC",
+    "AC",
+    "B",
+    "BC",
+    "C"
+   ],
+   "n_durch": {},
+   "I3_ladung": {
+    "I3_abs": 0.0029972170731707333,
+    "I3_int": 0.0026068707317073196,
+    "delta": 0.016709704878048782,
+    "kappa_L1": 0.17936983896754033,
+    "kappa_int": 0.15600938201678927
+   },
+   "I3_zentral_ladung": {
+    "I3": 0.0003849000000000001,
+    "delta": 0.0003435073170731701,
+    "kappa": 1.1205001491074875
+   }
+  },
+  "qball|0.9|h0.25|2|2R|v0.6|n41": {
+   "modell": "qball",
+   "omega": "0.9",
+   "h": 0.25,
+   "nspalt": 2,
+   "d": "2R",
+   "v": "0.6",
+   "gitter": 41,
+   "konfigs": [
+    "A",
+    "AB",
+    "B"
+   ],
+   "n_durch": {
+    "A": 0,
+    "AB": 0,
+    "B": 0
+   },
+   "klassen": {
+    "A": {
+     "reflektiert": 41
+    },
+    "AB": {
+     "reflektiert": 41
+    },
+    "B": {
+     "reflektiert": 41
+    }
+   },
+   "teilreflexion": {
+    "A": 0,
+    "AB": 0,
+    "B": 0
+   },
+   "dQ_rel_max": 1.1899983706209483e-06,
+   "E_verlust_rel_max": 0.005208120186332234,
+   "I2_kde": {
+    "I_abs": 0.0,
+    "summe": 0.0,
+    "r2": null
+   },
+   "I2_bin5": {
+    "I_abs": 0.0,
+    "summe": 0.0,
+    "r2": null
+   },
+   "I2_ladung": {
+    "I_abs": 0.006577117073170732,
+    "summe": 0.04510016097560976,
+    "r2": 0.14583356092071706
+   },
+   "periode_kde": {
+    "peaks": [],
+    "periodisch": false,
+    "periode": null
+   },
+   "periode_bin5": null,
+   "VQ4": {
+    "durchgelassen": 0,
+    "geteilt_plan": 0,
+    "geteilt_wortlaut": 0,
+    "beide_spalte": 0
+   }
+  },
+  "qball|0.9|h0.25|3|2R|v0.6|n41": {
+   "modell": "qball",
+   "omega": "0.9",
+   "h": 0.25,
+   "nspalt": 3,
+   "d": "2R",
+   "v": "0.6",
+   "gitter": 41,
+   "konfigs": [
+    "A",
+    "AB",
+    "ABC",
+    "AC",
+    "B",
+    "BC",
+    "C"
+   ],
+   "n_durch": {
+    "A": 0,
+    "B": 0,
+    "AB": 0,
+    "AC": 0,
+    "ABC": 0,
+    "C": 0,
+    "BC": 0
+   },
+   "klassen": {
+    "A": {
+     "reflektiert": 41
+    },
+    "B": {
+     "reflektiert": 41
+    },
+    "AB": {
+     "reflektiert": 41
+    },
+    "AC": {
+     "reflektiert": 41
+    },
+    "ABC": {
+     "reflektiert": 41
+    },
+    "C": {
+     "reflektiert": 41
+    },
+    "BC": {
+     "reflektiert": 41
+    }
+   },
+   "teilreflexion": {
+    "A": 0,
+    "B": 0,
+    "AB": 0,
+    "AC": 0,
+    "ABC": 0,
+    "C": 0,
+    "BC": 0
+   },
+   "dQ_rel_max": 1.1899983707319706e-06,
+   "E_verlust_rel_max": 0.010701018238644232,
+   "I3_kde": {
+    "I3_abs": 0.0,
+    "I3_int": 0.0,
+    "delta": 0.0,
+    "kappa_L1": null,
+    "kappa_int": null
+   },
+   "I3_bin5": {
+    "I3_abs": 0.0,
+    "I3_int": 0.0,
+    "delta": 0.0,
+    "kappa_L1": null,
+    "kappa_int": null
+   },
+   "I3_zentral_bin5": {
+    "I3": 0.0,
+    "delta": 0.0,
+    "kappa": null
+   },
+   "I3_ladung": {
+    "I3_abs": 0.0018723536585365855,
+    "I3_int": 0.001544231707317073,
+    "delta": 0.012598429268292684,
+    "kappa_L1": 0.14861802361734602,
+    "kappa_int": 0.12257335215617275
+   },
+   "I3_zentral_ladung": {
+    "I3": 0.00027112682926829217,
+    "delta": 0.0002698243902439026,
+    "kappa": 1.0048269877427027
+   }
+  },
+  "qball|0.9|h0.25|2|w3:2R|v0.6|n41": {
+   "modell": "qball",
+   "omega": "0.9",
+   "h": 0.25,
+   "nspalt": 2,
+   "d": "w3:2R",
+   "v": "0.6",
+   "gitter": 41,
+   "konfigs": [
+    "A",
+    "AB",
+    "B"
+   ],
+   "n_durch": {
+    "A": 7,
+    "AB": 14,
+    "B": 7
+   },
+   "klassen": {
+    "A": {
+     "reflektiert": 30,
+     "zerflossen": 4,
+     "ein_spalt": 7
+    },
+    "AB": {
+     "reflektiert": 16,
+     "zerflossen": 11,
+     "ein_spalt": 14
+    },
+    "B": {
+     "reflektiert": 30,
+     "zerflossen": 4,
+     "ein_spalt": 7
+    }
+   },
+   "teilreflexion": {
+    "A": 0,
+    "AB": 0,
+    "B": 0
+   },
+   "dQ_rel_max": 1.1899983706209483e-06,
+   "E_verlust_rel_max": 0.014349210740007994,
+   "I2_kde": {
+    "I_abs": 0.06566589633153383,
+    "summe": 0.6829268292682928,
+    "r2": 0.09615363391403166
+   },
+   "I2_bin5": {
+    "I_abs": 0.0,
+    "summe": 0.34146341463414637,
+    "r2": 0.0
+   },
+   "I2_ladung": {
+    "I_abs": 0.015215221951219545,
+    "summe": 0.3998062,
+    "r2": 0.03805649324902802
+   },
+   "periode_kde": {
+    "peaks": [
+     -15.5,
+     -3.0,
+     3.0,
+     15.5
+    ],
+    "periodisch": false,
+    "periode": 10.333333333333334,
+    "cv": 0.2965286501750038
+   },
+   "periode_bin5": null,
+   "VQ4": {
+    "durchgelassen": 14,
+    "geteilt_plan": 0,
+    "geteilt_wortlaut": 0,
+    "beide_spalte": 1
+   }
+  }
+ },
+ "urteile": {
+  "VQ1": {
+   "zeilen": [
+    {
+     "omega": "0.8",
+     "v": "0.2",
+     "plan": {
+      "r2_41": null,
+      "r2_81": null,
+      "r2_h0125": null,
+      "konv_y": null,
+      "konv_h": null
+     },
+     "wortlaut": {
+      "r2_41": null,
+      "r2_81": null,
+      "r2_h0125": null,
+      "konv_y": null,
+      "konv_h": null
+     },
+     "n_durch_A_B": 0
+    },
+    {
+     "omega": "0.8",
+     "v": "0.3",
+     "plan": {
+      "r2_41": null,
+      "r2_81": null,
+      "r2_h0125": null,
+      "konv_y": null,
+      "konv_h": null
+     },
+     "wortlaut": {
+      "r2_41": null,
+      "r2_81": null,
+      "r2_h0125": null,
+      "konv_y": null,
+      "konv_h": null
+     },
+     "n_durch_A_B": 0
+    },
+    {
+     "omega": "0.8",
+     "v": "0.45",
+     "plan": {
+      "r2_41": null,
+      "r2_81": null,
+      "r2_h0125": null,
+      "konv_y": null,
+      "konv_h": null
+     },
+     "wortlaut": {
+      "r2_41": null,
+      "r2_81": null,
+      "r2_h0125": null,
+      "konv_y": null,
+      "konv_h": null
+     },
+     "n_durch_A_B": 0
+    },
+    {
+     "omega": "0.9",
+     "v": "0.2",
+     "plan": {
+      "r2_41": null,
+      "r2_81": null,
+      "r2_h0125": null,
+      "konv_y": null,
+      "konv_h": null
+     },
+     "wortlaut": {
+      "r2_41": null,
+      "r2_81": null,
+      "r2_h0125": null,
+      "konv_y": null,
+      "konv_h": null
+     },
+     "n_durch_A_B": 0
+    },
+    {
+     "omega": "0.9",
+     "v": "0.3",
+     "plan": {
+      "r2_41": null,
+      "r2_81": null,
+      "r2_h0125": null,
+      "konv_y": null,
+      "konv_h": null
+     },
+     "wortlaut": {
+      "r2_41": null,
+      "r2_81": null,
+      "r2_h0125": null,
+      "konv_y": null,
+      "konv_h": null
+     },
+     "n_durch_A_B": 0
+    },
+    {
+     "omega": "0.9",
+     "v": "0.45",
+     "plan": {
+      "r2_41": null,
+      "r2_81": null,
+      "r2_h0125": null,
+      "konv_y": null,
+      "konv_h": null
+     },
+     "wortlaut": {
+      "r2_41": null,
+      "r2_81": null,
+      "r2_h0125": null,
+      "konv_y": null,
+      "konv_h": null
+     },
+     "n_durch_A_B": 0
+    }
+   ],
+   "plan": "unentschieden (keine wertbare Kombination)",
+   "wortlaut": "unentschieden (keine wertbare Kombination)"
+  },
+  "VQ2": {
+   "zeilen": [
+    {
+     "omega": "0.8",
+     "d": "1R",
+     "perioden": {
+      "0.2": null,
+      "0.3": null,
+      "0.45": null
+     },
+     "peaks": {
+      "0.2": null,
+      "0.3": null,
+      "0.45": null
+     },
+     "alle_periodisch": false
+    },
+    {
+     "omega": "0.8",
+     "d": "1.5R",
+     "perioden": {
+      "0.2": null,
+      "0.3": null,
+      "0.45": null
+     },
+     "peaks": {
+      "0.2": null,
+      "0.3": null,
+      "0.45": null
+     },
+     "alle_periodisch": false
+    },
+    {
+     "omega": "0.9",
+     "d": "1R",
+     "perioden": {
+      "0.2": null,
+      "0.3": null,
+      "0.45": null
+     },
+     "peaks": {
+      "0.2": null,
+      "0.3": null,
+      "0.45": null
+     },
+     "alle_periodisch": false
+    },
+    {
+     "omega": "0.9",
+     "d": "1.5R",
+     "perioden": {
+      "0.2": null,
+      "0.3": null,
+      "0.45": null
+     },
+     "peaks": {
+      "0.2": null,
+      "0.3": null,
+      "0.45": null
+     },
+     "alle_periodisch": false
+    }
+   ],
+   "plan": "kein Muster",
+   "wortlaut": "kein Muster"
+  },
+  "VQ3": {
+   "zeilen": [
+    {
+     "omega": "0.8",
+     "d": "1R",
+     "v": "0.2",
+     "n_durch_einzel": 0,
+     "plan": {
+      "vals": {
+       "41": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "81": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "h0125": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       }
+      },
+      "konv_y": null,
+      "konv_h": null
+     },
+     "ladung": {
+      "vals": {
+       "41": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "81": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "h0125": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       }
+      },
+      "konv_y": null,
+      "konv_h": null
+     },
+     "wortlaut": {
+      "vals": {
+       "41": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "81": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "h0125": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       }
+      },
+      "konv_y": null,
+      "konv_h": null
+     }
+    },
+    {
+     "omega": "0.8",
+     "d": "1R",
+     "v": "0.3",
+     "n_durch_einzel": 0,
+     "plan": {
+      "vals": {
+       "41": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "81": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "h0125": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       }
+      },
+      "konv_y": null,
+      "konv_h": null
+     },
+     "ladung": {
+      "vals": {
+       "41": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "81": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "h0125": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       }
+      },
+      "konv_y": null,
+      "konv_h": null
+     },
+     "wortlaut": {
+      "vals": {
+       "41": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "81": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "h0125": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       }
+      },
+      "konv_y": null,
+      "konv_h": null
+     }
+    },
+    {
+     "omega": "0.8",
+     "d": "1R",
+     "v": "0.45",
+     "n_durch_einzel": 0,
+     "plan": {
+      "vals": {
+       "41": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "81": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "h0125": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       }
+      },
+      "konv_y": null,
+      "konv_h": null
+     },
+     "ladung": {
+      "vals": {
+       "41": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "81": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "h0125": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       }
+      },
+      "konv_y": null,
+      "konv_h": null
+     },
+     "wortlaut": {
+      "vals": {
+       "41": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "81": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "h0125": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       }
+      },
+      "konv_y": null,
+      "konv_h": null
+     }
+    },
+    {
+     "omega": "0.8",
+     "d": "1.5R",
+     "v": "0.2",
+     "n_durch_einzel": 0,
+     "plan": {
+      "vals": {
+       "41": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "81": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "h0125": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       }
+      },
+      "konv_y": null,
+      "konv_h": null
+     },
+     "ladung": {
+      "vals": {
+       "41": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "81": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "h0125": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       }
+      },
+      "konv_y": null,
+      "konv_h": null
+     },
+     "wortlaut": {
+      "vals": {
+       "41": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "81": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "h0125": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       }
+      },
+      "konv_y": null,
+      "konv_h": null
+     }
+    },
+    {
+     "omega": "0.8",
+     "d": "1.5R",
+     "v": "0.3",
+     "n_durch_einzel": 0,
+     "plan": {
+      "vals": {
+       "41": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "81": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "h0125": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       }
+      },
+      "konv_y": null,
+      "konv_h": null
+     },
+     "ladung": {
+      "vals": {
+       "41": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "81": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "h0125": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       }
+      },
+      "konv_y": null,
+      "konv_h": null
+     },
+     "wortlaut": {
+      "vals": {
+       "41": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "81": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "h0125": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       }
+      },
+      "konv_y": null,
+      "konv_h": null
+     }
+    },
+    {
+     "omega": "0.8",
+     "d": "1.5R",
+     "v": "0.45",
+     "n_durch_einzel": 0,
+     "plan": {
+      "vals": {
+       "41": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "81": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "h0125": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       }
+      },
+      "konv_y": null,
+      "konv_h": null
+     },
+     "ladung": {
+      "vals": {
+       "41": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "81": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "h0125": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       }
+      },
+      "konv_y": null,
+      "konv_h": null
+     },
+     "wortlaut": {
+      "vals": {
+       "41": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "81": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "h0125": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       }
+      },
+      "konv_y": null,
+      "konv_h": null
+     }
+    },
+    {
+     "omega": "0.9",
+     "d": "1R",
+     "v": "0.2",
+     "n_durch_einzel": 0,
+     "plan": {
+      "vals": {
+       "41": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "81": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "h0125": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       }
+      },
+      "konv_y": null,
+      "konv_h": null
+     },
+     "ladung": {
+      "vals": {
+       "41": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "81": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "h0125": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       }
+      },
+      "konv_y": null,
+      "konv_h": null
+     },
+     "wortlaut": {
+      "vals": {
+       "41": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "81": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "h0125": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       }
+      },
+      "konv_y": null,
+      "konv_h": null
+     }
+    },
+    {
+     "omega": "0.9",
+     "d": "1R",
+     "v": "0.3",
+     "n_durch_einzel": 0,
+     "plan": {
+      "vals": {
+       "41": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "81": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "h0125": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       }
+      },
+      "konv_y": null,
+      "konv_h": null
+     },
+     "ladung": {
+      "vals": {
+       "41": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "81": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "h0125": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       }
+      },
+      "konv_y": null,
+      "konv_h": null
+     },
+     "wortlaut": {
+      "vals": {
+       "41": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "81": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "h0125": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       }
+      },
+      "konv_y": null,
+      "konv_h": null
+     }
+    },
+    {
+     "omega": "0.9",
+     "d": "1R",
+     "v": "0.45",
+     "n_durch_einzel": 0,
+     "plan": {
+      "vals": {
+       "41": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "81": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "h0125": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       }
+      },
+      "konv_y": null,
+      "konv_h": null
+     },
+     "ladung": {
+      "vals": {
+       "41": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "81": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "h0125": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       }
+      },
+      "konv_y": null,
+      "konv_h": null
+     },
+     "wortlaut": {
+      "vals": {
+       "41": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "81": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "h0125": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       }
+      },
+      "konv_y": null,
+      "konv_h": null
+     }
+    },
+    {
+     "omega": "0.9",
+     "d": "1.5R",
+     "v": "0.2",
+     "n_durch_einzel": 0,
+     "plan": {
+      "vals": {
+       "41": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "81": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "h0125": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       }
+      },
+      "konv_y": null,
+      "konv_h": null
+     },
+     "ladung": {
+      "vals": {
+       "41": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "81": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "h0125": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       }
+      },
+      "konv_y": null,
+      "konv_h": null
+     },
+     "wortlaut": {
+      "vals": {
+       "41": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "81": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "h0125": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       }
+      },
+      "konv_y": null,
+      "konv_h": null
+     }
+    },
+    {
+     "omega": "0.9",
+     "d": "1.5R",
+     "v": "0.3",
+     "n_durch_einzel": 0,
+     "plan": {
+      "vals": {
+       "41": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "81": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "h0125": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       }
+      },
+      "konv_y": null,
+      "konv_h": null
+     },
+     "ladung": {
+      "vals": {
+       "41": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "81": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "h0125": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       }
+      },
+      "konv_y": null,
+      "konv_h": null
+     },
+     "wortlaut": {
+      "vals": {
+       "41": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "81": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "h0125": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       }
+      },
+      "konv_y": null,
+      "konv_h": null
+     }
+    },
+    {
+     "omega": "0.9",
+     "d": "1.5R",
+     "v": "0.45",
+     "n_durch_einzel": 0,
+     "plan": {
+      "vals": {
+       "41": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "81": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "h0125": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       }
+      },
+      "konv_y": null,
+      "konv_h": null
+     },
+     "ladung": {
+      "vals": {
+       "41": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "81": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "h0125": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       }
+      },
+      "konv_y": null,
+      "konv_h": null
+     },
+     "wortlaut": {
+      "vals": {
+       "41": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "81": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       },
+       "h0125": {
+        "kq": null,
+        "krand": null,
+        "korr": null
+       }
+      },
+      "konv_y": null,
+      "konv_h": null
+     }
+    }
+   ],
+   "plan": "unentschieden (keine wertbare Kombination)",
+   "ladung": "unentschieden (keine wertbare Kombination)",
+   "wortlaut": "unentschieden (keine wertbare Kombination)"
+  },
+  "VQ4": {
+   "zeilen": [],
+   "durchgelassen": 0,
+   "geteilt_plan": 0,
+   "geteilt_wortlaut": 0,
+   "anteil_plan": null,
+   "anteil_wortlaut": null,
+   "plan": "unentschieden (weniger als 5 durchgelassene Laeufe)",
+   "wortlaut": "unentschieden (weniger als 5 durchgelassene Laeufe)"
+  }
+ },
+ "sek": 0.029840707778930664,
+ "ende_utc": "2026-10-05T04:02:34Z"
+}

@@ -1,0 +1,47 @@
+% Reviewed stored-data diagnostic; no new PDE evolution or scattering theorem.
+% Stored-data diagnostic, not a new PDE evolution or scattering theorem.
+\paragraph{Direction of the exterior field.}
+For the same chirp, we analysed the stored radial Cauchy data
+$u=r\phi_b$, $v=\partial_tu$ at $t=16,24,32$ on all three discretizations.
+A fixed window $\chi$ rises from zero to one on $12<r<16$ as
+$10s^3-15s^4+6s^5$, $s=(r-12)/4$; $(\chi u,\chi v)$ is zero-padded
+onto a periodic analysis interval of length $L=320$. With Fourier series
+normalized by $1/M$ for $M$ grid points, both temporal branches are retained:
+$a_\sigma=(\widehat{\chi u}+\widehat{\chi v}/(\sigma\ii\Omega))/2$,
+$\Omega=\sqrt{1+k^2}$, $\sigma=\pm1$.
+The convention $\exp(\ii k r+\sigma\ii\Omega t)$ gives group velocity
+$-\sigma k/\Omega$ and branch energy $8\pi L\Omega^2|a_\sigma|^2$.
+The denominator $E_{\mathrm{win}}$ below is the \emph{total free spectral window
+energy}, including the directionless $k=0$ and unresolved Nyquist bins;
+it is neither the original nonlinear energy nor its escaped fraction.
+
+The fine spatial grid gives the values below. Define
+$\epsilon_{\mathrm{nl}}=\|\chi(-2S_b+\tfrac32 S_b^2)u\|_2/\|\chi u\|_2$
+and $\epsilon_\chi=\|-2\chi'u_r-\chi''u\|_2/\|\chi u\|_2$,
+using the radial discrete $L^2$ norm. These are operator-source quotients
+in the mass-$1$ units of the model (dimensionally mass squared), not
+relative energy errors.
+\begin{center}
+\begin{tabular}{rrrr}
+\toprule
+$t$ & $E_{\mathrm{out}}/E_{\mathrm{win}}$ & $\epsilon_{\mathrm{nl}}$ & $\epsilon_\chi$\\
+\midrule
+16 & 0.904702 & $4.55352\times10^{-5}$ & 0.593850\\
+24 & 0.888886 & $1.14544\times10^{-4}$ & 0.828330\\
+32 & 0.939306 & $1.58566\times10^{-3}$ & 0.573484\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+All nine decompositions have $E_{\mathrm{out}}>E_{\mathrm{in}}+E_{\mathrm{Nyquist}}$
+and $E_{\mathrm{out}}>E_{\mathrm{win}}/2$. The largest change in the outgoing
+fraction under spatial refinement is $4.59\times10^{-4}$, and under
+timestep halving $1.78\times10^{-8}$; these are sensitivity bounds over
+the sampled cases, not certified errors. The exterior nonlinear source
+is weak in these units, but the filter source is not: its quotient ranges
+from $0.57$ to $0.83$. Zero extension also produces the separately monitored
+boundary term $u_r(80^-)\delta(r-80)$, rather than another volume norm.
+Thus the fixed-window data are predominantly outward-oriented; without
+control of the accumulated source terms, this does not establish
+asymptotically free radiation, stationary Q-ball formation or binding of
+a remaining core.

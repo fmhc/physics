@@ -1,0 +1,21 @@
+{
+ "a": "ausgabe/dauer_grob_ergebnis.json",
+ "b": "ausgabe/stopp_grob_ergebnis.json",
+ "p": 0.506385959352026,
+ "Q_d": {
+  "0.002": 0.27649746530815966,
+  "0.001": 0.19271292644910995,
+  "0.0005": 0.13703024307816633
+ },
+ "urteil": [
+  "V1: p = 0.506, Q_d(1e-3) = 0.19271292644910995 -> erfuellt",
+  "V2: omega-Abweichung [0.0004214459558116168, 0.00021905995565008052, 0.00012229060936774783], omega max vor Bruch [0.9977150469827052, 0.9989564326893288, 0.9995304097275038] -> erfuellt",
+  "V3: Q_d(5e-4)/Q_d(2e-3) = 0.4955931256926515 -> erfuellt",
+  "V4: q_rel(t_stop + 2000) = 0.9558580720936577, omega Ende 0.9995402726399097 -> erfuellt",
+  "Gegenprobe gamma = 0: dQ_in 6.963279199666907e-08, omega-Abw 4.5865615365348056e-05, S_c 0.0015327121083803519 -> bestanden",
+  "Gegenprobe 3D-Vergleich: nicht in diesem Code (NACHTRAG.md)"
+ ],
+ "scheitert": [],
+ "plausibel": true,
+ "ausgang": "getroffen (1D; 3D-Gegenprobe offen)"
+}

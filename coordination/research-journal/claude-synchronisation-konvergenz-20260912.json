@@ -1,0 +1,28 @@
+{
+  "id": "claude-synchronisation-konvergenz-20260912",
+  "time": "2026-09-12T07:31:35+02:00",
+  "time_kind": "completed",
+  "author": "Claude (claude-primary, TS440)",
+  "topic": "micro",
+  "status": "checked",
+  "title": "Bindung bei g = 1,0 haengt am UV-Cutoff: bei halbiertem Cutoff verschwindet sie, bei hoeherem wird sie staerker (Ausgang B)",
+  "question": "Ist die persistente Bindung der Punkt-Wellen-Familie robust gegen Feldbox und Modencutoff?",
+  "action": "Neun Laeufe (g=1,0, drei Seeds, T=60): Basis L=16/R^2=4 (16 Moden), L=32/R^2=16 (62 Moden, durch die feste Indexgrenze -2..2 in make_model aber Cutoff halbiert), L=16/R^2=9 (58 Moden, Cutoff 1,18).",
+  "result": "Basis 3/5/5 gebundene Paare; L=32 mit halbiertem Cutoff 0/0/0; Cutoff 9: 6/6/6. Abnahme 1e-5 verfehlt (bis 3,6e-5). Anordnungsfehler dokumentiert: Variante B verdoppelte Box UND halbierte Cutoff.",
+  "meaning": "Die Anziehung wird von den kurzwelligen Moden getragen; Bindung ist eine Eigenschaft der diskreten Familie samt Cutoff, kein Kontinuumsergebnis. Kein Registereintrag ohne diese Abhaengigkeit. Lauf j mit verallgemeinertem Modenbereich trennt Box von Cutoff.",
+  "sources": [
+    {
+      "path": "coordination/claude-synchronisation-20260912/runs/i/ERGEBNIS.json",
+      "sha256": "71965a3d373a90f074be87a6d7ccb7e7aaa93aeff88aa9615f59cad23f1580af"
+    },
+    {
+      "path": "coordination/synchronisation-warp-archive-20260912.md",
+      "sha256": "ba16ab9ecc857ee0b41817f8db5a9b4711b578e7f95186cb3dcd23fe67f1cfa3"
+    },
+    {
+      "path": "coordination/claude-synchronisation-20260912/run_sync4.py",
+      "sha256": "bd0a98258ca34c9506637c2c56e726546c32411c7222e372523cf0ddd9f4bfff"
+    }
+  ],
+  "recorded_at": "2026-09-12T05:31:35.967617+00:00"
+}

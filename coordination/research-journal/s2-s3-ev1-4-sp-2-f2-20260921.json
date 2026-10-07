@@ -1,0 +1,51 @@
+{
+  "id": "s2-s3-ev1-4-sp-2-f2-20260921",
+  "time": "2026-09-21T01:30:00+02:00",
+  "time_kind": "completed",
+  "author": "Claude",
+  "topic": "theory",
+  "status": "reported",
+  "title": "S2 und S3 zu EV1.4 und SP-2 F2: der geschlossene Kern haelt bitgleich, der Hauptarm von SP-2 ueberlebt sogar eine falsche Mastergleichung",
+  "question": "Halten die beiden am 20./21.09.2026 gerechneten Faelle mit belastbarem Ausgang dem Gegenlesen (S3) und einer Reproduktion aus dem Vertragstext allein durch ein fremdes Haus (S2, Haus Alibaba, qwen3.6-27b-bunker) stand - EV1.4 (Ausgang A, m_plus 3,061e-3 gegen Latte 0,01) und SP-2 Fassung 2 (Ausgang B, Dbar 0,00162 +- 0,00271 gegen Nachweisgrenze 0,02)?",
+  "action": "S3: zwei maschinelle Pruefskripte auf .69 (begrenzte User-Units, CPUQuota 100 Prozent), die jede Berichtszahl gegen die Ergebnisdatei stellen und Kennzahlen neu bilden - 144 Groessen fuer EV1.4, 296 fuer SP-2 F2. Dazu Lesen des Laufskripts entlang des Datenflusses, Nachlesen der archivierten NIST-Quellen und ein algebraischer Beweis der geschlossenen Identitaet des Vertrags EV1.4. S2: Materialpakete mechanisch aus zwei Dateilisten mit paket.py (nur Vertragstext, fuer EV1.4 zusaetzlich die hashgebundene VORAB-Datei; kein Laufskript, kein Bericht, keine Ergebnisdatei), Skripte von Bunker-Qwen, zeilenweise auf Vertragstreue geprueft, nur Serialisierungs-, Import- und eine Achsenkorrektur angewandt und dokumentiert, Ausfuehrung als begrenzte User-Units auf .69. Register und Ledger nicht angefasst, Runde 022 eingefroren, keine lokale Numerik.",
+  "result": "S3: 144 von 144 Berichtszahlen bei EV1.4 und 296 von 296 bei SP-2 F2 stimmen mit der Ergebnisdatei; m_plus, m_minus, sigma_D und Dbar wurden aus den Rohzellen neu gebildet und stimmen auf 1e-12 bzw. 1e-9. EV1.4: die geschlossene Identitaet D_e,exakt = (4 B_e^3/omega_e^2)(1+1/lam^2)^-3 ist keine numerische Behauptung, sondern in drei Zeilen beweisbar; Haus Alibaba trifft D_e,exakt und D_0,exakt auf dem letzten Bit (7,5e-16 bzw. 5,6e-16), reproduziert die Molekuelauswahl 3.1b mit identischem M_neu und bestaetigt K2, K7, K9, K10, K11 und N2. K9(i) ist scharf: ein an die Bezugsgroesse geklebter Schaetzer muesste 1,99e-2 liefern statt der gemessenen 1,14e-6 bis 2,40e-5. K9(ii) folgt dagegen rechnerisch aus (i) und der Auswahlregel und kann nicht scheitern; N2(i) ist K7 mit anderem Nenner. Auf den steifen Molekuelen weichen beide Haeuser in Q um bis 4,77e-5 ab, das Fuenffache der S2-Toleranz 1e-5 - die ausgangstragende Zelle liegt aber auf 1H19F, wo sie auf 5,7e-7 uebereinstimmen. SP-2 F2: die Normierung N^2/(Q(Q-1)) steht fuenffach abgesichert im Vertragstext, K6 haelt mit vier Groessenordnungen Luft (1,066e-14 gegen 1e-10), K5 ist gemessen (Dbar(v3) = -0,630403 = 337 sigma_D = 31,5 Nachweisgrenzen, z = 0,056 gegen die vorab gebundene Aufzaehlung). Die S2-Reproduktion ist dort in zwei Runden gescheitert: das fremde Haus hat die stationaere Gleichung transponiert aufgestellt, so dass fuer jede Parameterwahl die Gleichverteilung herauskommt; die Vertragskontrollen K2(b) und K2(c) melden das sofort (15,9 bzw. 1,97 gegen 1e-8). Der Gillespie-Teil lief nach 59 min 59,8 s CPU in die Zeitgrenze, ohne Zahlen.",
+  "meaning": "Der geschlossene Kern von EV1.4 traegt zweifach geprueft. Die Trennkraft liegt bei K9(i) und, staerker, im Datenfluss des Laufskripts: die Bezugsgroesse wird erst nach der Fitabbildung gebildet und geht in keine Fitfunktion ein. Drei Grenzen bleiben: K7 allein koennte einen angeklebten Schaetzer nicht erkennen, weil Wahrheit und Bezugsgroesse dort nur 1,2e-6 bis 8,6e-5 auseinanderliegen; in 114 von 234 Pflichtzellen ist epsilon_v groesser als sigma, und unter der strengsten Lesart bleibt A mit 0,0706 Prozent Abstand und nur durch eine Zelle stehen; ein vollstaendiges S2 der 61 Pruefzellen ist mit dem in 10.3 genannten Material nicht ausfuehrbar, weil 2.9 die Formfunktionen ausserhalb des Vertragstexts fuehrt. Bei SP-2 F2 hat der misslungene S2-Versuch unfreiwillig belegt, was beide Fremdreviews behauptet hatten: der Hauptarm ist so vollstaendig analytisch vorentschieden, dass eine FALSCHE Mastergleichung ihn exakt reproduziert (g = 16/15 fuer alle acht Abstaende, Delta ~ 1e-14) und erst auf den nicht reversiblen Armen zusammenbricht. Was der Lauf neu bestimmt, steht in der Aufzaehlung der offenen Zelle v9: Delta_exakt(v9) - Delta_exakt(v3) = +0,0021160946 bei Residuen von 9,3e-16 und 1,3e-18, also 0,106 Nachweisgrenzen - der Antrieb aendert das Korrelationsloch nachweislich, und die vorab festgelegte Lesart misst das mit dem stochastischen Arm und sieht es deshalb nicht. Zwei Vertragsluecken fuer die Vorlage: SP-2 2.5 legt die Indexkonvention von pi W = 0 nicht fest, genau daran ist S2 gescheitert; K2(c) nennt eine Referenzzahl ohne Toleranz. Empfehlung fuer R23: EV1.4 traegt, SP-2 F2 traegt nicht. Nichts gebucht, Runde 022 eingefroren.",
+  "sources": [
+    {
+      "path": "coordination/methodik-review/s2-s3-20260921/S2-S3-EV1-4.md",
+      "label": "S2/S3 zu EV1.4, mit Befundtabelle, Vergleichstabelle und Abstract",
+      "sha256": "90bd6f0f44d14bb2d7999348b46b57d252229b679db107ed9bec501df8131ddb"
+    },
+    {
+      "path": "coordination/methodik-review/s2-s3-20260921/S2-S3-SP-2-F2.md",
+      "label": "S2/S3 zu SP-2 Fassung 2, mit Befundtabelle, Vergleichstabelle und Abstract",
+      "sha256": "3e694bcdecc3ea95bc9b118d7e346e4d90ff48530a226e9c4942763128d85d52"
+    },
+    {
+      "path": "coordination/methodik-review/s2-s3-20260921/S3-EV1-4-PRUEFUNG.json",
+      "label": "S3 EV1.4: 144 gepruefte Groessen, keine Abweichung",
+      "sha256": "b9a384094eb06bd18ef30bc2f86f89808469a839f2947a1d554aa1bb142af1d0"
+    },
+    {
+      "path": "coordination/methodik-review/s2-s3-20260921/S3-SP-2-F2-PRUEFUNG.json",
+      "label": "S3 SP-2 F2: 296 gepruefte Groessen, keine Abweichung",
+      "sha256": "f7ffa3249192dd6ce72a2bb9a92286c91858e4ea0d6a27c5dd03408631cfed8d"
+    },
+    {
+      "path": "coordination/methodik-review/s2-s3-20260921/VERGLEICH-EV1-4.json",
+      "label": "S1 gegen S2 je Molekuel, Toleranzen aus Vertrag 10.3",
+      "sha256": "d1cbb4f697f5bd28e0f735dc5fabb09ad9dd79932df3d87a2d082d974276aea3"
+    },
+    {
+      "path": "coordination/methodik-review/s2-s3-20260921/s2-qwen/S2-EV1-4-QWEN.json",
+      "label": "S2-Ergebnis Haus Alibaba zu EV1.4",
+      "sha256": "9b64d07a2d19264c079601974c58067741aaadd2c2923cd24f325433cfac319b"
+    },
+    {
+      "path": "coordination/methodik-review/s2-s3-20260921/s2-qwen/S2-SP-2-F2-QWEN-TEIL1.json",
+      "label": "S2-Aufzaehlungen Haus Alibaba zu SP-2 F2, Runde 1",
+      "sha256": "b66ae11e4fdc0725861f0293199a5b44b14715449965550c607aebc94fd21650"
+    }
+  ],
+  "recorded_at": "2026-09-20T23:15:46.047221+00:00"
+}

@@ -1,0 +1,97 @@
+Unabhaengige Papier-/Codelekture, 2026-10-02 — causal_live_review
+Gelesen: PLAN.txt, detector.js und Konstruktor/RHS/RK4/sample des Basissolvers.
+Keine Rechnung oder Testausfuehrung; keine Ergebnisabnahme vorweggenommen.
+
+STARTBEURTEILUNG NACH KORREKTUR R1
+Kein statischer Hamiltonian-/Vorzeichen-/RK4-Blocker fuer die fest geplanten
+nichtlinearen Arme. R1 vor Hauptlauf behoben und run.py nachgelesen: kein
+Startblocker mehr fuer den begrenzten Lauf mit den unveraenderten Plan-Gates.
+Das ist Quellfreigabe fuer diese Rechnung, keine numerische Ergebnisabnahme.
+
+HERLEITUNG
+D=P^2/2+OmegaD^2(X-alpha F)^2/2 ist nichtnegativ. Der alpha^2 F^2-Term ist
+Teil des Modells und wirkt durch denselben Ausdruck X-alpha F auf beide
+Subsysteme; er darf nicht als entbehrlicher Offset entfernt werden.
+Mit delta F/delta psi*=w psi gilt
+delta D/delta psi*=-OmegaD^2 alpha(X-alpha F)w psi.
+Die Feldbeschleunigung erhaelt daher das positive Gegenvorzeichen ohne
+zusaetzlichen Faktor 2. Bei reellen Komponenten ist die Ableitung doppelt,
+deren kinetische Masse jedoch ebenfalls 2. Detector Pdot=-OmegaD^2(X-alpha F)
+und Xdot=P sind dazu reziprok. In q=r psi lautet der Zusatz entsprechend
++OmegaD^2 alpha(X-alpha F)w q, genau wie implementiert.
+Da F nur von der Dichte abhaengt, bleibt die U(1)-Symmetrie erhalten.
+Die Zusatzkraft ist reell proportional zu q und erzeugt keinen Ladungsterm.
+Die rotierende Darstellung aendert diesen Dichtekopplungsterm nicht.
+
+DISKRETISIERUNG UND RK4
+F verwendet konstante Simpsongewichte und festen Hintergrund _f, keine
+mitlaufende Baseline-Subtraktion. Sein diskreter reeller q-Gradient stimmt
+mit -2 mal Simpson-Volumengewicht mal Zusatzbeschleunigung ueberein.
+Dies ist eine konsistente Kopplungsidentitaet; der gesamte bestehende
+Finite-Differenzen-/Simpson-Solver wird dadurch nicht exakt Hamiltonsch.
+Der kontinuierlich normierte Gauss-Fussabdruck wird auf dem endlichen Gitter
+quadraturapproximiert, nicht separat diskret auf Integral 1 renormiert.
+Am aeusseren Rand wird der verschwindend kleine Referenztail nicht mitgezahlt.
+
+_y wird von 8N auf 8N+2 erweitert; _work und alle vier _k ebenfalls.
+Die geerbte step-Schleife iteriert ueber y.length, deshalb entwickeln sich X/P
+in allen RK-Stufen mit demselben Zeitschritt und reagieren auf den jeweiligen
+Stufenwert F. super._rhs setzt out vollstaendig zurueck; anschliessend werden
+Detektorableitungen und nur die Hauptfeldbeschleunigungen ergaenzt. Die vier
+Absorberraten betreffen weiter Haupt-/Baselinefeld E/Q; kein zusaetzlicher
+Detektordissipationskanal ist vorhanden oder behauptet.
+Die geerbte sample().energy enthaelt D NICHT. Der Runner muss fuer den
+geplanten Gesamtbilanztest sample().energy+detector().D verwenden und seine
+Anfangsenergie entsprechend festhalten. sample()-Drifts allein reichen nicht.
+Initial X=alpha F, P=0 ergibt D=0; die unveraenderte geerbte Anfangsfeldenergie
+ist deshalb fuer diese genau festgelegte Praeparation auch die Gesamtenergie.
+
+R1 — BEHOBEN VOR HAUPTLAUF
+gradientCheck prueft bislang eine nochmals ausgeschriebene Kraftformel,
+nicht den Zusatz, den DetectorSimulation._rhs tatsaechlich implementiert.
+Ein ausschliesslich dort eingebauter Vorzeichenfehler wuerde den Test bestehen.
+Root wurde vor Hauptlauf gebeten, die echte erweiterte RHS minus Basis-RHS
+auszuwerten und diese Kraft fuer Gradient- und Vorzeichenmutantentest zu nutzen.
+Die bestehende positive/negative algebraische Kontrolle ist an sich korrekt,
+erfuellte aber den beabsichtigten Code-Schutz noch nicht vollstaendig.
+Nachpruefung: force wird nun aus DetectorSimulation._rhs minus explizitem
+RadialSimulation.prototype._rhs bestimmt. Das Gradientgate ist damit an die
+implementierte Feldrueckwirkung gebunden; seine Vorzeichenmutante prueft das
+umgekehrte Vorzeichen dieses gemessenen Zusatzes.
+
+RUNNER-NACHPRUEFUNG
+run.py berechnet initialTotal=Feldenergie+initialD und spaeter E+D+AbsE;
+Q inklusive AbsQ bleibt ein eigener Test. maxAbsE, maxK und maxD werden
+gespeichert. Der Finite-Check umfasst auch saemtliche Detektorskalare.
+Pre-run-Gradientgate stoppt vor Zeitlaeufen bei Fehler. Tick-, Readout-,
+Transfer- und Gittergates entsprechen den angekuendigten Schwellen.
+Nullkontrollen muessen numerisch bestehen und das Clock-Gate verfehlen;
+alpha=0 verlangt X_pp=Kmax=0. Bei der festen Initialisierung X=P=0 und
+identisch verschwindendem alpha=0-Antrieb bedeutet dies die gewuenschte Ruhe.
+Der einzige Nullarm hat alpha=1, ratio=1. Fuer alpha=.1 und ratio=1.3 wird
+derselbe Nullarm als Vergleich benutzt: kein separat gemessenes armspezifisches
+Rauschlimit behaupten. Die drei Verdicts clock, readout, resolved_transfer
+sind getrennt. Insbesondere fordert resolved_transfer nicht automatisch die
+Readout-/Clock-Gates; kombinierte Aussagen muessen alle passenden Flags nennen.
+
+KONTROLLEN UND AUSSAGEGRENZEN
+alpha=0, Nullanregung und verstimmter Detektor sind sinnvolle getrennte
+Kontrollen. alpha=0 muss X=P=0 exakt erhalten; epsilon=0 begrenzt numerische
+Anregung aus der nicht exakt diskret stationaeren Hintergrundpraeparation.
+Resonanter Aufbau ist bei OmegaD=rho eine bewusst vorgewaehlte Situation,
+keine unabhaengige Entdeckung einer Frequenz oder spontaner Uhrbildung.
+K und D sind sinnvolle Diagnostika; die isolierte Oszillatorenergie ohne
+Wechselwirkung darf nicht nochmals zum vollstaendigen Quadrat addiert werden.
+Der Vergleich absoluter Bilanzfehler mit K ist fuer kleine Transfers noetig;
+das geplante 10%-Gate erhoeht Evidenz, zertifiziert aber keine exakte Energie.
+Raum, Integrationszeit und Abtastung werden gemeinsam verfeinert. Das endliche
+Fenster und die bekannten Tick-Gates beweisen keine Lebensdauer oder Eigenzeit.
+Der Detektor ist ein raeumlich kollektiver Freiheitsgrad mit vorgegebenem w
+und simultaner Kopplung an F, kein relativistisch lokales Messgeraet. Das ist
+im Plan offen ausgewiesen. Die Unterklasse ist fuer nonlinear-Arme geprueft;
+linear=true waere ein anderes, hier nicht freigegebenes Erweiterungsmodell.
+
+GEPRUEFTE QUELLHASHES
+detector.js 341b15fcbc6cc92701aee0b3ccd3bdc3e0584b133ad822c6d61ccb9d67633ec9
+run.py 6e879c87d9f4a221a67d801fce950b4a0b88735c0d402f24e06750b686d9e196
+PLAN.txt 2c844f7a3ac1a4da432871705b994ab6481fb1e748e53e09c3a9db6f92327989

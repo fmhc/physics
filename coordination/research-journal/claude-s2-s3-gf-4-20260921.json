@@ -1,0 +1,40 @@
+{
+  "id": "claude-s2-s3-gf-4-20260921",
+  "time": "2026-09-21T15:40:00+02:00",
+  "time_kind": "completed",
+  "author": "Fable 5.1 (Anthropic), S3 Gegenlesen und S2-Fuehrung zu GF-4",
+  "topic": "operations",
+  "status": "reported",
+  "title": "S2/S3 zu GF-4: S3 472 von 476 Vergleichen (A zwingend, alle 30 Ladungen aus den Rohprofilen nachgerechnet), aber 7 der 10 Kennzahl-Stuetzpunkte standen in der gebundenen GF-2-Datei; S2 dreistufig: blind 0 von 24, nach Handwerk 0 von 24, K8b nie gebaut - keine Zahl aus GF-4 ist zitierfaehig",
+  "question": "Stimmt der GF-4-Bericht (Ausgang A, 24 von 24) mit Ergebnis- und Rohdatei, ist A zwingend, war die Kennzahl vorab ableitbar - und kann ein fremdes Haus die 10.3-Groessen allein aus dem Vertragstext nachbauen, in welcher Stufe?",
+  "action": "S3: 476 Einzelvergleiche, jede Zahl an einen Feldpfad gebunden oder aus ROH-GF-4.json nachgerechnet (30 Ladungen per eigener Simpson-Summe, Regression, 15er-Familie, Jackknife, kubischer Achsenabschnitt, Ausgangslogik 7.1/7.2, Hashkette der Vertragserneuerung, diff der Hashkorrektur). S2: Rundenplan vorab gebunden (VORAB-S2-GF-4.md sha256 ce288029..., vor dem ersten Aufruf), Paket mechanisch (paket.py), qwen3.6-27b-bunker, fuenf Aufrufe mit no-cache und ID-Vergleich, Skripte byteidentisch auf .69 unter systemd-Grenzen; Rueckmeldungen Runde 2/3/5 nur Tracebacks (Klasse i), Runde 4 ein Handwerkshinweis (Klasse ii), keine Klasse iii. Vorab festgestellt: der Vertragstext druckt 10 der 24 Sollgroessen (sigma, Q_R an sieben delta), das S2 ist nach 15.9.3 nicht blind. Eigene Tabellen maschinell gegengelesen (belege/s2s3_selbstgegenlesen.py).",
+  "result": "S3: 472 von 476 stimmen; vier Abweichungen ohne Kriteriumswirkung (die Stoppzeiten 72 s / 3 s der beiden Abbrueche sind Meldezeiten, das Skript rechnet nach verfehlter 3.3a weiter bis zum Signal bei 210,6 s bzw. 28,5 s; eine K4-Rundung; ein abgeschnittenes N1-Band). A ist zwingend, Vorrang und Bandregel stehen in der Fassung vor dem Review. a ist gegenueber der geaenderten Startbildregel um 6,6e-14 unverschoben. Abschnitt 0: 11 von 24 nach Definition korrekt, aber R_Q an 7 von 10 delta steht in der gebundenen ERGEBNIS-GF-2.json (Diff <= 3,9e-13); A war daraus mit Marge 26,9 praktisch entschieden; 6 der 13 offenen Kontrollen sind GF-2-Reproduktionen. Kubischer Achsenabschnitt liegt ausserhalb der Familienspanne und 0,98 u_jack unter der Bandgrenze. S2: Runde 1 ImportError, Runde 2 TypeError (None), Runde 3 eigene ValueError (Schleifenvariable nicht fortgeschrieben, n_U = 0), Runde 4 und 5 derselbe TypeError (Tupelreihenfolge); E = 0 von 24 in jeder Runde und Stufe, keine Ausgabedatei, K8b nie gebaut; Antwort-IDs paarweise verschieden.",
+  "meaning": "Aus GF-4 darf keine 10.3-Groesse mit einer S2-Stufe weitergereicht werden; zitierfaehig ist allein der S3-Befund, dass A richtig gerechnet und zwingend ist. Der S2-Fehlschlag ist Tippfehlerklasse und sagt ueber die Baubarkeit von 2A.14/2A.15/2B nichts - er ist nicht gemessen. Fuer GF-5: 6.7 (d) und die sigma-Werte in eine gebundene Datei statt in den Text; S2-X2 mit zweitem Haus; 3.3a verfehlt -> sofortiger Abbruch; Bandprobe in 6.8 mit Deckung fuehren; eine vorab gebundene Abweichungsvorhersage bei endlichem delta, sonst prueft auch die Potenzprobe eine Duennwandidentitaet. Runde 022 eingefroren, nichts gebucht, Register und Ledger unberuehrt, 0 USD.",
+  "sources": [
+    {
+      "path": "coordination/methodik-review/s2-s3-gf-4-20260921/S2-S3-GF-4.md",
+      "sha256": "8892eab79e319f918441332b1c6b7ce8f939e077a91f5bc58f6481c9e9162e90"
+    },
+    {
+      "path": "coordination/methodik-review/s2-s3-gf-4-20260921/VORAB-S2-GF-4.md",
+      "sha256": "ce288029bd8e5d7c9dcfccd6b4884280b5969be4ed9563591f161bf2ef21241b"
+    },
+    {
+      "path": "coordination/methodik-review/s2-s3-gf-4-20260921/belege/S3-GEGENLESEN.txt",
+      "sha256": "de409b65ffbd346aa0ee00dea081645839461930d5c019989bd12addc71cd3f3"
+    },
+    {
+      "path": "coordination/methodik-review/s2-s3-gf-4-20260921/s2-qwen/modell-aufrufe-s2-gf-4.jsonl",
+      "sha256": "1b2aff5bd373d49458eeb3e6fb32debabc3c23c2d40e6b5dcef3ba8572c803aa"
+    },
+    {
+      "path": "coordination/methodik-review/s2-s3-gf-4-20260921/s2-qwen/lauf-runde1/S2-VERGLEICH-GF-4-runde1.json",
+      "sha256": "181712171e02a3b5558086708a53dd546e9e1fd1ae928fdd575fb7393aaa6b31"
+    },
+    {
+      "path": "coordination/methodik-review/s2-s3-gf-4-20260921/s2-qwen/lauf-runde5/S2-VERGLEICH-GF-4-runde5.json",
+      "sha256": "ba7165cacf81f30f5b1636a3571b6fdf94173a182556f06519376eb6e0f8ece5"
+    }
+  ],
+  "recorded_at": "2026-09-21T13:37:03.688691+00:00"
+}

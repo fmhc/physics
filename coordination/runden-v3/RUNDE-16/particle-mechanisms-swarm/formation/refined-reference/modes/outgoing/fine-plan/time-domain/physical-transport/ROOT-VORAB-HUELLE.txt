@@ -1,0 +1,22 @@
+2026-10-03 Root, VOR jedem Transportcode/Datenauswerteversuch.
+Plan bc5717949578efa12928012d0c976a04c75f5331885cbd078edf3b921bc42771
+ist als Erstfassung erhalten; noch keine Implementierungsfreigabe.
+
+Vorabproblem: die pauschale Hülle eps*k*(|chiL|+|chiR|)^2
+setzt auch bei identischen ruhenden Vakuumwerten einen O(eps)-Boden an.
+Für die tatsächliche Operation d=chiR-chiL, anschließend d², liefert
+Fehlerfortpflanzung dagegen 2|d|e_d+e_d² plus Multiplikationsrundung.
+Bei d=0 ist die übertragene Differenzunsicherheit nur quadratisch.
+Das ist eine algebraische Strukturfrage, nicht ein gemessener Transportwert.
+Der alte Boden ist grob-konservativ, nicht mathematisch falsch; ob er die
+realen Daten unauflösbar machen würde, wurde NICHT geprüft oder behauptet.
+
+Autor und Nichtautor prüfen deshalb vor Implementation eine vollständig
+festgelegte lokale Hülle. Kriterien, Fenster, Daten und unabhängige
+Zeit-/Sampling-/Bilanzdiagnosen bleiben unverändert. Keine nachträgliche
+Verkleinerung nach Signalansicht. Neue Hülle muss sämtliche tatsächlich
+verwendeten Operationen abdecken, einschließlich rotierender Ableitung,
+Kanten-, Potential-, Paar- und Zeitkombinationen; keine nur selektive
+Verbesserung des chi-Quadrats. Rechenarithmetik bleibt getrennt von
+ungeklärten Evolutions-/Speicher-/Samplingfehlern. Keine implizite
+Intervallzertifizierung aus einem empirischen Sicherheitsfaktor.

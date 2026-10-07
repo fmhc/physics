@@ -1,0 +1,761 @@
+{
+ "test": "teilung",
+ "start": "2026-09-30T11:14:38+02:00",
+ "ende": "2026-09-30T11:14:48+02:00",
+ "rauch": true,
+ "dauer_s": {
+  "schiessen_s": 9.168549854992307,
+  "entwicklung_grob_s": 0.46967220499936957
+ },
+ "geraet": "CPU (nur Form- und Syntaxprobe)",
+ "torch": "2.10.0+cu128",
+ "notizen": [],
+ "parameter": {
+  "T": 300.0,
+  "teil": "haupt",
+  "eps": 0.01,
+  "l_max": 6,
+  "L": 38.4,
+  "stufen": [
+   [
+    "grob",
+    0.6,
+    0.1
+   ],
+   [
+    "fein",
+    0.4,
+    0.05
+   ]
+  ],
+  "schwelle_rel": 0.5,
+  "q_min_rel": 0.03,
+  "blur": 1.0
+ },
+ "profile": [
+  {
+   "omega2": 0.55,
+   "m": 1,
+   "p": 0.2388045866662198,
+   "klammer": 1.4948930981972808e-11,
+   "x_schwanz": 18.93,
+   "N": 249.59541244050638,
+   "G": 22.756302801059192,
+   "VU": 137.27747684798638,
+   "Q": 370.2098240254603,
+   "E": 297.3112564913241,
+   "virialrest": 2.0789450574688838e-11,
+   "S_zentrum": 0.0,
+   "S_max": 1.004137603750431,
+   "R_halb": 9.212031224152685,
+   "R_kern_halb": 2.5437167452953298,
+   "R_max": 6.0200000000000005,
+   "f_top": 1.0230958614419827,
+   "gueltig": true
+  },
+  {
+   "omega2": 0.65,
+   "m": 1,
+   "p": 0.27470034238594,
+   "klammer": 1.4948930981972808e-11,
+   "x_schwanz": 15.780000000000001,
+   "N": 58.209898686419415,
+   "G": 12.041204793619627,
+   "VU": 37.836434142229656,
+   "Q": 93.8606413424517,
+   "E": 87.71407308202191,
+   "virialrest": -5.210539992398207e-11,
+   "S_zentrum": 0.0,
+   "S_max": 0.7105140929569308,
+   "R_halb": 5.278617028228214,
+   "R_kern_halb": 2.0117896430651343,
+   "R_max": 3.59,
+   "f_top": 1.061195061429805,
+   "gueltig": true
+  },
+  {
+   "omega2": 0.7569,
+   "m": 1,
+   "p": 0.2070727092245757,
+   "klammer": 1.4948930981972808e-11,
+   "x_schwanz": 17.73,
+   "N": 37.48718208630166,
+   "G": 7.150233638393326,
+   "VU": 28.374048118504476,
+   "Q": 65.22769683016489,
+   "E": 63.898329878019524,
+   "virialrest": -4.61204659445115e-11,
+   "S_zentrum": 0.0,
+   "S_max": 0.4399384004750629,
+   "R_halb": 5.343235344432465,
+   "R_kern_halb": 2.1266795348137477,
+   "R_max": 3.67,
+   "f_top": 1.0945588005537332,
+   "gueltig": true
+  },
+  {
+   "omega2": 0.55,
+   "m": 2,
+   "p": 0.006855649006410379,
+   "klammer": 1.4948930981972808e-11,
+   "x_schwanz": 22.94,
+   "N": 423.31526746895713,
+   "G": 41.187762817481264,
+   "VU": 232.8233971226984,
+   "Q": 627.8780092335552,
+   "E": 506.8345570481061,
+   "virialrest": 3.172352153134508e-11,
+   "S_zentrum": 0.0,
+   "S_max": 0.9930478885706612,
+   "R_halb": 13.18481987999299,
+   "R_kern_halb": 6.259243865326472,
+   "R_max": 9.93,
+   "f_top": 1.0230958614419827,
+   "gueltig": true
+  },
+  {
+   "omega2": 0.65,
+   "m": 2,
+   "p": 0.016317335646905053,
+   "klammer": 1.4948930981972808e-11,
+   "x_schwanz": 18.75,
+   "N": 106.14454479705229,
+   "G": 22.220299451823642,
+   "VU": 68.99395413786817,
+   "Q": 171.15293574593147,
+   "E": 160.2082077077758,
+   "virialrest": 1.4337619617764042e-10,
+   "S_zentrum": 0.0,
+   "S_max": 0.700505377677646,
+   "R_halb": 8.227498711171922,
+   "R_kern_halb": 4.8161707196377606,
+   "R_max": 6.51,
+   "f_top": 1.061195061429805,
+   "gueltig": true
+  },
+  {
+   "omega2": 0.7569,
+   "m": 2,
+   "p": 0.012459403401843375,
+   "klammer": 1.4948930981972808e-11,
+   "x_schwanz": 20.85,
+   "N": 69.14060419634122,
+   "G": 13.24466216428004,
+   "VU": 52.332523330014375,
+   "Q": 120.30465130163371,
+   "E": 117.9097088105051,
+   "virialrest": 1.3188458864248705e-10,
+   "S_zentrum": 0.0,
+   "S_max": 0.4332362408002835,
+   "R_halb": 8.469537585649896,
+   "R_kern_halb": 5.107182169741127,
+   "R_max": 6.76,
+   "f_top": 1.0945588005537332,
+   "gueltig": true
+  }
+ ],
+ "ergebnis": {
+  "grob": [
+   {
+    "lauf": "m1_05500",
+    "m": 1,
+    "omega2": 0.55,
+    "gestoert": true,
+    "stufe": "grob",
+    "dx": 0.6,
+    "dt": 0.1,
+    "Q_profil": 370.2098240254603,
+    "n_max": 1,
+    "n_ende": 1,
+    "teilung": false,
+    "t_teilung": null,
+    "Q_box_verlust": 1.5543122344752192e-15,
+    "E_box_verlust": 3.0848994947429986e-07,
+    "J_box_aenderung": 5.792736601506476e-08,
+    "J_box_start": 370.2799781717952,
+    "Q_box_start": 370.2799781731222,
+    "windung_ende": [
+     1
+    ],
+    "l_dominant": 2,
+    "A_start_ende": [
+     0.00836909019804531,
+     0.006259920972581315
+    ],
+    "gamma": null,
+    "gamma_2": null,
+    "A2_start_ende": [
+     0.00836909019804531,
+     0.006259920972581315
+    ],
+    "gamma_3": null,
+    "A3_start_ende": [
+     0.007738292107590176,
+     0.0033312307756636576
+    ],
+    "plausibel": {
+     "Q_nie_wachsend": true,
+     "Q_max_rel": 0.0,
+     "Q_erhalten_bis_t": 6.0,
+     "Q_rel_aenderung": 1.5543122344752192e-15,
+     "Q_erhalten": true,
+     "J_durch_Q_start": 0.9999999999964163,
+     "JQ_gleich_m": true,
+     "gamma_ok": true,
+     "bestanden": true
+    },
+    "gebiete": [
+     [
+      0.0,
+      1,
+      [
+       [
+        311.6523,
+        1,
+        0.9999,
+        -0.046,
+        -0.04,
+        0.00192,
+        -0.00208
+       ]
+      ]
+     ],
+     [
+      5.0,
+      1,
+      [
+       [
+        312.9479,
+        1,
+        1.0001,
+        -0.024,
+        -0.045,
+        0.00298,
+        -0.00105
+       ]
+      ]
+     ]
+    ]
+   },
+   {
+    "lauf": "m1_06500",
+    "m": 1,
+    "omega2": 0.65,
+    "gestoert": true,
+    "stufe": "grob",
+    "dx": 0.6,
+    "dt": 0.1,
+    "Q_profil": 93.8606413424517,
+    "n_max": 1,
+    "n_ende": 1,
+    "teilung": false,
+    "t_teilung": null,
+    "Q_box_verlust": 1.7763568394002505e-15,
+    "E_box_verlust": -5.049617151087205e-07,
+    "J_box_aenderung": -6.364720661622414e-08,
+    "J_box_start": 93.87756476126461,
+    "Q_box_start": 93.87756476196209,
+    "windung_ende": [
+     1
+    ],
+    "l_dominant": 2,
+    "A_start_ende": [
+     0.008035556673878595,
+     0.007614352419051154
+    ],
+    "gamma": null,
+    "gamma_2": null,
+    "A2_start_ende": [
+     0.008035556673878595,
+     0.007614352419051154
+    ],
+    "gamma_3": null,
+    "A3_start_ende": [
+     0.00735386668771023,
+     0.002962661823884951
+    ],
+    "plausibel": {
+     "Q_nie_wachsend": true,
+     "Q_max_rel": 0.0,
+     "Q_erhalten_bis_t": 6.0,
+     "Q_rel_aenderung": 1.7763568394002505e-15,
+     "Q_erhalten": true,
+     "J_durch_Q_start": 0.9999999999925703,
+     "JQ_gleich_m": true,
+     "gamma_ok": true,
+     "bestanden": true
+    },
+    "gebiete": [
+     [
+      0.0,
+      1,
+      [
+       [
+        75.7887,
+        1,
+        0.9998,
+        -0.045,
+        -0.042,
+        0.00271,
+        -0.0029
+       ]
+      ]
+     ],
+     [
+      5.0,
+      1,
+      [
+       [
+        75.9375,
+        1,
+        0.9999,
+        -0.027,
+        -0.061,
+        0.00317,
+        -0.00239
+       ]
+      ]
+     ]
+    ]
+   },
+   {
+    "lauf": "m1_07569",
+    "m": 1,
+    "omega2": 0.7569,
+    "gestoert": true,
+    "stufe": "grob",
+    "dx": 0.6,
+    "dt": 0.1,
+    "Q_profil": 65.22769683016489,
+    "n_max": 1,
+    "n_ende": 1,
+    "teilung": false,
+    "t_teilung": null,
+    "Q_box_verlust": 1.8685053504441385e-13,
+    "E_box_verlust": -1.6451706383868725e-06,
+    "J_box_aenderung": -1.1296208413114073e-10,
+    "J_box_start": 65.23919719105736,
+    "Q_box_start": 65.23919719106145,
+    "windung_ende": [
+     1
+    ],
+    "l_dominant": 2,
+    "A_start_ende": [
+     0.007886397019737876,
+     0.012741078550307323
+    ],
+    "gamma": null,
+    "gamma_2": null,
+    "A2_start_ende": [
+     0.007886397019737876,
+     0.012741078550307323
+    ],
+    "gamma_3": null,
+    "A3_start_ende": [
+     0.007200751518522742,
+     0.00705970685603002
+    ],
+    "plausibel": {
+     "Q_nie_wachsend": true,
+     "Q_max_rel": 0.0,
+     "Q_erhalten_bis_t": 6.0,
+     "Q_rel_aenderung": 1.8685053504441385e-13,
+     "Q_erhalten": true,
+     "J_durch_Q_start": 0.9999999999999373,
+     "JQ_gleich_m": true,
+     "gamma_ok": true,
+     "bestanden": true
+    },
+    "gebiete": [
+     [
+      0.0,
+      1,
+      [
+       [
+        52.1932,
+        1,
+        0.9998,
+        -0.044,
+        -0.042,
+        0.00241,
+        -0.00258
+       ]
+      ]
+     ],
+     [
+      5.0,
+      1,
+      [
+       [
+        52.1952,
+        1,
+        0.9998,
+        -0.031,
+        -0.062,
+        0.00263,
+        -0.00285
+       ]
+      ]
+     ]
+    ]
+   },
+   {
+    "lauf": "m2_05500",
+    "m": 2,
+    "omega2": 0.55,
+    "gestoert": true,
+    "stufe": "grob",
+    "dx": 0.6,
+    "dt": 0.1,
+    "Q_profil": 627.8780092335552,
+    "n_max": 1,
+    "n_ende": 1,
+    "teilung": false,
+    "t_teilung": null,
+    "Q_box_verlust": 2.30593322214645e-13,
+    "E_box_verlust": 7.751152719670529e-08,
+    "J_box_aenderung": -2.788374331430532e-08,
+    "J_box_start": 1256.0403376822467,
+    "Q_box_start": 628.0201688417015,
+    "windung_ende": [
+     2
+    ],
+    "l_dominant": 2,
+    "A_start_ende": [
+     0.009190244677464817,
+     0.009015543798639686
+    ],
+    "gamma": null,
+    "gamma_2": null,
+    "A2_start_ende": [
+     0.009190244677464817,
+     0.009015543798639686
+    ],
+    "gamma_3": null,
+    "A3_start_ende": [
+     0.008769067858254938,
+     0.006929022105725785
+    ],
+    "plausibel": {
+     "Q_nie_wachsend": true,
+     "Q_max_rel": 0.0,
+     "Q_erhalten_bis_t": 6.0,
+     "Q_rel_aenderung": 2.30593322214645e-13,
+     "Q_erhalten": true,
+     "J_durch_Q_start": 1.9999999999981586,
+     "JQ_gleich_m": true,
+     "gamma_ok": true,
+     "bestanden": true
+    },
+    "gebiete": [
+     [
+      0.0,
+      1,
+      [
+       [
+        529.5371,
+        2,
+        1.9997,
+        -0.09,
+        -0.086,
+        0.00212,
+        -0.00225
+       ]
+      ]
+     ],
+     [
+      5.0,
+      1,
+      [
+       [
+        528.3618,
+        2,
+        1.9999,
+        -0.048,
+        -0.065,
+        0.0025,
+        -0.00158
+       ]
+      ]
+     ]
+    ]
+   },
+   {
+    "lauf": "m2_06500",
+    "m": 2,
+    "omega2": 0.65,
+    "gestoert": true,
+    "stufe": "grob",
+    "dx": 0.6,
+    "dt": 0.1,
+    "Q_profil": 171.15293574593147,
+    "n_max": 1,
+    "n_ende": 1,
+    "teilung": false,
+    "t_teilung": null,
+    "Q_box_verlust": 1.6764367671839864e-14,
+    "E_box_verlust": -9.277648196359678e-07,
+    "J_box_aenderung": -1.2964278539584484e-09,
+    "J_box_start": 342.38527607774074,
+    "Q_box_start": 171.19263803900307,
+    "windung_ende": [
+     2
+    ],
+    "l_dominant": 2,
+    "A_start_ende": [
+     0.00923799230303901,
+     0.010817494260866915
+    ],
+    "gamma": null,
+    "gamma_2": null,
+    "A2_start_ende": [
+     0.00923799230303901,
+     0.010817494260866915
+    ],
+    "gamma_3": null,
+    "A3_start_ende": [
+     0.008847939188212422,
+     0.009689453987071932
+    ],
+    "plausibel": {
+     "Q_nie_wachsend": true,
+     "Q_max_rel": 0.0,
+     "Q_erhalten_bis_t": 6.0,
+     "Q_rel_aenderung": 1.6764367671839864e-14,
+     "Q_erhalten": true,
+     "J_durch_Q_start": 1.9999999999984497,
+     "JQ_gleich_m": true,
+     "gamma_ok": true,
+     "bestanden": true
+    },
+    "gebiete": [
+     [
+      0.0,
+      1,
+      [
+       [
+        136.9336,
+        2,
+        1.9997,
+        -0.066,
+        -0.06,
+        0.00289,
+        -0.00315
+       ]
+      ]
+     ],
+     [
+      5.0,
+      1,
+      [
+       [
+        136.8754,
+        2,
+        1.9996,
+        -0.044,
+        -0.073,
+        0.00255,
+        -0.00265
+       ]
+      ]
+     ]
+    ]
+   },
+   {
+    "lauf": "m2_07569",
+    "m": 2,
+    "omega2": 0.7569,
+    "gestoert": true,
+    "stufe": "grob",
+    "dx": 0.6,
+    "dt": 0.1,
+    "Q_profil": 120.30465130163371,
+    "n_max": 1,
+    "n_ende": 1,
+    "teilung": false,
+    "t_teilung": null,
+    "Q_box_verlust": 2.356892458976745e-12,
+    "E_box_verlust": -1.8857272141570292e-06,
+    "J_box_aenderung": -2.3669315396546153e-09,
+    "J_box_start": 240.66491639889256,
+    "Q_box_start": 120.33245819944595,
+    "windung_ende": [
+     2
+    ],
+    "l_dominant": 3,
+    "A_start_ende": [
+     0.008811877042807547,
+     0.015045990165398366
+    ],
+    "gamma": null,
+    "gamma_2": null,
+    "A2_start_ende": [
+     0.00920608641165189,
+     0.014432687861822913
+    ],
+    "gamma_3": null,
+    "A3_start_ende": [
+     0.008811877042807547,
+     0.015045990165398366
+    ],
+    "plausibel": {
+     "Q_nie_wachsend": true,
+     "Q_max_rel": 0.0,
+     "Q_erhalten_bis_t": 6.0,
+     "Q_rel_aenderung": 2.356892458976745e-12,
+     "Q_erhalten": true,
+     "J_durch_Q_start": 2.0000000000000053,
+     "JQ_gleich_m": true,
+     "gamma_ok": true,
+     "bestanden": true
+    },
+    "gebiete": [
+     [
+      0.0,
+      1,
+      [
+       [
+        96.112,
+        2,
+        1.9997,
+        -0.052,
+        -0.062,
+        0.00304,
+        -0.00282
+       ]
+      ]
+     ],
+     [
+      5.0,
+      1,
+      [
+       [
+        96.2405,
+        2,
+        1.9994,
+        -0.05,
+        -0.097,
+        0.00322,
+        -0.00293
+       ]
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ "kennzahlen": {
+  "grob_quelle": "dieser Aufruf",
+  "V1": {
+   "folge_m1": [
+    [
+     0.55,
+     false
+    ],
+    [
+     0.65,
+     false
+    ],
+    [
+     0.7569,
+     false
+    ]
+   ],
+   "monoton": true,
+   "t_teilung_065": null,
+   "t_teilung_07569": null,
+   "frueher_als_065": false,
+   "info_gamma_groesser_als_065": null,
+   "reproduktion_065_teilt": false,
+   "bestanden": false
+  },
+  "V2": {
+   "t_teilung_07569": null,
+   "gamma_07569": null,
+   "t_grenze": 150.0,
+   "gamma_band": [
+    0.09,
+    0.3
+   ],
+   "bestanden": false
+  },
+  "V3": {
+   "moden_m1": {},
+   "windungen_toechter": {},
+   "regel": "gamma_3 fehlt (l = 3 waechst nicht auf 3 A_3(0)) zaehlt als gamma_3 < gamma_2",
+   "bestanden": null
+  },
+  "V4": {
+   "folge_m2": [
+    [
+     0.55,
+     false
+    ],
+    [
+     0.65,
+     false
+    ],
+    [
+     0.7569,
+     false
+    ]
+   ],
+   "reproduktion_055_ruhig": true,
+   "bestanden": false
+  },
+  "scheitert": true,
+  "plausibel": {
+   "grob_m1_05500": true,
+   "grob_m1_06500": true,
+   "grob_m1_07569": true,
+   "grob_m2_05500": true,
+   "grob_m2_06500": true,
+   "grob_m2_07569": true
+  },
+  "profilprobe": {
+   "m1_05500": {
+    "S_max": 1.004137603750431,
+    "x_schwanz": 18.93,
+    "grenze": 30.4,
+    "gueltig": true,
+    "bestanden": false
+   },
+   "m1_06500": {
+    "S_max": 0.7105140929569308,
+    "x_schwanz": 15.780000000000001,
+    "grenze": 30.4,
+    "gueltig": true,
+    "bestanden": true
+   },
+   "m1_07569": {
+    "S_max": 0.4399384004750629,
+    "x_schwanz": 17.73,
+    "grenze": 30.4,
+    "gueltig": true,
+    "bestanden": true
+   },
+   "m2_05500": {
+    "S_max": 0.9930478885706612,
+    "x_schwanz": 22.94,
+    "grenze": 30.4,
+    "gueltig": true,
+    "bestanden": true
+   },
+   "m2_06500": {
+    "S_max": 0.700505377677646,
+    "x_schwanz": 18.75,
+    "grenze": 30.4,
+    "gueltig": true,
+    "bestanden": true
+   },
+   "m2_07569": {
+    "S_max": 0.4332362408002835,
+    "x_schwanz": 20.85,
+    "grenze": 30.4,
+    "gueltig": true,
+    "bestanden": true
+   }
+  },
+  "plausibilitaet_bestanden": false
+ }
+}

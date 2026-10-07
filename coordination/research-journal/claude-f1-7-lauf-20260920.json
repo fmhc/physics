@@ -1,0 +1,51 @@
+{
+  "id": "claude-f1-7-lauf-20260920",
+  "time": "2026-09-20T17:21:57+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5); Laufskript und Ausfuehrung Claude-Subagent (Anthropic, Opus 5), Vertrag 10.1/10.2",
+  "topic": "theory",
+  "status": "open",
+  "title": "F1.7 endet mit A: die sechs Starts von F1.6, die die Zeilengrenze 1e-8 verfehlten, treffen alle 40 vorab eingetragenen Vorhersagezahlen auf besser als 0,25 Prozent und halten die Grenze ab der vorhergesagten Schrittweite",
+  "question": "Faellt dH/H bei den sechs Starts von F1.6, die die Zeilengrenze dH/H <= 1e-8 der Registerzeile F1 verfehlen, entlang einer achtsprossigen Schrittweitenleiter so unter 1e-8, wie es die 40 vorab in den Vertrag eingetragenen Zahlen C_i h^2 vorhersagen (A: Verfahrensfehler, aufgeloest) - oder weicht mindestens einer davon klar ab (B: nicht aufgeloest, ein Befund ueber das Werkzeug)?",
+  "action": "Vertrag F1.7 (S0, sha256 7865deec..., fremdgeprueft durch Qwen und DeepSeek, beide 'freigeben mit Auflagen'; Startsignal Finn 20.09.2026 'mach weiter') auf fmh@192.168.178.69 gerechnet, User-Unit fmhc-physics-f17-20260920, Torch 2.5.1+cu121 float64 auf cuda:0 (Quadro P5000), jedes rechnende Paket unter flock auf gauntlet-gpu.lock. 63 Bahnen, 153 040 000 Integrationsschritte (18 160 000 Kernschritte durch Buendelung je Sprosse), 1817,1 s Rechenzeit, 5 Pakete, 2 Wiederaufsetzpunkte, Lockwartezeit 0,02 s; konservativ veranschlagt waren 2,6 h. Sieben Starts x acht Sprossen h von 1e-2 bis 1e-4, T = 800, Ausgaberaster 0,1 mit exakt 8001 Abtastpunkten je Bahn. Der Vertragsautor hat nach Vertrag 10.1 keine Zeile des Laufskripts geschrieben; das Skript schrieb ein Claude-Subagent allein aus dem Vertragstext plus den erlaubten Bausteinen. Zuerst Nullprobe und Kontrollen, dann die Produktion, dann der Ausgang strikt nach Vorrang T > U1 > B > A > U2.",
+  "result": "Ausgang A. Alle 56 gemessenen Zellen liegen im Bestaetigungsband [0,667; 1,500]; die groesste Abweichung des Vorhersageverhaeltnisses V von 1 betraegt bei den sechs Pflichtstarts 0,241 Prozent (16/20 wd- bei h = 1e-4) und bei der Haltprobe 4,43 Prozent. Die gemessene Ordnung liegt auf allen 42 vorab als auswertbar genannten Paaren der Pflichtstarts zwischen 1,9966 und 2,0016. Jeder Pflichtstart kreuzt 1e-8 genau auf der vorhergesagten Sprosse (dx+ 1e-4, dx- 2e-4, wd+ 5e-4, wd- 2,5e-4, Diagnose D5 sechs von sechs). Alle zehn Kontrollen bestanden: K0a Kraftrest 6,217e-15 und J-Abweichung exakt 0; K0b Neuberechnung von H0 und J0 exakt 0; K0c Rotor-Drift 7,368e-10 und 3,478e-13; K1 gegen F1.6 und K2 gegen F1 Nachtrag 4 jeweils bitgleich, Abweichung 0,0; K3 Spiegelpaare 19/15 und 20/16 auf allen acht Sprossen bitgleich; K4 Haltprobe dH <= 1e-8 auf allen sieben Sprossen h <= 5e-3; K6 alle Hashes vorher gleich nachher und 8001 Punkte je Bahn; K7 groesste rel-Abweichung 6,36e-4 und Q_max der Pflichtstarts exakt 0. Die Nullprobe N1 (Aussenfeder auf k_12 = 100.1 verstimmt, nur in der Kraft) besteht: dH_N1 = 1,458e-5 / 1,502e-5 / 1,503e-5 auf h = 5e-3 / 5e-4 / 1e-4, also 1458- bis 1503-fach ueber 1e-8 und h-unabhaengig, mit |p_N1| = 0,0130 und 0,000177 weit unter der Schwelle 0,3 - sie faellt nicht in das A-Muster. D1 zeigt keinen Rundungsboden (dH_3 bei h = 1e-4 ist 1,977e-12, keine Zelle ueber 1e-10), D6 keine Verletzung der Buchhaltungsgrenzen (|P| 9,08e-13, dJ/J 6,37e-13).",
+  "meaning": "Das Hindernis, das BERICHT-F1-6.md Abschnitt 4a.4 Punkt 3 benannt hat, ist ausgeraeumt: die Ueberschreitung der Zeilengrenze durch die vier wd-Starts und die zwei dx-Starts war ein Diskretisierungsfehler des Velocity-Verlet-Verfahrens bei fester Schrittweite und kein Befund ueber das Modell. Die Aussagen von F1.6 duerfen danach mit genannter Schrittweite zitiert werden ('bei h <= 1e-4 halten alle 20 Starts die Zeilengrenze'), nicht ohne. Drei Einschraenkungen bleiben und stehen so im Vertrag: A war der vorab erwartete Ausgang, die Schreibtischprobe nach Vorlage 5.4 ist woertlich nicht erfuellt (Vertrag 5.3, 12.4); von den sechs Pflichtstarts sind zwei exakte Spiegel und zwei Archiv, neu sind nur zwei Zahlenreihen plus Boden- und Formprobe (12.3); und die Nachweisgrenze ist Faktor 1,5 - eine systematische Abweichung von 20 Prozent haette diesen Lauf passiert (12.8). Dass K1 und K2 bitgleich herauskommen, belegt, dass dieselbe Sache gerechnet wurde, nicht dass sie richtig ist: ein von F1.6, F1 Nachtrag 4 und diesem Lauf geteilter Fehler bliebe unsichtbar; dagegen steht allein K0a und, noch ausstehend, S2 (Vertrag 12.5). A ist fuer sich genommen kein Aufstieg der Zeile F1, sagt nichts ueber h < 1e-4, nichts ueber T > 800 und nichts ueber die Zeile F2.2, deren Patch aus Runde 13 unerledigt bleibt. Keine Registerzeile; Gauntlet-Runde 022 ist eingefroren, es wurde nichts gebucht, keine Evidenz gebunden und keine Stufe geaendert. Die Zitiersperre gilt bis S2 (Pflicht nach 10.2, weil Autor und Ausfuehrender dasselbe Haus sind) und S3 vorliegen.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260918/f1-7-lauf/BERICHT-F1-7.md",
+      "label": "Bericht mit vollem Kopf, Vorrangregel, Tabelle gegen die 40 Erwartungszahlen, Nullprobe und Abschnitt 'Was dieser Lauf NICHT zeigt'",
+      "sha256": "5eedf5247bb165a5f0b1bf125ecde83d5bf4b3aa3aa4508d871504c42b30e901"
+    },
+    {
+      "path": "coordination/vertraege-20260918/f1-7-lauf/ERGEBNIS-F1-7.json",
+      "label": "Ergebnisdatei: alle 63 Bahnen, Kennzahlen, Kontrollen K0a-K7, Diagnosen D1-D8, Ausgang",
+      "sha256": "dda036723fdb7a445dce2876ddeebef4c22cc43104a43b951cdc31daf27b72ab"
+    },
+    {
+      "path": "coordination/vertraege-20260918/f1-7-VERTRAG.md",
+      "label": "Vertrag F1.7 mit den 40 vorab eingetragenen Vorhersagezahlen und allen Kriterien",
+      "sha256": "7865deec5864e857bbfd8fd188de79ac32bd65df72eb887c5c2edbc797e7dc7d"
+    },
+    {
+      "path": "coordination/vertraege-20260918/REVIEW-f1-7.md",
+      "label": "S0-Fremdreview Qwen und DeepSeek mit Einarbeitung und Ablehnungen",
+      "sha256": "235dfed8f3134373db28cdbf6a6a9ce539510c9073fcdb6a289b0424af7cc975"
+    },
+    {
+      "path": "coordination/vertraege-20260918/startsignal-f1-7.txt",
+      "label": "Startsignal Finn 20.09.2026 mit den sieben vorab gefuellten Vertragsluecken L1-L7",
+      "sha256": "564ec5824290d752c5ded9757535cca78746e30ab5c30f32f9b29ac9ecd85221"
+    },
+    {
+      "path": "coordination/vertraege-20260918/f1-7-lauf/f1_7.py",
+      "label": "Laufskript, vom Ausfuehrenden geschrieben, nicht vom Vertragsautor",
+      "sha256": "42731df9dcdd1c2e6fd6120ee0d47cee8328e5b374047651df52ec604426f906"
+    },
+    {
+      "path": "coordination/vertraege-20260918/f1-7-lauf/PRUEFE-F1-7.json",
+      "label": "Vorpruefung K0a, K0b, K6 vorher, Transkriptionsprobe, Durchsatzmessung",
+      "sha256": "a28dba2f21306586f2954b2bcf4dca2274eaf5102ea3274b26585f11d0898070"
+    }
+  ],
+  "recorded_at": "2026-09-20T17:28:19.381227+00:00"
+}

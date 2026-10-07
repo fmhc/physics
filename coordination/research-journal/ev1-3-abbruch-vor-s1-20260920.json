@@ -1,0 +1,48 @@
+{
+  "id": "ev1-3-abbruch-vor-s1-20260920",
+  "time": "2026-09-20T21:40:00+02:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5)",
+  "topic": "theory",
+  "status": "technical",
+  "title": "EV1.3: Abbruch vor S1 - Messlatte und Messgeraet machen denselben Fehler",
+  "question": "Traegt der heilende Vertrag EV1.3 die D_rot-Formunabhaengigkeit in voller Numerik auf Molekuelen, gegen die der Formraum nie ausgewaehlt wurde? Konkret: haelt jede der 61 Pruefformen auf vier neuen Molekuelen innerhalb 1 Prozent bei 4 B_e^3/omega_e^2?",
+  "action": "Vertrag EV1.3 vollstaendig gelesen; Kontrolle K8 (zwei unabhaengige Lesungen der NIST-Konstanten) durchgefuehrt, dazu die NIST-Grundzustandsseiten als HTML archiviert und gehasht; Regel 3.1b mechanisch angewandt; danach auf fmh@192.168.178.69 als begrenzte CPU-User-Unit (systemd-run --user, CPUQuota 100 %, MemoryMax 8G, RuntimeMaxSec 3600, OMP/OPENBLAS/MKL_NUM_THREADS=1, Python 3.12.3 / NumPy 2.4.4 / SciPy 1.18.0 wie der Zensus) eine Kettenprobe gerechnet: volle Kette (Kalibrierung, Sinus-DVR 512/1024, Fitabbildung, Kennzahl Q, sigma) fuer 65 Formen auf den beiden ANKERN H35Cl und 12C16O, dazu die Leiter L2 auf H35Cl und ein Schattenlauf mit n = 64. Die 244 Pflichtzellen auf den vier neuen Molekuelen wurden NICHT gerechnet. Bausteine unveraendert aus coordination/evolution/evolution_potential.py importiert (sha256 geprueft, nichts dort geaendert). Laufzeit 116,3 s.",
+  "result": "ABBRUCH VOR S1, kein Vertragsausgang. Vier Stoppgruende, alle vom Vertrag selbst vorgesehen: (1) K8 verfehlt - das zweite Haus (Qwen, Bunker) hat keinen Quellenzugriff und zitiert aus dem Gedaechtnis, Abweichung bis Faktor 10 (1H19F we 916,63 statt 4138,32); (2) Regel 3.1b unerfuellbar - die ersten vier zugelassenen Nicht-Anker (1H19F, 2H35Cl, 16O1H, 7Li1H) haben lam 187 bis 394, 3.1b verlangt zusaetzlich eines mit lam >= 900 und verbietet Nachruecken; (3) 3.1b und 6.1 widersprechen sich (lam >= 900 gegen lam <= 220), ausgangsbestimmend, 11.5 verlangt Vertragserneuerung; (4) 10.2 verbietet Anthropic als Ausfuehrenden. Kettenprobe: K1 bitgleich (0,0 ueber 66 Zellen), K2 1,32e-12 / 4,11e-13, K3 61/61, K4 und K6 bestanden, N3 exakt 0,0. Verfehlt: K3b (0 von 61 statt 55 - n = 64 ist bereits konvergiert), K7 (1,3333e-2 auf H35Cl gegen Schwelle 5e-3), N2 (alle vier Leitersprossen unkalibrierbar, B1-Residuum 9 bis 400 Prozent), N1 formal (Vertrag verlangt 1e-9 gegen sechsstellig gedruckte Zahlen; gemessen 8e-7 bis 3,5e-6, also genau der Rundungsfehler des Vertragstextes).",
+  "meaning": "Der schwerste Befund ist K7. Fuer das analytisch loesbare Kratzer-Potential liegt die WAHRE Zentrifugaldehnung 1,32 Prozent (H35Cl) bzw. 0,333 Prozent (12C16O) neben 4 B_e^3/omega_e^2; das Produkt mit lam ist -3,729 bzw. -3,745, die Abweichung geht also wie -3,73/lam. Die Zwoelf-Niveau-Fitabbildung trifft dagegen 4 B_e^3/omega_e^2 auf fuenf Stellen (Q = -4,94e-5). Schaetzer und Bezugsgroesse haben denselben systematischen Fehler, und der ist bei lam < 373 groesser als die Latte L = 0,01. Ein Ausgang B waere dort kein Formeffekt, sondern ein Schaetzereffekt - genau das Restrisiko 12.1 Nr. 5/6 des Vertrags, jetzt mit Zahl. K7 (Schwelle 5e-3) ist erst ab lam >= 746 passierbar, 6.1 verlangt ein Pflichtmolekuel mit lam <= 220: beide schliessen einander aus, EV1.3 ist auch nach Reparatur von 3.1b und K8 nicht ausfuehrbar. Die geschlossene Ableitung wurde mit 60-stelliger Dezimalarithmetik auf 4,1e-16 bestaetigt; die im Vertrag vorgeschriebene float64-Richardson-Rechnung ist reine Ausloeschung (28,5 % bzw. 9443 % Abweichung). NICHT GEZEIGT: nichts ueber die Frage von EV1.3 selbst (keine Pflichtzelle gerechnet), keine Bestaetigung und keine Widerlegung der Goldzeile EV1.2 - das entscheidet die Jury in Runde 23. Nicht gebucht, Runde 022 eingefroren, EV1.2 unveraendert. Fassung-2-Vorschlag EV1.4 liegt vor, sein Vorlaufteil wurde vor der ersten Zahl geschrieben.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260921/ev1-3-lauf/BERICHT-ev1-3.md",
+      "sha256": "c5892d70b353d18f502150ca030e50a3365a8b9373057b0f86c852c637830c15"
+    },
+    {
+      "path": "coordination/vertraege-20260921/ev1-3-lauf/ERGEBNIS-EV1-3-kettenprobe.json",
+      "sha256": "1d7751a1b9b941c1c73591165c3915ddcfa7445ca794cb9dc1b5fcdad6ec00f1"
+    },
+    {
+      "path": "coordination/vertraege-20260921/startsignal-ev1-3.txt",
+      "sha256": "6a49add62f85f359e35e282ff3c4701027321e925e32ba0ec8b3597ad5b830f6"
+    },
+    {
+      "path": "coordination/vertraege-20260921/ev1-3-lauf/K8-BEFUND.md",
+      "sha256": "09242e4c3a49f278ba4d28d64b93a874a1caf9e485845c442a37f0d1f6544672"
+    },
+    {
+      "path": "coordination/vertraege-20260921/ev1-3-lauf/ev1_3_kettenprobe.py",
+      "sha256": "551402b9e47d7c76361b289c5d920ff00a1046ce161ca361a2a483300e17b6e2"
+    },
+    {
+      "path": "coordination/vertraege-20260921/FASSUNG-2-VORSCHLAG-ev1-4.md",
+      "sha256": "6d9273462af7dcbbc5539557454bd0ae595992328062bb497e55141686351a0c"
+    },
+    {
+      "path": "coordination/vertraege-20260921/VORAB-MOLEKUELE.json",
+      "sha256": "02ec4fee41951b05f50d3a3b4355896f973a41ce88cf58be4a1dfd682d9bc737"
+    },
+    {
+      "path": "coordination/vertraege-20260921/ev1-3-VERTRAG.md",
+      "sha256": "2b56cca7b033c141956ef1735fe933bc68c3c9a6cbb085a6df60e80606f737ca"
+    }
+  ],
+  "recorded_at": "2026-09-20T19:20:13.598524+00:00"
+}

@@ -1,0 +1,867 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""REGIME-K-3 (fmhc-physics, Runde 49), Code-Agent fuer die Leitung claude-primary.
+
+Transfermatrix eines Zeltstangen-Takts je raeumlichem Bloch-k (PLAN.md Abschnitt 2):
+  Gitter unveraendert aus REGIME-K-2 (rk2.baue2: KW, B1-t1, V-A, V-B, S-A; rk.Gitter, tau = 1).
+  Schicht = ein Takt; Randdaten l (Kanten auf Stufe n), l' (Stufe n+1), Bulk b (Zeltstangen, Diagonalen).
+  Bulk per Schur eliminiert (Hoehn); Nullrichtungen von H_bb -> Lapse-Bedingungen C; Eichung G_l (4D-Verschiebungen);
+  W = (Bild [G_l, C])^perp; T auf (v, pi); Eigenwerte z = exp(i k_tau tau) wie REGIME-K-2.
+  Lorentz-Lesart (PLAN 2.5, Konvention REGGE-WELLE-1): omega = -Log z / tau, abs(lambda) := exp(abs(Arg z)).
+Modi:
+  transfer    --arm X --satz raster|bz [--teil i/n] [--rauch]  -> JSON
+  auswertung  --ein name=pfad ... (Urteile RT0 bis RT3, Kontrollen, beschreibende Zahlen) -> JSON
+"""
+import argparse, json, sys, os, time, platform, hashlib, resource, itertools
+import numpy as np
+import scipy.linalg as sla
+
+HIER = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HIER)
+import rk   # noqa: E402  (REGIME-K-1/2, unveraendert)
+import rk2  # noqa: E402  (REGIME-K-2, eingefroren, unveraendert)
+
+TOL_BB = 1e-14        # Nullrichtung von H_bb: abs(w) <= TOL_BB max abs(w) (nach r2 von 1e-10 gesenkt, PLAN 9)
+TOL_KOPPL = 1e-10     # Kopplung einer Nullrichtung an den Rand (relativ zu max abs(H_S))
+TOL_RANG = 1e-10      # Rang von [G_l, C]
+TOL_C = 1e-5          # Vor- gegen Nach-Bedingungen (Sinus); nach Rauchtest r1 (PLAN 9)
+TOL_EICH = 1e-6       # Eichidentitaeten, projiziert auf W (nach r1, PLAN 9)
+TOL_SYM = 1e-8        # Symplektizitaet, Paarfehler
+TOL_STAT = 1e-8       # statische Richtung: Singulaerwert von B_W relativ (nach r1, PLAN 9)
+TOL_KERN = 1e-6       # rechter gegen linken Kern von B_W (Sinus)
+NEWTON_MAX = 50       # Verfeinerung auf der vollen 4D-Form (nach r1, PLAN 9)
+VERF_MAX = 1e-2       # Verschiebung durch die Verfeinerung relativ, sonst gesperrt (nach r4, PLAN 9)
+S_ECHT = 1e-8         # s_voll
+Z_KLEIN, Z_GROSS = 1e-10, 1e10
+TT_MIN = 0.9
+TT_FENSTER = 3.0
+SEED = 20261005
+BETR_KOORD = [0.05, 0.2]
+BZ_N = 8
+SYMM_FCC = {'X': (0, 4, 4), 'L': (4, 4, 4), 'W': (2, 4, 6), 'K': (3, 3, 6), 'U': (2, 5, 5)}
+SYMM_KUB = {'X': (4, 0, 0), 'M': (4, 4, 0), 'R': (4, 4, 4)}
+
+
+def sha(path):
+    with open(path, 'rb') as f:
+        return hashlib.sha256(f.read()).hexdigest()
+
+
+def orth(M, tol):
+    if M.shape[1] == 0:
+        return np.zeros((M.shape[0], 0), complex)
+    U, s, _ = np.linalg.svd(M, full_matrices=False)
+    return U[:, s > tol]
+
+
+def kern(M, tol):
+    """Orthonormalbasis (Spalten) des Kerns von M; Schwelle absolut."""
+    n = M.shape[1]
+    if n == 0:
+        return np.zeros((0, 0), complex)
+    if M.shape[0] == 0:
+        return np.eye(n, dtype=complex)
+    _, s, Vh = np.linalg.svd(M, full_matrices=True)
+    r = int((s > tol).sum())
+    return Vh[r:].conj().T
+
+
+# ================================================================================================= Schicht
+class Schicht:
+    """Ein Takt der Zeltstangen-Treppe: Bloecke l (Stufe 0), b (Bulk), l' (Stufe 1); Bloch nur im Raum."""
+
+    def __init__(self, g):
+        self.g = g
+        skey, bkey, roh = {}, {}, []
+        for s, Sv in enumerate(g.simp):
+            for i, (a, c) in enumerate(rk.PAARE5):
+                (b1, n1), (b2, n2) = Sv[a], Sv[c]
+                if n1[3] == n2[3]:
+                    key, base = rk.kanon_kante((b1, tuple(n1[:3])), (b2, tuple(n2[:3])))
+                    e = skey.setdefault(key, len(skey))
+                    roh.append(('l' if n1[3] == 0 else 'r', e, base[:3]))
+                else:
+                    key, base = rk.kanon_kante((b1, tuple(n1)), (b2, tuple(n2)))
+                    j = bkey.setdefault(key, len(bkey))
+                    roh.append(('b', j, base[:3]))
+        self.Es, self.NB = len(skey), len(bkey)
+        self.N = 2 * self.Es + self.NB
+        off = {'l': 0, 'b': self.Es, 'r': self.Es + self.NB}
+        self.lab = np.array([off[a] + e for (a, e, _) in roh]).reshape(g.S, 10)
+        T3 = np.array([b for (_, _, b) in roh], float).reshape(g.S, 10, 3)
+        self.Tphys3 = T3 @ g.A3.T
+        self.skeys = sorted(skey, key=skey.get)
+        self.bkeys = sorted(bkey, key=bkey.get)
+        # Randkanten (Stufe 0): 4D-Kantenvektor, Mitte, Translation des zweiten Endes
+        E4, mid, Rd3, b1s, b2s = [], [], [], [], []
+        for (b1, b2, d3) in self.skeys:
+            p1 = g.pos(b1, (0, 0, 0, 0))
+            p2 = g.pos(b2, tuple(d3) + (0,))
+            E4.append(p2 - p1); mid.append(p1 + 0.5 * (p2 - p1)); Rd3.append(g.A3 @ np.array(d3, float))
+            b1s.append(b1); b2s.append(b2)
+        self.E4 = np.array(E4); self.mid = np.array(mid); self.Rd3 = np.array(Rd3)
+        self.b1 = np.array(b1s); self.b2 = np.array(b2s)
+        self.ls = np.linalg.norm(self.E4, axis=1)
+        self.us = self.E4 / self.ls[:, None]
+        self.n_zeltstangen = sum(1 for (b1, b2, d) in self.bkeys if b1 == b2 and not any(d[:3]))
+        self.n_diagonalen = self.NB - self.n_zeltstangen
+
+    def H(self, ks):
+        ph = np.exp(1j * (self.Tphys3 @ ks))
+        W = self.g.Hloc * (np.conj(ph)[:, :, None] * ph[:, None, :])
+        n = self.N
+        idx = (self.lab[:, :, None] * n + self.lab[:, None, :]).ravel()
+        Hk = np.bincount(idx, W.real.ravel(), minlength=n * n) + 1j * np.bincount(idx, W.imag.ravel(), minlength=n * n)
+        return Hk.reshape(n, n)
+
+    def Gl(self, ks):
+        NV = self.g.NV
+        G = np.zeros((self.Es, 4 * NV), complex)
+        ph = np.exp(1j * (self.Rd3 @ ks))
+        for e in range(self.Es):
+            G[e, 4 * self.b2[e]:4 * self.b2[e] + 4] += self.us[e] * ph[e]
+            G[e, 4 * self.b1[e]:4 * self.b1[e] + 4] -= self.us[e]
+        return G
+
+    def tt_basis(self, ks):
+        """Kantenbild (ohne Phasen) der raeumlichen TT-Moden h_+, h_x transversal zu ks: (E_s, 2)."""
+        kh = ks / np.linalg.norm(ks)
+        U, _, _ = np.linalg.svd(np.outer(kh, kh))
+        Ea, Eb = U[:, 1], U[:, 2]
+        out = []
+        for h3 in ((np.outer(Ea, Ea) - np.outer(Eb, Eb)) / np.sqrt(2), (np.outer(Ea, Eb) + np.outer(Eb, Ea)) / np.sqrt(2)):
+            h4 = np.zeros((4, 4)); h4[:3, :3] = h3
+            out.append(np.einsum('ei,ij,ej->e', self.E4, h4, self.E4) / (2.0 * self.ls))
+        return np.array(out).T
+
+
+def k1_kontrolle(sch, rng, n=32):
+    """K1: volle 4D-Bloch-Hesse aus den Schichtbloecken gegen rk.Gitter.H (Spektren)."""
+    g = sch.g; Es, NB = sch.Es, sch.NB
+    l = slice(0, Es); b = slice(Es, Es + NB); r = slice(Es + NB, 2 * Es + NB)
+    abw, herm = [], []
+    for _ in range(n):
+        k4 = rng.uniform(-np.pi, np.pi, size=4)
+        z = np.exp(1j * k4[3] * g.tau)
+        H = sch.H(k4[:3])
+        Hf = np.block([[H[l, l] + H[r, r] + z * H[l, r] + H[r, l] / z, H[l, b] + H[r, b] / z],
+                       [H[b, l] + z * H[b, r], H[b, b]]])
+        herm.append(float(np.abs(Hf - Hf.conj().T).max() / np.abs(Hf).max()))
+        e1 = np.linalg.eigvalsh(0.5 * (Hf + Hf.conj().T))
+        Hr = g.H(k4)
+        e2 = np.linalg.eigvalsh(0.5 * (Hr + Hr.conj().T))
+        abw.append(float(np.abs(e1 - e2).max() / np.abs(e2).max()))
+    return {'spektrum_max_rel': max(abw), 'herm_max_rel': max(herm), 'punkte': n}
+
+
+# ================================================================================================= ein k
+def punkt(sch, lau, tot, ks):
+    g = sch.g
+    Es, NB, NV = sch.Es, sch.NB, g.NV
+    t0 = time.time()
+    H0 = sch.H(ks)
+    hmax = float(np.abs(H0).max())
+    herm = float(np.abs(H0 - H0.conj().T).max() / hmax)
+    H = 0.5 * (H0 + H0.conj().T)
+    ib = np.arange(Es, Es + NB)
+    rnd = np.r_[np.arange(Es), np.arange(Es + NB, 2 * Es + NB)]
+    w, U = np.linalg.eigh(H[np.ix_(ib, ib)])
+    wmax = float(np.abs(w).max())
+    nul = np.abs(w) <= TOL_BB * wmax
+    Up, wp, Nb = U[:, ~nul], w[~nul], U[:, nul]
+    Hrb = H[np.ix_(rnd, ib)]
+    X = (Up.conj().T @ Hrb.conj().T) / wp[:, None]
+    E = H[np.ix_(rnd, rnd)] - (Hrb @ Up) @ X
+    E = 0.5 * (E + E.conj().T)
+    A, B, Bs, D = E[:Es, :Es], E[:Es, Es:], E[Es:, :Es], E[Es:, Es:]
+    # Nullrichtungen von H_bb und ihre Kopplung an den Rand (PLAN 2.2)
+    nn = int(nul.sum())
+    tolk = TOL_KOPPL * hmax
+    P, Pp = Hrb[:Es] @ Nb, Hrb[Es:] @ Nb
+    if nn:
+        R_vor, R_nach = kern(Pp, tolk), kern(P, tolk)
+        R_ent = kern(np.vstack([P, Pp]), tolk)
+        spann = int(np.linalg.matrix_rank(np.c_[R_vor, R_nach], tol=1e-8)) if (R_vor.shape[1] + R_nach.shape[1]) else 0
+        Cv, Cn = orth(P @ R_vor, tolk), orth(Pp @ R_nach, tolk)
+    else:
+        R_vor = R_nach = R_ent = np.zeros((0, 0)); spann = 0
+        Cv = Cn = np.zeros((Es, 0), complex)
+    n_ent = R_ent.shape[1]
+    n_vor, n_nach = R_vor.shape[1] - n_ent, R_nach.shape[1] - n_ent
+    n_gem = nn - spann
+    if Cv.shape[1] == Cn.shape[1]:
+        sinC = float(np.linalg.norm(Cn - Cv @ (Cv.conj().T @ Cn), 2)) if Cv.shape[1] else 0.0
+    else:
+        sinC = None
+    # Eichung (PLAN 2.3; nach r1: Identitaeten auf W projiziert, PLAN 9)
+    Gl = sch.Gl(ks)
+    gn = float(np.abs(Gl).max()); En = float(np.abs(E).max())
+    eich_roh = {'B': float(np.abs(B @ Gl).max() / (En * gn)), 'BH': float(np.abs(B.conj().T @ Gl).max() / (En * gn)),
+                'AD': float(np.abs((A + D) @ Gl).max() / (En * gn))}
+    bsym = float(np.abs(Bs - B.conj().T).max() / En)
+    sg = np.linalg.svd(Gl, compute_uv=False)
+    rG = int((sg > TOL_RANG * sg[0]).sum())
+    M = np.c_[Gl, Cv]
+    Um, sm, _ = np.linalg.svd(M, full_matrices=True)
+    rM = int((sm > TOL_RANG * sm[0]).sum())
+    W = Um[:, rM:]
+    d = Es - rM
+    eich = {'B': float(np.abs(W.conj().T @ B @ Gl).max() / (En * gn)),
+            'BH': float(np.abs(W.conj().T @ B.conj().T @ Gl).max() / (En * gn)),
+            'AD': float(np.abs(W.conj().T @ (A + D) @ Gl).max() / (En * gn)),
+            'C': float(np.abs(Cv.conj().T @ Gl).max() / gn) if Cv.shape[1] else 0.0}
+    AW, BW, BsW, DW = (W.conj().T @ Q @ W for Q in (A, B, Bs, D))
+    Ub, sB, Vhb = np.linalg.svd(BW)
+    condB = float(sB[0] / sB[-1]) if sB[-1] > 0 else float('inf')
+    stat = sB <= TOL_STAT * sB[0]
+    ns = int(stat.sum())
+    sinK = None
+    pfad = 'T'
+    Rb, Sb, Ms_inv_Msr = np.eye(d, dtype=complex), np.zeros((d, 0), complex), None
+    Ae, Be, Bse, De = AW, BW, BsW, DW
+    if ns:
+        Kr, Kl = Vhb[stat].conj().T, Ub[:, stat]
+        sinK = float(np.linalg.norm(Kl - Kr @ (Kr.conj().T @ Kl), 2))
+        if sinK <= TOL_KERN:
+            # statische Richtungen (ohne Traegheit) eliminieren, symmetrische Aufteilung (PLAN 9)
+            pfad = 'statisch'
+            Sb = Kr
+            Rb = Vhb[~stat].conj().T
+            Mx = AW + DW
+            Mss = Sb.conj().T @ Mx @ Sb
+            Ms_inv_Msr = np.linalg.solve(Mss, Sb.conj().T @ Mx @ Rb)
+            Me = Rb.conj().T @ Mx @ Rb - (Rb.conj().T @ Mx @ Sb) @ Ms_inv_Msr
+            Me = 0.5 * (Me + Me.conj().T)
+            Ae = De = 0.5 * Me
+            Be, Bse = Rb.conj().T @ BW @ Rb, Rb.conj().T @ BsW @ Rb
+        else:
+            pfad = 'buendel'
+    dd = Be.shape[0]
+    I, Z0 = np.eye(dd), np.zeros((dd, dd))
+    Ac = np.block([[Z0, I], [-Bse, -(Ae + De)]])
+    Bc = np.block([[I, Z0], [Z0, Be]])
+    s_sym = p_err_T = None
+    n_np = 0
+    if pfad in ('T', 'statisch'):
+        Bi = np.linalg.inv(Be)
+        T = np.block([[-Bi @ Ae, -Bi], [Bse - De @ Bi @ Ae, -De @ Bi]])
+        z, VL, VR = sla.eig(T, left=True, right=True)
+        kappa = 1.0 / np.maximum(np.abs(np.sum(np.conj(VL) * VR, axis=0)), 1e-300)
+        J = np.block([[Z0, I], [-I, Z0]])
+        s_sym = float(np.abs(T.conj().T @ J @ T - J).max() / max(1.0, float(np.abs(T).max()) ** 2))
+        p_err_T = float(max(np.min(np.abs(z - 1.0 / np.conj(zj))) * abs(zj) for zj in z))
+        vR = VR[:dd]
+        ab = sla.eig(Ac, Bc, right=False, homogeneous_eigvals=True)
+        zq = np.where(np.abs(ab[1]) > 1e-13 * np.abs(ab[0]), ab[0] / np.where(ab[1] == 0, 1, ab[1]), np.inf)
+        frei = list(range(len(zq)))
+        err_qz = []
+        for zj in z:
+            i = min(frei, key=lambda q: abs(zq[q] - zj) if np.isfinite(zq[q]) else np.inf)
+            err_qz.append(float(abs(zq[i] - zj))); frei.remove(i)
+        err_qz = np.array(err_qz)
+        n_np = 2 * ns
+    else:
+        ab, VRc = sla.eig(Ac, Bc, right=True, homogeneous_eigvals=True)
+        al, be = ab[0], ab[1]
+        ok = np.abs(be) > 1e-13 * np.abs(al)
+        zall = np.where(ok, al / np.where(be == 0, 1, be), np.inf)
+        phys = ok & (np.abs(zall) > Z_KLEIN) & (np.abs(zall) < Z_GROSS)
+        n_np = int((~phys).sum())
+        z = zall[phys]; vR = VRc[:dd, phys]
+        kappa = np.full(len(z), np.nan)
+        err_qz = np.full(len(z), 0.0)
+    # volle Randvektoren in W-Koordinaten (statische Anteile zurueck)
+    if pfad == 'statisch':
+        vec = Rb @ vR - Sb @ (Ms_inv_Msr @ vR)
+    else:
+        vec = vR
+    # Eigenwerte fuer die Urteile (PLAN 9): T-Eigenwerte als Startwerte, Newton auf der vollen 4D-Form (unabhaengig von
+    # der Bulk-Elimination); zusammengefallene Startwerte mit Deflation nacheinander.
+    C = lau.koeff(ks)
+    zT = np.array(z, complex)
+    z_ref = zT.copy()
+    schritt = np.zeros(len(zT))
+    n_it = []
+    for i in range(len(zT)):
+        zz, st, it = verfeinere(g, C, ks, tot, zT[[i]])
+        z_ref[i] = zz[0]; schritt[i] = st[0]; n_it.append(it)
+
+    def duplikate(zr):
+        out = []
+        for i in range(len(zT)):
+            for j in range(i + 1, len(zT)):
+                if abs(zr[i] - zr[j]) <= 1e-12 * abs(zr[i]) and abs(zT[i] - zT[j]) > 1e-6 * abs(zT[i]):
+                    out.append((i, j))
+        return out
+    dp = duplikate(z_ref)
+    n_aberth = 0
+    if dp:
+        # zusammengefallene Startwerte gemeinsam mit Aberth aus den T-Werten verfeinern (PLAN 9)
+        par = {}
+
+        def wurzel(x):
+            while par.get(x, x) != x:
+                x = par[x]
+            return x
+        for (i, j) in dp:
+            a, b = wurzel(i), wurzel(j)
+            if a != b:
+                par[max(a, b)] = min(a, b)
+        gruppen = {}
+        for q in sorted(set(i for pq in dp for i in pq)):
+            gruppen.setdefault(wurzel(q), []).append(q)
+        for grp in gruppen.values():
+            gefunden = []
+            for q in grp:
+                zz, st, it = verfeinere(g, C, ks, tot, zT[[q]], defl=gefunden)
+                z_ref[q] = zz[0]; schritt[q] = st[0]; n_it.append(it)
+                gefunden.append(zz[0])
+            n_aberth += 1
+        dp = duplikate(z_ref)
+    dup = len(dp)
+    verf = np.abs(z_ref - zT) / np.abs(zT) if len(zT) else np.zeros(0)
+    err = np.maximum(2.0 * schritt, 1e-15 * np.abs(z_ref)) if len(zT) else np.zeros(0)
+    z = z_ref
+    p_err = float(max(np.min(np.abs(z - 1.0 / np.conj(zj))) * abs(zj) for zj in z)) if len(z) else None
+    tb = sch.tt_basis(ks)
+    phs = np.exp(1j * (sch.mid[:, :3] @ ks))
+    sv_l, tt_l = [], []
+    for j, zj in enumerate(z):
+        Hz = sum(Cm * zj ** m for m, Cm in C.items())
+        sv = np.linalg.svd(Hz, compute_uv=False)
+        kt = -1j * np.log(zj) / g.tau
+        Nn = rk2.nullbasis(g, np.r_[ks, kt][None, :], tot)[0]
+        sn = np.linalg.svd(Nn, compute_uv=False)
+        r = int((sn > 1e-10 * sn[0]).sum())
+        sv_l.append(float(sv[len(sv) - r - 1] / sv[0]))
+        u = W @ vec[:, j]
+        u = u / np.linalg.norm(u)
+        tf = np.exp(np.log(zj) * sch.mid[:, 3] / g.tau)
+        QT, _ = np.linalg.qr(tb * (phs * tf)[:, None])
+        tt_l.append(rk2.tt_klasse(u, Gl, QT))
+    sv_l = np.array(sv_l)
+    sperren = []
+    if n_gem > 0 or sinC is None or sinC > TOL_C:
+        sperren.append('bulk')
+    if max(eich.values()) > TOL_EICH:
+        sperren.append('eichung')
+    if pfad in ('T', 'statisch') and (s_sym > TOL_SYM or (p_err is not None and p_err > TOL_SYM)):
+        sperren.append('symplektisch')
+    if len(sv_l) and sv_l.max() > S_ECHT:
+        sperren.append('unecht')
+    if (len(verf) and verf.max() > VERF_MAX) or dup:
+        sperren.append('verfeinerung')
+    kon = {'Es': Es, 'NB': NB, 'NE': g.NE, 'herm': herm, 'H_bb_null': nn, 'null_entkoppelt': n_ent,
+           'null_nur_unten': n_vor, 'null_nur_oben': n_nach, 'null_gemischt': n_gem,
+           'rang_C_vor': int(Cv.shape[1]), 'rang_C_nach': int(Cn.shape[1]), 'sin_C': sinC,
+           'rang_G': rG, 'rang_GC': rM, 'd': int(d), 'eich_max': max(eich.values()), 'eich': eich,
+           'eich_roh': eich_roh, 'B_sym': bsym, 'cond_B_W': condB, 'statisch': ns, 'sin_K': sinK, 'pfad': pfad,
+           'nicht_propagierend': n_np, 'zahl_eigenwerte': int(len(z)),
+           's_sym': s_sym, 'p_err': p_err, 'p_err_T': p_err_T,
+           'err_max': float(err.max()) if len(err) else None,
+           'err_qz_max': float(err_qz.max()) if len(err_qz) else None,
+           'verf_max': float(verf.max()) if len(verf) else None, 'newton_it_max': max(n_it) if n_it else None,
+           'duplikate': dup, 'aberth_gruppen': n_aberth, 'weg': 'S',
+           'bb_min_rel': float(np.abs(w).min() / wmax), 'bb_min_rel_nichtnull': float(np.abs(wp).min() / wmax) if len(wp) else None,
+           's_voll_max': float(sv_l.max()) if len(sv_l) else None,
+           'kappa_max': float(np.nanmax(kappa)) if len(kappa) and np.isfinite(kappa).any() else None,
+           'sperren': sperren, 'zeit_s': time.time() - t0}
+    return {'kontrollen': kon, 'z_re': z.real.tolist(), 'z_im': z.imag.tolist(), 'err': err.tolist(),
+            'zT_re': zT.real.tolist(), 'zT_im': zT.imag.tolist(),
+            's_voll': sv_l.tolist(), 'tt': [float(x) for x in tt_l],
+            'kappa': [float(x) if np.isfinite(x) else None for x in kappa]}
+
+
+def komplement(N):
+    U, s, _ = np.linalg.svd(N, full_matrices=True)
+    r = int((s > 1e-10 * s[0]).sum()) if len(s) else 0
+    return U[:, r:]
+
+
+def verfeinere(g, C, ks, tot, z0, defl=()):
+    """Newton mit logarithmischer Ableitung fuer det Ql^H H(z) Qr auf der vollen 4D-Form; Ql, Qr feste Komplemente der
+    Eichnullraeume N(1/conj z0) (links) und N(z0) (rechts); bereits gefundene Nullstellen 'defl' werden abdividiert
+    (Deflation). Abbruch bei Schritt <= 1e-15 abs(z) oder wenn der Schritt ab der dritten Iteration nicht mehr faellt."""
+    z = np.array(z0, complex)
+    zm = complex(np.mean(z))
+    defl = [complex(x) for x in defl]
+    k4r = np.r_[ks, -1j * np.log(zm) / g.tau]
+    k4l = np.r_[ks, -1j * np.log(1.0 / np.conj(zm)) / g.tau]
+    Qr = komplement(rk2.nullbasis(g, k4r[None, :], tot)[0])
+    Ql = komplement(rk2.nullbasis(g, k4l[None, :], tot)[0])
+    Fm = {m: Ql.conj().T @ Cm @ Qr for m, Cm in C.items()}
+    last = np.full(len(z), np.inf)
+    prev = np.inf
+    it = 0
+    aktiv = np.ones(len(z), bool)
+    for it in range(1, NEWTON_MAX + 1):
+        L = np.zeros(len(z), complex)
+        for i in range(len(z)):
+            if not aktiv[i]:
+                continue
+            F = sum(Fm[m] * z[i] ** m for m in Fm)
+            dF = sum(m * Fm[m] * z[i] ** (m - 1) for m in Fm)
+            try:
+                L[i] = np.trace(np.linalg.solve(F, dF))
+            except np.linalg.LinAlgError:
+                L[i] = np.inf
+        dz = np.zeros(len(z), complex)
+        for i in range(len(z)):
+            if not aktiv[i] or not np.isfinite(L[i]):
+                if aktiv[i]:
+                    last[i] = 0.0; aktiv[i] = False
+                continue
+            S = sum(1.0 / (z[i] - z[j]) for j in range(len(z)) if j != i and z[i] != z[j])
+            S += sum(1.0 / (z[i] - r) for r in defl if z[i] != r)
+            nenner = L[i] - S
+            if nenner == 0:
+                aktiv[i] = False
+                continue
+            dz[i] = -1.0 / nenner
+        z = z + dz
+        st = np.abs(dz)
+        last = np.where(aktiv, st, last)
+        aktiv &= st > 1e-15 * np.abs(z)
+        mx = float(np.max(st)) if len(st) else 0.0
+        if not aktiv.any() or (it >= 3 and mx >= prev):
+            break
+        prev = mx
+    return z, last, it
+
+
+# ================================================================================================= Punktsaetze
+def raster_punkte(g):
+    R = rk2.richtungen_rw24() + rk2.richtungen_rk25()
+    P = []
+    satz = [('kl%g' % x, x, 'kl') for x in rk.KL_RASTER] + [('koord%g' % x, x, 'koord') for x in BETR_KOORD]
+    for lab, x, art in satz:
+        kb = x / g.lmean if art == 'kl' else x
+        for nm, nh in R:
+            P.append({'richtung': nm, 'n': nh.tolist(), 'betrag_label': lab, 'art': art, 'eingabe': x, 'kb': kb,
+                      'kl': kb * g.lmean, 'ks': (kb * nh).tolist()})
+    return P
+
+
+def bz_punkte(g, name):
+    AiT = np.linalg.inv(g.A3).T
+    G = [2 * np.pi * AiT @ np.array(n, float) for n in itertools.product(range(-2, 3), repeat=3)]
+    G = np.array(G)
+    symm = SYMM_FCC if name in ('V-A', 'V-B', 'S-A') else SYMM_KUB
+    inv = {v: k for k, v in symm.items()}
+    P = []
+    for m in itertools.product(range(BZ_N), repeat=3):
+        if not any(m):
+            continue
+        ks = 2 * np.pi * AiT @ (np.array(m, float) / BZ_N)
+        dist = np.sort(np.linalg.norm(ks[None, :] - G, axis=1))
+        rand = bool(abs(dist[1] - dist[0]) <= 1e-9 * 2 * np.pi)
+        P.append({'m': list(m), 'ks': ks.tolist(), 'kb': float(np.linalg.norm(ks)), 'rand': rand,
+                  'symm': inv.get(tuple(m)), 'abstand_ws': float(dist[0])})
+    return P
+
+
+def lauf_transfer(arm, satz, teil, rauch):
+    t0 = time.time()
+    g = rk2.baue2(arm)
+    sch = Schicht(g)
+    lau = rk2.Laurent(g)
+    tot = rk2.tote_idx(g)
+    rng = np.random.default_rng(SEED)
+    out = {'arm': arm, 'satz': satz, 'teil': teil, 'tau': g.tau, 'lmean': g.lmean, 'NE': g.NE, 'NV': g.NV,
+           'Es': sch.Es, 'NB': sch.NB, 'zeltstangen': sch.n_zeltstangen, 'diagonalen': sch.n_diagonalen,
+           'tote_kanten_idx': tot, 'laurent_m': lau.ms}
+    out['kontrollen_global'] = {'K1': k1_kontrolle(sch, rng, 8 if rauch else 32), 'S': g.S, 'NE': g.NE, 'Es': sch.Es,
+                                'NB': sch.NB, 'zeltstangen': sch.n_zeltstangen, 'diagonalen': sch.n_diagonalen,
+                                'tote_kanten': len(tot)}
+    pts = raster_punkte(g) if satz == 'raster' else bz_punkte(g, arm)
+    if teil:
+        i, n = (int(x) for x in teil.split('/'))
+        pts = pts[i::n]
+    if rauch:
+        pts = pts[::max(1, len(pts) // 4)][:4]
+    for j, p in enumerate(pts):
+        r = punkt(sch, lau, tot, np.array(p['ks'], float))
+        p.update(r)
+        print('%s %s %d/%d d=%d %.2f s' % (arm, satz, j + 1, len(pts), r['kontrollen']['d'], r['kontrollen']['zeit_s']),
+              flush=True)
+    out['punkte'] = pts
+    out['t_gesamt_s'] = time.time() - t0
+    return out
+
+
+# ================================================================================================= Auswertung
+def ev(zr, zi, err):
+    z = complex(zr, zi)
+    a = abs(z)
+    delta = abs(float(np.angle(z)))
+    eps = max(err / a if a > 0 else np.inf, 1e-15)
+    return {'z': z, 'abs': a, 'delta': delta, 'eps': eps, 'schnitt': delta >= np.pi - max(eps, 1e-9),
+            'kreis': abs(a - 1.0) <= 1e-8, 'g': float(np.expm1(delta))}
+
+
+def test(e, theta, ohne_schnitt=False):
+    """0 erfuellt, 1 unsicher, 2 verletzt (PLAN 2.5)."""
+    if ohne_schnitt and e['schnitt']:
+        return 0
+    if np.expm1(e['delta'] + e['eps']) < theta:
+        return 0
+    if np.expm1(max(e['delta'] - e['eps'], 0.0)) > theta:
+        return 2
+    return 1
+
+
+def eigen(p):
+    return [ev(a, b, c) for a, b, c in zip(p['z_re'], p['z_im'], p['err'])]
+
+
+def tt_zuordnung(p, E, tau):
+    kand = [j for j, e in enumerate(E) if abs(np.log(e['z'])) <= TT_FENSTER * p['kb'] * tau]
+    ok = len(kand) == 4 and all(p['tt'][j] >= TT_MIN for j in kand)
+    return kand, ok
+
+
+def dreiwertig(verstoss, gesperrt):
+    if verstoss:
+        return 'nicht eingetroffen'
+    if gesperrt:
+        return 'nicht auswertbar'
+    return 'eingetroffen'
+
+
+def paar(a, b):
+    return a if a == b else 'unklar'
+
+
+def lauf_auswertung(pfade):
+    J = {nm: json.load(open(p)) for nm, p in pfade.items() if not nm.startswith('ref-')}
+    REF = {nm[4:]: json.load(open(p)) for nm, p in pfade.items() if nm.startswith('ref-')}
+    out = {'eingaben': {nm: {'pfad': p, 'sha256': sha(p)} for nm, p in pfade.items()}}
+    # Arme zusammenfuehren: name = <arm>-<satz>[-teilX]
+    arme = {}
+    for nm, d in J.items():
+        arme.setdefault(d['arm'], {}).setdefault(d['satz'], []).extend(d['punkte'])
+        arme[d['arm']].setdefault('_global', []).append(d['kontrollen_global'])
+        arme[d['arm']].setdefault('_tau', d['tau'])
+        arme[d['arm']].setdefault('_skript', set()).add(d['info']['skript_sha256'])
+    B = {}
+    for arm, A in arme.items():
+        tau = A['_tau']
+        alle = A.get('raster', []) + A.get('bz', [])
+        for p in alle:
+            p['_E'] = eigen(p)
+        sp = {}
+        for p in alle:
+            for s in p['kontrollen']['sperren']:
+                sp[s] = sp.get(s, 0) + 1
+        kk = [p['kontrollen'] for p in alle]
+
+        def mx(key):
+            v = [k[key] for k in kk if k.get(key) is not None]
+            return float(max(v)) if v else None
+
+        def vert(key):
+            o = {}
+            for k in kk:
+                o[str(k[key])] = o.get(str(k[key]), 0) + 1
+            return o
+        B[arm] = {'punkte': len(alle), 'raster': len(A.get('raster', [])), 'bz': len(A.get('bz', [])),
+                  'sperren': sp, 'gesperrt': sum(1 for p in alle if p['kontrollen']['sperren']),
+                  'skripte': sorted(A['_skript']),
+                  'K1_max': max(x['K1']['spektrum_max_rel'] for x in A['_global']),
+                  'K1_herm_max': max(x['K1']['herm_max_rel'] for x in A['_global']),
+                  'global': A['_global'][0],
+                  'd': vert('d'), 'H_bb_null': vert('H_bb_null'), 'null_entkoppelt': vert('null_entkoppelt'),
+                  'null_nur_unten': vert('null_nur_unten'), 'null_nur_oben': vert('null_nur_oben'),
+                  'null_gemischt': vert('null_gemischt'), 'rang_G': vert('rang_G'), 'rang_C': vert('rang_C_vor'),
+                  'pfad': vert('pfad'), 'nicht_propagierend': vert('nicht_propagierend'),
+                  'herm_max': mx('herm'), 'eich_max': mx('eich_max'), 'B_sym_max': mx('B_sym'), 'sin_C_max': mx('sin_C'),
+                  'cond_B_W_max': mx('cond_B_W'), 's_sym_max': mx('s_sym'), 'p_err_max': mx('p_err'),
+                  'err_max': mx('err_max'), 's_voll_max': mx('s_voll_max'), 'kappa_max': mx('kappa_max'),
+                  'zeit_max_s': mx('zeit_s'), 'zahl_eigenwerte': vert('zahl_eigenwerte')}
+        A['_alle'] = alle
+    out['arme'] = B
+    U = {}
+    # ---------------------------------------------------------------- K5: -k gegen konjugiert (rw24-Paare)
+    K5 = {}
+    for arm, A in arme.items():
+        R = {(p['betrag_label'], p['richtung']): p for p in A.get('raster', [])}
+        m5 = 0.0
+        n5 = 0
+        for (a, b) in (('x+', 'x-'), ('xy+', 'xy-'), ('xyz+', 'xyz-'), ('123', '-1-2-3')):
+            for lab in set(k[0] for k in R):
+                if (lab, a) in R and (lab, b) in R:
+                    za = np.array(R[(lab, a)]['z_re']) + 1j * np.array(R[(lab, a)]['z_im'])
+                    zb = np.conj(np.array(R[(lab, b)]['z_re']) + 1j * np.array(R[(lab, b)]['z_im']))
+                    if len(za) != len(zb):
+                        m5 = np.inf; continue
+                    m5 = max(m5, max(float(np.min(np.abs(zb - x)) / abs(x)) for x in za))
+                    n5 += 1
+        K5[arm] = {'max_rel': m5, 'paare': n5}
+    out['K5'] = K5
+    # ---------------------------------------------------------------- K6: Reproduktion REGIME-K-2
+    K6 = {}
+    for nm, R in REF.items():
+        arm = R['gitter']
+        A = arme.get(arm, {})
+        mine = {p['richtung']: p for p in A.get('raster', []) if p['art'] == 'koord' and abs(p['eingabe'] - 0.05) < 1e-12}
+        dmax, fehlt, n = 0.0, 0, 0
+        for q in R['punkte']:
+            p = mine.get(q['richtung'])
+            if p is None:
+                fehlt += 1; continue
+            z = np.array(p['z_re']) + 1j * np.array(p['z_im'])
+            for x in q['nullstellen']:
+                zr = np.exp(-complex(x['re'], x['im']) * R['tau'])
+                dmax = max(dmax, float(np.min(np.abs(z - zr)) / abs(zr)))
+                n += 1
+        K6.setdefault(arm, {'max_rel': 0.0, 'fehlend': 0, 'nullstellen': 0, 'dateien': []})
+        K6[arm]['max_rel'] = max(K6[arm]['max_rel'], dmax)
+        K6[arm]['fehlend'] += fehlt
+        K6[arm]['nullstellen'] += n
+        K6[arm]['dateien'].append(nm)
+    for arm in K6:
+        K6[arm]['ok'] = K6[arm]['max_rel'] <= 1e-8 and K6[arm]['fehlend'] == 0 and K6[arm]['nullstellen'] > 0
+    out['K6'] = K6
+    # ---------------------------------------------------------------- PK-T (KW-TT bei abs(k) <= 0,1)
+    pkt = {'punkte': 0, 'tt_nicht_zuordenbar': 0, 'verletzt_oder_unsicher': 0, 'g_max': 0.0}
+    for p in arme['KW'].get('raster', []):
+        if p['kb'] > 0.1:
+            continue
+        pkt['punkte'] += 1
+        kand, ok = tt_zuordnung(p, p['_E'], arme['KW']['_tau'])
+        if not ok or p['kontrollen']['sperren']:
+            pkt['tt_nicht_zuordenbar'] += 1; continue
+        for j in kand:
+            pkt['g_max'] = max(pkt['g_max'], p['_E'][j]['g'])
+            if test(p['_E'][j], 1e-10) != 0:
+                pkt['verletzt_oder_unsicher'] += 1
+    pkt['ok'] = pkt['punkte'] > 0 and pkt['tt_nicht_zuordenbar'] == 0 and pkt['verletzt_oder_unsicher'] == 0
+    out['PK-T'] = pkt
+    k1ok = all(B[a]['K1_max'] <= 1e-12 for a in ('KW', 'V-A', 'B1-t1') if a in B)
+    pipe = pkt['ok'] and k1ok and all(K6.get(a, {}).get('ok', False) for a in ('KW', 'B1-t1', 'V-A'))
+    U['Pipeline'] = {'ok': pipe, 'PK-T': pkt['ok'], 'K1': k1ok, 'K6': {a: K6.get(a, {}).get('ok') for a in ('KW', 'B1-t1', 'V-A')}}
+
+    # ---------------------------------------------------------------- RT0
+    def rt_alle(arm, theta, ohne_schnitt=False):
+        verst, gesp, gmax, nverl = [], [], 0.0, 0
+        for p in arme[arm]['_alle']:
+            st = [test(e, theta, ohne_schnitt) for e in p['_E']]
+            gmax = max([gmax] + [e['g'] for e in p['_E'] if not (ohne_schnitt and e['schnitt'])])
+            lab = p.get('richtung', str(p.get('m'))) + '@' + p.get('betrag_label', 'bz')
+            if p['kontrollen']['sperren']:
+                gesp.append(lab); continue
+            if 2 in st:
+                verst.append(lab); nverl += st.count(2)
+            elif 1 in st:
+                gesp.append(lab)
+        return {'urteil': dreiwertig(verst, gesp), 'verstoss_punkte': len(verst), 'verletzte_eigenwerte': nverl,
+                'gesperrt_oder_unsicher': len(gesp), 'beispiele_verstoss': verst[:12], 'beispiele_gesperrt': gesp[:12],
+                'g_max': gmax, 'punkte': len(arme[arm]['_alle'])}
+    r0 = rt_alle('KW', 1e-10)
+    U['RT0'] = {'plan': r0['urteil'], 'karte': r0['urteil'], 'detail': r0}
+    if not (B['KW']['K1_max'] <= 1e-12 and K6.get('KW', {}).get('ok', False)):
+        U['RT0']['plan_vor_PK'] = U['RT0']['plan']; U['RT0']['plan'] = U['RT0']['karte'] = 'unklar (Pipeline)'
+
+    # ---------------------------------------------------------------- RT1
+    def rt1(grenze_art):
+        verst, gesp, gmax, n = [], [], 0.0, 0
+        for p in arme['V-A'].get('raster', []):
+            x = p['kb'] if grenze_art == 'koord' else p['kl']
+            if x > 0.1 + 1e-12:
+                continue
+            n += 1
+            lab = p['richtung'] + '@' + p['betrag_label']
+            kand, ok = tt_zuordnung(p, p['_E'], arme['V-A']['_tau'])
+            if p['kontrollen']['sperren'] or not ok:
+                gesp.append(lab); continue
+            st = [test(p['_E'][j], 1e-8) for j in kand]
+            gmax = max([gmax] + [p['_E'][j]['g'] for j in kand])
+            if 2 in st:
+                verst.append(lab)
+            elif 1 in st:
+                gesp.append(lab)
+        return {'urteil': dreiwertig(verst, gesp), 'punkte': n, 'verstoss_punkte': len(verst),
+                'gesperrt': len(gesp), 'beispiele_gesperrt': gesp[:12], 'g_tt_max': gmax}
+    a1, b1 = rt1('koord'), rt1('kl')
+    U['RT1'] = {'plan': a1['urteil'], 'karte': paar(a1['urteil'], b1['urteil']), 'koord': a1, 'kl': b1}
+    # ---------------------------------------------------------------- RT2
+    a2, b2 = rt_alle('V-A', 1e-6), rt_alle('V-A', 1e-6, ohne_schnitt=True)
+    # RT2 ist eine Existenzaussage: Verstoss (Eigenwert > Schwelle) = eingetroffen
+    def exist(r):
+        if r['verstoss_punkte'] > 0:
+            return 'eingetroffen'
+        if r['gesperrt_oder_unsicher'] > 0:
+            return 'nicht auswertbar'
+        return 'nicht eingetroffen'
+    U['RT2'] = {'plan': exist(a2), 'karte': paar(exist(a2), exist(b2)), 'plan_detail': a2, 'karte_detail': b2}
+    # ---------------------------------------------------------------- RT3
+    def ninst(p, ohne_schnitt):
+        st = [test(e, 1e-6, ohne_schnitt) for e in p['_E']]
+        if p['kontrollen']['sperren'] or 1 in st:
+            return None
+        return st.count(2)
+
+    def rt3(ohne_schnitt):
+        res = {}
+        for arm in ('B1-t1', 'V-A'):
+            for p in arme[arm]['_alle']:
+                p['_n'] = ninst(p, ohne_schnitt)
+        gesp = {arm: sum(1 for p in arme[arm]['_alle'] if p['_n'] is None) / max(1, len(arme[arm]['_alle']))
+                for arm in ('B1-t1', 'V-A')}
+        RB = {(p['betrag_label'], p['richtung']): p['_n'] for p in arme['B1-t1'].get('raster', [])}
+        RV = {(p['betrag_label'], p['richtung']): p['_n'] for p in arme['V-A'].get('raster', [])}
+        verl, ncmp = [], 0
+        for key in RV:
+            if key in RB and RB[key] is not None and RV[key] is not None:
+                ncmp += 1
+                if RB[key] > RV[key] / 2.0:
+                    verl.append(list(key))
+        bzB = [p['_n'] for p in arme['B1-t1'].get('bz', []) if p['_n'] is not None]
+        bzV = [p['_n'] for p in arme['V-A'].get('bz', []) if p['_n'] is not None]
+        a = len(verl) == 0 and ncmp > 0
+        b = len(bzB) > 0 and len(bzV) > 0 and max(bzB) <= max(bzV) / 2.0
+        c = len(bzB) > 0 and len(bzV) > 0 and float(np.mean(bzB)) <= float(np.mean(bzV)) / 2.0
+        if max(gesp.values()) > 0.10:
+            u = 'nicht auswertbar'
+        else:
+            u = 'eingetroffen' if (a and b and c) else 'nicht eingetroffen'
+        verteil = {}
+        for arm in ('B1-t1', 'V-A'):
+            for satz in ('raster', 'bz'):
+                v = [p['_n'] for p in arme[arm].get(satz, []) if p['_n'] is not None]
+                verteil[arm + '-' + satz] = {'min': min(v) if v else None, 'max': max(v) if v else None,
+                                            'mittel': float(np.mean(v)) if v else None, 'zahl': len(v),
+                                            'haeufigkeit': {str(x): v.count(x) for x in sorted(set(v))}}
+        return {'urteil': u, 'a_raster': a, 'b_bz_max': b, 'c_bz_mittel': c, 'raster_verglichen': ncmp,
+                'raster_verstoesse': len(verl), 'beispiele': verl[:12], 'anteil_gesperrt': gesp, 'verteilung': verteil}
+    a3, b3 = rt3(False), rt3(True)
+    U['RT3'] = {'plan': a3['urteil'], 'karte': paar(a3['urteil'], b3['urteil']), 'plan_detail': a3, 'karte_detail': b3}
+    if not pipe:
+        for r in ('RT1', 'RT2', 'RT3'):
+            U[r]['plan_vor_PK'] = U[r]['plan']; U[r]['karte_vor_PK'] = U[r]['karte']
+            U[r]['plan'] = U[r]['karte'] = 'unklar (Pipeline)'
+    out['urteile'] = U
+    out['beschreibend'] = beschreibend(arme)
+    for A in arme.values():
+        for p in A['_alle']:
+            p.pop('_E', None); p.pop('_n', None)
+    return out
+
+
+def beschreibend(arme):
+    D = {}
+    for arm, A in arme.items():
+        tau = A['_tau']
+        alle = A['_alle']
+        kat = {'tt': 0, 'gitter': 0}
+        inst = {'tt': 0, 'gitter_kreis': 0, 'gitter_schnitt': 0, 'gitter_reell_pos': 0, 'gitter_komplex': 0}
+        top = []
+        je_betrag = {}
+        drit = []
+        for p in alle:
+            E = p['_E']
+            kand, ok = tt_zuordnung(p, E, tau) if p['kb'] <= 0.25 else ([], False)
+            ttset = set(kand) if ok else set()
+            lab = p.get('betrag_label', 'bz-rand' if p.get('rand') else 'bz')
+            jb = je_betrag.setdefault(lab, {'punkte': 0, 'g_tt_max': 0.0, 'g_gitter_max': 0.0, 'n_inst_summe': 0,
+                                            'tt_zuordenbar': 0, 'kreis_eukl': 0, 'schnitt': 0})
+            jb['punkte'] += 1
+            jb['tt_zuordenbar'] += int(ok)
+            for j, e in enumerate(E):
+                art = 'tt' if j in ttset else 'gitter'
+                kat[art] += 1
+                jb['kreis_eukl'] += int(e['kreis'] and art == 'gitter')
+                jb['schnitt'] += int(e['schnitt'])
+                if art == 'tt':
+                    jb['g_tt_max'] = max(jb['g_tt_max'], e['g'])
+                else:
+                    jb['g_gitter_max'] = max(jb['g_gitter_max'], e['g'])
+                if test(e, 1e-6) == 2:
+                    jb['n_inst_summe'] += 1
+                    if art == 'tt':
+                        inst['tt'] += 1
+                    elif e['schnitt']:
+                        inst['gitter_schnitt'] += 1
+                    elif e['kreis']:
+                        inst['gitter_kreis'] += 1
+                    elif e['delta'] <= 1e-10:
+                        inst['gitter_reell_pos'] += 1
+                    else:
+                        inst['gitter_komplex'] += 1
+                top.append((e['g'], {'punkt': p.get('richtung', str(p.get('m'))), 'betrag': lab, 'kb': p['kb'],
+                                     'z': [e['z'].real, e['z'].imag], 'abs_z': e['abs'], 'delta': e['delta'],
+                                     'omega': [float((-np.log(e['z']) / tau).real), float((-np.log(e['z']) / tau).imag)],
+                                     'tt_anteil': p['tt'][j], 'art': art, 's_voll': p['s_voll'][j]}))
+                if arm == 'KW' and art == 'gitter' and 'betrag_label' in p:
+                    drit.append((e['abs'], float(np.angle(e['z']))))
+        top.sort(key=lambda x: -x[0])
+        # TT gegen Wuerfelgitter-Formel (nur KW)
+        hk = None
+        if arm == 'KW':
+            mx = 0.0
+            for p in A.get('raster', []):
+                kand, ok = tt_zuordnung(p, p['_E'], tau)
+                if not ok:
+                    continue
+                ks = np.array(p['ks'])
+                whk = 2 * np.arcsinh(np.sqrt(np.sum(np.sin(ks / 2) ** 2)))
+                for j in kand:
+                    mx = max(mx, abs(abs(np.log(abs(p['_E'][j]['z']))) - whk) / whk)
+            hk = mx
+        bzr = [p for p in A.get('bz', []) if p.get('rand')]
+        symm = {}
+        for p in A.get('bz', []):
+            if p.get('symm'):
+                symm[p['symm']] = {'g_max': max(e['g'] for e in p['_E']) if p['_E'] else None,
+                                   'n_inst': sum(1 for e in p['_E'] if test(e, 1e-6) == 2),
+                                   'zahl_eigenwerte': len(p['_E']), 'sperren': p['kontrollen']['sperren'],
+                                   'pfad': p['kontrollen']['pfad']}
+        D[arm] = {'eigenwerte_je_art': kat, 'instabil_1e-6_je_art': inst, 'top12': [t[1] for t in top[:12]],
+                  'je_betrag': je_betrag, 'wuerfelformel_tt_max_rel': hk,
+                  'bz_rand': {'punkte': len(bzr), 'g_max': max((max(e['g'] for e in p['_E']) for p in bzr if p['_E']),
+                                                                default=None),
+                              'n_inst_max': max((sum(1 for e in p['_E'] if test(e, 1e-6) == 2) for p in bzr), default=None),
+                              'n_inst_mittel': float(np.mean([sum(1 for e in p['_E'] if test(e, 1e-6) == 2) for p in bzr]))
+                              if bzr else None,
+                              'gesperrt': sum(1 for p in bzr if p['kontrollen']['sperren']),
+                              'pfad_buendel': sum(1 for p in bzr if p['kontrollen']['pfad'] != 'T')},
+                  'symmetriepunkte': symm,
+                  'kuhn_gittermode_abs_z': [min(x[0] for x in drit), max(x[0] for x in drit)] if drit else None,
+                  'kuhn_gittermode_arg': [min(x[1] for x in drit), max(x[1] for x in drit)] if drit else None}
+    return D
+
+
+# ================================================================================================= main
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument('modus', choices=['transfer', 'auswertung'])
+    ap.add_argument('--arm', default='V-A', choices=['KW', 'B1-t1', 'V-A', 'V-B', 'S-A'])
+    ap.add_argument('--satz', default='raster', choices=['raster', 'bz'])
+    ap.add_argument('--teil', default='')
+    ap.add_argument('--rauch', action='store_true')
+    ap.add_argument('--ein', nargs='*', default=[])
+    ap.add_argument('--out', required=True)
+    a = ap.parse_args()
+    t0 = time.time()
+    info = {'numpy': np.__version__, 'python': platform.python_version(), 'host': platform.node(),
+            'start_utc': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()), 'argv': sys.argv,
+            'skript_sha256': sha(os.path.abspath(__file__)),
+            'rk_sha256': sha(os.path.join(HIER, 'rk.py')), 'rk2_sha256': sha(os.path.join(HIER, 'rk2.py')),
+            'pt_sha256': sha(os.path.join(HIER, 'pt.py')), 'ew_sha256': sha(os.path.join(HIER, 'ew.py')),
+            'tp_sha256': sha(os.path.join(HIER, 'tp.py'))}
+    if a.modus == 'auswertung':
+        res = lauf_auswertung(dict(x.split('=', 1) for x in a.ein))
+    else:
+        res = lauf_transfer(a.arm, a.satz, a.teil, a.rauch)
+    res['info'] = info
+    res['laufzeit_s'] = time.time() - t0
+    res['maxrss_MB'] = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 1024.0
+    res['ende_utc'] = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
+    with open(a.out + '.tmp', 'w') as f:
+        json.dump(res, f, indent=1, default=lambda o: o.item() if hasattr(o, 'item') else str(o))
+    os.replace(a.out + '.tmp', a.out)
+    print('fertig', a.modus, a.arm if a.modus != 'auswertung' else '', 'laufzeit %.1f s' % res['laufzeit_s'], flush=True)
+
+
+if __name__ == '__main__':
+    main()

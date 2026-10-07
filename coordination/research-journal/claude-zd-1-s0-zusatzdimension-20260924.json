@@ -1,0 +1,32 @@
+{
+  "id": "claude-zd-1-s0-zusatzdimension-20260924",
+  "time": "2026-09-24T21:53:24+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung; Herleitung, Literatur und Vertragsentwurf durch Autor-Subagent (Anthropic, Opus 5.5), 22:35:18 bis 23:50:17 (gemessen)",
+  "topic": "theory",
+  "status": "reported",
+  "title": "Feldgleichung mit Zusatzdimension: U(S) entsteht exakt, die Paarkopplung nur zusammen mit gleich starker Dichtekopplung; unsere Formel ist kein Ausschnitt einer Kaluza-Klein-Theorie",
+  "question": "Entsteht unsere Gesamtformel, insbesondere ihre Kanalkopplung, wenn man ein einziges komplexes Feld mit einer kompakten Zusatzrichtung reduziert (Kaluza-Klein, Finns Weg 2 'Zusatzdimension je Punkt'), und welche erste Rechnung auf diesem Weg steht nicht vorab fest?",
+  "action": "Eigene Herleitung der Modenreduktion am Kreis und am Intervall/Orbifold, Symbolrechnung mit sympy auf .69 (CPU, Skripte kk_reduktion.py, kk_nachtrag.py, fluessig_m.py mit Hashliste), Literatursuche mit Erwartung vor jedem Abruf, Vertragsentwurf ZD-1 Fassung 1 nach VORLAGE-v2. Keine Numerik an einem Vertragspunkt.",
+  "result": "Der in y gleichfoermige Anteil der Reduktion liefert U(S) exakt; alles Weitere steckt in der Dichteschwankung entlang y. Die Paarkopplung entsteht am Intervall/Orbifold und in reeller Kreisbasis, nicht in der Impulsbasis des Kreises. Ihr Koeffizient haengt von der Dichte ab (+2 bei kleiner Dichte, Vorzeichenwechsel bei S = 2/3), und sie kommt immer zusammen mit gleich starker Dichte-Dichte-Kopplung, Massenaufspaltung und Termen mit drei und vier Modenindizes (Landau-Verhaeltnis w/v = 3/4 statt unserer 1/2). Keine endliche Trunkierung mit zwei oder mehr Moden ist konsistent. Literatur: Herdeiro/Radu (JHEP 08 (2025) 049) rechnen Q-Strings auf M4 x S1 fuer dieselbe Potentialfamilie, Chen (PRL 134, 211603 (2025)) fuer unser Potential mit zweidimensionalem Querschnitt; die lineare Schwellenfrage ist damit Literatur.",
+  "meaning": "Unsere Formel entsteht nicht aus einer Zusatzdimension; sie teilt mit einer solchen Theorie nur Bausteine. Isotropie entsteht in Kaluza-Klein aus einer Isometrie, und dieselbe Isometrie verbietet den Paarterm. Offen und nicht vorab ableitbar bleibt die Ordnung des Uebergangs bei fester Ladung (stetig oder sprunghaft), die Herdeiro/Radu ausdruecklich offen lassen; dafuer liegt Vertrag ZD-1 Fassung 1 vor (Kennzahl: Vorzeichen von G + H^2/(2 dQ/domega), eine eindimensionale Rechnung). Er ist noch nicht fremdgeprueft (S0 laeuft). Hypothese ohne Rechnung: Mit dynamischer Groesse der Zusatzrichtung (Radion) koennte ein umlaufender Q-String seinen Kreis selbst verkuerzen.",
+  "sources": [
+    {
+      "path": "coordination/zusatzdimension-20260924/ZD-1-S0.md",
+      "sha256": "56d56cb76cc315d36e553c1b872efe2924061d6ae65912ec1e2ff662b9c60fca"
+    },
+    {
+      "path": "coordination/vertraege-20260924/ZD-1-VERTRAG.md",
+      "sha256": "8db1e6f9e9ac5fae245b96a7acf35023549c5efeec6de538b8ccaa2d4bbbedfd"
+    },
+    {
+      "path": "coordination/zusatzdimension-20260924/s0/SHA256SUMS.txt",
+      "sha256": "5554f8762b10b5f9e7a9e7bbc9ebc3a20452362008b61b1b8bf119eed2b43b83"
+    },
+    {
+      "path": "coordination/zusatzdimension-20260924/quellen/HASHES.txt",
+      "sha256": "4ea2584ad920fd306725a65cb1fee6a7604113f129bcf85513a23cb6c07ca327"
+    }
+  ],
+  "recorded_at": "2026-09-24T21:54:04.339298+00:00"
+}

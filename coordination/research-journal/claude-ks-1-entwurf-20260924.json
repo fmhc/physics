@@ -1,0 +1,22 @@
+{
+  "id": "claude-ks-1-entwurf-20260924",
+  "time": "2026-09-24T00:02:32.327243+00:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5); S0-Review durch Qwen (qwen3.6-27b-bunker)",
+  "topic": "vertraege",
+  "status": "reported",
+  "title": "Vertragsentwurf KS-1: Kern gegen Schwanz im Tieffeld, vorbereitet fuer einen Blindtest mit Gaia DR4; S0-Review weist den Entwurf mit fuenf Auflagen zurueck",
+  "question": "Wie laesst sich pruefen, ob im Tieffeld weiter Doppelsterne der Kern der Verteilung verschoben ist, so dass die Pruefung mit Gaia DR4 blind laufen kann?",
+  "action": "Nach dem Feldforscher-Bericht einen S0-Vertragsentwurf nach VORLAGE-v2 geschrieben, mit den operativen Definitionen aus gaia/elbadry_profile.py und der Statistik-Konvention aus newton_reference.py, ohne echte Tieffeld-Geschwindigkeiten anzusehen. Danach S0-Fremdreview durch Qwen im Bunker (0 USD) und Fassung 2 mit eingearbeiteten Auflagen.",
+  "result": "Kennzahl D_K: Quotient der unteren Mediane von x unter der Kepler-Decke x < Wurzel 2, Tieffeldzone logg [-11,4; -10,2) gegen Referenzbin [-8,6; -8,2), gegen das bedingte Newton-Vorwaertsmodell. Ausgaenge als Pseudocode: T bei gescheiterten Nullproben (Tripelschwanz muss B, Skala gamma 1,4 muss A, Haelften der Referenzzelle muessen gleich sein), U1 wenn die Trennschaerfe Delta_14 < 4 sigma_K, B wenn der Kern modellvertraeglich ist und der volle Median den Ueberschuss zeigt, A wenn der Kern um mindestens die halbe gamma-1,4-Verschiebung und zwei Streuungen verschoben ist. Fuer DR3 ist kein Blindtest moeglich, weil M1 und das Profil bekannt sind. Qwen weist zurueck, weil neun Luecken offen sind; eingearbeitet sind die Regel fuer N1 und N2 ausserhalb ihres Soll-Ausgangs, der Pseudocode, eine Kontrolle zur geschwindigkeitsabhaengigen Paarfindung, der DR4-Vorlauf mit DR4-Fehlerstruktur, die Verduennung durch die Zone und eine Grenze fuer formaendernde Abweichungen.",
+  "meaning": "Der Entwurf ist nicht startfaehig und soll es auch nicht sein, bevor Finn ueber den Blindtest entschieden hat. Er macht die Entscheidung konkret: der Vorlauf zur Trennschaerfe am Modell braucht keine echten Tieffelddaten und klaert, ob DR3 ueberhaupt entscheiden koennte. Strittig blieb eine Behauptung des Reviewers ueber das Medianverhalten von PyTorch; die Dokumentation war nicht abrufbar, nach der Regel ueber Wissensstand ist sie nicht widerlegt, fuer den Vertrag aber folgenlos, weil die Formel jetzt bibliotheksunabhaengig dasteht.",
+  "compute": "keine Rechnung; ein Anruf beim Bunker-Modell",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260924/KS-1-VERTRAG.md"
+    },
+    {
+      "path": "coordination/vertraege-20260924/ks-1-s0-qwen/antwort.md"
+    }
+  ]
+}

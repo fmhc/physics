@@ -1,0 +1,113 @@
+{
+ "info": {
+  "numpy": "2.4.4",
+  "python": "3.12.3",
+  "host": "ubuntu-auto",
+  "start_utc": "2026-10-05T05:52:30Z",
+  "argv": [
+   "code/inz.py",
+   "urteil",
+   "--h1",
+   "/home/fmh/fmhc-physics-remote/impuls-netz-1/lauf/h1.json",
+   "--zusatz",
+   "/home/fmh/fmhc-physics-remote/impuls-netz-1/lauf/zusatz.json",
+   "--out",
+   "/home/fmh/fmhc-physics-remote/impuls-netz-1/lauf/urteile.json"
+  ],
+  "skript_sha256": "e65a5cbf380defef0468f50de5a2dec5936d4228b72e1db8ff913ed765def8f2",
+  "pn_sha256": "c8034e40c3238cecdcc72ecd35f1f70d38ea330c9ae18911966581c10e592567",
+  "ew_sha256": "fa7b6417d39177102f0b19c5474453cd16a7595e23bc25ca548e081c4060b142",
+  "mn_sha256": "b36984d3f04276454a792f14c5655bff432332316d1b968dea46d4cb6eb96bbf",
+  "tp_sha256": "419d7da6caa211c721eb6a8c87403977415cf3050f03365377f51cb77b374dfd",
+  "ni_sha256": "1c92cb23988886731096dd44ce33aecfcde3b65cecf16b4232111550e4debc6c"
+ },
+ "urteil": {
+  "urteile": {
+   "IN0": {
+    "plan": "eingetroffen",
+    "kartenwortlaut": "eingetroffen",
+    "det": {
+     "001": {
+      "G_ohneJ": 1.1844050923687857,
+      "rel_zu_ref": 0.0,
+      "rel_zu_karte": 0.003733129126089585
+     },
+     "111": {
+      "G_ohneJ": 0.9087749678217026,
+      "rel_zu_ref": 0.0,
+      "rel_zu_karte": -0.0013461892069202008
+     },
+     "123": {
+      "G_ohneJ": 0.9769646539098713,
+      "rel_zu_ref": 0.0,
+      "rel_zu_karte": -0.0030972919287027834
+     }
+    }
+   },
+   "IN1": {
+    "plan": "eingetroffen",
+    "kartenwortlaut": "eingetroffen",
+    "teile": {
+     "rang_40": true,
+     "KR_cM": true,
+     "KF_MB": true,
+     "KJ": true,
+     "cholesky": true,
+     "KE_mitJ": true
+    },
+    "werte": {
+     "cM": 1.5930083956495642e-15,
+     "MB": 8.715570041255484e-16,
+     "KJ_MhPMsig": 2.7743823516850625e-11,
+     "KJ_cHpJ": 2.238218165588531e-13,
+     "KE": {
+      "mitJ": 1.3071905913779498e-14,
+      "ohneJ_dC_skal": 0.03470470022369012,
+      "ohneJ_dC_rel_TT_L": 5.404705477204435,
+      "ohneJ_kraft_rel": 3.705047419620624
+     }
+    }
+   },
+   "IN2": {
+    "plan": "nicht eingetroffen",
+    "kartenwortlaut": "nicht eingetroffen",
+    "det": {
+     "001": {
+      "G_V1SJ": 1.0296610138393512,
+      "G_SJ": 1.020799942384144
+     },
+     "111": {
+      "G_V1SJ": 1.0040051253222577,
+      "G_SJ": 1.0113076218272803
+     },
+     "123": {
+      "G_V1SJ": 0.9674684345785949,
+      "G_SJ": 0.9710184105837687
+     }
+    }
+   },
+   "IN3": {
+    "plan": "eingetroffen",
+    "kartenwortlaut": "eingetroffen",
+    "R_rot": {
+     "001": 1.0000074091392186,
+     "111": 1.0000074091333144,
+     "123": 1.0000074091363198
+    },
+    "R_mov": {
+     "001": 1.0000074091248405,
+     "111": 1.0000074091347793,
+     "123": 1.0000074091296882
+    },
+    "R_iso": 1.0000074091344304,
+    "r_min": 0.9999966776423651,
+    "r_max": 1.0000132035329943
+   }
+  },
+  "h1_sha256": "d54a34fe6644cebb1a4c701994428ad95a9a7a7b5b5bb1bc0f697961a1a80113",
+  "zusatz_sha256": "0245f9cfd5f35c138614ffd0cd65809095c477290645f08936f664426f2cde3a"
+ },
+ "laufzeit_s": 0.006251335144042969,
+ "maxrss_MB": 40.046875,
+ "ende_utc": "2026-10-05T05:52:30Z"
+}

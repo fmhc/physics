@@ -1,0 +1,47 @@
+Explorative Nachanalyse vorhandener M2-Zeitreihen, 02.10.2026
+Keine PDE/Neuberechnung. Originalstatus NUMERICALLY_UNRESOLVED_SENSITIVITY
+bleibt in jedem Ergebnis und Bild sichtbar. Keine neuen Physik-/Numerikgates.
+
+Einziger physikalischer Input HALF-RESULT.json, SHA256
+97cfb7ff68bff7a64bb4fb0aaf44130e859f6689ad5482594e5209c79df6e89a.
+Quellhash vor Analyse prüfen, keine anderen Läufe oder Endfelder hinzunehmen.
+Drei vollständige Wolkenarme base/space/time, je81 synchrone Samples
+t0..64, Abstand.8. Strukturprüfung ist nur Schutz gegen falschen Input.
+
+Für R50_density, Qcore/Q1100, chi_first_cell: komplette Zeitreihe ausgeben,
+globales Minimum/Maximum mit erstem Samplezeitpunkt und Nettoänderung.
+Kein Fit oder Trendgeradenmodell.
+Strikte diskrete Nachbarmaxima/-minima mit Zeiten auflisten; Plateauzeiten
+werden nicht künstlich aufgelöst. Anzahl aufeinanderfolgender Maximaabstände
+als beobachtete crest_intervals berichten; bei >=2 Maxima Median/Spanne
+ihrer Abstände. Das ist grobe Zykluszählung, keine Frequenzschätzung einer
+Eigenmode. Ohne Glättung/Schwelle sind kleine numerische Zacken mitzuzählen.
+
+Für vier normierte Stationaritätsreste rphi,rchi,tphi,tchi im unveränderten
+Schlussfenster48..64: RMS über gespeicherte Samples und Maximum/Maxzeit.
+RMS ist Sample-RMS, kein zeitkontinuierliches Fehlermaß. t0-rchi hat wegen
+anfangs fehlender chi-Absenkung einen Normfloor-Sonderfall; nicht als
+Schwingungsamplitude lesen. Keine neue Klassifikation daraus bilden.
+
+Sampling: dt_sample=.8, Nyquist-Kreisfrequenz pi/.8≈3.927 und formale
+endliche-Fenster-Kreisfrequenzskala2pi/64≈.0982. Keine FFT/Autokorrelation.
+Diese Skalen sind KEIN Nachweis auflösbarer Feld-Eigenfrequenzen. Gespeichert
+sind integrierte/reelle Diagnosen; komplexe Feldseitenbänder fehlen. Aus
+R50/chi-Momentzyklen folgt weder stationäre Eigenmode noch Lebensdauer.
+
+Grafik PNG mit3Panels, Titel „Numerisch unentschieden — gespeicherte Diagnosen“:
+1. Größen: R50/R50(0), Qcore/Q0, chi_first_cell; Farbe=Gitterarm,
+   Linienstil=Größe; alle t0..64, positive Dichte-Radiusdefinition sichtbar.
+2. Vier normierte Reste ausschließlich t48..64, Farbe=Gitterarm,
+   Linienstil=Rest; logarithmische Y-Achse bei positiven Werten, Nullen
+   maskiert und nicht auf Ersatzwert gehoben. Keine neuen Gate-Linien.
+3. Separate absolute Raum-/Zeit-Abweichung zur base-Zeitreihe von
+   Qcore/Q0, R50/R50_base(0),chi_first_cell; keine Konvergenzextrapolation.
+Plot aus gespeicherten Zahlen, kein Fit von Feldprofilen.
+
+analysis.py --input HALF-RESULT.json --out FRISCHER_ORDNER
+Erzeugt SUMMARY.json, TIMESERIES.csv, DIAGNOSTICS.png; eigener Codehash,
+Inputhash und ursprünglicher Status. Frische Ausgabepfade erforderlich.
+Matplotlib nur auf .69, Agg, ein CPU-Thread. Erwartet<5CPU-s, ungemessen;
+Root äußere Receipt/Begrenzung. Kein lokaler Interpreter/SSH durch Autor,
+Nichtautorreview vor Root-Ausführung. Keine Änderung an Originaldaten.

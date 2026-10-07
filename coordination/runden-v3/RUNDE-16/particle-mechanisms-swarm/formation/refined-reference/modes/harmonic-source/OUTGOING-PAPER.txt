@@ -1,0 +1,138 @@
+M2: GEKOPPELTE AUSLAUFENDE ANTWORT BEI nu=2rho — 2026-10-02
+Papiergrundlage, kein Code/Run. Basis DERIVATION.txt, ROOT-ABGLEICH.txt
+und der eigene kanonische lineare Operator. Keine Lebensdaueraussage.
+
+1. EINDEUTIGE FOURIERKONVENTION
+Die reellen kanonischen Felder zweiter Ordnung seien
+ (x,y,z)(t)=a(r)e^(i nu t)+a(r)*e^(-i nu t), a=(X,Y,Z).
+Es steht KEIN zusaetzliches Re ohne Faktor2 vor diesem Ausdruck.
+Bei Grundmode q mit reellen Feldern Re(q e^(i rho t)) ist der positive
+Fourierkoeffizient der quadratischen Kraft J2=J(q)/4, wie ROOT-ABGLEICH.
+Die Antwortgleichung lautet
+ [H-nu² I+i nu G]a=J2, G_xy=-2omega, G_yx=+2omega.
+Die xy-Offdiagonalen sind -2i omega nu und +2i omega nu.
+
+Transformiere unitaer zu den Kanal-Fourierkoeffizienten
+ p=(X+iY)/sqrt2, m=(X-iY)/sqrt2, c=Z,
+ s_plus=(J2x+i J2y)/sqrt2, s_minus=(J2x-i J2y)/sqrt2, s_chi=J2z.
+Dann lautet der komplexe Laborfeldbeitrag
+ delta phi=p e^(i(omega+nu)t)+m* e^(i(omega-nu)t).
+Insbesondere p selbst ist die obere LABOR-Fourieramplitude. Fuer chi gilt
+delta chi=c e^(i nu t)+c*e^(-i nu t). In der speziellen reellen
+cos/sin-Konvention von DERIVATION sind J2x=qx2/2, J2y=-i qy2/2;
+folglich s_plus=(qx2+qy2)/(2sqrt2), ohne weiteres Halbieren.
+
+2. RADIALER GEKOPPELTER OPERATOR
+Delta_r=d²/dr²+(2/r)d/dr fuer l=0. Definiere
+ Lbar=-Delta_r+1+g²-4f²+(9/2)f^4-omega²,
+ D=-2f²+3f^4, Btilde=2gf,
+ Lchi=-Delta_r+3g²-1+2f².
+Die inhomogene Kanalgleichung ist
+
+ [ Lbar-nu²-2omega nu    D                     Btilde       ] [p] [s_plus]
+ [ D                    Lbar-nu²+2omega nu     Btilde       ] [m]=[s_minus]
+ [ Btilde               Btilde                 Lchi-nu²    ] [c] [s_chi].
+
+Sie ist im Inneren reell symmetrisch bezueglich4pi r²dr; die auslaufende
+Randbedingung macht das Gesamtproblem komplex und nicht selbstadjungiert.
+FV-Matrizen benoetigen weiterhin Volumengewichtung bzw sqrtVol-Transformation.
+Die Quellen sind physische Felder; fuer die transformierte Matrix werden
+auch ihre Eintraege mit sqrtVol multipliziert.
+Am Ursprung: regulaere Felder mit radialer Ableitung0. Mit reduzierten
+Feldern (rp,rm,rc) lautet die Ursprungsbedingung stattdessen Dirichlet0.
+
+3. FREIES FERNFELD UND ROBIN-VORZEICHEN
+Bei f=0,g=1 zerfallen die Gleichungen in
+ (-Delta_r-kplus²)p=s_plus,
+ (-Delta_r+kappaminus²)m=s_minus,
+ (-Delta_r+kappachi²)c=s_chi,
+ kplus²=(omega+nu)²-2>0,
+ kappaminus²=2-(omega-nu)²>0,
+ kappachi²=2-nu²>0.
+Hier ist nur plus offen; diese Ungleichungen vor jeder Anwendung pruefen.
+Fuer ZEITKONVENTION e^(+i Omega t), Omega=omega+nu>0, ist auslaufend
+ p=Aplus e^(-i kplus r)/r, nicht e^(+i kplus r)/r.
+Die freien lokalen Robinbedingungen an einer benannten Radiusposition R:
+ p'(R)=(-i kplus-1/R)p(R),
+ m'(R)=(-kappaminus-1/R)m(R),
+ c'(R)=(-kappachi-1/R)c(R).
+Fuer reduzierte Felder entfaellt jeweils -1/R. Eine FV-Ghostlage muss
+zur tatsaechlichen Diskretisierung passen; weder Zellzentrum noch Ghost
+stillschweigend als Randflaeche R umbenennen. Kontinuums-Robin und diskrete
+Dispersion stimmen bei endlichem h nur naeherungsweise ueberein.
+
+Diese Randbedingungen sind exakt nur jenseits von Hintergrund UND Quellen
+im freien homogenen Gebiet. Reale f,g und Quellen haben Schwaenze. Dann
+bleiben offdiagonale Kopplung und diagonale Potentialreste am Rand; auch
+geschlossene Komponenten koennen getriebene Tails statt ihrer rein freien
+Exponenten tragen (TAIL-CAUTION). Kleine Randfeldwerte allein genuegen
+nicht. R-Vergroesserung muss insbesondere den extrahierten komplexen
+Aplus und den Fluss stabilisieren; h-Verfeinerung gesondert. Eine gekoppelte
+Fernfeldabbildung waere moeglich, ist hier aber nicht vorausgesetzt.
+
+4. FELD-, LADUNGS- UND ENERGIESTROM: FAKTOREN
+Fuer die verwendete Lagrangefunktion gilt radial
+ jQ=-2 Im(phi* d_r phi),
+ jE=-2 Re(phi_t* d_r phi)-chi_t d_r chi.
+Beim isolierten oberen Labor-Seitenband p=Aplus e^(-ikr)/r folgt
+ auswaertige Ladungsrate =8pi k |Aplus|²,
+ auswaertige Energieleistung =8pi (omega+nu) k |Aplus|².
+Diese Formeln gelten fuer den oben definierten Fourierkoeffizienten p.
+Die hier verwendete Quelle J2 bezieht sich auf die Modennormierung ||q||=1.
+Ist die tatsaechliche Gesamtamplitude alpha=epsilon*s wie im Excitation-
+Ansatz, traegt die physische Quelle den ausgeklammerten Faktor alpha².
+Die tatsaechliche Leistung ist daher alpha^4=epsilon^4*s^4 mal dieser
+Koeffizientenleistung, nicht ohne Beachtung von s bloss epsilon^4.
+Geschlossene homogene Kanaele tragen keinen asymptotischen Mittelstrom.
+Am endlichen Radius koennen gekoppelte/erzwungene Felder dennoch nicht
+einfach komponentenweise als bereits freies Fernfeld behandelt werden.
+
+Wichtige Bilanzunterscheidung: Die kanonische mitrotierende Antwort
+kontrolliert den Fluss von E-omega Q, nicht unmittelbar die Laborenergie.
+Im offenen Pluskanal ist dieser Fluss8pi nu k |Aplus|². Fuer die lineare
+gezwungene Antwort lautet die entsprechende integrierte Quellenleistung
+ 2nu Im Integral a^dagger J2 dVol,
+unter konsistenter auslaufender Randbedingung. Die Laborenergieleistung
+enthaelt zusaetzlich omega mal den Ladungsfluss. Ein Vergleich der
+Quellenleistung mit8pi(omega+nu)k|Aplus|² ohne diese Umrechnung waere falsch.
+Dies beschreibt die stationaere harmonische Antwort auf eine vorgegebene
+Quelle, nicht schon eine selbstkonsistente Abnahme der Grundmodenenergie.
+
+5. KOMPLEXE PHASENWAHL
+Eine gemeinsame Grundmodenphase q->e^(i theta)q dreht J2 und die Antwort
+um e^(2i theta). |Aplus|² und die Leistung sind invariant; der komplexe
+Koeffizient Aplus selbst ist es nicht. Fuer R/h-Vergleiche dieselbe
+Grundmodennormierung und Phasenreferenz verwenden oder explizit ausrichten.
+Nie Komponenten unabhaengig drehen und keine Betraege statt komplexer
+Quellen in den Loeser einsetzen. Bei Interferenz ist gerade die relative
+Phase der drei Quellen physikalisch entscheidend. Auch Quellen mit
+nichtverschwindender Norm koennen insgesamt Aplus=0 besitzen.
+
+6. ENGSTE FREIE GEGENPROBEN UND KONTROLLEN — NUR PLAN
+Zuerst Hintergrundoperator durch exaktes Vakuum ersetzen; Kanaele sind
+dann entkoppelt. Fuer eine kompakte radiale Plusquelle s(r) und regulaeren
+Ursprung lautet die exakte freie auslaufende Amplitude
+ A_free=(1/k) Integral_0^infty r sin(kr) s(r) dr.
+Dies folgt aus der Greenfunktion des reduzierten Operators -d²/dr²-k²,
+regulaerer Loesung sin(kr) und auslaufender Loesung e^(-ikr).
+
+Positivtest: s=s0 auf0<r<a, sonst0, ergibt
+ A_free=s0[sin(ka)-ka cos(ka)]/k³.
+Bei ka=pi/2 ist der Koeffizient s0/k³, ungleich0. Ein solcher Test
+kontrolliert Robin-Vorzeichen, Amplitude und die obigen Flussfaktoren;
+die Quellkante bei h-Verfeinerung passend abbilden.
+Nichttrivialer Nulltest: waehle ein regulaeres glattes radiales b(r) mit
+kompaktem Traeger und setze s=(-Delta_r-k²)b. Die exakte Antwort ist b,
+also A_free=0 trotz im Allgemeinen nichtverschwindender Quelle. Das
+testet echte Ausloeschung statt nur eines Nullarrays. Zusaetzlich muss
+eine alleinige geschlossene Quelle im entkoppelten Vakuum Plusamplitude0
+ergeben; so fallen Kanalvertauschungen auf.
+
+Danach hoechstens ein gespeichertes Moden-/Referenzpaar und seine feste
+Quelle im GEKOPPELTEN Operator: R-Kontrolle bei festem h und h-Kontrolle
+bei festem R, gleiche physische Quelle und Normierung. Komplexe Antwort-
+residuen, Aplus in mehreren passenden Aussenfenstern und Stroeme berichten.
+Eine endliche frei projizierte Besselquelle ist nur in der freien Probe
+die exakte Antwort; im Hintergrundproblem ersetzt sie keinen gekoppelten
+Loeser. Bis zu solchen Kontrollen ist jede Aussage zur Leistung offen;
+selbst eine bestandene Antwortrechnung liefert noch keine Lebensdauer.

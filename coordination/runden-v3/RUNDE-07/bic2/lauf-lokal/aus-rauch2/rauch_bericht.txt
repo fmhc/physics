@@ -1,0 +1,72 @@
+Runde 7 bic2 rauch Start 2026-09-30T04:35:21+02:00, Geraet cpu, torch 2.10.0+cu128
+=== omega^2 = 0.7: Kanten 1 - omega = 0.163340, 1 + omega = 1.836660
+  Profil (h/2 = 0.02): S0 = 1.135061, Q = 4.73413e+02, E = 4.28642e+02, R_Q = 3.9041, R_halb = 3.5134, Grund 1, r_cut 21.36
+  Wand: sigma grad/Laplace/kink = 0.50992/0.42293/0.35355, w = 1.58908; Rayleigh omega_2 = 0.207705 (Band 0.172951 .. 0.261794)
+  Rand R = 34.00, Anschluss r_m = 3.52, K = 850
+  Nullmoden l = 0: |D(0)| = 9.257e-08, |D(0.001)| = 1.662e-05, |D(2 eps)|/|D(eps)| = 3.9832 (Nullmode: ~4 und |D(0)|/|D(eps)| << 1)
+  Nullmoden l = 1: |D(0)| = 2.728e-08, |D(0.001)| = 1.862e-05, |D(2 eps)|/|D(eps)| = 4.0044 (Nullmode: ~4 und |D(0)|/|D(eps)| << 1)
+  Nullmoden l = 2: |D(0)| = 4.439e-01, |D(0.001)| = 4.439e-01, |D(2 eps)|/|D(eps)| = 0.9999 (Nullmode: ~4 und |D(0)|/|D(eps)| << 1)
+  ein Durchlauf (9 Werte) 0.29 s
+  gebunden: 0 Nullstellen in (0, 1 - omega), max |Im D|/|D| = 0.0e+00
+  Resonanzsuche: 22 Keime (reelle Achse 16 Punkte, Flaeche 8 x 4)
+  Kontur l = 0: Umlaufzahl 1.000 (93 Punkte, aufgeloest False), Newton im Kasten 0
+  Kontur l = 1: Umlaufzahl 1.000 (93 Punkte, aufgeloest False), Newton im Kasten 0
+  Kontur l = 2: Umlaufzahl 0.000 (90 Punkte, aufgeloest False), Newton im Kasten 0
+  Negativkontrolle ohne Ball: |D_frei| an den Polen nan (Minimum), Vorzeichenwechsel unter der Kante 0, Umlauf {'0': 6.432892715112842e-17, '1': 2.898943069042268e-18, '2': -5.632232248424977e-17}
+  gebundene Zustaende (reell), je Stufe h = 0.08, 0.04
+  Resonanzen (Im rho < 0 = abklingend), je Stufe h = 0.08, 0.04
+Rauch Bruecke:
+  dim = 1.0000: S0 = 0.367544, rho = 1.4937775301 - 6.710e-05 i, |D| = 2.1e-16, konvergiert True, K0 Profil 2.6e-10
+  dim = 1.2500: S0 = 0.455449, rho = 1.4980236186 - 1.182e-03 i, |D| = 8.8e-17, konvergiert True
+  dr = 0.1, dt = 0.04000000000000001, T = 6.0, 0.0 s, S0 = 1.135060, Ladungsdrift bis T/4 ['9.5e-15', '7.7e-15']
+    eta = 0.0 roh_zentrum: (+0.743099 -3.09e+01i |1.3e+09|), (-4.484059 -3.09e+01i |1.3e+09|), (+5.972635 -3.09e+01i |1.3e+09|), (-9.717804 -3.09e+01i |1.3e+09|), (+11.210995 -3.09e+01i |1.3e+09|)
+    eta = 0.001 differenz_zentrum: (+5.567868 -3.13e+01i |1.1e+10|), (+0.339091 -3.13e+01i |1.1e+10|), (+10.794622 -3.13e+01i |1.1e+10|), (-4.898977 -3.13e+01i |1.1e+10|), (-15.387132 -3.13e+01i |1.1e+10|)
+    eta = 0.001 differenz_wand: (+1.093467 -3.01e+01i |2.0e+09|), (-4.141347 -3.01e+01i |2.0e+09|), (+6.329241 -3.01e+01i |2.0e+09|), (-9.376382 -3.01e+01i |2.0e+09|), (+11.566199 -3.01e+01i |2.0e+09|)
+    eta = 0.001 betrag_zentrum: (-3.899232 -3.10e+01i |2.7e+09|), (+1.333978 -3.10e+01i |2.7e+09|), (-9.131422 -3.10e+01i |2.7e+09|), (+6.571022 -3.10e+01i |2.7e+09|), (-14.366396 -3.10e+01i |2.7e+09|)
+    eta = 0.001 roh_zentrum: (-0.380415 -3.02e+01i |3.8e+09|), (-5.610546 -3.02e+01i |3.8e+09|), (+4.851996 -3.02e+01i |3.8e+09|), (-10.844247 -3.02e+01i |3.8e+09|), (+10.090268 -3.02e+01i |3.8e+09|)
+  dr = 0.1, dt = 0.04000000000000001, T = 6.0, 0.0 s, S0 = 1.135060, Ladungsdrift bis T/4 ['8.9e-03', '2.1e-03']
+    l = 2 wand: (-3.382762 -3.05e+01i |4.7e+11|), (+1.846768 -3.05e+01i |4.7e+11|), (-8.613883 -3.05e+01i |4.7e+11|), (+7.081224 -3.05e+01i |4.7e+11|), (-13.851518 -3.05e+01i |4.6e+11|)
+    l = 2 halbe_wand: (+13.172363 -3.07e+01i |1.6e+11|), (+7.940281 -3.07e+01i |1.6e+11|), (-13.011818 -3.07e+01i |1.6e+11|), (+2.704010 -3.07e+01i |1.6e+11|), (-7.776145 -3.07e+01i |1.6e+11|)
+    l = 2 projektion: (-0.884885 -2.98e+01i |1.2e+12|), (+4.350248 -2.98e+01i |1.2e+12|), (-6.120937 -2.98e+01i |1.2e+12|), (+9.585329 -2.98e+01i |1.2e+12|), (-11.357822 -2.98e+01i |1.2e+12|)
+    l = 2 Nulldurchgaenge der Projektion: Frequenz nan (1 Durchgaenge); Kante 0.163340
+    l = 0 wand: (-0.970803 -3.09e+01i |1.1e+12|), (+4.262842 -3.09e+01i |1.1e+12|), (-6.204361 -3.09e+01i |1.1e+12|), (+9.498965 -3.09e+01i |1.1e+12|), (-11.440253 -3.09e+01i |1.1e+12|)
+    l = 0 halbe_wand: (+10.243743 -3.07e+01i |4.1e+11|), (+5.011181 -3.07e+01i |4.1e+11|), (+15.474740 -3.07e+01i |4.1e+11|), (-0.226399 -3.07e+01i |4.0e+11|), (-10.706793 -3.07e+01i |4.0e+11|)
+    l = 0 projektion: (-4.458770 -3.02e+01i |2.3e+12|), (+0.777985 -3.02e+01i |2.3e+12|), (-9.693910 -3.02e+01i |2.3e+12|), (+6.015619 -3.02e+01i |2.3e+12|), (-14.928198 -3.02e+01i |2.3e+12|)
+    l = 0 Nulldurchgaenge der Projektion: Frequenz nan (1 Durchgaenge); Kante 0.163340
+Rauch exakt (h = 0.08, 5 Profile):
+=== exakt U = S - S^2 + 0.5 S^3, h = 0.08, f_rand = 1e-08, x0 = 0.79768, rho0 = 1.744625
+  5 Profile (je bis 2.2 s), R = 38.56, r_m = 2.240
+  Newton (Pluecker) 0.8 s, konvergiert 5/5
+  Newton (direkt) 1.1 s, konvergiert 5/5, max |rho_direkt - rho_pluecker| = 2.13e-05
+  omega^2 | Re rho | Gamma Newton | Gamma Fluss | N_K | A_norm | arg A | sig_min/sig_2 | Wachstum
+    0.7975800 | 1.7445785875 | 9.5168e-09 | 9.5247e-09 | 4.29365e+01 | +8.408238e-05 +2.710937e-05i | +0.311892 | 1.7e-16 | 3.2e+00
+    0.7976600 | 1.7446109616 | 2.0722e-10 | 2.0797e-10 | 4.28181e+01 | +1.242450e-05 +4.005650e-06i | +0.311878 | 1.4e-15 | 3.2e+00
+    0.7976800 | 1.7446190524 | 4.0721e-11 | 4.0433e-11 | 4.27886e+01 | -5.478219e-06 -1.766154e-06i | -2.829718 | 1.4e-15 | 3.2e+00
+    0.7977000 | 1.7446271421 | 7.3726e-10 | 7.3622e-10 | 4.27591e+01 | -2.337623e-05 -7.536312e-06i | -2.829721 | 1.9e-15 | 3.2e+00
+    0.7977800 | 1.7446594902 | 1.2140e-08 | 1.2139e-08 | 4.26414e+01 | -9.492104e-05 -3.060052e-05i | -2.829733 | 8.0e-16 | 3.1e+00
+  Phasentest: Sprung zwischen Nachbarn - pi = -6.471e-06; Phase mod pi (rel. links aussen): +0.00e+00, -1.37e-05, -1.70e-05, -2.02e-05, -3.24e-05
+  Naechster Abstand zum Ursprung: d_min = 4.497e-12 bei omega^2 = 0.7976738795, |A'| = 9.4038e-01, d_min/|A'| = 4.782e-12 (Einheit omega^2), Fitrest 2.1e-11
+  s(x) = L(y_a) an L(y_b) = 0: 0.7975800: +2.0188e-05 (rho 1.744585726), 0.7976600: +2.9463e-06 (rho 1.744612003), 0.7976800: -1.3622e-06 (rho 1.744618571), 0.7977000: -5.6700e-06 (rho 1.744625137), 0.7977800: -2.2894e-05 (rho 1.744651398)
+  Nullstelle von W (linearer Fit): rho* = 1.7446164678, omega*^2 = 0.797673709, det J = 4.991e-01, Fitrest 4.2e-07, |Im|/|W| max 0.0e+00
+  Umlauf W auf Rechteck dx = 1.0e-04, drho = 1.077e-04 (24 Punkte): -1.0000, groesster Phasensprung 1.934 rad (aufgeloest: False), min |W| = 2.776e-05
+Rauch kurve poly:
+=== kurve U = S - S^2 + 0.45 S^3, h = 0.08, omega^2 = 0.78 .. 0.8 (2 Werte), Existenz omega^2 > 0.4444
+  2 Profile, R = 38.24, r_m = 2.080; S0 = 1.1562, 1.1115
+  W-Abtastung 40 Punkte je omega^2: 2 Kandidaten (Nullstellen von L(y_b)); Kernwachstum max 4.3e+00
+  omega^2 | rho_b (L(y_b) = 0) | s = L(y_a) | Pol | Gamma
+    0.7800 | 1.715454 | -5.894e-03 | 1.7198196 - 7.703e-04 i | 7.703e-04
+    0.8000 | 1.721686 | -9.190e-03 | 1.7266891 - 1.850e-03 i | 1.850e-03
+  kein Vorzeichenwechsel von s gefunden
+Rauch kurve log:
+=== kurve U = ln(1 + S), h = 0.08, omega^2 = 0.7 .. 0.8 (2 Werte), Existenz omega^2 > 0.0000
+  2 Profile, R = 38.40, r_m = 1.920; S0 = 6.0767, 3.4772
+  W-Abtastung 40 Punkte je omega^2: 2 Kandidaten (Nullstellen von L(y_b)); Kernwachstum max 2.0e+00
+  omega^2 | rho_b (L(y_b) = 0) | s = L(y_a) | Pol | Gamma
+    0.7000 | 1.555701 | +1.047e-03 | 1.5565417 - 7.861e-05 i | 7.861e-05
+    0.8000 | 1.673788 | +4.966e-04 | 1.6746993 - 3.956e-06 i | 3.956e-06
+  kein Vorzeichenwechsel von s gefunden
+Rauch nlfit (auf der eigenen Rauch-Ausgabe):
+  Datei | omega^2 | dr | T | eta | Rate (spaet) | Fensterraten | x_eff | x* falls rein linear
+    aus-rauch2 | 0.7 | 0.1 | 6.0 | 0.001 | 1.566e+01 | nan, nan, nan | 0.700000 | -3.125244 / 4.525244
+Rauchtest durchgelaufen nach 47.8 s (Zahlen ohne Bedeutung).
+Ende 2026-09-30T04:36:09+02:00, 47.8 s; entfallen: nichts

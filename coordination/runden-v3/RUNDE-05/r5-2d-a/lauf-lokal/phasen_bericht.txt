@@ -1,0 +1,17 @@
+Karte 7 Endzustand nach Rauschstart (Chemie 12), geschlossene Box. Start 2026-09-30T02:55:59+02:00, Ende 2026-09-30T02:56:10+02:00, CPU (nur Form- und Syntaxprobe), torch 2.10.0+cu128 RAUCHTEST: Zahlen ungueltig
+Dauer [s]: entwicklung_grob_s 5.3, entwicklung_fein_s 5.6
+Hochrechnung Hauptlauf: 547 s (nicht entwickelnde Teile 0 s + Entwicklung x 50); ueber 540 s: nicht starten, Leitung entscheidet (Stufen einzeln mit --stufe).
+Stufe S0 eps | E/Q | f_geb_min | Klasse T/2 -> T | f_geb | phi | n Gebiete | Kontrast | Kohaerenz | Schranke | Q/E-Drift
+  grob 0.1 0.1 | 0.9787 | 0.073 | G -> G | 0.000 | 0.000 | 0 | 0.161 | 0.979 | NEIN | 0.0e+00/-1.6e-05
+  grob 0.1 1.0 | 1.2116 | 0.000 | G -> G | 0.023 | 0.008 | 0 | 0.509 | 0.803 | ja | 0.0e+00/-7.1e-05
+  grob 0.1 3.0 | 1.7533 | 0.000 | G -> M | 0.128 | 0.035 | 3 | 0.702 | 0.592 | ja | -2.2e-16/-8.1e-05
+  grob 0.4 0.1 | 0.8664 | 0.456 | K -> K | 0.921 | 0.857 | 1 | 0.363 | 0.892 | ja | 0.0e+00/5.0e-05
+  grob 0.4 1.0 | 1.0726 | 0.000 | N -> N | 0.714 | 0.542 | 2 | 0.460 | 0.821 | ja | 2.2e-16/1.6e-05
+  grob 0.4 3.0 | 1.5683 | 0.000 | T -> N | 0.642 | 0.391 | 11 | 0.456 | 0.686 | ja | 0.0e+00/1.6e-04
+  grob 0.9 0.1 | 0.7440 | 0.874 | K -> K | 0.992 | 0.988 | 1 | 0.086 | 0.982 | ja | 0.0e+00/2.8e-05
+  grob 0.9 1.0 | 1.0505 | 0.000 | N -> K | 0.780 | 0.671 | 1 | 0.245 | 0.856 | ja | 0.0e+00/1.1e-03
+  grob 0.9 3.0 | 2.0910 | 0.000 | N -> N | 0.601 | 0.432 | 1 | 0.402 | 0.343 | ja | -2.2e-16/1.0e-02
+  fein 0.1 0.1 | 0.9787 | 0.073 | G -> G | 0.000 | 0.000 | 0 | 0.161 | 0.979 | NEIN | 0.0e+00/-3.6e-06
+  fein 0.4 1.0 | 1.0726 | 0.000 | N -> N | 0.714 | 0.541 | 1 | 0.460 | 0.821 | ja | -2.2e-16/4.2e-06
+  fein 0.9 3.0 | 2.0910 | 0.000 | N -> N | 0.600 | 0.431 | 1 | 0.403 | 0.336 | ja | 0.0e+00/2.4e-03
+Kennzahlen: {"diagramm": {"S0=0.1 eps=0.1": "G", "S0=0.1 eps=1.0": "G", "S0=0.1 eps=3.0": "M", "S0=0.4 eps=0.1": "K", "S0=0.4 eps=1.0": "N", "S0=0.4 eps=3.0": "N", "S0=0.9 eps=0.1": "K", "S0=0.9 eps=1.0": "K", "S0=0.9 eps=3.0": "N"}, "schranke_alle_erfuellt": false, "stationaer_alle": false, "L3": {"zellen": [{"zelle": [0.1, 0.1], "bestanden": true, "f_geb_aenderung": 0.0}, {"zelle": [0.4, 1.0], "bestanden": true, "f_geb_aenderung": 7.114845693223515e-05}, {"zelle": [0.9, 3.0], "bestanden": true, "f_geb_aenderung": 0.0003775211397776257}], "bestanden": true}}

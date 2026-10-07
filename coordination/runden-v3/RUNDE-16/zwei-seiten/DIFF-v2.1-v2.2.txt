@@ -1,0 +1,137 @@
+1c1
+< # Zwei Seiten des Feldes – Formeln und Arbeitsmodell (v2.1)
+---
+> # Zwei Seiten des Feldes – Formeln und Arbeitsmodell (v2.2)
+4a5,11
+> **v2.2** (ab 09:44:01 CEST):
+> - Eingearbeitet sind die Auflagen der zweiten frischen Gegenlesung (GEGENLESUNG-v2.1.md): N1 Anziehung, N2 Ereignissuche, N5 „+1“ offen.
+> - Dazu die Empfehlungen N3, N4 sowie N6 bis N16.
+> - Ergänzt sind die Ergebnisse von TETRAKETTE-1 (§14) und BEUTEL-1 (§1).
+> - v2.1 liegt als ZWEI-SEITEN-DES-FELDES-v2.1-stand-0919.md daneben.
+> - Nur die geänderten Sätze sind erneut zu lesen.
+> 
+17c24,25
+<    - μ_n: Eigenwerte; Λ: Lyapunov-Exponent; 𝒮: Wirkung
+---
+>    - μ_n: Eigenwerte der Hesse-Matrix K (nicht ω_n²); Λ: Lyapunov-Exponent; 𝒮: Wirkung
+>    - Doppelt belegt, aus dem Zusammenhang klar: K (Zellkomplex / Hesse-Matrix), s (Dichte / Stabilitätsexponent), P (Punktzahl / Wahrscheinlichkeit), M (Zentralmasse in §6 / Massenmatrix in §7)
+21c29
+< 5. **Energie:** Mit positiven α kollabiert alles; deshalb jetzt Ruhelängen. Eine Schnittenergie aus Punktzahlen hat fast überall keinen Gradienten; deshalb glatte Ersatzterme.
+---
+> 5. **Energie:** Mit positiven α kollabiert alles; deshalb jetzt Ruhelängen. Eine Schnittenergie aus Punktzahlen hat fast überall den Gradienten null; deshalb glatte Ersatzterme.
+33c41
+< **Was „zwei Seiten“ heißt, ist offen.** v1 definiert es nicht; das Wort steht nur im Titel. Es gibt zwei Deutungen:
+---
+> **Was „zwei Seiten“ heißt, ist offen.** v1 definiert es nicht; das Wort steht nur im Titel. Bisher liegen zwei Deutungen vor (Finn fragen):
+81c89,90
+<   - Antwortet χ (χ → 0 im Inneren), sinkt die untere Grenze. Schreibtischwert der Leitung ≈ 0,728; Test BEUTEL-1 läuft.
+---
+>   - Antwortet χ (χ → 0 im Inneren), sinkt die untere Grenze auf ≈ 0,728. Das ist die Dünnwand-Schranke ohne die Gradientenkosten von χ.
+>   - BEUTEL-1 (02.10.) bestätigt: E/Q → 0,853 = √0,728. Der Ball baut sich ab Q ≈ 370 eine Hülle, bleibt aber ein Tropfen (E ~ Q).
+99c108
+<   - Mit g > 0 wird V' für S > 2λ/(3g) hart; im Projektmodell ist das S > 4/3.
+---
+>   - „Hart“ heißt hier: Die Frequenz liegt über dem linearen Wert, V'(S) > m_Φ². Mit g > 0 gilt das für S > 2λ/(3g), im Projektmodell S > 4/3. Die Steigung von V' wird schon ab S = λ/(3g) positiv.
+110,111c119,120
+<   - Im Grenzfall J → 0 sitzt die Mode auf einem Knoten. Dann gilt ω² = V'(S), und das Fenster unterhalb des Bandes ist (1/3, 1). Das Minimum von V' ist 1/3 bei S = 2/3; allgemein m_Φ² − λ²/(3g). Nur hier ist es breiter als das Kontinuumsfenster (1/2, 1).
+<   - Bei J = 0,05: [0,475; 0,945 bis 0,960 je nach N]. Bei J = 0,1: [0,59; 0,885 bis 0,925], also schmaler.
+---
+>   - Im Grenzfall J → 0 sitzt die Mode auf einem Knoten. Dann gilt ω² = V'(S), und das Fenster unterhalb des Bandes ist (1/3, 1). Das Minimum von V' ist 1/3 bei S = 2/3; allgemein m_Φ² − λ²/(3g). Bei kleinem J ist es breiter als das Kontinuumsfenster (1/2, 1); bei der Kontrolle J = 10⁻⁴ ist es [0,334; 0,999].
+>   - Ab etwa J = 0,05 ist es schmaler: [0,475; 0,945 bis 0,960 je nach N], bei J = 0,1 [0,59; 0,885 bis 0,925].
+152c161
+<   - V4, gerechnet am 02.10. mit zwei sich durchdringenden Tetraedern: 1226 Ticks (229 Ecke-durch-Fläche, 997 Kante-durch-Kante) bei jedem Δt ≤ 0,1, Ereigniszeiten auf 4·10⁻¹³ gleich. Bei Δt = 0,2 fehlen 6.
+---
+>   - V4, gerechnet am 02.10. mit zwei sich durchdringenden Tetraedern: 1226 Ticks (229 Ecke-durch-Fläche, 997 Kante-durch-Kante) bei allen geprüften Δt von 0,1 bis 0,001, Ereigniszeiten auf 4·10⁻¹³ gleich. Bei Δt = 0,2 fehlen 6.
+186,187c195,197
+< - Eine Energie aus Punktzahlen ist stückweise konstant: Ihr Gradient ist fast überall null und springt an Ereignissen.
+< - Längen und Flächen von Schnittmengen ändern sich stetig. Ihr Gradient knickt aber an Ereignissen; bei glatten Körpern kann er an Berührpunkten unendlich werden.
+---
+> - Punktzahl: Die Energie springt an Ereignissen, ihr Gradient ist fast überall null.
+> - Längen: Die Energie knickt, ihr Gradient springt.
+> - Flächen (ebene Schnitte durch Tetraeder): Der Gradient ist stetig, knickt aber an Ereignissen. Bei glatten Körpern kann er an Berührpunkten unendlich werden.
+205,206c215,219
+< - Bei festgehaltenen Feldern gibt ein mit dem Abstand abnehmendes J(r) einen **abstoßenden** Beitrag. Es gilt F_i = −J'(r)·|Ψ_i − Ψ_j|²·(x_i − x_j)/r; mit J' < 0 zeigt die Kraft von j weg.
+< - Anziehung kann erst über die Relaxation des Feldes entstehen. Sie wird nicht eingesetzt.
+---
+> - Nimmt J(r) mit dem Abstand ab, ist der Beitrag zwischen zwei verbundenen Knoten für **jeden** Feldzustand abstoßend oder null.
+>   - Es gilt F_i = −J'(r)·|Ψ_i − Ψ_j|²·(x_i − x_j)/r; mit J' < 0 zeigt die Kraft von j weg.
+>   - Das gilt auch nach Relaxation des Feldes, denn dE_eff/dr = J'·|ΔΨ|² ≤ 0.
+> - Anziehung zwischen Knoten liefern in diesem Modell nur E_geo, E_int oder ein J mit J' > 0.
+> - Effektive Anziehung zwischen teilchenartigen Moden könnte höchstens indirekt entstehen, über Feldüberlapp zweier Moden oder über die Verformung der Geometrie [H]. Sie wird nicht eingesetzt.
+231c244
+<   - Mit einer konvexen Doppelpyramide gilt zusätzlich: C ist gleich der Zahl der Indexläufe.
+---
+>   - Bilden je zwei benachbarte Tetraeder eine konvexe Doppelpyramide, gilt zusätzlich: C ist gleich der Zahl der Indexläufe.
+269c282,284
+< - Gerechnet (02.10., V5, Rad-Graph): Die Regel traf an allen 3954 Punkten. Das reine dQ/dω < 0 wäre auf dem großen Zweig falsch gewesen.
+---
+> - Gerechnet (02.10., V5, Rad-Graph):
+>   - Die Vorhersage „stabil genau bei n = 0 oder bei n = 1 mit dQ/dω < 0“ traf an allen 3954 Punkten. Die Punkte mit n = 2 waren instabil (oszillatorisch); allgemein ist n ≥ 2 nicht zwingend instabil.
+>   - Das reine dQ/dω < 0 wäre auf dem großen Zweig falsch gewesen.
+282c297
+< - Energie: bei autonomer Dynamik ohne Dämpfung, Antrieb und vorgeschriebene Bewegung.
+---
+> - Energie: bei autonomer Dynamik ohne Dämpfung, Antrieb und vorgeschriebener Bewegung.
+311c326,329
+<    - Der Test braucht ein unendliches Gitter (Bloch-Rand) oder einen absorbierenden Rand. Ein endlicher Kasten reflektiert und hat kein Strahlungskontinuum (Codex).
+---
+>    - Der Test braucht ein unendliches Gitter mit ausstrahlender (transparenter) Randbedingung, z. B. über die Gitter-Green-Funktion, oder eine absorbierende Schicht. Ein endlicher Kasten reflektiert und hat kein Strahlungskontinuum (Codex).
+>    - Scheiterregel vorab [H]:
+>      - Auf dem kubischen Gitter mit J = 1/a² ist das Band [1; 1 + 12/a²].
+>      - Der offene Kanal (ω + ρ)² ≈ 6,96 liegt nur für a ≤ 1,42 im Band. Bei gröberem Gitter ist die Stille trivial.
+346c364
+< - C_{I,ν}(Δ) = ⟨δN_I(t) δν_Δ(t+Δ)⟩.
+---
+> - C_{I,ν}(τ_v) = ⟨δN_I(t) δν_Δ(t+τ_v)⟩, mit eigener Verzögerung τ_v bei festem Fenster Δ.
+355c373
+< - Kennzahlen, alle nach Abzug der Symmetriemoden:
+---
+> - Kennzahlen. s_max nur nach Abzug der Symmetriemoden und nur als Stabilitätsanzeige, nicht für den 3σ-Test:
+366c384,391
+<   - **Die Tetraederkette (Variante T), also die Form aus dem Tetra-Bündel, ist noch nicht gerechnet.**
+---
+> - **Variante T am 02.10. gerechnet** (TETRAKETTE-1):
+>   - Gerechnet wurde für 4 bis 33 Ecken (Ecken = N_T + 3). „11+1“ entspricht 12 Ecken, „19+1“ 20 Ecken.
+>   - In Federsteifigkeit, Feldklumpen, Lennard-Jones-Bindung und Schnittstatistik sind 12 und 20 Ecken nicht besonders.
+>   - 20 ist nirgends markiert. 12 ist nur zusammen mit dem ganzen Kurzkettenbereich 8 bis 14 markiert, wo die Enden dominieren; dort war das vorab gewählte Kriterium untauglich.
+>   - Besonders an der 12 ist die Geometrie: Die Helix dreht je Ecke um arccos(−2/3) = 131,81°.
+>     - 11 Schritte sind fast genau 4 Umläufe (9,9° Versatz). Bei 12 Ecken liegen also erstmals zwei Ecken fast auf derselben Seite.
+>     - Besser wird das erst bei 31 Ecken: 30 Schritte sind fast 11 Umläufe (5,7°).
+>   - Nachträglich beobachtet [H]: Die zwei tiefsten Biegeschwingungen fallen bei 9, 12 und 15/16 Ecken fast zusammen, also dort, wo neue Fast-Ausrichtungen hinzukommen.
+408c433
+< - **H – Brücke (§9a):** stille Stelle auf dem Gitter, a → 0, mit Bloch- oder absorbierendem Rand.
+---
+> - **H – Brücke (§9a):** stille Stelle auf dem Gitter, a → 0, mit ausstrahlendem oder absorbierendem Rand.
+428c453
+<   - Q-Bälle in einem sextischen Modell dieser Familie bei Battye/Sutcliffe 2000. Dort ist die Normierung anders (halbe Kinetik); Werte sind nur nach Umrechnung vergleichbar (Codex hat die Quelle gelesen).
+---
+>   - Q-Bälle in einem sextischen Modell dieser Familie bei Battye/Sutcliffe 2000. Dort ist die Normierung anders (halbe Kinetik); Werte sind nur nach Umrechnung vergleichbar [S: Codex, hep-th/0003252v1 §2].
+431c456
+< - Ansätze mit Berührungspunkten, Bezug offen [H]: Regge-Kalkül, Spinschäume, Quantum Graphity, spektrale Dimension in kausalen dynamischen Triangulationen. Dort ist die Geometrie selbst dynamisch, ohne äußere Zeit und Einbettung. Vergleichbar ist zunächst nur die Messgröße d_s.
+---
+> - Ansätze mit Berührungspunkten, Bezug offen [H]: Regge-Kalkül, Spinschäume, Quantum Graphity, spektrale Dimension in kausalen dynamischen Triangulationen. Dort ist die Geometrie selbst dynamisch und nicht eingebettet; die Rolle der Zeit unterscheidet sich je Ansatz [L?]. Vergleichbar ist zunächst nur die Messgröße d_s.
+438c463
+< - effektive Anziehung aus Kanten-, Flächen- und Volumenenergie bzw. aus Feldrelaxation
+---
+> - effektive Anziehung aus Kanten-, Flächen- und Volumenenergie oder indirekt über Feldüberlapp und Verformung (nicht über J(r) mit J' < 0, das stößt ab)
+444c469
+< - fundamentale Auszeichnung von 11 oder 19 (Variante T ungerechnet)
+---
+> - fundamentale Auszeichnung von 11 oder 19. In Stabilitätsgrößen ist sie weder in R noch in T gefunden; in T gibt es nur die geometrische Ausrichtung (11 Schritte ≈ 4 Umläufe).
+458c483,486
+< 3. Bei Vorzeichenwechsel: Ereigniszeit per Nullstellensuche bestimmen, Innen-Test machen und bei Erfolg den Tick protokollieren. Höchstens ein Wechsel je Schritt und Quadrupel, sonst Schritt verkleinern.
+---
+> 3. Bei Vorzeichenwechsel: Ereigniszeit per Nullstellensuche bestimmen, Innen-Test machen und bei Erfolg den Tick protokollieren.
+>    - Doppelte Wechsel in einem Schritt sind am Vorzeichen allein nicht erkennbar.
+>    - Deshalb χ und dχ/dt an beiden Schrittenden auswerten und alle Nullstellen im Schritt suchen, oder Δt über eine Schranke für d²χ/dt² begrenzen.
+>    - Kontrolle immer durch Halbierung von Δt (§18).
+472c500
+< 8. Sind 11+1 oder 19+1 gegenüber benachbarten N außergewöhnlich, nach vorab festgelegtem Maß, und zwar in Variante T?
+---
+> 8. Sind 11+1 oder 19+1 gegenüber benachbarten N außergewöhnlich, nach vorab festgelegtem Maß? Welche Form Finn meint, Kette T oder Ring R, ist offen. T ist am 02.10. gerechnet (§14).
+516c544,546
+< **Variante T (Tetraederkette 11+1/19+1 und ihre Nachbarn) → Kontinuums-Q-Ball-Stelle als dritte Positivkontrolle → N-Scan für R und T → ereignisgenaue Ticks → gyroskopische und Floquet-Stabilität → Störungen → Konvergenz.**
+---
+> **Kontinuums-Q-Ball-Stelle als dritte Positivkontrolle → N-Scan für R (Variante T ist am 02.10. gerechnet) → ereignisgenaue Ticks → gyroskopische und Floquet-Stabilität → Störungen → Konvergenz.**
+> 
+> Welche Form Finn mit 11+1/19+1 meint, ist offen.

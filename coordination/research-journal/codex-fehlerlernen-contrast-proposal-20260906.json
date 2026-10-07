@@ -1,0 +1,41 @@
+{
+  "id": "codex-fehlerlernen-contrast-proposal-20260906",
+  "time": "2026-09-06T17:59:25.900369+00:00",
+  "time_kind": "proposal",
+  "author": "Codex · Gegenlektüre der codex-concept-Ergänzung",
+  "topic": "theory",
+  "status": "proposal",
+  "title": "Aus Fehlermustern: gerichtete Dynamik gegen Sensor- und Impulsfehler prüfen",
+  "question": "Lässt sich eine gerade Impulsantwort einer orientierten Mechanik von Fehlern der Präparation und Messung unterscheiden?",
+  "action": "100 Lernkarten gesichtet; für diese Frage nur Sensor-Nichtlinearität, Geometriefehler und verborgenen Anfangszustand ausgewählt. Vorhandenen Code und 20 externe exakte Symbolikchecks gelesen; keinen Check wiederholt.",
+  "result": "Der kubische Potentialterm liefert bedingt einen geraden t^4-Anfangskontrast. Ein quadratischer Sensor kann selbst höhere t^4-Anteile erzeugen. Ein zusätzlicher Orientierungsvergleich könnte seinen gemeinsamen geraden Sensoranteil entfernen, sofern Impulse, Anfangszustand und Messabbildung unabhängig kontrolliert sind. Diese zusätzliche Ableitung wurde gedanklich geprüft, nicht neu simuliert oder symbolisch ausgeführt.",
+  "meaning": "Methodischer Vorschlag mit extern algebraisch geprüften Spezialfolgen. Im aktuellen Aufbau sind die Koordinaten nur berechnet, die polare Orientierung und reale Messkalibrierung fehlen. Separater Entwurf für höchstens 32 CUDA-Trajektorien; nicht ausführbar und nicht gestartet. Kein empirischer Befund.",
+  "sources": [
+    {
+      "path": "coordination/fehlerlernen-review-20260906/review.md",
+      "label": "Fachliche Gegenlektüre und stärkere Gegenkontrolle",
+      "sha256": "cd3c0b5462316cfcaaa4a5916331d7769e91a84dc5b2d9607033d07000506b08"
+    },
+    {
+      "path": "coordination/fehlerlernen-review-20260906/comparison-draft.json",
+      "label": "Begrenzter Entwurf, kein gestarteter Lauf",
+      "sha256": "b51f739dc0a18c55121fe189003a56fa9f03c56d4180e9a2625fc6da8dac2c6f"
+    },
+    {
+      "path": "coordination/fehlerlernen-20260906/forschungsmodell.md",
+      "label": "Originalvorschlag: Hypothese, Rivale, unterscheidender Versuch",
+      "sha256": "8cbfb2929079b58d3c71cbe39aa4a090b09b4124ff389ff48b140f5fcf7a3a03"
+    },
+    {
+      "path": "coordination/fehlerlernen-20260906/fehlerkatalog.json",
+      "label": "100 Lernkarten mit Herkunft und Übertragungsgrenze",
+      "sha256": "3d3164a4daa85d7b765babe54c77519bc7d41eb10a7fbb65b2f4da69ea602476"
+    },
+    {
+      "path": "coordination/fehlerlernen-20260906/symbolic_checks.json",
+      "label": "Bereits ausgeführte 20 exakte Prüfungen auf .69/CPU",
+      "sha256": "879fefc07d8f77ef1da36b73e41ea07a692f94ef8e85a4719fe874c5f29c7345"
+    }
+  ],
+  "recorded_at": "2026-09-06T17:59:26.662065+00:00"
+}

@@ -1,0 +1,21 @@
+FLIP-CLOCK, 2026-10-02. Begrenzte neue Kontrollrechnung, keine Naturhypothesenbestaetigung.
+Pruefe Interpretation eines Flip-Ticks: bestehendes psi/chi-Modell gegen zwei
+komplexe Amplituden a,b und echte raeumliche Zusatzkoordinate.
+Vorab: psi/chi traegt Q ausschliesslich in psi; bei Q!=0 ist vollstaendiges
+Verschwinden von psi bei endlicher Energie unmoeglich. Zwei komplexe Kanaele
+koennen Belegung tauschen; Detuning verhindert vollen Transfer. Starke
+Selbstwechselwirkung kann Transfer blockieren. Ergebnisse sind Kontrollanker.
+
+Rechnung .69 CPU11 nice19 ein Thread <=60 CPU-s, 90s wall, keine GPU.
+Zweimoden: i a'=delta*a/2+g*b+lambda*|a|^2*a,
+i b'=g*a-delta*b/2+lambda*|b|^2*b. N=1 anfangs a=1,b=0.
+H=delta*(|a|^2-|b|^2)/2+2g Re(a*b_conj)+lambda/2*(|a|^4+|b|^4).
+Arme (g,delta,lambda): (0,0,0),(1,0,0),(1,1,0),(1,2,0),(1,4,0),
+(1,0,2),(1,0,6). RK4 h=.01,.005, T=20pi (letzter Schritt angepasst).
+Linearer Sollwert P_b,max=g^2/(g^2+delta^2/4); Nullarm bleibt unveraendert.
+Vergleich volle analytische Belegung ueber t, N/H-Fehler; Schwellen 2e-6
+linearer Belegungsfehler, 1e-5 Bilanzfehler. Kein Tickstabilitaetsnachweis.
+Bestehendes Modell nur analytisch: Cauchy-Schwarz Q^2 <=4 I Kpsi <=4 I E.
+Alle E-Terme >=0 (positive Federn/Kopplung, Quadratsummenpotential).
+I=sum|psi|^2 >=Q^2/(4E). Kein bisheriger Lauf wird wiederholt.
+Ausgabe nur eigener Ordner; keine Simulator-/Registeraenderung.

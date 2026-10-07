@@ -1,0 +1,26 @@
+brechung: Start 2026-09-30T03:27:55+02:00, Ende 2026-09-30T03:28:07+02:00, CPU (1 Thread), torch 2.10.0+cu128 RAUCHTEST: Zahlen ungueltig
+Medium C0 = 0.1, g4 = 0.5, lam = 0.1: c_s = 0.2085, Heilungslaenge etwa 3.23
+Dauer [s]: massen_grob_s 1.0, relax_grob_s 0.7, entw_grob_s 3.4, massen_fein_s 2.9, relax_fein_s 0.6, entw_fein_s 2.5
+Hochrechnung Hauptlauf (nur --rauch ohne --mini gilt): 300 s = nicht entwickelnde Teile 5 s + Entwicklung x 50; Relaxation im Rauchtest gekuerzt. Ueber 540 s je Aufruf: Stufen einzeln (--stufe grob / --stufe fein).
+Karte brechung (Wellen 14). Ball m = 0, omega^2 = 0.7 (Q 23.996, Vakuum-E 22.6258), Soll v1 = 0.12; Stufe C0 -> C0 + dC bei x = 0 (Breite 2.0), Fits fuer |X| >= 9.0.
+[grob]
+  M_eff (F mit Ball - F ohne Ball): {"dC-0.04": 22.70122919295681, "dC0.0": 22.755313227720272, "dC0.04": 22.810153415202855, "dC0.06": 22.837719799578117, "lam0": 22.62574550174741}; Kontrolle lam0 gegen Vakuum-E: -8.38e-06
+  Lauf | dC | th1 soll/mess | v1 | M* (Stoss/v1) | m mitgef. | Ausgang | th2 mess | P1 th2 | d P1 | v2/P1 | P2 th2 | d P2 | vy2/vy1 | Q-Verlust
+  abst20 | +0.04 | 20/- | - | - | - | unklar (-) | - | - | - | - | - | - | - | 4.5e-09
+  abst40 | +0.04 | 40/- | - | - | - | unklar (-) | - | - | - | - | - | - | - | 5.1e-09
+  abst50 | +0.06 | 50/- | - | - | - | unklar (-) | - | - | - | - | - | - | - | 1.6e-07
+  anz20 | -0.04 | 20/- | - | - | - | unklar (-) | - | - | - | - | - | - | - | 4.5e-09
+  anz40 | -0.04 | 40/- | - | - | - | unklar (-) | - | - | - | - | - | - | - | 5.2e-09
+  senkrecht | +0.04 | 0/- | - | - | - | unklar (-) | - | - | - | - | - | - | - | 4.4e-09
+  ohne40 | +0.00 | 40/- | - | - | - | unklar (-) | - | - | - | - | - | - | - | 5.2e-09
+  lam0_40 | +0.04 | 40/- | - | - | - | unklar (-) | - | - | - | - | - | - | - | 5.3e-09
+  Urteil nach PLAN.md: offen
+[fein]
+  M_eff (F mit Ball - F ohne Ball): {"dC-0.04": 22.70122917845312, "dC0.0": 22.75531321082411, "dC0.04": 22.81015339872527, "dC0.06": 22.83771978332966, "lam0": 22.62574548421081}; Kontrolle lam0 gegen Vakuum-E: -8.40e-06
+  Lauf | dC | th1 soll/mess | v1 | M* (Stoss/v1) | m mitgef. | Ausgang | th2 mess | P1 th2 | d P1 | v2/P1 | P2 th2 | d P2 | vy2/vy1 | Q-Verlust
+  abst20 | +0.04 | 20/- | - | - | - | unklar (-) | - | - | - | - | - | - | - | 4.4e-09
+  abst40 | +0.04 | 40/- | - | - | - | unklar (-) | - | - | - | - | - | - | - | 5.0e-09
+  anz40 | -0.04 | 40/- | - | - | - | unklar (-) | - | - | - | - | - | - | - | 5.1e-09
+  Urteil nach PLAN.md: offen
+L3 (grob gegen fein; bestanden, wenn |fein - grob| <= max(0,2 |fein|, Toleranz)):
+  L3 gesamt: bestanden (0 von 0)

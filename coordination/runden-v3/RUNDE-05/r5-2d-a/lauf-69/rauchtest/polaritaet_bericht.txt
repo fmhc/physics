@@ -1,0 +1,21 @@
+Karte 3 Polaritaet im Gradienten (Bio 23). Start 2026-09-30T00:58:07+00:00, Ende 2026-09-30T00:58:09+00:00, Quadro P4000, torch 2.5.1+cu121 RAUCHTEST: Zahlen ungueltig
+Dauer [s]: schiessen_s 0.0, entwicklung_grob_s 0.4, entwicklung_fein_s 1.7
+Hochrechnung Hauptlauf: 43 s (nicht entwickelnde Teile 0 s + Entwicklung x 20); ueber 540 s: nicht starten, Leitung entscheidet (Stufen einzeln mit --stufe).
+Stufe Lauf | a_mess/a_vorh | d_QE (Mittel, Streuung) | d_SE | Schiefe | Langstreckung | y-Kontrolle
+  grob w55_g0 | - | 1.492e-15 (7.1e-15) | 1.680e-15 | -5.633e-18 | -2.305e-19 | 1.6e-15
+  grob w55_g+5e-4 | 0.9965 | 3.000e-04 (1.5e-04) | -5.718e-03 | 1.839e-05 | 8.063e-06 | 1.1e-15
+  grob w55_g+1e-3 | 0.9966 | 6.010e-04 (2.9e-04) | -1.143e-02 | 3.681e-05 | 3.224e-05 | 1.3e-15
+  grob w55_g-1e-3 | 0.9966 | -6.010e-04 (2.9e-04) | 1.143e-02 | -3.681e-05 | 3.224e-05 | 1.3e-15
+  grob w70_g0 | - | 1.038e-14 (1.6e-13) | 1.039e-14 | -3.001e-17 | 2.122e-17 | 1.0e-14
+  grob w70_g+5e-4 | 0.9996 | 8.075e-05 (7.7e-05) | -6.532e-04 | -7.824e-05 | 1.977e-06 | 1.3e-14
+  grob w70_g+1e-3 | 0.9996 | 1.615e-04 (1.5e-04) | -1.306e-03 | -1.559e-04 | 7.612e-06 | 1.8e-14
+  grob w70_g-1e-3 | 0.9996 | -1.615e-04 (1.5e-04) | 1.306e-03 | 1.559e-04 | 7.612e-06 | 1.8e-14
+  fein w55_g0 | - | -3.542e-16 (1.0e-15) | -4.029e-16 | -1.252e-17 | -1.273e-17 | -4.3e-16
+  fein w55_g+5e-4 | 0.9963 | 2.981e-04 (1.5e-04) | -5.720e-03 | 1.854e-05 | 8.063e-06 | -4.7e-16
+  fein w55_g+1e-3 | 0.9965 | 5.972e-04 (2.9e-04) | -1.144e-02 | 3.711e-05 | 3.225e-05 | -3.2e-16
+  fein w55_g-1e-3 | 0.9965 | -5.972e-04 (2.9e-04) | 1.144e-02 | -3.711e-05 | 3.225e-05 | -3.1e-16
+  fein w70_g0 | - | -4.966e-15 (1.6e-14) | -4.943e-15 | -1.156e-16 | 2.156e-17 | -5.0e-15
+  fein w70_g+5e-4 | 0.9993 | 8.055e-05 (7.7e-05) | -6.533e-04 | -7.795e-05 | 1.901e-06 | -5.6e-15
+  fein w70_g+1e-3 | 0.9993 | 1.611e-04 (1.5e-04) | -1.307e-03 | -1.558e-04 | 7.577e-06 | -5.2e-15
+  fein w70_g-1e-3 | 0.9993 | -1.611e-04 (1.5e-04) | 1.307e-03 | 1.558e-04 | 7.577e-06 | -5.2e-15
+Kennzahlen: {"w55": {"null_d_QE": 1.4921686955772206e-15, "null_schiefe": -5.632716010897581e-18, "linear_2g_zu_g": 2.0032427391968985, "antisymmetrie": -0.9999999999959354, "d_QE_bei_1e-3": 0.0006009634520313292, "d_SE_bei_1e-3": -0.011434968801821589, "schiefe_bei_1e-3": 3.6809507087176624e-05, "langstreckung_bei_1e-3": 3.224308306424495e-05, "a_verhaeltnis_1e-3": 0.9966374405987788}, "w70": {"null_d_QE": 1.0382313074037162e-14, "null_schiefe": -3.000589721267953e-17, "linear_2g_zu_g": 2.0000488402743377, "antisymmetrie": -0.9999999997001195, "d_QE_bei_1e-3": 0.00016149689081090452, "d_SE_bei_1e-3": -0.0013064811874836193, "schiefe_bei_1e-3": -0.00015590953056960304, "langstreckung_bei_1e-3": 7.612000291525675e-06, "a_verhaeltnis_1e-3": 0.9995684959740442}, "L3": {"laeufe": [{"lauf": "w55_g+5e-4", "aenderung_d_QE": 1.9038875897212158e-06, "bestanden": true}, {"lauf": "w55_g+1e-3", "aenderung_d_QE": 3.8076499746242387e-06, "bestanden": true}, {"lauf": "w55_g-1e-3", "aenderung_d_QE": 3.807649971727901e-06, "bestanden": true}, {"lauf": "w70_g+5e-4", "aenderung_d_QE": 1.9473551042909702e-07, "bestanden": true}, {"lauf": "w70_g+1e-3", "aenderung_d_QE": 3.757584995699517e-07, "bestanden": true}, {"lauf": "w70_g-1e-3", "aenderung_d_QE": 3.757584334026381e-07, "bestanden": true}], "bestanden": true}}

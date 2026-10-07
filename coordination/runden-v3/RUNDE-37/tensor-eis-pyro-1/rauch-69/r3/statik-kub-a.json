@@ -1,0 +1,78 @@
+{
+ "info": {
+  "numpy": "2.4.4",
+  "python": "3.12.3",
+  "host": "ubuntu-auto",
+  "start_utc": "2026-10-04T10:08:12Z",
+  "argv": [
+   "code/tp.py",
+   "statik",
+   "--modell",
+   "kubisch",
+   "--L",
+   "32",
+   "--L",
+   "48",
+   "--L",
+   "64",
+   "--out",
+   "rauch/r3/statik-kub-a.json",
+   "--npz",
+   "rauch/r3/statik-kub-a.npz"
+  ],
+  "skript_sha256": "419d7da6caa211c721eb6a8c87403977415cf3050f03365377f51cb77b374dfd"
+ },
+ "laeufe": [
+  {
+   "modell": "kubisch",
+   "L": 32,
+   "t_kern_s": 0.375302791595459,
+   "stat": {
+    "res_max": 1.7763568394002505e-15,
+    "res_gross_anzahl": 0,
+    "kap_im_max": 0.0
+   },
+   "G0": -0.12283827559325422,
+   "mittel": 2.710505431213761e-20,
+   "n_vektoren": 20479,
+   "spiegel_max": 3.469446951953614e-18,
+   "t_gesamt_s": 0.5530381202697754,
+   "maxrss_MB": 53.66796875
+  },
+  {
+   "modell": "kubisch",
+   "L": 48,
+   "t_kern_s": 1.2310373783111572,
+   "stat": {
+    "res_max": 1.7763568394002505e-15,
+    "res_gross_anzahl": 0,
+    "kap_im_max": 0.0
+   },
+   "G0": -0.12401377301845054,
+   "mittel": 1.6062254407192657e-20,
+   "n_vektoren": 20479,
+   "spiegel_max": 1.3877787807814457e-17,
+   "t_gesamt_s": 1.4019875526428223,
+   "maxrss_MB": 76.4609375
+  },
+  {
+   "modell": "kubisch",
+   "L": 64,
+   "t_kern_s": 2.6571929454803467,
+   "stat": {
+    "res_max": 2.220446049250313e-15,
+    "res_gross_anzahl": 0,
+    "kap_im_max": 0.0
+   },
+   "G0": -0.12460164194690246,
+   "mittel": 6.776263578034403e-21,
+   "n_vektoren": 20479,
+   "spiegel_max": 4.0115480381963664e-18,
+   "t_gesamt_s": 2.827838897705078,
+   "maxrss_MB": 106.515625
+  }
+ ],
+ "laufzeit_s": 4.833210229873657,
+ "maxrss_MB": 106.515625,
+ "ende_utc": "2026-10-04T10:08:17Z"
+}

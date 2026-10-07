@@ -1,0 +1,112 @@
+{
+ "info": {
+  "numpy": "2.4.4",
+  "scipy": "1.18.0",
+  "python": "3.12.3",
+  "host": "ubuntu-auto",
+  "argv": [
+   "/home/fmh/fmhc-physics-remote/minkowski-dim-1/code/md.py",
+   "takt",
+   "--netze",
+   "V,S,C15,A15,glas-N128-s901",
+   "--rauch",
+   "--out",
+   "/home/fmh/fmhc-physics-remote/minkowski-dim-1/rauch/r1.json"
+  ],
+  "skript_sha256": "31519880b6831aca4b6e6d498839eb8b7a8e2e4f3c965f57730ca512fffab0f3",
+  "module_sha256": {
+   "tg": "ec48a258e266fc2226d0d10564b606052831ffefbf0642e4f7d04f9de85cfd9e",
+   "uk": "f52df7438c3d33b4fe86d4352bed3373b38e27a083f3d60eb12d4143fa6b71e0",
+   "tu": "6c5c3a9509ad0be5a8e72ab9a3cabb85a2300d11a2581c7d9ecf2b9e7fa9720a",
+   "dn": "0cd5d13e98f41df277ec7d8139970d1e658542f843ed8180bc756a4ea1d4d1ae"
+  },
+  "start_utc": "2026-10-05T09:14:37Z"
+ },
+ "schluessel": [
+  {
+   "netz": "str",
+   "nV": "int",
+   "E": "int",
+   "T": "int",
+   "pruefung": {
+    "T": "int",
+    "E": "int",
+    "nV": "int",
+    "kanten_je_ecke": "float",
+    "tetra_je_ecke": "float",
+    "selbstkanten": "int",
+    "laengen_abw_max": "float",
+    "volumen_summe_rel_abw": "float",
+    "vol_min": "float",
+    "vol_min_rel_mittel": "float",
+    "dieder_summe_minus_2pi_max": "float",
+    "dieder_min_grad": "float",
+    "dieder_max_grad": "float",
+    "D_sym_max": "float",
+    "schlaefli_lD_max": "float",
+    "D_absmax": "float",
+    "l_min": "float",
+    "l_max": "float",
+    "Vbox": "float"
+   },
+   "netz_info": {},
+   "hodge": {
+    "E": "int",
+    "F": "int",
+    "nV": "int",
+    "T": "int",
+    "stern1_min": "float",
+    "stern1_max": "float",
+    "stern1_n_neg": "int",
+    "stern1_n_null": "int",
+    "stern2_min": "float",
+    "stern2_max": "float",
+    "stern2_n_neg": "int",
+    "stern2_n_null": "int",
+    "stern0_min": "float",
+    "stern0_n_neg": "int",
+    "stern1_neg_werte": "list",
+    "stern2_neg_werte": "list",
+    "mu_min": "float",
+    "mu_n_verletzt": "int",
+    "mu_n_kugel": "int",
+    "mu_gegen_stern2_widerspruch": "int",
+    "kontrolle": [
+     "V",
+     "Vbox",
+     "sum_fL_durch_3V",
+     "sum_lA_durch_3V",
+     "sum_s0_durch_V"
+    ]
+   },
+   "stern0": {
+    "min": "float",
+    "max": "float",
+    "n_nicht_pos": "int",
+    "summe_durch_V": "float"
+   },
+   "stern1_n_nicht_pos": "int",
+   "kontrolle_matrix": {
+    "rest_L1_max": "float",
+    "rest_P_gegen_8L1_max": "float"
+   },
+   "ops": {
+    "takt_s0": [
+     "gewertet",
+     "kontrolle"
+    ],
+    "takt": [
+     "gewertet",
+     "kontrolle"
+    ],
+    "graph": [
+     "gewertet",
+     "kontrolle"
+    ]
+   },
+   "sek": "float"
+  }
+ ],
+ "laufzeit_s": 2.3760898113250732,
+ "maxrss_MB": 93.69921875
+}

@@ -1,0 +1,11 @@
+ROT-1 band2 (BAND-1, Linse True) grob RAUCH. Start 2026-09-30T10:44:27+02:00, Ende 2026-09-30T10:44:30+02:00, CPU (nur Rauchtest), torch 2.10.0+cu128
+Q = 3600.0, L = 48.0, dx 0.6, dt 0.1, n 160, T 20.0 (erreicht 20.0, Abbruch False), Entwicklung 2.2 s, Hochrechnung x20 44 s
+Ball: b 1.1250: omega 0.61742, S_0 1.1373, R_halb 28.575, Residuum 4.7e-05
+
+lauf | Klasse | t_extra | t_umgelegt | t_klumpen | Anteil verbunden | Randkreis-Wechsel-Anteil | Q_w Ende/Start | extra max | Bloecke Band max (t ab 3x) / sonst max | d Start/min/max/Ende | Bilanz Q/E | Q geschluckt
+g0.5_d14 | reisst nicht | - | - | - | 1.00 | 0.00 | 1.000 | 0 | 0 (-) / 0 | 14.40/7.30/14.40/7.30 | 1.4e-09/1.5e-04 | 0.000
+g-0.5_d14_ipsi2 | reisst nicht | - | - | - | 1.00 | 0.00 | 1.000 | 0 | 0 (-) / 0 | 14.40/7.30/14.40/7.30 | 1.4e-09/1.5e-04 | 0.000
+
+Zeitreihen je 25 (extra Wirbelgruppen / Wandkreuzungen Paarkreis / Randkreis / Klumpen / d):
+  g0.5_d14: t 0: 0/0/0/1/14.4
+  g-0.5_d14_ipsi2: t 0: 0/0/0/1/14.4

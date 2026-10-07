@@ -1,0 +1,59 @@
+{
+  "status": "CLASSIFIER_GAPS_FOUND",
+  "synthetic_only": true,
+  "time_steps": 0,
+  "source_sha256": "4f2ca1da379617413e642be02fc6b2cec565fcd9183a2300ac0eda6906a9ff0c",
+  "script_sha256": "7e08c2d19a928a6221591162860e5539aaf1f170aea539576e521089ee671ea4",
+  "cases": [
+    {
+      "case": "all_gates_pass",
+      "expected": "RADIAL_FORMATION_CANDIDATE",
+      "actual": "RADIAL_FORMATION_CANDIDATE",
+      "passed": true
+    },
+    {
+      "case": "compact_pulsating_same_Q_omega",
+      "expected": "NO_CANDIDATE_IN_FIXED_WINDOW",
+      "actual": "NO_CANDIDATE_IN_FIXED_WINDOW",
+      "passed": true
+    },
+    {
+      "case": "one_bad_reference",
+      "expected": "NUMERICALLY_UNRESOLVED_REFERENCE",
+      "actual": "NUMERICALLY_UNRESOLVED_REFERENCE",
+      "passed": true
+    },
+    {
+      "case": "one_incomplete_numerical_arm",
+      "expected": "INCOMPLETE",
+      "actual": "INCOMPLETE",
+      "passed": true
+    },
+    {
+      "case": "one_bad_grid_sensitivity",
+      "expected": "NUMERICALLY_UNRESOLVED_SENSITIVITY",
+      "actual": "NUMERICALLY_UNRESOLVED_SENSITIVITY",
+      "passed": true
+    },
+    {
+      "case": "one_grid_fails_contraction",
+      "expected": "NO_CANDIDATE_IN_FIXED_WINDOW",
+      "actual": "NO_CANDIDATE_IN_FIXED_WINDOW",
+      "passed": true
+    }
+  ],
+  "structural_probes": [
+    {
+      "case": "missing_sample",
+      "actual": "RADIAL_FORMATION_CANDIDATE",
+      "rejected": false,
+      "note": "Malformed input must not yield a formation candidate"
+    },
+    {
+      "case": "unsynchronised_sample",
+      "actual": "RADIAL_FORMATION_CANDIDATE",
+      "rejected": false,
+      "note": "Malformed input must not yield a formation candidate"
+    }
+  ]
+}

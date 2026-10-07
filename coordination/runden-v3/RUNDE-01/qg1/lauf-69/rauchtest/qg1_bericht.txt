@@ -1,0 +1,32 @@
+QG-1 Bericht. Start 2026-09-29T22:36:43+00:00, Ende 2026-09-29T22:38:09+00:00, Geraet Quadro P5000, torch 2.5.1+cu121
+g = 0.0002, Phi = g x / 2, a_Newton = -0.0001, T = 40.0, Fit ab t = 2.5
+Dauer [s]: schiessen_s 82.5, entwicklung_grob_s 1.0, entwicklung_fein_s 1.8
+
+Profil: omega2 | f0^2 Schuss | f0^2 Anker | max|f - f_Anker| grob, fein | G/E Anker | Virialrest fein
+  0.55 | 0.683772233995 | 0.683772233983 | 1.2e-10, 1.2e-10 | 0.08042 | -6.2e-06
+  0.70 | 0.367544467971 | 0.367544467966 | 7.0e-11, 7.0e-11 | 0.05567 | -3.9e-06
+  0.90 | 0.105572809000 | 0.105572809000 | 3.3e-11, 3.3e-11 | 0.01734 | -4.8e-07
+
+R = a/a_Newton: Variante omega2 | Soll | grob | fein | Spaetfenster | Abstrahlung Q | Atmung Breite | Atmung Smax
+  A  0.55 | 0.3217 | 0.3216 | 0.3216 | 0.3235 | 1.5e-13 | 3.9e-05 | 6.8e-05
+  A  0.70 | 0.2227 | 0.2231 | 0.2230 | 0.2210 | 5.7e-15 | 7.0e-05 | 1.1e-04
+  A  0.90 | 0.0694 | 0.0702 | 0.0701 | 0.0702 | -3.4e-13 | 8.3e-06 | 8.9e-05
+  B  0.55 | 1.6783 | 1.6784 | 1.6786 | 1.6782 | 1.2e-13 | 4.0e-05 | 1.1e-04
+  B  0.70 | 1.7773 | 1.7776 | 1.7776 | 1.7775 | 4.3e-15 | 7.2e-05 | 1.7e-04
+  B  0.90 | 1.9306 | 1.9317 | 1.9311 | 1.9312 | -4.2e-13 | 1.2e-05 | 9.7e-05
+  C  0.55 | 1.0000 | 1.0000 | 1.0001 | 1.0009 | 1.3e-13 | 4.0e-05 | 1.1e-04
+  C  0.70 | 1.0000 | 1.0004 | 1.0003 | 0.9993 | 5.3e-15 | 7.1e-05 | 1.3e-04
+  C  0.90 | 1.0000 | 1.0010 | 1.0007 | 1.0008 | -3.7e-13 | 9.2e-06 | 1.1e-04
+  C2 0.55 | 2.0000 | 2.0001 | 2.0003 | 2.0001 | 1.3e-13 | 4.0e-05 | 9.3e-05
+  C2 0.70 | 2.0000 | 2.0005 | 2.0004 | 2.0000 | 5.4e-15 | 7.1e-05 | 1.1e-04
+  C2 0.90 | 2.0000 | 2.0013 | 2.0007 | 2.0008 | -3.8e-13 | 9.5e-06 | 9.9e-05
+  g = 0: 0.55: a/|a_N| = -2.5e-16, Atmung 3.9e-05; 0.70: a/|a_N| = -7.7e-16, Atmung 7.0e-05; 0.90: a/|a_N| = 4.2e-16, Atmung 8.4e-06
+
+Spannweite von R ueber omega (fein): A 0.2515, B 0.2526, C 0.0006, C2 0.0004
+Kontrollen:
+  K0_profil_gegen_anker: bestanden  max_abw_f = 1.201e-10
+  K1_C_universell: bestanden  max_abw_R_C_von_1 = 6.673e-04, max_rel_abw_R_C2_von_2 = 3.345e-04
+  K2_g_null: bestanden  max_beschl_zu_aNewton = 4.604e-15
+  K3_vorzeichen: bestanden  max_gerade_zu_ungerade = 4.708e-15
+  K4_L3_aufloesung: bestanden  spannweite_A_fein = 2.515e-01, max_aenderung_R_fein_grob = 5.940e-04
+Abweichungen vom Sollwert ueber 0.03: keine

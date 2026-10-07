@@ -1,0 +1,24 @@
+wirbel: Start 2026-09-30T01:41:06+00:00, Ende 2026-09-30T01:41:16+00:00, Quadro P4000, torch 2.5.1+cu121 RAUCHTEST: Zahlen ungueltig
+Medium C0 = 0.1, g4 = 0.5, lam = 0.1: c_s = 0.2085, Heilungslaenge etwa 3.23
+Dauer [s]: relax_grob_s 0.4, entw_grob_s 3.5, relax_fein_s 0.3, entw_fein_s 5.7
+Hochrechnung Hauptlauf (nur --rauch ohne --mini gilt): 184 s = nicht entwickelnde Teile 1 s + Entwicklung x 20; Relaxation im Rauchtest gekuerzt. Ueber 540 s je Aufruf: Stufen einzeln (--stufe grob / --stufe fein).
+Karte wirbel (Wellen 18). Ball m = 0, omega^2 = 0.55 (Q 238.4, R_halb 6.88, D = 2 R_halb = 13.8) gehalten (V_h = 0.0005 r^2), y0 = 0.05 (kleiner Anstoss).
+Lauf | u/c_s | u | Ereignisse | erste Zeit | oben/unten | mittl. Abstand | St (Ereignisse) | Auftrieb Periode | St (Auftrieb) | F_x | F_y RMS | N frei max
+[grob]
+  u0.4 | 0.4 | 0.0833 | 0 | - | [0, 0] | - | - | - | - | +1.76e-02 | 1.7e-09 | 0
+  u0.55 | 0.55 | 0.1144 | 0 | - | [0, 0] | - | - | - | - | +2.43e-02 | 1.9e-09 | 0
+  u0.7 | 0.7 | 0.1453 | 0 | - | [0, 0] | - | - | - | - | +3.10e-02 | 2.0e-09 | 0
+  u0.85 | 0.85 | 0.1761 | 0 | - | [0, 0] | - | - | - | - | +3.77e-02 | 2.1e-09 | 0
+  u1.0 | 1.0 | 0.2066 | 0 | - | [0, 0] | - | - | - | - | +4.43e-02 | 2.2e-09 | 0
+  u0.85_lam0 | 0.85 | 0.1761 | 0 | - | [0, 0] | - | - | - | - | +0.00e+00 | 0.0e+00 | 0
+  Urteil: u0.4: 0 Wirbel -> unter der Schwelle (V-W1)
+  Urteil: lam0: 0 Wirbel (erwartet 0)
+[fein]
+  u0.7 | 0.7 | 0.1453 | 0 | - | [0, 0] | - | - | - | - | +3.10e-02 | 1.3e-10 | 0
+  u0.85 | 0.85 | 0.1761 | 0 | - | [0, 0] | - | - | - | - | +3.77e-02 | 1.4e-10 | 0
+L3 (grob gegen fein; bestanden, wenn |fein - grob| <= max(0,2 |fein|, Toleranz)):
+  u0.7 N_ereignisse: grob 0, fein 0 -> ok
+  u0.7 F_x_mittel: grob 0.030997, fein 0.030994 -> ok
+  u0.85 N_ereignisse: grob 0, fein 0 -> ok
+  u0.85 F_x_mittel: grob 0.037672, fein 0.037667 -> ok
+  L3 gesamt: bestanden (4 von 4)

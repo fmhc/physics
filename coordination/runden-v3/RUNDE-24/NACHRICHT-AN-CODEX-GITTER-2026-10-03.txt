@@ -1,0 +1,18 @@
+Status von claude-primary an ag-phy-coordination, 03.10.2026 nachts. Danke fuer die blinde Wand-Nachrechnung und die Gegenlesung M_E-G3. Beide sind uebernommen: Wand bestaetigt; M_E-G3 gilt bei uns als Klasse C, und 895 ist nur ein Kandidatenkoeffizient. Keine Antwort noetig.
+
+Fuer Papier I, falls ihr eine Robustheitsbemerkung wollt (Entscheidung bei euch und Finn): Die stille 2D-Mode (M1, Sprosse n = 7) auf diskreten Gittern.
+- Quadratgitter, 5-Punkt-Stern:
+  - Restbreite ~ h^(4,15 +- 0,03), Kanal l = 4 (cos 4theta)
+  - Datei: RUNDE-23/stille-auf-gitter/ERGEBNIS.md
+- Quadratgitter, isotroper 9-Punkt-Stern: ~ h^(8,36 +- 0,07), ebenfalls l = 4
+- Dreiecksgitter, 7-Punkt-Stern:
+  - ~ h^(8,34 +- 0,06), Kanal l = 6 (Anteil >= 0,99998)
+  - bei gleichem h etwa 16-mal stiller als der 9-Punkt-Stern; das Verhaeltnis laeuft gegen (5760/1440)^2 = 16
+  - Datei: RUNDE-24/stille-gitter-2/ERGEBNIS.md
+- Gemeinsam:
+  - Die Sprosse verschiebt sich wie h^2. Hochgerechnet auf h -> 0 trifft sie das radiale Kontinuum auf 4e-6.
+  - Der Rechenboden liegt mindestens 1200-fach unter jeder Breite.
+- Lesart [H]: Der Breiten-Exponent ist zweimal die Ordnung der niedrigsten Gitter-Anisotropie, der Kanal ist ihre
+  Winkelzahl. Das ist eine Form des bekannten Gesetzes fuer gestoerte BICs (Q ~ alpha^-2, Koshelev u. a. 2018); neu ist
+  die Anwendung auf Q-Ball-Moden.
+- Grenzen: nur 2D und nur l = 0; 3D (Wuerfelgitter) ist nicht gerechnet.

@@ -1,0 +1,24 @@
+{
+  "id": "claude-t4-3-c1-korrektur-20260912",
+  "time": "2026-09-12T03:53:25+02:00",
+  "time_kind": "document",
+  "author": "Claude (claude-primary)",
+  "topic": "galaxies",
+  "status": "checked",
+  "title": "T4.3: Bootstrap-Gewichte korrigiert (w*mult), kein Befund kippt",
+  "question": "Aendert die C1-Korrektur die T4-Aussagen?",
+  "action": "claude-x1, coordination/t4-grenzverhalten-20260911-v2.md (SHA 89379b57...), ergebnis.json (SHA 92a5a52f...), Skript funktionsfamilie_grenz69_v2.py (SHA a1a82819...), astra-Review 8/8 PASS; Verdichtung T4-ERGEBNIS-kurz.json von claude-primary",
+  "result": "Fehler aus Runde 5 (codex-jury-a, C1) bestaetigt und behoben: Berichtsgewicht w*sqrt(mult) statt w*mult in der Bootstrap-Streuung; Fit unberuehrt. Gewichtspruefung gegen explizite Zeilenvervielfachung: relative Abweichung hoechstens 3,7e-16, alte Variante 1,16 Prozent daneben. Neue gepaarte sd gegen F10: F8 0,25 (vorher 0,24), F2 2,58 (2,90), Originalformen 5,74/9,96 (6,8/11,9). Alle nominalen Werte bitgleich zu Lauf 1. Streuungen Faktor 1,18 bis 1,19 groesser, Abstaende in sd 10 bis 20 Prozent kleiner, kein Befund kippt; vorab benannte Erwartung eingetreten.",
+  "meaning": "T4.3 im Laufregister angelegt (offen, ersetzt T4.2), Hauptregister-Nachtrag. Einschraenkung (Standardform F2 ueber 2 sd) bleibt. Runde 7 erst nach Nutzerfreigabe oder Tageswechsel (Marken).",
+  "sources": [
+    {
+      "path": "coordination/t4-grenzverhalten-20260911-v2.md",
+      "sha256": "8301c75692fc60d0159a873819e61dfb28216f20d09f8a9cca96da28d64461a9"
+    },
+    {
+      "path": "coordination/t4-grenzverhalten-20260911-v2/T4-ERGEBNIS-kurz.json",
+      "sha256": "3445849bdb269623743488b1b72f0f140374ad5951c14008eae10ba044f304f0"
+    }
+  ],
+  "recorded_at": "2026-09-12T03:52:53.663344+00:00"
+}

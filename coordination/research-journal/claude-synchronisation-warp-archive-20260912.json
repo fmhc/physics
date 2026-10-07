@@ -1,0 +1,28 @@
+{
+  "id": "claude-synchronisation-warp-archive-20260912",
+  "time": "2026-09-12T05:56:15+02:00",
+  "time_kind": "completed",
+  "author": "Claude (claude-primary, Auswertung auf TS440)",
+  "topic": "micro",
+  "status": "checked",
+  "title": "Synchronisation entsteht in der Punkt-Wellen-Familie von selbst und wirkt netto anziehend; Annaeherung ohne Bindung",
+  "question": "Ordnen sich die inneren Oszillatorphasen von selbst, und folgt die Paarbewegung der Ordnung (Forschungsatlas, Synchronisation)?",
+  "action": "Auswertung der neun Warp-v2-Archive (h=0,005, on): Phasen phi_i = atan2(z_i, q_i), Ordnungsparameter R, exakte Paarkopplung U_ij = -g^2 G_ij q_i q_j, Lag-Korrelationen; keine neue Integration; TS440 CPU 0,2 s.",
+  "result": "R von 0,74 (zufaellige Anfangsphasen, seed 11) auf 0,99 bei t=6 und 12; <cos delta> 0,71 bis 0,78; U_ij in 86 bis 90 Prozent der Zeit negativ, <U> -0,15 bis -0,22; Paarabstaende 3,6 bis 6,0 auf 1,1 bis 2,5, Paar 0-1: 4,00 -> 1,42 (t=6) -> 2,24 (t=12). Teil der Ordnung ist eine gemeinsame Gleichverschiebung aller q durch die Mittelfeldantwort. Lag-Korrelation cos delta gegen Delta r positiv (+0,21 bis +0,28), durch Umkehrpunkte der Bahnen verfaelscht; als Vorzeichentest untauglich.",
+  "meaning": "Die Atlas-These ist in dieser Familie nicht Ansatz, sondern Struktur; die Phasen bleiben nicht unabhaengig, das Feld synchronisiert sie, die Kopplung ist netto anziehend, gebunden wird trotzdem nichts (Mulde real, kinetische Energie zu gross). Grenzen: ein Seed, vier Punkte, gleiche Eigenfrequenzen, g=0,7. Naechster Schritt: verstimmte Frequenzen und drei Seeds fuer die Synchronisationsschwelle.",
+  "sources": [
+    {
+      "path": "coordination/synchronisation-warp-archive-20260912.md",
+      "sha256": "01fa4766612c3d537db69ca98a6c92e397d176b13f1f459f394c9a976d6491d5"
+    },
+    {
+      "path": "coordination/claude-synchronisation-20260912/runs/b/ERGEBNIS.json",
+      "sha256": "a8e57077d94e0a5d30edd3aba19e08cfe613875b6ecd0a7c389ce99542865164"
+    },
+    {
+      "path": "coordination/claude-synchronisation-20260912/run_sync.py",
+      "sha256": "d9f33140896e5e9e4aead121ec84488475e81eeec45388affcaa144e0c51320e"
+    }
+  ],
+  "recorded_at": "2026-09-12T03:56:15.962779+00:00"
+}

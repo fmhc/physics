@@ -1,0 +1,74 @@
+M2: direkte Amplitudenänderung gegen ihren eigenen Zeitschrittfehler
+2026-10-03, Root, prospektiv vor den neuen Läufen. Kein Lauf durch diese Datei.
+
+Frage: Ist der Unterschied der skalierten geraden Außenantwort zwischen
+epsilon=.002 und.001 gegenüber der direkten Zeitschritthalbierung dieses
+Unterschieds aufgelöst? Kein bloßer Vergleich mit der kausalen Referenz;
+kein Ordnungsexponent aus zwei Amplituden. Eine nichtaufgelöste Änderung
+ist ein zulässiges Ergebnis und kein Grund zum Verlängern/Nachjustieren.
+Die Differenz kann kleiner sein als die bisher beobachteten Einzelrestfehler.
+
+Modell/Profil/Ritzvektor/Integrator bleiben wie im gehashten M2-T128- und
+Phasenzyklusversuch. R120,h=.05,T128. Volle v->iv-Quadratur einschließlich
+Geschwindigkeiten, keine neue Pivotfixierung oder Q/E-Nachnormalisierung.
+alpha=epsilon*s, s aus dem unveränderten Profil. theta0 undtheta90 nutzen
+unterschiedliche Starts, die nicht nachträglich auf gleichQ/E gebracht werden.
+
+Genau sechs neue Arme:
+- dt=.01: theta90,epsilon=+.001 und-.001
+- dt=.005: theta0 undtheta90, jeepsilon=+.001 und-.001.
+Wiederverwenden: theta0 kleineAmplitude bei dt=.01, beidePhasen großeAmplitude
+bei beiden dt, passendeNullarme. Result-/Code-/NPZ-Hashes und identische
+Gitter/Zeiten/Normierung vor Nutzung prüfen. Keine Baseline neu rechnen.
+
+Feldkombination vor Norm/Betrag. Mit aH=2aL, Ptheta,a=Uplus+Uminus,B=U0:
+Delta_theta=Etheta(aH)-Etheta(aL)=[Ptheta,H-4Ptheta,L+6B]/(2aH²).
+Delta_D=(Delta_0+Delta_90)/2;
+Delta_H=(Delta_0-Delta_90)/2.
+Für Delta_H die gemeinsame Baseline VOR Floating-Auswertung algebraisch
+streichen. Delta_D enthält12B im Zähler mit Nenner4aH². Die jeweiligen
+positiven Summandenhüllen benutzen die Beträge und absoluten Koeffizienten
+derselben direkten Kombinationen;64*float64-eps ist wie bisher nur eine
+Auswerte-Sensitivität, kein Zertifikat akkumulierten Evolutionsfehlers.
+
+Feste Messabbildung: phi-Komponente, Volumengewichte, Fenster
+[88,88+2pi/rho] und[104.5,104.5+2pi/rho], Schalen[40,45),[45,50).
+Je theta0,theta90,D,H: Zeit-L2-Norm und räumlicheL2-Norm des komplexen
++2rho-Koeffizienten. Auch absoluteNormen und Nenner ausweisen. Keine
+Differenz bloßer Normen statt einer Norm der komplexen Felddifferenz.
+
+Prospektive Auflösungsregel je16Positionen×2Normen:
+N=Norm(Delta bei dt=.005), d=Norm(Delta_fine-Delta_coarse).
+Aufgelöst nur falls N>0, alleWerte endlich, N>10*d und N>100*eta.
+eta=Maximum der64eps-Hüllskalen beiderdt, Bandhülle mit positivemZeit-
+integral statt oszillierenderFourierauswertung. Kein kausalerReferenzfehler
+im Nenner oder Reserve; dieser gemeinsame Vergleichsterm fehlt hier.
+Alle32Normprüfungen erforderlich für ein Gesamtlabel
+RESOLVED_AMPLITUDE_DIFFERENCE_ON_FIXED_GRID. Sonst UNRESOLVED mit allen
+Einzelwerten. Kein Mehrheitslabel. Ein Gesamtpass belegt eine numerisch
+stabile endlicheAmplitudenänderung auf diesem festenRadialgitter, weder
+asymptotischenExponent noch Kontinuums-/Langzeit-/BIC-Stabilität.
+Einzelne Ergebnisse dürfen beschrieben werden, nicht als Gesamtpass.
+
+Unveränderte Startadapter-, vollständige Odd-Moden-, E/Q-, Kernbilanz-,
+Finite- und Kragenkontrollen je neuemArm. Sechs neueArme mit je321QA-
+Samples bisT128 und passendenRingen zwingend. Unvollständig=INCOMPLETE.
+Bei Verletzung kein neuer Versuchsarm, keine tolerierte Schwellenänderung.
+Der vorherige Phasenzyklus-Pass und alteStationaritätUNRESOLVED bleiben.
+
+Budget:160CPU-s einschließlichSyntax undAuswertung. Erwarteter Aufwand
+nach65.65CPU-s für vierVorläuferarme etwa110CPU-s, keine Garantie.
+.69/ubuntu-auto CPU8,nice19,OMP/OPENBLAS/MKL je1; bestehendercpu2-Lock,
+flock-w45. Lauf intern150CPU-s, extern159CPU-s und240sWandgrenze;
+Adressraum1GiB. Kein lokalerInterpreter/CUDA/Service. Vor Start Kapazität,
+Hashbindung, tatsächlichenGitstand, Nichtautor-Plan-/Codeprüfung und Root-
+Abnahme; Peerbus-Abstimmung. Originale und fremde Dateien unverändert.
+
+Interpretationspräzisierung vor Lauf: Eine aufgelöste Änderung kann auch
+amplitudenabhängige Phasen-/Hintergrundanpassung enthalten. Sie isoliert
+keine einzelne quartische Quelle und ist kein eigener Nachweis eines
+höherharmonischen Strahlungskanals. Die Starts liegen nicht bei gleichem
+Q/E; dieser Unterschied wird wie im Vorläufer offen ausgewiesen.
+Bandhülle dimensionsgleich: positiver Zeitmittelwert, also dasselbe
+Integral geteilt durch die Fensterlänge wie coefficient(...,frequency=0).
+Dies präzisiert die Normierung, ändert keine Schwelle oder Messgröße.

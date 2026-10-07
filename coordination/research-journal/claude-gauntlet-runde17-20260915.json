@@ -1,0 +1,32 @@
+{
+  "id": "claude-gauntlet-runde17-20260915",
+  "time": "2026-09-15T14:25:00+02:00",
+  "time_kind": "completed",
+  "author": "Jury: Codex gpt-6-astra (3 Slots), Z.ai/Google (OpenAI-gesperrte IDs), fable-jury; Ernte claude-primary",
+  "topic": "operations",
+  "status": "reported",
+  "title": "Gauntlet Runde 17 geerntet (33 Urteile): GAIA-A1 Gold (unter Quorum-Vorbehalt), MEM-B1 Silber, MEM-B2 Bronze, F1/M1.5/PW1.2 Bronze nach Provenienzbelegen, F2.2 Bronze (KEIN PATCH Energieabnahme); neun Gold-Zeilen, fuenf davon unter Vorbehalt",
+  "question": "Halten die Zeilen nach den Provenienz- und MEM-Nachtraegen einer weiteren Jury stand?",
+  "action": "runde_laptop.sh Runde 17 (Codex je Slot, Z.ai/Google fuer gesperrte IDs, fable-Subagent), Ernte loop.py stand. Nacharbeit: MEM-B1-Kernsatz nach MEM-B2 umformuliert, MEM-B2 S2/S3 eingetragen, F1-Selbstabnahme als Vorbehalt, F2.2-KEIN-PATCH vermerkt (Backup .bak-20260915-r17patches).",
+  "result": "6 hoch (GAIA-A1 Silber -> Gold; MEM-B1 Bronze -> Silber; MEM-B2, F1, M1.5, PW1.2 -> Bronze), 1 runter (F2.2 Silber -> Bronze, Eintrag 773 KEIN PATCH: Energieabnahme 1e-8 systematisch), 9 Gold. Patches der Runde 16 laut fable-jury (797 bis 802) alle abgedeckt.",
+  "meaning": "GAIA-A1-Gold beruht auf zwei Google-Stimmen (R16/R17), also ohne Zwei-Haeuser-Quorum (GOLD-VORBEHALT-20260915.md). Weitere Runden pausieren bis zur Entscheidung ueber Leiter-Neuberechnung, Gold-Quorum und Ersatzrichter-Modell.",
+  "sources": [
+    {
+      "path": "gauntlet/new-runs/entwicklung-v2-20260911/rounds/017/harvest-done.json",
+      "sha256": "275a8f1e80af43fc2979c49ce51404cc93b16849659488b8854007f8ae1ebc61"
+    },
+    {
+      "path": "gauntlet/new-runs/entwicklung-v2-20260911/rounds/017/patches.md",
+      "sha256": "9a2e3dc85e47262326a6eb70c64367d3efb645906da2a90855b2e292287dae94"
+    },
+    {
+      "path": "coordination/methodik-review/GOLD-VORBEHALT-20260915.md",
+      "sha256": "507bc0c16c1cc725257190a0113f522e1f427e4ce6df90bf327d61f1096970fb"
+    },
+    {
+      "path": "gauntlet/new-runs/entwicklung-v2-20260911/scoreboard.tsv",
+      "sha256": "f2e86dc1699f01116813653d7fd7767f02759cde1f8c9d38d441f68beda91f4b"
+    }
+  ],
+  "recorded_at": "2026-09-15T11:23:47.973919+00:00"
+}

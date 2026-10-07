@@ -1,0 +1,225 @@
+{
+  "status": "QA_ONLY_COMPLETE",
+  "arms": [],
+  "model": "FADEN-KERN-1 / BEUTEL-1 M2",
+  "code_sha256": "4f2ca1da379617413e642be02fc6b2cec565fcd9183a2300ac0eda6906a9ff0c",
+  "pid": 1992593,
+  "host": "ubuntu-auto",
+  "execution": "CPU numpy float64",
+  "qa": {
+    "energy_variation": 2.112809927012904e-12,
+    "Q_derivative_error": 7.646059044584088e-18,
+    "flux_derivative_error": 3.823029522292044e-18,
+    "vacuum_exact": true,
+    "time_steps": 0,
+    "uniform_sphere_radius_errors": [
+      2.220446049250313e-16,
+      0.0
+    ],
+    "zero_density_radius": null
+  },
+  "reference": {
+    "path": "prepared",
+    "manifest_sha256": "8c33ace3a5465a8fd481d26b35457425ee3c5d5f0111b3f11c09f4a9dd72fdf4",
+    "profiles": [
+      {
+        "h": 0.1,
+        "file": "prepared/reference-h0.1.npz",
+        "sha256": "8265a508c85b5823e1a46f47ea3a9cadb26c790fe89f8ad711699164483d3adb"
+      },
+      {
+        "h": 0.05,
+        "file": "prepared/reference-h0.05.npz",
+        "sha256": "bf03078bb52e4fe515cb3a5fbd01608efec3df18b8845a3ae37aaef6c9661011"
+      }
+    ]
+  },
+  "initial_checks": [
+    {
+      "level": "base",
+      "h": 0.1,
+      "dt": 0.02,
+      "kind": "reference",
+      "preparation": {
+        "omega": 1.0181382710767997,
+        "Q_normalized": false,
+        "exact_grid": true
+      },
+      "diagnostics": {
+        "E": 1212.95165461606,
+        "Q": 1100.0000000019509,
+        "Qcore": 1099.99981296002,
+        "omega": 1.0181382710767999,
+        "rphi": 5.8949759186772076e-12,
+        "rchi": 1.6989745698837946e-12,
+        "tphi": 1.6354905796251298e-16,
+        "tchi": 0.0,
+        "driftphi": 0.0,
+        "driftchi": 0.0,
+        "chimin": 0.01976095424274842,
+        "chi_first_cell": 0.01976095424274842,
+        "r50_density": 3.714349205976965,
+        "rphi_max": 2.4986679392213773e-11,
+        "rchi_max": 3.735456388653802e-12,
+        "collar": 2.1725078901126206e-89
+      },
+      "Q_pass": true,
+      "reference_residual_pass": true
+    },
+    {
+      "level": "base",
+      "h": 0.1,
+      "dt": 0.02,
+      "kind": "cloud",
+      "preparation": {
+        "omega": 1.4142135623730951,
+        "Q_normalized": true
+      },
+      "diagnostics": {
+        "E": 1546.6893779273594,
+        "Q": 1100.0000000000005,
+        "Qcore": 866.4921820062989,
+        "omega": 1.4142135623730951,
+        "rphi": 0.04692543306572182,
+        "rchi": 426701094969459.1,
+        "tphi": 0.0,
+        "tchi": 0.0,
+        "driftphi": 0.0,
+        "driftchi": 0.0,
+        "chimin": 1.0,
+        "chi_first_cell": 1.0,
+        "r50_density": 8.701117966440936,
+        "rphi_max": 0.07313669332598616,
+        "rchi_max": 0.2728064555823338,
+        "collar": 3.0532057780125847e-81
+      },
+      "Q_pass": true,
+      "reference_residual_pass": true
+    },
+    {
+      "level": "space",
+      "h": 0.05,
+      "dt": 0.02,
+      "kind": "reference",
+      "preparation": {
+        "omega": 1.018163515240714,
+        "Q_normalized": false,
+        "exact_grid": true
+      },
+      "diagnostics": {
+        "E": 1213.001008705813,
+        "Q": 1100.0000000011014,
+        "Qcore": 1099.9998130430743,
+        "omega": 1.0181635152407142,
+        "rphi": 3.6127750846562175e-12,
+        "rchi": 9.944371119355497e-13,
+        "tphi": 1.6128367271362278e-16,
+        "tchi": 0.0,
+        "driftphi": 0.0,
+        "driftchi": 0.0,
+        "chimin": 0.01971970769212097,
+        "chi_first_cell": 0.01971970769212097,
+        "r50_density": 3.714292435029684,
+        "rphi_max": 1.5156542687577712e-11,
+        "rchi_max": 2.239375351820172e-12,
+        "collar": 2.0810087290149165e-89
+      },
+      "Q_pass": true,
+      "reference_residual_pass": true
+    },
+    {
+      "level": "space",
+      "h": 0.05,
+      "dt": 0.02,
+      "kind": "cloud",
+      "preparation": {
+        "omega": 1.4142135623730951,
+        "Q_normalized": true
+      },
+      "diagnostics": {
+        "E": 1546.6896004441546,
+        "Q": 1100.0000000000002,
+        "Qcore": 866.4835584371056,
+        "omega": 1.4142135623730954,
+        "rphi": 0.04692505063100526,
+        "rchi": 426700067863124.9,
+        "tphi": 1.7031565641961547e-16,
+        "tchi": 0.0,
+        "driftphi": 0.0,
+        "driftchi": 0.0,
+        "chimin": 1.0,
+        "chi_first_cell": 1.0,
+        "r50_density": 8.701195859293694,
+        "rphi_max": 0.07314137778352992,
+        "rchi_max": 0.2728197764485381,
+        "collar": 3.171748527785017e-81
+      },
+      "Q_pass": true,
+      "reference_residual_pass": true
+    },
+    {
+      "level": "time",
+      "h": 0.1,
+      "dt": 0.01,
+      "kind": "reference",
+      "preparation": {
+        "omega": 1.0181382710767997,
+        "Q_normalized": false,
+        "exact_grid": true
+      },
+      "diagnostics": {
+        "E": 1212.95165461606,
+        "Q": 1100.0000000019509,
+        "Qcore": 1099.99981296002,
+        "omega": 1.0181382710767999,
+        "rphi": 5.8949759186772076e-12,
+        "rchi": 1.6989745698837946e-12,
+        "tphi": 1.6354905796251298e-16,
+        "tchi": 0.0,
+        "driftphi": 0.0,
+        "driftchi": 0.0,
+        "chimin": 0.01976095424274842,
+        "chi_first_cell": 0.01976095424274842,
+        "r50_density": 3.714349205976965,
+        "rphi_max": 2.4986679392213773e-11,
+        "rchi_max": 3.735456388653802e-12,
+        "collar": 2.1725078901126206e-89
+      },
+      "Q_pass": true,
+      "reference_residual_pass": true
+    },
+    {
+      "level": "time",
+      "h": 0.1,
+      "dt": 0.01,
+      "kind": "cloud",
+      "preparation": {
+        "omega": 1.4142135623730951,
+        "Q_normalized": true
+      },
+      "diagnostics": {
+        "E": 1546.6893779273594,
+        "Q": 1100.0000000000005,
+        "Qcore": 866.4921820062989,
+        "omega": 1.4142135623730951,
+        "rphi": 0.04692543306572182,
+        "rchi": 426701094969459.1,
+        "tphi": 0.0,
+        "tchi": 0.0,
+        "driftphi": 0.0,
+        "driftchi": 0.0,
+        "chimin": 1.0,
+        "chi_first_cell": 1.0,
+        "r50_density": 8.701117966440936,
+        "rphi_max": 0.07313669332598616,
+        "rchi_max": 0.2728064555823338,
+        "collar": 3.0532057780125847e-81
+      },
+      "Q_pass": true,
+      "reference_residual_pass": true
+    }
+  ],
+  "initial_gate_pass": true,
+  "cpu_seconds": 0.148723986,
+  "peak_rss_kib": 34872
+}

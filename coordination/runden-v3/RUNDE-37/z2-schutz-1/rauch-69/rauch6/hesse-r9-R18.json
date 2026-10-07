@@ -1,0 +1,109 @@
+{
+ "kopf": {
+  "karte": "Z2-SCHUTZ-1 (Runde 49)",
+  "modus": "hesse",
+  "args": {
+   "modus": "hesse",
+   "aus": "/home/fmh/fmhc-physics-remote/z2-schutz-1/rauch6",
+   "r0": 9.0,
+   "R": 18.0,
+   "nmax": 20000,
+   "ftol": 1e-07,
+   "dtmax": 0.1,
+   "dtstart": 0.02,
+   "capw": 0.05,
+   "start": "/home/fmh/fmhc-physics-remote/z2-schutz-1/rauch6/start-r9-R18.npz",
+   "eingaben": "../eingaben-gfn1",
+   "aufgabe": "haupt",
+   "verfahren": "neb",
+   "M": 12,
+   "d_grad": 30.0,
+   "sigma": 0.001,
+   "ks": 1.0,
+   "nvor": 150,
+   "ftol_ci": 0.001,
+   "ftol_band": 0.005,
+   "budget": 480.0,
+   "zs0_nmax": 3000,
+   "nmax_rel": 20000,
+   "zusatz": [
+    "SA=/home/fmh/fmhc-physics-remote/z2-schutz-1/rauch6/weg-haupt-r9-R18-neb.npz:X"
+   ],
+   "fortsetzung": "",
+   "fstufe": 1,
+   "keim": "",
+   "kappen": "30,60,90",
+   "delta_k": 1.0,
+   "nkeim": 2000,
+   "e_T": 0.001,
+   "keim_min": 100,
+   "zugpfad": "",
+   "nzug": 17,
+   "kappa": 100.0,
+   "nzugmax": 1500,
+   "ftol_zug": 0.0001,
+   "dtmax_zug": 0.05,
+   "k": 4,
+   "tol": 1e-09,
+   "maxiter": 3000
+  },
+  "code_sha256": "abc2a31201c35506e7ecca9a16278326639b7abe57ea777e2d465329c6d9e70f",
+  "finn_sha256": "e9f357b63788918f7edd6e4e4abc84dcafb7924fbbbb5e147150c16f12d6c155",
+  "g2_sha256": "c9374a9898c9ab0ff8458b5077ed0e31f4cec53362d432ab21ef670e3be67933",
+  "start_utc": "2026-10-05T11:33:56Z",
+  "schreibzeit_utc": "2026-10-05T11:33:56Z",
+  "numpy": "2.4.4"
+ },
+ "netz_info": {
+  "art": "diamant",
+  "feld": "so3",
+  "N": 28747,
+  "frei": 21386,
+  "kern": 3061,
+  "rand": 4300,
+  "bindungen": 55544,
+  "grad_frei_min": 4,
+  "grad_frei_max": 4,
+  "bindungslaenge_min": 0.8660254037844386,
+  "bindungslaenge_max": 0.8660254037844386,
+  "innen_frei": 4132,
+  "z3_gleich_g2": null
+ },
+ "ergebnisse": {
+  "S": {
+   "eigenwerte": [
+    -4.454366873624513e-09,
+    -4.4543545519264675e-09,
+    0.050415914373879704,
+    0.050415914373886796
+   ],
+   "fehler": null,
+   "dim": 64158,
+   "nnz": 922914,
+   "zahl_negativ": 0,
+   "laufzeit_s": 6.362819194793701,
+   "symmetrie_ueberlapp": [
+    0.9999999999999958,
+    1.0000000000000016
+   ]
+  },
+  "T": {
+   "eigenwerte": [
+    0.4304551159778919,
+    0.47611493831960633,
+    0.5634247424434495,
+    0.5718568728538566
+   ],
+   "fehler": null,
+   "dim": 64158,
+   "nnz": 922914,
+   "zahl_negativ": 0,
+   "laufzeit_s": 2.2370784282684326
+  },
+  "SA": {
+   "fehlt": true
+  }
+ },
+ "laufzeit_s": 8.648132801055908,
+ "maxrss_mb": 227.1484375
+}

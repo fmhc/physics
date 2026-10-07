@@ -1,0 +1,111 @@
+M2-MODEN: UNABHAENGIGE OPERATORABLEITUNG — 2026-10-02
+Keine Autorcodelektuere der Modensuche, keine Numerik oder Simulation.
+Basis: L=|dphi|²+(dchi)²/2-V und potential/forces des M2-maincode.
+Alle Spektralaussagen unten setzen einen stationaeren Hintergrund voraus;
+ein numerischer Hintergrundrest ist gesondert zu messen.
+
+1. HINTERGRUND UND KANONISCHE REELLE VARIABLEN
+phi=e^(i omega t)f(r), chi=g(r), f,g reell, Vakuum f->0,g->1.
+Setze A=1+g²-2f²+(3/2)f^4. Stationaere Gleichungen:
+ [-Delta+A-omega²]f=0,
+ -Delta g+g(g²-1+2f²)=0.
+Stoerungen: phi=e^(i omega t)(f+a+i b), chi=g+c.
+Kanonische reelle Variablen U=sqrt2 a, V=sqrt2 b, C=c geben jeweils
+Kinetik (Zeitableitung)²/2. Die radiale Norm nutzt dVol=4pi r²dr.
+
+Definiere selbstadjungierte Raumoperatoren
+ Lplus=-Delta+1+g²-6f²+(15/2)f^4-omega²,
+ Lminus=-Delta+1+g²-2f²+(3/2)f^4-omega²,
+ Lchi=-Delta+3g²-1+2f²,
+ B=2sqrt2 gf  (Multiplikationsoperator).
+Dann gilt
+ U_tt-2omega V_t+Lplus U+B C=0,
+ V_tt+2omega U_t+Lminus V=0,
+ C_tt+Lchi C+B U=0.
+Die symmetrische Kopplung B folgt aus den unskalierten Faktoren2gf/4gf.
+Die Rotationsterme tragen entgegengesetzte Vorzeichen vor V_t und U_t.
+
+2. REELLES SYMMETRISCHES QUADRATISCHES SPEKTRALPROBLEM
+Waehle U=U_r(r) cos(rho t), V=V_r(r) sin(rho t),
+C=C_r(r) cos(rho t), mit rho reell. Nach Einsetzen:
+
+ K(rho) (U_r,V_r,C_r)^T=0,
+
+ K(rho) = [ Lplus-rho²    -2omega rho     B            ]
+          [ -2omega rho   Lminus-rho²    0            ]
+          [ B            0              Lchi-rho²   ].
+
+Das ist ein quadratischer operatorwertiger Pencil, fuer jedes REELLE rho
+selbstadjungiert. Die beiden Rotationsbloecke haben bei diesem sin-Ansatz
+das GLEICHE negative Vorzeichen. Eine andere sin-Konvention aendert beide
+Vorzeichen gemeinsam und die passende Ladungsformel, nicht das Spektrum.
+Auf einem FV-Gitter ist -Delta zunaechst in der Volumengewichtung W
+selbstadjungiert. Fuer einen euklidisch symmetrischen Sparse-Solver jeden
+Block mit W^(1/2) K W^(-1/2) transformieren; lokale Potentiale bleiben
+diagonal. Nicht den untransformierten FV-Laplace als symmetrische Matrix
+deklarieren. Identische linearisierte Randbedingungen in allen Bloecken.
+
+Eine Nullstelle einer Eigenwertkurve lambda_j(rho) liefert einen Kandidaten.
+Zur Kontrolle direkt ||K(rho)z|| und Eigenvektornorm ausweisen, nicht nur
+eine Interpolationsnullstelle. Eigenwertnummern koennen bei Kreuzungen
+wechseln; Ueberlappung/Eigenraeume helfen bei der Zuordnung. Fuer eine
+einfache normierte Eigenkurve gilt
+ lambda'_j=-2rho ||z||²-4omega <U_r,V_r>.
+Die Steigung hat KEIN festes Vorzeichen. Weder monotone Kurven noch nur
+vorzeichenwechselnde Nullstellen sind allgemein garantiert; Tangential-
+nullstellen koennen von einem reinen Bracketing uebersehen werden.
+
+Alternative sechs Bloecke: q=(U,V,C), H mit Diagonalen Lplus,Lminus,Lchi
+und Kopplungen H_UC=H_CU=B; G_UV=-2omega, G_VU=+2omega, sonst0.
+ q_tt+G q_t+H q=0,
+ d/dt(q,p)=[0 I; -H -G](q,p), p=q_t.
+Das erste-Ordnung-Problem ist nicht euklidisch symmetrisch. Seine
+Eigenwerte s=+/-i rho beschreiben oszillatorische Loesungen; Re(s)>0
+waere eine wachsende lineare Stoerung. Nur reelle rho mit K zu suchen
+kann solche Instabilitaeten uebersehen: keine globale Stabilitaetsaussage.
+
+3. PHASENNULLMODE UND LINEARE LADUNG
+Lminus f=0. Die U1-Phasenmode ist statisch (U,V,C)=(0,sqrt2 f,0).
+Der gewaehlte sin(rho t)-Ansatz degeneriert bei rho=0; die Phase muss
+dort separat als konstante V-Stoerung interpretiert werden. Ein kleiner
+numerischer rho nahe0 ist daher ohne Hintergrundrest-/Nullraumkontrolle
+keine neu entdeckte positive interne Mode. Weitere Nullrichtungen oder
+verallgemeinerte Nullmoden sind nicht allein dadurch ausgeschlossen;
+Translationen liegen im l=1-Sektor und nicht im rein radialen l=0-Problem.
+
+Q=2 Integral Im(phi* phi_t) dVol. In erster Ordnung:
+ deltaQ(t)=sqrt2 Integral f(2omega U_r+rho V_r) dVol cos(rho t).
+Fuer rho>0 muss dieser Koeffizient bei einer geschlossenen, ladungs-
+erhaltenden Eigenmode verschwinden. Das folgt auch direkt aus Zeile2:
+Skalarprodukt mit f und Lminus f=0 gibt
+ rho <f,V_r>+2omega <f,U_r>=0.
+Dies ist eine wichtige Konsistenzkontrolle, aber kein unabhaengiger
+Existenzbeweis. NICHT stattdessen <f,V_r>=0 oder <f,U_r>=0 separat
+erzwingen: das koennte physische Moden entfernen. Endliche Hintergrund-
+reste und Randfehler begrenzen die Genauigkeit dieses Identitaetstests.
+
+4. FREIE VAKUUMWURZELN UND LOKALISATION
+Asymptotisch Lplus=Lminus=-Delta+2-omega², Lchi=-Delta+2, B=0.
+Bei -Delta=k² hat der komplexe2x2-Block die Faktoren
+ k²+2-(omega+rho)²  fuer U_r=V_r,
+ k²+2-(omega-rho)²  fuer U_r=-V_r;
+der chi-Faktor ist k²+2-rho².
+Das liefert die freien Wurzeln und kontrolliert zugleich die Vorzeichen
+der Rotationsterme. Bei0<omega<sqrt2 liegt ein positiver Kandidat unter
+allen Kanaelen genau im Intervall0<rho<sqrt2-omega.
+Ein normalisierbarer Modus dort ist eine gewoehnliche gebundene interne
+Mode, kein BIC. Die Phasenmode rho=0 zaehlt nicht. Lineare Strahlung in
+diese Vakuumkanaele ist dann geschlossen; nichtlineare Harmonische und
+andere Sektoren sind damit nicht kontrolliert.
+
+Ein endlicher Dirichletkasten diskretisiert auch das Kontinuum. Seine
+Eigenwerte allein beweisen keine Freiraumlokalisation. Fuer einen
+Subthreshold-Kandidaten muessen Feldkomponenten am Rand klein sein und
+rho sowie inneres normiertes Profil bei vergroessertem Kasten stabil
+bleiben; Raumgitterfehler separat behandeln. Relevant sind die drei
+Abklingraten kappa=sqrt(2-(omega+rho)²), sqrt(2-(omega-rho)²),
+sqrt(2-rho²). Nahe der ersten Schwelle kann die groesste Abklinglaenge
+beliebig gross werden; ein kleiner Randwert durch erzwungenes Dirichlet
+ALLEIN ist keine Kontrolle. Randkragennorm und Profil vor dem Rand sind
+aussagekraeftiger. Eine nachgewiesene positive Mode beweist weder
+Vollstaendigkeit der Suche noch nichtlineare/3D-Stabilitaet des Kerns.

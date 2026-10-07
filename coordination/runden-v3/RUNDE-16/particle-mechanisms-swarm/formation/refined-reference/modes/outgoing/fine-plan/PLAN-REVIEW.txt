@@ -1,0 +1,47 @@
+NICHTAUTOR-PLANLEKTUERE — 2026-10-02
+Reviewer tetra_next_review. Gelesen fine-plan/PLAN.txt und urspruenglicher
+outgoing/PLAN.txt. Kein Lauf, Interpreter oder Test. Code noch ausstehend.
+
+URTEIL
+Der feste Feinplan ist als NEUE diagnostische Antwortserie methodisch
+vertretbar; kein konkreter Planblocker. Dies ist keine Startfreigabe fuer
+noch ungelesenen Code und keine nachtraegliche Freigabe der Altserie.
+
+TRAGENDE TRENNUNGEN
+1. h=.025 ist nicht bloss eine fein interpolierte Referenz: Interpolation
+   liefert nur den Newton-Start, danach folgen echte diskrete Referenz,
+   neuer gekoppelter Ritzvektor und neu ausgewertete Quelle auf4800Zellen.
+   Alte Praeparationsgates bleiben bestehen; Gitternaehe allein genuegt nicht.
+2. R60 ist je h ein unrenormierter Ausschnitt derselben R120-Daten.
+   omega,rho,Referenz,Modennorm und komplexe Quellengauge muessen gemeinsam
+   gebunden bleiben. Kein R60-Ritzwert darf heimlich nu ersetzen.
+3. h-Vergleich benutzt Betraege; R-Vergleich die gemeinsame komplexe Gauge.
+   Ueberlapp>.98 ist betrags-/phaseninvariant zu definieren und darf nicht
+   durch unabhaengige Komponentendrehungen hergestellt werden.
+4. Der bekannte Lokalisierungs-FAIL wird nicht beseitigt oder versteckt.
+   Die Quelle stammt weiter aus einem diagnostischen Ritzvektor. Eine
+   kontrollierte erzwungene Antwort daraus bestaetigt keine gebundene Mode.
+5. Vorhandene Freikontrollen duerfen per Hash und tatsaechlichen alten
+   Einzelgates wiederverwendet werden. Ein alter Gesamtstatus ersetzt keine
+   Prüfung der benoetigten Einzelergebnisse. Die neue Null-Ratio betrifft
+   explizit das neue Paar .05/.025. Closed/Null erhalten keine Nichtnullgates.
+
+GRENZEN UND CODEPRUEFPUNKTE
+- J2=J(qphys)/4 sowie DC-Formel unveraendert. Nur globale Ritznormierung;
+  Gesamtamplitude alpha liegt ausserhalb dieser normierten Quelle.
+- Loesungsoperator, Ghostkonvention, Flussnormierung E-omegaQ, alte Nenner,
+  Fenster40..45/45..50 und Schwellen duerfen nicht still geaendert werden.
+- R-/h-Vergleich ist eine begrenzte Sensitivitaetsdiagnose, kein rigoroser
+  Fehlerbalken. Die 5mal-Signalgrenze darf nicht als Intervallbeweis gelten.
+- Vor einem Artefakt-PASS alle vier Faelle, Freigates und Herkunftsbindungen
+  pruefen. Artefakte atomisch nach abgeschlossenen Teilen sichern; Gatefehler
+  und Budgetabbruch muessen von Erfolg unterscheidbar bleiben.
+- Budget20 CPU-s ist gemeinsam, in zwei getrennte Prozesse12+8 inklusive
+  Imports/QA/IO aufgeteilt, nicht20 je Autor. Checkpoints10/6 ersetzen die
+  harten Rootdeckel nicht. Sparse-Aufrufe koennen diese ueberschreiten;
+  Abbruch bedeutet INCOMPLETE, keinen Retry. RAM<512MB ist ohne Laufmessung
+  eine Vorgabe/Schaetzung, kein nachgewiesener Verbrauch.
+
+FAZIT
+Plan pruefbar und sauber begrenzt. prepare.py und responses.py nach
+Fertigstellung gegen die Originalmethoden lesen; bis dahin kein Codeurteil.

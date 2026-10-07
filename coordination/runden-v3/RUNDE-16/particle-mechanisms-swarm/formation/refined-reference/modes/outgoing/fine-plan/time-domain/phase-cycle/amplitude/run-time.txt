@@ -1,0 +1,23 @@
+	Command being timed: "env OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 taskset -c 8 nice -n 19 prlimit --cpu=159:159 --as=1073741824:1073741824 /home/fmh/fmhc-physics-gpu-venv/bin/python amplitude.py --phase-code phase-cycle.py --time-code time-domain.py --split-code causal-split.py --excitation excitation.py --dynamics timestep-half.py --operator modecode.py --outgoing outgoing.py --response-code fine-responses.py --reference prepared --source-dir harmonic-source-run --prepared-dir fine-prepared --response-dir fine-responses-run --search-dir modes-search --observed-dir time-domain-run --phase-dir phase-cycle-run --out amplitude-run"
+	User time (seconds): 107.92
+	System time (seconds): 0.68
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:48.74
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 694600
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 69749
+	Voluntary context switches: 23
+	Involuntary context switches: 620
+	Swaps: 0
+	File system inputs: 16
+	File system outputs: 557104
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

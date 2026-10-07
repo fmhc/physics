@@ -1,0 +1,18 @@
+KOLL-1 lin Start 2026-09-30T08:09:40+02:00, Geraet cpu, torch 2.10.0+cu128
+  Argumente: {"kommando": "lin", "geraet": "cpu", "out": "lauf-lokal/rauch-cache1", "w2": 0.7976768, "rho0": 1.728147, "h": 0.3, "cfl": 0.4, "rmax": 14.0, "zmax": 20.0, "schicht": 4.0, "sig0": 2.0, "rfluss": 9.0, "zfluss": 15.0, "abstaende": [12.0], "kette": 0.0, "vorzeichen": -1, "halten": false, "paritaet": -1, "d": 10.0, "eps": 0.005, "T": 150.0, "dtmess": 0.2, "budget": 500.0, "weiter": false, "faeden": 1, "profil_h": 0.01, "profil_rmax": 30.0}
+  Profil omega^2 = 0.7976768: f0 = 1.024235494350164 (Klammer 6.2e-11), S0 = 1.049058, r_c = 14.35, A = 7.518211 (Streuung 4.4e-05 auf [r_c-4, r_c]), Q = 189.1443, E = 184.6243
+  stille Stelle: Singulaerwerte 5.036e-01, 4.270e-04 (Verhaeltnis 8.48e-04); a-Zeile +1.271e-04, +4.766e-04
+  Mode rho = 1.744617500: kappa_c = 0.524371, q = 2.440840, N (r <= 12.0) = 2.690973e+02, C_v = +1.514904e+01, offene Aussenamplitude 1.692e-07 (reduziert), wachsender Rest bei r_m +3.02e-04, V(r_m) +3.743e-03, u(0) = +0.4998, v(0) = +0.5002
+  Gitter h = 0.3, dt = 0.1200, nr = 47, nz = 135, Glieder 2: ['einzel', 'paar12'], Punkte je Glied 6345
+  Ueberlappmatrizen M (Zeile = Messball, Spalte = Mode): einzel: [[1.0]]; paar12: [[0.9943, 0.0043], [-0.0043, -0.9943]]
+  Start Zeitschleife 2026-09-30T08:09:42+02:00, t = 0.00 bis 150.0, Messung alle 2 Schritte, Budget 500.0 s
+  Ende Zeitschleife 2026-09-30T08:09:44+02:00, t = 150.00, Schritte 1250, 2.0 s (1.57 ms je Schritt in diesem Aufruf)
+=== Auswertung lauf-lokal/rauch-cache1 (lin, omega^2 = 0.7976768, h = 0.3, t bis 150.0) ===
+  paar12: Uebersprechen M_BA/M_BB = +0.0044, M_AB/M_AA = +0.0044
+  Demodulation bei rho_d = 1.7451812 (Nachfuehrung +5.64e-04); Bezug |a_A| Einzelball bei t = 36.2; Amplituden nach Inversion der Ueberlappmatrix (chi-Bild, CMT: arg(b/a) = -pi/2 fuer t_AB < 0)
+  Einzelball: Gamma (Abklingen a_A) = +7.548e-06; a_A(Ende) = 0.99459; Fluss/a^2 Mittel = 1.4983e-02
+  einzel  : Summe a^2 Ende/Anfang 0.98921, Gamma_Summe +7.548e-06, Gamma_A +7.548e-06, Frequenzversatz A gegen Einzelball +7.619e-08
+            a(t): 
+  paar12  : Summe a^2 Ende/Anfang 0.98891, Gamma_Summe +5.531e-06, Gamma_A +5.531e-06, Frequenzversatz A gegen Einzelball +2.033e-03; b_max 0.5076 bei t = 59; J aus atan2(b, a) -4.482e-18 -> pi/(2J) = 350470566330599296; arg(b/a) frueh +3.142
+            a(t): 
+Ende 2026-09-30T08:09:44+02:00, 3.8 s

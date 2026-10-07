@@ -1,0 +1,46 @@
+{
+  "id": "vertraege-m3-4-t4-4-s0-20260921",
+  "time": "2026-09-20T21:40:00+02:00",
+  "time_kind": "proposal",
+  "author": "claude-primary (Anthropic, Opus 5)",
+  "topic": "operations",
+  "status": "proposal",
+  "title": "Aus der Literatursichtung zwei S0-Vertraege: der Winkelkanal als schwerkraftblinder Pruefstein des Rauschmodells (M3.4) und die tiefe Steigung als gemessene Groesse auf der eingefrorenen SPARC-Auswahl (T4.4)",
+  "question": "Tragen die drei wichtigsten Treffer der DeepSeek-Vorsortierung vom 20.09. (arXiv:2607.14450 Chae & Yoon; Zenodo 10.5281/zenodo.22837688 Hajek; Frontiers 10.3389/fspas.2026.1890948 Ribeiro & Simonssini) nach eigener Pruefung an der Quelle einen Vertrag, der eine unserer offenen Fragen entscheidet - und welche?",
+  "action": "Alle drei Quellen selbst abgerufen und im Volltext geprueft (arXiv-Abstract und HTML, die beiden Zenodo-PDF und die Frontiers-PDF lokal mit pdftotext gewandelt, nur Textextraktion, keine Numerik). Ergebnis in coordination/analyse-literatur-20260920/EINORDNUNG.md je Treffer mit Behauptung, Daten, Methode, Bedeutung fuer unsere Zeile und Urteil stuetzt/widerspricht/daneben. Daraus zwei S0-Vertraege nach coordination/vertraege-vorlage/VORLAGE-v2.md: M3.4 (Winkel zwischen Paartrennung und Relativgeschwindigkeit auf der eingefrorenen M1-Auswahl gegen die 200 hashgebundenen Newton-Kataloge) und T4.4 (Profil der tiefen Steigung kappa auf der eingefrorenen SPARC-Auswahl, Zweiparameterfamilie (1+y^-q)^s). Beide mit Kennzahl als Formel, Nullproben, Schreibtischprobe gegen Symmetrien, Erreichbarkeitsprobe und den Ausgaengen A/B/T/U1/U2. S0-Fremdreview beider Vertraege durch Qwen (Alibaba, Bunker, 0 USD) und DeepSeek (OpenRouter, 0,01986 USD zusammen), Materialpaket mechanisch aus je einer Dateiliste durch paket.py, Leitfrage 'Ist das Kriterium erreichbar und wo ist es selbsterfuellend?'. Runde 022 blieb eingefroren; Register und Ledger nur gelesen, keine Stufe geaendert, kein Startsignal.",
+  "result": "Kein einziger der drei Treffer widerspricht einer unserer Zeilen. Chae & Yoon benennen den Verfahrensschritt, den unsere Kette ausgelassen hat (Kalibrierung an den Daten des newtonschen Bereichs) - genau der Schritt, an dem M1.7 mit Kontrolle K10 gescheitert ist; ihre Zahl gamma 1,3-1,6 ist im Abstract Literaturstand, nicht eigene Messung, und mit unserem Gamma 1,30158651067974 nicht vergleichbar (die vergleichbare Groesse waere 1,2172, und ihr Modell ist von M1.7 verworfen). Hajek liegt neben M3.3: M3.3 misst ein Verhaeltnis (quer/laengs 0,9249), in dem sich ein globaler Fehlerfaktor exakt herauskuerzt, Hajek fordert eine Skala (f_pm 1,97-2,25, von ihm selbst als fit-internal gekennzeichnet, die staerkere Fassung 2,1 hat er widerrufen, weil sein Gitter-Posterior einen Flachprior-Mittelwert von exakt 2,0 hatte); ausserdem ist der Aufsatz laut eigener Danksagung mit Claude (Anthropic) erstellt, seine Gutachterrunden waren Modellsitzungen, und er ist nicht begutachtet - er ist fuer uns kein unabhaengiges Haus. Frontiers beruehrt nicht T4.3, sondern T4.2: seine Gleichung 4 nu_p(y) = (1+y^-p)^(1/(1+p)) ist buchstaeblich unsere Form F6 (1+y^-q)^(1/(2q)) mit geloester Sperre der tiefen Steigung; die beiden fallen genau bei p=q=1 zusammen. T4.3 hat diese Achse per Konstruktion festgehalten, kann also nicht widersprochen werden. Fremdreview: beide Haeuser bei beiden Vertraegen 'freigeben mit Auflagen', beide urteilen, dass kein Ausgang trivial erfuellt oder trivial verfehlt ist. Quote neu/gesamt 15/20 (M3.4) und 16/22 (T4.4). Kosten 0,01986 USD von 0,40 USD Deckel, Reserve 1,00 USD unberuehrt, Restguthaben 6,73 USD.",
+  "meaning": "Die Vorsortierung eines guenstigen Modells ist als Vorsortierung brauchbar und als Beleg unbrauchbar: bei allen drei wichtigsten Treffern musste die Zuordnung korrigiert werden (Zahlenzuordnung, Herkunft, Zeilenbezug). Fachlich zeigt die Pruefung eine Luecke, die keine unserer 24 aktiven Zeilen besetzt: die absolute Skala der Paar-Geschwindigkeitsfehler. M3.4 misst sie ueber einen Kanal, der gegen die Masse-Leuchtkraft-Systematik blind ist; T4.4 misst, wie scharf unsere eingefrorene SPARC-Auswahl die tiefe Steigung ueberhaupt aufloest, und entscheidet damit, ob T4.3s 'keine Trennung nachgewiesen' eine Aussage ueber SPARC oder ueber unsere Formauswahl war. Beide sind Vorschlaege: S0, kein Startsignal, keine Registerwirkung, Start entscheidet Finn. M3.4 ist ausserdem erst nach einer Vorabrechnung V0 startfaehig, die aus dem Fremdreview stammt - solange sie nicht gerechnet ist, ist nicht gezeigt, dass der Kanal einen verdoppelten Fehler sehen wuerde, und das Urteil von DeepSeek dazu bleibt stehen.",
+  "sources": [
+    {
+      "path": "coordination/analyse-literatur-20260920/EINORDNUNG.md",
+      "label": "Einordnung der drei Treffer, an der Quelle geprueft",
+      "sha256": "143304ab262a6c8113af1771fa968d2e72bb9c231baacb8bfde0744b6bb9e860"
+    },
+    {
+      "path": "coordination/vertraege-20260921/m3-4-VERTRAG.md",
+      "label": "Vertrag M3.4, S0, kein Startsignal",
+      "sha256": "d45c08e311dc9f2503c27166bccc81aaaea36e92e59ca6f32bee4b8fceb3309e"
+    },
+    {
+      "path": "coordination/vertraege-20260921/t4-4-VERTRAG.md",
+      "label": "Vertrag T4.4, S0, kein Startsignal",
+      "sha256": "fe8b3892b34a160f300df5b395a0702897daee5075474688f64f3ff5c14cb356"
+    },
+    {
+      "path": "coordination/vertraege-20260921/REVIEW-m3-4.md",
+      "label": "Fremdreview M3.4: Befunde, Einarbeitung, Quote",
+      "sha256": "606de0ab91d52312b00eddf48c868ab6ca48487079dc8397f74a70a2ee100c17"
+    },
+    {
+      "path": "coordination/vertraege-20260921/REVIEW-t4-4.md",
+      "label": "Fremdreview T4.4: Befunde, Einarbeitung, Quote",
+      "sha256": "67b88f57db4c7278e0a1a179362cbb4eff9c21e46efd8165c729491b9dbf5250"
+    },
+    {
+      "path": "coordination/deepseek-20260920/scout-sichtung/SCOUT-SICHTUNG-20260920.md",
+      "label": "Vorsortierung, Grundlage dieses Auftrags",
+      "sha256": "6864e50e8ad12923e2f86e9faf575e0fe34137d2f8ae119f8aae43ba41ece37f"
+    }
+  ],
+  "recorded_at": "2026-09-20T19:09:53.180327+00:00"
+}

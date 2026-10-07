@@ -1,0 +1,563 @@
+{
+ "test": "teilung",
+ "start": "2026-09-30T11:15:05+02:00",
+ "ende": "2026-09-30T11:15:25+02:00",
+ "rauch": true,
+ "dauer_s": {
+  "schiessen_s": 10.673134676006157,
+  "entwicklung_fein_s": 9.112342430991703
+ },
+ "geraet": "CPU (nur Form- und Syntaxprobe)",
+ "torch": "2.10.0+cu128",
+ "notizen": [],
+ "parameter": {
+  "T": 2400.0,
+  "teil": "haupt",
+  "eps": 0.01,
+  "l_max": 6,
+  "L": 48.0,
+  "stufen": [
+   [
+    "grob",
+    0.6,
+    0.1
+   ],
+   [
+    "fein",
+    0.4,
+    0.05
+   ]
+  ],
+  "schwelle_rel": 0.5,
+  "q_min_rel": 0.03,
+  "blur": 1.0
+ },
+ "profile": [
+  {
+   "omega2": 0.535,
+   "m": 3,
+   "p": 2.660400763329927e-05,
+   "klammer": 1.4949819160392508e-11,
+   "x_schwanz": 31.59,
+   "N": 1062.2249866651946,
+   "G": 72.61715952191628,
+   "VU": 568.2903681107439,
+   "Q": 1553.9011917471357,
+   "E": 1209.1978954985393,
+   "virialrest": 2.1543980883752383e-10,
+   "S_zentrum": 0.0,
+   "S_max": 1.0029434696787123,
+   "R_halb": 21.85324497881056,
+   "R_kern_halb": 11.846177213056123,
+   "R_max": 17.63,
+   "f_top": 1.0165300454651272,
+   "gueltig": true
+  },
+  {
+   "omega2": 0.55,
+   "m": 3,
+   "p": 7.456217408704266e-05,
+   "klammer": 1.4948042803553108e-11,
+   "x_schwanz": 27.23,
+   "N": 614.0074380234339,
+   "G": 60.55852822337463,
+   "VU": 337.7040910099423,
+   "Q": 910.720206586975,
+   "E": 735.9667101462056,
+   "virialrest": 1.4369630121858437e-10,
+   "S_zentrum": 0.0,
+   "S_max": 0.98980338628505,
+   "R_halb": 17.456617464376837,
+   "R_kern_halb": 10.430870957156227,
+   "R_max": 14.120000000000001,
+   "f_top": 1.0230958614419827,
+   "gueltig": true
+  }
+ ],
+ "ergebnis": {
+  "fein": [
+   {
+    "lauf": "m3_0535",
+    "m": 3,
+    "omega2": 0.535,
+    "gestoert": true,
+    "stufe": "fein",
+    "dx": 0.4,
+    "dt": 0.05,
+    "Q_profil": 1553.9011917471357,
+    "n_max": 1,
+    "n_ende": 1,
+    "teilung": false,
+    "t_teilung": null,
+    "Q_box_verlust": -3.05903904451732e-06,
+    "E_box_verlust": 1.1991861284754712e-05,
+    "J_box_aenderung": 0.025013542558554036,
+    "J_box_start": 4662.864305191921,
+    "Q_box_start": 1554.2881017306404,
+    "windung_ende": [
+     3
+    ],
+    "l_dominant": 2,
+    "A_start_ende": [
+     0.009573623105053598,
+     0.009794667909192341
+    ],
+    "gamma": null,
+    "plausibel": {
+     "Q_nie_wachsend": true,
+     "Q_max_rel": 3.05903904451732e-06,
+     "Q_erhalten_bis_t": 48.0,
+     "Q_rel_aenderung": 3.05903904451732e-06,
+     "Q_erhalten": true,
+     "J_durch_Q_start": 2.9999999999999996,
+     "JQ_gleich_m": true,
+     "gamma_ok": true,
+     "bestanden": true
+    },
+    "gebiete": [
+     [
+      0.0,
+      1,
+      [
+       [
+        1362.9556,
+        3,
+        2.9995,
+        -0.17,
+        -0.15,
+        0.0021,
+        -0.00234
+       ]
+      ]
+     ],
+     [
+      5.0,
+      1,
+      [
+       [
+        1362.8796,
+        3,
+        2.9997,
+        -0.102,
+        -0.102,
+        0.00221,
+        -0.00184
+       ]
+      ]
+     ],
+     [
+      10.0,
+      1,
+      [
+       [
+        1365.2791,
+        3,
+        2.9996,
+        -0.135,
+        -0.15,
+        0.00211,
+        -0.00177
+       ]
+      ]
+     ],
+     [
+      15.0,
+      1,
+      [
+       [
+        1365.1734,
+        3,
+        2.9998,
+        -0.152,
+        -0.183,
+        0.00145,
+        -0.00128
+       ]
+      ]
+     ],
+     [
+      20.0,
+      1,
+      [
+       [
+        1365.3764,
+        3,
+        2.9994,
+        -0.084,
+        -0.174,
+        0.00148,
+        -0.00183
+       ]
+      ]
+     ],
+     [
+      25.0,
+      1,
+      [
+       [
+        1364.6475,
+        3,
+        2.9993,
+        -0.106,
+        -0.196,
+        0.00184,
+        -0.00227
+       ]
+      ]
+     ],
+     [
+      30.0,
+      1,
+      [
+       [
+        1364.3234,
+        3,
+        2.9996,
+        -0.053,
+        -0.155,
+        0.00218,
+        -0.00196
+       ]
+      ]
+     ],
+     [
+      35.0,
+      1,
+      [
+       [
+        1365.2792,
+        3,
+        2.9996,
+        -0.064,
+        -0.165,
+        0.00231,
+        -0.00169
+       ]
+      ]
+     ],
+     [
+      40.0,
+      1,
+      [
+       [
+        1366.1527,
+        3,
+        2.9997,
+        -0.101,
+        -0.216,
+        0.00205,
+        -0.00123
+       ]
+      ]
+     ],
+     [
+      45.0,
+      1,
+      [
+       [
+        1365.0145,
+        3,
+        2.9997,
+        -0.072,
+        -0.241,
+        0.0017,
+        -0.00142
+       ]
+      ]
+     ]
+    ]
+   },
+   {
+    "lauf": "m3_0550",
+    "m": 3,
+    "omega2": 0.55,
+    "gestoert": true,
+    "stufe": "fein",
+    "dx": 0.4,
+    "dt": 0.05,
+    "Q_profil": 910.720206586975,
+    "n_max": 1,
+    "n_ende": 1,
+    "teilung": false,
+    "t_teilung": null,
+    "Q_box_verlust": -9.95670573100682e-07,
+    "E_box_verlust": 8.447763477414938e-06,
+    "J_box_aenderung": 0.006073336596728041,
+    "J_box_start": 2732.85551232716,
+    "Q_box_start": 910.9518374423868,
+    "windung_ende": [
+     3
+    ],
+    "l_dominant": 2,
+    "A_start_ende": [
+     0.009652375643051605,
+     0.007418209495531925
+    ],
+    "gamma": null,
+    "plausibel": {
+     "Q_nie_wachsend": true,
+     "Q_max_rel": 9.95670573100682e-07,
+     "Q_erhalten_bis_t": 48.0,
+     "Q_rel_aenderung": 9.95670573100682e-07,
+     "Q_erhalten": true,
+     "J_durch_Q_start": 2.9999999999999996,
+     "JQ_gleich_m": true,
+     "gamma_ok": true,
+     "bestanden": true
+    },
+    "gebiete": [
+     [
+      0.0,
+      1,
+      [
+       [
+        762.0393,
+        3,
+        2.9994,
+        -0.137,
+        -0.128,
+        0.00266,
+        -0.00291
+       ]
+      ]
+     ],
+     [
+      5.0,
+      1,
+      [
+       [
+        761.2595,
+        3,
+        2.9996,
+        -0.083,
+        -0.09,
+        0.00258,
+        -0.0021
+       ]
+      ]
+     ],
+     [
+      10.0,
+      1,
+      [
+       [
+        762.0101,
+        3,
+        2.9998,
+        -0.096,
+        -0.135,
+        0.00217,
+        -0.00171
+       ]
+      ]
+     ],
+     [
+      15.0,
+      1,
+      [
+       [
+        761.8697,
+        3,
+        2.9996,
+        -0.076,
+        -0.164,
+        0.0022,
+        -0.00177
+       ]
+      ]
+     ],
+     [
+      20.0,
+      1,
+      [
+       [
+        761.1582,
+        3,
+        2.9993,
+        -0.053,
+        -0.155,
+        0.00254,
+        -0.0026
+       ]
+      ]
+     ],
+     [
+      25.0,
+      1,
+      [
+       [
+        763.2591,
+        3,
+        2.9993,
+        -0.051,
+        -0.173,
+        0.00313,
+        -0.00223
+       ]
+      ]
+     ],
+     [
+      30.0,
+      1,
+      [
+       [
+        762.053,
+        3,
+        2.9998,
+        -0.053,
+        -0.178,
+        0.00244,
+        -0.00137
+       ]
+      ]
+     ],
+     [
+      35.0,
+      1,
+      [
+       [
+        760.5734,
+        3,
+        2.9999,
+        -0.057,
+        -0.207,
+        0.00187,
+        -0.00163
+       ]
+      ]
+     ],
+     [
+      40.0,
+      1,
+      [
+       [
+        759.5613,
+        3,
+        2.9995,
+        -0.041,
+        -0.202,
+        0.00221,
+        -0.00274
+       ]
+      ]
+     ],
+     [
+      45.0,
+      1,
+      [
+       [
+        762.3683,
+        3,
+        2.9993,
+        0.008,
+        -0.239,
+        0.00233,
+        -0.00213
+       ]
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ "kennzahlen": {
+  "grob_quelle": "formprobe/teilung_haupt_grob_ergebnis.json",
+  "V1": {
+   "folge": [
+    [
+     0.53,
+     false
+    ],
+    [
+     0.535,
+     false
+    ],
+    [
+     0.54,
+     false
+    ],
+    [
+     0.545,
+     false
+    ],
+    [
+     0.55,
+     false
+    ],
+    [
+     0.56,
+     false
+    ]
+   ],
+   "monoton": true,
+   "hoechste_nicht_teilende": 0.56,
+   "tiefste_teilende": null,
+   "teilt_0530": false,
+   "teilt_0535": false,
+   "teilt_0550": false,
+   "teilt_0560": false,
+   "bestanden": false
+  },
+  "V2": {
+   "gamma_teilende": [],
+   "band": [
+    0.54,
+    0.548
+   ],
+   "hinweis": "Gerade gamma^2 gegen omega^2 durch die zwei tiefsten teilenden m = 3-Laeufe mit gamma-Fit",
+   "bestanden": null,
+   "grund": "weniger als zwei teilende m = 3-Laeufe mit gamma-Fit"
+  },
+  "V3": {
+   "windungen_toechter_m3": [],
+   "eich_quelle": "formprobe/teilung_eich_grob_ergebnis.json",
+   "m2_teilung": {
+    "0.56": false,
+    "0.565": false
+   },
+   "bestanden": true
+  },
+  "scheitert": true,
+  "scheitert_hypothese_V1_V2": true,
+  "plausibel": {
+   "fein_m3_0535": true,
+   "fein_m3_0550": true
+  },
+  "profilprobe": {
+   "m3_0535": {
+    "S_max": 1.0029434696787123,
+    "x_schwanz": 31.59,
+    "grenze": 40.0,
+    "gueltig": true,
+    "bestanden": false
+   },
+   "m3_0550": {
+    "S_max": 0.98980338628505,
+    "x_schwanz": 27.23,
+    "grenze": 40.0,
+    "gueltig": true,
+    "bestanden": true
+   }
+  },
+  "plausibilitaet_bestanden": false,
+  "L3": {
+   "laeufe": [
+    {
+     "lauf": "m3_0535",
+     "ausgang_und_toechterzahl_gleich": true,
+     "t_teilung_ok_info": true,
+     "gamma_rel_aenderung": null,
+     "bestanden": true
+    },
+    {
+     "lauf": "m3_0550",
+     "ausgang_und_toechterzahl_gleich": true,
+     "t_teilung_ok_info": true,
+     "gamma_rel_aenderung": null,
+     "bestanden": true
+    }
+   ],
+   "bestanden": true
+  }
+ }
+}

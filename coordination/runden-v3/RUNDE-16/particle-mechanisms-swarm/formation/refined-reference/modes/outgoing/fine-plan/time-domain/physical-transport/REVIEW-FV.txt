@@ -1,0 +1,61 @@
+Unabhängige Papierprüfung particle_binding, 03.10.2026; keine Rechnung.
+ROOT-FV-IDENTITAET.txt gegen timestep-half.py:23–79 und
+time-domain/code.py:203–205 direkt gelesen.
+
+Urteil: Identität und Vorzeichen stimmen für die vorgesehenen inneren
+Schalen mit ganzen FV-Zellen. Kein fehlender komplexer Faktor2, sofern
+der Fluss genau mit der SUMME der beiden Zellgeschwindigkeiten wie
+angegeben implementiert wird. Bei Verwendung ihres MITTELWERTS braucht
+der komplexe Term entsprechend den Faktor2.
+
+Grid/forces/energy: V=4pi*h*(r²+h²/12), A=4pi*r_face²,
+Delta=pR−pL. Codepotential U=.25(c²−1)²+(1+c²)|p|²−|p|⁴+.5|p|⁶
+liefert Up*=U_S p und U_c=c(c²−1+2|p|²). Die kinetischen Faktoren
+|v|² und .5w² sowie Kantenfaktoren |Delta p|² und .5(Delta c)²
+stimmen mit den Beschleunigungen überein. Daher fällt Potentialarbeit
+im lokalen semidiskreten Energiederivat weg.
+
+Expliziter Grenzkantencheck links: kinetische Kantenarbeit
+2A/h Re(conj(vL)Delta p) plus halbe Kantenenergiederivative
+A/h Re(conj(Delta p)(vR−vL)) ergibt
+A/h Re(conj(vL+vR)Delta p). Reeller chi-Term ergibt entsprechend
+A/(2h)(wL+wR)Delta c. Rechts jeweils das Negative. Somit korrekt:
+F_E=−A/h[Re(conj(vL+vR)Delta p)+.5(wL+wR)Delta c].
+Eine Schale erhält innere Kanten voll und beide Grenzkanten halb;
+dE_S/dt=F_E(inner)−F_E(outer). Halos müssen auf beiden Seiten
+mindestens die direkte Nachbarzelle enthalten.
+
+Geltungsgrenze: Diese Halbzuordnung betrifft innere Schalen, nicht eine
+stille Neudefinition der gesamten Domainenergie am äußeren festen Ghost.
+timestep-half.energy zählt die äußere Ghost-Kante vollständig. Für die
+geplanten Schalen40..45/45..50 weit innerhalbR120 ist das kein Problem.
+Kantenradien und Zellmasken anhand h bestimmen, nicht Fluss an beliebigem
+Zellzentrum als Schalenflächenfluss deklarieren.
+
+Ladung: Q_j=2V Im(conj(p)v), lokale Potentialkraft trägt nichts zu Qdot
+bei. Links einer Kante Qdot=+2A/h Im(conj(pL)pR); daher auswärts
+F_Q=−2A/h Im(conj(pL)pR), genau wie outward_flux im vorhandenen Code.
+Für p~exp(i omega t−ikr) und0<kh<pi gilt F_Q>0; F_E=omega F_Q>0
+bei omega>0. Gegenrichtung kehrt die Vorzeichen um. Kein Vertauschen
+von conj(pL)pR und conj(pR)pL in der Implementierung.
+
+Rotierende Ringe: gespeichertes zweites Feld ist d=v exp(−iomega t)
+−iomega z, NICHT Labor-v in gedrehter Phase. Für Energie und Ströme
+muss v_rot=d+iomega z zurückgebildet werden; globale exp(iomega t)
+hebt sich in allen bilinearen Größen auf. Q im Frame enthält damit
+auch2omega V|z|². chi/w müssen reell sein; numerische Imaginärreste
+vor ihrer Verwerfung prüfen. E−omegaQ und F_E−omegaF_Q sind mit
+derselben festen omega konsistent, aber nicht positiv definit.
+
+Armdifferenzen: Zuerst physische E/Q/F jedes vollständigen +/-/Nullarms
+berechnen, dann [.plus+.minus]/2−baseline. Fluss eines isolierten
+parity-even Felds ersetzt dies nicht, da bilineare Kreuzterme verloren
+gehen. Die Differenz ist keine eigenständige positive Energiequelle.
+Auch ein positiver endlicher Nettofluss belegt keine irreversibel
+verlorene Energie, Stationarität oder Lebensdauer. Verlet und die
+gespeicherte Zeitabtastung geben zusätzliche Bilanzreste; ein globaler
+Energiedrift genügt nicht als Reserve für ein kleines lokales Signal.
+
+Der angekündigte Transport-PLAN lag hier noch nicht vor; anschließende
+Prüfung muss Flächenauswahl, Bilanzintegration und Signalreserve konkret
+gegen diese Identität binden. Keine Rechnung durch diesen Bericht.

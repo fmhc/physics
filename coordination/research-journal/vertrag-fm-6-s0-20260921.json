@@ -1,0 +1,52 @@
+{
+  "id": "vertrag-fm-6-s0-20260921",
+  "time": "2026-09-21T12:45:00+02:00",
+  "time_kind": "document",
+  "author": "claude-primary (Anthropic, Opus 5)",
+  "topic": "theory",
+  "status": "reported",
+  "title": "Vertrag FM-6 geschrieben: ein Register fuer Mengen und Nummern, eine gemessene Radienwahl, eine gerechnete Positivkontrolle fuer B und eine Ausgangsbedingung ohne Duennwandnaeherung",
+  "question": "Laesst sich der Nachfolgevertrag zu FM-5 so bauen, dass (a) die Zweideutigkeit der beiden Radien gemessen entschieden ist, (b) die Ausgangsklasse B gerechnet erreichbar ist, (c) eine maschinelle Probe auch Mengen und Nummern prueft, und (d) nicht alle Ausgangsbedingungen aus derselben Naeherung stammen?",
+  "action": "Vertrag FM-6 von VORLAGE-v2 und ihrem Nachtrag aus neu geschrieben (2709 Zeilen, sha256 41c3748a...), Zahlen nur einzeln mit Belegstelle uebernommen. Machbarkeitsvorlauf in sieben Teilen auf fmh@192.168.178.69, 321,6 s CPU, eigene Units (CPUQuota 100 %, MemoryMax 8G), float64, kein CUDA, gauntlet-gpu.lock unberuehrt; Skript unabhaengig von fm_5.py neu geschrieben. Zwei maschinelle Proben: die Zahlenprobe aus FM-5 (43 Eintraege) und eine neue Mengen- und Nummernprobe pruefe_register_fm6.py mit vier Teilproben (einmalige Definition, Laenge/Elemente/Reihenfolge, Nummer gegen Name innerhalb der Nummernfamilie, Zaehlwort gegen Laenge), ueber Dateigrenzen. S0-Fremdreview durch Qwen (Bunker, 0,00 USD) und DeepSeek (OpenRouter, 0,024944 USD). Danach zweite Ueberarbeitung nach dem Methodik-Review vom 21.09. (Nachtrag 25 bis 27, Regel 15.8). Runde 022 nicht angefasst: kein Register, kein Ledger, keine Evidenz, keine Jury.",
+  "result": "(1) Radienwahl gemessen statt gesetzt: das gerechnete Randverhaeltnis liegt an acht Messstellen um 0,041 bis 0,106 Dekaden neben der Vorhersage mit dem Wandradius und um 0,413 bis 9,043 Dekaden neben der Gegenlesart; am Stopp bei L = 160 trennen neun Dekaden. (2) Positivkontrolle fuer B gerechnet: der kubische Arm (c5 = 0, h = 0,00125) erreicht an allen drei Pflichtgebieten alle fuenf B-Bedingungen, engste Marge 43. Bei h = 0,0025 erreicht derselbe Arm ebenfalls alles, was FM-5 fuer B verlangte - aber weil das Aufloesungstor G6 reisst; daraus die neue Bedingung B(4) 'weder G4 noch G6'. (3) Die Registerprobe an FM-5: 14 Beanstandungen, darunter genau die vier bekannten K9-statt-K11-Stellen und die vom Methodik-Review benannte Zeile 'vier gerechnete Gebiete' ueber einer fuenfzeiligen Tabelle; die beiden Q-Fehlzitate findet sie nicht - das steht als Grenze in der Probe selbst. (4) DeepSeek hat von Hand nachgerechnet, dass die siebenstellige Gebietsgrenze keine Nullstelle ist: g(0,7120609) = +5,64e-04 gegen g(0,7120608610354864) = -4,72e-13, weil dg/domega rund 1,4e+04 betraegt. (5) Neuer Arm A(iv): eine Gebietsgrenze allein aus dem gemessenen Profil, im Vorlauf auf 4,247e-05 (L = 40) und 1,258e-06 (L = 80) erprobt. (6) Deckungsprobe: die Robustheit von A(i) ist Faktor 5,82 (2,026 % Deckung gegen 0,348 % Naeherungsfehler bei L = 120).",
+  "meaning": "Drei Dinge sind erstmals belegt statt behauptet. Erstens ist die Wahl einer Zwischengroesse, an der ein Kriterium haengt, durch eine Messung entschieden worden und nicht durch Lesart - der Unterschied betraegt neun Dekaden. Zweitens ist die Gegenantwort B zum ersten Mal wirklich gerechnet worden, und genau diese Rechnung hat einen Mangel des Vorgaengerkriteriums aufgedeckt: FM-5 haette einen Stopp am Aufloesungstor als B gebucht. Drittens findet eine maschinelle Probe jetzt auch Nummern- und Mengendefekte, die eine reine Zahlenprobe prinzipiell nicht sieht - am bekannten Fehlerfall vier von zwoelf plus die erst spaeter benannte Stelle, und die Grenze steht in der Probe. Offen bleibt der Kern: A(i) und A(iii) stammen aus derselben Duennwandnaeherung wie die Schwelle, sind mit Faktor 5,8 bis 121 abschaetzbar und pruefen die Implementierung, nicht die Physik - beide Fremdhaeuser haben das unabhaengig gesagt, und es steht woertlich im Restrisiko. Die einzige offene Vorhersage ist A(iv), weil sie ohne die Naeherung auskommt.",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260921/fm-6-VERTRAG.md",
+      "sha256": "41c3748a4a74d0b78a36a45c327f70de08b523e645e25fccaa16f02f563154b8"
+    },
+    {
+      "path": "coordination/vertraege-20260921/startsignal-fm-6.txt",
+      "sha256": "283c2530e6a1022dc1bd3e1b16e9830716232f1986fbf996d3bd272a06e13d90"
+    },
+    {
+      "path": "coordination/vertraege-20260921/REVIEW-fm-6.md",
+      "sha256": "a45792fed92fcc93fd9b08d1c86504a2292505b4a02efc519a3089477e737dbf"
+    },
+    {
+      "path": "coordination/vertraege-20260921/fm-6-machbarkeit/MACHBARKEIT-FM-6.md",
+      "sha256": "7b796f8a6b5d3abfaae26d57986bf8487d702703a6fec43c8d1209c06cebc5ef"
+    },
+    {
+      "path": "coordination/vertraege-20260921/fm-6-machbarkeit/MACHBARKEIT-FM-6.json",
+      "sha256": "878bbb52bb25fdedda56cb79639ad28a4ba32a997c559d82977820862d623dac"
+    },
+    {
+      "path": "coordination/vertraege-20260921/GLEICHHEITSPROBE-FM-6.txt",
+      "sha256": "ce17ff7e60dc7a0b17ef87183909197edf7468ba0a54661551b2511f0d68d82c"
+    },
+    {
+      "path": "coordination/vertraege-20260921/REGISTERPROBE-FM-6.txt",
+      "sha256": "835b752b1575e2d1316355fa4cdac979e3ed7f23d8c89de689b15149dae3313c"
+    },
+    {
+      "path": "coordination/vertraege-20260921/REGISTERPROBE-FM-5-GEGENPROBE.txt",
+      "sha256": "36578916bd8d703ebbbaee0ae6603c5053741da537eb02a001a5ca0abcd5d123"
+    },
+    {
+      "path": "coordination/vertraege-20260921/VORAB-FM-6.json",
+      "sha256": "4657501d460d8bb2b3f5a315e45312f6f5cb65472d85fe0835e402f5b78e9dc0"
+    }
+  ],
+  "recorded_at": "2026-09-21T10:39:55.968051+00:00"
+}

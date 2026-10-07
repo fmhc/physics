@@ -1,0 +1,62 @@
+{
+  "time_kind": "completed",
+  "author": "Claude",
+  "topic": "binaries",
+  "status": "technical",
+  "title": "Vorwaertsmodell gegen Deprojektion auf unserer M1-Auswahl: Lauf endet mit T, weil eine Kontrolle auf ihrem Hilfsmass reisst - die Antwortfunktion der M1-Kennzahl ist trotzdem erstmals vermessen",
+  "question": "Saad & Ting 2026 erhalten am identischen 36-Paar-Datensatz von Chae gamma = 1,00 statt 1,60, allein durch Vorwaertsmodellierung statt Deprojektion. Liefert dieselbe Auswahl, auf der unsere Silberzeile M1.5 steht (18051 Paare, ev <= 0,05), bei Vorwaertsmodellierung einen anderen Wert als bei Deprojektion, und ist der Unterschied groesser als seine eigene Streuung?",
+  "action": "Vertrag V-2 nach coordination/vertraege-vorlage/VORLAGE-v2.md geschrieben (alle 13 Pflichtabschnitte), vor dem Start von zwei fremden Haeusern pruefen lassen (Qwen im Bunker, 0 USD; DeepSeek ueber OpenRouter, 0,0096 USD; Materialpaket mechanisch erzeugt; beide Urteile 'freigeben mit Auflagen'; 9 von 11 Befunden neu, davon 8 eingearbeitet und 4 begruendet abgelehnt). Gerechnet am 20./21.09.2026 auf fmh@192.168.178.69 als begrenzte User-Unit, CPU, einthreadig, 3367,7 s. Weg DEP: gamma direkt aus dem beobachteten Feldverhaeltnis. Weg FWD: das bedingte Newton-Vorwaertsmodell erzeugt Beobachtungsgroessen bei 15 Kopplungswerten zwischen 0,90 und 1,60 (200 Kataloge je Wert, gemeinsame Zufallszahlen), daraus die Antwortfunktion R(g), die an der Messung invertiert wird.",
+  "result": "Ausgang T: von dreizehn Pruefungen ist genau eine gerissen, Kontrolle K3, und zwar auf ihrem Hilfsmass (Anteil gekoppelter Paare im Referenzfeld 0,00322 gegen die Schranke 0,002), waehrend die Groesse, die K3 schuetzt - die Aenderung des Referenzfeldmedians ueber alle 15 Gitterpunkte - exakt 0,0 betraegt (Schranke 1e-3). Damit ist keine der gerechneten Zahlen ein Ergebnis. Gerechnet wurden: gamma_DEP = 1,220525, gamma_FWD = 1,174160, Delta = 0,046365 bei SD_Delta = 0,004614 (die Einzelwerte sind je rund 0,068 unsicher; die kleine gepaarte Streuung ist nicht die Genauigkeit der Einzelwerte). Erstmals vermessen ist die vollstaendige Antwortfunktion: R(1,00) = 1,047297, Steigung s_R = 0,994984, Verduennung d = s_R/R(1,00) = 0,950050; rauschfrei ist die Antwort auf 2,3e-6 genau proportional (Kontrolle K10, analytischer Sollwert 1). Bestanden haben alle drei Nullproben und die Kontrollen K1 (200/200 Kataloge archivgleich, max |dgamma| = 1,73e-13), K2, K4 (Trennkraft: die absichtlich global gekoppelte Variante antwortet mit 0,0168 gegen 0,5932 der richtigen), K5 bis K10.",
+  "meaning": "Der Lauf entscheidet ueber ein Verfahren, nicht ueber die Schwerkraft, und er ist NICHT gebucht: keine Registerzeile, keine Evidenzbindung, keine Stufenaenderung, Runde 022 bleibt eingefroren und die Silberzeile M1.5 unveraendert. Der Befund ist ein Methodenbefund: eine Kontrolle, deren Hilfsmass nicht vorab abgeschaetzt ist, reisst unabhaengig davon, ob die geschuetzte Groesse verletzt ist - der Vertrag verlangt eine solche Vorabschaetzung fuer Feldbesetzungen und fuer die Kennzahl, aber nicht fuer dieses Hilfsmass, und ist an der eigenen Regel gescheitert. Offen bleibt der groessere Punkt: die Erzeugung der Kataloge steht nicht im Vertragstext, deshalb sind R(g), s_R, gamma_FWD und Delta durch eine unabhaengige Reproduktion (S2) NICHT bestaetigt; das loest erst M1.8. Nachfolgevorschlag V-3 (K3 auf die geschuetzte Groesse statt auf das Hilfsmass) liegt daneben; am Kriterium wurde nichts geaendert. Korrektur gegenueber der ersten Meldung: an den Zahlen aendert sich nichts, aber zwei Quellen sind nach deren Veroeffentlichung noch gewachsen. Die Sitzung des Ausfuehrenden war zweimal an einem Kontingentlimit abgebrochen; der Vertragsautor hatte ersatzweise drei Textstuecke in den Bericht gesetzt und einen Nachfolgevorschlag geschrieben. Der Ausfuehrende ist danach zurueckgekehrt und hat dieselben Abschnitte selbst verfasst; die Ersatzstuecke des Autors sind wieder entfernt worden, im Bericht steht jetzt ausschliesslich der Text des Ausfuehrenden, und beide Nachfolgevorschlaege bleiben nebeneinander liegen. Der Hergang steht in ABLAUF-UND-AENDERUNGEN.txt Abschnitt F.",
+  "recorded_at": "2026-09-21T02:01:50.607245+00:00",
+  "id": "claude-v-2-vorwaertsmodell-gegen-deprojektion-20260921-korrektur",
+  "time": "2026-09-21T02:20:00+00:00",
+  "supersedes": "claude-v-2-vorwaertsmodell-gegen-deprojektion-20260921",
+  "sources": [
+    {
+      "path": "coordination/vertraege-20260921/v-2-VERTRAG.md",
+      "label": "Vertrag V-2, Fassung 2",
+      "sha256": "e8d44b97ff54e8229ca1ed47a0f536c58a667668013d6e459684b0d89d7c2503"
+    },
+    {
+      "path": "coordination/vertraege-20260921/startsignal-v-2.txt",
+      "label": "Startsignal mit Wortlaut, Zeit und Grund",
+      "sha256": "bdaeed03a07ba6cf4ba5172f6e31eb23651c152caa8eb205d68b858ee10ae324"
+    },
+    {
+      "path": "coordination/vertraege-20260921/REVIEW-v-2.md",
+      "label": "S0-Fremdreview Qwen und DeepSeek, Neu-Quote 9 von 11",
+      "sha256": "9dc4c26e15061d54d0cdcc8ece31943dacc6d097bd8dc53a7403b95a21959178"
+    },
+    {
+      "path": "coordination/vertraege-20260921/v-2-lauf/BERICHT-V-2.md",
+      "label": "Bericht mit beiden Werten, Streuung und Ursache",
+      "sha256": "605b2393a04720477fbce1b04633bd3871f7a0981fa6287cce8dc48e50528814"
+    },
+    {
+      "path": "coordination/vertraege-20260921/v-2-lauf/ERGEBNIS-V-2.json",
+      "label": "Ergebnisdatei, Quelle jeder Zahl",
+      "sha256": "e8026fc0add2e709622d8d367e277aef21829eee5d2599a9515e6763acc6cece"
+    },
+    {
+      "path": "coordination/vertraege-20260921/v-2-lauf/VORSCHLAG-V-3.md",
+      "label": "Nachfolgevorschlag nach Vertrag 11.3",
+      "sha256": "b4bebeb97095308e1b7ab9c2ee5c8844f0c32ad4f3ad97a54e85ba05acbc5e34"
+    },
+    {
+      "path": "coordination/art-grenzen-20260921/BEOBACHTUNGSSPANNUNGEN.md",
+      "label": "Saad & Ting 2026, Abschnitt 3.3",
+      "sha256": "bb9ae5e881c5721bca1b6faa1cceb4731e820e252ffc7dfafc3c0fe17cd20521"
+    },
+    {
+      "path": "coordination/vertraege-20260921/v-2-lauf/VORSCHLAG-V-3-AUSFUEHRENDER.md",
+      "label": "Nachfolgevorschlag des Ausfuehrenden, massgebliche Fassung",
+      "sha256": "15dbe459a8d69d81bf938705ee6c428bef442442f8319b76c2a6a47e4b5a3aee"
+    },
+    {
+      "path": "coordination/vertraege-20260921/v-2-lauf/ABLAUF-UND-AENDERUNGEN.txt",
+      "label": "Vertragsluecken, Skriptaenderungen und Rollenhergang",
+      "sha256": "a23f0a263d6d7199eed6e3a99ec45532ba2ccfaabf709f143d8e5c82a2c9476b"
+    }
+  ]
+}

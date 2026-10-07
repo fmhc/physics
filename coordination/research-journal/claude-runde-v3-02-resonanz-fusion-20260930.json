@@ -1,0 +1,49 @@
+{
+  "id": "claude-runde-v3-02-resonanz-fusion-20260930",
+  "time": "2026-09-30T02:25:31+02:00",
+  "time_kind": "completed",
+  "author": "claude-primary (Anthropic, Opus 5.5), Leitung; Feinrechnung Anthropic Opus 5.5 (Agent, tests1d_fein.py); Resonanz-Nachrechnung Codex (OpenAI, resonance-20260930)",
+  "topic": "theory",
+  "status": "reported",
+  "evidenzart": "modell",
+  "title": "Runde 2, Nachtrag (explorativ, zwei Haeuser): Die Absorptionsspitze ist eine langlebige, ausleckende Resonanz des Q-Balls bei nu - omega = 1,494 (Pol 1,49378 - 6,7e-5 i; Speicher konvergiert, Abklingrate getroffen; bekannt aus der Literatur); Q-Baelle verschmelzen im 1D-Modell fast nur bei gleicher Frequenz und kleinem Tempo",
+  "question": "Ist die Absorptionsspitze aus Runde 2 echt, und ist sie Aufnahme, Verzoegerung oder Numerik? Wovon haengt das Verschmelzen zweier Q-Baelle ab?",
+  "action": "Anthropic: tests1d_fein.py (vier Gitterstufen bis 243 Punkte je Wellenlaenge, Auslesung t = 300/500/1000/1500, Kern/Aussen, Teilchen-/Antiteilchenkanal, Amplitudenprobe, Frequenzen ueber der Kanalschwelle, Groessenprobe omega^2 = 0,6/0,8, Verschmelzungskarte 32 Stoesse), gerechnet 30.09. 00:07:39Z bis 00:23:20Z auf zwei Quadro-P4000-Spuren; Vorhersagen vorab in PLAN-FEIN.md. Codex unabhaengig: lineare Zwei-Kanal-Randwertrechnung und Zeitrechnungen auf drei Gittern (TS440 CPU), Literatur mit sechs PDFs.",
+  "result": "Resonanz: Speicher dA_Q(t=500) an der Spitze konvergiert zweiter Ordnung (nu = 2,325: 3,68e-3 -> 2,46e-3 -> 2,12e-3 -> 2,03e-3, q = 0,257, Richardson 2,00e-3); Spitze 2,326 gegen omega + Omega_2 = 2,330; Stossfrequenz 1,49369 und Ladungsrate 1,36e-4 gegen Codex-Pol 1,49378 und 2 Gamma = 1,343e-4; Codex: Abklingrate 1,3414e-4 gegen 1,3432e-4 (0,13 Prozent), linear, Abstrahlung nach aussen. Ueber der Schwelle 2,673 Antiteilchenstrom ~3,5e-4 (Zwei-Kanal). Groessenprobe: omega^2 = 0,6 Spitze 2,151 gegen eigene Vorhersage 2,153 (Fabry-Perot-Bild 2,47 verfehlt), omega^2 = 0,8 kein Speicher. Verschmelzen: nur 0,55 gegen 0,55 gleichphasig bei v <= 0,1 und 0,65 bei v = 0,02; 0,60 und ab 0,70 nie; gegenphasig nie; L3 32/32.",
+  "meaning": "Explorativ, keine formale Bestaetigung, 1D. Der Q-Ball speichert einen kleinen Teil einer einlaufenden Welle in einer langlebigen, langsam abstrahlenden Resonanz (Halbwertszeit der Amplitude ~ 10^4 Zeiteinheiten); keine dauerhafte Aufnahme. Der Mechanismus ist Literatur (Ciurla u. a. 2405.06591 u. a.); neu fuer uns ist der quantitative Abgleich in zwei Haeusern. Verschmelzen verlangt fast gleiche innere Frequenz und kleines Tempo. Offene Anschluesse: 3D-Resonanz (Runde 6 laeuft), Stabilisierung durch Reflexion (Karten R-1 bis R-5), Fusionsfenster als Gesetz (Fable KF-2).",
+  "sources": [
+    {
+      "path": "coordination/runden-v3/RUNDE-02.md",
+      "sha256": "45fa508fc98e147f56a025f5962eeab1f1c412d5b5991840204b0e148a9171f7"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-02/tests1d/tests1d_fein.py",
+      "sha256": "212028df2372aa7da6a5cc8d59ba25d0cac74db80012271806e6bd9f0ce840e1"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-02/tests1d/PLAN-FEIN.md",
+      "sha256": "7e2426865da6a11992b3ed39d26fe137aa2b631ba979cd3e67d1fa33e91aee24"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-02/tests1d/fein-lauf-69/kern3/fein_bericht.txt",
+      "sha256": "b644891ee7a0482fd55d3d9fc8fd3159b87cf216ee346f24b588fc18ca7789b8"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-02/tests1d/fein-lauf-69/g06/fein_bericht.txt",
+      "sha256": "d13ce1b65fc87fbabc855d488d7642c42d3c140f5eaba1abde0f249d9c50ca09"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-02/tests1d/fein-lauf-69/g08/fein_bericht.txt",
+      "sha256": "ecff9beb419ed379003de3f53b8f0ede57e077777fd6991388be42492846d620"
+    },
+    {
+      "path": "coordination/runden-v3/RUNDE-02/tests1d/fein-lauf-69/3k/fein_bericht.txt",
+      "sha256": "3dabf657384e9709910993a847e73fded8144148d07d7eda77923d37c0844442"
+    },
+    {
+      "path": "coordination/resonance-20260930/ERGEBNIS.txt",
+      "sha256": "1d0381d89d84a7161fb007f9e64ae17c18af064a434e36d5c191c6dbe929975b"
+    }
+  ],
+  "recorded_at": "2026-09-30T00:25:31.568807+00:00"
+}

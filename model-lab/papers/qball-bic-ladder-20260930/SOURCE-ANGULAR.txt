@@ -1,0 +1,43 @@
+Proposed source row — angular chirp l2 diagnostic (2026-10-01)
+Insertion: canonical main.tex after the formation/non-dilution discussion,
+before subsection Remaining mathematical and experimental tasks.
+No canonical edit, build, simulation or new array analysis by this author.
+Author role: wrote tangent run.py and this insert; result review is independent.
+Final notation clarification: J is the radial grid endpoint index (r_J=80),
+not a ladder label. The collar flag uses N_collar²(t)/N_h²(0)>1e-6;
+the insert states the complementary sampled bound <=1e-6 explicitly.
+
+Suggested provenance-table wording:
+Angular chirp l=2 | one prescribed tangent on the time-dependent inward
+chirp, R80,T32, three fixed h/dt combinations | finite diagnostic,
+not stationary formation or all-mode stability | angular-chirp-l2/PLAN.txt,
+run.py,prod/RESULT.json,RESULT-REVIEW.txt; visualization/plot.py.
+
+Bindings below are actually read sources, not merely proposed runs:
+Root=coordination/resonance-20260930/formation-nonlinear-3d/angular-chirp-l2/
+prod/RESULT.json b6f969c6a30e668002860cc023f479682c1e33ce1cfd5d1167a47a1606e63cdd
+RESULT-REVIEW.txt 2e028a548073e5e6207bd319c300cdc3c42910c26beec1d8e2ea854e511e2096
+ERGEBNIS-ROOT.txt f307c19d495577462aa2b25860f8f062016856b4c3d458bb973cb93bd9ba18e7
+run.py a069d0fcb18c36710feb520124872be87e4c66af9c66d7549c7b478d17e57df0
+PLAN.txt ce07c8d9ccc682960b88066aa6b6b4f2c7ad712ec2dc6b771a947020194ed9b6
+Canonical main.tex read at SHA256
+36de745e027d8ebe923321376bb77d81211a939a7295fb89d431f211f27c5223
+path=model-lab/papers/qball-bic-ladder-20260930/main.tex
+
+JSON locations: arms[1].samples[*].tangent.amplification, times in same
+records; final norm and zonal values in arms[1].samples[-1].tangent;
+comparisons[*].endfield_difference_over_initial. Peak sampled value checked
+against independent RESULT-REVIEW; not a claim that continuous maximum is known.
+Actual route from receipts/review: .69 CPU11 nice19, one thread, QA46PASS,
+production995PASS, finalrehash true; .91+12.01=12.92 external CPU seconds.
+Background replay is implementation control, not independent radial evidence.
+
+Figure: angular-chirp-l2.pdf from visualization/plot.py; only code/caption
+read here. No final rendered PDF hash claimed in this source row: Root must
+bind the actual rendering receipt/file at integration. The fixed +/-12
+refers to spatial display extent, NOT a fixed numerical colour amplitude.
+All snapshot panels share one symmetric colour scale chosen for rendering.
+The input norm is positive reduced discrete norm, not physical local energy;
+its core/exterior split does not discard the continuum eta-gradient boundary
+term under an asserted local energy identity. Display amplitudes are per unit
+linear tangent, never a reconstructed finite-amplitude 3D solution.
