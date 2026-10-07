@@ -9,7 +9,7 @@ Literatur, [H] Hypothese.
   Netz (1,032) mit dem Hyperkubus (1,034) auf 0,2 +- 0,7 % ueberein [E].
   - T_c*Wurzel(t0) weicht um -2,7 % ab, haengt aber stark an der Lage des Uebergangs auf dem Netz.
   - Die Fadenspannung (S4) blieb unentschieden.
-  - Ein zweiter Gitterabstand (S6) laeuft.
+  - Zweiter Gitterabstand (S6): T_c*Wurzel(t0) +0,9 +- 2,2 %, w0/Wurzel(t0) -2,2 +- 0,9 %; empfindlich auf beta_c(Netz) +- 0,03 und das Volumen ([ERGEBNIS-S6](coordination/runden-v3/RUNDE-37/quant-3/ERGEBNIS-S6.md)).
   - Ordner: coordination/runden-v3/RUNDE-37/quant-3/.
 - **Netzdynamik (VOLUMEN-G2-1):** Ohne Bedingung bricht die Umklapp-Dynamik in allen vier Testnetzen ab. Haelt man
   das Gesamt-4-Volumen fest (unimodulare Bedingung), laufen drei von vier Netzen zehn Schwingungen stabil [E].
@@ -25,28 +25,12 @@ Literatur, [H] Hypothese.
   Kollaps trugen beim ehrlichen Nachrechnen nicht.
   - Ein echter Kern: Die Volumenbedingung beim Umklappen (siehe oben).
 
-## Stand je Schicht (Schaetzung, 07.10.2026)
-
-| Schicht | Stand | Aenderung |
-|---|---|---|
-| Netz und Raum | 65 % | +5: Die Volumenbedingung stabilisiert das Umklappen in 3 von 4 Netzen |
-| Schwerkraft | 55 % | +5: Perihel aus Netzwerten |
-| Licht | 55 % | - |
-| Materiefeld | 30 % | - |
-| Spin 1/2 | 20 % | - |
-| Starke Kraft | 35 % | +5: w0/Wurzel(t0) universell |
-| Mesonen, Baryonen | 5 % | - |
-| Schwache Kraft, Higgs, Generationen | 0 % | - |
-| Vergleich mit Messdaten | 5 % | - |
-| Quantengravitation | 7 % | +2: Messwerkzeug geeicht |
-
-Gesamt grob 22 %.
 
 ## Naechste Schritte (Reihenfolge nach Hebel)
 
 1. **Starke Kraft:**
-   - Zweiter Gitterabstand (S6, laeuft).
-   - Traegt er, folgt SU(3) auf dem Netz mit demselben Flow-Protokoll.
+   - Zweiter Gitterabstand (S6) erledigt; SU(3) an den Codex-Strang uebergeben.
+   - Als Naechstes SU(3) auf dem Netz mit demselben Flow-Protokoll.
    - Danach die Fadenspannung ueber einen Potentialfit mit echten Punktlagen.
 2. **Volumenregel pruefen und gegebenenfalls in die Grundgleichung aufnehmen:**
    - voller G2 mit allen Ableitungen der Traegheit

@@ -24,22 +24,24 @@ Theorie der Teilchenphysik entstehen.
 - Die Architektur Regge + DEC-Maxwell + Skalar ist **Literatur**, unter anderem McDonald/Miller 2010. Eigen sind nur
   die Rechnungen auf diesem Netz.
 
-## Stand je Schicht (Schaetzung der Leitung, 07.10.2026)
+## Stand je Bereich (07.10.2026)
 
-| Schicht | Stand | steht | fehlt |
+Keine Fortschrittsprozente: Je Bereich steht, was gerechnet ist, was Hypothese ist und welcher Mechanismus fehlt. Alle
+Rechnungen sind synthetisch, auf kleinen Netzen und nicht begutachtet. Pfade relativ zu `coordination/runden-v3/`.
+
+| Bereich | Gerechnet [E] | Hypothese [H] | Fehlt |
 |---|---|---|---|
-| Netz und Raum | 65 % | Netz, Fuellung, Gewichte; traegt Licht und Schwerkraft | Herleitung des Netzes; nichtlineare Netzdynamik (Ausnahmezuege beim Umklappen) |
-| Schwerkraft | 55 % | Fernfeld wie ART: Lichtablenkung, Shapiro, beta ~ 1, gleiche Uhr fuer Licht und Wellen | Nahfeld, Perihel, Kollaps |
-| Licht | 55 % | klassisch und quantisiert ein masseloses, richtungsgleiches Photon | Kopplungskonstante nicht hergeleitet |
-| Materiefeld (Q-Baelle) | 30 % | Q-Baelle sind Vielteilchen-Objekte | Massen kleiner Teilchen |
-| Spin 1/2 | 20 % | Fadenenden mit Spin-Vorzeichen per Buchhaltung | eine Dynamik, die es erzwingt |
-| Starke Kraft | 35 % | SU(2) auf dem Netz schliesst ein und schmilzt ohne Volumenuebergang (kleine Netze) | Fadenspannung (Grenzfall), SU(3) |
-| Mesonen, Baryonen | 5 % | duenne Faeden stabil | fast alles |
-| Schwache Kraft, Higgs, Generationen | 0 % | - | alles |
-| Vergleich mit Messdaten | 5 % | Schranken (GW170817, Doppelbrechung) | Vorhersagen |
-| Quantengravitation | 7 % | dynamisches Netz (CDT-artig) gebaut, Volumina zu klein | alles Weitere |
+| Netz und Raum | Netz V mit Gewichten; Umklappen mit Traegheit am Netz ([UMKLAPP-FOLGE-1](coordination/runden-v3/RUNDE-37/umklapp-folge-1/ERGEBNIS.md), [NETZ-NICHTLINEAR-1](coordination/runden-v3/RUNDE-37/netz-nichtlinear-1/ERGEBNIS.md)); mit fester 4-Volumen-Bedingung laufen 3 von 4 Testnetzen stabil, ohne sie keins ([VOLUMEN-G2-1](coordination/runden-v3/RUNDE-37/volumen-g2-1/ERGEBNIS.md)) | Volumenerhalt (unimodular) als Grundregel | voll nichtlineare Rechnung mit allen Ableitungen; Herleitung des Netzes |
+| Schwerkraft | Fernfeld wie ART (Lichtablenkung, Shapiro, beta ~ 1; [GRUNDGLEICHUNG-v3](coordination/runden-v3/RUNDE-50/GRUNDGLEICHUNG-v3.md)); Perihel-Faktor aus diesen Netzwerten 0,993 bis 1,000 (PPN-Arithmetik, [ANTIGRAVITY-NACHBAU-1](coordination/runden-v3/RUNDE-37/antigravity-nachbau-1/ERGEBNIS.md)) | - | Nahfeld, Kollaps, nichtlineare Dynamik |
+| Licht | DEC-Maxwell auf V; quantisiert ein masseloses, richtungsgleiches Photon ([QUANT-2](coordination/runden-v3/RUNDE-37/quant-2/ERGEBNIS.md)) | - | Kopplungskonstante nicht hergeleitet |
+| Starke Kraft | SU(2) auf dem Netz: Einschluss, Deconfinement ohne Volumenuebergang; Flow-Skalen bei zwei Gitterabstaenden auf etwa 1 bis 3 % wie der Hyperkubus, begrenzt durch die Unsicherheit von beta_c ([QUANT-3](coordination/runden-v3/RUNDE-37/quant-3/), S5, S6) | - | SU(3); Fadenspannung (unentschieden); groessere Volumina |
+| Mesonen, Baryonen | Unveraenderte Q-Baelle sind keine Hadronen: bosonisch, Drehimpulssprung um die ganze Ladung, keine Regge-Gerade ([QBALL-HADRON-1](coordination/runden-v3/RUNDE-37/qball-hadron-1/ERGEBNIS.md)). Q-Ball-Dreierbuendel binden, zeigen aber kein SU(3), keinen Einschluss und nichts dreierspezifisches ([QBALL-DREIPOL-1](coordination/runden-v3/RUNDE-37/qball-dreipol-1/ERGEBNIS.md), [-2](coordination/runden-v3/RUNDE-37/qball-dreipol-2/ERGEBNIS.md), [-3](coordination/runden-v3/RUNDE-37/qball-dreipol-3/ERGEBNIS.md)) | Faeden mit zwei bzw. drei Enden als Meson bzw. Baryon | jeder Mechanismus mit Einschluss und Quantenzahlen |
+| Spin 1/2 | Fadenenden mit Fermion-Statistik (Twist); 2-pi-Vorzeichen nur per Buchhaltung, aus einer getrennten Regel ([GERAHMTER-FADEN-1](coordination/runden-v3/RUNDE-37/gerahmter-faden-1/ERGEBNIS.md)) | doppelte Wertung (SU(2)-Rahmen) als Dynamik | eine Dynamik, die Spin und Statistik koppelt |
+| Schwache Kraft, Higgs, Generationen | nichts Tragendes. Die KI-Entwuerfe zu Generationen und Massenhierarchie hielten beim Nachrechnen nicht ([ANTIGRAVITY-NACHBAU-1](coordination/runden-v3/RUNDE-37/antigravity-nachbau-1/ERGEBNIS.md)) | - | jeder Mechanismus |
+| Vergleich mit Messdaten | nur Schranken (GW170817, Doppelbrechung) | - | Vorhersagen |
+| Quantengravitation | CDT-artiges dynamisches Netz mit Feldern ([NETZ-DYN-1](coordination/runden-v3/RUNDE-37/netz-dyn-1/ERGEBNIS.md)); Messwerkzeug geeicht, konvergiert langsam ([DS-EICHUNG-2D-1](coordination/runden-v3/RUNDE-37/ds-eichung-2d-1/ERGEBNIS.md)) | 4D aus Zeitschichten | grosse Volumina |
 
-Gesamt grob 22 % (Stand 07.10.2026; Neues und naechste Schritte in [STAND-UND-NAECHSTE-SCHRITTE.md](STAND-UND-NAECHSTE-SCHRITTE.md)) auf dem Weg zu einer kompletten Theorie.
+Neues und naechste Schritte: [STAND-UND-NAECHSTE-SCHRITTE.md](STAND-UND-NAECHSTE-SCHRITTE.md).
 
 ## Verzeichnisse
 

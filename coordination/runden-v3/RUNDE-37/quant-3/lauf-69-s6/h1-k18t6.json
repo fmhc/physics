@@ -1,0 +1,169 @@
+{
+ "kopf": {
+  "python": "3.12.3",
+  "numpy": "2.4.4",
+  "torch": "2.5.1+cu121",
+  "gpu": "Quadro P4000",
+  "host": "ubuntu-auto",
+  "start_utc": "2026-10-07T15:27:10Z",
+  "argv": [
+   "/home/fmh/fmhc-physics-remote/quant-3/code/su2b.py",
+   "lauf",
+   "--gitter",
+   "kubisch",
+   "--L",
+   "18",
+   "--Nt",
+   "6",
+   "--betas",
+   "2.38:2.42:2.44:2.48",
+   "2.48:2.44:2.42:2.38",
+   "--starts",
+   "heiss",
+   "kalt",
+   "--ntherm",
+   "150",
+   "--nmess",
+   "1000",
+   "--nbin",
+   "20",
+   "--nor",
+   "2",
+   "--graph",
+   "--zeitlimit",
+   "540",
+   "--seed",
+   "20261201",
+   "--out",
+   "/home/fmh/fmhc-physics-remote/quant-3/lauf-s6/h1-k18t6"
+  ],
+  "skript_sha256": "eafc7ed27848aee8339410fef23a4ae6b72112c309bc514f55525267c890f6d0",
+  "qu2_sha256": "76ee69416803374d90082f856bf33f97f063da83980baf26566d863606e5390c",
+  "gpu_frei_MB_start": 2064.449536
+ },
+ "gitter": "kubisch",
+ "L": 18,
+ "Nt": 6,
+ "tau": 1.0,
+ "gew": "eins",
+ "nE": 139968,
+ "nF": 209952,
+ "nS": 5832,
+ "NV": 1,
+ "farben": 11,
+ "w_summe": 209952.0,
+ "n_neg_w": 0,
+ "mh_max_je_plakette": 2,
+ "multihit": false,
+ "R": 2,
+ "S": 4,
+ "folgen": [
+  [
+   2.38,
+   2.42,
+   2.44,
+   2.48
+  ],
+  [
+   2.48,
+   2.44,
+   2.42,
+   2.38
+  ]
+ ],
+ "starts": [
+  "heiss",
+  "kalt"
+ ],
+ "ntherm": 150,
+ "nmess": 1000,
+ "nbin": 20,
+ "nor": 2,
+ "mabst": 1,
+ "seed": 20261201,
+ "korr": false,
+ "zeit_bau_s": 2.5848116874694824,
+ "stufen": [
+  {
+   "stufe": 0,
+   "betas": [
+    2.38,
+    2.48
+   ],
+   "nmess": 1000,
+   "nbin": 20,
+   "zeit_s": 112.82756185531616,
+   "zeit_therm_s": 13.61186408996582,
+   "pw_mittel": [
+    0.6250615653428371,
+    0.6483676689662731
+   ],
+   "L_mittel": [
+    0.024601773202184575,
+    0.13306636743722533
+   ]
+  },
+  {
+   "stufe": 1,
+   "betas": [
+    2.42,
+    2.44
+   ],
+   "nmess": 1000,
+   "nbin": 20,
+   "zeit_s": 155.73540997505188,
+   "zeit_therm_s": 16.97982358932495,
+   "pw_mittel": [
+    0.6349822061790978,
+    0.6397462727631383
+   ],
+   "L_mittel": [
+    0.05411285257464387,
+    0.096690219047965
+   ]
+  },
+  {
+   "stufe": 2,
+   "betas": [
+    2.44,
+    2.42
+   ],
+   "nmess": 1000,
+   "nbin": 20,
+   "zeit_s": 123.34550142288208,
+   "zeit_therm_s": 14.612747430801392,
+   "pw_mittel": [
+    0.6396680338504105,
+    0.6351597092780829
+   ],
+   "L_mittel": [
+    0.08571362042060694,
+    0.0664627935978729
+   ]
+  },
+  {
+   "stufe": 3,
+   "betas": [
+    2.48,
+    2.38
+   ],
+   "nmess": 1000,
+   "nbin": 20,
+   "zeit_s": 124.5614013671875,
+   "zeit_therm_s": 15.098845720291138,
+   "pw_mittel": [
+    0.6483110377126767,
+    0.6249111282655105
+   ],
+   "L_mittel": [
+    0.13660178685445765,
+    0.025021448305336334
+   ]
+  }
+ ],
+ "abbruch": null,
+ "zeit_gesamt_s": 519.0569236278534,
+ "gpu_speicher_max_MB": 270.966272,
+ "cuda_graph": true,
+ "waermebad_ohne_annahme": 0
+}
