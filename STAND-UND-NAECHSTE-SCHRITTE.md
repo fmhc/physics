@@ -26,6 +26,27 @@ Literatur, [H] Hypothese.
   - Ein echter Kern: Die Volumenbedingung beim Umklappen (siehe oben).
 
 
+## Schaetzwerte (subjektiv) und Aenderungen gegenueber der Fassung vom 07.10. mittags
+
+Die Prozentwerte sind eine subjektive, grobe Entwicklungsschaetzung bis zu einem vollstaendigen physikalischen
+Mechanismus. Sie sind keine Wahrscheinlichkeit, kein Messwert und kein bestaetigter Anteil, und sie werden nicht
+gemittelt. Die Befunde in den verlinkten Ergebnissen haben Vorrang.
+
+| Bereich | alt | neu | Grund |
+|---|---|---|---|
+| Netz und Raum | 65 % | 65 % | unveraendert |
+| Schwerkraft | 55 % | 55 % | unveraendert |
+| Licht | 55 % | 55 % | unveraendert |
+| Materiefeld (Q-Baelle) | 30 % | 30 % | unveraendert, wieder als eigene Zeile |
+| Spin 1/2 | 20 % | 20 % | unveraendert |
+| Starke Kraft | 35 % | 40 % | S6: Flow-Skalen bei zwei Gitterabstaenden vertraeglich mit dem Hyperkubus; SU(3) fehlt |
+| Mesonen, Baryonen | 5 % | 10 % | QBALL-DREIPOL-2/3 gepruefte Struktur- und Stabilitaetsbefunde in 2D/3D; weiterhin kein Einschluss und keine Hadronen |
+| Schwache Kraft | 0 % (gemeinsam) | 2 % | getrennt; Literaturvorarbeit RUNDE-20/ew-baelle, kein eigener Mechanismus |
+| Higgs | 0 % (gemeinsam) | 2 % | getrennt; dieselbe Literaturvorarbeit, KI-Entwurf zur Massenhierarchie hielt nicht |
+| Generationen | 0 % (gemeinsam) | 2 % | getrennt; nur Negativbefund aus ANTIGRAVITY-NACHBAU-1 |
+| Vergleich mit Messdaten | 5 % | 5 % | unveraendert |
+| Quantengravitation | 7 % | 7 % | unveraendert |
+
 ## Naechste Schritte (Reihenfolge nach Hebel)
 
 1. **Starke Kraft:**
