@@ -1,0 +1,17 @@
+{
+  "host": "ubuntu-auto",
+  "gpu": "Quadro P5000",
+  "torch": "2.5.1+cu121",
+  "compute": "CUDA float64 FFT, energies, derivatives, norms and finite differences; CPU IO/control/scalar grouping",
+  "input_sha256": "1aa779f171b0ab3c3eb1b844d98934b18cb6dc129b398fff10ea7e33ce801a7d",
+  "source_hashes": {
+    "run.py": "8b7d47fbac1eb08862f3640ea8d8825e765111d2bb9e1727516e57ee109ea085",
+    "PLAN.md": "b2be6b452466dcc272356e0ba225991a178e596a36bc56d6d9a0bfd34810dc93"
+  },
+  "export_changes": "Only input location adapted to adjacent published B13 data; scientific code unchanged. Exported script not rerun.",
+  "exported_run_sha256": "2a4a8b9be8fbc991ab40d59423a91cd9d9d323c80de51c8682fbdf4173959241",
+  "source_base_public_commit": "bd26c7838b1ad29bf12be20737eaa9975fce9dc9",
+  "service_runtime_s": 5.33,
+  "lease_released": true,
+  "plotting": "CPU matplotlib on same compute host; SVG whitespace stripped; no numerical simulation on coordinator"
+}

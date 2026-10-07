@@ -58,6 +58,14 @@ Alle 24 vorhandenen B13-Profile wurden neu ausgewertet. Die räumliche Antwort z
 
 Neue CUDA-Auswertung vorhandener radialer 3D-Profile; keine erneute Relaxation. Gültigkeit für neue selbstkonsistente Profile und Zeitentwicklung ist noch offen. Die Entwicklungsschätzungen bleiben unverändert.
 
+## Neuer Befund: konsistente reduzierte Higgs-Kräfte (08.10.2026)
+
+Die anschließende Kraftprüfung auf denselben 24 Profilen ist abgeschlossen. Die vollständige Ableitung der zusammengesetzten Higgsenergie (**Ecomp**) erreicht bei stärkerer Portalkopplung **0,0097–0,0116 % Kraftfehler**. Alle drei geprüften Energie-Kraft-Paare bestehen das vorab festgelegte 5-%-Kriterium in allen acht Parametergruppen. Einfaches Einsetzen des angenäherten Higgsfeldes lässt dagegen einen messbaren Kettenregelbeitrag weg. [Ergebnisse, Ableitung, QA und reproduzierbarer Code](coordination/higgs-force-20261008/ERGEBNIS.md).
+
+[![Reduzierte Higgsmodelle: Fehler von Portalkraft und Energie](coordination/higgs-force-20261008/force-errors.svg)](coordination/higgs-force-20261008/ERGEBNIS.md)
+
+Damit ist ein weiterer Baustein für die Modellverbindungen gerechnet. Neue selbstkonsistente Minima, Zeitentwicklung und Übertragung auf V bleiben offen; die Entwicklungsschätzungen ändern sich dadurch nicht.
+
 ## Zehn Verbindungsideen in drei Runden
 
 Aus den vorhandenen Higgsportal-Rechnungen wurden [zehn Ideen über drei analytische Runden weiterentwickelt](coordination/higgs-verbindungen-20261007/README.md): Mechanismus, Gegenprüfung und konkreter Entscheidungstest. Priorität haben die berechenbare Higgsrückwirkung, die vollständige Modenprüfung und die Übertragung derselben Portalwirkung auf V. Neue analytische Bausteine und eine gezielte Prüfung des OpenAI-Math-Releases sind dokumentiert. Keine neuen Simulationen oder erhöhten Fortschrittsprozente.
