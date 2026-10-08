@@ -74,6 +74,14 @@ Damit ist ein weiterer Baustein für die Modellverbindungen gerechnet. Neue selb
 
 Geprüft ist ein bekannter radialer 3D-Zweig. Allgemeine Stabilität, Zeitentwicklung und Übertragung auf V bleiben offen. Die Entwicklungsprozente bleiben unverändert.
 
+## Neuer Befund: energetische Störrichtungen des Higgsportalzweigs (08.10.2026)
+
+**24 CUDA-Eigenwertmatrizen** prüfen die volle Theorie auf drei Radialgittern: Amplituden einschließlich Higgs sowie Phasen, jeweils für Winkelordnungen l=0 bis 3. Alle acht Sektoren haben nach der geprüften Identifikation von gemeinsamer Phasendrehung und Translation eine positiv aufgelöste Energiekrümmung. Gegensinnige Komponentenänderungen und relative Phasen sind ausdrücklich enthalten. [Ergebnisse, Herleitung, Literaturabgrenzung und QA](coordination/higgs-modes-20261008/ERGEBNIS.md).
+
+[![Energiekrümmungen und Symmetrierichtungen des Higgsportalzweigs](coordination/higgs-modes-20261008/mode-spectrum.svg)](coordination/higgs-modes-20261008/ERGEBNIS.md)
+
+Ein begrenzter energetischer Stabilitätsbefund für einen Parameterpunkt; keine dynamischen Schwingungsfrequenzen, keine Prüfung endlicher Störungen. Die reduzierten Modelle E3/Ecomp müssen diese zweiten Variationen noch separat bestehen. Entwicklungsprozente unverändert.
+
 ## Zehn Verbindungsideen in drei Runden
 
 Aus den vorhandenen Higgsportal-Rechnungen wurden [zehn Ideen über drei analytische Runden weiterentwickelt](coordination/higgs-verbindungen-20261007/README.md): Mechanismus, Gegenprüfung und konkreter Entscheidungstest. Priorität haben die berechenbare Higgsrückwirkung, die vollständige Modenprüfung und die Übertragung derselben Portalwirkung auf V. Neue analytische Bausteine und eine gezielte Prüfung des OpenAI-Math-Releases sind dokumentiert. Keine neuen Simulationen oder erhöhten Fortschrittsprozente.
