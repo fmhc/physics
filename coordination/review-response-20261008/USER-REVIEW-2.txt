@@ -1,0 +1,35 @@
+User-supplied second review, 2026-10-08. Reviewer identity and independent execution not established. Counts describe the reviewer's snapshot.
+
+Ich habe mir das Repo angesehen (README, RESULTS.md, Ausschlüsse, Beteiligte, Stichproben aus Ergebnisdateien und Code). Hier meine Einschätzung.
+
+Was es ist
+Ein öffentliches Laborbuch zu einer spekulativen Idee: Der Raum ist ein gefülltes Tetraedernetz, und darauf sollen Gravitation, Licht, Materie und am Ende das Standardmodell entstehen. Den Großteil von Text und Code haben KI-Agenten geschrieben (Claude, Codex, Gemini), Ideen und Richtung kommen von Finn Hinrichsen. Das Repo umfasst rund 12.500 Dateien, davon etwa 5.800 JSON, 1.400 Python und 1.500 Markdown. Die gesamte Git-Historie besteht aus 18 Commits vom 7. und 8. Oktober 2026. Es ist also ein kuratierter Export eines größeren Arbeitsprojekts, kein gewachsenes Repository.
+
+Was wirklich gut ist
+Die erkenntnistheoretische Hygiene ist deutlich besser als bei fast allen „Theorie von allem“-Projekten, die ich kenne:
+Ehrliche Selbstverortung. Gleich im ersten Absatz steht, dass die Architektur (Regge-Gravitation, diskretes Maxwell, Skalarfeld auf einem Simplizialkomplex) aus der Literatur bekannt ist, etwa McDonald/Miller 2010. Eigen sind nur die Rechnungen auf diesem konkreten Netz.
+Grenzen stehen bei jedem Befund. RESULTS.md nennt zu jedem Ergebnis Methode, Zahl, Fehler und Grenzen. Teilweise steht dort sogar, dass ein Wert „vorab aus Gitteridentitäten folgt“, also keine echte Vorhersage ist. Ebenso wird ausgewiesen, dass PPN-γ = 1 eine Identität der Eichung ist und kein Ergebnis.
+Negativbefunde werden prominent berichtet. Q-Bälle sind keine Hadronen, es gibt keine gebundenen Kleinzustände, keinen Generationsmechanismus, keine messbare Fadenspannung, und Zopfmodelle passen nicht ins Netz.
+KI-Fehler werden nachgeprüft. Ein Nachbau fand, dass 2 von 8 KI-generierten Skripten abstürzen und 3 ihr Ergebnis von Hand einsetzen. Solche Entwürfe wurden aussortiert.
+Provenienz ist dokumentiert. Es gibt Prüfsummen, Zeitstempel, „Karten“ mit Erwartungen vor der Rechnung und ein unveränderliches Journal, in dem Berichtigungen als neue Einträge erscheinen.
+Offener Umgang mit Lücken. Schwache Kraft, Higgs-Herleitung und Generationen stehen in der Tabelle selbst bei 2 %.
+
+Wo ich kritisch bin
+Wissenschaftlicher Gehalt. Die positiven Befunde bestätigen weitgehend Bekanntes auf einem neuen Gitter. Dass Regge-Kalkül im schwachen Feld zur ART konvergiert, dass kompaktes U(1) eine Coulomb- und eine Einschlussphase hat und dass SU(2)-Flow-Skalen gitterunabhängig sind, ist zu erwarten. Das sind sinnvolle Konsistenzchecks, aber keine Physik, die über das Bekannte hinausgeht. Die Gitter sind sehr klein (bei U(1) auf V nur L = 2 und 3). Ein Kontinuums- oder Volumenlimes wurde nirgends genommen.
+
+Die Reife-Prozente sind trotz Disclaimer zu hoch. Etwa „Schwerkraft 55 %“ oder „Netz und Raum 65 %“: Gemessen an „vollständiger physikalischer Mechanismus“ wirken diese Zahlen optimistisch, weil der bekannte Teil (lineares Fernfeld) den leichten Anteil ausmacht. Nahfeld, Kollaps und volle Nichtlinearität sind das eigentlich Schwere. Ohne die Spalte wäre das README ehrlicher. Die Historie zeigt übrigens, dass sie einmal entfernt und dann wieder aufgenommen wurde.
+
+Das Kernproblem bleibt unberührt. Alles, was eine Theorie von allem ausmachen würde, fehlt: Spin ½ aus Dynamik, SU(3), chirale Fermionen, Massen und Kopplungen. Die Arbeit vom 8.10. geht zudem vor allem in die Higgs-Portal-Linie. Dort werden in einem klassischen Radialmodell mit von Hand gesetzten Higgs-Parametern reduzierte Modelle auf 0,0003 % genau validiert, und das nicht einmal auf dem Netz V. Das ist sauber gerechnet, trägt zur Leitfrage aber wenig bei. Ich sehe hier ein typisches Muster agentischer Forschung: Die Agenten optimieren gut lösbare, präzise validierbare Teilaufgaben, während die entscheidenden offenen Fragen liegen bleiben.
+
+Reproduzierbarkeit und Lesbarkeit. Es gibt keine requirements.txt, kein pyproject und keine Umgebungsbeschreibung. Die Rohdaten (npz/npy) sind laut AUSSCHLUESSE.md nicht enthalten, und Läufe beziehen sich auf bestimmte Rechner („cpu2“, „.69“). Die Quelldateien sind deutsch mit projekteigener Terminologie (Finn-Ecke, Takt, Umklappen, Hebehoehen), die Code-Dateinamen sind kryptisch (la.py, mn.py, rv.py). Für Außenstehende ist das 12.000-Dateien-Laborbuch praktisch nicht prüfbar. Nur RESULTS.md ist realistisch lesbar.
+
+Statistik. Viele Läufe sind laut eigener Angabe explorativ und ohne eingefrorenen Plan. Mehrfach wurden Auswertungsentscheidungen während des Laufs getroffen (Gewichtssuche, Multihit, Kriterien nach dem ersten Fehlschlag). Das ist transparent benannt, schwächt die Befunde aber.
+
+Gesamturteil
+Als Physik ist das ein spekulatives Programm, das bisher nichts Neues über die Natur zeigt. Die Wahrscheinlichkeit, dass daraus eine Herleitung des Standardmodells wird, schätze ich als sehr gering ein. Das liegt an der Größe der Lücken, nicht an mangelndem Fleiß.
+Als Fallstudie für KI-gestützte Forschung ist es dagegen bemerkenswert und gut gemacht. Es zeigt, wie man mit Agenten diszipliniert arbeiten kann: Vorab-Karten, Gegenleser, Negativbefunde, Provenienz und ehrliche Abgrenzung. Gleichzeitig zeigt es die Grenzen: enorme Materialmenge, schwer prüfbar, und eine Tendenz zu präzisen Nebenschauplätzen.
+Wenn das Projekt ernst genommen werden soll, wären meine drei Vorschläge:
+Ein einziges, sauber reproduzierbares Ergebnispaket mit Umgebung, Daten und einem Skript pro Befund aus RESULTS.md.
+Eine echte, falsifizierbare Vorhersage, die das Netz V von gewöhnlichem Regge/Gitter-QFT unterscheidet, etwa Anisotropie oder Dispersion bei hoher Energie.
+Externe Begutachtung eines Teilergebnisses, zum Beispiel des SU(2)-Flow-Befunds als kurzes Paper.
+Soll ich mir einen bestimmten Befund oder Code-Teil genauer ansehen, etwa nachrechnen, ob sich ein Ergebnis aus RESULTS.md reproduzieren lässt?

@@ -3,6 +3,27 @@
 Synthetische Modellrechnungen und Hypothesen, nicht begutachtet. Kennzeichen: [E] gerechnet, [M] Mathematik, [L]
 Literatur, [H] Hypothese.
 
+## Vorrang nach den beiden Reviews vom 08.10.2026
+
+Die folgende Reihenfolge ersetzt die fruehere Prioritaetenliste am Ende dieser Seite:
+
+1. **Reproduzierbarkeit:** ein kleines Paket fuer den Maxwell-Gewichtsbefund auf V, mit festen Eingaben,
+   Umgebung, einem Aufruf, erwarteten Zahlen und Fehlerkriterien. Einstieg: [REPRODUCIBILITY.md](REPRODUCIBILITY.md).
+2. **Maxwell-Grundlagen:** Eichidentitaet, Positivitaet der quadratischen Form und Reflexionspositivitaet getrennt
+   untersuchen. Die Gewichte einfrieren; neue Richtungen und kleine Impulse pruefen, keine Nachoptimierung am Test.
+3. **Konvergenz:** Gitterabstand bei fester physikalischer Box und Boxgroesse bei festem Gitterabstand getrennt
+   variieren; beobachtbare Groesse, Skalenabgleich, Auswertefenster und Abbruchkriterien vorab festlegen.
+4. **Unterscheidbare Vorhersage:** erst nach diesen Kontrollen Anisotropie oder Dispersion zwischen V und
+   Vergleichsgittern testen. Eine Diskretisierungsabweichung ist noch kein messbares Naturgesetz.
+5. **Externe Reproduktion:** ein eng begrenztes Teilergebnis zur unabhaengigen menschlichen Begutachtung vorbereiten.
+   SU(2)-Flow ist ein Kandidat, braucht aber vorher die Kontrolle der Skalenwahl und des abweichenden zweiten
+   Referenzwerts. Es wurde noch niemand mit einer Begutachtung beauftragt.
+
+SU(3), chirale Materie und weitere Higgsportal-Tests bleiben Forschungsfragen, erhalten durch zusaetzliche
+Nachkommastellen aber keinen Vorrang vor diesen Grundlagen. Die Prozentwerte werden durch diese organisatorischen
+Aenderungen nicht erhoeht. [Review-Antwort](coordination/review-response-20261008/RESPONSE.md),
+[Aussagen und Pruefkriterien](CLAIMS.md).
+
 ## Neue Higgs-Auswertung (08.10.2026)
 
 [HIGGS-RESPONSE-1](coordination/higgs-response-20261008/ERGEBNIS.md) prüft Näherungen an allen 24 gespeicherten B13-Profilen. Eine räumliche Korrektur zweiter Ordnung besteht das vorab definierte Pilotkriterium in allen acht Parametergruppen. Es handelt sich um eine neue Auswertung bei festgehaltenen Singuletts, keine neue Relaxation und keine Herleitung des Higgsmechanismus. Nächste Frage: konsistente reduzierte Energie und Kräfte, danach selbstkonsistente Profile; parallel bleibt die vollständige Modenprüfung wichtig.
@@ -12,7 +33,10 @@ einzigen Parameterpunkt: [Kraefte](coordination/higgs-force-20261008/ERGEBNIS.md
 [selbstkonsistente Profile](coordination/higgs-minima-20261008/ERGEBNIS.md),
 [Energiekruemmungen der vollen Theorie](coordination/higgs-modes-20261008/ERGEBNIS.md) und
 [radiale Kruemmungen der reduzierten Modelle](coordination/higgs-reduced-modes-20261008/ERGEBNIS.md). Offen bleiben
-Winkelantwort der reduzierten Modelle, Zeitentwicklung, weitere Parameter und die Uebertragung auf V.
+direkte nichtlineare Zeitentwicklung, weitere Parameter und die Uebertragung auf V. Winkelantwort und lineare
+Frequenzen wurden inzwischen geprueft: [Winkelmoden](coordination/higgs-angular-modes-20261008/ERGEBNIS.md),
+[lineare Dynamik](coordination/higgs-dynamics-20261008/ERGEBNIS.md). Das ersetzt weder nichtlineare Stabilitaet noch
+Konvergenz zur Kontinuumstheorie.
 
 ## Neuer Literatur- und Modellvergleich
 
@@ -62,7 +86,7 @@ gemittelt. Die Befunde in den verlinkten Ergebnissen haben Vorrang.
 | Vergleich mit Messdaten | 5 % | 5 % | unveraendert |
 | Quantengravitation | 7 % | 7 % | unveraendert |
 
-## Naechste Schritte (Reihenfolge nach Hebel)
+## Fruehere Arbeitsliste (durch die Review-Prioritaeten oben nachgeordnet)
 
 1. **Starke Kraft:**
    - Zweiter Gitterabstand (S6) erledigt; SU(3) an den Codex-Strang uebergeben.

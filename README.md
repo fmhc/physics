@@ -30,6 +30,8 @@ against measured data or peer-reviewed. The robust findings, with numbers and li
 | Wenn Sie ... | dann lesen Sie |
 |---|---|
 | die belastbaren Befunde suchen | [RESULTS.md](RESULTS.md) (englisch) |
+| einen Befund nachrechnen wollen | [REPRODUCIBILITY.md](REPRODUCIBILITY.md): kompaktes Maxwell-Paket mit festen Eingaben |
+| Aussagen, Fehlerarten und offene Gegenpruefungen vergleichen wollen | [CLAIMS.md](CLAIMS.md) |
 | den aktuellen Stand und die naechsten Schritte suchen | [STAND-UND-NAECHSTE-SCHRITTE.md](STAND-UND-NAECHSTE-SCHRITTE.md) |
 | die Modellgleichung sehen wollen | [GRUNDGLEICHUNG-v3](coordination/runden-v3/RUNDE-50/GRUNDGLEICHUNG-v3.md) |
 | wissen wollen, wer was geschrieben hat | [BETEILIGTE.md](BETEILIGTE.md) |
@@ -65,6 +67,20 @@ auf kleinen Netzen und nicht begutachtet.
 **Zur Spalte "Subjektive Reife":** grobe, subjektive Einschaetzung der Leitung, wie weit der Bereich von einem
 vollstaendigen physikalischen Mechanismus entfernt ist. Sie ist keine Wahrscheinlichkeit, kein Messwert und kein
 bestaetigter Anteil, und sie wird nicht zu einem Gesamtwert gemittelt. Die verlinkten Ergebnisdateien haben Vorrang.
+
+Es gibt bislang **keine kalibrierte Skala, keine fest gewichtete Liste aller Teilprobleme und keinen objektiven Nenner**
+fuer diese Zahlen. 65 % bedeutet daher nicht, dass 65 % einer physikalischen Theorie bewiesen sind. Insbesondere lassen
+sich leichte Konsistenztests und offene Grundprobleme nicht nach Arbeitsmenge gegeneinander aufrechnen. Die Zahlen
+bleiben auf Wunsch der Projektleitung als subjektive Orientierung sichtbar; neue Dokumentation oder weitere Stellen
+Genauigkeit im Portalmodell erhoehen sie nicht. Beide neuen Reviews kritisieren diese Darstellung als zu optimistisch.
+
+### Prioritaet nach den Reviews vom 08.10.2026
+
+Zuerst ein kleines reproduzierbares Ergebnis auf V, die Positivitaetsfrage der Maxwell-Gewichte sowie getrennte
+Gitterabstands- und Volumentests. Erst danach neue Mechanismen oder weitere Praezisionsstufen im Higgsportal.
+Eine endliche Stichprobe positiver Eigenwerte ist kein Positivitaetsbeweis; Gitteranisotropie allein ist noch keine
+Vorhersage ueber die Natur. Die [Review-Antwort](coordination/review-response-20261008/RESPONSE.md) beschreibt
+Pruefkriterien und offene Punkte. Die [Aussagenliste](CLAIMS.md) trennt Nachrechnung, Konvergenz und physikalische Geltung.
 
 | Bereich | Subjektive Reife | Gerechnet [E] | Hypothese [H] | Fehlt |
 |---|---|---|---|---|

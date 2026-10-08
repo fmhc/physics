@@ -9,6 +9,11 @@ direction ([BETEILIGTE.md](BETEILIGTE.md)). The source files are in German.
 were exploratory, without a pre-registered plan; this is noted per item. Small lattices throughout; no continuum or
 infinite-volume limit has been taken anywhere.
 
+For claim-by-claim code links, error types and prospective failure criteria see [CLAIMS.md](CLAIMS.md).
+The first compact rerun package is described in [REPRODUCIBILITY.md](REPRODUCIBILITY.md); it addresses the Maxwell
+weight limitation in finding 3, not all eight findings. Artifact integrity and agreement with archived numbers do not
+establish physical validity or external independent reproduction.
+
 The model architecture (Regge gravity + discrete exterior calculus Maxwell + scalar field on one simplicial complex) is
 known from the literature, e.g. McDonald and Miller 2010. What is our own are the computations on the specific filled
 tetrahedral network "V" and its time-extended "tent" version.
@@ -38,14 +43,15 @@ tetrahedral network "V" and its time-extended "tent" version.
   depending on the fit form. Including the gauge residual of the lattice equations: beta = 0.95 +- 0.05.
   gamma = 1 is an identity of the isotropic gauge (deviation 2.5e-16), not a result.
 - **Limits:** Static, single point source, periodic boxes. Near the source beta is far below 1 (0.58 at 2.6 l_P). The
-  second-order spatial term (delta) could not be determined. Regge calculus is known to converge to GR, so agreement is
-  expected in principle. Exploratory run.
+  second-order spatial term (delta) could not be determined. Agreement with the intended GR continuum theory is a
+  consistency test; convergence of these particular observables and meshes has not been established. Exploratory run.
 - **Source:** [beta-netz-v/ERGEBNIS.md](coordination/runden-v3/RUNDE-37/beta-netz-v/ERGEBNIS.md)
 
 ### 3. Compact U(1) on the tent network: massless, isotropic photon and a phase transition
 
 - **Claim:** Quantised (Monte Carlo) compact U(1) gauge theory on the time-extended network V has a Coulomb phase with a
-  massless photon moving at speed 1 in all tested directions, and a confining phase.
+  photon data compatible with a massless mode moving at speed 1 in the tested directions, and evidence for a
+  confining phase at the accessible sizes.
 - **Method:** Euclidean heat-bath plus overrelaxation, weighted Wilson action normalised to Maxwell (identity holds to
   1e-15); cubic lattice L = 6, 8 as control.
 - **Numbers:** Photon E/|k| = 1.01 +- 0.04 at beta = 2.0, equal for the <111> and <100> direction families within about
@@ -55,7 +61,9 @@ tetrahedral network "V" and its time-extended "tent" version.
   time step; the computation needed vertex weights found by a numerical search (3 of 484 triangle classes stay slightly
   negative). Only L = 2 and 3 on V. Order of the transition not established. String tension and Luescher term could not
   be measured (sigma = 2.0 +- 0.8 a^-2 only in one distance window, compatible with zero without r < 0.3 a). Search,
-  multihit and re-analysis were decided during the run.
+  multihit and re-analysis were decided during the run. Gauge invariance follows from the incidence identity d1 d0 = 0
+  and does not establish positive energy. Positivity of sampled gauge-projected quadratic forms does not prove
+  positivity for every momentum or reflection positivity of the interacting Euclidean theory.
 - **Source:** [quant-2/ERGEBNIS.md](coordination/runden-v3/RUNDE-37/quant-2/ERGEBNIS.md)
 
 ### 4. SU(2) on the network: gradient-flow scales track the hypercubic lattice at two lattice spacings
@@ -77,8 +85,8 @@ tetrahedral network "V" and its time-extended "tent" version.
 
 ### 5. Quantised Q-ball field: no small bound states; classical Q-balls are many-quantum objects
 
-- **Claim:** In the quantised complex scalar (Q-ball) sector, states of 2 to 5 quanta are not bound; at stronger coupling
-  the quanta repel. Classical Q-balls exist only for a large number of quanta.
+- **Claim:** In the tested quantised complex scalar (Q-ball) sector, no binding of states of 2 to 5 quanta was resolved;
+  the stronger-coupling examples show repulsion. The studied classical Q-balls require many quanta.
 - **Method:** Hybrid Monte Carlo on cubic lattices (L = 4, 8) and on V (L = 4), multi-particle correlators, free-field
   control at the same statistics.
 - **Numbers:** Binding per particle at lambda = 0.25, L = 4: b_2 = 0.0010 +- 0.0007, free control 0.0007 +- 0.0010
@@ -104,10 +112,10 @@ tetrahedral network "V" and its time-extended "tent" version.
   added after first results. Not the full model (mass matrix updated piecewise).
 - **Source:** [volumen-g2-1/ERGEBNIS.md](coordination/runden-v3/RUNDE-37/volumen-g2-1/ERGEBNIS.md)
 
-### 7. Calibration of the dimension estimators: they underestimate at accessible sizes
+### 7. Calibration of the dimension estimators: finite-size bias limits interpretation
 
-- **Claim:** The Hausdorff and spectral dimension estimators used for the dynamical-network runs are biased low at the
-  sizes we can simulate, so small-size dimension values from those runs are not interpretable.
+- **Claim:** Calibration reveals finite-size biases: the quadrangulation estimates lie low, whereas the CDT Hausdorff
+  estimate lies above 2. Small-size values from dynamical-network runs need these controls before interpretation.
 - **Method:** Same estimators applied to ensembles with known answers: random quadrangulations (exact sampler,
   d_H = 4, d_s = 2) and 1+1D causal dynamical triangulations, N up to 1e5.
 - **Numbers:** Quadrangulations: d_H from size scaling 3.38 (N = 1e3 to 1e5); compatible with 4 only with a large

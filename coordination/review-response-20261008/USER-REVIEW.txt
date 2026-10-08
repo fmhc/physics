@@ -1,0 +1,77 @@
+Review: fmhc/physics
+Scientific and technical review · October 8, 2026
+Overall assessment: The fmhc/physics repository is an ambitious, unusually transparent computational research notebook investigating whether a tetrahedral network can provide a common framework for spacetime, gravity, electromagnetism, and particle physics.
+Its strongest feature is the distinction between computed results, hypotheses, known physics, and failed experiments. Its biggest weakness is that reproducing established physical behavior on a particular lattice does not establish that the lattice is a fundamental description of nature.
+My preliminary judgment is that this is a credible exploratory computational research project, but not yet a validated new physical theory.
+1. Executive assessment
+Dimension Assessment
+Scientific ambition Very high
+Research transparency Strong
+Mathematical foundation Promising but incomplete
+Numerical validation Encouraging in selected sectors
+Experimental validation Absent
+Novelty Mainly lattice-specific computations
+Readiness for peer review Selected results may be suitable after independent reproduction
+Status as a unified physical theory Not established
+The repository explicitly acknowledges that its architecture—Regge gravity, discrete electromagnetism, and scalar fields on a simplicial complex—builds on existing literature. It also acknowledges missing mechanisms for SU(3), chiral fermions, spin-½, the weak interaction, particle generations, and experimentally verified predictions.
+
+GitHub
+
+That disclosure is important. It makes the project substantially easier to evaluate than a speculative theory that presents every numerical agreement as a discovery.
+2. Most important scientific findings
+Gravity: encouraging consistency checks
+Light deflection approaches the general-relativistic result as lattice size increases, and the reported second-order PPN parameter is β=0.95±0.05. However, the linear far-field behavior is already implied by the construction, and the PPN estimate remains sensitive to lattice gauge residuals.
+Promising
+Electromagnetism: numerical discretization issue
+A massless photon is reported with E/|k|=1.01±0.04. But the original circumcentric Hodge-star construction produces negative Maxwell weights, requiring numerically searched alternative weights. This is a significant theoretical concern.
+Needs work
+Strong interactions: insufficient evidence
+SU(2) simulations show some agreement with hypercubic lattice results, but the agreement depends on scale choices and the critical coupling. At another reference scale, the reported ratio is 0.43. SU(3), quarks, and fermions are absent.
+Preliminary
+Q-balls: valuable negative results
+Small bound states were not established, and the proposed unmodified Q-balls do not reproduce hadron properties. These results help eliminate unsuccessful particle-model candidates.
+Useful
+Higgs portal: strongest numerical subproject
+Reduced classical models reproduce several full-model quantities to high precision, including a reported maximum dynamic-frequency error of 0.000237% after adding induced inertia. But these are same-discretization comparisons, largely at one parameter point, and not calculations on the tetrahedral network.
+Promising
+These figures come from the project's own results register and have not been independently reproduced in this review.
+
+GitHub
+
+3. Critical problems
+A. The continuum limit is missing
+This is the most important foundational issue. No demonstrated continuum or infinite-volume limit appears in the reported results.
+To establish a fundamental theory, the authors need to show that physical observables converge as lattice spacing approaches zero, rather than merely finding agreement on a few small networks.
+B. Fundamental physics versus numerical implementation
+A lattice can successfully approximate general relativity or Yang–Mills theory without explaining why those theories exist.
+The key question is:
+What physical result follows specifically from the tetrahedral network that would not follow from an ordinary lattice discretization?
+Until that question has a quantitative answer, the framework is better regarded as an alternative computational formulation.
+C. Gauge consistency and emergent symmetries
+The electromagnetic weight correction raises questions about positivity, gauge invariance, and whether the selected weights are uniquely justified.
+Likewise, a complete model would need a convincing account of local Lorentz symmetry, chiral fermions, and their coupling to gravity. These are not minor details; they are central to recovering known particle physics.
+D. Numerical precision is not physical accuracy
+A 0.000237% discrepancy between two computational formulations is impressive as a numerical result. But it does not imply that either formulation predicts physical measurements to that accuracy.
+The distinction between approximation error, discretization error, statistical uncertainty, and experimental uncertainty should remain explicit throughout the project.
+4. What I would prioritize
+Priority Action Why
+P0 Establish continuum and finite-volume scaling Tests whether results survive refinement
+P0 Independently reproduce one central result Tests computational reliability
+P0 Resolve the negative Maxwell weights Tests mathematical consistency
+P1 Identify a distinctive, falsifiable prediction Establishes physical novelty
+P1 Compare multiple lattice geometries Separates universal behavior from network-specific artifacts
+P1 Validate Higgs approximations at new parameter points Tests generalization
+P2 Explore fermions and SU(3) Necessary for broader unification
+I would resist expanding into additional speculative particle mechanisms until the foundational tests have passed.
+5. Repository and research-process review
+The structure is well suited to an exploratory archive: raw research logs, individual experiment results, code, checksums, a consolidated results register, and explicit negative findings.
+Three improvements would make external scrutiny substantially easier:
+1. A minimal reproducibility package: pinned dependencies, deterministic seeds, exact commands, expected outputs, and continuous integration for one representative result.
+2. A scientific claims register: each claim linked to its derivation, source code, numerical convergence evidence, and failure criteria.
+3. Independent verification: human review of AI-generated mathematical derivations and numerical implementations, ideally with a separately written reference implementation.
+The repository's disclosure of AI authorship and documented failed experiments is a strength, but neither substitutes for independent validation.
+6. Final verdict
+The project deserves serious consideration as an open computational research notebook. The gravity and gauge calculations are worth checking, the Higgs-portal reduction may support a narrower numerical-methods publication, and the negative results provide useful constraints on future hypotheses.
+However, the current evidence does not justify claiming a unified theory, a derivation of the Standard Model, or a new experimentally supported description of spacetime.
+The single highest-value next milestone is an independently reproducible, convergent calculation that produces a genuinely network-specific physical prediction.
+Scope: This is a scientific and methodological review of the public README, consolidated results, and project-status material. I have not executed the simulation code, audited every derivation, or verified the reported numerical outputs independently.
