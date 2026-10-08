@@ -7,6 +7,13 @@ Literatur, [H] Hypothese.
 
 [HIGGS-RESPONSE-1](coordination/higgs-response-20261008/ERGEBNIS.md) prüft Näherungen an allen 24 gespeicherten B13-Profilen. Eine räumliche Korrektur zweiter Ordnung besteht das vorab definierte Pilotkriterium in allen acht Parametergruppen. Es handelt sich um eine neue Auswertung bei festgehaltenen Singuletts, keine neue Relaxation und keine Herleitung des Higgsmechanismus. Nächste Frage: konsistente reduzierte Energie und Kräfte, danach selbstkonsistente Profile; parallel bleibt die vollständige Modenprüfung wichtig.
 
+Nachtrag 08.10.2026: Die Folgetests sind gerechnet, alle am selben radialen 3D-Portalmodell und, ab HIGGS-MINIMA-1, an einem
+einzigen Parameterpunkt: [Kraefte](coordination/higgs-force-20261008/ERGEBNIS.md),
+[selbstkonsistente Profile](coordination/higgs-minima-20261008/ERGEBNIS.md),
+[Energiekruemmungen der vollen Theorie](coordination/higgs-modes-20261008/ERGEBNIS.md) und
+[radiale Kruemmungen der reduzierten Modelle](coordination/higgs-reduced-modes-20261008/ERGEBNIS.md). Offen bleiben
+Winkelantwort der reduzierten Modelle, Zeitentwicklung, weitere Parameter und die Uebertragung auf V.
+
 ## Neuer Literatur- und Modellvergleich
 
 Der [Volltextvergleich vom 07.10.2026](coordination/runden-v3/RUNDE-51/modell-screening-1/VOLLTEXT-VERGLEICH-20261007.md) prüft sechs arXiv-Arbeiten und zwei ältere Kontrollen. Der [revidierte Modellfahrplan](coordination/runden-v3/RUNDE-51/modell-screening-1/MODELLFAHRPLAN.md) enthält sieben konkrete Prüfkarten. Schwerpunkt: Hadronmodelle, chirale Materie, Higgs und belastbare Auswertung. Dies ist Quellenlektüre [S] und Modellplanung [H], keine neue Simulation. Die Prozentwerte bleiben unverändert.
@@ -50,7 +57,7 @@ gemittelt. Die Befunde in den verlinkten Ergebnissen haben Vorrang.
 | Starke Kraft | 35 % | 40 % | S6: Flow-Skalen bei zwei Gitterabstaenden vertraeglich mit dem Hyperkubus; SU(3) fehlt |
 | Mesonen, Baryonen | 5 % | 10 % | QBALL-DREIPOL-2/3 gepruefte Struktur- und Stabilitaetsbefunde in 2D/3D; weiterhin kein Einschluss und keine Hadronen |
 | Schwache Kraft | 0 % (gemeinsam) | 2 % | getrennt; Literaturvorarbeit RUNDE-20/ew-baelle, kein eigener Mechanismus |
-| Higgs | 0 % (gemeinsam) | 2 % | getrennt; dieselbe Literaturvorarbeit, KI-Entwurf zur Massenhierarchie hielt nicht |
+| Higgs | 0 % (gemeinsam) | 2 % | getrennt; Portalmodell-Rechnungen B13 bis B23 mit gesetzten Higgsparametern (siehe [BESTAND](coordination/higgs-bestandsaufnahme-20261007/BESTAND.md)), kein eigener Mechanismus; KI-Entwurf zur Massenhierarchie hielt nicht |
 | Generationen | 0 % (gemeinsam) | 2 % | getrennt; nur Negativbefund aus ANTIGRAVITY-NACHBAU-1 |
 | Vergleich mit Messdaten | 5 % | 5 % | unveraendert |
 | Quantengravitation | 7 % | 7 % | unveraendert |

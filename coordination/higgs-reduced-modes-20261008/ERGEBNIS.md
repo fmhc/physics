@@ -2,7 +2,7 @@
 
 08.10.2026 · [E] neue CUDA-Hessianrechnung, Anschluss an [HIGGS-MODES-1](../higgs-modes-20261008/ERGEBNIS.md).
 
-**E3 und Ecomp bestehen den vorab festgelegten radialen Spektralvergleich.** Der maximale relative Fehler der geprüften nichttrivialen Energiekrümmungen beträgt **0,009883 % für E3** und **0,0002517 % für Ecomp**. Beide Näherungen erhalten die gemeinsame Phasen-Nullrichtung und positive übrige Krümmungen.
+**E3 und Ecomp bestehen den vorab festgelegten radialen Spektralvergleich.** Der maximale relative Fehler der geprüften nichttrivialen Energiekrümmungen beträgt **0,009882 % für E3** und **0,0002516 % für Ecomp**. Beide Näherungen erhalten die gemeinsame Phasen-Nullrichtung und positive übrige Krümmungen.
 
 ![Radiale Energiekrümmungen reduzierter Modelle im Vergleich](reduced-mode-errors.svg)
 
@@ -18,10 +18,10 @@ Pro Modellvergleich wurden die acht niedrigsten reellen und sieben niedrigsten n
 
 | Vergleichsgröße | E3 | Ecomp |
 |---|---:|---:|
-| Maximaler relativer Eigenwertfehler | 0,009883 % | 0,0002517 % |
-| Beobachteter Fehlerdrift zwischen Gitter/Box | 0,002496 Prozentpunkte | 0,0001350 Prozentpunkte |
+| Maximaler relativer Eigenwertfehler | 0,009882 % | 0,0002516 % |
+| Beobachteter Fehlerdrift zwischen Gitter/Box | 0,002496 Prozentpunkte | 0,0001349 Prozentpunkte |
 | Kleinster quadrierter Eigenvektorüberlapp | 0,9999999442 | 0,999999999941 |
-| Größte relative Frobeniusabweichung der Matrizen | 5,55e-7 | 4,41e-9 |
+| Größte relative Frobeniusabweichung der Matrizen | 5,54e-7 | 4,41e-9 |
 | Gemeinsame Phase korrekt identifiziert | ja, alle drei Stufen | ja, alle drei Stufen |
 | Nichttriviale Eigenwerte positiv | ja | ja |
 | Vorabkriterium einschließlich Drift | bestanden | bestanden |
