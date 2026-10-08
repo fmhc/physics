@@ -82,6 +82,14 @@ Geprüft ist ein bekannter radialer 3D-Zweig. Allgemeine Stabilität, Zeitentwic
 
 Ein begrenzter energetischer Stabilitätsbefund für einen Parameterpunkt; keine dynamischen Schwingungsfrequenzen, keine Prüfung endlicher Störungen. Die reduzierten Modelle E3/Ecomp müssen diese zweiten Variationen noch separat bestehen. Entwicklungsprozente unverändert.
 
+## Neuer Befund: reduzierte Modelle erhalten radiale Störrichtungen (08.10.2026)
+
+**18 weitere CUDA-Eigenwertmatrizen** vergleichen E3 und Ecomp mit der vollen Theorie bei statisch mitreagierendem Higgsfeld. Beide bestehen die radiale Prüfung: maximal **0,009883 % Eigenwertfehler bei E3**, **0,0002517 % bei Ecomp**, gemeinsame Phasen-Nullrichtung erhalten, übrige geprüfte Krümmungen positiv. [Ergebnisse, Herleitung der Referenz und QA](coordination/higgs-reduced-modes-20261008/ERGEBNIS.md).
+
+[![Radiale Energiekrümmungen von E3 und Ecomp im Vergleich](coordination/higgs-reduced-modes-20261008/reduced-mode-errors.svg)](coordination/higgs-reduced-modes-20261008/ERGEBNIS.md)
+
+Damit ist die radiale zweite Variation der reduzierten Modelle geprüft. Ihre Winkelantwort und dynamischen Frequenzen bleiben offen; die Entwicklungsprozente bleiben unverändert.
+
 ## Zehn Verbindungsideen in drei Runden
 
 Aus den vorhandenen Higgsportal-Rechnungen wurden [zehn Ideen über drei analytische Runden weiterentwickelt](coordination/higgs-verbindungen-20261007/README.md): Mechanismus, Gegenprüfung und konkreter Entscheidungstest. Priorität haben die berechenbare Higgsrückwirkung, die vollständige Modenprüfung und die Übertragung derselben Portalwirkung auf V. Neue analytische Bausteine und eine gezielte Prüfung des OpenAI-Math-Releases sind dokumentiert. Keine neuen Simulationen oder erhöhten Fortschrittsprozente.

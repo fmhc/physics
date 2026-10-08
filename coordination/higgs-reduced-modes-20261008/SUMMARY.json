@@ -1,0 +1,95 @@
+{
+  "groups": [
+    {
+      "method": "E3",
+      "maximum_relative_spectral_error": 9.882409404499972e-05,
+      "drift": 2.4959811806864413e-05,
+      "nontrivial_positive": true,
+      "phase_passed": true,
+      "verdict": "bestanden",
+      "minimum_eigenvector_overlap_squared": 0.9999999442005113,
+      "maximum_operator_relative_frobenius": 5.544936421411325e-07
+    },
+    {
+      "method": "Ecomp",
+      "maximum_relative_spectral_error": 2.516336548102014e-06,
+      "drift": 1.3491136019183174e-06,
+      "nontrivial_positive": true,
+      "phase_passed": true,
+      "verdict": "bestanden",
+      "minimum_eigenvector_overlap_squared": 0.9999999999412517,
+      "maximum_operator_relative_frobenius": 4.407783324165839e-09
+    }
+  ],
+  "phase_checks": [
+    {
+      "stage": "base",
+      "method": "full",
+      "eigenvalue": 1.2253896547693701e-09,
+      "overlap": 0.9999999999999953,
+      "passed": true
+    },
+    {
+      "stage": "base",
+      "method": "E3",
+      "eigenvalue": 2.5825675983046828e-09,
+      "overlap": 0.9999999999999997,
+      "passed": true
+    },
+    {
+      "stage": "base",
+      "method": "Ecomp",
+      "eigenvalue": 1.1501145085297976e-08,
+      "overlap": 0.9999999999999962,
+      "passed": true
+    },
+    {
+      "stage": "grid",
+      "method": "full",
+      "eigenvalue": 3.5514571132312808e-09,
+      "overlap": 0.9999999999999952,
+      "passed": true
+    },
+    {
+      "stage": "grid",
+      "method": "E3",
+      "eigenvalue": -2.6086767830812514e-09,
+      "overlap": 0.999999999999999,
+      "passed": true
+    },
+    {
+      "stage": "grid",
+      "method": "Ecomp",
+      "eigenvalue": 1.8504938254831728e-09,
+      "overlap": 0.9999999999999999,
+      "passed": true
+    },
+    {
+      "stage": "box",
+      "method": "full",
+      "eigenvalue": 6.251263713860154e-14,
+      "overlap": 0.9999999999999984,
+      "passed": true
+    },
+    {
+      "stage": "box",
+      "method": "E3",
+      "eigenvalue": 2.7118843961024967e-09,
+      "overlap": 1.0000000000000007,
+      "passed": true
+    },
+    {
+      "stage": "box",
+      "method": "Ecomp",
+      "eigenvalue": -9.928627188224218e-09,
+      "overlap": 0.9999999999999901,
+      "passed": true
+    }
+  ],
+  "minimum_higgs_block_eigenvalue": 4.714586003961112,
+  "max_schur_solve_residual": 7.728877521970537e-15,
+  "max_raw_asymmetry": 4.440892098500626e-16,
+  "max_finite_difference_error": 3.259574902704632e-07,
+  "max_eigen_residual": 1.392931183088621e-11,
+  "max_orthogonality": 3.387643898039583e-15
+}
