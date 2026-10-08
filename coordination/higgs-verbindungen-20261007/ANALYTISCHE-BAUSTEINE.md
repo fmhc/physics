@@ -97,3 +97,7 @@ eec83602c6d4e4b7efb6416eeef628bb78539c5fbe8668b367773bf80ad958dc  coordination/f
 ```
 
 Ein Hash bindet die gelesene Datei, bestätigt aber nicht ihre Physik. Die Gleichungen A–F sind explizite Zwischenresultate der Analyse; sie wurden nicht durch den OpenAI-Math-Release bewiesen.
+
+## G. Dynamische und quantisierte Erweiterungen — Nachtrag 08.10.2026
+
+Die statischen Herleitungen A–F bleiben bestehen. Der [neue Formelabgleich](../literatur-formeln-20261008/FORMEL-ABGLEICH.md) leitet die zeitabhängige Higgsantwort, das gekoppelte Amplituden-/Phasenproblem, die Zusatzträgheit und den Unterschied zwischen Fix-Q- und dynamischem Operator her. [Quanten- und thermische Erweiterungen](../literatur-formeln-20261008/QUANTEN-PORTAL.md) benötigen eigene Kovarianz-, Ladungs- und Matchingkonventionen. Dies sind analytische Vorschläge, keine nachträglich veränderten oder neu ausgeführten Rechenergebnisse.

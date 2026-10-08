@@ -136,7 +136,7 @@ Die zeitabhaengige Higgsantwort, weitere Parameterpunkte und die Uebertragung au
 | [![Selbstkonsistenter Higgsvergleich: Materieprofile und Frequenzen](coordination/higgs-minima-20261008/minima-errors.svg)](coordination/higgs-minima-20261008/ERGEBNIS.md) | [![Energiekruemmungen und Symmetrierichtungen des Higgsportalzweigs](coordination/higgs-modes-20261008/mode-spectrum.svg)](coordination/higgs-modes-20261008/ERGEBNIS.md) |
 | [![Radiale Energiekruemmungen von E3 und Ecomp](coordination/higgs-reduced-modes-20261008/reduced-mode-errors.svg)](coordination/higgs-reduced-modes-20261008/ERGEBNIS.md) | [![Winkelkruemmungen und Translationskontrolle](coordination/higgs-angular-modes-20261008/angular-mode-errors.svg)](coordination/higgs-angular-modes-20261008/ERGEBNIS.md) |
 
-## Literaturvergleich und naechste Pruefungen (07.10.2026)
+## Literaturvergleich und naechste Pruefungen (08.10.2026)
 
 Sechs neue arXiv-Arbeiten und zwei aeltere Kontrollen wurden in den relevanten Volltextabschnitten gelesen und mit den
 eigenen Ansaetzen verglichen (Hadronen, chirale Materie, Higgs, Schranken). Das ist Quellenlektuere und Modellplanung,
@@ -145,6 +145,8 @@ keine neue Simulation. [Vergleich und Primaerquellen](coordination/runden-v3/RUN
 [Modellfahrplan](coordination/runden-v3/RUNDE-51/modell-screening-1/MODELLFAHRPLAN.md). Eine der Pruefkarten ist
 inzwischen beantwortet: Zopf-Preonmodelle passen nicht als Teilgraph in V
 ([ZOPF-SIMPLIZIAL-L](coordination/runden-v3/RUNDE-51/zopf-simplizial-l/ERGEBNIS.md)).
+
+**Ergaenzung 08.10.:** [Sieben Volltexte samt enthaltenen Anhaengen](coordination/literatur-formeln-20261008/README.md) gelesen und mit unseren Formeln verglichen. Der [Formelabgleich](coordination/literatur-formeln-20261008/FORMEL-ABGLEICH.md) konkretisiert die dynamische Higgsantwort, Zusatztraegheit und den Unterschied zum Fix-Q-Hessian. Hinzu kommen Quanten-/Fermionvoraussetzungen und kritische Quellenbefunde zu Rangnaeherungen, Hadronenschwellen und Dichteumrechnung. Die statischen Portalparameter bleiben bestehen; keine neue Simulation und keine Prozentanhebung. [Literaturliste](coordination/literatur-formeln-20261008/QUELLEN.json) · [BibTeX](coordination/literatur-formeln-20261008/references.bib).
 
 ## Bewusst nicht enthalten
 

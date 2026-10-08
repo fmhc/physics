@@ -53,3 +53,7 @@ Stand 07.10.2026. [S] Quellenlektüre, [M] eigene Prüfung, [H] Modellvorschlag.
 ## Konsequenz für den Projektstand
 
 Die bisherigen Schätzungen bleiben: Mesonen/Baryonen **10 %**, schwache Kraft **2 %**, Higgs **2 %**. Das sind subjektive Entwicklungsschätzungen, keine Wahrscheinlichkeiten. Diese Lektüre begründet neue Kandidaten und bessere Ausschlussprüfungen, keinen numerischen Fortschritt. Die [Kandidatenmatrix](KANDIDATENMATRIX.md) unterscheidet vorhandene Mechanismen, zusätzliche Annahmen und nächste Entscheidung; der [Fahrplan](MODELLFAHRPLAN.md) legt die Reihenfolge fest.
+
+## Ergänzung vom 08.10.2026
+
+[Sieben Volltexte mit Formelabgleich](../../../literatur-formeln-20261008/README.md): Craig, Schur-Elimination, Tetraquarks, vertiefte Topa-Lektüre, Spektator-Higgsportal, Quanten-Q-Balls und Domain-Wall-Skyrmionen. Der Folgebericht dokumentiert gelesene Haupt-PDFs/Anhänge, kritische Quellenbefunde und eigene dynamische Portalherleitungen. Topa ist derselbe Eintrag wie oben, kein zusätzlicher Literaturfund. Keine neue Simulation oder Prozentanhebung.

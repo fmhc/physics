@@ -18,3 +18,18 @@
 Gemeinsames SU(2) als Zielraum macht Skyrme- und Higgsmodelle nicht zu derselben Theorie. Eichtransformationen, Wirkung, physikalischer Zustandsraum und topologischer Schutz sind getrennt zu bestimmen. Das Eichmachen einer globalen Symmetrie kann die Interpretation einer Windungszahl ändern.
 
 Methodenoption: [BOUNDS-PILOT-1](karten/BOUNDS-PILOT-1.md) untersucht überprüfbare Schranken zunächst an einem kleinen Kontrollmodell. Das ist kein zusätzlicher Teilchenkandidat.
+
+## Ergänzende Entscheidungen vom 08.10.2026
+
+[Quellen und Volltextreview](../../../literatur-formeln-20261008/README.md) · [konkrete Formeln](../../../literatur-formeln-20261008/FORMEL-ABGLEICH.md).
+
+| Anschluss | Zusätzliche Voraussetzungen | Nächste Entscheidung |
+|---|---|---|
+| Dynamisches Higgsportal | kinetische Gewichte, mitrotierende Amplituden/Phasen, frequenzabhängiger Higgsblock | volle lineare Dynamik gegen reduzierte Antwort prüfen; statische Referenz bleibt |
+| Overlap-Fermionmaß nach Craig | zulässige Eichfelder, anomaliefreies Multiplet, lokale Maßphase | kubische Referenz vor einer V-Übertragung; eigenständiger schwacher Zweig |
+| Quanten-Q-Balls | fünf reelle Felder, Kovarianzen, Gesamtladung und EFT-Matching | erst klassische Dynamik, dann konsistenter Hartree-Pilot |
+| Domain-Wall-Skyrmionen | WZW/Statistik, Magnetfeld, Dichte, Wandtheorie | getrennte Variante; Dichteumrechnung der Quelle kritisch prüfen |
+| Tetraquarkmethodik | explizite Quarktheorie, erlaubte Kanäle, gleiche Regulatoren | Schwellen-/Kontinuumsdiagnostik übernehmen, keine automatische Hadronidentifikation |
+| Kosmologisches Portal | SM-Feldinhalt oder eigene Wärmebadtheorie, Expansion/Anfangsdaten | zurückstellen bis gesonderter Modellvertrag vorliegt |
+
+Die Schur-Quelle begründet keine universelle Rang-zwei-Näherung. Bisherige statische Portalparameter und laufende Skyrme-Abnahmekriterien werden nicht geändert.
