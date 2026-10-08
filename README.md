@@ -43,7 +43,7 @@ Berichtigungen. Es ist nicht nachtraeglich geglaettet; Ordnernamen bleiben stabi
 - `coordination/runden-v3/`: Arbeitsrunden. `RUNDE-NN.md` ist das Protokoll einer Runde; `RUNDE-NN/<name>/` enthaelt
   je Untersuchung die Karte (Erwartungen vor der Rechnung), `ERGEBNIS.md`, Code und Pruefsummen. Die meisten Ergebnisse
   liegen in `RUNDE-37/`. `netz-gpu/` ist die GPU-Engine.
-- `coordination/higgs-*-2026100x/`: Higgsportal-Linie (Bestandsaufnahme, Verbindungsideen, fuenf Rechentests mit Plan,
+- `coordination/higgs-*-2026100x/`: Higgsportal-Linie (Bestandsaufnahme, Verbindungsideen, sechs Rechentests mit Plan,
   Code, Ergebnisdateien und Provenienz).
 - `coordination/research-journal/`: Forschungsjournal als JSON; Eintraege werden nicht geaendert, Berichtigungen sind
   neue Eintraege.
@@ -111,7 +111,7 @@ auf V gerechnet. Die Prozentwerte oben bleiben deshalb unveraendert.
   die Bildungsversuche B22/B23 verfehlten ihre Kriterien. [Bestandsaufnahme](coordination/higgs-bestandsaufnahme-20261007/BESTAND.md)
 - **Zehn Verbindungsideen** in drei analytischen Runden, ohne neue Rechnung, mit einer Pruefnotiz zu einer Mathematik-
   Veroeffentlichung von OpenAI. [Uebersicht](coordination/higgs-verbindungen-20261007/README.md)
-- **Fuenf Rechentests** mit vorab gesetzten Kriterien (CUDA, float64). Fehler sind Abweichungen von der vollen Theorie,
+- **Sechs Rechentests** mit vorab gesetzten Kriterien (CUDA, float64). Fehler sind Abweichungen von der vollen Theorie,
   keine statistischen Unsicherheiten:
   1. [Higgsantwort](coordination/higgs-response-20261008/ERGEBNIS.md) an 24 archivierten Profilen: Die Antwort zweiter
      Ordnung erreicht 0,026 bis 0,028 % Profilfehler bei schwacher und 0,64 bis 0,71 % bei staerkerer Kopplung; sie
@@ -123,13 +123,18 @@ auf V gerechnet. Die Prozentwerte oben bleiben deshalb unveraendert.
   4. [Energiekruemmungen der vollen Theorie](coordination/higgs-modes-20261008/ERGEBNIS.md): keine negative Richtung in
      acht Sektoren (l = 0 bis 3) nach Abzug der Symmetrierichtungen; statisch, keine Schwingungsfrequenzen.
   5. [Radiale Kruemmungen der reduzierten Modelle](coordination/higgs-reduced-modes-20261008/ERGEBNIS.md): hoechstens
-     0,0099 % (E3) und 0,00025 % (Ecomp) Eigenwertfehler; Winkelantwort offen.
+     0,0099 % (E3) und 0,00025 % (Ecomp) Eigenwertfehler.
+  6. [Winkelkruemmungen der reduzierten Modelle](coordination/higgs-angular-modes-20261008/ERGEBNIS.md): 36 Matrizen
+     fuer l = 1, 2; hoechstens 0,007295 % (E3) und 0,0003385 % (Ecomp) Eigenwertfehler. Translation erhalten,
+     uebrige gepruefte Richtungen positiv; unabhaengige Winkelintegration bestaetigt die Ableitung.
+
+Die zeitabhaengige Higgsantwort, weitere Parameterpunkte und die Uebertragung auf V bleiben offen.
 
 | | |
 |---|---|
 | [![Higgs-Naeherungen: Profil- und Energiefehler](coordination/higgs-response-20261008/approximation-errors.svg)](coordination/higgs-response-20261008/ERGEBNIS.md) | [![Reduzierte Higgsmodelle: Fehler von Portalkraft und Energie](coordination/higgs-force-20261008/force-errors.svg)](coordination/higgs-force-20261008/ERGEBNIS.md) |
 | [![Selbstkonsistenter Higgsvergleich: Materieprofile und Frequenzen](coordination/higgs-minima-20261008/minima-errors.svg)](coordination/higgs-minima-20261008/ERGEBNIS.md) | [![Energiekruemmungen und Symmetrierichtungen des Higgsportalzweigs](coordination/higgs-modes-20261008/mode-spectrum.svg)](coordination/higgs-modes-20261008/ERGEBNIS.md) |
-| [![Radiale Energiekruemmungen von E3 und Ecomp](coordination/higgs-reduced-modes-20261008/reduced-mode-errors.svg)](coordination/higgs-reduced-modes-20261008/ERGEBNIS.md) | |
+| [![Radiale Energiekruemmungen von E3 und Ecomp](coordination/higgs-reduced-modes-20261008/reduced-mode-errors.svg)](coordination/higgs-reduced-modes-20261008/ERGEBNIS.md) | [![Winkelkruemmungen und Translationskontrolle](coordination/higgs-angular-modes-20261008/angular-mode-errors.svg)](coordination/higgs-angular-modes-20261008/ERGEBNIS.md) |
 
 ## Literaturvergleich und naechste Pruefungen (07.10.2026)
 

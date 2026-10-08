@@ -117,7 +117,7 @@ tetrahedral network "V" and its time-extended "tent" version.
   own derivation, not taken from the literature.
 - **Source:** [ds-eichung-2d-1/ERGEBNIS.md](coordination/runden-v3/RUNDE-37/ds-eichung-2d-1/ERGEBNIS.md)
 
-### 8. Higgs-portal model: a reduced Higgs energy reproduces profiles, forces and radial curvatures
+### 8. Higgs-portal model: a reduced Higgs energy reproduces profiles, forces and tested curvatures
 
 - **Claim:** In a classical model with two complex singlets coupled to a real Higgs amplitude (radial 3D, Higgs mass
   and vacuum value as inputs), an analytically derived reduced Higgs energy ("Ecomp") reproduces the full theory.
@@ -127,7 +127,10 @@ tetrahedral network "V" and its time-extended "tent" version.
   error of Ecomp 0.0097 to 0.0116 %. In 18 new relaxations the Ecomp matter profile deviates by at most 6.6e-5 %, the
   reconstructed Higgs profile by about 0.65 %. Full theory: no negative energy curvature in all 8 tested sectors
   (angular orders l = 0 to 3) after identified symmetry directions. Reduced models: radial eigenvalue errors at most
-  0.0099 % (E3) and 0.00025 % (Ecomp). Errors are deviations from the full model, not statistical uncertainties.
+  0.0099 % (E3) and 0.00025 % (Ecomp). A further 36 matrices test angular orders l = 1, 2 against the full static
+  Higgs response (Schur complement): at most 0.007295 % (E3) and 0.0003385 % (Ecomp) eigenvalue error, translation
+  identified and other tested directions positive. Independent finite-angle energy differences check the angular
+  derivation. Errors are deviations from the full static model, not statistical uncertainties.
 - **Limits:** The second-order response was planned after the first-order one failed at stronger coupling (documented).
   One parameter point for relaxations and modes; static curvatures, not dynamical frequencies; no time evolution;
   computed on radial grids, not on V. This is a classical model with Higgs parameters put in by hand, not a derivation
@@ -136,7 +139,8 @@ tetrahedral network "V" and its time-extended "tent" version.
   [higgs-force](coordination/higgs-force-20261008/ERGEBNIS.md),
   [higgs-minima](coordination/higgs-minima-20261008/ERGEBNIS.md),
   [higgs-modes](coordination/higgs-modes-20261008/ERGEBNIS.md),
-  [higgs-reduced-modes](coordination/higgs-reduced-modes-20261008/ERGEBNIS.md); background:
+  [higgs-reduced-modes](coordination/higgs-reduced-modes-20261008/ERGEBNIS.md),
+  [higgs-angular-modes](coordination/higgs-angular-modes-20261008/ERGEBNIS.md); background:
   [inventory of earlier portal runs](coordination/higgs-bestandsaufnahme-20261007/BESTAND.md)
 
 ## Negative results
