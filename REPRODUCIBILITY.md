@@ -14,6 +14,18 @@ implementations. Sampled positivity is not a proof for all momenta or for the in
 
 ## Coverage and error meanings
 
+Two follow-ups address questions that the historical reproduction cannot settle:
+
+- [Fixed-weight momentum holdout](reproducibility/maxwell-holdout/README.md): new four-dimensional Bloch points
+  and rays towards the origin, without weight optimization. This is a finite-sample stability diagnostic.
+- [Exact time-reflection check](reproducibility/maxwell-reflection/README.md): an integer/rational certificate
+  for pure time reflection at fixed spatial position in this staggered embedding. It does not test every possible
+  combined reflection or establish failure of reflection positivity.
+
+The first uses the unchanged `maxwell-v` package as a hashed input; the second uses only Python's standard library.
+See [the next mathematical gate](coordination/maxwell-foundations-20261008/NEXT-TEST.md) for the distinction between
+these checks and a full positivity certificate.
+
 [CLAIMS.md](CLAIMS.md) lists all eight findings and their present evidence. The other seven findings do not yet have
 complete compact packages here. Historical code and reports remain available through that register; some original
 binary data are excluded as documented in [AUSSCHLUESSE.md](AUSSCHLUESSE.md).

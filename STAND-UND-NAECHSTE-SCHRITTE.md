@@ -24,6 +24,14 @@ Nachkommastellen aber keinen Vorrang vor diesen Grundlagen. Die Prozentwerte wer
 Aenderungen nicht erhoeht. [Review-Antwort](coordination/review-response-20261008/RESPONSE.md),
 [Aussagen und Pruefkriterien](CLAIMS.md).
 
+## Neue Maxwell-Grundlagenpruefungen (08.10.2026)
+
+Die Maxwell-Grundlagenarbeit wird inzwischen durch zwei neue, begrenzte Tests ergaenzt:
+[neue Impulse bei festen Gewichten](reproducibility/maxwell-holdout/README.md) und
+[reine Zeitreflexion der versetzten Geometrie](reproducibility/maxwell-reflection/README.md).
+Die Ergebnisse und ihre Grenzen stehen in der [Auswertung](coordination/maxwell-foundations-20261008/RESULT.md).
+Beides ersetzt keinen Kontinuums- oder Volumenlimes; die Prozentwerte bleiben unveraendert.
+
 ## Neue Higgs-Auswertung (08.10.2026)
 
 [HIGGS-RESPONSE-1](coordination/higgs-response-20261008/ERGEBNIS.md) prüft Näherungen an allen 24 gespeicherten B13-Profilen. Eine räumliche Korrektur zweiter Ordnung besteht das vorab definierte Pilotkriterium in allen acht Parametergruppen. Es handelt sich um eine neue Auswertung bei festgehaltenen Singuletts, keine neue Relaxation und keine Herleitung des Higgsmechanismus. Nächste Frage: konsistente reduzierte Energie und Kräfte, danach selbstkonsistente Profile; parallel bleibt die vollständige Modenprüfung wichtig.

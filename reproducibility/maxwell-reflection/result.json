@@ -1,0 +1,262 @@
+{
+  "schema": 1,
+  "spatial_dimensions": 3,
+  "euclidean_time_dimensions": 1,
+  "question": "Pure time reflection with spatial positions fixed modulo FCC translations",
+  "spatial_representatives_in_eighths": [
+    [
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      -1,
+      -1
+    ],
+    [
+      -1,
+      1,
+      -1
+    ],
+    [
+      -1,
+      -1,
+      1
+    ],
+    [
+      -2,
+      -2,
+      -2
+    ],
+    [
+      4,
+      4,
+      4
+    ],
+    [
+      -3,
+      -3,
+      -3
+    ],
+    [
+      -3,
+      -1,
+      -1
+    ],
+    [
+      -1,
+      -3,
+      -1
+    ],
+    [
+      -1,
+      -1,
+      -3
+    ]
+  ],
+  "temporal_offsets_over_tau": [
+    "0",
+    "1/10",
+    "1/5",
+    "3/10",
+    "2/5",
+    "1/2",
+    "3/5",
+    "7/10",
+    "4/5",
+    "9/10"
+  ],
+  "spatial_coset_equivalence": [
+    [
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    [
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    [
+      false,
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    [
+      false,
+      false,
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    [
+      false,
+      false,
+      false,
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    [
+      false,
+      false,
+      false,
+      false,
+      false,
+      true,
+      false,
+      false,
+      false,
+      false
+    ],
+    [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      true,
+      false,
+      false,
+      false
+    ],
+    [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      true,
+      false,
+      false
+    ],
+    [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      true,
+      false
+    ],
+    [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      true
+    ]
+  ],
+  "candidate_planes_modulo_half_tau": [
+    {
+      "c": "0",
+      "t0_over_tau": "0",
+      "matching_sublattices": [
+        0,
+        5
+      ]
+    },
+    {
+      "c": "1/5",
+      "t0_over_tau": "1/10",
+      "matching_sublattices": [
+        1,
+        6
+      ]
+    },
+    {
+      "c": "2/5",
+      "t0_over_tau": "1/5",
+      "matching_sublattices": [
+        2,
+        7
+      ]
+    },
+    {
+      "c": "3/5",
+      "t0_over_tau": "3/10",
+      "matching_sublattices": [
+        3,
+        8
+      ]
+    },
+    {
+      "c": "4/5",
+      "t0_over_tau": "2/5",
+      "matching_sublattices": [
+        4,
+        9
+      ]
+    }
+  ],
+  "valid_c_classes": [],
+  "simplex_matching": "not reached: vertex-set invariance is necessary and fails",
+  "certificate": {
+    "b0_requires": "c = 0 modulo 1",
+    "b1_requires": "c = 1/5 modulo 1",
+    "contradiction": "1/5 is not an integer"
+  },
+  "checks": {
+    "ten_distinct_spatial_cosets": true,
+    "five_candidate_plane_classes": true,
+    "two_sublattices_per_candidate": true,
+    "no_pure_time_reflection": true,
+    "b0_b1_obstruction": true,
+    "synchronous_vertex_control": true,
+    "individual_sublattice_controls": true,
+    "fcc_translation_control": true
+  },
+  "passed": true,
+  "provenance": {
+    "utc": "2026-10-08T18:33:45.095734+00:00",
+    "host": "ubuntu-auto",
+    "python": "3.12.3",
+    "backend": "single-process CPU, exact integer/rational arithmetic",
+    "sha256": {
+      "check_reflection.py": "4681bada5a61f64e508fc11d277fd4d67647b952b84e92dd42473de937a961e4",
+      "PLAN.md": "56e91a1fd49c370440bffdef6eb7ea9e89a108d3f71a801d5553eb18a9b8111e"
+    }
+  }
+}

@@ -82,6 +82,12 @@ Eine endliche Stichprobe positiver Eigenwerte ist kein Positivitaetsbeweis; Gitt
 Vorhersage ueber die Natur. Die [Review-Antwort](coordination/review-response-20261008/RESPONSE.md) beschreibt
 Pruefkriterien und offene Punkte. Die [Aussagenliste](CLAIMS.md) trennt Nachrechnung, Konvergenz und physikalische Geltung.
 
+**Neue Grundlagenpruefung:** Bei 304 zusaetzlichen Impulsen bleiben die festen optimierten Maxwell-Gewichte ohne
+aufgeloeste negative physikalische Mode; die Standardgewichte sind bei allen 304 instabil. Darunter sind gezielte
+Annaeherungen an Null, aber kein Beweis fuer die gesamte Impulszone. Ausserdem besitzt die gewaehlte versetzte
+Zelteinbettung keine reine Zeitspiegelung bei festgehaltenem Ort. Das schliesst andere Zeitrekonstruktionen nicht aus.
+[Rechnung, Grafik und Grenzen](coordination/maxwell-foundations-20261008/RESULT.md).
+
 | Bereich | Subjektive Reife | Gerechnet [E] | Hypothese [H] | Fehlt |
 |---|---|---|---|---|
 | Netz und Raum | 65 % | Netz V mit Gewichten; Umklappen mit Traegheit am Netz ([UMKLAPP-FOLGE-1](coordination/runden-v3/RUNDE-37/umklapp-folge-1/ERGEBNIS.md), [NETZ-NICHTLINEAR-1](coordination/runden-v3/RUNDE-37/netz-nichtlinear-1/ERGEBNIS.md)); mit fester 4-Volumen-Bedingung laufen 3 von 4 Testnetzen stabil, ohne sie keins ([VOLUMEN-G2-1](coordination/runden-v3/RUNDE-37/volumen-g2-1/ERGEBNIS.md)) | Volumenerhalt (unimodular) als Grundregel | voll nichtlineare Rechnung mit allen Ableitungen; Herleitung des Netzes |

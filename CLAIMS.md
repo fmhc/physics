@@ -27,6 +27,12 @@ Status: 2026-10-08. Read alongside [RESULTS.md](RESULTS.md). IDs below refer to 
 - **Evidence / error:** V uses L = 2, 3 only. E/|k| = 1.01 ± 0.04 is a finite-lattice estimate; beta_c = 1.45 ± 0.01 uses hysteresis width, not a confidence interval. Plain circumcentric weights yield negative bands at tested time steps. Searched weights leave three negative triangle classes but positive physical quadratic eigenvalues at tested momenta. Neither sampled positivity nor constant-field normalization proves positivity at every momentum, reflection positivity, uniqueness, or a continuum limit. The chain identity d1 d0 = 0 and quadratic-action positivity are distinct checks.
 - **Next rejection test:** A resolved negative physical eigenvalue at an independently chosen momentum rejects global quadratic positivity for the fixed weight set. Persistent directional dispersion after controlled long-wavelength/refinement tests rejects the corresponding isotropy claim. Freeze the weights before holdout testing; a new search creates a new model requiring new holdouts.
 
+- **New follow-up:** [304 fixed-weight momentum evaluations](reproducibility/maxwell-holdout/README.md) extend the
+  earlier sample with 256 new random points and 48 ray points. The searched weights have no resolved negative
+  physical mode at these points; the circumcentric control has one at each. No weight retuning was performed.
+  [Exact reflection certificate](reproducibility/maxwell-reflection/README.md) excludes only pure time reflection
+  of the chosen staggered embedding at fixed spatial position, not all possible quantum reconstructions.
+
 ## C4 — SU(2) flow-scale comparisons
 
 - **Supported scope:** Two scale assignments at c = 0.3 give some close network/hypercube ratios. This is not demonstrated universality, a continuum determination, SU(3), or a hadron calculation.

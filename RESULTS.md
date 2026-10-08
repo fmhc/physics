@@ -64,6 +64,12 @@ tetrahedral network "V" and its time-extended "tent" version.
   multihit and re-analysis were decided during the run. Gauge invariance follows from the incidence identity d1 d0 = 0
   and does not establish positive energy. Positivity of sampled gauge-projected quadratic forms does not prove
   positivity for every momentum or reflection positivity of the interacting Euclidean theory.
+- **Follow-up (2026-10-08):** With the weights frozen, 256 new random four-dimensional Bloch points and 48 directed
+  ray points toward the origin give no resolved negative physical mode for the searched weights, versus 304/304
+  for the circumcentric control. This is a finite quadratic-form diagnostic, not new Monte Carlo or real-time
+  photon dispersion. A separate exact check excludes pure time reflection at fixed spatial position for the chosen
+  staggered tent embedding; combined transformations and reflection positivity remain untested.
+  [Follow-up report](coordination/maxwell-foundations-20261008/RESULT.md).
 - **Source:** [quant-2/ERGEBNIS.md](coordination/runden-v3/RUNDE-37/quant-2/ERGEBNIS.md)
 
 ### 4. SU(2) on the network: gradient-flow scales track the hypercubic lattice at two lattice spacings
