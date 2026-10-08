@@ -1,0 +1,49 @@
+Okt 08 17:57:56 ubuntu-auto systemd[124419]: Started ag-physics-codex-higgs-dynamics-20261008.service - /bin/bash /home/fmh/ag-physics-codex/higgs-dynamics-20261008/launch.sh.
+Okt 08 17:57:56 ubuntu-auto bash[2857471]: GEPACHTET dot69 halb fuer 30 min, Pacht 85e45c0e
+Okt 08 17:57:56 ubuntu-auto bash[2857471]: Grenzen fuer den Job:
+Okt 08 17:57:56 ubuntu-auto bash[2857471]:   CPUQuota=300%
+Okt 08 17:57:56 ubuntu-auto bash[2857471]:   MemoryMax=7G
+Okt 08 17:57:56 ubuntu-auto bash[2857471]:   GPU=unter gauntlet-gpu.lock, nur bei voller Pacht (nur unter gauntlet-gpu.lock)
+Okt 08 17:57:56 ubuntu-auto bash[2857471]: systemd-run --user -p CPUQuota=300% -p MemoryMax=7G -p RuntimeMaxSec=1800 --unit=ag-physics-codex-higgs-dynamics-85e45c0e ...
+Okt 08 17:57:56 ubuntu-auto bash[2857471]: Laeuft von selbst ab. Vorzeitig frei: platz.py gib dot69 --wer codex-higgs-dynamics
+Okt 08 17:57:59 ubuntu-auto bash[2857481]: [W1008 17:57:59.265273041 Context.cpp:281] Warning: torch.backends.cuda.preferred_linalg_library is an experimental feature. If you see any error or unexpected behavior when this flag is set please file an issue on GitHub. (function operator())
+Okt 08 17:58:00 ubuntu-auto bash[2857481]: {"stage": "base", "method": "full", "ell": 0, "lowest": [0.030982896805115664, 0.10517732541841361, 0.14058170144935506], "elapsed": 1.0838772486895323}
+Okt 08 17:58:00 ubuntu-auto bash[2857481]: {"stage": "base", "method": "Schur-static", "ell": 0, "lowest": [0.03098289680511937, 0.10517759882115787, 0.14058170144955778], "elapsed": 1.4056039610877633}
+Okt 08 17:58:00 ubuntu-auto bash[2857481]: {"stage": "base", "method": "Schur-inertia", "ell": 0, "lowest": [0.03098289680506139, 0.1051773308024104, 0.1405817014493261], "elapsed": 1.724775841459632}
+Okt 08 17:58:03 ubuntu-auto bash[2857481]: {"stage": "base", "method": "E3-static", "ell": 0, "lowest": [0.030987765118930508, 0.10518891305060032, 0.14059489973894576], "elapsed": 4.6373093370348215}
+Okt 08 17:58:04 ubuntu-auto bash[2857481]: {"stage": "base", "method": "E3-inertia", "ell": 0, "lowest": [0.03098776511887686, 0.1051886536297951, 0.14059489973915038], "elapsed": 4.956226943060756}
+Okt 08 17:58:05 ubuntu-auto bash[2857481]: {"stage": "base", "method": "Ecomp-static", "ell": 0, "lowest": [0.03098277608488157, 0.10517712124966029, 0.14058114644226177], "elapsed": 5.935636203736067}
+Okt 08 17:58:05 ubuntu-auto bash[2857481]: {"stage": "base", "method": "Ecomp-inertia", "ell": 0, "lowest": [0.030982776084946383, 0.10517685941156939, 0.1405811464423038], "elapsed": 6.254678823053837}
+Okt 08 17:58:06 ubuntu-auto bash[2857481]: {"stage": "base", "method": "full", "ell": 1, "lowest": [4.4226662548658115e-06, 0.10111170433325982, 0.11167931360729957], "elapsed": 6.86262243334204}
+Okt 08 17:58:06 ubuntu-auto bash[2857481]: {"stage": "base", "method": "Schur-static", "ell": 1, "lowest": [4.424033936913739e-06, 0.10111170433330985, 0.11167984445224724], "elapsed": 7.182652156800032}
+Okt 08 17:58:06 ubuntu-auto bash[2857481]: {"stage": "base", "method": "Schur-inertia", "ell": 1, "lowest": [4.422666241865761e-06, 0.10111170433324242, 0.11167932386374592], "elapsed": 7.49987184908241}
+Okt 08 17:58:07 ubuntu-auto bash[2857481]: {"stage": "base", "method": "E3-static", "ell": 1, "lowest": [4.423962474632675e-06, 0.10112637266718931, 0.11169158834558882], "elapsed": 8.251448785886168}
+Okt 08 17:58:07 ubuntu-auto bash[2857481]: {"stage": "base", "method": "E3-inertia", "ell": 1, "lowest": [4.422618100097096e-06, 0.1011263726670968, 0.11169107709965215], "elapsed": 8.569666338153183}
+Okt 08 17:58:08 ubuntu-auto bash[2857481]: {"stage": "base", "method": "Ecomp-static", "ell": 1, "lowest": [4.425507469414679e-06, 0.10111132177679531, 0.11167934691976343], "elapsed": 9.482482434250414}
+Okt 08 17:58:08 ubuntu-auto bash[2857481]: {"stage": "base", "method": "Ecomp-inertia", "ell": 1, "lowest": [4.424156567483703e-06, 0.1011113217768519, 0.11167883288298114], "elapsed": 9.800390020012856}
+Okt 08 17:58:09 ubuntu-auto bash[2857481]: {"stage": "base", "method": "full", "ell": 2, "lowest": [0.07189291920411639, 0.12217393369400473, 0.15428266472809002], "elapsed": 10.409318145364523}
+Okt 08 17:58:09 ubuntu-auto bash[2857481]: {"stage": "base", "method": "Schur-static", "ell": 2, "lowest": [0.07191605330991767, 0.12217510723220446, 0.15428266472790633], "elapsed": 10.730419144034386}
+Okt 08 17:58:10 ubuntu-auto bash[2857481]: {"stage": "base", "method": "Schur-inertia", "ell": 2, "lowest": [0.07189318303393274, 0.12217395634570996, 0.1542826647281211], "elapsed": 11.048009742051363}
+Okt 08 17:58:10 ubuntu-auto bash[2857481]: {"stage": "base", "method": "E3-static", "ell": 2, "lowest": [0.0719209464489451, 0.1221873048583826, 0.15429696347914426], "elapsed": 11.800559099763632}
+Okt 08 17:58:11 ubuntu-auto bash[2857481]: {"stage": "base", "method": "E3-inertia", "ell": 2, "lowest": [0.07189825900396646, 0.12218616317832165, 0.15429696347919813], "elapsed": 12.119328963570297}
+Okt 08 17:58:12 ubuntu-auto bash[2857481]: {"stage": "base", "method": "Ecomp-static", "ell": 2, "lowest": [0.07191568716451832, 0.12217458583229737, 0.15428208171638458], "elapsed": 13.044866831041873}
+Okt 08 17:58:12 ubuntu-auto bash[2857481]: {"stage": "base", "method": "Ecomp-inertia", "ell": 2, "lowest": [0.07189293819274592, 0.12217344066331275, 0.15428208171627886], "elapsed": 13.363757204264402}
+Okt 08 17:58:15 ubuntu-auto bash[2857481]: {"stage": "grid", "method": "full", "ell": 0, "lowest": [0.030979242741924633, 0.10517151064532691, 0.14057495449566357], "elapsed": 16.205554397776723}
+Okt 08 17:58:16 ubuntu-auto bash[2857481]: {"stage": "grid", "method": "Schur-static", "ell": 0, "lowest": [0.03097924274150166, 0.10517178403538882, 0.1405749544960899], "elapsed": 17.8097278540954}
+Okt 08 17:58:18 ubuntu-auto bash[2857481]: {"stage": "grid", "method": "Schur-inertia", "ell": 0, "lowest": [0.030979242741662954, 0.10517151602878506, 0.140574954495963], "elapsed": 19.388787682168186}
+Okt 08 17:58:21 ubuntu-auto bash[2857481]: {"stage": "grid", "method": "E3-static", "ell": 0, "lowest": [0.030984107627145648, 0.10518309037896881, 0.14058814363488206], "elapsed": 21.977963898330927}
+Okt 08 17:58:22 ubuntu-auto bash[2857481]: {"stage": "grid", "method": "E3-inertia", "ell": 0, "lowest": [0.030984107627160362, 0.10518283096951121, 0.14058814363492508], "elapsed": 23.554697079584002}
+Okt 08 17:58:25 ubuntu-auto bash[2857481]: {"stage": "grid", "method": "Ecomp-static", "ell": 0, "lowest": [0.03097911858176802, 0.10517130468913913, 0.1405743974012212], "elapsed": 26.461517554707825}
+Okt 08 17:58:27 ubuntu-auto bash[2857481]: {"stage": "grid", "method": "Ecomp-inertia", "ell": 0, "lowest": [0.030979118582066104, 0.10517104286257195, 0.14057439740101238], "elapsed": 28.02477233763784}
+Okt 08 17:58:29 ubuntu-auto bash[2857481]: Traceback (most recent call last):
+Okt 08 17:58:29 ubuntu-auto bash[2857481]:   File "/home/fmh/ag-physics-codex/higgs-dynamics-20261008/run.py", line 95, in <module>
+Okt 08 17:58:29 ubuntu-auto bash[2857481]:     refs={};refs['full']=spectrum('full',A,D,eye,u,omega,L,B,C,{'higgs_minimum':float(torch.linalg.eigvalsh(C)[0]),'schur_solve_error':cerr})
+Okt 08 17:58:29 ubuntu-auto bash[2857481]:                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Okt 08 17:58:29 ubuntu-auto bash[2857481]:   File "/home/fmh/ag-physics-codex/higgs-dynamics-20261008/run.py", line 82, in spectrum
+Okt 08 17:58:29 ubuntu-auto bash[2857481]:     physical.append(er);assert er<1e-7,(name,er)
+Okt 08 17:58:29 ubuntu-auto bash[2857481]:                                ^^^^^^^
+Okt 08 17:58:29 ubuntu-auto bash[2857481]: AssertionError: ('full', 5.814300845261688e-07)
+Okt 08 17:58:30 ubuntu-auto bash[2857609]: dot69: Pachten von codex-higgs-dynamics freigegeben
+Okt 08 17:58:30 ubuntu-auto systemd[124419]: ag-physics-codex-higgs-dynamics-20261008.service: Main process exited, code=exited, status=1/FAILURE
+Okt 08 17:58:30 ubuntu-auto systemd[124419]: ag-physics-codex-higgs-dynamics-20261008.service: Failed with result 'exit-code'.
+Okt 08 17:58:30 ubuntu-auto systemd[124419]: ag-physics-codex-higgs-dynamics-20261008.service: Consumed 31.936s CPU time, 585.5M memory peak, 0B memory swap peak.

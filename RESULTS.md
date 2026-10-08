@@ -117,12 +117,14 @@ tetrahedral network "V" and its time-extended "tent" version.
   own derivation, not taken from the literature.
 - **Source:** [ds-eichung-2d-1/ERGEBNIS.md](coordination/runden-v3/RUNDE-37/ds-eichung-2d-1/ERGEBNIS.md)
 
-### 8. Higgs-portal model: a reduced Higgs energy reproduces profiles, forces and tested curvatures
+### 8. Higgs-portal model: reduced energy and inertia reproduce tested static and linear dynamic observables
 
 - **Claim:** In a classical model with two complex singlets coupled to a real Higgs amplitude (radial 3D, Higgs mass
-  and vacuum value as inputs), an analytically derived reduced Higgs energy ("Ecomp") reproduces the full theory.
+  and vacuum value as inputs), a reduced Higgs energy ("Ecomp") and induced inertia reproduce the tested full-model
+  profiles, forces, energy curvatures and low linear dynamic frequencies.
 - **Method:** CUDA float64 evaluation of 24 archived stationary profiles (8 parameter groups, three grid/box levels),
-  then new relaxations and Hessian eigenvalue computations at one parameter point; pass criteria set in advance per step.
+  then new relaxations, Hessian eigenvalues and 63 linear dynamic spectral problems at one parameter point;
+  pass criteria set in advance per step.
 - **Numbers:** Profile error of the second-order Higgs response 0.64 to 0.71 % at the stronger coupling. Portal-force
   error of Ecomp 0.0097 to 0.0116 %. In 18 new relaxations the Ecomp matter profile deviates by at most 6.6e-5 %, the
   reconstructed Higgs profile by about 0.65 %. Full theory: no negative energy curvature in all 8 tested sectors
@@ -130,9 +132,14 @@ tetrahedral network "V" and its time-extended "tent" version.
   0.0099 % (E3) and 0.00025 % (Ecomp). A further 36 matrices test angular orders l = 1, 2 against the full static
   Higgs response (Schur complement): at most 0.007295 % (E3) and 0.0003385 % (Ecomp) eigenvalue error, translation
   identified and other tested directions positive. Independent finite-angle energy differences check the angular
-  derivation. Errors are deviations from the full static model, not statistical uncertainties.
+  derivation. Adding the induced Higgs inertia reduces the maximum Ecomp dynamic-frequency error from 0.01583 %
+  to 0.000237 %; E3 with inertia reaches 0.007857 %. No resolved exponentially growing mode in tested l = 0, 1, 2
+  sectors on three finite grids. Errors compare models at the same discretization, not statistical uncertainties.
 - **Limits:** The second-order response was planned after the first-order one failed at stronger coupling (documented).
-  One parameter point for relaxations and modes; static curvatures, not dynamical frequencies; no time evolution;
+  A first dynamic run stopped on a reconstruction-residual check near the translation zero mode; a numerically stable
+  equivalent reconstruction passed unchanged tolerances, retaining 28 completed spectra and computing the remaining 35.
+  One parameter point for relaxations and modes; the earlier curvature tests are static, while the new spectral test
+  concerns linear dynamics only. No direct nonlinear time integration or quantum-stability test;
   computed on radial grids, not on V. This is a classical model with Higgs parameters put in by hand, not a derivation
   of the Higgs mechanism.
 - **Sources:** [higgs-response](coordination/higgs-response-20261008/ERGEBNIS.md),
@@ -140,7 +147,8 @@ tetrahedral network "V" and its time-extended "tent" version.
   [higgs-minima](coordination/higgs-minima-20261008/ERGEBNIS.md),
   [higgs-modes](coordination/higgs-modes-20261008/ERGEBNIS.md),
   [higgs-reduced-modes](coordination/higgs-reduced-modes-20261008/ERGEBNIS.md),
-  [higgs-angular-modes](coordination/higgs-angular-modes-20261008/ERGEBNIS.md); background:
+  [higgs-angular-modes](coordination/higgs-angular-modes-20261008/ERGEBNIS.md),
+  [higgs-dynamics](coordination/higgs-dynamics-20261008/ERGEBNIS.md); background:
   [inventory of earlier portal runs](coordination/higgs-bestandsaufnahme-20261007/BESTAND.md)
 
 ## Negative results

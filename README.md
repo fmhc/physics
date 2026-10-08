@@ -111,7 +111,7 @@ auf V gerechnet. Die Prozentwerte oben bleiben deshalb unveraendert.
   die Bildungsversuche B22/B23 verfehlten ihre Kriterien. [Bestandsaufnahme](coordination/higgs-bestandsaufnahme-20261007/BESTAND.md)
 - **Zehn Verbindungsideen** in drei analytischen Runden, ohne neue Rechnung, mit einer Pruefnotiz zu einer Mathematik-
   Veroeffentlichung von OpenAI. [Uebersicht](coordination/higgs-verbindungen-20261007/README.md)
-- **Sechs Rechentests** mit vorab gesetzten Kriterien (CUDA, float64). Fehler sind Abweichungen von der vollen Theorie,
+- **Sieben Rechentests** mit vorab gesetzten Kriterien (CUDA, float64). Fehler sind Abweichungen von der vollen Theorie,
   keine statistischen Unsicherheiten:
   1. [Higgsantwort](coordination/higgs-response-20261008/ERGEBNIS.md) an 24 archivierten Profilen: Die Antwort zweiter
      Ordnung erreicht 0,026 bis 0,028 % Profilfehler bei schwacher und 0,64 bis 0,71 % bei staerkerer Kopplung; sie
@@ -128,13 +128,21 @@ auf V gerechnet. Die Prozentwerte oben bleiben deshalb unveraendert.
      fuer l = 1, 2; hoechstens 0,007295 % (E3) und 0,0003385 % (Ecomp) Eigenwertfehler. Translation erhalten,
      uebrige gepruefte Richtungen positiv; unabhaengige Winkelintegration bestaetigt die Ableitung.
 
-Die zeitabhaengige Higgsantwort, weitere Parameterpunkte und die Uebertragung auf V bleiben offen.
+  7. [Lineare Higgsdynamik](coordination/higgs-dynamics-20261008/ERGEBNIS.md): 63 Spektralprobleme fuer l = 0, 1, 2.
+     Die neue Higgs-Traegheit senkt den maximalen Frequenzfehler von Ecomp von 0,01583 % auf **0,000237 %**;
+     E3 erreicht 0,007857 %. Keine aufgeloeste exponentielle Instabilitaet in den geprueften Sektoren.
+     Ein QA-Abbruch bei der Translationsrueckrechnung ist dokumentiert; Fortsetzung ohne gelockerte Kriterien.
+
+Die lineare zeitabhaengige Antwort ist damit an diesem Parameterpunkt geprueft. Nichtlineare Zeitentwicklung,
+weitere Parameterpunkte, Quanteneffekte und die Uebertragung auf V bleiben offen.
 
 | | |
 |---|---|
 | [![Higgs-Naeherungen: Profil- und Energiefehler](coordination/higgs-response-20261008/approximation-errors.svg)](coordination/higgs-response-20261008/ERGEBNIS.md) | [![Reduzierte Higgsmodelle: Fehler von Portalkraft und Energie](coordination/higgs-force-20261008/force-errors.svg)](coordination/higgs-force-20261008/ERGEBNIS.md) |
 | [![Selbstkonsistenter Higgsvergleich: Materieprofile und Frequenzen](coordination/higgs-minima-20261008/minima-errors.svg)](coordination/higgs-minima-20261008/ERGEBNIS.md) | [![Energiekruemmungen und Symmetrierichtungen des Higgsportalzweigs](coordination/higgs-modes-20261008/mode-spectrum.svg)](coordination/higgs-modes-20261008/ERGEBNIS.md) |
 | [![Radiale Energiekruemmungen von E3 und Ecomp](coordination/higgs-reduced-modes-20261008/reduced-mode-errors.svg)](coordination/higgs-reduced-modes-20261008/ERGEBNIS.md) | [![Winkelkruemmungen und Translationskontrolle](coordination/higgs-angular-modes-20261008/angular-mode-errors.svg)](coordination/higgs-angular-modes-20261008/ERGEBNIS.md) |
+
+[![Dynamischer Frequenzvergleich mit Higgs-Traegheit](coordination/higgs-dynamics-20261008/dynamic-frequency-errors.svg)](coordination/higgs-dynamics-20261008/ERGEBNIS.md)
 
 ## Literaturvergleich und naechste Pruefungen (08.10.2026)
 
