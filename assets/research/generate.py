@@ -8,17 +8,17 @@ import math
 OUT=Path(__file__).resolve().parent
 C='#60dbc2'; B='#86aaff'; G='#acb8cd'; A='#f6c776'; WHITE='#f2f5fa'
 DATA=[
-('netz','Netz und Raum',65,'Geometrie als Ausgangspunkt',['Tetraeder, Kanten und Gewichte.','Volumenregel: 3 von 4 Testnetzen stabil.'],['Nichtlineare Dynamik und Netzherkunft.'],'RUNDE-37/volumen-g2-1/ERGEBNIS.md'),
-('gravitation','Schwerkraft',55,'Krümmung verändert Wege',['Fernfeld und Lichtablenkung gerechnet.','Perihel aus Netzwerten: PPN-Arithmetik.'],['Nahfeld und dynamischer Kollaps.'],'RUNDE-50/GRUNDGLEICHUNG-v3.md'),
-('licht','Licht',55,'Feld auf Kanten und Flächen',['DEC-Maxwell auf dem Netz.','Masseloser Modus in Modellrechnungen.'],['Kopplungsstärke aus dem Modell ableiten.'],'RUNDE-37/quant-2/ERGEBNIS.md'),
+('netz','Netz und Raum',65,'Geometrie als Ausgangspunkt',['Umklapp-Instabilität sitzt an der neuen Kante.','Festhalten heilt sie bei kleiner Amplitude.'],['Große Amplituden: flache Tetraeder.'],'RUNDE-52/kanten-dyn-3/ERGEBNIS.md'),
+('gravitation','Schwerkraft',55,'Krümmung verändert Wege',['Fernfeld, Ablenkung, Mitziehen langwellig.','Erste Netzbahnen: Gitter überdeckt Perihel.'],['Größere Netze für Bahntests (GPU).'],'../s301-review-20261009/ERGEBNIS-S301-1.md'),
+('licht','Licht',55,'Feld auf Kanten und Flächen',['DEC-Maxwell, masseloser Modus.','Schichtnetz V×Z: Form positiv (Stichprobe).'],['Kopplung ableiten; Gewichte bleiben frei.'],'RUNDE-52/prisma-maxwell-1/ERGEBNIS.md'),
 ('materie','Materiefeld · Q-Bälle',30,'Ein gebundener Feldklumpen',['Klassische Vielteilchen-Objekte.','Für 2–5 Quanten keine belastbare Bindung.'],['Mechanismus für kleine Teilchenmassen.'],'RUNDE-37/quant-1/ERGEBNIS.md'),
 ('stark','Starke Kraft',40,'Eichfelder auf dem Netz',['SU(2): Einschluss und Flow-Skalen.','S5/S6: Vergleich an zwei Gitterabständen.'],['SU(3), Fadenspannung, größere Netze.'],'RUNDE-37/quant-3/ERGEBNIS-S6.md'),
 ('hadronen','Mesonen und Baryonen',10,'Gebundene Paare und Dreier?',['Dreipol-Modelle zeigen Bindung.','U(1)³: noch kein Baryonennachweis.'],['Farbeinschluss, Spin und Quantenzahlen.'],'RUNDE-37/qball-dreipol-3/ERGEBNIS.md'),
-('spin','Spin ½',20,'Drehung, Vorzeichen, Statistik',['2π-Vorzeichen als zusätzliche Regel.','Spin und Statistik noch nicht vereint.'],['Gemeinsame Dynamik statt Vorgabe.'],'RUNDE-37/gerahmter-faden-1/ERGEBNIS.md'),
-('schwach','Schwache Kraft',2,'Gesucht: chirale Wechselwirkung',['Literatur und Modellabgleich vorhanden.','Kein eigener tragender Mechanismus.'],['Chiralität und passende Eichkopplung.'],'RUNDE-20/ew-baelle/ERGEBNIS.md'),
+('spin','Spin ½',20,'Drehung, Vorzeichen, Statistik',['Rohrgang: Spinor-Dublett mit Kegel auf V.','2π-Vorzeichen und Statistik eingesetzt.'],['Pauli-Verhalten aus der Dynamik.'],'RUNDE-52/rohr-drehung-2/ERGEBNIS.md'),
+('schwach','Schwache Kraft',2,'Gesucht: chirale Wechselwirkung',['Einhändigkeit nur im nicht-unitären Schritt.','Hermitesch kehren die Partner zurück.'],['Chirale Kopplung bleibt eingesetzt.'],'RUNDE-52/chiral-ideen-1/DOSSIER.md'),
 ('higgs','Higgs',2,'Gesucht: dynamische Massenerzeugung',['Portalrechnungen B13–B23 vorhanden.','Kein eigener Higgs-Mechanismus.'],['Feld, Symmetriebrechung, Kopplungen.'],'../higgs-bestandsaufnahme-20261007/BESTAND.md'),
 ('generationen','Generationen',2,'Warum drei Teilchenfamilien?',['64 Flussmuster: keine isolierten Knoten.','Einstellbare Massen sind keine Vorhersage.'],['Drei Familien und ihre Hierarchie erklären.'],'RUNDE-37/antigravity-nachbau-1/ERGEBNIS.md'),
-('messdaten','Vergleich mit Messdaten',5,'Vom Modell zur prüfbaren Vorhersage',['Bestehende Schranken zusammengestellt.','Bisher keine Messdatenbestätigung.'],['Eigene quantitative Vorhersagen testen.'],'RUNDE-50/GRUNDGLEICHUNG-v3.md'),
+('messdaten','Vergleich mit Messdaten',5,'Vom Modell zur prüfbaren Vorhersage',['Schranken gesammelt; S301 geprüft.','Keine beobachtbare Netzvorhersage.'],['Eigene quantitative Vorhersagen testen.'],'../s301-review-20261009/AUDIT.md'),
 ('quantengravitation','Quantengravitation',7,'Das Netz selbst wird dynamisch',['CDT-artiges Modell und Dimensionsmessung.','Messverfahren konvergiert langsam.'],['Große Volumina und kontrollierte Grenzfälle.'],'RUNDE-37/ds-eichung-2d-1/ERGEBNIS.md'),
 ]
 
@@ -100,7 +100,7 @@ for i,(slug,title,pct,subtitle,known,missing,source) in enumerate(DATA,1):
  for j,t in enumerate(known):s+=text(490,217+j*29,t,18)
  s+=text(490,291,'OFFENE FRAGE',13,A,600)
  for j,t in enumerate(missing):s+=text(490,323+j*26,t,18)
- s+=line(35,391,965,391,'#26374c',1)+text(35,423,'SCHEMA · keine Messdaten · keine maßstäbliche Darstellung',14,G)+text(35,449,'Stand 07.10.2026 · Befunde und Grenzen: verlinkte Projektberichte',13,G)
+ s+=line(35,391,965,391,'#26374c',1)+text(35,423,'SCHEMA · keine Messdaten · keine maßstäbliche Darstellung',14,G)+text(35,449,'Texte Stand 10.10.2026 (explorativ, Gegenlesung offen) · Prozente unverändert seit 07.10.2026',13,G)
  s+='</g></svg>'
  (OUT/f'{slug}.svg').write_text(s)
 
