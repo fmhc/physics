@@ -1,6 +1,6 @@
 # Offenes, KI-gestuetztes Forschungsnotizbuch zu einem Gittermodell
 
-Raum als gefuelltes Tetraedernetz: Modellrechnungen, Hypothesen und Negativbefunde. Stand 08.10.2026.
+Raum als gefuelltes Tetraedernetz: Modellrechnungen, Hypothesen und Negativbefunde. Stand 10.10.2026.
 
 **In short (English).** This is an open lab notebook, written largely by AI agents (Claude, Codex and others) under the
 direction of Finn Hinrichsen, about a lattice model in which space is a filled tetrahedral network ("V"). On small
@@ -24,6 +24,22 @@ against measured data or peer-reviewed. The robust findings, with numbers and li
    Generationen, kein Mechanismus fuer Spin 1/2, keine Vorhersage, die an Messdaten geprueft waere.
 5. **Wie belastbar:** alles synthetisch, kleine Gitter, nicht begutachtet; mehrere Laeufe explorativ ohne Vorab-Plan.
    Belastbare Befunde und Negativbefunde mit Zahlen und Grenzen stehen in [RESULTS.md](RESULTS.md).
+
+## Stand 10.10.2026 (synthetisch, explorativ)
+
+Die [Tagesübersicht in RESULTS](RESULTS.md#stand-10102026-synthetisch-explorativ) übernimmt die fachlich
+freigegebenen, korrigierten Sätze des Gegenlesens vom 10.10.2026. Die bisherigen subjektiven Reife-Prozentwerte
+bleiben unverändert. Es gibt weiterhin keinen Abgleich mit Messdaten und keine externe Begutachtung.
+
+In Lean sind die endliche Zellkombinatorik von V, die Korandidentität, die Positivsemidefinitheit gewichteter
+Korandoperatoren, eine Obstruktion zweiter Ordnung des 12-Ecken-Stabmodells und das Trägheitslemma in der Fassung
+mit negativem Trägheitsindex formal geprüft; die Gleichsetzung dieses Index mit der Eigenwertzählung bleibt offen.
+[Quellen und Ergebnis-Kurzfassung](lean/ERGEBNIS.md) erläutern die Kernelprüfung und ihre Grenzen.
+
+Im synthetischen Vergleich erfüllt S an den festgelegten Bezugspunkten alle sieben gerichteten Kriterien besser
+als V; die vorgeschriebene Blindheit ist nicht belegt, und die Zahlen begründen weder eine allgemeine
+Stabilitätsrangfolge noch eine Ursache der Umklappinstabilität. **V-ODER-S-1 ist hier ausschließlich ein
+nicht-blinder synthetischer Zahlenvergleich.** Die blinde Wiederholung läuft noch und ist nicht Teil dieses Stands.
 
 ## Wo anfangen
 

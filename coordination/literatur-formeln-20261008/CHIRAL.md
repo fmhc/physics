@@ -23,7 +23,7 @@ Die numerische Reichweite ist L ≤ 8; Paar-Korrelatoren haben kein gesichertes 
 
 **Einordnung:** bedingte Symmetrieaussage und begrenztes Modellresultat; weder allgemeine Widerlegung des Seesaw-Mechanismus noch Nachweis eines Higgsersatzes. Die offengelegten Einschränkungen sind nicht als von uns entdeckte Widersprüche auszugeben.
 
-## Eigene Formelentscheidungen für ag-physics
+## Eigene Formelentscheidungen für fmhc-physics
 
 ### 1. Bestehendes skalares Portal: Parameter unverändert
 

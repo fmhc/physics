@@ -14,7 +14,8 @@ ROOT = Path(__file__).resolve().parent
 EXPECTED = {
     'reproduce.py': 'a05feb97c8f1c8d0b35924fbe92c51f2bbe60130abea2282ec36d10c2ab2f283',
     'result.json': '153a695ff94816ce1597cf83b45bb4fef668a0133d3851434c8db3ef5b166222',
-    'archive/gwp.json': 'a91fdfd0c86026d0f211dd8f1bb6812db966007f87bbd84d66cc67da16f6fa35',
+    # Public metadata-only export; the historical result retains its original hash.
+    'archive/gwp.json': '5bfea9818d6be9906c5a7521f4d873cbbada980c524bb9cf37802a61aa798bc5',
 }
 
 def main():

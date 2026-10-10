@@ -34,7 +34,7 @@ Acceptance: counts and exact checks above pass. Failed checks invalidate
 the implementation certificate and must be reported without changing this plan.
 
 Execution: Python standard library, one CPU core on `.69`, serialized by
-`/home/fmh/ag-physics-remote/lock-klein-cpu2.lock`. Parent coordinator manages
+`/home/fmh/fmhc-physics-remote/lock-klein-cpu2.lock`. Parent coordinator manages
 the concurrent GPU task. Record host, Python version and input hashes.
 Do not infer violation of Osterwalder–Schrader positivity, nonunitarity,
 failure of all generalized reflections, or failure of a continuum limit.

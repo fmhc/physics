@@ -1,5 +1,11 @@
 # New-momentum test of the fixed Maxwell weights
 
+Publication correction, 2026-10-10: the host-path label in the shared archived
+input was renamed without changing numerical fields. `run.py` now requires the
+public input hash; the plan and archived result retain their historical hashes.
+The updated `SHA256SUMS` describes this export, not a new run.
+See [source provenance](../maxwell-v/SOURCES.md) and [export changes](../../EXPORT-20261010.md).
+
 The archived power-dual weights have no negative projected quadratic direction
 at these **304 new momentum evaluations**. The circumcentric weights have a
 negative direction at all 304. This strengthens a finite-sample observation;

@@ -1,9 +1,18 @@
 # Source provenance
 
-The fixed historical input is `archive/gwp.json`, copied verbatim from
+The fixed historical input is `archive/gwp.json`, originally copied verbatim from
 `coordination/runden-v3/RUNDE-37/quant-2/lauf-69/gwp.json`. Historical run:
 2026-10-05T16:37:32Z, Python 3.12.3, NumPy 2.4.4. It is a comparison target,
 not independently verified evidence.
+
+Publication correction on 2026-10-10: only the historical host-path label in
+`kopf.argv[3]` was renamed. All other JSON fields, including every numerical
+value, were compared and are unchanged. Original SHA-256:
+`a91fdfd0c86026d0f211dd8f1bb6812db966007f87bbd84d66cc67da16f6fa35`;
+public SHA-256: `5bfea9818d6be9906c5a7521f4d873cbbada980c524bb9cf37802a61aa798bc5`.
+The archived results retain their historical input hashes. `verify_archive.py`
+checks this one explicit export mapping; all other inputs still require their
+original hashes. See [publication changes](../../EXPORT-20261010.md).
 
 The compact implementation translates these source algorithms at their observed
 SHA-256 (paths relative to `coordination/runden-v3/RUNDE-37/quant-2/code/`):

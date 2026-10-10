@@ -1,6 +1,6 @@
 # Results: what is computed, with limits
 
-Status 2026-10-08. This page lists the findings of this notebook that we consider robust enough to state, each with
+Status 2026-10-10; the original findings below retain their earlier scope. This page lists findings of this notebook, with
 method, number, limits and the source file. Everything here is a **synthetic model computation**: no finding is a
 confirmation by measured data, none is peer-reviewed, and most text and code was written by AI systems under human
 direction ([BETEILIGTE.md](BETEILIGTE.md)). The source files are in German.
@@ -17,6 +17,51 @@ establish physical validity or external independent reproduction.
 The model architecture (Regge gravity + discrete exterior calculus Maxwell + scalar field on one simplicial complex) is
 known from the literature, e.g. McDonald and Miller 2010. What is our own are the computations on the specific filled
 tetrahedral network "V" and its time-extended "tent" version.
+
+## Stand 10.10.2026 (synthetisch, explorativ)
+
+Die folgenden Sätze übernehmen den korrigierten Wortlaut des Gegenlesens vom 10.10.2026 und die
+anschließende Berichtigung. Sie ergänzen die älteren Befunde um begrenzte Modellresultate und Negativbefunde;
+Reife-Prozentwerte werden nicht angehoben. Die numerischen Läufe wurden für diesen Export nicht wiederholt.
+Die Eintragskennungen bezeichnen die internen Tagesberichte; deren vollständige Laufpakete sind hier nicht
+mit veröffentlicht. Das [Lean-Quellenpaket](lean/ERGEBNIS.md) ist enthalten.
+
+**V-ODER-S-1: ausschließlich nicht-blinder synthetischer Zahlenvergleich.** Die blinde Wiederholung läuft noch;
+ein Ergebnis daraus wird hier nicht vorweggenommen. Die sieben gerichteten Kriterien sind keine sieben
+unabhängigen Experimente. K6 ist eine statische Schwelle, kein ausgeführter Umklappvorgang.
+
+| Eintrag | Korrigierter öffentlicher Wortlaut |
+|---|---|
+| lean-pilot-1-r2 | In Lean sind die endliche Zellkombinatorik von V, die Korandidentität, die Positivsemidefinitheit gewichteter Korandoperatoren, eine Obstruktion zweiter Ordnung des 12-Ecken-Stabmodells und das Trägheitslemma in der Fassung mit negativem Trägheitsindex formal geprüft; die Gleichsetzung dieses Index mit der Eigenwertzählung bleibt offen. |
+| rohr-haut-v-haupt | Die synthetische Platte von V zeigt bei festem Querschnitt und gewählten Spektralparametern rasterstabile Windungswerte und eine feldabhängige gerichtete Resolventenantwort; eine zertifizierte Windung, Eigenvektorlokalisierung oder physikalische Anomalie wurde damit nicht nachgewiesen. |
+| v-oder-s-1 | Im synthetischen Vergleich erfüllt S an den festgelegten Bezugspunkten alle sieben gerichteten Kriterien besser als V; die vorgeschriebene Blindheit ist nicht belegt, und die Zahlen begründen weder eine allgemeine Stabilitätsrangfolge noch eine Ursache der Umklappinstabilität. |
+| su3-v-haupt | Der synthetische SU(3)-Lauf lieferte einzelne Hyperkubus-Kontrollen und explorative Flussskalen ohne freigegebene statistische Fehler; wegen unzureichender Scanstatistik und ausgefallener Folgestufen entstand kein belastbarer Befund auf V. |
+| lsh-v-1 | Die bei j_max=1/2 abgeschnittene SU(2)-Produktbasis reproduziert auf kleinen offenen Graphen Starkkopplungskontrollen und zeigt explorative Grad-, Dreiecks- und Plaketteneffekte; eine Rechnung in der eichinvarianten LSH-Basis auf V steht aus. |
+| lean-pilot-1 | Runde 1 formalisiert die Zellzählungen, die Korandidentität, Positivsemidefinitheit und die algebraische Obstruktion des untersuchten Stabmodells, während das Trägheitslemma in dieser historischen Runde noch offene Beweisschritte enthält. |
+| uebertragung-1 | Die geprüfte neue Übertragung reduziert den Graphrest an gespeicherten Übergängen, beseitigt deren große Energiesprünge jedoch nicht; im neuen s4-Lauf scheitert der Arm ohne Kantenbedingung bei etwa 1,43 T, während der gehaltene Arm bis 2,45 T mit wiederholten Rückwechseln derselben Kante läuft. |
+| rgraph-1 | Ein gespeicherter 3-2-Übergang verletzt die geprüfte linearisierte Graphbedingung um den Faktor 3,45 Millionen gegenüber der vorab festgelegten Toleranz; eine Ursache des Energiesprungs ist damit noch nicht bestimmt. |
+| bruecke-1 | Im synthetischen Federmodell ergibt die Born-Näherung bei einer gewählten Wellenzahl eine sektorabhängige Antwort mit Licht-Skalar-Verhältnis 0,22 bis 0,27 in den beiden untersuchten Zellgrößen; eine universelle gravitationsartige Kopplung wurde damit nicht gezeigt. |
+| schaum-disklination-1 | Die synthetische 3D-Zelle von V besitzt das kombinatorische Kantenmittel 87/17 und ein innerhalb der Gewichtskammer unverändertes Netzwerk der Kantenklassen, dessen Deutung als dynamische Fadenanregung offen bleibt. |
+| rohr-v-komplett | Der untersuchte Transferoperator auf V besitzt vier Nullbänder je Sektor und rastergestützte Windungswerte +1 bis zum kleinsten geprüften Radius r=0,1; das Verhalten näher am Ursprung bleibt offen. |
+| jessen-flip-1 | Das synthetische 12-Ecken-Stabmodell zeigt bei veränderlichem Ruhelängenverhältnis eine Doppelmulde mit berechenbarer Barriere; der untersuchte Bewegungsweg liefert keine Spinor-Doppelwertigkeit und belegt keinen entsprechenden Freiheitsgrad auf V. |
+| kugel-zaehlung-1 | Die geometrisch ableitbare mittlere Schnittdichte von V beträgt 6,1025 je Quadrat der festgelegten Referenzkantenlänge; zusätzlich wurden 11,3 Prozent Ebenenanisotropie und eine explorative Schwankungsskalierung im untersuchten Radiusbereich gefunden. |
+| umklappschwelle-v-1 | In den untersuchten synthetischen V-Läufen wurde oberhalb statischer Schwellen von etwa 0,20 bis 0,28 kein stabiler wiederholter Umklapptakt gefunden; große Dehnungen, Geometrieabbrüche und fehlende 4-4-Züge begrenzen die Aussage. |
+| gewichtsfeld-2 | Die explorative Robustheitsprüfung zeigt eine starke Abhängigkeit des Nullpunktminimums von Gegentermen und Diskretisierung; auch das Verhältnis der Richtungsmuster ist nur entlang der untersuchten Minimumsfamilie annähernd konstant. |
+| psi-varianten-1 | Im synthetischen Transfermodell verschiebt die fest orientierte Verdrillung auf V den untersuchten Phasenberührungspunkt nahezu linear mit Steigung 2,04; die erhaltene Sektorpaarung liefert dabei keine Auswahl einer Händigkeit. |
+| gewichtsfeld-1 | Die freie Nullpunktsumme von Licht und Skalar besitzt im untersuchten symmetrischen Gewichtsschnitt ein lokales inneres Minimum; die anschließende Prüfung zeigt jedoch, dass daraus kein gegen die getesteten Modelländerungen robustes Gewichtsprinzip folgt. |
+
+Ergänzende Auswertungsgrenzen der Berichtigung: In LSH-V-1 sind es 116 gluonische plus 10 Materie-Ecken,
+116 virtuelle Links und 184 abelsche Linkbedingungen. Beim SU(3)-Kontrollfall E2 liegt der Heiß/Kalt-Abstand
+mit 3,34 über der Grenze 3,0; V5 wurde gemessen, blieb aber unentscheidbar. Bei ROHR-HAUT-V ist +2 bei
+r = 0,95 numerisch unbestimmt, kein Nachweis einer geschlossenen Punktlücke. ROHR-V-KOMPLETT erreicht
+nur r = 0,1 statt der für V6 geforderten Prüfung bis r ≤ 0,05; V6 bleibt unentschieden.
+
+Räumlicher Geltungsbereich: Die konkreten Netz- und Geometriezahlen gehören zu den jeweils festgelegten
+3D-Modellen beziehungsweise Platten mit festem Querschnitt. Die kleinen offenen SU(2)-Graphen sind keine
+zusätzlichen räumlichen Dimensionen; SU(2) und SU(3) bezeichnen innere Symmetrien. Die allgemeinen
+Korand- und Matrixidentitäten sind algebraisch dimensionsunabhängig. Ein Vergleich derselben physikalischen
+Aussagen in 1D, 2D oder zusätzlichen Raumdimensionen wurde hier nicht ausgeführt; Normierungen und
+Schwellen dürfen nicht unverändert übertragen werden.
 
 ## Findings
 

@@ -1,10 +1,10 @@
-Okt 08 17:57:56 ubuntu-auto systemd[124419]: Started ag-physics-codex-higgs-dynamics-20261008.service - /bin/bash /home/fmh/ag-physics-codex/higgs-dynamics-20261008/launch.sh.
+Okt 08 17:57:56 ubuntu-auto systemd[124419]: Started fmhc-physics-codex-higgs-dynamics-20261008.service - /bin/bash /home/fmh/fmhc-physics-codex/higgs-dynamics-20261008/launch.sh.
 Okt 08 17:57:56 ubuntu-auto bash[2857471]: GEPACHTET dot69 halb fuer 30 min, Pacht 85e45c0e
 Okt 08 17:57:56 ubuntu-auto bash[2857471]: Grenzen fuer den Job:
 Okt 08 17:57:56 ubuntu-auto bash[2857471]:   CPUQuota=300%
 Okt 08 17:57:56 ubuntu-auto bash[2857471]:   MemoryMax=7G
 Okt 08 17:57:56 ubuntu-auto bash[2857471]:   GPU=unter gauntlet-gpu.lock, nur bei voller Pacht (nur unter gauntlet-gpu.lock)
-Okt 08 17:57:56 ubuntu-auto bash[2857471]: systemd-run --user -p CPUQuota=300% -p MemoryMax=7G -p RuntimeMaxSec=1800 --unit=ag-physics-codex-higgs-dynamics-85e45c0e ...
+Okt 08 17:57:56 ubuntu-auto bash[2857471]: systemd-run --user -p CPUQuota=300% -p MemoryMax=7G -p RuntimeMaxSec=1800 --unit=fmhc-physics-codex-higgs-dynamics-85e45c0e ...
 Okt 08 17:57:56 ubuntu-auto bash[2857471]: Laeuft von selbst ab. Vorzeitig frei: platz.py gib dot69 --wer codex-higgs-dynamics
 Okt 08 17:57:59 ubuntu-auto bash[2857481]: [W1008 17:57:59.265273041 Context.cpp:281] Warning: torch.backends.cuda.preferred_linalg_library is an experimental feature. If you see any error or unexpected behavior when this flag is set please file an issue on GitHub. (function operator())
 Okt 08 17:58:00 ubuntu-auto bash[2857481]: {"stage": "base", "method": "full", "ell": 0, "lowest": [0.030982896805115664, 0.10517732541841361, 0.14058170144935506], "elapsed": 1.0838772486895323}
@@ -36,14 +36,14 @@ Okt 08 17:58:22 ubuntu-auto bash[2857481]: {"stage": "grid", "method": "E3-inert
 Okt 08 17:58:25 ubuntu-auto bash[2857481]: {"stage": "grid", "method": "Ecomp-static", "ell": 0, "lowest": [0.03097911858176802, 0.10517130468913913, 0.1405743974012212], "elapsed": 26.461517554707825}
 Okt 08 17:58:27 ubuntu-auto bash[2857481]: {"stage": "grid", "method": "Ecomp-inertia", "ell": 0, "lowest": [0.030979118582066104, 0.10517104286257195, 0.14057439740101238], "elapsed": 28.02477233763784}
 Okt 08 17:58:29 ubuntu-auto bash[2857481]: Traceback (most recent call last):
-Okt 08 17:58:29 ubuntu-auto bash[2857481]:   File "/home/fmh/ag-physics-codex/higgs-dynamics-20261008/run.py", line 95, in <module>
+Okt 08 17:58:29 ubuntu-auto bash[2857481]:   File "/home/fmh/fmhc-physics-codex/higgs-dynamics-20261008/run.py", line 95, in <module>
 Okt 08 17:58:29 ubuntu-auto bash[2857481]:     refs={};refs['full']=spectrum('full',A,D,eye,u,omega,L,B,C,{'higgs_minimum':float(torch.linalg.eigvalsh(C)[0]),'schur_solve_error':cerr})
 Okt 08 17:58:29 ubuntu-auto bash[2857481]:                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Okt 08 17:58:29 ubuntu-auto bash[2857481]:   File "/home/fmh/ag-physics-codex/higgs-dynamics-20261008/run.py", line 82, in spectrum
+Okt 08 17:58:29 ubuntu-auto bash[2857481]:   File "/home/fmh/fmhc-physics-codex/higgs-dynamics-20261008/run.py", line 82, in spectrum
 Okt 08 17:58:29 ubuntu-auto bash[2857481]:     physical.append(er);assert er<1e-7,(name,er)
 Okt 08 17:58:29 ubuntu-auto bash[2857481]:                                ^^^^^^^
 Okt 08 17:58:29 ubuntu-auto bash[2857481]: AssertionError: ('full', 5.814300845261688e-07)
 Okt 08 17:58:30 ubuntu-auto bash[2857609]: dot69: Pachten von codex-higgs-dynamics freigegeben
-Okt 08 17:58:30 ubuntu-auto systemd[124419]: ag-physics-codex-higgs-dynamics-20261008.service: Main process exited, code=exited, status=1/FAILURE
-Okt 08 17:58:30 ubuntu-auto systemd[124419]: ag-physics-codex-higgs-dynamics-20261008.service: Failed with result 'exit-code'.
-Okt 08 17:58:30 ubuntu-auto systemd[124419]: ag-physics-codex-higgs-dynamics-20261008.service: Consumed 31.936s CPU time, 585.5M memory peak, 0B memory swap peak.
+Okt 08 17:58:30 ubuntu-auto systemd[124419]: fmhc-physics-codex-higgs-dynamics-20261008.service: Main process exited, code=exited, status=1/FAILURE
+Okt 08 17:58:30 ubuntu-auto systemd[124419]: fmhc-physics-codex-higgs-dynamics-20261008.service: Failed with result 'exit-code'.
+Okt 08 17:58:30 ubuntu-auto systemd[124419]: fmhc-physics-codex-higgs-dynamics-20261008.service: Consumed 31.936s CPU time, 585.5M memory peak, 0B memory swap peak.

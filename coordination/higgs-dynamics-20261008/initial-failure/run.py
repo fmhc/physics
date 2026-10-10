@@ -2,7 +2,7 @@ import torch,json,math,time,hashlib,gc
 from pathlib import Path
 from models import make
 P=Path(__file__).resolve().parent
-INPUT=Path('/home/fmh/ag-physics-codex/higgs-minima-20261008/results/RESULT.json')
+INPUT=Path('/home/fmh/fmhc-physics-codex/higgs-minima-20261008/results/RESULT.json')
 raw=INPUT.read_bytes();assert hashlib.sha256(raw).hexdigest()=='a4a5fd942db57ab7a6b351840d0e64877eb29f7136450385d0c66cada4b601d9'
 assert torch.cuda.is_available();torch.set_num_threads(1);torch.backends.cuda.preferred_linalg_library('cusolver')
 dev='cuda';dt=torch.float64;pi=math.pi;a=125**2/(2*246**2*.01);y0=.492;b=.5;eta=.05;Q=600.
