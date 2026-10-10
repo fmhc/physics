@@ -1,0 +1,99 @@
+ATOM-KERNEL-0 — vorab gebundener Rechenplan, 2026-10-10
+Status: NUR QUELLCODE. Kein Interpreter, Test oder Numeriklauf ausgefuehrt.
+Start erst nach Codelektuere der koordinierenden Sitzung und aktueller
+Peer-Bus-Abstimmung fuer .69. Dieser Plan erteilt keine eigene Startfreigabe.
+
+Eingaben und Abhaengigkeiten
+Unveraendertes pm.raum_V(x=-23/7,y=-32/7), seine d0-Termliste und s1.
+pm.koeff erzeugt die Bloch-Bloecke; L(q)=D(q)^* diag(s1) D(q).
+Keine neue Gewichtsanpassung. Integrierte Eckladungen, e=1 als Modelleinheit,
+kein gemessener Elektronenwert. Keine s0-Multiplikation fuer diese Quellen.
+Eingefrorener V-Hintergrund: Teilproblem des DEC-Sektors, nicht der gesamte
+akzeptierte Kern mit zulaessigen Flips. Die Ladungen sind extern eingesetzte
+Testladungen. q=eQ ist hier eine Normierungsbruecke; die Summe
+SRegge+SMaxwell+SSkalar allein belegt keine geladene Skalar-Quellenkopplung
+und keine bereits vereinte atomare Wirkung.
+Statisch gelesene Importkette: pm -> rv -> ew -> tp sowie
+danzer_naeherung -> licht_netz. NumPy und SciPy sind erforderlich;
+scipy.special.sph_harm_y muss verfuegbar sein. Keine Installation vorgesehen.
+Die sechs Quelldateien, dieses Skript und dieser Plan werden vor Imports in
+einen neuen Laufordner kopiert und SHA256-gebunden. Aus den Kopien wird
+importiert. Commit/Branch und Originalpfade werden dokumentiert; die Kopien
+bewahren auch einen vom Commit abweichenden Stand vollstaendig. Keine NPZ.
+Fuer .69 ohne Git-Arbeitsbaum: --source-dir benennt die uebertragenen sechs
+Quelldateien, --provenance ein VOR START lokal gebundenes JSON mit git_commit,
+git_branch und sha256={Dateibasisname: SHA256} fuer genau alle acht Dateien.
+Jeder Hash wird vor dem wissenschaftlichen Import geprueft; das externe
+Provenienz-JSON wird separat archiviert und selbst gehasht. Ohne dieses
+Argument wird ein echter Git-Arbeitsbaum vorausgesetzt; kein erfundener Commit.
+
+Festgelegte Rechnung
+3D-fcc-Superzellen N=4 und N=6 mit N^3 primitiven Zellen. Das ist eine
+Boxgroessenvariation bei gleicher Gitterweite, KEIN Kontinuumslimes.
+Punktquellen auf derselben Untergitterecke 0 mit Verschiebungen s*d,
+s=1,2; d=(1,0,0),(0,1,0),(0,0,1),(1,-1,0). N=4, s=2 liegt teilweise
+am periodischen Halbweg; unwrapped_r ist keine Behauptung eines isolierten
+euklidischen Paarabstands. Die volle Boxmatrix und Verschiebung stehen im JSON.
+Keine Atome, keine Teilchenmassen, keine quantisierte Relativbewegung.
+
+Neutrale Quelle q=u-v; primaer E=1/2 q^T L+ q. L+ verwirft genau die
+konstante Nullmode; jede andere Nullmode oder negative Mode stoppt den Lauf.
+Einzelquellen u und v werden mit IDENTISCHEM uniformem integriertem
+Hintergrund 1/(N^3 nV) geloest. E_u und E_v aus demselben Operator werden
+einzeln abgezogen: V_cross=E-E_u-E_v=-u^T L+v. Dies ist die auf dem Torus
+gemeinsam festgelegte Nullmittelwertkonvention. V_cross muss wegen dieses
+additiven Bezuges nicht an jedem Boxabstand negativ sein. Die
+Vorzeicheninvarianz betrifft q -> -q und die gesamte Feldenergie.
+Diskret wird das arithmetische Potentialmittel und ein uniformer integrierter
+Hintergrund benutzt, nicht das *0-volumengewichtete Mittel/uniforme physische
+Ladungsdichte des Kontinuums. Absolute Kreuzterm-Differenzen koennen deshalb
+auch einen Konventions-/Diskretisierungsoffset enthalten. Zusaetzlich werden
+Abstandsdifferenzen relativ zur Verschiebung (1,0,0) derselben Box berichtet;
+diese entfernen einen gemeinsamen additiven Offset fuer die gleiche Untergitterquelle.
+
+Kontrollen und Fehlertore (vor Ausfuehrung festgelegt)
+Gauss-Rest relativ zur Fourier-Quellnorm <=1e-9 (Nenner mindestens 1).
+Neutralitaet, D(0)1, Hermitizitaet, Potential-Imaginaerteil,
+Eichverschiebung a0->a0+3.25 (Energie UND Kantenfeld), Ladungsumkehr,
+Reziprozitaet, Selbstenergie-Translationsgleichheit, Energiezerlegung und
+Identitaet mit 1/2 sum s1 |D a0|^2 jeweils absolut <=1e-9.
+E >= -1e-9 fuer alle Paare; alle s1 strikt positiv.
+Eigenmode-null-Schwelle 1e-12*max(1,lambda_max), genau eine Nullmode.
+Bekannte unabhaengige Referenz: periodischer kubischer 3D-Laplacian aus
+pm.raum_Z3 gegen lambda(q)=4 sum_i sin^2(q_i/2), Fehler <=1e-9.
+
+Kontinuumsvergleich
+Periodischer Nullmittelwert-Greenoperator von -Delta in exakt derselben
+schiefen 3D-Box, mit rationalisierter 1/(4 pi r)-Normierung. Ewald-Summe:
+sum_n erfc(eta|r+nB|)/(4pi|r+nB|)
++ (1/Vol) sum_k!=0 exp(-k^2/(4eta^2)) cos(k.r)/k^2
+- 1/(4 eta^2 Vol), eta=2/min_i|B_i|.
+Reale und reziproke Integer-Cutoffs 4 und 6; Aenderung <=1e-8 absolut.
+Dies kontrolliert den verwendeten Cutoff, ist keine mathematische Restschranke.
+Verglichen wird nur der Punktquellen-KREUZTERM; die divergente
+Kontinuums-Punktselbstenergie wird niemals mit endlichen Gitter-Selbstenergien
+identifiziert. Diskretisierungsdifferenzen werden roh berichtet; keine
+vorgegebene Uebereinstimmungsschwelle und keine Parameteranpassung.
+Kein aufgeloester Bereich a << r << L: unabhaengig von bestandenen Kontrollen
+lautet der Coulombstatus finite-box/UNRESOLVED, niemals Coulomb-PASS.
+
+Ausfuehrungsbudget und Ablage
+Nur .69, Host ubuntu-auto, ein CPU-Thread, Affinitaet auf eine bereits
+erlaubte logische CPU, keine GPU. CPU-Softlimit 55 s, Hardlimit 58 s,
+Prioritaet nice=19.
+Wall-Alarm 57 s; Budget bleibt unter 60 s. Keine Dienste oder Wrapper.
+Ein moeglicher Timeout ist ein offenes Ergebnis, kein Grund zur automatischen
+Wiederholung oder Budgeterhoehung. Hartes Signal kann Ergebnisdatei verhindern;
+manifest.json bleibt der Startbeleg, partial.json enthaelt fertige Boxen.
+Nach separater Freigabe: python atom_kernel.py --output <neuer Unterordner>.
+Es werden nur manifest.json, partial.json, result.json und inputs/ im neuen
+Unterordner geschrieben. Kein Ueberschreiben alter Laeufe, kein Commit.
+
+Dimensionen und Reichweite
+Algebraische Positivitaet/Gauss/Eichinvarianz gelten in jeder Dimension fuer
+positive Hodge-Gewichte; dieser Lauf ist ausschliesslich raeumlich 3D.
+Kontinuumsformen: 1D linear, 2D logarithmisch, d>2 r^(2-d), jeweils mit
+passender Normierung und Randkonvention. Innere Untergitterindizes sind keine
+weiteren Raumdimensionen. Keine 1D/2D- oder Extra-Dimensionsrechnung erfolgt.
+Nicht geprueft: unterschiedliche Untergitter-Quellen, geglaettete Profile,
+Netzinhomogenitaet, Gitterverfeinerung, Langstreckenfenster, Teilchensektoren.

@@ -1,0 +1,389 @@
+{
+  "status": "STATIC_HAMILTONIAN_CHECKS_PASS",
+  "parameters": {
+    "e": 0.3,
+    "seed": 20261010,
+    "fd_steps": [
+      0.00001,
+      0.000005
+    ],
+    "fd_tolerance": 2E-7,
+    "algebra_tolerance": 1E-10,
+    "spatial_dimension": 3,
+    "primitive_periodic_cells": 1,
+    "state_count": 3,
+    "gauss_projection": false,
+    "mutant_detection_floor": 0.000001,
+    "cpu_soft_seconds": 55,
+    "cpu_hard_seconds": 58,
+    "wall_seconds": 57
+  },
+  "utc": "2026-10-10T03:19:25Z",
+  "execution": "CPU float64/complex128 one thread; no CUDA",
+  "scope": "NEW explicit minimal-coupling completion; frozen fixed-V scalar Hamiltonian",
+  "not_established": [
+    "already accepted unified core coupling",
+    "fermions",
+    "electron",
+    "proton",
+    "atom",
+    "trajectory",
+    "physical Gauss initial state"
+  ],
+  "geometry": {
+    "nV": 10,
+    "nE": 68,
+    "nF": 116,
+    "min_star0": 0.0024599125364431484,
+    "min_star1": 0.030612244897959145,
+    "min_star2": 1.828571428571427,
+    "chain_complex_error": 0.0,
+    "constant_incidence_error": 0.0
+  },
+  "qball_charge_sign_error": 2.168404344971009E-19,
+  "states": [
+    {
+      "H": 69.45061410818042,
+      "parts": {
+        "kinetic": 30.98414538964187,
+        "gradient": 1.163251086199365,
+        "potential": 0.013822514282509819,
+        "electric": 16.92950604948872,
+        "magnetic": 20.359889068567952
+      },
+      "total_charge": -0.14075800198109378,
+      "gauss_norm": 2.377424305028139,
+      "off_constraint_state": true,
+      "algebra": {
+        "gauge_energy_relative": 0.0,
+        "gauge_current_absolute": 3.469446951953614E-18,
+        "gauge_rho_absolute": 1.3877787807814457E-17,
+        "gauge_gauss_absolute": 0.0,
+        "gauge_flow_absolute": 7.105427357601002E-15,
+        "continuity_absolute": 1.973247953923618E-16,
+        "total_charge_derivative_absolute": 1.5178830414797062E-16,
+        "gauss_derivative_absolute": 5.044575868140555E-15
+      },
+      "finite_difference": [
+        {
+          "step": 0.00001,
+          "hamiltonian_gradient_relative": 1.3092306976139128E-11,
+          "current_absolute": 7.9280757479816E-10,
+          "continuity_absolute": 3.913297411811678E-9,
+          "gauss_derivative_absolute": 3.913293581542243E-9,
+          "generator_absolute": 1.0960898855216783E-11,
+          "directional_rho_absolute": 8.076993934791332E-13
+        },
+        {
+          "step": 0.000005,
+          "hamiltonian_gradient_relative": 2.2753297785116497E-11,
+          "current_absolute": 1.3386193698644577E-9,
+          "continuity_absolute": 3.5480799687181985E-9,
+          "gauss_derivative_absolute": 3.5480787474728714E-9,
+          "generator_absolute": 2.0917547208232357E-11,
+          "directional_rho_absolute": 1.762211253655832E-12
+        }
+      ],
+      "mutants": {
+        "reversed_current": {
+          "algebra": {
+            "gauge_energy_relative": 0.0,
+            "gauge_current_absolute": 3.469446951953614E-18,
+            "gauge_rho_absolute": 1.3877787807814457E-17,
+            "gauge_gauss_absolute": 0.0,
+            "gauge_flow_absolute": 7.105427357601002E-15,
+            "continuity_absolute": 0.03731055717851306,
+            "total_charge_derivative_absolute": 1.5178830414797062E-16,
+            "gauss_derivative_absolute": 0.03731055717851072
+          },
+          "finite_difference": [
+            {
+              "step": 0.00001,
+              "hamiltonian_gradient_relative": 0.00035195426394919136,
+              "current_absolute": 0.02131266971413387,
+              "continuity_absolute": 3.913297411811678E-9,
+              "gauss_derivative_absolute": 3.913293581542243E-9,
+              "generator_absolute": 1.0960898855216783E-11,
+              "directional_rho_absolute": 8.076993934791332E-13
+            },
+            {
+              "step": 0.000005,
+              "hamiltonian_gradient_relative": 0.0003519542756829886,
+              "current_absolute": 0.021312670424676605,
+              "continuity_absolute": 3.5480799687181985E-9,
+              "gauss_derivative_absolute": 3.5480787474728714E-9,
+              "generator_absolute": 2.0917547208232357E-11,
+              "directional_rho_absolute": 1.762211253655832E-12
+            }
+          ],
+          "same_checks_passed": false
+        },
+        "ungauged_gradient": {
+          "algebra": {
+            "gauge_energy_relative": 0.00013226615378640017,
+            "gauge_current_absolute": 0.0,
+            "gauge_rho_absolute": 1.3877787807814457E-17,
+            "gauge_gauss_absolute": 0.0,
+            "gauge_flow_absolute": 0.06373180983690474,
+            "continuity_absolute": 0.01835480164079736,
+            "total_charge_derivative_absolute": 3.625572064791527E-16,
+            "gauss_derivative_absolute": 0.01835480164079514
+          },
+          "finite_difference": [
+            {
+              "step": 0.00001,
+              "hamiltonian_gradient_relative": 1.1134376230263706E-11,
+              "current_absolute": 6.742446601037955E-10,
+              "continuity_absolute": 0.01835480301300731,
+              "gauss_derivative_absolute": 0.01835480301300348,
+              "generator_absolute": 1.0960898855216783E-11,
+              "directional_rho_absolute": 7.451782246814531E-13
+            },
+            {
+              "step": 0.000005,
+              "hamiltonian_gradient_relative": 2.3377596301925133E-11,
+              "current_absolute": 1.4156356087369204E-9,
+              "continuity_absolute": 0.018354805900281008,
+              "gauss_derivative_absolute": 0.018354805900277178,
+              "generator_absolute": 2.0917547208232357E-11,
+              "directional_rho_absolute": 1.6815416789030257E-12
+            }
+          ],
+          "same_checks_passed": false
+        }
+      },
+      "passed": true
+    },
+    {
+      "H": 91.34829700284709,
+      "parts": {
+        "kinetic": 52.858466809475075,
+        "gradient": 1.053324793155156,
+        "potential": 0.020195688622672257,
+        "electric": 19.60782076380556,
+        "magnetic": 17.80848894778863
+      },
+      "total_charge": 0.07081306986192477,
+      "gauss_norm": 1.6515701134353074,
+      "off_constraint_state": true,
+      "algebra": {
+        "gauge_energy_relative": 0.0,
+        "gauge_current_absolute": 1.734723475976807E-18,
+        "gauge_rho_absolute": 6.938893903907228E-18,
+        "gauge_gauss_absolute": 0.0,
+        "gauge_flow_absolute": 7.105427357601002E-15,
+        "continuity_absolute": 9.107298248878237E-16,
+        "total_charge_derivative_absolute": 8.387388006347862E-16,
+        "gauss_derivative_absolute": 2.4988691671445906E-15
+      },
+      "finite_difference": [
+        {
+          "step": 0.00001,
+          "hamiltonian_gradient_relative": 7.206700719318608E-12,
+          "current_absolute": 6.621631663122907E-10,
+          "continuity_absolute": 2.391270384830002E-9,
+          "gauss_derivative_absolute": 2.391270027476966E-9,
+          "generator_absolute": 1.8110013488836785E-11,
+          "directional_rho_absolute": 6.993572387870017E-13
+        },
+        {
+          "step": 0.000005,
+          "hamiltonian_gradient_relative": 1.466617814838329E-11,
+          "current_absolute": 1.313577019726453E-9,
+          "continuity_absolute": 3.9768877080348375E-9,
+          "gauss_derivative_absolute": 3.976891815860029E-9,
+          "generator_absolute": 5.5792759301454E-11,
+          "directional_rho_absolute": 8.618938895921247E-13
+        }
+      ],
+      "mutants": {
+        "reversed_current": {
+          "algebra": {
+            "gauge_energy_relative": 0.0,
+            "gauge_current_absolute": 1.734723475976807E-18,
+            "gauge_rho_absolute": 6.938893903907228E-18,
+            "gauge_gauss_absolute": 0.0,
+            "gauge_flow_absolute": 7.105427357601002E-15,
+            "continuity_absolute": 0.08705055776664654,
+            "total_charge_derivative_absolute": 8.387388006347862E-16,
+            "gauss_derivative_absolute": 0.08705055776664264
+          },
+          "finite_difference": [
+            {
+              "step": 0.00001,
+              "hamiltonian_gradient_relative": 0.0003502433299727514,
+              "current_absolute": 0.033130674000190895,
+              "continuity_absolute": 2.391270384830002E-9,
+              "gauss_derivative_absolute": 2.391270027476966E-9,
+              "generator_absolute": 1.8110013488836785E-11,
+              "directional_rho_absolute": 6.993572387870017E-13
+            },
+            {
+              "step": 0.000005,
+              "hamiltonian_gradient_relative": 0.0003502433374843056,
+              "current_absolute": 0.03313067471073363,
+              "continuity_absolute": 3.9768877080348375E-9,
+              "gauss_derivative_absolute": 3.976891815860029E-9,
+              "generator_absolute": 5.5792759301454E-11,
+              "directional_rho_absolute": 8.618938895921247E-13
+            }
+          ],
+          "same_checks_passed": false
+        },
+        "ungauged_gradient": {
+          "algebra": {
+            "gauge_energy_relative": 0.000053507550009180176,
+            "gauge_current_absolute": 0.0,
+            "gauge_rho_absolute": 6.938893903907228E-18,
+            "gauge_gauss_absolute": 0.0,
+            "gauge_flow_absolute": 0.2606922071906599,
+            "continuity_absolute": 0.04820622699510084,
+            "total_charge_derivative_absolute": 4.380176776841438E-16,
+            "gauss_derivative_absolute": 0.04820622699509729
+          },
+          "finite_difference": [
+            {
+              "step": 0.00001,
+              "hamiltonian_gradient_relative": 8.159076006961044E-12,
+              "current_absolute": 7.71793962073275E-10,
+              "continuity_absolute": 0.04820622703493325,
+              "gauss_derivative_absolute": 0.04820622703492914,
+              "generator_absolute": 1.8110013488836785E-11,
+              "directional_rho_absolute": 5.109870859776322E-13
+            },
+            {
+              "step": 0.000005,
+              "hamiltonian_gradient_relative": 1.466617814838329E-11,
+              "current_absolute": 1.3305743173930296E-9,
+              "continuity_absolute": 0.048206227063093784,
+              "gauss_derivative_absolute": 0.04820622706308968,
+              "generator_absolute": 5.5792759301454E-11,
+              "directional_rho_absolute": 1.5706810851945363E-12
+            }
+          ],
+          "same_checks_passed": false
+        }
+      },
+      "passed": true
+    },
+    {
+      "H": 89.20739258623564,
+      "parts": {
+        "kinetic": 51.15822300507164,
+        "gradient": 0.6703418682151533,
+        "potential": 0.010391294733103835,
+        "electric": 19.797927721538866,
+        "magnetic": 17.570508696676885
+      },
+      "total_charge": -0.02126122873062209,
+      "gauss_norm": 1.8732528528649446,
+      "off_constraint_state": true,
+      "algebra": {
+        "gauge_energy_relative": 1.5930131240484977E-16,
+        "gauge_current_absolute": 1.734723475976807E-18,
+        "gauge_rho_absolute": 6.938893903907228E-18,
+        "gauge_gauss_absolute": 0.0,
+        "gauge_flow_absolute": 1.4210854715202004E-14,
+        "continuity_absolute": 3.8510861166685117E-16,
+        "total_charge_derivative_absolute": 3.452099717193846E-16,
+        "gauss_derivative_absolute": 1.3396402043230893E-15
+      },
+      "finite_difference": [
+        {
+          "step": 0.00001,
+          "hamiltonian_gradient_relative": 1.0381177143602104E-11,
+          "current_absolute": 7.838067486720668E-10,
+          "continuity_absolute": 1.303173425941384E-9,
+          "gauss_derivative_absolute": 1.3031730928744767E-9,
+          "generator_absolute": 2.05194194968783E-11,
+          "directional_rho_absolute": 2.2329013638078266E-13
+        },
+        {
+          "step": 0.000005,
+          "hamiltonian_gradient_relative": 1.8431039574613462E-11,
+          "current_absolute": 1.356717227495377E-9,
+          "continuity_absolute": 2.6598933186225415E-9,
+          "gauss_derivative_absolute": 2.659892985555634E-9,
+          "generator_absolute": 5.274425340928701E-11,
+          "directional_rho_absolute": 1.4116318790974303E-12
+        }
+      ],
+      "mutants": {
+        "reversed_current": {
+          "algebra": {
+            "gauge_energy_relative": 1.5930131240484977E-16,
+            "gauge_current_absolute": 1.734723475976807E-18,
+            "gauge_rho_absolute": 6.938893903907228E-18,
+            "gauge_gauss_absolute": 0.0,
+            "gauge_flow_absolute": 1.4210854715202004E-14,
+            "continuity_absolute": 0.028938946783599574,
+            "total_charge_derivative_absolute": 3.452099717193846E-16,
+            "gauss_derivative_absolute": 0.028938946783596736
+          },
+          "finite_difference": [
+            {
+              "step": 0.00001,
+              "hamiltonian_gradient_relative": 0.0001853035353830059,
+              "current_absolute": 0.013990915343942194,
+              "continuity_absolute": 1.303173425941384E-9,
+              "gauss_derivative_absolute": 1.3031730928744767E-9,
+              "generator_absolute": 2.05194194968783E-11,
+              "directional_rho_absolute": 2.2329013638078266E-13
+            },
+            {
+              "step": 0.000005,
+              "hamiltonian_gradient_relative": 0.0001853035259721791,
+              "current_absolute": 0.013990914633399458,
+              "continuity_absolute": 2.6598933186225415E-9,
+              "gauss_derivative_absolute": 2.659892985555634E-9,
+              "generator_absolute": 5.274425340928701E-11,
+              "directional_rho_absolute": 1.4116318790974303E-12
+            }
+          ],
+          "same_checks_passed": false
+        },
+        "ungauged_gradient": {
+          "algebra": {
+            "gauge_energy_relative": 0.000022633370259632993,
+            "gauge_current_absolute": 0.0,
+            "gauge_rho_absolute": 6.938893903907228E-18,
+            "gauge_gauss_absolute": 0.0,
+            "gauge_flow_absolute": 0.06568727013770392,
+            "continuity_absolute": 0.013884848242960102,
+            "total_charge_derivative_absolute": 4.40619762898109E-16,
+            "gauss_derivative_absolute": 0.013884848242959213
+          },
+          "finite_difference": [
+            {
+              "step": 0.00001,
+              "hamiltonian_gradient_relative": 9.204232676921903E-12,
+              "current_absolute": 6.949443243087217E-10,
+              "continuity_absolute": 0.013884849580751321,
+              "gauss_derivative_absolute": 0.013884849580750988,
+              "generator_absolute": 2.05194194968783E-11,
+              "directional_rho_absolute": 5.15023245405144E-13
+            },
+            {
+              "step": 0.000005,
+              "hamiltonian_gradient_relative": 1.679957276001603E-11,
+              "current_absolute": 1.2106666780198339E-9,
+              "continuity_absolute": 0.013884848302828648,
+              "gauss_derivative_absolute": 0.013884848302828314,
+              "generator_absolute": 5.274425340928701E-11,
+              "directional_rho_absolute": 1.5281664822452967E-12
+            }
+          ],
+          "same_checks_passed": false
+        }
+      },
+      "passed": true
+    }
+  ],
+  "original_inputs_unchanged": true,
+  "mutants_detected": {
+    "reversed_current": true,
+    "ungauged_gradient": true
+  },
+  "wall_seconds": 2.7354642264544964,
+  "process_cpu_seconds": 2.793064549
+}

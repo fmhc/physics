@@ -1,0 +1,91 @@
+Vom Gittermodell zum Atom: Stand 10. Oktober 2026
+Finn Malte Hinrichsen, Hamburg; KI-gestuetzte Projektarbeit.
+Texte/Daten CC BY4.0, Code Apache-2.0, wie im Hauptrepository.
+
+Ergebnis zuerst
+Eine explizite klassische Skalar-Maxwell-Kopplung auf festem V hat jetzt
+statische Hamilton- und kurze Zeitintegrationskontrollen bestanden. Das
+ist eine Implementierungsbasis, keine Herleitung von Elektronen, Protonen
+oder Atomen. Forschungsziel: Wasserstoff-1, danach Helium-4 und Kohlenstoff-12.
+Keines dieser Atome ist bisher aus dem Modell erzeugt oder vorhergesagt.
+
+1. Welcher Kern?
+V ist der eingesetzte raeumliche 3D-Traeger; S (=C15) ein Vergleichsnetz.
+Pro periodischer V-Zelle: 10 Ecken,68 Kanten,116 Dreiecke,58 Tetraeder.
+Stetige Zeit, freie Geometriegewichte und freie physikalische Gitterskala.
+Regge-Geometrie, Maxwell und Skalar sind die Architektur. Umklappen mit
+Volumen-/Kantenbedingungen ist eine ausgewiesene Zusatz-Modellwahl.
+Die hier berichteten neuen Rechnungen halten die Geometrie FEST und pruefen
+weder diese Umklappdynamik noch eine Quantisierung der Geometrie.
+Die Kernfassung im Repository ist ihr historischer Entwurf; die beigefuegten
+FINN-ENTSCHEIDUNGEN.md loesen dessen damalige Entscheidungsfragen auf.
+DEC-Maxwell und Fluss-Eis bleiben getrennte Modellvarianten.
+
+2. Drei abgeschlossene kleine Kontrollen (CPU, ein Thread)
+ATOM-KERNEL-0: statischer DEC-Kern L=D^T W D, mit eingesetzten neutralen
+Testquellen, auf N=4 und6 periodischen V-Boxen. Algebra/Gauss und periodische
+Referenzkontrollen bestehen. Fernfeld-/Kontinuumskonvergenz bleibt offen.
+Gleichlange Verschiebungen ergeben fuer die gewaehlte Quell-Unterstruktur
+bei N=6 eine Kreuzenergiedifferenz0.0120982; kein allgemeines Anisotropiegesetz
+oder schon gemessener Coulombbereich. Originalstatus:
+ CONTROLS_PASS_FINITE_BOX_UNRESOLVED.
+
+SCALAR-CURRENT-0: expliziter Hamiltonian aus FORMULAS.txt, drei generische
+Zustaende und zwei gezielt falsche Varianten. Algebraischer Maximalrest
+1.421e-14, finite-Differenz-Maximalrest3.977e-9; beide Mutanten erkannt.
+Das waren Off-Constraint-Proben, noch keine physikalischen Anfangszustaende.
+Originalstatus STATIC_HAMILTONIAN_CHECKS_PASS.
+
+SCALAR-FLOW-0: neutraler Gauss-zulaessiger Anfangszustand, ohne kompensierenden
+Quellenhintergrund. Eine primitive 3D-Zelle, T=.2 bei dt=.001,.0005,.00025;
+je eine separat integrierte zeitunabhaengige Eichkopie. Maximaler Gauss-Rest
+3.7075e-16; Gesamtladungsabweichung1.0461e-18. Endzustands-Selbstkonvergenz-
+quotient4.00019, vertraeglich mit zweiter Ordnung auf diesem Intervall.
+Feine maximale skalierte Energiedifferenz5.6482e-7, Nenner max(1,|E0|).
+E0=.18857<1: dieser Wert ist KEIN relativer Prozentfehler von E0.
+Absichtlich umgekehrter EM-Strom verursacht Gauss-Rest3.3001e-4 und wird
+erkannt, obwohl Gesamtladung und Eichkopie klein bleiben.
+Originalstatus SHORT_INTEGRATION_QA_PASS. Laufzeit der Unit3.819s.
+Keine Langzeitstabilitaet, keine Atom- oder Teilchenbildungsrechnung.
+
+3. Energetische Grenze (Papier, unabhaengig projektintern gegengelesen)
+Im angegebenen endlichen klassischen positiven Hamiltonmodell gibt es
+bei Gesamt-Q=0 und Gauss=0, ohne weitere festgehaltene Erhaltungsgroessen,
+kein nichttriviales lokales Energieminimum mit Skalarfeld/Impulsen:
+Impulse lassen sich gemeinsam absenken; danach laesst sich phi absenken,
+weil U'(s)=1/3+(3/2)(s-2/3)^2>0. Siehe NEUTRAL-SCALAR.txt und Review.
+Das ist kein allgemeines Bindungsverbot: Nichtnullladung, feste P/J,
+externe Quellen, andere Sektoren oder Quantisierung aendern die Frage.
+Insbesondere folgt daraus kein Zerfall jeder zeitabhaengigen Konfiguration.
+
+4. Was zur Atombruecke fehlt
+Zwei entgegengesetzte Flecken eines klassischen Skalars sind keine
+unabhaengigen Elektron-/Proton-Spezies. Ladungskonjugation desselben Profils
+liefert nicht deren unterschiedliche Massen. Noetig bleiben identifizierte
+Ladungstraeger, ihre stabile/effective Sektordynamik, Massen, Spin/Statistik
+und eine gemeinsame Quantentheorie. Kernstruktur ist fuer He/C zusaetzlich offen.
+Ein vorhandener Standard-Wasserstoffsolver mit eingesetztem Coulombpotential
+wird nicht als End-to-end-Erfolg oder neue Rechnung ausgegeben.
+
+Ein konkreter Literaturanschluss ist das U1-Rotormodell von Levin/Wen:
+https://arxiv.org/abs/hep-th/0507118 . Die Projektarbeit TWIST-PYRO prueft
+bereits Teile seiner Vorzeichenalgebra. Vollstaendige Rotor-Ladungsdynamik
+und ihr Match zum selben V/DEC-Kern sind damit noch nicht implementiert.
+Der neue Rotor-Code ist in Vorbereitung und bewusst NICHT Teil dieses Exports.
+
+5. Belegniveau und Dimensionen
+Synthetische Modellkontrollen; keine Messdaten, kein externer Peer-Review.
+Code und Resultate wurden in einem anderen Projekt-Agentenkontext gelesen;
+das ist keine unabhaengige numerische Reproduktion.
+Die Algebra von Gauss/Splitting ist mit passenden Sternen dimensionsallgemein;
+ausgefuehrt wurden die beschriebenen 3D-Netze, keine 1D-/2D-Atommodelle.
+Innere Rotor-/Skalarkomponenten sind keine weiteren Raumdimensionen.
+
+6. Dateien und Reproduktion
+results/: wissenschaftliche Ergebnisfelder, nur Betriebs-/Pfadmetadaten
+entfernt. sources/: unveraenderte Quellen der abgeschlossenen Laeufe,
+inklusive Geometrieabhaengigkeiten. plans/: unveraenderte Vorabplaene.
+Die Quellprogramme behalten historische Host-/Pfadschutzregeln; dieses
+Archiv ist KEIN neuer portabler Startbefehl und kein Auftrag zu einem Lauf.
+Alte relative Referenzen zeigen teilweise auf das interne Arbeitsarchiv.
+EXPORT.txt dokumentiert Originalhashes/Abgrenzung, SHA256SUMS den Export.

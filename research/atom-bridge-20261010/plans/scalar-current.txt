@@ -1,0 +1,65 @@
+SCALAR-CURRENT-0 — Code und Vorabplan, 2026-10-10
+NICHT AUSGEFUEHRT. Erst Root-Codelektuere und aktuelle .69-Abstimmung.
+
+Zweck
+Pruefung einer explizit NEU angenommenen minimalen Skalar-Maxwell-Kopplung
+auf eingefrorenem V: Hamiltonfunktion, kanonischer Strom, Eichgenerator,
+lokale Kontinuitaet und formale Gauss-Erhaltung. Keine Trajektorie, keine
+Loesungssuche, keine Fermionen und kein Atom. Herleitung in DERIVATION.txt.
+Der Code liest sechs eingefrorene Quelldateien aus
+../atom-kernel-0/inputs-source/, ohne alte Atom-Kernel-Dateien zu aendern.
+pm.raum_V() mit bestehenden HAND_X/HAND_Y, s0/s1/s2 und d0/d1; N=1 Torus.
+Keine Gewichtsoptimierung, neue Geometrie oder externen Daten.
+
+Vorab festgelegte Proben
+e=0.3 als freie Modellzahl; drei generische reelle kanonische Zustandsvektoren
+mit unabhaengigen N(0,0.2²)-Komponenten, Seed 20261010. Je Probe ein
+N(0,0.7²)-Eichparameter pro Ecke. Dies sind algebraische Off-Constraint-Proben:
+G und Gesamtladung werden berichtet, G=0 wird NICHT vorgegeben oder behauptet.
+Keine physische periodische nichtneutrale Anfangswertaufgabe wird geloest.
+Bekannte Kontrolle bei f=0.4, omega=0.7: phi=exp(-i omega t)f ergibt
+rho=2e M omega f². Dies prueft Normierung/Vorzeichen, keine stationaere Loesung.
+
+Fehlertore
+Alle s0,s1,s2 strikt positiv. CD und D1 absolut <=1e-10.
+Analytische Kontrollen <=1e-10: Eichinvarianz von H (relativ mit Nenner >=1),
+J, rho und G, Kovarianz des Hamilton-Vektorfelds, dotrho+D^T J,
+sum dotrho und dotG. Die Ableitungen stammen aus der expliziten Hamiltonfunktion.
+Unabhaengige zentrale Differenzen fuer JEDE reelle kanonische Variable mit
+h=1e-5 und h=5e-6: volle H-Ableitung gegen analytische Ableitung, Materiestrom
+aus numerischer H_A minus magnetischem Anteil, lokale Kontinuitaet und dotG
+aus numerischen H-Ableitungen, kanonischer Generator aus numerischen
+Ableitungen von chi.G, Richtungsableitung von rho entlang des Hamiltonfelds.
+Fehler <=2e-7 fuer beide h, H-Gradient relativ mit Nenner >=1, andere absolut.
+Beide h werden roh ausgegeben; kein nachtraegliches Auswaehlen des besseren.
+Generatorpruefung und Ladungskontrolle verwenden unabhaengige Formeln.
+Negativkontrollen durch echte Varianten derselben Modellfunktion: umgekehrter
+J UND umgekehrter Materiebeitrag in analytischem H_A bei unveraenderter
+Hamiltonenergie muessen an unabhaengigen H-Differenzen scheitern. Variante
+W|phi_j-phi_i|² ohne Link aendert Energie und Ableitungen konsistent (J=0)
+und muss lokale Eichinvarianz verletzen. Beide Varianten durchlaufen dieselben
+vollstaendigen Checks mit identischen Zustandsproben. Erforderlich jeweils
+bei mindestens einer Probe: regulaeres Fehlertor verletzt UND spezifischer
+Fehler >1e-6 (Strom-FD absolut bzw. Eichenergie relativ mit Nenner >=1).
+Erkannte Mutanten sind erwartete Detektionen, keine Fehler des Originalmodells.
+
+Abhaengigkeiten, Provenienz und Grenzen
+NumPy und SciPy; die vorhandene Importkette benoetigt sph_harm_y.
+--provenance ist verpflichtend: vor Start gebundenes JSON mit git_commit,
+git_branch, sha256={Basisdateiname: Hash} fuer exakt neun Dateien:
+pm.py,rv.py,ew.py,tp.py,danzer_naeherung.py,licht_netz.py,
+scalar_current.py,PLAN.txt,DERIVATION.txt. Lokaler Commit und tatsaechliche
+Dateihashes bleiben getrennt; Vollkopien dokumentieren abweichenden Quellstand.
+Hashes vor wissenschaftlichen Imports pruefen, alle Quellen in neuem
+Lauf-Unterordner inputs/ archivieren, Geometrie aus den archivierten Dateien
+importieren. Optional --source-dir fuer abweichende .69-Transferablage.
+
+Potentieller spaeterer Aufruf nach Freigabe, NUR auf ubuntu-auto (.69):
+python scalar_current.py --provenance <gebundenes.json> --output <NEUER Unterordner>
+CPU/float64/complex128, keine CUDA; ein Thread, eine schon erlaubte logische
+CPU, nice=19. Soft-CPU 55s, Hard-CPU 58s, Wall-Alarm 57s; keine Dienste,
+Wrapper, Installationen oder automatische Wiederholung. manifest.json vor
+Imports; partial.json nach jeder Probe; result.json bei normalem Abschluss,
+Fehler oder abgefangenem Timeout. Hartes Signal kann Schluss-JSON verhindern.
+Status STATIC_HAMILTONIAN_CHECKS_PASS waere nur eine algebraisch-numerische
+Implementierungspruefung dieser neuen Kopplung, kein Dynamik-/Stabilitaetsnachweis.

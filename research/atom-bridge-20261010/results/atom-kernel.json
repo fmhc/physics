@@ -1,0 +1,528 @@
+{
+  "status": "CONTROLS_PASS_FINITE_BOX_UNRESOLVED",
+  "parameters": {
+    "boxes": [
+      4,
+      6
+    ],
+    "charge_e": 1.0,
+    "source_vertex": 0,
+    "source": "integrated vertex delta; common sublattice; no star0 multiplier",
+    "hand_x": -3.2857142857142856,
+    "hand_y": -4.571428571428571,
+    "directions": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        -1,
+        0
+      ]
+    ],
+    "steps": [
+      1,
+      2
+    ],
+    "ewald_cutoffs": [
+      4,
+      6
+    ],
+    "algebra_tolerance": 1E-9,
+    "eigen_relative_cutoff": 1E-12,
+    "reference_absolute_tolerance": 1E-8,
+    "cpu_soft_seconds": 55,
+    "cpu_hard_seconds": 58,
+    "wall_seconds": 57
+  },
+  "execution": "CPU float64/complex128, one thread, no CUDA",
+  "scope": "frozen-background fixed-V DEC subproblem; inserted external test charges",
+  "coupling_caveat": "q=eQ is a normalization bridge; SRegge+SMaxwell+SSkalar alone does not establish charged scalar source coupling or a unified atomic action",
+  "utc": "2026-10-10T03:11:15Z",
+  "claims_excluded": [
+    "hydrogen",
+    "particle masses",
+    "emergent Maxwell",
+    "resolved 1/r"
+  ],
+  "geometry": {
+    "nV": 10,
+    "nE": 68,
+    "min_s1": 0.030612244897959145,
+    "vol3": 0.25
+  },
+  "known_cubic_reference_error": 8.881784197001252E-16,
+  "boxes": [
+    {
+      "N": 4,
+      "vertices": 640,
+      "primitive_box_rows": [
+        [
+          0.0,
+          2.0,
+          2.0
+        ],
+        [
+          2.0,
+          0.0,
+          2.0
+        ],
+        [
+          2.0,
+          2.0,
+          0.0
+        ]
+      ],
+      "spectrum_min": -9.43689570931383E-16,
+      "positive_min": 0.1445873361975499,
+      "zero_modes": 1,
+      "controls": {
+        "gauss_relative_max": 1.4629482470256538E-15,
+        "constant_d0_max": 0.0,
+        "hermitian_max": 0.0,
+        "neutrality_max": 0.0,
+        "gauge_energy_change_max": 2.220446049250313E-16,
+        "gauge_field_change_max": 2.6771112385273296E-14,
+        "sign_reversal_max": 0.0,
+        "reciprocity_max": 0.0,
+        "decomposition_max": 1.3877787807814457E-16,
+        "field_energy_identity_max": 2.220446049250313E-16,
+        "imaginary_potential_max": 1.0408340855860843E-16,
+        "self_translation_max": 0.0,
+        "continuum_convergence_max": 0.0
+      },
+      "algebra_pass": true,
+      "continuum_reference_converged": true,
+      "coulomb_status": "UNRESOLVED: no a << r << L window asserted",
+      "rows": [
+        {
+          "cell_shift": [
+            1,
+            0,
+            0
+          ],
+          "displacement": [
+            0.0,
+            0.5,
+            0.5
+          ],
+          "unwrapped_r": 0.7071067811865476,
+          "neutral_field_energy": 0.5716905916585218,
+          "self_u": 0.30399723192712275,
+          "self_v": 0.30399723192712275,
+          "cross_after_same_source_self_subtraction": -0.03630387219572365,
+          "continuum_cross_cutoff4": -0.02659864386159029,
+          "continuum_cross_cutoff6": -0.02659864386159029,
+          "lattice_minus_continuum_cross": -0.009705228334133356,
+          "interpretation": "periodic finite-box; additive zero-mean convention",
+          "delta_cross_vs_shift100": 0.0,
+          "delta_continuum_cross_vs_shift100": 0.0
+        },
+        {
+          "cell_shift": [
+            2,
+            0,
+            0
+          ],
+          "displacement": [
+            0.0,
+            1.0,
+            1.0
+          ],
+          "unwrapped_r": 1.4142135623730951,
+          "neutral_field_energy": 0.6153813212917862,
+          "self_u": 0.30399723192712275,
+          "self_v": 0.30399723192712275,
+          "cross_after_same_source_self_subtraction": 0.00738685743754075,
+          "continuum_cross_cutoff4": 0.01158889765034398,
+          "continuum_cross_cutoff6": 0.01158889765034398,
+          "lattice_minus_continuum_cross": -0.0042020402128032305,
+          "interpretation": "periodic finite-box; additive zero-mean convention",
+          "delta_cross_vs_shift100": 0.0436907296332644,
+          "delta_continuum_cross_vs_shift100": 0.03818754151193427
+        },
+        {
+          "cell_shift": [
+            0,
+            1,
+            0
+          ],
+          "displacement": [
+            0.5,
+            0.0,
+            0.5
+          ],
+          "unwrapped_r": 0.7071067811865476,
+          "neutral_field_energy": 0.5716905916585219,
+          "self_u": 0.30399723192712275,
+          "self_v": 0.30399723192712275,
+          "cross_after_same_source_self_subtraction": -0.03630387219572358,
+          "continuum_cross_cutoff4": -0.02659864386159029,
+          "continuum_cross_cutoff6": -0.02659864386159029,
+          "lattice_minus_continuum_cross": -0.009705228334133287,
+          "interpretation": "periodic finite-box; additive zero-mean convention",
+          "delta_cross_vs_shift100": 6.938893903907228E-17,
+          "delta_continuum_cross_vs_shift100": 0.0
+        },
+        {
+          "cell_shift": [
+            0,
+            2,
+            0
+          ],
+          "displacement": [
+            1.0,
+            0.0,
+            1.0
+          ],
+          "unwrapped_r": 1.4142135623730951,
+          "neutral_field_energy": 0.6153813212917862,
+          "self_u": 0.30399723192712275,
+          "self_v": 0.30399723192712275,
+          "cross_after_same_source_self_subtraction": 0.007386857437540806,
+          "continuum_cross_cutoff4": 0.01158889765034398,
+          "continuum_cross_cutoff6": 0.01158889765034398,
+          "lattice_minus_continuum_cross": -0.004202040212803175,
+          "interpretation": "periodic finite-box; additive zero-mean convention",
+          "delta_cross_vs_shift100": 0.04369072963326445,
+          "delta_continuum_cross_vs_shift100": 0.03818754151193427
+        },
+        {
+          "cell_shift": [
+            0,
+            0,
+            1
+          ],
+          "displacement": [
+            0.5,
+            0.5,
+            0.0
+          ],
+          "unwrapped_r": 0.7071067811865476,
+          "neutral_field_energy": 0.5716905916585218,
+          "self_u": 0.30399723192712275,
+          "self_v": 0.30399723192712275,
+          "cross_after_same_source_self_subtraction": -0.03630387219572359,
+          "continuum_cross_cutoff4": -0.02659864386159029,
+          "continuum_cross_cutoff6": -0.02659864386159029,
+          "lattice_minus_continuum_cross": -0.0097052283341333,
+          "interpretation": "periodic finite-box; additive zero-mean convention",
+          "delta_cross_vs_shift100": 5.551115123125783E-17,
+          "delta_continuum_cross_vs_shift100": 0.0
+        },
+        {
+          "cell_shift": [
+            0,
+            0,
+            2
+          ],
+          "displacement": [
+            1.0,
+            1.0,
+            0.0
+          ],
+          "unwrapped_r": 1.4142135623730951,
+          "neutral_field_energy": 0.6153813212917862,
+          "self_u": 0.30399723192712275,
+          "self_v": 0.30399723192712275,
+          "cross_after_same_source_self_subtraction": 0.007386857437540809,
+          "continuum_cross_cutoff4": 0.01158889765034398,
+          "continuum_cross_cutoff6": 0.01158889765034398,
+          "lattice_minus_continuum_cross": -0.0042020402128031716,
+          "interpretation": "periodic finite-box; additive zero-mean convention",
+          "delta_cross_vs_shift100": 0.04369072963326445,
+          "delta_continuum_cross_vs_shift100": 0.03818754151193427
+        },
+        {
+          "cell_shift": [
+            1,
+            -1,
+            0
+          ],
+          "displacement": [
+            -0.5,
+            0.5,
+            0.0
+          ],
+          "unwrapped_r": 0.7071067811865476,
+          "neutral_field_energy": 0.583919707357205,
+          "self_u": 0.30399723192712275,
+          "self_v": 0.30399723192712275,
+          "cross_after_same_source_self_subtraction": -0.02407475649704046,
+          "continuum_cross_cutoff4": -0.02659864386159029,
+          "continuum_cross_cutoff6": -0.02659864386159029,
+          "lattice_minus_continuum_cross": 0.0025238873645498303,
+          "interpretation": "periodic finite-box; additive zero-mean convention",
+          "delta_cross_vs_shift100": 0.012229115698683186,
+          "delta_continuum_cross_vs_shift100": 0.0
+        },
+        {
+          "cell_shift": [
+            2,
+            -2,
+            0
+          ],
+          "displacement": [
+            -1.0,
+            1.0,
+            0.0
+          ],
+          "unwrapped_r": 1.4142135623730951,
+          "neutral_field_energy": 0.6183391425572762,
+          "self_u": 0.30399723192712275,
+          "self_v": 0.30399723192712275,
+          "cross_after_same_source_self_subtraction": 0.010344678703030769,
+          "continuum_cross_cutoff4": 0.01158889765034398,
+          "continuum_cross_cutoff6": 0.01158889765034398,
+          "lattice_minus_continuum_cross": -0.0012442189473132123,
+          "interpretation": "periodic finite-box; additive zero-mean convention",
+          "delta_cross_vs_shift100": 0.046648550898754415,
+          "delta_continuum_cross_vs_shift100": 0.03818754151193427
+        }
+      ]
+    },
+    {
+      "N": 6,
+      "vertices": 2160,
+      "primitive_box_rows": [
+        [
+          0.0,
+          3.0,
+          3.0
+        ],
+        [
+          3.0,
+          0.0,
+          3.0
+        ],
+        [
+          3.0,
+          3.0,
+          0.0
+        ]
+      ],
+      "spectrum_min": -9.43689570931383E-16,
+      "positive_min": 0.07400724893282888,
+      "zero_modes": 1,
+      "controls": {
+        "gauss_relative_max": 1.8906147832610663E-15,
+        "constant_d0_max": 0.0,
+        "hermitian_max": 8.326672684688674E-17,
+        "neutrality_max": 0.0,
+        "gauge_energy_change_max": 1.1102230246251565E-16,
+        "gauge_field_change_max": 1.1379786002407855E-13,
+        "sign_reversal_max": 0.0,
+        "reciprocity_max": 7.37257477290143E-17,
+        "decomposition_max": 1.6653345369377348E-16,
+        "field_energy_identity_max": 2.220446049250313E-16,
+        "imaginary_potential_max": 8.125324391966721E-17,
+        "self_translation_max": 1.1102230246251565E-16,
+        "continuum_convergence_max": 0.0
+      },
+      "algebra_pass": true,
+      "continuum_reference_converged": true,
+      "coulomb_status": "UNRESOLVED: no a << r << L window asserted",
+      "rows": [
+        {
+          "cell_shift": [
+            1,
+            0,
+            0
+          ],
+          "displacement": [
+            0.0,
+            0.5,
+            0.5
+          ],
+          "unwrapped_r": 0.7071067811865476,
+          "neutral_field_energy": 0.5754700911132917,
+          "self_u": 0.3183554002130905,
+          "self_v": 0.3183554002130904,
+          "cross_after_same_source_self_subtraction": -0.06124070931288926,
+          "continuum_cross_cutoff4": -0.05328050155290863,
+          "continuum_cross_cutoff6": -0.05328050155290863,
+          "lattice_minus_continuum_cross": -0.007960207759980631,
+          "interpretation": "periodic finite-box; additive zero-mean convention",
+          "delta_cross_vs_shift100": 0.0,
+          "delta_continuum_cross_vs_shift100": 0.0
+        },
+        {
+          "cell_shift": [
+            2,
+            0,
+            0
+          ],
+          "displacement": [
+            0.0,
+            1.0,
+            1.0
+          ],
+          "unwrapped_r": 1.4142135623730951,
+          "neutral_field_energy": 0.6331199632759607,
+          "self_u": 0.3183554002130905,
+          "self_v": 0.31835540021309044,
+          "cross_after_same_source_self_subtraction": -0.0035908371502203123,
+          "continuum_cross_cutoff4": -0.0018153603700219179,
+          "continuum_cross_cutoff6": -0.0018153603700219179,
+          "lattice_minus_continuum_cross": -0.0017754767801983944,
+          "interpretation": "periodic finite-box; additive zero-mean convention",
+          "delta_cross_vs_shift100": 0.057649872162668946,
+          "delta_continuum_cross_vs_shift100": 0.05146514118288671
+        },
+        {
+          "cell_shift": [
+            0,
+            1,
+            0
+          ],
+          "displacement": [
+            0.5,
+            0.0,
+            0.5
+          ],
+          "unwrapped_r": 0.7071067811865476,
+          "neutral_field_energy": 0.5754700911132915,
+          "self_u": 0.3183554002130905,
+          "self_v": 0.31835540021309044,
+          "cross_after_same_source_self_subtraction": -0.06124070931288941,
+          "continuum_cross_cutoff4": -0.05328050155290863,
+          "continuum_cross_cutoff6": -0.05328050155290863,
+          "lattice_minus_continuum_cross": -0.007960207759980784,
+          "interpretation": "periodic finite-box; additive zero-mean convention",
+          "delta_cross_vs_shift100": -1.5265566588595902E-16,
+          "delta_continuum_cross_vs_shift100": 0.0
+        },
+        {
+          "cell_shift": [
+            0,
+            2,
+            0
+          ],
+          "displacement": [
+            1.0,
+            0.0,
+            1.0
+          ],
+          "unwrapped_r": 1.4142135623730951,
+          "neutral_field_energy": 0.6331199632759602,
+          "self_u": 0.3183554002130905,
+          "self_v": 0.31835540021309044,
+          "cross_after_same_source_self_subtraction": -0.003590837150220714,
+          "continuum_cross_cutoff4": -0.0018153603700219179,
+          "continuum_cross_cutoff6": -0.0018153603700219179,
+          "lattice_minus_continuum_cross": -0.001775476780198796,
+          "interpretation": "periodic finite-box; additive zero-mean convention",
+          "delta_cross_vs_shift100": 0.05764987216266855,
+          "delta_continuum_cross_vs_shift100": 0.05146514118288671
+        },
+        {
+          "cell_shift": [
+            0,
+            0,
+            1
+          ],
+          "displacement": [
+            0.5,
+            0.5,
+            0.0
+          ],
+          "unwrapped_r": 0.7071067811865476,
+          "neutral_field_energy": 0.5754700911132917,
+          "self_u": 0.3183554002130905,
+          "self_v": 0.31835540021309044,
+          "cross_after_same_source_self_subtraction": -0.061240709312889385,
+          "continuum_cross_cutoff4": -0.05328050155290863,
+          "continuum_cross_cutoff6": -0.05328050155290863,
+          "lattice_minus_continuum_cross": -0.007960207759980756,
+          "interpretation": "periodic finite-box; additive zero-mean convention",
+          "delta_cross_vs_shift100": -1.249000902703301E-16,
+          "delta_continuum_cross_vs_shift100": 0.0
+        },
+        {
+          "cell_shift": [
+            0,
+            0,
+            2
+          ],
+          "displacement": [
+            1.0,
+            1.0,
+            0.0
+          ],
+          "unwrapped_r": 1.4142135623730951,
+          "neutral_field_energy": 0.6331199632759605,
+          "self_u": 0.3183554002130905,
+          "self_v": 0.31835540021309044,
+          "cross_after_same_source_self_subtraction": -0.0035908371502204883,
+          "continuum_cross_cutoff4": -0.0018153603700219179,
+          "continuum_cross_cutoff6": -0.0018153603700219179,
+          "lattice_minus_continuum_cross": -0.0017754767801985705,
+          "interpretation": "periodic finite-box; additive zero-mean convention",
+          "delta_cross_vs_shift100": 0.05764987216266877,
+          "delta_continuum_cross_vs_shift100": 0.05146514118288671
+        },
+        {
+          "cell_shift": [
+            1,
+            -1,
+            0
+          ],
+          "displacement": [
+            -0.5,
+            0.5,
+            0.0
+          ],
+          "unwrapped_r": 0.7071067811865476,
+          "neutral_field_energy": 0.5875682883961488,
+          "self_u": 0.3183554002130905,
+          "self_v": 0.3183554002130904,
+          "cross_after_same_source_self_subtraction": -0.04914251203003217,
+          "continuum_cross_cutoff4": -0.05328050155290863,
+          "continuum_cross_cutoff6": -0.05328050155290863,
+          "lattice_minus_continuum_cross": 0.004137989522876459,
+          "interpretation": "periodic finite-box; additive zero-mean convention",
+          "delta_cross_vs_shift100": 0.01209819728285709,
+          "delta_continuum_cross_vs_shift100": 0.0
+        },
+        {
+          "cell_shift": [
+            2,
+            -2,
+            0
+          ],
+          "displacement": [
+            -1.0,
+            1.0,
+            0.0
+          ],
+          "unwrapped_r": 1.4142135623730951,
+          "neutral_field_energy": 0.6348596550235053,
+          "self_u": 0.3183554002130905,
+          "self_v": 0.3183554002130904,
+          "cross_after_same_source_self_subtraction": -0.0018511454026756042,
+          "continuum_cross_cutoff4": -0.0018153603700219179,
+          "continuum_cross_cutoff6": -0.0018153603700219179,
+          "lattice_minus_continuum_cross": -0.00003578503265368638,
+          "interpretation": "periodic finite-box; additive zero-mean convention",
+          "delta_cross_vs_shift100": 0.059389563910213654,
+          "delta_continuum_cross_vs_shift100": 0.05146514118288671
+        }
+      ]
+    }
+  ],
+  "original_inputs_unchanged": true,
+  "wall_seconds": 1.263760469853878,
+  "process_cpu_seconds": 1.325407814
+}

@@ -1,0 +1,27 @@
+Curated public export, 2026-10-10
+
+Only completed model QA and the reviewed neutral-scalar argument are included.
+No new simulation was run for this export. Sources, plans and review texts
+are archived byte-for-byte. Their historical host/path guards are retained;
+this is an evidence archive, not a newly validated portable run package.
+
+Original result SHA256:
+atom-kernel.json 93e5f4ff7327ae075b88df054cf0082a440aeb338f06eeb139e036653366d3f1
+scalar-current.json 70600d8f6518b7dd9f1f11f652730a426111bbb7f63afdec16ae1182f9c851b8
+scalar-flow.json 3ac318c1a71b7fbec07a8ad69837d580451ea3b7e4a499c5da8e6ba59c9e1f57
+
+The public result JSONs remove only these top-level operational keys:
+host, cpu_affinity, nice, git_commit, git_branch, inputs,
+provenance_sha256, python, numpy, scipy.
+Numerical results, parameters and outcome labels are unchanged. Public hashes
+therefore differ from original hashes and are recorded in SHA256SUMS.
+
+Original project directories:
+coordination/codex-sync-20261010/atom-kernel-0/
+coordination/codex-sync-20261010/scalar-current-0/
+coordination/codex-sync-20261010/scalar-flow-0/
+
+Excluded: sealed data, internal bus and process logs, downloaded literature,
+private repository history, raw large archives and unexecuted rotor code.
+The accompanying core draft and Finn decisions are historical architecture
+records; the new QA tests fixed geometry only. No atom has been derived.

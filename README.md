@@ -43,6 +43,13 @@ nicht-blinder synthetischer Zahlenvergleich.** Die blinde Wiederholung läuft no
 
 ## Wo anfangen
 
+**Ergänzung vom 10.10.: Atombrücke und aktueller Kern.** Die
+[Kernfassung](coordination/runden-v3/RUNDE-52/kernfassung/KERNFASSUNG-v1.md) zusammen mit
+[Finns Entscheidungen](coordination/runden-v3/RUNDE-52/kernfassung/FINN-ENTSCHEIDUNGEN.md)
+beschreibt den Modellstand. Das neue [Atombrücken-Paket](research/atom-bridge-20261010/SUMMARY.txt)
+enthält abgeschlossene Kontrollen der klassischen Skalar-Maxwell-Kopplung, Formeln, Quellen und Ergebnisdaten.
+Es liefert noch keine Elektronen, Protonen oder Atome; Wasserstoff, Helium und Kohlenstoff bleiben Forschungsziele.
+
 | Wenn Sie ... | dann lesen Sie |
 |---|---|
 | die belastbaren Befunde suchen | [RESULTS.md](RESULTS.md) (englisch) |

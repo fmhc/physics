@@ -1,0 +1,69 @@
+SCALAR-FLOW-0 — nur vorbereiteter Code/Plan, 2026-10-10
+KEIN LAUF. Root-Codelektuere, unabhängige Review und aktuelle .69-Abstimmung
+vor jedem Start. Ziel: kurze Integrations-QA, keine Bindung oder Atombildung.
+
+Eingefrorene Grundlagen
+scalar_current.py aus scalar-current-0/run-a/inputs/ plus sechs vorhandene
+Geometrie-Abhaengigkeiten aus scalar-current-0/inputs-source/. Keine Aenderung
+dieser Dateien. NumPy/SciPy (einschliesslich sph_harm_y) wie bisher.
+pm.raum_V() liefert bestehende Handgewichte, M=s0,W=s1,S2=s2,d0,d1.
+Eine primitive periodische 3D-Zelle, e=0.3 als freie Modellkonvention.
+Modell bleibt neue explizite Kopplung des Skalarsektors auf eingefrorenem V.
+
+Anfangsdaten (Seed 20261011)
+x,y unabhaengig N(0,.05²), px/M,py/M unabhaengig N(0,.02²), A=N(0,.02²).
+Kanonischer Impuls wird entlang der Gesamtladungsfunktion auf Q=0 projiziert;
+dann Loesung von D^T W D a0=rho und Pi=+W D a0. Kein Ladungshintergrund.
+Genau eine Nullmode, keine negativen Eigenwerte (Cutoff 1e-12 max(1,lambda_max)).
+Initiale Neutralitaet <=1e-10, Gauss-Linf <=1e-9. Vollstaendiger Anfangszustand,
+Korrektur, rho, Hilfspotential und Eichparameter chi=N(0,.7²) im Ergebnis.
+
+Trajektorien
+Strang kick(dt/2), drift(dt), kick(dt/2), genau bis T=.2 mit
+dt=.001,.0005,.00025 (200,400,800 volle Schritte). Fuer jede Aufloesung
+eine separat integrierte zeitunabhaengige Eichkopie desselben Anfangszustands.
+Somit 2800 originale/companion volle Schritte; negative Probe auf dt=.001
+mit eigener Eichkopie fuegt 400 Schritte hinzu. Kein adaptiver Nachlauf.
+Nur Endzustand gespeichert; maximale Fehler an ALLEN vollen Schritten inkl.
+t=0 erfasst. Teilfluss-Erhaltung ist Papierableitung, kein all-substep Messclaim.
+
+Vorab gebundene Fehlertore
+Original und Eichkopie: max_t ||G||inf<=1e-9; max_t |sum rho|<=1e-10.
+Eichrelation aller kanonischen Variablen: Linf-Abweichung geteilt durch
+max(1,Linf erwarteter Zustand) <=1e-9. Energieabweichung zu E(0), geteilt
+durch max(1,|E(0)|), <=.01. Energie ist NICHT exakt erhalten.
+Nichtendliche Zustandswerte brechen ab. Keine nachtraegliche Toleranzanpassung.
+
+Endzustands-Selbstkonvergenz getrennt von Energiedrift
+Vergleiche z_dt-z_dt/2 und z_dt/2-z_dt/4 in derselben Eichung/kanonischen
+Koordinaten, L2 geteilt durch max(1,L2 feinster Zustand).
+Gate: feinere Differenz <= groebere+1e-10 UND feinere <=1e-3.
+Ordnungsindikator grob/fein nur oberhalb Rundungsfloor 1e-10 fuer BEIDE.
+Intervall [2.5,5.5] wird SECOND_ORDER_COMPATIBLE_ON_THIS_INTERVAL genannt;
+sonst ORDER_UNRESOLVED, bei Floor ROUNDING_FLOOR_UNRESOLVED. Keine erzwungene
+Ordnungs-PASS-Aussage; Ordnungslabel und QA-Gesamtstatus bleiben getrennt.
+Diese Selbstkonvergenz ist keine exakte Fehlerreferenz.
+
+Negativprobe
+dt=.001,T=.2: nur Materiestrom im elektromagnetischen Kick umkehren;
+Skalar-Kick, Drift und Energie unveraendert. Dieselben Trajektorienchecks.
+Erwartet: Checks scheitern UND max Gauss >1e-6. Wird dies nicht erkannt,
+Gesamt-QA nicht bestanden. Keine physikalische Interpretation des Mutanten.
+
+Provenienz und Betrieb
+Verpflichtendes VOR START gebundenes JSON: git_commit,git_branch,sha256 fuer
+exakt zehn Basisdateinamen: sechs Geometriequellen, scalar_current.py,
+scalar_flow.py,PLAN.txt,DERIVATION.txt. Alle Hashes vor wissenschaftlichen
+Imports verifizieren, Vollkopien archivieren; mutable Originale nicht importieren.
+--source-dir und --model-source erlauben passende Transferablage auf .69.
+Aufruf nach separater Freigabe: python scalar_flow.py --provenance <JSON>
+--output <neuer Unterordner>. Keine vorhandene Ablage ueberschreiben.
+CPU float64/complex128, ein Thread/eine erlaubte logische CPU, nice19,
+kein CUDA. CPU soft55/hard58s, wall57s. Unter 60s, keine Dienste, Wrapper,
+Installationen oder Wiederholungen. manifest/partial/result.json atomar;
+hartes Limit kann Schlussresultat verhindern. Dann offen/Timeout berichten.
+
+Reichweite
+SHORT_INTEGRATION_QA_PASS waere nur der kontrollierte kurze Fluss dieses
+klassischen Modells. Keine Teilchenidentitaet, Bindung, Elektronen/Protonen,
+Quantisierung, Atome, Langzeitstabilitaet oder gesamter Kern mit Netz-Flips.

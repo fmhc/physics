@@ -1,0 +1,31 @@
+Explizite Kopplung auf festem V — Modelleinheiten, 10.10.2026
+Neue minimale Kopplungsvariante, nicht fertig quantisierter Gesamtkern.
+phi_v=x_v+i y_v, kanonische Impulse px_v,py_v; Kantenpotential A_e,Pi_e.
+D=d0 (Start -1, Ziel +1), C=d1, CD=0. Positive M=*0,W=*1,Z=*2.
+
+H = sum_v (px_v²+py_v²)/(4M_v)
+  + sum_e W_e |exp(-i e A_e)phi_head-phi_tail|²
+  + sum_v M_v U(|phi_v|²)
+  + (1/2) Pi^T W^-1 Pi +(1/2)(CA)^T Z(CA),
+U(s)=s-s²+s³/2.
+
+rho_v=e(y_v px_v-x_v py_v), G=D^T Pi-rho.
+Eichtransformation: phi,p -> exp(i e chi)(phi,p), A -> A+Dchi,
+Pi unveraendert. Strom J=partial H_matter/partial A:
+J_e=-2e W_e Im(phi_tail* exp(-ie A_e)phi_head).
+Damit dot rho+D^T J=0, dot Pi=-C^T Z C A-J und dot G=0.
+
+Statischer elektrischer Kern: L=D^T W D, L a0=rho,
+Pi=W D a0, E_C=(1/2)rho^T L^+rho im neutralen periodischen Sektor.
+L^+ verwirft nur die konstante Eichnullmode. Einzelquellenvergleiche brauchen
+dieselbe Hintergrund-/Selbstenergie-Konvention wie im jeweiligen Vorabplan.
+
+Integrator: H=T(p,Pi)+V(x,y,A), Strang K(dt/2)D(dt)K(dt/2).
+Kick: px-=h partial_x V, py-=h partial_y V, Pi-=h partial_A V.
+Drift: x+=h px/(2M), y+=h py/(2M), A+=h Pi/W.
+Jeder exakte Teilfluss erhaelt Gauss; Energie H nur approximativ erhalten.
+Das gepruefte Zeitintervall ist T=.2, kein Dauerstabilitaetsnachweis.
+
+Diese Formeln definieren das gepruefte Feldmodell auf fester Geometrie. Die dynamische
+Regge-Wirkung, Geometrieimpulse, Lapse/Shift, Umklapp-Uebergaben und deren
+Zwaenge sind dadurch NICHT mitgerechnet. Kein Elektron-/Protonterm enthalten.

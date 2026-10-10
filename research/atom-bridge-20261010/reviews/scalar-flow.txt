@@ -1,0 +1,59 @@
+SCALAR-FLOW-RESULT-REVIEW — 2026-10-10
+Komplettes scalar-flow-0/run-a/result.json gelesen, gegen den vorab gelesenen
+PLAN abgeglichen. Keine Nachrechnung, kein Test/Interpreter; Ergebnisreview,
+keine unabhaengige numerische Reproduktion.
+
+Urteil: SHORT_INTEGRATION_QA_PASS ist durch die berichteten Daten gedeckt.
+Drei Originaltrajektorien plus separat integrierte Eichkopien, dt=.001,.0005,
+.00025, jeweils T=.2 und 200,400,800 volle Schritte. Negative Probe genau
+auf der groben Aufloesung mit derselben Laufzeit. Kein adaptiver Nachlauf
+im gespeicherten Ergebnis ersichtlich.
+
+Initialisierung und echte Zwangsbedingungen
+Q vor Impulskorrektur 3.7256e-5, danach -1.0588e-21; Gauss-Max1.0165e-20.
+Eine Nullmode, Potentialmittel1.7471e-22; kein Ladungshintergrund. Ganzer
+Anfangszustand, Korrekturvektor, rho,a0,chi sind im JSON gespeichert.
+Im Gegensatz zu SCALAR-CURRENT liegen jetzt zulaessige neutrale Anfangsdaten
+im deklarierten klassischen Modell und ausgefuehrte kurze Trajektorien vor.
+Diese Aufwertung betrifft Integrations-QA, keine Teilchen-/Bindungsaussage.
+
+Fehlertore (beide Eichungen, alle gemessenen VOLLEN Schritte)
+- groesster Gauss-Rest 3.7075e-16 <1e-9;
+- groesste globale Ladungsabweichung 1.0461e-18 <1e-10;
+- groesste skalierte Eichzustandsabweichung 2.1427e-15 <1e-9;
+- skalierte maximale Energieabweichung grob/mittel/fein
+  9.0364e-6 / 2.2593e-6 / 5.6482e-7, alle <.01.
+Achtung zur Beschriftung energy_relative: der vorab definierte Nenner ist
+max(1,|E0|), und E0=.18857226<1. Hier sind die Zahlen deshalb numerisch
+absolute Energieabweichungen in Modelleinheiten, NICHT DeltaE/E0 oder
+Prozentfehler. 'Skalierte Energieabweichung' ist die praezise Kurzbezeichnung.
+Keine exakte Energieerhaltung und keine Messung aller Teilkick-Zwischenstaende
+behaupten. Schlussenergie und maximale Abweichung sind verschiedene Werte.
+
+Selbstkonvergenz
+Grobe Endzustandsdifferenz4.831919e-6, feine1.207923e-6, beide >Floor1e-10;
+fein kleiner und <1e-3. Quotient4.0001869 liegt im gebundenen Intervall
+[2.5,5.5]. SECOND_ORDER_COMPATIBLE_ON_THIS_INTERVAL ist deshalb korrekt.
+Kein exakter Loesungsfehler, kein Beweis asymptotischer oder Langzeitordnung.
+
+Mutant
+Umgekehrter EM-Stromkick liefert Gauss-Max3.300119e-4 (>1e-6) und denselben
+Fehler in der Eichkopie, trajectory_checks_passed=false. Detektion bestanden.
+Globale Ladung, Eichrelation und Energie-Grenzwert bestehen dabei weiterhin;
+das ist mit der Papierableitung vereinbar. Gerade der lokale Gauss-Test
+entdeckt den gezielten Kopplungsfehler. Bestandene Eichkovarianz alleine
+waere kein hinreichender Konsistenznachweis dieser Dynamik.
+
+Provenienz und Grenze
+JSON meldet ubuntu-auto/.69, ein CPU-Thread, Affinitaet[0], nice19, kein CUDA;
+3.7014 s Wandzeit,3.7589 s CPU. Quellhash31fdc858cb1c2dd8a543cc2dd0297589587ace43b6666071802744d2dee099b6,
+Plan9e33e9c6d12802e7ad3263ed0c6fee35df84479e79732edd32b2fe03dd038da4,
+Ableitunga95b2f3228591cc7288e70139e36ad3614b4c6d5757b8c694bf699aaec59e133
+entsprechen dem finalen Papierreview; eingefrorenes Hamiltonmodell88d68e60...,
+zehn Eingabehashes, original_inputs_unchanged=true. Keine erneute Hashpruefung
+der Laufkopien hier.
+
+Dieser Lauf bestaetigt nur kurze Integrationskontrollen der neuen Kopplung
+auf einer primitiven 3D-Zelle. Er widerspricht nicht dem neutralen
+Nichtminimumargument und sucht kein Atomminimum. Keine Bildung, Bindung,
+Langzeitstabilitaet, Fermionen, Massen oder BIC-Beweisuebertragung gezeigt.

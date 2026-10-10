@@ -20,6 +20,16 @@ tetrahedral network "V" and its time-extended "tent" version.
 
 ## Stand 10.10.2026 (synthetisch, explorativ)
 
+**Separate Ergänzung: klassische Atombrücken-Kontrollen.** Das
+[neue Paket](research/atom-bridge-20261010/SUMMARY.txt) archiviert drei abgeschlossene Tests auf festem V:
+den statischen DEC-Kern (Kontrollen bestanden, endliche Box ungelöst), die Hamilton-Stromidentitäten
+und eine kurze eichkovariante Zeitintegration. Bei T = 0,2 beträgt der maximale Gauss-Rest
+3,71e-16; der Endzustands-Selbstkonvergenzquotient ist 4,00019. Das sind Implementierungskontrollen,
+keine Teilchen- oder Atomnachweise. Ein separat gegengelesenes Absenkargument schließt unter den
+genannten klassischen Neutralitätsbedingungen ein nichttriviales lokales Skalar-Energieminimum aus.
+[Formeln](research/atom-bridge-20261010/FORMULAS.txt) und
+[Exportprovenienz](research/atom-bridge-20261010/EXPORT.txt) nennen den genauen Umfang.
+
 Die folgenden Sätze übernehmen den korrigierten Wortlaut des Gegenlesens vom 10.10.2026 und die
 anschließende Berichtigung. Sie ergänzen die älteren Befunde um begrenzte Modellresultate und Negativbefunde;
 Reife-Prozentwerte werden nicht angehoben. Die numerischen Läufe wurden für diesen Export nicht wiederholt.
