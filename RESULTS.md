@@ -247,5 +247,5 @@ Schwellen dürfen nicht unverändert übertragen werden.
 ## Not shown
 
 No derivation of particle masses, of SU(3), of the weak interaction, of the Higgs mechanism or of three generations; no
-spin-1/2 dynamics; no quantitative prediction tested against measured data. The per-area status table in the
-[README](README.md) gives a subjective maturity estimate for each area.
+spin-1/2 dynamics; no quantitative prediction tested against measured data. The
+[README](README.md) now provides a concise current overview; the historical findings above retain their original scope.
