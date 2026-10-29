@@ -1,0 +1,487 @@
+{
+  "time": "2026-10-29T05:37:00+00:00",
+  "host": "author-workstation",
+  "python": "3.12.3",
+  "matplotlib": "3.11.2",
+  "numpy": "2.4.4",
+  "script_sha256": "ff60bc0f6b6083d3a6b38ae254935c3193145bad97a92032bb235daa90962c06",
+  "inputs_sha256": {
+    "PROFILE.json": "9509436ad3fd57718a89c0773ede36fc22a481b299cf2d584f79e275d1218dbb",
+    "PROOF-v051.tex": "33cf7e0b40e60c19eafa01b829240e7ec188643acfd0ea26a536bcc04857280c",
+    "SEQUENCE-v051.tex": "f19139daf83b92046251c20f5d5365125ca73ca17a9fea332db785968d202ccf",
+    "figure-data.json": "1dcf9139e23bc31687114770719260a808ca85b4e0cbe2e72305332fda07d69e",
+    "sprossen.json": "4267791b7d2dfaae4bc8da28ab80ce30d0f0bf26e0e24c97f1c998fb911a1005"
+  },
+  "outputs_sha256": {
+    "qball-overview.pdf": "a7403b72545bec0d2e0fc0c0b40f2fde0bac29ed77c42d45e18c89bd5a14f77a",
+    "qball-overview.png": "8f0bf2e621fa40023110770a2a926ca97589d7ff0d947fcc805e0acb96065466",
+    "qball-overview.svg": "58a4f3a53b25f2f42de7b24f5b06e0f3329bfcbee7c837389db6aea101dc7c58"
+  },
+  "gates": {
+    "G1": {
+      "pass": true,
+      "detail": {
+        "1": [
+          0.7976767871118652,
+          "figure-data.json:x[0]"
+        ],
+        "2": [
+          0.6851289044582161,
+          "figure-data.json:x[1]"
+        ],
+        "3": [
+          0.6314495672353974,
+          "figure-data.json:x[2]"
+        ],
+        "4": [
+          0.6014214665907026,
+          "figure-data.json:x[3]"
+        ],
+        "5": [
+          0.5824173602715405,
+          "figure-data.json:x[4]"
+        ],
+        "6": [
+          0.5693598307,
+          "figure-data.json:x[5]"
+        ],
+        "7": [
+          0.5598482409,
+          "figure-data.json:x[6]"
+        ],
+        "8": [
+          0.5526191112,
+          "figure-data.json:x[7]"
+        ],
+        "9": [
+          0.5469398966,
+          "figure-data.json:x[8]"
+        ],
+        "10": [
+          0.5423644204,
+          "figure-data.json:x[9]"
+        ],
+        "11": [
+          0.5386025292854802,
+          "figure-data.json:x[10]"
+        ],
+        "12": [
+          0.5354487488460722,
+          "figure-data.json:x[11]"
+        ],
+        "13": [
+          0.5327715612187037,
+          "figure-data.json:x[12]"
+        ],
+        "14": [
+          0.5304697504749699,
+          "figure-data.json:x[13]"
+        ],
+        "15": [
+          0.5284693357421102,
+          "sprossen.json:pb0.je_sprosse[0].omega2_h002"
+        ],
+        "16": [
+          0.5267154164259079,
+          "sprossen.json:sprossen[index=16].omega2"
+        ],
+        "17": [
+          0.5251627698595307,
+          "sprossen.json:sprossen[index=17].omega2"
+        ],
+        "18": [
+          0.5237874658867491,
+          "sprossen.json:sprossen[index=18].omega2"
+        ]
+      }
+    },
+    "G2": {
+      "pass": true,
+      "detail": {
+        "uncertified_radial": 16,
+        "certified_radial": 2,
+        "certified_dipole": 1
+      }
+    },
+    "G1b": {
+      "pass": true,
+      "detail": {
+        "1": {
+          "table": "0.797676787",
+          "plotted": 0.7976767871118652,
+          "diff": 1.1186518378281107e-10,
+          "tol": 1e-09,
+          "pass": true
+        },
+        "2": {
+          "table": "0.685128904",
+          "plotted": 0.6851289044582161,
+          "diff": 4.582160206823005e-10,
+          "tol": 1e-09,
+          "pass": true
+        },
+        "3": {
+          "table": "0.631450",
+          "plotted": 0.6314495672353974,
+          "diff": 4.3276460259811245e-07,
+          "tol": 1e-06,
+          "pass": true
+        },
+        "4": {
+          "table": "0.601421",
+          "plotted": 0.6014214665907026,
+          "diff": 4.6659070263022073e-07,
+          "tol": 1e-06,
+          "pass": true
+        },
+        "5": {
+          "table": "0.582417",
+          "plotted": 0.5824173602715405,
+          "diff": 3.6027154048934307e-07,
+          "tol": 1e-06,
+          "pass": true
+        },
+        "6": {
+          "table": "0.569360",
+          "plotted": 0.5693598307,
+          "diff": 1.693000000191347e-07,
+          "tol": 1e-06,
+          "pass": true
+        },
+        "7": {
+          "table": "0.559848",
+          "plotted": 0.5598482409,
+          "diff": 2.4089999994814093e-07,
+          "tol": 1e-06,
+          "pass": true
+        },
+        "8": {
+          "table": "0.552619",
+          "plotted": 0.5526191112,
+          "diff": 1.1119999998587815e-07,
+          "tol": 1e-06,
+          "pass": true
+        },
+        "9": {
+          "table": "0.546940",
+          "plotted": 0.5469398966,
+          "diff": 1.0340000000663707e-07,
+          "tol": 1e-06,
+          "pass": true
+        },
+        "10": {
+          "table": "0.542364",
+          "plotted": 0.5423644204,
+          "diff": 4.204000000340713e-07,
+          "tol": 1e-06,
+          "pass": true
+        },
+        "11": {
+          "table": "0.53860",
+          "plotted": 0.5386025292854802,
+          "diff": 2.5292854802794196e-06,
+          "tol": 1e-05,
+          "pass": true
+        },
+        "12": {
+          "table": "0.535449",
+          "plotted": 0.5354487488460722,
+          "diff": 2.5115392776609013e-07,
+          "tol": 1e-06,
+          "pass": true
+        },
+        "13": {
+          "table": "0.532772",
+          "plotted": 0.5327715612187037,
+          "diff": 4.3878129629693063e-07,
+          "tol": 1e-06,
+          "pass": true
+        },
+        "14": {
+          "table": "0.530470",
+          "plotted": 0.5304697504749699,
+          "diff": 2.495250300826868e-07,
+          "tol": 1e-06,
+          "pass": true
+        },
+        "15": {
+          "table": "0.52846934",
+          "plotted": 0.5284693357421102,
+          "diff": 4.257889818504168e-09,
+          "tol": 1e-08,
+          "pass": true
+        },
+        "16": {
+          "table": "0.52671542",
+          "plotted": 0.5267154164259079,
+          "diff": 3.574092133362683e-09,
+          "tol": 1e-08,
+          "pass": true
+        },
+        "17": {
+          "table": "0.52516277",
+          "plotted": 0.5251627698595307,
+          "diff": 1.40469302856161e-10,
+          "tol": 1e-08,
+          "pass": true
+        },
+        "18": {
+          "table": "0.5237875",
+          "plotted": 0.5237874658867491,
+          "diff": 3.41132508907549e-08,
+          "tol": 1e-07,
+          "pass": true
+        }
+      }
+    },
+    "G2b": {
+      "pass": true,
+      "detail": {
+        "1": {
+          "table_text": "Existence enclosure C0",
+          "class_from_table": "certified",
+          "plotted_class": "certified",
+          "pass": true
+        },
+        "2": {
+          "table_text": "Existence enclosure C1",
+          "class_from_table": "certified",
+          "plotted_class": "certified",
+          "pass": true
+        },
+        "3": {
+          "table_text": "Resolved numerical winding",
+          "class_from_table": "winding",
+          "plotted_class": "winding",
+          "pass": true
+        },
+        "4": {
+          "table_text": "Resolved numerical winding",
+          "class_from_table": "winding",
+          "plotted_class": "winding",
+          "pass": true
+        },
+        "5": {
+          "table_text": "Sign change; winding unresolved",
+          "class_from_table": "weaker",
+          "plotted_class": "weaker",
+          "pass": true
+        },
+        "6": {
+          "table_text": "Resolved numerical winding",
+          "class_from_table": "winding",
+          "plotted_class": "winding",
+          "pass": true
+        },
+        "7": {
+          "table_text": "Resolved numerical winding",
+          "class_from_table": "winding",
+          "plotted_class": "winding",
+          "pass": true
+        },
+        "8": {
+          "table_text": "Resolved numerical winding",
+          "class_from_table": "winding",
+          "plotted_class": "winding",
+          "pass": true
+        },
+        "9": {
+          "table_text": "Resolved numerical winding",
+          "class_from_table": "winding",
+          "plotted_class": "winding",
+          "pass": true
+        },
+        "10": {
+          "table_text": "Resolved numerical winding",
+          "class_from_table": "winding",
+          "plotted_class": "winding",
+          "pass": true
+        },
+        "11": {
+          "table_text": "Linewidth reconstruction",
+          "class_from_table": "weaker",
+          "plotted_class": "weaker",
+          "pass": true
+        },
+        "12": {
+          "table_text": "Linewidth reconstruction",
+          "class_from_table": "weaker",
+          "plotted_class": "weaker",
+          "pass": true
+        },
+        "13": {
+          "table_text": "Linewidth reconstruction",
+          "class_from_table": "weaker",
+          "plotted_class": "weaker",
+          "pass": true
+        },
+        "14": {
+          "table_text": "Linewidth reconstruction",
+          "class_from_table": "weaker",
+          "plotted_class": "weaker",
+          "pass": true
+        },
+        "15": {
+          "table_text": "Subsequent resolved winding",
+          "class_from_table": "winding",
+          "plotted_class": "winding",
+          "pass": true
+        },
+        "16": {
+          "table_text": "Resolved winding, final bracket rule failed",
+          "class_from_table": "failed",
+          "plotted_class": "failed",
+          "pass": true
+        },
+        "17": {
+          "table_text": "Resolved winding, final bracket rule failed",
+          "class_from_table": "failed",
+          "plotted_class": "failed",
+          "pass": true
+        },
+        "18": {
+          "table_text": "Crossing count $+1$; phase unresolved",
+          "class_from_table": "failed",
+          "plotted_class": "failed",
+          "pass": true
+        }
+      }
+    },
+    "G7": {
+      "pass": true,
+      "detail": {
+        "C0": {
+          "table_w2": "0.797676787111865191750",
+          "table_rho": "1.744617544837398735781",
+          "pass": true
+        },
+        "C1": {
+          "table_w2": "0.6851289044582160933",
+          "table_rho": "1.6903565973281434568",
+          "pass": true
+        },
+        "C2": {
+          "table_w2": "0.7544960137826372331",
+          "table_rho": "1.826342030181069956",
+          "pass": true
+        }
+      }
+    },
+    "G3": {
+      "pass": true,
+      "detail": {
+        "profile_omega2": 0.7976767871118652,
+        "f0": 1.0242355065715394
+      }
+    },
+    "G4": {
+      "pass": true,
+      "detail": {
+        "omega_plus_rho": 2.637745076107074,
+        "omega_minus_rho": -0.8514900135677234
+      }
+    },
+    "G5": {
+      "pass": true,
+      "detail": {
+        "V(0)": 0.0,
+        "V(1)": 0.0
+      }
+    },
+    "G6": {
+      "pass": true,
+      "detail": {
+        "qball-overview.pdf": "a7403b72545bec0d2e0fc0c0b40f2fde0bac29ed77c42d45e18c89bd5a14f77a",
+        "qball-overview.png": "8f0bf2e621fa40023110770a2a926ca97589d7ff0d947fcc805e0acb96065466",
+        "qball-overview.svg": "58a4f3a53b25f2f42de7b24f5b06e0f3329bfcbee7c837389db6aea101dc7c58"
+      }
+    }
+  },
+  "derived_values": {
+    "sidebands": {
+      "C0": {
+        "omega": 0.8931275312696755,
+        "omega_plus_rho": 2.637745076107074,
+        "omega_minus_rho": -0.8514900135677234
+      },
+      "C1": {
+        "omega": 0.8277251382302074,
+        "omega_plus_rho": 2.5180817355583507,
+        "omega_minus_rho": -0.8626314590979359
+      },
+      "C2": {
+        "omega": 0.8686172999558766,
+        "omega_plus_rho": 2.6949593301369466,
+        "omega_minus_rho": -0.9577247302251934
+      }
+    },
+    "inverse_detuning": {
+      "1": 3.359348270660439,
+      "2": 5.401641644920455,
+      "3": 7.607480351831202,
+      "4": 9.859845589056693,
+      "5": 12.133366037268123,
+      "6": 14.417566910237579,
+      "7": 16.708928866779786,
+      "8": 19.004501923248007,
+      "9": 21.303839003343704,
+      "10": 23.604713355171977,
+      "11": 25.90503830991548,
+      "12": 28.209740330815727,
+      "13": 30.514261842040945,
+      "14": 32.819435158206275,
+      "15": 35.12551220226955,
+      "16": 37.43157074767609,
+      "17": 39.74125287408445,
+      "18": 42.038946256862744
+    },
+    "inverse_detuning_C2": 3.9293346293985225,
+    "thinwall_R_n14": 23.20684515507985,
+    "step_14_15": 2.3060770440632723
+  },
+  "ladder_sources": {
+    "1": "figure-data.json:x[0]",
+    "2": "figure-data.json:x[1]",
+    "3": "figure-data.json:x[2]",
+    "4": "figure-data.json:x[3]",
+    "5": "figure-data.json:x[4]",
+    "6": "figure-data.json:x[5]",
+    "7": "figure-data.json:x[6]",
+    "8": "figure-data.json:x[7]",
+    "9": "figure-data.json:x[8]",
+    "10": "figure-data.json:x[9]",
+    "11": "figure-data.json:x[10]",
+    "12": "figure-data.json:x[11]",
+    "13": "figure-data.json:x[12]",
+    "14": "figure-data.json:x[13]",
+    "15": "sprossen.json:pb0.je_sprosse[0].omega2_h002",
+    "16": "sprossen.json:sprossen[index=16].omega2",
+    "17": "sprossen.json:sprossen[index=17].omega2",
+    "18": "sprossen.json:sprossen[index=18].omega2"
+  },
+  "evidence_classes": {
+    "1": "certified",
+    "2": "certified",
+    "3": "winding",
+    "4": "winding",
+    "5": "weaker",
+    "6": "winding",
+    "7": "winding",
+    "8": "winding",
+    "9": "winding",
+    "10": "winding",
+    "11": "weaker",
+    "12": "weaker",
+    "13": "weaker",
+    "14": "weaker",
+    "15": "winding",
+    "16": "failed",
+    "17": "failed",
+    "18": "failed"
+  },
+  "schematic_elements": [
+    "panel (a) phase-rotation inset",
+    "panel (d) generic open-channel tail (amplitude 0.16, onset r=5, wavenumber k of C0)",
+    "panel (e) width curve sin^2(pi N(x)), N = PCHIP through (x_n, n); reported locations are data (candidates for n=3-18); the schematic zero depth is not established for n=3-18"
+  ]
+}

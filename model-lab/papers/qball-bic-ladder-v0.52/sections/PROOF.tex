@@ -1,0 +1,220 @@
+\section{Computer-assisted existence results}
+\label{sec:certified-existence}
+
+We distinguish the three computer-assisted existence results below from
+the numerically observed ladder. The proof establishes a localized mode
+at a parameter pair inside each specified box. It does not certify every
+observed radiation minimum, an infinite ladder, or a nonlinear
+nonradiating solution.
+
+\subsection{Model and precise statement}
+\label{sec:proof-model}
+Consider the complex Klein--Gordon equation in three spatial dimensions,
+\begin{equation}
+ \partial_t^2\phi-\Delta\phi+U'(|\phi|^2)\phi=0,
+ \qquad U(S)=S-S^2+\tfrac12 S^3.
+ \label{eq:proof-kg}
+\end{equation}
+A stationary Q-ball has the form $\phi_0=e^{i\omega t}f(r)$, where
+\begin{equation}
+ f''+\frac{2}{r}f'=(1-\omega^2)f-2f^3+\tfrac32 f^5,
+ \qquad f(0)=a,\quad f'(0)=0.
+ \label{eq:proof-profile}
+\end{equation}
+We use a real orthonormal basis $Y_{\ell m}$ of spherical harmonics and
+write a linear perturbation as
+\begin{equation}
+ \delta\phi=e^{i\omega t}
+ \left[\frac{A(r)}{r}e^{i\rho t}
+       +\frac{B(r)}{r}e^{-i\rho t}\right]Y_{\ell m}.
+ \label{eq:proof-mode}
+\end{equation}
+In a complex harmonic basis the second sideband instead contains
+$Y_{\ell m}^*$. With $S=f^2$, substitution in the linearization of
+\eqref{eq:proof-kg} gives
+\begin{equation}
+ \begin{aligned}
+ A''&=\left[1-4S+\tfrac92 S^2-(\omega+\rho)^2
+                  +\frac{\ell(\ell+1)}{r^2}\right]A+CB,\\
+ B''&=\left[1-4S+\tfrac92 S^2-(\omega-\rho)^2
+                  +\frac{\ell(\ell+1)}{r^2}\right]B+CA,
+ \qquad C=-2S+3S^2.
+ \end{aligned}
+ \label{eq:proof-radial-system}
+\end{equation}
+Regularity requires $A,B=O(r^{\ell+1})$. Define
+\begin{equation}
+ \kappa_0=\sqrt{1-\omega^2},\qquad
+ k=\sqrt{(\omega+\rho)^2-1},\qquad
+ \kappa_c=\sqrt{1-(\omega-\rho)^2}.
+ \label{eq:proof-channel-numbers}
+\end{equation}
+
+\noindent\textbf{Computer-assisted existence statement.}
+For each row of Table~\ref{tab:proof-cases}, the corresponding certificate
+encloses a quadruple $(a_*,c_*,\rho_*,\omega_*)$ with $c_*>0$ such that
+\eqref{eq:proof-profile} has a positive global solution satisfying
+$r e^{\kappa_0r}f(r)\to c_*$, and
+\eqref{eq:proof-radial-system} has a nonzero real solution regular at the
+origin with
+\begin{equation}
+ |A(r)|+|B(r)|\leq K_J e^{-\kappa_c r}\quad(r\geq L),
+ \qquad e^{\kappa_c r}B(r)\longrightarrow1.
+ \label{eq:proof-decay}
+\end{equation}
+The resulting spatial fields in \eqref{eq:proof-mode} are smooth and
+exponentially localized. The certification is
+conditional on the correctness of the stated interval-arithmetic
+implementation and its underlying arithmetic libraries.
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabular}{ccll}
+\hline
+Case & $\ell$ & Enclosure of $\omega_*^2$ & Enclosure of $\rho_*$ \\
+\hline
+C0 & 0 & $0.797676787111865191750\pm4.8\,10^{-22}$
+       & $1.744617544837398735781\pm6.8\,10^{-22}$ \\
+C1 & 0 & $0.6851289044582160933\pm2.5\,10^{-20}$
+       & $1.6903565973281434568\pm4.7\,10^{-20}$ \\
+C2 & 1 & $0.7544960137826372331\pm7.8\,10^{-20}$
+       & $1.826342030181069956\pm3.0\,10^{-19}$ \\
+\hline
+\end{tabular}
+\caption{The three certified parameter boxes, displayed as outward-rounded
+decimal enclosures. The proof uses the full exact dyadic boxes in
+$(a,c,\rho,\omega)$, not these two-coordinate summaries.
+Their numerical ladder
+assignments are $(\ell,n)=(0,1),(0,2),(1,1)$; the labels $n$ are not
+separately certified nodal counts.}
+\label{tab:proof-cases}
+\end{table}
+
+For the enclosed parameter pair and its fixed radial angular channel, every
+solution of \eqref{eq:proof-radial-system} that is square integrable on
+$[L,\infty)$ is a scalar multiple of the constructed solution. This is
+\emph{geometric radial simplicity}. It neither establishes algebraic
+simplicity of a dynamical generator nor excludes Jordan chains. For C2,
+the three-dimensional $\ell=1$ angular multiplet remains degenerate.
+The translation mode at $\rho=0$ does not belong to the fixed nonzero
+frequency considered here.
+
+The term \emph{embedded} is used operationally: $k^2>0$ and
+$\kappa_c^2>0$, so a free asymptotic channel is open, while the constructed
+mode is exponentially localized and has no oscillatory radiation tail.
+We do not identify the essential spectrum of a fully specified operator
+pencil in this proof. The perturbation is periodic after removing
+$e^{i\omega t}$; the two laboratory frequencies are $\omega\pm\rho$,
+with no claim about their rational commensurability.
+
+\subsection{Infinite-domain construction and inclusion}
+\label{sec:proof-tails}
+The matching radius $L$ joins an interval-integrated core to an analytic
+infinite exterior. The potential and its coupling are retained beyond
+$L$. Appendix~\ref{supp:proof-lemmas} gives the complete
+analytic lemmas used below, including the origin start and the error
+bounds for every Taylor step.
+
+For the profile, $\widetilde u=r e^{\kappa_0r}f$ satisfies
+\begin{equation}
+ \widetilde u(r)=c+\int_r^\infty
+ \frac{1-e^{-2\kappa_0(s-r)}}{2\kappa_0}
+ \left(-2f(s)^2+\tfrac32f(s)^4\right)\widetilde u(s)\,\dd s.
+ \label{eq:proof-profile-volterra}
+\end{equation}
+The certified exterior constants give a uniform contraction in a positive
+ball about $c$. For the mode, the free open and closed Green kernels
+produce a Volterra equation with integrable coefficients. Ordered
+iteration has factorial error majorants, and yields a normalized
+exponentially decaying Jost solution. The $\ell=1$ construction retains
+the exact Riccati functions and the centrifugal term. These constructions
+supply continuous corrections to both the profile Cauchy data and the
+mode Cauchy data at $L$, uniformly on the parameter box.
+
+\subsection{Finite-dimensional certificate}
+\label{sec:proof-krawczyk}
+Let $z=(a,c,\rho,\omega)$. The four-component matching map is
+$H=H_0+E$. Its first two components match profile value and derivative;
+the last two are scaled Wronski forms
+$W(\Psi,R_i)=\Psi\cdot R_i'-\Psi'\cdot R_i$, where $R_1,R_2$ are
+the two regular origin solutions. The nominal map $H_0$ uses the free
+Jost data and $E$ bounds the infinite-tail correction.
+For $\ell=0$, these pairings equal the origin values of $\Psi$.
+For $\ell=1$, the regular behaviors $r^2e_i$ pair with singular
+behaviors $r^{-1}e_i/3$ to give $\delta_{ij}$. Thus their joint vanishing
+is precisely regularity of the Jost solution at the origin.
+
+The core integration encloses $H_0(z_0)$ and $DH_0(Z)$ using complex
+analytic a priori bounds and Taylor remainders. At the origin, the
+profile integral equation has weight mass $r^2/6$; for
+$A=r^2\alpha$, $B=r^2\beta$ the $\ell=1$ weight mass is $r^2/10$.
+Parameter derivatives are integrated as part of the same enclosed
+system. All step choices and preconditioners become exact dyadic input;
+acceptance uses directed arithmetic.
+
+Write $Z=z_0+[-\delta,\delta]$, let $D$ enclose $DH_0(Z)$, and let
+$|E_i|\leq\epsilon_i$ throughout $Z$. A fixed dyadic matrix $Y$ gives
+\begin{equation}
+ \begin{split}
+ z_0-YH_0(z_0)+(I-YD)[-\delta,\delta]
+       +|Y|[-\epsilon,\epsilon]&\subset\operatorname{int}Z,\\
+ \max_i\sum_j |I-YD|_{ij}\frac{\delta_j}{\delta_i}&<1.
+ \end{split}
+ \label{eq:proof-krawczyk-inclusion}
+\end{equation}
+The first inclusion makes $z\mapsto z-YH(z)$ a continuous self-map of
+$Z$. Brouwer gives a fixed point; the weighted matrix inequality makes
+$Y$ invertible, so $H(z_*)=0$. This proof requires continuity, but no
+derivative bound, for $E$ and does not assert uniqueness of $z_*$.
+Positive core enclosures, a minimum-principle argument on the remaining
+finite interval, and the positive exterior fixed point establish $f>0$.
+Finally $2\kappa_0>\kappa_c$ permits two bounded oscillatory comparison
+solutions at infinity. Their nonzero mutual Wronskian and the
+four-dimensional symplectic Cauchy-data space imply that every
+square-integrable solution is a multiple of the decaying Jost solution.
+Appendix~\ref{supp:simplicity} supplies this simplicity proof explicitly.
+
+\subsection{Certificate contents and verification scope}
+\label{sec:proof-verification-limits}
+The defining certificates use $L=40$ for C0, $L=32$ for C1, and $L=36$
+for C2, with 256-bit ball arithmetic. The preserved historical records
+identify these three JSON certificates by case, filename and SHA-256
+checksum. A distribution copy with redacted execution metadata is a
+derivative: the archive manifest lists its checksum separately from the
+historical checksum, while retaining the numerical fields. The full
+dyadic boxes, channel bounds, tail constants,
+inclusion results and integration-step records are the proof inputs.
+The fresh primary-certificate reproduction uses the preserved historical
+proof-code bytes. The distribution provides separately hashed code
+derivatives with redacted comments and one metadata string in the unused
+starting-value-search mode; \texttt{CODE-HASH-MAP.tsv} records their
+correspondence. These changes leave the certificate execution path unchanged.
+A filename recorded by an old driver is resolved through its recorded
+hash, rather than assumed to identify a later file with the same name.
+
+Additional runs use larger matching radii and 320-bit arithmetic. C2's
+original repeat at $L=40$ failed the inclusion test; a subsequent run
+with an enlarged $c$-radius passed after reevaluating all bounds on that
+box. This is an adaptive additional certificate. The C2 existence claim
+rests on the first successful certificate alone.
+
+For C0, $2\kappa_0>\kappa_c$ was recorded and separately checked but
+was absent from the historical aggregate success flag. This documented
+flag omission is retained. For preprint 0.51 a separate ball-arithmetic
+check reconstructs the exact dyadic parameter box from the reproduced
+C0 receipt and verifies $2\kappa_0-\kappa_c>0$ throughout that box,
+together with $\rho>\omega$. It binds the checked receipt and the checker
+by their checksums; neither the historical driver nor its success flag
+is amended.
+The C1/C2 drivers include the inequality explicitly. Repeated runs and
+code review use the same implementation and do not supply an independent
+second implementation. Correctness of Python--FLINT, Arb/Acb and the
+recorded execution remains part of the computational trust base.
+
+The arithmetic uses midpoint--radius enclosures
+\cite{Johansson2017Arb,PythonFlintDocs,FlintSoftware}; the finite-dimensional
+inclusion is of Krawczyk type \cite{Krawczyk1969}, with the explicit
+Brouwer argument above for the continuous tail correction. The three
+linear existence results leave background stability, algebraic spectral
+simplicity and certification of the full empirical ladder open.

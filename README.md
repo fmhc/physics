@@ -32,6 +32,10 @@ Kontinuumsmodell, keine Rechnung auf dem Netz) ist als Release
 [qball-bic-v0.51](https://github.com/fmhc/physics/releases/tag/qball-bic-v0.51) mit Quellen in
 [model-lab/papers/qball-bic-ladder-v0.51/](model-lab/papers/qball-bic-ladder-v0.51/README.md) veröffentlicht: drei
 computergestützte Existenzeinschlüsse linearer Moden, alles Weitere numerisch oder bedingt, nicht begutachtet.
+Aktuelle Fassung ist der Preprint 0.52 vom selben Tag (Release
+[qball-bic-v0.52](https://github.com/fmhc/physics/releases/tag/qball-bic-v0.52), Quellen in
+[model-lab/papers/qball-bic-ladder-v0.52/](model-lab/papers/qball-bic-ladder-v0.52/README.md)): neu sind eine Widmung,
+ein allgemeinverständlicher Überblick und eine Übersichtsabbildung; Ergebnisse und Zahlen sind unverändert.
 Seit dem 28. Oktober rechnen wir zuerst die reine SU(3)-Eichtheorie (nur Gluonen) auf dem Netz BCC-r\* × Z; Universalität
 und Kontinuumsexistenz sind dabei Setzungen, Confinement ist offen. Erste Skalen- und Topologiebefunde, ihre Fehlschläge
 und Grenzen stehen im [Stand vom 29.10.](STAND-UND-NAECHSTE-SCHRITTE.md) und in
@@ -44,5 +48,5 @@ und Grenzen stehen im [Stand vom 29.10.](STAND-UND-NAECHSTE-SCHRITTE.md) und in
 - [Bewusste Ausschlüsse des öffentlichen Archivs](AUSSCHLUESSE.md)
 
 Texte, Abbildungen und eigene Daten: [CC BY 4.0](LICENSE). Code: [Apache-2.0](LICENSE-CODE).
-Hinweise zur Namensnennung stehen in [NOTICE](NOTICE). Ausnahme: Der Q-Ball-Preprint 0.51 und sein Begleitarchiv
+Hinweise zur Namensnennung stehen in [NOTICE](NOTICE). Ausnahme: Der Q-Ball-Preprint (Fassungen 0.51 und 0.52) und sein Begleitarchiv
 stehen für Text, Abbildungen, Daten und Zertifikate unter CC BY 4.0 und für Code unter der MIT-Lizenz.

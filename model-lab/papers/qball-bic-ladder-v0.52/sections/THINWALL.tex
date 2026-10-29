@@ -1,0 +1,128 @@
+\section{Thin-wall phase matching and a planar transmission zero}\label{sec:thinwall}
+Put $\epsilon=\omega^2-\omega_c^2$ and $S_c=1/(2\beta)$.
+The leading thin-wall profile and radius in three dimensions are
+\begin{equation}\label{eq:thinwall}
+R_{\mathrm{tw}}\simeq\frac{1}{2\sqrt\beta\,\epsilon},\qquad
+f^2(r)\simeq\frac{S_c}{1+\exp[(r-R_{\mathrm{tw}})/\sqrt\beta]}.
+\end{equation}
+These are asymptotic approximations, not substitutes for the certified
+profiles. The leading radius relation is established prior work: with
+$\Delta=m_\phi^2-\omega_0^2$, Heeck et al. use
+$\kappa^2=(\omega^2-\omega_0^2)/\Delta$ and
+$R^*=\sqrt\Delta R$, and obtain $R^*\simeq1/\kappa^2$
+in their Eq.~(40)~\cite{Heeck2021}.
+Here $\Delta=1/(4\beta)$, which gives the radius in
+Eq.~\eqref{eq:thinwall}. Their inflection-point radius and our
+half-density radius need not have identical subleading coefficients.
+Their Eq.~(58) gives
+$R^*=\kappa^{-2}+\tfrac14-\tfrac{5}{16}\kappa^2+O(\kappa^4)$;
+these terms require a radius-convention conversion before comparison
+with the present half-density radius~\cite{Heeck2021}.
+Diagonalizing the constant interior channel matrix gives the
+propagating interior wavenumber
+\begin{equation}\label{eq:interior}
+k_{\mathrm{in}}^2=\omega^2+\rho^2-D_c+
+ \sqrt{4\omega^2\rho^2+C_c^2},\qquad
+D_c=1+\frac1{4\beta},\quad C_c=\frac1{2\beta}.
+\end{equation}
+At the stated interior amplitude, this is the same dispersion branch as
+Eq.~(101) of Zhang, Zhou, and Zhu~\cite{ZhangZhouZhu2025}; the interior
+wavenumber is an established ingredient, not a new result here.
+A regular interior standing wave reaches the wall with phase
+$\Psi=k_{\mathrm{in}}R_{\mathrm{tw}}$. The bare closed-channel wall approximation
+supplies a localized state, while matching it to the open interior
+wave permits a sign-changing radiation amplitude. A useful leading
+parametrization is
+\begin{equation}\label{eq:phase}
+k_{\mathrm{in}}(\omega_n,\rho_n)R_{\mathrm{tw}}(\omega_n)
+ \simeq\pi[n+\theta(\epsilon_n)],\qquad
+\rho_n\simeq\omega_n+c(\epsilon_n).
+\end{equation}
+The radius and interior dispersion follow from the model approximations;
+the wall phase $\theta$ and dressed level shift contained in $c$ remain
+calibrated. A separate coupled planar-wall calculation now supplies a
+numerical transmission zero, but does not determine both finite-curvature
+functions independently. Consequently, agreement of the calibrated
+phase rule with the sequence is not a parameter-free prediction.
+
+For $\beta=1/2$ and $\omega^2=1/2$, the exact planar profile is
+$S(x)=[1+\exp(\sqrt2 x)]^{-1}$. Solving the two-channel scattering
+problem, with one open and one evanescent channel on each side, gives
+\begin{equation}\label{eq:planarzero}
+\rho_z\simeq1.52414976213,\qquad
+k_{\mathrm{in}}(\rho_z)\simeq1.92332459129.
+\end{equation}
+An independently implemented Numerov boundary-value calculation confirmed
+this zero before reading the comparison calculation. It used a continuously
+phase-normalized transmission amplitude, actual complex-transmission
+residuals, flux and reciprocity controls, and separate mesh and boundary
+refinements. A conservative empirical frequency uncertainty is $10^{-9}$;
+this is not a certified enclosure. Two finite frequency scans found no
+additional zero, but do not prove uniqueness throughout the open-channel
+window. The planar scattering state has an incident and reflected wave;
+it is not itself a square-integrable embedded mode.
+
+If $k_{\mathrm{in}}\to k_\infty>0$ and the wall phase has a finite limit,
+Equation~\eqref{eq:phase} predicts, within the approximation,
+\begin{equation}\label{eq:spacing}
+\epsilon_n\sim\frac1{b_\infty n},\qquad
+b_\infty=\frac{2\sqrt\beta\,\pi}{k_\infty}.
+\end{equation}
+From the historical rounded locations $0.535449$, $0.532772$,
+$0.530470$, $0.528469$, the inverse-detuning steps for indices 12--15
+are approximately 2.3043, 2.3053 and 2.3068;
+these descriptive values do not specify accuracy beyond the input locations.
+The calibrated model gives 2.298, while its bare
+wall-state estimate gives 2.334. Substituting the independently computed
+planar zero into Equation~\eqref{eq:spacing} instead gives
+$b_\infty^{\mathrm{wall}}\simeq2.31000162857$, with a conservative empirical
+numerical uncertainty of $2\times10^{-9}$. This wall-based candidate was not
+fitted to ladder locations. Identifying it with the actual radial limiting
+step still requires a controlled curvature and phase-matching limit.
+This supports a useful spacing description;
+it does not prove existence of infinitely many localized modes or identify
+an exact limiting constant. The phase model also motivates alternating
+signs of a matching Jacobian and quadratic linewidth minima, but neither
+property independently replaces a tail-controlled existence proof.
+The inverse-first-power scaling follows from the calibrated model, not
+from an independently established asymptotic exponent. Exploratory free
+power fits yielded exponents between $-0.76$ and $-0.88$; the reciprocal
+fit improved the comparison metric only by factors of approximately
+$1.2$--$2$, below the originally sought factor of ten. Finite-data agreement
+therefore does not establish an exact asymptotic law.
+
+A local numerical check also supports a planar transmission cancellation
+for the modified potential $U(S)=S-S^2+S^3$ at
+$\omega_{\min}=\sqrt{3}/2$. An independent Numerov implementation,
+with the candidate frequency already known, gives
+$\rho_z\simeq1.77345307180$ and $k_{\mathrm{in}}\simeq2.3994321234$.
+The last grid change, $h=0.04$ to $0.02$, shifts $\rho_z$ by
+$1.64\times10^{-10}$, while increasing the half-domain from $32$ to $40$
+at the finest spacing changes it by $4.2\times10^{-14}$; these are
+empirical sensitivities, not certified bounds. The corresponding thin-wall
+spacing candidate is $2\pi/k_{\mathrm{in}}\simeq2.618613482$. This known-target
+local replication neither counts all planar zeros nor establishes the
+radial ladder limit for the modified potential.
+
+The corresponding radial calculation is also available. Its last
+previously reported inverse-detuning step was $2.596420$, about $0.9\%$
+below the planar candidate. A subsequent search gave the following
+finite-domain numerical locations; $k$ continues that study's local
+index and is not a certified node count:
+\begin{center}\small
+\begin{tabular}{rlll}\toprule
+$k$&$\omega^2$&$1/(\omega^2-3/4)$&Resolved winding\\\midrule
+0&$0.778585440$&$34.98284$&$-1$\\
+$-1$&$0.776606628$&$37.58462$&$+1$\\
+$-2$&$0.774882776$&$40.18844$&$-1$\\\bottomrule
+\end{tabular}\end{center}
+The reported empirical uncertainties are about $2\times10^{-8}$ in
+$\omega^2$ and $3\times10^{-5}$ in inverse detuning. These later
+increments are approximately $2.6018$ and $2.6038$; convergence to the
+planar value remains a conjectural interpretation. A frozen
+absolute-location formula truncated after the $O(1)$ term failed its
+combined test: inverse-detuning errors for this potential were
+$0.23$--$0.26$, outside the preassigned $0.10$ window; an extrapolation
+of the preceding radial locations was more accurate for both potentials.
+This failure concerns the finite-order absolute-location formula,
+not a proof or disproof of the leading wall spacing.

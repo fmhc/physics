@@ -16,6 +16,11 @@ Ergebnisdateien zum Gluonsektor sind hier nicht mit veröffentlicht; Abbildungen
 TeX-Quellen, PDF und HTML in [model-lab/papers/qball-bic-ladder-v0.51/](model-lab/papers/qball-bic-ladder-v0.51/README.md),
 Release [qball-bic-v0.51](https://github.com/fmhc/physics/releases/tag/qball-bic-v0.51) mit PDF, Supplement und
 Begleitarchiv (ZIP, 37 MB). Kein Bezug zum Tetraedernetz; ein Kontinuumsmodell.
+Aktuelle Fassung ist der Preprint 0.52 vom selben Tag (Release
+[qball-bic-v0.52](https://github.com/fmhc/physics/releases/tag/qball-bic-v0.52), Quellen in
+[model-lab/papers/qball-bic-ladder-v0.52/](model-lab/papers/qball-bic-ladder-v0.52/README.md)): Widmung,
+allgemeinverständlicher Überblick (Abschnitt 1) und Übersichtsabbildung (Abb. 1) kommen hinzu; Ergebnisse, Zahlen und
+Beweise sind unverändert, das Begleitarchiv bleibt das von 0.51.
 
 - **Computergestützt eingeschlossen:** drei lokalisierte lineare Moden (zwei radial, C0 und C1; ein Dipol, C2) auf dem
   unendlichen radialen Gebiet, mit Intervallarithmetik innen und analytischer Abschätzung außen. Vertrauensannahmen:

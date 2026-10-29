@@ -1,0 +1,217 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,graphicx,booktabs,longtable,array}
+\usepackage[margin=24mm]{geometry}
+\usepackage{microtype}
+\usepackage{xr-hyper}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue,pdfauthor={Finn Hinrichsen},pdftitle={Radiative cancellations and localized linear modes in three-dimensional sextic Q-balls}]{hyperref}
+\externaldocument[][nocite]{supplement}
+\setlength{\emergencystretch}{2em}
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\ii}{\mathrm{i}}
+\title{Radiative cancellations and localized linear modes\\in three-dimensional sextic Q-balls}
+\author{Finn Hinrichsen}
+\date{29 October 2026 --- Preprint 0.52}
+\begin{document}
+\maketitle
+\begin{center}
+{\small\emph{Dedicated to my parents, Rommy and Helmut Hinrichsen, who
+taught me early on that ‘you cannot eat everything, but perhaps you can
+know everything,’ and that small daily steps of learning add up.}}
+\end{center}
+\begin{abstract}
+We study localized linear excitations of a complex scalar Q-ball in three
+spatial dimensions with potential $\mathcal U(S)=S-S^2+S^3/2$.
+In a regime with one propagating and one evanescent exterior channel,
+we assemble computer-assisted existence arguments for two radial modes
+and one dipole mode on the infinite radial domain. Analytic exterior
+estimates and ball-arithmetic interior enclosures distinguish these
+results from finite-box linewidth minima. A numerical radial sequence,
+with candidates reported through index eighteen, motivates a thin-wall
+phase-matching description. An independently computed planar transmission
+zero yields an unfitted spacing candidate; identifying this value with
+a radial limiting spacing remains open. A second-harmonic analysis
+separates one dipole monopole outgoing coefficient from zero under
+explicitly audited exact-mode and enclosure hypotheses. It obstructs a
+specified uniformly localized smooth continuation for every linked dipole
+polarization with $\boldsymbol p^T\boldsymbol p\ne0$; circular polarization
+requires a separate quadrupole certificate. Linear existence, numerical
+spacing and nonlinear continuation are treated as distinct statements.
+\end{abstract}
+
+\input{sections/OVERVIEW.tex}
+
+\section{Question and scope}\label{sec:scope}
+A small resonance width, an exactly localized linear mode and a localized
+finite-amplitude oscillation require different evidence. We examine this
+separation for a complex scalar Q-ball, reporting three existence
+enclosures, a broader numerical sequence and a wall-scattering
+interpretation of its spacing. The sequence label $n$ is a continuation
+index, not a certified node count or a completeness statement.
+A bound state in the continuum (BIC) denotes a localized linear mode in
+an available propagating-channel regime~\cite{Hsu2016}. Uncertified
+locations will be called candidates. All quantities are dimensionless.
+\input{sections/LITERATURE.tex}
+
+\section{Field model and two-channel linearization}\label{sec:model}
+With metric signature $(+,-,-,-)$, define
+\begin{equation}\label{eq:action}
+\mathcal L=\partial_\mu\phi^*\partial^\mu\phi-\mathcal U(|\phi|^2),
+\qquad \mathcal U(S)=S-S^2+\beta S^3,\qquad \beta=\tfrac12.
+\end{equation}
+The free scalar mass is one. A spherical stationary background is
+$\phi_0=e^{\ii\omega t}f(r)$ with real $f$, satisfying
+\begin{equation}\label{eq:profile}
+f''+\frac2r f'=(1-\omega^2)f-2f^3+3\beta f^5,
+\quad f'(0)=0,\quad f(r)\longrightarrow0.
+\end{equation}
+For definiteness the charge sign is chosen so that
+$Q=2\omega\int f^2\dd^3x>0$ when $\omega>0$.
+The thin-wall frequency threshold is
+$\omega_c^2=\min_{S>0}\mathcal U(S)/S=1-1/(4\beta)=1/2$.
+
+Use a real orthonormal spherical-harmonic basis and write
+\begin{equation}\label{eq:ansatz}
+\delta\phi=e^{\ii\omega t}
+ [a(r)e^{\ii\rho t}+b(r)e^{-\ii\rho t}]Y_{lm}(\hat x),
+\qquad A=ra,\quad B=rb,
+\end{equation}
+for real-frequency, real-radial-function modes. In a complex harmonic basis
+the second sideband instead carries $Y_{lm}^*$.
+Let $S=f^2$, $D=1-4S+9\beta S^2$, and $C=-2S+6\beta S^2$.
+The radial equations are
+\begin{align}
+ A''&=\left[D+\frac{l(l+1)}{r^2}-(\omega+\rho)^2\right]A+CB,
+ \label{eq:radialA}\\
+ B''&=CA+\left[D+\frac{l(l+1)}{r^2}-(\omega-\rho)^2\right]B.
+ \label{eq:radialB}
+\end{align}
+Regular solutions satisfy $A,B=O(r^{l+1})$ at the origin.
+In the range $1-\omega<\rho<1+\omega$, define
+\begin{equation}\label{eq:channels}
+k^2=(\omega+\rho)^2-1>0,\qquad
+\kappa_c^2=1-(\omega-\rho)^2>0,\qquad
+\kappa_0^2=1-\omega^2>0.
+\end{equation}
+The $A$ channel is open and the $B$ channel closed. A localized mode
+requires cancellation of both oscillatory exterior components of $A$
+and exclusion of the growing component of $B$.
+The asymptotic continuous-frequency branches start at $|\rho|=1-\omega$,
+with the second channel opening at $|\rho|=1+\omega$; these are the
+standard Q-ball sideband thresholds~\cite{Kovtun2018,Ciurla2024}.
+Here ``embedded'' specifies an exactly localized solution in this
+continuous-frequency range. The certificates establish a partial-wave
+statement, rather than a separate theorem about the full evolution
+generator's essential spectrum or algebraic multiplicity.
+
+The spatial dimension is three; the two sidebands are field components,
+not additional spatial dimensions. Spherical reduction retains the
+three-dimensional measure and centrifugal term. It is neither a
+one-dimensional field theory nor a test of all three-dimensional
+perturbations. In one spatial dimension there is no spherical centrifugal
+term; in two dimensions both the radial measure and angular decomposition
+change. The planar wall below is a local thin-wall approximation to the
+three-dimensional profile. The separate two-dimensional numerical study
+is retained in the Supplement; profiles and charge normalizations are
+not transferred between dimensions. Higher spatial dimensions are outside
+the present evidence.
+
+\begin{figure}[htbp]\centering
+\includegraphics[width=.88\linewidth]{dipole-phases.pdf}
+\caption{Numerical reconstruction near the enclosed dipole mode C2, with
+angular factor $Y_{10}=\sqrt{3/(4\pi)}z/r$. Top: three phases of the
+linear perturbation; bottom: $y=0$ sections with phase masked below
+$1.5\%$ of the common displayed maximum. The time factors are the two
+linear sidebands, not a nonlinear evolution. The stored visualization's
+historical label is mapped to C2 in the archive figure inventory.}
+\label{fig:core-dipole}
+\end{figure}
+\input{sections/PROOF.tex}
+\input{sections/SEQUENCE.tex}
+\input{sections/THINWALL.tex}
+\input{sections/NONLINEAR.tex}
+
+\section{Discussion and conclusion}
+The strongest result is the existence of three localized linear modes
+with analytic treatment of the infinite exterior. The remaining radial
+locations have the numerical evidence classes recorded in
+Table~\ref{tab:ladder}. The unfitted planar spacing candidate provides a
+mechanism to test; a controlled radial curvature limit and an
+infinite-ladder theorem remain open. The failed absolute-location test
+in Section~\ref{sec:thinwall} constrains the finite-order approximation.
+
+The conditional monopole enclosure obstructs uniformly localized smooth
+continuation for the linked dipole polarizations with
+$\boldsymbol p^T\boldsymbol p\ne0$. A complete quadrupole certificate is
+still required for circular polarization. The numerical power table has
+a different normalization and is not recertified by this bound. None of
+these statements supplies a nonlinear lifetime or a stability theorem
+for the background. In particular, the charge slope $dQ/d\omega$ at the
+three certified backgrounds has not been evaluated in this revision;
+a stability assignment from that criterion is left open.
+An independent interval implementation and an operator realization of the
+full evolution generator would strengthen the computational and spectral
+interpretation respectively.
+
+The Supplement retains prescribed driving, formation diagnostics,
+discretization sensitivity and the numerical response controls as
+exploratory material. They supply no additional existence enclosures.
+\section*{Data and code availability}
+The supplementary archive, prepared from the preserved historical
+records, contains proof code, certificates, selected numerical records,
+source bindings and environment instructions. It is distributed as the
+file \texttt{qball-bic-v0.51-archive-r2.zip} of release
+\texttt{qball-bic-v0.51} at
+\url{https://github.com/fmhc/physics/releases/tag/qball-bic-v0.51}.
+This is a selected-records archive, not a complete reproducibility
+package for every numerical statement. The source and matching records
+for ladder indices 3--5, the separate $\beta=1$ ladder and wall studies,
+and the data package assembling the linewidth reconstructions are not
+included. The nonlinear and exploratory programs are historical source
+records rather than portable rerun packages; parent computations of the
+exploratory results are not packaged. The archive README's coverage
+table specifies these limits.
+Historical checksums and the checksums of metadata-redacted distribution
+copies are recorded separately; such redaction does not alter numerical
+fields or replace the historical provenance.
+Text, figures, data and certificates are licensed under CC BY 4.0;
+program code is licensed under the MIT License. For preprint 0.51, the three primary linear
+certificate runs were repeated with unchanged proof code; this evidence is carried forward unchanged. After excluding
+four timing fields, their receipts agree exactly with the archived
+receipts; all point and box step records are byte-identical. This is
+reproduction of the same implementation, not an independent interval
+implementation. The remaining historical numerical calculations have not
+been repeated since. The proof appendix and the
+supplementary hypothesis-by-hypothesis audit specify the analytical dependencies.
+Figure~\ref{fig:overview} is rendered from archived data and evaluations
+of formulas stated in this paper, with no new simulation, fit or
+certificate run; its inputs and checksums are listed in Supplement
+Section~\ref{app:provenance}. Its plotting script, receipt and input
+copies are published with the sources of release
+\texttt{qball-bic-v0.52}.
+
+\section*{Revision note}
+Preprint 0.52 differs from preprint 0.51 by the non-technical overview
+(Section~\ref{sec:overview}), the overview figure
+(Fig.~\ref{fig:overview}), one additional reference, the figure
+provenance paragraph in Supplement Section~\ref{app:provenance}, the
+corresponding sentence in the data availability statement, wording that
+attributes the certificate reproduction to preprint 0.51, a dedication,
+the version line and this note.
+No result, number, lemma, certificate or previous figure is changed.
+Section and figure numbers after the new section are shifted by one.
+
+\section*{Use of AI tools}
+This work was carried out with extensive use of AI tools: Claude
+(Anthropic) and Codex (OpenAI). They were used for drafting text,
+writing and running code, the interval computations, literature
+comparison and internal reviews. The author chose the questions,
+directed the work, decided on scope and publication, and takes
+responsibility for the content. In the companion archive, names of
+individual AI agents in historical records are replaced by neutral
+labels. The manuscript has not been peer reviewed.
+\appendix
+\input{sections/PROOF-LEMMAS.tex}
+\input{sections/bibliography.tex}
+\end{document}

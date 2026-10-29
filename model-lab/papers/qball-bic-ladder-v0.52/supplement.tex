@@ -1,0 +1,89 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,graphicx,booktabs,longtable,array}
+\usepackage[margin=24mm]{geometry}
+\usepackage{microtype}
+\usepackage{xr-hyper}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue,pdfauthor={Finn Hinrichsen},pdftitle={Supplement to Radiative cancellations and localized linear modes in three-dimensional sextic Q-balls}]{hyperref}
+\externaldocument[][nocite]{main}[paper.pdf]
+\setlength{\emergencystretch}{2em}
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\ii}{\mathrm{i}}
+\renewcommand{\thesection}{S\arabic{section}}
+\renewcommand{\theequation}{S\arabic{equation}}
+\renewcommand{\thefigure}{S\arabic{figure}}
+\renewcommand{\thetable}{S\arabic{table}}
+\title{Supplement to ``Radiative cancellations and localized linear modes\\in three-dimensional sextic Q-balls''}
+\author{Finn Hinrichsen}
+\date{29 October 2026 --- Preprint 0.52}
+\begin{document}\maketitle
+This Supplement records the nonlinear coefficient's dependency audit,
+followed by exploratory driving, formation and numerical-control
+material retained from the earlier manuscript. The complete linear
+proof lemmas are in Appendix A of the main paper.
+The latter material is not evidence for additional localized linear modes.
+Equation and section references without an S prefix refer to the main paper.
+The companion archive is distributed with release \texttt{qball-bic-v0.51}
+(see the data availability statement of the main paper); text, data and
+certificates are licensed under CC BY 4.0, code under the MIT License.
+Historical records are preserved. The 0.51 preprint
+repeated the three primary linear certificate runs with unchanged proof
+code; it did not repeat the exploratory physical evolutions below.
+Preprint 0.52 adds explanatory material only.
+\tableofcontents
+\input{sections/HYPOTHESIS-AUDIT.tex}
+\section{Stored numerical response and figure diagnostics}
+\input{sections/RESPONSE-DIAGNOSTICS.tex}
+\subsection{Radial nonlinear diagnostics}\label{supp:c0-evidence}
+\input{sections/RADIAL-NONLINEAR-DIAGNOSTICS.tex}
+\input{sections/MODE-FIGURES.tex}
+\section{Dimensional and discretization comparisons}
+\input{sections/DIMENSIONAL-NUMERICS.tex}
+\input{sections/GRID-SENSITIVITY.tex}
+\input{sections/EXTRA-CHANNEL.tex}
+\clearpage
+\input{sections/APPENDIX-DRIVING.tex}
+\clearpage
+\input{sections/APPENDIX-FORMATION.tex}
+\clearpage
+\input{sections/NUMERICAL-METHOD-CONTROLS.tex}
+\section{Archive structure and evidential scope}\label{app:provenance}
+The companion archive is distributed with an inventory mapping
+original records to portable paths and SHA256 bindings distinguishing
+historical records from derived export copies. The three primary linear
+certificate runs were reproduced for preprint 0.51: their receipts agree
+with the originals after omitting four timing fields, and all six point
+and box step records are byte-identical. This does not validate a new
+implementation or reproduce the planar-wall comparison and nonlinear
+coefficient bound, which retain separate provenance. Failed sufficient
+checks and adaptive repetitions remain recorded with their original status.
+
+{\sloppy
+The overview figure of the main paper (Fig.~\ref{fig:overview}) is
+rendered from archived data and evaluations of formulas stated in the
+paper, with no new simulation, fit or certificate run. Its data inputs
+are the archive files \texttt{figures/modes/PROFILE.json} (SHA-256
+prefix \texttt{9509436ad3fd5771}), \texttt{ladder/figure/figure-data.json}
+(\texttt{1dcf9139e23bc316}) and \texttt{ladder/extension/sprossen.json}
+(\texttt{4267791b7d2dfaae}), together with the midpoints of
+Table~\ref{tab:proof-cases}. Panel~(a) also evaluates the thin-wall
+formula, Eq.~\eqref{eq:thinwall}, and panel~(b) the function $V(f)$
+of the figure caption; panel~(c) uses only the certified midpoints.
+The phase inset, the dashed tail in panel~(d) and the width curve in
+panel~(e) are schematic. The plotting script (SHA-256 prefix
+\texttt{ff60bc0f6b6083d3}) reads the plotted coordinates directly from
+the archived fields. Before rendering it compares every plotted location
+with the value displayed in Table~\ref{tab:ladder} to one unit of the
+last displayed digit, derives each evidence class from that table's
+evidence column, and compares the certified midpoints with
+Table~\ref{tab:proof-cases}. These are consistency checks of the
+rendering, not additional evidence for the physics. Its receipt records
+the full checksums of script, inputs and outputs. Script, receipt and
+input copies are published in the folder \texttt{fig-overview} of the
+preprint 0.52 sources; they are not part of the 0.51 archive. In the
+published copies, three lines of the script's header text and the host field
+of the receipt are replaced by neutral wording; a map there lists the
+checksums of the run copies and of the published copies.\par}
+\input{sections/bibliography.tex}
+\end{document}

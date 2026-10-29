@@ -30,6 +30,10 @@ the gluon work are not published here; figures and plotted values are in
 0.51): sources in [model-lab/papers/qball-bic-ladder-v0.51/](model-lab/papers/qball-bic-ladder-v0.51/README.md), PDF and
 companion archive in release [qball-bic-v0.51](https://github.com/fmhc/physics/releases/tag/qball-bic-v0.51). A continuum
 field model, not a computation on the network. Not peer reviewed; no measured data.
+**Current version: preprint 0.52** (same day; release
+[qball-bic-v0.52](https://github.com/fmhc/physics/releases/tag/qball-bic-v0.52), sources in
+[model-lab/papers/qball-bic-ladder-v0.52/](model-lab/papers/qball-bic-ladder-v0.52/README.md)). It adds a dedication,
+a non-technical overview section and an overview figure; results and numbers are unchanged from 0.51.
 
 - **Computer-assisted existence:** three localized linear modes (radial C0, C1; dipole C2) on the infinite radial
   domain (interval interior enclosures plus analytic exterior estimates). Trust assumptions: proof code and

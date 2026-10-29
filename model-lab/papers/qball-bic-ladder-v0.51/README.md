@@ -3,6 +3,9 @@
 **Finn Hinrichsen — preprint version 0.51, 29 October 2026.** Not peer reviewed. Release
 [`qball-bic-v0.51`](https://github.com/fmhc/physics/releases/tag/qball-bic-v0.51).
 
+> **Superseded by preprint 0.52** (same results, plus a dedication, a non-technical overview and an overview figure):
+> [`../qball-bic-ladder-v0.52/`](../qball-bic-ladder-v0.52/README.md). Apart from this note, the folder is kept unchanged as the 0.51 record.
+
 *Kurz auf Deutsch:* Preprint zu lokalisierten linearen Moden eines Q-Balls (komplexes Skalarfeld, sextisches Potential,
 drei Raumdimensionen). Drei Existenzaussagen sind computergestützt mit Intervallarithmetik eingeschlossen; alles Übrige
 ist numerische Evidenz oder bedingte Aussage. Nicht begutachtet, keine Messdaten. Text und Daten CC BY 4.0, Code MIT.
