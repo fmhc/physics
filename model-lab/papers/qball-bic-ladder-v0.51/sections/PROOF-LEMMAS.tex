@@ -1,0 +1,368 @@
+\section{Analytic lemmas underlying the linear certificates}
+\label{supp:proof-lemmas}
+This section spells out the analytical implications tested by the
+certificates. It concerns three spatial dimensions and radial angular
+sectors $\ell=0,1$ only. A radial reduction of the three-dimensional
+problem is not a one-dimensional field theory. The normalization,
+origin powers and exterior kernels below depend on dimension and
+angular momentum; they cannot be transferred unchanged to other cases.
+All inequalities are evaluated over the whole dyadic parameter box.
+
+\subsection{Profile tail: contraction and matching errors}
+\label{supp:profile-tail}
+Let $1/\sqrt2<\omega<1$, $\kappa_0=\sqrt{1-\omega^2}$, $L,c,\bar f>0$,
+and define
+\begin{align}
+ K_P&=\frac{(2+\tfrac32\bar f^2)e^{-2\kappa_0L}}{4\kappa_0^2L^2},
+ &\eta&=2K_Pc^3,&m&=c+\eta,\nonumber\\
+ \Lambda&=\frac{(6+\tfrac{15}{2}\bar f^2)m^2e^{-2\kappa_0L}}
+                   {4\kappa_0^2L^2}.&&&
+ \label{eq:proof-profile-constants}
+\end{align}
+Assume $m e^{-\kappa_0L}/L\leq\bar f$, $K_Pm^3\leq\eta$,
+$\Lambda<1$ and $c>\eta$. Then the profile Volterra equation has a
+unique solution in $\|\widetilde u-c\|_\infty\leq\eta$,
+where $f=e^{-\kappa_0r}\widetilde u/r$. It is positive and solves the
+profile equation. With $\eta_0=K_Pm^3$, its matching errors satisfy
+\begin{equation}
+ |Le^{\kappa_0L}f(L)-c|\leq\eta_0,\qquad
+ |e^{\kappa_0L}(Lf'(L)+f(L))+\kappa_0c|\leq2\kappa_0\eta_0.
+ \label{supp:profile-errors}
+\end{equation}
+
+\noindent\emph{Proof.}
+On the indicated complete ball in $C_b([L,\infty))$, $|\widetilde u|\leq m$
+and $|f|\leq\bar f$. The kernel is bounded by $1/(2\kappa_0)$ and
+\begin{equation}
+ \int_r^\infty e^{-2\kappa_0s}s^{-2}\,\dd s
+ \leq\frac{e^{-2\kappa_0r}}{2\kappa_0r^2}.
+\end{equation}
+Thus the integral map differs from $c$ by at most $K_Pm^3$. The
+nonlinear integrand as a function of $\widetilde u$ is
+$-2e^{-2\kappa_0s}s^{-2}\widetilde u^3+
+\tfrac32e^{-4\kappa_0s}s^{-4}\widetilde u^5$; its derivative is bounded
+in modulus by $(6+\tfrac{15}{2}\bar f^2)m^2e^{-2\kappa_0s}s^{-2}$.
+The map is therefore a contraction of constant $\Lambda$.
+Banach's theorem supplies its fixed point and $\widetilde u\geq c-\eta>0$.
+Writing $u=e^{-\kappa_0r}\widetilde u$ gives
+\begin{equation}
+ u(r)=ce^{-\kappa_0r}+\int_r^\infty
+ \frac{\sinh(\kappa_0(s-r))}{\kappa_0}q_f(s)u(s)\,\dd s,
+ \qquad q_f=-2f^2+\tfrac32f^4.
+\end{equation}
+Differentiation proves $u''-\kappa_0^2u=q_fu$ and the profile equation.
+The first bound in \eqref{supp:profile-errors} follows from the
+self-map estimate; for the second use
+\begin{equation}
+ e^{\kappa_0r}u'(r)+\kappa_0c
+ =-\int_r^\infty\frac{1+e^{-2\kappa_0(s-r)}}{2}
+                   q_f(s)\widetilde u(s)\,\dd s.
+\end{equation}
+The same integral majorant gives $2\kappa_0\eta_0$ at $L$.
+The integral tails vanish at infinity, proving the asserted normalization.
+For a fixed profile-row scale $s_1$ and $E_0=e^{-\kappa_0L}$,
+the resulting matching-map corrections satisfy
+\begin{equation}
+ |E_1|\leq |s_1|E_0\eta_0/L,\qquad
+ |E_2|\leq |s_1|E_0(2\kappa_0\eta_0/L+\eta_0/L^2).
+\end{equation}
+
+\subsection{Decaying mode: the two angular sectors}
+\label{supp:jost-tail}
+Put $dV=-4f^2+\tfrac92 f^4$, $C=-2f^2+3f^4$ and
+$q_J=|dV|+|C|\leq6f^2+\tfrac{15}{2}f^4$. A common integral bound is
+\begin{equation}
+ Q=\frac{(6+\tfrac{15}{2}\bar f^2)m^2e^{-2\kappa_0L}}
+          {2\kappa_0L^2}\geq\int_L^\infty q_J(s)\,\dd s.
+\end{equation}
+Assume $k=\sqrt{(\omega+\rho)^2-1}>0$ and
+$\kappa_c=\sqrt{1-(\omega-\rho)^2}>0$. Normalize
+$(\widetilde A,\widetilde B)=e^{\kappa_cr}(A,B)$.
+For $\ell=0$ their Volterra equation has free term $(0,1)$ and kernels
+\begin{equation}
+ K_A=e^{-\kappa_c(s-r)}\frac{\sin(k(s-r))}{k},\qquad
+ K_B=\frac{1-e^{-2\kappa_c(s-r)}}{2\kappa_c}.
+ \label{eq:proof-l0-kernels}
+\end{equation}
+The first kernel multiplies $dV\widetilde A+C\widetilde B$ and the
+second multiplies $dV\widetilde B+C\widetilde A$.
+With $\mu=\max(1/k,1/(2\kappa_c))$ and $e_0=e^{\mu Q}-1$, one obtains
+\begin{align}
+ |\widetilde A|&\leq\frac{e_0}{\mu k},&
+ |\widetilde B-1|&\leq\frac{e_0}{2\mu\kappa_c},\nonumber\\
+ |e^{\kappa_cr}A'|&\leq
+  \left(\sqrt{1+\kappa_c^2/k^2}+\kappa_c/k\right)\frac{e_0}{\mu},&
+ |e^{\kappa_cr}B'+\kappa_c|&\leq\frac{3e_0}{2\mu}.
+ \label{supp:jost-l0-errors}
+\end{align}
+These bounds hold for all $r\geq L$.
+
+For $\ell=1$ define the free Riccati functions
+\begin{align}
+ j(x)&=\sin(x)/x-\cos(x),& y(x)&=-\cos(x)/x-\sin(x),\nonumber\\
+ d(u)&=e^{-u}(1+1/u),&g(u)&=e^u(1-1/u),\nonumber\\
+ G_A(r,s)&=\frac{j(kr)y(ks)-y(kr)j(ks)}{k},&
+ G_B(r,s)&=\frac{d(\kappa_cr)g(\kappa_cs)-g(\kappa_cr)d(\kappa_cs)}{2\kappa_c}.
+ \label{eq:proof-l1-kernels}
+\end{align}
+Here $K_{A,B}=e^{-\kappa_c(s-r)}G_{A,B}$ and the free term is
+$(0,1+1/(\kappa_cr))$. For $kL,\kappa_cL\geq1$ put
+\begin{align}
+ a_1&=\frac{1+(kL)^{-2}}{k},&a_2&=\sqrt{1+(kL)^{-2}},\nonumber\\
+ b_0&=1+(\kappa_cL)^{-1},&b_1&=\frac{b_0}{2\kappa_c},&
+ b_2&=1+(\kappa_cL)^{-1}+\tfrac12(\kappa_cL)^{-2}.
+ \label{eq:proof-l1-majorants}
+\end{align}
+Then $|K_A|\leq a_1$, $|K_B|\leq b_1$,
+$|e^{-\kappa_c(s-r)}\partial_rG_A|\leq a_2$ and
+$|(\partial_r-\kappa_c)K_B|\leq b_2$.
+With $\mu=\max(a_1,b_1)$ and $e_1=b_0(e^{\mu Q}-1)/\mu$ the four
+errors in normalized physical Cauchy data are bounded by
+$(a_1,b_1,a_2,b_2)e_1$ about
+\begin{equation}
+ J_0=\left(0,1+\frac1{\kappa_cL},0,
+              -\kappa_c-\frac1L-\frac1{\kappa_cL^2}\right).
+\end{equation}
+In particular $e^{\kappa_cr}(|A|+|B|)\leq b_0+(a_1+b_1)e_1$.
+
+\noindent\emph{Proof.}
+For $\ell=0$, the kernels have bounds $1/k$ and $1/(2\kappa_c)$.
+The $n$th ordered Volterra iterate is bounded by $(\mu Q)^n/n!$.
+Thus the series converges uniformly and
+$\psi=\max(|\widetilde A|,|\widetilde B|)\leq e^{\mu Q(r)}$,
+where $Q(r)=\int_r^\infty q_J$. Since
+$\int_r^\infty q_J(s)e^{\mu Q(s)}\,\dd s=(e^{\mu Q(r)}-1)/\mu$,
+the value bounds follow. Differentiating the kernels gives
+$|\partial_rK_A|\leq\sqrt{1+\kappa_c^2/k^2}$ and
+$|\partial_rK_B|\leq1$; subtracting $\kappa_c$ times the normalized
+values gives the displayed conservative physical derivative bounds.
+Twice differentiating the integral equations proves the radial ODE.
+
+For $\ell=1$, direct differentiation gives
+$W_x(j,y)=1$, $j^2+y^2=1+x^{-2}$ and
+$j'^2+y'^2=1-x^{-2}+x^{-4}\leq1$ for $x\geq1$.
+Cauchy--Schwarz yields $a_1,a_2$. The normalized closed kernel is
+\begin{equation}
+ K_B=\frac{(1+1/u)(1-1/v)-e^{-2(v-u)}(1-1/u)(1+1/v)}{2\kappa_c},
+ \quad v=\kappa_cs\geq u=\kappa_cr\geq1.
+\end{equation}
+Both terms are nonnegative before subtraction; the first dominates,
+so $0\leq K_B\leq b_0/(2\kappa_c)$. Differentiating gives the stated
+$b_2$ bound (it concerns $(\partial_r-\kappa_c)K_B$, not
+$\partial_rK_B$). More explicitly, twice the absolute normalized physical
+derivative kernel is
+\begin{equation}
+ (1+u^{-1}+u^{-2})(1-v^{-1})
+ +e^{-2(v-u)}(1-u^{-1}+u^{-2})(1+v^{-1})
+ \leq 2+2u^{-1}+u^{-2}.
+\end{equation}
+The inequality follows by replacing the exponential by one, leaving
+$2+2u^{-2}-2/(uv)$, which is at most the right-hand side for $u\geq1$.
+The ordered-series argument now starts with a free term bounded by $b_0$.
+It gives $\psi\leq b_0e^{\mu Q(r)}$ and the four errors above.
+In both sectors the correction tends to zero, so
+$e^{\kappa_cr}B\to1$ and the Jost solution is nonzero.
+If $(E_A,E_B,E_{A'},E_{B'})$ denotes these four normalized Cauchy-data
+error bounds and $s_3$ is the fixed Wronski-row scale, then
+\begin{equation}
+ |E_{2+i}|\leq |s_3|\bigl(E_A|A_i'(L)|+E_B|B_i'(L)|
+                    +E_{A'}|A_i(L)|+E_{B'}|B_i(L)|\bigr),\quad i=1,2.
+\end{equation}
+The core values on the right are enclosed over the entire parameter box.
+The exact dyadic scales $s_1,s_3$ change conditioning, not the zero set.
+
+\subsection{Continuity on the parameter box}
+The profile contractions use common upper bounds over the whole box,
+with $\inf\kappa_0>0$ and $\sup\Lambda<1$. Their kernels vary
+continuously and have a common integrable majorant. For two parameter
+values $z,z'$, the fixed points obey
+\begin{equation}
+ \|\widetilde u_z-\widetilde u_{z'}\|_\infty
+ \leq\frac{1}{1-\Lambda}
+       \sup_{u\in X'}\|(T_z-T_{z'})u\|_\infty\longrightarrow0,
+\end{equation}
+where a common ball $X'$ contains both fixed points.
+Dominated convergence also gives continuity of the profile matching
+derivative. The Jost Picard iterates are continuous in parameters and
+converge uniformly with the common factorial bound. Their normalized
+Cauchy data are therefore continuous. Regular core solutions depend
+smoothly on parameters. Consequently every component of the tail
+correction $E$ in the finite-dimensional matching problem is continuous.
+
+\subsection{Validated Taylor steps and the origin}
+\label{supp:taylor}
+Consider $y'=F(r,y)$ at a positive center $r_j$. Let a complex square
+$\mathcal D$ of half-side $R$ enclose $|r-r_j|\leq R$, and let $B$ be a
+compact product of complex rectangles. Suppose $F$ is analytic on a
+neighborhood of these sets and the interval test
+\begin{equation}
+ Y_0+\mathcal D_0 F(r_j+\mathcal D_0,B)\subset B,
+ \qquad R<r_j,
+ \label{supp:taylor-test}
+\end{equation}
+is satisfied, where $\mathcal D_0=\mathcal D-r_j$ and $Y_0$ encloses
+all initial values. If $\beta_i$ bounds the distance of component $B_i$
+from its chosen center, the Taylor coefficients obey
+$|y_{i,n}|\leq\beta_iR^{-n}$ for $n\geq1$. For $N\geq1$ and
+$0<h<R$, $q=h/R$, the enclosed endpoint is
+\begin{equation}
+ y_i(r_j+h)\in\sum_{n=0}^{N-1}y_{i,n}h^n+
+ \left[-\frac{\beta_iq^N}{1-q},\frac{\beta_iq^N}{1-q}\right].
+ \label{supp:taylor-remainder}
+\end{equation}
+
+\noindent\emph{Proof.}
+The Picard operator along straight complex segments maps analytic
+functions valued in $B$ into the same set by \eqref{supp:taylor-test}.
+Convexity justifies the segment average. Analyticity supplies a finite
+Lipschitz constant on the enclosing set; on the disk $|r-r_j|\leq R$,
+iterated differences have bound $(\Lambda_T R)^m/m!$. Picard iteration therefore converges
+uniformly to the unique analytic solution. Cauchy's coefficient bound
+for $y_i$ minus the center of $B_i$, first on $R'<R$ and then as
+$R'\uparrow R$, gives the coefficient estimate. Summing the geometric
+series gives \eqref{supp:taylor-remainder}. Interval recursion encloses
+the retained coefficients. How the trial box was found does not affect
+this implication: only the verified inclusion accepts the step.
+The condition $R<r_j$ keeps both $2/r$ and, for $\ell=1$, $2/r^2$
+analytic. It applies only to positive-center steps.
+
+At the origin write $N(f)=(1-\omega^2)f-2f^3+\tfrac32f^5$. The
+regular profile solves
+\begin{equation}
+ f(r)=a+r^2\int_0^1\tau(1-\tau)N(f(\tau r))\,\dd\tau,
+ \qquad f'(r)=r\int_0^1\tau^2N(f(\tau r))\,\dd\tau.
+\end{equation}
+These formulas follow by integrating $(r^2f')'=r^2N(f)$ twice.
+They give the enclosure masses $R^2/6$ and $R/3$ and the recurrence
+$(n+2)(n+3)f_{n+2}=[N(f)]_n$. The derivative remainder uses its own
+box for $f'$, not a differentiated endpoint error. Profile parameter
+variations obey the same integral operator with source
+$N'(f)\partial_pf+\partial_pN$.
+For the origin step let $\mathcal D_R$ enclose the complex disk
+$|r|\leq R$, and let $\mathcal D_R^{[2]}$ enclose
+$\{r^2:|r|\leq R\}$. The validated a priori condition is
+\begin{equation}
+ a+\tfrac16\mathcal D_R^{[2]}N(B_f)\subset B_f,
+ \qquad B_{f'}=\tfrac13\mathcal D_R N(B_f).
+\end{equation}
+It is checked componentwise over the full parameter box, with the same
+condition for each differentiated source. Only this verified
+self-inclusion permits the analytic Picard construction and the Cauchy
+bound for the start; the derivative remainder uses $B_{f'}$.
+
+For $\ell=0$, the mode equation is nonsingular at zero.
+For $\ell=1$ set $A=r^2\alpha$, $B=r^2\beta$; the centrifugal term
+cancels and each regular component satisfies $y''+4y'/r=F$ with
+\begin{equation}
+ y(r)=y(0)+\frac{r^2}{3}\int_0^1\tau(1-\tau^3)F(\tau r)\,\dd\tau,
+ \qquad y'(r)=r\int_0^1\tau^4F(\tau r)\,\dd\tau.
+\end{equation}
+The enclosure masses are $R^2/10$ and $R/5$, with recurrence
+$(n+2)(n+5)y_{n+2}=F_n$, $y_1=0$. For the joint source box $B$,
+the corresponding verified componentwise conditions are
+\begin{equation}
+ y(0)+\tfrac1{10}\mathcal D_R^{[2]}F(B)\subset B_y,
+ \qquad B_{y'}=\tfrac15\mathcal D_R F(B).
+\end{equation}
+They apply also to the parameter-variation sources. Under these
+self-inclusions, Volterra iteration on the disk
+has factorial convergence as above; the Cauchy remainder applies to
+both $y$ and $y'$. The two regular columns have initial data
+$(\alpha(0),\beta(0))=(1,0),(0,1)$ and zero derivatives.
+At the first positive endpoint $h_0$, use the exact conversion
+$A=h_0^2\alpha$, $A'=2h_0\alpha+h_0^2\alpha'$ (and likewise for $B$).
+The parameter-variation equations use the differentiated sources and
+the same origin construction. Thus the start is an enclosed regular
+solution, rather than prescribed approximate data at a small radius.
+For completeness, the core Jacobian calculation evolves the profile
+and its $a,\omega$ derivatives, the two regular mode columns, and
+their $a,\rho,\omega$ derivatives as one system of 38 real components.
+In particular, with $S=f^2$,
+$\partial_pS=2f\partial_pf$,
+$\partial_pdV=(9S-4)\partial_pS$ and
+$\partial_pC=(6S-2)\partial_pS$. The explicit frequency derivatives
+are obtained from $-(\omega\pm\rho)^2$, while the profile source
+has $\partial_\omega N=-2\omega f$. The parameter $c$ enters the
+profile tail matching, not the core initial-value problem.
+
+\subsection{Wronski matching, positivity and smoothness}
+\label{supp:matching-positive}
+For a symmetric radial matrix $M$, the bilinear form
+$W(X,Y)=X\cdot Y'-X'\cdot Y$ is constant because
+$W'=X\cdot MY-MX\cdot Y=0$. For $\ell=0$ choose
+$R_i(0)=0$, $R_i'(0)=e_i$; then $W(\Psi,R_i)=\Psi_i(0)$.
+For $\ell=1$, the Frobenius exponents are $2$ and $-1$. Choose regular
+columns $R_i\sim r^2e_i$ and singular columns $S_i\sim r^{-1}e_i/3$.
+Since $W(r^{-1},r^2)=3$, $W(S_i,R_j)=\delta_{ij}$ and
+$W(R_i,R_j)=0$. Possible higher-order logarithmic terms do not change
+these limiting pairings. Therefore $W(\Psi,R_1)=W(\Psi,R_2)=0$
+removes the two singular coefficients. Profile matching equates the
+inner and outer Cauchy data; ODE uniqueness then gives one global
+profile and the Jost mode belongs to the regular origin span.
+
+Suppose interval enclosures give $f>0$ on $[0,L_p]$ and
+$|f|<\sqrt{S_-}$ on $[L_p,L]$, where
+\begin{equation}
+ S_-=(2-\sqrt{4-6\kappa_0^2})/3,
+ \qquad 4-6\kappa_0^2>0.
+\end{equation}
+Then $V_f=\kappa_0^2-2f^2+\tfrac32f^4>0$ on that remaining interval.
+With $u=rf$, $u''=V_fu$ and both endpoint values positive, a negative
+interior minimum would have $u''=V_fu<0$, a contradiction. A zero
+minimum has $u=u'=0$ and forces the identically zero solution, also a
+contradiction. The positive exterior fixed point completes $f>0$.
+
+The origin series for $f$ is even. For $\ell=0$, the regular mode
+components $A,B$ are odd, so $A/r,B/r$ are even analytic functions.
+For $\ell=1$, $\alpha,\beta$ are even analytic and
+$(A/r)Y_{1m}=\alpha(r)(rY_{1m})$ is smooth, since $rY_{1m}$ is linear
+in Cartesian coordinates. The ODE and the exponentially decaying
+exterior bounds propagate decay to derivatives. This establishes
+smooth exponentially localized spatial fields in the two stated sectors.
+
+\subsection{Geometric radial simplicity and its extra inequality}
+\label{supp:simplicity}
+Assume additionally $2\kappa_0>\kappa_c$. Every solution $\Phi$ that is
+square integrable on $[L,\infty)$ is a multiple of the constructed
+Jost solution $\Psi$.
+
+\noindent\emph{Proof.}
+Bounded coefficients imply $\Phi''\in L^2$. The interpolation estimate
+on overlapping unit intervals gives $\Phi'\in L^2$; hence
+$\Phi,\Phi'\to0$. Two oscillatory comparison solutions can be
+constructed by Volterra iteration about $(\cos kr,0),(\sin kr,0)$
+for $\ell=0$, or $(j(kr),0),(y(kr),0)$ for $\ell=1$.
+In the closed component the unnormalized Green kernel grows at most
+as a constant times $e^{\kappa_c(s-L)}$, while the coupling is bounded
+by a constant times $e^{-2\kappa_0s}/s^2$. The assumption makes their
+product integrable. The ordered Picard series and its differentiated
+series converge, with corrections tending to zero. Their mutual
+Wronskian is $k\ne0$; both are Wronski-orthogonal to the decaying
+$\Psi$. They and $\Psi$ span a three-dimensional subspace of the
+four-dimensional space of radial Cauchy data: a nonzero combination
+of the oscillatory asymptotes cannot decay. Since $\Phi,\Phi'\to0$,
+$\Phi$ is Wronski-orthogonal to this whole subspace. The Wronski form
+on Cauchy data is nondegenerate, so this orthogonal complement is
+one-dimensional and contains $\Psi$. It is precisely its span.
+
+The inequality $2\kappa_0>\kappa_c$ is needed for this comparison
+construction, not inferred from existence of the localized mode.
+For C0 the recorded lower bound on $2\kappa_0-\kappa_c$ is $0.375236$,
+separately checked but omitted from the historical aggregate success
+flag. The C1/C2 drivers include the condition. This appendix retains
+that audit qualification and does not silently replace the C0 driver.
+The conclusion is geometric simplicity in a fixed radial sector;
+the $\ell=1$ angular degeneracy, algebraic multiplicity, Jordan chains
+and stability are separate questions.
+
+\subsection{Brouwer inclusion with a continuous correction}
+Let $Z=z_0+[-\delta,\delta]$, $H=H_0+E$ continuous, $H_0\in C^1$,
+$DH_0(Z)\subset D$ and $|E|\leq\epsilon$ componentwise. The inclusion
+and weighted matrix bound in the main text imply a zero of $H$ in $Z$.
+Indeed, the mean-value formula encloses $z-YH_0(z)$ by
+$z_0-YH_0(z_0)+(I-YD)[-\delta,\delta]$; adding $-YE$ gives a
+self-map of $Z$. Brouwer supplies $z_*$ with $YH(z_*)=0$.
+Let $A=DH_0(z_0)$. The weighted row bound implies the operator norm of
+$I-YA$ is less than one in the box-weighted maximum norm. Thus $YA$
+is invertible, as is $Y$, and $H(z_*)=0$. Neither differentiability
+of $E$ nor uniqueness of the parameter zero follows from this argument.

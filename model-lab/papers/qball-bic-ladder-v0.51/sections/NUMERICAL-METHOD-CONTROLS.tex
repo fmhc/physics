@@ -1,0 +1,35 @@
+\section{Separate numerical-method controls}\label{app:method-controls}
+The original finite-correlation field calculation remains a numerical
+acceptance failure, and no accepted OU mean is inferred from it. A separate
+constant-source control exposed a finite-step defect in the RK4 quadratic
+balance: an exact finite-step RK4 identity reproduced the stored endpoint and
+accumulated-rate discrepancies, within the prescribed floating-point
+comparison tolerances, for 27 case--step combinations sampled at 31 times
+each. This identifies the numerical mechanism in those controls, not the
+complete cause of the earlier spatial-field failure. A subsequent two-stage
+Gauss control evaluated nine constant-system cases (three damping rates and
+three complex sources) at three time steps. Its recorded acceptance checks
+passed, including independent exact-state and directly integrated-rate
+references at the finest step, the prescribed error non-growth checks, and
+rejection of an intentionally incorrect rate. The conclusion therefore does
+not rest solely on Gauss's algebraic quadratic-balance property. These
+controls alone do not validate the original physical-pulse field calculation
+or decide the OU-versus-Wiener comparison; the subsequent prescribed-pulse
+calculation is reported separately in this supplement.
+
+A subsequent spatial adapter used a smooth manufactured solution on the actual
+finite operator with $R=20$, $h=0.04$ and 499 interior nodes, through $T=1$.
+It covered nine damping rates $\lambda=1,11,\ldots,81$ and a separate zero
+control at time steps $0.005$, $0.0025$ and $0.00125$.
+Independent full-state references and direct integral references for five
+original rates and three modified quadratic rates passed their finest-step
+accuracy checks and prescribed error non-growth checks, with a non-author
+result review supporting the recorded outcome.
+This control alone validates only the manufactured solution, not the prescribed
+physical pulse, an OU mean, or a continuum limit.
+The archive's provenance inventory identifies the separate fixed plans,
+results and non-author reviews for these controls, the physical-pulse
+comparison, its exterior sensitivity, signed lag kernel, angular second
+variation, compensated-energy comparison and local-clock test. These are
+historical numerical controls and stored-data diagnostics, rather than
+new physical findings or interval-certified integration errors.

@@ -1,6 +1,6 @@
 # Results: what is computed, with limits
 
-Status 2026-10-10; the original findings below retain their earlier scope. This page lists findings of this notebook, with
+Status 2026-10-29 (new section below); the original findings retain their earlier scope. This page lists findings of this notebook, with
 method, number, limits and the source file. Everything here is a **synthetic model computation**: no finding is a
 confirmation by measured data, none is peer-reviewed, and most text and code was written by AI systems under human
 direction ([BETEILIGTE.md](BETEILIGTE.md)). The source files are in German.
@@ -17,6 +17,69 @@ establish physical validity or external independent reproduction.
 The model architecture (Regge gravity + discrete exterior calculus Maxwell + scalar field on one simplicial complex) is
 known from the literature, e.g. McDonald and Miller 2010. What is our own are the computations on the specific filled
 tetrahedral network "V" and its time-extended "tent" version.
+
+## Status 29 Oct 2026
+
+Two additions since the overview of 21 Oct 2026. Earlier subjective maturity estimates are not raised. The internal result files of
+the gluon work are not published here; figures and plotted values are in
+[assets/stand-20261029/](assets/stand-20261029/README.md).
+
+### Q-ball preprint 0.51 released
+
+*Radiative cancellations and localized linear modes in three-dimensional sextic Q-balls* (Finn Hinrichsen, preprint
+0.51): sources in [model-lab/papers/qball-bic-ladder-v0.51/](model-lab/papers/qball-bic-ladder-v0.51/README.md), PDF and
+companion archive in release [qball-bic-v0.51](https://github.com/fmhc/physics/releases/tag/qball-bic-v0.51). A continuum
+field model, not a computation on the network. Not peer reviewed; no measured data.
+
+- **Computer-assisted existence:** three localized linear modes (radial C0, C1; dipole C2) on the infinite radial
+  domain (interval interior enclosures plus analytic exterior estimates). Trust assumptions: proof code and
+  ball-arithmetic library. Certificate runs repeated with unchanged code for 0.51 (byte-identical step records): a
+  reproduction of the same implementation, not an independent one.
+- **Numerical only:** further ladder candidates up to index 18; an unfitted planar spacing candidate. A finite-order
+  absolute-location test failed and is reported in the paper.
+- **Conditional:** a second-harmonic monopole coefficient is separated from zero under audited hypotheses, obstructing
+  a specified uniformly localized smooth continuation for linked dipole polarizations with p·p ≠ 0.
+- **Open:** quadrupole certificate (circular polarization), stability (dQ/dω not evaluated), an independent interval
+  implementation, an end-to-end replay of the nonlinear evidence chain (archived with hash closure only).
+- Licences: text, figures, data and certificates CC BY 4.0; code MIT. AI tools: Claude (Anthropic), Codex (OpenAI).
+
+### Gluon sector on BCC-r\* × Z (since 28 Oct 2026)
+
+- **Change of course.** On the evening of 28 Oct 2026 the project lead moved the focus: hydrogen and percent-level
+  targets are paused; first, pure SU(3) gauge theory (gluons only) is computed on the BCC-r\* × Z lattice. Reason:
+  gradient-flow measurements had shown that the lattice spacing is not yet under control at β ≤ 6.5.
+- **Assumptions, not proofs:** [W-BAL] Balaban's UV stability of lattice Yang–Mills theory (Wilson action,
+  hypercubic); [W-YM] the Clay statement (existence on R⁴ and a mass gap); [W-U] universality: the cubic lattice and
+  BCC-r\* × Z have the same continuum limit. [W-BAL] is hypercubic only; the bridge to the BCC lattice rests on [W-U]
+  alone. **Confinement is explicitly open:** string tension and T_c are to be measured on this lattice, not target values.
+- **Computed [R]** (quenched SU(3), Wilson action, Monte Carlo, synthetic; small boxes L = 4–7a, 22–100 configurations):
+  - *Scale (Fig. G1):* clover t₀/a² rises from 0.2446(4) at β = 6.0 to 0.5006(115) at 6.7, i.e. a(t₀) ≈ 0.34 → 0.24 fm
+    (convention r₀ = 0.5 fm [W]). The plaquette definition gives up to 2.7 times smaller t₀; there is no
+    definition-independent scale yet. From β = 6.6 on, a drops faster than two-loop running; crossover, box or
+    definition effect is open.
+  - *Control ratio K = √t₀/w₀ (Fig. G2):* clover approaches the continuum value 0.9796 from +20 % (β = 6.0) to +7.7 %
+    (6.7). The pre-registered 10 % gate is passed **only for the clover definition**; plaquette is −23 % off at 6.7.
+  - *Topology (Figs. G3, G4):* t₀²χ_t rises from 0.4×10⁻⁴ (β = 6.0) to 3.6(6)×10⁻⁴ (6.7, 7³×10 box), versus
+    6.67×10⁻⁴ in the continuum (cubic lattices, literature). The charge does not become integer under smoothing and keeps
+    growing; there is no continuum band.
+  - *Improved BCC action:* one extra loop with positive weights removes the O(a²) error of the free gluon dispersion
+    isotropically [A, R]; implemented and checked in the free field only.
+- **Failed or corrected:** topology at β = 6.5 (factor 0.11 below the continuum) and the topology plateau at 6.7
+  (borderline; about 1.7σ under an AR(1)-based error-inflation estimate, a longer-block reanalysis is pending) miss their pre-registered gates; an "in band" hit at 6.7 was selected after looking at the
+  data and is descriptive only. The glueball attempt found no plateau in the 0++ channel. At β = 7.0 the flow does not
+  reach t₀ in the 5³ box. β = 6.8 is box-limited and descriptive only; a volume check there is UNRESOLVED because hot-
+  and cold-start chains disagree (not yet cross-read). Several pre-registered predictions (convergence of K, β\* of the
+  improved action, t₀²χ_t at 6.0/6.5) were missed and are reported as such.
+- **New, not yet cross-read (29 Oct):** a bulk-crossover test finds the maximum of the plaquette slope dP/dβ at
+  β ≈ 6.63 at the same place in three box sizes, and its height does not grow with the volume [R]. This is consistent
+  with a lattice crossover, as known from cubic lattices, not with a phase boundary of the continuum theory; the evidence
+  is thin (120–200 measurement sweeps per chain), an indication rather than an end-point proof. At β = 6.8 hot- and
+  cold-start chains also separate on the 6³×8 box; [H] more likely a slowly decaying ordered state of the small box than
+  a first-order jump. Under this preliminary interpretation, many earlier findings lie in or below the suspected
+  crossover region; β = 6.8 remains unresolved because of the separate hot/cold discrepancy. A new working point
+  β = 7.0 with boxes M ≥ 8 and a mandatory hot/cold test is therefore planned; it is not yet physically validated.
+- **Running and planned:** tree-level correction of the flow, Λ parameter of the improved action (no result yet);
+  planned a cubic-lattice twin for direct comparison and T_c at N_t = 4 and 6.
 
 ## Stand 10.10.2026 (synthetisch, explorativ)
 

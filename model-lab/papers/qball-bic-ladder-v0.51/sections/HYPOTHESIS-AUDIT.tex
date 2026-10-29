@@ -1,0 +1,231 @@
+\section{Dependency audit for the monopole coefficient}
+\label{supp:hypothesis-audit}
+The five hypotheses in the main text describe dependencies of the
+coefficient enclosure. The scalar summation alone does not prove its
+input lemmas. This register distinguishes inherited computer-assisted
+results, analytic implications, conventions and the additional
+regularity assumption on a hypothetical nonlinear family. The
+accompanying archive is distributed with release \texttt{qball-bic-v0.51}
+(see the data availability statement of the main paper).
+
+\subsection{Status of the five dependencies}
+\begin{enumerate}
+\item\textbf{Common exact background and mode: inherited existence result.}
+The defining C2 certificate, \texttt{ZERT-T2-A-L36.json} in
+\texttt{archive/proofs/C1-C2/}, encloses one common exact tuple
+$z_*=(a_*,c_*,\rho_*,\omega_*)$. The analytic implication is the
+linear theorem together with the origin, tail and inclusion lemmas in
+Section~\ref{supp:proof-lemmas}. All following enclosures refer to this
+same tuple. Neither a distinct fit nor every point in the parameter box
+is assumed to be an exact root. The code and arithmetic trust assumption
+is inherited; uniqueness of the tuple is unnecessary.
+
+\item\textbf{Regular/Jost identification: inherited Wronski argument.}
+At this tuple, the two exact matching Wronskians vanish, so the
+normalized decaying Jost vector belongs to the two-dimensional regular
+origin span. Section~\ref{supp:matching-positive} supplies this analytic
+step. The archived matching-component bounds enclose its coefficients
+in that span. Their residual intervals containing zero would not, by
+themselves, establish a common solution. The exterior evaluation binds
+the C2 box and verifies the rational majorants
+\begin{equation}
+ |f_*(r)|\leq\frac{97}{8}\frac{e^{-0.495r}}{r},\qquad
+ |u(r)|+|v(r)|\leq1.097e^{-0.287r},\qquad r\geq36.
+ \label{supp:exact-tails}
+\end{equation}
+These are the fundamental mode's reduced components and Jost
+normalization, not unit-$L^2$ data.
+
+\item\textbf{Source and normalization: definition plus checked binding.}
+The exact source is the full quadratic product in the main text.
+The fixed nominal unit-$L^2$ mode is divided by
+$s_0=2558188928468177/2251799813685248$, and quadratic quantities by
+$s_0^2$. This exact rational conversion defines the comparison data;
+it does not set the exact mode's $L^2$ norm equal to $s_0$.
+The source and response exports use the same nominal functions and
+carrier conjugation. Exact-to-nominal errors remain in the budget.
+This item is a convention and input-identity check, rather than a
+new existence assumption. The archive's normalization and error-identity
+lemmas specify it independently of the stored scalar sum.
+
+\item\textbf{Exact outgoing problem: analytic implication with checked inputs.}
+The reduced second-harmonic operator has a real symmetric locally
+bounded potential and both $q_\pm$ strictly between $5/2$ and $23/5$.
+These inequalities are checked over the same exact C2 box. The exterior
+evaluation gives, at $R=64$,
+\begin{equation}
+ \int_{64}^{\infty}\|V_*\|_2\,\dd r<10^{-28},\qquad
+ \int_{64}^{\infty}\|F_*\|_2\,\dd r<10^{-32}.
+ \label{supp:exterior-masses}
+\end{equation}
+In particular the contraction condition
+$\int_R^\infty\|V_*\|_2/q_{\min}<1/2$ is verified at the exact
+frequencies. The construction below includes the exterior source and
+proves the unique regular outgoing problem and its adjoint extraction.
+Thus this item is not an untested numerical Robin-condition assumption.
+It still depends on the inherited exact-mode and tail lemmas and the
+correctness of their validated evaluation.
+
+\item\textbf{Quantitative bounds and complete budget: checked inputs and sum.}
+The complete-potential enclosure gives
+$\int_0^\infty\|V_*\|_2\,\dd r<25/4$. The analytic argument below
+therefore supplies $\|Z\|_2<26/5$, $\|Z'\|_2<14$ for the exact
+adjoint. The archived component budget bounds source and operator
+errors, the actual reconstructed response residual, origin terms,
+matching jumps, exterior corrections and coefficient extraction.
+Its classification is a satisfied conditional coefficient criterion;
+there is no unfilled numerical summand in this $L=0$ budget.
+Accepting the historical input chain and its directed-arithmetic
+execution remains a trust assumption, rather than a new independent
+verification performed for this manuscript revision.
+\end{enumerate}
+
+All five items have identified analytical or computational support.
+The adjective \emph{conditional} records this inherited proof chain and
+its software assumptions; it does not designate an omitted term of the
+reported scalar budget. The separate assumption that a hypothetical
+nonlinear family is twice continuously differentiable in a fixed
+weighted space restricts the family excluded by the continuation
+argument. The circular-polarization case and a quantitative quadrupole
+nonzero certificate remain outside this monopole conclusion.
+
+\subsection{Exterior reduction and unique outgoing response}
+Let $-U''-Q^2U+VU=F$, with $Q=\operatorname{diag}(q_+,q_-)$ and
+$q_j\geq q_{\min}>0$. In the computational convention both outgoing
+carriers are $e^{iq_jr}$. Define
+\begin{equation}
+ (Kg)(r)=\int_r^\infty Q^{-1}\sin(Q(s-r))g(s)\,\dd s,\quad
+ E(r)=e^{iQr},\quad H=E+KVH,\quad p=KVp-KF.
+\end{equation}
+Set $A_R=\int_R^\infty\|V\|_2$, $B_R=\int_R^\infty\|F\|_2$,
+$\eta=A_R/q_{\min}<1/2$, $\delta=\eta/(1-\eta)$ and
+$\gamma_R=1/(1-\delta)$. Neumann inversion on bounded functions gives
+\begin{equation}
+ \|H\|\leq\frac1{1-\eta},\quad \|H-E\|\leq\delta,\quad
+ \|H'-E'\|\leq\frac{A_R}{1-\eta},\quad
+ \|p\|\leq\frac{B_R}{q_{\min}(1-\eta)},\quad
+ \|p'\|\leq\frac{B_R}{1-\eta}.
+\end{equation}
+The corrections and their first derivatives vanish at infinity.
+Since $E(R)$ is unitary and $\delta<1$, $H(R)$ is invertible with
+inverse norm at most $\gamma_R$. Thus $U=HC+p$ has the exact maps
+\begin{equation}
+ \begin{aligned}
+ T=H(R)^{-1},\quad c=-Tp(R),\quad D=H'(R)T,\quad
+ &b=p'(R)-Dp(R),\\
+ C=TU(R)+c,\qquad &U'(R)=DU(R)+b.
+ \end{aligned}
+\end{equation}
+The source contributes both $b$ and $c$. Dropping it would change the
+problem even if the homogeneous maps were exact.
+For $d_R=[A_R/(1-\eta)+q_{\max}\delta]\gamma_R$, the bounds are
+\begin{equation}
+ \|T-E(R)^{-1}\|\leq\delta\gamma_R,\quad
+ \|D-iQ\|\leq d_R,\quad
+ \|c\|\leq\gamma_R\|p\|,\quad
+ \|b\|\leq\|p'\|+(q_{\max}+d_R)\|p\|.
+\end{equation}
+They follow by inserting $H-E$ into the inverse identity and into
+$H'-iQH$; all matrix products keep their displayed order.
+
+For real symmetric $V$, the conserved matrix current is
+$(H^\dagger H'-H'^\dagger H)/(2i)=Q$. Consequently
+\begin{equation}
+ \frac{D-D^\dagger}{2i}=H(R)^{-\dagger}QH(R)^{-1}>0.
+\end{equation}
+A homogeneous regular solution $U(0)=0$ satisfying $U'(R)=DU(R)$
+has real interior Green energy. Its boundary imaginary part is positive
+unless $U(R)=0$. Hence both Cauchy data vanish and $U=0$.
+The finite regular-to-boundary matrix is therefore invertible, which
+proves existence and uniqueness for the inhomogeneous boundary data.
+The adjoint problem uses $D^\dagger$ and has negative definite boundary
+imaginary part, so the same argument proves its uniqueness.
+This reasoning applies to the two open second-harmonic channels.
+The fundamental embedded mode has a closed channel and does not satisfy
+this positivity premise.
+
+\subsection{Global adjoint weights and the error identity}
+Let $A(r)=\int_r^\infty\|V(s)\|_2\,\dd s$ and
+$h(r)=e^{A(r)/q_{\min}}$. Ordered Volterra iteration on the whole
+half-line gives outgoing and incoming matrices $H_\pm$ with
+\begin{equation}
+ \|H_\pm(r)\|_2\leq h(r),\qquad
+ \|H_\pm'(r)\|_2\leq q_{\max}+q_{\min}(h(r)-1).
+\end{equation}
+No smallness condition on $A(0)$ is required: the $n$th integral has
+bound $(A(r)/q_{\min})^n/n!$. The conserved sesquilinear Wronskians are
+$W(H_\pm,H_\pm)=\pm2iQ$, with zero cross-pairings. If
+$\Phi(0)=0$, $\Phi'(0)=I$, then
+$Z=\Phi H_+(0)^{-\dagger}$ obeys $W(H_+,Z)=I$ and $W(Z,Z)=0$.
+Invertibility of $H_+(0)$ follows directly from its positive current.
+Writing $Z=H_+C_++H_-C_-$ gives
+$C_+=(2iQ)^{-1}$ and $C_-^\dagger QC_-=(1/4)Q^{-1}$.
+It follows that $\|C_\pm\|_2\leq1/(2q_{\min})$ and therefore
+\begin{equation}
+ \|Z(r)\|_2\leq\frac{h(r)}{q_{\min}},\qquad
+ \|Z'(r)\|_2\leq\frac{q_{\max}}{q_{\min}}+h(r)-1.
+\end{equation}
+The checked $A(0)<25/4$, $q_{\min}=5/2$, $q_{\max}=23/5$ give
+$h(r)<e^{5/2}<13$ and the weights $26/5$, $14$. The rational estimate
+$e\leq87/32<11/4$, $\sqrt e<5/3$ yields
+$e^{5/2}<605/48<13$; it uses the exponential series remainder after
+$n=3$, bounded by $(1/24)/(1-1/5)$.
+
+For the fixed piecewise smooth nominal response $\widehat U$, define
+$ I_F=\int_0^R\|F_*-F_n\|_2$, $I_W=\int_0^R\|W_*-W_n\|_2\|\widehat U\|_2$,
+$I_R=\int_0^R\|L_n\widehat U-F_n\|_2$,
+$J_U=\sum\|[\widehat U]\|_2$, $J_D=\sum\|[\widehat U']\|_2$,
+$U_0=\|\widehat U(0)\|_2$ and $U_R=\|\widehat U(R)\|_2$.
+Integrating Green's identity on each smooth piece keeps the origin,
+jump and exterior boundary terms. Bounding each by the exact adjoint
+weights yields
+\begin{equation}
+ \|C_*-C_{\mathrm{num}}\|_2
+ \leq\frac{26}{5}(I_F+I_W+I_R+J_D+B)+14(J_U+U_0)+O,
+ \label{supp:complete-budget}
+\end{equation}
+where
+$B=\|b_*\|_2+\epsilon_DU_R+\|b_n\|_2$ and
+$O=\epsilon_TU_R+\|c_*\|_2+\|d_{\mathrm{out}}\|_2$.
+Here $\epsilon_D,\epsilon_T$ bound exact-to-nominal maps, $b_n$ is
+the nominal response's actual boundary mismatch and $d_{\mathrm{out}}$
+is its extraction difference from the fixed comparison coefficient.
+$W$ denotes the full reduced operator potential, including the
+frequency part. Thus frequency errors are retained in $I_W$, and
+exterior source terms occur in $b_*,c_*$ exactly once. The archived
+component result encloses every term of \eqref{supp:complete-budget};
+its positive second-channel margin is the one quoted in the main text.
+
+\subsection{Weighted regularity and the continuation assumption}
+The already derived weighted-regularity lemma permits $\gamma=1/10$.
+Here is its logical link to the exact data, without a new numerical
+Sobolev-norm calculation. From \eqref{supp:exact-tails}, write
+$a=0.495$, $b=0.287$. The profile equation gives
+$(r^2f')'=r^2N(f)$ with integrable right-hand side; hence
+\begin{equation}
+ f'(r)=\frac{\ell_\infty}{r^2}
+       -r^{-2}\int_r^\infty s^2N(f(s))\,\dd s.
+\end{equation}
+Integration yields $f(r)=-\ell_\infty/r+O(e^{-ar})$; the known
+exponential bound forces $\ell_\infty=0$, so $f'=O(e^{-ar})$.
+For the fundamental mode $y=(u,v)$, the bounded exterior matrix in
+$y''=M(r)y$ gives $y''=O(e^{-br})$. Its integrability gives a limit
+of $y'$, which must be zero because $y\to0$. Thus $y'=O(e^{-br})$.
+Twice differentiating these actual ODEs propagates the same rates through
+order four. This differentiates equations, not a modulus inequality.
+The origin expansions in Section~\ref{supp:matching-positive} give
+smooth Cartesian fields; the compact intermediate region is smooth.
+Cartesian derivatives through order four are finite sums of radial
+derivatives times bounded angular factors and inverse powers of $r$.
+After multiplication by $e^{\gamma\sqrt{1+r^2}}$, they remain square
+integrable because $a-\gamma>0$, $b-\gamma>0$. Thus the background
+and every finite complex combination of its three dipole tangents
+belong to $H^4_\gamma(\mathbb R^3)$.
+
+What remains an explicit assumption is that a hypothetical family is
+$C^2$ in amplitude in $C^2(\mathbb T;H^4_\gamma)$ with this one fixed
+positive weight, smooth real frequencies and the specified first
+harmonic tangent (possibly plus a static first tangent).
+The nonzero coefficient excludes that class. Pointwise smoothness at
+each radius, changing weights along the family, other first harmonics
+or circular polarization are not covered by this monopole argument.

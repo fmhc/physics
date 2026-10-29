@@ -1,0 +1,74 @@
+\paragraph{One prescribed temporal phase drift.}
+The constant-phase ensemble above does not determine the response to a
+phase varying during a pulse. As a separate finite comparison, we replaced
+the same delayed B/T1 source $S_d(t)$ by
+$S_{\delta,\theta_0}(t)=\exp[\ii\theta_0+\ii\delta(t-\Delta)]S_d(t)$,
+with the single preselected value $\delta=0.1$ against $\delta=0$.
+The multiplier acts on the entire complex source; the original envelope,
+carrier construction and delay are unchanged. It preserves the source
+magnitude pointwise and its integrated $L^2$ budget. For each detuning we
+independently evolved the responses to $S_{\delta,0}$ and
+$\ii S_{\delta,0}$ through $T=3$. Real linearity gives the response at
+$\theta_0$ as the cosine--sine combination of these two responses;
+the second is not assumed to be $\ii$ times the first.
+
+Averaging uniformly over the \emph{constant initial} phase $\theta_0$
+eliminates both the mixed quadrature term and the work cross term with
+any deterministic first-pulse field. Consequently the mean second-pulse
+laboratory source work is one half of the sum of the two isolated
+quadrature works. No first-pulse evolution was repeated; this reduction
+applies to the mean, not to phase-specific two-pulse work. With
+$(h,\Delta t)=(0.04,0.005)$ and $(0.02,0.0025)$, both means are positive
+on both discretizations. On the finer grid the mean increases from
+$1.133373236\times10^{-4}$ to $1.248632464\times10^{-4}$,
+a difference of $1.152592277\times10^{-5}$ (about $10.2\%$).
+
+The increase exceeds the predeclared diagnostic comparison guard
+$7.94\times10^{-11}$, which combines the change between discretizations,
+unshifted-work reproduction errors and energy-balance residuals.
+This guard is not a certified error bound; space and time resolution change
+together. The result establishes sensitivity of this nominal mean source
+work to one prescribed phase drift at equal source norm. It does not give
+a phase-noise or thermal model, an efficiency gain, or a claim about all
+detunings. The frozen-profile approximation, artificial $R=20$ boundary
+and omitted nonlinear backreaction remain unchanged.
+\paragraph{Local direction and one mirror detuning.}
+A follow-up fixed $d=0.1$ and added only the mirror source at $-d$ and
+the parameter tangent at zero. Writing $z=\partial_\delta q|_0$, the
+exact differentiated finite-grid equation has the same real-linear
+operator and forcing $\ii(t-\Delta)S_d$. Its numerical integration retains
+both derivatives of the work integrand, from the response and from the
+source, for each independently evolved quadrature. The zero-detuning
+basis trajectories are needed for these products; the first pulse is
+not repeated, and the $+d$ result is reused. For the uniform initial-phase
+mean $m(\delta)$, the finer grid gives $m'(0)\simeq1.1006065\times10^{-4}$
+in model units. Both grids resolve a positive slope with the prescribed
+empirical guard. The three fine-grid means remain positive:
+\begin{center}
+\begin{tabular}{rr}
+\toprule
+$\delta$ & Mean laboratory source work $m(\delta)$\\
+\midrule
+$-0.1$ & $1.0285198\times10^{-4}$\\
+$0$ & $1.1333732\times10^{-4}$\\
+$+0.1$ & $1.2486325\times10^{-4}$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Define the finite odd and even changes by
+$O_d=[m(d)-m(-d)]/2$ and
+$E_d=[m(d)+m(-d)-2m(0)]/2$.
+Their fine-grid values are approximately $1.1005634\times10^{-5}$ and
+$5.20289\times10^{-7}$; the residual
+$R_d=O_d-dm'(0)\simeq-4.31\times10^{-10}$ is small but not an exact
+identity or a certified Taylor remainder. The resolved positive odd
+change agrees with the local direction. This is a directional response
+of the fixed nominal actuator, not an identification of rotation as its
+cause: a free complex accelerator $q_{tt}=\exp[\ii(\kappa+\delta)t]$ already
+admits a nonzero detuning slope. More generally, uniform initial-phase
+averaging selects the normal causal response, whose work derivative is
+a lag-weighted imaginary response kernel; the carrier and field response
+enter it jointly. The two-grid guards are diagnostic, and the inherited
+profile, boundary and linearization limitations persist. No thermal,
+new-memory-mediator or efficiency conclusion follows.

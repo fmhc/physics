@@ -1,0 +1,61 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,graphicx,booktabs,longtable,array}
+\usepackage[margin=24mm]{geometry}
+\usepackage{microtype}
+\usepackage{xr-hyper}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue,pdfauthor={Finn Hinrichsen},pdftitle={Supplement to Radiative cancellations and localized linear modes in three-dimensional sextic Q-balls}]{hyperref}
+\externaldocument[][nocite]{main}[paper.pdf]
+\setlength{\emergencystretch}{2em}
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\ii}{\mathrm{i}}
+\renewcommand{\thesection}{S\arabic{section}}
+\renewcommand{\theequation}{S\arabic{equation}}
+\renewcommand{\thefigure}{S\arabic{figure}}
+\renewcommand{\thetable}{S\arabic{table}}
+\title{Supplement to ``Radiative cancellations and localized linear modes\\in three-dimensional sextic Q-balls''}
+\author{Finn Hinrichsen}
+\date{29 October 2026 --- Preprint 0.51}
+\begin{document}\maketitle
+This Supplement records the nonlinear coefficient's dependency audit,
+followed by exploratory driving, formation and numerical-control
+material retained from the earlier manuscript. The complete linear
+proof lemmas are in Appendix A of the main paper.
+The latter material is not evidence for additional localized linear modes.
+Equation and section references without an S prefix refer to the main paper.
+The companion archive is distributed with release \texttt{qball-bic-v0.51}
+(see the data availability statement of the main paper); text, data and
+certificates are licensed under CC BY 4.0, code under the MIT License.
+Historical records are preserved. This revision
+repeats the three primary linear certificate runs with unchanged proof
+code; it does not repeat the exploratory physical evolutions below.
+\tableofcontents
+\input{sections/HYPOTHESIS-AUDIT.tex}
+\section{Stored numerical response and figure diagnostics}
+\input{sections/RESPONSE-DIAGNOSTICS.tex}
+\subsection{Radial nonlinear diagnostics}\label{supp:c0-evidence}
+\input{sections/RADIAL-NONLINEAR-DIAGNOSTICS.tex}
+\input{sections/MODE-FIGURES.tex}
+\section{Dimensional and discretization comparisons}
+\input{sections/DIMENSIONAL-NUMERICS.tex}
+\input{sections/GRID-SENSITIVITY.tex}
+\input{sections/EXTRA-CHANNEL.tex}
+\clearpage
+\input{sections/APPENDIX-DRIVING.tex}
+\clearpage
+\input{sections/APPENDIX-FORMATION.tex}
+\clearpage
+\input{sections/NUMERICAL-METHOD-CONTROLS.tex}
+\section{Archive structure and evidential scope}\label{app:provenance}
+The companion archive is distributed with an inventory mapping
+original records to portable paths and SHA256 bindings distinguishing
+historical records from derived export copies. The three primary linear
+certificate runs were reproduced for this revision: their receipts agree
+with the originals after omitting four timing fields, and all six point
+and box step records are byte-identical. This does not validate a new
+implementation or reproduce the planar-wall comparison and nonlinear
+coefficient bound, which retain separate provenance. Failed sufficient
+checks and adaptive repetitions remain recorded with their original status.
+\input{sections/bibliography.tex}
+\end{document}
