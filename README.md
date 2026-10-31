@@ -36,6 +36,11 @@ Aktuelle Fassung ist der Preprint 0.52 vom selben Tag (Release
 [qball-bic-v0.52](https://github.com/fmhc/physics/releases/tag/qball-bic-v0.52), Quellen in
 [model-lab/papers/qball-bic-ladder-v0.52/](model-lab/papers/qball-bic-ladder-v0.52/README.md)): neu sind eine Widmung,
 ein allgemeinverständlicher Überblick und eine Übersichtsabbildung; Ergebnisse und Zahlen sind unverändert.
+**Nachtrag 31. Oktober 2026:** Aktuelle Fassung ist der Preprint 0.53 (Release
+[qball-bic-v0.53](https://github.com/fmhc/physics/releases/tag/qball-bic-v0.53) mit Begleitarchiv Revision 3, Quellen in
+[model-lab/papers/qball-bic-ladder-v0.53/](model-lab/papers/qball-bic-ladder-v0.53/README.md)): Leiter als ausdrückliche
+Vermutung, Grenzen und offene Fragen, numerische Ladungssteigung dQ/dω, Matching-Rechnung für die Indizes 5 und 11–14;
+kein Zertifikat oder Lemma geändert.
 Seit dem 28. Oktober rechnen wir zuerst die reine SU(3)-Eichtheorie (nur Gluonen) auf dem Netz BCC-r\* × Z; Universalität
 und Kontinuumsexistenz sind dabei Setzungen, Confinement ist offen. Erste Skalen- und Topologiebefunde, ihre Fehlschläge
 und Grenzen stehen im [Stand vom 29.10.](STAND-UND-NAECHSTE-SCHRITTE.md) und in
@@ -48,5 +53,5 @@ und Grenzen stehen im [Stand vom 29.10.](STAND-UND-NAECHSTE-SCHRITTE.md) und in
 - [Bewusste Ausschlüsse des öffentlichen Archivs](AUSSCHLUESSE.md)
 
 Texte, Abbildungen und eigene Daten: [CC BY 4.0](LICENSE). Code: [Apache-2.0](LICENSE-CODE).
-Hinweise zur Namensnennung stehen in [NOTICE](NOTICE). Ausnahme: Der Q-Ball-Preprint (Fassungen 0.51 und 0.52) und sein Begleitarchiv
+Hinweise zur Namensnennung stehen in [NOTICE](NOTICE). Ausnahme: Der Q-Ball-Preprint (Fassungen 0.51, 0.52 und 0.53) und sein Begleitarchiv
 stehen für Text, Abbildungen, Daten und Zertifikate unter CC BY 4.0 und für Code unter der MIT-Lizenz.

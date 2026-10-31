@@ -1,0 +1,94 @@
+\section{Numerical charge slope of the certified backgrounds}\label{supp:charge-slope}
+This section reports a numerical evaluation added in preprint 0.53. It is
+not an interval enclosure and does not change any certificate.
+
+\paragraph{Definitions and method.}
+With the convention of the main paper, $Q=2\omega\int f^2\dd^3x=
+8\pi\omega\int_0^\infty r^2f^2\dd r$ and $G=\int|\nabla f|^2\dd^3x$.
+Profiles of Eq.~\eqref{eq:profile} were computed by collocation with a
+relative tolerance $10^{-8}$, a Robin condition
+$f'+(\kappa_0+1/R)f=0$ at the outer radius
+$R=F\max(40,16/\kappa_0,R_{\mathrm{tw}}+30)$ and an analytic exponential
+tail correction to $Q$. The slope $D=dQ/d(\omega^2)$ was taken as a
+central difference with steps $\delta=2\times10^{-3}$ and $10^{-3}$
+($F=1$) and $\delta=10^{-3}$ ($F=1.25$); the noise measure $\eta$ is
+the sum of the absolute differences between consecutive variants, and
+$dQ/d\omega=2\omega D$. Before the calculation, a background was to be
+classified as lying on the branch $dQ/d\omega<0$ only if all three
+variants were negative and $|D|>10\eta$.
+
+\begin{table}[htbp]\centering\small
+\caption{Charge and charge slope at the midpoints of the certified
+parameter boxes (Table~\ref{tab:proof-cases}). $D$ is the variant with
+$\delta=10^{-3}$, $F=1$. Numerical values, not enclosures.}
+\label{tab:charge-slope}
+\begin{tabular}{lllllr}\toprule
+Case&$\omega^2$&$Q$&$D=dQ/d(\omega^2)$&$dQ/d\omega$&$|D|/\eta$\\\midrule
+C0&$0.797677$&$189.14436$&$-1326.19$&$-2368.9$&$10\,560$\\
+C1&$0.685129$&$573.40356$&$-7743.01$&$-12\,818$&$3\,919$\\
+C2&$0.754496$&$266.78523$&$-2394.87$&$-4160.5$&$7\,609$\\\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Charge minimum.}
+On a grid $\omega^2=0.59,\dots,0.998$ the charge has exactly one local
+minimum. A golden-section refinement gives
+$\omega_Q^2\simeq0.927176$ and $Q_{\min}\simeq111.860$, independently of
+$F\in\{1,1.25\}$. $Q$ decreases from $\omega^2=0.59$ to $\omega_Q^2$ and
+increases above it. The three certified backgrounds lie $0.13$--$0.24$
+below $\omega_Q^2$ in $\omega^2$. Two profiles of equal charge reported
+in earlier project calculations, at $\omega^2\simeq0.766$ and $0.993$, lie
+on opposite sides of this minimum. Below $\omega^2=0.59$ the collocation
+routine found no accepted profile; this does not affect the three
+backgrounds.
+
+\paragraph{Controls.}
+(i)~The two equal-charge profiles were reproduced to relative accuracy
+$7\times10^{-8}$ (threshold $10^{-5}$).
+(ii)~Cubic nonlinear Schr\"odinger limit. For $\omega\to1$,
+$Q\kappa_0/\omega$ must approach $N_R=\int g^2\dd^3s$, where $g$ is the
+positive ground state of $g''+2g'/s=g-g^3$. A separate shooting
+calculation gives $g(0)\simeq4.33738768$ and $N_R\simeq18.897251$, stable
+to $4\times10^{-11}$ and $4\times10^{-12}$ relative under step and
+outer-radius changes. The computed $Q\kappa_0/\omega$ is $20.186$,
+$19.529$ and $19.147$ at $\omega^2=0.99$, $0.995$ and $0.998$; the
+relative excess over $N_R$ falls monotonically to $1.3\,\%$ (threshold
+$3\,\%$ at $\omega^2=0.998$).
+(iii)~Virial identity. Derrick scaling and the Hellmann--Feynman
+relation for the action $\int(|\nabla f|^2+\mathcal U(f^2)-\omega^2f^2)
+\dd^3x$ give the exact identity $dG/d(\omega^2)=-3Q/(4\omega)$. With
+central differences of $G$ at $\delta=5\times10^{-4}$ and
+$2.5\times10^{-4}$, the largest relative deviation is approximately
+$1.2\times10^{-5}$ and $3.0\times10^{-6}$ respectively (threshold
+$10^{-4}$); halving $\delta$ reduces it by a factor of four, as expected
+for the truncation error of the difference quotient.
+(iv)~An independent shooting calculation with a fourth-order
+Runge--Kutta integrator, an exact Taylor start near the origin and an
+analytic Yukawa tail reproduced $Q$ at eleven comparison points to
+$3\times10^{-10}$ relative, the slopes $D$ at the same finite-difference
+step $\delta=10^{-3}$ to six or more digits and $\omega_Q^2$ to
+$10^{-6}$; with steps down to $\delta=2.5\times10^{-4}$ it gives
+$|D|/\eta>10^4$ at all three backgrounds. Between $\delta=10^{-3}$ and
+$2.5\times10^{-4}$ the slopes change by at most $8\times10^{-5}$
+relative (truncation error of the difference quotient); the signs are
+unaffected. The displayed digits of $\omega_Q^2$ and $Q_{\min}$ are
+numerical values, not a validated accuracy. It also obtained
+accepted profiles down to $\omega^2=0.511$, where $Q$ approaches the
+leading thin-wall charge from above. In that calculation an additional
+classification check of the shooting bracket, not part of the
+prespecified acceptance rule, failed at the level of floating-point
+rounding; the values above are unaffected.
+
+\paragraph{Scope.}
+For the $l=0$ ansatz with a real growth rate, Kovtun, Nugaev and
+Shkerin arrive at the Vakhitov--Kolokolov criterion $dQ/d\omega>0$ for
+instability, in the same sign convention~\cite{Kovtun2018,VakhitovKolokolov1973}.
+Provided the spectral hypotheses of this radial criterion hold for the
+nodeless sextic branch considered here, the negative slopes give
+numerical evidence against a purely growing radial instability of the
+three backgrounds; these hypotheses are not independently verified by
+the charge-slope calculation. The slopes do not address
+oscillatory instabilities, the sectors $l\ge1$, orbital or nonlinear
+stability, the persistence of the embedded modes at finite amplitude or
+a lifetime. Programs and result records of both calculations are
+included in archive revision~3 (directory \texttt{charge-slope/}).

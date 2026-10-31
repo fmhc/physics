@@ -1,0 +1,151 @@
+\paragraph{Correlated instantaneous frequency.}
+A separate prescribed drive model replaces Wiener phase increments by
+$\theta(t)=\theta_0+\int_\Delta^t\xi(s)\,ds$, with an independent uniform
+initial angle and stationary zero-mean Ornstein--Uhlenbeck frequency
+$\mathbb E\xi(t)\xi(s)=(D/\tau_c)e^{-|t-s|/\tau_c}$.
+Its phase correlation at lag $u\ge0$ is
+\[
+ C(u)=\exp\{-D[u-\tau_c(1-e^{-u/\tau_c})]\}.
+\]
+This retains the pathwise source norm and fixes the long-time phase
+diffusion constant $D$; the instantaneous frequency variance is
+$D/\tau_c$. The Wiener kernel is recovered as $\tau_c\to0$ at fixed $D$.
+Finite $\tau_c$ removes its linear short-lag cusp, but does not impose a
+hard bandwidth cutoff or define a thermal bath. Pointwise larger phase
+correlation need not give larger work against an oscillatory response.
+
+\paragraph{Small correlation-time limit.}
+For a fixed finite spatial operator and fixed $D\geq0$, let $\tau=\tau_c$ and write the exact mean work as
+$m_\tau=\int_0^T W(u)C_\tau(u)\,du$, with real lag kernel $W$ and
+$m_D=\int_0^T W(u)e^{-Du}\,du$. If $|W(u)|\leq M$, then
+\[
+ |m_\tau-e^{D\tau}m_D|\leq
+ \frac{e^{D\tau}DM\tau^2}{1+D\tau},\qquad m'_+(0)=Dm_D.
+\]
+If $W$ is continuous at zero, the present source-work observable has
+$W(0)=2B_{\mathrm{src}}$, where $B_{\mathrm{src}}=\int_0^T\|S(t)\|^2dt$ is the exact
+nominal source budget. Consequently,
+$m_\tau=m_D+Dm_D\tau+(D^2m_D/2-2DB_{\mathrm{src}})\tau^2+o(\tau^2)$.
+These local asymptotics neither determine the comparison at $\tau=0.1$
+nor imply global monotonicity, a thermal interpretation, or a continuum error bound.
+
+For the fixed choice $D=1$, $\tau_c=1/10$, put $a=1/10$.
+The mean source work has the signed representation
+$m_{\mathrm{OU}}=e^a\sum_{n\ge0}(-a)^n m_{1+10n}/n!$, where $m_\lambda$
+is the two-quadrature work obtained from the auxiliary generator
+$A-\lambda I$. This is not a positive mixture of dissipative states.
+The selected truncation retains $n=0,\ldots,8$. If
+$B\ge2\int_{t>s}|K_{\mathrm{work}}(t,s)|\,dt\,ds$, its analytical work-tail
+bound is
+\[
+ \epsilon_{\mathrm{tail}}\le
+ B\,\frac{10}{9}\,\frac{(1/10)^9}{9!}\,\frac{1}{1-1/100}.
+\]
+The finite-model bound uses a positive reference energy norm,
+a coefficient-envelope check and an exact-rational source-norm bound
+for frozen nominal binary coefficients. This bounds the omitted series,
+not floating exponential evaluation, signed-sum roundoff or RK integration.
+Those errors and the combined space/time sensitivity require separate
+assessment; auxiliary endpoint energies are not ensemble energies.
+The first finite-correlation implementation passed its scalar controls but
+failed the preselected modified quadratic-balance tolerance on the coarser
+field grid. That implementation therefore yielded no accepted finite-correlation
+field result, and its finer grid was not run. The analytical series-tail estimate
+did not repair this numerical acceptance failure, and the original outcome
+and thresholds remain unchanged. A separate calculation with a different
+integrator and a prospectively specified temporal-sensitivity comparison is
+reported below.
+
+\paragraph{A separate finite-correlation pulse comparison.}
+A separately specified two-stage Gauss calculation retained the prescribed
+source, its normalization, $D=1$, $\tau_c=0.1$ and the signed nine-term expansion.
+It split integration steps at the two known source-window joins and used
+both genuine quadratures for every auxiliary rate, plus a zero-source
+control. Three fixed integrations compared $(h,\Delta t)=(0.04,0.005)$,
+$(0.04,0.0025)$ and $(0.02,0.0025)$ through $T=3$ at $R=20$.
+All 108 recorded acceptance checks passed; this comparison was made against
+the previously stored Wiener-source work on the corresponding spatial grid,
+not against an auxiliary endpoint energy or a newly repeated Wiener run.
+
+On the finer spatial grid, the truncated OU mean source work was
+$2.1932622828\times10^{-4}$, compared with $2.1733143747\times10^{-4}$
+for the stored Wiener result. The difference, $1.9947908110\times10^{-6}$
+(approximately $0.918\%$), exceeded the predeclared diagnostic guard
+$1.2658579115\times10^{-8}$ and had the same positive sign on the coarser grid.
+The guard includes the analytical series-tail allowance and measured temporal,
+spatial, adapter and accounting contributions; it is not a certified total-error
+bound. The fixed coarse-grid time comparison does not directly measure fine-grid
+temporal error. This is a bounded increase in mean source work for one prescribed
+drive in the frozen finite-domain model, not evidence of retained energy,
+heating, formation, improved efficiency or experimental realizability.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=.98\linewidth]{mean-injected-work.pdf}
+\caption{Cumulative mean source work for prescribed OU and Wiener phase
+drives on the $h=0.02$ grid (left), and their difference (right).
+The OU curve is the signed nine-term mean of the two genuine quadrature
+works per auxiliary rate; the Wiener curve uses the previously stored
+calculation. Both use integrated original source work, not auxiliary
+endpoint or ensemble energy. Straight lines join 31 stored times, with no
+additional field integration for the figure. The endpoint marker spans
+the predeclared diagnostic guard; it is neither a confidence interval nor
+a certified total-error bar. All quantities are in dimensionless model units.}
+\label{fig:ou-source-work}
+\end{figure}
+
+\paragraph{One exterior-domain sensitivity check.}
+A separate calculation at fixed $h=0.04$, $\Delta t=0.0025$ and $T=3$
+extended $R=20$ to $R=30$, retaining byte-identical source values and
+interior coefficients and comparing with the stored $R=20$ calculation.
+Across the 31 shared sample times, the absolute-weighted majorant for the
+change in the same-method OU-minus-$n=0$ source-work contrast was
+$1.14\times10^{-19}$, below the predefined diagnostic threshold
+$1.27\times10^{-9}$. This is agreement at floating-point roundoff scale,
+not absolute accuracy at $10^{-19}$; common spatial, temporal and profile
+errors can remain. The check does not establish an infinite-domain limit,
+long-time behavior or control between samples, and neither replaces the
+earlier Wiener baseline nor reduces the original comparison guard.
+
+\paragraph{Signed contributions from source-time separations.}
+A separate response-kernel calculation uses the fixed $h=0.04$, $R=20$
+spatial operator and both genuine quadratures of each source profile.
+After averaging the uniform initial phase, its mean source work is
+$m[C]=\int_0^1 W(u)C(u)\,du$, where $u$ is the separation of two source
+times, not the observation time. The kernel can have either sign, with
+$W(0)=2B_{\mathrm{src}}$. On the finest of three lag meshes
+($400$, $800$, $1600$ subdivisions), with independent overlap quadratures
+of orders $16$ and $32$, the four prescribed quarter-interval contributions
+to $\int_0^1 W(u)[C_{\mathrm{OU}}(u)-e^{-u}]\,du$ are, in units of $10^{-6}$,
+\[
+ (+23.13074873,\;-9.08245885,\;-11.01641674,\;-1.03681136).
+\]
+Their signed sum is $1.99506177879\times10^{-6}$, with summed heuristic
+refinement envelopes $6.98\times10^{-14}$; these are not a certified
+error bound or confidence interval. The shortest-lag contribution exceeds
+the three negative later-lag contributions (Fig.~\ref{fig:signed-lag-kernel}).
+Closure to the stored same-grid Gauss OU and Wiener-rate works passes the
+predeclared diagnostic allowances. The separate shift of the Gauss
+Wiener-rate work relative to the old RK Wiener baseline is
+$-8.47524\times10^{-10}$; it is not assigned to any lag bin.
+This calculation is not the $h=0.02$ comparison above and does not exactly
+decompose its mixed-integrator result. A lag bin integrates pairs of source
+times, not instantaneous positive or negative power. All separations are
+at most one model time unit, below the nominal period $2\pi/\rho\simeq3.44$;
+the response involves the full generator, not an isolated BIC or a long
+ringdown. No stored-energy, formation or stabilization conclusion follows.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=.98\linewidth]{signed-lag-kernel.pdf}
+\caption{Stored finest-grid signed lag kernel $W(u)$ (left) and four fixed
+integrals of $W(u)[C_{\mathrm{OU}}(u)-e^{-u}]$ (right), for the frozen $h=0.04$
+model. Lines connect the stored lag nodes without smoothing. The caps and
+reported net envelope are heuristic numerical sensitivity measures, too
+small to resolve at this scale, not confidence intervals or certified
+errors; no continuous kernel error band is asserted. The positive net
+source-work difference retains all three negative contributions. These
+are source-time-pair contributions, not a time history of instantaneous
+power or retained energy.}
+\label{fig:signed-lag-kernel}
+\end{figure}

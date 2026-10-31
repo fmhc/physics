@@ -1,0 +1,115 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,graphicx,booktabs,longtable,array}
+\usepackage[margin=24mm]{geometry}
+\usepackage{microtype}
+\usepackage{xr-hyper}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue,pdfauthor={Finn Hinrichsen},pdftitle={Supplement to Radiative cancellations and localized linear modes in three-dimensional sextic Q-balls}]{hyperref}
+\externaldocument[][nocite]{main}[paper.pdf]
+\setlength{\emergencystretch}{2em}
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\ii}{\mathrm{i}}
+\renewcommand{\thesection}{S\arabic{section}}
+\renewcommand{\theequation}{S\arabic{equation}}
+\renewcommand{\thefigure}{S\arabic{figure}}
+\renewcommand{\thetable}{S\arabic{table}}
+\title{Supplement to ``Radiative cancellations and localized linear modes\\in three-dimensional sextic Q-balls''}
+\author{Finn Hinrichsen}
+\date{30 October 2026 --- Preprint 0.53}
+\begin{document}\maketitle
+This Supplement records the nonlinear coefficient's dependency audit,
+followed by exploratory driving, formation and numerical-control
+material retained from the earlier manuscript. The complete linear
+proof lemmas are in Appendix A of the main paper.
+The latter material is not evidence for additional localized linear modes.
+Equation and section references without an S prefix refer to the main paper.
+The companion archive revision~2 is distributed with release
+\texttt{qball-bic-v0.51}; revision~3 is distributed with release
+\texttt{qball-bic-v0.53} (see the data availability statement
+of the main paper). Text, data and certificates are licensed under
+CC BY 4.0, code under the MIT License.
+Historical records are preserved. The 0.51 preprint
+repeated the three primary linear certificate runs with unchanged proof
+code; it did not repeat the exploratory physical evolutions below.
+Preprint 0.52 added explanatory material only. Preprint 0.53 adds the
+numerical charge-slope evaluation of Section~\ref{supp:charge-slope};
+the new matching calculation of ladder indices 5 and 11--14 is
+described in Section~\ref{sec:sequence} of the main paper.
+\tableofcontents
+\input{sections/HYPOTHESIS-AUDIT.tex}
+\section{Stored numerical response and figure diagnostics}
+\input{sections/RESPONSE-DIAGNOSTICS.tex}
+\subsection{Radial nonlinear diagnostics}\label{supp:c0-evidence}
+\input{sections/RADIAL-NONLINEAR-DIAGNOSTICS.tex}
+\input{sections/MODE-FIGURES.tex}
+\section{Dimensional and discretization comparisons}
+\input{sections/DIMENSIONAL-NUMERICS.tex}
+\input{sections/GRID-SENSITIVITY.tex}
+\input{sections/EXTRA-CHANNEL.tex}
+\clearpage
+\input{sections/APPENDIX-DRIVING.tex}
+\clearpage
+\input{sections/APPENDIX-FORMATION.tex}
+\clearpage
+\input{sections/NUMERICAL-METHOD-CONTROLS.tex}
+\clearpage
+\input{sections/CHARGE-SLOPE.tex}
+\section{Archive structure and evidential scope}\label{app:provenance}
+The companion archive is distributed with an inventory mapping
+original records to portable paths and SHA256 bindings distinguishing
+historical records from derived export copies. The three primary linear
+certificate runs were reproduced for preprint 0.51: their receipts agree
+with the originals after omitting four timing fields, and all six point
+and box step records are byte-identical. This does not validate a new
+implementation or reproduce the planar-wall comparison and nonlinear
+coefficient bound, which retain separate provenance. Failed sufficient
+checks and adaptive repetitions remain recorded with their original status.
+
+{\sloppy
+The overview figure of the main paper (Fig.~\ref{fig:overview}) is
+rendered from archived data and evaluations of formulas stated in the
+paper, with no new simulation, fit or certificate run. Its data inputs
+are the archive files \texttt{figures/modes/PROFILE.json} (SHA-256
+prefix \texttt{9509436ad3fd5771}), \texttt{ladder/figure/figure-data.json}
+(\texttt{1dcf9139e23bc316}) and \texttt{ladder/extension/sprossen.json}
+(\texttt{4267791b7d2dfaae}), together with the midpoints of
+Table~\ref{tab:proof-cases}. Panel~(a) also evaluates the thin-wall
+formula, Eq.~\eqref{eq:thinwall}, and panel~(b) the function $V(f)$
+of the figure caption; panel~(c) uses only the certified midpoints.
+The phase inset, the dashed tail in panel~(d) and the width curve in
+panel~(e) are schematic. The plotting script (SHA-256 prefix
+\texttt{ff60bc0f6b6083d3}) reads the plotted coordinates directly from
+the archived fields. Before rendering it compared every plotted location
+with the value displayed in Table~\ref{tab:ladder} of preprint 0.52 to one
+unit of the last displayed digit, derived each evidence class from that
+table's evidence column, and compared the certified midpoints with
+Table~\ref{tab:proof-cases}. These are consistency checks of the
+rendering, not additional evidence for the physics. The figure is
+retained unchanged in preprint 0.53; its classifications and locations for
+$n=5$ and $n=11$--$14$ are those of preprint 0.52 and do not reflect the
+updated Table~\ref{tab:ladder}. Its receipt records
+the full checksums of script, inputs and outputs. Script, receipt and
+input copies are published in the folder \texttt{fig-overview} of the
+preprint 0.52 sources; they are not part of the archive. In the
+published copies, three lines of the script's header text and the host field
+of the receipt are replaced by neutral wording; a map there lists the
+checksums of the run copies and of the published copies.\par}
+
+Archive revision~3 adds both historical records that revision~2 bound
+only by checksum (the source and matching records of ladder indices
+3--5, a redacted derivative of the data package of the linewidth
+reconstructions, and the $\beta=1$ ladder and planar-wall studies) and
+new records of calculations made after revision~2: the outer-radius
+variation of the ladder calculation, the charge-slope programs and
+results of Section~\ref{supp:charge-slope}, and the raw outputs, driver
+and mechanical evaluation of the matching calculation for indices 5 and
+11--14, including a control rerun of index 15. Text records that named machines, accounts, agents or internal
+locations are distributed as lexically redacted copies; each such copy
+is listed with its historical and distributed checksum, and the
+redaction is invertible to the historical bytes. Numerical fields are
+unchanged. The added historical programs were not rerun; the programs of
+the new calculations are included as source records of those runs, not
+as portable rerun packages.
+\input{sections/bibliography.tex}
+\end{document}

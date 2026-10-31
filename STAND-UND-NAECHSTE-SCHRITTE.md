@@ -21,6 +21,12 @@ Aktuelle Fassung ist der Preprint 0.52 vom selben Tag (Release
 [model-lab/papers/qball-bic-ladder-v0.52/](model-lab/papers/qball-bic-ladder-v0.52/README.md)): Widmung,
 allgemeinverständlicher Überblick (Abschnitt 1) und Übersichtsabbildung (Abb. 1) kommen hinzu; Ergebnisse, Zahlen und
 Beweise sind unverändert, das Begleitarchiv bleibt das von 0.51.
+Seit dem 31. Oktober ist der Preprint 0.53 die aktuelle Fassung (Release
+[qball-bic-v0.53](https://github.com/fmhc/physics/releases/tag/qball-bic-v0.53) mit Begleitarchiv Revision 3, Quellen in
+[model-lab/papers/qball-bic-ladder-v0.53/](model-lab/papers/qball-bic-ladder-v0.53/README.md)): Leiter als ausdrückliche
+Vermutung 1, Abschnitt zu Grenzen und offenen Fragen, numerische Ladungssteigung dQ/dω an C0, C1, C2 (betrifft nur eine
+rein wachsende kugelsymmetrische Instabilität), Matching-Rechnung für die Indizes 5 und 11–14; Zertifikate, Lemmata und
+Einschlüsse unverändert.
 
 - **Computergestützt eingeschlossen:** drei lokalisierte lineare Moden (zwei radial, C0 und C1; ein Dipol, C2) auf dem
   unendlichen radialen Gebiet, mit Intervallarithmetik innen und analytischer Abschätzung außen. Vertrauensannahmen:

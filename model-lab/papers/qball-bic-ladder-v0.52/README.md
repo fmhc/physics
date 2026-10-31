@@ -1,8 +1,12 @@
 # Radiative cancellations and localized linear modes in three-dimensional sextic Q-balls
 
 **Finn Hinrichsen — preprint version 0.52, 29 October 2026.** Not peer reviewed. Release
-[`qball-bic-v0.52`](https://github.com/fmhc/physics/releases/tag/qball-bic-v0.52). This is the current version;
+[`qball-bic-v0.52`](https://github.com/fmhc/physics/releases/tag/qball-bic-v0.52). This was the current version until 31 October 2026;
 version 0.51 remains unchanged in [`../qball-bic-ladder-v0.51/`](../qball-bic-ladder-v0.51/README.md).
+
+> **Superseded by preprint 0.53** (conjecture, limitations, numerical charge slope, matching calculation, archive
+> revision 3): [`../qball-bic-ladder-v0.53/`](../qball-bic-ladder-v0.53/README.md). Apart from this note, the folder is
+> kept unchanged as the 0.52 record.
 
 *Kurz auf Deutsch:* Preprint zu lokalisierten linearen Moden eines Q-Balls (komplexes Skalarfeld, sextisches Potential,
 drei Raumdimensionen). Neu in 0.52: eine Widmung, ein allgemeinverständlicher Überblick (Abschnitt 1) und eine
