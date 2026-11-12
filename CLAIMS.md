@@ -2,6 +2,8 @@
 
 Status: 2026-10-08. Read alongside [RESULTS.md](RESULTS.md). IDs below refer to its eight findings. This is an evidence map, not independent verification: the reports and implementations are mostly AI-authored, and no entry establishes agreement with experimental data or a new fundamental theory. Links identify archived derivations, implementations and plans; they do **not** mean that every linked script runs from a fresh checkout. Missing raw arrays and host-dependent imports remain reproducibility gaps; see [AUSSCHLUESSE.md](AUSSCHLUESSE.md).
 
+**Scope note (13 Nov 2026):** this register covers only the eight findings of 8 Oct 2026. Later public material, i.e. the Q-ball preprint releases 0.51–0.53, the gluon-sector status of 29 Oct and the short status of November 2026 in [README.md](README.md#stand-november-2026), has no claims entries here; those texts carry their own scope statements.
+
 **Error categories:** implementation residuals test equations as implemented; approximation errors compare models; discretization and finite-volume errors concern the numerical regulator; sampling errors concern Monte Carlo estimates; experimental uncertainty concerns measured data. These categories cannot substitute for one another. No experimental uncertainty is assessed here. A small same-grid model discrepancy is not a small total physical error.
 
 **Rejection criteria below are prospective review requirements**, written after the archived results. They are not retroactive preregistration, numerical acceptance thresholds, or evidence that new runs have passed. Before a follow-up run, freeze its parameters, estimator, tolerance, resources and treatment of failures in a new plan. Existing plans remain unchanged.

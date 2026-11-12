@@ -1,6 +1,8 @@
 # Stand und nächste Schritte
 
-Stand: 29. Oktober 2026 (Nachtrag); der Abschnitt vom 21. Oktober 2026 folgt unverändert.
+Stand: 29. Oktober 2026 (Nachtrag); der Abschnitt vom 21. Oktober 2026 folgt unverändert. Neuerer Stand: Abschnitt
+„Stand November 2026“ in der [Übersicht](README.md#stand-november-2026). Die nächsten Schritte unten sind der Plan vom
+29. Oktober; seit dem 31. Oktober liegt der Schwerpunkt auf dem dort beschriebenen Ziel, der Plan ist daher teilweise überholt.
 
 ## Nachtrag 29.10.2026 (synthetisch, nicht begutachtet)
 
@@ -16,7 +18,7 @@ Ergebnisdateien zum Gluonsektor sind hier nicht mit veröffentlicht; Abbildungen
 TeX-Quellen, PDF und HTML in [model-lab/papers/qball-bic-ladder-v0.51/](model-lab/papers/qball-bic-ladder-v0.51/README.md),
 Release [qball-bic-v0.51](https://github.com/fmhc/physics/releases/tag/qball-bic-v0.51) mit PDF, Supplement und
 Begleitarchiv (ZIP, 37 MB). Kein Bezug zum Tetraedernetz; ein Kontinuumsmodell.
-Aktuelle Fassung ist der Preprint 0.52 vom selben Tag (Release
+Noch am selben Tag erschien der Preprint 0.52 (Release
 [qball-bic-v0.52](https://github.com/fmhc/physics/releases/tag/qball-bic-v0.52), Quellen in
 [model-lab/papers/qball-bic-ladder-v0.52/](model-lab/papers/qball-bic-ladder-v0.52/README.md)): Widmung,
 allgemeinverständlicher Überblick (Abschnitt 1) und Übersichtsabbildung (Abb. 1) kommen hinzu; Ergebnisse, Zahlen und
@@ -38,7 +40,7 @@ Einschlüsse unverändert.
 - **Bedingt:** Eine Analyse zweiter Harmonischer trennt einen Monopolkoeffizienten von null, unter ausdrücklich
   geprüften Hypothesen; das versperrt eine bestimmte glatte, gleichmäßig lokalisierte nichtlineare Fortsetzung für
   verknüpfte Dipolpolarisationen mit p·p ≠ 0.
-- **Offen:** Quadrupolzertifikat für zirkulare Polarisation, Stabilität (dQ/dω nicht ausgewertet), eine unabhängige
+- **Offen:** Quadrupolzertifikat für zirkulare Polarisation, Stabilität (in 0.51 und 0.52 war dQ/dω nicht ausgewertet; 0.53 ergänzt numerische Ladungssteigungen, die nur unter nicht unabhängig geprüften Voraussetzungen des radialen Steigungskriteriums eine rein wachsende kugelsymmetrische Instabilität betreffen; kein allgemeiner Stabilitätsnachweis), eine unabhängige
   Intervallimplementierung, ein Ende-zu-Ende-Nachlauf der nichtlinearen Belegkette (im Archiv nur als hashgeschlossene
   Aufzeichnung).
 - **Lizenz:** Text, Abbildungen, Daten und Zertifikate CC BY 4.0, Code MIT. **KI-Werkzeuge:** Claude (Anthropic) und

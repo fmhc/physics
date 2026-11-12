@@ -1,6 +1,6 @@
 # Results: what is computed, with limits
 
-Status 2026-10-29 (new section below); the original findings retain their earlier scope. This page lists findings of this notebook, with
+Status 2026-10-29 (new section below); the original findings retain their earlier scope. A newer short status (13 Nov 2026, in German) is in [README.md](README.md#stand-november-2026); the plans listed under "Running and planned" below date from 29 Oct 2026 and are partly superseded. This page lists findings of this notebook, with
 method, number, limits and the source file. Everything here is a **synthetic model computation**: no finding is a
 confirmation by measured data, none is peer-reviewed, and most text and code was written by AI systems under human
 direction ([BETEILIGTE.md](BETEILIGTE.md)). The source files are in German.
@@ -50,7 +50,7 @@ certificate, lemma or certified enclosure changed.
   absolute-location test failed and is reported in the paper.
 - **Conditional:** a second-harmonic monopole coefficient is separated from zero under audited hypotheses, obstructing
   a specified uniformly localized smooth continuation for linked dipole polarizations with p·p ≠ 0.
-- **Open:** quadrupole certificate (circular polarization), stability (dQ/dω not evaluated), an independent interval
+- **Open:** quadrupole certificate (circular polarization), stability (dQ/dω was not evaluated in 0.51 and 0.52; 0.53 adds the numerical charge slope, see above), an independent interval
   implementation, an end-to-end replay of the nonlinear evidence chain (archived with hash closure only).
 - Licences: text, figures, data and certificates CC BY 4.0; code MIT. AI tools: Claude (Anthropic), Codex (OpenAI).
 
