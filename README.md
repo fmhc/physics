@@ -85,10 +85,6 @@ KI-erstellt. Jede Aussage gilt nur für die genannten Regeln, Größen und Zufal
   Bezugswert eines zufälligen Baums und unter dem eines Würfelgitters. Die Zuordnung „Kleinwelt“ ist eine operative
   Fensterklasse, deren Schnitte mit Kenntnis der Bezugswerte gesetzt wurden, kein Dimensionsnachweis. Mit der später
   geprüften Schranke wurde dieser Ausgang nicht vorab hergeleitet.
-  <!-- J:raum-ortsteilung-1-w-elter-uneinig-20261113; REG I-2099 mit Zusatz (13.11. 00:28:54); Codex T1-6 -->
-  Eine weitere, vorab festgelegte Regel mit örtlicher Teilung an der wachsenden Front ist inzwischen gerechnet: Beim
-  Hauptkandidaten fielen die drei Zufallsfolgen in drei verschiedene operative Klassen, eine davon „raumartig“. Der
-  Ausgang ist uneinig; ein über die Zufallsfolgen wiederholter Befund oder ein Dimensionsnachweis liegt nicht vor.
 - **Vorbehalt zu kleinen exakten Rechnungen.**
   <!-- J:vorbehalt-torus-ed-20261104; J:berichtigung-verweise-torus-zeiten-20261104 (supersedes ed-ordnung-1, ed-v-scan-1);
        coordination/runden-v3/RUNDE-52/emergenz-confinement-1031/VORBEHALT-TORUS-ED-20261104.md; Codex T1-7 -->
