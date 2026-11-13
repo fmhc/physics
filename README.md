@@ -85,6 +85,17 @@ KI-erstellt. Jede Aussage gilt nur für die genannten Regeln, Größen und Zufal
   Bezugswert eines zufälligen Baums und unter dem eines Würfelgitters. Die Zuordnung „Kleinwelt“ ist eine operative
   Fensterklasse, deren Schnitte mit Kenntnis der Bezugswerte gesetzt wurden, kein Dimensionsnachweis. Mit der später
   geprüften Schranke wurde dieser Ausgang nicht vorab hergeleitet.
+  <!-- REG I-2099 mit Zusätzen (REG:15930, REG:15935); REG I-2102; J:raum-ortsteilung-1-w-elter-uneinig-20261113;
+       J:raum-ortsteilung-2-raumartig-selten-20261113; coordination/runden-v3/RUNDE-52/raum-randverkleben-1/ortsteilung-1/AUSGANG-RAUM-ORTSTEILUNG-1.md;
+       .../ortsteilung-2/AUSGANG-RAUM-ORTSTEILUNG-2.md §2.3, §2.4, §3 und Berichtigung 1 (B4)  -->
+  Eine weitere, vorab festgelegte Regel teilt eine Kante, die ein „Wanderer“ örtlich auswählt; danach geht der Wanderer
+  zum anderen Elternpunkt. Diese Regel
+  ergab in einer vorab gebundenen Schätzung über 64 Zufallsfolgen, zwischen 2000 und 32 000 Punkten und gemessen von
+  16 festen älteren Punkten aus, nur in 4 Fällen die operative Tabellenklasse „raumartig“ (exaktes binomiales
+  95-%-Intervall etwa 2–15 %); am häufigsten waren die Klassen „kleinweltartig“ (23) und „dicht-zwischen“ (21). Das
+  sind operative Fensterklassen mit nach Sicht gesetzten Schnitten, kein Dimensionsnachweis; mit anderen Schnitten
+  könnte die Zahl anders ausfallen, und das Intervall setzt gleichartige, unabhängige Zufallsfolgen voraus. Es gilt
+  nur für diese Regel und diese Größen.
 - **Vorbehalt zu kleinen exakten Rechnungen.**
   <!-- J:vorbehalt-torus-ed-20261104; J:berichtigung-verweise-torus-zeiten-20261104 (supersedes ed-ordnung-1, ed-v-scan-1);
        coordination/runden-v3/RUNDE-52/emergenz-confinement-1031/VORBEHALT-TORUS-ED-20261104.md; Codex T1-7 -->

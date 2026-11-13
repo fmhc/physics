@@ -1,0 +1,12 @@
+Repair of the public copy, 13 November 2026
+
+The exported main.tex and paper.html contained truncated provenance text. They have been restored byte for byte from the working draft dated 5 October 2026, matching their entries in the historical SHA256SUMS.txt. This also restores the “AG Physics working draft” attribution label and author metadata in these source formats. The earlier PDF already contained the complete text and this label.
+
+paper.pdf was rebuilt; its metadata identifies pdfTeX 1.40.25. The supplied old and new extracted PDF texts are byte-identical. The scientific text is unchanged relative to the intact working draft and the earlier PDF; the damaged exported source text has been repaired.
+
+README.txt and build-remote.sh retain their export versions. Their paths differ from the working copy, and README.txt also omits its original draft-attribution line. SHA256SUMS.txt remains a historical record, not a manifest of the repaired public directory: its README.txt, build-remote.sh and paper.pdf entries do not match the present files. The current hashes of the three repaired files follow.
+
+sha256 after the repair:
+fa558659b4d3b6810aa7e3ac49b2f07590e03c26ac5026666716ef772b3bae4a  main.tex
+902a43c6faae2a1d0fd8c9426c0700152f363106053b9ffa4dcc2e897235e193  paper.html
+05fa74c85eca4801eb77880bd2698d5eb1be93878399f91eb6e44fec22c0684e  paper.pdf
