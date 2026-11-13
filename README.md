@@ -68,8 +68,8 @@ Alles Folgende sind synthetische Modellrechnungen oder Papierargumente: keine Me
 KI-erstellt. Jede Aussage gilt nur für die genannten Regeln, Größen und Zufallsfolgen.
 
 - **Raum aus Punkten, wieder verfolgt.**
-  <!-- GOAL (Pause 3.11., spätere Varianten); REG I-2046 (Auftrag Randverkleben, 7.11.); Codex T1-2 -->
-  Die Frage, ob Regeln für Punkte einen ausgedehnten dreidimensionalen Raum bilden, wird nach der Pause vom 3. November
+  <!-- GOAL Z. 125–127 (Pausenbeschluss 1.11.; im Website-Stand 3.11. dokumentiert, spätere Varianten); REG I-2046 (Auftrag Randverkleben, 7.11.); Codex T1-2 -->
+  Die Frage, ob Regeln für Punkte einen ausgedehnten dreidimensionalen Raum bilden, wird nach der im Bericht vom 3. November dokumentierten Pause
   wieder verfolgt; am 7. November beauftragte die Projektleitung dazu eine Variante, die Ränder verklebt.
   <!-- J:raum-randverkleben-1-ausgang-bruch-ohne-inneres-20261108; REG I-2046; Codex T1-3 -->
   Eine Regel, die Kanten zwischen Teilen der Nachbarschaft eines Punktes schließt, ergab bei insgesamt 8000 Punkten in
