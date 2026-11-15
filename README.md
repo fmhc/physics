@@ -1,6 +1,6 @@
 # Netz-, Feld- und Kontaktmodelle
 
-Stand: 21. Oktober 2026; Nachträge vom 29. und 31. Oktober 2026; Abschnitt „Stand November 2026“ vom 13. November 2026.
+Stand: 21. Oktober 2026; Nachträge vom 29. und 31. Oktober 2026; Abschnitt „Stand November 2026“ vom 13. November 2026, Nachtrag vom 15. November 2026.
 
 Der folgende Einstieg beschreibt den Arbeitsstand vom 21. Oktober. Seit dem 31. Oktober liegt der Schwerpunkt auf dem
 Ziel, aus Punktregeln eine lokale nichtabelsche Eichdynamik und daran Confinement mit thermischer Gegenprobe zu begründen;
@@ -111,6 +111,95 @@ KI-erstellt. Jede Aussage gilt nur für die genannten Regeln, Größen und Zufal
   <!-- Website-Stand 3.11., Punkt "Lattice checks, status 30 October (unchanged)"; J:vorab-skala-m12-1-gebunden-20261106 (nur Plan); Codex T1-9 -->
   Die auf der Webseite gesondert aufgeführten Gitterprüfungen der reinen SU(3)-Eichtheorie auf BCC-r\* × Z behalten ihren
   Stand vom 30. Oktober; der dort berichtete Krafttest und der Abschluss der Glueball-Serie sind davon getrennt.
+
+### Nachtrag 15. November 2026
+
+<!-- Stand 15.11.2026. J: = coordination/research-journal/<id>.json (bei Berichtigungen gilt nur die neueste Fassung),
+     REG = coordination/runden-v3/RUNDE-52/IDEEN-REGISTER.md, Einträge und Zusätze I-2104 bis I-2113 (Z. 15942–15978).
+     Gegenlesung: coordination/publication-review-20261115/. Eine Übersicht als Grafik steht auf https://physics.fmhc.io/. -->
+Alles Folgende sind synthetische Modellrechnungen oder Papierargumente: keine Messdaten, nicht begutachtet, überwiegend
+KI-erstellt. „Papier“ heißt Papierbefund oder Hypothese ohne Rechnung, keine Messung. Jede Aussage gilt nur für das
+gewählte Modell und die genannten Größen und Annahmen.
+
+- **Farbe: Woher könnte SU(3) kommen?**
+  <!-- Rahmen: J:uhr-schliesst-so3-ungeklaert-b2-20261113 (meaning); J:dichte-so3-1-ungeklaert-20261113 (question) -->
+  Damit SU(3) aus dem Netz entsteht, statt gesetzt zu werden, müsste die eigene Dynamik des Modells ein Dreierniveau so
+  von Ort zu Ort tragen, dass SU(3) entsteht. Die folgenden Punkte prüfen einzelne Glieder dieser Kette im gewählten
+  Quanten-Trimermodell; keiner weist einen solchen Transport nach.
+  <!-- J:perron-komponenten-h-2-ausgang-b1-20261113 (result, meaning); REG I-2106 Zusätze REG:15962, REG:15966 -->
+  - *Tiefste Komponenten eines reduzierten Operators in einer gepinnten Röhre (gerechnet, synthetisch).* Auf einem röhrenförmigen Stück des
+    raumzentrierten Gitters (Länge 6, Querschnitt 2×2; eine Röhre, kein Gitter) mit festgehaltenen Löchern wurde für einen
+    reduzierten Operator vierter Ordnung geprüft, ob das tiefste Niveau je Lochanordnung in einer oder in mehreren gleich
+    tiefen Komponenten liegt. Von sieben nichtleeren Anordnungen ergaben drei eine, vier zwei innerhalb der Toleranz; die
+    Zweifachheit ist durch die räumliche Symmetrie erklärt, die die Löcher festhält. Das gilt für g ≠ 0. Es ist keine
+    vollständige Zerlegung in Symmetrietypen; das volle Pinmodell hat bei endlicher Größe genau einen tiefsten Zustand,
+    und aus der Zahl folgt keine Eignung oder Nichteignung als Transportkanal. Ob ein zweiter Rechner dieselben Klassen
+    liefert, ist ungeprüft. Codex: „TRÄGT MIT VERMERKEN: … tragen den begrenzten Ausgang FAST-ENTARTET-STAB“.
+  <!-- J:uhr-schliesst-so3-ungeklaert-b2-20261113 (result, meaning); REG I-2107 Zusätze REG:15958, REG:15963;
+       Zeitschritte: REG I-2112 Zusatz REG:15971 -->
+  - *Kann ein Zusatzelement SU(3) vervollständigen? (Papier).* Die Gruppentheorie trägt: so(3) ist maximal in su(3), und
+    ein geeignetes komplexes Zusatzelement, etwa eine dreiwertige Uhrphase, erzeugte zusammen mit einer dichten SO(3) die
+    SU(3). Im Modell selbst ist kein solches Element nachgewiesen und keines endgültig ausgeschlossen; eine dichte SO(3)
+    gibt es im Bestand nicht. Ein Negativbefund gilt nur eingeschränkt: Reelle statische oder geometrische Transporte auf
+    einer reell geschlossenen, rangstabilen Dreierfaser und reelle Pfadsummen bei festem reellem E bleiben in O(3). Eine
+    Phase aus der Zeitentwicklung bleibt algebraisch geeignet und bedingt offen; nach Entscheidung der Projektleitung vom
+    13. November zählen Zeitschritte nicht zu den räumlichen Transporten, sondern bilden einen eigenen späteren Zweig.
+    Ausgang ungeklärt. Codex: „UNGEKLÄRT statt SCHLIESST-NICHT gedeckt, weil die tragende Gruppentheorie die offenen
+    Transport-, Erhaltungs- und Dynamikvoraussetzungen des nativen Modells nicht ersetzt.“
+  <!-- J:dichte-so3-1-ungeklaert-20261113 (result, meaning); REG I-2110 Zusatz REG:15969 -->
+  - *Gibt es eine dichte SO(3)? (Papier).* Im Bestand entscheidet keine ablesbare Zahl. Der zuvor untersuchte
+    Oktaeder-Triplett-Transport hat in zweiter Ordnung in λ Rang eins. Unter Symmetrievoraussetzungen gibt ein bedingter
+    Ansatz (Überlappungstransport eines isolierten Dreierniveaus längs einer Achse und einer Raumdiagonale, Schleifen über
+    kleine Dreiecke) genau dann eine dichte Gruppe, wenn ein einziges Vorzeichen der Raumdiagonal-Bindung negativ ist.
+    Das Vorzeichenkriterium betrifft die determinantenkorrigierte Schleifengruppe aus den Drehanteilen der
+    Überlappungsmatrizen. Offen bleiben das Dreierniveau, der volle Rang, das Vorzeichen und die physische Rechtfertigung
+    dieser Ersetzung; der Prüfplan ist nur ein Entwurf. Auch eine dichte SO(3) wäre
+    noch keine SU(3)-Struktur, weil ein Zusatzelement nötig bleibt. Codex: „… trägt nach BERICHTIGUNG 1 mit Vermerken als
+    bedingte Papierargumentation mit Modell-Ausgang UNGEKLÄRT“.
+  <!-- J:okt-wegsummen-rang-1-kandidat-20261115 (result, meaning); REG I-2111 Zusatz REG:15976 -->
+  - *Rang 1 oder Rang 3 zwischen zwei Oktaedern? (Papier).* Für die ausgewählte Bindung G1–G3 der betrachteten
+    Oktaederanordnung hat der Dreiertransport im gepinnten Sektor mit genau einer Anregung bis zur zweiten Ordnung in λ
+    (der Kopplung) Rang eins. In vierter Ordnung öffnen Wege über die Kontaktdreiecke zwei weitere, schwache Richtungen.
+    In führender Ordnung ist das Verhältnis des kleinsten zum größten Singulärwert (53/2880) λ² im einen und
+    (7/2880) λ² im anderen Schema. Keine Symmetrie erzwingt Rang eins. Rang 3 ist damit nur formal für kleine λ
+    ein Kandidat, sehr anisotrop, und das Dreierniveau je Platz ist schon in zweiter Ordnung aufgespalten. Bei λ = 1 ist
+    der Störungsbefund nicht kontrolliert: Schon am offenen Paar gleichartiger Oktaeder hat der Resolvent bei
+    festgehaltener ungestörter Energie einen Pol bei λ ≈ 0,861. Das ist keine nachgewiesene Singularität des
+    physikalischen Spektrums; zudem hängt der Rang des Bindungsblocks vom Schema ab.
+    Codex: „RANG-3-KANDIDAT bleibt der richtige Abschluss …“.
+  <!-- J:t-niveau-oh-1-t6-nicht-durchfuehrbar-20261113; REG I-2108 Zusätze REG:15973, REG:15974 -->
+  - *Niveaus eines symmetrisch gepinnten Blocks.* Eine exakte Rechnung auf einem periodischen Würfel der Kantenlänge 6
+    erwies sich vor dem Bau als nicht durchführbar. Die Arbeit an einem offenen Block mit voller Oktaedersymmetrie um einen
+    Punkt läuft; ein Ergebnis gibt es nicht.
+- **Raum.**
+  <!-- J:dimensionsmass-e2-strangende-b1-20261113 (result, meaning); REG I-2109 Zusätze REG:15960, REG:15964 -->
+  Eine Messvorschrift für die Dimension des wachsenden Netzes (Rückkehr einer Irrfahrt, Kugelwachstum als Kontrolle) trug
+  zweimal in der Gegenlesung nicht; nach der Abbruchregel ist dieser Strang beendet, gerechnet wurde nichts. Im
+  Suchumfang ist damit kein skalarer Dimensionsschätzer gebunden. Die für die Raumregeln genannten Klassen sind operativ
+  und kein Dimensionsnachweis: Das zugrunde liegende Wachstumsverhältnis ist nur eine bedingte Potenzschätzung und gibt
+  einem Würfelgitter nur etwa 2,5–2,6.
+  <!-- J:kantentransfer-strang-beendet-20261113; J:kantentransfer-e3-endgueltig-abgebrochen-20261113;
+       REG I-2104 Zusätze REG:15965, REG:15972 -->
+  Eine weitere Wachstumsregel, bei der Kanten zwischen Punkten übertragen werden, wurde auf Papier ausgearbeitet und mit
+  einem Messplan versehen. Der Messplan trug in der Gegenlesung nicht; nach der Abbruchregel ist der Strang beendet und
+  ruht nach Entscheidung der Projektleitung. Gemessen wurde nichts; die Abstandsklasse dieser Regel ist ungemessen.
+- **Röhre (Papier).**
+  <!-- J:randableitung-roehre-ungeklaert-20261115 (result, meaning); REG I-2113 mit Zusatz REG:15975, REG:15978 -->
+  Auf röhrenförmigen Gitterstücken mit offenem Seitenrand enthält die Dynamik vierter Ordnung des gewählten Trimermodells
+  ein Potential für einzelne Trimere, das zählt, wie viele andere Dreiecke mit dem besetzten Trimer eine Kante teilen;
+  auf der Röhre der Länge 6 mit Querschnitt 3×1 ist es im Sektor nicht konstant. Für die von der Herleitung gedeckten
+  Röhrengeometrien und Längen mit nichtleeren, durch die Dynamik erhaltenen Windungssektoren und translationsinvariantem
+  Operator ist der Sektorenergieabstand null, wenn 3 das Querschnittsprodukt nicht teilt (etwa Länge 6, Querschnitt 2×2).
+  Eine Änderung des Koeffizienten des Randpotentials erhält diese Gleichheit. Bei Querschnitt 3×1 bleibt die Wirkung auf
+  den nichttrivialen Sektorabstand offen. Codex: „Für die D-6-Frage nach
+  der tatsächlichen Wirkung der Randdiagonale auf den nichttrivialen Sektorenergieabstand ist nach dieser Lesung
+  UNGEKLÄRT richtig; RAND-NEUTRAL gilt bedingt für die translationsverbundenen Sektoren, während RAND-WIRKT für ΔE durch
+  die vorgelegten Papierzeugen nicht folgt.“ Eine Spektralrechnung auf 3×1-Röhren ist geplant, aber nicht durchgeführt.
+- **Verfahren.**
+  <!-- REG I-2104 Zusatz REG:15972 (Entscheidung 13.11.); J:kantentransfer-strang-beendet-20261113 (meaning) -->
+  Seit dem 13. November gilt nach Entscheidung der Projektleitung: Ein Strang endet, sobald er irgendwo im Strang zum
+  zweiten Mal das Urteil „trägt nicht“ erhält. Eine kurz zuvor angewandte Zählung je Stufe wurde als Lockerung der Regel
+  verworfen. Für die reine SU(3)-Gittertheorie gibt es keine neuen gerechneten Ergebnisse.
 
 - [Aktueller Stand und nächste Schritte](STAND-UND-NAECHSTE-SCHRITTE.md)
 - [Historische Ergebnisse mit Methoden und Grenzen](RESULTS.md)
