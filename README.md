@@ -115,7 +115,8 @@ KI-erstellt. Jede Aussage gilt nur für die genannten Regeln, Größen und Zufal
 ### Nachtrag 15. November 2026
 
 <!-- Stand 15.11.2026. J: = coordination/research-journal/<id>.json (bei Berichtigungen gilt nur die neueste Fassung),
-     REG = coordination/runden-v3/RUNDE-52/IDEEN-REGISTER.md, Einträge und Zusätze I-2104 bis I-2113 (Z. 15942–15978).
+     REG = coordination/runden-v3/RUNDE-52/IDEEN-REGISTER.md, Einträge und Zusätze I-2104 bis I-2121 (Z. 15942–16001);
+     Abendstand 15.11.: KURATOR-20261115-ABEND.md §4.
      Gegenlesung: coordination/publication-review-20261115/. Eine Übersicht als Grafik steht auf https://physics.fmhc.io/. -->
 Alles Folgende sind synthetische Modellrechnungen oder Papierargumente: keine Messdaten, nicht begutachtet, überwiegend
 KI-erstellt. „Papier“ heißt Papierbefund oder Hypothese ohne Rechnung, keine Messung. Jede Aussage gilt nur für das
@@ -136,12 +137,22 @@ gewählte Modell und die genannten Größen und Annahmen.
     und aus der Zahl folgt keine Eignung oder Nichteignung als Transportkanal. Ob ein zweiter Rechner dieselben Klassen
     liefert, ist ungeprüft. Codex: „TRÄGT MIT VERMERKEN: … tragen den begrenzten Ausgang FAST-ENTARTET-STAB“.
   <!-- J:uhr-schliesst-so3-ungeklaert-b2-20261113 (result, meaning); REG I-2107 Zusätze REG:15958, REG:15963;
-       Zeitschritte: REG I-2112 Zusatz REG:15971 -->
+       Zeitschritte: REG I-2112 Zusatz REG:15971;
+       Windungssektoren: J:sektor-realstruktur-1-reell-geschlossen-b1-20261115 (result, meaning); REG I-2114 Zusätze REG:15985, REG:15994;
+       chirales Pinmuster: J:chiral-pin-sektor-1-kandidat-20261115 (meaning); REG I-2115 Zusatz REG:15992 -->
   - *Kann ein Zusatzelement SU(3) vervollständigen? (Papier).* Die Gruppentheorie trägt: so(3) ist maximal in su(3), und
     ein geeignetes komplexes Zusatzelement, etwa eine dreiwertige Uhrphase, erzeugte zusammen mit einer dichten SO(3) die
     SU(3). Im Modell selbst ist kein solches Element nachgewiesen und keines endgültig ausgeschlossen; eine dichte SO(3)
     gibt es im Bestand nicht. Ein Negativbefund gilt nur eingeschränkt: Reelle statische oder geometrische Transporte auf
     einer reell geschlossenen, rangstabilen Dreierfaser und reelle Pfadsummen bei festem reellem E bleiben in O(3). Eine
+    weitere Papierstudie (15. November) zeigt, dass die Windungssektoren solche Transporte nicht komplex machen: Für
+    vollständige isolierte Dreierniveaus in einem festen Windungssektor und reelle räumliche Transporte liegen die
+    Polarfaktoren bei vollem Rang in O(3). Dass ein solches Niveau existiert, ist nicht gezeigt, und andere komplexe
+    Sektoren sind damit nicht entschieden. Eine andere Papierstudie findet nur eine algebraische Möglichkeit: Mit einem
+    gewählten händigen (chiralen) Muster festgehaltener Löcher ist auf der Ebene der algebraischen Konstruktion ein Umlauf von
+    Überlappungstransporten außerhalb U(1)·O(3) möglich, also außerhalb der Klasse reeller orthogonaler Transformationen
+    mit einer gemeinsamen Phase; ein solches Muster ist eine eingesetzte Zutat, keine Emergenz, und seine Umsetzung im
+    Modell, die Größe des Effekts und die übrigen Voraussetzungen sind offen. Eine
     Phase aus der Zeitentwicklung bleibt algebraisch geeignet und bedingt offen; nach Entscheidung der Projektleitung vom
     13. November zählen Zeitschritte nicht zu den räumlichen Transporten, sondern bilden einen eigenen späteren Zweig.
     Ausgang ungeklärt. Codex: „UNGEKLÄRT statt SCHLIESST-NICHT gedeckt, weil die tragende Gruppentheorie die offenen
@@ -170,10 +181,20 @@ gewählte Modell und die genannten Größen und Annahmen.
     festgehaltener ungestörter Energie einen Pol bei λ ≈ 0,861. Das ist keine nachgewiesene Singularität des
     physikalischen Spektrums; zudem hängt der Rang des Bindungsblocks vom Schema ab.
     Codex: „RANG-3-KANDIDAT bleibt der richtige Abschluss …“.
-  <!-- J:t-niveau-oh-1-t6-nicht-durchfuehrbar-20261113; REG I-2108 Zusätze REG:15973, REG:15974 -->
-  - *Niveaus eines symmetrisch gepinnten Blocks.* Eine exakte Rechnung auf einem periodischen Würfel der Kantenlänge 6
-    erwies sich vor dem Bau als nicht durchführbar. Die Arbeit an einem offenen Block mit voller Oktaedersymmetrie um einen
-    Punkt läuft; ein Ergebnis gibt es nicht.
+    <!-- J:okt-lambda1-1-strangende-b1-20261115 (result, meaning); REG I-2111 Zusätze REG:15989, REG:15996 -->
+    Ein Folgestrang bei λ = 1 endete nach der Abbruchregel (zweimal „trägt nicht“ zum Verfahren); gemessen wurde nichts.
+    Ob es bei λ = 1 in einem Verbund aus vier Oktaedern drei Transportrichtungen gibt, bleibt offen; dieser Strang ist
+    beendet.
+  <!-- J:t-niveau-oh-1-t6-nicht-durchfuehrbar-20261113; J:t-niveau-oh-1-kein-block-in-grenze-b1-20261115 (result, meaning);
+       REG I-2108 Zusätze REG:15973, REG:15974, REG:15987, REG:15997; Folgestrang REG I-2116 mit Zusatz REG:15988, REG:15995 -->
+  - *Niveaus eines symmetrisch gepinnten Blocks; Strang beendet.* Eine exakte Rechnung auf einem periodischen Würfel der
+    Kantenlänge 6 erwies sich vor dem Bau als nicht durchführbar. Danach wurde ein offener Block mit voller
+    Oktaedersymmetrie und festgehaltenen Löchern gesucht, den das vorhandene Zählwerkzeug innerhalb einer Grenze von 10⁷
+    Bedeckungen vollständig auszählen kann. Für neun gewählte Paare aus Block und Lochmuster traf das auf keines zu: Zwei
+    Blöcke sind gar nicht belegbar, einer endete an der Zeitgrenze und ist getrennt durch eine Zählbilanz ausgeschlossen,
+    sechs liegen über 10⁷ Bedeckungen. Kein Niveau wurde gerechnet; über ein Dreierniveau sagt das nichts. Die Grenze gehört
+    zu diesem Werkzeug und ist keine allgemeine Schranke; andere Blockfamilien und größere Radien wurden nicht geprüft. Ein
+    symmetriereduzierter Folgestrang läuft; ein Ergebnis gibt es nicht.
 - **Raum.**
   <!-- J:dimensionsmass-e2-strangende-b1-20261113 (result, meaning); REG I-2109 Zusätze REG:15960, REG:15964 -->
   Eine Messvorschrift für die Dimension des wachsenden Netzes (Rückkehr einer Irrfahrt, Kugelwachstum als Kontrolle) trug
@@ -199,8 +220,14 @@ gewählte Modell und die genannten Größen und Annahmen.
   den nichttrivialen Sektorabstand offen. Codex: „Für die D-6-Frage nach
   der tatsächlichen Wirkung der Randdiagonale auf den nichttrivialen Sektorenergieabstand ist nach dieser Lesung
   UNGEKLÄRT richtig; RAND-NEUTRAL gilt bedingt für die translationsverbundenen Sektoren, während RAND-WIRKT für ΔE durch
-  die vorgelegten Papierzeugen nicht folgt.“ Eine Spektralrechnung auf 3×1-Röhren ist geplant, aber nicht durchgeführt;
-  sie entschiede nur für diesen Querschnitt.
+  die vorgelegten Papierzeugen nicht folgt.“
+  <!-- J:rand-3x1-1-ausgang-unresolved-technik-20261115 (result, meaning); REG I-2113 Zusätze REG:15982, REG:15990 -->
+  Eine Spektralrechnung auf 3×1-Röhren der Längen 4 und 6 ist inzwischen gelaufen. Ihr formaler Ausgang ist technisch
+  ungeklärt: Die vorab festgelegte Integritätsprüfung verfehlte ihren Sollhash, weil einige Zahlen in Exponentschreibweise
+  standen; die Daten selbst sind laut Gegenlesung unberührt. Ob ein Ersatzbeleg anerkannt wird, entscheidet die
+  Projektleitung. Nur beschreibend, nicht als Befund: Die Randverschiebung des Sektorabstands liegt bei beiden Längen
+  unter 0,10 t₄ (t₄ ist die Energieeinheit der Dynamik vierter Ordnung). Die Rechnung entscheidet nur für diesen
+  Querschnitt.
 - **Verfahren.**
   <!-- REG I-2104 Zusatz REG:15972 (Entscheidung 13.11.); J:kantentransfer-strang-beendet-20261113 (meaning) -->
   Seit dem 13. November gilt nach Entscheidung der Projektleitung: Ein Strang endet, sobald er irgendwo im Strang zum
