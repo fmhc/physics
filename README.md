@@ -146,23 +146,26 @@ gewählte Modell und die genannten Größen und Annahmen.
     13. November zählen Zeitschritte nicht zu den räumlichen Transporten, sondern bilden einen eigenen späteren Zweig.
     Ausgang ungeklärt. Codex: „UNGEKLÄRT statt SCHLIESST-NICHT gedeckt, weil die tragende Gruppentheorie die offenen
     Transport-, Erhaltungs- und Dynamikvoraussetzungen des nativen Modells nicht ersetzt.“
-  <!-- J:dichte-so3-1-ungeklaert-20261113 (result, meaning); REG I-2110 Zusatz REG:15969 -->
+  <!-- J:dichte-so3-1-ungeklaert-b1-20261113 (result, meaning); REG I-2110 Zusatz REG:15969 -->
   - *Gibt es eine dichte SO(3)? (Papier).* Im Bestand entscheidet keine ablesbare Zahl. Der zuvor untersuchte
     Oktaeder-Triplett-Transport hat in zweiter Ordnung in λ Rang eins. Unter Symmetrievoraussetzungen gibt ein bedingter
     Ansatz (Überlappungstransport eines isolierten Dreierniveaus längs einer Achse und einer Raumdiagonale, Schleifen über
     kleine Dreiecke) genau dann eine dichte Gruppe, wenn ein einziges Vorzeichen der Raumdiagonal-Bindung negativ ist.
     Das Vorzeichenkriterium betrifft die determinantenkorrigierte Schleifengruppe aus den Drehanteilen der
     Überlappungsmatrizen. Offen bleiben das Dreierniveau, der volle Rang, das Vorzeichen und die physische Rechtfertigung
-    dieser Ersetzung; der Prüfplan ist nur ein Entwurf. Auch eine dichte SO(3) wäre
+    dieser Ersetzung; der Prüfplan ist nur ein Entwurf. Erst nach dem Nachweis von Dreierniveau, Rang 3 und weiteren
+    Strukturvoraussetzungen (Zustandsraum, Transportdefinition, Parität, Kovarianz, Spektralzweig, zertifizierte Fehler)
+    hinge die Dichte an diesem Vorzeichen. Auch eine dichte SO(3) wäre
     noch keine SU(3)-Struktur, weil ein Zusatzelement nötig bleibt. Codex: „… trägt nach BERICHTIGUNG 1 mit Vermerken als
     bedingte Papierargumentation mit Modell-Ausgang UNGEKLÄRT“.
-  <!-- J:okt-wegsummen-rang-1-kandidat-20261115 (result, meaning); REG I-2111 Zusatz REG:15976 -->
+  <!-- J:okt-wegsummen-rang-1-kandidat-b1-20261115 (result, meaning); REG I-2111 Zusatz REG:15976 -->
   - *Rang 1 oder Rang 3 zwischen zwei Oktaedern? (Papier).* Für die ausgewählte Bindung G1–G3 der betrachteten
     Oktaederanordnung hat der Dreiertransport im gepinnten Sektor mit genau einer Anregung bis zur zweiten Ordnung in λ
     (der Kopplung) Rang eins. In vierter Ordnung öffnen Wege über die Kontaktdreiecke zwei weitere, schwache Richtungen.
     In führender Ordnung ist das Verhältnis des kleinsten zum größten Singulärwert (53/2880) λ² im einen und
-    (7/2880) λ² im anderen Schema. Keine Symmetrie erzwingt Rang eins. Rang 3 ist damit nur formal für kleine λ
-    ein Kandidat, sehr anisotrop, und das Dreierniveau je Platz ist schon in zweiter Ordnung aufgespalten. Bei λ = 1 ist
+    (7/2880) λ² im anderen Schema. Keine Symmetrie erzwingt Rang eins. Das ist ein formaler Rang-3-Befund eines
+    Bindungstransporters für kleine λ ≠ 0, sehr anisotrop; kein Rangzertifikat und keine vom Rechenschema unabhängige
+    Dreierfaser. Das Dreierniveau je Platz ist schon in zweiter Ordnung stärker aufgespalten als jedes Hüpfen. Bei λ = 1 ist
     der Störungsbefund nicht kontrolliert: Schon am offenen Paar gleichartiger Oktaeder hat der Resolvent bei
     festgehaltener ungestörter Energie einen Pol bei λ ≈ 0,861. Das ist keine nachgewiesene Singularität des
     physikalischen Spektrums; zudem hängt der Rang des Bindungsblocks vom Schema ab.
@@ -184,17 +187,20 @@ gewählte Modell und die genannten Größen und Annahmen.
   einem Messplan versehen. Der Messplan trug in der Gegenlesung nicht; nach der Abbruchregel ist der Strang beendet und
   ruht nach Entscheidung der Projektleitung. Gemessen wurde nichts; die Abstandsklasse dieser Regel ist ungemessen.
 - **Röhre (Papier).**
-  <!-- J:randableitung-roehre-ungeklaert-20261115 (result, meaning); REG I-2113 mit Zusatz REG:15975, REG:15978 -->
+  <!-- J:randableitung-roehre-ungeklaert-b1-20261115 (result, meaning); REG I-2113 mit Zusatz REG:15975, REG:15978 -->
   Auf röhrenförmigen Gitterstücken mit offenem Seitenrand enthält die Dynamik vierter Ordnung des gewählten Trimermodells
   ein Potential für einzelne Trimere, das zählt, wie viele andere Dreiecke mit dem besetzten Trimer eine Kante teilen;
-  auf der Röhre der Länge 6 mit Querschnitt 3×1 ist es im Sektor nicht konstant. Für die von der Herleitung gedeckten
+  dieser Randterm gilt im gewählten Modell vierter Ordnung nur für einen von null verschiedenen Strafparameter κ (bei
+  κ = 0 verschwindet er), für Röhrenlängen ab 4 und für windungserhaltende Züge. Auf der Röhre der Länge 6 mit
+  Querschnitt 3×1 ist er im Sektor nicht konstant. Für die von der Herleitung gedeckten
   Röhrengeometrien und Längen mit nichtleeren, durch die Dynamik erhaltenen Windungssektoren und translationsinvariantem
-  Operator ist der Sektorenergieabstand null, wenn 3 das Querschnittsprodukt nicht teilt (etwa Länge 6, Querschnitt 2×2).
+  Operator ist der Sektorenergieabstand null, wenn 3 das Querschnittsprodukt nicht teilt (etwa Länge 6, Querschnitt 2×2); dazu muss 3 die Länge teilen.
   Eine Änderung des Koeffizienten des Randpotentials erhält diese Gleichheit. Bei Querschnitt 3×1 bleibt die Wirkung auf
   den nichttrivialen Sektorabstand offen. Codex: „Für die D-6-Frage nach
   der tatsächlichen Wirkung der Randdiagonale auf den nichttrivialen Sektorenergieabstand ist nach dieser Lesung
   UNGEKLÄRT richtig; RAND-NEUTRAL gilt bedingt für die translationsverbundenen Sektoren, während RAND-WIRKT für ΔE durch
-  die vorgelegten Papierzeugen nicht folgt.“ Eine Spektralrechnung auf 3×1-Röhren ist geplant, aber nicht durchgeführt.
+  die vorgelegten Papierzeugen nicht folgt.“ Eine Spektralrechnung auf 3×1-Röhren ist geplant, aber nicht durchgeführt;
+  sie entschiede nur für diesen Querschnitt.
 - **Verfahren.**
   <!-- REG I-2104 Zusatz REG:15972 (Entscheidung 13.11.); J:kantentransfer-strang-beendet-20261113 (meaning) -->
   Seit dem 13. November gilt nach Entscheidung der Projektleitung: Ein Strang endet, sobald er irgendwo im Strang zum
