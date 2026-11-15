@@ -122,7 +122,7 @@ KI-erstellt. „Papier“ heißt Papierbefund oder Hypothese ohne Rechnung, kein
 gewählte Modell und die genannten Größen und Annahmen.
 
 - **Farbe: Woher könnte SU(3) kommen?**
-  <!-- Rahmen: J:uhr-schliesst-so3-ungeklaert-b2-20261113 (meaning); J:dichte-so3-1-ungeklaert-20261113 (question) -->
+  <!-- Rahmen: J:uhr-schliesst-so3-ungeklaert-b2-20261113 (meaning); J:dichte-so3-1-ungeklaert-b1-20261113 (question) -->
   Damit SU(3) aus dem Netz entsteht, statt gesetzt zu werden, müsste die eigene Dynamik des Modells ein Dreierniveau so
   von Ort zu Ort tragen, dass SU(3) entsteht. Die folgenden Punkte prüfen einzelne Glieder dieser Kette im gewählten
   Quanten-Trimermodell; keiner weist einen solchen Transport nach.
